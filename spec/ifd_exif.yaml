@@ -59,6 +59,24 @@ tags:
         title: OECF
         components: Any
         format: Undefined
+    0x8830:
+        name: SensitivityType
+        title: 'Sensitivity Type'
+        format: Short
+        text:
+            mapping:
+                0: 'Unknown'
+                1: 'Standard Output Sensitivity'
+                2: 'Recommended Exposure Index'
+                3: 'ISO Speed'
+                4: 'Standard Output Sensitivity and Recommended Exposure Index'
+                5: 'Standard Output Sensitivity and ISO Speed'
+                6: 'Recommended Exposure Index and ISO Speed'
+                7: 'Standard Output Sensitivity, Recommended Exposure Index and ISO Speed'
+    0x8832:
+        name: RecommendedExposureIndex
+        title: 'Recommended Exposure Index'
+        format: Short
     0x9000:
         const: EXIF_VERSION
         name: ExifVersion
@@ -524,6 +542,30 @@ tags:
         name: ImageUniqueID
         title: 'Image Unique ID'
         components: 32
+        format: Ascii
+    0xA430:
+        name: OwnerName
+        title: 'Owner Name'
+        format: Ascii
+    0xA431:
+        name: SerialNumber
+        title: 'Serial Number'
+        format: Ascii
+    0xA432:
+        name: LensInfo
+        title: 'Lens Information'
+        format: Rational
+    0xA433:
+        name: LensMake
+        title: 'Lens Make'
+        format: Ascii
+    0xA434:
+        name: LensModel
+        title: 'Lens Model'
+        format: Ascii
+    0xA435:
+        name: LensSerialNumber
+        title: 'Lens Serial Number'
         format: Ascii
     0xA500:
         const: GAMMA
