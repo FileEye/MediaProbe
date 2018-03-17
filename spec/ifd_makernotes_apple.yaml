@@ -1,0 +1,33 @@
+type: 'Apple Maker Notes'
+class: PelIfd
+makerNotes:
+  - 'Apple'
+tags:
+    0x0003:
+        name: RunTime
+        title: 'Apple Run Time'
+        #ifd: 'Canon Camera Settings'
+    0x0008:
+        name: AccelerationVector
+        title: 'Acceleration Vector'
+        format: SRational
+    0x000a:
+        name: HDRImageType
+        title: 'HDRImageType'
+        format: SShort
+        text:
+            mapping:
+                3: 'HDR Image'
+                4: 'Original Image'
+    0x000b:
+        name: BurstUUID
+        title: 'Burst UUID'
+        format: Ascii
+    0x0011:
+        name: ContentIdentifier
+        title: 'Content Identifier'
+        format: Ascii
+    0x0015:
+        name: ImageUniqueID
+        title: 'ImageUniqueID'
+        format: Ascii
