@@ -32,6 +32,7 @@ class PelIfdApple extends PelIfd
             $tag = $d->getShort($offset + 12 * $i);
             $tag_format = $d->getShort($offset + 12 * $i + 2);
             $tag_components = $d->getLong($offset + 12 * $i + 4);
+            $tag_offset = $d->getLong($offset + 12 * $i + 8);
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag)) {
@@ -79,7 +80,7 @@ class PelIfdApple extends PelIfd
             }
 
             // Load a TAG entry.
-            if ($entry = PelEntry::createFromData($this->type, $tag, $d, $offset, $i)) {
+            if ($entry = static::createFromData($this->type, $tag, $d, $offset, $i)) {
                 $this->addEntry($entry);
             }
         }
@@ -107,6 +108,36 @@ class PelIfdApple extends PelIfd
         // Invoke post-load callbacks.
         foreach (PelSpec::getIfdPostLoadCallbacks($this->type) as $callback) {
             call_user_func($callback, $d, $this);
+        }
+    }
+
+    final public static function createFromData($ifd_id, $tag_id, PelDataWindow $data, $ifd_offset, $seq)
+    {
+        $format = $data->getShort($ifd_offset + 12 * $seq + 2);
+        $components = $data->getLong($ifd_offset + 12 * $seq + 4);
+        // The data size. If bigger than 4 bytes, the actual data is
+        // not in the entry but somewhere else, with the offset stored
+        // in the entry.
+        $size = PelFormat::getSize($format) * $components;
+        if ($size > 0) {
+            $data_offset = $ifd_offset + 12 * $seq + 8;
+            if ($size > 4) {
+                $data_offset = $data->getLong($data_offset);
+            }
+            $sub_data = $data->getClone($data_offset + $ifd_offset - 16, $size);
+        } else {
+            $data_offset = 0;
+            $sub_data = new PelDataWindow();
+        }
+
+        try {
+            $class = PelSpec::getTagClass($ifd_id, $tag_id, $format);
+            $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $sub_data, $data_offset);
+            return  call_user_func($class . '::createInstance', $ifd_id, $tag_id, $arguments);
+        } catch (PelException $e) {
+            // Throw the exception when running in strict mode, store
+            // otherwise.
+            Pel::maybeThrow($e);
         }
     }
 }
