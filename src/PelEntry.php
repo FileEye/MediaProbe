@@ -138,15 +138,21 @@ abstract class PelEntry
      *            the TAG id.
      * @param PelDataWindow $data
      *            the data window that will provide the data.
-     * @param integer $ifd_offset
+     * @param int $ifd_offset
      *            the offset within the window where the directory will
      *            be found.
      * @param int $seq
      *            the element's position in the {@link PelDataWindow} $data.
+     * @param bool $absolute_offset
+     *            (Optional) Defines if tag offsets are absolute or relative.
+     *            Defaults to true.
+     * @param int $skip_offset
+     *            (Optional) an additional offset to be added to the retrieved
+     *            offset. Defaults to 0.
      *
      * @return PelEntry a newly created entry, holding the data given.
      */
-    final public static function createFromData($ifd_id, $tag_id, PelDataWindow $data, $ifd_offset, $seq)
+    final public static function createFromData($ifd_id, $tag_id, PelDataWindow $data, $ifd_offset, $seq, $absolute_offset = true, $skip_offset = 0)
     {
         $format = $data->getShort($ifd_offset + 12 * $seq + 2);
         $components = $data->getLong($ifd_offset + 12 * $seq + 4);
@@ -159,6 +165,10 @@ abstract class PelEntry
             $data_offset = $ifd_offset + 12 * $seq + 8;
             if ($size > 4) {
                 $data_offset = $data->getLong($data_offset);
+                if (!$absolute_offset) {
+                    $data_offset += $ifd_offset;
+                }
+                $data_offset += $skip_offset;
             }
             $sub_data = $data->getClone($data_offset, $size);
         } else {

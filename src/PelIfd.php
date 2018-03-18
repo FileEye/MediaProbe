@@ -86,6 +86,27 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     const INTEROPERABILITY = 4;
 
     /**
+     * The IFD header bytes to skip.
+     *
+     * @var array
+     */
+    protected $headerSkipBytes = 0;
+
+    /**
+     * Defines if tags in the IFD point to absolute offset.
+     *
+     * @var array
+     */
+    protected $tagsAbsoluteOffset = true;
+
+    /**
+     * The offset skip for tags.
+     *
+     * @var array
+     */
+    protected $tagsSkipOffset = 0;
+
+    /**
      * The entries held by this directory.
      *
      * Each tag in the directory is represented by a {@link PelEntry}
@@ -178,7 +199,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         $thumb_length = 0;
 
         /* Read the number of entries */
-        $n = $d->getShort($offset);
+        $n = $d->getShort($offset + $this->headerSkipBytes);
         Pel::debug(
             str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d entries at offset %d from %d bytes...",
             $this->getName(),
@@ -187,7 +208,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $d->getSize()
         );
 
-        $offset += 2;
+        $offset += 2 + $this->headerSkipBytes;
 
         /* Check if we have enough data. */
         if ($offset + 12 * $n > $d->getSize()) {
@@ -200,6 +221,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $tag = $d->getShort($offset + 12 * $i);
             $tag_format = $d->getShort($offset + 12 * $i + 2);
             $tag_components = $d->getLong($offset + 12 * $i + 4);
+            $tag_offset = $d->getLong($offset + 12 * $i + 8);
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag)) {
@@ -261,7 +283,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             }
 
             // Load a TAG entry.
-            if ($entry = PelEntry::createFromData($this->type, $tag, $d, $offset, $i)) {
+            if ($entry = PelEntry::createFromData($this->type, $tag, $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
                 $this->addEntry($entry);
             }
         }

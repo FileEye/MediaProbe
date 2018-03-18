@@ -31,13 +31,14 @@ script:
   - php bin/pel compile
   - ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
   - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ./test
-  - php examples/dump-image.php -d test/images/1024-2006_1011_093752.jpg
+  #- php examples/dump-image.php -d test/images/1024-2006_1011_093752.jpg
   #- php examples/dump-image.php -d test/images/gh-77.jpg
   #- php examples/dump-image.php -d test/images/no-exif.jpg
   #- php examples/dump-image.php -d test/imagetests/canon-eos-650d.jpg
   #- php examples/dump-image.php -d test/imagetests/canon-ixus-ii.jpg
   #- php examples/dump-image.php -d test/imagetests/canon-powershot-s60.jpg
   - php examples/dump-image.php -d test/imagetests/apple-iphone6s.jpg
+  - php examples/dump-image.php -d test/imagetests/apple-iphone7.jpg
   #- php examples/dump-image.php -d test/broken_images/gh-10-a.jpg
   #- php examples/dump-image.php -d test/broken_images/gh-10-b.jpg
   #- php examples/dump-image.php -d test/broken_images/gh-11.jpg
