@@ -36,10 +36,15 @@
         "symfony/yaml": "*"
     },
     "autoload": {
-        "psr-4": {"lsolesen\\pel\\": "src/"}
+        "psr-4": {
+            "lsolesen\\pel\\": "src/",
+            "ExifEye\\core\\": "src-exifeye/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Pel\\Test\\": "test/" }
+        "psr-4": {
+            "ExifEye\\Test\\core": "test/"
+        }
     },
     "bin": ["bin/pel"]
 }

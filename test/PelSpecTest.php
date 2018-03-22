@@ -1,6 +1,6 @@
 <?php
 
-namespace Pel\Test;
+namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelEntry;
 use lsolesen\pel\PelFormat;
