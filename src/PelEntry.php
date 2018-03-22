@@ -24,7 +24,7 @@
  */
 namespace lsolesen\pel;
 
-use ExifeEye\core\Format;
+use ExifEye\core\Format;
 
 /**
  * Classes for dealing with Exif entries.
