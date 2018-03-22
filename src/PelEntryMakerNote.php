@@ -38,7 +38,7 @@ class PelEntryMakerNote extends PelEntryUndefined
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data

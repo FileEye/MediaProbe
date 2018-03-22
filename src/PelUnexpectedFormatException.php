@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes for dealing with Exif entries.
  *
@@ -62,18 +64,18 @@ class PelUnexpectedFormatException extends PelEntryException
      *            the tag for which the violation was found as defined in {@link PelTag}
      *
      * @param int $found
-     *            the format found as defined in {@link PelFormat}
+     *            the format found as defined in {@link Format}
      *
      * @param int $expected
-     *            the expected as defined in {@link PelFormat}
+     *            the expected as defined in {@link Format}
      */
     public function __construct($type, $tag, $found, $expected)
     {
         parent::__construct(
-            'Unexpected format found for %s tag: PelFormat::%s. Expected PelFormat::%s instead.',
+            'Unexpected format found for %s tag: Format::%s. Expected Format::%s instead.',
             PelTag::getName($type, $tag),
-            strtoupper(PelFormat::getName($found)),
-            strtoupper(PelFormat::getName($expected))
+            strtoupper(Format::getName($found)),
+            strtoupper(Format::getName($expected))
         );
         $this->tag = $tag;
         $this->type = $type;

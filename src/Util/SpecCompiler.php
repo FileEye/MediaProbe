@@ -2,7 +2,7 @@
 
 namespace lsolesen\pel\Util;
 
-use lsolesen\pel\PelFormat;
+use ExifEye\core\Format;
 use lsolesen\pel\PelIfd;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -213,7 +213,7 @@ DATA;
             }
             $formats = [];
             foreach ($temp as $name) {
-                if (($formats[] = PelFormat::getIdFromName($name)) === null) {
+                if (($formats[] = Format::getIdFromName($name)) === null) {
                     throw new SpecCompilerException($file->getFileName() . ": invalid '" . $name . "' format found for TAG '" . $tag['name'] . "'");
                 }
             }

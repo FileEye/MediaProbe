@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to hold ASCII strings.
  *
@@ -145,7 +147,7 @@ class PelEntryTime extends PelEntryAscii
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data
@@ -158,8 +160,8 @@ class PelEntryTime extends PelEntryAscii
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, PelDataWindow $data, $data_offset)
     {
-        if ($format != PelFormat::ASCII) {
-            throw new PelUnexpectedFormatException($ifd_id, $tag_id, $format, PelFormat::ASCII);
+        if ($format != Format::ASCII) {
+            throw new PelUnexpectedFormatException($ifd_id, $tag_id, $format, Format::ASCII);
         }
         if ($components != 20) {
             throw new PelWrongComponentCountException($ifd_id, $tag_id, $components, 20);

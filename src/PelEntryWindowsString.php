@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to hold bytes, both signed and unsigned.
  * The {@link
@@ -104,7 +106,7 @@ class PelEntryWindowsString extends PelEntry
     public function __construct($tag, $str = '', $from_exif = false)
     {
         $this->tag = $tag;
-        $this->format = PelFormat::BYTE;
+        $this->format = Format::BYTE;
         $this->setValue($str, $from_exif);
     }
 
@@ -116,7 +118,7 @@ class PelEntryWindowsString extends PelEntry
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data
@@ -129,8 +131,8 @@ class PelEntryWindowsString extends PelEntry
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, PelDataWindow $data, $data_offset)
     {
-        if ($format != PelFormat::BYTE) {
-            throw new PelUnexpectedFormatException($ifd_id, $tag_id, $format, PelFormat::BYTE);
+        if ($format != Format::BYTE) {
+            throw new PelUnexpectedFormatException($ifd_id, $tag_id, $format, Format::BYTE);
         }
         return [$data->getBytes(), true];
     }

@@ -2,6 +2,8 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Class to retrieve IFD and TAG information from YAML specs.
  */
@@ -20,16 +22,16 @@ class PelSpec
      * @var array
      */
     private static $defaultTagClasses = [
-        PelFormat::ASCII => 'lsolesen\\pel\\PelEntryAscii',
-        PelFormat::BYTE => 'lsolesen\\pel\\PelEntryByte',
-        PelFormat::SHORT => 'lsolesen\\pel\\PelEntryShort',
-        PelFormat::LONG => 'lsolesen\\pel\\PelEntryLong',
-        PelFormat::RATIONAL => 'lsolesen\\pel\\PelEntryRational',
-        PelFormat::SBYTE => 'lsolesen\\pel\\PelEntrySByte',
-        PelFormat::SSHORT => 'lsolesen\\pel\\PelEntrySShort',
-        PelFormat::SLONG => 'lsolesen\\pel\\PelEntrySLong',
-        PelFormat::SRATIONAL => 'lsolesen\\pel\\PelEntrySRational',
-        PelFormat::UNDEFINED => 'lsolesen\\pel\\PelEntryUndefined',
+        Format::ASCII => 'lsolesen\\pel\\PelEntryAscii',
+        Format::BYTE => 'lsolesen\\pel\\PelEntryByte',
+        Format::SHORT => 'lsolesen\\pel\\PelEntryShort',
+        Format::LONG => 'lsolesen\\pel\\PelEntryLong',
+        Format::RATIONAL => 'lsolesen\\pel\\PelEntryRational',
+        Format::SBYTE => 'lsolesen\\pel\\PelEntrySByte',
+        Format::SSHORT => 'lsolesen\\pel\\PelEntrySShort',
+        Format::SLONG => 'lsolesen\\pel\\PelEntrySLong',
+        Format::SRATIONAL => 'lsolesen\\pel\\PelEntrySRational',
+        Format::UNDEFINED => 'lsolesen\\pel\\PelEntryUndefined',
     ];
 
     /**
@@ -270,7 +272,7 @@ class PelSpec
         }
 
         if (!isset(self::$defaultTagClasses[$format])) {
-            throw new PelException('Unsupported format: %s', PelFormat::getName($format));
+            throw new PelException('Unsupported format: %s', Format::getName($format));
         }
         return self::$defaultTagClasses[$format];
     }

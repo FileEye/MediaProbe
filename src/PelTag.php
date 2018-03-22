@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
     /**
      * Namespace for functions operating on Exif tags.
      *
@@ -60,7 +62,7 @@ class PelTag
     /**
      * Interoperability index.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 4.
      */
@@ -69,7 +71,7 @@ class PelTag
     /**
      * Interoperability version.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: 4.
      */
@@ -78,7 +80,7 @@ class PelTag
     /**
      * Image width.
      *
-     * Format: {@link PelFormat::SHORT} or {@link PelFormat::LONG}.
+     * Format: {@link Format::SHORT} or {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -87,7 +89,7 @@ class PelTag
     /**
      * Image length.
      *
-     * Format: {@link PelFormat::SHORT} or {@link PelFormat::LONG}.
+     * Format: {@link Format::SHORT} or {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -96,7 +98,7 @@ class PelTag
     /**
      * Number of bits per component.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 3.
      */
@@ -105,7 +107,7 @@ class PelTag
     /**
      * Compression scheme.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -114,7 +116,7 @@ class PelTag
     /**
      * Pixel composition.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -159,7 +161,7 @@ class PelTag
     /**
      * Model
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -168,7 +170,7 @@ class PelTag
     /**
      * Strip Offsets
      *
-     * Format: {@link PelFormat::SHORT} or {@link PelFormat::LONG}.
+     * Format: {@link Format::SHORT} or {@link Format::LONG}.
      *
      * Components: any number.
      */
@@ -177,7 +179,7 @@ class PelTag
     /**
      * Orientation of image.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -186,7 +188,7 @@ class PelTag
     /**
      * Number of components.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -195,7 +197,7 @@ class PelTag
     /**
      * Rows per Strip
      *
-     * Format: {@link PelFormat::SHORT} or {@link PelFormat::LONG}.
+     * Format: {@link Format::SHORT} or {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -204,7 +206,7 @@ class PelTag
     /**
      * Strip Byte Count
      *
-     * Format: {@link PelFormat::SHORT} or {@link PelFormat::LONG}.
+     * Format: {@link Format::SHORT} or {@link Format::LONG}.
      *
      * Components: any number.
      */
@@ -213,7 +215,7 @@ class PelTag
     /**
      * Image resolution in width direction.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -222,7 +224,7 @@ class PelTag
     /**
      * Image resolution in height direction.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -231,7 +233,7 @@ class PelTag
     /**
      * Image data arrangement.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -240,7 +242,7 @@ class PelTag
     /**
      * Unit of X and Y resolution.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -249,7 +251,7 @@ class PelTag
     /**
      * Transfer function.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 3.
      */
@@ -258,7 +260,7 @@ class PelTag
     /**
      * Software used.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -267,7 +269,7 @@ class PelTag
     /**
      * File change date and time.
      *
-     * Format: {@link PelFormat::ASCII}, modelled by the {@link
+     * Format: {@link Format::ASCII}, modelled by the {@link
      * PelEntryTime} class.
      *
      * Components: 20.
@@ -277,7 +279,7 @@ class PelTag
     /**
      * Person who created the image.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -286,7 +288,7 @@ class PelTag
     /**
      * White point chromaticity.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 2.
      */
@@ -295,7 +297,7 @@ class PelTag
     /**
      * Chromaticities of primaries.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 6.
      */
@@ -322,7 +324,7 @@ class PelTag
     /**
      * Offset to JPEG SOI.
      *
-     * Format: {@link PelFormat::LONG}.
+     * Format: {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -331,7 +333,7 @@ class PelTag
     /**
      * Bytes of JPEG data.
      *
-     * Format: {@link PelFormat::LONG}.
+     * Format: {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -340,7 +342,7 @@ class PelTag
     /**
      * Color space transformation matrix coefficients.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 3.
      */
@@ -349,7 +351,7 @@ class PelTag
     /**
      * Subsampling ratio of Y to C.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 2.
      */
@@ -358,7 +360,7 @@ class PelTag
     /**
      * Y and C positioning.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -367,7 +369,7 @@ class PelTag
     /**
      * Pair of black and white reference values.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 6.
      */
@@ -385,7 +387,7 @@ class PelTag
     /**
      * Related Image Width
      *
-     * Format: Unknown, probably {@link PelFormat::SHORT}?
+     * Format: Unknown, probably {@link Format::SHORT}?
      *
      * Components: Unknown, probably 1.
      */
@@ -394,7 +396,7 @@ class PelTag
     /**
      * Related Image Length
      *
-     * Format: Unknown, probably {@link PelFormat::SHORT}?
+     * Format: Unknown, probably {@link Format::SHORT}?
      *
      * Components: Unknown, probably 1.
      */
@@ -403,7 +405,7 @@ class PelTag
     /**
      * Rating
      *
-     * Format: {@link PelFormat::SHORT}
+     * Format: {@link Format::SHORT}
      *
      * Components: 1.
     */
@@ -412,7 +414,7 @@ class PelTag
     /**
      * Rating percent
      *
-     * Format: {@link PelFormat::SHORT}
+     * Format: {@link Format::SHORT}
      *
      * Components: 1.
      */
@@ -421,7 +423,7 @@ class PelTag
     /**
      * CFA Repeat Pattern Dim.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 2.
      */
@@ -439,7 +441,7 @@ class PelTag
     /**
      * Copyright holder.
      *
-     * Format: {@link PelFormat::ASCII}, modelled by the {@link
+     * Format: {@link Format::ASCII}, modelled by the {@link
      * PelEntryCopyright} class.
      *
      * Components: any number.
@@ -449,7 +451,7 @@ class PelTag
     /**
      * Exposure Time
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -458,7 +460,7 @@ class PelTag
     /**
      * FNumber
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -467,7 +469,7 @@ class PelTag
     /**
      * IPTC/NAA
      *
-     * Format: {@link PelFormat::LONG}.
+     * Format: {@link Format::LONG}.
      *
      * Components: any number.
      */
@@ -476,7 +478,7 @@ class PelTag
     /**
      * Exif IFD Pointer
      *
-     * Format: {@link PelFormat::LONG}.
+     * Format: {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -485,7 +487,7 @@ class PelTag
     /**
      * Inter Color Profile
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: any number.
      */
@@ -494,7 +496,7 @@ class PelTag
     /**
      * Exposure Program
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -503,7 +505,7 @@ class PelTag
     /**
      * Spectral Sensitivity
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -512,7 +514,7 @@ class PelTag
     /**
      * GPS Info IFD Pointer
      *
-     * Format: {@link PelFormat::LONG}.
+     * Format: {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -521,7 +523,7 @@ class PelTag
     /**
      * ISO Speed Ratings
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 2.
      */
@@ -530,7 +532,7 @@ class PelTag
     /**
      * OECF
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: any number.
      */
@@ -539,7 +541,7 @@ class PelTag
     /**
      * Exif version.
      *
-     * Format: {@link PelFormat::UNDEFINED}, modelled by the {@link
+     * Format: {@link Format::UNDEFINED}, modelled by the {@link
      * PelEntryVersion} class.
      *
      * Components: 4.
@@ -549,7 +551,7 @@ class PelTag
     /**
      * Date and time of original data generation.
      *
-     * Format: {@link PelFormat::ASCII}, modelled by the {@link
+     * Format: {@link Format::ASCII}, modelled by the {@link
      * PelEntryTime} class.
      *
      * Components: 20.
@@ -559,7 +561,7 @@ class PelTag
     /**
      * Date and time of digital data generation.
      *
-     * Format: {@link PelFormat::ASCII}, modelled by the {@link
+     * Format: {@link Format::ASCII}, modelled by the {@link
      * PelEntryTime} class.
      *
      * Components: 20.
@@ -569,7 +571,7 @@ class PelTag
     /**
      * Offset time (timezone) of file change time.
      *
-     * Format: {@link PelFormat::ASCII}
+     * Format: {@link Format::ASCII}
      *
      * Components: 7.
      */
@@ -578,7 +580,7 @@ class PelTag
     /**
      * Offset time (timezone) of original data generation.
      *
-     * Format: {@link PelFormat::ASCII}
+     * Format: {@link Format::ASCII}
      *
      * Components: 7.
      */
@@ -587,7 +589,7 @@ class PelTag
     /**
      * Offset time (timezone) of digital data generation.
      *
-     * Format: {@link PelFormat::ASCII}
+     * Format: {@link Format::ASCII}
      *
      * Components: 7.
      */
@@ -596,7 +598,7 @@ class PelTag
     /**
      * Meaning of each component.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: 4.
      */
@@ -605,7 +607,7 @@ class PelTag
     /**
      * Image compression mode.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -614,7 +616,7 @@ class PelTag
     /**
      * Shutter speed
      *
-     * Format: {@link PelFormat::SRATIONAL}.
+     * Format: {@link Format::SRATIONAL}.
      *
      * Components: 1.
      */
@@ -623,7 +625,7 @@ class PelTag
     /**
      * Aperture
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -632,7 +634,7 @@ class PelTag
     /**
      * Brightness
      *
-     * Format: {@link PelFormat::SRATIONAL}.
+     * Format: {@link Format::SRATIONAL}.
      *
      * Components: 1.
      */
@@ -641,7 +643,7 @@ class PelTag
     /**
      * Exposure Bias
      *
-     * Format: {@link PelFormat::SRATIONAL}.
+     * Format: {@link Format::SRATIONAL}.
      *
      * Components: 1.
      */
@@ -650,7 +652,7 @@ class PelTag
     /**
      * Max Aperture Value
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -659,7 +661,7 @@ class PelTag
     /**
      * Subject Distance
      *
-     * Format: {@link PelFormat::SRATIONAL}.
+     * Format: {@link Format::SRATIONAL}.
      *
      * Components: 1.
      */
@@ -668,7 +670,7 @@ class PelTag
     /**
      * Metering Mode
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -677,7 +679,7 @@ class PelTag
     /**
      * Light Source
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -686,7 +688,7 @@ class PelTag
     /**
      * Flash
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -695,7 +697,7 @@ class PelTag
     /**
      * Focal Length
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -704,7 +706,7 @@ class PelTag
     /**
      * Subject Area
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 4.
      */
@@ -713,7 +715,7 @@ class PelTag
     /**
      * Maker Note
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: any number.
      */
@@ -722,7 +724,7 @@ class PelTag
     /**
      * User Comment
      *
-     * Format: {@link PelFormat::UNDEFINED}, modelled by the {@link
+     * Format: {@link Format::UNDEFINED}, modelled by the {@link
      * PelEntryUserComment} class.
      *
      * Components: any number.
@@ -732,7 +734,7 @@ class PelTag
     /**
      * SubSec Time
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -741,7 +743,7 @@ class PelTag
     /**
      * SubSec Time Original
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -750,7 +752,7 @@ class PelTag
     /**
      * SubSec Time Digitized
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -759,7 +761,7 @@ class PelTag
     /**
      * Windows XP Title
      *
-     * Format: {@link PelFormat::BYTE}, modelled by the
+     * Format: {@link Format::BYTE}, modelled by the
      * {@link PelEntryWindowsString} class.
      *
      * Components: any number.
@@ -769,7 +771,7 @@ class PelTag
     /**
      * Windows XP Comment
      *
-     * Format: {@link PelFormat::BYTE}, modelled by the
+     * Format: {@link Format::BYTE}, modelled by the
      * {@link PelEntryWindowsString} class.
      *
      * Components: any number.
@@ -779,7 +781,7 @@ class PelTag
     /**
      * Windows XP Author
      *
-     * Format: {@link PelFormat::BYTE}, modelled by the
+     * Format: {@link Format::BYTE}, modelled by the
      * {@link PelEntryWindowsString} class.
      *
      * Components: any number.
@@ -789,7 +791,7 @@ class PelTag
     /**
      * Windows XP Keywords
      *
-     * Format: {@link PelFormat::BYTE}, modelled by the
+     * Format: {@link Format::BYTE}, modelled by the
      * {@link PelEntryWindowsString} class.
      *
      * Components: any number.
@@ -799,7 +801,7 @@ class PelTag
     /**
      * Windows XP Subject
      *
-     * Format: {@link PelFormat::BYTE}, modelled by the
+     * Format: {@link Format::BYTE}, modelled by the
      * {@link PelEntryWindowsString} class.
      *
      * Components: any number.
@@ -809,7 +811,7 @@ class PelTag
     /**
      * Supported Flashpix version
      *
-     * Format: {@link PelFormat::UNDEFINED}, modelled by the {@link
+     * Format: {@link Format::UNDEFINED}, modelled by the {@link
      * PelEntryVersion} class.
      *
      * Components: 4.
@@ -819,7 +821,7 @@ class PelTag
     /**
      * Color space information.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -828,7 +830,7 @@ class PelTag
     /**
      * Valid image width.
      *
-     * Format: {@link PelFormat::SHORT} or {@link PelFormat::LONG}.
+     * Format: {@link Format::SHORT} or {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -837,7 +839,7 @@ class PelTag
     /**
      * Valid image height.
      *
-     * Format: {@link PelFormat::SHORT} or {@link PelFormat::LONG}.
+     * Format: {@link Format::SHORT} or {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -846,7 +848,7 @@ class PelTag
     /**
      * Related audio file.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: any number.
      */
@@ -855,7 +857,7 @@ class PelTag
     /**
      * Interoperability IFD Pointer
      *
-     * Format: {@link PelFormat::LONG}.
+     * Format: {@link Format::LONG}.
      *
      * Components: 1.
      */
@@ -864,7 +866,7 @@ class PelTag
     /**
      * Flash energy.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -873,7 +875,7 @@ class PelTag
     /**
      * Spatial frequency response.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: any number.
      */
@@ -882,7 +884,7 @@ class PelTag
     /**
      * Focal plane X resolution.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -891,7 +893,7 @@ class PelTag
     /**
      * Focal plane Y resolution.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -900,7 +902,7 @@ class PelTag
     /**
      * Focal plane resolution unit.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -909,7 +911,7 @@ class PelTag
     /**
      * Subject location.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -918,7 +920,7 @@ class PelTag
     /**
      * Exposure index.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -927,7 +929,7 @@ class PelTag
     /**
      * Sensing method.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -936,7 +938,7 @@ class PelTag
     /**
      * File source.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: 1.
      */
@@ -945,7 +947,7 @@ class PelTag
     /**
      * Scene type.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: 1.
      */
@@ -954,7 +956,7 @@ class PelTag
     /**
      * CFA pattern.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: any number.
      */
@@ -963,7 +965,7 @@ class PelTag
     /**
      * Custom image processing.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -972,7 +974,7 @@ class PelTag
     /**
      * Exposure mode.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -981,7 +983,7 @@ class PelTag
     /**
      * White balance.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -990,7 +992,7 @@ class PelTag
     /**
      * Digital zoom ratio.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -999,7 +1001,7 @@ class PelTag
     /**
      * Focal length in 35mm film.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1008,7 +1010,7 @@ class PelTag
     /**
      * Scene capture type.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -1017,7 +1019,7 @@ class PelTag
     /**
      * Gain control.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -1026,7 +1028,7 @@ class PelTag
     /**
      * Contrast.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -1035,7 +1037,7 @@ class PelTag
     /**
      * Saturation.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -1044,7 +1046,7 @@ class PelTag
     /**
      * Sharpness.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -1062,7 +1064,7 @@ class PelTag
     /**
      * Subject distance range.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */
@@ -1071,7 +1073,7 @@ class PelTag
     /**
      * Image unique ID.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 32.
      */
@@ -1080,7 +1082,7 @@ class PelTag
     /**
      * Gamma.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1089,7 +1091,7 @@ class PelTag
     /**
      * PrintIM
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: unknown.
      */
@@ -1098,7 +1100,7 @@ class PelTag
     /**
      * GPS tag version.
      *
-     * Format: {@link PelFormat::BYTE}.
+     * Format: {@link Format::BYTE}.
      *
      * Components: 4.
      */
@@ -1107,7 +1109,7 @@ class PelTag
     /**
      * North or South Latitude.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1116,7 +1118,7 @@ class PelTag
     /**
      * Latitude.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 3.
      */
@@ -1125,7 +1127,7 @@ class PelTag
     /**
      * East or West Longitude.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1134,7 +1136,7 @@ class PelTag
     /**
      * Longitude.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 3.
      */
@@ -1143,7 +1145,7 @@ class PelTag
     /**
      * Altitude reference.
      *
-     * Format: {@link PelFormat::BYTE}.
+     * Format: {@link Format::BYTE}.
      *
      * Components: 1.
      */
@@ -1152,7 +1154,7 @@ class PelTag
     /**
      * Altitude.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1161,7 +1163,7 @@ class PelTag
     /**
      * GPS time (atomic clock).
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 3.
      */
@@ -1170,7 +1172,7 @@ class PelTag
     /**
      * GPS satellites used for measurement.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: Any.
      */
@@ -1179,7 +1181,7 @@ class PelTag
     /**
      * GPS receiver status.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1188,7 +1190,7 @@ class PelTag
     /**
      * GPS measurement mode.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1197,7 +1199,7 @@ class PelTag
     /**
      * Measurement precision.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1206,7 +1208,7 @@ class PelTag
     /**
      * Speed unit.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1215,7 +1217,7 @@ class PelTag
     /**
      * Speed of GPS receiver.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1224,7 +1226,7 @@ class PelTag
     /**
      * Reference for direction of movement.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1233,7 +1235,7 @@ class PelTag
     /**
      * Direction of movement.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1242,7 +1244,7 @@ class PelTag
     /**
      * Reference for direction of image.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1251,7 +1253,7 @@ class PelTag
     /**
      * Direction of image.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1260,7 +1262,7 @@ class PelTag
     /**
      * Geodetic survey data used.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: Any.
      */
@@ -1269,7 +1271,7 @@ class PelTag
     /**
      * Reference for latitude of destination.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1278,7 +1280,7 @@ class PelTag
     /**
      * Latitude of destination.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 3.
      */
@@ -1287,7 +1289,7 @@ class PelTag
     /**
      * Reference for longitude of destination.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1296,7 +1298,7 @@ class PelTag
     /**
      * Longitude of destination.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 3.
      */
@@ -1305,7 +1307,7 @@ class PelTag
     /**
      * Reference for bearing of destination.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1314,7 +1316,7 @@ class PelTag
     /**
      * Bearing of destination.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1323,7 +1325,7 @@ class PelTag
     /**
      * Reference for distance to destination.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 2.
      */
@@ -1332,7 +1334,7 @@ class PelTag
     /**
      * Distance to destination.
      *
-     * Format: {@link PelFormat::RATIONAL}.
+     * Format: {@link Format::RATIONAL}.
      *
      * Components: 1.
      */
@@ -1341,7 +1343,7 @@ class PelTag
     /**
      * Name of GPS processing method.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: Any.
      */
@@ -1350,7 +1352,7 @@ class PelTag
     /**
      * Name of GPS area.
      *
-     * Format: {@link PelFormat::UNDEFINED}.
+     * Format: {@link Format::UNDEFINED}.
      *
      * Components: Any.
      */
@@ -1359,7 +1361,7 @@ class PelTag
     /**
      * GPS date.
      *
-     * Format: {@link PelFormat::ASCII}.
+     * Format: {@link Format::ASCII}.
      *
      * Components: 11.
      */
@@ -1368,7 +1370,7 @@ class PelTag
     /**
      * GPS differential correction.
      *
-     * Format: {@link PelFormat::SHORT}.
+     * Format: {@link Format::SHORT}.
      *
      * Components: 1.
      */

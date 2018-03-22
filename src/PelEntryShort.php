@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to hold shorts, both signed and unsigned.
  *
@@ -38,7 +40,7 @@ namespace lsolesen\pel;
  *
  * This class can hold shorts, either just a single short or an array
  * of shorts. The class will be used to manipulate any of the Exif
- * tags which has format {@link PelFormat::SHORT} like in this
+ * tags which has format {@link Format::SHORT} like in this
  * example:
  *
  * <code>
@@ -77,7 +79,7 @@ class PelEntryShort extends PelEntryNumber
      *            the tag which this entry represents. This should be
      *            one of the constants defined in {@link PelTag}, e.g., {@link
      *            PelTag::IMAGE_WIDTH}, {@link PelTag::ISO_SPEED_RATINGS},
-     *            or any other tag with format {@link PelFormat::SHORT}.
+     *            or any other tag with format {@link Format::SHORT}.
      *
      * @param int $value...
      *            the short(s) that this entry will
@@ -92,7 +94,7 @@ class PelEntryShort extends PelEntryNumber
         $this->tag = $tag;
         $this->min = 0;
         $this->max = 65535;
-        $this->format = PelFormat::SHORT;
+        $this->format = Format::SHORT;
 
         $value = func_get_args();
         array_shift($value);
@@ -107,7 +109,7 @@ class PelEntryShort extends PelEntryNumber
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data

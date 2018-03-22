@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelEntry;
-use lsolesen\pel\PelFormat;
+use ExifEye\core\Format;
 use lsolesen\pel\PelSpec;
 use PHPUnit\Framework\TestCase;
 
@@ -58,8 +58,8 @@ class PelSpecTest extends TestCase
         $this->assertNull(PelSpec::getIfdIdFromTag(0, 0x829A));
 
         // Check getTagFormat.
-        $this->assertEquals([PelFormat::UNDEFINED], PelSpec::getTagFormat(2, 0x9286));
-        $this->assertEquals([PelFormat::SHORT, PelFormat::LONG], PelSpec::getTagFormat(2, 0xA002));
+        $this->assertEquals([Format::UNDEFINED], PelSpec::getTagFormat(2, 0x9286));
+        $this->assertEquals([Format::SHORT, Format::LONG], PelSpec::getTagFormat(2, 0xA002));
 
         // Check getTagTitle.
         $this->assertEquals('Exif IFD Pointer', PelSpec::getTagTitle(0, 0x8769));

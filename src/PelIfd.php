@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes for dealing with Exif IFDs.
  *
@@ -242,7 +244,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
                 $tag,
                 PelSpec::getTagName($this->type, $tag),
                 $tag_format,
-                PelFormat::getName($tag_format),
+                Format::getName($tag_format),
                 $tag_components,
                 $i + 1,
                 $n
@@ -349,7 +351,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * Make a new entry from a bunch of bytes.
      *
      * This method will create the proper subclass of {@link PelEntry}
-     * corresponding to the {@link PelTag} and {@link PelFormat} given.
+     * corresponding to the {@link PelTag} and {@link Format} given.
      * The entry will be initialized with the data given.
      *
      * Please note that the data you pass to this method should come
@@ -369,7 +371,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *            the tag of the entry as defined in {@link PelSpec}.
      *
      * @param integer $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      *
      * @param int $components
      *            the components in the entry.
@@ -885,12 +887,12 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             // TODO: make PelEntry a class that can be constructed with
             // arguments corresponding to the newt four lines.
             $bytes .= PelConvert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
-            $bytes .= PelConvert::shortToBytes(PelFormat::LONG, $order);
+            $bytes .= PelConvert::shortToBytes(Format::LONG, $order);
             $bytes .= PelConvert::longToBytes(1, $order);
             $bytes .= PelConvert::longToBytes($this->thumb_data->getSize(), $order);
 
             $bytes .= PelConvert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
-            $bytes .= PelConvert::shortToBytes(PelFormat::LONG, $order);
+            $bytes .= PelConvert::shortToBytes(Format::LONG, $order);
             $bytes .= PelConvert::longToBytes(1, $order);
             $bytes .= PelConvert::longToBytes($end, $order);
 
@@ -914,7 +916,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             /* Make an aditional entry with the pointer. */
             $bytes .= PelConvert::shortToBytes($tag, $order);
             /* Next the format, which is always unsigned long. */
-            $bytes .= PelConvert::shortToBytes(PelFormat::LONG, $order);
+            $bytes .= PelConvert::shortToBytes(Format::LONG, $order);
             /* There is only one component. */
             $bytes .= PelConvert::longToBytes(1, $order);
 

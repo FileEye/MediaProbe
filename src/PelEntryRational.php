@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to manipulate rational numbers.
  *
@@ -43,7 +45,7 @@ namespace lsolesen\pel;
  *
  * The class can hold either just a single rational or an array of
  * rationals. The class will be used to manipulate any of the Exif
- * tags which can have format {@link PelFormat::RATIONAL} like in this
+ * tags which can have format {@link Format::RATIONAL} like in this
  * example:
  *
  * <code>
@@ -68,7 +70,7 @@ class PelEntryRational extends PelEntryLong
      *            int the tag which this entry represents. This should
      *            be one of the constants defined in {@link PelTag}, e.g., {@link
      *            PelTag::X_RESOLUTION}, or any other tag which can have format
-     *            {@link PelFormat::RATIONAL}.
+     *            {@link Format::RATIONAL}.
      *
      * @param array $value...
      *            the rational(s) that this entry will
@@ -82,7 +84,7 @@ class PelEntryRational extends PelEntryLong
     public function __construct($tag, $value = null)
     {
         $this->tag = $tag;
-        $this->format = PelFormat::RATIONAL;
+        $this->format = Format::RATIONAL;
         $this->dimension = 2;
         $this->min = 0;
         $this->max = 4294967295;
@@ -100,7 +102,7 @@ class PelEntryRational extends PelEntryLong
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data

@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to hold data for Exif tags of format undefined.
  *
@@ -64,7 +66,7 @@ class PelEntryUndefined extends PelEntry
      *            should be one of the constants defined in {@link PelTag},
      *            e.g., {@link PelTag::SCENE_TYPE}, {@link
      *            PelTag::MAKER_NOTE} or any other tag with format {@link
-     *            PelFormat::UNDEFINED}.
+     *            Format::UNDEFINED}.
      *
      * @param string $data
      *            the data that this entry will be holding. Since
@@ -73,7 +75,7 @@ class PelEntryUndefined extends PelEntry
     public function __construct($tag, $data = '')
     {
         $this->tag = $tag;
-        $this->format = PelFormat::UNDEFINED;
+        $this->format = Format::UNDEFINED;
         $this->setValue($data);
     }
 
@@ -85,7 +87,7 @@ class PelEntryUndefined extends PelEntry
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data

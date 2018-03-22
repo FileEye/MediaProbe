@@ -2,6 +2,8 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Class representing an index of Short values as an IFD.
  */
@@ -31,7 +33,7 @@ class PelIfdIndexShort extends PelIfd
         );
 
         $index_size = $d->getShort($offset);
-        if ($index_size / $components !== PelFormat::getSize(PelFormat::SHORT)) {
+        if ($index_size / $components !== Format::getSize(Format::SHORT)) {
             Pel::maybeThrow(new PelInvalidDataException('Size of %s does not match the number of entries.', $this->getName()));
         }
         $offset += 2;
@@ -53,34 +55,34 @@ class PelIfdIndexShort extends PelIfd
                 $i + 1,
                 PelSpec::getTagName($this->type, $i + 1),
                 $item_format,
-                PelFormat::getName($item_format),
+                Format::getName($item_format),
                 1,
                 $i + 1,
                 $components
             );
             switch ($item_format) {
-                case PelFormat::BYTE:
+                case Format::BYTE:
                     $item_value = $d->getByte($offset + $i * 2);
                     break;
-                case PelFormat::SHORT:
+                case Format::SHORT:
                     $item_value = $d->getShort($offset + $i * 2);
                     break;
-                case PelFormat::LONG:
+                case Format::LONG:
                     $item_value = $d->getLong($offset + $i * 2);
                     break;
-                case PelFormat::RATIONAL:
+                case Format::RATIONAL:
                     $item_value = $d->getRational($offset + $i * 2);
                     break;
-                case PelFormat::SBYTE:
+                case Format::SBYTE:
                     $item_value = $d->getSByte($offset + $i * 2);
                     break;
-                case PelFormat::SSHORT:
+                case Format::SSHORT:
                     $item_value = $d->getSShort($offset + $i * 2);
                     break;
-                case PelFormat::SLONG:
+                case Format::SLONG:
                     $item_value = $d->getSLong($offset + $i * 2);
                     break;
-                case PelFormat::SRATIONAL:
+                case Format::SRATIONAL:
                     $item_value = $d->getSRattional($offset + $i * 2);
                     break;
             }

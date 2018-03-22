@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to hold longs, both signed and unsigned.
  *
@@ -38,7 +40,7 @@ namespace lsolesen\pel;
  *
  * This class can hold longs, either just a single long or an array of
  * longs. The class will be used to manipulate any of the Exif tags
- * which can have format {@link PelFormat::SLONG}.
+ * which can have format {@link Format::SLONG}.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
@@ -58,7 +60,7 @@ class PelEntrySLong extends PelEntryNumber
      * @param
      *            int the tag which this entry represents. This
      *            should be one of the constants defined in {@link PelTag}
-     *            which have format {@link PelFormat::SLONG}.
+     *            which have format {@link Format::SLONG}.
      *
      * @param int $value...
      *            the long(s) that this entry will represent
@@ -73,7 +75,7 @@ class PelEntrySLong extends PelEntryNumber
         $this->tag = $tag;
         $this->min = - 2147483648;
         $this->max = 2147483647;
-        $this->format = PelFormat::SLONG;
+        $this->format = Format::SLONG;
 
         $value = func_get_args();
         array_shift($value);
@@ -88,7 +90,7 @@ class PelEntrySLong extends PelEntryNumber
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data

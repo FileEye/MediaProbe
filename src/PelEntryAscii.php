@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to hold ASCII strings.
  *
@@ -76,7 +78,7 @@ class PelEntryAscii extends PelEntry
      *            the tag which this entry represents. This should be
      *            one of the constants defined in {@link PelTag}, e.g., {@link
      *            PelTag::IMAGE_DESCRIPTION}, {@link PelTag::MODEL}, or any other
-     *            tag with format {@link PelFormat::ASCII}.
+     *            tag with format {@link Format::ASCII}.
      *
      * @param string $str
      *            the string that this entry will represent. The
@@ -87,7 +89,7 @@ class PelEntryAscii extends PelEntry
     public function __construct($tag, $str = '')
     {
         $this->tag = $tag;
-        $this->format = PelFormat::ASCII;
+        $this->format = Format::ASCII;
         self::setValue($str);
     }
 
@@ -99,7 +101,7 @@ class PelEntryAscii extends PelEntry
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data

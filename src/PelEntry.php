@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifeEye\core\Format;
+
 /**
  * Classes for dealing with Exif entries.
  *
@@ -97,7 +99,7 @@ abstract class PelEntry
     protected $tag;
 
     /**
-     * The {@link PelFormat} of this entry.
+     * The {@link Format} of this entry.
      *
      * @var int
      */
@@ -160,7 +162,7 @@ abstract class PelEntry
         // The data size. If bigger than 4 bytes, the actual data is
         // not in the entry but somewhere else, with the offset stored
         // in the entry.
-        $size = PelFormat::getSize($format) * $components;
+        $size = Format::getSize($format) * $components;
         if ($size > 0) {
             $data_offset = $ifd_offset + 12 * $seq + 8;
             if ($size > 4) {
@@ -217,7 +219,7 @@ abstract class PelEntry
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data
@@ -370,7 +372,7 @@ abstract class PelEntry
     public function __toString()
     {
         $str = Pel::fmt("  Tag: 0x%04X (%s)\n", $this->tag, PelTag::getName($this->ifd_type, $this->tag));
-        $str .= Pel::fmt("    Format    : %d (%s)\n", $this->format, PelFormat::getName($this->format));
+        $str .= Pel::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= Pel::fmt("    Components: %d\n", $this->components);
         if ($this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('0'), 'PrintIM')) {
             $str .= Pel::fmt("    Value     : %s\n", print_r($this->getValue(), true));

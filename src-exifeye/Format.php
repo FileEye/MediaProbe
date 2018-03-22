@@ -1,27 +1,5 @@
 <?php
-/*
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005 Martin Geisler.
- * Copyright (C) 2017 Johannes Weberhofer.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
+
 namespace lsolesen\pel;
 
 /**
@@ -29,7 +7,7 @@ namespace lsolesen\pel;
  *
  * This class defines the constants that are to be used whenever one
  * has to refer to the format of an Exif tag. They will be
- * collectively denoted by the pseudo-type PelFormat throughout the
+ * collectively denoted by the pseudo-type Format throughout the
  * documentation.
  *
  * All the methods defined here are static, and they all operate on a
@@ -39,10 +17,8 @@ namespace lsolesen\pel;
  * @author Johannes Weberhofer <jweberhofer@weberhofer.at>
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public
  *          License (GPL)
- * @package
- *
  */
-class PelFormat
+class Format
 {
 
     /**
@@ -196,7 +172,7 @@ class PelFormat
      * Returns the name of a format like 'Ascii' for the {@link ASCII} format
      *
      * @param integer $type
-     *            as defined in {@link PelFormat}
+     *            as defined in {@link Format}
      * @return string
      */
     public static function getName($type)
@@ -212,7 +188,7 @@ class PelFormat
      * Returns the id of a format from its name.
      *
      * @param string $name
-     *            as defined in {@link PelFormat}
+     *            as defined in {@link Format}
      *
      * @return integer|null
      */
@@ -232,7 +208,7 @@ class PelFormat
      * given format.
      *
      * @param integer $type
-     *            as defined in {@link PelFormat}
+     *            as defined in {@link Format}
      * @return integer|string
      */
     public static function getSize($type)

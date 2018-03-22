@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Format;
+
 /**
  * Classes used to hold bytes, both signed and unsigned.
  * The {@link
@@ -41,7 +43,7 @@ namespace lsolesen\pel;
  *
  * This class can hold bytes, either just a single byte or an array of
  * bytes. The class will be used to manipulate any of the Exif tags
- * which has format {@link PelFormat::BYTE}.
+ * which has format {@link Format::BYTE}.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
@@ -59,7 +61,7 @@ class PelEntrySByte extends PelEntryNumber
      * @param int $tag
      *            the tag which this entry represents. This
      *            should be one of the constants defined in {@link PelTag}
-     *            which has format {@link PelFormat::BYTE}.
+     *            which has format {@link Format::BYTE}.
      *
      * @param int $value...
      *            the byte(s) that this entry will represent.
@@ -73,7 +75,7 @@ class PelEntrySByte extends PelEntryNumber
         $this->tag = $tag;
         $this->min = - 128;
         $this->max = 127;
-        $this->format = PelFormat::SBYTE;
+        $this->format = Format::SBYTE;
 
         $value = func_get_args();
         array_shift($value);
@@ -88,7 +90,7 @@ class PelEntrySByte extends PelEntryNumber
      * @param int $tag_id
      *            the TAG id.
      * @param int $format
-     *            the format of the entry as defined in {@link PelFormat}.
+     *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
      * @param PelDataWindow $data
