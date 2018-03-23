@@ -6,7 +6,6 @@ use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 
-
 class NikonCoolscanIVTest extends ExifEyeTestCaseBase
 {
     public function testRead()
