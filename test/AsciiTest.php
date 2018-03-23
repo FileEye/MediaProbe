@@ -65,7 +65,7 @@ class AsciiTest extends ExifEyeTestCaseBase
     public function testCopyright()
     {
         $entry = new PelEntryCopyright();
-        $this->assertEquals($entry->getTag(), PelTag::COPYRIGHT);
+        $this->assertEquals($entry->getTag(), 0x8298);
         $value = $entry->getValue();
         $this->assertEquals($value[0], '');
         $this->assertEquals($value[1], '');

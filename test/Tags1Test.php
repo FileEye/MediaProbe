@@ -21,22 +21,22 @@ class Tags1Test extends ExifEyeTestCaseBase
         $ifd0 = $tiff->getIfd();
         $this->assertInstanceOf('\lsolesen\pel\PelIfd', $ifd0);
 
-        $ratingPercent = $ifd0->getEntry(\lsolesen\pel\PelTag::RATING_PERCENT);
+        $ratingPercent = $ifd0->getEntry(0x4749);
         $this->assertInstanceOf('\lsolesen\pel\PelEntry', $ratingPercent);
         $this->assertEquals(78, $ratingPercent->getValue());
 
         $exifIfd = $ifd0->getSubIfd(\lsolesen\pel\PelIfd::EXIF);
         $this->assertInstanceOf('\lsolesen\pel\PelIfd', $exifIfd);
 
-        $offsetTime = $exifIfd->getEntry(\lsolesen\pel\PelTag::OFFSET_TIME);
+        $offsetTime = $exifIfd->getEntry(0x9010);
         $this->assertInstanceOf('\lsolesen\pel\PelEntry', $offsetTime);
         $this->assertEquals('-09:00', $offsetTime->getValue());
 
-        $offsetTimeDigitized = $exifIfd->getEntry(\lsolesen\pel\PelTag::OFFSET_TIME_DIGITIZED);
+        $offsetTimeDigitized = $exifIfd->getEntry(0x9012);
         $this->assertInstanceOf('\lsolesen\pel\PelEntry', $offsetTimeDigitized);
         $this->assertEquals('-10:00', $offsetTimeDigitized->getValue());
 
-        $offsetTimeOriginal = $exifIfd->getEntry(\lsolesen\pel\PelTag::OFFSET_TIME_ORIGINAL);
+        $offsetTimeOriginal = $exifIfd->getEntry(0x9011);
         $this->assertInstanceOf('\lsolesen\pel\PelEntry', $offsetTimeOriginal);
         $this->assertEquals('-11:00', $offsetTimeOriginal->getValue());
     }

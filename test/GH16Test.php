@@ -49,7 +49,7 @@ class GH16Test extends ExifEyeTestCaseBase
                 $tiff->setIfd($ifd0);
             }
         }
-        $ifd0->addEntry(new PelEntryWindowsString(PelTag::XP_SUBJECT, $subject));
+        $ifd0->addEntry(new PelEntryWindowsString(0x9C9F, $subject));
 
         file_put_contents($this->file, $jpeg->getBytes());
 
@@ -57,7 +57,7 @@ class GH16Test extends ExifEyeTestCaseBase
         $exif = $jpeg->getExif();
         $tiff = $exif->getTiff();
         $ifd0 = $tiff->getIfd();
-        $written_subject = $ifd0->getEntry(PelTag::XP_SUBJECT);
+        $written_subject = $ifd0->getEntry(0x9C9F);
         $this->assertEquals($subject, $written_subject->getValue());
     }
 }

@@ -4,7 +4,6 @@ namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelEntryAscii;
-use lsolesen\pel\PelTag;
 use lsolesen\pel\PelEntryTime;
 
 class IfdTest extends ExifEyeTestCaseBase
@@ -15,8 +14,8 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
-        $desc = new PelEntryAscii(PelTag::IMAGE_DESCRIPTION, 'Hello?');
-        $date = new PelEntryTime(PelTag::DATE_TIME, 12345678);
+        $desc = new PelEntryAscii(0x010E, 'Hello?');
+        $date = new PelEntryTime(0x0132, 12345678);
 
         $ifd->addEntry($desc);
         $ifd->addEntry($date);
@@ -28,8 +27,8 @@ class IfdTest extends ExifEyeTestCaseBase
             $entries[$tag] = $entry;
         }
 
-        $this->assertSame($entries[PelTag::IMAGE_DESCRIPTION], $desc);
-        $this->assertSame($entries[PelTag::DATE_TIME], $date);
+        $this->assertSame($entries[0x010E], $desc);
+        $this->assertSame($entries[0x0132], $date);
     }
 
     public function testArrayAccess()
@@ -38,17 +37,17 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
-        $desc = new PelEntryAscii(PelTag::IMAGE_DESCRIPTION, 'Hello?');
-        $date = new PelEntryTime(PelTag::DATE_TIME, 12345678);
+        $desc = new PelEntryAscii(0x010E, 'Hello?');
+        $date = new PelEntryTime(0x0132, 12345678);
 
         $ifd[] = $desc;
         $ifd[] = $date;
 
-        $this->assertSame($ifd[PelTag::IMAGE_DESCRIPTION], $desc);
-        $this->assertSame($ifd[PelTag::DATE_TIME], $date);
+        $this->assertSame($ifd[0x010E], $desc);
+        $this->assertSame($ifd[0x0132], $date);
 
-        unset($ifd[PelTag::DATE_TIME]);
+        unset($ifd[0x0132]);
 
-        $this->assertFalse(isset($ifd[PelTag::DATE_TIME]));
+        $this->assertFalse(isset($ifd[0x0132]));
     }
 }

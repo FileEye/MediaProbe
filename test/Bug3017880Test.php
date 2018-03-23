@@ -40,10 +40,10 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             }
 
             $software_name = 'Example V2';
-            $software = $ifd0->getEntry(PelTag::SOFTWARE);
+            $software = $ifd0->getEntry(0x0131);
 
             if ($software === null) {
-                $software = new PelEntryAscii(PelTag::SOFTWARE, $software_name);
+                $software = new PelEntryAscii(0x0131, $software_name);
                 $ifd0->addEntry($software);
                 $resave_file = 1;
             } else {

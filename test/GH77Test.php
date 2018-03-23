@@ -6,7 +6,6 @@ use lsolesen\pel\PelDataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelTag;
 
 class GH77Test extends ExifEyeTestCaseBase
 {
@@ -20,11 +19,11 @@ class GH77Test extends ExifEyeTestCaseBase
         $tiff = $app1->getTiff();
         $ifd0 = $tiff->getIfd();
 
-        $model = $ifd0->getEntry(PelTag::MODEL);
+        $model = $ifd0->getEntry(0x0110);
 
         $this->assertEquals($model->getValue(), "Canon EOS 5D Mark III");
 
-        $copyright = $ifd0->getEntry(PelTag::COPYRIGHT);
+        $copyright = $ifd0->getEntry(0x8298);
         $this->assertInstanceOf('lsolesen\pel\PelEntryCopyright', $copyright);
         $this->assertEquals(['Copyright 2016', ''], $copyright->getValue());
         $this->assertEquals('Copyright 2016 (Photographer)', $copyright->getText());
