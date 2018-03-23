@@ -13,6 +13,7 @@ class GH77Test extends TestCase
 {
     public function testReturnModul()
     {
+        ExifEye::setStrictParsing(false);
 
         $file = dirname(__FILE__) . '/images/gh-77.jpg';
 
