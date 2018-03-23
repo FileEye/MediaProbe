@@ -2,6 +2,9 @@
 
 namespace ExifEye\core;
 
+use lsolesen\pel\PelConvert;
+use lsolesen\pel\PelInvalidArgumentException;
+
 /**
  * A data window object.
  */
