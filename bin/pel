@@ -4,6 +4,7 @@
  * A Symfony CLI utility application for PEL.
  */
 
+use ExifEye\core\ExifEye;
 use lsolesen\pel\Command\CompileCommand;
 use Symfony\Component\Console\Application;
 
@@ -15,6 +16,6 @@ if (file_exists($packageAutoloader)) {
     require_once $standaloneAutoloader;
 }
 
-$application = new Application('pel');
+$application = new Application('pel', ExifEye::version());
 $application->add(new CompileCommand());
 $application->run();

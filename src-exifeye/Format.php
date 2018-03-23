@@ -13,7 +13,7 @@ namespace ExifEye\core;
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @author Johannes Weberhofer <jweberhofer@weberhofer.at>
  */
-class Format
+abstract class Format
 {
     /**
      * Unsigned byte.

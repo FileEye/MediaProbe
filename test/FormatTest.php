@@ -2,28 +2,55 @@
 
 namespace ExifEye\Test\core;
 
-use PHPUnit\Framework\TestCase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use PHPUnit\Framework\TestCase;
 
 class FormatTest extends TestCase
 {
-
-    public function testNames()
+    public function setUp()
     {
-        $format = new Format();
-        $this->assertEquals($format::getName(Format::ASCII), 'Ascii');
-        $this->assertEquals($format::getName(Format::FLOAT), 'Float');
-        $this->assertEquals($format::getName(Format::UNDEFINED), 'Undefined');
-        $this->assertEquals($format::getName(100), ExifEye::fmt('Unknown format: 0x%X', 100));
+        parent::setUp();
+        ExifEye::setStrictParsing(true);
     }
 
-    public function testDescriptions()
+    public function testGetName()
     {
-        $format = new Format();
-        $this->assertEquals($format::getSize(Format::ASCII), 1);
-        $this->assertEquals($format::getSize(Format::FLOAT), 4);
-        $this->assertEquals($format::getSize(Format::UNDEFINED), 1);
-        $this->assertEquals($format::getSize(100), ExifEye::fmt('Unknown format: 0x%X', 100));
+        $this->assertEquals('Ascii', Format::getName(Format::ASCII));
+        $this->assertEquals('Float', Format::getName(Format::FLOAT));
+        $this->assertEquals('Undefined', Format::getName(Format::UNDEFINED));
+        //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
+        //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
+        if (method_exists($this, 'expectException')) {
+            $this->expectException('ExifEye\core\ExifEyeException');
+            $this->expectExceptionMessage("No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+        } else {
+            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+        }
+        Format::getName(100);
+    }
+
+    public function testGetIdFromName()
+    {
+        $this->assertEquals(Format::ASCII, Format::getIdFromName('Ascii'));
+        $this->assertEquals(Format::FLOAT, Format::getIdFromName('Float'));
+        $this->assertEquals(Format::UNDEFINED, Format::getIdFromName('Undefined'));
+        $this->assertNull(Format::getIdFromName('UnexistingFormat'));
+    }
+
+    public function testGetSize()
+    {
+        $this->assertEquals(1, Format::getSize(Format::ASCII));
+        $this->assertEquals(4, Format::getSize(Format::FLOAT));
+        $this->assertEquals(1, Format::getSize(Format::UNDEFINED));
+        //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
+        //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
+        if (method_exists($this, 'expectException')) {
+            $this->expectException('ExifEye\core\ExifEyeException');
+            $this->expectExceptionMessage("No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+        } else {
+            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+        }
+        Format::getSize(100);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use \lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use \lsolesen\pel\PelOverflowException;
 use PHPUnit\Framework\TestCase;
 

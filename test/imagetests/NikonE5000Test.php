@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
+use ExifEye\core\ExifEyeException;
 use lsolesen\pel\PelJpeg;
 use PHPUnit\Framework\TestCase;
 
