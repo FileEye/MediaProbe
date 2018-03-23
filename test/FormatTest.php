@@ -23,9 +23,9 @@ class FormatTest extends TestCase
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {
             $this->expectException('ExifEye\core\ExifEyeException');
-            $this->expectExceptionMessage("No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+            $this->expectExceptionMessage("Unknown format: 0x64");
         } else {
-            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+            $this->setExpectedException('ExifEye\core\ExifEyeException', "Unknown format: 0x64");
         }
         Format::getName(100);
     }
@@ -47,9 +47,9 @@ class FormatTest extends TestCase
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {
             $this->expectException('ExifEye\core\ExifEyeException');
-            $this->expectExceptionMessage("No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+            $this->expectExceptionMessage("Unknown format: 0x64");
         } else {
-            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+            $this->setExpectedException('ExifEye\core\ExifEyeException', "Unknown format: 0x64");
         }
         Format::getSize(100);
     }

@@ -26,6 +26,7 @@
 namespace lsolesen\pel;
 
 use ExifEye\core\ExifEye;
+use ExifEye\core\ExifEyeException;
 
 /**
  * Class for handling JPEG data.
