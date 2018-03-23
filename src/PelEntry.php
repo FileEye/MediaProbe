@@ -373,7 +373,7 @@ abstract class PelEntry
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, PelTag::getName($this->ifd_type, $this->tag));
+        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, PelSpec::getTagName($this->ifd_type, $this->tag));
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
         if ($this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('0'), 'PrintIM')) {

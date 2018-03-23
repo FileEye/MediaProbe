@@ -74,7 +74,7 @@ class PelWrongComponentCountException extends \lsolesen\pel\PelEntryException
      */
     public function __construct($type, $tag, $found, $expected)
     {
-        parent::__construct('Wrong number of components found for %s tag: %d. ' . 'Expected %d.', PelTag::getName($type, $tag), $found, $expected);
+        parent::__construct('Wrong number of components found for %s tag: %d. ' . 'Expected %d.', PelSpec::getTagName($type, $tag), $found, $expected);
         $this->tag = $tag;
         $this->type = $type;
     }

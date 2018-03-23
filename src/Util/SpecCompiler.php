@@ -22,7 +22,7 @@ class SpecCompiler
     /**
      * Map of expected TAG level array keys.
      */
-    private $tagKeys = ['const', 'name', 'title', 'components', 'format', 'class', 'ifd', 'text'];
+    private $tagKeys = ['name', 'title', 'components', 'format', 'class', 'ifd', 'text'];
 
     /**
      * Map of expected TAG/text level array keys.
@@ -238,9 +238,6 @@ DATA;
                 $tag['text']['decode'] = $this->getFullyQualifiedClassName($class) . '::' . $method;
             }
         }
-
-        // Remove the 'const' key.
-        unset($tag['const']);
 
         // 'tags' entry.
         $this->map['tags'][$ifd_id][$tag_id] = $tag;

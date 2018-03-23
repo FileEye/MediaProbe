@@ -36,7 +36,6 @@ alias:
   - 'Main'
 tags:
     0x0100:
-        const: IMAGE_WIDTH
         name: ImageWidth
         title: 'Image Width'
         components: 1
@@ -62,7 +61,6 @@ An TAG entry is an array describing a single EXIF tag. The structure of the arra
 
 ```
     0x0106:
-        const: PHOTOMETRIC_INTERPRETATION
         name: PhotometricInterpretation
         title: 'Photometric Interpretation'
         components: 1
@@ -77,11 +75,10 @@ The TAG entry is identified by the HEX value of the EXIF tag, like `0x0106` in t
 
 | Key        | Description                                                                                           |
 | ---------- | ----------------------------------------------------------------------------------------------------- |
-| const      | (Legacy) A string identifying the TAG constant defined in the `PelTag` class, like `PHOTOMETRIC_INTERPRETATION` in the example above. This will be dropped in a future version of PEL. |
 | name       | A string identifying the TAG short name. |
 | title      | A string with a description of the TAG. |
 | components | (Optional) An integer describing the exepcted number of data components in the TAG. |
-| format     | (Optional) A string/array of strings identifying the expected data format of the tag. |
+| format     | A string/array of strings identifying the expected data format of the tag. |
 | class      | (Optional) A string identifying the TAG's PHP class. If not specified, the default class for the TAG format will be used. |
 | ifd        | (Optional) If specified, identifies the TAG as a pointer to a sub-IFD, as the string of the relative IFD type.  |
 | text       | (Optional) If specified, instructs PEL to decode the value of the TAG to a text string. This can be done either as a mapping between the value and the text (defined by the `mapping:` array), or by calling a callback method (indicated by the `decode:` key). |

@@ -69,7 +69,7 @@ save the file again.  All in just six lines of code:
 
   $jpeg = new PelJpeg($argv[1]);
   $ifd0 = $jpeg->getExif()->getTiff()->getIfd();
-  $entry = $ifd0->getEntry(PelTag::IMAGE_DESCRIPTION);
+  $entry = $ifd0->getEntry(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'));
   $entry->setValue('Edited by PEL');
   $jpeg->saveFile($argv[1]);
   ?>
