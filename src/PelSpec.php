@@ -2,6 +2,7 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 
@@ -326,7 +327,7 @@ class PelSpec
             $map = self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'];
             // If the code to be mapped is a non-int, change to string.
             $id = is_int($value) ? $value : (string) $value;
-            return isset($map[$id]) ? Pel::tra($map[$id]) : null;
+            return isset($map[$id]) ? ExifEye::tra($map[$id]) : null;
         }
 
         return null;

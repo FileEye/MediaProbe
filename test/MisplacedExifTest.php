@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelExif;
 use lsolesen\pel\PelJpegMarker;
@@ -14,8 +14,8 @@ class MisplacedExifTest extends TestCase
     // manipulations. It may fail it this changes.
     public function testRead()
     {
-        Pel::clearExceptions();
-        Pel::setStrictParsing(false);
+        ExifEye::clearExceptions();
+        ExifEye::setStrictParsing(false);
         // Image contains non-EXIF APP1 section ahead of the EXIF one
         $jpeg = new PelJpeg(dirname(__FILE__) . '/broken_images/misplaced-exif.jpg');
         // Assert we just have loaded correct file for the test

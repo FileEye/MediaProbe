@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 
@@ -151,7 +152,7 @@ class PelEntryCopyright extends PelEntryAscii
         }
         $v = explode("\0", trim($data->getBytes(), ' '));
         if (! isset($v[1])) {
-            Pel::maybeThrow(new ExifEyeException('Invalid copyright: %s', $data->getBytes()));
+            ExifEye::maybeThrow(new ExifEyeException('Invalid copyright: %s', $data->getBytes()));
             // when not in strict mode, set empty copyright and continue
             $v[1] = '';
         }
@@ -226,8 +227,8 @@ class PelEntryCopyright extends PelEntryAscii
             $p = '';
             $e = '';
         } else {
-            $p = ' ' . Pel::tra('(Photographer)');
-            $e = ' ' . Pel::tra('(Editor)');
+            $p = ' ' . ExifEye::tra('(Photographer)');
+            $e = ' ' . ExifEye::tra('(Editor)');
         }
 
         if ($this->photographer != '' && $this->editor != '') {

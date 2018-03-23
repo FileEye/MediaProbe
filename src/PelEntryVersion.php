@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
 /**
@@ -191,9 +192,9 @@ class PelEntryVersion extends PelEntry
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return Pel::fmt('Exif %s', $version);
+            return ExifEye::fmt('Exif %s', $version);
         } else {
-            return Pel::fmt('Exif Version %s', $version);
+            return ExifEye::fmt('Exif Version %s', $version);
         }
     }
 
@@ -212,9 +213,9 @@ class PelEntryVersion extends PelEntry
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return Pel::fmt('FlashPix %s', $version);
+            return ExifEye::fmt('FlashPix %s', $version);
         } else {
-            return Pel::fmt('FlashPix Version %s', $version);
+            return ExifEye::fmt('FlashPix Version %s', $version);
         }
     }
 
@@ -233,9 +234,9 @@ class PelEntryVersion extends PelEntry
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return Pel::fmt('Interoperability %s', $version);
+            return ExifEye::fmt('Interoperability %s', $version);
         } else {
-            return Pel::fmt('Interoperability Version %s', $version);
+            return ExifEye::fmt('Interoperability Version %s', $version);
         }
     }
 
@@ -262,7 +263,7 @@ class PelEntryVersion extends PelEntry
         if ($brief) {
             return $version;
         } else {
-            return Pel::fmt('Version %s', $version);
+            return ExifEye::fmt('Version %s', $version);
         }
     }
 }

@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
 /**
@@ -151,7 +152,7 @@ class PelEntrySRational extends PelEntrySLong
      */
     public static function decodeShutterSpeedValue(PelEntry $entry, $brief = false)
     {
-        return Pel::fmt('%.0f/%.0f sec. (APEX: %d)', $entry->getValue()[0], $entry->getValue()[1], pow(sqrt(2), $entry->getValue()[0] / $entry->getValue()[1]));
+        return ExifEye::fmt('%.0f/%.0f sec. (APEX: %d)', $entry->getValue()[0], $entry->getValue()[1], pow(sqrt(2), $entry->getValue()[0] / $entry->getValue()[1]));
     }
 
     /**

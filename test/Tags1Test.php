@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core\imagetests;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use PHPUnit\Framework\TestCase;
 
@@ -10,8 +10,8 @@ class Tags1Test extends TestCase
 {
     public function testTags()
     {
-        Pel::clearExceptions();
-        Pel::setStrictParsing(true);
+        ExifEye::clearExceptions();
+        ExifEye::setStrictParsing(true);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/images/test-tags-1.jpg');
 
         $exif = $jpeg->getExif();

@@ -29,7 +29,7 @@ setlocale(LC_ALL, '');
 
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelDataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
@@ -40,10 +40,10 @@ $file = '';
 while (! empty($argv)) {
     switch ($argv[0]) {
         case '-d':
-            Pel::setDebug(true);
+            ExifEye::setDebug(true);
             break;
         case '-s':
-            Pel::setStrictParsing(true);
+            ExifEye::setStrictParsing(true);
             break;
         default:
             $file = $argv[0];
@@ -91,9 +91,9 @@ $img->load($data);
 print($img);
 
 /* Deal with any exceptions: */
-if (count(Pel::getExceptions()) > 0) {
+if (count(ExifEye::getExceptions()) > 0) {
     print("\nThe following errors were encountered while loading the image:\n");
-    foreach (Pel::getExceptions() as $e) {
+    foreach (ExifEye::getExceptions() as $e) {
         print("\n" . $e->__toString());
     }
 }

@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
+
 /**
  * Classes for dealing with TIFF data.
  *
@@ -96,10 +98,10 @@ class PelTiff
             return;
         }
         if (is_string($data)) {
-            Pel::debug('Initializing PelTiff object from %s', $data);
+            ExifEye::debug('Initializing PelTiff object from %s', $data);
             $this->loadFile($data);
         } elseif ($data instanceof PelDataWindow) {
-            Pel::debug('Initializing PelTiff object from PelDataWindow.');
+            ExifEye::debug('Initializing PelTiff object from PelDataWindow.');
             $this->load($data);
         } else {
             throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
@@ -121,7 +123,7 @@ class PelTiff
      */
     public function load(PelDataWindow $d)
     {
-        Pel::debug('Parsing %d bytes of TIFF data...', $d->getSize());
+        ExifEye::debug('Parsing %d bytes of TIFF data...', $d->getSize());
 
         /*
          * There must be at least 8 bytes available: 2 bytes for the byte
@@ -133,10 +135,10 @@ class PelTiff
         }
         /* Byte order */
         if ($d->strcmp(0, 'II')) {
-            Pel::debug('Found Intel byte order');
+            ExifEye::debug('Found Intel byte order');
             $d->setByteOrder(PelConvert::LITTLE_ENDIAN);
         } elseif ($d->strcmp(0, 'MM')) {
-            Pel::debug('Found Motorola byte order');
+            ExifEye::debug('Found Motorola byte order');
             $d->setByteOrder(PelConvert::BIG_ENDIAN);
         } else {
             throw new PelInvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $d->getByte(0), $d->getByte(1));
@@ -148,7 +150,7 @@ class PelTiff
         }
         /* IFD 0 offset */
         $offset = $d->getLong(4);
-        Pel::debug('First IFD at offset %d.', $offset);
+        ExifEye::debug('First IFD at offset %d.', $offset);
 
         if ($offset > 0) {
             /*
@@ -268,7 +270,7 @@ class PelTiff
      */
     public function __toString()
     {
-        $str = Pel::fmt("Dumping TIFF data...\n");
+        $str = ExifEye::fmt("Dumping TIFF data...\n");
         if ($this->ifd !== null) {
             $str .= $this->ifd->__toString();
         }
@@ -302,7 +304,7 @@ class PelTiff
         if ($d->strcmp(0, 'II')) {
             $d->setByteOrder(PelConvert::LITTLE_ENDIAN);
         } elseif ($d->strcmp(0, 'MM')) {
-            Pel::debug('Found Motorola byte order');
+            ExifEye::debug('Found Motorola byte order');
             $d->setByteOrder(PelConvert::BIG_ENDIAN);
         } else {
             return false;

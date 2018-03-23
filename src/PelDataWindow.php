@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
+
 /**
  * The window.
  *
@@ -104,7 +106,7 @@ class PelDataWindow
              * we have to buffer the output...
              */
             ob_start();
-            ImageJpeg($data, null, Pel::getJPEGQuality());
+            ImageJpeg($data, null, ExifEye::getJPEGQuality());
             $this->data = ob_get_clean();
         } else {
             throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
@@ -559,7 +561,7 @@ class PelDataWindow
      */
     public function __toString()
     {
-        return Pel::fmt(
+        return ExifEye::fmt(
             'DataWindow: %d bytes in [%d, %d] of %d bytes',
             $this->size,
             $this->start,

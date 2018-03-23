@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
 /**
@@ -202,7 +203,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
 
         /* Read the number of entries */
         $n = $d->getShort($offset + $this->headerSkipBytes);
-        Pel::debug(
+        ExifEye::debug(
             str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d entries at offset %d from %d bytes...",
             $this->getName(),
             $n,
@@ -215,7 +216,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         /* Check if we have enough data. */
         if ($offset + 12 * $n > $d->getSize()) {
             $n = floor(($offset - $d->getSize()) / 12);
-            Pel::maybeThrow(new PelIfdException('Adjusted to: %d.', $n));
+            ExifEye::maybeThrow(new PelIfdException('Adjusted to: %d.', $n));
         }
 
         for ($i = 0; $i < $n; $i++) {
@@ -227,7 +228,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag)) {
-                Pel::maybeThrow(
+                ExifEye::maybeThrow(
                     new PelIfdException(
                         str_repeat("  ", $nesting_level) . "No specification available for TAG 0x%04X in IFD '%s', skipping (%d of %d)...",
                         $tag,
@@ -239,7 +240,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
                 continue;
             }
 
-            Pel::debug(
+            ExifEye::debug(
                 str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d (%d of %d)...',
                 $tag,
                 PelSpec::getTagName($this->type, $tag),
@@ -262,10 +263,10 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
                         $ifd->load($d, $o, $tag_components, $nesting_level + 1);
                         $this->sub[$type] = $ifd;
                     } catch (PelDataWindowOffsetException $e) {
-                        Pel::maybeThrow(new PelIfdException($e->getMessage()));
+                        ExifEye::maybeThrow(new PelIfdException($e->getMessage()));
                     }
                 } else {
-                    Pel::maybeThrow(new PelIfdException('Bogus offset to next IFD: %d, same as offset being loaded from.', $o));
+                    ExifEye::maybeThrow(new PelIfdException('Bogus offset to next IFD: %d, same as offset being loaded from.', $o));
                 }
                 continue;
             }
@@ -292,23 +293,23 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
 
         /* Offset to next IFD */
         $o = $d->getLong($offset + 12 * $n);
-        Pel::debug(str_repeat("  ", $nesting_level) . 'Current offset is %d, link at %d points to %d.', $offset, $offset + 12 * $n, $o);
+        ExifEye::debug(str_repeat("  ", $nesting_level) . 'Current offset is %d, link at %d points to %d.', $offset, $offset + 12 * $n, $o);
 
         if ($o > 0) {
             /* Sanity check: we need 6 bytes */
             if ($o > $d->getSize() - 6) {
-                Pel::maybeThrow(new PelIfdException('Bogus offset to next IFD: ' . '%d > %d!', $o, $d->getSize() - 6));
+                ExifEye::maybeThrow(new PelIfdException('Bogus offset to next IFD: ' . '%d > %d!', $o, $d->getSize() - 6));
             } else {
                 if (PelSpec::getIfdType($this->type) === '1') {
                     // IFD1 shouldn't link further...
-                    Pel::maybeThrow(new PelIfdException('IFD1 links to another IFD!'));
+                    ExifEye::maybeThrow(new PelIfdException('IFD1 links to another IFD!'));
                 }
                 $this->next = new PelIfd(PelSpec::getIfdIdByType('1'));
                 $this->next->load($d, $o);
             }
         }
 
-        Pel::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
+        ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
 
         // Invoke post-load callbacks.
         foreach (PelSpec::getIfdPostLoadCallbacks($this->type) as $callback) {
@@ -424,7 +425,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
              * check the length before we store the thumbnail.
              */
             if ($offset + $length > $d->getSize()) {
-                Pel::maybeThrow(
+                ExifEye::maybeThrow(
                     new PelIfdException(
                         'Thumbnail length %d bytes ' . 'adjusted to %d bytes.',
                         $length,
@@ -438,7 +439,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             try {
                 $this->setThumbnail($d->getClone($offset, $length));
             } catch (PelDataWindowWindowException $e) {
-                Pel::maybeThrow(new PelIfdException($e->getMessage()));
+                ExifEye::maybeThrow(new PelIfdException($e->getMessage()));
             }
         }
     }
@@ -450,7 +451,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * data will be checked to ensure that it has a proper {@link
      * PelJpegMarker::EOI} at the end. If not, then the length is
      * adjusted until one if found. An {@link PelIfdException} might be
-     * thrown (depending on {@link Pel::$strict}) this case.
+     * thrown (depending on {@link ExifEye::$strict}) this case.
      *
      * @param PelDataWindow $d
      *            the thumbnail data.
@@ -464,7 +465,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         }
 
         if ($size != $d->getSize()) {
-            Pel::maybeThrow(new PelIfdException('Decrementing thumbnail size ' . 'to %d bytes', $size));
+            ExifEye::maybeThrow(new PelIfdException('Decrementing thumbnail size ' . 'to %d bytes', $size));
         }
         $this->thumb_data = $d->getClone(0, $size);
     }
@@ -834,7 +835,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         $bytes = '';
         $extra_bytes = '';
 
-        Pel::debug('Bytes from IDF will start at offset %d within Exif data', $offset);
+        ExifEye::debug('Bytes from IDF will start at offset %d within Exif data', $offset);
 
         $n = count($this->entries) + count($this->sub);
         if ($this->thumb_data !== null) {
@@ -868,12 +869,12 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $data = $entry->getBytes($order);
             $s = strlen($data);
             if ($s > 4) {
-                Pel::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
+                ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
                 $bytes .= PelConvert::longToBytes($end, $order);
                 $extra_bytes .= $data;
                 $end += $s;
             } else {
-                Pel::debug('Data size %d fits.', $s);
+                ExifEye::debug('Data size %d fits.', $s);
                 /*
                  * Copy data directly, pad with NULL bytes as necessary to
                  * fill out the four bytes available.
@@ -883,7 +884,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         }
 
         if ($this->thumb_data !== null) {
-            Pel::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
+            ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
             // TODO: make PelEntry a class that can be constructed with
             // arguments corresponding to the newt four lines.
             $bytes .= PelConvert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
@@ -935,7 +936,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $link = $end;
         }
 
-        Pel::debug('Link to next IFD: %d', $link);
+        ExifEye::debug('Link to next IFD: %d', $link);
 
         $bytes .= PelConvert::longtoBytes($link, $order);
 
@@ -955,12 +956,12 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      */
     public function __toString()
     {
-        $str = Pel::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->entries));
+        $str = ExifEye::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->entries));
 
         foreach ($this->entries as $entry) {
             $str .= $entry->__toString();
         }
-        $str .= Pel::fmt("Dumping %d sub IFDs...\n", count($this->sub));
+        $str .= ExifEye::fmt("Dumping %d sub IFDs...\n", count($this->sub));
 
         foreach ($this->sub as $type => $ifd) {
             $str .= $ifd->__toString();

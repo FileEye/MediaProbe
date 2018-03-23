@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
 /**
@@ -183,13 +184,13 @@ class PelEntryShort extends PelEntryNumber
     {
         switch ($entry->getComponents()) {
             case 2:
-                return Pel::fmt('(x,y) = (%d,%d)', $entry->getValue()[0], $entry->getValue()[1]);
+                return ExifEye::fmt('(x,y) = (%d,%d)', $entry->getValue()[0], $entry->getValue()[1]);
             case 3:
-                return Pel::fmt('Within distance %d of (x,y) = (%d,%d)', $entry->getValue()[0], $entry->getValue()[1], $entry->getValue()[2]);
+                return ExifEye::fmt('Within distance %d of (x,y) = (%d,%d)', $entry->getValue()[0], $entry->getValue()[1], $entry->getValue()[2]);
             case 4:
-                return Pel::fmt('Within rectangle (width %d, height %d) around (x,y) = (%d,%d)', $entry->getValue()[0], $entry->getValue()[1], $entry->getValue()[2], $entry->getValue()[3]);
+                return ExifEye::fmt('Within rectangle (width %d, height %d) around (x,y) = (%d,%d)', $entry->getValue()[0], $entry->getValue()[1], $entry->getValue()[2], $entry->getValue()[3]);
             default:
-                return Pel::fmt('Unexpected number of components (%d, expected 2, 3, or 4).', $entry->getComponents());
+                return ExifEye::fmt('Unexpected number of components (%d, expected 2, 3, or 4).', $entry->getComponents());
         }
     }
 }

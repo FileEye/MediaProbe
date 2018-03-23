@@ -18,7 +18,7 @@ abstract class NumberTestCase extends TestCase
     public function setUp()
     {
         parent::setUp();
-        Pel::setStrictParsing(true);
+        ExifEye::setStrictParsing(true);
     }
 
     public function testOverflow()

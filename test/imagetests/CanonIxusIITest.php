@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core\imagetests;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelSpec;
 use PHPUnit\Framework\TestCase;
@@ -11,8 +11,8 @@ class CanonIxusIITest extends TestCase
 {
     public function testRead()
     {
-        Pel::clearExceptions();
-        Pel::setStrictParsing(false);
+        ExifEye::clearExceptions();
+        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/canon-ixus-ii.jpg');
 
         $exif = $jpeg->getExif();
@@ -390,6 +390,6 @@ class CanonIxusIITest extends TestCase
         $this->assertEquals($entry->getValue(), '1');
         $this->assertEquals($entry->getText(), 'JPEG');
 
-        $this->assertCount(3, Pel::getExceptions());
+        $this->assertCount(3, ExifEye::getExceptions());
     }
 }

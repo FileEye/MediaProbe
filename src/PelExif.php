@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
+
 /**
  * Classes for dealing with Exif data.
  *
@@ -90,7 +92,7 @@ class PelExif extends PelJpegContent
      */
     public function load(PelDataWindow $d)
     {
-        Pel::debug('Parsing %d bytes of Exif data...', $d->getSize());
+        ExifEye::debug('Parsing %d bytes of Exif data...', $d->getSize());
 
         /* There must be at least 6 bytes for the Exif header. */
         if ($d->getSize() < 6) {
@@ -154,6 +156,6 @@ class PelExif extends PelJpegContent
      */
     public function __toString()
     {
-        return Pel::tra("Dumping Exif data...\n") . $this->tiff->__toString();
+        return ExifEye::tra("Dumping Exif data...\n") . $this->tiff->__toString();
     }
 }

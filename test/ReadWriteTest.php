@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelEntryByte;
 use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelTiff;
@@ -25,7 +25,7 @@ class WriteEntryTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        Pel::setStrictParsing(true);
+        ExifEye::setStrictParsing(true);
     }
 
     /**

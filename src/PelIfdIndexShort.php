@@ -2,6 +2,7 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
 /**
@@ -25,7 +26,7 @@ class PelIfdIndexShort extends PelIfd
      */
     public function load(PelDataWindow $d, $offset, $components = 1, $nesting_level = 0)
     {
-        Pel::debug(
+        ExifEye::debug(
             str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d entries at offset %d...",
             $this->getName(),
             $components,
@@ -34,13 +35,13 @@ class PelIfdIndexShort extends PelIfd
 
         $index_size = $d->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
-            Pel::maybeThrow(new PelInvalidDataException('Size of %s does not match the number of entries.', $this->getName()));
+            ExifEye::maybeThrow(new PelInvalidDataException('Size of %s does not match the number of entries.', $this->getName()));
         }
         $offset += 2;
         for ($i = 0; $i < $components; $i++) {
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($i + 1)) {
-                Pel::debug(
+                ExifEye::debug(
                     str_repeat("  ", $nesting_level) . "No specification available for tag 0x%04X, skipping (%d of %d)...",
                     $i + 1,
                     $i + 1,
@@ -50,7 +51,7 @@ class PelIfdIndexShort extends PelIfd
             }
 
             $item_format = PelSpec::getTagFormat($this->type, $i + 1)[0];
-            Pel::debug(
+            ExifEye::debug(
                 str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d (%d of %d)...',
                 $i + 1,
                 PelSpec::getTagName($this->type, $i + 1),
@@ -90,6 +91,6 @@ class PelIfdIndexShort extends PelIfd
                 $this->addEntry($entry);
             }
         }
-        Pel::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
+        ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core\imagetests;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use PHPUnit\Framework\TestCase;
 
@@ -10,8 +10,8 @@ class NikonCoolscanIVTest extends TestCase
 {
     public function testRead()
     {
-        Pel::clearExceptions();
-        Pel::setStrictParsing(false);
+        ExifEye::clearExceptions();
+        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/nikon-coolscan-iv.jpg');
 
         $exif = $jpeg->getExif();
@@ -139,6 +139,6 @@ class NikonCoolscanIVTest extends TestCase
         $this->assertNull($ifd1);
         /* End of IFD $ifd0. */
 
-        $this->assertTrue(count(Pel::getExceptions()) == 0);
+        $this->assertTrue(count(ExifEye::getExceptions()) == 0);
     }
 }

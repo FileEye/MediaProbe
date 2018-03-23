@@ -5,7 +5,7 @@ namespace ExifEye\Test\core;
 use lsolesen\pel\PelDataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelTag;
 use PHPUnit\Framework\TestCase;
 

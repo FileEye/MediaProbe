@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core\imagetests;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use PHPUnit\Framework\TestCase;
 
@@ -10,8 +10,8 @@ class OlympusC5050zTest extends TestCase
 {
     public function testRead()
     {
-        Pel::clearExceptions();
-        Pel::setStrictParsing(false);
+        ExifEye::clearExceptions();
+        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/olympus-c5050z.jpg');
 
         $exif = $jpeg->getExif();
@@ -361,6 +361,6 @@ class OlympusC5050zTest extends TestCase
         $this->assertNull($ifd2);
         /* End of IFD $ifd1. */
 
-        $this->assertTrue(count(Pel::getExceptions()) == 0);
+        $this->assertTrue(count(ExifEye::getExceptions()) == 0);
     }
 }

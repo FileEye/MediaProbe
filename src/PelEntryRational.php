@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
 /**
@@ -155,7 +156,7 @@ class PelEntryRational extends PelEntryLong
      */
     public static function decodeFNumber(PelEntry $entry, $brief = false)
     {
-        return Pel::fmt('f/%.01f', $entry->getValue()[0] / $entry->getValue()[1]);
+        return ExifEye::fmt('f/%.01f', $entry->getValue()[0] / $entry->getValue()[1]);
     }
 
     /**
@@ -171,7 +172,7 @@ class PelEntryRational extends PelEntryLong
      */
     public static function decodeApertureValue(PelEntry $entry, $brief = false)
     {
-        return Pel::fmt('f/%.01f', pow(2, $entry->getValue()[0] / $entry->getValue()[1] / 2));
+        return ExifEye::fmt('f/%.01f', pow(2, $entry->getValue()[0] / $entry->getValue()[1] / 2));
     }
 
     /**
@@ -187,7 +188,7 @@ class PelEntryRational extends PelEntryLong
      */
     public static function decodeFocalLength(PelEntry $entry, $brief = false)
     {
-        return Pel::fmt('%.1f mm', $entry->getValue()[0] / $entry->getValue()[1]);
+        return ExifEye::fmt('%.1f mm', $entry->getValue()[0] / $entry->getValue()[1]);
     }
 
     /**
@@ -203,7 +204,7 @@ class PelEntryRational extends PelEntryLong
      */
     public static function decodeSubjectDistance(PelEntry $entry, $brief = false)
     {
-        return Pel::fmt('%.1f m', $entry->getValue()[0] / $entry->getValue()[1]);
+        return ExifEye::fmt('%.1f m', $entry->getValue()[0] / $entry->getValue()[1]);
     }
 
     /**
@@ -220,9 +221,9 @@ class PelEntryRational extends PelEntryLong
     public static function decodeExposureTime(PelEntry $entry, $brief = false)
     {
         if ($entry->getValue()[0] / $entry->getValue()[1] < 1) {
-            return Pel::fmt('1/%d sec.', $entry->getValue()[1] / $entry->getValue()[0]);
+            return ExifEye::fmt('1/%d sec.', $entry->getValue()[1] / $entry->getValue()[0]);
         } else {
-            return Pel::fmt('%d sec.', $entry->getValue()[0] / $entry->getValue()[1]);
+            return ExifEye::fmt('%d sec.', $entry->getValue()[0] / $entry->getValue()[1]);
         }
     }
 

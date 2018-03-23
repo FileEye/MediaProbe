@@ -43,6 +43,7 @@ setlocale(LC_ALL, '');
  */
 require_once '../autoload.php';
 
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelDataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
@@ -60,7 +61,7 @@ $error = false;
  * extra information is printed out when the image is parsed.
  */
 if (isset($argv[0]) && $argv[0] == '-d') {
-    Pel::setDebug(true);
+    ExifEye::setDebug(true);
     array_shift($argv);
 }
 

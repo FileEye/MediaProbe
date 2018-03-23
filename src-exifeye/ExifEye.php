@@ -49,7 +49,7 @@ class ExifEye
      *
      * @var boolean
      */
-    private static $strict = true;
+    private static $strict = false;
 
     /**
      * Stored exceptions.

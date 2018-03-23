@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
     /**
@@ -1472,7 +1473,7 @@ class PelTag
      */
     protected static function unknownTag($tag)
     {
-        return Pel::fmt('Unknown: 0x%04X', $tag);
+        return ExifEye::fmt('Unknown: 0x%04X', $tag);
     }
 
     /**

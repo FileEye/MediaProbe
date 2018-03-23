@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
+
 /**
  * Abstract class for numbers.
  *
@@ -158,18 +160,18 @@ abstract class PelEntryNumber extends PelEntry
      *
      * @return void nothing, but will throw a {@link
      *         PelOverflowException} if the number is found to be outside the
-     *         legal range and {@link Pel::$strict} is true.
+     *         legal range and {@link ExifEye::$strict} is true.
      */
     public function validateNumber($n)
     {
         if ($this->dimension == 1) {
             if ($n < $this->min || $n > $this->max) {
-                Pel::maybeThrow(new PelOverflowException($n, $this->min, $this->max));
+                ExifEye::maybeThrow(new PelOverflowException($n, $this->min, $this->max));
             }
         } else {
             for ($i = 0; $i < $this->dimension; $i ++) {
                 if ($n[$i] < $this->min || $n[$i] > $this->max) {
-                    Pel::maybeThrow(new PelOverflowException($n[$i], $this->min, $this->max));
+                    ExifEye::maybeThrow(new PelOverflowException($n[$i], $this->min, $this->max));
                 }
             }
         }

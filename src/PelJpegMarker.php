@@ -25,6 +25,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
+
 /**
  * Classes for dealing with JPEG markers.
  *
@@ -509,7 +511,7 @@ class PelJpegMarker
         if (array_key_exists($marker, self::$jpegMarkerShort)) {
             return self::$jpegMarkerShort[$marker];
         } else {
-            return Pel::fmt('Unknown marker: 0x%02X', $marker);
+            return ExifEye::fmt('Unknown marker: 0x%02X', $marker);
         }
     }
 
@@ -534,10 +536,10 @@ class PelJpegMarker
                     PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE
                 );
                 if ((count($splitted) == 2) && array_key_exists($splitted[0], self::$jpegMarkerDescriptions)) {
-                    return Pel::fmt(self::$jpegMarkerDescriptions[$splitted[0]], $splitted[1]);
+                    return ExifEye::fmt(self::$jpegMarkerDescriptions[$splitted[0]], $splitted[1]);
                 }
             }
         }
-        return Pel::fmt('Unknown marker: 0x%02X', $marker);
+        return ExifEye::fmt('Unknown marker: 0x%02X', $marker);
     }
 }

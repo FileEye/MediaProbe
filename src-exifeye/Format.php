@@ -2,8 +2,6 @@
 
 namespace ExifEye\core;
 
-use lsolesen\pel\Pel;
-
 /**
  * This class defines the constants that are to be used whenever one has to
  * refer to the format of an Exif tag. They will be collectively denoted by the

@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 
@@ -186,7 +187,7 @@ abstract class PelEntry
         } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store
             // otherwise.
-            Pel::maybeThrow($e);
+            ExifEye::maybeThrow($e);
         }
     }
 
@@ -372,13 +373,13 @@ abstract class PelEntry
      */
     public function __toString()
     {
-        $str = Pel::fmt("  Tag: 0x%04X (%s)\n", $this->tag, PelTag::getName($this->ifd_type, $this->tag));
-        $str .= Pel::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
-        $str .= Pel::fmt("    Components: %d\n", $this->components);
+        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, PelTag::getName($this->ifd_type, $this->tag));
+        $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
+        $str .= ExifEye::fmt("    Components: %d\n", $this->components);
         if ($this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('0'), 'PrintIM')) {
-            $str .= Pel::fmt("    Value     : %s\n", print_r($this->getValue(), true));
+            $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
         }
-        $str .= Pel::fmt("    Text      : %s\n", $this->getText());
+        $str .= ExifEye::fmt("    Text      : %s\n", $this->getText());
         return $str;
     }
 }

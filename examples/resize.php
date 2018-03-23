@@ -38,6 +38,7 @@ setlocale(LC_ALL, '');
 /* Load the required PEL files for handling JPEG images. */
 require_once '../autoload.php';
 
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 
 /*
@@ -52,7 +53,7 @@ $error = false;
  * extra information is printed out when the image is parsed.
  */
 if (isset($argv[0]) && $argv[0] == '-d') {
-    Pel::setDebug(true);
+    ExifEye::setDebug(true);
     array_shift($argv);
 }
 

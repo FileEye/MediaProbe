@@ -25,6 +25,8 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEye;
+
 /**
  * Class for handling JPEG data.
  *
@@ -119,13 +121,13 @@ class PelJpeg
         }
 
         if (is_string($data)) {
-            Pel::debug('Initializing PelJpeg object from %s', $data);
+            ExifEye::debug('Initializing PelJpeg object from %s', $data);
             $this->loadFile($data);
         } elseif ($data instanceof PelDataWindow) {
-            Pel::debug('Initializing PelJpeg object from PelDataWindow.');
+            ExifEye::debug('Initializing PelJpeg object from PelDataWindow.');
             $this->load($data);
         } elseif (is_resource($data) && get_resource_type($data) == 'gd') {
-            Pel::debug('Initializing PelJpeg object from image resource.');
+            ExifEye::debug('Initializing PelJpeg object from image resource.');
             $this->load(new PelDataWindow($data));
         } else {
             throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
@@ -169,7 +171,7 @@ class PelJpeg
      */
     public function load(PelDataWindow $d)
     {
-        Pel::debug('Parsing %d bytes...', $d->getSize());
+        ExifEye::debug('Parsing %d bytes...', $d->getSize());
 
         /* JPEG data is stored in big-endian format. */
         $d->setByteOrder(PelConvert::BIG_ENDIAN);
@@ -205,7 +207,7 @@ class PelJpeg
                  */
                 $len = $d->getShort(0) - 2;
 
-                Pel::debug('Found %s section of length %d', PelJpegMarker::getName($marker), $len);
+                ExifEye::debug('Found %s section of length %d', PelJpegMarker::getName($marker), $len);
 
                 /* Skip past the length. */
                 $d->setWindowStart(2);
@@ -251,14 +253,14 @@ class PelJpeg
                         }
 
                         $this->jpeg_data = $d->getClone(0, $length - 2);
-                        Pel::debug('JPEG data: ' . $this->jpeg_data->__toString());
+                        ExifEye::debug('JPEG data: ' . $this->jpeg_data->__toString());
 
                         /* Append the EOI. */
                         $this->appendSection(PelJpegMarker::EOI, new PelJpegContent(new PelDataWindow()));
 
                         /* Now check to see if there are any trailing data. */
                         if ($length != $d->getSize()) {
-                            Pel::maybeThrow(new ExifEyeException('Found trailing content ' . 'after EOI: %d bytes', $d->getSize() - $length));
+                            ExifEye::maybeThrow(new ExifEyeException('Found trailing content ' . 'after EOI: %d bytes', $d->getSize() - $length));
                             $content = new PelJpegContent($d->getClone($length));
                             /*
                              * We don't have a proper JPEG marker for trailing
@@ -616,25 +618,25 @@ class PelJpeg
      */
     public function __toString()
     {
-        $str = Pel::tra("Dumping JPEG data...\n");
+        $str = ExifEye::tra("Dumping JPEG data...\n");
         $count_sections = count($this->sections);
         for ($i = 0; $i < $count_sections; $i ++) {
             $m = $this->sections[$i][0];
             $c = $this->sections[$i][1];
-            $str .= Pel::fmt("Section %d (marker 0x%02X - %s):\n", $i, $m, PelJpegMarker::getName($m));
-            $str .= Pel::fmt("  Description: %s\n", PelJpegMarker::getDescription($m));
+            $str .= ExifEye::fmt("Section %d (marker 0x%02X - %s):\n", $i, $m, PelJpegMarker::getName($m));
+            $str .= ExifEye::fmt("  Description: %s\n", PelJpegMarker::getDescription($m));
 
             if ($m == PelJpegMarker::SOI || $m == PelJpegMarker::EOI) {
                 continue;
             }
 
             if ($c instanceof PelExif) {
-                $str .= Pel::tra("  Content    : Exif data\n");
+                $str .= ExifEye::tra("  Content    : Exif data\n");
                 $str .= $c->__toString() . "\n";
             } elseif ($c instanceof PelJpegComment) {
-                $str .= Pel::fmt("  Content    : %s\n", $c->getValue());
+                $str .= ExifEye::fmt("  Content    : %s\n", $c->getValue());
             } else {
-                $str .= Pel::tra("  Content    : Unknown\n");
+                $str .= ExifEye::tra("  Content    : Unknown\n");
             }
         }
 

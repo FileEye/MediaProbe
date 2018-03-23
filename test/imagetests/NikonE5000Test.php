@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core\imagetests;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use PHPUnit\Framework\TestCase;
 
@@ -10,8 +10,8 @@ class NikonE5000Test extends TestCase
 {
     public function testRead()
     {
-        Pel::clearExceptions();
-        Pel::setStrictParsing(false);
+        ExifEye::clearExceptions();
+        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/nikon-e5000.jpg');
 
         $exif = $jpeg->getExif();
@@ -284,7 +284,7 @@ class NikonE5000Test extends TestCase
         $this->assertNull($ifd2);
         /* End of IFD $ifd1. */
 
-        $exceptions = Pel::getExceptions();
+        $exceptions = ExifEye::getExceptions();
         $this->assertInstanceOf('ExifEye\core\ExifEyeException', $exceptions[0]);
         $this->assertEquals($exceptions[0]->getMessage(), 'Found trailing content after EOI: 1396 bytes');
     }

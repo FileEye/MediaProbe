@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core\imagetests;
 
-use lsolesen\pel\Pel;
+use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelSpec;
 use PHPUnit\Framework\TestCase;
@@ -11,8 +11,8 @@ class CanonEos650dTest extends TestCase
 {
     public function testRead()
     {
-        Pel::clearExceptions();
-        Pel::setStrictParsing(false);
+        ExifEye::clearExceptions();
+        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/canon-eos-650d.jpg');
 
         $exif = $jpeg->getExif();
@@ -309,6 +309,6 @@ class CanonEos650dTest extends TestCase
         // Tamron 150-600mm G2
         $this->assertEquals($entry->getText(), 'Canon EF 100-400mm f/4.5-5.6L IS II USM or Tamron Lens');
 
-        $this->assertCount(18, Pel::getExceptions());
+        $this->assertCount(18, ExifEye::getExceptions());
     }
 }
