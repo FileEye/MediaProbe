@@ -1,6 +1,6 @@
 <?php
 
-namespace lsolesen\pel;
+namespace ExifEye\core;
 
 /**
  * A data window object.
