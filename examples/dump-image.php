@@ -30,7 +30,7 @@ setlocale(LC_ALL, '');
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelDataWindow;
+use ExifEye\core\DataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 
@@ -73,7 +73,7 @@ if (! is_readable($file)) {
  */
 ini_set('memory_limit', '32M');
 
-$data = new PelDataWindow(file_get_contents($file));
+$data = new DataWindow(file_get_contents($file));
 
 if (PelJpeg::isValid($data)) {
     $img = new PelJpeg();

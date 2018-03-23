@@ -2,16 +2,16 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelDataWindow;
+use ExifEye\core\DataWindow;
 use lsolesen\pel\PelConvert;
-use lsolesen\pel\PelDataWindowOffsetException;
+use ExifEye\core\DataWindowOffsetException;
 
 class DataWindowTest extends ExifEyeTestCaseBase
 {
 
     public function testReadBytes()
     {
-        $window = new PelDataWindow('abcdefgh');
+        $window = new DataWindow('abcdefgh');
 
         $this->assertEquals($window->getSize(), 8);
         $this->assertEquals($window->getBytes(), 'abcdefgh');
@@ -43,7 +43,7 @@ class DataWindowTest extends ExifEyeTestCaseBase
         $caught = false;
         try {
             $clone->getBytes(0, 6);
-        } catch (PelDataWindowOffsetException $e) {
+        } catch (DataWindowOffsetException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);
@@ -51,7 +51,7 @@ class DataWindowTest extends ExifEyeTestCaseBase
 
     public function testReadIntegers()
     {
-        $window = new PelDataWindow("\x01\x02\x03\x04", PelConvert::BIG_ENDIAN);
+        $window = new DataWindow("\x01\x02\x03\x04", PelConvert::BIG_ENDIAN);
 
         $this->assertEquals($window->getSize(), 4);
         $this->assertEquals($window->getBytes(), "\x01\x02\x03\x04");
@@ -85,7 +85,7 @@ class DataWindowTest extends ExifEyeTestCaseBase
 
     public function testReadBigIntegers()
     {
-        $window = new PelDataWindow("\x89\xAB\xCD\xEF", PelConvert::BIG_ENDIAN);
+        $window = new DataWindow("\x89\xAB\xCD\xEF", PelConvert::BIG_ENDIAN);
 
         $this->assertEquals($window->getSize(), 4);
         $this->assertEquals($window->getBytes(), "\x89\xAB\xCD\xEF");

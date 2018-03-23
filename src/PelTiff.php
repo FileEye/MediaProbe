@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 
 /**
@@ -85,12 +86,12 @@ class PelTiff
      *
      * The new object will be empty (with no {@link PelIfd}) unless an
      * argument is given from which it can initialize itself. This can
-     * either be the filename of a TIFF image or a {@link PelDataWindow}
+     * either be the filename of a TIFF image or a {@link DataWindow}
      * object.
      *
      * Use {@link setIfd()} to explicitly set the IFD.
      *
-     * @param boolean|string|PelDataWindow $data;
+     * @param boolean|string|DataWindow $data;
      */
     public function __construct($data = false)
     {
@@ -100,8 +101,8 @@ class PelTiff
         if (is_string($data)) {
             ExifEye::debug('Initializing PelTiff object from %s', $data);
             $this->loadFile($data);
-        } elseif ($data instanceof PelDataWindow) {
-            ExifEye::debug('Initializing PelTiff object from PelDataWindow.');
+        } elseif ($data instanceof DataWindow) {
+            ExifEye::debug('Initializing PelTiff object from DataWindow.');
             $this->load($data);
         } else {
             throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
@@ -117,11 +118,11 @@ class PelTiff
      *
      * @param
      *            d
-     *            PelDataWindow the data from which the object will be
+     *            DataWindow the data from which the object will be
      *            constructed. This should be valid TIFF data, coming either
      *            directly from a TIFF image or from the Exif data in a JPEG image.
      */
-    public function load(PelDataWindow $d)
+    public function load(DataWindow $d)
     {
         ExifEye::debug('Parsing %d bytes of TIFF data...', $d->getSize());
 
@@ -170,7 +171,7 @@ class PelTiff
      */
     public function loadFile($filename)
     {
-        $this->load(new PelDataWindow(file_get_contents($filename)));
+        $this->load(new DataWindow(file_get_contents($filename)));
     }
 
     /**
@@ -285,7 +286,7 @@ class PelTiff
      * if the data could be a valid TIFF data. This means that the
      * check is more like a heuristic than a rigorous check.
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *            the bytes that will be examined.
      *
      * @return boolean true if the data looks like valid TIFF data,
@@ -293,7 +294,7 @@ class PelTiff
      *
      * @see PelJpeg::isValid()
      */
-    public static function isValid(PelDataWindow $d)
+    public static function isValid(DataWindow $d)
     {
         /* First check that we have enough data. */
         if ($d->getSize() < 8) {

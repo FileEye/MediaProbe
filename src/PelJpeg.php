@@ -25,6 +25,7 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 
@@ -55,7 +56,7 @@ use ExifEye\core\ExifEyeException;
  * under the keys found in {@link PelTag}.
  *
  * Should one have some image data (in the form of a {@link
- * PelDataWindow}) of an unknown type, then the {@link
+ * DataWindow}) of an unknown type, then the {@link
  * PelJpeg::isValid()} function is handy: it will quickly test if the
  * data could be valid JPEG data. The {@link PelTiff::isValid()}
  * function does the same for TIFF images.
@@ -86,7 +87,7 @@ class PelJpeg
     /**
      * The JPEG image data.
      *
-     * @var PelDataWindow
+     * @var DataWindow
      */
     private $jpeg_data = null;
 
@@ -95,7 +96,7 @@ class PelJpeg
      *
      * The new object will be empty unless an argument is given from
      * which it can initialize itself. This can either be the filename
-     * of a JPEG image, a {@link PelDataWindow} object or a PHP image
+     * of a JPEG image, a {@link DataWindow} object or a PHP image
      * resource handle.
      *
      * New Exif data (in the form of a {@link PelExif} object) can be
@@ -112,7 +113,7 @@ class PelJpeg
      *
      * @param
      *            mixed the data that this JPEG. This can either be a
-     *            filename, a {@link PelDataWindow} object, or a PHP image resource
+     *            filename, a {@link DataWindow} object, or a PHP image resource
      *            handle.
      */
     public function __construct($data = false)
@@ -124,12 +125,12 @@ class PelJpeg
         if (is_string($data)) {
             ExifEye::debug('Initializing PelJpeg object from %s', $data);
             $this->loadFile($data);
-        } elseif ($data instanceof PelDataWindow) {
-            ExifEye::debug('Initializing PelJpeg object from PelDataWindow.');
+        } elseif ($data instanceof DataWindow) {
+            ExifEye::debug('Initializing PelJpeg object from DataWindow.');
             $this->load($data);
         } elseif (is_resource($data) && get_resource_type($data) == 'gd') {
             ExifEye::debug('Initializing PelJpeg object from image resource.');
-            $this->load(new PelDataWindow($data));
+            $this->load(new DataWindow($data));
         } else {
             throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
         }
@@ -139,7 +140,7 @@ class PelJpeg
      * JPEG sections start with 0xFF. The first byte that is not
      * 0xFF is a marker (hopefully).
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *
      * @return integer
      */
@@ -167,10 +168,10 @@ class PelJpeg
      * be one {@link PelJpegMarker::SOS} section at any given time.
      *
      * @param
-     *            PelDataWindow the data that will be turned into JPEG
+     *            DataWindow the data that will be turned into JPEG
      *            sections.
      */
-    public function load(PelDataWindow $d)
+    public function load(DataWindow $d)
     {
         ExifEye::debug('Parsing %d bytes...', $d->getSize());
 
@@ -199,7 +200,7 @@ class PelJpeg
             $d->setWindowStart($i + 1);
 
             if ($marker == PelJpegMarker::SOI || $marker == PelJpegMarker::EOI) {
-                $content = new PelJpegContent(new PelDataWindow());
+                $content = new PelJpegContent(new DataWindow());
                 $this->appendSection($marker, $content);
             } else {
                 /*
@@ -257,7 +258,7 @@ class PelJpeg
                         ExifEye::debug('JPEG data: ' . $this->jpeg_data->__toString());
 
                         /* Append the EOI. */
-                        $this->appendSection(PelJpegMarker::EOI, new PelJpegContent(new PelDataWindow()));
+                        $this->appendSection(PelJpegMarker::EOI, new PelJpegContent(new DataWindow()));
 
                         /* Now check to see if there are any trailing data. */
                         if ($length != $d->getSize()) {
@@ -286,7 +287,7 @@ class PelJpeg
      */
     public function loadFile($filename)
     {
-        $this->load(new PelDataWindow(file_get_contents($filename)));
+        $this->load(new DataWindow(file_get_contents($filename)));
     }
 
     /**
@@ -653,14 +654,14 @@ class PelJpeg
      * than a rigorous check.
      *
      * @param
-     *            PelDataWindow the bytes that will be checked.
+     *            DataWindow the bytes that will be checked.
      *
      * @return boolean true if the bytes look like the beginning of a
      *         JPEG image, false otherwise.
      *
      * @see PelTiff::isValid()
      */
-    public static function isValid(PelDataWindow $d)
+    public static function isValid(DataWindow $d)
     {
         /* JPEG data is stored in big-endian format. */
         $d->setByteOrder(PelConvert::BIG_ENDIAN);

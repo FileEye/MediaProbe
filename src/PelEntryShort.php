@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
@@ -113,7 +114,7 @@ class PelEntryShort extends PelEntryNumber
      *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
-     * @param PelDataWindow $data
+     * @param DataWindow $data
      *            the data which will be used to construct the entry.
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
@@ -121,7 +122,7 @@ class PelEntryShort extends PelEntryNumber
      * @return array a list or arguments to be passed to the PelEntry subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, PelDataWindow $data, $data_offset)
+    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {

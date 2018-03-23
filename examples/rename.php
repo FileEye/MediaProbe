@@ -48,7 +48,7 @@ setlocale(LC_ALL, '');
 require_once '../autoload.php';
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelDataWindow;
+use ExifEye\core\DataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelSpec;
 use lsolesen\pel\PelTiff;
@@ -85,7 +85,7 @@ ini_set('memory_limit', '32M');
 
 foreach ($argv as $file) {
     println('Reading file "%s".', $file);
-    $data = new PelDataWindow(file_get_contents($file));
+    $data = new DataWindow(file_get_contents($file));
 
     if (PelJpeg::isValid($data)) {
         $jpeg = new PelJpeg();

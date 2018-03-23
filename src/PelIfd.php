@@ -24,6 +24,9 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
+use ExifEye\core\DataWindowOffsetException;
+use ExifEye\core\DataWindowWindowException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
@@ -153,7 +156,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * This will be initialized in the constructor, or be left as null
      * if there are no thumbnail as part of this directory.
      *
-     * @var PelDataWindow
+     * @var DataWindow
      */
     protected $thumb_data = null;
     // TODO: use this format to choose between the
@@ -183,7 +186,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     /**
      * Load data into a Image File Directory (IFD).
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *            the data window that will provide the data.
      * @param int $offset
      *            the offset within the window where the directory will
@@ -194,7 +197,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *            (Optional) the level of nesting of this IFD in the overall
      *            structure.
      */
-    public function load(PelDataWindow $d, $offset, $components = 1, $nesting_level = 0)
+    public function load(DataWindow $d, $offset, $components = 1, $nesting_level = 0)
     {
         $starting_offset = $offset;
 
@@ -262,7 +265,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
                     try {
                         $ifd->load($d, $o, $tag_components, $nesting_level + 1);
                         $this->sub[$type] = $ifd;
-                    } catch (PelDataWindowOffsetException $e) {
+                    } catch (DataWindowOffsetException $e) {
                         ExifEye::maybeThrow(new PelIfdException($e->getMessage()));
                     }
                 } else {
@@ -320,7 +323,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     /**
      * Load a single value which didn't match any special {@link PelTag}.
      *
-     * This method will add a single value given by the {@link PelDataWindow} and it's offset ($offset) and element counter ($i).
+     * This method will add a single value given by the {@link DataWindow} and it's offset ($offset) and element counter ($i).
      *
      * Please note that the data you pass to this method should come
      * from an image, that is, it should be raw bytes. If instead you
@@ -328,7 +331,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * create a {@link PelEntryShort} object directly and load the data
      * into it.
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *            the data window that will provide the data.
      *
      * @param integer $offset
@@ -336,7 +339,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *            be found.
      *
      * @param int $i
-     *            the element's position in the {@link PelDataWindow} $d.
+     *            the element's position in the {@link DataWindow} $d.
      *
      * @param int $tag
      *            the tag of the entry as defined in {@link PelSpec}.
@@ -377,7 +380,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param int $components
      *            the components in the entry.
      *
-     * @param PelDataWindow $data
+     * @param DataWindow $data
      *            the data which will be used to construct the
      *            entry.
      *
@@ -385,7 +388,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *
      * @deprecated Use PelEntry::createFromData instead.
      */
-    public function newEntryFromData($tag, $format, $components, PelDataWindow $data)
+    public function newEntryFromData($tag, $format, $components, DataWindow $data)
     {
         $class = PelSpec::getTagClass($this->type, $tag, $format);
         $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $this->type, $tag, $format, $components, $data, null);
@@ -403,7 +406,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * available data and adjust as necessary. Only then is the
      * thumbnail data loaded.
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *            the data from which the thumbnail will be
      *            extracted.
      *
@@ -413,7 +416,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param int $length
      *            the length of the thumbnail.
      */
-    protected function safeSetThumbnail(PelDataWindow $d, $offset, $length)
+    protected function safeSetThumbnail(DataWindow $d, $offset, $length)
     {
         /*
          * Load the thumbnail if both the offset and the length is
@@ -438,7 +441,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             /* Now set the thumbnail normally. */
             try {
                 $this->setThumbnail($d->getClone($offset, $length));
-            } catch (PelDataWindowWindowException $e) {
+            } catch (DataWindowWindowException $e) {
                 ExifEye::maybeThrow(new PelIfdException($e->getMessage()));
             }
         }
@@ -453,10 +456,10 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * adjusted until one if found. An {@link PelIfdException} might be
      * thrown (depending on {@link ExifEye::$strict}) this case.
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *            the thumbnail data.
      */
-    public function setThumbnail(PelDataWindow $d)
+    public function setThumbnail(DataWindow $d)
     {
         $size = $d->getSize();
         /* Now move backwards until we find the EOI JPEG marker. */

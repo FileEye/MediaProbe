@@ -2,6 +2,8 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
+
 /**
  * Class used to hold data for MakerNote tags.
  */
@@ -41,7 +43,7 @@ class PelEntryMakerNote extends PelEntryUndefined
      *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
-     * @param PelDataWindow $data
+     * @param DataWindow $data
      *            the data which will be used to construct the entry.
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
@@ -49,7 +51,7 @@ class PelEntryMakerNote extends PelEntryUndefined
      * @return array a list or arguments to be passed to the PelEntry subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, PelDataWindow $data, $data_offset)
+    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         return [$data->getBytes(), $data_offset];
     }
@@ -94,12 +96,12 @@ class PelEntryMakerNote extends PelEntryUndefined
     /**
      * Converts a maker note tag to an IFD structure for dumping.
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *            the data window that will provide the data.
      * @param PelIfd $ifd
      *            the root PelIfd object.
      */
-    public static function tagToIfd(PelDataWindow $d, PelIfd $ifd)
+    public static function tagToIfd(DataWindow $d, PelIfd $ifd)
     {
         // Get the Exif subIfd if existing.
         if (!$exif_ifd = $ifd->getSubIfd(PelSpec::getIfdIdByType('Exif'))) {

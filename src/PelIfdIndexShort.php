@@ -2,6 +2,7 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
@@ -13,7 +14,7 @@ class PelIfdIndexShort extends PelIfd
     /**
      * Load data into a Image File Directory (IFD).
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      *            the data window that will provide the data.
      * @param int $offset
      *            the offset within the window where the directory will
@@ -24,7 +25,7 @@ class PelIfdIndexShort extends PelIfd
      *            (Optional) the level of nesting of this IFD in the overall
      *            structure.
      */
-    public function load(PelDataWindow $d, $offset, $components = 1, $nesting_level = 0)
+    public function load(DataWindow $d, $offset, $components = 1, $nesting_level = 0)
     {
         ExifEye::debug(
             str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d entries at offset %d...",

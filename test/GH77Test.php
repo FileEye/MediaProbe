@@ -2,7 +2,6 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelDataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 use ExifEye\core\ExifEye;

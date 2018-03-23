@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelDataWindow;
+use ExifEye\core\DataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelEntryWindowsString;
 use lsolesen\pel\PelTag;
@@ -27,7 +27,7 @@ class GH16Test extends ExifEyeTestCaseBase
     {
         $subject = "Превед, медвед!";
 
-        $data = new PelDataWindow(file_get_contents($this->file));
+        $data = new DataWindow(file_get_contents($this->file));
 
         if (PelJpeg::isValid($data)) {
             $jpeg = new PelJpeg();

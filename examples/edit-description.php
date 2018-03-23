@@ -38,13 +38,13 @@ setlocale(LC_ALL, '');
 /*
  * Load the required files. One would normally just require the
  * PelJpeg.php file for dealing with JPEG images, but because this
- * example can handle both JPEG and TIFF it loads the PelDataWindow
+ * example can handle both JPEG and TIFF it loads the DataWindow
  * class too.
  */
 require_once '../autoload.php';
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelDataWindow;
+use ExifEye\core\DataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 use lsolesen\pel\PelSpec;
@@ -104,13 +104,13 @@ $description = implode(' ', $argv);
 ini_set('memory_limit', '32M');
 
 /*
- * The input file is now read into a PelDataWindow object. At this
+ * The input file is now read into a DataWindow object. At this
  * point we do not know if the file stores JPEG or TIFF data, so
  * instead of using one of the loadFile methods on PelJpeg or PelTiff
- * we store the data in a PelDataWindow.
+ * we store the data in a DataWindow.
  */
 println('Reading file "%s".', $input);
-$data = new PelDataWindow(file_get_contents($input));
+$data = new DataWindow(file_get_contents($input));
 
 /*
  * The static isValid methods in PelJpeg and PelTiff will tell us in
@@ -126,9 +126,9 @@ if (PelJpeg::isValid($data)) {
     $jpeg = $file = new PelJpeg();
 
     /*
-     * We then load the data from the PelDataWindow into our PelJpeg
+     * We then load the data from the DataWindow into our PelJpeg
      * object. No copying of data will be done, the PelJpeg object will
-     * simply remember that it is to ask the PelDataWindow for data when
+     * simply remember that it is to ask the DataWindow for data when
      * required.
      */
     $jpeg->load($data);

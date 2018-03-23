@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 
 /**
@@ -72,7 +73,7 @@ class PelExif extends PelJpegContent
      * Construct a new Exif object.
      *
      * The new object will be empty --- use the {@link load()} method to
-     * load Exif data from a {@link PelDataWindow} object, or use the
+     * load Exif data from a {@link DataWindow} object, or use the
      * {@link setTiff()} to change the {@link PelTiff} object, which is
      * the true holder of the Exif {@link PelEntry entries}.
      */
@@ -88,9 +89,9 @@ class PelExif extends PelJpegContent
      * {@link PelTiff} object. This TIFF object can be accessed with
      * the {@link getTiff()} method.
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      */
-    public function load(PelDataWindow $d)
+    public function load(DataWindow $d)
     {
         ExifEye::debug('Parsing %d bytes of Exif data...', $d->getSize());
 

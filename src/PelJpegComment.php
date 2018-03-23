@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
+
 /**
  * Class for dealing with JPEG comments.
  *
@@ -66,9 +68,9 @@ class PelJpegComment extends PelJpegContent
      *
      * This will load the comment from the data window passed.
      *
-     * @param PelDataWindow $d
+     * @param DataWindow $d
      */
-    public function load(PelDataWindow $d)
+    public function load(DataWindow $d)
     {
         $this->comment = $d->getBytes();
     }

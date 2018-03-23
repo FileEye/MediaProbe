@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
@@ -140,13 +141,13 @@ abstract class PelEntry
      *            the IFD id.
      * @param int $tag_id
      *            the TAG id.
-     * @param PelDataWindow $data
+     * @param DataWindow $data
      *            the data window that will provide the data.
      * @param int $ifd_offset
      *            the offset within the window where the directory will
      *            be found.
      * @param int $seq
-     *            the element's position in the {@link PelDataWindow} $data.
+     *            the element's position in the {@link DataWindow} $data.
      * @param bool $absolute_offset
      *            (Optional) Defines if tag offsets are absolute or relative.
      *            Defaults to true.
@@ -156,7 +157,7 @@ abstract class PelEntry
      *
      * @return PelEntry a newly created entry, holding the data given.
      */
-    final public static function createFromData($ifd_id, $tag_id, PelDataWindow $data, $ifd_offset, $seq, $absolute_offset = true, $skip_offset = 0)
+    final public static function createFromData($ifd_id, $tag_id, DataWindow $data, $ifd_offset, $seq, $absolute_offset = true, $skip_offset = 0)
     {
         $format = $data->getShort($ifd_offset + 12 * $seq + 2);
         $components = $data->getLong($ifd_offset + 12 * $seq + 4);
@@ -177,7 +178,7 @@ abstract class PelEntry
             $sub_data = $data->getClone($data_offset, $size);
         } else {
             $data_offset = 0;
-            $sub_data = new PelDataWindow();
+            $sub_data = new DataWindow();
         }
 
         try {
@@ -224,7 +225,7 @@ abstract class PelEntry
      *            the format of the entry as defined in {@link Format}.
      * @param int $components
      *            the components in the entry.
-     * @param PelDataWindow $data
+     * @param DataWindow $data
      *            the data which will be used to construct the entry.
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
@@ -232,7 +233,7 @@ abstract class PelEntry
      * @return array a list or arguments to be passed to the PelEntry subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, PelDataWindow $data, $data_offset)
+    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         throw new ExifEyeException('getInstanceArgumentsFromData() must be implemented.');
     }
