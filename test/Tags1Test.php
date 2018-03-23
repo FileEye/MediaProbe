@@ -1,6 +1,6 @@
 <?php
 
-namespace ExifEye\Test\core\imagetests;
+namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
