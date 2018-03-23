@@ -24,12 +24,14 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEyeException;
+
 /**
  * An exception thrown when an invalid offset is encountered.
  *
  * @package PEL
  * @subpackage Exception
  */
-class PelDataWindowOffsetException extends PelException
+class PelDataWindowOffsetException extends ExifEyeException
 {
 }

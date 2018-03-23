@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEyeException;
+
 /**
  * A container for bytes with a limited window of accessible bytes.
  *
@@ -38,6 +40,6 @@ namespace lsolesen\pel;
  * @package PEL
  * @subpackage Exception
  */
-class PelDataWindowWindowException extends PelException
+class PelDataWindowWindowException extends ExifEyeException
 {
 }

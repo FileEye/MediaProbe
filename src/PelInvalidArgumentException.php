@@ -24,7 +24,7 @@
  */
 namespace lsolesen\pel;
 
-use lsolesen\pel\PelException;
+use ExifEye\core\ExifEyeException;
 
 /**
  * Standard PEL exception.
@@ -42,6 +42,6 @@ use lsolesen\pel\PelException;
  * @package PEL
  * @subpackage Exception
  */
-class PelInvalidArgumentException extends PelException
+class PelInvalidArgumentException extends ExifEyeException
 {
 }

@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEyeException;
+
 /**
  * Classes for dealing with Exif entries.
  *
@@ -46,7 +48,7 @@ namespace lsolesen\pel;
  * @package PEL
  * @subpackage Exception
  */
-class PelEntryException extends PelException
+class PelEntryException extends ExifEyeException
 {
 
     /**

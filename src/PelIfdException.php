@@ -24,6 +24,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEyeException;
+
 /**
  * Classes for dealing with Exif IFDs.
  *
@@ -40,7 +42,7 @@ namespace lsolesen\pel;
  * @package PEL
  * @subpackage Exception
  */
-class PelIfdException extends PelException
+class PelIfdException extends ExifEyeException
 {
     // do nothing
 }

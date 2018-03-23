@@ -258,7 +258,7 @@ class PelJpeg
 
                         /* Now check to see if there are any trailing data. */
                         if ($length != $d->getSize()) {
-                            Pel::maybeThrow(new PelException('Found trailing content ' . 'after EOI: %d bytes', $d->getSize() - $length));
+                            Pel::maybeThrow(new ExifEyeException('Found trailing content ' . 'after EOI: %d bytes', $d->getSize() - $length));
                             $content = new PelJpegContent($d->getClone($length));
                             /*
                              * We don't have a proper JPEG marker for trailing

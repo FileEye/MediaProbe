@@ -75,12 +75,12 @@ class PelSpecTest extends TestCase
         $this->assertEquals('lsolesen\pel\PelEntryUserComment', PelSpec::getTagClass(2, 0x9286));
         $this->assertEquals('lsolesen\pel\PelEntryTime', PelSpec::getTagClass(2, 0x9003));
         //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
-        //@todo change below to PelException::class once PHP 5.4 support is removed.
+        //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {
-            $this->expectException('lsolesen\pel\PelException');
+            $this->expectException('ExifEye\core\ExifEyeException');
             $this->expectExceptionMessage("No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
         } else {
-            $this->setExpectedException('lsolesen\pel\PelException', "No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
         }
         $this->assertNull(PelSpec::getTagClass(PelSpec::getIfdIdByType('Canon Picture Information'), 0x0003));
     }

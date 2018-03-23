@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 
 /**
@@ -182,7 +183,7 @@ abstract class PelEntry
             $class = PelSpec::getTagClass($ifd_id, $tag_id, $format);
             $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $sub_data, $data_offset);
             return  call_user_func($class . '::createInstance', $ifd_id, $tag_id, $arguments);
-        } catch (PelException $e) {
+        } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store
             // otherwise.
             Pel::maybeThrow($e);
@@ -232,7 +233,7 @@ abstract class PelEntry
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, PelDataWindow $data, $data_offset)
     {
-        throw new PelException('getInstanceArgumentsFromData() must be implemented.');
+        throw new ExifEyeException('getInstanceArgumentsFromData() must be implemented.');
     }
 
     /**
@@ -360,7 +361,7 @@ abstract class PelEntry
          * wont allow subclasses to define it with two arguments (which is
          * what PelEntryCopyright does).
          */
-        throw new PelException('setValue() is abstract.');
+        throw new ExifEyeException('setValue() is abstract.');
     }
 
     /**

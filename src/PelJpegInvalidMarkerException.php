@@ -23,6 +23,8 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\ExifEyeException;
+
 /**
  * Exception thrown when an invalid marker is found.
  *
@@ -34,7 +36,7 @@ namespace lsolesen\pel;
  * @package PEL
  * @subpackage Exception
  */
-class PelJpegInvalidMarkerException extends PelException
+class PelJpegInvalidMarkerException extends ExifEyeException
 {
 
     /**
