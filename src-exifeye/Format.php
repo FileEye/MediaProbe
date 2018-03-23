@@ -14,8 +14,6 @@ use lsolesen\pel\Pel;
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @author Johannes Weberhofer <jweberhofer@weberhofer.at>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
  */
 class Format
 {
@@ -134,7 +132,9 @@ class Format
     const DOUBLE = 12;
 
     /**
-     * Values for format's short names
+     * Values for formats short names.
+     *
+     * @var string[]
      */
     protected static $formatName = [
         self::ASCII => 'Ascii',
@@ -151,6 +151,11 @@ class Format
         self::UNDEFINED => 'Undefined'
     ];
 
+    /**
+     * Values for formats short names.
+     *
+     * @var int[]
+     */
     protected static $formatLength = [
         self::ASCII => 1,
         self::BYTE => 1,
@@ -178,9 +183,8 @@ class Format
     {
         if (array_key_exists($type, self::$formatName)) {
             return self::$formatName[$type];
-        } else {
-            return Pel::fmt('Unknown format: 0x%X', $type);
         }
+        ExifEye::maybeThrow(new ExifEyeException(ExifEye::fmt('Unknown format: 0x%X', $type)));
     }
 
     /**
@@ -209,14 +213,13 @@ class Format
      * @param integer $type
      *            as defined in {@link Format}
      *
-     * @return integer|string
+     * @return integer
      */
     public static function getSize($type)
     {
         if (array_key_exists($type, self::$formatLength)) {
             return self::$formatLength[$type];
-        } else {
-            return Pel::fmt('Unknown format: 0x%X', $type);
         }
+        ExifEye::maybeThrow(new ExifEyeException(ExifEye::fmt('Unknown format: 0x%X', $type)));
     }
 }

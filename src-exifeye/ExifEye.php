@@ -1,42 +1,19 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005, 2006, 2007 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core;
 
 /**
  * Class with miscellaneous static methods.
  *
- * This class will contain various methods that govern the overall
- * behavior of PEL.
+ * This class contains various methods that govern the overall behavior of
+ * ExifEye.
  *
- * Debugging output from PEL can be turned on and off by assigning
- * true or false to {@link Pel::$debug}.
+ * Debugging output from ExifEye can be turned on and off by assigning true or
+ * false to {@link ExifEye::$debug}.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class Pel
+class ExifEye
 {
 
     /**
@@ -63,8 +40,8 @@ class Pel
      *
      * If this variable is set to true, then most errors while loading
      * images will result in exceptions being thrown. Otherwise a
-     * warning will be emitted (using {@link Pel::warning}) and the
-     * exceptions will be appended to {@link Pel::$exceptions}.
+     * warning will be emitted (using {@link ExifEye::warning}) and the
+     * exceptions will be appended to {@link ExifEye::$exceptions}.
      *
      * Some errors will still be fatal and result in thrown exceptions,
      * but an effort will be made to skip over as much garbage as
@@ -72,12 +49,12 @@ class Pel
      *
      * @var boolean
      */
-    private static $strict = false;
+    private static $strict = true;
 
     /**
      * Stored exceptions.
      *
-     * When {@link Pel::$strict} is set to false exceptions will be
+     * When {@link ExifEye::$strict} is set to false exceptions will be
      * accumulated here instead of being thrown.
      */
     private static $exceptions = [];
@@ -95,6 +72,17 @@ class Pel
      * @var int
      */
     private static $quality = 75;
+
+    /**
+     * Returns the current version of ExifEye.
+     *
+     * @return string
+     *            the current version of ExifEye.
+     */
+    public static function version()
+    {
+        return '1.0.0-dev';
+    }
 
     /**
      * Set the JPEG encoding quality.
@@ -121,20 +109,20 @@ class Pel
     /**
      * Return list of stored exceptions.
      *
-     * When PEL is parsing in non-strict mode, it will store most
+     * When ExifyEye is parsing in non-strict mode, it will store most
      * exceptions instead of throwing them. Use this method to get hold
      * of them when a call returns.
      *
      * Code for using this could look like this:
      *
      * <code>
-     * Pel::setStrictParsing(true);
-     * Pel::clearExceptions();
+     * ExifEye::setStrictParsing(true);
+     * ExifEye::clearExceptions();
      *
      * $jpeg = new PelJpeg($file);
      *
      * // Check for exceptions.
-     * foreach (Pel::getExceptions() as $e) {
+     * foreach (ExifEye::getExceptions() as $e) {
      * printf("Exception: %s\n", $e->getMessage());
      * if ($e instanceof PelEntryException) {
      * // Warn about entries that couldn't be loaded.
@@ -173,12 +161,12 @@ class Pel
      * in effect (see {@link setStrictParsing()}). Otherwise the
      * exception is stored (it can be accessed with {@link
      * getExceptions()}) and a warning is issued (with {@link
-     * Pel::warning}).
+     * ExifEye::warning}).
      *
-     * @param PelException $e
+     * @param ExifEyeException $e
      *            the exceptions.
      */
-    public static function maybeThrow(PelException $e)
+    public static function maybeThrow(ExifEyeException $e)
     {
         if (self::$strict) {
             throw $e;
@@ -193,7 +181,7 @@ class Pel
      *
      * If strict parsing is enabled, then most errors while loading
      * images will result in exceptions being thrown. Otherwise a
-     * warning will be emitted (using {@link Pel::warning}) and the
+     * warning will be emitted (using {@link ExifEye::warning}) and the
      * exceptions will be stored for later use via {@link
      * getExceptions()}.
      *
@@ -248,7 +236,7 @@ class Pel
      *
      * This method works just like printf() except that it always
      * terminates the output with a newline, and that it only outputs
-     * something if the {@link Pel::$debug} is true.
+     * something if the {@link ExifEye::$debug} is true.
      *
      * @param string $format
      *            the format string.
