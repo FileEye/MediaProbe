@@ -2,12 +2,11 @@
 
 namespace ExifEye\Test\core;
 
-use PHPUnit\Framework\TestCase;
 use lsolesen\pel\PelJpegMarker;
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpegInvalidMarkerException;
 
-class PelJpegMarkerTest extends TestCase
+class PelJpegMarkerTest extends ExifEyeTestCaseBase
 {
 
     public function testNames()

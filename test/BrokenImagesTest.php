@@ -3,9 +3,8 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelJpeg;
-use PHPUnit\Framework\TestCase;
 
-class BrokenImagesTest extends TestCase
+class BrokenImagesTest extends ExifEyeTestCaseBase
 {
     public function testWindowWindowExceptionIsCaught()
     {

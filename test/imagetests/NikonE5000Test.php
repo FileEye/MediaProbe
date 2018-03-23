@@ -5,14 +5,12 @@ namespace ExifEye\Test\core\imagetests;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use lsolesen\pel\PelJpeg;
-use PHPUnit\Framework\TestCase;
+use ExifEye\Test\core\ExifEyeTestCaseBase;
 
-class NikonE5000Test extends TestCase
+class NikonE5000Test extends ExifEyeTestCaseBase
 {
     public function testRead()
     {
-        ExifEye::clearExceptions();
-        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/nikon-e5000.jpg');
 
         $exif = $jpeg->getExif();

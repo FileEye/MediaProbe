@@ -6,9 +6,8 @@ use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelEntryAscii;
 use lsolesen\pel\PelTag;
 use lsolesen\pel\PelEntryTime;
-use PHPUnit\Framework\TestCase;
 
-class IfdTest extends TestCase
+class IfdTest extends ExifEyeTestCaseBase
 {
     public function testIteratorAggretate()
     {

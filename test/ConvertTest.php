@@ -3,9 +3,8 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelConvert;
-use PHPUnit\Framework\TestCase;
 
-class ConvertTest extends TestCase
+class ConvertTest extends ExifEyeTestCaseBase
 {
 
     private $bytes = "\x00\x00\x00\x00\x01\x23\x45\x67\x89\xAB\xCD\xEF\xFF\xFF\xFF\xFF";

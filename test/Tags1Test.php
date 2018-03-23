@@ -4,13 +4,11 @@ namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
-use PHPUnit\Framework\TestCase;
 
-class Tags1Test extends TestCase
+class Tags1Test extends ExifEyeTestCaseBase
 {
     public function testTags()
     {
-        ExifEye::clearExceptions();
         ExifEye::setStrictParsing(true);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/images/test-tags-1.jpg');
 

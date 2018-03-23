@@ -3,9 +3,8 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelJpeg;
-use PHPUnit\Framework\TestCase;
 
-class GH21Test extends TestCase
+class GH21Test extends ExifEyeTestCaseBase
 {
     protected $file;
 

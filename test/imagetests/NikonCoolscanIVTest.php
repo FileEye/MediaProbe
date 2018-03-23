@@ -4,14 +4,13 @@ namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
-use PHPUnit\Framework\TestCase;
+use ExifEye\Test\core\ExifEyeTestCaseBase;
 
-class NikonCoolscanIVTest extends TestCase
+
+class NikonCoolscanIVTest extends ExifEyeTestCaseBase
 {
     public function testRead()
     {
-        ExifEye::clearExceptions();
-        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/nikon-coolscan-iv.jpg');
 
         $exif = $jpeg->getExif();

@@ -4,9 +4,8 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use PHPUnit\Framework\TestCase;
 
-class FormatTest extends TestCase
+class FormatTest extends ExifEyeTestCaseBase
 {
     public function setUp()
     {

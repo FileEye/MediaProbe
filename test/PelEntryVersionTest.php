@@ -4,9 +4,8 @@ namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelEntryVersion;
 use lsolesen\pel\PelConvert;
-use PHPUnit\Framework\TestCase;
 
-class PelEntryVersionTest extends TestCase
+class PelEntryVersionTest extends ExifEyeTestCaseBase
 {
     public function testVersion()
     {

@@ -6,16 +6,13 @@ use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelExif;
 use lsolesen\pel\PelJpegMarker;
-use PHPUnit\Framework\TestCase;
 
-class MisplacedExifTest extends TestCase
+class MisplacedExifTest extends ExifEyeTestCaseBase
 {
     // NOTE: this test relies on the assumption that internal PelJpeg::sections order is kept between section
     // manipulations. It may fail it this changes.
     public function testRead()
     {
-        ExifEye::clearExceptions();
-        ExifEye::setStrictParsing(false);
         // Image contains non-EXIF APP1 section ahead of the EXIF one
         $jpeg = new PelJpeg(dirname(__FILE__) . '/broken_images/misplaced-exif.jpg');
         // Assert we just have loaded correct file for the test

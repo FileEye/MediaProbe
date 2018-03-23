@@ -5,12 +5,11 @@ namespace ExifEye\Test\core;
 use lsolesen\pel\PelEntry;
 use ExifEye\core\Format;
 use lsolesen\pel\PelSpec;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Test the PelSpec class.
  */
-class PelSpecTest extends TestCase
+class PelSpecTest extends ExifEyeTestCaseBase
 {
     /**
      * Tests the pre-compiled default specifications set.

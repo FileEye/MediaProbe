@@ -7,14 +7,11 @@ use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelTag;
-use PHPUnit\Framework\TestCase;
 
-class GH77Test extends TestCase
+class GH77Test extends ExifEyeTestCaseBase
 {
-    public function testReturnModul()
+    public function testReturnModel()
     {
-        ExifEye::setStrictParsing(false);
-
         $file = dirname(__FILE__) . '/images/gh-77.jpg';
 
         $input_jpeg = new PelJpeg($file);

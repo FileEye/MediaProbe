@@ -5,14 +5,12 @@ namespace ExifEye\Test\core\imagetests;
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelSpec;
-use PHPUnit\Framework\TestCase;
+use ExifEye\Test\core\ExifEyeTestCaseBase;
 
-class CanonPowershotS60Test extends TestCase
+class CanonPowershotS60Test extends ExifEyeTestCaseBase
 {
     public function testRead()
     {
-        ExifEye::clearExceptions();
-        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/canon-powershot-s60.jpg');
 
         $exif = $jpeg->getExif();

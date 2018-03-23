@@ -15,9 +15,8 @@ use lsolesen\pel\PelEntrySShort;
 use lsolesen\pel\PelEntryLong;
 use lsolesen\pel\PelEntrySLong;
 use lsolesen\pel\PelEntryAscii;
-use PHPUnit\Framework\TestCase;
 
-class WriteEntryTest extends TestCase
+class WriteEntryTest extends ExifEyeTestCaseBase
 {
     /**
      * {@inheritdoc}

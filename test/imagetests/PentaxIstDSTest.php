@@ -4,14 +4,12 @@ namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
-use PHPUnit\Framework\TestCase;
+use ExifEye\Test\core\ExifEyeTestCaseBase;
 
-class PentaxIstDSTest extends TestCase
+class PentaxIstDSTest extends ExifEyeTestCaseBase
 {
     public function testRead()
     {
-        ExifEye::clearExceptions();
-        ExifEye::setStrictParsing(false);
         $jpeg = new PelJpeg(dirname(__FILE__) . '/pentax-istDS.jpg');
 
         $exif = $jpeg->getExif();

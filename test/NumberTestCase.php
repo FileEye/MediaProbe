@@ -4,9 +4,8 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
 use \lsolesen\pel\PelOverflowException;
-use PHPUnit\Framework\TestCase;
 
-abstract class NumberTestCase extends TestCase
+abstract class NumberTestCase extends ExifEyeTestCaseBase
 {
     protected $min;
     protected $max;

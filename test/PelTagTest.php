@@ -3,10 +3,9 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelIfd;
-use PHPUnit\Framework\TestCase;
 use lsolesen\pel\PelTag;
 
-class PelTagTest extends TestCase
+class PelTagTest extends ExifEyeTestCaseBase
 {
     const NONEXISTENT_TAG_NAME = 'nonexistent tag name';
     const NONEXISTENT_EXIF_TAG = 0xFCFC;

@@ -5,9 +5,8 @@ namespace ExifEye\Test\core;
 use lsolesen\pel\PelConvert;
 use lsolesen\pel\PelEntryWindowsString;
 use lsolesen\pel\PelTag;
-use PHPUnit\Framework\TestCase;
 
-class PelEntryWindowsStringTest extends TestCase
+class PelEntryWindowsStringTest extends ExifEyeTestCaseBase
 {
 
     public function testWindowsString()

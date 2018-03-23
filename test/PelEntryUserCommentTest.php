@@ -3,9 +3,8 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelEntryUserComment;
-use PHPUnit\Framework\TestCase;
 
-class PelEntryUserCommentTest extends TestCase
+class PelEntryUserCommentTest extends ExifEyeTestCaseBase
 {
 
     public function testUsercomment()

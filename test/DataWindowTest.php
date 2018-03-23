@@ -5,9 +5,8 @@ namespace ExifEye\Test\core;
 use lsolesen\pel\PelDataWindow;
 use lsolesen\pel\PelConvert;
 use lsolesen\pel\PelDataWindowOffsetException;
-use PHPUnit\Framework\TestCase;
 
-class DataWindowTest extends TestCase
+class DataWindowTest extends ExifEyeTestCaseBase
 {
 
     public function testReadBytes()

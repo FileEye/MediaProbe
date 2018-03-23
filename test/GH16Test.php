@@ -6,9 +6,8 @@ use lsolesen\pel\PelDataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelEntryWindowsString;
 use lsolesen\pel\PelTag;
-use PHPUnit\Framework\TestCase;
 
-class GH16Test extends TestCase
+class GH16Test extends ExifEyeTestCaseBase
 {
     protected $file;
 

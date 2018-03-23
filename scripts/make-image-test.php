@@ -209,15 +209,13 @@ println('<?php
 
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelJpeg;
-use PHPUnit\Framework\TestCase;
+use ExifEye\Test\core\ExifEyeTestCaseBase;
 
-class %s extends TestCase
+class %s extends ExifEyeTestCaseBase
 {
 
   function testRead()
   {
-    ExifEye::clearExceptions();
-    ExifEye::setStrictParsing(false);
     $jpeg = new PelJpeg(dirname(__FILE__) . \'/%s\');
 ', $test_name, $image_filename, $image_filename);
 
