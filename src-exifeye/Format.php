@@ -30,7 +30,7 @@ abstract class Format
      *
      * Each component will be an ASCII character.
      *
-     * Modelled with the {@link PelEntryAscii} class.
+     * Modelled with the {@link Ascii} class.
      */
     const ASCII = 2;
 

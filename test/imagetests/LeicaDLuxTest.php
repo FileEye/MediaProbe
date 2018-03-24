@@ -26,12 +26,12 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 10);
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'LEICA');
         $this->assertEquals($entry->getText(), 'LEICA');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'D-LUX');
         $this->assertEquals($entry->getText(), 'D-LUX');
 
@@ -62,12 +62,12 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Ver1.06');
         $this->assertEquals($entry->getText(), 'Ver1.06');
 
         $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1099994128);
         $this->assertEquals($entry->getText(), '2004:11:09 09:55:28');
 
@@ -122,12 +122,12 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Exif Version 2.2');
 
         $entry = $ifd0_0->getEntry(36867); // DateTimeOriginal
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1099994128);
         $this->assertEquals($entry->getText(), '2004:11:09 09:55:28');
 
         $entry = $ifd0_0->getEntry(36868); // DateTimeDigitized
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1099994128);
         $this->assertEquals($entry->getText(), '2004:11:09 09:55:28');
 
@@ -312,7 +312,7 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 

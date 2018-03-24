@@ -26,17 +26,17 @@ class NikonE950Test extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 10);
 
         $entry = $ifd0->getEntry(270); // ImageDescription
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), '          ');
         $this->assertEquals($entry->getText(), '          ');
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'NIKON');
         $this->assertEquals($entry->getText(), 'NIKON');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'E950');
         $this->assertEquals($entry->getText(), 'E950');
 
@@ -67,12 +67,12 @@ class NikonE950Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'v981p-78');
         $this->assertEquals($entry->getText(), 'v981p-78');
 
         $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 978276013);
         $this->assertEquals($entry->getText(), '2000:12:31 15:20:13');
 
@@ -121,12 +121,12 @@ class NikonE950Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Exif Version 2.1');
 
         $entry = $ifd0_0->getEntry(36867); // DateTimeOriginal
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 978276013);
         $this->assertEquals($entry->getText(), '2000:12:31 15:20:13');
 
         $entry = $ifd0_0->getEntry(36868); // DateTimeDigitized
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 978276013);
         $this->assertEquals($entry->getText(), '2000:12:31 15:20:13');
 
@@ -232,7 +232,7 @@ class NikonE950Test extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 

@@ -14,7 +14,7 @@ use lsolesen\pel\PelEntryShort;
 use lsolesen\pel\PelEntrySShort;
 use lsolesen\pel\PelEntryLong;
 use lsolesen\pel\PelEntrySLong;
-use lsolesen\pel\PelEntryAscii;
+use ExifEye\core\Entry\Ascii;
 
 class WriteEntryTest extends ExifEyeTestCaseBase
 {
@@ -176,10 +176,10 @@ class WriteEntryTest extends ExifEyeTestCaseBase
             ],
             'PEL Ascii Read/Write Tests' => [
                 [
-                    new PelEntryAscii(0xF601),
-                    new PelEntryAscii(0xF602, ''),
-                    new PelEntryAscii(0xF603, 'Hello World!'),
-                    new PelEntryAscii(0xF604, "\x00\x01\x02...\xFD\xFE\xFF"),
+                    new Ascii(0xF601),
+                    new Ascii(0xF602, ''),
+                    new Ascii(0xF603, 'Hello World!'),
+                    new Ascii(0xF604, "\x00\x01\x02...\xFD\xFE\xFF"),
                 ],
             ],
         ];

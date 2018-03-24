@@ -27,12 +27,12 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 9);
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Canon');
         $this->assertEquals($entry->getText(), 'Canon');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Canon EOS 650D');
         $this->assertEquals($entry->getText(), 'Canon EOS 650D');
 
@@ -63,7 +63,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1509974253);
         $this->assertEquals($entry->getText(), '2017:11:06 13:17:33');
 
@@ -97,12 +97,12 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Exif Version 2.3');
 
         $entry = $ifd0_0->getEntry(36867); // DateTimeOriginal
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1497623444);
         $this->assertEquals($entry->getText(), '2017:06:16 14:30:44');
 
         $entry = $ifd0_0->getEntry(36868); // DateTimeDigitized
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1497623444);
         $this->assertEquals($entry->getText(), '2017:06:16 14:30:44');
 
@@ -201,7 +201,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 
@@ -279,11 +279,11 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0_mn);
 
         $entry = $ifd0_mn->getEntry(6); // ImageType
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Canon EOS 650D');
 
         $entry = $ifd0_mn->getEntry(7); // FirmwareVersion
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Firmware Version 1.0.4');
 
         /* Start of IDF $ifd0_mn_cs. */

@@ -26,12 +26,12 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 13);
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'PENTAX Corporation ');
         $this->assertEquals($entry->getText(), 'PENTAX Corporation ');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'PENTAX *ist DS     ');
         $this->assertEquals($entry->getText(), 'PENTAX *ist DS     ');
 
@@ -62,12 +62,12 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), '*ist DS     Ver 1.00   ');
         $this->assertEquals($entry->getText(), '*ist DS     Ver 1.00   ');
 
         $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1106749970);
         $this->assertEquals($entry->getText(), '2005:01:26 14:32:50');
 
@@ -184,12 +184,12 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Exif Version 2.21');
 
         $entry = $ifd0_0->getEntry(36867); // DateTimeOriginal
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1106749970);
         $this->assertEquals($entry->getText(), '2005:01:26 14:32:50');
 
         $entry = $ifd0_0->getEntry(36868); // DateTimeDigitized
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1106749970);
         $this->assertEquals($entry->getText(), '2005:01:26 14:32:50');
 
@@ -327,7 +327,7 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R03');
         $this->assertEquals($entry->getText(), 'R03');
 

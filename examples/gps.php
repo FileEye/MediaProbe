@@ -171,9 +171,9 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
     $inter_ifd = new PelIfd(PelSpec::getIfdIdByType('Interoperability'));
     $ifd0->addSubIfd($inter_ifd);
 
-    $ifd0->addEntry(new PelEntryAscii(PelSpec::getTagIdByName($ifd0->getType(), 'Model'), $model));
-    $ifd0->addEntry(new PelEntryAscii(PelSpec::getTagIdByName($ifd0->getType(), 'DateTime'), $date_time));
-    $ifd0->addEntry(new PelEntryAscii(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description));
+    $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'Model'), $model));
+    $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'DateTime'), $date_time));
+    $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description));
 
     $gps_ifd->addEntry(new PelEntryByte(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSVersionID'), 2, 2, 0, 0));
 
@@ -186,14 +186,14 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
     /* We interpret a negative latitude as being south. */
     $latitude_ref = ($latitude < 0) ? 'S' : 'N';
 
-    $gps_ifd->addEntry(new PelEntryAscii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitudeRef'), $latitude_ref));
+    $gps_ifd->addEntry(new Ascii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitudeRef'), $latitude_ref));
     $gps_ifd->addEntry(new PelEntryRational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitude'), $hours, $minutes, $seconds));
 
     /* The longitude works like the latitude. */
     list ($hours, $minutes, $seconds) = convertDecimalToDMS($longitude);
     $longitude_ref = ($longitude < 0) ? 'W' : 'E';
 
-    $gps_ifd->addEntry(new PelEntryAscii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitudeRef'), $longitude_ref));
+    $gps_ifd->addEntry(new Ascii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitudeRef'), $longitude_ref));
     $gps_ifd->addEntry(new PelEntryRational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitude'), $hours, $minutes, $seconds));
 
     /*

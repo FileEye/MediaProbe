@@ -26,17 +26,17 @@ class OlympusC765uzTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 11);
 
         $entry = $ifd0->getEntry(270); // ImageDescription
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'OLYMPUS DIGITAL CAMERA         ');
         $this->assertEquals($entry->getText(), 'OLYMPUS DIGITAL CAMERA         ');
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'OLYMPUS CORPORATION');
         $this->assertEquals($entry->getText(), 'OLYMPUS CORPORATION');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'C765UZ');
         $this->assertEquals($entry->getText(), 'C765UZ');
 
@@ -67,12 +67,12 @@ class OlympusC765uzTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'v777-76');
         $this->assertEquals($entry->getText(), 'v777-76');
 
         $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1090073972);
         $this->assertEquals($entry->getText(), '2004:07:17 14:19:32');
 
@@ -127,12 +127,12 @@ class OlympusC765uzTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Exif Version 2.2');
 
         $entry = $ifd0_0->getEntry(36867); // DateTimeOriginal
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1090073972);
         $this->assertEquals($entry->getText(), '2004:07:17 14:19:32');
 
         $entry = $ifd0_0->getEntry(36868); // DateTimeDigitized
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1090073972);
         $this->assertEquals($entry->getText(), '2004:07:17 14:19:32');
 
@@ -286,7 +286,7 @@ class OlympusC765uzTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 

@@ -3,8 +3,8 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelIfd;
-use lsolesen\pel\PelEntryAscii;
-use lsolesen\pel\PelEntryTime;
+use ExifEye\core\Entry\Ascii;
+use ExifEye\core\Entry\Time;
 
 class IfdTest extends ExifEyeTestCaseBase
 {
@@ -14,8 +14,8 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
-        $desc = new PelEntryAscii(0x010E, 'Hello?');
-        $date = new PelEntryTime(0x0132, 12345678);
+        $desc = new Ascii(0x010E, 'Hello?');
+        $date = new Time(0x0132, 12345678);
 
         $ifd->addEntry($desc);
         $ifd->addEntry($date);
@@ -37,8 +37,8 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
-        $desc = new PelEntryAscii(0x010E, 'Hello?');
-        $date = new PelEntryTime(0x0132, 12345678);
+        $desc = new Ascii(0x010E, 'Hello?');
+        $date = new Time(0x0132, 12345678);
 
         $ifd[] = $desc;
         $ifd[] = $date;

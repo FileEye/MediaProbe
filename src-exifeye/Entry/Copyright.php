@@ -1,51 +1,11 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005, 2006, 2007 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
-
-/**
- * Classes used to hold ASCII strings.
- *
- * The classes defined here are to be used for Exif entries holding
- * ASCII strings, such as {@link PelTag::MAKE}, {@link
- * PelTag::SOFTWARE}, and {@link PelTag::DATE_TIME}. For
- * entries holding normal textual ASCII strings the class {@link
- * PelEntryAscii} should be used, but for entries holding
- * timestamps the class {@link PelEntryTime} would be more
- * convenient instead. Copyright information is handled by the {@link
- * PelEntryCopyright} class.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class for holding copyright information.
@@ -61,7 +21,7 @@ use ExifEye\core\Format;
  * This would be done like this:
  *
  * <code>
- * $entry = new PelEntryCopyright('Copyright, Martin Geisler, 2004');
+ * $entry = new Copyright('Copyright, Martin Geisler, 2004');
  * $ifd0->addEntry($entry);
  * </code>
  *
@@ -71,11 +31,9 @@ use ExifEye\core\Format;
  * string.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class PelEntryCopyright extends PelEntryAscii
+class Copyright extends Ascii
 {
-
     /**
      * The photographer copyright.
      *

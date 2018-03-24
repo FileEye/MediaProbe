@@ -27,17 +27,17 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 11);
 
         $entry = $ifd0->getEntry(270); // ImageDescription
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'OLYMPUS DIGITAL CAMERA         ');
         $this->assertEquals($entry->getText(), 'OLYMPUS DIGITAL CAMERA         ');
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'OLYMPUS OPTICAL CO.,LTD');
         $this->assertEquals($entry->getText(), 'OLYMPUS OPTICAL CO.,LTD');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'X-2,C-50Z       ');
         $this->assertEquals($entry->getText(), 'X-2,C-50Z       ');
 
@@ -68,12 +68,12 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), '28-1012                        ');
         $this->assertEquals($entry->getText(), '28-1012                        ');
 
         $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), false);
         $this->assertEquals($entry->getText(), '0000:00:00 00:00:00');
 
@@ -128,12 +128,12 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Exif Version 2.2');
 
         $entry = $ifd0_0->getEntry(36867); // DateTimeOriginal
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), false);
         $this->assertEquals($entry->getText(), '0000:00:00 00:00:00');
 
         $entry = $ifd0_0->getEntry(36868); // DateTimeDigitized
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), false);
         $this->assertEquals($entry->getText(), '0000:00:00 00:00:00');
 
@@ -274,7 +274,7 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 

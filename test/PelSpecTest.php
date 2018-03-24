@@ -72,7 +72,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
     public function testGetTagClass()
     {
         $this->assertEquals('lsolesen\pel\PelEntryUserComment', PelSpec::getTagClass(2, 0x9286));
-        $this->assertEquals('lsolesen\pel\PelEntryTime', PelSpec::getTagClass(2, 0x9003));
+        $this->assertEquals('ExifEye\core\Entry\Time', PelSpec::getTagClass(2, 0x9003));
         //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {

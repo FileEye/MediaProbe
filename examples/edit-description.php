@@ -220,11 +220,11 @@ if ($desc == null) {
     println('Added new IMAGE_DESCRIPTION entry with "%s".', $description);
 
     /*
-     * In this case we simply create a new PelEntryAscii object to hold
-     * the description. The constructor for PelEntryAscii needs to know
+     * In this case we simply create a new Ascii object to hold
+     * the description. The constructor for Ascii needs to know
      * the tag and contents of the new entry.
      */
-    $desc = new PelEntryAscii(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description);
+    $desc = new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description);
 
     /*
      * This will insert the newly created entry with the description

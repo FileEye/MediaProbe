@@ -26,7 +26,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 6);
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('lsolesen\pel\PelEntryAscii', $entry);
+        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Nikon');
         $this->assertEquals($entry->getText(), 'Nikon');
 
@@ -52,7 +52,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryTime', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
         $this->assertEquals($entry->getValue(), 1090023875);
         $this->assertEquals($entry->getText(), '2004:07:17 00:24:35');
 

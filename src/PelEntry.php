@@ -62,7 +62,7 @@ use ExifEye\core\Format;
  * form of an integer, a string, a byte, or some other PHP type, then
  * don't use this class. You should instead create an object of the
  * right subclass ({@link PelEntryShort} for short integers, {@link
- * PelEntryAscii} for strings, and so on) directly.
+ * Ascii} for strings, and so on) directly.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
@@ -361,7 +361,7 @@ abstract class PelEntry
          * documentation to refer to PelEntry::setValue().
          * It cannot declared abstract in the proper PHP way, for then PHP
          * wont allow subclasses to define it with two arguments (which is
-         * what PelEntryCopyright does).
+         * what Copyright does).
          */
         throw new ExifEyeException('setValue() is abstract.');
     }

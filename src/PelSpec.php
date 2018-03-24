@@ -24,7 +24,7 @@ class PelSpec
      * @var array
      */
     private static $defaultTagClasses = [
-        Format::ASCII => 'lsolesen\\pel\\PelEntryAscii',
+        Format::ASCII => 'ExifEye\\core\\Entry\\Ascii',
         Format::BYTE => 'lsolesen\\pel\\PelEntryByte',
         Format::SHORT => 'lsolesen\\pel\\PelEntryShort',
         Format::LONG => 'lsolesen\\pel\\PelEntryLong',

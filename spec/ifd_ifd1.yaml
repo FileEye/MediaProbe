@@ -136,7 +136,7 @@ tags:
         title: 'Date and Time'
         components: 20
         format: Ascii
-        class: PelEntryTime
+        class: ExifEye\core\Entry\Time
     0x013B:
         name: Artist
         title: Artist
@@ -203,7 +203,7 @@ tags:
         title: Copyright
         components: Any
         format: Ascii
-        class: PelEntryCopyright
+        class: ExifEye\core\Entry\Copyright
     0x8769:
         name: ExifIFDPointer
         title: 'Exif IFD Pointer'

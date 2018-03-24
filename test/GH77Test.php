@@ -23,7 +23,7 @@ class GH77Test extends ExifEyeTestCaseBase
         $this->assertEquals($model->getValue(), "Canon EOS 5D Mark III");
 
         $copyright = $ifd0->getEntry(0x8298);
-        $this->assertInstanceOf('lsolesen\pel\PelEntryCopyright', $copyright);
+        $this->assertInstanceOf('ExifEye\core\Entry\Copyright', $copyright);
         $this->assertEquals(['Copyright 2016', ''], $copyright->getValue());
         $this->assertEquals('Copyright 2016 (Photographer)', $copyright->getText());
     }

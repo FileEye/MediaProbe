@@ -7,7 +7,7 @@ use lsolesen\pel\PelExif;
 use lsolesen\pel\PelTiff;
 use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelTag;
-use lsolesen\pel\PelEntryAscii;
+use ExifEye\core\Entry\Ascii;
 
 class Bug3017880Test extends ExifEyeTestCaseBase
 {
@@ -43,7 +43,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $software = $ifd0->getEntry(0x0131);
 
             if ($software === null) {
-                $software = new PelEntryAscii(0x0131, $software_name);
+                $software = new Ascii(0x0131, $software_name);
                 $ifd0->addEntry($software);
                 $resave_file = 1;
             } else {
