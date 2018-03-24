@@ -27,6 +27,7 @@ namespace lsolesen\pel;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Classes used to hold shorts, both signed and unsigned.
@@ -138,14 +139,14 @@ class PelEntryShort extends PelEntryNumber
      *            the number that should be converted.
      *
      * @param boolean $order
-     *            one of {@link PelConvert::LITTLE_ENDIAN} and
-     *            {@link PelConvert::BIG_ENDIAN}, specifying the target byte order.
+     *            one of {@link Convert::LITTLE_ENDIAN} and
+     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
      *
      * @return string bytes representing the number given.
      */
     public function numberToBytes($number, $order)
     {
-        return PelConvert::shortToBytes($number, $order);
+        return Convert::shortToBytes($number, $order);
     }
 
     /**

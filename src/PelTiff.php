@@ -26,6 +26,7 @@ namespace lsolesen\pel;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Classes for dealing with TIFF data.
@@ -137,10 +138,10 @@ class PelTiff
         /* Byte order */
         if ($d->strcmp(0, 'II')) {
             ExifEye::debug('Found Intel byte order');
-            $d->setByteOrder(PelConvert::LITTLE_ENDIAN);
+            $d->setByteOrder(Convert::LITTLE_ENDIAN);
         } elseif ($d->strcmp(0, 'MM')) {
             ExifEye::debug('Found Motorola byte order');
-            $d->setByteOrder(PelConvert::BIG_ENDIAN);
+            $d->setByteOrder(Convert::BIG_ENDIAN);
         } else {
             throw new PelInvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $d->getByte(0), $d->getByte(1));
         }
@@ -203,27 +204,27 @@ class PelTiff
     /**
      * Turn this object into bytes.
      *
-     * TIFF images can have {@link PelConvert::LITTLE_ENDIAN
-     * little-endian} or {@link PelConvert::BIG_ENDIAN big-endian} byte
+     * TIFF images can have {@link Convert::LITTLE_ENDIAN
+     * little-endian} or {@link Convert::BIG_ENDIAN big-endian} byte
      * order, and so this method takes an argument specifying that.
      *
      * @param boolean $order
      *            the desired byte order of the TIFF data.
-     *            This should be one of {@link PelConvert::LITTLE_ENDIAN} or {@link
-     *            PelConvert::BIG_ENDIAN}.
+     *            This should be one of {@link Convert::LITTLE_ENDIAN} or {@link
+     *            Convert::BIG_ENDIAN}.
      *
      * @return string the bytes representing this object.
      */
-    public function getBytes($order = PelConvert::LITTLE_ENDIAN)
+    public function getBytes($order = Convert::LITTLE_ENDIAN)
     {
-        if ($order == PelConvert::LITTLE_ENDIAN) {
+        if ($order == Convert::LITTLE_ENDIAN) {
             $bytes = 'II';
         } else {
             $bytes = 'MM';
         }
 
         /* TIFF magic number --- fixed value. */
-        $bytes .= PelConvert::shortToBytes(self::TIFF_HEADER, $order);
+        $bytes .= Convert::shortToBytes(self::TIFF_HEADER, $order);
 
         if ($this->ifd !== null) {
             /*
@@ -232,7 +233,7 @@ class PelTiff
              * header, and 4 bytes for the IFD 0 offset make 8 bytes
              * together).
              */
-            $bytes .= PelConvert::longToBytes(8, $order);
+            $bytes .= Convert::longToBytes(8, $order);
 
             /*
              * The argument specifies the offset of this IFD. The IFD will
@@ -242,7 +243,7 @@ class PelTiff
              */
             $bytes .= $this->ifd->getBytes(8, $order);
         } else {
-            $bytes .= PelConvert::longToBytes(0, $order);
+            $bytes .= Convert::longToBytes(0, $order);
         }
 
         return $bytes;
@@ -303,10 +304,10 @@ class PelTiff
 
         /* Byte order */
         if ($d->strcmp(0, 'II')) {
-            $d->setByteOrder(PelConvert::LITTLE_ENDIAN);
+            $d->setByteOrder(Convert::LITTLE_ENDIAN);
         } elseif ($d->strcmp(0, 'MM')) {
             ExifEye::debug('Found Motorola byte order');
-            $d->setByteOrder(PelConvert::BIG_ENDIAN);
+            $d->setByteOrder(Convert::BIG_ENDIAN);
         } else {
             return false;
         }

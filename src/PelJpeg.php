@@ -28,6 +28,7 @@ namespace lsolesen\pel;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Class for handling JPEG data.
@@ -176,7 +177,7 @@ class PelJpeg
         ExifEye::debug('Parsing %d bytes...', $d->getSize());
 
         /* JPEG data is stored in big-endian format. */
-        $d->setByteOrder(PelConvert::BIG_ENDIAN);
+        $d->setByteOrder(Convert::BIG_ENDIAN);
 
         /*
          * Run through the data to read the sections in the image. After
@@ -583,7 +584,7 @@ class PelJpeg
             $data = $c->getBytes();
             $size = strlen($data) + 2;
 
-            $bytes .= PelConvert::shortToBytes($size, PelConvert::BIG_ENDIAN);
+            $bytes .= Convert::shortToBytes($size, Convert::BIG_ENDIAN);
             $bytes .= $data;
 
             /* In case of SOS, we need to write the JPEG data. */
@@ -664,7 +665,7 @@ class PelJpeg
     public static function isValid(DataWindow $d)
     {
         /* JPEG data is stored in big-endian format. */
-        $d->setByteOrder(PelConvert::BIG_ENDIAN);
+        $d->setByteOrder(Convert::BIG_ENDIAN);
 
         $i = self::getJpgSectionStart($d);
 

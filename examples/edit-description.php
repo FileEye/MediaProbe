@@ -45,6 +45,7 @@ require_once '../autoload.php';
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
+use ExifEye\core\Utility\Convert;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 use lsolesen\pel\PelSpec;
@@ -180,7 +181,7 @@ if (PelJpeg::isValid($data)) {
      * Complain loudly, dump the first 16 bytes, and exit.
      */
     println('Unrecognized image format! The first 16 bytes follow:');
-    PelConvert::bytesToDump($data->getBytes(0, 16));
+    Convert::bytesToDump($data->getBytes(0, 16));
     exit(1);
 }
 

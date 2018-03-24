@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelConvert;
+use ExifEye\core\Utility\Convert;
 use lsolesen\pel\PelEntryAscii;
 use lsolesen\pel\PelEntryCopyright;
 use lsolesen\pel\PelEntryTime;
@@ -78,7 +78,7 @@ class AsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals($value[1], '');
         $this->assertEquals($entry->getText(false), 'A (Photographer)');
         $this->assertEquals($entry->getText(true), 'A');
-        $this->assertEquals($entry->getBytes(PelConvert::LITTLE_ENDIAN), 'A' . chr(0));
+        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), 'A' . chr(0));
 
         $entry->setValue('', 'B');
         $value = $entry->getValue();
@@ -86,7 +86,7 @@ class AsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals($value[1], 'B');
         $this->assertEquals($entry->getText(false), 'B (Editor)');
         $this->assertEquals($entry->getText(true), 'B');
-        $this->assertEquals($entry->getBytes(PelConvert::LITTLE_ENDIAN), ' ' . chr(0) . 'B' . chr(0));
+        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), ' ' . chr(0) . 'B' . chr(0));
 
         $entry->setValue('A', 'B');
         $value = $entry->getValue();
@@ -94,6 +94,6 @@ class AsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals($value[1], 'B');
         $this->assertEquals($entry->getText(false), 'A (Photographer) - B (Editor)');
         $this->assertEquals($entry->getText(true), 'A - B');
-        $this->assertEquals($entry->getBytes(PelConvert::LITTLE_ENDIAN), 'A' . chr(0) . 'B' . chr(0));
+        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), 'A' . chr(0) . 'B' . chr(0));
     }
 }

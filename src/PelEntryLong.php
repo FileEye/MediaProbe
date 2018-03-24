@@ -26,6 +26,7 @@ namespace lsolesen\pel;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Classes used to hold longs, both signed and unsigned.
@@ -135,12 +136,12 @@ class PelEntryLong extends PelEntryNumber
      * @param
      *            int the number that should be converted.
      * @param
-     *            PelByteOrder one of {@link PelConvert::LITTLE_ENDIAN} and
-     *            {@link PelConvert::BIG_ENDIAN}, specifying the target byte order.
+     *            PelByteOrder one of {@link Convert::LITTLE_ENDIAN} and
+     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
      * @return string bytes representing the number given.
      */
     public function numberToBytes($number, $order)
     {
-        return PelConvert::longToBytes($number, $order);
+        return Convert::longToBytes($number, $order);
     }
 }

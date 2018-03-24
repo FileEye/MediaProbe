@@ -2,7 +2,7 @@
 
 namespace ExifEye\core;
 
-use lsolesen\pel\PelConvert;
+use ExifEye\core\Utility\Convert;
 use lsolesen\pel\PelInvalidArgumentException;
 
 /**
@@ -24,7 +24,7 @@ class DataWindow
      *
      * This will be the byte order used when data is read using the for
      * example the {@link getShort} function. It must be one of {@link
-     * PelConvert::LITTLE_ENDIAN} and {@link PelConvert::BIG_ENDIAN}.
+     * Convert::LITTLE_ENDIAN} and {@link Convert::BIG_ENDIAN}.
      *
      * @var boolean
      * @see setByteOrder, getByteOrder
@@ -66,12 +66,12 @@ class DataWindow
      *
      * @param boolean $endianess
      *            the initial byte order of the window. This must
-     *            be either {@link PelConvert::LITTLE_ENDIAN} or {@link
-     *            PelConvert::BIG_ENDIAN}. This will be used when integers are
+     *            be either {@link Convert::LITTLE_ENDIAN} or {@link
+     *            Convert::BIG_ENDIAN}. This will be used when integers are
      *            read from the data, and it can be changed later with {@link
      *            setByteOrder()}.
      */
-    public function __construct($data = '', $endianess = PelConvert::LITTLE_ENDIAN)
+    public function __construct($data = '', $endianess = Convert::LITTLE_ENDIAN)
     {
         if (is_string($data)) {
             $this->data = $data;
@@ -110,8 +110,8 @@ class DataWindow
      *
      * @param boolean $order
      *            the new byte order. This must be either
-     *            {@link PelConvert::LITTLE_ENDIAN} or {@link
-     *            PelConvert::BIG_ENDIAN}.
+     *            {@link Convert::LITTLE_ENDIAN} or {@link
+     *            Convert::BIG_ENDIAN}.
      */
     public function setByteOrder($order)
     {
@@ -122,7 +122,7 @@ class DataWindow
      * Get the currently used byte order.
      *
      * @return boolean this will be either {@link
-     *         PelConvert::LITTLE_ENDIAN} or {@link PelConvert::BIG_ENDIAN}.
+     *         Convert::LITTLE_ENDIAN} or {@link Convert::BIG_ENDIAN}.
      */
     public function getByteOrder()
     {
@@ -293,7 +293,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return an unsigned byte. */
-        return PelConvert::bytesToByte($this->data, $offset);
+        return Convert::bytesToByte($this->data, $offset);
     }
 
     /**
@@ -321,7 +321,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed byte. */
-        return PelConvert::bytesToSByte($this->data, $offset);
+        return Convert::bytesToSByte($this->data, $offset);
     }
 
     /**
@@ -350,7 +350,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return an unsigned short. */
-        return PelConvert::bytesToShort($this->data, $offset, $this->order);
+        return Convert::bytesToShort($this->data, $offset, $this->order);
     }
 
     /**
@@ -379,7 +379,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed short. */
-        return PelConvert::bytesToSShort($this->data, $offset, $this->order);
+        return Convert::bytesToSShort($this->data, $offset, $this->order);
     }
 
     /**
@@ -408,7 +408,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return an unsigned long. */
-        return PelConvert::bytesToLong($this->data, $offset, $this->order);
+        return Convert::bytesToLong($this->data, $offset, $this->order);
     }
 
     /**
@@ -437,7 +437,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed long. */
-        return PelConvert::bytesToSLong($this->data, $offset, $this->order);
+        return Convert::bytesToSLong($this->data, $offset, $this->order);
     }
 
     /**

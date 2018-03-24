@@ -31,6 +31,7 @@ require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
+use ExifEye\core\Utility\Convert;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 
@@ -81,7 +82,7 @@ if (PelJpeg::isValid($data)) {
     $img = new PelTiff();
 } else {
     print("Unrecognized image format! The first 16 bytes follow:\n");
-    PelConvert::bytesToDump($data->getBytes(0, 16));
+    Convert::bytesToDump($data->getBytes(0, 16));
     exit(1);
 }
 

@@ -29,6 +29,7 @@ use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\DataWindowWindowException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Classes for dealing with Exif IFDs.
@@ -831,7 +832,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param boolean $order
      *            the byte order that should be used when
      *            turning integers into bytes. This should be one of {@link
-     *            PelConvert::LITTLE_ENDIAN} and {@link PelConvert::BIG_ENDIAN}.
+     *            Convert::LITTLE_ENDIAN} and {@link Convert::BIG_ENDIAN}.
      */
     public function getBytes($offset, $order)
     {
@@ -849,7 +850,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $n += 2;
         }
 
-        $bytes .= PelConvert::shortToBytes($n, $order);
+        $bytes .= Convert::shortToBytes($n, $order);
 
         /*
          * Initialize offset of extra data. This included the bytes
@@ -861,9 +862,9 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
 
         foreach ($this->entries as $tag => $entry) {
             /* Each entry is 12 bytes long. */
-            $bytes .= PelConvert::shortToBytes($entry->getTag(), $order);
-            $bytes .= PelConvert::shortToBytes($entry->getFormat(), $order);
-            $bytes .= PelConvert::longToBytes($entry->getComponents(), $order);
+            $bytes .= Convert::shortToBytes($entry->getTag(), $order);
+            $bytes .= Convert::shortToBytes($entry->getFormat(), $order);
+            $bytes .= Convert::longToBytes($entry->getComponents(), $order);
 
             /*
              * Size? If bigger than 4 bytes, the actual data is not in
@@ -873,7 +874,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $s = strlen($data);
             if ($s > 4) {
                 ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
-                $bytes .= PelConvert::longToBytes($end, $order);
+                $bytes .= Convert::longToBytes($end, $order);
                 $extra_bytes .= $data;
                 $end += $s;
             } else {
@@ -890,15 +891,15 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
             // TODO: make PelEntry a class that can be constructed with
             // arguments corresponding to the newt four lines.
-            $bytes .= PelConvert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
-            $bytes .= PelConvert::shortToBytes(Format::LONG, $order);
-            $bytes .= PelConvert::longToBytes(1, $order);
-            $bytes .= PelConvert::longToBytes($this->thumb_data->getSize(), $order);
+            $bytes .= Convert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
+            $bytes .= Convert::shortToBytes(Format::LONG, $order);
+            $bytes .= Convert::longToBytes(1, $order);
+            $bytes .= Convert::longToBytes($this->thumb_data->getSize(), $order);
 
-            $bytes .= PelConvert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
-            $bytes .= PelConvert::shortToBytes(Format::LONG, $order);
-            $bytes .= PelConvert::longToBytes(1, $order);
-            $bytes .= PelConvert::longToBytes($end, $order);
+            $bytes .= Convert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
+            $bytes .= Convert::shortToBytes(Format::LONG, $order);
+            $bytes .= Convert::longToBytes(1, $order);
+            $bytes .= Convert::longToBytes($end, $order);
 
             $extra_bytes .= $this->thumb_data->getBytes();
             $end += $this->thumb_data->getSize();
@@ -914,21 +915,21 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             } elseif (PelSpec::getIfdType($type) === 'Interoperability') {
                 $tag = PelSpec::getTagIdByName($this->type, 'InteroperabilityIFDPointer');
             } else {
-                // PelConvert::BIG_ENDIAN is the default used by PelConvert
-                $tag = PelConvert::BIG_ENDIAN;
+                // Convert::BIG_ENDIAN is the default used by Convert
+                $tag = Convert::BIG_ENDIAN;
             }
             /* Make an aditional entry with the pointer. */
-            $bytes .= PelConvert::shortToBytes($tag, $order);
+            $bytes .= Convert::shortToBytes($tag, $order);
             /* Next the format, which is always unsigned long. */
-            $bytes .= PelConvert::shortToBytes(Format::LONG, $order);
+            $bytes .= Convert::shortToBytes(Format::LONG, $order);
             /* There is only one component. */
-            $bytes .= PelConvert::longToBytes(1, $order);
+            $bytes .= Convert::longToBytes(1, $order);
 
             $data = $sub->getBytes($end, $order);
             $s = strlen($data);
             $sub_bytes .= $data;
 
-            $bytes .= PelConvert::longToBytes($end, $order);
+            $bytes .= Convert::longToBytes($end, $order);
             $end += $s;
         }
 
@@ -941,7 +942,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
 
         ExifEye::debug('Link to next IFD: %d', $link);
 
-        $bytes .= PelConvert::longtoBytes($link, $order);
+        $bytes .= Convert::longtoBytes($link, $order);
 
         $bytes .= $extra_bytes . $sub_bytes;
 

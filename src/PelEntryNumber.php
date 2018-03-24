@@ -205,8 +205,8 @@ abstract class PelEntryNumber extends PelEntry
      *            int the number that should be converted.
      *
      * @param
-     *            PelByteOrder one of {@link PelConvert::LITTLE_ENDIAN} and
-     *            {@link PelConvert::BIG_ENDIAN}, specifying the target byte order.
+     *            PelByteOrder one of {@link Convert::LITTLE_ENDIAN} and
+     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
      *
      * @return string bytes representing the number given.
      */
@@ -217,8 +217,8 @@ abstract class PelEntryNumber extends PelEntry
      *
      * @param
      *            PelByteOrder the desired byte order, which must be either
-     *            {@link PelConvert::LITTLE_ENDIAN} or {@link
-     *            PelConvert::BIG_ENDIAN}.
+     *            {@link Convert::LITTLE_ENDIAN} or {@link
+     *            Convert::BIG_ENDIAN}.
      *
      * @return string bytes representing this entry.
      */

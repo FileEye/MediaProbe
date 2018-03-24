@@ -118,8 +118,8 @@ class PelEntrySByte extends PelEntryNumber
      *            the number that should be converted.
      *
      * @param PelByteOrder $order
-     *            one of {@link PelConvert::LITTLE_ENDIAN} and
-     *            {@link PelConvert::BIG_ENDIAN}, specifying the target byte order.
+     *            one of {@link Convert::LITTLE_ENDIAN} and
+     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
      *
      * @return string bytes representing the number given.
      */

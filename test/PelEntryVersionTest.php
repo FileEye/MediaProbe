@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelEntryVersion;
-use lsolesen\pel\PelConvert;
+use ExifEye\core\Utility\Convert;
 
 class PelEntryVersionTest extends ExifEyeTestCaseBase
 {
@@ -17,18 +17,18 @@ class PelEntryVersionTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getValue(), 2.0);
         $this->assertEquals($entry->getText(false), 'Version 2.0');
         $this->assertEquals($entry->getText(true), '2.0');
-        $this->assertEquals($entry->getBytes(PelConvert::LITTLE_ENDIAN), '0200');
+        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), '0200');
 
         $entry->setValue(2.1);
         $this->assertEquals($entry->getValue(), 2.1);
         $this->assertEquals($entry->getText(false), 'Version 2.1');
         $this->assertEquals($entry->getText(true), '2.1');
-        $this->assertEquals($entry->getBytes(PelConvert::LITTLE_ENDIAN), '0210');
+        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), '0210');
 
         $entry->setValue(2.01);
         $this->assertEquals($entry->getValue(), 2.01);
         $this->assertEquals($entry->getText(false), 'Version 2.01');
         $this->assertEquals($entry->getText(true), '2.01');
-        $this->assertEquals($entry->getBytes(PelConvert::LITTLE_ENDIAN), '0201');
+        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), '0201');
     }
 }
