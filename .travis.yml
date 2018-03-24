@@ -21,7 +21,7 @@ matrix:
 
 install:
   - composer install --no-interaction --no-progress --no-suggest
-  - php bin/pel --help
+  - php bin/pel --version
 
 before_script:
   - mkdir -p build/logs
