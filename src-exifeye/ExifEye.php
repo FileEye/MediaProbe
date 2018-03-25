@@ -124,7 +124,7 @@ class ExifEye
      * // Check for exceptions.
      * foreach (ExifEye::getExceptions() as $e) {
      *   printf("Exception: %s\n", $e->getMessage());
-     *   if ($e instanceof PelEntryException) {
+     *   if ($e instanceof EntryException) {
      *     // Warn about entries that couldn't be loaded.
      *     printf("Warning: Problem with %s.\n",
      *     PelSpec::getTagName(($e->getType(), $e->getTag()));

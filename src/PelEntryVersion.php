@@ -25,6 +25,7 @@
 namespace lsolesen\pel;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
@@ -128,7 +129,7 @@ class PelEntryVersion extends PelEntry
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         if ($format != Format::UNDEFINED) {
-            throw new PelUnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
+            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
         }
         return [$data->getBytes() / 100];
     }

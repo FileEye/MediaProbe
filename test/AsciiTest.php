@@ -6,7 +6,6 @@ use ExifEye\core\Utility\Convert;
 use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Entry\Copyright;
 use ExifEye\core\Entry\Time;
-use lsolesen\pel\PelTag;
 
 class AsciiTest extends ExifEyeTestCaseBase
 {

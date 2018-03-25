@@ -365,9 +365,9 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * create a {@link Short} object directly and load the data
      * into it.
      *
-     * A {@link PelUnexpectedFormatException} is thrown if a mismatch is
+     * A {@link UnexpectedFormatException} is thrown if a mismatch is
      * discovered between the tag and format, and likewise a {@link
-     * PelWrongComponentCountException} is thrown if the number of
+     * WrongComponentCountException} is thrown if the number of
      * components does not match the requirements of the tag. The
      * requirements for a given tag (if any) can be found in the
      * documentation for {@link PelSpec}.

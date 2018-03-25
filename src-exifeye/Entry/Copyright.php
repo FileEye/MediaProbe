@@ -3,12 +3,12 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 use lsolesen\pel\PelEntry;
 use lsolesen\pel\PelSpec;
-use lsolesen\pel\PelUnexpectedFormatException;
 
 /**
  * Class for holding copyright information.
@@ -110,7 +110,7 @@ class Copyright extends Ascii
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         if ($format != Format::ASCII) {
-            throw new PelUnexpectedFormatException($ifd_id, $tag_id, $format, Format::ASCII);
+            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::ASCII);
         }
         $v = explode("\0", trim($data->getBytes(), ' '));
         if (! isset($v[1])) {

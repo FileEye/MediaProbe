@@ -4,8 +4,8 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-use lsolesen\pel\PelUnexpectedFormatException;
-use lsolesen\pel\PelWrongComponentCountException;
+use ExifEye\core\Entry\Exception\UnexpectedFormatException;
+use ExifEye\core\Entry\Exception\WrongComponentCountException;
 use lsolesen\pel\PelInvalidArgumentException;
 use lsolesen\pel\PelEntry;
 
@@ -124,10 +124,10 @@ class Time extends Ascii
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         if ($format != Format::ASCII) {
-            throw new PelUnexpectedFormatException($ifd_id, $tag_id, $format, Format::ASCII);
+            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::ASCII);
         }
         if ($components != 20) {
-            throw new PelWrongComponentCountException($ifd_id, $tag_id, $components, 20);
+            throw new WrongComponentCountException($ifd_id, $tag_id, $components, 20);
         }
         // TODO: handle timezones.
         return [$data->getBytes(0, - 1), static::EXIF_STRING];

@@ -5,7 +5,6 @@ namespace ExifEye\Test\core;
 use ExifEye\core\DataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelEntryWindowsString;
-use lsolesen\pel\PelTag;
 
 class GH16Test extends ExifEyeTestCaseBase
 {

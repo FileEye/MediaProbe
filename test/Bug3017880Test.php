@@ -6,7 +6,6 @@ use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelExif;
 use lsolesen\pel\PelTiff;
 use lsolesen\pel\PelIfd;
-use lsolesen\pel\PelTag;
 use ExifEye\core\Entry\Ascii;
 
 class Bug3017880Test extends ExifEyeTestCaseBase
