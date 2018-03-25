@@ -5,7 +5,6 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use lsolesen\pel\PelEntry;
 use lsolesen\pel\PelOverflowException;
 
 /**
@@ -15,7 +14,7 @@ use lsolesen\pel\PelOverflowException;
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-abstract class NumberBase extends PelEntry
+abstract class NumberBase extends EntryBase
 {
     /**
      * The value held by this entry.

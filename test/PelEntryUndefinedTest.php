@@ -2,9 +2,8 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelEntryUndefined;
-use lsolesen\pel\PelEntryUserComment;
-use lsolesen\pel\PelEntryVersion;
+use ExifEye\core\Entry\Undefined;
+use ExifEye\core\Entry\UserComment;
 use ExifEye\core\Utility\Convert;
 
 class PelEntryUndefinedTest extends ExifEyeTestCaseBase
@@ -12,16 +11,16 @@ class PelEntryUndefinedTest extends ExifEyeTestCaseBase
 
     public function testReturnValues()
     {
-        new PelEntryUndefined(42);
+        new Undefined(42);
 
-        $entry = new PelEntryUndefined(42, 'foo bar baz');
+        $entry = new Undefined(42, 'foo bar baz');
         $this->assertEquals($entry->getComponents(), 11);
         $this->assertEquals($entry->getValue(), 'foo bar baz');
     }
 
     public function testUsercomment()
     {
-        $entry = new PelEntryUserComment();
+        $entry = new UserComment();
         $this->assertEquals($entry->getComponents(), 8);
         $this->assertEquals($entry->getValue(), '');
         $this->assertEquals($entry->getEncoding(), 'ASCII');
@@ -30,30 +29,5 @@ class PelEntryUndefinedTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getComponents(), 14);
         $this->assertEquals($entry->getValue(), 'Hello!');
         $this->assertEquals($entry->getEncoding(), 'ASCII');
-    }
-
-    public function testVersion()
-    {
-        $entry = new PelEntryVersion(42);
-
-        $this->assertEquals($entry->getValue(), 0.0);
-
-        $entry->setValue(2.0);
-        $this->assertEquals($entry->getValue(), 2.0);
-        $this->assertEquals($entry->getText(false), 'Version 2.0');
-        $this->assertEquals($entry->getText(true), '2.0');
-        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), '0200');
-
-        $entry->setValue(2.1);
-        $this->assertEquals($entry->getValue(), 2.1);
-        $this->assertEquals($entry->getText(false), 'Version 2.1');
-        $this->assertEquals($entry->getText(true), '2.1');
-        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), '0210');
-
-        $entry->setValue(2.01);
-        $this->assertEquals($entry->getValue(), 2.01);
-        $this->assertEquals($entry->getText(false), 'Version 2.01');
-        $this->assertEquals($entry->getText(true), '2.01');
-        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), '0201');
     }
 }

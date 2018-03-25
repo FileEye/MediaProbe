@@ -61,7 +61,7 @@ abstract class Format
      * enumerator and denominator. Each integer will have a value between 0 and
     *  4294967295.
      *
-     * Modelled with the {@link PelEntryRational} class.
+     * Modelled with the {@link Rational} class.
      */
     const RATIONAL = 5;
 
@@ -80,7 +80,7 @@ abstract class Format
      *
      * Each component will be a byte with no associated interpretation.
      *
-     * Modelled with the {@link PelEntryUndefined} class.
+     * Modelled with the {@link Undefined} class.
      */
     const UNDEFINED = 7;
 
@@ -111,7 +111,7 @@ abstract class Format
      * enumerator and denominator. Each integer will have a value between
      * -2147483648 and 2147483647.
      *
-     * Modelled with the {@link PelEntrySRational} class.
+     * Modelled with the {@link SignedRational} class.
      */
     const SRATIONAL = 10;
 

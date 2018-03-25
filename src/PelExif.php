@@ -75,7 +75,7 @@ class PelExif extends PelJpegContent
      * The new object will be empty --- use the {@link load()} method to
      * load Exif data from a {@link DataWindow} object, or use the
      * {@link setTiff()} to change the {@link PelTiff} object, which is
-     * the true holder of the Exif {@link PelEntry entries}.
+     * the true holder of the Exif {@link EntryBase entries}.
      */
     public function __construct()
     {

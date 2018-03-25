@@ -18,7 +18,7 @@ tags:
         components: 3
         format: Rational
         text:
-            decode: PelEntryRational::decodeGPSLatitude
+            decode: ExifEye\core\Entry\Rational::decodeGPSLatitude
     0x0003:
         name: GPSLongitudeRef
         title: GPSLongitudeRef
@@ -30,7 +30,7 @@ tags:
         components: 3
         format: Rational
         text:
-            decode: PelEntryRational::decodeGPSLongitude
+            decode: ExifEye\core\Entry\Rational::decodeGPSLongitude
     0x0005:
         name: GPSAltitudeRef
         title: GPSAltitudeRef

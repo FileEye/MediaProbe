@@ -7,7 +7,6 @@ use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
-use lsolesen\pel\PelEntry;
 use lsolesen\pel\PelSpec;
 
 /**
@@ -76,10 +75,10 @@ class Copyright extends Ascii
      * @param int $tag_id
      *            the TAG id.
      * @param array $arguments
-     *            a list or arguments to be passed to the PelEntry subclass
+     *            a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      *
-     * @return PelEntry a newly created entry, holding the data given.
+     * @return EntryBase a newly created entry, holding the data given.
      */
     public static function createInstance($ifd_id, $tag_id, $arguments)
     {
@@ -104,7 +103,7 @@ class Copyright extends Ascii
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)

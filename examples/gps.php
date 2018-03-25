@@ -39,7 +39,10 @@ require_once '../autoload.php';
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 use lsolesen\pel\PelSpec;
+use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Entry\Byte;
+use ExifEye\core\Entry\UserComment;
+use ExifEye\core\Entry\Rational;
 
 /**
  * Convert a decimal degree into degrees, minutes, and seconds.
@@ -50,7 +53,7 @@ use ExifEye\core\Entry\Byte;
  *
  * @return array a triple with the degrees, minutes, and seconds. Each
  *         value is an array itself, suitable for passing to a
- *         PelEntryRational. If the degree is outside the allowed interval,
+ *         Rational. If the degree is outside the allowed interval,
  *         null is returned instead.
  */
 function convertDecimalToDMS($degree)
@@ -166,7 +169,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * first IFD.
      */
     $exif_ifd = new PelIfd(PelSpec::getIfdIdByType('Exif'));
-    $exif_ifd->addEntry(new PelEntryUserComment($comment));
+    $exif_ifd->addEntry(new UserComment($comment));
     $ifd0->addSubIfd($exif_ifd);
 
     $inter_ifd = new PelIfd(PelSpec::getIfdIdByType('Interoperability'));
@@ -188,20 +191,20 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
     $latitude_ref = ($latitude < 0) ? 'S' : 'N';
 
     $gps_ifd->addEntry(new Ascii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitudeRef'), $latitude_ref));
-    $gps_ifd->addEntry(new PelEntryRational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitude'), $hours, $minutes, $seconds));
+    $gps_ifd->addEntry(new Rational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitude'), $hours, $minutes, $seconds));
 
     /* The longitude works like the latitude. */
     list ($hours, $minutes, $seconds) = convertDecimalToDMS($longitude);
     $longitude_ref = ($longitude < 0) ? 'W' : 'E';
 
     $gps_ifd->addEntry(new Ascii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitudeRef'), $longitude_ref));
-    $gps_ifd->addEntry(new PelEntryRational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitude'), $hours, $minutes, $seconds));
+    $gps_ifd->addEntry(new Rational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitude'), $hours, $minutes, $seconds));
 
     /*
      * Add the altitude. The absolute value is stored here, the sign is
      * stored in the GPS_ALTITUDE_REF tag below.
      */
-    $gps_ifd->addEntry(new PelEntryRational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSAltitude'), [abs($altitude), 1]));
+    $gps_ifd->addEntry(new Rational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSAltitude'), [abs($altitude), 1]));
     /*
      * The reference is set to 1 (true) if the altitude is below sea
      * level, or 0 (false) otherwise.

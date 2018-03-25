@@ -2,14 +2,14 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelEntryUserComment;
+use ExifEye\core\Entry\UserComment;
 
 class PelEntryUserCommentTest extends ExifEyeTestCaseBase
 {
 
     public function testUsercomment()
     {
-        $entry = new PelEntryUserComment();
+        $entry = new UserComment();
         $this->assertEquals($entry->getComponents(), 8);
         $this->assertEquals($entry->getValue(), '');
         $this->assertEquals($entry->getEncoding(), 'ASCII');

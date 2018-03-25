@@ -1,46 +1,9 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-
-/**
- * Classes used to hold data for Exif tags of format undefined.
- *
- * This file contains the base class {@link PelEntryUndefined} and
- * the subclasses {@link PelEntryUserComment} which should be used
- * to manage the {@link PelTag::USER_COMMENT} tag, and {@link
- * PelEntryVersion} which is used to manage entries with version
- * information.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class for holding data of any kind.
@@ -48,9 +11,8 @@ use ExifEye\core\Format;
  * This class can hold bytes of undefined format.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class PelEntryUndefined extends PelEntry
+class Undefined extends EntryBase
 {
     /**
      * The value held by this entry.
@@ -60,7 +22,7 @@ class PelEntryUndefined extends PelEntry
     protected $value = [];
 
     /**
-     * Make a new PelEntry that can hold undefined data.
+     * Make a new EntryBase that can hold undefined data.
      *
      * @param integer $tag
      *            which this entry represents. This
@@ -96,7 +58,7 @@ class PelEntryUndefined extends PelEntry
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
@@ -131,15 +93,15 @@ class PelEntryUndefined extends PelEntry
     /**
      * Decode text for an Exif/FileSource tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeFileSource(PelEntry $entry, $brief = false)
+    public static function decodeFileSource(EntryBase $entry, $brief = false)
     {
         $value = $entry->getValue();
         switch (ord($value{0})) {
@@ -153,15 +115,15 @@ class PelEntryUndefined extends PelEntry
     /**
      * Decode text for an Exif/SceneType tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeSceneType(PelEntry $entry, $brief = false)
+    public static function decodeSceneType(EntryBase $entry, $brief = false)
     {
         $value = $entry->getValue();
         switch (ord($value{0})) {
@@ -175,15 +137,15 @@ class PelEntryUndefined extends PelEntry
     /**
      * Decode text for an Exif/ComponentsConfiguration tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeComponentsConfiguration(PelEntry $entry, $brief = false)
+    public static function decodeComponentsConfiguration(EntryBase $entry, $brief = false)
     {
         $value = $entry->getValue();
         $v = '';

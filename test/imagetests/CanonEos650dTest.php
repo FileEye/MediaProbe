@@ -42,7 +42,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'top - left');
 
         $entry = $ifd0->getEntry(282); // XResolution
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 72,
             1 => 1
@@ -50,7 +50,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd0->getEntry(283); // YResolution
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 72,
             1 => 1
@@ -76,7 +76,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0->getEntries()), 29);
 
         $entry = $ifd0_0->getEntry(33434); // ExposureTime
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 1,
             1 => 800
@@ -84,7 +84,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '1/800 sec.');
 
         $entry = $ifd0_0->getEntry(33437); // FNumber
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 63,
             1 => 10
@@ -92,7 +92,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'f/6.3');
 
         $entry = $ifd0_0->getEntry(36864); // ExifVersion
-        $this->assertInstanceOf('lsolesen\pel\PelEntryVersion', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Version', $entry);
         $this->assertEquals($entry->getValue(), 2.3);
         $this->assertEquals($entry->getText(), 'Exif Version 2.3');
 
@@ -107,12 +107,12 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '2017:06:16 14:30:44');
 
         $entry = $ifd0_0->getEntry(37121); // ComponentsConfiguration
-        $this->assertInstanceOf('lsolesen\pel\PelEntryUndefined', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Undefined', $entry);
         $this->assertEquals($entry->getValue(), "\x01\x02\x03\0");
         $this->assertEquals($entry->getText(), 'Y Cb Cr -');
 
         $entry = $ifd0_0->getEntry(37378); // ApertureValue
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 352256,
             1 => 65536
@@ -120,7 +120,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'f/6.4');
 
         $entry = $ifd0_0->getEntry(37380); // ExposureBiasValue
-        $this->assertInstanceOf('lsolesen\pel\PelEntrySRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\SignedRational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 0,
             1 => 1
@@ -138,7 +138,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Flash did not fire, compulsory flash mode.');
 
         $entry = $ifd0_0->getEntry(37386); // FocalLength
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 600,
             1 => 1
@@ -149,7 +149,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertNull($entry);
 
         $entry = $ifd0_0->getEntry(37510); // UserComment
-        $this->assertInstanceOf('lsolesen\pel\PelEntryUserComment', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\UserComment', $entry);
 
         $expected = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
         $this->assertEquals($entry->getValue(), $expected);
@@ -158,7 +158,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), $expected);
 
         $entry = $ifd0_0->getEntry(40960); // FlashPixVersion
-        $this->assertInstanceOf('lsolesen\pel\PelEntryVersion', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Version', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'FlashPix Version 1.0');
 
@@ -206,7 +206,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'R98');
 
         $entry = $ifd0_0_0->getEntry(2); // InteroperabilityVersion
-        $this->assertInstanceOf('lsolesen\pel\PelEntryVersion', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Version', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'Interoperability Version 1.0');
 
@@ -243,7 +243,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '0');
 
         $entry = $ifd1->getEntry(282); // XResolution
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 72,
             1 => 1
@@ -251,7 +251,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd1->getEntry(283); // YResolution
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 72,
             1 => 1

@@ -61,7 +61,7 @@ function quote($str)
     ], $str);
 }
 
-function entryToTest($name, PelEntry $entry)
+function entryToTest($name, EntryBase $entry)
 {
     println('$this->assertInstanceOf(\'%s\', %s);', $name, get_class($entry));
 

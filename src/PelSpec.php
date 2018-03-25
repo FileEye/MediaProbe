@@ -2,6 +2,7 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
@@ -28,12 +29,12 @@ class PelSpec
         Format::BYTE => 'ExifEye\\core\\Entry\\Byte',
         Format::SHORT => 'ExifEye\\core\\Entry\\Short',
         Format::LONG => 'ExifEye\\core\\Entry\\Long',
-        Format::RATIONAL => 'lsolesen\\pel\\PelEntryRational',
+        Format::RATIONAL => 'ExifEye\\core\\Entry\\Rational',
         Format::SBYTE => 'ExifEye\\core\\Entry\\SignedByte',
         Format::SSHORT => 'ExifEye\\core\\Entry\\SignedShort',
         Format::SLONG => 'ExifEye\\core\\Entry\\SignedLong',
-        Format::SRATIONAL => 'lsolesen\\pel\\PelEntrySRational',
-        Format::UNDEFINED => 'lsolesen\\pel\\PelEntryUndefined',
+        Format::SRATIONAL => 'ExifEye\\core\\Entry\\SignedRational',
+        Format::UNDEFINED => 'ExifEye\\core\\Entry\\Undefined',
     ];
 
     /**
@@ -298,15 +299,15 @@ class PelSpec
     /**
      * Returns the TAG text.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            indicates to use brief output.
      *
      * @return string|null
      *            the TAG text, or NULL if not applicable.
      */
-    public static function getTagText(PelEntry $entry, $brief)
+    public static function getTagText(EntryBase $entry, $brief)
     {
         $ifd_id = $entry->getIfdType();
         $tag_id = $entry->getTag();

@@ -42,7 +42,7 @@ use ExifEye\core\Utility\Convert;
  *
  * Exif data is actually an extension of the TIFF file format. TIFF
  * images consist of a number of {@link PelIfd Image File Directories}
- * (IFDs), each containing a number of {@link PelEntry entries}. The
+ * (IFDs), each containing a number of {@link EntryBase entries}. The
  * IFDs are linked to each other --- one can get hold of the first one
  * with the {@link getIfd()} method.
  *

@@ -5,7 +5,7 @@ alias:
   - 'IFD0'
   - 'Main'
 postLoad:
-  - PelEntryMakerNote::tagToIfd
+  - ExifEye\core\Entry\MakerNote::tagToIfd
 tags:
     0x0100:
         name: ImageWidth
@@ -219,31 +219,31 @@ tags:
         title: 'Windows XP Title'
         components: Any
         format: Byte
-        class: PelEntryWindowsString
+        class: ExifEye\core\Entry\WindowsString
     0x9C9C:
         name: WindowsXPComment
         title: 'Windows XP Comment'
         components: Any
         format: Byte
-        class: PelEntryWindowsString
+        class: ExifEye\core\Entry\WindowsString
     0x9C9D:
         name: WindowsXPAuthor
         title: 'Windows XP Author'
         components: Any
         format: Byte
-        class: PelEntryWindowsString
+        class: ExifEye\core\Entry\WindowsString
     0x9C9E:
         name: WindowsXPKeywords
         title: 'Windows XP Keywords'
         components: Any
         format: Byte
-        class: PelEntryWindowsString
+        class: ExifEye\core\Entry\WindowsString
     0x9C9F:
         name: WindowsXPSubject
         title: 'Windows XP Subject'
         components: Any
         format: Byte
-        class: PelEntryWindowsString
+        class: ExifEye\core\Entry\WindowsString
     0xC4A5:
         name: PrintIM
         title: 'Print IM'

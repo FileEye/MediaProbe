@@ -5,7 +5,6 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelEntry;
 
 /**
  * Class for holding unsigned longs.
@@ -86,7 +85,7 @@ class Long extends NumberBase
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)

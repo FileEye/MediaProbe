@@ -2,14 +2,14 @@
 
 namespace ExifEye\Test\core;
 
-use \lsolesen\pel\PelEntrySRational;
-use \lsolesen\pel\PelOverflowException;
+use ExifEye\core\Entry\SignedRational;
+use lsolesen\pel\PelOverflowException;
 
 class NumberSRationalTest extends NumberTestCase
 {
     public function testOverflow()
     {
-        $entry = new PelEntrySRational(42, [-1, 2]);
+        $entry = new SignedRational(42, [-1, 2]);
         $this->assertEquals($entry->getValue(), [-1, 2]);
 
         $caught = false;
@@ -42,7 +42,7 @@ class NumberSRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new PelEntrySRational(42);
+        $entry = new SignedRational(42);
         $this->assertEquals($entry->getValue(), []);
 
         $entry->setValue([-1, 2], [3, 4], [5, -6]);

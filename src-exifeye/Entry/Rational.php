@@ -1,42 +1,10 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005, 2006 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use ExifEye\core\Entry\Long;
-
-/**
- * Classes used to manipulate rational numbers.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class for holding unsigned rational numbers.
@@ -63,7 +31,7 @@ use ExifEye\core\Entry\Long;
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
  */
-class PelEntryRational extends Long
+class Rational extends Long
 {
 
     /**
@@ -113,7 +81,7 @@ class PelEntryRational extends Long
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
@@ -148,15 +116,15 @@ class PelEntryRational extends Long
     /**
      * Decode text for an Exif/FNumber tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeFNumber(PelEntry $entry, $brief = false)
+    public static function decodeFNumber(EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('f/%.01f', $entry->getValue()[0] / $entry->getValue()[1]);
     }
@@ -164,15 +132,15 @@ class PelEntryRational extends Long
     /**
      * Decode text for an Exif/ApertureValue tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeApertureValue(PelEntry $entry, $brief = false)
+    public static function decodeApertureValue(EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('f/%.01f', pow(2, $entry->getValue()[0] / $entry->getValue()[1] / 2));
     }
@@ -180,15 +148,15 @@ class PelEntryRational extends Long
     /**
      * Decode text for an Exif/FocalLength tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeFocalLength(PelEntry $entry, $brief = false)
+    public static function decodeFocalLength(EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('%.1f mm', $entry->getValue()[0] / $entry->getValue()[1]);
     }
@@ -196,15 +164,15 @@ class PelEntryRational extends Long
     /**
      * Decode text for an Exif/SubjectDistance tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeSubjectDistance(PelEntry $entry, $brief = false)
+    public static function decodeSubjectDistance(EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('%.1f m', $entry->getValue()[0] / $entry->getValue()[1]);
     }
@@ -212,15 +180,15 @@ class PelEntryRational extends Long
     /**
      * Decode text for an Exif/ExposureTime tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeExposureTime(PelEntry $entry, $brief = false)
+    public static function decodeExposureTime(EntryBase $entry, $brief = false)
     {
         if ($entry->getValue()[0] / $entry->getValue()[1] < 1) {
             return ExifEye::fmt('1/%d sec.', $entry->getValue()[1] / $entry->getValue()[0]);
@@ -249,15 +217,15 @@ class PelEntryRational extends Long
     /**
      * Decode text for a GPS/GPSLongitude tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeGPSLongitude(PelEntry $entry, $brief = false)
+    public static function decodeGPSLongitude(EntryBase $entry, $brief = false)
     {
         return static::formatDegrees($entry->getValue());
     }
@@ -265,15 +233,15 @@ class PelEntryRational extends Long
     /**
      * Decode text for a GPS/GPSLatitude tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeGPSLatitude(PelEntry $entry, $brief = false)
+    public static function decodeGPSLatitude(EntryBase $entry, $brief = false)
     {
         return static::formatDegrees($entry->getValue());
     }

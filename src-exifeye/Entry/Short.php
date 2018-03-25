@@ -3,10 +3,10 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelEntry;
 
 /**
  * Class for holding unsigned shorts.
@@ -87,7 +87,7 @@ class Short extends NumberBase
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
@@ -119,15 +119,15 @@ class Short extends NumberBase
     /**
      * Decode text for a IFD0/YCbCrSubSampling tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeYCbCrSubSampling(PelEntry $entry, $brief = false)
+    public static function decodeYCbCrSubSampling(EntryBase $entry, $brief = false)
     {
         if ($entry->getValue()[0] == 2 && $entry->getValue()[1] == 1) {
             return 'YCbCr4:2:2';
@@ -141,15 +141,15 @@ class Short extends NumberBase
     /**
      * Decode text for an Exif/SubjectArea tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeSubjectArea(PelEntry $entry, $brief = false)
+    public static function decodeSubjectArea(EntryBase $entry, $brief = false)
     {
         switch ($entry->getComponents()) {
             case 2:

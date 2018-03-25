@@ -30,9 +30,9 @@ use ExifEye\core\ExifEyeException;
  * Classes for dealing with Exif entries.
  *
  * This file defines two exception classes and the abstract class
- * {@link PelEntry} which provides the basic methods that all Exif
+ * {@link EntryBase} which provides the basic methods that all Exif
  * entries will have. All Exif entries will be represented by
- * descendants of the {@link PelEntry} class --- the class itself is
+ * descendants of the {@link EntryBase} class --- the class itself is
  * abstract and so it cannot be instantiated.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>

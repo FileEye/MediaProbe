@@ -31,7 +31,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Nikon');
 
         $entry = $ifd0->getEntry(282); // XResolution
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 2000,
             1 => 1
@@ -39,7 +39,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '2000/1');
 
         $entry = $ifd0->getEntry(283); // YResolution
-        $this->assertInstanceOf('lsolesen\pel\PelEntryRational', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
         $this->assertEquals($entry->getValue(), [
             0 => 2000,
             1 => 1
@@ -70,23 +70,23 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0->getEntries()), 7);
 
         $entry = $ifd0_0->getEntry(36864); // ExifVersion
-        $this->assertInstanceOf('lsolesen\pel\PelEntryVersion', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Version', $entry);
         $this->assertEquals($entry->getValue(), 2.1);
         $this->assertEquals($entry->getText(), 'Exif Version 2.1');
 
         $entry = $ifd0_0->getEntry(37121); // ComponentsConfiguration
-        $this->assertInstanceOf('lsolesen\pel\PelEntryUndefined', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Undefined', $entry);
         $this->assertEquals($entry->getValue(), "\x01\x02\x03\0");
         $this->assertEquals($entry->getText(), 'Y Cb Cr -');
 
         $entry = $ifd0_0->getEntry(37500); // MakerNote
-        $this->assertInstanceOf('lsolesen\pel\PelEntryUndefined', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Undefined', $entry);
         $expected = "\x02\0\x01\0\x07\0\x04\0\0\0\x30\x31\x30\x30\x10\x0e\x04\0\x01\0\0\0\x16\x01\0\0\0\0\0\0\x05\0";
         $this->assertEquals($entry->getValue(), $expected);
         $this->assertEquals($entry->getText(), '32 bytes unknown MakerNote data');
 
         $entry = $ifd0_0->getEntry(40960); // FlashPixVersion
-        $this->assertInstanceOf('lsolesen\pel\PelEntryVersion', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Version', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'FlashPix Version 1.0');
 

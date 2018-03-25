@@ -13,14 +13,14 @@ tags:
         components: 1
         format: Rational
         text:
-            decode: PelEntryRational::decodeExposureTime
+            decode: ExifEye\core\Entry\Rational::decodeExposureTime
     0x829D:
         name: FNumber
         title: FNumber
         components: 1
         format: Rational
         text:
-            decode: PelEntryRational::decodeFNumber
+            decode: ExifEye\core\Entry\Rational::decodeFNumber
     0x8822:
         name: ExposureProgram
         title: 'Exposure Program'
@@ -74,9 +74,9 @@ tags:
         title: 'Exif Version'
         components: 4
         format: Undefined
-        class: PelEntryVersion
+        class: ExifEye\core\Entry\Version
         text:
-            decode: PelEntryVersion::decodeExifVersion
+            decode: ExifEye\core\Entry\Version::decodeExifVersion
     0x9003:
         name: DateTimeOriginal
         title: 'Date and Time (original)'
@@ -110,7 +110,7 @@ tags:
         components: 4
         format: Undefined
         text:
-            decode: PelEntryUndefined::decodeComponentsConfiguration
+            decode: ExifEye\core\Entry\Undefined::decodeComponentsConfiguration
     0x9102:
         name: CompressedBitsPerPixel
         title: 'Compressed Bits per Pixel'
@@ -122,28 +122,28 @@ tags:
         components: 1
         format: SRational
         text:
-            decode: PelEntrySRational::decodeShutterSpeedValue
+            decode: ExifEye\core\Entry\SignedRational::decodeShutterSpeedValue
     0x9202:
         name: ApertureValue
         title: Aperture
         components: 1
         format: Rational
         text:
-            decode: PelEntryRational::decodeApertureValue
+            decode: ExifEye\core\Entry\Rational::decodeApertureValue
     0x9203:
         name: BrightnessValue
         title: Brightness
         components: 1
         format: SRational
         text:
-            decode: PelEntrySRational::decodeBrightnessValue
+            decode: ExifEye\core\Entry\SignedRational::decodeBrightnessValue
     0x9204:
         name: ExposureBiasValue
         title: 'Exposure Bias'
         components: 1
         format: SRational
         text:
-            decode: PelEntrySRational::decodeExposureBiasValue
+            decode: ExifEye\core\Entry\SignedRational::decodeExposureBiasValue
     0x9205:
         name: MaxApertureValue
         title: 'Max Aperture Value'
@@ -155,7 +155,7 @@ tags:
         components: 1
         format: SRational
         text:
-            decode: PelEntryRational::decodeSubjectDistance
+            decode: ExifEye\core\Entry\Rational::decodeSubjectDistance
     0x9207:
         name: MeteringMode
         title: 'Metering Mode'
@@ -234,7 +234,7 @@ tags:
         components: 1
         format: Rational
         text:
-            decode: PelEntryRational::decodeFocalLength
+            decode: ExifEye\core\Entry\Rational::decodeFocalLength
     0x9214:
         name: SubjectArea
         title: 'Subject Area'
@@ -245,13 +245,13 @@ tags:
         name: MakerNote
         title: 'Maker Note'
         format: Undefined
-        class: PelEntryMakerNote
+        class: ExifEye\core\Entry\MakerNote
     0x9286:
         name: UserComment
         title: 'User Comment'
         components: Any
         format: Undefined
-        class: PelEntryUserComment
+        class: ExifEye\core\Entry\UserComment
     0x9290:
         name: SubSecTime
         title: 'SubSec Time'
@@ -272,9 +272,9 @@ tags:
         title: 'FlashPix Version'
         components: 4
         format: Undefined
-        class: PelEntryVersion
+        class: ExifEye\core\Entry\Version
         text:
-            decode: PelEntryVersion::decodeFlashPixVersion
+            decode: ExifEye\core\Entry\Version::decodeFlashPixVersion
     0xA001:
         name: ColorSpace
         title: 'Color Space'
@@ -363,14 +363,14 @@ tags:
         components: 1
         format: Undefined
         text:
-            decode: PelEntryUndefined::decodeFileSource
+            decode: ExifEye\core\Entry\Undefined::decodeFileSource
     0xA301:
         name: SceneType
         title: 'Scene Type'
         components: 1
         format: Undefined
         text:
-            decode: PelEntryUndefined::decodeSceneType
+            decode: ExifEye\core\Entry\Undefined::decodeSceneType
     0xA401:
         name: CustomRendered
         title: 'Custom Rendered'

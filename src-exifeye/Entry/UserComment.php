@@ -1,47 +1,10 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Format;
-
-/**
- * Classes used to hold data for Exif tags of format undefined.
- *
- * This file contains the base class {@link PelEntryUndefined} and
- * the subclasses {@link PelEntryUserComment} which should be used
- * to manage the {@link PelTag::USER_COMMENT} tag, and {@link
- * PelEntryVersion} which is used to manage entries with version
- * information.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class for a user comment.
@@ -55,7 +18,7 @@ use ExifEye\core\Format;
  * string for later retrieval using {@link getValue}:
  *
  * <code>
- * $entry = new PelEntryUserComment('An ASCII string');
+ * $entry = new UserComment('An ASCII string');
  * echo $entry->getValue();
  * </code>
  *
@@ -68,11 +31,9 @@ use ExifEye\core\Format;
  * encoding is undefined.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class PelEntryUserComment extends PelEntryUndefined
+class UserComment extends Undefined
 {
-
     /**
      * The user comment.
      *
@@ -114,10 +75,10 @@ class PelEntryUserComment extends PelEntryUndefined
      * @param int $tag_id
      *            the TAG id.
      * @param array $arguments
-     *            a list or arguments to be passed to the PelEntry subclass
+     *            a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      *
-     * @return PelEntry a newly created entry, holding the data given.
+     * @return EntryBase a newly created entry, holding the data given.
      */
     public static function createInstance($ifd_id, $tag_id, $arguments)
     {
@@ -146,7 +107,7 @@ class PelEntryUserComment extends PelEntryUndefined
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)

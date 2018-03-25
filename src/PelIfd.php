@@ -27,6 +27,7 @@ namespace lsolesen\pel;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\DataWindowWindowException;
+use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\Convert;
@@ -45,7 +46,7 @@ use ExifEye\core\Utility\Convert;
  *
  * {@link PelTiff TIFF data} is structured as a number of Image File
  * Directories, IFDs for short. Each IFD contains a number of {@link
- * PelEntry entries}, some data and finally a link to the next IFD.
+ * EntryBase entries}, some data and finally a link to the next IFD.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
@@ -116,7 +117,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     /**
      * The entries held by this directory.
      *
-     * Each tag in the directory is represented by a {@link PelEntry}
+     * Each tag in the directory is represented by a {@link EntryBase}
      * object in this array.
      *
      * @var array
@@ -168,7 +169,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * Construct a new Image File Directory (IFD).
      *
      * The IFD will be empty, use the {@link addEntry()} method to add
-     * an {@link PelEntry}. Use the {@link setNext()} method to link
+     * an {@link EntryBase}. Use the {@link setNext()} method to link
      * this IFD to another.
      *
      * @param int $type
@@ -290,7 +291,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             }
 
             // Load a TAG entry.
-            if ($entry = PelEntry::createFromData($this->type, $tag, $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
+            if ($entry = EntryBase::createFromData($this->type, $tag, $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
                 $this->addEntry($entry);
             }
         }
@@ -345,17 +346,17 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param int $tag
      *            the tag of the entry as defined in {@link PelSpec}.
      *
-     * @deprecated Use PelEntry::createFromData instead.
+     * @deprecated Use EntryBase::createFromData instead.
      */
     public function loadSingleValue($d, $offset, $i, $tag)
     {
-        $this->addEntry(PelEntry::createFromData($this->type, $tag, $d, $offset, $i));
+        $this->addEntry(EntryBase::createFromData($this->type, $tag, $d, $offset, $i));
     }
 
     /**
      * Make a new entry from a bunch of bytes.
      *
-     * This method will create the proper subclass of {@link PelEntry}
+     * This method will create the proper subclass of {@link EntryBase}
      * corresponding to the {@link PelTag} and {@link Format} given.
      * The entry will be initialized with the data given.
      *
@@ -385,9 +386,9 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *            the data which will be used to construct the
      *            entry.
      *
-     * @return PelEntry a newly created entry, holding the data given.
+     * @return EntryBase a newly created entry, holding the data given.
      *
-     * @deprecated Use PelEntry::createFromData instead.
+     * @deprecated Use EntryBase::createFromData instead.
      */
     public function newEntryFromData($tag, $format, $components, DataWindow $data)
     {
@@ -559,7 +560,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     /**
      * Adds an entry to the directory.
      *
-     * @param PelEntry $e
+     * @param EntryBase $e
      *            the entry that will be added. If the entry is not
      *            valid in this IFD (as per {@link isValidTag()}) an
      *            {@link PelInvalidDataException} is thrown.
@@ -568,7 +569,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *       directory can only contain one entry with each tag. Is this a
      *       bug?
      */
-    public function addEntry(PelEntry $e)
+    public function addEntry(EntryBase $e)
     {
         if ($this->isValidTag($e->getTag())) {
             $e->setIfdType($this->type);
@@ -616,7 +617,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *            which is not in the IFD, just like asking for a non-existant
      *            array entry.
      *
-     * @return PelEntry the entry.
+     * @return EntryBase the entry.
      */
     public function offsetGet($tag)
     {
@@ -640,16 +641,16 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param int $tag
      *            unused.
      *
-     * @param PelEntry $e
+     * @param EntryBase $e
      *            the new value.
      */
     public function offsetSet($tag, $e)
     {
-        if ($e instanceof PelEntry) {
+        if ($e instanceof EntryBase) {
             $tag = $e->getTag();
             $this->entries[$tag] = $e;
         } else {
-            throw new PelInvalidArgumentException('Argument "%s" must be a PelEntry.', $e);
+            throw new PelInvalidArgumentException('Argument "%s" must be a EntryBase.', $e);
         }
     }
 
@@ -678,7 +679,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param int $tag
      *            the tag identifying the entry.
      *
-     * @return PelEntry the entry associated with the tag, or null if no
+     * @return EntryBase the entry associated with the tag, or null if no
      *         such entry exists.
      */
     public function getEntry($tag)
@@ -693,7 +694,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     /**
      * Returns all entries contained in this IFD.
      *
-     * @return array an array of {@link PelEntry} objects, or rather
+     * @return array an array of {@link EntryBase} objects, or rather
      *         descendant classes. The array has {@link PelTag}s as keys
      *         and the entries as values.
      *
@@ -712,7 +713,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *
      * <code>
      * foreach ($ifd as $tag => $entry) {
-     * // $tag is now a PelTag and $entry is a PelEntry object.
+     * // $tag is now a PelTag and $entry is a EntryBase object.
      * }
      * </code>
      *
@@ -889,7 +890,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
 
         if ($this->thumb_data !== null) {
             ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
-            // TODO: make PelEntry a class that can be constructed with
+            // TODO: make EntryBase a class that can be constructed with
             // arguments corresponding to the newt four lines.
             $bytes .= Convert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
             $bytes .= Convert::shortToBytes(Format::LONG, $order);

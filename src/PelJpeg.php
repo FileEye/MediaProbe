@@ -108,7 +108,7 @@ class PelJpeg
      * // Create container for the Exif information:
      * $exif = new PelExif();
      * // Now Add a PelTiff object with a PelIfd object with one or more
-     * // PelEntry objects to $exif... Finally add $exif to $jpeg:
+     * // EntryBase objects to $exif... Finally add $exif to $jpeg:
      * $jpeg->setExif($exif);
      * </code>
      *

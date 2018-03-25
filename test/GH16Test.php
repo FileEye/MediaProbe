@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\DataWindow;
 use lsolesen\pel\PelJpeg;
-use lsolesen\pel\PelEntryWindowsString;
+use ExifEye\core\Entry\WindowsString;
 
 class GH16Test extends ExifEyeTestCaseBase
 {
@@ -48,7 +48,7 @@ class GH16Test extends ExifEyeTestCaseBase
                 $tiff->setIfd($ifd0);
             }
         }
-        $ifd0->addEntry(new PelEntryWindowsString(0x9C9F, $subject));
+        $ifd0->addEntry(new EntryWindowsString(0x9C9F, $subject));
 
         file_put_contents($this->file, $jpeg->getBytes());
 

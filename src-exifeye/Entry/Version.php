@@ -1,48 +1,11 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-
-/**
- * Classes used to hold data for Exif tags of format undefined.
- *
- * This file contains the base class {@link PelEntryUndefined} and
- * the subclasses {@link PelEntryUserComment} which should be used
- * to manage the {@link PelTag::USER_COMMENT} tag, and {@link
- * PelEntryVersion} which is used to manage entries with version
- * information.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class to hold version information.
@@ -55,7 +18,7 @@ use ExifEye\core\Format;
  *
  * The class is used in a very straight-forward way:
  * <code>
- * $entry = new PelEntryVersion(PelTag::EXIF_VERSION, 2.2);
+ * $entry = new Version(PelTag::EXIF_VERSION, 2.2);
  * </code>
  * This creates an entry for an file complying to the Exif 2.2
  * standard. It is easy to test for standards level of an unknown
@@ -68,9 +31,8 @@ use ExifEye\core\Format;
  * </code>
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class PelEntryVersion extends PelEntry
+class Version extends EntryBase
 {
 
     /**
@@ -123,7 +85,7 @@ class PelEntryVersion extends PelEntry
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
@@ -182,15 +144,15 @@ class PelEntryVersion extends PelEntry
     /**
      * Decode text for an Exif/ExifVersion tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeExifVersion(PelEntry $entry, $brief = false)
+    public static function decodeExifVersion(EntryBase $entry, $brief = false)
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
@@ -203,15 +165,15 @@ class PelEntryVersion extends PelEntry
     /**
      * Decode text for an Exif/FlashPixVersion tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeFlashPixVersion(PelEntry $entry, $brief = false)
+    public static function decodeFlashPixVersion(EntryBase $entry, $brief = false)
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
@@ -224,15 +186,15 @@ class PelEntryVersion extends PelEntry
     /**
      * Decode text for an Interoperability/InteroperabilityVersion tag.
      *
-     * @param PelEntry $entry
-     *            the TAG PelEntry object.
+     * @param EntryBase $entry
+     *            the TAG EntryBase object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeInteroperabilityVersion(PelEntry $entry, $brief = false)
+    public static function decodeInteroperabilityVersion(EntryBase $entry, $brief = false)
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {

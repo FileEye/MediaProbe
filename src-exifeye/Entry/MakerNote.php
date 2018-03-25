@@ -1,13 +1,13 @@
 <?php
 
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 
 /**
  * Class used to hold data for MakerNote tags.
  */
-class PelEntryMakerNote extends PelEntryUndefined
+class MakerNote extends Undefined
 {
     /**
      * The offset of the MakerNote IFD vs the main DataWindow.
@@ -17,7 +17,7 @@ class PelEntryMakerNote extends PelEntryUndefined
     protected $dataOffset;
 
     /**
-     * Constructs a PelEntry that can hold MakerNote data.
+     * Constructs a EntryBase that can hold MakerNote data.
      *
      * @param integer $tag
      *            the MakerNote TAG id.
@@ -48,7 +48,7 @@ class PelEntryMakerNote extends PelEntryUndefined
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)

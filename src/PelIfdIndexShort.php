@@ -3,6 +3,7 @@
 namespace lsolesen\pel;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
@@ -88,7 +89,7 @@ class PelIfdIndexShort extends PelIfd
                     $item_value = $d->getSRattional($offset + $i * 2);
                     break;
             }
-            if ($entry = PelEntry::createNew($this->type, $i + 1, [$item_value])) {
+            if ($entry = EntryBase::createNew($this->type, $i + 1, [$item_value])) {
                 $this->addEntry($entry);
             }
         }

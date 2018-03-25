@@ -4,7 +4,6 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-use lsolesen\pel\PelEntry;
 
 /**
  * Class for holding unsigned bytes.
@@ -12,8 +11,7 @@ use lsolesen\pel\PelEntry;
  * This class can hold bytes, either just a single byte or an array of
  * bytes. The class will be used to manipulate any of the Exif tags
  * which has format {@link Format::BYTE}.
- * The {@link
- * PelEntryWindowsString} class is used to manipulate strings in the
+ * The {@link WindowsString} class is used to manipulate strings in the
  * format Windows XP needs.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
@@ -66,7 +64,7 @@ class Byte extends NumberBase
      * @param int $data_offset
      *            the offset of the main DataWindow where data is stored.
      *
-     * @return array a list or arguments to be passed to the PelEntry subclass
+     * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)

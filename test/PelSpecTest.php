@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelEntry;
+use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\Format;
 use lsolesen\pel\PelSpec;
 
@@ -33,7 +33,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $this->assertEquals('lsolesen\pel\PelIfdIndexShort', PelSpec::getIfdClass(PelSpec::getIfdIdByType('Canon Camera Settings')));
 
         // Test retrieving IFD post-load callbacks.
-        $this->assertEquals(['lsolesen\pel\PelEntryMakerNote::tagToIfd'], PelSpec::getIfdPostLoadCallbacks(PelSpec::getIfdIdByType('0')));
+        $this->assertEquals(['ExifEye\core\Entry\MakerNote::tagToIfd'], PelSpec::getIfdPostLoadCallbacks(PelSpec::getIfdIdByType('0')));
         $this->assertEquals([], PelSpec::getIfdPostLoadCallbacks(PelSpec::getIfdIdByType('Canon Camera Settings')));
 
         // Test retrieving maker note IFD.
@@ -71,7 +71,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
      */
     public function testGetTagClass()
     {
-        $this->assertEquals('lsolesen\pel\PelEntryUserComment', PelSpec::getTagClass(2, 0x9286));
+        $this->assertEquals('ExifEye\core\Entry\UserComment', PelSpec::getTagClass(2, 0x9286));
         $this->assertEquals('ExifEye\core\Entry\Time', PelSpec::getTagClass(2, 0x9003));
         //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
@@ -93,7 +93,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
     {
         $ifd_id = PelSpec::getIfdIdByType($ifd);
         $tag_id = PelSpec::getTagIdByName($ifd_id, $tag);
-        $entry = PelEntry::createNew($ifd_id, $tag_id, $args);
+        $entry = EntryBase::createNew($ifd_id, $tag_id, $args);
         $this->assertInstanceOf($expected_class, $entry);
         $this->assertEquals($expected_text, PelSpec::getTagText($entry, $brief));
     }
@@ -141,79 +141,79 @@ class PelSpecTest extends ExifEyeTestCaseBase
               'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\Short', 'Exif', 'SubjectArea', [6],
           ],
           'Exif/FNumber - value 60, 10' => [
-              'f/6.0', 'lsolesen\pel\PelEntryRational', 'Exif', 'FNumber', [[60, 10]],
+              'f/6.0', 'ExifEye\core\Entry\Rational', 'Exif', 'FNumber', [[60, 10]],
           ],
           'Exif/FNumber - value 26, 10' => [
-              'f/2.6', 'lsolesen\pel\PelEntryRational', 'Exif', 'FNumber', [[26, 10]],
+              'f/2.6', 'ExifEye\core\Entry\Rational', 'Exif', 'FNumber', [[26, 10]],
           ],
           'Exif/ApertureValue - value 60, 10' => [
-              'f/8.0', 'lsolesen\pel\PelEntryRational', 'Exif', 'ApertureValue', [[60, 10]],
+              'f/8.0', 'ExifEye\core\Entry\Rational', 'Exif', 'ApertureValue', [[60, 10]],
           ],
           'Exif/ApertureValue - value 26, 10' => [
-              'f/2.5', 'lsolesen\pel\PelEntryRational', 'Exif', 'ApertureValue', [[26, 10]],
+              'f/2.5', 'ExifEye\core\Entry\Rational', 'Exif', 'ApertureValue', [[26, 10]],
           ],
           'Exif/FocalLength - value 60, 10' => [
-              '6.0 mm', 'lsolesen\pel\PelEntryRational', 'Exif', 'FocalLength', [[60, 10]],
+              '6.0 mm', 'ExifEye\core\Entry\Rational', 'Exif', 'FocalLength', [[60, 10]],
           ],
           'Exif/FocalLength - value 26, 10' => [
-              '2.6 mm', 'lsolesen\pel\PelEntryRational', 'Exif', 'FocalLength', [[26, 10]],
+              '2.6 mm', 'ExifEye\core\Entry\Rational', 'Exif', 'FocalLength', [[26, 10]],
           ],
           'Exif/SubjectDistance - value 60, 10' => [
-              '6.0 m', 'lsolesen\pel\PelEntrySRational', 'Exif', 'SubjectDistance', [[60, 10]],
+              '6.0 m', 'ExifEye\core\Entry\SignedRational', 'Exif', 'SubjectDistance', [[60, 10]],
           ],
           'Exif/SubjectDistance - value 26, 10' => [
-              '2.6 m', 'lsolesen\pel\PelEntrySRational', 'Exif', 'SubjectDistance', [[26, 10]],
+              '2.6 m', 'ExifEye\core\Entry\SignedRational', 'Exif', 'SubjectDistance', [[26, 10]],
           ],
           'Exif/ExposureTime - value 60, 10' => [
-              '6 sec.', 'lsolesen\pel\PelEntryRational', 'Exif', 'ExposureTime', [[60, 10]],
+              '6 sec.', 'ExifEye\core\Entry\Rational', 'Exif', 'ExposureTime', [[60, 10]],
           ],
           'Exif/ExposureTime - value 5, 10' => [
-              '1/2 sec.', 'lsolesen\pel\PelEntryRational', 'Exif', 'ExposureTime', [[5, 10]],
+              '1/2 sec.', 'ExifEye\core\Entry\Rational', 'Exif', 'ExposureTime', [[5, 10]],
           ],
           'GPS/GPSLongitude' => [
-              '30° 45\' 28" (30.76°)', 'lsolesen\pel\PelEntryRational', 'GPS', 'GPSLongitude', [[30, 1], [45, 1], [28, 1]],
+              '30° 45\' 28" (30.76°)', 'ExifEye\core\Entry\Rational', 'GPS', 'GPSLongitude', [[30, 1], [45, 1], [28, 1]],
           ],
           'GPS/GPSLatitude' => [
-              '50° 33\' 12" (50.55°)', 'lsolesen\pel\PelEntryRational', 'GPS', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
+              '50° 33\' 12" (50.55°)', 'ExifEye\core\Entry\Rational', 'GPS', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
           ],
           'Exif/ShutterSpeedValue - value 5, 10' => [
-              '5/10 sec. (APEX: 1)', 'lsolesen\pel\PelEntrySRational', 'Exif', 'ShutterSpeedValue', [[5, 10]],
+              '5/10 sec. (APEX: 1)', 'ExifEye\core\Entry\SignedRational', 'Exif', 'ShutterSpeedValue', [[5, 10]],
           ],
           'Exif/BrightnessValue - value 5, 10' => [
-              '5/10', 'lsolesen\pel\PelEntrySRational', 'Exif', 'BrightnessValue', [[5, 10]],
+              '5/10', 'ExifEye\core\Entry\SignedRational', 'Exif', 'BrightnessValue', [[5, 10]],
           ],
           'Exif/ExposureBiasValue - value 5, 10' => [
-              '+0.5', 'lsolesen\pel\PelEntrySRational', 'Exif', 'ExposureBiasValue', [[5, 10]],
+              '+0.5', 'ExifEye\core\Entry\SignedRational', 'Exif', 'ExposureBiasValue', [[5, 10]],
           ],
           'Exif/ExposureBiasValue - value -5, 10' => [
-              '-0.5', 'lsolesen\pel\PelEntrySRational', 'Exif', 'ExposureBiasValue', [[-5, 10]],
+              '-0.5', 'ExifEye\core\Entry\SignedRational', 'Exif', 'ExposureBiasValue', [[-5, 10]],
           ],
           'Exif/ExifVersion - short' => [
-              'Exif 2.2', 'lsolesen\pel\PelEntryVersion', 'Exif', 'ExifVersion', [2.2], true,
+              'Exif 2.2', 'ExifEye\core\Entry\Version', 'Exif', 'ExifVersion', [2.2], true,
           ],
           'Exif/ExifVersion - long' => [
-              'Exif Version 2.2', 'lsolesen\pel\PelEntryVersion', 'Exif', 'ExifVersion', [2.2],
+              'Exif Version 2.2', 'ExifEye\core\Entry\Version', 'Exif', 'ExifVersion', [2.2],
           ],
           'Exif/FlashPixVersion - short' => [
-              'FlashPix 2.5', 'lsolesen\pel\PelEntryVersion', 'Exif', 'FlashPixVersion', [2.5], true,
+              'FlashPix 2.5', 'ExifEye\core\Entry\Version', 'Exif', 'FlashPixVersion', [2.5], true,
           ],
           'Exif/FlashPixVersion - long' => [
-              'FlashPix Version 2.5', 'lsolesen\pel\PelEntryVersion', 'Exif', 'FlashPixVersion', [2.5],
+              'FlashPix Version 2.5', 'ExifEye\core\Entry\Version', 'Exif', 'FlashPixVersion', [2.5],
           ],
           'Interoperability/InteroperabilityVersion - short' => [
-              'Interoperability 1.0', 'lsolesen\pel\PelEntryVersion', 'Interoperability', 'InteroperabilityVersion', [1], true,
+              'Interoperability 1.0', 'ExifEye\core\Entry\Version', 'Interoperability', 'InteroperabilityVersion', [1], true,
           ],
           'Interoperability/InteroperabilityVersion - long' => [
-              'Interoperability Version 1.0', 'lsolesen\pel\PelEntryVersion', 'Interoperability', 'InteroperabilityVersion', [1],
+              'Interoperability Version 1.0', 'ExifEye\core\Entry\Version', 'Interoperability', 'InteroperabilityVersion', [1],
           ],
           'Exif/ComponentsConfiguration' => [
-              'Y Cb Cr -', 'lsolesen\pel\PelEntryUndefined', 'Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
+              'Y Cb Cr -', 'ExifEye\core\Entry\Undefined', 'Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
           ],
           'Exif/FileSource' => [
-              'DSC', 'lsolesen\pel\PelEntryUndefined', 'Exif', 'FileSource', ["\x03"],
+              'DSC', 'ExifEye\core\Entry\Undefined', 'Exif', 'FileSource', ["\x03"],
           ],
           'Exif/SceneType' => [
-              'Directly photographed', 'lsolesen\pel\PelEntryUndefined', 'Exif', 'SceneType', ["\x01"],
+              'Directly photographed', 'ExifEye\core\Entry\Undefined', 'Exif', 'SceneType', ["\x01"],
           ],
         ];
     }

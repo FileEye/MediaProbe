@@ -2,14 +2,14 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelEntryVersion;
+use ExifEye\core\Entry\Version;
 use ExifEye\core\Utility\Convert;
 
 class PelEntryVersionTest extends ExifEyeTestCaseBase
 {
     public function testVersion()
     {
-        $entry = new PelEntryVersion(42);
+        $entry = new Version(42);
 
         $this->assertEquals($entry->getValue(), 0.0);
 
