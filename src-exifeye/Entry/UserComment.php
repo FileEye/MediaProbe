@@ -5,6 +5,7 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Format;
+use lsolesen\pel\PelSpec;
 
 /**
  * Class for a user comment.

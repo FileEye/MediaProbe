@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use lsolesen\pel\PelSpec;
 use lsolesen\pel\PelIfd;
 
 /**
