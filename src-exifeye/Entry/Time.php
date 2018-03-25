@@ -4,6 +4,9 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
+use lsolesen\pel\PelUnexpectedFormatException;
+use lsolesen\pel\PelWrongComponentCountException;
+use lsolesen\pel\PelInvalidArgumentException;
 
 /**
  * Class for holding a date and time.
