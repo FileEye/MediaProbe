@@ -7,6 +7,7 @@ use ExifEye\core\Format;
 use lsolesen\pel\PelUnexpectedFormatException;
 use lsolesen\pel\PelWrongComponentCountException;
 use lsolesen\pel\PelInvalidArgumentException;
+use lsolesen\pel\PelEntry;
 
 /**
  * Class for holding a date and time.

@@ -4,6 +4,7 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
+use lsolesen\pel\PelEntry;
 
 /**
  * Class for holding signed bytes.

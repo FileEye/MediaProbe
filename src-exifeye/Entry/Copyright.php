@@ -6,6 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
+use lsolesen\pel\PelEntry;
 use lsolesen\pel\PelSpec;
 use lsolesen\pel\PelUnexpectedFormatException;
 
