@@ -2,6 +2,8 @@
 
 namespace ExifEye\core\Entry\Exception;
 
+use lsolesen\pel\PelSpec;
+
 /**
  * Exception indicating that an unexpected number of components was
  * found.

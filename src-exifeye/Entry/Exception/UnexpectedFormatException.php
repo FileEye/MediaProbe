@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry\Exception;
 
 use ExifEye\core\Format;
+use lsolesen\pel\PelSpec;
 
 /**
  * Exception indicating that an unexpected format was found.
