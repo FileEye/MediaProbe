@@ -27,6 +27,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 9);
 
         $entry = $ifd0->getEntry(271); // Make
+$this->assertEquals('bing', get_class($entry));
         $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Canon');
         $this->assertEquals($entry->getText(), 'Canon');
