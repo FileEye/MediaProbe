@@ -2,7 +2,7 @@ language: php
 sudo: false
 
 php:
-  #- 5.4
+  - 5.4
   #- 5.5
   #- 5.6
   #- 7.0
@@ -38,11 +38,11 @@ script:
   #- php examples/dump-image.php -d test/imagetests/canon-eos-650d.jpg
   #- php examples/dump-image.php -d test/imagetests/canon-ixus-ii.jpg
   #- php examples/dump-image.php -d test/imagetests/canon-powershot-s60.jpg
-  - php examples/dump-image.php -d test/imagetests/apple-iphone6s.jpg
-  - php examples/dump-image.php -d test/imagetests/apple-iphone7.JPG
+  #- php examples/dump-image.php -d test/imagetests/apple-iphone6s.jpg
+  #- php examples/dump-image.php -d test/imagetests/apple-iphone7.JPG
   #- php examples/dump-image.php -d test/broken_images/gh-10-a.jpg
   #- php examples/dump-image.php -d test/broken_images/gh-10-b.jpg
   #- php examples/dump-image.php -d test/broken_images/gh-11.jpg
 
 after_script:
-  - travis_retry php vendor/bin/coveralls -v
+  - php vendor/bin/coveralls -v
