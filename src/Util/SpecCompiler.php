@@ -257,7 +257,7 @@ DATA;
      */
     protected function getFullyQualifiedClassName($class_name)
     {
-        if (strpos("\", $class_name) === false) {
+        if (preg_match('/\\\\/', $class_name) !== 1) {
             return $this->defaultNamespace . $class_name;
         }
         return $class_name;
