@@ -26,12 +26,12 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 10);
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'LEICA');
         $this->assertEquals($entry->getText(), 'LEICA');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'D-LUX');
         $this->assertEquals($entry->getText(), 'D-LUX');
 
@@ -62,7 +62,7 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Ver1.06');
         $this->assertEquals($entry->getText(), 'Ver1.06');
 
@@ -312,7 +312,7 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 

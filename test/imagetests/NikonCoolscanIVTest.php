@@ -26,7 +26,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 6);
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Nikon');
         $this->assertEquals($entry->getText(), 'Nikon');
 

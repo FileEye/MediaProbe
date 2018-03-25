@@ -26,17 +26,17 @@ class OlympusC5050zTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 11);
 
         $entry = $ifd0->getEntry(270); // ImageDescription
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'OLYMPUS DIGITAL CAMERA         ');
         $this->assertEquals($entry->getText(), 'OLYMPUS DIGITAL CAMERA         ');
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'OLYMPUS OPTICAL CO.,LTD');
         $this->assertEquals($entry->getText(), 'OLYMPUS OPTICAL CO.,LTD');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'C5050Z');
         $this->assertEquals($entry->getText(), 'C5050Z');
 
@@ -67,7 +67,7 @@ class OlympusC5050zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'v558-83');
         $this->assertEquals($entry->getText(), 'v558-83');
 
@@ -286,7 +286,7 @@ class OlympusC5050zTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 

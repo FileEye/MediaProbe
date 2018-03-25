@@ -26,17 +26,17 @@ class SonyDscV1Test extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 10);
 
         $entry = $ifd0->getEntry(270); // ImageDescription
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), '                               ');
         $this->assertEquals($entry->getText(), '                               ');
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'SONY');
         $this->assertEquals($entry->getText(), 'SONY');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'DSC-V1');
         $this->assertEquals($entry->getText(), 'DSC-V1');
 
@@ -247,7 +247,7 @@ class SonyDscV1Test extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 
@@ -289,12 +289,12 @@ class SonyDscV1Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'JPEG compression');
 
         $entry = $ifd1->getEntry(271); // Make
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'SONY');
         $this->assertEquals($entry->getText(), 'SONY');
 
         $entry = $ifd1->getEntry(272); // Model
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'DSC-V1');
         $this->assertEquals($entry->getText(), 'DSC-V1');
 

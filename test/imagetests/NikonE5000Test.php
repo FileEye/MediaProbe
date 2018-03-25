@@ -27,17 +27,17 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 9);
 
         $entry = $ifd0->getEntry(270); // ImageDescription
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), '          ');
         $this->assertEquals($entry->getText(), '          ');
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'NIKON');
         $this->assertEquals($entry->getText(), 'NIKON');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'E5000');
         $this->assertEquals($entry->getText(), 'E5000');
 
@@ -63,7 +63,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0->getEntry(305); // Software
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'E5000v1.6');
         $this->assertEquals($entry->getText(), 'E5000v1.6');
 

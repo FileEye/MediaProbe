@@ -27,12 +27,12 @@ class CanonIxusIITest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0->getEntries()), 8);
 
         $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Canon');
         $this->assertEquals($entry->getText(), 'Canon');
 
         $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Canon DIGITAL IXUS II');
         $this->assertEquals($entry->getText(), 'Canon DIGITAL IXUS II');
 
@@ -274,7 +274,7 @@ class CanonIxusIITest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_0_0->getEntries()), 4);
 
         $entry = $ifd0_0_0->getEntry(1); // InteroperabilityIndex
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'R98');
         $this->assertEquals($entry->getText(), 'R98');
 
@@ -362,11 +362,11 @@ class CanonIxusIITest extends ExifEyeTestCaseBase
         $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0_mn);
 
         $entry = $ifd0_mn->getEntry(6); // ImageType
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'IMG:DIGITAL IXUS II JPEG');
 
         $entry = $ifd0_mn->getEntry(7); // FirmwareVersion
-        $this->assertInstanceOf('ExifeEye\core\Entry\Ascii', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
         $this->assertEquals($entry->getValue(), 'Firmware Version 1.00');
 
         $entry = $ifd0_mn->getEntry(8); // FileNumber
