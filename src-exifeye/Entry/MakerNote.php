@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use lsolesen\pel\PelIfd;
 
 /**
  * Class used to hold data for MakerNote tags.
