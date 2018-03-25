@@ -1,43 +1,9 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005, 2006, 2007 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-
-/**
- * Classes used to hold bytes, both signed and unsigned.
- * The {@link
- * PelEntryWindowsString} class is used to manipulate strings in the
- * format Windows XP needs.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class for holding unsigned bytes.
@@ -45,13 +11,14 @@ use ExifEye\core\Format;
  * This class can hold bytes, either just a single byte or an array of
  * bytes. The class will be used to manipulate any of the Exif tags
  * which has format {@link Format::BYTE}.
+ * The {@link
+ * PelEntryWindowsString} class is used to manipulate strings in the
+ * format Windows XP needs.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class PelEntryByte extends PelEntryNumber
+class Byte extends NumberBase
 {
-
     /**
      * Make a new entry that can hold an unsigned byte.
      *
@@ -63,7 +30,6 @@ class PelEntryByte extends PelEntryNumber
      *            the tag which this entry represents. This
      *            should be one of the constants defined in {@link PelTag}
      *            which has format {@link Format::BYTE}.
-     *
      * @param int $value...
      *            the byte(s) that this entry will represent.
      *            The argument passed must obey the same rules as the argument to
@@ -116,7 +82,6 @@ class PelEntryByte extends PelEntryNumber
      *
      * @param int $number
      *            the number that should be converted.
-     *
      * @param PelByteOrder $order
      *            one of {@link Convert::LITTLE_ENDIAN} and
      *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.

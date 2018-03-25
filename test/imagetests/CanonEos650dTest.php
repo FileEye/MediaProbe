@@ -37,7 +37,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Canon EOS 650D');
 
         $entry = $ifd0->getEntry(274); // Orientation
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'top - left');
 
@@ -58,7 +58,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd0->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 
@@ -128,12 +128,12 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '0.0');
 
         $entry = $ifd0_0->getEntry(37383); // MeteringMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 5);
         $this->assertEquals($entry->getText(), 'Pattern');
 
         $entry = $ifd0_0->getEntry(37385); // Flash
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 16);
         $this->assertEquals($entry->getText(), 'Flash did not fire, compulsory flash mode.');
 
@@ -163,32 +163,32 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'FlashPix Version 1.0');
 
         $entry = $ifd0_0->getEntry(40961); // ColorSpace
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'sRGB');
 
         $entry = $ifd0_0->getEntry(41488); // FocalPlaneResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 
         $entry = $ifd0_0->getEntry(41985); // CustomRendered
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal process');
 
         $entry = $ifd0_0->getEntry(41986); // ExposureMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Auto exposure');
 
         $entry = $ifd0_0->getEntry(41987); // WhiteBalance
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Auto white balance');
 
         $entry = $ifd0_0->getEntry(41990); // SceneCaptureType
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Standard');
 
@@ -238,7 +238,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd1->getEntries()), 4);
 
         $entry = $ifd1->getEntry(259); // Compression
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), '0');
 
@@ -259,7 +259,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd1->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 
@@ -292,17 +292,17 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd0_mn_cs->getEntries()), 37);
 
         $entry = $ifd0_mn_cs->getEntry(1); // MacroMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntrySShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\SignedShort', $entry);
         $this->assertEquals($entry->getValue(), '2');
         $this->assertEquals($entry->getText(), 'Normal');
 
         $entry = $ifd0_mn_cs->getEntry(9); // RecordMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntrySShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\SignedShort', $entry);
         $this->assertEquals($entry->getValue(), '6');
         $this->assertEquals($entry->getText(), 'CR2');
 
         $entry = $ifd0_mn_cs->getEntry(22); // LensModel
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 747);
         // Tamron 150-600mm G2
         $this->assertEquals($entry->getText(), 'Canon EF 100-400mm f/4.5-5.6L IS II USM or Tamron Lens');

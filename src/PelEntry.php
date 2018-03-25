@@ -61,7 +61,7 @@ use ExifEye\core\Format;
  * If you instead want to have an entry for some data which take the
  * form of an integer, a string, a byte, or some other PHP type, then
  * don't use this class. You should instead create an object of the
- * right subclass ({@link PelEntryShort} for short integers, {@link
+ * right subclass ({@link Short} for short integers, {@link
  * Ascii} for strings, and so on) directly.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>

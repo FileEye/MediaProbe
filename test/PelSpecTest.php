@@ -105,40 +105,40 @@ class PelSpecTest extends ExifEyeTestCaseBase
     {
         return [
           'IFD0/PlanarConfiguration - value 1' => [
-              'chunky format', 'lsolesen\pel\PelEntryShort', 'IFD0', 'PlanarConfiguration', [1],
+              'chunky format', 'ExifEye\core\Entry\Short', 'IFD0', 'PlanarConfiguration', [1],
           ],
           'IFD0/PlanarConfiguration - missing mapping' => [
-              null, 'lsolesen\pel\PelEntryShort', 'IFD0', 'PlanarConfiguration', [6.1],
+              null, 'ExifEye\core\Entry\Short', 'IFD0', 'PlanarConfiguration', [6.1],
           ],
           'Canon Panorama Information/PanoramaDirection - value 4' => [
-              '2x2 Matrix (Clockwise)', 'lsolesen\pel\PelEntrySShort', 'Canon Panorama Information', 'PanoramaDirection', [4],
+              '2x2 Matrix (Clockwise)', 'ExifEye\core\Entry\SignedShort', 'Canon Panorama Information', 'PanoramaDirection', [4],
           ],
           'Canon Camera Settings/LensType - value 493' => [
-              'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'lsolesen\pel\PelEntryShort', 'Canon Camera Settings', 'LensType', [493],
+              'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'ExifEye\core\Entry\Short', 'Canon Camera Settings', 'LensType', [493],
           ],
           'Canon Camera Settings/LensType - value 493.1' => [
-              'Canon EF 24-105mm f/4L IS USM', 'lsolesen\pel\PelEntryShort', 'Canon Camera Settings', 'LensType', [493.1],
+              'Canon EF 24-105mm f/4L IS USM', 'ExifEye\core\Entry\Short', 'Canon Camera Settings', 'LensType', [493.1],
           ],
           'IFD0/YCbCrSubSampling - value 2, 1' => [
-              'YCbCr4:2:2', 'lsolesen\pel\PelEntryShort', 'IFD0', 'YCbCrSubSampling', [2, 1],
+              'YCbCr4:2:2', 'ExifEye\core\Entry\Short', 'IFD0', 'YCbCrSubSampling', [2, 1],
           ],
           'IFD0/YCbCrSubSampling - value 2, 2' => [
-              'YCbCr4:2:0', 'lsolesen\pel\PelEntryShort', 'IFD0', 'YCbCrSubSampling', [2, 2],
+              'YCbCr4:2:0', 'ExifEye\core\Entry\Short', 'IFD0', 'YCbCrSubSampling', [2, 2],
           ],
           'IFD0/YCbCrSubSampling - value 6, 7' => [
-              '6, 7', 'lsolesen\pel\PelEntryShort', 'IFD0', 'YCbCrSubSampling', [6, 7],
+              '6, 7', 'ExifEye\core\Entry\Short', 'IFD0', 'YCbCrSubSampling', [6, 7],
           ],
           'Exif/SubjectArea - value 6, 7' => [
-              '(x,y) = (6,7)', 'lsolesen\pel\PelEntryShort', 'Exif', 'SubjectArea', [6, 7],
+              '(x,y) = (6,7)', 'ExifEye\core\Entry\Short', 'Exif', 'SubjectArea', [6, 7],
           ],
           'Exif/SubjectArea - value 5, 6, 7' => [
-              'Within distance 5 of (x,y) = (6,7)', 'lsolesen\pel\PelEntryShort', 'Exif', 'SubjectArea', [5, 6, 7],
+              'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\Short', 'Exif', 'SubjectArea', [5, 6, 7],
           ],
           'Exif/SubjectArea - value 4, 5, 6, 7' => [
-              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'lsolesen\pel\PelEntryShort', 'Exif', 'SubjectArea', [4, 5, 6, 7],
+              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\Short', 'Exif', 'SubjectArea', [4, 5, 6, 7],
           ],
           'Exif/SubjectArea - wrong components' => [
-              'Unexpected number of components (1, expected 2, 3, or 4).', 'lsolesen\pel\PelEntryShort', 'Exif', 'SubjectArea', [6],
+              'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\Short', 'Exif', 'SubjectArea', [6],
           ],
           'Exif/FNumber - value 60, 10' => [
               'f/6.0', 'lsolesen\pel\PelEntryRational', 'Exif', 'FNumber', [[60, 10]],

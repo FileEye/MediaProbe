@@ -42,7 +42,7 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'X-2,C-50Z       ');
 
         $entry = $ifd0->getEntry(274); // Orientation
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'top - left');
 
@@ -63,7 +63,7 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '144/1');
 
         $entry = $ifd0->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 
@@ -78,7 +78,7 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '0000:00:00 00:00:00');
 
         $entry = $ifd0->getEntry(531); // YCbCrPositioning
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'co-sited');
 
@@ -113,12 +113,12 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'f/4.5');
 
         $entry = $ifd0_0->getEntry(34850); // ExposureProgram
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 5);
         $this->assertEquals($entry->getText(), 'Creative program (biased toward depth of field)');
 
         $entry = $ifd0_0->getEntry(34855); // ISOSpeedRatings
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 80);
         $this->assertEquals($entry->getText(), '80');
 
@@ -159,17 +159,17 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '300/100');
 
         $entry = $ifd0_0->getEntry(37383); // MeteringMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 5);
         $this->assertEquals($entry->getText(), 'Pattern');
 
         $entry = $ifd0_0->getEntry(37384); // LightSource
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Unknown');
 
         $entry = $ifd0_0->getEntry(37385); // Flash
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 25);
         $this->assertEquals($entry->getText(), 'Flash fired, auto mode.');
 
@@ -198,17 +198,17 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'FlashPix Version 1.0');
 
         $entry = $ifd0_0->getEntry(40961); // ColorSpace
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'sRGB');
 
         $entry = $ifd0_0->getEntry(40962); // PixelXDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2560);
         $this->assertEquals($entry->getText(), '2560');
 
         $entry = $ifd0_0->getEntry(40963); // PixelYDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1920);
         $this->assertEquals($entry->getText(), '1920');
 
@@ -218,17 +218,17 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'DSC');
 
         $entry = $ifd0_0->getEntry(41985); // CustomRendered
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal process');
 
         $entry = $ifd0_0->getEntry(41986); // ExposureMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Auto exposure');
 
         $entry = $ifd0_0->getEntry(41987); // WhiteBalance
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Auto white balance');
 
@@ -241,27 +241,27 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '100/100');
 
         $entry = $ifd0_0->getEntry(41990); // SceneCaptureType
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Portrait');
 
         $entry = $ifd0_0->getEntry(41991); // GainControl
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal');
 
         $entry = $ifd0_0->getEntry(41992); // Contrast
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal');
 
         $entry = $ifd0_0->getEntry(41993); // Saturation
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal');
 
         $entry = $ifd0_0->getEntry(41994); // Sharpness
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal');
 
@@ -311,7 +311,7 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd1->getEntries()), 4);
 
         $entry = $ifd1->getEntry(259); // Compression
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 6);
         $this->assertEquals($entry->getText(), 'JPEG compression');
 
@@ -332,7 +332,7 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd1->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 

@@ -56,7 +56,7 @@ use ExifEye\core\Format;
  * PelTag::XP_AUTHOR}, {@link PelTag::XP_KEYWORD}, and {@link
  * PelTag::XP_SUBJECT} tags. If another tag is used the data will no
  * longer be correctly decoded when reloaded with PEL. (The data will
- * be loaded as an {@link PelEntryByte} entry, which isn't as useful.)
+ * be loaded as an {@link Byte} entry, which isn't as useful.)
  *
  * This class is to be used as in
  * <code>
@@ -95,7 +95,7 @@ class PelEntryWindowsString extends PelEntry
      *            one of {@link PelTag::XP_TITLE}, {@link PelTag::XP_COMMENT},
      *            {@link PelTag::XP_AUTHOR}, {@link PelTag::XP_KEYWORD}, and {@link
      *            PelTag::XP_SUBJECT} tags. If another tag is used, then this
-     *            entry will be incorrectly reloaded as a {@link PelEntryByte}.
+     *            entry will be incorrectly reloaded as a {@link Byte}.
      *
      * @param string $str
      *            the string that this entry will represent. It will

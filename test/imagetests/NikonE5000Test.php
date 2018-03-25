@@ -58,7 +58,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '300/1');
 
         $entry = $ifd0->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 
@@ -73,7 +73,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '2002:05:21 14:53:52');
 
         $entry = $ifd0->getEntry(531); // YCbCrPositioning
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'centered');
 
@@ -102,12 +102,12 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'f/2.8');
 
         $entry = $ifd0_0->getEntry(34850); // ExposureProgram
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Normal program');
 
         $entry = $ifd0_0->getEntry(34855); // ISOSpeedRatings
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 100);
         $this->assertEquals($entry->getText(), '100');
 
@@ -148,17 +148,17 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '3/1');
 
         $entry = $ifd0_0->getEntry(37383); // MeteringMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 5);
         $this->assertEquals($entry->getText(), 'Pattern');
 
         $entry = $ifd0_0->getEntry(37384); // LightSource
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Unknown');
 
         $entry = $ifd0_0->getEntry(37385); // Flash
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Flash did not fire.');
 
@@ -187,17 +187,17 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'FlashPix Version 1.0');
 
         $entry = $ifd0_0->getEntry(40961); // ColorSpace
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'sRGB');
 
         $entry = $ifd0_0->getEntry(40962); // PixelXDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryLong', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Long', $entry);
         $this->assertEquals($entry->getValue(), 1600);
         $this->assertEquals($entry->getText(), '1600');
 
         $entry = $ifd0_0->getEntry(40963); // PixelYDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryLong', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Long', $entry);
         $this->assertEquals($entry->getValue(), 1200);
         $this->assertEquals($entry->getText(), '1200');
 
@@ -247,7 +247,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd1->getEntries()), 4);
 
         $entry = $ifd1->getEntry(259); // Compression
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 6);
         $this->assertEquals($entry->getText(), 'JPEG compression');
 
@@ -268,7 +268,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd1->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 

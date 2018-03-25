@@ -3,17 +3,17 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelEntryByte;
+use ExifEye\core\Entry\Byte;
 use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelTiff;
 use lsolesen\pel\PelExif;
 use lsolesen\pel\PelJpeg;
 use ExifEye\core\Format;
-use lsolesen\pel\PelEntrySByte;
-use lsolesen\pel\PelEntryShort;
-use lsolesen\pel\PelEntrySShort;
-use lsolesen\pel\PelEntryLong;
-use lsolesen\pel\PelEntrySLong;
+use ExifEye\core\Entry\SignedByte;
+use ExifEye\core\Entry\Short;
+use ExifEye\core\Entry\SignedShort;
+use ExifEye\core\Entry\Long;
+use ExifEye\core\Entry\SignedLong;
 use ExifEye\core\Entry\Ascii;
 
 class WriteEntryTest extends ExifEyeTestCaseBase
@@ -101,77 +101,77 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         return [
             'PEL Byte Read/Write Tests' => [
                 [
-                    new PelEntryByte(0xF001, 0),
-                    new PelEntryByte(0xF002, 1),
-                    new PelEntryByte(0xF003, 2),
-                    new PelEntryByte(0xF004, 253),
-                    new PelEntryByte(0xF005, 254),
-                    new PelEntryByte(0xF006, 255),
-                    new PelEntryByte(0xF007, 0, 1, 2, 253, 254, 255),
-                    new PelEntryByte(0xF008),
+                    new Byte(0xF001, 0),
+                    new Byte(0xF002, 1),
+                    new Byte(0xF003, 2),
+                    new Byte(0xF004, 253),
+                    new Byte(0xF005, 254),
+                    new Byte(0xF006, 255),
+                    new Byte(0xF007, 0, 1, 2, 253, 254, 255),
+                    new Byte(0xF008),
                 ],
             ],
             'PEL SByte Read/Write Tests' => [
                 [
-                    new PelEntrySByte(0xF101, - 128),
-                    new PelEntrySByte(0xF102, - 127),
-                    new PelEntrySByte(0xF103, - 1),
-                    new PelEntrySByte(0xF104, 0),
-                    new PelEntrySByte(0xF105, 1),
-                    new PelEntrySByte(0xF106, 126),
-                    new PelEntrySByte(0xF107, 127),
-                    new PelEntrySByte(0xF108, - 128, - 1, 0, 1, 127),
-                    new PelEntrySByte(0xF109),
+                    new SignedByte(0xF101, - 128),
+                    new SignedByte(0xF102, - 127),
+                    new SignedByte(0xF103, - 1),
+                    new SignedByte(0xF104, 0),
+                    new SignedByte(0xF105, 1),
+                    new SignedByte(0xF106, 126),
+                    new SignedByte(0xF107, 127),
+                    new SignedByte(0xF108, - 128, - 1, 0, 1, 127),
+                    new SignedByte(0xF109),
                 ],
             ],
             'PEL Short Read/Write Tests' => [
                 [
-                    new PelEntryShort(0xF201, 0),
-                    new PelEntryShort(0xF202, 1),
-                    new PelEntryShort(0xF203, 2),
-                    new PelEntryShort(0xF204, 65533),
-                    new PelEntryShort(0xF205, 65534),
-                    new PelEntryShort(0xF206, 65535),
-                    new PelEntryShort(0xF208, 0, 1, 65534, 65535),
-                    new PelEntryShort(0xF209),
+                    new Short(0xF201, 0),
+                    new Short(0xF202, 1),
+                    new Short(0xF203, 2),
+                    new Short(0xF204, 65533),
+                    new Short(0xF205, 65534),
+                    new Short(0xF206, 65535),
+                    new Short(0xF208, 0, 1, 65534, 65535),
+                    new Short(0xF209),
                 ],
             ],
             'PEL SShort Read/Write Tests' => [
                 [
-                    new PelEntrySShort(0xF301, - 32768),
-                    new PelEntrySShort(0xF302, - 32767),
-                    new PelEntrySShort(0xF303, - 1),
-                    new PelEntrySShort(0xF304, 0),
-                    new PelEntrySShort(0xF305, 1),
-                    new PelEntrySShort(0xF306, 32766),
-                    new PelEntrySShort(0xF307, 32767),
-                    new PelEntrySShort(0xF308, - 32768, - 1, 0, 1, 32767),
-                    new PelEntrySShort(0xF309),
+                    new SignedShort(0xF301, - 32768),
+                    new SignedShort(0xF302, - 32767),
+                    new SignedShort(0xF303, - 1),
+                    new SignedShort(0xF304, 0),
+                    new SignedShort(0xF305, 1),
+                    new SignedShort(0xF306, 32766),
+                    new SignedShort(0xF307, 32767),
+                    new SignedShort(0xF308, - 32768, - 1, 0, 1, 32767),
+                    new SignedShort(0xF309),
                 ],
             ],
             'PEL Long Read/Write Tests' => [
                 [
-                    new PelEntryLong(0xF401, 0),
-                    new PelEntryLong(0xF402, 1),
-                    new PelEntryLong(0xF403, 2),
-                    new PelEntryLong(0xF404, 4294967293),
-                    new PelEntryLong(0xF405, 4294967294),
-                    new PelEntryLong(0xF406, 4294967295),
-                    new PelEntryLong(0xF408, 0, 1, 4294967295),
-                    new PelEntryLong(0xF409),
+                    new Long(0xF401, 0),
+                    new Long(0xF402, 1),
+                    new Long(0xF403, 2),
+                    new Long(0xF404, 4294967293),
+                    new Long(0xF405, 4294967294),
+                    new Long(0xF406, 4294967295),
+                    new Long(0xF408, 0, 1, 4294967295),
+                    new Long(0xF409),
                 ],
             ],
             'PEL SLong Read/Write Tests' => [
                 [
-                    new PelEntrySLong(0xF501, - 2147483648),
-                    new PelEntrySLong(0xF502, - 2147483647),
-                    new PelEntrySLong(0xF503, - 1),
-                    new PelEntrySLong(0xF504, 0),
-                    new PelEntrySLong(0xF505, 1),
-                    new PelEntrySLong(0xF506, 2147483646),
-                    new PelEntrySLong(0xF507, 2147483647),
-                    new PelEntrySLong(0xF508, - 2147483648, 0, 2147483647),
-                    new PelEntrySLong(0xF509),
+                    new SignedLong(0xF501, - 2147483648),
+                    new SignedLong(0xF502, - 2147483647),
+                    new SignedLong(0xF503, - 1),
+                    new SignedLong(0xF504, 0),
+                    new SignedLong(0xF505, 1),
+                    new SignedLong(0xF506, 2147483646),
+                    new SignedLong(0xF507, 2147483647),
+                    new SignedLong(0xF508, - 2147483648, 0, 2147483647),
+                    new SignedLong(0xF509),
                 ],
             ],
             'PEL Ascii Read/Write Tests' => [

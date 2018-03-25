@@ -47,7 +47,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '2000/1');
 
         $entry = $ifd0->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 
@@ -57,7 +57,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '2004:07:17 00:24:35');
 
         $entry = $ifd0->getEntry(531); // YCbCrPositioning
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'centered');
 
@@ -91,17 +91,17 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'FlashPix Version 1.0');
 
         $entry = $ifd0_0->getEntry(40961); // ColorSpace
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'sRGB');
 
         $entry = $ifd0_0->getEntry(40962); // PixelXDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryLong', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Long', $entry);
         $this->assertEquals($entry->getValue(), 960);
         $this->assertEquals($entry->getText(), '960');
 
         $entry = $ifd0_0->getEntry(40963); // PixelYDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryLong', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Long', $entry);
         $this->assertEquals($entry->getValue(), 755);
         $this->assertEquals($entry->getText(), '755');
 

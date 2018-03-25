@@ -21,7 +21,7 @@ abstract class Format
      * Each component will be an unsigned 8-bit integer with a value between 0
      * and 255.
      *
-     * Modelled with the {@link PelEntryByte} class.
+     * Modelled with the {@link Byte} class.
      */
     const BYTE = 1;
 
@@ -40,7 +40,7 @@ abstract class Format
      * Each component will be an unsigned 16-bit integer with a value between 0
      * and 65535.
      *
-     * Modelled with the {@link PelEntryShort} class.
+     * Modelled with the {@link Short} class.
      */
     const SHORT = 3;
 
@@ -50,7 +50,7 @@ abstract class Format
      * Each component will be an unsigned 32-bit integer with a value between 0
      * and 4294967295.
      *
-     * Modelled with the {@link PelEntryLong} class.
+     * Modelled with the {@link Long} class.
      */
     const LONG = 4;
 
@@ -71,7 +71,7 @@ abstract class Format
      * Each component will be a signed 8-bit integer with a value between -128
      * and 127.
      *
-     * Modelled with the {@link PelEntrySByte} class.
+     * Modelled with the {@link SignedByte} class.
      */
     const SBYTE = 6;
 
@@ -90,7 +90,7 @@ abstract class Format
      * Each component will be a signed 16-bit integer with a value between
      * -32768 and 32767.
      *
-     * Modelled with the {@link PelEntrySShort} class.
+     * Modelled with the {@link SignedShort} class.
      */
     const SSHORT = 8;
 
@@ -100,7 +100,7 @@ abstract class Format
      * Each component will be a signed 32-bit integer with a value between
      * -2147483648 and 2147483647.
      *
-     * Modelled with the {@link PelEntrySLong} class.
+     * Modelled with the {@link SignedLong} class.
      */
     const SLONG = 9;
 

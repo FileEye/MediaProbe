@@ -329,7 +329,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * Please note that the data you pass to this method should come
      * from an image, that is, it should be raw bytes. If instead you
      * want to create an entry for holding, say, an short integer, then
-     * create a {@link PelEntryShort} object directly and load the data
+     * create a {@link Short} object directly and load the data
      * into it.
      *
      * @param DataWindow $d
@@ -362,7 +362,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * Please note that the data you pass to this method should come
      * from an image, that is, it should be raw bytes. If instead you
      * want to create an entry for holding, say, an short integer, then
-     * create a {@link PelEntryShort} object directly and load the data
+     * create a {@link Short} object directly and load the data
      * into it.
      *
      * A {@link PelUnexpectedFormatException} is thrown if a mismatch is

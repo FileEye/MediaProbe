@@ -1,41 +1,10 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005, 2006 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\Convert;
-
-/**
- * Classes used to hold longs, both signed and unsigned.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class for holding unsigned longs.
@@ -54,11 +23,9 @@ use ExifEye\core\Utility\Convert;
  * values.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class PelEntryLong extends PelEntryNumber
+class Long extends NumberBase
 {
-
     /**
      * Make a new entry that can hold an unsigned long.
      *
@@ -70,7 +37,7 @@ class PelEntryLong extends PelEntryNumber
      *
      * This means that one can conveniently use objects like this:
      * <code>
-     * $a = new PelEntryLong(PelTag::EXIF_IMAGE_WIDTH, 123456);
+     * $a = new Long(PelTag::EXIF_IMAGE_WIDTH, 123456);
      * $b = $a->getValue() - 654321;
      * </code>
      * where the call to {@link getValue} will return an integer instead
@@ -138,6 +105,7 @@ class PelEntryLong extends PelEntryNumber
      * @param
      *            PelByteOrder one of {@link Convert::LITTLE_ENDIAN} and
      *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
+     *
      * @return string bytes representing the number given.
      */
     public function numberToBytes($number, $order)

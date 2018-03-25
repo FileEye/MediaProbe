@@ -36,7 +36,7 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'PENTAX *ist DS     ');
 
         $entry = $ifd0->getEntry(274); // Orientation
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'top - left');
 
@@ -57,7 +57,7 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd0->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 
@@ -134,7 +134,7 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '299/1000, 587/1000, 114/1000');
 
         $entry = $ifd0->getEntry(531); // YCbCrPositioning
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'co-sited');
 
@@ -169,12 +169,12 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'f/4.5');
 
         $entry = $ifd0_0->getEntry(34850); // ExposureProgram
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Normal program');
 
         $entry = $ifd0_0->getEntry(34855); // ISOSpeedRatings
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 200);
         $this->assertEquals($entry->getText(), '200');
 
@@ -207,12 +207,12 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '0.0');
 
         $entry = $ifd0_0->getEntry(37383); // MeteringMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 5);
         $this->assertEquals($entry->getText(), 'Pattern');
 
         $entry = $ifd0_0->getEntry(37385); // Flash
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 16);
         $this->assertEquals($entry->getText(), 'Flash did not fire, compulsory flash mode.');
 
@@ -236,22 +236,22 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'FlashPix Version 1.0');
 
         $entry = $ifd0_0->getEntry(40961); // ColorSpace
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 65535);
         $this->assertEquals($entry->getText(), 'Uncalibrated');
 
         $entry = $ifd0_0->getEntry(40962); // PixelXDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryLong', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Long', $entry);
         $this->assertEquals($entry->getValue(), 1536);
         $this->assertEquals($entry->getText(), '1536');
 
         $entry = $ifd0_0->getEntry(40963); // PixelYDimension
-        $this->assertInstanceOf('lsolesen\pel\PelEntryLong', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Long', $entry);
         $this->assertEquals($entry->getValue(), 1024);
         $this->assertEquals($entry->getText(), '1024');
 
         $entry = $ifd0_0->getEntry(41495); // SensingMethod
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'One-chip color area sensor');
 
@@ -266,47 +266,47 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), 'Directly photographed');
 
         $entry = $ifd0_0->getEntry(41985); // CustomRendered
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal process');
 
         $entry = $ifd0_0->getEntry(41986); // ExposureMode
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Auto exposure');
 
         $entry = $ifd0_0->getEntry(41987); // WhiteBalance
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'Manual white balance');
 
         $entry = $ifd0_0->getEntry(41989); // FocalLengthIn35mmFilm
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 67);
         $this->assertEquals($entry->getText(), '67');
 
         $entry = $ifd0_0->getEntry(41990); // SceneCaptureType
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Standard');
 
         $entry = $ifd0_0->getEntry(41992); // Contrast
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal');
 
         $entry = $ifd0_0->getEntry(41993); // Saturation
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal');
 
         $entry = $ifd0_0->getEntry(41994); // Sharpness
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 0);
         $this->assertEquals($entry->getText(), 'Normal');
 
         $entry = $ifd0_0->getEntry(41996); // SubjectDistanceRange
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 1);
         $this->assertEquals($entry->getText(), 'Macro');
 
@@ -364,7 +364,7 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals(count($ifd1->getEntries()), 4);
 
         $entry = $ifd1->getEntry(259); // Compression
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 6);
         $this->assertEquals($entry->getText(), 'JPEG compression');
 
@@ -385,7 +385,7 @@ class PentaxIstDSTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getText(), '72/1');
 
         $entry = $ifd1->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('lsolesen\pel\PelEntryShort', $entry);
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
         $this->assertEquals($entry->getValue(), 2);
         $this->assertEquals($entry->getText(), 'Inch');
 

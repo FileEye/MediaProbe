@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use \lsolesen\pel\PelEntrySByte;
+use ExifEye\core\Entry\SignedByte;
 
 class NumberSByteTest extends NumberTestCase
 {
@@ -12,7 +12,7 @@ class NumberSByteTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new PelEntrySByte(42);
+        $this->num = new SignedByte(42);
         $this->min = -128;
         $this->max = 127;
     }

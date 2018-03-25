@@ -25,13 +25,13 @@ class PelSpec
      */
     private static $defaultTagClasses = [
         Format::ASCII => 'ExifEye\\core\\Entry\\Ascii',
-        Format::BYTE => 'lsolesen\\pel\\PelEntryByte',
-        Format::SHORT => 'lsolesen\\pel\\PelEntryShort',
-        Format::LONG => 'lsolesen\\pel\\PelEntryLong',
+        Format::BYTE => 'ExifEye\\core\\Entry\\Byte',
+        Format::SHORT => 'ExifEye\\core\\Entry\\Short',
+        Format::LONG => 'ExifEye\\core\\Entry\\Long',
         Format::RATIONAL => 'lsolesen\\pel\\PelEntryRational',
-        Format::SBYTE => 'lsolesen\\pel\\PelEntrySByte',
-        Format::SSHORT => 'lsolesen\\pel\\PelEntrySShort',
-        Format::SLONG => 'lsolesen\\pel\\PelEntrySLong',
+        Format::SBYTE => 'ExifEye\\core\\Entry\\SignedByte',
+        Format::SSHORT => 'ExifEye\\core\\Entry\\SignedShort',
+        Format::SLONG => 'ExifEye\\core\\Entry\\SignedLong',
         Format::SRATIONAL => 'lsolesen\\pel\\PelEntrySRational',
         Format::UNDEFINED => 'lsolesen\\pel\\PelEntryUndefined',
     ];

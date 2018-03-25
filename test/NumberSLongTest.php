@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use \lsolesen\pel\PelEntrySLong;
+use ExifEye\core\Entry\SignedLong;
 
 class NumberSLongTest extends NumberTestCase
 {
@@ -12,7 +12,7 @@ class NumberSLongTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new PelEntrySLong(42);
+        $this->num = new SignedLong(42);
         $this->min = -2147483648;
         $this->max = 2147483647;
     }

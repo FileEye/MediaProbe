@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use \lsolesen\pel\PelEntryShort;
+use ExifEye\core\Entry\Short;
 
 class NumberShortTest extends NumberTestCase
 {
@@ -12,7 +12,7 @@ class NumberShortTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new PelEntryShort(42);
+        $this->num = new Short(42);
         $this->min = 0;
         $this->max = 65535;
     }

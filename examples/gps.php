@@ -39,6 +39,7 @@ require_once '../autoload.php';
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTiff;
 use lsolesen\pel\PelSpec;
+use ExifEye\core\Entry\Byte;
 
 /**
  * Convert a decimal degree into degrees, minutes, and seconds.
@@ -175,7 +176,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
     $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'DateTime'), $date_time));
     $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description));
 
-    $gps_ifd->addEntry(new PelEntryByte(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSVersionID'), 2, 2, 0, 0));
+    $gps_ifd->addEntry(new Byte(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSVersionID'), 2, 2, 0, 0));
 
     /*
      * Use the convertDecimalToDMS function to convert the latitude from
@@ -205,7 +206,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * The reference is set to 1 (true) if the altitude is below sea
      * level, or 0 (false) otherwise.
      */
-    $gps_ifd->addEntry(new PelEntryByte(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSAltitudeRef'), (int) ($altitude < 0)));
+    $gps_ifd->addEntry(new Byte(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSAltitudeRef'), (int) ($altitude < 0)));
 
     /* Finally we store the data in the output file. */
     file_put_contents($output, $jpeg->getBytes());

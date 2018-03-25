@@ -27,6 +27,7 @@ namespace lsolesen\pel;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\Entry\SignedLong;
 
 /**
  * Classes used to manipulate rational numbers.
@@ -52,7 +53,7 @@ use ExifEye\core\Format;
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
  */
-class PelEntrySRational extends PelEntrySLong
+class PelEntrySRational extends SignedLong
 {
 
     /**
