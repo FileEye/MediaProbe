@@ -7,6 +7,7 @@ use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\InvalidDataException;
+use lsolesen\pel\PelSpec;
 
 /**
  * Class representing an index of Short values as an IFD.

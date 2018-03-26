@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
 
 class Tags1Test extends ExifEyeTestCaseBase
