@@ -184,7 +184,7 @@ DATA;
         }
 
         // Check name.
-        if (isset($tag['name'])) {
+        if (!isset($tag['name'])) {
             throw new SpecCompilerException($file->getFileName() . ": missing name for TAG '" . $tag_id . "'");
         }
 
