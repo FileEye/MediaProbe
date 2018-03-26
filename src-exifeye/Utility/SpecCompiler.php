@@ -1,6 +1,6 @@
 <?php
 
-namespace lsolesen\pel\Util;
+namespace ExifEye\core\Utility;
 
 use ExifEye\core\Format;
 use ExifEye\core\Block\Ifd;

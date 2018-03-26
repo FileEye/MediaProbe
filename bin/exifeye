@@ -1,11 +1,11 @@
 #!/usr/bin/env php
 <?php
 /**
- * A Symfony CLI utility application for PEL.
+ * A Symfony CLI utility application for ExifEye.
  */
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\Command\CompileCommand;
+use ExifEye\core\Command\CompileCommand;
 use Symfony\Component\Console\Application;
 
 $packageAutoloader = __DIR__ . '/../vendor/autoload.php';
@@ -16,6 +16,6 @@ if (file_exists($packageAutoloader)) {
     require_once $standaloneAutoloader;
 }
 
-$application = new Application('pel', ExifEye::version());
+$application = new Application('exifeye', ExifEye::version());
 $application->add(new CompileCommand());
 $application->run();

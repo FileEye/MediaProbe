@@ -1,12 +1,12 @@
 <?php
 
-namespace lsolesen\pel\Command;
+namespace ExifEye\core\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use lsolesen\pel\Util\SpecCompiler;
+use ExifEye\core\Utility\SpecCompiler;
 
 /**
  * A Symfony application command to compile the PEL specification YAML files.

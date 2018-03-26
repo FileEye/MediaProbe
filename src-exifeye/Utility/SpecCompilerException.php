@@ -1,6 +1,6 @@
 <?php
 
-namespace lsolesen\pel\Util;
+namespace ExifEye\core\Utility;
 
 /**
  * Exception raised by the SpecCompiler class.
