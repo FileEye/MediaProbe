@@ -34,7 +34,7 @@ class Byte extends NumberBase
      *            The argument passed must obey the same rules as the argument to
      *            {@link setValue}, namely that it should be within range of an
      *            unsigned byte, that is between 0 and 255 (inclusive). If not,
-     *            then a {@link PelOverflowException} will be thrown.
+     *            then a {@link OverflowException} will be thrown.
      */
     public function __construct($tag, $value = null)
     {

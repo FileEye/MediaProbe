@@ -6,7 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Entry\Exception\WrongComponentCountException;
-use lsolesen\pel\PelInvalidArgumentException;
+use ExifEye\core\InvalidArgumentException;
 
 /**
  * Class for holding a date and time.
@@ -177,7 +177,7 @@ class Time extends Ascii
             case self::JULIAN_DAY_COUNT:
                 return $this->day_count + $this->seconds / 86400;
             default:
-                throw new PelInvalidArgumentException(
+                throw new InvalidArgumentException(
                     'Expected UNIX_TIMESTAMP (%d), ' . 'EXIF_STRING (%d), or ' . 'JULIAN_DAY_COUNT (%d) for $type, got %d.',
                     self::UNIX_TIMESTAMP,
                     self::EXIF_STRING,
@@ -232,7 +232,7 @@ class Time extends Ascii
                 break;
 
             default:
-                throw new PelInvalidArgumentException(
+                throw new InvalidArgumentException(
                     'Expected UNIX_TIMESTAMP (%d), ' . 'EXIF_STRING (%d), or ' . 'JULIAN_DAY_COUNT (%d) for $type, got %d.',
                     self::UNIX_TIMESTAMP,
                     self::EXIF_STRING,

@@ -28,6 +28,8 @@ namespace lsolesen\pel;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
+use ExifEye\core\InvalidArgumentException;
+use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\Convert;
 
 /**
@@ -133,7 +135,7 @@ class PelJpeg
             ExifEye::debug('Initializing PelJpeg object from image resource.');
             $this->load(new DataWindow($data));
         } else {
-            throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
+            throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
         }
     }
 
@@ -219,7 +221,7 @@ class PelJpeg
                     try {
                         $content = new PelExif();
                         $content->load($d->getClone(0, $len));
-                    } catch (PelInvalidDataException $e) {
+                    } catch (InvalidDataException $e) {
                         /*
                          * We store the data as normal JPEG content if it could
                          * not be parsed as Exif data.

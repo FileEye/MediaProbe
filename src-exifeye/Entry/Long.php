@@ -55,7 +55,7 @@ class Long extends NumberBase
      *            the same rules as the argument to {@link setValue}, namely that
      *            it should be within range of an unsigned long (32 bit), that is
      *            between 0 and 4294967295 (inclusive). If not, then a {@link
-     *            PelExifOverflowException} will be thrown.
+     *            OverflowException} will be thrown.
      */
     public function __construct($tag, $value = null)
     {

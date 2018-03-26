@@ -26,6 +26,7 @@ namespace lsolesen\pel;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
+use ExifEye\core\InvalidDataException;
 
 /**
  * Classes for dealing with Exif data.
@@ -97,13 +98,13 @@ class PelExif extends PelJpegContent
 
         /* There must be at least 6 bytes for the Exif header. */
         if ($d->getSize() < 6) {
-            throw new PelInvalidDataException('Expected at least 6 bytes of Exif ' . 'data, found just %d bytes.', $d->getSize());
+            throw new InvalidDataException('Expected at least 6 bytes of Exif ' . 'data, found just %d bytes.', $d->getSize());
         }
         /* Verify the Exif header */
         if ($d->strcmp(0, self::EXIF_HEADER)) {
             $d->setWindowStart(strlen(self::EXIF_HEADER));
         } else {
-            throw new PelInvalidDataException('Exif header not found.');
+            throw new InvalidDataException('Exif header not found.');
         }
 
         /* The rest of the data is TIFF data. */

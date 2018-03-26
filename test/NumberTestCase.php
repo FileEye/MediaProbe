@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
-use \lsolesen\pel\PelOverflowException;
+use ExifEye\core\Entry\Exception\OverflowException;
 
 abstract class NumberTestCase extends ExifEyeTestCaseBase
 {
@@ -28,7 +28,7 @@ abstract class NumberTestCase extends ExifEyeTestCaseBase
         $caught = false;
         try {
             $this->num->setValue($this->min - 1);
-        } catch (PelOverflowException $e) {
+        } catch (OverflowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);
@@ -37,7 +37,7 @@ abstract class NumberTestCase extends ExifEyeTestCaseBase
         $caught = false;
         try {
             $this->num->setValue($this->max + 1);
-        } catch (PelOverflowException $e) {
+        } catch (OverflowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);
@@ -46,7 +46,7 @@ abstract class NumberTestCase extends ExifEyeTestCaseBase
         $caught = false;
         try {
             $this->num->setValue(0, $this->max + 1);
-        } catch (PelOverflowException $e) {
+        } catch (OverflowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);
@@ -55,7 +55,7 @@ abstract class NumberTestCase extends ExifEyeTestCaseBase
         $caught = false;
         try {
             $this->num->setValue(0, $this->min - 1);
-        } catch (PelOverflowException $e) {
+        } catch (OverflowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);

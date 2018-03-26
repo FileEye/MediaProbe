@@ -26,6 +26,8 @@ namespace lsolesen\pel;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
+use ExifEye\core\InvalidArgumentException;
+use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\Convert;
 
 /**
@@ -106,7 +108,7 @@ class PelTiff
             ExifEye::debug('Initializing PelTiff object from DataWindow.');
             $this->load($data);
         } else {
-            throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
+            throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
         }
     }
 
@@ -115,7 +117,7 @@ class PelTiff
      *
      * The data given will be parsed and an internal tree representation
      * will be built. If the data cannot be parsed correctly, a {@link
-     * PelInvalidDataException} is thrown, explaining the problem.
+     * InvalidDataException} is thrown, explaining the problem.
      *
      * @param
      *            d
@@ -133,7 +135,7 @@ class PelTiff
          * to the first IFD.
          */
         if ($d->getSize() < 8) {
-            throw new PelInvalidDataException('Expected at least 8 bytes of TIFF ' . 'data, found just %d bytes.', $d->getSize());
+            throw new InvalidDataException('Expected at least 8 bytes of TIFF ' . 'data, found just %d bytes.', $d->getSize());
         }
         /* Byte order */
         if ($d->strcmp(0, 'II')) {
@@ -143,12 +145,12 @@ class PelTiff
             ExifEye::debug('Found Motorola byte order');
             $d->setByteOrder(Convert::BIG_ENDIAN);
         } else {
-            throw new PelInvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $d->getByte(0), $d->getByte(1));
+            throw new InvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $d->getByte(0), $d->getByte(1));
         }
 
         /* Verify the TIFF header */
         if ($d->getShort(2) != self::TIFF_HEADER) {
-            throw new PelInvalidDataException('Missing TIFF magic value.');
+            throw new InvalidDataException('Missing TIFF magic value.');
         }
         /* IFD 0 offset */
         $offset = $d->getLong(4);
@@ -185,7 +187,7 @@ class PelTiff
     public function setIfd(PelIfd $ifd)
     {
         if ($ifd->getType() != PelSpec::getIfdIdByType('IFD0')) {
-            throw new PelInvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getType(), PelSpec::getIfdIdByType('IFD0'));
+            throw new InvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getType(), PelSpec::getIfdIdByType('IFD0'));
         }
         $this->ifd = $ifd;
     }

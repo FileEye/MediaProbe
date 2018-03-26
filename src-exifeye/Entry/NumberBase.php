@@ -3,9 +3,9 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\Exception\OverflowException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use lsolesen\pel\PelOverflowException;
 
 /**
  * Abstract class for numbers.
@@ -27,7 +27,7 @@ abstract class NumberBase extends EntryBase
      * The minimum allowed value.
      *
      * Any attempt to change the value below this variable will result
-     * in a {@link PelOverflowException} being thrown.
+     * in a {@link OverflowException} being thrown.
      *
      * @var int
      */
@@ -37,7 +37,7 @@ abstract class NumberBase extends EntryBase
      * The maximum allowed value.
      *
      * Any attempt to change the value over this variable will result in
-     * a {@link PelOverflowException} being thrown.
+     * a {@link OverflowException} being thrown.
      *
      * @var int
      */
@@ -58,7 +58,7 @@ abstract class NumberBase extends EntryBase
      *
      * This method can change both the number of components and the
      * value of the components. Range checks will be made on the new
-     * value, and a {@link PelOverflowException} will be thrown if the
+     * value, and a {@link OverflowException} will be thrown if the
      * value is found to be outside the legal range.
      *
      * The method accept several number arguments. The {@link getValue}
@@ -69,7 +69,7 @@ abstract class NumberBase extends EntryBase
      *            the new value(s). This can be zero or
      *            more numbers, that is, either integers or arrays. The input will
      *            be checked to ensure that the numbers are within the valid range.
-     *            If not, then a {@link PelOverflowException} will be thrown.
+     *            If not, then a {@link OverflowException} will be thrown.
      *
      * @see getValue
      */
@@ -84,7 +84,7 @@ abstract class NumberBase extends EntryBase
      *
      * This method can change both the number of components and the
      * value of the components. Range checks will be made on the new
-     * value, and a {@link PelOverflowException} will be thrown if the
+     * value, and a {@link OverflowException} will be thrown if the
      * value is found to be outside the legal range.
      *
      * @param
@@ -123,25 +123,25 @@ abstract class NumberBase extends EntryBase
      *
      * This method will check that the number given is within the range
      * given my {@link getMin()} and {@link getMax()}, inclusive. If
-     * not, then a {@link PelOverflowException} is thrown.
+     * not, then a {@link OverflowException} is thrown.
      *
      * @param
      *            int|array the number in question.
      *
      * @return void nothing, but will throw a {@link
-     *         PelOverflowException} if the number is found to be outside the
+     *         OverflowException} if the number is found to be outside the
      *         legal range and {@link ExifEye::$strict} is true.
      */
     public function validateNumber($n)
     {
         if ($this->dimension == 1) {
             if ($n < $this->min || $n > $this->max) {
-                ExifEye::maybeThrow(new PelOverflowException($n, $this->min, $this->max));
+                ExifEye::maybeThrow(new OverflowException($n, $this->min, $this->max));
             }
         } else {
             for ($i = 0; $i < $this->dimension; $i ++) {
                 if ($n[$i] < $this->min || $n[$i] > $this->max) {
-                    ExifEye::maybeThrow(new PelOverflowException($n[$i], $this->min, $this->max));
+                    ExifEye::maybeThrow(new OverflowException($n[$i], $this->min, $this->max));
                 }
             }
         }

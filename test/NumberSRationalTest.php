@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\SignedRational;
-use lsolesen\pel\PelOverflowException;
+use ExifEye\core\Entry\Exception\OverflowException;
 
 class NumberSRationalTest extends NumberTestCase
 {
@@ -15,7 +15,7 @@ class NumberSRationalTest extends NumberTestCase
         $caught = false;
         try {
             $entry->setValue([-10, -20], [-1, -2147483649]);
-        } catch (PelOverflowException $e) {
+        } catch (OverflowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);
@@ -24,7 +24,7 @@ class NumberSRationalTest extends NumberTestCase
         $caught = false;
         try {
             $entry->setValue([3, 4], [1, 2147483648]);
-        } catch (PelOverflowException $e) {
+        } catch (OverflowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);
@@ -33,7 +33,7 @@ class NumberSRationalTest extends NumberTestCase
         $caught = false;
         try {
             $entry->setValue([3, 4], [4294967296, 1]);
-        } catch (PelOverflowException $e) {
+        } catch (OverflowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);

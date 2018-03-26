@@ -6,6 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\InvalidDataException;
 
 /**
  * Class representing an index of Short values as an IFD.
@@ -37,7 +38,7 @@ class PelIfdIndexShort extends PelIfd
 
         $index_size = $d->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
-            ExifEye::maybeThrow(new PelInvalidDataException('Size of %s does not match the number of entries.', $this->getName()));
+            ExifEye::maybeThrow(new InvalidDataException('Size of %s does not match the number of entries.', $this->getName()));
         }
         $offset += 2;
         for ($i = 0; $i < $components; $i++) {

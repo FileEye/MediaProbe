@@ -30,6 +30,8 @@ use ExifEye\core\DataWindowWindowException;
 use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\InvalidArgumentException;
+use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\Convert;
 
 /**
@@ -563,7 +565,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param EntryBase $e
      *            the entry that will be added. If the entry is not
      *            valid in this IFD (as per {@link isValidTag()}) an
-     *            {@link PelInvalidDataException} is thrown.
+     *            {@link InvalidDataException} is thrown.
      *
      * @todo The entry will be identified with its tag, so each
      *       directory can only contain one entry with each tag. Is this a
@@ -575,7 +577,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $e->setIfdType($this->type);
             $this->entries[$e->getTag()] = $e;
         } else {
-            throw new PelInvalidDataException("IFD %s cannot hold\n%s", $this->getName(), $e->__toString());
+            throw new InvalidDataException("IFD %s cannot hold\n%s", $this->getName(), $e->__toString());
         }
     }
 
@@ -650,7 +652,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             $tag = $e->getTag();
             $this->entries[$tag] = $e;
         } else {
-            throw new PelInvalidArgumentException('Argument "%s" must be a EntryBase.', $e);
+            throw new InvalidArgumentException('Argument "%s" must be a EntryBase.', $e);
         }
     }
 

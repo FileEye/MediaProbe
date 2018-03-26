@@ -49,7 +49,7 @@ class Rational extends Long
      *            argument to {@link setValue}, namely that each argument should be
      *            an array with two entries, both of which must be within range of
      *            an unsigned long (32 bit), that is between 0 and 4294967295
-     *            (inclusive). If not, then a {@link PelOverflowException} will be
+     *            (inclusive). If not, then a {@link OverflowException} will be
      *            thrown.
      */
     public function __construct($tag, $value = null)

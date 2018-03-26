@@ -3,7 +3,7 @@
 namespace ExifEye\core;
 
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelInvalidArgumentException;
+use ExifEye\core\InvalidArgumentException;
 
 /**
  * A data window object.
@@ -85,7 +85,7 @@ class DataWindow
             ImageJpeg($data, null, ExifEye::getJPEGQuality());
             $this->data = ob_get_clean();
         } else {
-            throw new PelInvalidArgumentException('Bad type for $data: %s', gettype($data));
+            throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
         }
 
         $this->order = $endianess;

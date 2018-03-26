@@ -37,7 +37,7 @@ class SignedRational extends SignedLong
      *            an array with two entries, both of which must be within range of
      *            a signed long (32 bit), that is between -2147483648 and
      *            2147483647 (inclusive). If not, then a {@link
-     *            PelOverflowException} will be thrown.
+     *            OverflowException} will be thrown.
      */
     public function __construct($tag, $value = null)
     {
