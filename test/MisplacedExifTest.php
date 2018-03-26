@@ -3,9 +3,9 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
+use ExifEye\core\JpegMarker;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelExif;
-use lsolesen\pel\PelJpegMarker;
 
 class MisplacedExifTest extends ExifEyeTestCaseBase
 {
@@ -16,14 +16,14 @@ class MisplacedExifTest extends ExifEyeTestCaseBase
         // Image contains non-EXIF APP1 section ahead of the EXIF one
         $jpeg = new PelJpeg(dirname(__FILE__) . '/broken_images/misplaced-exif.jpg');
         // Assert we just have loaded correct file for the test
-        $this->assertNotInstanceOf('\lsolesen\pel\PelExif', $jpeg->getSection(PelJpegMarker::APP1));
+        $this->assertNotInstanceOf('\lsolesen\pel\PelExif', $jpeg->getSection(JpegMarker::APP1));
 
         // Manually find exif APP1 section index
         $sections1 = $jpeg->getSections();
         $exifIdx = null;
         $idx = 0;
         foreach ($sections1 as $section) {
-            if (($section[0] == PelJpegMarker::APP1) && ($section[1] instanceof PelExif)) {
+            if (($section[0] == JpegMarker::APP1) && ($section[1] instanceof PelExif)) {
                 $exifIdx = $idx;
                 break;
             }

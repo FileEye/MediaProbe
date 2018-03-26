@@ -30,6 +30,8 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
+use ExifEye\core\JpegInvalidMarkerException;
+use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\Convert;
 
 /**
@@ -38,10 +40,10 @@ use ExifEye\core\Utility\Convert;
  * The {@link PelJpeg} class defined here provides an abstraction for
  * dealing with a JPEG file. The file will be contain a number of
  * sections containing some {@link PelJpegContent content} identified
- * by a {@link PelJpegMarker marker}.
+ * by a {@link JpegMarker marker}.
  *
  * The {@link getExif()} method is used get hold of the {@link
- * PelJpegMarker::APP1 APP1} section which stores Exif data. So if
+ * JpegMarker::APP1 APP1} section which stores Exif data. So if
  * the name of the JPEG file is stored in $filename, then one would
  * get hold of the Exif data by saying:
  *
@@ -74,11 +76,11 @@ class PelJpeg
      * The sections in the JPEG data.
      *
      * A JPEG file is built up as a sequence of sections, each section
-     * is identified with a {@link PelJpegMarker}. Some sections can
+     * is identified with a {@link JpegMarker}. Some sections can
      * occur more than once in the JPEG stream (the {@link
-     * PelJpegMarker::DQT DQT} and {@link PelJpegMarker::DHT DTH}
+     * JpegMarker::DQT DQT} and {@link JpegMarker::DHT DTH}
      * markers for example) and so this is an array of ({@link
-     * PelJpegMarker}, {@link PelJpegContent}) pairs.
+     * JpegMarker}, {@link PelJpegContent}) pairs.
      *
      * The content can be either generic {@link PelJpegContent JPEG
      * content} or {@link PelExif Exif data}.
@@ -168,7 +170,7 @@ class PelJpeg
      * been constructed, also after the {@link appendSection()} has been
      * called to append custom sections. Loading several JPEG images
      * into one object will accumulate the sections, but there will only
-     * be one {@link PelJpegMarker::SOS} section at any given time.
+     * be one {@link JpegMarker::SOS} section at any given time.
      *
      * @param
      *            DataWindow the data that will be turned into JPEG
@@ -192,8 +194,8 @@ class PelJpeg
 
             $marker = $d->getByte($i);
 
-            if (!PelJpegMarker::isValid($marker)) {
-                throw new PelJpegInvalidMarkerException($marker, $i);
+            if (!JpegMarker::isValid($marker)) {
+                throw new JpegInvalidMarkerException($marker, $i);
             }
 
             /*
@@ -202,7 +204,7 @@ class PelJpeg
              */
             $d->setWindowStart($i + 1);
 
-            if ($marker == PelJpegMarker::SOI || $marker == PelJpegMarker::EOI) {
+            if ($marker == JpegMarker::SOI || $marker == JpegMarker::EOI) {
                 $content = new PelJpegContent(new DataWindow());
                 $this->appendSection($marker, $content);
             } else {
@@ -212,12 +214,12 @@ class PelJpeg
                  */
                 $len = $d->getShort(0) - 2;
 
-                ExifEye::debug('Found %s section of length %d', PelJpegMarker::getName($marker), $len);
+                ExifEye::debug('Found %s section of length %d', JpegMarker::getName($marker), $len);
 
                 /* Skip past the length. */
                 $d->setWindowStart(2);
 
-                if ($marker == PelJpegMarker::APP1) {
+                if ($marker == JpegMarker::APP1) {
                     try {
                         $content = new PelExif();
                         $content->load($d->getClone(0, $len));
@@ -232,7 +234,7 @@ class PelJpeg
                     $this->appendSection($marker, $content);
                     /* Skip past the data. */
                     $d->setWindowStart($len);
-                } elseif ($marker == PelJpegMarker::COM) {
+                } elseif ($marker == JpegMarker::COM) {
                     $content = new PelJpegComment();
                     $content->load($d->getClone(0, $len));
                     $this->appendSection($marker, $content);
@@ -244,7 +246,7 @@ class PelJpeg
                     $d->setWindowStart($len);
 
                     /* In case of SOS, image data will follow. */
-                    if ($marker == PelJpegMarker::SOS) {
+                    if ($marker == JpegMarker::SOS) {
                         /*
                          * Some images have some trailing (garbage?) following the
                          * EOI marker. To handle this we seek backwards until we
@@ -253,7 +255,7 @@ class PelJpeg
                          */
 
                         $length = $d->getSize();
-                        while ($d->getByte($length - 2) != 0xFF || $d->getByte($length - 1) != PelJpegMarker::EOI) {
+                        while ($d->getByte($length - 2) != 0xFF || $d->getByte($length - 1) != JpegMarker::EOI) {
                             $length --;
                         }
 
@@ -261,7 +263,7 @@ class PelJpeg
                         ExifEye::debug('JPEG data: ' . $this->jpeg_data->__toString());
 
                         /* Append the EOI. */
-                        $this->appendSection(PelJpegMarker::EOI, new PelJpegContent(new DataWindow()));
+                        $this->appendSection(JpegMarker::EOI, new PelJpegContent(new DataWindow()));
 
                         /* Now check to see if there are any trailing data. */
                         if ($length != $d->getSize()) {
@@ -312,9 +314,9 @@ class PelJpeg
         for ($i = 0; $i < $sections_count; $i ++) {
             if (! empty($this->sections[$i][0])) {
                 $section = $this->sections[$i];
-                if ($section[0] == PelJpegMarker::APP0) {
+                if ($section[0] == JpegMarker::APP0) {
                     $app0_offset = $i;
-                } elseif (($section[0] == PelJpegMarker::APP1) && ($section[1] instanceof PelExif)) {
+                } elseif (($section[0] == JpegMarker::APP1) && ($section[1] instanceof PelExif)) {
                     $app1_offset = $i;
                     break;
                 }
@@ -329,7 +331,7 @@ class PelJpeg
         if ($app1_offset > 0) {
             $this->sections[$app1_offset][1] = $exif;
         } else {
-            $this->insertSection(PelJpegMarker::APP1, $exif, $app0_offset + 1);
+            $this->insertSection(JpegMarker::APP1, $exif, $app0_offset + 1);
         }
     }
 
@@ -351,9 +353,9 @@ class PelJpeg
         $count_sections = count($this->sections);
         for ($i = 0; $i < $count_sections; $i ++) {
             if (! empty($this->sections[$i][0])) {
-                if ($this->sections[$i][0] == PelJpegMarker::APP1) {
+                if ($this->sections[$i][0] == JpegMarker::APP1) {
                     $app1_offset = $i;
-                } elseif ($this->sections[$i][0] == PelJpegMarker::APP2) {
+                } elseif ($this->sections[$i][0] == JpegMarker::APP2) {
                     $app2_offset = $i;
                     break;
                 }
@@ -368,7 +370,7 @@ class PelJpeg
         if ($app2_offset > 0) {
             $this->sections[$app1_offset][1] = $icc;
         } else {
-            $this->insertSection(PelJpegMarker::APP2, $icc, $app1_offset + 1);
+            $this->insertSection(JpegMarker::APP2, $icc, $app1_offset + 1);
         }
     }
 
@@ -384,7 +386,7 @@ class PelJpeg
     {
         $sections_count = count($this->sections);
         for ($i = 0; $i < $sections_count; $i ++) {
-            $section = $this->getSection(PelJpegMarker::APP1, $i);
+            $section = $this->getSection(JpegMarker::APP1, $i);
             if ($section instanceof PelExif) {
                 return $section;
             }
@@ -402,7 +404,7 @@ class PelJpeg
      */
     public function getICC()
     {
-        $icc = $this->getSection(PelJpegMarker::APP2);
+        $icc = $this->getSection(JpegMarker::APP2);
         if ($icc instanceof PelJpegContent) {
             return $icc;
         }
@@ -412,14 +414,14 @@ class PelJpeg
     /**
      * Clear any Exif data.
      *
-     * This method will only clear @{link PelJpegMarker::APP1} EXIF sections found.
+     * This method will only clear @{link JpegMarker::APP1} EXIF sections found.
      */
     public function clearExif()
     {
         $idx = 0;
         while ($idx < count($this->sections)) {
             $s = $this->sections[$idx];
-            if (($s[0] == PelJpegMarker::APP1) && ($s[1] instanceof PelExif)) {
+            if (($s[0] == JpegMarker::APP1) && ($s[1] instanceof PelExif)) {
                 array_splice($this->sections, $idx, 1);
                 $idx--;
             } else {
@@ -432,7 +434,7 @@ class PelJpeg
      * Append a new section.
      *
      * Used only when loading an image. If it used again later, then the
-     * section will end up after the @{link PelJpegMarker::EOI EOI
+     * section will end up after the @{link JpegMarker::EOI EOI
      * marker} and will probably not be useful.
      *
      * Please use @{link setExif()} instead if you intend to add Exif
@@ -440,7 +442,7 @@ class PelJpeg
      * place to insert the data.
      *
      * @param
-     *            PelJpegMarker the marker identifying the new section.
+     *            JpegMarker the marker identifying the new section.
      *
      * @param
      *            PelJpegContent the content of the new section.
@@ -461,7 +463,7 @@ class PelJpeg
      * place to insert the data.
      *
      * @param
-     *            PelJpegMarker the marker for the new section.
+     *            JpegMarker the marker for the new section.
      *
      * @param
      *            PelJpegContent the content of the new section.
@@ -488,17 +490,17 @@ class PelJpeg
      *
      * This will search through the sections of this JPEG object,
      * looking for a section identified with the specified {@link
-     * PelJpegMarker marker}. The {@link PelJpegContent content} will
+     * JpegMarker marker}. The {@link PelJpegContent content} will
      * then be returned. The optional argument can be used to skip over
      * some of the sections. So if one is looking for the, say, third
-     * {@link PelJpegMarker::DHT DHT} section one would do:
+     * {@link JpegMarker::DHT DHT} section one would do:
      *
      * <code>
-     * $dht3 = $jpeg->getSection(PelJpegMarker::DHT, 2);
+     * $dht3 = $jpeg->getSection(JpegMarker::DHT, 2);
      * </code>
      *
      * @param
-     *            PelJpegMarker the marker identifying the section.
+     *            JpegMarker the marker identifying the section.
      *
      * @param
      *            int the number of sections to be skipped. This must be a
@@ -525,9 +527,9 @@ class PelJpeg
     /**
      * Get all sections.
      *
-     * @return array an array of ({@link PelJpegMarker}, {@link
+     * @return array an array of ({@link JpegMarker}, {@link
      *         PelJpegContent}) pairs. Each pair is an array with the {@link
-     *         PelJpegMarker} as the first element and the {@link
+     *         JpegMarker} as the first element and the {@link
      *         PelJpegContent} as the second element, so the return type is an
      *         array of arrays.
      *
@@ -577,9 +579,9 @@ class PelJpeg
             $c = $section[1];
 
             /* Write the marker */
-            $bytes .= "\xFF" . PelJpegMarker::getBytes($m);
+            $bytes .= "\xFF" . JpegMarker::getBytes($m);
             /* Skip over empty markers. */
-            if ($m == PelJpegMarker::SOI || $m == PelJpegMarker::EOI) {
+            if ($m == JpegMarker::SOI || $m == JpegMarker::EOI) {
                 continue;
             }
 
@@ -590,7 +592,7 @@ class PelJpeg
             $bytes .= $data;
 
             /* In case of SOS, we need to write the JPEG data. */
-            if ($m == PelJpegMarker::SOS) {
+            if ($m == JpegMarker::SOS) {
                 $bytes .= $this->jpeg_data->getBytes();
             }
         }
@@ -628,10 +630,10 @@ class PelJpeg
         for ($i = 0; $i < $count_sections; $i ++) {
             $m = $this->sections[$i][0];
             $c = $this->sections[$i][1];
-            $str .= ExifEye::fmt("Section %d (marker 0x%02X - %s):\n", $i, $m, PelJpegMarker::getName($m));
-            $str .= ExifEye::fmt("  Description: %s\n", PelJpegMarker::getDescription($m));
+            $str .= ExifEye::fmt("Section %d (marker 0x%02X - %s):\n", $i, $m, JpegMarker::getName($m));
+            $str .= ExifEye::fmt("  Description: %s\n", JpegMarker::getDescription($m));
 
-            if ($m == PelJpegMarker::SOI || $m == PelJpegMarker::EOI) {
+            if ($m == JpegMarker::SOI || $m == JpegMarker::EOI) {
                 continue;
             }
 
@@ -671,6 +673,6 @@ class PelJpeg
 
         $i = self::getJpgSectionStart($d);
 
-        return $d->getByte($i) == PelJpegMarker::SOI;
+        return $d->getByte($i) == JpegMarker::SOI;
     }
 }

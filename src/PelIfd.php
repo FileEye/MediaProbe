@@ -32,6 +32,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
+use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\Convert;
 
 /**
@@ -456,7 +457,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *
      * Use this to embed an arbitrary JPEG image within this IFD. The
      * data will be checked to ensure that it has a proper {@link
-     * PelJpegMarker::EOI} at the end. If not, then the length is
+     * JpegMarker::EOI} at the end. If not, then the length is
      * adjusted until one if found. An {@link PelIfdException} might be
      * thrown (depending on {@link ExifEye::$strict}) this case.
      *
@@ -467,7 +468,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     {
         $size = $d->getSize();
         /* Now move backwards until we find the EOI JPEG marker. */
-        while ($d->getByte($size - 2) != 0xFF || $d->getByte($size - 1) != PelJpegMarker::EOI) {
+        while ($d->getByte($size - 2) != 0xFF || $d->getByte($size - 1) != JpegMarker::EOI) {
             $size --;
         }
 

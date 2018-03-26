@@ -3,7 +3,6 @@
 namespace ExifEye\core;
 
 use ExifEye\core\Utility\Convert;
-use ExifEye\core\InvalidArgumentException;
 
 /**
  * A data window object.

@@ -1,31 +1,6 @@
 <?php
 
-/*
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2006 Martin Geisler.
- * Copyright (C) 2017 Johannes Weberhofer.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
-
-use ExifEye\core\ExifEye;
+namespace ExifEye\core;
 
 /**
  * Classes for dealing with JPEG markers.
@@ -33,18 +8,13 @@ use ExifEye\core\ExifEye;
  * This class defines the constants to be used whenever one refers to
  * a JPEG marker. All the methods defined are static, and they all
  * operate on one argument which should be one of the class constants.
- * They will all be denoted by PelJpegMarker in the documentation.
+ * They will all be denoted by JpegMarker in the documentation.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @author Johannes Weberhofer <jweberhofer@weberhofer.at>
- *
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
  */
-class PelJpegMarker
+class JpegMarker
 {
-
     /**
      * Encoding (baseline)
      */
@@ -474,7 +444,7 @@ class PelJpegMarker
      * If the byte is recognized true is returned, otherwise false will be returned.
      *
      * @param integer $marker
-     *            the marker as defined in {@link PelJpegMarker}
+     *            the marker as defined in {@link JpegMarker}
      *
      * @return boolean
      */
@@ -488,7 +458,7 @@ class PelJpegMarker
      * This will be a string with just a single byte since all JPEG markers are simply single bytes.
      *
      * @param integer $marker
-     *            the marker as defined in {@link PelJpegMarker}
+     *            the marker as defined in {@link JpegMarker}
      *
      * @return string
      */
@@ -502,7 +472,7 @@ class PelJpegMarker
      * of Image marker.
      *
      * @param integer $marker
-     *            the marker as defined in {@link PelJpegMarker}
+     *            the marker as defined in {@link JpegMarker}
      *
      * @return string
      */
@@ -519,7 +489,7 @@ class PelJpegMarker
      * Returns a description of a JPEG marker.
      *
      * @param integer $marker
-     *            the marker as defined in {@link PelJpegMarker}
+     *            the marker as defined in {@link JpegMarker}
      *
      * @return string
      */
