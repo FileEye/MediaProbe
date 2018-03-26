@@ -177,15 +177,15 @@ DATA;
      */
     protected function mapTag($ifd_id, $tag_id, array $tag, SplFileInfo $file)
     {
-        // Add some defaults.
-        $tag = array_merge([
-            'name' => $tag_id,
-        ], $tag);
-
         // Check validity of TAG keys.
         $diff = array_diff(array_keys($tag), $this->tagKeys);
         if (!empty($diff)) {
             throw new SpecCompilerException($file->getFileName() . ": invalid key(s) found for TAG '" . $tag['name'] . "' - " . implode(", ", $diff));
+        }
+
+        // Check name.
+        if (isset($tag['name'])) {
+            throw new SpecCompilerException($file->getFileName() . ": missing name for TAG '" . $tag_id . "'");
         }
 
         // Convert format string to its ID.
