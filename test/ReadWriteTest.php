@@ -15,6 +15,7 @@ use ExifEye\core\Entry\SignedShort;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Format;
+use ExifEye\core\Spec;
 
 class ReadWriteTest extends ExifEyeTestCaseBase
 {

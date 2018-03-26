@@ -115,7 +115,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $ifd0_1 = $ifd0_0->getNextIfd();
         $this->assertNull($ifd0_1);
         /* End of IFD $ifd0_0. */
-        $ifd0_1 = $ifd0->getSubIfd(3); // IFD GPS
+        $ifd0_1 = $ifd0->getSubIfd(Spec::getIfdIdByType('GPS')); // IFD GPS
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_1);
 
         /* Start of IDF $ifd0_1. */
