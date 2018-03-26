@@ -10,7 +10,7 @@ class IfdTest extends ExifEyeTestCaseBase
 {
     public function testIteratorAggretate()
     {
-        $ifd = new Ifd(Ifd::IFD0);
+        $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
@@ -33,7 +33,7 @@ class IfdTest extends ExifEyeTestCaseBase
 
     public function testArrayAccess()
     {
-        $ifd = new Ifd(Ifd::IFD0);
+        $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 

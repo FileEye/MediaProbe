@@ -16,7 +16,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Format;
 
-class WriteEntryTest extends ExifEyeTestCaseBase
+class ReadWriteTest extends ExifEyeTestCaseBase
 {
     /**
      * {@inheritdoc}
@@ -32,7 +32,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
      */
     public function testWriteRead(array $entries)
     {
-        $ifd = new Ifd(Ifd::IFD0);
+        $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
@@ -70,7 +70,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         $ifd = $tiff->getIfd();
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd);
 
-        $this->assertEquals($ifd->getType(), Ifd::IFD0);
+        $this->assertEquals($ifd->getType(), Spec::getIfdIdByType('IFD0'));
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
