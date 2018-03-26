@@ -341,7 +341,7 @@ abstract class EntryBase
         $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, Spec::getTagName($this->ifd_type, $this->tag));
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
-        if ($this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('0'), 'PrintIM')) {
+        if ($this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'PrintIM')) {
             $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
         }
         $str .= ExifEye::fmt("    Text      : %s\n", $this->getText());

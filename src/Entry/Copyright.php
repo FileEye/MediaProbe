@@ -63,7 +63,7 @@ class Copyright extends Ascii
      */
     public function __construct($photographer = '', $editor = '')
     {
-        parent::__construct(Spec::getTagIdByName(Spec::getIfdIdByType('0'), 'Copyright'));
+        parent::__construct(Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'Copyright'));
         $this->setValue($photographer, $editor);
     }
 

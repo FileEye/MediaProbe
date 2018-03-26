@@ -28,10 +28,10 @@ An IFD is fully described by a single YAML file. The file name should convention
 [type] is the value of the 'type' key below, or of one of its aliases. The structure of the file is as follows:
 
 ```
-type: '0'
+type: 'IFD0'
 class: ExifEye\core\Block\Ifd
 alias:
-  - 'IFD0'
+  - '0'
   - 'Main'
 tags:
     0x0100:

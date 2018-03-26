@@ -16,24 +16,17 @@ class PelSpecTest extends ExifEyeTestCaseBase
      */
     public function testDefaultSpec()
     {
-        // Test retrieving IFD type.
-        $this->assertEquals('0', Spec::getIfdType(0));
-        $this->assertEquals('Exif', Spec::getIfdType(2));
-        $this->assertNotNull(Spec::getIfdType(5));
-
         // Test retrieving IFD id by type.
-        $this->assertEquals(0, Spec::getIfdIdByType('0'));
-        $this->assertEquals(0, Spec::getIfdIdByType('IFD0'));
-        $this->assertEquals(0, Spec::getIfdIdByType('Main'));
-        $this->assertEquals(2, Spec::getIfdIdByType('Exif'));
+        $this->assertEquals(Spec::getIfdIdByType('IFD0'), Spec::getIfdIdByType('0'));
+        $this->assertEquals(Spec::getIfdIdByType('IFD0'), Spec::getIfdIdByType('Main'));
         $this->assertNotNull(Spec::getIfdIdByType('Canon Maker Notes'));
 
         // Test retrieving IFD class.
-        $this->assertEquals('ExifEye\core\Block\Ifd', Spec::getIfdClass(Spec::getIfdIdByType('0')));
+        $this->assertEquals('ExifEye\core\Block\Ifd', Spec::getIfdClass(Spec::getIfdIdByType('IFD0')));
         $this->assertEquals('ExifEye\core\Block\IfdIndexShort', Spec::getIfdClass(Spec::getIfdIdByType('Canon Camera Settings')));
 
         // Test retrieving IFD post-load callbacks.
-        $this->assertEquals(['ExifEye\core\Entry\MakerNote::tagToIfd'], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('0')));
+        $this->assertEquals(['ExifEye\core\Entry\MakerNote::tagToIfd'], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('IFD0')));
         $this->assertEquals([], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('Canon Camera Settings')));
 
         // Test retrieving maker note IFD.

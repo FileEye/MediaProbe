@@ -7,6 +7,7 @@ use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
+use ExifEye\core\Spec;
 
 class Bug3017880Test extends ExifEyeTestCaseBase
 {
@@ -34,7 +35,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $tiff = $exif->getTiff();
             $ifd0 = $tiff->getIfd();
             if ($ifd0 === null) {
-                $ifd0 = new Ifd(Ifd::IFD0);
+                $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'));
                 $tiff->setIfd($ifd0);
             }
 

@@ -114,13 +114,13 @@ class SpecCompilerTest extends TestCase
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
         Spec::setMap($this->testResourceDirectory . '/spec.php');
-        $this->assertEquals([2 => 'Exif', 0 => '0'], Spec::getIfdTypes());
+        $this->assertCount(2, Spec::getIfdTypes());
 
-        $this->assertEquals(0x0100, Spec::getTagIdByName(0, 'ImageWidth'));
-        $this->assertEquals(0x8769, Spec::getTagIdByName(0, 'ExifIFDPointer'));
-        $this->assertEquals(0x829A, Spec::getTagIdByName(2, 'ExposureTime'));
+        $this->assertEquals(0x0100, Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'ImageWidth'));
+        $this->assertEquals(0x8769, Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'ExifIFDPointer'));
+        $this->assertEquals(0x829A, Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'ExposureTime'));
 
         // Compression is missing from the stub specs.
-        $this->assertNull(Spec::getTagIdByName(0, 'Compression'));
+        $this->assertNull(Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'Compression'));
     }
 }

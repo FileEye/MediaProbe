@@ -27,46 +27,6 @@ use ExifEye\core\Spec;
 class Ifd implements \IteratorAggregate, \ArrayAccess
 {
     /**
-     * Main image IFD.
-     *
-     * Pass this to the constructor when creating an IFD which will be
-     * the IFD of the main image.
-     */
-    const IFD0 = 0;
-
-    /**
-     * Thumbnail image IFD.
-     *
-     * Pass this to the constructor when creating an IFD which will be
-     * the IFD of the thumbnail image.
-     */
-    const IFD1 = 1;
-
-    /**
-     * Exif IFD.
-     *
-     * Pass this to the constructor when creating an IFD which will be
-     * the Exif sub-IFD.
-     */
-    const EXIF = 2;
-
-    /**
-     * GPS IFD.
-     *
-     * Pass this to the constructor when creating an IFD which will be
-     * the GPS sub-IFD.
-     */
-    const GPS = 3;
-
-    /**
-     * Interoperability IFD.
-     *
-     * Pass this to the constructor when creating an IFD which will be
-     * the interoperability sub-IFD.
-     */
-    const INTEROPERABILITY = 4;
-
-    /**
      * The IFD header bytes to skip.
      *
      * @var array
