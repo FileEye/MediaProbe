@@ -31,12 +31,12 @@ use ExifEye\core\Utility\Convert;
  * $exif = $jpeg->getExif();
  * $tiff = $exif->getTiff();
  * $ifd0 = $tiff->getIfd();
- * $exif = $ifd0->getSubIfd(PelIfd::EXIF);
+ * $exif = $ifd0->getSubIfd(Ifd::EXIF);
  * $ifd1 = $ifd0->getNextIfd();
  * </code>
  *
  * The $idf0 and $ifd1 variables will then be two {@link Tiff TIFF}
- * {@link PelIfd Image File Directories}, in which the data is stored
+ * {@link Ifd Image File Directories}, in which the data is stored
  * under the keys found in {@link PelTag}.
  *
  * Should one have some image data (in the form of a {@link
@@ -90,7 +90,7 @@ class Jpeg
      * $jpeg = new Jpeg($data);
      * // Create container for the Exif information:
      * $exif = new Exif();
-     * // Now Add a Tiff object with a PelIfd object with one or more
+     * // Now Add a Tiff object with a Ifd object with one or more
      * // EntryBase objects to $exif... Finally add $exif to $jpeg:
      * $jpeg->setExif($exif);
      * </code>

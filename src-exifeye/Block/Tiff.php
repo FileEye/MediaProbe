@@ -7,14 +7,13 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelSpec;
 
 /**
  * Class for handling TIFF data.
  *
  * Exif data is actually an extension of the TIFF file format. TIFF
- * images consist of a number of {@link PelIfd Image File Directories}
+ * images consist of a number of {@link Ifd Image File Directories}
  * (IFDs), each containing a number of {@link EntryBase entries}. The
  * IFDs are linked to each other --- one can get hold of the first one
  * with the {@link getIfd()} method.
@@ -24,7 +23,7 @@ use lsolesen\pel\PelSpec;
  * <code>
  * $tiff = new Tiff($data);
  * $ifd0 = $tiff->getIfd();
- * $exif = $ifd0->getSubIfd(PelIfd::EXIF);
+ * $exif = $ifd0->getSubIfd(Ifd::EXIF);
  * $ifd1 = $ifd0->getNextIfd();
  * </code>
  *
@@ -49,16 +48,16 @@ class Tiff
     /**
      * The first Image File Directory, if any.
      *
-     * If set, then the type of the IFD must be {@link PelIfd::IFD0}.
+     * If set, then the type of the IFD must be {@link Ifd::IFD0}.
      *
-     * @var PelIfd
+     * @var Ifd
      */
     private $ifd = null;
 
     /**
      * Construct a new object for holding TIFF data.
      *
-     * The new object will be empty (with no {@link PelIfd}) unless an
+     * The new object will be empty (with no {@link Ifd}) unless an
      * argument is given from which it can initialize itself. This can
      * either be the filename of a TIFF image or a {@link DataWindow}
      * object.
@@ -132,7 +131,7 @@ class Tiff
              * Parse the first IFD, this will automatically parse the
              * following IFDs and any sub IFDs.
              */
-            $this->ifd = new PelIfd(PelSpec::getIfdIdByType('IFD0'));
+            $this->ifd = new Ifd(PelSpec::getIfdIdByType('IFD0'));
             $this->ifd->load($d, $offset);
         }
     }
@@ -151,11 +150,11 @@ class Tiff
     /**
      * Set the first IFD.
      *
-     * @param PelIfd $ifd
+     * @param Ifd $ifd
      *            the new first IFD, which must be of type {@link
-     *            PelIfd::IFD0}.
+     *            Ifd::IFD0}.
      */
-    public function setIfd(PelIfd $ifd)
+    public function setIfd(Ifd $ifd)
     {
         if ($ifd->getType() != PelSpec::getIfdIdByType('IFD0')) {
             throw new InvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getType(), PelSpec::getIfdIdByType('IFD0'));
@@ -166,7 +165,7 @@ class Tiff
     /**
      * Return the first IFD.
      *
-     * @return PelIfd the first IFD contained in the TIFF data, if any.
+     * @return Ifd the first IFD contained in the TIFF data, if any.
      *         If there is no IFD null will be returned.
      */
     public function getIfd()

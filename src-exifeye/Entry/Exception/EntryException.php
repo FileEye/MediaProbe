@@ -34,9 +34,9 @@ class EntryException extends ExifEyeException
     /**
      * Get the IFD type associated with the exception.
      *
-     * @return int one of {@link PelIfd::IFD0}, {@link PelIfd::IFD1},
-     *         {@link PelIfd::EXIF}, {@link PelIfd::GPS}, or {@link
-     *         PelIfd::INTEROPERABILITY}. If no type is set, null is returned.
+     * @return int one of {@link Ifd::IFD0}, {@link Ifd::IFD1},
+     *         {@link Ifd::EXIF}, {@link Ifd::GPS}, or {@link
+     *         Ifd::INTEROPERABILITY}. If no type is set, null is returned.
      */
     public function getIfdType()
     {

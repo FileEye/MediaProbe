@@ -21,7 +21,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
 
         /* The first IFD. */
         $ifd0 = $tiff->getIfd();
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0);
 
         /* Start of IDF $ifd0. */
         $this->assertEquals(count($ifd0->getEntries()), 9);
@@ -80,7 +80,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         /* Sub IFDs of $ifd0. */
         $this->assertEquals(count($ifd0->getSubIfds()), 2);
         $ifd0_0 = $ifd0->getSubIfd(2); // IFD Exif
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0_0);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_0);
 
         /* Start of IDF $ifd0_0. */
         $this->assertEquals(count($ifd0_0->getEntries()), 22);
@@ -221,7 +221,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
         $this->assertNull($ifd0_1);
         /* End of IFD $ifd0_0. */
         $ifd0_1 = $ifd0->getSubIfd(3); // IFD GPS
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0_1);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_1);
 
         /* Start of IDF $ifd0_1. */
         $this->assertEquals(count($ifd0_1->getEntries()), 0);
@@ -240,7 +240,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
 
         /* Next IFD. */
         $ifd1 = $ifd0->getNextIfd();
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd1);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd1);
         /* End of IFD $ifd0. */
 
         /* Start of IDF $ifd1. */

@@ -3,7 +3,7 @@
 namespace lsolesen\pel\Util;
 
 use ExifEye\core\Format;
-use lsolesen\pel\PelIfd;
+use ExifEye\core\Block\Ifd;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -61,7 +61,7 @@ class SpecCompiler
         $this->defaultNamespace = $defaultNamespace;
         $this->finder = $finder ? $finder : new Finder();
         $this->fs = $fs ? $fs : new Filesystem();
-        $this->nextIfdId = PelIfd::INTEROPERABILITY + 1;
+        $this->nextIfdId = Ifd::INTEROPERABILITY + 1;
     }
 
     /**

@@ -29,8 +29,8 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $this->assertNotNull(PelSpec::getIfdIdByType('Canon Maker Notes'));
 
         // Test retrieving IFD class.
-        $this->assertEquals('lsolesen\pel\PelIfd', PelSpec::getIfdClass(PelSpec::getIfdIdByType('0')));
-        $this->assertEquals('lsolesen\pel\PelIfdIndexShort', PelSpec::getIfdClass(PelSpec::getIfdIdByType('Canon Camera Settings')));
+        $this->assertEquals('ExifEye\core\Block\Ifd', PelSpec::getIfdClass(PelSpec::getIfdIdByType('0')));
+        $this->assertEquals('ExifEye\core\Block\IfdIndexShort', PelSpec::getIfdClass(PelSpec::getIfdIdByType('Canon Camera Settings')));
 
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals(['ExifEye\core\Entry\MakerNote::tagToIfd'], PelSpec::getIfdPostLoadCallbacks(PelSpec::getIfdIdByType('0')));

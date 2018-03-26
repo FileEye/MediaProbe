@@ -5,7 +5,7 @@ namespace ExifEye\Test\core;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Ascii;
-use lsolesen\pel\PelIfd;
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
 
 class Bug3017880Test extends ExifEyeTestCaseBase
@@ -34,7 +34,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $tiff = $exif->getTiff();
             $ifd0 = $tiff->getIfd();
             if ($ifd0 === null) {
-                $ifd0 = new PelIfd(PelIfd::IFD0);
+                $ifd0 = new Ifd(Ifd::IFD0);
                 $tiff->setIfd($ifd0);
             }
 

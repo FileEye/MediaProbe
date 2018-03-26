@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\WindowsString;
@@ -46,7 +47,7 @@ class GH16Test extends ExifEyeTestCaseBase
 
             $ifd0 = $tiff->getIfd();
             if (null === $ifd0) {
-                $ifd0 = new PelIfd(PelIfd::IFD0);
+                $ifd0 = new Ifd(Ifd::IFD0);
                 $tiff->setIfd($ifd0);
             }
         }

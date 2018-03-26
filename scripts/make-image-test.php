@@ -23,6 +23,7 @@
  * Boston, MA 02110-1301 USA
  */
 
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\JpegContent;
@@ -74,7 +75,7 @@ function entryToTest($name, EntryBase $entry)
     println('$this->assertEquals(%s->getText(), \'%s\');', $name, quote($entry->getText()));
 }
 
-function ifdToTest($name, $number, PelIfd $ifd)
+function ifdToTest($name, $number, Ifd $ifd)
 {
     println();
     println('/* Start of IDF %s%d. */', $name, $number);
@@ -98,7 +99,7 @@ function ifdToTest($name, $number, PelIfd $ifd)
     $sub_name = $name . $number . '_';
     foreach ($sub_ifds as $type => $sub_ifd) {
         println('%s%d = %s%d->getSubIfd(%d); // IFD %s', $sub_name, $n, $name, $number, $type, $sub_ifd->getName());
-        println('$this->assertInstanceOf(\'PelIfd\', %s%d);', $sub_name, $n);
+        println('$this->assertInstanceOf(\'ExifEye\core\Block\Ifd\', %s%d);', $sub_name, $n);
         ifdToTest($sub_name, $n, $sub_ifd);
         $n ++;
     }
@@ -119,8 +120,8 @@ function ifdToTest($name, $number, PelIfd $ifd)
     $next = $ifd->getNextIfd();
     println('%s%d = %s%d->getNextIfd();', $name, $number + 1, $name, $number);
 
-    if ($next instanceof PelIfd) {
-        println('$this->assertInstanceOf(\'PelIfd\', %s%d);', $name, $number + 1);
+    if ($next instanceof Ifd) {
+        println('$this->assertInstanceOf(\'ExifEye\core\Block\Ifd\', %s%d);', $name, $number + 1);
         println('/* End of IFD %s%d. */', $name, $number);
 
         ifdToTest($name, $number + 1, $next);
@@ -136,8 +137,8 @@ function tiffToTest($name, Tiff $tiff)
     println('/* The first IFD. */');
     println('$ifd0 = %s->getIfd();', $name);
     $ifd = $tiff->getIfd();
-    if ($ifd instanceof PelIfd) {
-        println('$this->assertInstanceOf(\'PelIfd\', $ifd0);');
+    if ($ifd instanceof Ifd) {
+        println('$this->assertInstanceOf(\'ExifEye\core\Block\Ifd\', $ifd0);');
         ifdToTest('$ifd', 0, $ifd);
     } else {
         println('$this->assertNull($ifd0);');

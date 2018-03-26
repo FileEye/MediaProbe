@@ -19,14 +19,14 @@ class Tags1Test extends ExifEyeTestCaseBase
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
 
         $ifd0 = $tiff->getIfd();
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0);
 
         $ratingPercent = $ifd0->getEntry(0x4749);
         $this->assertInstanceOf('ExifEye\core\Entry\Short', $ratingPercent);
         $this->assertEquals(78, $ratingPercent->getValue());
 
-        $exifIfd = $ifd0->getSubIfd(\lsolesen\pel\PelIfd::EXIF);
-        $this->assertInstanceOf('\lsolesen\pel\PelIfd', $exifIfd);
+        $exifIfd = $ifd0->getSubIfd(Ifd::EXIF);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $exifIfd);
 
         $offsetTime = $exifIfd->getEntry(0x9010);
         $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $offsetTime);

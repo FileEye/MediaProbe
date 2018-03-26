@@ -4,7 +4,7 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use lsolesen\pel\PelSpec;
-use lsolesen\pel\PelIfd;
+use ExifEye\core\Block\Ifd;
 
 /**
  * Class used to hold data for MakerNote tags.
@@ -100,10 +100,10 @@ class MakerNote extends Undefined
      *
      * @param DataWindow $d
      *            the data window that will provide the data.
-     * @param PelIfd $ifd
-     *            the root PelIfd object.
+     * @param Ifd $ifd
+     *            the root Ifd object.
      */
-    public static function tagToIfd(DataWindow $d, PelIfd $ifd)
+    public static function tagToIfd(DataWindow $d, Ifd $ifd)
     {
         // Get the Exif subIfd if existing.
         if (!$exif_ifd = $ifd->getSubIfd(PelSpec::getIfdIdByType('Exif'))) {

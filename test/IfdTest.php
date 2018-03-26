@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelIfd;
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Entry\Time;
 
@@ -10,7 +10,7 @@ class IfdTest extends ExifEyeTestCaseBase
 {
     public function testIteratorAggretate()
     {
-        $ifd = new PelIfd(PelIfd::IFD0);
+        $ifd = new Ifd(Ifd::IFD0);
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
@@ -33,7 +33,7 @@ class IfdTest extends ExifEyeTestCaseBase
 
     public function testArrayAccess()
     {
-        $ifd = new PelIfd(PelIfd::IFD0);
+        $ifd = new Ifd(Ifd::IFD0);
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 

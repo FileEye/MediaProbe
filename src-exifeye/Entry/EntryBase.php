@@ -9,7 +9,7 @@ use ExifEye\core\Format;
 use lsolesen\pel\PelSpec;
 
 /**
- * Common ancestor class of all {@link PelIfd} entries.
+ * Common ancestor class of all {@link Ifd} entries.
  *
  * As this class is abstract you cannot instantiate objects from it.
  * It only serves as a common ancestor to define the methods common to
@@ -37,11 +37,11 @@ abstract class EntryBase
     /**
      * Type of IFD containing this tag.
      *
-     * This must be one of the constants defined in {@link PelIfd}:
-     * {@link PelIfd::IFD0} for the main image IFD, {@link PelIfd::IFD1}
-     * for the thumbnail image IFD, {@link PelIfd::EXIF} for the Exif
-     * sub-IFD, {@link PelIfd::GPS} for the GPS sub-IFD, or {@link
-     * PelIfd::INTEROPERABILITY} for the interoperability sub-IFD.
+     * This must be one of the constants defined in {@link Ifd}:
+     * {@link Ifd::IFD0} for the main image IFD, {@link Ifd::IFD1}
+     * for the thumbnail image IFD, {@link Ifd::EXIF} for the Exif
+     * sub-IFD, {@link Ifd::GPS} for the GPS sub-IFD, or {@link
+     * Ifd::INTEROPERABILITY} for the interoperability sub-IFD.
      *
      * @var int
      */
@@ -215,11 +215,11 @@ abstract class EntryBase
     /**
      * Return the type of IFD which holds this entry.
      *
-     * @return int one of the constants defined in {@link PelIfd}:
-     *         {@link PelIfd::IFD0} for the main image IFD, {@link PelIfd::IFD1}
-     *         for the thumbnail image IFD, {@link PelIfd::EXIF} for the Exif
-     *         sub-IFD, {@link PelIfd::GPS} for the GPS sub-IFD, or {@link
-     *         PelIfd::INTEROPERABILITY} for the interoperability sub-IFD.
+     * @return int one of the constants defined in {@link Ifd}:
+     *         {@link Ifd::IFD0} for the main image IFD, {@link Ifd::IFD1}
+     *         for the thumbnail image IFD, {@link Ifd::EXIF} for the Exif
+     *         sub-IFD, {@link Ifd::GPS} for the GPS sub-IFD, or {@link
+     *         Ifd::INTEROPERABILITY} for the interoperability sub-IFD.
      */
     public function getIfdType()
     {
@@ -231,10 +231,10 @@ abstract class EntryBase
      *
      * @param
      *            int must be one of the constants defined in {@link
-     *            PelIfd}: {@link PelIfd::IFD0} for the main image IFD, {@link
-     *            PelIfd::IFD1} for the thumbnail image IFD, {@link PelIfd::EXIF}
-     *            for the Exif sub-IFD, {@link PelIfd::GPS} for the GPS sub-IFD, or
-     *            {@link PelIfd::INTEROPERABILITY} for the interoperability
+     *            Ifd}: {@link Ifd::IFD0} for the main image IFD, {@link
+     *            Ifd::IFD1} for the thumbnail image IFD, {@link Ifd::EXIF}
+     *            for the Exif sub-IFD, {@link Ifd::GPS} for the GPS sub-IFD, or
+     *            {@link Ifd::INTEROPERABILITY} for the interoperability
      *            sub-IFD.
      */
     public function setIfdType($type)

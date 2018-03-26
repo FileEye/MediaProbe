@@ -1,29 +1,8 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005, 2006, 2007, 2008 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Block;
 
+use ExifEye\core\Block\Exception\IfdException;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\DataWindowWindowException;
@@ -36,15 +15,6 @@ use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\Convert;
 
 /**
- * Classes for dealing with Exif IFDs.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
-
-/**
  * Class representing an Image File Directory (IFD).
  *
  * {@link Tiff TIFF data} is structured as a number of Image File
@@ -52,9 +22,8 @@ use ExifEye\core\Utility\Convert;
  * EntryBase entries}, some data and finally a link to the next IFD.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
-class PelIfd implements \IteratorAggregate, \ArrayAccess
+class Ifd implements \IteratorAggregate, \ArrayAccess
 {
     /**
      * Main image IFD.
@@ -142,14 +111,14 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * This will be initialized in the constructor, or be left as null
      * if this is the last directory.
      *
-     * @var PelIfd
+     * @var Ifd
      */
     protected $next = null;
 
     /**
      * Sub-directories pointed to by this directory.
      *
-     * This will be an array of ({@link PelTag}, {@link PelIfd}) pairs.
+     * This will be an array of ({@link PelTag}, {@link Ifd}) pairs.
      *
      * @var array
      */
@@ -177,12 +146,12 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *
      * @param int $type
      *            the type of this IFD, as found in PelSpec. A
-     *            {@link PelIfdException} will be thrown if unknown.
+     *            {@link IfdException} will be thrown if unknown.
      */
     public function __construct($type)
     {
         if (PelSpec::getIfdType($type) === null) {
-            throw new PelIfdException('Unknown IFD type: %d', $type);
+            throw new IfdException('Unknown IFD type: %d', $type);
         }
 
         $this->type = $type;
@@ -224,7 +193,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         /* Check if we have enough data. */
         if ($offset + 12 * $n > $d->getSize()) {
             $n = floor(($offset - $d->getSize()) / 12);
-            ExifEye::maybeThrow(new PelIfdException('Adjusted to: %d.', $n));
+            ExifEye::maybeThrow(new IfdException('Adjusted to: %d.', $n));
         }
 
         for ($i = 0; $i < $n; $i++) {
@@ -237,7 +206,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag)) {
                 ExifEye::maybeThrow(
-                    new PelIfdException(
+                    new IfdException(
                         str_repeat("  ", $nesting_level) . "No specification available for TAG 0x%04X in IFD '%s', skipping (%d of %d)...",
                         $tag,
                         $this->getName(),
@@ -271,10 +240,10 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
                         $ifd->load($d, $o, $tag_components, $nesting_level + 1);
                         $this->sub[$type] = $ifd;
                     } catch (DataWindowOffsetException $e) {
-                        ExifEye::maybeThrow(new PelIfdException($e->getMessage()));
+                        ExifEye::maybeThrow(new IfdException($e->getMessage()));
                     }
                 } else {
-                    ExifEye::maybeThrow(new PelIfdException('Bogus offset to next IFD: %d, same as offset being loaded from.', $o));
+                    ExifEye::maybeThrow(new IfdException('Bogus offset to next IFD: %d, same as offset being loaded from.', $o));
                 }
                 continue;
             }
@@ -306,13 +275,13 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         if ($o > 0) {
             /* Sanity check: we need 6 bytes */
             if ($o > $d->getSize() - 6) {
-                ExifEye::maybeThrow(new PelIfdException('Bogus offset to next IFD: ' . '%d > %d!', $o, $d->getSize() - 6));
+                ExifEye::maybeThrow(new IfdException('Bogus offset to next IFD: ' . '%d > %d!', $o, $d->getSize() - 6));
             } else {
                 if (PelSpec::getIfdType($this->type) === '1') {
                     // IFD1 shouldn't link further...
-                    ExifEye::maybeThrow(new PelIfdException('IFD1 links to another IFD!'));
+                    ExifEye::maybeThrow(new IfdException('IFD1 links to another IFD!'));
                 }
-                $this->next = new PelIfd(PelSpec::getIfdIdByType('1'));
+                $this->next = new Ifd(PelSpec::getIfdIdByType('1'));
                 $this->next->load($d, $o);
             }
         }
@@ -323,81 +292,6 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         foreach (PelSpec::getIfdPostLoadCallbacks($this->type) as $callback) {
             call_user_func($callback, $d, $this);
         }
-    }
-
-    /**
-     * Load a single value which didn't match any special {@link PelTag}.
-     *
-     * This method will add a single value given by the {@link DataWindow} and it's offset ($offset) and element counter ($i).
-     *
-     * Please note that the data you pass to this method should come
-     * from an image, that is, it should be raw bytes. If instead you
-     * want to create an entry for holding, say, an short integer, then
-     * create a {@link Short} object directly and load the data
-     * into it.
-     *
-     * @param DataWindow $d
-     *            the data window that will provide the data.
-     *
-     * @param integer $offset
-     *            the offset within the window where the directory will
-     *            be found.
-     *
-     * @param int $i
-     *            the element's position in the {@link DataWindow} $d.
-     *
-     * @param int $tag
-     *            the tag of the entry as defined in {@link PelSpec}.
-     *
-     * @deprecated Use EntryBase::createFromData instead.
-     */
-    public function loadSingleValue($d, $offset, $i, $tag)
-    {
-        $this->addEntry(EntryBase::createFromData($this->type, $tag, $d, $offset, $i));
-    }
-
-    /**
-     * Make a new entry from a bunch of bytes.
-     *
-     * This method will create the proper subclass of {@link EntryBase}
-     * corresponding to the {@link PelTag} and {@link Format} given.
-     * The entry will be initialized with the data given.
-     *
-     * Please note that the data you pass to this method should come
-     * from an image, that is, it should be raw bytes. If instead you
-     * want to create an entry for holding, say, an short integer, then
-     * create a {@link Short} object directly and load the data
-     * into it.
-     *
-     * A {@link UnexpectedFormatException} is thrown if a mismatch is
-     * discovered between the tag and format, and likewise a {@link
-     * WrongComponentCountException} is thrown if the number of
-     * components does not match the requirements of the tag. The
-     * requirements for a given tag (if any) can be found in the
-     * documentation for {@link PelSpec}.
-     *
-     * @param integer $tag
-     *            the tag of the entry as defined in {@link PelSpec}.
-     *
-     * @param integer $format
-     *            the format of the entry as defined in {@link Format}.
-     *
-     * @param int $components
-     *            the components in the entry.
-     *
-     * @param DataWindow $data
-     *            the data which will be used to construct the
-     *            entry.
-     *
-     * @return EntryBase a newly created entry, holding the data given.
-     *
-     * @deprecated Use EntryBase::createFromData instead.
-     */
-    public function newEntryFromData($tag, $format, $components, DataWindow $data)
-    {
-        $class = PelSpec::getTagClass($this->type, $tag, $format);
-        $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $this->type, $tag, $format, $components, $data, null);
-        return call_user_func($class . '::createInstance', $this->type, $tag, $arguments);
     }
 
     /**
@@ -434,7 +328,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
              */
             if ($offset + $length > $d->getSize()) {
                 ExifEye::maybeThrow(
-                    new PelIfdException(
+                    new IfdException(
                         'Thumbnail length %d bytes ' . 'adjusted to %d bytes.',
                         $length,
                         $d->getSize() - $offset
@@ -447,7 +341,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             try {
                 $this->setThumbnail($d->getClone($offset, $length));
             } catch (DataWindowWindowException $e) {
-                ExifEye::maybeThrow(new PelIfdException($e->getMessage()));
+                ExifEye::maybeThrow(new IfdException($e->getMessage()));
             }
         }
     }
@@ -458,7 +352,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * Use this to embed an arbitrary JPEG image within this IFD. The
      * data will be checked to ensure that it has a proper {@link
      * JpegMarker::EOI} at the end. If not, then the length is
-     * adjusted until one if found. An {@link PelIfdException} might be
+     * adjusted until one if found. An {@link IfdException} might be
      * thrown (depending on {@link ExifEye::$strict}) this case.
      *
      * @param DataWindow $d
@@ -473,7 +367,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         }
 
         if ($size != $d->getSize()) {
-            ExifEye::maybeThrow(new PelIfdException('Decrementing thumbnail size ' . 'to %d bytes', $size));
+            ExifEye::maybeThrow(new IfdException('Decrementing thumbnail size ' . 'to %d bytes', $size));
         }
         $this->thumb_data = $d->getClone(0, $size);
     }
@@ -547,7 +441,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
         if (PelSpec::getIfdType($type) !== null) {
             return PelSpec::getIfdType($type);
         }
-        throw new PelIfdException('Unknown IFD type: %d', $type);
+        throw new IfdException('Unknown IFD type: %d', $type);
     }
 
     /**
@@ -751,10 +645,10 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     /**
      * Make this directory point to a new directory.
      *
-     * @param PelIfd $i
+     * @param Ifd $i
      *            the IFD that this directory will point to.
      */
-    public function setNextIfd(PelIfd $i)
+    public function setNextIfd(Ifd $i)
     {
         $this->next = $i;
     }
@@ -762,7 +656,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
     /**
      * Return the IFD pointed to by this directory.
      *
-     * @return PelIfd the next IFD, following this IFD. If this is the
+     * @return Ifd the next IFD, following this IFD. If this is the
      *         last IFD, null is returned.
      */
     public function getNextIfd()
@@ -786,10 +680,10 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      *
      * Any previous sub-IFD of the same type will be overwritten.
      *
-     * @param PelIfd $sub
+     * @param Ifd $sub
      *            the sub IFD.
      */
-    public function addSubIfd(PelIfd $sub)
+    public function addSubIfd(Ifd $sub)
     {
         $this->sub[$sub->type] = $sub;
     }
@@ -800,7 +694,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * @param int $type
      *            the type of the sub IFD.
      *
-     * @return PelIfd the IFD associated with the type, or null if that
+     * @return Ifd the IFD associated with the type, or null if that
      *         sub IFD does not exist.
      */
     public function getSubIfd($type)
@@ -816,7 +710,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
      * Get all sub IFDs.
      *
      * @return array an associative array with (IFD-type, {@link
-     *         PelIfd}) pairs.
+     *         Ifd}) pairs.
      */
     public function getSubIfds()
     {

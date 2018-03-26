@@ -1,8 +1,8 @@
 <?php
 
-namespace lsolesen\pel;
+namespace ExifEye\core\Block;
 
-class PelIfdMakerNoteApple extends PelIfd
+class IfdMakerNoteApple extends Ifd
 {
     /**
      * The IFD header bytes to skip.

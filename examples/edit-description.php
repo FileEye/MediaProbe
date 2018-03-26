@@ -202,10 +202,10 @@ if ($ifd0 == null) {
      * No IFD in the TIFF data? This probably means that the image
      * didn't have any Exif information to start with, and so an empty
      * Tiff object was inserted by the code above. But this is no
-     * problem, we just create and inserts an empty PelIfd object.
+     * problem, we just create and inserts an empty Ifd object.
      */
     println('No IFD found, adding new.');
-    $ifd0 = new PelIfd(PelSpec::getIfdIdByType('IFD0'));
+    $ifd0 = new Ifd(PelSpec::getIfdIdByType('IFD0'));
     $tiff->setIfd($ifd0);
 }
 

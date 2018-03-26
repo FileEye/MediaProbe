@@ -13,7 +13,7 @@ use ExifEye\core\Entry\SignedByte;
 use ExifEye\core\Entry\SignedLong;
 use ExifEye\core\Entry\SignedShort;
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelIfd;
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Format;
 
 class WriteEntryTest extends ExifEyeTestCaseBase
@@ -32,7 +32,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
      */
     public function testWriteRead(array $entries)
     {
-        $ifd = new PelIfd(PelIfd::IFD0);
+        $ifd = new Ifd(Ifd::IFD0);
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
@@ -68,9 +68,9 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
 
         $ifd = $tiff->getIfd();
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd);
 
-        $this->assertEquals($ifd->getType(), PelIfd::IFD0);
+        $this->assertEquals($ifd->getType(), Ifd::IFD0);
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {

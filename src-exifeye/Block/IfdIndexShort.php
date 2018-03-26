@@ -1,6 +1,6 @@
 <?php
 
-namespace lsolesen\pel;
+namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\EntryBase;
@@ -11,7 +11,7 @@ use ExifEye\core\InvalidDataException;
 /**
  * Class representing an index of Short values as an IFD.
  */
-class PelIfdIndexShort extends PelIfd
+class IfdIndexShort extends Ifd
 {
     /**
      * Load data into a Image File Directory (IFD).

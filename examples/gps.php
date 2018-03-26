@@ -36,6 +36,7 @@
  */
 require_once '../autoload.php';
 
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
@@ -155,25 +156,25 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * Create first Image File Directory and associate it with the TIFF
      * data.
      */
-    $ifd0 = new PelIfd(PelSpec::getIfdIdByType('IFD0'));
+    $ifd0 = new Ifd(PelSpec::getIfdIdByType('IFD0'));
     $tiff->setIfd($ifd0);
 
     /*
      * Create a sub-IFD for holding GPS information. GPS data must be
      * below the first IFD.
      */
-    $gps_ifd = new PelIfd(PelSpec::getIfdIdByType('GPS'));
+    $gps_ifd = new Ifd(PelSpec::getIfdIdByType('GPS'));
     $ifd0->addSubIfd($gps_ifd);
 
     /*
      * The USER_COMMENT tag must be put in a Exif sub-IFD under the
      * first IFD.
      */
-    $exif_ifd = new PelIfd(PelSpec::getIfdIdByType('Exif'));
+    $exif_ifd = new Ifd(PelSpec::getIfdIdByType('Exif'));
     $exif_ifd->addEntry(new UserComment($comment));
     $ifd0->addSubIfd($exif_ifd);
 
-    $inter_ifd = new PelIfd(PelSpec::getIfdIdByType('Interoperability'));
+    $inter_ifd = new Ifd(PelSpec::getIfdIdByType('Interoperability'));
     $ifd0->addSubIfd($inter_ifd);
 
     $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'Model'), $model));

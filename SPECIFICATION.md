@@ -30,7 +30,7 @@ An IFD is fully described by a single YAML file. The file name should convention
 ```
 const: 0
 type: '0'
-class: PelIfd
+class: ExifEye\core\Block\Ifd
 alias:
   - 'IFD0'
   - 'Main'
@@ -47,7 +47,7 @@ found in that IFD.
 
 | Key        | Description                                                                                           |
 | ---------- | ----------------------------------------------------------------------------------------------------- |
-| const      | (Legacy) An integer identifying the IFD, corresponding to the constant values found in the `PelIfd` class, like `const IFD0 = 0;`. This will be dropped in a future version of PEL. |
+| const      | (Legacy) An integer identifying the IFD, corresponding to the constant values found in the `Ifd` class, like `const IFD0 = 0;`. This will be dropped in a future version of PEL. |
 | type       | A string identifying the IFD type. |
 | class      | A string identifying the IFD's PHP class to be used to process the IFD information. |
 | postLoad   | (Optional) An array of callbacks to be fired at the end of the IFD loading process. |

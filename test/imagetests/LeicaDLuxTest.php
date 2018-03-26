@@ -20,7 +20,7 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
 
         /* The first IFD. */
         $ifd0 = $tiff->getIfd();
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0);
 
         /* Start of IDF $ifd0. */
         $this->assertEquals(count($ifd0->getEntries()), 10);
@@ -85,7 +85,7 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         /* Sub IFDs of $ifd0. */
         $this->assertEquals(count($ifd0->getSubIfds()), 1);
         $ifd0_0 = $ifd0->getSubIfd(2); // IFD Exif
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0_0);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_0);
 
         /* Start of IDF $ifd0_0. */
         $this->assertEquals(count($ifd0_0->getEntries()), 37);
@@ -306,7 +306,7 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
         /* Sub IFDs of $ifd0_0. */
         $this->assertEquals(count($ifd0_0->getSubIfds()), 1);
         $ifd0_0_0 = $ifd0_0->getSubIfd(4); // IFD Interoperability
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0_0_0);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_0_0);
 
         /* Start of IDF $ifd0_0_0. */
         $this->assertEquals(count($ifd0_0_0->getEntries()), 2);
@@ -342,7 +342,7 @@ class LeicaDLuxTest extends ExifEyeTestCaseBase
 
         /* Next IFD. */
         $ifd1 = $ifd0->getNextIfd();
-        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd1);
+        $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd1);
         /* End of IFD $ifd0. */
 
         /* Start of IDF $ifd1. */
