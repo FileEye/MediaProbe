@@ -69,7 +69,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
 
         /* Sub IFDs of $ifd0. */
         $this->assertEquals(count($ifd0->getSubIfds()), 2);
-        $ifd0_0 = $ifd0->getSubIfd(2); // IFD Exif
+        $ifd0_0 = $ifd0->getSubIfd(Spec::getIfdIdByType('Exif')); // IFD Exif
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_0);
 
         /* Start of IDF $ifd0_0. */

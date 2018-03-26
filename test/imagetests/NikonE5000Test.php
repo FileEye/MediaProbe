@@ -6,6 +6,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
+use ExifEye\core\Spec;
 
 class NikonE5000Test extends ExifEyeTestCaseBase
 {
@@ -79,7 +80,7 @@ class NikonE5000Test extends ExifEyeTestCaseBase
 
         /* Sub IFDs of $ifd0. */
         $this->assertEquals(count($ifd0->getSubIfds()), 2);
-        $ifd0_0 = $ifd0->getSubIfd(2); // IFD Exif
+        $ifd0_0 = $ifd0->getSubIfd(Spec::getIfdIdByType('Exif')); // IFD Exif
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_0);
 
         /* Start of IDF $ifd0_0. */

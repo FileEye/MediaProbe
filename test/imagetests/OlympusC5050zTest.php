@@ -5,6 +5,7 @@ namespace ExifEye\Test\core\imagetests;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
+use ExifEye\core\Spec;
 
 class OlympusC5050zTest extends ExifEyeTestCaseBase
 {
@@ -89,7 +90,7 @@ class OlympusC5050zTest extends ExifEyeTestCaseBase
 
         /* Sub IFDs of $ifd0. */
         $this->assertEquals(count($ifd0->getSubIfds()), 1);
-        $ifd0_0 = $ifd0->getSubIfd(2); // IFD Exif
+        $ifd0_0 = $ifd0->getSubIfd(Spec::getIfdIdByType('Exif')); // IFD Exif
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_0);
 
         /* Start of IDF $ifd0_0. */
