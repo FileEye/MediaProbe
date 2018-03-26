@@ -7,44 +7,52 @@
 return array (
   'ifds' =>
   array (
-    5 => 'Canon Picture Information',
-    4 => 'Interoperability',
+    0 => 'Canon Picture Information',
+    1 => 'Interoperability',
+    2 => 'Apple Maker Notes',
     3 => 'GPS',
-    2 => 'Exif',
-    6 => 'Canon Maker Notes',
-    7 => 'Canon Camera Settings',
-    8 => 'Canon File Information',
-    9 => 'Canon Shot Information',
-    10 => 'Canon Panorama Information',
-    0 => '0',
-    1 => '1',
+    4 => 'Exif',
+    5 => 'Canon Maker Notes',
+    6 => 'Canon Camera Settings',
+    7 => 'Canon File Information',
+    8 => 'Canon Shot Information',
+    9 => 'Canon Panorama Information',
+    10 => 'IFD0',
+    11 => 'IFD1',
   ),
   'ifdClasses' =>
   array (
-    5 => 'lsolesen\\pel\\???',
-    4 => 'lsolesen\\pel\\PelIfd',
-    3 => 'lsolesen\\pel\\PelIfd',
-    2 => 'lsolesen\\pel\\PelIfd',
-    6 => 'lsolesen\\pel\\PelIfd',
-    7 => 'lsolesen\\pel\\PelIfdIndexShort',
-    8 => 'lsolesen\\pel\\PelIfdIndexShort',
-    9 => 'lsolesen\\pel\\PelIfdIndexShort',
-    10 => 'lsolesen\\pel\\PelIfdIndexShort',
-    0 => 'lsolesen\\pel\\PelIfd',
-    1 => 'lsolesen\\pel\\PelIfd',
+    0 => '???',
+    1 => 'ExifEye\\core\\Block\\Ifd',
+    2 => 'ExifEye\\core\\Block\\IfdMakerNoteApple',
+    3 => 'ExifEye\\core\\Block\\Ifd',
+    4 => 'ExifEye\\core\\Block\\Ifd',
+    5 => 'ExifEye\\core\\Block\\Ifd',
+    6 => 'ExifEye\\core\\Block\\IfdIndexShort',
+    7 => 'ExifEye\\core\\Block\\IfdIndexShort',
+    8 => 'ExifEye\\core\\Block\\IfdIndexShort',
+    9 => 'ExifEye\\core\\Block\\IfdIndexShort',
+    10 => 'ExifEye\\core\\Block\\Ifd',
+    11 => 'ExifEye\\core\\Block\\Ifd',
   ),
   'ifdPostLoadCallbacks' =>
   array (
-    5 =>
+    0 =>
     array (
     ),
-    4 =>
+    1 =>
+    array (
+    ),
+    2 =>
     array (
     ),
     3 =>
     array (
     ),
-    2 =>
+    4 =>
+    array (
+    ),
+    5 =>
     array (
     ),
     6 =>
@@ -61,37 +69,35 @@ return array (
     ),
     10 =>
     array (
+      0 => 'ExifEye\\core\\Entry\\MakerNote::tagToIfd',
     ),
-    0 =>
-    array (
-      0 => 'lsolesen\\pel\\PelEntryMakerNote::tagToIfd',
-    ),
-    1 =>
+    11 =>
     array (
     ),
   ),
   'ifdsByType' =>
   array (
-    'Canon Picture Information' => 5,
-    'Interoperability' => 4,
-    'Interop' => 4,
+    'Canon Picture Information' => 0,
+    'Interoperability' => 1,
+    'Interop' => 1,
+    'Apple Maker Notes' => 2,
     'GPS' => 3,
-    'Exif' => 2,
-    'Canon Maker Notes' => 6,
-    'Canon Camera Settings' => 7,
-    'Canon File Information' => 8,
-    'Canon Shot Information' => 9,
-    'Canon Panorama Information' => 10,
-    0 => 0,
-    'IFD0' => 0,
-    'Main' => 0,
-    1 => 1,
-    'IFD1' => 1,
-    'Thumbnail' => 1,
+    'Exif' => 4,
+    'Canon Maker Notes' => 5,
+    'Canon Camera Settings' => 6,
+    'Canon File Information' => 7,
+    'Canon Shot Information' => 8,
+    'Canon Panorama Information' => 9,
+    'IFD0' => 10,
+    0 => 10,
+    'Main' => 10,
+    'IFD1' => 11,
+    1 => 11,
+    'Thumbnail' => 11,
   ),
   'tags' =>
   array (
-    5 =>
+    0 =>
     array (
       2 =>
       array (
@@ -124,7 +130,7 @@ return array (
         'title' => 'AF Points Used (20D)',
       ),
     ),
-    4 =>
+    1 =>
     array (
       1 =>
       array (
@@ -145,10 +151,10 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryVersion',
+        'class' => 'ExifEye\\core\\Entry\\Version',
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryVersion::decodeInteroperabilityVersion',
+          'decode' => 'ExifEye\\core\\Entry\\Version::decodeInteroperabilityVersion',
         ),
       ),
       4096 =>
@@ -179,6 +185,67 @@ return array (
         'format' =>
         array (
           0 => 3,
+        ),
+      ),
+    ),
+    2 =>
+    array (
+      3 =>
+      array (
+        'name' => 'RunTime',
+        'title' => 'Apple Run Time',
+      ),
+      8 =>
+      array (
+        'name' => 'AccelerationVector',
+        'title' => 'Acceleration Vector',
+        'format' =>
+        array (
+          0 => 10,
+        ),
+      ),
+      10 =>
+      array (
+        'name' => 'HDRImageType',
+        'title' => 'HDRImageType',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            3 => 'HDR Image',
+            4 => 'Original Image',
+          ),
+        ),
+      ),
+      11 =>
+      array (
+        'name' => 'BurstUUID',
+        'title' => 'Burst UUID',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      17 =>
+      array (
+        'name' => 'ContentIdentifier',
+        'title' => 'Content Identifier',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      21 =>
+      array (
+        'name' => 'ImageUniqueID',
+        'title' => 'ImageUniqueID',
+        'format' =>
+        array (
+          0 => 2,
         ),
       ),
     ),
@@ -215,7 +282,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryRational::decodeGPSLatitude',
+          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeGPSLatitude',
         ),
       ),
       3 =>
@@ -239,7 +306,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryRational::decodeGPSLongitude',
+          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeGPSLongitude',
         ),
       ),
       5 =>
@@ -502,8 +569,17 @@ return array (
           0 => 3,
         ),
       ),
+      31 =>
+      array (
+        'name' => 'GPSHPositioningError',
+        'title' => 'GPS Horizontal Positioning Error',
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
     ),
-    2 =>
+    4 =>
     array (
       41730 =>
       array (
@@ -526,7 +602,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryRational::decodeExposureTime',
+          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeExposureTime',
         ),
       ),
       33437 =>
@@ -540,7 +616,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryRational::decodeFNumber',
+          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeFNumber',
         ),
       ),
       34850 =>
@@ -598,6 +674,38 @@ return array (
           0 => 7,
         ),
       ),
+      34864 =>
+      array (
+        'name' => 34864,
+        'title' => 'Sensitivity Type',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unknown',
+            1 => 'Standard Output Sensitivity',
+            2 => 'Recommended Exposure Index',
+            3 => 'ISO Speed',
+            4 => 'Standard Output Sensitivity and Recommended Exposure Index',
+            5 => 'Standard Output Sensitivity and ISO Speed',
+            6 => 'Recommended Exposure Index and ISO Speed',
+            7 => 'Standard Output Sensitivity, Recommended Exposure Index and ISO Speed',
+          ),
+        ),
+      ),
+      34866 =>
+      array (
+        'name' => 'RecommendedExposureIndex',
+        'title' => 'Recommended Exposure Index',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
       36864 =>
       array (
         'name' => 'ExifVersion',
@@ -607,10 +715,10 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryVersion',
+        'class' => 'ExifEye\\core\\Entry\\Version',
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryVersion::decodeExifVersion',
+          'decode' => 'ExifEye\\core\\Entry\\Version::decodeExifVersion',
         ),
       ),
       36867 =>
@@ -622,7 +730,7 @@ return array (
         array (
           0 => 2,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryTime',
+        'class' => 'ExifEye\\core\\Entry\\Time',
       ),
       36868 =>
       array (
@@ -633,7 +741,7 @@ return array (
         array (
           0 => 2,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryTime',
+        'class' => 'ExifEye\\core\\Entry\\Time',
       ),
       36880 =>
       array (
@@ -676,7 +784,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryUndefined::decodeComponentsConfiguration',
+          'decode' => 'ExifEye\\core\\Entry\\Undefined::decodeComponentsConfiguration',
         ),
       ),
       37122 =>
@@ -700,7 +808,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntrySRational::decodeShutterSpeedValue',
+          'decode' => 'ExifEye\\core\\Entry\\SignedRational::decodeShutterSpeedValue',
         ),
       ),
       37378 =>
@@ -714,7 +822,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryRational::decodeApertureValue',
+          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeApertureValue',
         ),
       ),
       37379 =>
@@ -728,7 +836,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntrySRational::decodeBrightnessValue',
+          'decode' => 'ExifEye\\core\\Entry\\SignedRational::decodeBrightnessValue',
         ),
       ),
       37380 =>
@@ -742,7 +850,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntrySRational::decodeExposureBiasValue',
+          'decode' => 'ExifEye\\core\\Entry\\SignedRational::decodeExposureBiasValue',
         ),
       ),
       37381 =>
@@ -766,7 +874,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryRational::decodeSubjectDistance',
+          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeSubjectDistance',
         ),
       ),
       37383 =>
@@ -879,7 +987,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryRational::decodeFocalLength',
+          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeFocalLength',
         ),
       ),
       37396 =>
@@ -892,7 +1000,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryShort::decodeSubjectArea',
+          'decode' => 'ExifEye\\core\\Entry\\Short::decodeSubjectArea',
         ),
       ),
       37500 =>
@@ -903,7 +1011,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryMakerNote',
+        'class' => 'ExifEye\\core\\Entry\\MakerNote',
       ),
       37510 =>
       array (
@@ -914,7 +1022,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryUserComment',
+        'class' => 'ExifEye\\core\\Entry\\UserComment',
       ),
       37520 =>
       array (
@@ -955,10 +1063,10 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryVersion',
+        'class' => 'ExifEye\\core\\Entry\\Version',
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryVersion::decodeFlashPixVersion',
+          'decode' => 'ExifEye\\core\\Entry\\Version::decodeFlashPixVersion',
         ),
       ),
       40961 =>
@@ -1016,7 +1124,7 @@ return array (
       array (
         'name' => 'InteroperabilityIFDPointer',
         'title' => 'Interoperability IFD Pointer',
-        'ifd' => 4,
+        'ifd' => 1,
       ),
       41483 =>
       array (
@@ -1130,7 +1238,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryUndefined::decodeFileSource',
+          'decode' => 'ExifEye\\core\\Entry\\Undefined::decodeFileSource',
         ),
       ),
       41729 =>
@@ -1144,7 +1252,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryUndefined::decodeSceneType',
+          'decode' => 'ExifEye\\core\\Entry\\Undefined::decodeSceneType',
         ),
       ),
       41985 =>
@@ -1356,6 +1464,60 @@ return array (
           0 => 2,
         ),
       ),
+      42032 =>
+      array (
+        'name' => 'OwnerName',
+        'title' => 'Owner Name',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      42033 =>
+      array (
+        'name' => 'SerialNumber',
+        'title' => 'Serial Number',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      42034 =>
+      array (
+        'name' => 'LensInfo',
+        'title' => 'Lens Information',
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
+      42035 =>
+      array (
+        'name' => 'LensMake',
+        'title' => 'Lens Make',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      42036 =>
+      array (
+        'name' => 'LensModel',
+        'title' => 'Lens Model',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      42037 =>
+      array (
+        'name' => 'LensSerialNumber',
+        'title' => 'Lens Serial Number',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
       42240 =>
       array (
         'name' => 'Gamma',
@@ -1367,13 +1529,13 @@ return array (
         ),
       ),
     ),
-    6 =>
+    5 =>
     array (
       1 =>
       array (
         'name' => 'CameraSettings',
         'title' => 'Camera Settings',
-        'ifd' => 7,
+        'ifd' => 6,
       ),
       2 =>
       array (
@@ -1388,13 +1550,13 @@ return array (
       array (
         'name' => 'ShotInfo',
         'title' => 'Shot Info',
-        'ifd' => 9,
+        'ifd' => 8,
       ),
       5 =>
       array (
         'name' => 'Panorama',
         'title' => 'Panorama',
-        'ifd' => 10,
+        'ifd' => 9,
       ),
       6 =>
       array (
@@ -1531,7 +1693,7 @@ return array (
       array (
         'name' => 'FileInfo',
         'title' => 'File Info',
-        'ifd' => 8,
+        'ifd' => 7,
       ),
       149 =>
       array (
@@ -1637,7 +1799,7 @@ return array (
         ),
       ),
     ),
-    7 =>
+    6 =>
     array (
       1 =>
       array (
@@ -2663,7 +2825,7 @@ return array (
         ),
       ),
     ),
-    8 =>
+    7 =>
     array (
       1 =>
       array (
@@ -2923,7 +3085,7 @@ return array (
         ),
       ),
     ),
-    9 =>
+    8 =>
     array (
       2 =>
       array (
@@ -3170,7 +3332,7 @@ return array (
         ),
       ),
     ),
-    10 =>
+    9 =>
     array (
       2 =>
       array (
@@ -3202,7 +3364,7 @@ return array (
         ),
       ),
     ),
-    0 =>
+    10 =>
     array (
       256 =>
       array (
@@ -3464,7 +3626,7 @@ return array (
         array (
           0 => 2,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryTime',
+        'class' => 'ExifEye\\core\\Entry\\Time',
       ),
       315 =>
       array (
@@ -3537,7 +3699,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryShort::decodeYCbCrSubSampling',
+          'decode' => 'ExifEye\\core\\Entry\\Short::decodeYCbCrSubSampling',
         ),
       ),
       531 =>
@@ -3597,13 +3759,13 @@ return array (
         array (
           0 => 2,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryCopyright',
+        'class' => 'ExifEye\\core\\Entry\\Copyright',
       ),
       34665 =>
       array (
         'name' => 'ExifIFDPointer',
         'title' => 'Exif IFD Pointer',
-        'ifd' => 2,
+        'ifd' => 4,
       ),
       34853 =>
       array (
@@ -3620,7 +3782,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40092 =>
       array (
@@ -3631,7 +3793,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40093 =>
       array (
@@ -3642,7 +3804,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40094 =>
       array (
@@ -3653,7 +3815,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40095 =>
       array (
@@ -3664,7 +3826,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       50341 =>
       array (
@@ -3677,7 +3839,7 @@ return array (
         ),
       ),
     ),
-    1 =>
+    11 =>
     array (
       256 =>
       array (
@@ -3939,7 +4101,7 @@ return array (
         array (
           0 => 2,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryTime',
+        'class' => 'ExifEye\\core\\Entry\\Time',
       ),
       315 =>
       array (
@@ -4012,7 +4174,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'lsolesen\\pel\\PelEntryShort::decodeYCbCrSubSampling',
+          'decode' => 'ExifEye\\core\\Entry\\Short::decodeYCbCrSubSampling',
         ),
       ),
       531 =>
@@ -4072,13 +4234,13 @@ return array (
         array (
           0 => 2,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryCopyright',
+        'class' => 'ExifEye\\core\\Entry\\Copyright',
       ),
       34665 =>
       array (
         'name' => 'ExifIFDPointer',
         'title' => 'Exif IFD Pointer',
-        'ifd' => 2,
+        'ifd' => 4,
       ),
       34853 =>
       array (
@@ -4095,7 +4257,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40092 =>
       array (
@@ -4106,7 +4268,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40093 =>
       array (
@@ -4117,7 +4279,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40094 =>
       array (
@@ -4128,7 +4290,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40095 =>
       array (
@@ -4139,7 +4301,7 @@ return array (
         array (
           0 => 1,
         ),
-        'class' => 'lsolesen\\pel\\PelEntryWindowsString',
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       50341 =>
       array (
@@ -4155,7 +4317,7 @@ return array (
   ),
   'tagsByName' =>
   array (
-    5 =>
+    0 =>
     array (
       'ImageWidth' => 2,
       'ImageHeight' => 3,
@@ -4164,13 +4326,22 @@ return array (
       'AFPointsUsed' => 22,
       'AFPointsUsed(20D)' => 26,
     ),
-    4 =>
+    1 =>
     array (
       'InteroperabilityIndex' => 1,
       'InteroperabilityVersion' => 2,
       'RelatedImageFileFormat' => 4096,
       'RelatedImageWidth' => 4097,
       'RelatedImageLength' => 4098,
+    ),
+    2 =>
+    array (
+      'RunTime' => 3,
+      'AccelerationVector' => 8,
+      'HDRImageType' => 10,
+      'BurstUUID' => 11,
+      'ContentIdentifier' => 17,
+      'ImageUniqueID' => 21,
     ),
     3 =>
     array (
@@ -4205,8 +4376,9 @@ return array (
       'GPSAreaInformation' => 28,
       'GPSDateStamp' => 29,
       'GPSDifferential' => 30,
+      'GPSHPositioningError' => 31,
     ),
-    2 =>
+    4 =>
     array (
       'CFAPattern' => 41730,
       'ExposureTime' => 33434,
@@ -4215,6 +4387,8 @@ return array (
       'SpectralSensitivity' => 34852,
       'ISOSpeedRatings' => 34855,
       'OECF' => 34856,
+      34864 => 34864,
+      'RecommendedExposureIndex' => 34866,
       'ExifVersion' => 36864,
       'DateTimeOriginal' => 36867,
       'DateTimeDigitized' => 36868,
@@ -4268,9 +4442,15 @@ return array (
       'DeviceSettingDescription' => 41995,
       'SubjectDistanceRange' => 41996,
       'ImageUniqueID' => 42016,
+      'OwnerName' => 42032,
+      'SerialNumber' => 42033,
+      'LensInfo' => 42034,
+      'LensMake' => 42035,
+      'LensModel' => 42036,
+      'LensSerialNumber' => 42037,
       'Gamma' => 42240,
     ),
-    6 =>
+    5 =>
     array (
       'CameraSettings' => 1,
       'FocalLength' => 2,
@@ -4303,7 +4483,7 @@ return array (
       'SensorInfo' => 224,
       'ColorData' => 16385,
     ),
-    7 =>
+    6 =>
     array (
       'MacroMode' => 1,
       'SelfTimer' => 2,
@@ -4343,7 +4523,7 @@ return array (
       'ColorTone' => 42,
       'SRAWQuality' => 46,
     ),
-    8 =>
+    7 =>
     array (
       'FileNumber' => 1,
       'BracketMode' => 3,
@@ -4363,7 +4543,7 @@ return array (
       'FocusDistanceLower' => 21,
       'FlashExposureLock' => 25,
     ),
-    9 =>
+    8 =>
     array (
       'ISOSpeedUsed' => 2,
       'MeasuredEV' => 3,
@@ -4383,12 +4563,12 @@ return array (
       'AutoRotate' => 27,
       'NDFilter' => 28,
     ),
-    10 =>
+    9 =>
     array (
       'PanoramaFrame' => 2,
       'PanoramaDirection' => 5,
     ),
-    0 =>
+    10 =>
     array (
       'ImageWidth' => 256,
       'ImageLength' => 257,
@@ -4432,7 +4612,7 @@ return array (
       'WindowsXPSubject' => 40095,
       'PrintIM' => 50341,
     ),
-    1 =>
+    11 =>
     array (
       'ImageWidth' => 256,
       'ImageLength' => 257,
@@ -4479,6 +4659,7 @@ return array (
   ),
   'makerNotes' =>
   array (
-    'Canon' => 6,
+    'Apple' => 2,
+    'Canon' => 5,
   ),
 );
