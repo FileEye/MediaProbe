@@ -9,7 +9,7 @@ return array (
   array (
     0 => 'CanonPictureInformation',
     1 => 'Interoperability',
-    2 => 'Apple Maker Notes',
+    2 => 'AppleMakerNotes',
     3 => 'GPS',
     4 => 'Exif',
     5 => 'CanonMakerNotes',
@@ -80,7 +80,7 @@ return array (
     'CanonPictureInformation' => 0,
     'Interoperability' => 1,
     'Interop' => 1,
-    'Apple Maker Notes' => 2,
+    'AppleMakerNotes' => 2,
     'GPS' => 3,
     'Exif' => 4,
     'CanonMakerNotes' => 5,
@@ -676,7 +676,7 @@ return array (
       ),
       34864 =>
       array (
-        'name' => 34864,
+        'name' => 'SensitivityType',
         'title' => 'Sensitivity Type',
         'format' =>
         array (
@@ -4387,7 +4387,7 @@ return array (
       'SpectralSensitivity' => 34852,
       'ISOSpeedRatings' => 34855,
       'OECF' => 34856,
-      34864 => 34864,
+      'SensitivityType' => 34864,
       'RecommendedExposureIndex' => 34866,
       'ExifVersion' => 36864,
       'DateTimeOriginal' => 36867,
