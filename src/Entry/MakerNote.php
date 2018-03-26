@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 use ExifEye\core\Block\Ifd;
 
 /**
@@ -106,34 +106,34 @@ class MakerNote extends Undefined
     public static function tagToIfd(DataWindow $d, Ifd $ifd)
     {
         // Get the Exif subIfd if existing.
-        if (!$exif_ifd = $ifd->getSubIfd(PelSpec::getIfdIdByType('Exif'))) {
+        if (!$exif_ifd = $ifd->getSubIfd(Spec::getIfdIdByType('Exif'))) {
             return;
         }
 
         // Get MakerNotes from Exif IFD.
-        if (!$maker_note = $exif_ifd->getEntry(PelSpec::getTagIdByName($exif_ifd->getType(), 'MakerNote'))) {
+        if (!$maker_note = $exif_ifd->getEntry(Spec::getTagIdByName($exif_ifd->getType(), 'MakerNote'))) {
             return;
         }
 
         // Get Make tag from IFD0.
-        if (!$make = $ifd->getEntry(PelSpec::getTagIdByName($ifd->getType(), 'Make'))) {
+        if (!$make = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), 'Make'))) {
             return;
         }
 
         // Get Model tag from IFD0.
-        $model_entry = $ifd->getEntry(PelSpec::getTagIdByName($ifd->getType(), 'Model'));
+        $model_entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), 'Model'));
         $model = $model_entry ? $model_entry->getValue() : 'na';
 
         // Get maker note IFD id.
-        if (!$maker_note_ifd_id = PelSpec::getMakerNoteIfd($make->getValue(), $model)) {
+        if (!$maker_note_ifd_id = Spec::getMakerNoteIfd($make->getValue(), $model)) {
             return;
         }
 
         // Load maker note into IFD.
-        $ifd_class = PelSpec::getIfdClass($maker_note_ifd_id);
+        $ifd_class = Spec::getIfdClass($maker_note_ifd_id);
         $ifd = new $ifd_class($maker_note_ifd_id);
         $ifd->load($d, $maker_note->getDataOffset());
         $exif_ifd->addSubIfd($ifd);
-        $exif_ifd->offsetUnset(PelSpec::getTagIdByName($exif_ifd->getType(), 'MakerNote'));
+        $exif_ifd->offsetUnset(Spec::getTagIdByName($exif_ifd->getType(), 'MakerNote'));
     }
 }

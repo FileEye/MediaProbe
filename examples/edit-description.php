@@ -50,7 +50,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\Convert;
 use ExifEye\core\Block\Jpeg;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /*
  * Store the name of the script in $prog and remove this first part of
@@ -205,7 +205,7 @@ if ($ifd0 == null) {
      * problem, we just create and inserts an empty Ifd object.
      */
     println('No IFD found, adding new.');
-    $ifd0 = new Ifd(PelSpec::getIfdIdByType('IFD0'));
+    $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'));
     $tiff->setIfd($ifd0);
 }
 
@@ -214,7 +214,7 @@ if ($ifd0 == null) {
  * ImageDescription entry if it is present. If the IFD does not
  * contain such an entry, null will be returned.
  */
-$desc = $ifd0->getEntry(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'));
+$desc = $ifd0->getEntry(Spec::getTagIdByName($ifd0->getType(), 'ImageDescription'));
 
 /* We need to check if the image already had a description stored. */
 if ($desc == null) {
@@ -226,7 +226,7 @@ if ($desc == null) {
      * the description. The constructor for Ascii needs to know
      * the tag and contents of the new entry.
      */
-    $desc = new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description);
+    $desc = new Ascii(Spec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description);
 
     /*
      * This will insert the newly created entry with the description

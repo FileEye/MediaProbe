@@ -39,7 +39,7 @@ require_once '../autoload.php';
 use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Block\Jpeg;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 use ExifEye\core\Block\Tiff;
 
 $prog = array_shift($argv);
@@ -87,7 +87,7 @@ foreach ($argv as $file) {
     }
 
     $ifd0 = $tiff->getIfd();
-    $entry = $ifd0->getEntry(PelSpec::getTagIdByName($ifd0->getType(), 'DateTime'));
+    $entry = $ifd0->getEntry(Spec::getTagIdByName($ifd0->getType(), 'DateTime'));
 
     if ($entry == null) {
         println('Skipping %s because no DATE_TIME tag was found.', $file);

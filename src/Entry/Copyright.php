@@ -7,7 +7,7 @@ use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Class for holding copyright information.
@@ -63,7 +63,7 @@ class Copyright extends Ascii
      */
     public function __construct($photographer = '', $editor = '')
     {
-        parent::__construct(PelSpec::getTagIdByName(PelSpec::getIfdIdByType('0'), 'Copyright'));
+        parent::__construct(Spec::getTagIdByName(Spec::getIfdIdByType('0'), 'Copyright'));
         $this->setValue($photographer, $editor);
     }
 

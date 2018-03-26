@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Utility\SpecCompiler;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -37,7 +37,7 @@ class SpecCompilerTest extends TestCase
     public function tearDown()
     {
         $this->fs->remove($this->testResourceDirectory);
-        PelSpec::setMap(null);
+        Spec::setMap(null);
         parent::tearDown();
     }
 
@@ -115,14 +115,14 @@ class SpecCompilerTest extends TestCase
     {
         $compiler = new SpecCompiler(self::DEFAULT_NAMESPACE);
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
-        PelSpec::setMap($this->testResourceDirectory . '/spec.php');
-        $this->assertEquals([2 => 'Exif', 0 => '0'], PelSpec::getIfdTypes());
+        Spec::setMap($this->testResourceDirectory . '/spec.php');
+        $this->assertEquals([2 => 'Exif', 0 => '0'], Spec::getIfdTypes());
 
-        $this->assertEquals(0x0100, PelSpec::getTagIdByName(0, 'ImageWidth'));
-        $this->assertEquals(0x8769, PelSpec::getTagIdByName(0, 'ExifIFDPointer'));
-        $this->assertEquals(0x829A, PelSpec::getTagIdByName(2, 'ExposureTime'));
+        $this->assertEquals(0x0100, Spec::getTagIdByName(0, 'ImageWidth'));
+        $this->assertEquals(0x8769, Spec::getTagIdByName(0, 'ExifIFDPointer'));
+        $this->assertEquals(0x829A, Spec::getTagIdByName(2, 'ExposureTime'));
 
         // Compression is missing from the stub specs.
-        $this->assertNull(PelSpec::getTagIdByName(0, 'Compression'));
+        $this->assertNull(Spec::getTagIdByName(0, 'Compression'));
     }
 }

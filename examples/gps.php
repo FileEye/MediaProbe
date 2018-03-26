@@ -40,7 +40,7 @@ use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Entry\Byte;
 use ExifEye\core\Entry\UserComment;
@@ -156,32 +156,32 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * Create first Image File Directory and associate it with the TIFF
      * data.
      */
-    $ifd0 = new Ifd(PelSpec::getIfdIdByType('IFD0'));
+    $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'));
     $tiff->setIfd($ifd0);
 
     /*
      * Create a sub-IFD for holding GPS information. GPS data must be
      * below the first IFD.
      */
-    $gps_ifd = new Ifd(PelSpec::getIfdIdByType('GPS'));
+    $gps_ifd = new Ifd(Spec::getIfdIdByType('GPS'));
     $ifd0->addSubIfd($gps_ifd);
 
     /*
      * The USER_COMMENT tag must be put in a Exif sub-IFD under the
      * first IFD.
      */
-    $exif_ifd = new Ifd(PelSpec::getIfdIdByType('Exif'));
+    $exif_ifd = new Ifd(Spec::getIfdIdByType('Exif'));
     $exif_ifd->addEntry(new UserComment($comment));
     $ifd0->addSubIfd($exif_ifd);
 
-    $inter_ifd = new Ifd(PelSpec::getIfdIdByType('Interoperability'));
+    $inter_ifd = new Ifd(Spec::getIfdIdByType('Interoperability'));
     $ifd0->addSubIfd($inter_ifd);
 
-    $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'Model'), $model));
-    $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'DateTime'), $date_time));
-    $ifd0->addEntry(new Ascii(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description));
+    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getType(), 'Model'), $model));
+    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getType(), 'DateTime'), $date_time));
+    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description));
 
-    $gps_ifd->addEntry(new Byte(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSVersionID'), 2, 2, 0, 0));
+    $gps_ifd->addEntry(new Byte(Spec::getTagIdByName($gps_ifd->getType(), 'GPSVersionID'), 2, 2, 0, 0));
 
     /*
      * Use the convertDecimalToDMS function to convert the latitude from
@@ -192,26 +192,26 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
     /* We interpret a negative latitude as being south. */
     $latitude_ref = ($latitude < 0) ? 'S' : 'N';
 
-    $gps_ifd->addEntry(new Ascii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitudeRef'), $latitude_ref));
-    $gps_ifd->addEntry(new Rational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLatitude'), $hours, $minutes, $seconds));
+    $gps_ifd->addEntry(new Ascii(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLatitudeRef'), $latitude_ref));
+    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLatitude'), $hours, $minutes, $seconds));
 
     /* The longitude works like the latitude. */
     list ($hours, $minutes, $seconds) = convertDecimalToDMS($longitude);
     $longitude_ref = ($longitude < 0) ? 'W' : 'E';
 
-    $gps_ifd->addEntry(new Ascii(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitudeRef'), $longitude_ref));
-    $gps_ifd->addEntry(new Rational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSLongitude'), $hours, $minutes, $seconds));
+    $gps_ifd->addEntry(new Ascii(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLongitudeRef'), $longitude_ref));
+    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLongitude'), $hours, $minutes, $seconds));
 
     /*
      * Add the altitude. The absolute value is stored here, the sign is
      * stored in the GPS_ALTITUDE_REF tag below.
      */
-    $gps_ifd->addEntry(new Rational(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSAltitude'), [abs($altitude), 1]));
+    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getType(), 'GPSAltitude'), [abs($altitude), 1]));
     /*
      * The reference is set to 1 (true) if the altitude is below sea
      * level, or 0 (false) otherwise.
      */
-    $gps_ifd->addEntry(new Byte(PelSpec::getTagIdByName($gps_ifd->getType(), 'GPSAltitudeRef'), (int) ($altitude < 0)));
+    $gps_ifd->addEntry(new Byte(Spec::getTagIdByName($gps_ifd->getType(), 'GPSAltitudeRef'), (int) ($altitude < 0)));
 
     /* Finally we store the data in the output file. */
     file_put_contents($output, $jpeg->getBytes());

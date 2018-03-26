@@ -7,7 +7,7 @@ use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\InvalidDataException;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Class representing an index of Short values as an IFD.
@@ -54,11 +54,11 @@ class IfdIndexShort extends Ifd
                 continue;
             }
 
-            $item_format = PelSpec::getTagFormat($this->type, $i + 1)[0];
+            $item_format = Spec::getTagFormat($this->type, $i + 1)[0];
             ExifEye::debug(
                 str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d (%d of %d)...',
                 $i + 1,
-                PelSpec::getTagName($this->type, $i + 1),
+                Spec::getTagName($this->type, $i + 1),
                 $item_format,
                 Format::getName($item_format),
                 1,

@@ -6,7 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Common ancestor class of all {@link Ifd} entries.
@@ -94,7 +94,7 @@ abstract class EntryBase
      */
     final public static function createNew($ifd_id, $tag_id, array $arguments)
     {
-        $class = PelSpec::getTagClass($ifd_id, $tag_id);
+        $class = Spec::getTagClass($ifd_id, $tag_id);
         return call_user_func($class . '::createInstance', $ifd_id, $tag_id, $arguments);
     }
 
@@ -146,7 +146,7 @@ abstract class EntryBase
         }
 
         try {
-            $class = PelSpec::getTagClass($ifd_id, $tag_id, $format);
+            $class = Spec::getTagClass($ifd_id, $tag_id, $format);
             $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $sub_data, $data_offset);
             return  call_user_func($class . '::createInstance', $ifd_id, $tag_id, $arguments);
         } catch (ExifEyeException $e) {
@@ -291,9 +291,9 @@ abstract class EntryBase
      */
     public function getText($brief = false)
     {
-        // If PelSpec can return the text, return it, otherwise implementations
+        // If Spec can return the text, return it, otherwise implementations
         // will override.
-        return PelSpec::getTagText($this, $brief);
+        return Spec::getTagText($this, $brief);
     }
 
     /**
@@ -338,10 +338,10 @@ abstract class EntryBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, PelSpec::getTagName($this->ifd_type, $this->tag));
+        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, Spec::getTagName($this->ifd_type, $this->tag));
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
-        if ($this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != PelSpec::getTagIdByName(PelSpec::getIfdIdByType('0'), 'PrintIM')) {
+        if ($this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('0'), 'PrintIM')) {
             $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
         }
         $str .= ExifEye::fmt("    Text      : %s\n", $this->getText());

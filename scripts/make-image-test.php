@@ -85,7 +85,7 @@ function ifdToTest($name, $number, Ifd $ifd)
 
     foreach ($entries as $tag => $entry) {
         println();
-        println('$entry = %s%d->getEntry(%d); // %s', $name, $number, $tag, PelSpec::getTagName($ifd->getType(), $tag));
+        println('$entry = %s%d->getEntry(%d); // %s', $name, $number, $tag, Spec::getTagName($ifd->getType(), $tag));
         entryToTest('$entry', $entry);
     }
 

@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry\Exception;
 
 use ExifEye\core\Format;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Exception indicating that an unexpected format was found.
@@ -31,7 +31,7 @@ class UnexpectedFormatException extends EntryException
     {
         parent::__construct(
             'Unexpected format found for %s tag: Format::%s. Expected Format::%s instead.',
-            PelSpec::getTagName($type, $tag),
+            Spec::getTagName($type, $tag),
             strtoupper(Format::getName($found)),
             strtoupper(Format::getName($expected))
         );

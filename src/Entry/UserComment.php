@@ -5,7 +5,7 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Format;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Class for a user comment.
@@ -64,7 +64,7 @@ class UserComment extends Undefined
      */
     public function __construct($comment = '', $encoding = 'ASCII')
     {
-        parent::__construct(PelSpec::getTagIdByName(PelSpec::getIfdIdByType('Exif'), 'UserComment'));
+        parent::__construct(Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'UserComment'));
         $this->setValue($comment, $encoding);
     }
 

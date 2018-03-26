@@ -13,7 +13,7 @@ use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Class representing an Image File Directory (IFD).
@@ -146,12 +146,12 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
      * this IFD to another.
      *
      * @param int $type
-     *            the type of this IFD, as found in PelSpec. A
+     *            the type of this IFD, as found in Spec. A
      *            {@link IfdException} will be thrown if unknown.
      */
     public function __construct($type)
     {
-        if (PelSpec::getIfdType($type) === null) {
+        if (Spec::getIfdType($type) === null) {
             throw new IfdException('Unknown IFD type: %d', $type);
         }
 
@@ -221,7 +221,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             ExifEye::debug(
                 str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d (%d of %d)...',
                 $tag,
-                PelSpec::getTagName($this->type, $tag),
+                Spec::getTagName($this->type, $tag),
                 $tag_format,
                 Format::getName($tag_format),
                 $tag_components,
@@ -230,12 +230,12 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             );
 
             // Load a subIfd.
-            if (PelSpec::isTagAnIfdPointer($this->type, $tag)) {
+            if (Spec::isTagAnIfdPointer($this->type, $tag)) {
                 // If the tag is an IFD pointer, loads the IFD.
-                $type = PelSpec::getIfdIdFromTag($this->type, $tag);
+                $type = Spec::getIfdIdFromTag($this->type, $tag);
                 $o = $d->getLong($offset + 12 * $i + 8);
                 if ($starting_offset != $o) {
-                    $ifd_class = PelSpec::getIfdClass($type);
+                    $ifd_class = Spec::getIfdClass($type);
                     $ifd = new $ifd_class($type);
                     try {
                         $ifd->load($d, $o, $tag_components, $nesting_level + 1);
@@ -250,13 +250,13 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             }
 
             // Manage Thumbnail data.
-            if (PelSpec::getTagName($this->type, $tag) === 'JPEGInterchangeFormat') {
+            if (Spec::getTagName($this->type, $tag) === 'JPEGInterchangeFormat') {
                 // Aka 'Thumbnail Offset'.
                 $thumb_offset = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
                 continue;
             }
-            if (PelSpec::getTagName($this->type, $tag) === 'JPEGInterchangeFormatLength') {
+            if (Spec::getTagName($this->type, $tag) === 'JPEGInterchangeFormatLength') {
                 // Aka 'Thumbnail Length'.
                 $thumb_length = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
@@ -278,11 +278,11 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             if ($o > $d->getSize() - 6) {
                 ExifEye::maybeThrow(new IfdException('Bogus offset to next IFD: ' . '%d > %d!', $o, $d->getSize() - 6));
             } else {
-                if (PelSpec::getIfdType($this->type) === '1') {
+                if (Spec::getIfdType($this->type) === '1') {
                     // IFD1 shouldn't link further...
                     ExifEye::maybeThrow(new IfdException('IFD1 links to another IFD!'));
                 }
-                $this->next = new Ifd(PelSpec::getIfdIdByType('1'));
+                $this->next = new Ifd(Spec::getIfdIdByType('1'));
                 $this->next->load($d, $o);
             }
         }
@@ -290,7 +290,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
         ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
 
         // Invoke post-load callbacks.
-        foreach (PelSpec::getIfdPostLoadCallbacks($this->type) as $callback) {
+        foreach (Spec::getIfdPostLoadCallbacks($this->type) as $callback) {
             call_user_func($callback, $d, $this);
         }
     }
@@ -376,7 +376,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
     /**
      * Get the type of this directory.
      *
-     * @return int the type of this directory, as identified in PelSpec.
+     * @return int the type of this directory, as identified in Spec.
      */
     public function getType()
     {
@@ -415,7 +415,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
      */
     public function getValidTags()
     {
-        return PelSpec::getIfdSupportedTagIds($this->type);
+        return Spec::getIfdSupportedTagIds($this->type);
 
         /*
          * TODO: Where do these tags belong?
@@ -433,14 +433,14 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
      * Get the name of an IFD type.
      *
      * @param int $type
-     *            the type of the directory, as identified in PelSpec.
+     *            the type of the directory, as identified in Spec.
      *
      * @return string the name of type.
      */
     public static function getTypeName($type)
     {
-        if (PelSpec::getIfdType($type) !== null) {
-            return PelSpec::getIfdType($type);
+        if (Spec::getIfdType($type) !== null) {
+            return Spec::getIfdType($type);
         }
         throw new IfdException('Unknown IFD type: %d', $type);
     }
@@ -790,12 +790,12 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
             // TODO: make EntryBase a class that can be constructed with
             // arguments corresponding to the newt four lines.
-            $bytes .= Convert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
+            $bytes .= Convert::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
             $bytes .= Convert::shortToBytes(Format::LONG, $order);
             $bytes .= Convert::longToBytes(1, $order);
             $bytes .= Convert::longToBytes($this->thumb_data->getSize(), $order);
 
-            $bytes .= Convert::shortToBytes(PelSpec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
+            $bytes .= Convert::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
             $bytes .= Convert::shortToBytes(Format::LONG, $order);
             $bytes .= Convert::longToBytes(1, $order);
             $bytes .= Convert::longToBytes($end, $order);
@@ -807,12 +807,12 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
         /* Find bytes from sub IFDs. */
         $sub_bytes = '';
         foreach ($this->sub as $type => $sub) {
-            if (PelSpec::getIfdType($type) === 'Exif') {
-                $tag = PelSpec::getTagIdByName($this->type, 'ExifIFDPointer');
-            } elseif (PelSpec::getIfdType($type) === 'GPS') {
-                $tag = PelSpec::getTagIdByName($this->type, 'GPSInfoIFDPointer');
-            } elseif (PelSpec::getIfdType($type) === 'Interoperability') {
-                $tag = PelSpec::getTagIdByName($this->type, 'InteroperabilityIFDPointer');
+            if (Spec::getIfdType($type) === 'Exif') {
+                $tag = Spec::getTagIdByName($this->type, 'ExifIFDPointer');
+            } elseif (Spec::getIfdType($type) === 'GPS') {
+                $tag = Spec::getTagIdByName($this->type, 'GPSInfoIFDPointer');
+            } elseif (Spec::getIfdType($type) === 'Interoperability') {
+                $tag = Spec::getTagIdByName($this->type, 'InteroperabilityIFDPointer');
             } else {
                 // Convert::BIG_ENDIAN is the default used by Convert
                 $tag = Convert::BIG_ENDIAN;

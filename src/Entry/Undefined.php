@@ -196,7 +196,7 @@ class Undefined extends EntryBase
      */
     public function getText($brief = false)
     {
-        // If PelSpec can return the text, return it.
+        // If Spec can return the text, return it.
         if (($tag_text = parent::getText($brief)) !== null) {
             return $tag_text;
         }

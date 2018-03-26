@@ -4,7 +4,7 @@ namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Jpeg;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 
 class CanonEos650dTest extends ExifEyeTestCaseBase
@@ -275,7 +275,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         /* End of IFD $ifd1. */
 
         /* Start of IDF $ifd0_mn  */
-        $ifd0_mn = $ifd0_0->getSubIfd(PelSpec::getIfdIdByType('Canon Maker Notes')); // IFD MakerNotes
+        $ifd0_mn = $ifd0_0->getSubIfd(Spec::getIfdIdByType('Canon Maker Notes')); // IFD MakerNotes
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_mn);
 
         $entry = $ifd0_mn->getEntry(6); // ImageType
@@ -287,7 +287,7 @@ class CanonEos650dTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getValue(), 'Firmware Version 1.0.4');
 
         /* Start of IDF $ifd0_mn_cs. */
-        $ifd0_mn_cs = $ifd0_mn->getSubIfd(PelSpec::getIfdIdByType('Canon Camera Settings')); // CameraSettings
+        $ifd0_mn_cs = $ifd0_mn->getSubIfd(Spec::getIfdIdByType('Canon Camera Settings')); // CameraSettings
         $this->assertInstanceOf('ExifEye\core\Block\IfdIndexShort', $ifd0_mn_cs);
         $this->assertEquals(count($ifd0_mn_cs->getEntries()), 37);
 

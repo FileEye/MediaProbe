@@ -2,7 +2,7 @@
 
 namespace ExifEye\core\Entry\Exception;
 
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Exception indicating that an unexpected number of components was
@@ -32,7 +32,7 @@ class WrongComponentCountException extends EntryException
      */
     public function __construct($type, $tag, $found, $expected)
     {
-        parent::__construct('Wrong number of components found for %s tag: %d. ' . 'Expected %d.', PelSpec::getTagName($type, $tag), $found, $expected);
+        parent::__construct('Wrong number of components found for %s tag: %d. ' . 'Expected %d.', Spec::getTagName($type, $tag), $found, $expected);
         $this->tag = $tag;
         $this->type = $type;
     }

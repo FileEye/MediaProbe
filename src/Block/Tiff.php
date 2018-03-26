@@ -7,7 +7,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 
 /**
  * Class for handling TIFF data.
@@ -131,7 +131,7 @@ class Tiff
              * Parse the first IFD, this will automatically parse the
              * following IFDs and any sub IFDs.
              */
-            $this->ifd = new Ifd(PelSpec::getIfdIdByType('IFD0'));
+            $this->ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
             $this->ifd->load($d, $offset);
         }
     }
@@ -156,8 +156,8 @@ class Tiff
      */
     public function setIfd(Ifd $ifd)
     {
-        if ($ifd->getType() != PelSpec::getIfdIdByType('IFD0')) {
-            throw new InvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getType(), PelSpec::getIfdIdByType('IFD0'));
+        if ($ifd->getType() != Spec::getIfdIdByType('IFD0')) {
+            throw new InvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getType(), Spec::getIfdIdByType('IFD0'));
         }
         $this->ifd = $ifd;
     }

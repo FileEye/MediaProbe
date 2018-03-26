@@ -108,7 +108,7 @@ to be used with the following code:
 
 ```php
 ...
-use lsolesen\pel\PelSpec;
+use ExifEye\core\Spec;
 ...
 
 class MyClass
@@ -116,8 +116,8 @@ class MyClass
     public function myMethod()
     {
         ...
-        PelSpec::setMap('my_resources/spec.php');
-        $ifd_types = PelSpec::getIfdTypes();
+        Spec::setMap('my_resources/spec.php');
+        $ifd_types = Spec::getIfdTypes();
         ...
     }
 }

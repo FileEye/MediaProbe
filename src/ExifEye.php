@@ -127,7 +127,7 @@ class ExifEye
      *   if ($e instanceof EntryException) {
      *     // Warn about entries that couldn't be loaded.
      *     printf("Warning: Problem with %s.\n",
-     *     PelSpec::getTagName(($e->getType(), $e->getTag()));
+     *     Spec::getTagName(($e->getType(), $e->getTag()));
      *   }
      * }
      * </code>

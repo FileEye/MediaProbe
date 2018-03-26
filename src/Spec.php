@@ -1,6 +1,6 @@
 <?php
 
-namespace lsolesen\pel;
+namespace ExifEye\core;
 
 use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
@@ -10,7 +10,7 @@ use ExifEye\core\Format;
 /**
  * Class to retrieve IFD and TAG information from YAML specs.
  */
-class PelSpec
+class Spec
 {
     /**
      * The compiled PEL specification map.
