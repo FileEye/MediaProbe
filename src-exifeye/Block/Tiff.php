@@ -7,6 +7,8 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\Convert;
+use lsolesen\pel\PelIfd;
+use lsolesen\pel\PelSpec;
 
 /**
  * Class for handling TIFF data.
