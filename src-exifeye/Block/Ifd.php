@@ -13,6 +13,7 @@ use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\Convert;
+use lsolesen\pel\PelSpec;
 
 /**
  * Class representing an Image File Directory (IFD).
