@@ -64,7 +64,7 @@ class ExifEye
      *
      * This controls the quality used then PHP image resources are
      * encoded into JPEG images. This happens when you create a
-     * {@link PelJpeg} object based on an image resource.
+     * {@link Jpeg} object based on an image resource.
      *
      * The default is 75 for average quality images, but you can change
      * this to an integer between 0 and 100.
@@ -119,7 +119,7 @@ class ExifEye
      * ExifEye::setStrictParsing(true);
      * ExifEye::clearExceptions();
      *
-     * $jpeg = new PelJpeg($file);
+     * $jpeg = new Jpeg($file);
      *
      * // Check for exceptions.
      * foreach (ExifEye::getExceptions() as $e) {

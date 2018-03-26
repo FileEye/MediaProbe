@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use lsolesen\pel\PelSpec;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 
@@ -11,7 +11,7 @@ class CanonIxusIITest extends ExifEyeTestCaseBase
 {
     public function testRead()
     {
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/canon-ixus-ii.jpg');
+        $jpeg = new Jpeg(dirname(__FILE__) . '/canon-ixus-ii.jpg');
 
         $exif = $jpeg->getExif();
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);

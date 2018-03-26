@@ -37,18 +37,19 @@ setlocale(LC_ALL, '');
 
 /*
  * Load the required files. One would normally just require the
- * PelJpeg.php file for dealing with JPEG images, but because this
+ * Jpeg.php file for dealing with JPEG images, but because this
  * example can handle both JPEG and TIFF it loads the DataWindow
  * class too.
  */
 require_once '../autoload.php';
 
 use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use lsolesen\pel\PelSpec;
 
 /*
@@ -108,35 +109,35 @@ ini_set('memory_limit', '32M');
 /*
  * The input file is now read into a DataWindow object. At this
  * point we do not know if the file stores JPEG or TIFF data, so
- * instead of using one of the loadFile methods on PelJpeg or Tiff
+ * instead of using one of the loadFile methods on Jpeg or Tiff
  * we store the data in a DataWindow.
  */
 println('Reading file "%s".', $input);
 $data = new DataWindow(file_get_contents($input));
 
 /*
- * The static isValid methods in PelJpeg and Tiff will tell us in
+ * The static isValid methods in Jpeg and Tiff will tell us in
  * an efficient maner which kind of data we are dealing with.
  */
-if (PelJpeg::isValid($data)) {
+if (Jpeg::isValid($data)) {
     /*
      * The data was recognized as JPEG data, so we create a new empty
-     * PelJpeg object which will hold it. When we want to save the
+     * Jpeg object which will hold it. When we want to save the
      * image again, we need to know which object to same (using the
      * getBytes method), so we store $jpeg as $file too.
      */
-    $jpeg = $file = new PelJpeg();
+    $jpeg = $file = new Jpeg();
 
     /*
-     * We then load the data from the DataWindow into our PelJpeg
-     * object. No copying of data will be done, the PelJpeg object will
+     * We then load the data from the DataWindow into our Jpeg
+     * object. No copying of data will be done, the Jpeg object will
      * simply remember that it is to ask the DataWindow for data when
      * required.
      */
     $jpeg->load($data);
 
     /*
-     * The PelJpeg object contains a number of sections, one of which
+     * The Jpeg object contains a number of sections, one of which
      * might be our Exif data. The getExif() method is a convenient way
      * of getting the right section with a minimum of fuzz.
      */
@@ -151,7 +152,7 @@ if (PelJpeg::isValid($data)) {
 
         /*
          * In this case we simply create a new APP1 section (a Exif
-         * object) and adds it to the PelJpeg object.
+         * object) and adds it to the Jpeg object.
          */
         $exif = new Exif();
         $jpeg->setExif($exif);

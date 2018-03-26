@@ -48,8 +48,8 @@ to read the CHANGELOG.md file before starting with a new version.
 
 ## Using PEL
 
-Your application should include PelJpeg.php or Tiff.php for working
-with JPEG or TIFF files.  The files will define the PelJpeg and
+Your application should include Jpeg.php or Tiff.php for working
+with JPEG or TIFF files.  The files will define the Jpeg and
 Tiff classes, which can hold a JPEG or TIFF image, respectively.
 Please see the API documentation in the doc directory or online at
 
@@ -65,9 +65,9 @@ save the file again.  All in just six lines of code:
 
   ```php5
   <?php
-  require_once('PelJpeg.php');
+  require_once('Jpeg.php');
 
-  $jpeg = new PelJpeg($argv[1]);
+  $jpeg = new Jpeg($argv[1]);
   $ifd0 = $jpeg->getExif()->getTiff()->getIfd();
   $entry = $ifd0->getEntry(PelSpec::getTagIdByName($ifd0->getType(), 'ImageDescription'));
   $entry->setValue('Edited by PEL');

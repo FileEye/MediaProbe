@@ -6,7 +6,7 @@ use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Ascii;
 use lsolesen\pel\PelIfd;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 
 class Bug3017880Test extends ExifEyeTestCaseBase
 {
@@ -17,8 +17,8 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $exif = null;
             $success = 1; // return true by default, as this function may not resave the file, but it's still success
             $resave_file = 0;
-            $jpeg = new PelJpeg($filename);
-            $this->assertInstanceOf('\lsolesen\pel\PelJpeg', $jpeg);
+            $jpeg = new Jpeg($filename);
+            $this->assertInstanceOf('\ExifEye\core\Block\Jpeg', $jpeg);
 
             // should all exif data on photo be cleared (gd and iu will always strip it anyway, so only
             // force strip if you know the image you're branding is an original)

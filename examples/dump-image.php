@@ -32,7 +32,7 @@ require_once dirname(__FILE__) . '/../vendor/autoload.php';
 use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Utility\Convert;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 
 $prog = array_shift($argv);
@@ -76,8 +76,8 @@ ini_set('memory_limit', '32M');
 
 $data = new DataWindow(file_get_contents($file));
 
-if (PelJpeg::isValid($data)) {
-    $img = new PelJpeg();
+if (Jpeg::isValid($data)) {
+    $img = new Jpeg();
 } elseif (Tiff::isValid($data)) {
     $img = new Tiff();
 } else {

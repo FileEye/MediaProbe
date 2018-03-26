@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\ExifEye;
 
@@ -12,7 +12,7 @@ class GH77Test extends ExifEyeTestCaseBase
     {
         $file = dirname(__FILE__) . '/images/gh-77.jpg';
 
-        $input_jpeg = new PelJpeg($file);
+        $input_jpeg = new Jpeg($file);
         $app1 = $input_jpeg->getExif();
 
         $tiff = $app1->getTiff();

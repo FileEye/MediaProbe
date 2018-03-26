@@ -2,25 +2,25 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 
 class BrokenImagesTest extends ExifEyeTestCaseBase
 {
     public function testWindowWindowExceptionIsCaught()
     {
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/broken_images/gh-10-a.jpg');
-        $this->assertInstanceOf('\lsolesen\pel\PelJpeg', $jpeg);
+        $jpeg = new Jpeg(dirname(__FILE__) . '/broken_images/gh-10-a.jpg');
+        $this->assertInstanceOf('ExifEye\core\Block\Jpeg', $jpeg);
     }
 
     public function testWindowOffsetExceptionIsCaught()
     {
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/broken_images/gh-10-b.jpg');
-        $this->assertInstanceOf('\lsolesen\pel\PelJpeg', $jpeg);
+        $jpeg = new Jpeg(dirname(__FILE__) . '/broken_images/gh-10-b.jpg');
+        $this->assertInstanceOf('ExifEye\core\Block\Jpeg', $jpeg);
     }
 
     public function testParsingNotFailingOnRecursingIfd()
     {
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/broken_images/gh-11.jpg');
-        $this->assertInstanceOf('\lsolesen\pel\PelJpeg', $jpeg);
+        $jpeg = new Jpeg(dirname(__FILE__) . '/broken_images/gh-11.jpg');
+        $this->assertInstanceOf('ExifEye\core\Block\Jpeg', $jpeg);
     }
 }

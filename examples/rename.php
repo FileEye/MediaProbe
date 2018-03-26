@@ -49,7 +49,7 @@ require_once '../autoload.php';
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use lsolesen\pel\PelSpec;
 use ExifEye\core\Block\Tiff;
 
@@ -87,8 +87,8 @@ foreach ($argv as $file) {
     println('Reading file "%s".', $file);
     $data = new DataWindow(file_get_contents($file));
 
-    if (PelJpeg::isValid($data)) {
-        $jpeg = new PelJpeg();
+    if (Jpeg::isValid($data)) {
+        $jpeg = new Jpeg();
         $jpeg->load($data);
         $app1 = $jpeg->getExif();
         $tiff = $app1->getTiff();

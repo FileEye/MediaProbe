@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Entry\Byte;
@@ -13,7 +14,6 @@ use ExifEye\core\Entry\SignedLong;
 use ExifEye\core\Entry\SignedShort;
 use ExifEye\core\ExifEye;
 use lsolesen\pel\PelIfd;
-use lsolesen\pel\PelJpeg;
 use ExifEye\core\Format;
 
 class WriteEntryTest extends ExifEyeTestCaseBase
@@ -49,7 +49,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         $exif->setTiff($tiff);
         $this->assertNotNull($exif->getTiff());
 
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/images/no-exif.jpg');
+        $jpeg = new Jpeg(dirname(__FILE__) . '/images/no-exif.jpg');
         $this->assertNull($jpeg->getExif());
         $jpeg->setExif($exif);
         $this->assertNotNull($jpeg->getExif());
@@ -59,7 +59,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         $this->assertTrue(filesize('test-output.jpg') > 0);
 
         /* Now read the file and see if the entries are still there. */
-        $jpeg = new PelJpeg('test-output.jpg');
+        $jpeg = new Jpeg('test-output.jpg');
 
         $exif = $jpeg->getExif();
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);

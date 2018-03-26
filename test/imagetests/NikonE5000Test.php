@@ -4,14 +4,14 @@ namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 
 class NikonE5000Test extends ExifEyeTestCaseBase
 {
     public function testRead()
     {
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/nikon-e5000.jpg');
+        $jpeg = new Jpeg(dirname(__FILE__) . '/nikon-e5000.jpg');
 
         $exif = $jpeg->getExif();
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);

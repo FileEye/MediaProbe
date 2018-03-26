@@ -3,14 +3,14 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 
 class Tags1Test extends ExifEyeTestCaseBase
 {
     public function testTags()
     {
         ExifEye::setStrictParsing(true);
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/images/test-tags-1.jpg');
+        $jpeg = new Jpeg(dirname(__FILE__) . '/images/test-tags-1.jpg');
 
         $exif = $jpeg->getExif();
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);

@@ -30,7 +30,7 @@ use lsolesen\pel\PelSpec;
  *
  * Should one have some image data of an unknown type, then the {@link
  * Tiff::isValid()} function is handy: it will quickly test if the
- * data could be valid TIFF data. The {@link PelJpeg::isValid()}
+ * data could be valid TIFF data. The {@link Jpeg::isValid()}
  * function does the same for JPEG images.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
@@ -266,7 +266,7 @@ class Tiff
      * @return boolean true if the data looks like valid TIFF data,
      *         false otherwise.
      *
-     * @see PelJpeg::isValid()
+     * @see Jpeg::isValid()
      */
     public static function isValid(DataWindow $d)
     {

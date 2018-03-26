@@ -39,7 +39,7 @@ setlocale(LC_ALL, '');
 require_once '../autoload.php';
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 
 /*
  * Store the name of the script in $prog and remove this first part of
@@ -93,9 +93,9 @@ if ($error) {
     exit(1);
 }
 
-/* The input file is now loaded into a PelJpeg object. */
+/* The input file is now loaded into a Jpeg object. */
 println('Reading file "%s".', $input);
-$input_jpeg = new PelJpeg($input);
+$input_jpeg = new Jpeg($input);
 
 /*
  * The input image is already loaded, so we can reuse the bytes stored
@@ -114,9 +114,9 @@ ImageCopyResampled($scaled, $original, 0, 0, 0, 0, $scaled_w, $scaled_h, $origin
 
 /*
  * We want the raw JPEG data from $scaled. Luckily, one can create a
- * PelJpeg object from an image resource directly:
+ * Jpeg object from an image resource directly:
  */
-$output_jpeg = new PelJpeg($scaled);
+$output_jpeg = new Jpeg($scaled);
 
 /* Retrieve the original Exif data in $jpeg (if any). */
 $exif = $input_jpeg->getExif();

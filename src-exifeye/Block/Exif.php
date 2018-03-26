@@ -2,7 +2,6 @@
 
 namespace ExifEye\core\Block;
 
-use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidDataException;
@@ -12,7 +11,7 @@ use ExifEye\core\JpegContent;
  * Class representing Exif data.
  *
  * Exif data resides as {@link JpegContent data} and consists of a
- * header followed by a number of {@link PelJpegIfd IFDs}.
+ * header followed by a number of {@link JpegIfd IFDs}.
  *
  * The interesting method in this class is {@link getTiff()} which
  * will return the {@link Tiff} object which really holds the data

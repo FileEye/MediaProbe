@@ -36,7 +36,7 @@
  */
 require_once '../autoload.php';
 
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
 use lsolesen\pel\PelSpec;
@@ -134,8 +134,8 @@ function convertDecimalToDMS($degree)
  */
 function addGpsInfo($input, $output, $description, $comment, $model, $longitude, $latitude, $altitude, $date_time)
 {
-    /* Load the given image into a PelJpeg object */
-    $jpeg = new PelJpeg($input);
+    /* Load the given image into a Jpeg object */
+    $jpeg = new Jpeg($input);
 
     /*
      * Create and add empty Exif data to the image (this throws away any

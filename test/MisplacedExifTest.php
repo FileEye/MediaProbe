@@ -5,16 +5,16 @@ namespace ExifEye\Test\core;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\ExifEye;
 use ExifEye\core\JpegMarker;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 
 class MisplacedExifTest extends ExifEyeTestCaseBase
 {
-    // NOTE: this test relies on the assumption that internal PelJpeg::sections order is kept between section
+    // NOTE: this test relies on the assumption that internal Jpeg::sections order is kept between section
     // manipulations. It may fail it this changes.
     public function testRead()
     {
         // Image contains non-EXIF APP1 section ahead of the EXIF one
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/broken_images/misplaced-exif.jpg');
+        $jpeg = new Jpeg(dirname(__FILE__) . '/broken_images/misplaced-exif.jpg');
         // Assert we just have loaded correct file for the test
         $this->assertNotInstanceOf('ExifEye\core\Block\Exif', $jpeg->getSection(JpegMarker::APP1));
 

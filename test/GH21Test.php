@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 
 class GH21Test extends ExifEyeTestCaseBase
 {
@@ -23,7 +23,7 @@ class GH21Test extends ExifEyeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         $scale = 0.75;
-        $input_jpeg = new PelJpeg($this->file);
+        $input_jpeg = new Jpeg($this->file);
 
         $original = ImageCreateFromString($input_jpeg->getBytes());
         $original_w = ImagesX($original);
@@ -46,7 +46,7 @@ class GH21Test extends ExifEyeTestCaseBase
             $original_h
         );
 
-        $output_jpeg = new PelJpeg($scaled);
+        $output_jpeg = new Jpeg($scaled);
 
         $exif = $input_jpeg->getExif();
 
@@ -56,7 +56,7 @@ class GH21Test extends ExifEyeTestCaseBase
 
         file_put_contents($this->file, $output_jpeg->getBytes());
 
-        $jpeg = new PelJpeg($this->file);
+        $jpeg = new Jpeg($this->file);
         $exifin = $jpeg->getExif();
         $this->assertEquals($exif, $exifin);
     }

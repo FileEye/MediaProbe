@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core\imagetests;
 
 use ExifEye\core\ExifEye;
-use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 
 class OlympusC50zTest extends ExifEyeTestCaseBase
@@ -11,7 +11,7 @@ class OlympusC50zTest extends ExifEyeTestCaseBase
 
     public function testRead()
     {
-        $jpeg = new PelJpeg(dirname(__FILE__) . '/olympus-c50z.jpg');
+        $jpeg = new Jpeg(dirname(__FILE__) . '/olympus-c50z.jpg');
 
         $exif = $jpeg->getExif();
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);
