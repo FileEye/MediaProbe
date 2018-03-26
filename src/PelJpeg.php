@@ -26,10 +26,12 @@
 namespace lsolesen\pel;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\JpegComment;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
+use ExifEye\core\JpegContent;
 use ExifEye\core\JpegInvalidMarkerException;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\Convert;
@@ -39,7 +41,7 @@ use ExifEye\core\Utility\Convert;
  *
  * The {@link PelJpeg} class defined here provides an abstraction for
  * dealing with a JPEG file. The file will be contain a number of
- * sections containing some {@link PelJpegContent content} identified
+ * sections containing some {@link JpegContent content} identified
  * by a {@link JpegMarker marker}.
  *
  * The {@link getExif()} method is used get hold of the {@link
@@ -80,9 +82,9 @@ class PelJpeg
      * occur more than once in the JPEG stream (the {@link
      * JpegMarker::DQT DQT} and {@link JpegMarker::DHT DTH}
      * markers for example) and so this is an array of ({@link
-     * JpegMarker}, {@link PelJpegContent}) pairs.
+     * JpegMarker}, {@link JpegContent}) pairs.
      *
-     * The content can be either generic {@link PelJpegContent JPEG
+     * The content can be either generic {@link JpegContent JPEG
      * content} or {@link PelExif Exif data}.
      *
      * @var array
@@ -205,7 +207,7 @@ class PelJpeg
             $d->setWindowStart($i + 1);
 
             if ($marker == JpegMarker::SOI || $marker == JpegMarker::EOI) {
-                $content = new PelJpegContent(new DataWindow());
+                $content = new JpegContent(new DataWindow());
                 $this->appendSection($marker, $content);
             } else {
                 /*
@@ -228,19 +230,19 @@ class PelJpeg
                          * We store the data as normal JPEG content if it could
                          * not be parsed as Exif data.
                          */
-                        $content = new PelJpegContent($d->getClone(0, $len));
+                        $content = new JpegContent($d->getClone(0, $len));
                     }
 
                     $this->appendSection($marker, $content);
                     /* Skip past the data. */
                     $d->setWindowStart($len);
                 } elseif ($marker == JpegMarker::COM) {
-                    $content = new PelJpegComment();
+                    $content = new JpegComment();
                     $content->load($d->getClone(0, $len));
                     $this->appendSection($marker, $content);
                     $d->setWindowStart($len);
                 } else {
-                    $content = new PelJpegContent($d->getClone(0, $len));
+                    $content = new JpegContent($d->getClone(0, $len));
                     $this->appendSection($marker, $content);
                     /* Skip past the data. */
                     $d->setWindowStart($len);
@@ -251,7 +253,7 @@ class PelJpeg
                          * Some images have some trailing (garbage?) following the
                          * EOI marker. To handle this we seek backwards until we
                          * find the EOI marker. Any trailing content is stored as
-                         * a PelJpegContent object.
+                         * a JpegContent object.
                          */
 
                         $length = $d->getSize();
@@ -263,12 +265,12 @@ class PelJpeg
                         ExifEye::debug('JPEG data: ' . $this->jpeg_data->__toString());
 
                         /* Append the EOI. */
-                        $this->appendSection(JpegMarker::EOI, new PelJpegContent(new DataWindow()));
+                        $this->appendSection(JpegMarker::EOI, new JpegContent(new DataWindow()));
 
                         /* Now check to see if there are any trailing data. */
                         if ($length != $d->getSize()) {
                             ExifEye::maybeThrow(new ExifEyeException('Found trailing content ' . 'after EOI: %d bytes', $d->getSize() - $length));
-                            $content = new PelJpegContent($d->getClone($length));
+                            $content = new JpegContent($d->getClone($length));
                             /*
                              * We don't have a proper JPEG marker for trailing
                              * garbage, so we just use 0x00...
@@ -342,9 +344,9 @@ class PelJpeg
      * any old ICC information in the image.
      *
      * @param
-     *            PelJpegContent the ICC data.
+     *            JpegContent the ICC data.
      */
-    public function setICC(PelJpegContent $icc)
+    public function setICC(JpegContent $icc)
     {
         $app1_offset = 1;
         $app2_offset = - 1;
@@ -397,15 +399,15 @@ class PelJpeg
     /**
      * Get ICC data.
      *
-     * Use this to get the @{link PelJpegContent ICC data} stored.
+     * Use this to get the @{link JpegContent ICC data} stored.
      *
-     * @return PelJpegContent the ICC data found or null if the image has no
+     * @return JpegContent the ICC data found or null if the image has no
      *         ICC data.
      */
     public function getICC()
     {
         $icc = $this->getSection(JpegMarker::APP2);
-        if ($icc instanceof PelJpegContent) {
+        if ($icc instanceof JpegContent) {
             return $icc;
         }
         return null;
@@ -445,9 +447,9 @@ class PelJpeg
      *            JpegMarker the marker identifying the new section.
      *
      * @param
-     *            PelJpegContent the content of the new section.
+     *            JpegContent the content of the new section.
      */
-    public function appendSection($marker, PelJpegContent $content)
+    public function appendSection($marker, JpegContent $content)
     {
         $this->sections[] = [
             $marker,
@@ -466,14 +468,14 @@ class PelJpeg
      *            JpegMarker the marker for the new section.
      *
      * @param
-     *            PelJpegContent the content of the new section.
+     *            JpegContent the content of the new section.
      *
      * @param
      *            int the offset where the new section will be inserted ---
      *            use 0 to insert it at the very beginning, use 1 to insert it
      *            between sections 1 and 2, etc.
      */
-    public function insertSection($marker, PelJpegContent $content, $offset)
+    public function insertSection($marker, JpegContent $content, $offset)
     {
         array_splice($this->sections, $offset, 0, [
             [
@@ -490,7 +492,7 @@ class PelJpeg
      *
      * This will search through the sections of this JPEG object,
      * looking for a section identified with the specified {@link
-     * JpegMarker marker}. The {@link PelJpegContent content} will
+     * JpegMarker marker}. The {@link JpegContent content} will
      * then be returned. The optional argument can be used to skip over
      * some of the sections. So if one is looking for the, say, third
      * {@link JpegMarker::DHT DHT} section one would do:
@@ -506,7 +508,7 @@ class PelJpeg
      *            int the number of sections to be skipped. This must be a
      *            non-negative integer.
      *
-     * @return PelJpegContent the content found, or null if there is no
+     * @return JpegContent the content found, or null if there is no
      *         content available.
      */
     public function getSection($marker, $skip = 0)
@@ -528,9 +530,9 @@ class PelJpeg
      * Get all sections.
      *
      * @return array an array of ({@link JpegMarker}, {@link
-     *         PelJpegContent}) pairs. Each pair is an array with the {@link
+     *         JpegContent}) pairs. Each pair is an array with the {@link
      *         JpegMarker} as the first element and the {@link
-     *         PelJpegContent} as the second element, so the return type is an
+     *         JpegContent} as the second element, so the return type is an
      *         array of arrays.
      *
      *         So to loop through all the sections in a given JPEG image do
@@ -640,7 +642,7 @@ class PelJpeg
             if ($c instanceof PelExif) {
                 $str .= ExifEye::tra("  Content    : Exif data\n");
                 $str .= $c->__toString() . "\n";
-            } elseif ($c instanceof PelJpegComment) {
+            } elseif ($c instanceof JpegComment) {
                 $str .= ExifEye::fmt("  Content    : %s\n", $c->getValue());
             } else {
                 $str .= ExifEye::tra("  Content    : Unknown\n");

@@ -23,6 +23,8 @@
  * Boston, MA 02110-1301 USA
  */
 
+use ExifEye\core\JpegContent;
+
 /*
  * This meta-program will generate a PHP script with unit tests for
  * testing the image supplied on the command line. It works by
@@ -140,7 +142,7 @@ function tiffToTest($name, PelTiff $tiff)
     }
 }
 
-function jpegContentToTest($name, PelJpegContent $content)
+function jpegContentToTest($name, JpegContent $content)
 {
     if ($content instanceof PelExif) {
         println('$this->assertInstanceOf(\'PelExif\', %s);', $name);

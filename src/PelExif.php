@@ -27,6 +27,7 @@ namespace lsolesen\pel;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidDataException;
+use ExifEye\core\JpegContent;
 
 /**
  * Classes for dealing with Exif data.
@@ -40,7 +41,7 @@ use ExifEye\core\InvalidDataException;
 /**
  * Class representing Exif data.
  *
- * Exif data resides as {@link PelJpegContent data} and consists of a
+ * Exif data resides as {@link JpegContent data} and consists of a
  * header followed by a number of {@link PelJpegIfd IFDs}.
  *
  * The interesting method in this class is {@link getTiff()} which
@@ -52,7 +53,7 @@ use ExifEye\core\InvalidDataException;
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
  */
-class PelExif extends PelJpegContent
+class PelExif extends JpegContent
 {
 
     /**
