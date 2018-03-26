@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\Util\SpecCompiler;
+use ExifEye\core\Utility\SpecCompiler;
 use lsolesen\pel\PelSpec;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
