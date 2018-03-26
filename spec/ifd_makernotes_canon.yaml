@@ -1,4 +1,4 @@
-type: 'Canon Maker Notes'
+type: 'CanonMakerNotes'
 class: ExifEye\core\Block\Ifd
 makerNotes:
   - 'Canon'
@@ -6,7 +6,7 @@ tags:
     0x0001:
         name: CameraSettings
         title: 'Camera Settings'
-        ifd: 'Canon Camera Settings'
+        ifd: 'CanonCameraSettings'
     0x0002:
         name: FocalLength
         title: 'Focal Length'
@@ -14,11 +14,11 @@ tags:
     0x0004:
         name: ShotInfo
         title: 'Shot Info'
-        ifd: 'Canon Shot Information'
+        ifd: 'CanonShotInformation'
     0x0005:
         name: Panorama
         title: Panorama
-        ifd: 'Canon Panorama Information'
+        ifd: 'CanonPanoramaInformation'
     0x0006:
         name: ImageType
         title: 'Image Type'
@@ -54,7 +54,7 @@ tags:
     0x0012:
         name: PictureInfo
         title: 'Picture Info'
-        #ifd: 'Canon Picture Information'
+        #ifd: 'CanonPictureInformation'
         format: Undefined
     0x0013:
         name: ThumbnailImageValidArea
@@ -83,7 +83,7 @@ tags:
     0x0093:
         name: FileInfo
         title: 'File Info'
-        ifd: 'Canon File Information'
+        ifd: 'CanonFileInformation'
     0x0095:
         name: LensModel
         title: 'Lens model'

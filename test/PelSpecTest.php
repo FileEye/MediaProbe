@@ -19,18 +19,18 @@ class PelSpecTest extends ExifEyeTestCaseBase
         // Test retrieving IFD id by type.
         $this->assertEquals(Spec::getIfdIdByType('IFD0'), Spec::getIfdIdByType('0'));
         $this->assertEquals(Spec::getIfdIdByType('IFD0'), Spec::getIfdIdByType('Main'));
-        $this->assertNotNull(Spec::getIfdIdByType('Canon Maker Notes'));
+        $this->assertNotNull(Spec::getIfdIdByType('CanonMakerNotes'));
 
         // Test retrieving IFD class.
         $this->assertEquals('ExifEye\core\Block\Ifd', Spec::getIfdClass(Spec::getIfdIdByType('IFD0')));
-        $this->assertEquals('ExifEye\core\Block\IfdIndexShort', Spec::getIfdClass(Spec::getIfdIdByType('Canon Camera Settings')));
+        $this->assertEquals('ExifEye\core\Block\IfdIndexShort', Spec::getIfdClass(Spec::getIfdIdByType('CanonCameraSettings')));
 
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals(['ExifEye\core\Entry\MakerNote::tagToIfd'], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('IFD0')));
-        $this->assertEquals([], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('Canon Camera Settings')));
+        $this->assertEquals([], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('CanonCameraSettings')));
 
         // Test retrieving maker note IFD.
-        $this->assertEquals(Spec::getIfdIdByType('Canon Maker Notes'), Spec::getMakerNoteIfd('Canon', 'any'));
+        $this->assertEquals(Spec::getIfdIdByType('CanonMakerNotes'), Spec::getMakerNoteIfd('Canon', 'any'));
         $this->assertNull(Spec::getMakerNoteIfd('Minolta', 'any'));
 
         // Test retrieving TAG name.
@@ -70,11 +70,11 @@ class PelSpecTest extends ExifEyeTestCaseBase
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {
             $this->expectException('ExifEye\core\ExifEyeException');
-            $this->expectExceptionMessage("No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+            $this->expectExceptionMessage("No format can be derived for tag: 'ImageHeight' in ifd: 'CanonPictureInformation'");
         } else {
-            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 'ImageHeight' in ifd: 'Canon Picture Information'");
+            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 'ImageHeight' in ifd: 'CanonPictureInformation'");
         }
-        $this->assertNull(Spec::getTagClass(Spec::getIfdIdByType('Canon Picture Information'), 0x0003));
+        $this->assertNull(Spec::getTagClass(Spec::getIfdIdByType('CanonPictureInformation'), 0x0003));
     }
 
     /**
@@ -103,14 +103,14 @@ class PelSpecTest extends ExifEyeTestCaseBase
           'IFD0/PlanarConfiguration - missing mapping' => [
               null, 'ExifEye\core\Entry\Short', 'IFD0', 'PlanarConfiguration', [6.1],
           ],
-          'Canon Panorama Information/PanoramaDirection - value 4' => [
-              '2x2 Matrix (Clockwise)', 'ExifEye\core\Entry\SignedShort', 'Canon Panorama Information', 'PanoramaDirection', [4],
+          'CanonPanoramaInformation/PanoramaDirection - value 4' => [
+              '2x2 Matrix (Clockwise)', 'ExifEye\core\Entry\SignedShort', 'CanonPanoramaInformation', 'PanoramaDirection', [4],
           ],
-          'Canon Camera Settings/LensType - value 493' => [
-              'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'ExifEye\core\Entry\Short', 'Canon Camera Settings', 'LensType', [493],
+          'CanonCameraSettings/LensType - value 493' => [
+              'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'ExifEye\core\Entry\Short', 'CanonCameraSettings', 'LensType', [493],
           ],
-          'Canon Camera Settings/LensType - value 493.1' => [
-              'Canon EF 24-105mm f/4L IS USM', 'ExifEye\core\Entry\Short', 'Canon Camera Settings', 'LensType', [493.1],
+          'CanonCameraSettings/LensType - value 493.1' => [
+              'Canon EF 24-105mm f/4L IS USM', 'ExifEye\core\Entry\Short', 'CanonCameraSettings', 'LensType', [493.1],
           ],
           'IFD0/YCbCrSubSampling - value 2, 1' => [
               'YCbCr4:2:2', 'ExifEye\core\Entry\Short', 'IFD0', 'YCbCrSubSampling', [2, 1],
