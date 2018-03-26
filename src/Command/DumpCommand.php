@@ -115,7 +115,7 @@ class DumpCommand extends Command
             $json['exif']['tiff'][$this->ifdKey($ifd)] = NULL;
         }
     }
-    protected function jpegContentToTest($name, JpegContent $content, &$json)
+    protected function jpegContentToTest($name, $content, &$json)
     {
         if ($content instanceof Exif) {
             $json['exif']['class'] = get_class($content);
