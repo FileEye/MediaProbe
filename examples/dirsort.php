@@ -40,7 +40,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelSpec;
-use lsolesen\pel\PelTiff;
+use ExifEye\core\Block\Tiff;
 
 $prog = array_shift($argv);
 $error = false;
@@ -79,8 +79,8 @@ foreach ($argv as $file) {
         }
 
         $tiff = $app1->getTiff();
-    } elseif (PelTiff::isValid($data)) {
-        $tiff = new PelTiff($data);
+    } elseif (Tiff::isValid($data)) {
+        $tiff = new Tiff($data);
     } else {
         println('Unrecognized image format! Skipping.');
         continue;

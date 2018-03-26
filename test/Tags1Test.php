@@ -13,13 +13,13 @@ class Tags1Test extends ExifEyeTestCaseBase
         $jpeg = new PelJpeg(dirname(__FILE__) . '/images/test-tags-1.jpg');
 
         $exif = $jpeg->getExif();
-        $this->assertInstanceOf('\lsolesen\pel\PelExif', $exif);
+        $this->assertInstanceOf('lsolesen\pel\PelExif', $exif);
 
         $tiff = $exif->getTiff();
-        $this->assertInstanceOf('\lsolesen\pel\PelTiff', $tiff);
+        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
 
         $ifd0 = $tiff->getIfd();
-        $this->assertInstanceOf('\lsolesen\pel\PelIfd', $ifd0);
+        $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd0);
 
         $ratingPercent = $ifd0->getEntry(0x4749);
         $this->assertInstanceOf('ExifEye\core\Entry\Short', $ratingPercent);

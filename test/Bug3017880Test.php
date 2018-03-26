@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelExif;
-use lsolesen\pel\PelTiff;
+use ExifEye\core\Block\Tiff;
 use lsolesen\pel\PelIfd;
 use ExifEye\core\Entry\Ascii;
 
@@ -27,7 +27,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             if ($exif === null) {
                 $exif = new PelExif();
                 $jpeg->setExif($exif);
-                $tiff = new PelTiff();
+                $tiff = new Tiff();
                 $exif->setTiff($tiff);
             }
 

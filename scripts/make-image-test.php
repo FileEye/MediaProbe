@@ -23,6 +23,7 @@
  * Boston, MA 02110-1301 USA
  */
 
+use ExifEye\core\Block\Tiff;
 use ExifEye\core\JpegContent;
 
 /*
@@ -128,7 +129,7 @@ function ifdToTest($name, $number, PelIfd $ifd)
     }
 }
 
-function tiffToTest($name, PelTiff $tiff)
+function tiffToTest($name, Tiff $tiff)
 {
     println();
     println('/* The first IFD. */');
@@ -149,8 +150,8 @@ function jpegContentToTest($name, JpegContent $content)
         $tiff = $content->getTiff();
         println();
         println('$tiff = %s->getTiff();', $name);
-        if ($tiff instanceof PelTiff) {
-            println('$this->assertInstanceOf(\'PelTiff\', $tiff);');
+        if ($tiff instanceof Tiff) {
+            println('$this->assertInstanceOf(\'ExifEye\core\Block\Tiff\', $tiff);');
             tiffToTest('$tiff', $tiff);
         }
     }

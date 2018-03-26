@@ -58,14 +58,14 @@ use ExifEye\core\Utility\Convert;
  * $ifd1 = $ifd0->getNextIfd();
  * </code>
  *
- * The $idf0 and $ifd1 variables will then be two {@link PelTiff TIFF}
+ * The $idf0 and $ifd1 variables will then be two {@link Tiff TIFF}
  * {@link PelIfd Image File Directories}, in which the data is stored
  * under the keys found in {@link PelTag}.
  *
  * Should one have some image data (in the form of a {@link
  * DataWindow}) of an unknown type, then the {@link
  * PelJpeg::isValid()} function is handy: it will quickly test if the
- * data could be valid JPEG data. The {@link PelTiff::isValid()}
+ * data could be valid JPEG data. The {@link Tiff::isValid()}
  * function does the same for TIFF images.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
@@ -113,7 +113,7 @@ class PelJpeg
      * $jpeg = new PelJpeg($data);
      * // Create container for the Exif information:
      * $exif = new PelExif();
-     * // Now Add a PelTiff object with a PelIfd object with one or more
+     * // Now Add a Tiff object with a PelIfd object with one or more
      * // EntryBase objects to $exif... Finally add $exif to $jpeg:
      * $jpeg->setExif($exif);
      * </code>
@@ -666,7 +666,7 @@ class PelJpeg
      * @return boolean true if the bytes look like the beginning of a
      *         JPEG image, false otherwise.
      *
-     * @see PelTiff::isValid()
+     * @see Tiff::isValid()
      */
     public static function isValid(DataWindow $d)
     {

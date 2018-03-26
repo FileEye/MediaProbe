@@ -47,7 +47,7 @@ use ExifEye\core\Utility\Convert;
 /**
  * Class representing an Image File Directory (IFD).
  *
- * {@link PelTiff TIFF data} is structured as a number of Image File
+ * {@link Tiff TIFF data} is structured as a number of Image File
  * Directories, IFDs for short. Each IFD contains a number of {@link
  * EntryBase entries}, some data and finally a link to the next IFD.
  *

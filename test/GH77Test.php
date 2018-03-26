@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use lsolesen\pel\PelJpeg;
-use lsolesen\pel\PelTiff;
+use ExifEye\core\Block\Tiff;
 use ExifEye\core\ExifEye;
 
 class GH77Test extends ExifEyeTestCaseBase

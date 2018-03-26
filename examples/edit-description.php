@@ -47,7 +47,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Utility\Convert;
 use lsolesen\pel\PelJpeg;
-use lsolesen\pel\PelTiff;
+use ExifEye\core\Block\Tiff;
 use lsolesen\pel\PelSpec;
 
 /*
@@ -107,14 +107,14 @@ ini_set('memory_limit', '32M');
 /*
  * The input file is now read into a DataWindow object. At this
  * point we do not know if the file stores JPEG or TIFF data, so
- * instead of using one of the loadFile methods on PelJpeg or PelTiff
+ * instead of using one of the loadFile methods on PelJpeg or Tiff
  * we store the data in a DataWindow.
  */
 println('Reading file "%s".', $input);
 $data = new DataWindow(file_get_contents($input));
 
 /*
- * The static isValid methods in PelJpeg and PelTiff will tell us in
+ * The static isValid methods in PelJpeg and Tiff will tell us in
  * an efficient maner which kind of data we are dealing with.
  */
 if (PelJpeg::isValid($data)) {
@@ -156,23 +156,23 @@ if (PelJpeg::isValid($data)) {
         $jpeg->setExif($exif);
 
         /* We then create an empty TIFF structure in the APP1 section. */
-        $tiff = new PelTiff();
+        $tiff = new Tiff();
         $exif->setTiff($tiff);
     } else {
         /*
          * Surprice, surprice: Exif data is really just TIFF data! So we
-         * extract the PelTiff object for later use.
+         * extract the Tiff object for later use.
          */
         println('Found existing APP1 section.');
         $tiff = $exif->getTiff();
     }
-} elseif (PelTiff::isValid($data)) {
+} elseif (Tiff::isValid($data)) {
     /*
-     * The data was recognized as TIFF data. We prepare a PelTiff
-     * object to hold it, and record in $file that the PelTiff object is
+     * The data was recognized as TIFF data. We prepare a Tiff
+     * object to hold it, and record in $file that the Tiff object is
      * the top-most object (the one on which we will call getBytes).
      */
-    $tiff = $file = new PelTiff();
+    $tiff = $file = new Tiff();
     /* Now load the data. */
     $tiff->load($data);
 } else {
@@ -199,7 +199,7 @@ if ($ifd0 == null) {
     /*
      * No IFD in the TIFF data? This probably means that the image
      * didn't have any Exif information to start with, and so an empty
-     * PelTiff object was inserted by the code above. But this is no
+     * Tiff object was inserted by the code above. But this is no
      * problem, we just create and inserts an empty PelIfd object.
      */
     println('No IFD found, adding new.');

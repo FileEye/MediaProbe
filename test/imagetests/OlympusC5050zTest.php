@@ -16,7 +16,7 @@ class OlympusC5050zTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf('lsolesen\pel\PelExif', $exif);
 
         $tiff = $exif->getTiff();
-        $this->assertInstanceOf('lsolesen\pel\PelTiff', $tiff);
+        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
 
         /* The first IFD. */
         $ifd0 = $tiff->getIfd();

@@ -5,7 +5,7 @@ namespace ExifEye\Test\core;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Entry\Byte;
 use lsolesen\pel\PelIfd;
-use lsolesen\pel\PelTiff;
+use ExifEye\core\Block\Tiff;
 use lsolesen\pel\PelExif;
 use lsolesen\pel\PelJpeg;
 use ExifEye\core\Format;
@@ -39,7 +39,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
             $ifd->addEntry($entry);
         }
 
-        $tiff = new PelTiff();
+        $tiff = new Tiff();
         $this->assertNull($tiff->getIfd());
         $tiff->setIfd($ifd);
         $this->assertNotNull($tiff->getIfd());
@@ -65,7 +65,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf('lsolesen\pel\PelExif', $exif);
 
         $tiff = $exif->getTiff();
-        $this->assertInstanceOf('lsolesen\pel\PelTiff', $tiff);
+        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
 
         $ifd = $tiff->getIfd();
         $this->assertInstanceOf('lsolesen\pel\PelIfd', $ifd);

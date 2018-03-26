@@ -37,7 +37,7 @@
 require_once '../autoload.php';
 
 use lsolesen\pel\PelJpeg;
-use lsolesen\pel\PelTiff;
+use ExifEye\core\Block\Tiff;
 use lsolesen\pel\PelSpec;
 use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Entry\Byte;
@@ -147,7 +147,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * Create and add TIFF data to the Exif data (Exif data is actually
      * stored in a TIFF format).
      */
-    $tiff = new PelTiff();
+    $tiff = new Tiff();
     $exif->setTiff($tiff);
 
     /*

@@ -48,9 +48,9 @@ to read the CHANGELOG.md file before starting with a new version.
 
 ## Using PEL
 
-Your application should include PelJpeg.php or PelTiff.php for working
+Your application should include PelJpeg.php or Tiff.php for working
 with JPEG or TIFF files.  The files will define the PelJpeg and
-PelTiff classes, which can hold a JPEG or TIFF image, respectively.
+Tiff classes, which can hold a JPEG or TIFF image, respectively.
 Please see the API documentation in the doc directory or online at
 
   http://lsolesen.github.com/pel/doc/

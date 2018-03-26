@@ -1,43 +1,12 @@
 <?php
 
-/**
- * PEL: PHP Exif Library.
- * A library with support for reading and
- * writing all Exif headers in JPEG and TIFF images using PHP.
- *
- * Copyright (C) 2004, 2005, 2006 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
- */
-namespace lsolesen\pel;
+namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\Convert;
-
-/**
- * Classes for dealing with TIFF data.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public
- *          License (GPL)
- * @package PEL
- */
 
 /**
  * Class for handling TIFF data.
@@ -51,21 +20,21 @@ use ExifEye\core\Utility\Convert;
  * To parse a TIFF image for Exif data one would do:
  *
  * <code>
- * $tiff = new PelTiff($data);
+ * $tiff = new Tiff($data);
  * $ifd0 = $tiff->getIfd();
  * $exif = $ifd0->getSubIfd(PelIfd::EXIF);
  * $ifd1 = $ifd0->getNextIfd();
  * </code>
  *
  * Should one have some image data of an unknown type, then the {@link
- * PelTiff::isValid()} function is handy: it will quickly test if the
+ * Tiff::isValid()} function is handy: it will quickly test if the
  * data could be valid TIFF data. The {@link PelJpeg::isValid()}
  * function does the same for JPEG images.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
  */
-class PelTiff
+class Tiff
 {
 
     /**
@@ -102,10 +71,10 @@ class PelTiff
             return;
         }
         if (is_string($data)) {
-            ExifEye::debug('Initializing PelTiff object from %s', $data);
+            ExifEye::debug('Initializing Tiff object from %s', $data);
             $this->loadFile($data);
         } elseif ($data instanceof DataWindow) {
-            ExifEye::debug('Initializing PelTiff object from DataWindow.');
+            ExifEye::debug('Initializing Tiff object from DataWindow.');
             $this->load($data);
         } else {
             throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));

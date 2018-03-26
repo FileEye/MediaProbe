@@ -33,7 +33,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Utility\Convert;
 use lsolesen\pel\PelJpeg;
-use lsolesen\pel\PelTiff;
+use ExifEye\core\Block\Tiff;
 
 $prog = array_shift($argv);
 $file = '';
@@ -78,8 +78,8 @@ $data = new DataWindow(file_get_contents($file));
 
 if (PelJpeg::isValid($data)) {
     $img = new PelJpeg();
-} elseif (PelTiff::isValid($data)) {
-    $img = new PelTiff();
+} elseif (Tiff::isValid($data)) {
+    $img = new Tiff();
 } else {
     print("Unrecognized image format! The first 16 bytes follow:\n");
     Convert::bytesToDump($data->getBytes(0, 16));

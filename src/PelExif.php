@@ -24,6 +24,7 @@
  */
 namespace lsolesen\pel;
 
+use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidDataException;
@@ -45,7 +46,7 @@ use ExifEye\core\JpegContent;
  * header followed by a number of {@link PelJpegIfd IFDs}.
  *
  * The interesting method in this class is {@link getTiff()} which
- * will return the {@link PelTiff} object which really holds the data
+ * will return the {@link Tiff} object which really holds the data
  * which one normally think of when talking about Exif data. This is
  * because Exif data is stored as an extension of the TIFF file
  * format.
@@ -65,9 +66,9 @@ class PelExif extends JpegContent
     const EXIF_HEADER = "Exif\0\0";
 
     /**
-     * The PelTiff object contained within.
+     * The Tiff object contained within.
      *
-     * @var PelTiff
+     * @var Tiff
      */
     private $tiff = null;
 
@@ -76,7 +77,7 @@ class PelExif extends JpegContent
      *
      * The new object will be empty --- use the {@link load()} method to
      * load Exif data from a {@link DataWindow} object, or use the
-     * {@link setTiff()} to change the {@link PelTiff} object, which is
+     * {@link setTiff()} to change the {@link Tiff} object, which is
      * the true holder of the Exif {@link EntryBase entries}.
      */
     public function __construct()
@@ -88,7 +89,7 @@ class PelExif extends JpegContent
      * Load and parse Exif data.
      *
      * This will populate the object with Exif data, contained as a
-     * {@link PelTiff} object. This TIFF object can be accessed with
+     * {@link Tiff} object. This TIFF object can be accessed with
      * the {@link getTiff()} method.
      *
      * @param DataWindow $d
@@ -109,7 +110,7 @@ class PelExif extends JpegContent
         }
 
         /* The rest of the data is TIFF data. */
-        $this->tiff = new PelTiff();
+        $this->tiff = new Tiff();
         $this->tiff->load($d);
     }
 
@@ -117,13 +118,13 @@ class PelExif extends JpegContent
      * Change the TIFF information.
      *
      * Exif data is really stored as TIFF data, and this method can be
-     * used to change this data from one {@link PelTiff} object to
+     * used to change this data from one {@link Tiff} object to
      * another.
      *
-     * @param PelTiff $tiff
+     * @param Tiff $tiff
      *            the new TIFF object.
      */
-    public function setTiff(PelTiff $tiff)
+    public function setTiff(Tiff $tiff)
     {
         $this->tiff = $tiff;
     }
@@ -131,10 +132,10 @@ class PelExif extends JpegContent
     /**
      * Get the underlying TIFF object.
      *
-     * The actual Exif data is stored in a {@link PelTiff} object, and
+     * The actual Exif data is stored in a {@link Tiff} object, and
      * this method provides access to it.
      *
-     * @return PelTiff the TIFF object with the Exif data.
+     * @return Tiff the TIFF object with the Exif data.
      */
     public function getTiff()
     {
