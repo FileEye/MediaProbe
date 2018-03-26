@@ -2,19 +2,19 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\ExifEye;
-use ExifEye\core\Entry\Byte;
-use lsolesen\pel\PelIfd;
+use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
-use lsolesen\pel\PelExif;
+use ExifEye\core\Entry\Ascii;
+use ExifEye\core\Entry\Byte;
+use ExifEye\core\Entry\Long;
+use ExifEye\core\Entry\Short;
+use ExifEye\core\Entry\SignedByte;
+use ExifEye\core\Entry\SignedLong;
+use ExifEye\core\Entry\SignedShort;
+use ExifEye\core\ExifEye;
+use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelJpeg;
 use ExifEye\core\Format;
-use ExifEye\core\Entry\SignedByte;
-use ExifEye\core\Entry\Short;
-use ExifEye\core\Entry\SignedShort;
-use ExifEye\core\Entry\Long;
-use ExifEye\core\Entry\SignedLong;
-use ExifEye\core\Entry\Ascii;
 
 class WriteEntryTest extends ExifEyeTestCaseBase
 {
@@ -44,7 +44,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         $tiff->setIfd($ifd);
         $this->assertNotNull($tiff->getIfd());
 
-        $exif = new PelExif();
+        $exif = new Exif();
         $this->assertNull($exif->getTiff());
         $exif->setTiff($tiff);
         $this->assertNotNull($exif->getTiff());
@@ -62,7 +62,7 @@ class WriteEntryTest extends ExifEyeTestCaseBase
         $jpeg = new PelJpeg('test-output.jpg');
 
         $exif = $jpeg->getExif();
-        $this->assertInstanceOf('lsolesen\pel\PelExif', $exif);
+        $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);
 
         $tiff = $exif->getTiff();
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);

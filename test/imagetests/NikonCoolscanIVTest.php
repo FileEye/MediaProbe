@@ -13,7 +13,7 @@ class NikonCoolscanIVTest extends ExifEyeTestCaseBase
         $jpeg = new PelJpeg(dirname(__FILE__) . '/nikon-coolscan-iv.jpg');
 
         $exif = $jpeg->getExif();
-        $this->assertInstanceOf('lsolesen\pel\PelExif', $exif);
+        $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);
 
         $tiff = $exif->getTiff();
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);

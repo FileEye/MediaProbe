@@ -37,6 +37,7 @@
 require_once '../autoload.php';
 
 use lsolesen\pel\PelJpeg;
+use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
 use lsolesen\pel\PelSpec;
 use ExifEye\core\Entry\Ascii;
@@ -140,7 +141,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * Create and add empty Exif data to the image (this throws away any
      * old Exif data in the image).
      */
-    $exif = new PelExif();
+    $exif = new Exif();
     $jpeg->setExif($exif);
 
     /*

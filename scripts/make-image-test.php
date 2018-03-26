@@ -145,8 +145,8 @@ function tiffToTest($name, Tiff $tiff)
 
 function jpegContentToTest($name, JpegContent $content)
 {
-    if ($content instanceof PelExif) {
-        println('$this->assertInstanceOf(\'PelExif\', %s);', $name);
+    if ($content instanceof Exif) {
+        println('$this->assertInstanceOf(\'ExifEye\core\Block\Exif\', %s);', $name);
         $tiff = $content->getTiff();
         println();
         println('$tiff = %s->getTiff();', $name);

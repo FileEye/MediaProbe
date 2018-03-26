@@ -2,11 +2,11 @@
 
 namespace ExifEye\Test\core;
 
-use lsolesen\pel\PelJpeg;
-use lsolesen\pel\PelExif;
+use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
-use lsolesen\pel\PelIfd;
 use ExifEye\core\Entry\Ascii;
+use lsolesen\pel\PelIfd;
+use lsolesen\pel\PelJpeg;
 
 class Bug3017880Test extends ExifEyeTestCaseBase
 {
@@ -25,7 +25,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             // $jpeg->clearExif();
 
             if ($exif === null) {
-                $exif = new PelExif();
+                $exif = new Exif();
                 $jpeg->setExif($exif);
                 $tiff = new Tiff();
                 $exif->setTiff($tiff);

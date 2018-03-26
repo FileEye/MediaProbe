@@ -2,10 +2,11 @@
 
 namespace ExifEye\Test\core;
 
+use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
-use lsolesen\pel\PelJpeg;
 use ExifEye\core\Entry\WindowsString;
+use lsolesen\pel\PelJpeg;
 
 class GH16Test extends ExifEyeTestCaseBase
 {
@@ -35,7 +36,7 @@ class GH16Test extends ExifEyeTestCaseBase
             $exif = $jpeg->getExif();
 
             if (null === $exif) {
-                $exif = new PelExif();
+                $exif = new Exif();
                 $jpeg->setExif($exif);
                 $tiff = new Tiff();
                 $exif->setTiff($tiff);

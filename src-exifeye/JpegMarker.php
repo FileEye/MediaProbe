@@ -185,7 +185,7 @@ class JpegMarker
      *
      * When a JPEG image contains Exif data, the data will normally be
      * stored in this section and a call to {@link PelJpeg::getExif()}
-     * will return a {@link PelExif} object representing it.
+     * will return a {@link Exif} object representing it.
      */
     const APP1 = 0xE1;
 

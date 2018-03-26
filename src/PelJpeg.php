@@ -25,6 +25,7 @@
 
 namespace lsolesen\pel;
 
+use ExifEye\core\Block\Exif;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\JpegComment;
 use ExifEye\core\ExifEye;
@@ -85,7 +86,7 @@ class PelJpeg
      * JpegMarker}, {@link JpegContent}) pairs.
      *
      * The content can be either generic {@link JpegContent JPEG
-     * content} or {@link PelExif Exif data}.
+     * content} or {@link Exif Exif data}.
      *
      * @var array
      */
@@ -106,13 +107,13 @@ class PelJpeg
      * of a JPEG image, a {@link DataWindow} object or a PHP image
      * resource handle.
      *
-     * New Exif data (in the form of a {@link PelExif} object) can be
+     * New Exif data (in the form of a {@link Exif} object) can be
      * inserted with the {@link setExif()} method:
      *
      * <code>
      * $jpeg = new PelJpeg($data);
      * // Create container for the Exif information:
-     * $exif = new PelExif();
+     * $exif = new Exif();
      * // Now Add a Tiff object with a PelIfd object with one or more
      * // EntryBase objects to $exif... Finally add $exif to $jpeg:
      * $jpeg->setExif($exif);
@@ -223,7 +224,7 @@ class PelJpeg
 
                 if ($marker == JpegMarker::APP1) {
                     try {
-                        $content = new PelExif();
+                        $content = new Exif();
                         $content->load($d->getClone(0, $len));
                     } catch (InvalidDataException $e) {
                         /*
@@ -304,9 +305,9 @@ class PelJpeg
      * any old Exif information in the image.
      *
      * @param
-     *            PelExif the Exif data.
+     *            Exif the Exif data.
      */
-    public function setExif(PelExif $exif)
+    public function setExif(Exif $exif)
     {
         $app0_offset = 1;
         $app1_offset = - 1;
@@ -318,7 +319,7 @@ class PelJpeg
                 $section = $this->sections[$i];
                 if ($section[0] == JpegMarker::APP0) {
                     $app0_offset = $i;
-                } elseif (($section[0] == JpegMarker::APP1) && ($section[1] instanceof PelExif)) {
+                } elseif (($section[0] == JpegMarker::APP1) && ($section[1] instanceof Exif)) {
                     $app1_offset = $i;
                     break;
                 }
@@ -379,9 +380,9 @@ class PelJpeg
     /**
      * Get first valid APP1 Exif section data.
      *
-     * Use this to get the @{link PelExif Exif data} stored.
+     * Use this to get the @{link Exif Exif data} stored.
      *
-     * @return PelExif the Exif data found or null if the image has no
+     * @return Exif the Exif data found or null if the image has no
      *         Exif data.
      */
     public function getExif()
@@ -389,7 +390,7 @@ class PelJpeg
         $sections_count = count($this->sections);
         for ($i = 0; $i < $sections_count; $i ++) {
             $section = $this->getSection(JpegMarker::APP1, $i);
-            if ($section instanceof PelExif) {
+            if ($section instanceof Exif) {
                 return $section;
             }
         }
@@ -423,7 +424,7 @@ class PelJpeg
         $idx = 0;
         while ($idx < count($this->sections)) {
             $s = $this->sections[$idx];
-            if (($s[0] == JpegMarker::APP1) && ($s[1] instanceof PelExif)) {
+            if (($s[0] == JpegMarker::APP1) && ($s[1] instanceof Exif)) {
                 array_splice($this->sections, $idx, 1);
                 $idx--;
             } else {
@@ -639,7 +640,7 @@ class PelJpeg
                 continue;
             }
 
-            if ($c instanceof PelExif) {
+            if ($c instanceof Exif) {
                 $str .= ExifEye::tra("  Content    : Exif data\n");
                 $str .= $c->__toString() . "\n";
             } elseif ($c instanceof JpegComment) {

@@ -11,7 +11,7 @@ use ExifEye\core\DataWindow;
  * associated {@link JpegMarker marker} and some content. This
  * class represents the content, and this basic type is just a simple
  * holder of such content, represented by a {@link DataWindow}
- * object. The {@link PelExif} class is an example of more
+ * object. The {@link Exif} class is an example of more
  * specialized JPEG content.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>

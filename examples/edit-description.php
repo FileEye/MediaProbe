@@ -43,11 +43,12 @@ setlocale(LC_ALL, '');
  */
 require_once '../autoload.php';
 
-use ExifEye\core\ExifEye;
+use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
+use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\Convert;
 use lsolesen\pel\PelJpeg;
-use ExifEye\core\Block\Tiff;
 use lsolesen\pel\PelSpec;
 
 /*
@@ -149,10 +150,10 @@ if (PelJpeg::isValid($data)) {
         println('No APP1 section found, added new.');
 
         /*
-         * In this case we simply create a new APP1 section (a PelExif
+         * In this case we simply create a new APP1 section (a Exif
          * object) and adds it to the PelJpeg object.
          */
-        $exif = new PelExif();
+        $exif = new Exif();
         $jpeg->setExif($exif);
 
         /* We then create an empty TIFF structure in the APP1 section. */
