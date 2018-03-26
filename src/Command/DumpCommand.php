@@ -34,7 +34,7 @@ class DumpCommand extends Command
             ->setDescription('Dump image information.')
             ->addArgument(
                 'file-path',
-                InputArgument::MANDATORY,
+                InputArgument::REQUIRED,
                 'Path to the image file'
             )
         ;
