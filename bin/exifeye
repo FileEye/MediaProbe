@@ -6,6 +6,7 @@
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\Command\CompileCommand;
+use ExifEye\core\Command\DumpCommand;
 use Symfony\Component\Console\Application;
 
 $packageAutoloader = __DIR__ . '/../vendor/autoload.php';
@@ -18,4 +19,5 @@ if (file_exists($packageAutoloader)) {
 
 $application = new Application('exifeye', ExifEye::version());
 $application->add(new CompileCommand());
+$application->add(new DumpCommand());
 $application->run();

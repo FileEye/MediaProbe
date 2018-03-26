@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use ExifEye\core\Utility\SpecCompiler;
 
 /**
- * A Symfony application command to compile the PEL specification YAML files.
+ * A Symfony application command to compile the ExifEye specification YAML files.
  */
 class CompileCommand extends Command
 {
@@ -36,7 +36,7 @@ class CompileCommand extends Command
     {
         $this
             ->setName('compile')
-            ->setDescription('Converts the PEL specification YAML files into a spec.php file.')
+            ->setDescription('Converts the ExifEye specification YAML files into a spec.php file.')
             ->addArgument(
                 'spec-dir',
                 InputArgument::OPTIONAL,
