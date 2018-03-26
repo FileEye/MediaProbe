@@ -67,18 +67,18 @@ class DumpCommand extends Command
             }
         }
         $yaml = Yaml::dump($json, 20);
-        dump($yaml);
+        $output->writeln($yaml);
     }
     
     protected function ifdKey(Ifd $ifd)
     {
-        return $ifd->getName() . ' [' . $ifd->getType() . ']';
+        return $ifd->getName();
     }
     protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getType();
         $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['class'] = get_class($entry);
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['value'] = $entry->getValue();
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['value'] = serialize($entry->getValue());
         $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['text'] = $entry->getText();
     }
     protected function ifdToTest($name, $number, Ifd $ifd, &$json)
