@@ -17,7 +17,7 @@ class SpecCompiler
     /**
      * Map of expected IFD level array keys.
      */
-    private $ifdKeys = ['const', 'type', 'class', 'alias', 'tags', 'makerNotes', 'postLoad'];
+    private $ifdKeys = ['type', 'class', 'alias', 'tags', 'makerNotes', 'postLoad'];
 
     /**
      * Map of expected TAG level array keys.
@@ -28,9 +28,6 @@ class SpecCompiler
      * Map of expected TAG/text level array keys.
      */
     private $tagTextKeys = ['mapping', 'decode'];
-
-    /** @var string */
-    private $defaultNamespace;
 
     /** @var int */
     private $nextIfdId;
@@ -51,17 +48,14 @@ class SpecCompiler
     /**
      * Constructs a SpecCompiler object.
      *
-     * @param string $defaultNamespace
-     *            the default PHP namespace of Pel classes.
      * @param Finder $finder
      * @param Filesystem $fs
      */
-    public function __construct($defaultNamespace, Finder $finder = null, Filesystem $fs = null)
+    public function __construct(Finder $finder = null, Filesystem $fs = null)
     {
-        $this->defaultNamespace = $defaultNamespace;
         $this->finder = $finder ? $finder : new Finder();
         $this->fs = $fs ? $fs : new Filesystem();
-        $this->nextIfdId = Ifd::INTEROPERABILITY + 1;
+        $this->nextIfdId = 0;
     }
 
     /**
@@ -137,12 +131,7 @@ DATA;
             'postLoad' => [],
         ], $ifd);
 
-        // Manage the IFD id; if 'const' key is present, use that,
-        // otherwise get a new id.
-        $ifd_id = isset($ifd['const']) ? $ifd['const'] : $this->nextIfdId++;
-
-        // Fully qualifies the class name.
-        $ifd['class'] = $this->getFullyQualifiedClassName($ifd['class']);
+        $ifd_id = $this->nextIfdId++;
 
         // 'ifds' entry.
         $this->map['ifds'][$ifd_id] = $ifd['type'];
@@ -151,11 +140,7 @@ DATA;
         $this->map['ifdClasses'][$ifd_id] = $ifd['class'];
 
         // 'ifdPostLoadCallbacks' entry.
-        $this->map['ifdPostLoadCallbacks'][$ifd_id] = [];
-        foreach ($ifd['postLoad'] as $callback) {
-            list($class, $method) = explode('::', $callback);
-            $this->map['ifdPostLoadCallbacks'][$ifd_id][] = $this->getFullyQualifiedClassName($class) . '::' . $method;
-        }
+        $this->map['ifdPostLoadCallbacks'][$ifd_id] = $ifd['postLoad'];
 
         // 'ifdsByType' (reverse lookup) entry.
         $this->map['ifdsByType'][$ifd['type']] = $ifd_id;
@@ -220,22 +205,11 @@ DATA;
             $tag['format'] = $formats;
         }
 
-        // Fully qualifies the class name.
-        if (isset($tag['class'])) {
-            $tag['class'] = $this->getFullyQualifiedClassName($tag['class']);
-        }
-
         // Check validity of TAG/text keys.
         if (isset($tag['text'])) {
             $diff = array_diff(array_keys($tag['text']), $this->tagTextKeys);
             if (!empty($diff)) {
                 throw new SpecCompilerException($file->getFileName() . ": invalid key(s) found for TAG '" . $tag['name'] . ".text' - " . implode(", ", $diff));
-            }
-
-            // Fully qualifies the decode method.
-            if (isset($tag['text']['decode'])) {
-                list($class, $method) = explode('::', $tag['text']['decode']);
-                $tag['text']['decode'] = $this->getFullyQualifiedClassName($class) . '::' . $method;
             }
         }
 
@@ -244,22 +218,5 @@ DATA;
 
         // 'tagsByName' (reverse lookup) entry.
         $this->map['tagsByName'][$ifd_id][$tag['name']] = $tag_id;
-    }
-
-    /**
-     * Fully qualifies a class name.
-     *
-     * @param string $class_name
-     *            the class name.
-     *
-     * @return string
-     *            the fully qualified class name.
-     */
-    protected function getFullyQualifiedClassName($class_name)
-    {
-        if (preg_match('/\\\\/', $class_name) !== 1) {
-            return $this->defaultNamespace . $class_name;
-        }
-        return $class_name;
     }
 }

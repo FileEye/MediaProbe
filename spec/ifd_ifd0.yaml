@@ -1,8 +1,7 @@
-const: 0
-type: '0'
+type: 'IFD0'
 class: ExifEye\core\Block\Ifd
 alias:
-  - 'IFD0'
+  - '0'
   - 'Main'
 postLoad:
   - ExifEye\core\Entry\MakerNote::tagToIfd

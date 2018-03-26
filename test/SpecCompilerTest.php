@@ -12,8 +12,6 @@ use Symfony\Component\Filesystem\Filesystem;
  */
 class SpecCompilerTest extends TestCase
 {
-    const DEFAULT_NAMESPACE = 'lsolesen\\pel\\';
-
     /** @var Filesystem */
     private $fs;
 
@@ -53,7 +51,7 @@ class SpecCompilerTest extends TestCase
         } else {
             $this->setExpectedException('Symfony\Component\Yaml\Exception\ParseException');
         }
-        $compiler = new SpecCompiler(self::DEFAULT_NAMESPACE);
+        $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory);
     }
 
@@ -70,7 +68,7 @@ class SpecCompilerTest extends TestCase
         } else {
             $this->setExpectedException('ExifEye\core\Utility\SpecCompilerException', 'ifd_ifd0.yaml: invalid IFD key(s) found - bork');
         }
-        $compiler = new SpecCompiler(self::DEFAULT_NAMESPACE);
+        $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/invalid_ifd_keys', $this->testResourceDirectory);
     }
 
@@ -87,7 +85,7 @@ class SpecCompilerTest extends TestCase
         } else {
             $this->setExpectedException('ExifEye\core\Utility\SpecCompilerException', "ifd_ifd0.yaml: invalid key(s) found for TAG 'ImageWidth' - bork");
         }
-        $compiler = new SpecCompiler(self::DEFAULT_NAMESPACE);
+        $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/invalid_tag_keys', $this->testResourceDirectory);
     }
 
@@ -104,7 +102,7 @@ class SpecCompilerTest extends TestCase
         } else {
             $this->setExpectedException('ExifEye\core\Utility\SpecCompilerException', "Invalid sub IFD(s) found for TAG 'ExifIFDPointer': *** EXPECTED FAILURE ***");
         }
-        $compiler = new SpecCompiler(self::DEFAULT_NAMESPACE);
+        $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/invalid_subifd', $this->testResourceDirectory);
     }
 
@@ -113,7 +111,7 @@ class SpecCompilerTest extends TestCase
      */
     public function testValidStubSpec()
     {
-        $compiler = new SpecCompiler(self::DEFAULT_NAMESPACE);
+        $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
         Spec::setMap($this->testResourceDirectory . '/spec.php');
         $this->assertEquals([2 => 'Exif', 0 => '0'], Spec::getIfdTypes());

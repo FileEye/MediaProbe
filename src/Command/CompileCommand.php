@@ -19,9 +19,6 @@ class CompileCommand extends Command
     /** @var string */
     private $specDirectory;
 
-    /** @var string */
-    private $defaultNamespace;
-
     /**
      * {@inheritdoc}
      */
@@ -29,7 +26,6 @@ class CompileCommand extends Command
     {
         $this->specDirectory = (string) realpath(__DIR__ . '/../../spec');
         $this->resourceDirectory = (string) realpath(__DIR__ . '/../../resources');
-        $this->defaultNamespace = 'lsolesen\\pel\\';
         parent::__construct();
     }
 
@@ -61,7 +57,7 @@ class CompileCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $compiler = new SpecCompiler($this->defaultNamespace);
+        $compiler = new SpecCompiler();
         $compiler->compile($input->getArgument('spec-dir'), $input->getArgument('resource-dir'));
     }
 }
