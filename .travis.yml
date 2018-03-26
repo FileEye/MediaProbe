@@ -21,6 +21,8 @@ matrix:
 
 install:
   - composer install --no-interaction --no-progress --no-suggest
+  - php bin/exifeye list
+  - php bin/exifeye --version
 
 before_script:
   - mkdir -p build/logs
@@ -28,8 +30,6 @@ before_script:
 script:
   # Remove the comment to the line below during development, to let
   # TravisCI re-compile the specification PHP file from the YAML files.
-  - php bin/exifeye list
-  - php bin/exifeye --version
   - php bin/exifeye compile
   #- ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
   - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ./test

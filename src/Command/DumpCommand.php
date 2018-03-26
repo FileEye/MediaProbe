@@ -77,9 +77,9 @@ class DumpCommand extends Command
     protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getType();
-        $json['entries'][PelTag::getName($ifd_type, $entry->getTag())]['class'] = get_class($entry);
-        $json['entries'][PelTag::getName($ifd_type, $entry->getTag())]['value'] = $entry->getValue();
-        $json['entries'][PelTag::getName($ifd_type, $entry->getTag())]['text'] = $entry->getText();
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['class'] = get_class($entry);
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['value'] = $entry->getValue();
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['text'] = $entry->getText();
     }
     protected function ifdToTest($name, $number, Ifd $ifd, &$json)
     {
