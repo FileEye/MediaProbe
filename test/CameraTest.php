@@ -34,57 +34,11 @@ class CameraTest extends ExifEyeTestCaseBase
         foreach ($test['exif']['tiff']['IFD0']['entries'] as $test_entry => $test_entry_data) {
             $entry = $ifd0->getEntry(Spec::getTagIdByName($ifd0->getType(), $test_entry));
             $this->assertInstanceOf($test_entry_data['class'], $entry);
-            $this->assertEquals($test_entry_data['value'], $entry->getValue());
+            $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue());
             $this->assertEquals($test_entry_data['text'], $entry->getText());
         }
 
-/*        $entry = $ifd0->getEntry(271); // Make
-        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
-        $this->assertEquals($entry->getValue(), 'Canon');
-        $this->assertEquals($entry->getText(), 'Canon');
-
-        $entry = $ifd0->getEntry(272); // Model
-        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $entry);
-        $this->assertEquals($entry->getValue(), 'Canon DIGITAL IXUS II');
-        $this->assertEquals($entry->getText(), 'Canon DIGITAL IXUS II');
-
-        $entry = $ifd0->getEntry(274); // Orientation
-        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
-        $this->assertEquals($entry->getValue(), 6);
-        $this->assertEquals($entry->getText(), 'right - top');
-
-        $entry = $ifd0->getEntry(282); // XResolution
-        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
-        $this->assertEquals($entry->getValue(), [
-            0 => 180,
-            1 => 1
-        ]);
-        $this->assertEquals($entry->getText(), '180/1');
-
-        $entry = $ifd0->getEntry(283); // YResolution
-        $this->assertInstanceOf('ExifEye\core\Entry\Rational', $entry);
-        $this->assertEquals($entry->getValue(), [
-            0 => 180,
-            1 => 1
-        ]);
-        $this->assertEquals($entry->getText(), '180/1');
-
-        $entry = $ifd0->getEntry(296); // ResolutionUnit
-        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
-        $this->assertEquals($entry->getValue(), 2);
-        $this->assertEquals($entry->getText(), 'Inch');
-
-        $entry = $ifd0->getEntry(306); // DateTime
-        $this->assertInstanceOf('ExifEye\core\Entry\Time', $entry);
-        $this->assertEquals($entry->getValue(), 1089488628);
-        $this->assertEquals($entry->getText(), '2004:07:10 19:43:48');
-
-        $entry = $ifd0->getEntry(531); // YCbCrPositioning
-        $this->assertInstanceOf('ExifEye\core\Entry\Short', $entry);
-        $this->assertEquals($entry->getValue(), 1);
-        $this->assertEquals($entry->getText(), 'centered');
-
-        $this->assertEquals(count($ifd0->getSubIfds()), 1);
+/*        $this->assertEquals(count($ifd0->getSubIfds()), 1);
         $ifd0_0 = $ifd0->getSubIfd(Spec::getIfdIdByType('Exif')); // IFD Exif
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0_0);
 
