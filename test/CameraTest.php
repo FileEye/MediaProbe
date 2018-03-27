@@ -17,7 +17,7 @@ class CameraTest extends ExifEyeTestCaseBase
     /** @var Finder */
     protected $finder;
 
-    public setUp()
+    public function setUp()
     {
         parent::setUp;
         $this->finder = new Finder();
