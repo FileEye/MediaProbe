@@ -58,9 +58,8 @@ class DumpCommand extends Command
         $this->jpegToTest('$jpeg', $jpeg, $json);
         $exceptions = ExifEye::getExceptions();
         if (count($exceptions) == 0) {
-            $json['errors'] = NULL;
+            $json['errors'] = [];
         } else {
-            $json['errors']['count'] = count($exceptions);
             for ($i = 0; $i < count($exceptions); $i ++) {
                 $json['errors']['entries'][$i]['class'] = get_class($exceptions[$i]);
                 $json['errors']['entries'][$i]['message'] = $exceptions[$i]->getMessage();
@@ -115,21 +114,18 @@ class DumpCommand extends Command
         foreach ($entries as $tag => $entry) {
             $this->entryToTest('$entry', $entry, $ifd, $json);
         }
-/*        $sub_ifds = $ifd->getSubIfds();
-        $json['counts']['subIfds'] = count($sub_ifds);
+        $sub_ifds = $ifd->getSubIfds();
         $n = 0;
-        $sub_name = $name . $number . '_';
         foreach ($sub_ifds as $type => $sub_ifd) {
-            $json['subIfds'][$this->ifdKey($sub_ifd)]['class'] = get_class($sub_ifd);
-            $this->ifdToTest($sub_name, $n, $sub_ifd, $json['subIfds'][$this->ifdKey($sub_ifd)]);
+            $json['blocks'][$sub_ifd->getName()]['class'] = get_class($sub_ifd);
+            $this->ifdToTest('$ifd', $n, $sub_ifd, $json['blocks'][$sub_ifd->getName()]);
             $n ++;
         }
-        $next = $ifd->getNextIfd();
-        if ($next instanceof Ifd) {
-            $json['nextIfd'][$this->ifdKey($next)]['class'] = get_class($next);
-            $this->ifdToTest($name, $number + 1, $next, $json['nextIfd'][$this->ifdKey($next)]);
-        } else {
-            $json['nextIfd'] = NULL;
+/*        $n = 1;
+        while ($ifd = $ifd->getNextIfd()) {
+            $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
+            $this->ifdToTest('$ifd', $n, $ifd, $json['blocks'][$ifd->getName()]);
+            $n ++;
         }*/
     }
 
