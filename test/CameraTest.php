@@ -13,20 +13,39 @@ use Symfony\Component\Yaml\Yaml;
  */
 class CameraTest extends ExifEyeTestCaseBase
 {
+    protected function assertIfd($expected, $ifd)
+    {
+        $this->assertInstanceOf($expected['class'], $ifd);
+
+        if (isset($expected['entries'])) {
+            $this->assertCount(count($expected['entries']), $ifd->getEntries());
+            foreach ($expected['entries'] as $test_entry => $test_entry_data) {
+                $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
+                $this->assertInstanceOf($test_entry_data['class'], $entry);
+                $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue());
+                $this->assertEquals($test_entry_data['text'], $entry->getText());
+            }
+        }
+
+        if (isset($expected['blocks'])) {
+            $this->assertCount(count($expected['blocks']), $ifd->getSubIfds());
+        }
+    }
+
     public function testParse()
     {
-        $test = Yaml::parseFile(dirname(__FILE__) . '/imagetests/apple-iphone7.JPG.test.yml');
+        $test = Yaml::parseFile(dirname(__FILE__) . '/imagetests/canon-eos-650d.jpg.test.yml');
 
         $jpeg = new Jpeg(dirname(__FILE__) . '/imagetests/' . $test['jpeg']);
 
         $exif = $jpeg->getExif();
-        $this->assertInstanceOf($test['exif']['class'], $exif);
-
         $tiff = $exif->getTiff();
-        $this->assertInstanceOf($test['exif']['tiff']['class'], $tiff);
-
         $ifd0 = $tiff->getIfd();
-        $this->assertInstanceOf($test['exif']['tiff']['IFD0']['class'], $ifd0);
+
+        if (isset($test['blocks']['IFD0'])) {
+            $this->assertIfd($test['blocks']['IFD0'], $ifd0);
+        }
+/*        $this->assertInstanceOf($test['exif']['tiff']['IFD0']['class'], $ifd0);
 
         $this->assertCount($test['exif']['tiff']['IFD0']['counts']['entries'], $ifd0->getEntries());
         $this->assertCount($test['exif']['tiff']['IFD0']['counts']['subIfds'], $ifd0->getSubIfds());
