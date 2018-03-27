@@ -34,7 +34,6 @@ use ExifEye\core\Format;
  */
 class Version extends EntryBase
 {
-
     /**
      * The version held by this entry.
      *
@@ -50,23 +49,12 @@ class Version extends EntryBase
     protected $value = [];
 
     /**
-     * Make a new entry for holding a version.
-     *
-     * @param integer $tag
-     *            This should be one of {@link
-     *            PelTag::EXIF_VERSION}, {@link PelTag::FLASH_PIX_VERSION},
-     *            or {@link PelTag::INTEROPERABILITY_VERSION}.
-     *
-     * @param float $version
-     *            The size of the entries leave room for
-     *            exactly four digits: two digits on either side of the decimal
-     *            point.
+     * {@inheritdoc}
      */
-    public function __construct($tag, $version = 0.0)
+    public function __construct($block_id, $entry_id, array $data)
     {
-        $this->tag = $tag;
         $this->format = Format::UNDEFINED;
-        $this->setValue($version);
+        parent::__construct($block_id, $entry_id, $data);
     }
 
     /**
@@ -99,17 +87,16 @@ class Version extends EntryBase
     /**
      * Set the version held by this entry.
      *
-     * @param float $version
-     *            The size of the entries leave room for
-     *            exactly four digits: two digits on either side of the decimal
-     *            point.
+     * @param array $data
+     *            The size of the entries leave room for exactly four digits:
+     *            two digits on either side of the decimal point.
      */
-    public function setValue($version = 0.0)
+    public function setValue(array $data)
     {
-        $this->version = $version;
-        $this->value[0] = $version;
-        $major = floor($version);
-        $minor = ($version - $major) * 100;
+        $this->version = isset($data[0]) ? $data[0] : 0.0;
+        $this->value[0] = $this->version;
+        $major = floor($this->version);
+        $minor = ($this->version - $major) * 100;
         $strValue = sprintf('%02.0f%02.0f', $major, $minor);
         $this->components = strlen($strValue);
         $this->bytes = $strValue;
