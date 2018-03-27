@@ -90,33 +90,33 @@ class WindowsString extends EntryBase
      * Set the version held by this entry.
      *
      * @param array $data
-     *            key 0 holds the new value of the entry.
-     *            key 1 is internal use only, tells that string is UCS-2LE
+     *            key 0 - holds the new value of the entry.
+     *            key 1 - is internal use only, tells that string is UCS-2LE
      *            encoded, as PHP fails to detect this encoding.
      */
     public function setValue(array $data)
     {
-      $str = $data[0];
-      $from_exif = isset($data[1]) ? $data[1] : false;
-      $zlen = strlen(static::ZEROES);
-      if (false !== $from_exif) {
-          $s = $str;
-          if (substr($str, -$zlen, $zlen) == static::ZEROES) {
-              $str = substr($str, 0, -$zlen);
-          }
-          $str = mb_convert_encoding($str, 'UTF-8', 'UCS-2LE');
-      } else {
-          $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
-      }
+        $str = $data[0];
+        $from_exif = isset($data[1]) ? $data[1] : false;
+        $zlen = strlen(static::ZEROES);
+        if (false !== $from_exif) {
+            $s = $str;
+            if (substr($str, -$zlen, $zlen) == static::ZEROES) {
+                $str = substr($str, 0, -$zlen);
+            }
+            $str = mb_convert_encoding($str, 'UTF-8', 'UCS-2LE');
+        } else {
+            $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
+        }
 
-      if (substr($s, -$zlen, $zlen) != static::ZEROES) {
-          $s .= static::ZEROES;
-      }
-      $l = strlen($s);
+        if (substr($s, -$zlen, $zlen) != static::ZEROES) {
+            $s .= static::ZEROES;
+        }
+        $l = strlen($s);
 
-      $this->components = $l;
-      $this->str = $str;
-      $this->bytes = $s;
+        $this->components = $l;
+        $this->str = $str;
+        $this->bytes = $s;
     }
 
     /**

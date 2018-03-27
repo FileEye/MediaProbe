@@ -28,6 +28,10 @@ use ExifEye\core\Format;
  */
 class Ascii extends EntryBase
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::ASCII;
 
     /**
      * The string hold by this entry.
@@ -39,28 +43,6 @@ class Ascii extends EntryBase
      * @var string
      */
     private $str;
-
-    /**
-     * Make a new EntryBase that can hold an ASCII string.
-     *
-     * @param int $tag
-     *            the tag which this entry represents. This should be
-     *            one of the constants defined in {@link PelTag}, e.g., {@link
-     *            PelTag::IMAGE_DESCRIPTION}, {@link PelTag::MODEL}, or any other
-     *            tag with format {@link Format::ASCII}.
-     *
-     * @param string $str
-     *            the string that this entry will represent. The
-     *            string must obey the same rules as the string argument to {@link
-     *            setValue}, namely that it should be given without any trailing
-     *            NULL character and that it must be plain 7-bit ASCII.
-     */
-    public function __construct($tag, $str = '')
-    {
-        $this->tag = $tag;
-        $this->format = Format::ASCII;
-        self::setValue($str);
-    }
 
     /**
      * Get arguments for the instance constructor from file data.
@@ -96,21 +78,21 @@ class Ascii extends EntryBase
     /**
      * Give the entry a new ASCII value.
      *
-     * This will overwrite the previous value. The value can be
-     * retrieved later with the {@link getValue} method.
+     * This will overwrite the previous value. The value can be retrieved later
+     * with the {@link getValue} method.
      *
-     * @param
-     *            string the new value of the entry. This should be given
+     * @param array $data
+     *            the new value of the entry. This should be given
      *            without any trailing NULL character. The string must be plain
      *            7-bit ASCII, the string should contain no high bytes.
      *
      * @todo Implement check for high bytes?
      */
-    public function setValue($str)
+    public function setValue(array $data)
     {
-        $this->components = strlen($str) + 1;
-        $this->str = $str;
-        $this->bytes = $str . chr(0x00);
+        $this->components = strlen($data[0]) + 1;
+        $this->str = $data[0];
+        $this->bytes = $data[0] . chr(0x00);
     }
 
     /**

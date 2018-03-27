@@ -86,8 +86,8 @@ class UserComment extends Undefined
      * Set the user comment.
      *
      * @param array $data
-     *            key 0 holds the comment.
-     *            key 1 holds a string with the encoding of the comment. This
+     *            key 0 - holds the comment.
+     *            key 1 - holds a string with the encoding of the comment. This
      *            should be either 'ASCII', 'JIS', 'Unicode', or the empty
      *            string specifying an unknown encoding.
      */

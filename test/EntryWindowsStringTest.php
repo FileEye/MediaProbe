@@ -6,7 +6,7 @@ use ExifEye\core\Entry\WindowsString;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\Convert;
 
-class PelEntryWindowsStringTest extends ExifEyeTestCaseBase
+class EntryWindowsStringTest extends ExifEyeTestCaseBase
 {
 
     public function testWindowsString()
@@ -16,20 +16,20 @@ class PelEntryWindowsStringTest extends ExifEyeTestCaseBase
         $test_str_ucs2_zt = $test_str_ucs2 . WindowsString::ZEROES;
 
         $entry = new WindowsString(Spec::getIfdIdByType('IFD0'), 0x9C9B, [$test_str]);
-        $this->assertNotEquals($entry->getValue(), $entry->getBytes(Convert::LITTLE_ENDIAN));
-        $this->assertEquals($entry->getValue(), $test_str);
-        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), $test_str_ucs2_zt);
+        $this->assertNotEquals($entry->getBytes(Convert::LITTLE_ENDIAN), $entry->getValue());
+        $this->assertEquals($test_str, $entry->getValue());
+        $this->assertEquals($test_str_ucs2_zt, $entry->getBytes(Convert::LITTLE_ENDIAN));
 
         // correct zero-terminated data from the exif
         $entry->setValue([$test_str_ucs2_zt, true]);
-        $this->assertNotEquals($entry->getValue(), $entry->getBytes(Convert::LITTLE_ENDIAN));
-        $this->assertEquals($entry->getValue(), $test_str);
-        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), $test_str_ucs2_zt);
+        $this->assertNotEquals($entry->getBytes(Convert::LITTLE_ENDIAN), $entry->getValue());
+        $this->assertEquals($test_str, $entry->getValue());
+        $this->assertEquals($test_str_ucs2_zt, $entry->getBytes(Convert::LITTLE_ENDIAN));
 
         // incorrect data from exif
         $entry->setValue([$test_str_ucs2, true]);
-        $this->assertNotEquals($entry->getValue(), $entry->getBytes(Convert::LITTLE_ENDIAN));
-        $this->assertEquals($entry->getValue(), $test_str);
-        $this->assertEquals($entry->getBytes(Convert::LITTLE_ENDIAN), $test_str_ucs2_zt);
+        $this->assertNotEquals($entry->getBytes(Convert::LITTLE_ENDIAN), $entry->getValue());
+        $this->assertEquals($test_str, $entry->getValue());
+        $this->assertEquals($test_str_ucs2_zt, $entry->getBytes(Convert::LITTLE_ENDIAN));
     }
 }

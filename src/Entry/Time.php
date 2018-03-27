@@ -71,37 +71,6 @@ class Time extends Ascii
     private $seconds;
 
     /**
-     * Make a new entry for holding a timestamp.
-     *
-     * @param integer $tag
-     *            the Exif tag which this entry represents. There are
-     *            only three standard tags which hold timestamp, so this should be
-     *            one of the constants {@link PelTag::DATE_TIME}, {@link
-     *            PelTag::DATE_TIME_ORIGINAL}, or {@link
-     *            PelTag::DATE_TIME_DIGITIZED}.
-     *
-     * @param integer $timestamp
-     *            the timestamp held by this entry in the correct form
-     *            as indicated by the third argument. For {@link UNIX_TIMESTAMP}
-     *            this is an integer counting the number of seconds since January
-     *            1st 1970, for {@link EXIF_STRING} this is a string of the form
-     *            'YYYY:MM:DD hh:mm:ss', and for {@link JULIAN_DAY_COUNT} this is a
-     *            floating point number where the integer part denotes the day
-     *            count and the fractional part denotes the time of day (0.25 means
-     *            6:00, 0.75 means 18:00).
-     *
-     * @param integer $type
-     *            the type of the timestamp. This must be one of
-     *            {@link UNIX_TIMESTAMP}, {@link EXIF_STRING}, or
-     *            {@link JULIAN_DAY_COUNT}.
-     */
-    public function __construct($tag, $timestamp, $type = self::UNIX_TIMESTAMP)
-    {
-        parent::__construct($tag);
-        $this->setValue($timestamp, $type);
-    }
-
-    /**
      * Get arguments for the instance constructor from file data.
      *
      * @param int $ifd_id
@@ -190,8 +159,8 @@ class Time extends Ascii
     /**
      * Update the timestamp held by this entry.
      *
-     * @param integer $timestamp
-     *            the timestamp held by this entry in the correct form
+     * @param array $data
+     *            key 0 - holds the timestamp held by this entry in the correct form
      *            as indicated by the third argument. For {@link UNIX_TIMESTAMP}
      *            this is an integer counting the number of seconds since January
      *            1st 1970, for {@link EXIF_STRING} this is a string of the form
@@ -199,14 +168,14 @@ class Time extends Ascii
      *            floating point number where the integer part denotes the day
      *            count and the fractional part denotes the time of day (0.25 means
      *            6:00, 0.75 means 18:00).
-     *
-     * @param integer $type
-     *            the type of the timestamp. This must be one of
+     *            key 1 - holds the type of the timestamp. This must be one of
      *            {@link UNIX_TIMESTAMP}, {@link EXIF_STRING}, or
      *            {@link JULIAN_DAY_COUNT}.
      */
-    public function setValue($timestamp, $type = self::UNIX_TIMESTAMP)
+    public function setValue(array $data)
     {
+        $timestamp = $data[0];
+        $type = isset($data[1]) ? $data[1] : self::UNIX_TIMESTAMP;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
                 $this->day_count = $this->convertUnixToJd($timestamp);
@@ -214,8 +183,8 @@ class Time extends Ascii
                 break;
 
             case self::EXIF_STRING:
-                /* Clean the timestamp: some timestamps are broken other
-                 * separators than ':' and ' '. */
+                // Clean the timestamp: some timestamps are broken other
+                // separators than ':' and ' '.
                 $d = preg_split('/[^0-9]+/', $timestamp);
                 for ($i = 0; $i < 6; $i ++) {
                     if (empty($d[$i])) {
@@ -241,11 +210,9 @@ class Time extends Ascii
                 );
         }
 
-        /*
-         * Now finally update the string which will be used when this is
-         * turned into bytes.
-         */
-        parent::setValue($this->getValue(self::EXIF_STRING));
+        // Now finally update the string which will be used when this is
+        // turned into bytes.
+        parent::setValue([$this->getValue(self::EXIF_STRING)]);
     }
 
     // The following four functions are used for converting back and
