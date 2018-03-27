@@ -70,18 +70,45 @@ class DumpCommand extends Command
         $output->writeln($yaml);
     }
     
-    protected function ifdKey(Ifd $ifd)
+    protected function jpegToTest($name, Jpeg $jpeg, &$json)
     {
-        return $ifd->getName();
+        $exif = $jpeg->getExif();
+        if ($exif == null) {
+            $json['blocks'] = [];
+        } else {
+            $this->exifToTest('$exif', $exif, $json);
+        }
     }
-    protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
+
+    protected function exifToTest($name, $content, &$json)
     {
-        $ifd_type = $ifd->getType();
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['class'] = get_class($entry);
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['value'] = serialize($entry->getValue());
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['text'] = $entry->getText();
+        if ($content instanceof Exif) {
+            $tiff = $content->getTiff();
+            if ($tiff instanceof Tiff) {
+                $this->tiffToTest('$tiff', $tiff, $json);
+            } else {
+                $json['blocks'] = [];
+            }
+        }
     }
-    protected function ifdToTest($name, $number, Ifd $ifd, &$json)
+
+    protected function tiffToTest($name, Tiff $tiff, &$json)
+    {
+        $ifd = $tiff->getIfd();
+        if ($ifd instanceof Ifd) {
+            $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
+//            $this->ifdToTest('$ifd', 0, $ifd, $json['blocks'][$ifd->getName()]);
+            foreach ($ifd->getSubIfds() as $type => $sub_ifd) {
+                $json['blocks'][$sub_ifd->getName()]['class'] = get_class($sub_ifd);
+//                $this->ifdToTest($sub_name, $n, $sub_ifd, $json['subIfds'][$this->ifdKey($sub_ifd)]);
+//                $n ++;
+            }
+        } else {
+            $json['blocks'][$ifd->getName()] = [];
+        }
+    }
+
+/*    protected function ifdToTest($name, $number, Ifd $ifd, &$json)
     {
         $entries = $ifd->getEntries();
         $json['counts']['entries'] = count($entries);
@@ -105,37 +132,16 @@ class DumpCommand extends Command
             $json['nextIfd'] = NULL;
         }
     }
-    protected function tiffToTest($name, Tiff $tiff, &$json)
-    {
-        $ifd = $tiff->getIfd();
-        if ($ifd instanceof Ifd) {
-            $json['exif']['tiff'][$this->ifdKey($ifd)]['class'] = get_class($ifd);
-            $this->ifdToTest('$ifd', 0, $ifd, $json['exif']['tiff'][$this->ifdKey($ifd)]);
-        } else {
-            $json['exif']['tiff'][$this->ifdKey($ifd)] = NULL;
-        }
-    }
-    protected function jpegContentToTest($name, $content, &$json)
-    {
-        if ($content instanceof Exif) {
-            $json['exif']['class'] = get_class($content);
-            $tiff = $content->getTiff();
-            if ($tiff instanceof Tiff) {
-                $json['exif']['tiff']['class'] = get_class($tiff);
-                $this->tiffToTest('$tiff', $tiff, $json);
-            } else {
-                $json['exif']['tiff'] = get_class($tiff);
-            }
-        }
-    }
-    protected function jpegToTest($name, Jpeg $jpeg, &$json)
-    {
-        $exif = $jpeg->getExif();
-        if ($exif == null) {
-            $json['exif'] = NULL;
-        } else {
-            $this->jpegContentToTest('$exif', $exif, $json);
-        }
-    }
 
+    protected function ifdKey(Ifd $ifd)
+    {
+        return $ifd->getName();
+    }
+    protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
+    {
+        $ifd_type = $ifd->getType();
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['class'] = get_class($entry);
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['value'] = serialize($entry->getValue());
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['text'] = $entry->getText();
+    }*/
 }
