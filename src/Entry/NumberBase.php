@@ -56,27 +56,12 @@ abstract class NumberBase extends EntryBase
     /**
      * Change the value.
      *
-     * This method can change both the number of components and the
-     * value of the components. Range checks will be made on the new
-     * value, and a {@link OverflowException} will be thrown if the
-     * value is found to be outside the legal range.
-     *
-     * The method accept several number arguments. The {@link getValue}
-     * method will always return an array except for when a single
-     * number is given here.
-     *
-     * @param int|array $value...
-     *            the new value(s). This can be zero or
-     *            more numbers, that is, either integers or arrays. The input will
-     *            be checked to ensure that the numbers are within the valid range.
-     *            If not, then a {@link OverflowException} will be thrown.
-     *
-     * @see getValue
+     * @param array
+     *            the new value.
      */
-    public function setValue($value)
+    public function setValue(array $data)
     {
-        $value = func_get_args();
-        $this->setValueArray($value);
+        $this->setValueArray($data);
     }
 
     /**

@@ -18,35 +18,19 @@ use ExifEye\core\Utility\Convert;
 class SignedShort extends NumberBase
 {
     /**
-     * Make a new entry that can hold a signed short.
-     *
-     * The method accept several integer arguments. The {@link
-     * getValue} method will always return an array except for when a
-     * single integer argument is given here.
-     *
-     * @param int $tag
-     *            the tag which this entry represents. This
-     *            should be one of the constants defined in {@link PelTag}
-     *            which has format {@link Format::SSHORT}.
-     * @param int $value...
-     *            the signed short(s) that this entry will
-     *            represent. The argument passed must obey the same rules as the
-     *            argument to {@link setValue}, namely that it should be within
-     *            range of a signed short, that is between -32768 to 32767
-     *            (inclusive). If not, then a {@link PelOverFlowException} will be
-     *            thrown.
+     * {@inheritdoc}
      */
-    public function __construct($tag, $value = null)
-    {
-        $this->tag = $tag;
-        $this->min = - 32768;
-        $this->max = 32767;
-        $this->format = Format::SSHORT;
+    protected $min= -32768;
 
-        $value = func_get_args();
-        array_shift($value);
-        $this->setValueArray($value);
-    }
+    /**
+     * {@inheritdoc}
+     */
+    protected $max = 32767;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::SSHORT;
 
     /**
      * Get arguments for the instance constructor from file data.
