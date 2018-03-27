@@ -97,25 +97,25 @@ class DumpCommand extends Command
         $ifd = $tiff->getIfd();
         if ($ifd instanceof Ifd) {
             $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
-//            $this->ifdToTest('$ifd', 0, $ifd, $json['blocks'][$ifd->getName()]);
+            $this->ifdToTest('$ifd', 0, $ifd, $json['blocks'][$ifd->getName()]);
+            $n = 1;
             while ($ifd = $ifd->getNextIfd()) {
                 $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
-//                $this->ifdToTest($sub_name, $n, $sub_ifd, $json['subIfds'][$this->ifdKey($sub_ifd)]);
-//                $n ++;
+                $this->ifdToTest('$ifd', $n, $ifd, $json['blocks'][$ifd->getName()]);
+                $n ++;
             }
         } else {
             $json['blocks'][$ifd->getName()] = [];
         }
     }
 
-/*    protected function ifdToTest($name, $number, Ifd $ifd, &$json)
+    protected function ifdToTest($name, $number, Ifd $ifd, &$json)
     {
         $entries = $ifd->getEntries();
-        $json['counts']['entries'] = count($entries);
         foreach ($entries as $tag => $entry) {
             $this->entryToTest('$entry', $entry, $ifd, $json);
         }
-        $sub_ifds = $ifd->getSubIfds();
+/*        $sub_ifds = $ifd->getSubIfds();
         $json['counts']['subIfds'] = count($sub_ifds);
         $n = 0;
         $sub_name = $name . $number . '_';
@@ -130,18 +130,14 @@ class DumpCommand extends Command
             $this->ifdToTest($name, $number + 1, $next, $json['nextIfd'][$this->ifdKey($next)]);
         } else {
             $json['nextIfd'] = NULL;
-        }
+        }*/
     }
 
-    protected function ifdKey(Ifd $ifd)
-    {
-        return $ifd->getName();
-    }
     protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getType();
         $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['class'] = get_class($entry);
         $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['value'] = serialize($entry->getValue());
         $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['text'] = $entry->getText();
-    }*/
+    }
 }
