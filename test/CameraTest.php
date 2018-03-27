@@ -39,7 +39,7 @@ class CameraTest extends ExifEyeTestCaseBase
         $finder->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
         $result = [];
         foreach ($finder as $file) {
-            $result[] = $file;
+            $result[] = [$file];
         }
         return $result;
     }
