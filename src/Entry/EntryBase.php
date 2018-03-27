@@ -33,19 +33,12 @@ use ExifEye\core\Spec;
  */
 abstract class EntryBase
 {
-
     /**
-     * Type of IFD containing this tag.
-     *
-     * This must be one of the constants defined in {@link Ifd}:
-     * {@link Ifd::IFD0} for the main image IFD, {@link Ifd::IFD1}
-     * for the thumbnail image IFD, {@link Ifd::EXIF} for the Exif
-     * sub-IFD, {@link Ifd::GPS} for the GPS sub-IFD, or {@link
-     * Ifd::INTEROPERABILITY} for the interoperability sub-IFD.
+     * The ID of the block containing this entry.
      *
      * @var int
      */
-    protected $ifd_type;
+    protected $blockId;
 
     /**
      * The bytes representing this entry.
@@ -78,6 +71,23 @@ abstract class EntryBase
      * @var int
      */
     protected $components;
+
+    /**
+     * Constructs an EntryInterface object.
+     *
+     * @param integer $block_id
+     *            The ID of the block containing this entry.
+     * @param integer $entry_id
+     *            The ID of the entry.
+     * @param array $data
+     *            the data that this entry will be holding.
+     */
+    public function __construct($block_id, $entry_id, array $data)
+    {
+        $this->blockId = $block_id;
+        $this->tag = $entry_id;
+        $this->setValue($data);
+    }
 
     /**
      * Creates a new EntryBase of the required subclass.
@@ -159,23 +169,18 @@ abstract class EntryBase
     /**
      * Creates an instance of the entry.
      *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param array $arguments
-     *            a list or arguments to be passed to the EntryBase subclass
-     *            constructor.
+     * @param integer $block_id
+     *            The ID of the block containing this entry.
+     * @param integer $entry_id
+     *            The ID of the entry.
+     * @param array $data
+     *            the data that this entry will be holding.
      *
      * @return EntryBase a newly created entry, holding the data given.
      */
-    public static function createInstance($ifd_id, $tag_id, $arguments)
+    public static function createInstance($block_id, $entry_id, array $data)
     {
-        $class = new \ReflectionClass(get_called_class());
-        array_unshift($arguments, $tag_id);
-        $instance = $class->newInstanceArgs($arguments);
-        $instance->setIfdType($ifd_id);
-        return $instance;
+        return new static($block_id, $entry_id, $data);
     }
 
     /**
@@ -223,23 +228,7 @@ abstract class EntryBase
      */
     public function getIfdType()
     {
-        return $this->ifd_type;
-    }
-
-    /**
-     * Update the IFD type.
-     *
-     * @param
-     *            int must be one of the constants defined in {@link
-     *            Ifd}: {@link Ifd::IFD0} for the main image IFD, {@link
-     *            Ifd::IFD1} for the thumbnail image IFD, {@link Ifd::EXIF}
-     *            for the Exif sub-IFD, {@link Ifd::GPS} for the GPS sub-IFD, or
-     *            {@link Ifd::INTEROPERABILITY} for the interoperability
-     *            sub-IFD.
-     */
-    public function setIfdType($type)
-    {
-        $this->ifd_type = $type;
+        return $this->blockId;
     }
 
     /**
@@ -338,7 +327,7 @@ abstract class EntryBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, Spec::getTagName($this->ifd_type, $this->tag));
+        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, Spec::getTagName($this->getIfdType(), $this->tag));
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
         if ($this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'PrintIM')) {

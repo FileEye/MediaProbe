@@ -430,7 +430,6 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
     public function addEntry(EntryBase $e)
     {
         if ($this->isValidTag($e->getTag())) {
-            $e->setIfdType($this->type);
             $this->entries[$e->getTag()] = $e;
         } else {
             throw new InvalidDataException("IFD %s cannot hold\n%s", $this->getName(), $e->__toString());

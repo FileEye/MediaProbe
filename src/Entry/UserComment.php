@@ -52,47 +52,6 @@ class UserComment extends Undefined
     private $encoding;
 
     /**
-     * Make a new entry for holding a user comment.
-     *
-     * @param
-     *            string the new user comment.
-     *
-     * @param
-     *            string the encoding of the comment. This should be either
-     *            'ASCII', 'JIS', 'Unicode', or the empty string specifying an
-     *            undefined encoding.
-     */
-    public function __construct($comment = '', $encoding = 'ASCII')
-    {
-        parent::__construct(Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'UserComment'));
-        $this->setValue($comment, $encoding);
-    }
-
-    /**
-     * Creates an instance of the entry.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param array $arguments
-     *            a list or arguments to be passed to the EntryBase subclass
-     *            constructor.
-     *
-     * @return EntryBase a newly created entry, holding the data given.
-     */
-    public static function createInstance($ifd_id, $tag_id, $arguments)
-    {
-        if (empty($arguments)) {
-            $instance = new static();
-        } else {
-            $instance = new static($arguments[0], $arguments[1]);
-        }
-        $instance->setIfdType($ifd_id);
-        return $instance;
-    }
-
-    /**
      * Get arguments for the instance constructor from file data.
      *
      * @param int $ifd_id

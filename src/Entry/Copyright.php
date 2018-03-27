@@ -83,7 +83,6 @@ class Copyright extends Ascii
     public static function createInstance($ifd_id, $tag_id, $arguments)
     {
         $instance = new static($arguments[0], $arguments[1]);
-        $instance->setIfdType($ifd_id);
         return $instance;
     }
 

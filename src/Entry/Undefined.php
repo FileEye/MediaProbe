@@ -22,24 +22,12 @@ class Undefined extends EntryBase
     protected $value = [];
 
     /**
-     * Make a new EntryBase that can hold undefined data.
-     *
-     * @param integer $tag
-     *            which this entry represents. This
-     *            should be one of the constants defined in {@link PelTag},
-     *            e.g., {@link PelTag::SCENE_TYPE}, {@link
-     *            PelTag::MAKER_NOTE} or any other tag with format {@link
-     *            Format::UNDEFINED}.
-     *
-     * @param string $data
-     *            the data that this entry will be holding. Since
-     *            the format is undefined, no checking will be done on the data. If no data are given, a empty string will be stored
+     * {@inheritdoc}
      */
-    public function __construct($tag, $data = '')
+    public function __construct($block_id, $entry_id, array $data)
     {
-        $this->tag = $tag;
         $this->format = Format::UNDEFINED;
-        $this->setValue($data);
+        parent::_construct($block_id, $entry_id, $data);
     }
 
     /**
