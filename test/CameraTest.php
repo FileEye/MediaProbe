@@ -35,7 +35,13 @@ class CameraTest extends ExifEyeTestCaseBase
 
     public function imageFileProvider()
     {
-        return (new Finder())->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
+        $finder = new Finder();
+        $finder->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
+        $result = [];
+        foreach ($finder as $file) {
+            $result[] = $file;
+        }
+        return $result;
     }
 
     /**
