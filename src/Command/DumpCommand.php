@@ -99,7 +99,6 @@ class DumpCommand extends Command
             $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
 //            $this->ifdToTest('$ifd', 0, $ifd, $json['blocks'][$ifd->getName()]);
             while ($ifd = $ifd->getNextIfd()) {
-            }
                 $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
 //                $this->ifdToTest($sub_name, $n, $sub_ifd, $json['subIfds'][$this->ifdKey($sub_ifd)]);
 //                $n ++;
