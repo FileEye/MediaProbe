@@ -22,9 +22,9 @@ class CameraTest extends ExifEyeTestCaseBase
             $this->assertCount(count($expected['entries']), $ifd->getEntries());
             foreach ($expected['entries'] as $test_entry => $test_entry_data) {
                 $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
-                $this->assertInstanceOf($test_entry_data['class'], $entry, "IFD: {$ifd->getName} TAG: $test_entry");
-                $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue(), "IFD: {$ifd->getName} TAG: $test_entry");
-                $this->assertEquals($test_entry_data['text'], $entry->getText().'xx', "IFD: {$ifd->getName} TAG: $test_entry");
+                $this->assertInstanceOf($test_entry_data['class'], $entry, "IFD: {$ifd->getName()} TAG: $test_entry");
+                $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue(), "IFD: {$ifd->getName()} TAG: $test_entry");
+                $this->assertEquals($test_entry_data['text'], $entry->getText().'xx', "IFD: {$ifd->getName()} TAG: $test_entry");
             }
         }
 
@@ -39,7 +39,7 @@ class CameraTest extends ExifEyeTestCaseBase
         $finder->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
         $result = [];
         foreach ($finder as $file) {
-            $result[] = [$file];
+            $result[] = [(string) $file];
         }
         return $result;
     }
