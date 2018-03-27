@@ -41,13 +41,19 @@ script:
   #- php bin/exifeye dump test/imagetests/canon-eos-650d.jpg
   #- php examples/dump-image.php -d test/imagetests/canon-ixus-ii.jpg
   #- php examples/dump-image.php -d test/imagetests/canon-powershot-s60.jpg
-  #- php examples/dump-image.php -d test/imagetests/apple-iphone6s.jpg
-  #- php bin/exifeye dump test/imagetests/apple-iphone6s.jpg
-  #- php bin/exifeye dump test/imagetests/apple-iphone7.JPG
-  #- php examples/dump-image.php -d test/imagetests/apple-iphone7.JPG
   #- php examples/dump-image.php -d test/broken_images/gh-10-a.jpg
   #- php examples/dump-image.php -d test/broken_images/gh-10-b.jpg
   #- php examples/dump-image.php -d test/broken_images/gh-11.jpg
+  - php bin/exifeye dump test/images/canon-ixus-ii.jpg
+  - php bin/exifeye dump test/images/canon-powershot-s60.jpg
+  - php bin/exifeye dump test/images/leica-d-lux.jpg
+  - php bin/exifeye dump test/images/nikon-coolscan-iv.jpg
+  - php bin/exifeye dump test/images/nikon-e950.jpg
+  - php bin/exifeye dump test/images/nikon-e5000.jpg
+  - php bin/exifeye dump test/images/olympus-c50z.jpg
+  - php bin/exifeye dump test/images/olympus-c765uz.jpg
+  - php bin/exifeye dump test/images/pentax-istDS.jpg
+  - php bin/exifeye dump test/images/sony-dsc-v1.jpg
 
 after_script:
   - php vendor/bin/coveralls -v

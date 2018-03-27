@@ -68,5 +68,9 @@ class CameraTest extends ExifEyeTestCaseBase
         if (isset($test['blocks']['IFD1'])) {
             $this->assertIfd($test['blocks']['IFD1'], $ifd0->getNextIfd());
         }
+
+        if (isset($test['errors'])) {
+            $this->assertCount(count($test['errors']['entries']), ExifEye::getExceptions());
+        }
     }
 }
