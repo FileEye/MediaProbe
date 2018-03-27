@@ -24,12 +24,16 @@ class CameraTest extends ExifEyeTestCaseBase
                 $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
                 $this->assertInstanceOf($test_entry_data['class'], $entry, "IFD: {$ifd->getName()} TAG: $test_entry");
                 $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue(), "IFD: {$ifd->getName()} TAG: $test_entry");
-                $this->assertEquals($test_entry_data['text'], $entry->getText().'xx', "IFD: {$ifd->getName()} TAG: $test_entry");
+                $this->assertEquals($test_entry_data['text'], $entry->getText(), "IFD: {$ifd->getName()} TAG: $test_entry");
             }
         }
 
         if (isset($expected['blocks'])) {
             $this->assertCount(count($expected['blocks']), $ifd->getSubIfds());
+            foreach ($expected['blocks'] as $test_block => $test_block_data) {
+                $block = $ifd->getSubIfd(Spec::getIfdIdByType($test_block));
+                $this->assertIfd($test_block_data, $block);
+            }
         }
     }
 
@@ -39,7 +43,7 @@ class CameraTest extends ExifEyeTestCaseBase
         $finder->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
         $result = [];
         foreach ($finder as $file) {
-            $result[] = [(string) $file];
+            $result[] = [$file->getFileName()];
         }
         return $result;
     }
@@ -49,9 +53,7 @@ class CameraTest extends ExifEyeTestCaseBase
      */
     public function testParse($imageDumpFile)
     {
-        $test = Yaml::parseFile($imageDumpFile);
-
-        // $test = Yaml::parseFile(dirname(__FILE__) . '/imagetests/canon-eos-650d.jpg.test.yml');
+        $test = Yaml::parseFile(dirname(__FILE__) . '/imagetests/' . $imageDumpFile);
 
         $jpeg = new Jpeg(dirname(__FILE__) . '/imagetests/' . $test['jpeg']);
 
@@ -61,6 +63,10 @@ class CameraTest extends ExifEyeTestCaseBase
 
         if (isset($test['blocks']['IFD0'])) {
             $this->assertIfd($test['blocks']['IFD0'], $ifd0);
+        }
+
+        if (isset($test['blocks']['IFD1'])) {
+            $this->assertIfd($test['blocks']['IFD1'], $ifd0->getNextIfd());
         }
     }
 }
