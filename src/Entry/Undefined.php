@@ -27,7 +27,7 @@ class Undefined extends EntryBase
     public function __construct($block_id, $entry_id, array $data)
     {
         $this->format = Format::UNDEFINED;
-        parent::_construct($block_id, $entry_id, $data);
+        parent::__construct($block_id, $entry_id, $data);
     }
 
     /**
