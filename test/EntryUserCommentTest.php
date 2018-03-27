@@ -15,7 +15,7 @@ class EntryUserCommentTest extends ExifEyeTestCaseBase
         $this->assertEquals($entry->getValue(), '');
         $this->assertEquals($entry->getEncoding(), 'ASCII');
 
-        $entry->setValue('Hello!');
+        $entry->setValue(['Hello!']);
         $this->assertEquals($entry->getComponents(), 14);
         $this->assertEquals($entry->getValue(), 'Hello!');
         $this->assertEquals($entry->getEncoding(), 'ASCII');

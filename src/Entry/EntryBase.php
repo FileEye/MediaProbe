@@ -299,25 +299,10 @@ abstract class EntryBase
     /**
      * Set the value of this entry.
      *
-     * The value should be in the same format as for the constructor.
-     *
-     * @param
-     *            mixed the new value.
-     *
-     * @abstract
-     *
+     * @param array
+     *            the new value.
      */
-    public function setValue($value)
-    {
-        /*
-         * This (fake) abstract method is here to make it possible for the
-         * documentation to refer to EntryBase::setValue().
-         * It cannot declared abstract in the proper PHP way, for then PHP
-         * wont allow subclasses to define it with two arguments (which is
-         * what Copyright does).
-         */
-        throw new ExifEyeException('setValue() is abstract.');
-    }
+    abstract public function setValue(array $value);
 
     /**
      * Turn this entry into a string.
