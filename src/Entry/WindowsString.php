@@ -44,6 +44,11 @@ class WindowsString extends EntryBase
     const ZEROES = "\x0\x0";
 
     /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::BYTE;
+
+    /**
      * The string hold by this entry.
      *
      * This is the string that was given to the {@link __construct
@@ -53,30 +58,6 @@ class WindowsString extends EntryBase
      * @var string
      */
     private $str;
-
-    /**
-     * Make a new EntryBase that can hold a Windows XP specific string.
-     *
-     * @param int $tag
-     *            the tag which this entry represents. This should be
-     *            one of {@link PelTag::XP_TITLE}, {@link PelTag::XP_COMMENT},
-     *            {@link PelTag::XP_AUTHOR}, {@link PelTag::XP_KEYWORD}, and {@link
-     *            PelTag::XP_SUBJECT} tags. If another tag is used, then this
-     *            entry will be incorrectly reloaded as a {@link Byte}.
-     *
-     * @param string $str
-     *            the string that this entry will represent. It will
-     *            be passed to {@link setValue} and thus has to obey its
-     *            requirements.
-     * @param bool $from_exif
-     *            internal use only, tells that string is UCS-2LE encoded, as PHP fails to detect this encoding
-     */
-    public function __construct($tag, $str = '', $from_exif = false)
-    {
-        $this->tag = $tag;
-        $this->format = Format::BYTE;
-        $this->setValue($str, $from_exif);
-    }
 
     /**
      * Get arguments for the instance constructor from file data.
@@ -106,37 +87,36 @@ class WindowsString extends EntryBase
     }
 
     /**
-     * Give the entry a new value.
+     * Set the version held by this entry.
      *
-     * This will overwrite the previous value. The value can be
-     * retrieved later with the {@link getValue} method.
-     *
-     * @param string $str
-     *            the new value of the entry.
-     * @param bool $from_exif
-     *            internal use only, tells that string is UCS-2LE encoded, as PHP fails to detect this encoding
+     * @param array $data
+     *            key 0 holds the new value of the entry.
+     *            key 1 is internal use only, tells that string is UCS-2LE
+     *            encoded, as PHP fails to detect this encoding.
      */
-    public function setValue($str, $from_exif = false)
+    public function setValue(array $data)
     {
-        $zlen = strlen(static::ZEROES);
-        if (false !== $from_exif) {
-            $s = $str;
-            if (substr($str, -$zlen, $zlen) == static::ZEROES) {
-                $str = substr($str, 0, -$zlen);
-            }
-            $str = mb_convert_encoding($str, 'UTF-8', 'UCS-2LE');
-        } else {
-            $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
-        }
+      $str = $data[0];
+      $from_exif = isset($data[1]) ? $data[1] : false;
+      $zlen = strlen(static::ZEROES);
+      if (false !== $from_exif) {
+          $s = $str;
+          if (substr($str, -$zlen, $zlen) == static::ZEROES) {
+              $str = substr($str, 0, -$zlen);
+          }
+          $str = mb_convert_encoding($str, 'UTF-8', 'UCS-2LE');
+      } else {
+          $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
+      }
 
-        if (substr($s, -$zlen, $zlen) != static::ZEROES) {
-            $s .= static::ZEROES;
-        }
-        $l = strlen($s);
+      if (substr($s, -$zlen, $zlen) != static::ZEROES) {
+          $s .= static::ZEROES;
+      }
+      $l = strlen($s);
 
-        $this->components = $l;
-        $this->str = $str;
-        $this->bytes = $s;
+      $this->components = $l;
+      $this->str = $str;
+      $this->bytes = $s;
     }
 
     /**

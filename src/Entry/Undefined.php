@@ -15,20 +15,16 @@ use ExifEye\core\Format;
 class Undefined extends EntryBase
 {
     /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::UNDEFINED;
+
+    /**
      * The value held by this entry.
      *
      * @var array
      */
     protected $value = [];
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __construct($block_id, $entry_id, array $data)
-    {
-        $this->format = Format::UNDEFINED;
-        parent::__construct($block_id, $entry_id, $data);
-    }
 
     /**
      * Get arguments for the instance constructor from file data.
