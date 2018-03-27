@@ -26,7 +26,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals(10, $entry->getValue(Time::UNIX_TIMESTAMP));
         $this->assertEquals('1970:01:01 00:00:10', $entry->getValue(Time::EXIF_STRING));
         $this->assertEquals(2440588 + 10 / 86400, $entry->getValue(Time::JULIAN_DAY_COUNT));
-        $this->assertEquals('1970:01:01 00:00:10'$entry->getText());
+        $this->assertEquals('1970:01:01 00:00:10', $entry->getText());
 
         // Malformed Exif timestamp.
         $entry->setValue(['1970!01-01 00 00 30', Time::EXIF_STRING]);
