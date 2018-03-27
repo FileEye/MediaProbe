@@ -23,7 +23,7 @@ class CameraTest extends ExifEyeTestCaseBase
                 $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
                 $this->assertInstanceOf($test_entry_data['class'], $entry);
                 $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue());
-                $this->assertEquals($test_entry_data['text'], $entry->getText());
+                $this->assertEquals($test_entry_data['text'], $entry->getText() .'xx');
             }
         }
 
