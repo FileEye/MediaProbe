@@ -14,15 +14,6 @@ use Symfony\Component\Yaml\Yaml;
  */
 class CameraTest extends ExifEyeTestCaseBase
 {
-    /** @var Finder */
-    protected $finder;
-
-    public function setUp()
-    {
-        parent::setUp;
-        $this->finder = new Finder();
-    }
-
     protected function assertIfd($expected, $ifd)
     {
         $this->assertInstanceOf($expected['class'], $ifd);
@@ -44,7 +35,7 @@ class CameraTest extends ExifEyeTestCaseBase
 
     public function imageFileProvider()
     {
-        return $this->finder->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
+        return (new Finder())->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
     }
 
     /**
