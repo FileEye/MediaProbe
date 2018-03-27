@@ -52,7 +52,7 @@ class CameraTest extends ExifEyeTestCaseBase
      */
     public function testParse($imageDumpFile)
     {
-        $test = Yaml::parse($imageDumpFile->getContents()
+        $test = Yaml::parseFile($imageDumpFile);
 
         //$test = Yaml::parseFile(dirname(__FILE__) . '/imagetests/canon-eos-650d.jpg.test.yml');
 
