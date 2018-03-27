@@ -57,15 +57,15 @@ class Undefined extends EntryBase
     /**
      * Set the data of this undefined entry.
      *
-     * @param string $data
-     *            the data that this entry will be holding. Since
-     *            the format is undefined, no checking will be done on the data.
+     * @param array $data
+     *            the data that this entry will be holding. Since the format is
+     *            undefined, no checking will be done on the data.
      */
-    public function setValue($data)
+    public function setValue(array $data)
     {
-        $this->value[0] = $data;
-        $this->components = strlen($data);
-        $this->bytes = $data;
+        $this->value[0] = $data[0];
+        $this->components = strlen($data[0]);
+        $this->bytes = $data[0];
     }
 
     /**

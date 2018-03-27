@@ -85,19 +85,17 @@ class UserComment extends Undefined
     /**
      * Set the user comment.
      *
-     * @param
-     *            string the new user comment.
-     *
-     * @param
-     *            string the encoding of the comment. This should be either
-     *            'ASCII', 'JIS', 'Unicode', or the empty string specifying an
-     *            unknown encoding.
+     * @param array $data
+     *            key 0 holds the comment.
+     *            key 1 holds a string with the encoding of the comment. This
+     *            should be either 'ASCII', 'JIS', 'Unicode', or the empty
+     *            string specifying an unknown encoding.
      */
-    public function setValue($comment = '', $encoding = 'ASCII')
+    public function setValue(array $data)
     {
-        $this->comment = $comment;
-        $this->encoding = $encoding;
-        parent::setValue(str_pad($encoding, 8, chr(0)) . $comment);
+        $this->comment = isset($data[0]) ? $data[0] : '';
+        $this->encoding = isset($data[1]) ? $data[1] : 'ASCII';
+        parent::setValue([str_pad($this->encoding, 8, chr(0)) . $this->comment]);
     }
 
     /**
