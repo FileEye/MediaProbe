@@ -9,28 +9,6 @@ use ExifEye\core\Format;
 
 /**
  * Class to hold version information.
- *
- * There are three Exif entries that hold version information: the
- * {@link PelTag::EXIF_VERSION}, {@link
- * PelTag::FLASH_PIX_VERSION}, and {@link
- * PelTag::INTEROPERABILITY_VERSION} tags. This class manages
- * those tags.
- *
- * The class is used in a very straight-forward way:
- * <code>
- * $entry = new Version(PelTag::EXIF_VERSION, 2.2);
- * </code>
- * This creates an entry for an file complying to the Exif 2.2
- * standard. It is easy to test for standards level of an unknown
- * entry:
- * <code>
- * if ($entry->getTag() == PelTag::EXIF_VERSION &&
- * $entry->getValue() > 2.0) {
- * echo 'Recent Exif version.';
- * }
- * </code>
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
 class Version extends EntryBase
 {
