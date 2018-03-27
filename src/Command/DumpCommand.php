@@ -67,7 +67,7 @@ class DumpCommand extends Command
             }
         }
         $yaml = Yaml::dump($json, 20);
-        $output->writeln($yaml);
+        $output->write($yaml);
     }
     
     protected function jpegToTest($name, Jpeg $jpeg, &$json)
@@ -98,8 +98,9 @@ class DumpCommand extends Command
         if ($ifd instanceof Ifd) {
             $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
 //            $this->ifdToTest('$ifd', 0, $ifd, $json['blocks'][$ifd->getName()]);
-            foreach ($ifd->getSubIfds() as $type => $sub_ifd) {
-                $json['blocks'][$sub_ifd->getName()]['class'] = get_class($sub_ifd);
+            while ($ifd = $ifd->getNextIfd()) {
+            }
+                $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
 //                $this->ifdToTest($sub_name, $n, $sub_ifd, $json['subIfds'][$this->ifdKey($sub_ifd)]);
 //                $n ++;
             }
