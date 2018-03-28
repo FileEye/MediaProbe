@@ -160,18 +160,14 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
 
         for ($i = 0; $i < $n; $i++) {
             // TODO: increment window start instead of using offsets.
-            Tag::loadFromData($d, $offset + 12 * $i, $nesting_level + 1);
-            $tag = $d->getShort($offset + 12 * $i);
-            $tag_format = $d->getShort($offset + 12 * $i + 2);
-            $tag_components = $d->getLong($offset + 12 * $i + 4);
-            $tag_offset = $d->getLong($offset + 12 * $i + 8);
+            $tag = Tag::loadFromData($d, $offset + 12 * $i, $nesting_level);
 
             // Check if PEL can support this TAG.
-            if (!$this->isValidTag($tag)) {
+            if (!$this->isValidTag($tag->getId())) {
                 ExifEye::maybeThrow(
                     new IfdException(
                         str_repeat("  ", $nesting_level) . "No specification available for TAG 0x%04X in IFD '%s', skipping (%d of %d)...",
-                        $tag,
+                        $tag->getId(),
                         $this->getName(),
                         $i + 1,
                         $n
@@ -182,8 +178,8 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
 
             ExifEye::debug(
                 str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d (%d of %d)...',
-                $tag,
-                Spec::getTagName($this->type, $tag),
+                $tag->getId(),
+                Spec::getTagName($this->type, $tag->getId()),
                 $tag_format,
                 Format::getName($tag_format),
                 $tag_components,
@@ -192,9 +188,9 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             );
 
             // Load a subIfd.
-            if (Spec::isTagAnIfdPointer($this->type, $tag)) {
+            if (Spec::isTagAnIfdPointer($this->type, $tag->getId())) {
                 // If the tag is an IFD pointer, loads the IFD.
-                $type = Spec::getIfdIdFromTag($this->type, $tag);
+                $type = Spec::getIfdIdFromTag($this->type, $tag->getId());
                 $o = $d->getLong($offset + 12 * $i + 8);
                 if ($starting_offset != $o) {
                     $ifd_class = Spec::getIfdClass($type);
@@ -212,13 +208,13 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             }
 
             // Manage Thumbnail data.
-            if (Spec::getTagName($this->type, $tag) === 'JPEGInterchangeFormat') {
+            if (Spec::getTagName($this->type, $tag->getId()) === 'JPEGInterchangeFormat') {
                 // Aka 'Thumbnail Offset'.
                 $thumb_offset = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
                 continue;
             }
-            if (Spec::getTagName($this->type, $tag) === 'JPEGInterchangeFormatLength') {
+            if (Spec::getTagName($this->type, $tag->getId()) === 'JPEGInterchangeFormatLength') {
                 // Aka 'Thumbnail Length'.
                 $thumb_length = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
@@ -226,7 +222,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             }
 
             // Load a TAG entry.
-            if ($entry = EntryBase::createFromData($this->type, $tag, $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
+            if ($entry = EntryBase::createFromData($this->type, $tag->getId(), $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
                 $this->addEntry($entry);
             }
         }
