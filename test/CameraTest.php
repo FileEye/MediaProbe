@@ -58,7 +58,7 @@ class CameraTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf($expected['class'], $ifd);
 
         if (isset($expected['entries'])) {
-            $this->assertCount(count($expected['entries']), $ifd->getEntries());
+            $this->assertCount(count($expected['entries']), $ifd->getEntries(), "Block: '{$ifd->getName()}' - entries count");
             foreach ($expected['entries'] as $test_entry => $test_entry_data) {
                 $matches = [];
                 if (preg_match('/\[\[\[(\d+)\]\]\]/', $test_entry, $matches) === 1) {
@@ -73,7 +73,7 @@ class CameraTest extends ExifEyeTestCaseBase
         }
 
         if (isset($expected['blocks'])) {
-            $this->assertCount(count($expected['blocks']), $ifd->getSubIfds());
+            $this->assertCount(count($expected['blocks']), $ifd->getSubIfds(), "Block: '{$ifd->getName()}' - sub-blocks count");
             foreach ($expected['blocks'] as $test_block => $test_block_data) {
                 $block = $ifd->getSubIfd(Spec::getIfdIdByType($test_block));
                 $this->assertIfd($test_block_data, $block);
