@@ -177,7 +177,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
                         $n
                     )
                 );
-                continue;
+                //continue;
             }
 
             // Load a subIfd.

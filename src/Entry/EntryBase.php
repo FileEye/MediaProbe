@@ -294,7 +294,8 @@ abstract class EntryBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, Spec::getTagName($this->getIfdType(), $this->id));
+        $entry_name = Spec::getTagName($this->getIfdType(), $this->id) ?: '*** UNKNOWN ***';
+        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, $entry_name);
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
         if ($this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'PrintIM')) {

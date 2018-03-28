@@ -269,7 +269,7 @@ class Spec
         if ($format === null) {
             $formats = self::getTagFormat($ifd_id, $tag_id);
             if (empty($formats)) {
-                throw new ExifEyeException('No format can be derived for tag: \'%s\' in ifd: \'%s\'', self::getTagName($ifd_id, $tag_id), self::getIfdType($ifd_id));
+                throw new ExifEyeException('No format can be derived for tag: 0x%04X (%s) in ifd: \'%s\'', $tag_id, self::getTagName($ifd_id, $tag_id), self::getIfdType($ifd_id));
             }
             $format = $formats[0];
         }
