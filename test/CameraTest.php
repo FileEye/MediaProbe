@@ -61,8 +61,7 @@ class CameraTest extends ExifEyeTestCaseBase
             $this->assertCount(count($expected['entries']), $ifd->getEntries());
             foreach ($expected['entries'] as $test_entry => $test_entry_data) {
                 $matches = [];
-                if (preg_match('/\[\[\[(\d.)\]\]\]/', $test_entry, $matches) === 1) {
-dump($matches);
+                if (preg_match('/\[\[\[(\d+)\]\]\]/', $test_entry, $matches) === 1) {
                     $entry = $ifd->getEntry((int) $matches[1]);
                 } else {
                     $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
