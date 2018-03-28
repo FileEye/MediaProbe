@@ -164,7 +164,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
                 'current' => $i + 1,
                 'total' => $n,
                 'ifd_id' => $this->type,
-            ];
+            ]);
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag->getId())) {
