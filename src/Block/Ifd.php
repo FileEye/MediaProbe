@@ -3,6 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\Block\Exception\IfdException;
+use ExifEye\core\Block\Tag;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\DataWindowWindowException;
@@ -159,6 +160,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
 
         for ($i = 0; $i < $n; $i++) {
             // TODO: increment window start instead of using offsets.
+            Tag::loadFromData($d, $offset + 12 * $i, $nesting_level + 1);
             $tag = $d->getShort($offset + 12 * $i);
             $tag_format = $d->getShort($offset + 12 * $i + 2);
             $tag_components = $d->getLong($offset + 12 * $i + 4);
