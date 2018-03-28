@@ -65,10 +65,10 @@ class Tag extends BlockBase
             $tag_format,
             Format::getName($tag_format),
             $tag_components,
-            $options['current'],
-            $options['total'],
             $tag_value,
-            $tag_value_is_offset ? ' (offset)' : ''
+            $tag_value_is_offset ? ' (offset)' : '',
+            $options['current'],
+            $options['total']
         );
 
         return new static($tag_id, $tag_format, $tag_components, $tag_value, $tag_value_is_offset);
