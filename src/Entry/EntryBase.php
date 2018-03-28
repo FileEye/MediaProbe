@@ -29,7 +29,6 @@ use ExifEye\core\Spec;
  * Ascii} for strings, and so on) directly.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
 abstract class EntryBase
 {
@@ -105,7 +104,7 @@ abstract class EntryBase
     final public static function createNew($ifd_id, $tag_id, array $arguments)
     {
         $class = Spec::getTagClass($ifd_id, $tag_id);
-        return call_user_func($class . '::createInstance', $ifd_id, $tag_id, $arguments);
+        return new static($ifd_id, $tag_id, $arguments);
     }
 
     /**
@@ -158,29 +157,12 @@ abstract class EntryBase
         try {
             $class = Spec::getTagClass($ifd_id, $tag_id, $format);
             $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $sub_data, $data_offset);
-            return  call_user_func($class . '::createInstance', $ifd_id, $tag_id, $arguments);
+            return new static($ifd_id, $tag_id, $arguments);
         } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store
             // otherwise.
             ExifEye::maybeThrow($e);
         }
-    }
-
-    /**
-     * Creates an instance of the entry.
-     *
-     * @param integer $block_id
-     *            The ID of the block containing this entry.
-     * @param integer $entry_id
-     *            The ID of the entry.
-     * @param array $data
-     *            the data that this entry will be holding.
-     *
-     * @return EntryBase a newly created entry, holding the data given.
-     */
-    public static function createInstance($block_id, $entry_id, array $data)
-    {
-        return new static($block_id, $entry_id, $data);
     }
 
     /**
