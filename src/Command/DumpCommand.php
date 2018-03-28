@@ -132,8 +132,8 @@ class DumpCommand extends Command
     protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getType();
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['class'] = get_class($entry);
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['value'] = serialize($entry->getValue());
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getTag())]['text'] = $entry->getText();
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getId())]['class'] = get_class($entry);
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getId())]['value'] = serialize($entry->getValue());
+        $json['entries'][Spec::getTagName($ifd_type, $entry->getId())]['text'] = $entry->getText();
     }
 }

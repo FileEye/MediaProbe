@@ -427,12 +427,12 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
      *       directory can only contain one entry with each tag. Is this a
      *       bug?
      */
-    public function addEntry(EntryBase $e)
+    public function addEntry(EntryBase $entry)
     {
-        if ($this->isValidTag($e->getTag())) {
-            $this->entries[$e->getTag()] = $e;
+        if ($this->isValidTag($entry->getId())) {
+            $this->entries[$entry->getId()] = $entry;
         } else {
-            throw new InvalidDataException("IFD %s cannot hold\n%s", $this->getName(), $e->__toString());
+            throw new InvalidDataException("IFD %s cannot hold\n%s", $this->getName(), $entry->__toString());
         }
     }
 
@@ -482,7 +482,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
     }
 
     /**
-     * Set or update a given tag in this IFD.
+     * Set or update a given entry in this IFD.
      *
      * This methods is part of the ArrayAccess SPL interface for
      * overriding array access of objects, it allows you to add new
@@ -495,19 +495,19 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
      * Note that the actual array index passed is ignored! Instead the
      * {@link PelTag} from the entry is used.
      *
-     * @param int $tag
+     * @param int $entry_id
      *            unused.
      *
      * @param EntryBase $e
      *            the new value.
      */
-    public function offsetSet($tag, $e)
+    public function offsetSet($entry_id, $entry)
     {
-        if ($e instanceof EntryBase) {
-            $tag = $e->getTag();
-            $this->entries[$tag] = $e;
+        if ($entry instanceof EntryBase) {
+            $entry_id = $entry->getId();
+            $this->entries[$entry_id] = $entry;
         } else {
-            throw new InvalidArgumentException('Argument "%s" must be a EntryBase.', $e);
+            throw new InvalidArgumentException('Argument 1 must be of the EntryBase type.');
         }
     }
 
@@ -720,7 +720,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
 
         foreach ($this->entries as $tag => $entry) {
             /* Each entry is 12 bytes long. */
-            $bytes .= Convert::shortToBytes($entry->getTag(), $order);
+            $bytes .= Convert::shortToBytes($entry->getId(), $order);
             $bytes .= Convert::shortToBytes($entry->getFormat(), $order);
             $bytes .= Convert::longToBytes($entry->getComponents(), $order);
 

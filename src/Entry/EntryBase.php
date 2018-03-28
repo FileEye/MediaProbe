@@ -33,6 +33,13 @@ use ExifEye\core\Spec;
 abstract class EntryBase
 {
     /**
+     * The ID of this entry.
+     *
+     * @var int
+     */
+    protected $id;
+
+    /**
      * The ID of the block containing this entry.
      *
      * @var int
@@ -49,13 +56,6 @@ abstract class EntryBase
      * @var string
      */
     protected $bytes = '';
-
-    /**
-     * The {@link PelTag} of this entry.
-     *
-     * @var int
-     */
-    protected $tag;
 
     /**
      * The {@link Format} of this entry.
@@ -84,7 +84,7 @@ abstract class EntryBase
     public function __construct($block_id, $entry_id, array $data)
     {
         $this->blockId = $block_id;
-        $this->tag = $entry_id;
+        $this->id = $entry_id;
         $this->setValue($data);
     }
 
@@ -190,13 +190,13 @@ abstract class EntryBase
     }
 
     /**
-     * Return the tag of this entry.
+     * Returns the ID of this entry.
      *
-     * @return int the tag of this entry.
+     * @return int
      */
-    public function getTag()
+    public function getId()
     {
-        return $this->tag;
+        return $this->id;
     }
 
     /**
@@ -294,10 +294,10 @@ abstract class EntryBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->tag, Spec::getTagName($this->getIfdType(), $this->tag));
+        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, Spec::getTagName($this->getIfdType(), $this->id));
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
-        if ($this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getTag() != Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'PrintIM')) {
+        if ($this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'PrintIM')) {
             $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
         }
         $str .= ExifEye::fmt("    Text      : %s\n", $this->getText());

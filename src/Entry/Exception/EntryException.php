@@ -25,11 +25,11 @@ class EntryException extends ExifEyeException
     protected $type;
 
     /**
-     * The tag of the entry (if known).
+     * The ID of the entry (if known).
      *
      * @var int
      */
-    protected $tag;
+    protected $id;
 
     /**
      * Get the IFD type associated with the exception.
@@ -44,12 +44,12 @@ class EntryException extends ExifEyeException
     }
 
     /**
-     * Get the tag associated with the exception.
+     * Get the ID of the tag associated with the exception.
      *
-     * @return int the tag. If no tag is set, null is returned.
+     * @return int|null
      */
-    public function getTag()
+    public function getId()
     {
-        return $this->tag;
+        return $this->id;
     }
 }

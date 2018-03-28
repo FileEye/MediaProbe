@@ -62,7 +62,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
     public function testCopyright()
     {
         $entry = new Copyright(Spec::getIfdIdByType('IFD0'), 0x8298, []);
-        $this->assertEquals($entry->getTag(), 0x8298);
+        $this->assertEquals($entry->getId(), 0x8298);
         $value = $entry->getValue();
         $this->assertEquals('', $value[0]);
         $this->assertEquals('', $value[1]);
