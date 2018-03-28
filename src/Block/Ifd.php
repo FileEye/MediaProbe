@@ -161,7 +161,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
         for ($i = 0; $i < $n; $i++) {
             $tag = Tag::loadFromData($d, $offset + 12 * $i, ['ifd_id' => $this->getType()]);
             ExifEye::debug(
-                str_repeat("  ", $options['nesting_level']) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d Value: %d%s (%d of %d)...',
+                str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d Value: %d%s (%d of %d)...',
                 $tag->getId(),
                 $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
                 $tag->getFormat(),

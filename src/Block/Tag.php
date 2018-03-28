@@ -32,9 +32,8 @@ class Tag extends BlockBase
         $this->components = $components;
         $this->value = $value;
 
-        // The data size. If bigger than 4 bytes, the actual data is
-        // not in the entry but somewhere else, with the offset stored
-        // in the entry.
+        // The data size. If bigger than 4 bytes, the actual data is not in the
+        // entry but somewhere else, with the offset stored in the entry.
         $size = Format::getSize($this->format) * $this->components;
         $this->isOffset = ($size > 4);
 
