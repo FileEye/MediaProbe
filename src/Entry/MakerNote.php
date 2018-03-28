@@ -52,7 +52,7 @@ class MakerNote extends Undefined
      */
     public function setValue(array $data)
     {
-        parent:setValue($data[0]);
+        parent::setValue([$data[0]]);
         $this->setDataOffset($data[1]);
     }
 

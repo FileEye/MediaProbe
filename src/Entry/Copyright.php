@@ -51,25 +51,6 @@ class Copyright extends Ascii
     private $editor;
 
     /**
-     * Creates an instance of the entry.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param array $arguments
-     *            a list or arguments to be passed to the EntryBase subclass
-     *            constructor.
-     *
-     * @return EntryBase a newly created entry, holding the data given.
-     */
-    public static function createInstance($ifd_id, $tag_id, $arguments)
-    {
-        $instance = new static($arguments[0], $arguments[1]);
-        return $instance;
-    }
-
-    /**
      * Get arguments for the instance constructor from file data.
      *
      * @param int $ifd_id

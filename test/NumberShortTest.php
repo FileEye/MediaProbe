@@ -12,7 +12,7 @@ class NumberShortTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new Short(42);
+        $this->num = new Short(0, 42, []);
         $this->min = 0;
         $this->max = 65535;
     }

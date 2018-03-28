@@ -43,11 +43,11 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $software = $ifd0->getEntry(0x0131);
 
             if ($software === null) {
-                $software = new Ascii(0x0131, $software_name);
+                $software = new Ascii($ifd0->getType(), 0x0131, [$software_name]);
                 $ifd0->addEntry($software);
                 $resave_file = 1;
             } else {
-                $software->setValue($software_name);
+                $software->setValue([$software_name]);
                 $resave_file = 1;
             }
 
