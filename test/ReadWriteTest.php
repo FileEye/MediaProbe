@@ -177,7 +177,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
             'PEL Ascii Read/Write Tests' => [
                 [
                     new Ascii(Spec::getIfdIdByType('IFD0'), 0xF601, []),
-                    new Ascii(Spec::getIfdIdByType('IFD0'), 0xF602, [''),
+                    new Ascii(Spec::getIfdIdByType('IFD0'), 0xF602, ['']),
                     new Ascii(Spec::getIfdIdByType('IFD0'), 0xF603, ['Hello World!']),
                     new Ascii(Spec::getIfdIdByType('IFD0'), 0xF604, ["\x00\x01\x02...\xFD\xFE\xFF"]),
                 ],
