@@ -164,10 +164,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             // Invalid TAG.
             if (!$tag) {
                 ExifEye::maybeThrow(
-                    new IfdException(
-                        "Invalid TAG 0x0000 in IFD '%s'",
-                        $this->getName()
-                    )
+                    new IfdException("Invalid TAG 0x0000 in IFD '%s'", $this->getName())
                 );
                 continue;
             }
