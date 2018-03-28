@@ -94,17 +94,19 @@ class Copyright extends Ascii
      */
     public function setValue(array $data)
     {
-        $this->photographer = isset($data[0]) ? $data[0] : '';
-        $this->editor = isset($data[1]) ? $data[1] : '';
+        $photographer = isset($data[0]) ? $data[0] : '';
+        $editor = isset($data[1]) ? $data[1] : '';
+        $this->photographer = $photographer;
+        $this->editor = $editor;
 
-        if ($this->photographer == '' && $this->editor != '') {
-            $this->photographer = ' ';
+        if ($photographer == '' && $editor != '') {
+            $photographer = ' ';
         }
 
-        if ($this->editor == '') {
-            parent::setValue([$this->photographer]);
+        if ($editor == '') {
+            parent::setValue([$photographer]);
         } else {
-            parent::setValue([$this->photographer . chr(0x00) . $this->editor]);
+            parent::setValue([$photographer . chr(0x00) . $editor]);
         }
     }
 
