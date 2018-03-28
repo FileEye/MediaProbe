@@ -160,6 +160,19 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
 
         for ($i = 0; $i < $n; $i++) {
             $tag = Tag::loadFromData($d, $offset + 12 * $i, ['ifd_id' => $this->getType()]);
+
+            // Invalid TAG.
+            if (!$tag) {
+                ExifEye::maybeThrow(
+                    new IfdException(
+                        "Invalid TAG 0x%04X in IFD '%s'",
+                        $tag->getId(),
+                        $this->getName()
+                    )
+                );
+                continue;
+            }
+
             ExifEye::debug(
                 str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d Value: %d%s (%d of %d)...',
                 $tag->getId(),
@@ -177,11 +190,9 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             if (!$this->isValidTag($tag->getId())) {
                 ExifEye::maybeThrow(
                     new IfdException(
-                        str_repeat("  ", $nesting_level) . "Unknown TAG 0x%04X in IFD '%s' (%d of %d)...",
+                        "Unknown TAG 0x%04X in IFD '%s'",
                         $tag->getId(),
-                        $this->getName(),
-                        $i + 1,
-                        $n
+                        $this->getName()
                     )
                 );
             }

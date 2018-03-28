@@ -47,7 +47,12 @@ class Tag extends BlockBase
     public static function loadFromData(DataWindow $data_window, $offset, $options = [])
     {
         $ifd_id = isset($options['ifd_id']) ? $options['ifd_id'] : null;
+
         $id = $data_window->getShort($offset);
+        if ($id === 0) {
+            return null;
+        }
+
         $format = $data_window->getShort($offset + 2);
         $components = $data_window->getLong($offset + 4);
         $value = $data_window->getLong($offset + 8);
