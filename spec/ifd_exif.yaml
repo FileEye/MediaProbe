@@ -69,14 +69,14 @@ tags:
         name: RecommendedExposureIndex
         title: 'Recommended Exposure Index'
         format: Short
-    0x9000:
-        name: ExifVersion
-        title: 'Exif Version'
-        components: 4
-        format: Undefined
-        class: ExifEye\core\Entry\Version
-        text:
-            decode: ExifEye\core\Entry\Version::decodeExifVersion
+#    0x9000:
+#        name: ExifVersion
+#        title: 'Exif Version'
+#        components: 4
+#        format: Undefined
+#        class: ExifEye\core\Entry\Version
+#        text:
+#            decode: ExifEye\core\Entry\Version::decodeExifVersion
     0x9003:
         name: DateTimeOriginal
         title: 'Date and Time (original)'
