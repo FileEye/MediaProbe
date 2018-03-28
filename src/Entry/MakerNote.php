@@ -19,22 +19,6 @@ class MakerNote extends Undefined
     protected $dataOffset;
 
     /**
-     * Constructs a EntryBase that can hold MakerNote data.
-     *
-     * @param integer $tag
-     *            the MakerNote TAG id.
-     * @param string $data
-     *            the MakerNote data.
-     * @param integer $data_offset
-     *            the offset of the MakerNote IFD vs the main DataWindow.
-     */
-    public function __construct($tag, $data, $data_offset)
-    {
-        parent::__construct($tag, $data);
-        $this->setDataOffset($data_offset);
-    }
-
-    /**
      * Get arguments for the instance constructor from file data.
      *
      * @param int $ifd_id
@@ -56,6 +40,20 @@ class MakerNote extends Undefined
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         return [$data->getBytes(), $data_offset];
+    }
+
+    /**
+     * Set the data of this undefined entry.
+     *
+     * @param array $data
+     *            key 0 - the maker note data.
+     *            key 1 - the offset of the MakerNote IFD vs the main
+     *            DataWindow.
+     */
+    public function setValue(array $data)
+    {
+        parent:setValue($data[0]);
+        $this->setDataOffset($data[1]);
     }
 
     /**

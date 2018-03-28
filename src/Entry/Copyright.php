@@ -117,7 +117,7 @@ class Copyright extends Ascii
         $this->editor = isset($data[1]) ? $data[1] : '';
 
         if ($this->photographer == '' && $this->editor != '') {
-            $photographer = ' ';
+            $this->photographer = ' ';
         }
 
         if ($this->editor == '') {
