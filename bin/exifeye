@@ -9,13 +9,7 @@ use ExifEye\core\Command\CompileCommand;
 use ExifEye\core\Command\DumpCommand;
 use Symfony\Component\Console\Application;
 
-$packageAutoloader = __DIR__ . '/../vendor/autoload.php';
-$standaloneAutoloader = __DIR__ . '/../../../autoload.php';
-if (file_exists($packageAutoloader)) {
-    require_once $packageAutoloader;
-} else {
-    require_once $standaloneAutoloader;
-}
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $application = new Application('exifeye', ExifEye::version());
 $application->add(new CompileCommand());

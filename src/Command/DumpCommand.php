@@ -68,7 +68,7 @@ class DumpCommand extends Command
         $yaml = Yaml::dump($json, 20);
         $output->write($yaml);
     }
-    
+
     protected function jpegToTest($name, Jpeg $jpeg, &$json)
     {
         $exif = $jpeg->getExif();
@@ -132,8 +132,12 @@ class DumpCommand extends Command
     protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getType();
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getId())]['class'] = get_class($entry);
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getId())]['value'] = serialize($entry->getValue());
-        $json['entries'][Spec::getTagName($ifd_type, $entry->getId())]['text'] = $entry->getText();
+
+        $tag_name = Spec::getTagName($ifd_type, $entry->getId());
+        $tag_name = $tag_name ?: '[[[' . $entry->getId() . ']]]';
+
+        $json['entries'][$tag_name]['class'] = get_class($entry);
+        $json['entries'][$tag_name]['value'] = serialize($entry->getValue());
+        $json['entries'][$tag_name]['text'] = $entry->getText();
     }
 }
