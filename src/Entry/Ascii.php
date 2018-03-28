@@ -90,9 +90,10 @@ class Ascii extends EntryBase
      */
     public function setValue(array $data)
     {
-        $this->components = strlen($data[0]) + 1;
-        $this->str = $data[0];
-        $this->bytes = $data[0] . chr(0x00);
+        $str = isset($data[0]) ? $data[0] : '';
+        $this->components = strlen($str) + 1;
+        $this->str = $str;
+        $this->bytes = $str . chr(0x00);
     }
 
     /**
