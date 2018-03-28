@@ -34,11 +34,10 @@ abstract class BlockBase
      * @param int $offset
      *            the offset within the window where the directory will
      *            be found.
-     * @param int $nesting_level
-     *            (Optional) the level of nesting of this block in the overall
-     *            structure.
+     * @param array $options
+     *            (Optional) an array with additional options for the load.
      *
      * @returns BlockBase
      */
-    abstract public static function loadFromData(DataWindow $data_window, $offset, $nesting_level = 0);
+    abstract public static function loadFromData(DataWindow $data_window, $offset, $options = []);
 }

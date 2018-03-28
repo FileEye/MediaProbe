@@ -37,7 +37,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public static function loadFromData(DataWindow $data_window, $offset, $nesting_level = 0)
+    public static function loadFromData(DataWindow $data_window, $offset, $options = [])
     {
         $tag_id = $data_window->getShort($offset);
         $tag_format = $data_window->getShort($offset + 2);
@@ -50,12 +50,22 @@ class Tag extends BlockBase
         $size = Format::getSize($tag_format) * $tag_components;
         $tag_value_is_offset = ($size > 4);
 
+        // Provide sane defaults.
+        $options = array_merge([
+            'nesting_level' => 0,
+            'current' => 1,
+            'total' => 1,
+            'ifd_id' => null,
+        ], $options);
         ExifEye::debug(
-            str_repeat("  ", $nesting_level) . "%s ID: 0x%04X, FMT: %d, COMP: %d, VAL: %d%s",
-            static::$type,
+            str_repeat("  ", $options['nesting_level']) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d Value: %d%s (%d of %d)...',
             $tag_id,
+            Spec::getTagName($options['ifd_id'], $tag_id),
             $tag_format,
+            Format::getName($tag_format),
             $tag_components,
+            $options['current'],
+            $options['total'],
             $tag_value,
             $tag_value_is_offset ? ' (offset)' : ''
         );

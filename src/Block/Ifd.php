@@ -159,8 +159,12 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
         }
 
         for ($i = 0; $i < $n; $i++) {
-            // TODO: increment window start instead of using offsets.
-            $tag = Tag::loadFromData($d, $offset + 12 * $i, $nesting_level);
+            $tag = Tag::loadFromData($d, $offset + 12 * $i, [
+                'nesting_level' => $nesting_level,
+                'current' => $i + 1,
+                'total' => $n,
+                'ifd_id' => $this->type,
+            ];
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag->getId())) {
@@ -176,17 +180,6 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
                 continue;
             }
 
-            ExifEye::debug(
-                str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d (%d of %d)...',
-                $tag->getId(),
-                Spec::getTagName($this->type, $tag->getId()),
-                $tag_format,
-                Format::getName($tag_format),
-                $tag_components,
-                $i + 1,
-                $n
-            );
-
             // Load a subIfd.
             if (Spec::isTagAnIfdPointer($this->type, $tag->getId())) {
                 // If the tag is an IFD pointer, loads the IFD.
@@ -196,7 +189,7 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
                     $ifd_class = Spec::getIfdClass($type);
                     $ifd = new $ifd_class($type);
                     try {
-                        $ifd->load($d, $o, $tag_components, $nesting_level + 1);
+                        $ifd->load($d, $o, $tag->getComponents(), $nesting_level + 1);
                         $this->sub[$type] = $ifd;
                     } catch (DataWindowOffsetException $e) {
                         ExifEye::maybeThrow(new IfdException($e->getMessage()));
