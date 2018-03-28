@@ -5,6 +5,7 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\Spec;
 
 /**
  * Class representing an Exif TAG as an ExifEye block.
@@ -70,7 +71,7 @@ class Tag extends BlockBase
             $tag_value_is_offset ? ' (offset)' : ''
         );
 
-        return new static::($tag_id, $tag_format, $tag_components, $tag_value, $tag_value_is_offset);
+        return new static($tag_id, $tag_format, $tag_components, $tag_value, $tag_value_is_offset);
     }
 
     public function getId()
