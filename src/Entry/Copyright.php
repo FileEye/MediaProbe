@@ -51,23 +51,6 @@ class Copyright extends Ascii
     private $editor;
 
     /**
-     * Make a new entry for holding copyright information.
-     *
-     * @param
-     *            string the photographer copyright. Use the empty string
-     *            if there is no photographer copyright.
-     *
-     * @param
-     *            string the editor copyright. Use the empty string if
-     *            there is no editor copyright.
-     */
-    public function __construct($photographer = '', $editor = '')
-    {
-        parent::__construct(Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'Copyright'));
-        $this->setValue($photographer, $editor);
-    }
-
-    /**
      * Creates an instance of the entry.
      *
      * @param int $ifd_id
@@ -122,27 +105,25 @@ class Copyright extends Ascii
     /**
      * Update the copyright information.
      *
-     * @param
-     *            string the photographer copyright. Use the empty string
-     *            if there is no photographer copyright.
-     *
-     * @param
-     *            string the editor copyright. Use the empty string if
-     *            there is no editor copyright.
+     * @param array $data
+     *            key 0 - the photographer copyright. Use the empty string if
+     *            there is no photographer copyright.
+     *            key 1 - the editor copyright. Use the empty string if there
+     *            is no editor copyright.
      */
-    public function setValue($photographer = '', $editor = '')
+    public function setValue(array $data)
     {
-        $this->photographer = $photographer;
-        $this->editor = $editor;
+        $this->photographer = isset($data[0]) ? $data[0] : '';
+        $this->editor = isset($data[1]) ? $data[1] : '';
 
-        if ($photographer == '' && $editor != '') {
+        if ($this->photographer == '' && $this->editor != '') {
             $photographer = ' ';
         }
 
-        if ($editor == '') {
-            parent::setValue($photographer);
+        if ($this->editor == '') {
+            parent::setValue([$this->photographer]);
         } else {
-            parent::setValue($photographer . chr(0x00) . $editor);
+            parent::setValue([$this->photographer . chr(0x00) . $this->editor]);
         }
     }
 
