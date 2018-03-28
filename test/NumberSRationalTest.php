@@ -9,12 +9,12 @@ class NumberSRationalTest extends NumberTestCase
 {
     public function testOverflow()
     {
-        $entry = new SignedRational(42, [-1, 2]);
+        $entry = new SignedRational(0, 42, [[-1, 2]]);
         $this->assertEquals($entry->getValue(), [-1, 2]);
 
         $caught = false;
         try {
-            $entry->setValue([-10, -20], [-1, -2147483649]);
+            $entry->setValue([[-10, -20], [-1, -2147483649]]);
         } catch (OverflowException $e) {
             $caught = true;
         }
@@ -23,7 +23,7 @@ class NumberSRationalTest extends NumberTestCase
 
         $caught = false;
         try {
-            $entry->setValue([3, 4], [1, 2147483648]);
+            $entry->setValue([[3, 4], [1, 2147483648]]);
         } catch (OverflowException $e) {
             $caught = true;
         }
@@ -32,7 +32,7 @@ class NumberSRationalTest extends NumberTestCase
 
         $caught = false;
         try {
-            $entry->setValue([3, 4], [4294967296, 1]);
+            $entry->setValue([[3, 4], [4294967296, 1]]);
         } catch (OverflowException $e) {
             $caught = true;
         }
@@ -42,18 +42,18 @@ class NumberSRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new SignedRational(42);
+        $entry = new SignedRational(0, 42, []);
         $this->assertEquals($entry->getValue(), []);
 
-        $entry->setValue([-1, 2], [3, 4], [5, -6]);
+        $entry->setValue([[-1, 2], [3, 4], [5, -6]]);
         $this->assertEquals($entry->getValue(), [[-1, 2], [3, 4], [5, -6]]);
         $this->assertEquals($entry->getText(), '-1/2, 3/4, -5/6');
 
-        $entry->setValue([-7, -8]);
+        $entry->setValue([[-7, -8]]);
         $this->assertEquals($entry->getValue(), [-7, -8]);
         $this->assertEquals($entry->getText(), '7/8');
 
-        $entry->setValue([0, 2147483647]);
+        $entry->setValue([[0, 2147483647]]);
         $this->assertEquals($entry->getValue(), [0, 2147483647]);
         $this->assertEquals($entry->getText(), '0/2147483647');
     }

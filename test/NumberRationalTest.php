@@ -9,12 +9,12 @@ class NumberRationalTest extends NumberTestCase
 {
     public function testOverflow()
     {
-        $entry = new Rational(42, [1, 2]);
+        $entry = new Rational(0, 42, [[1, 2]]);
         $this->assertEquals($entry->getValue(), [1, 2]);
 
         $caught = false;
         try {
-            $entry->setValue([3, 4], [-1, 2], [7, 8]);
+            $entry->setValue([[3, 4], [-1, 2], [7, 8]]);
         } catch (OverflowException $e) {
             $caught = true;
         }
@@ -23,7 +23,7 @@ class NumberRationalTest extends NumberTestCase
 
         $caught = false;
         try {
-            $entry->setValue([3, 4], [1, 4294967296]);
+            $entry->setValue([[3, 4], [1, 4294967296]]);
         } catch (OverflowException $e) {
             $caught = true;
         }
@@ -32,7 +32,7 @@ class NumberRationalTest extends NumberTestCase
 
         $caught = false;
         try {
-            $entry->setValue([3, 4], [4294967296, 1]);
+            $entry->setValue([[3, 4], [4294967296, 1]]);
         } catch (OverflowException $e) {
             $caught = true;
         }
@@ -42,19 +42,19 @@ class NumberRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new Rational(42);
+        $entry = new Rational(0, 42, []);
         $this->assertEquals($entry->getValue(), []);
         $this->assertEquals($entry->getText(), '');
 
-        $entry->setValue([1, 2], [3, 4], [5, 6]);
+        $entry->setValue([[1, 2], [3, 4], [5, 6]]);
         $this->assertEquals($entry->getValue(), [[1, 2], [3, 4], [5, 6]]);
         $this->assertEquals($entry->getText(), '1/2, 3/4, 5/6');
 
-        $entry->setValue([7, 8]);
+        $entry->setValue([[7, 8]]);
         $this->assertEquals($entry->getValue(), [7, 8]);
         $this->assertEquals($entry->getText(), '7/8');
 
-        $entry->setValue([0, 4294967295]);
+        $entry->setValue([[0, 4294967295]]);
         $this->assertEquals($entry->getValue(), [0, 4294967295]);
         $this->assertEquals($entry->getText(), '0/4294967295');
     }
