@@ -157,8 +157,6 @@ abstract class EntryBase
         try {
             $class = Spec::getTagClass($ifd_id, $tag_id, $format);
             $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $sub_data, $data_offset);
-dump($class);
-dump($arguments);
             return new $class($ifd_id, $tag_id, $arguments);
         } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store

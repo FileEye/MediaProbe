@@ -70,9 +70,9 @@ class PelSpecTest extends ExifEyeTestCaseBase
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {
             $this->expectException('ExifEye\core\ExifEyeException');
-            $this->expectExceptionMessage("No format can be derived for tag: 0x0003 'ImageHeight' in ifd: 'CanonPictureInformation'");
+            $this->expectExceptionMessage("No format can be derived for tag: 0x0003 (ImageHeight) in ifd: 'CanonPictureInformation'");
         } else {
-            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 0x0003 'ImageHeight' in ifd: 'CanonPictureInformation'");
+            $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 0x0003 (ImageHeight) in ifd: 'CanonPictureInformation'");
         }
         $this->assertNull(Spec::getTagClass(Spec::getIfdIdByType('CanonPictureInformation'), 0x0003));
     }

@@ -170,14 +170,13 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
             if (!$this->isValidTag($tag->getId())) {
                 ExifEye::maybeThrow(
                     new IfdException(
-                        str_repeat("  ", $nesting_level) . "No specification available for TAG 0x%04X in IFD '%s', skipping (%d of %d)...",
+                        str_repeat("  ", $nesting_level) . "Unknown TAG 0x%04X in IFD '%s' (%d of %d)...",
                         $tag->getId(),
                         $this->getName(),
                         $i + 1,
                         $n
                     )
                 );
-                //continue;
             }
 
             // Load a subIfd.
@@ -410,21 +409,11 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
      * Adds an entry to the directory.
      *
      * @param EntryBase $e
-     *            the entry that will be added. If the entry is not
-     *            valid in this IFD (as per {@link isValidTag()}) an
-     *            {@link InvalidDataException} is thrown.
-     *
-     * @todo The entry will be identified with its tag, so each
-     *       directory can only contain one entry with each tag. Is this a
-     *       bug?
+     *            the entry that will be added.
      */
     public function addEntry(EntryBase $entry)
     {
-        if ($this->isValidTag($entry->getId())) {
-            $this->entries[$entry->getId()] = $entry;
-        } else {
-            throw new InvalidDataException("IFD %s cannot hold\n%s", $this->getName(), $entry->__toString());
-        }
+        $this->entries[$entry->getId()] = $entry;
     }
 
     /**
