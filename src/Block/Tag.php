@@ -25,7 +25,7 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($tag_id, $id, $format, $components, $value)
+    public function __construct($ifd_id, $id, $format, $components, $value)
     {
         $this->id = $id;
         $this->format = $format;
@@ -35,7 +35,7 @@ class Tag extends BlockBase
         // The data size. If bigger than 4 bytes, the actual data is
         // not in the entry but somewhere else, with the offset stored
         // in the entry.
-        $size = Format::getSize($tag_format) * $tag_components;
+        $size = Format::getSize($this->format) * $this->components;
         $this->isOffset = ($size > 4);
 
         $this->name = Spec::getTagName($ifd_id, $id);
@@ -48,12 +48,12 @@ class Tag extends BlockBase
     public static function loadFromData(DataWindow $data_window, $offset, $options = [])
     {
         $ifd_id = isset($options['ifd_id']) ? $options['ifd_id'] : null;
-        $tag_id = $data_window->getShort($offset);
-        $tag_format = $data_window->getShort($offset + 2);
-        $tag_components = $data_window->getLong($offset + 4);
-        $tag_value = $data_window->getLong($offset + 8);
+        $id = $data_window->getShort($offset);
+        $format = $data_window->getShort($offset + 2);
+        $components = $data_window->getLong($offset + 4);
+        $value = $data_window->getLong($offset + 8);
 
-        return new static($ifd_id, $tag_id, $tag_format, $tag_components, $tag_value, $tag_value_is_offset);
+        return new static($ifd_id, $id, $format, $components, $value);
     }
 
     public function getFormat()
