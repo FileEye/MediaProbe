@@ -15,8 +15,8 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
-        $desc = new Ascii(0x010E, 'Hello?');
-        $date = new Time(0x0132, 12345678);
+        $desc = new Ascii($ifd->getType(), 0x010E, ['Hello?']);
+        $date = new Time($ifd->getType(), 0x0132, [12345678]);
 
         $ifd->addEntry($desc);
         $ifd->addEntry($date);
@@ -38,8 +38,8 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $this->assertEquals(sizeof($ifd->getIterator()), 0);
 
-        $desc = new Ascii(0x010E, 'Hello?');
-        $date = new Time(0x0132, 12345678);
+        $desc = new Ascii($ifd->getType(), 0x010E, ['Hello?']);
+        $date = new Time($ifd->getType(), 0x0132, [12345678]);
 
         $ifd[] = $desc;
         $ifd[] = $date;
