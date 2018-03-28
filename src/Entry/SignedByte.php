@@ -17,35 +17,19 @@ use ExifEye\core\Format;
 class SignedByte extends NumberBase
 {
     /**
-     * Make a new entry that can hold a signed byte.
-     *
-     * The method accept several integer arguments. The {@link getValue}
-     * method will always return an array except for when a single
-     * integer argument is given here.
-     *
-     * @param int $tag
-     *            the tag which this entry represents. This
-     *            should be one of the constants defined in {@link PelTag}
-     *            which has format {@link Format::BYTE}.
-     *
-     * @param int $value...
-     *            the byte(s) that this entry will represent.
-     *            The argument passed must obey the same rules as the argument to
-     *            {@link setValue}, namely that it should be within range of a
-     *            signed byte, that is between -128 and 127 (inclusive). If not,
-     *            then a {@link OverflowException} will be thrown.
+     * {@inheritdoc}
      */
-    public function __construct($tag, $value = null)
-    {
-        $this->tag = $tag;
-        $this->min = - 128;
-        $this->max = 127;
-        $this->format = Format::SBYTE;
+    protected $min = -128;
 
-        $value = func_get_args();
-        array_shift($value);
-        $this->setValueArray($value);
-    }
+    /**
+     * {@inheritdoc}
+     */
+    protected $max = 127;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::SBYTE;
 
     /**
      * Get arguments for the instance constructor from file data.

@@ -31,45 +31,19 @@ use ExifEye\core\Utility\Convert;
 class Short extends NumberBase
 {
     /**
-     * Make a new entry that can hold an unsigned short.
-     *
-     * The method accept several integer arguments. The {@link
-     * getValue} method will always return an array except for when a
-     * single integer argument is given here.
-     *
-     * This means that one can conveniently use objects like this:
-     * <code>
-     * $a = new Short(PelTag::EXIF_IMAGE_HEIGHT, 42);
-     * $b = $a->getValue() + 314;
-     * </code>
-     * where the call to {@link getValue} will return an integer
-     * instead of an array with one integer element, which would then
-     * have to be extracted.
-     *
-     * @param int $tag
-     *            the tag which this entry represents. This should be
-     *            one of the constants defined in {@link PelTag}, e.g., {@link
-     *            PelTag::IMAGE_WIDTH}, {@link PelTag::ISO_SPEED_RATINGS},
-     *            or any other tag with format {@link Format::SHORT}.
-     * @param int $value...
-     *            the short(s) that this entry will
-     *            represent. The argument passed must obey the same rules as the
-     *            argument to {@link setValue}, namely that it should be within
-     *            range of an unsigned short, that is between 0 and 65535
-     *            (inclusive). If not, then a {@link PelOverFlowException} will be
-     *            thrown.
+     * {@inheritdoc}
      */
-    public function __construct($tag, $value = null)
-    {
-        $this->tag = $tag;
-        $this->min = 0;
-        $this->max = 65535;
-        $this->format = Format::SHORT;
+    protected $min = 0;
 
-        $value = func_get_args();
-        array_shift($value);
-        $this->setValueArray($value);
-    }
+    /**
+     * {@inheritdoc}
+     */
+    protected $max = 65535;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::SHORT;
 
     /**
      * Get arguments for the instance constructor from file data.

@@ -20,7 +20,7 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $min= -32768;
+    protected $min = -32768;
 
     /**
      * {@inheritdoc}

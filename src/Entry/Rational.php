@@ -33,37 +33,25 @@ use ExifEye\core\Format;
  */
 class Rational extends Long
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected $min = 0;
 
     /**
-     * Make a new entry that can hold an unsigned rational.
-     *
-     * @param
-     *            int the tag which this entry represents. This should
-     *            be one of the constants defined in {@link PelTag}, e.g., {@link
-     *            PelTag::X_RESOLUTION}, or any other tag which can have format
-     *            {@link Format::RATIONAL}.
-     *
-     * @param array $value...
-     *            the rational(s) that this entry will
-     *            represent. The arguments passed must obey the same rules as the
-     *            argument to {@link setValue}, namely that each argument should be
-     *            an array with two entries, both of which must be within range of
-     *            an unsigned long (32 bit), that is between 0 and 4294967295
-     *            (inclusive). If not, then a {@link OverflowException} will be
-     *            thrown.
+     * {@inheritdoc}
      */
-    public function __construct($tag, $value = null)
-    {
-        $this->tag = $tag;
-        $this->format = Format::RATIONAL;
-        $this->dimension = 2;
-        $this->min = 0;
-        $this->max = 4294967295;
+    protected $max = 4294967295;
 
-        $value = func_get_args();
-        array_shift($value);
-        $this->setValueArray($value);
-    }
+    /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::RATIONAL;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $dimension = 2;
 
     /**
      * Get arguments for the instance constructor from file data.
