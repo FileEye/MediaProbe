@@ -159,12 +159,19 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
         }
 
         for ($i = 0; $i < $n; $i++) {
-            $tag = Tag::loadFromData($d, $offset + 12 * $i, [
-                'nesting_level' => $nesting_level,
-                'current' => $i + 1,
-                'total' => $n,
-                'ifd_id' => $this->type,
-            ]);
+            $tag = Tag::loadFromData($d, $offset + 12 * $i, ['ifd_id' => $this->getType()]);
+            ExifEye::debug(
+                str_repeat("  ", $options['nesting_level']) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d Value: %d%s (%d of %d)...',
+                $tag->getId(),
+                $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
+                $tag->getFormat(),
+                Format::getName($tag->getFormat()),
+                $tag->getComponents(),
+                $tag->getValue(),
+                $tag->isOffset() ? ' (offset)' : '',
+                $i + 1,
+                $n
+            );
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag->getId())) {

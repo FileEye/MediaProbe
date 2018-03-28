@@ -15,6 +15,9 @@ abstract class BlockBase
      * @var string
      */
     protected $type;
+    protected $id;
+    protected $name;
+    protected $hasSpecification;
 
     /**
      * Returns the type of this block.
@@ -24,6 +27,21 @@ abstract class BlockBase
     public function getType()
     {
         return $this->type;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function hasSpecification()
+    {
+        return $this->hasSpecification;
     }
 
     /**
