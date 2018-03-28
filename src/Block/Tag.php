@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 
 /**
