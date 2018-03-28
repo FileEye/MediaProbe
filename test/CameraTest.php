@@ -60,7 +60,12 @@ class CameraTest extends ExifEyeTestCaseBase
         if (isset($expected['entries'])) {
             $this->assertCount(count($expected['entries']), $ifd->getEntries());
             foreach ($expected['entries'] as $test_entry => $test_entry_data) {
-                $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
+                $matches = [];
+                if (preg_match('/\[\[\[(\d.)\]\]\]/', $test_entry, $matches) === 1) {
+                    $entry = $ifd->getEntry((int) $matches[1]);
+                } else {
+                    $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
+                }
                 $this->assertInstanceOf($test_entry_data['class'], $entry, "Block: '{$ifd->getName()}' Entry: '$test_entry'");
                 $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue(), "Block: '{$ifd->getName()}' Entry: '$test_entry'");
                 $this->assertEquals($test_entry_data['text'], $entry->getText(), "Block: '{$ifd->getName()}' Entry: '$test_entry'");
