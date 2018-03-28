@@ -167,18 +167,82 @@ blocks:
                     AppleMakerNotes:
                         class: ExifEye\core\Block\IfdMakerNoteApple
                         entries:
+                            '[[[1]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:9;'
+                                text: 9
+                            '[[[2]]]':
+                                class: ExifEye\core\Entry\Undefined
+                                value: !!binary czo1NTg6ImJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
+                                text: (undefined)
                             RunTime:
                                 class: ExifEye\core\Entry\Undefined
                                 value: !!binary czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
                                 text: (undefined)
+                            '[[[4]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:1;'
+                                text: 1
+                            '[[[5]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:165;'
+                                text: 165
+                            '[[[6]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:162;'
+                                text: 162
+                            '[[[7]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:1;'
+                                text: 1
                             AccelerationVector:
                                 class: ExifEye\core\Entry\SignedRational
                                 value: 'a:3:{i:0;a:2:{i:0;i:-6707;i:1;i:6713;}i:1;a:2:{i:0;i:281;i:1;i:3621;}i:2;a:2:{i:0;i:583;i:1;i:5235;}}'
                                 text: '-6707/6713, 281/3621, 583/5235'
+                            '[[[12]]]':
+                                class: ExifEye\core\Entry\SignedRational
+                                value: 'a:2:{i:0;a:2:{i:0;i:137;i:1;i:256;}i:1;a:2:{i:0;i:61;i:1;i:32;}}'
+                                text: '137/256, 61/32'
+                            '[[[13]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:40;'
+                                text: 40
+                            '[[[14]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:4;'
+                                text: 4
+                            '[[[16]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:1;'
+                                text: 1
                             ContentIdentifier:
                                 class: ExifEye\core\Entry\Ascii
                                 value: 's:36:"6AB558E4-C30A-487F-9443-29F4B3CC1F4E";'
                                 text: 6AB558E4-C30A-487F-9443-29F4B3CC1F4E
+                            '[[[20]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:1;'
+                                text: 1
+                            '[[[22]]]':
+                                class: ExifEye\core\Entry\Ascii
+                                value: 's:28:"Aaonjq1yJePknSSYF/Tu0r00cTL9";'
+                                text: Aaonjq1yJePknSSYF/Tu0r00cTL9
+                            '[[[23]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:0;'
+                                text: 0
+                            '[[[25]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:0;'
+                                text: 0
+                            '[[[26]]]':
+                                class: ExifEye\core\Entry\Ascii
+                                value: 's:5:"q825s";'
+                                text: q825s
+                            '[[[31]]]':
+                                class: ExifEye\core\Entry\SignedLong
+                                value: 'i:0;'
+                                text: 0
             GPS:
                 class: ExifEye\core\Block\Ifd
                 entries:
@@ -189,7 +253,7 @@ blocks:
                     GPSLatitude:
                         class: ExifEye\core\Entry\Rational
                         value: 'a:3:{i:0;a:2:{i:0;i:46;i:1;i:1;}i:1;a:2:{i:0;i:32;i:1;i:1;}i:2;a:2:{i:0;i:4540;i:1;i:100;}}'
-                        text: '46° 32'' 45.4" (46.55°)'
+                        text: '46Â° 32'' 45.4" (46.55Â°)'
                     GPSLongitudeRef:
                         class: ExifEye\core\Entry\Ascii
                         value: 's:1:"E";'
@@ -197,7 +261,7 @@ blocks:
                     GPSLongitude:
                         class: ExifEye\core\Entry\Rational
                         value: 'a:3:{i:0;a:2:{i:0;i:11;i:1;i:1;}i:1;a:2:{i:0;i:59;i:1;i:1;}i:2;a:2:{i:0;i:3525;i:1;i:100;}}'
-                        text: '11° 59'' 35.25" (11.99°)'
+                        text: '11Â° 59'' 35.25" (11.99Â°)'
                     GPSAltitudeRef:
                         class: ExifEye\core\Entry\Byte
                         value: 'i:0;'
@@ -238,49 +302,49 @@ errors:
     entries:
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0001 in IFD ''AppleMakerNotes'', skipping (1 of 19)...'
+            message: 'Unknown TAG 0x0001 in IFD ''AppleMakerNotes'' (1 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0002 in IFD ''AppleMakerNotes'', skipping (2 of 19)...'
+            message: 'Unknown TAG 0x0002 in IFD ''AppleMakerNotes'' (2 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0004 in IFD ''AppleMakerNotes'', skipping (4 of 19)...'
+            message: 'Unknown TAG 0x0004 in IFD ''AppleMakerNotes'' (4 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0005 in IFD ''AppleMakerNotes'', skipping (5 of 19)...'
+            message: 'Unknown TAG 0x0005 in IFD ''AppleMakerNotes'' (5 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0006 in IFD ''AppleMakerNotes'', skipping (6 of 19)...'
+            message: 'Unknown TAG 0x0006 in IFD ''AppleMakerNotes'' (6 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0007 in IFD ''AppleMakerNotes'', skipping (7 of 19)...'
+            message: 'Unknown TAG 0x0007 in IFD ''AppleMakerNotes'' (7 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x000C in IFD ''AppleMakerNotes'', skipping (9 of 19)...'
+            message: 'Unknown TAG 0x000C in IFD ''AppleMakerNotes'' (9 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x000D in IFD ''AppleMakerNotes'', skipping (10 of 19)...'
+            message: 'Unknown TAG 0x000D in IFD ''AppleMakerNotes'' (10 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x000E in IFD ''AppleMakerNotes'', skipping (11 of 19)...'
+            message: 'Unknown TAG 0x000E in IFD ''AppleMakerNotes'' (11 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0010 in IFD ''AppleMakerNotes'', skipping (12 of 19)...'
+            message: 'Unknown TAG 0x0010 in IFD ''AppleMakerNotes'' (12 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0014 in IFD ''AppleMakerNotes'', skipping (14 of 19)...'
+            message: 'Unknown TAG 0x0014 in IFD ''AppleMakerNotes'' (14 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0016 in IFD ''AppleMakerNotes'', skipping (15 of 19)...'
+            message: 'Unknown TAG 0x0016 in IFD ''AppleMakerNotes'' (15 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0017 in IFD ''AppleMakerNotes'', skipping (16 of 19)...'
+            message: 'Unknown TAG 0x0017 in IFD ''AppleMakerNotes'' (16 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0019 in IFD ''AppleMakerNotes'', skipping (17 of 19)...'
+            message: 'Unknown TAG 0x0019 in IFD ''AppleMakerNotes'' (17 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x001A in IFD ''AppleMakerNotes'', skipping (18 of 19)...'
+            message: 'Unknown TAG 0x001A in IFD ''AppleMakerNotes'' (18 of 19)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x001F in IFD ''AppleMakerNotes'', skipping (19 of 19)...'
+            message: 'Unknown TAG 0x001F in IFD ''AppleMakerNotes'' (19 of 19)...'

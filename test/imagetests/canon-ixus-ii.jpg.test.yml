@@ -182,6 +182,14 @@ blocks:
                                 class: ExifEye\core\Entry\Short
                                 value: 'a:4:{i:0;i:2;i:1;i:215;i:2;i:213;i:3;i:159;}'
                                 text: '2, 215, 213, 159'
+                            '[[[3]]]':
+                                class: ExifEye\core\Entry\Short
+                                value: 'a:4:{i:0;i:1024;i:1;i:0;i:2;i:0;i:3;i:0;}'
+                                text: '1024, 0, 0, 0'
+                            '[[[0]]]':
+                                class: ExifEye\core\Entry\Short
+                                value: 'a:4:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;}'
+                                text: '0, 0, 0, 0'
                             PictureInfo:
                                 class: ExifEye\core\Entry\Short
                                 value: 'a:28:{i:0;i:9;i:1;i:9;i:2;i:640;i:3;i:480;i:4;i:2048;i:5;i:256;i:6;i:369;i:7;i:42;i:8;i:65166;i:9;i:0;i:10;i:370;i:11;i:65166;i:12;i:0;i:13;i:370;i:14;i:65166;i:15;i:0;i:16;i:370;i:17;i:65488;i:18;i:65488;i:19;i:65488;i:20;i:0;i:21;i:0;i:22;i:0;i:23;i:48;i:24;i:48;i:25;i:48;i:26;i:1;i:27;i:2;}'
@@ -460,10 +468,10 @@ errors:
     entries:
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0003 in IFD ''CanonMakerNotes'', skipping (3 of 14)...'
+            message: 'Unknown TAG 0x0003 in IFD ''CanonMakerNotes'' (3 of 14)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0000 in IFD ''CanonMakerNotes'', skipping (5 of 14)...'
+            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'' (5 of 14)...'
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'No specification available for TAG 0x0000 in IFD ''CanonMakerNotes'', skipping (6 of 14)...'
+            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'' (6 of 14)...'
