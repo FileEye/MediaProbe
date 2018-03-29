@@ -4,6 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
+use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Ascii;
 use ExifEye\core\Entry\Byte;
@@ -37,7 +38,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
-            $ifd->addEntry($entry);
+            $tag = new Tag($entry->getIfdType(), $entry->getId(), $entry->getFormat(), $entry->getComponents(), null/* xx */);
+            $ifd->xxAddSubBlock($tag);
+            $tag->xxAddEntry($entry);
         }
 
         $tiff = new Tiff();
