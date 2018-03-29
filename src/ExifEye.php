@@ -259,7 +259,7 @@ class ExifEye
         if (self::$debug) {
             $args = func_get_args();
             $str = array_shift($args);
-            vprintf($str . "\n", $args);
+            //vprintf($str . "\n", $args);
 dump(sprintf($str . "\n", $args));
         }
     }
