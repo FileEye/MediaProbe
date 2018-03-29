@@ -43,7 +43,7 @@ class GH16Test extends ExifEyeTestCaseBase
         $entry = new WindowsString($ifd0->getType(), 0x9C9F, [$subject]); /* xx */
         $tag = new Tag($ifd0->getType(), 0x9C9F, $entry->getFormat(), $entry->getComponents(), null/* xx */);
         $ifd0->xxAddSubBlock($tag);
-        $tag->xxAddEntry($entry);
+        $tag->setEntry($entry);
         $this->assertCount(1, $ifd0->xxGetSubBlocks());
 
         file_put_contents($this->file, $jpeg->getBytes());
@@ -53,7 +53,7 @@ class GH16Test extends ExifEyeTestCaseBase
         $tiff = $exif->getTiff();
         $ifd0 = $tiff->getIfd();
         $this->assertCount(1, $ifd0->xxGetSubBlocks());
-        $written_subject = $ifd0->xxGetTagByName('WindowsXPSubject')->xxGetEntry()->getValue();
+        $written_subject = $ifd0->xxGetTagByName('WindowsXPSubject')->getEntry()->getValue();
         $this->assertEquals($subject, $written_subject);
     }
 }

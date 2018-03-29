@@ -47,10 +47,10 @@ class Bug3017880Test extends ExifEyeTestCaseBase
                 $software = new Ascii($ifd0->getType(), 0x0131, [$software_name]); /* xx */
                 $tag = new Tag($ifd0->getType(), 0x0131, $software->getFormat(), $software->getComponents(), null/* xx */);
                 $ifd0->xxAddSubBlock($tag);
-                $tag->xxAddEntry($software);
+                $tag->setEntry($software);
                 $resave_file = 1;
             } else {
-                $software_tag->xxGetEntry()->setValue([$software_name]);
+                $software_tag->getEntry()->setValue([$software_name]);
                 $resave_file = 1;
             }
 

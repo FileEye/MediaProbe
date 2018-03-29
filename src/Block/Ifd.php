@@ -227,7 +227,7 @@ class Ifd extends BlockBase
 
             // Load a TAG entry.
             if ($entry = EntryBase::createFromData($this->type, $tag->getId(), $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
-                $tag->xxAddEntry($entry);
+                $tag->setEntry($entry);
                 $this->xxAppendSubBlock($tag);
             }
         }
@@ -576,15 +576,15 @@ class Ifd extends BlockBase
 
         foreach ($this->xxGetSubBlocks() as $tag => $sub_block) {
             /* Each entry is 12 bytes long. */
-            $bytes .= Convert::shortToBytes($sub_block->xxGetEntry()->getId(), $order);
-            $bytes .= Convert::shortToBytes($sub_block->xxGetEntry()->getFormat(), $order);
-            $bytes .= Convert::longToBytes($sub_block->xxGetEntry()->getComponents(), $order);
+            $bytes .= Convert::shortToBytes($sub_block->getEntry()->getId(), $order);
+            $bytes .= Convert::shortToBytes($sub_block->getEntry()->getFormat(), $order);
+            $bytes .= Convert::longToBytes($sub_block->getEntry()->getComponents(), $order);
 
             /*
              * Size? If bigger than 4 bytes, the actual data is not in
              * the entry but somewhere else.
              */
-            $data = $sub_block->xxGetEntry()->getBytes($order);
+            $data = $sub_block->getEntry()->getBytes($order);
             $s = strlen($data);
             if ($s > 4) {
                 ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
@@ -677,7 +677,7 @@ class Ifd extends BlockBase
         $str = ExifEye::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->xxGetSubBlocks()));
 
         foreach ($this->xxGetSubBlocks() as $sub_block) {
-            $str .= $sub_block->xxGetEntry()->__toString();
+            $str .= $sub_block->getEntry()->__toString();
         }
         $str .= ExifEye::fmt("Dumping %d sub IFDs...\n", count($this->sub));
 

@@ -45,6 +45,13 @@ abstract class BlockBase
     protected $subBlocks = [];
 
     /**
+     * The block's associated entry.
+     *
+     * @var EntryBase[]
+     */
+    protected $entry;
+
+    /**
      * Returns the type of this block.
      *
      * @return int
@@ -135,5 +142,27 @@ abstract class BlockBase
     public function xxGetSubBlocks()
     {
         return $this->subBlocks;
+    }
+
+    /**
+     * Sets the block's associated entry.
+     *
+     * @param EntryBase $entry
+     *
+     * @return $this
+     */
+    public function setEntry(EntryBase $entry)
+    {
+        $this->entry = $entry;
+    }
+
+    /**
+     * Gets the block's associated entry.
+     *
+     * @return EntryBase
+     */
+    public function getEntry()
+    {
+        return $this->entry;
     }
 }

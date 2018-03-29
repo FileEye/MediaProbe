@@ -120,17 +120,17 @@ class MakerNote extends Undefined
 
         // Get Model tag from IFD0.
         $model_tag = $ifd->xxGetTagByName('Model');
-        $model = $model_tag ? $model_tag->xxGetEntry()->getValue() : 'na';
+        $model = $model_tag ? $model_tag->getEntry()->getValue() : 'na';
 
         // Get maker note IFD id.
-        if (!$maker_note_ifd_id = Spec::getMakerNoteIfd($make_tag->xxGetEntry()->getValue(), $model)) {
+        if (!$maker_note_ifd_id = Spec::getMakerNoteIfd($make_tag->getEntry()->getValue(), $model)) {
             return;
         }
 
         // Load maker note into IFD.
         $ifd_class = Spec::getIfdClass($maker_note_ifd_id);
         $ifd = new $ifd_class($maker_note_ifd_id);
-        $ifd->load($d, $maker_note_tag->xxGetEntry()->getDataOffset());
+        $ifd->load($d, $maker_note_tag->getEntry()->getDataOffset());
         $exif_ifd->addSubIfd($ifd);
     }
 }

@@ -93,7 +93,7 @@ class IfdIndexShort extends Ifd
             }
             if ($entry = EntryBase::createNew($this->type, $i + 1, [$item_value])) {
                 $tag = new Tag($this->getType(), $i + 1, $entry->getFormat(), $entry->getComponents(), null/* xx */);
-                $tag->xxAddEntry($entry);
+                $tag->setEntry($entry);
                 $this->xxAppendSubBlock($tag);
             }
         }

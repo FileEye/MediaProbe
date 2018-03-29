@@ -151,17 +151,17 @@ class DumpCommand extends Command
 
         $tag_id = $tag->getId();
         $tag_name = $tag->getName();
-        $entry = $tag->xxGetEntry();
-        
+        $entry = $tag->getEntry();
+
         $json['tags'][] = [
             'id' => $tag_id,
             'name' => $tag_name,
-            'entries' => [
-                [
-                      'class' => get_class($entry),
-                      'value' => serialize($entry->getValue()),
-                      'text' => $entry->getText(),
-                ],
+            'entry' => [
+                'class' => get_class($entry),
+                'format' => Format::getName($entry->getFormat()),
+                'components' => $entry->getComponents(),
+                'value' => serialize($entry->getValue()),
+                'text' => $entry->getText(),
             ],
         ];
     }
