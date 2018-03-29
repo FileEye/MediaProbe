@@ -66,7 +66,7 @@ class CameraTest extends ExifEyeTestCaseBase
                 $entry = $tags[$i]->xxGetEntry();
                 $this->assertInstanceOf($expected['tags'][$i]['entries'][0]['class'], $entry, "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
                 $this->assertEquals(unserialize($expected['tags'][$i]['entries'][0]['value']), $entry->getValue(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals($expected['tags'][$i]['entries'][0]['text'], $entry->getText().'xx', "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals($expected['tags'][$i]['entries'][0]['text'], $entry->getText(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
             }
         }
 
