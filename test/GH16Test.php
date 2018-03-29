@@ -19,6 +19,7 @@ class GH16Test extends ExifEyeTestCaseBase
         $this->file = dirname(__FILE__) . '/images/gh-16-tmp.jpg';
         $file = dirname(__FILE__) . '/images/gh-16.jpg';
         copy($file, $this->file);
+ExifEye::setStrictParsing(true);
     }
 
     public function tearDown()
@@ -52,7 +53,7 @@ class GH16Test extends ExifEyeTestCaseBase
                 $tiff->setIfd($ifd0);
             }
         }
-        $entry = new WindowsString($ifd0->getType(), 0x9C9F, [$subject, true]); /* xx */
+        $entry = new WindowsString($ifd0->getType(), 0x9C9F, [$subject]); /* xx */
         $tag = new Tag($ifd0->getType(), 0x9C9F, $entry->getFormat(), $entry->getComponents(), null/* xx */);
         $ifd0->xxAddSubBlock($tag);
         $tag->xxAddEntry($entry);
