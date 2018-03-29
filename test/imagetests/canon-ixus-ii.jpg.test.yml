@@ -77,7 +77,7 @@ blocks:
                         text: f/3.2
                     ExposureBiasValue:
                         class: ExifEye\core\Entry\SignedRational
-                        value: 'a:2:{i:0;i:-1;i:1;i:3;}'
+                        value: 'a:2:{i:0;d:-1;i:1;i:3;}'
                         text: '-0.3'
                     MaxApertureValue:
                         class: ExifEye\core\Entry\Rational
@@ -95,6 +95,10 @@ blocks:
                         class: ExifEye\core\Entry\Rational
                         value: 'a:2:{i:0;i:215;i:1;i:32;}'
                         text: '6.7 mm'
+                    MakerNote:
+                        class: ExifEye\core\Entry\MakerNote
+                        value: !!binary czo1OTA6Ig4AAQADAC4AAABcBAAAAgADAAQAAAC4BAAAAwADAAQAAADABAAABAADACIAAADIBAAAAAADAAYAAAAMBQAAAAADAAQAAAAYBQAAEgADABwAAAAgBQAAEwADAAQAAABYBQAABgACACAAAABgBQAABwACABgAAACABQAACAAEAAEAAAB8VxIACQACACAAAACYBQAAEAAEAAEAAAAAACMBDQADACIAAAC4BQAAAAAAAFwAAgAAAAIAAAAAAAAABAAAAAEAAgABAAAAAAAAAAAADwADAAEAAUAAAAAA//9aAa0AIABqAL4AAAAAAAAAAAAAAAEA//8AAAAIAAgAAAAAAwAAAP9/AAAAAAAAAgDXANUAnwAABAAAAAAAAEQAAACAAIEAawCdAPT/BAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEANgAAAGoAoQAAAAAAAQD6AAEAAAAAAAAAAAAAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAkAgALgAQAIAAFxASoAjv4AAHIBjv4AAHIBjv4AAHIB0P/Q/9D/AAAAAAAAMAAwADAAAQACAAAAAAAAAAAASU1HOkRJR0lUQUwgSVhVUyBJSSBKUEVHAAAAAAAAAABGaXJtd2FyZSBWZXJzaW9uIDEuMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQACQDaAdsB0QHZAdkB2wHbAdsB2gFAAAAAAACi/wEAAAAKAAAA+/8KACADbQABAP//uwMAAAAAAAAAAAAAbAAAAAYAIjs=
+                        text: '590 bytes unknown MakerNote data'
                     UserComment:
                         class: ExifEye\core\Entry\UserComment
                         value: "s:256:\"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\";"

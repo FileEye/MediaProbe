@@ -107,6 +107,10 @@ blocks:
                         class: ExifEye\core\Entry\Short
                         value: 'a:4:{i:0;i:2015;i:1;i:1511;i:2;i:2217;i:3;i:1330;}'
                         text: 'Within rectangle (width 2015, height 1511) around (x,y) = (2217,1330)'
+                    MakerNote:
+                        class: ExifEye\core\Entry\MakerNote
+                        value: !!binary czo5MjQ6IkFwcGxlIGlPUwAAAU1NAA8AAQAJAAAAAQAAAAkAAgAHAAACLgAAAMgAAwAHAAAAaAAAAvYABAAJAAAAAQAAAAEABQAJAAAAAQAAAN0ABgAJAAAAAQAAAN8ABwAJAAAAAQAAAAEACAAKAAAAAwAAA14ACQAJAAAAAQAAERMADgAJAAAAAQAAAAQAEQACAAAAJQAAA3YAFAAJAAAAAQAAAAQAFwAJAAAAAQAAAAAAGQAJAAAAAQAAAAAAHwAJAAAAAQAAAAAAAAAAYnBsaXN0MDBPEQIARAENAewA4ADCADYBUAGlAK8AlwCHAOcAlwCHAHMAXACVAMcAnwCPAbQAnwGoAbwAoACaAJ0AHQGMAJMAegBjAIgAxwDNAFABCwEvAVUBFwHIAI0AyAAoAYcArgCDAGYAmQDIAHcBqQE4ASgB+wAZAagAlADVADMBfADCAIYAcACNAIkAaAHuAUAB+wDkADMBEgEEAfwABgHgAOgAogBqAG4ApwBUAbYBTgHMANQAZwFJAT0BKwEYAQsB7gCxAHUAeAC9AD4BbQFaAUwBVgFyAVkBhAE2AR0B9QDaAMEAswBxAJIAGQFdAUEBpQF7AV0BVAGSAUIBMgH0AAYBwADFAOMABAE7AWABcgGjAYoBQwFHAWkBPAEtAfAABQHdAM8AUwCSABkBWQFgAUwBEgExAUUBTQElARkB/QD+AMgArwBOAFYAXQBcAFwAWABVAN0AtQCvACkBBAHVAOMAkAB/AEwAUgBXAFMAUQBUAFAA2QBsAFoAOwHnAF4AXwAnADEASgBRAFYAVQBOAE8ATQDLAGMAWwA3AcwAYQBuAFMAMQABAe4ApQClAHEATgBLALwAcABVACsBwwBeAHkAbAAzAPQAHwH2APYA+gDLAHwAsgB1AFEAEQGqAGAA/AB0AEEAmABbATIB/gCRAI8AsQDaAJEAVgANAd8AzABQAWwAUAAACAAAAAAAAAIBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAIMYnBsaXN0MDDUAQIDBAUGBwhVZmxhZ3NVdmFsdWVZdGltZXNjYWxlVWVwb2NoEAETAAFgoar+bqgSO5rKABAACBEXHSctLzg9AAAAAAAAAQEAAAAAAAAACQAAAAAAAAAAAAAAAAAAAD8AAAR7AAAwZf//8ycAABcg///1dgAAC3cyODNERDFENC01M0M3LTRDOUMtQkIyMy1GREY5Rjk1NDM2RDEAACI7
+                        text: '924 bytes unknown MakerNote data'
                     SubSecTimeOriginal:
                         class: ExifEye\core\Entry\Ascii
                         value: 's:3:"160";'
@@ -201,7 +205,7 @@ blocks:
                                 text: 1
                             AccelerationVector:
                                 class: ExifEye\core\Entry\SignedRational
-                                value: 'a:3:{i:0;a:2:{i:0;i:1147;i:1;i:12389;}i:1;a:2:{i:0;i:-3289;i:1;i:5920;}i:2;a:2:{i:0;i:-2698;i:1;i:2935;}}'
+                                value: 'a:3:{i:0;a:2:{i:0;i:1147;i:1;i:12389;}i:1;a:2:{i:0;d:-3289;i:1;i:5920;}i:2;a:2:{i:0;d:-2698;i:1;i:2935;}}'
                                 text: '1147/12389, -3289/5920, -2698/2935'
                             '[[[9]]]':
                                 class: ExifEye\core\Entry\SignedLong
@@ -317,37 +321,37 @@ errors:
     entries:
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0001 in IFD ''AppleMakerNotes'' (1 of 15)...'
+            message: 'Unknown TAG 0x0001 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0002 in IFD ''AppleMakerNotes'' (2 of 15)...'
+            message: 'Unknown TAG 0x0002 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0004 in IFD ''AppleMakerNotes'' (4 of 15)...'
+            message: 'Unknown TAG 0x0004 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0005 in IFD ''AppleMakerNotes'' (5 of 15)...'
+            message: 'Unknown TAG 0x0005 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0006 in IFD ''AppleMakerNotes'' (6 of 15)...'
+            message: 'Unknown TAG 0x0006 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0007 in IFD ''AppleMakerNotes'' (7 of 15)...'
+            message: 'Unknown TAG 0x0007 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0009 in IFD ''AppleMakerNotes'' (9 of 15)...'
+            message: 'Unknown TAG 0x0009 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x000E in IFD ''AppleMakerNotes'' (10 of 15)...'
+            message: 'Unknown TAG 0x000E in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0014 in IFD ''AppleMakerNotes'' (12 of 15)...'
+            message: 'Unknown TAG 0x0014 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0017 in IFD ''AppleMakerNotes'' (13 of 15)...'
+            message: 'Unknown TAG 0x0017 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0019 in IFD ''AppleMakerNotes'' (14 of 15)...'
+            message: 'Unknown TAG 0x0019 in IFD ''AppleMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x001F in IFD ''AppleMakerNotes'' (15 of 15)...'
+            message: 'Unknown TAG 0x001F in IFD ''AppleMakerNotes'''
