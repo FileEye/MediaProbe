@@ -257,10 +257,9 @@ class ExifEye
     public static function debug($format)
     {
         if (self::$debug) {
-            //$args = func_get_args();
-            //$str = array_shift($args);
-            //vprintf($str . "\n", $args);
-dump(func_get_args());
+            $args = func_get_args();
+            $str = array_shift($args);
+            vprintf($str . "\n", $args);
         }
     }
 

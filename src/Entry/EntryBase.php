@@ -81,10 +81,8 @@ abstract class EntryBase
      * @param array $data
      *            the data that this entry will be holding.
      */
-    public function __construct($block_id, $entry_id, array $data)
+    public function __construct(array $data)
     {
-        $this->blockId = $block_id;
-        $this->id = $entry_id;
         $this->setValue($data);
     }
 
