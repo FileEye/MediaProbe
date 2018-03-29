@@ -13,6 +13,7 @@ use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Entry\JpegContent;
 use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -125,9 +126,9 @@ class DumpCommand extends Command
 
     protected function ifdToTest($name, $number, Ifd $ifd, &$json)
     {
-        $entries = $ifd->getEntries();
-        foreach ($entries as $tag => $entry) {
-            $this->entryToTest('$entry', $entry, $ifd, $json);
+        $tags = $ifd->xxGetSubBlocks();
+        foreach ($tags as $tag) {
+            $this->tagToTest('$tag', $tag, $ifd, $json);
         }
         $sub_ifds = $ifd->getSubIfds();
         $n = 0;
@@ -144,15 +145,24 @@ class DumpCommand extends Command
         }*/
     }
 
-    protected function entryToTest($name, EntryBase $entry, Ifd $ifd, &$json)
+    protected function tagToTest($name, Tag $tag, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getType();
 
-        $tag_name = Spec::getTagName($ifd_type, $entry->getId());
-        $tag_name = $tag_name ?: '[[[' . $entry->getId() . ']]]';
-
-        $json['entries'][$tag_name]['class'] = get_class($entry);
-        $json['entries'][$tag_name]['value'] = serialize($entry->getValue());
-        $json['entries'][$tag_name]['text'] = $entry->getText();
+        $tag_id = $tag->getId();
+        $tag_name = $tag->getName();
+        $entry = $tag->xxGetEntry();
+        
+        $json['tags'][] = [
+            'id' => $tag_id;
+            'name' => $tag_name,
+            'entries' => [
+                [
+                      'class' => get_class($entry),
+                      'value' => serialize($entry->getValue()),
+                      'text' => $entry->getText(),
+                ],
+            ],
+        ];
     }
 }
