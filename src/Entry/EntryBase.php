@@ -104,7 +104,7 @@ abstract class EntryBase
     final public static function createNew($ifd_id, $tag_id, array $arguments)
     {
         $class = Spec::getTagClass($ifd_id, $tag_id);
-        return new $class($ifd_id, $tag_id, $arguments);
+        return new $class($arguments);
     }
 
     /**
@@ -157,7 +157,7 @@ abstract class EntryBase
         try {
             $class = Spec::getTagClass($ifd_id, $tag_id, $format);
             $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $sub_data, $data_offset);
-            return new $class($ifd_id, $tag_id, $arguments);
+            return new $class($arguments);
         } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store
             // otherwise.
@@ -187,30 +187,6 @@ abstract class EntryBase
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         throw new ExifEyeException('getInstanceArgumentsFromData() must be implemented.');
-    }
-
-    /**
-     * Returns the ID of this entry.
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Return the type of IFD which holds this entry.
-     *
-     * @return int one of the constants defined in {@link Ifd}:
-     *         {@link Ifd::IFD0} for the main image IFD, {@link Ifd::IFD1}
-     *         for the thumbnail image IFD, {@link Ifd::EXIF} for the Exif
-     *         sub-IFD, {@link Ifd::GPS} for the GPS sub-IFD, or {@link
-     *         Ifd::INTEROPERABILITY} for the interoperability sub-IFD.
-     */
-    public function getIfdType()
-    {
-        return $this->blockId;
     }
 
     /**
@@ -294,13 +270,13 @@ abstract class EntryBase
      */
     public function __toString()
     {
-        $entry_name = Spec::getTagName($this->getIfdType(), $this->id) ?: '*** UNKNOWN ***';
-        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, $entry_name);
-        $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
+//        $entry_name = Spec::getTagName($this->getIfdType(), $this->id) ?: '*** UNKNOWN ***';
+//        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, $entry_name);
+        $str = ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
-        if ($this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'PrintIM')) {
+//        if ($this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'MakerNote') && $this->getId() != Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'PrintIM')) {
             $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
-        }
+//        }
         $str .= ExifEye::fmt("    Text      : %s\n", $this->getText());
         return $str;
     }
