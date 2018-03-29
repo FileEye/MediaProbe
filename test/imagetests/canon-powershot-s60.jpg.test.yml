@@ -2,480 +2,948 @@ jpeg: canon-powershot-s60.jpg
 blocks:
     IFD0:
         class: ExifEye\core\Block\Ifd
-        entries:
-            Make:
-                class: ExifEye\core\Entry\Ascii
-                value: 's:5:"Canon";'
-                text: Canon
-            Model:
-                class: ExifEye\core\Entry\Ascii
-                value: 's:19:"Canon PowerShot S60";'
-                text: 'Canon PowerShot S60'
-            Orientation:
-                class: ExifEye\core\Entry\Short
-                value: 'i:1;'
-                text: 'top - left'
-            XResolution:
-                class: ExifEye\core\Entry\Rational
-                value: 'a:2:{i:0;i:180;i:1;i:1;}'
-                text: 180/1
-            YResolution:
-                class: ExifEye\core\Entry\Rational
-                value: 'a:2:{i:0;i:180;i:1;i:1;}'
-                text: 180/1
-            ResolutionUnit:
-                class: ExifEye\core\Entry\Short
-                value: 'i:2;'
-                text: Inch
-            DateTime:
-                class: ExifEye\core\Entry\Time
-                value: 'd:1097316018;'
-                text: '2004:10:09 10:00:18'
-            YCbCrPositioning:
-                class: ExifEye\core\Entry\Short
-                value: 'i:1;'
-                text: centered
-        blocks:
-            Exif:
-                class: ExifEye\core\Block\Ifd
+        tags:
+            -
+                id: 271
+                name: Make
                 entries:
-                    ExposureTime:
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:1;i:1;i:8;}'
-                        text: '1/8 sec.'
-                    FNumber:
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:53;i:1;i:10;}'
-                        text: f/5.3
-                    ExifVersion:
-                        class: ExifEye\core\Entry\Version
-                        value: 'd:2.2;'
-                        text: 'Exif Version 2.2'
-                    DateTimeOriginal:
-                        class: ExifEye\core\Entry\Time
-                        value: 'd:1097316018;'
-                        text: '2004:10:09 10:00:18'
-                    DateTimeDigitized:
-                        class: ExifEye\core\Entry\Time
-                        value: 'd:1097316018;'
-                        text: '2004:10:09 10:00:18'
-                    ComponentsConfiguration:
-                        class: ExifEye\core\Entry\Undefined
-                        value: !!binary czo0OiIBAgMAIjs=
-                        text: 'Y Cb Cr -'
-                    CompressedBitsPerPixel:
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:2;i:1;i:1;}'
-                        text: 2/1
-                    ShutterSpeedValue:
-                        class: ExifEye\core\Entry\SignedRational
-                        value: 'a:2:{i:0;i:96;i:1;i:32;}'
-                        text: '96/32 sec. (APEX: 2)'
-                    ApertureValue:
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:154;i:1;i:32;}'
-                        text: f/5.3
-                    ExposureBiasValue:
-                        class: ExifEye\core\Entry\SignedRational
-                        value: 'a:2:{i:0;i:0;i:1;i:3;}'
-                        text: '0.0'
-                    MaxApertureValue:
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:154;i:1;i:32;}'
-                        text: 154/32
-                    MeteringMode:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:5;'
-                        text: Pattern
-                    Flash:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:16;'
-                        text: 'Flash did not fire, compulsory flash mode.'
-                    FocalLength:
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:662;i:1;i:32;}'
-                        text: '20.7 mm'
-                    MakerNote:
-                        class: ExifEye\core\Entry\MakerNote
-                        value: !!binary czo5MDQ6IhEAAQADAC4AAACABAAAAgADAAQAAADcBAAAAwADAAQAAADkBAAABAADACIAAADsBAAAAAADAAYAAAAwBQAAAAADAAQAAAA8BQAAEgADABwAAABEBQAAEwADAAQAAAB8BQAABgACACAAAACEBQAABwACABgAAACkBQAACAAEAAEAAABpQg8ACQACACAAAAC8BQAAEAAEAAEAAAAAADkBAAADAAUAAADcBQAAGAABAAABAADmBQAAGQADAAEAAAABAAAADQADACQAAADmBgAAAAAAAFwAAgAAAAIAAAAAAAAABAAAAAEAAgAAAAAAAAAAAAAADwADAAEAAUAAAP9///+WAroAIACdAMAA//8AAAAAAAAAAAAA//81ACAKIAoAAAAAAAAAAP9//38AAAAAAgCWAiIB2QAAAAAAAAAAAEQAIACAADYAmgBgAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEAagAAAJ0AYAAAAAAAAQD6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAkAgALgASAK2ADTAScALP4AANQBLP4AANQBLP4AANQB1v/W/9b/AAAAAAAAKgAqACoAIAAFAAAAAAAAAAAASU1HOlBvd2VyU2hvdCBTNjAgSlBFRwAAAAAAAAAAAABGaXJtd2FyZSBWZXJzaW9uIDEuMDAAAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAgACAIAC4AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAJAH8CfAJ8An0CegKAAnwCgQJ6AkQAAAAAAFj/AgAAAAoA/v8AAAoAdADHACUAAQDcAwAAAAAAAAAAAAAqAAAAAACAAOAASUkqAK4DAAAiOw==
-                        text: '904 bytes unknown MakerNote data'
-                    UserComment:
-                        class: ExifEye\core\Entry\UserComment
-                        value: "s:256:\"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\";"
-                        text: "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
-                    FlashPixVersion:
-                        class: ExifEye\core\Entry\Version
-                        value: 'i:1;'
-                        text: 'FlashPix Version 1.0'
-                    ColorSpace:
+                    -
+                        class: ExifEye\core\Entry\Ascii
+                        value: 's:5:"Canon";'
+                        text: Canon
+            -
+                id: 272
+                name: Model
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Ascii
+                        value: 's:19:"Canon PowerShot S60";'
+                        text: 'Canon PowerShot S60'
+            -
+                id: 274
+                name: Orientation
+                entries:
+                    -
                         class: ExifEye\core\Entry\Short
                         value: 'i:1;'
-                        text: sRGB
-                    PixelXDimension:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:640;'
-                        text: 640
-                    PixelYDimension:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:480;'
-                        text: 480
-                    FocalPlaneXResolution:
+                        text: 'top - left'
+            -
+                id: 282
+                name: XResolution
+                entries:
+                    -
                         class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:640000;i:1;i:283;}'
-                        text: 640000/283
-                    FocalPlaneYResolution:
+                        value: 'a:2:{i:0;i:180;i:1;i:1;}'
+                        text: 180/1
+            -
+                id: 283
+                name: YResolution
+                entries:
+                    -
                         class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:480000;i:1;i:212;}'
-                        text: 480000/212
-                    FocalPlaneResolutionUnit:
+                        value: 'a:2:{i:0;i:180;i:1;i:1;}'
+                        text: 180/1
+            -
+                id: 296
+                name: ResolutionUnit
+                entries:
+                    -
                         class: ExifEye\core\Entry\Short
                         value: 'i:2;'
                         text: Inch
-                    SensingMethod:
+            -
+                id: 306
+                name: DateTime
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Time
+                        value: 'd:1097316018;'
+                        text: '2004:10:09 10:00:18'
+            -
+                id: 531
+                name: YCbCrPositioning
+                entries:
+                    -
                         class: ExifEye\core\Entry\Short
-                        value: 'i:2;'
-                        text: 'One-chip color area sensor'
-                    FileSource:
-                        class: ExifEye\core\Entry\Undefined
-                        value: !!binary czoxOiIDIjs=
-                        text: DSC
-                    CustomRendered:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:0;'
-                        text: 'Normal process'
-                    ExposureMode:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:0;'
-                        text: 'Auto exposure'
-                    WhiteBalance:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:0;'
-                        text: 'Auto white balance'
-                    DigitalZoomRatio:
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:2592;i:1;i:2592;}'
-                        text: 2592/2592
-                    SceneCaptureType:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:0;'
-                        text: Standard
-                blocks:
-                    Interoperability:
-                        class: ExifEye\core\Block\Ifd
+                        value: 'i:1;'
+                        text: centered
+        blocks:
+            Exif:
+                class: ExifEye\core\Block\Ifd
+                tags:
+                    -
+                        id: 33434
+                        name: ExposureTime
                         entries:
-                            InteroperabilityIndex:
-                                class: ExifEye\core\Entry\Ascii
-                                value: 's:3:"R98";'
-                                text: R98
-                            InteroperabilityVersion:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:1;i:1;i:8;}'
+                                text: '1/8 sec.'
+                    -
+                        id: 33437
+                        name: FNumber
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:53;i:1;i:10;}'
+                                text: f/5.3
+                    -
+                        id: 36864
+                        name: ExifVersion
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Version
+                                value: 'd:2.2;'
+                                text: 'Exif Version 2.2'
+                    -
+                        id: 36867
+                        name: DateTimeOriginal
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Time
+                                value: 'd:1097316018;'
+                                text: '2004:10:09 10:00:18'
+                    -
+                        id: 36868
+                        name: DateTimeDigitized
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Time
+                                value: 'd:1097316018;'
+                                text: '2004:10:09 10:00:18'
+                    -
+                        id: 37121
+                        name: ComponentsConfiguration
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Undefined
+                                value: !!binary czo0OiIBAgMAIjs=
+                                text: 'Y Cb Cr -'
+                    -
+                        id: 37122
+                        name: CompressedBitsPerPixel
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:2;i:1;i:1;}'
+                                text: 2/1
+                    -
+                        id: 37377
+                        name: ShutterSpeedValue
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\SignedRational
+                                value: 'a:2:{i:0;i:96;i:1;i:32;}'
+                                text: '96/32 sec. (APEX: 2)'
+                    -
+                        id: 37378
+                        name: ApertureValue
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:154;i:1;i:32;}'
+                                text: f/5.3
+                    -
+                        id: 37380
+                        name: ExposureBiasValue
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\SignedRational
+                                value: 'a:2:{i:0;i:0;i:1;i:3;}'
+                                text: '0.0'
+                    -
+                        id: 37381
+                        name: MaxApertureValue
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:154;i:1;i:32;}'
+                                text: 154/32
+                    -
+                        id: 37383
+                        name: MeteringMode
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:5;'
+                                text: Pattern
+                    -
+                        id: 37385
+                        name: Flash
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:16;'
+                                text: 'Flash did not fire, compulsory flash mode.'
+                    -
+                        id: 37386
+                        name: FocalLength
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:662;i:1;i:32;}'
+                                text: '20.7 mm'
+                    -
+                        id: 37500
+                        name: MakerNote
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\MakerNote
+                                value: !!binary czo5MDQ6IhEAAQADAC4AAACABAAAAgADAAQAAADcBAAAAwADAAQAAADkBAAABAADACIAAADsBAAAAAADAAYAAAAwBQAAAAADAAQAAAA8BQAAEgADABwAAABEBQAAEwADAAQAAAB8BQAABgACACAAAACEBQAABwACABgAAACkBQAACAAEAAEAAABpQg8ACQACACAAAAC8BQAAEAAEAAEAAAAAADkBAAADAAUAAADcBQAAGAABAAABAADmBQAAGQADAAEAAAABAAAADQADACQAAADmBgAAAAAAAFwAAgAAAAIAAAAAAAAABAAAAAEAAgAAAAAAAAAAAAAADwADAAEAAUAAAP9///+WAroAIACdAMAA//8AAAAAAAAAAAAA//81ACAKIAoAAAAAAAAAAP9//38AAAAAAgCWAiIB2QAAAAAAAAAAAEQAIACAADYAmgBgAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEAagAAAJ0AYAAAAAAAAQD6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAkAgALgASAK2ADTAScALP4AANQBLP4AANQBLP4AANQB1v/W/9b/AAAAAAAAKgAqACoAIAAFAAAAAAAAAAAASU1HOlBvd2VyU2hvdCBTNjAgSlBFRwAAAAAAAAAAAABGaXJtd2FyZSBWZXJzaW9uIDEuMDAAAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAgACAIAC4AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAJAH8CfAJ8An0CegKAAnwCgQJ6AkQAAAAAAFj/AgAAAAoA/v8AAAoAdADHACUAAQDcAwAAAAAAAAAAAAAqAAAAAACAAOAASUkqAK4DAAAiOw==
+                                text: '904 bytes unknown MakerNote data'
+                    -
+                        id: 37510
+                        name: UserComment
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\UserComment
+                                value: "s:256:\"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\";"
+                                text: "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+                    -
+                        id: 40960
+                        name: FlashPixVersion
+                        entries:
+                            -
                                 class: ExifEye\core\Entry\Version
                                 value: 'i:1;'
-                                text: 'Interoperability Version 1.0'
-                            RelatedImageWidth:
+                                text: 'FlashPix Version 1.0'
+                    -
+                        id: 40961
+                        name: ColorSpace
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:1;'
+                                text: sRGB
+                    -
+                        id: 40962
+                        name: PixelXDimension
+                        entries:
+                            -
                                 class: ExifEye\core\Entry\Short
                                 value: 'i:640;'
                                 text: 640
-                            RelatedImageLength:
+                    -
+                        id: 40963
+                        name: PixelYDimension
+                        entries:
+                            -
                                 class: ExifEye\core\Entry\Short
                                 value: 'i:480;'
                                 text: 480
+                    -
+                        id: 41486
+                        name: FocalPlaneXResolution
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:640000;i:1;i:283;}'
+                                text: 640000/283
+                    -
+                        id: 41487
+                        name: FocalPlaneYResolution
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:480000;i:1;i:212;}'
+                                text: 480000/212
+                    -
+                        id: 41488
+                        name: FocalPlaneResolutionUnit
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:2;'
+                                text: Inch
+                    -
+                        id: 41495
+                        name: SensingMethod
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:2;'
+                                text: 'One-chip color area sensor'
+                    -
+                        id: 41728
+                        name: FileSource
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Undefined
+                                value: !!binary czoxOiIDIjs=
+                                text: DSC
+                    -
+                        id: 41985
+                        name: CustomRendered
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:0;'
+                                text: 'Normal process'
+                    -
+                        id: 41986
+                        name: ExposureMode
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:0;'
+                                text: 'Auto exposure'
+                    -
+                        id: 41987
+                        name: WhiteBalance
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:0;'
+                                text: 'Auto white balance'
+                    -
+                        id: 41988
+                        name: DigitalZoomRatio
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Rational
+                                value: 'a:2:{i:0;i:2592;i:1;i:2592;}'
+                                text: 2592/2592
+                    -
+                        id: 41990
+                        name: SceneCaptureType
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:0;'
+                                text: Standard
+                blocks:
+                    Interoperability:
+                        class: ExifEye\core\Block\Ifd
+                        tags:
+                            -
+                                id: 1
+                                name: InteroperabilityIndex
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Ascii
+                                        value: 's:3:"R98";'
+                                        text: R98
+                            -
+                                id: 2
+                                name: InteroperabilityVersion
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Version
+                                        value: 'i:1;'
+                                        text: 'Interoperability Version 1.0'
+                            -
+                                id: 4097
+                                name: RelatedImageWidth
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'i:640;'
+                                        text: 640
+                            -
+                                id: 4098
+                                name: RelatedImageLength
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'i:480;'
+                                        text: 480
                     CanonMakerNotes:
                         class: ExifEye\core\Block\Ifd
-                        entries:
-                            FocalLength:
-                                class: ExifEye\core\Entry\Short
-                                value: 'a:4:{i:0;i:2;i:1;i:662;i:2;i:290;i:3;i:217;}'
-                                text: '2, 662, 290, 217'
-                            '[[[3]]]':
-                                class: ExifEye\core\Entry\Short
-                                value: 'a:4:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;}'
-                                text: '0, 0, 0, 0'
-                            '[[[0]]]':
-                                class: ExifEye\core\Entry\Short
-                                value: 'a:5:{i:0;i:10;i:1;i:2;i:2;i:2;i:3;i:640;i:4;i:480;}'
-                                text: '10, 2, 2, 640, 480'
-                            PictureInfo:
-                                class: ExifEye\core\Entry\Short
-                                value: 'a:28:{i:0;i:9;i:1;i:9;i:2;i:640;i:3;i:480;i:4;i:2592;i:5;i:216;i:6;i:467;i:7;i:39;i:8;i:65068;i:9;i:0;i:10;i:468;i:11;i:65068;i:12;i:0;i:13;i:468;i:14;i:65068;i:15;i:0;i:16;i:468;i:17;i:65494;i:18;i:65494;i:19;i:65494;i:20;i:0;i:21;i:0;i:22;i:0;i:23;i:42;i:24;i:42;i:25;i:42;i:26;i:32;i:27;i:5;}'
-                                text: '9, 9, 640, 480, 2592, 216, 467, 39, 65068, 0, 468, 65068, 0, 468, 65068, 0, 468, 65494, 65494, 65494, 0, 0, 0, 42, 42, 42, 32, 5'
-                            ThumbnailImageValidArea:
-                                class: ExifEye\core\Entry\Short
-                                value: 'a:4:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;}'
-                                text: '0, 0, 0, 0'
-                            ImageType:
-                                class: ExifEye\core\Entry\Ascii
-                                value: 's:22:"IMG:PowerShot S60 JPEG";'
-                                text: 'IMG:PowerShot S60 JPEG'
-                            FirmwareVersion:
-                                class: ExifEye\core\Entry\Ascii
-                                value: 's:21:"Firmware Version 1.00";'
-                                text: 'Firmware Version 1.00'
-                            FileNumber:
-                                class: ExifEye\core\Entry\Long
-                                value: 'i:1000041;'
-                                text: 1000041
-                            OwnerName:
-                                class: ExifEye\core\Entry\Ascii
-                                value: 's:0:"";'
-                                text: ''
-                            ModelID:
-                                class: ExifEye\core\Entry\Long
-                                value: 'i:20512768;'
-                                text: 20512768
-                            '[[[24]]]':
-                                class: ExifEye\core\Entry\Byte
-                                value: 'a:256:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;i:8;i:0;i:9;i:0;i:10;i:0;i:11;i:0;i:12;i:0;i:13;i:0;i:14;i:0;i:15;i:0;i:16;i:0;i:17;i:0;i:18;i:0;i:19;i:0;i:20;i:0;i:21;i:0;i:22;i:0;i:23;i:0;i:24;i:0;i:25;i:0;i:26;i:0;i:27;i:0;i:28;i:0;i:29;i:0;i:30;i:0;i:31;i:0;i:32;i:0;i:33;i:0;i:34;i:0;i:35;i:0;i:36;i:0;i:37;i:0;i:38;i:0;i:39;i:0;i:40;i:0;i:41;i:0;i:42;i:0;i:43;i:0;i:44;i:0;i:45;i:0;i:46;i:0;i:47;i:0;i:48;i:0;i:49;i:0;i:50;i:0;i:51;i:0;i:52;i:0;i:53;i:0;i:54;i:0;i:55;i:0;i:56;i:0;i:57;i:0;i:58;i:0;i:59;i:0;i:60;i:0;i:61;i:0;i:62;i:0;i:63;i:0;i:64;i:0;i:65;i:0;i:66;i:0;i:67;i:0;i:68;i:0;i:69;i:0;i:70;i:0;i:71;i:0;i:72;i:0;i:73;i:0;i:74;i:0;i:75;i:0;i:76;i:0;i:77;i:0;i:78;i:0;i:79;i:0;i:80;i:0;i:81;i:0;i:82;i:0;i:83;i:0;i:84;i:0;i:85;i:0;i:86;i:0;i:87;i:0;i:88;i:0;i:89;i:0;i:90;i:0;i:91;i:0;i:92;i:0;i:93;i:0;i:94;i:0;i:95;i:0;i:96;i:0;i:97;i:0;i:98;i:0;i:99;i:0;i:100;i:0;i:101;i:0;i:102;i:0;i:103;i:0;i:104;i:0;i:105;i:0;i:106;i:0;i:107;i:0;i:108;i:0;i:109;i:0;i:110;i:0;i:111;i:0;i:112;i:0;i:113;i:0;i:114;i:0;i:115;i:0;i:116;i:0;i:117;i:0;i:118;i:0;i:119;i:0;i:120;i:0;i:121;i:0;i:122;i:0;i:123;i:0;i:124;i:0;i:125;i:0;i:126;i:0;i:127;i:0;i:128;i:0;i:129;i:0;i:130;i:0;i:131;i:0;i:132;i:0;i:133;i:0;i:134;i:0;i:135;i:0;i:136;i:0;i:137;i:0;i:138;i:0;i:139;i:0;i:140;i:0;i:141;i:0;i:142;i:0;i:143;i:0;i:144;i:0;i:145;i:0;i:146;i:0;i:147;i:0;i:148;i:0;i:149;i:0;i:150;i:0;i:151;i:0;i:152;i:0;i:153;i:0;i:154;i:0;i:155;i:0;i:156;i:0;i:157;i:0;i:158;i:0;i:159;i:0;i:160;i:0;i:161;i:0;i:162;i:0;i:163;i:0;i:164;i:0;i:165;i:0;i:166;i:0;i:167;i:0;i:168;i:0;i:169;i:0;i:170;i:0;i:171;i:0;i:172;i:0;i:173;i:0;i:174;i:0;i:175;i:0;i:176;i:0;i:177;i:0;i:178;i:0;i:179;i:0;i:180;i:0;i:181;i:0;i:182;i:0;i:183;i:0;i:184;i:0;i:185;i:0;i:186;i:0;i:187;i:0;i:188;i:0;i:189;i:0;i:190;i:0;i:191;i:0;i:192;i:0;i:193;i:0;i:194;i:0;i:195;i:0;i:196;i:0;i:197;i:0;i:198;i:0;i:199;i:0;i:200;i:0;i:201;i:0;i:202;i:0;i:203;i:0;i:204;i:0;i:205;i:0;i:206;i:0;i:207;i:0;i:208;i:0;i:209;i:0;i:210;i:0;i:211;i:0;i:212;i:0;i:213;i:0;i:214;i:0;i:215;i:0;i:216;i:0;i:217;i:0;i:218;i:0;i:219;i:0;i:220;i:0;i:221;i:0;i:222;i:0;i:223;i:0;i:224;i:0;i:225;i:0;i:226;i:0;i:227;i:0;i:228;i:0;i:229;i:0;i:230;i:0;i:231;i:0;i:232;i:0;i:233;i:0;i:234;i:0;i:235;i:0;i:236;i:0;i:237;i:0;i:238;i:0;i:239;i:0;i:240;i:0;i:241;i:0;i:242;i:0;i:243;i:0;i:244;i:0;i:245;i:0;i:246;i:0;i:247;i:0;i:248;i:0;i:249;i:0;i:250;i:0;i:251;i:0;i:252;i:0;i:253;i:0;i:254;i:0;i:255;i:0;}'
-                                text: '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0'
-                            '[[[25]]]':
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:1;'
-                                text: 1
-                            CameraInfo:
-                                class: ExifEye\core\Entry\Short
-                                value: 'a:36:{i:0;i:72;i:1;i:9;i:2;i:639;i:3;i:636;i:4;i:636;i:5;i:637;i:6;i:634;i:7;i:640;i:8;i:636;i:9;i:641;i:10;i:634;i:11;i:68;i:12;i:0;i:13;i:0;i:14;i:65368;i:15;i:2;i:16;i:0;i:17;i:10;i:18;i:65534;i:19;i:0;i:20;i:10;i:21;i:116;i:22;i:199;i:23;i:37;i:24;i:1;i:25;i:988;i:26;i:0;i:27;i:0;i:28;i:0;i:29;i:0;i:30;i:0;i:31;i:42;i:32;i:0;i:33;i:0;i:34;i:128;i:35;i:224;}'
-                                text: '72, 9, 639, 636, 636, 637, 634, 640, 636, 641, 634, 68, 0, 0, 65368, 2, 0, 10, 65534, 0, 10, 116, 199, 37, 1, 988, 0, 0, 0, 0, 0, 42, 0, 0, 128, 224'
+                        tags:
+                            -
+                                id: 2
+                                name: FocalLength
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:4:{i:0;i:2;i:1;i:662;i:2;i:290;i:3;i:217;}'
+                                        text: '2, 662, 290, 217'
+                            -
+                                id: 3
+                                name: null
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:4:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;}'
+                                        text: '0, 0, 0, 0'
+                            -
+                                id: 0
+                                name: null
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:6:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;}'
+                                        text: '0, 0, 0, 0, 0, 0'
+                            -
+                                id: 0
+                                name: null
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:4:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;}'
+                                        text: '0, 0, 0, 0'
+                            -
+                                id: 18
+                                name: PictureInfo
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:28:{i:0;i:9;i:1;i:9;i:2;i:640;i:3;i:480;i:4;i:2592;i:5;i:216;i:6;i:467;i:7;i:39;i:8;i:65068;i:9;i:0;i:10;i:468;i:11;i:65068;i:12;i:0;i:13;i:468;i:14;i:65068;i:15;i:0;i:16;i:468;i:17;i:65494;i:18;i:65494;i:19;i:65494;i:20;i:0;i:21;i:0;i:22;i:0;i:23;i:42;i:24;i:42;i:25;i:42;i:26;i:32;i:27;i:5;}'
+                                        text: '9, 9, 640, 480, 2592, 216, 467, 39, 65068, 0, 468, 65068, 0, 468, 65068, 0, 468, 65494, 65494, 65494, 0, 0, 0, 42, 42, 42, 32, 5'
+                            -
+                                id: 19
+                                name: ThumbnailImageValidArea
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:4:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;}'
+                                        text: '0, 0, 0, 0'
+                            -
+                                id: 6
+                                name: ImageType
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Ascii
+                                        value: 's:22:"IMG:PowerShot S60 JPEG";'
+                                        text: 'IMG:PowerShot S60 JPEG'
+                            -
+                                id: 7
+                                name: FirmwareVersion
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Ascii
+                                        value: 's:21:"Firmware Version 1.00";'
+                                        text: 'Firmware Version 1.00'
+                            -
+                                id: 8
+                                name: FileNumber
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Long
+                                        value: 'i:1000041;'
+                                        text: 1000041
+                            -
+                                id: 9
+                                name: OwnerName
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Ascii
+                                        value: 's:0:"";'
+                                        text: ''
+                            -
+                                id: 16
+                                name: ModelID
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Long
+                                        value: 'i:20512768;'
+                                        text: 20512768
+                            -
+                                id: 0
+                                name: null
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:5:{i:0;i:10;i:1;i:2;i:2;i:2;i:3;i:640;i:4;i:480;}'
+                                        text: '10, 2, 2, 640, 480'
+                            -
+                                id: 24
+                                name: null
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Byte
+                                        value: 'a:256:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;i:8;i:0;i:9;i:0;i:10;i:0;i:11;i:0;i:12;i:0;i:13;i:0;i:14;i:0;i:15;i:0;i:16;i:0;i:17;i:0;i:18;i:0;i:19;i:0;i:20;i:0;i:21;i:0;i:22;i:0;i:23;i:0;i:24;i:0;i:25;i:0;i:26;i:0;i:27;i:0;i:28;i:0;i:29;i:0;i:30;i:0;i:31;i:0;i:32;i:0;i:33;i:0;i:34;i:0;i:35;i:0;i:36;i:0;i:37;i:0;i:38;i:0;i:39;i:0;i:40;i:0;i:41;i:0;i:42;i:0;i:43;i:0;i:44;i:0;i:45;i:0;i:46;i:0;i:47;i:0;i:48;i:0;i:49;i:0;i:50;i:0;i:51;i:0;i:52;i:0;i:53;i:0;i:54;i:0;i:55;i:0;i:56;i:0;i:57;i:0;i:58;i:0;i:59;i:0;i:60;i:0;i:61;i:0;i:62;i:0;i:63;i:0;i:64;i:0;i:65;i:0;i:66;i:0;i:67;i:0;i:68;i:0;i:69;i:0;i:70;i:0;i:71;i:0;i:72;i:0;i:73;i:0;i:74;i:0;i:75;i:0;i:76;i:0;i:77;i:0;i:78;i:0;i:79;i:0;i:80;i:0;i:81;i:0;i:82;i:0;i:83;i:0;i:84;i:0;i:85;i:0;i:86;i:0;i:87;i:0;i:88;i:0;i:89;i:0;i:90;i:0;i:91;i:0;i:92;i:0;i:93;i:0;i:94;i:0;i:95;i:0;i:96;i:0;i:97;i:0;i:98;i:0;i:99;i:0;i:100;i:0;i:101;i:0;i:102;i:0;i:103;i:0;i:104;i:0;i:105;i:0;i:106;i:0;i:107;i:0;i:108;i:0;i:109;i:0;i:110;i:0;i:111;i:0;i:112;i:0;i:113;i:0;i:114;i:0;i:115;i:0;i:116;i:0;i:117;i:0;i:118;i:0;i:119;i:0;i:120;i:0;i:121;i:0;i:122;i:0;i:123;i:0;i:124;i:0;i:125;i:0;i:126;i:0;i:127;i:0;i:128;i:0;i:129;i:0;i:130;i:0;i:131;i:0;i:132;i:0;i:133;i:0;i:134;i:0;i:135;i:0;i:136;i:0;i:137;i:0;i:138;i:0;i:139;i:0;i:140;i:0;i:141;i:0;i:142;i:0;i:143;i:0;i:144;i:0;i:145;i:0;i:146;i:0;i:147;i:0;i:148;i:0;i:149;i:0;i:150;i:0;i:151;i:0;i:152;i:0;i:153;i:0;i:154;i:0;i:155;i:0;i:156;i:0;i:157;i:0;i:158;i:0;i:159;i:0;i:160;i:0;i:161;i:0;i:162;i:0;i:163;i:0;i:164;i:0;i:165;i:0;i:166;i:0;i:167;i:0;i:168;i:0;i:169;i:0;i:170;i:0;i:171;i:0;i:172;i:0;i:173;i:0;i:174;i:0;i:175;i:0;i:176;i:0;i:177;i:0;i:178;i:0;i:179;i:0;i:180;i:0;i:181;i:0;i:182;i:0;i:183;i:0;i:184;i:0;i:185;i:0;i:186;i:0;i:187;i:0;i:188;i:0;i:189;i:0;i:190;i:0;i:191;i:0;i:192;i:0;i:193;i:0;i:194;i:0;i:195;i:0;i:196;i:0;i:197;i:0;i:198;i:0;i:199;i:0;i:200;i:0;i:201;i:0;i:202;i:0;i:203;i:0;i:204;i:0;i:205;i:0;i:206;i:0;i:207;i:0;i:208;i:0;i:209;i:0;i:210;i:0;i:211;i:0;i:212;i:0;i:213;i:0;i:214;i:0;i:215;i:0;i:216;i:0;i:217;i:0;i:218;i:0;i:219;i:0;i:220;i:0;i:221;i:0;i:222;i:0;i:223;i:0;i:224;i:0;i:225;i:0;i:226;i:0;i:227;i:0;i:228;i:0;i:229;i:0;i:230;i:0;i:231;i:0;i:232;i:0;i:233;i:0;i:234;i:0;i:235;i:0;i:236;i:0;i:237;i:0;i:238;i:0;i:239;i:0;i:240;i:0;i:241;i:0;i:242;i:0;i:243;i:0;i:244;i:0;i:245;i:0;i:246;i:0;i:247;i:0;i:248;i:0;i:249;i:0;i:250;i:0;i:251;i:0;i:252;i:0;i:253;i:0;i:254;i:0;i:255;i:0;}'
+                                        text: '0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0'
+                            -
+                                id: 25
+                                name: null
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'i:1;'
+                                        text: 1
+                            -
+                                id: 13
+                                name: CameraInfo
+                                entries:
+                                    -
+                                        class: ExifEye\core\Entry\Short
+                                        value: 'a:36:{i:0;i:72;i:1;i:9;i:2;i:639;i:3;i:636;i:4;i:636;i:5;i:637;i:6;i:634;i:7;i:640;i:8;i:636;i:9;i:641;i:10;i:634;i:11;i:68;i:12;i:0;i:13;i:0;i:14;i:65368;i:15;i:2;i:16;i:0;i:17;i:10;i:18;i:65534;i:19;i:0;i:20;i:10;i:21;i:116;i:22;i:199;i:23;i:37;i:24;i:1;i:25;i:988;i:26;i:0;i:27;i:0;i:28;i:0;i:29;i:0;i:30;i:0;i:31;i:42;i:32;i:0;i:33;i:0;i:34;i:128;i:35;i:224;}'
+                                        text: '72, 9, 639, 636, 636, 637, 634, 640, 636, 641, 634, 68, 0, 0, 65368, 2, 0, 10, 65534, 0, 10, 116, 199, 37, 1, 988, 0, 0, 0, 0, 0, 42, 0, 0, 128, 224'
                         blocks:
                             CanonCameraSettings:
                                 class: ExifEye\core\Block\IfdIndexShort
-                                entries:
-                                    MacroMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:2;'
-                                        text: Normal
-                                    SelfTimer:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    Quality:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:2;'
-                                        text: Normal
-                                    FlashMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 'Off'
-                                    DriveMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: Single
-                                    FocusMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:4;'
-                                        text: Single
-                                    RecordMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:1;'
-                                        text: JPEG
-                                    ImageSize:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:2;'
-                                        text: Small
-                                    EasyShootingMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 'Full auto'
-                                    DigitalZoom:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: None
-                                    Contrast:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: Normal
-                                    Saturation:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: Normal
-                                    Sharpness:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    ISOSpeed:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:15;'
-                                        text: 15
-                                    MeteringMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:3;'
-                                        text: Evaluative
-                                    FocusType:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:1;'
-                                        text: Auto
-                                    AFPointSelected:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:16385;'
-                                        text: 'Auto AF point selection'
-                                    ExposureMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: Easy
-                                    LensType:
-                                        class: ExifEye\core\Entry\Short
-                                        value: 'i:65535;'
-                                        text: 65535
-                                    LongFocalLength:
-                                        class: ExifEye\core\Entry\Short
-                                        value: 'i:662;'
-                                        text: 662
-                                    ShortFocalLength:
-                                        class: ExifEye\core\Entry\Short
-                                        value: 'i:186;'
-                                        text: 186
-                                    FocalUnits:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:32;'
-                                        text: 32
-                                    MaxAperture:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:157;'
-                                        text: 157
-                                    MinAperture:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:192;'
-                                        text: 192
-                                    FlashActivity:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:-1;'
-                                        text: -1
-                                    FlashDetails:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    FocusContinuous:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    AESetting:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 'Normal AE'
-                                    ImageStabilization:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:-1;'
-                                        text: -1
-                                    DisplayAperture:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:53;'
-                                        text: 53
-                                    ZoomSourceWidth:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:2592;'
-                                        text: 2592
-                                    ZoomTargetWidth:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:2592;'
-                                        text: 2592
-                                    SpotMeteringMode:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: Center
-                                    PhotoEffect:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 'Off'
-                                    ManualFlashOutput:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    ColorTone:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:32767;'
-                                        text: 32767
-                                    SRAWQuality:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:2;'
-                                        text: 'sRAW2 (sRAW)'
+                                tags:
+                                    -
+                                        id: 1
+                                        name: MacroMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:2;'
+                                                text: Normal
+                                    -
+                                        id: 2
+                                        name: SelfTimer
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 3
+                                        name: Quality
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:2;'
+                                                text: Normal
+                                    -
+                                        id: 4
+                                        name: FlashMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 'Off'
+                                    -
+                                        id: 5
+                                        name: DriveMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: Single
+                                    -
+                                        id: 7
+                                        name: FocusMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:4;'
+                                                text: Single
+                                    -
+                                        id: 9
+                                        name: RecordMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:1;'
+                                                text: JPEG
+                                    -
+                                        id: 10
+                                        name: ImageSize
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:2;'
+                                                text: Small
+                                    -
+                                        id: 11
+                                        name: EasyShootingMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 'Full auto'
+                                    -
+                                        id: 12
+                                        name: DigitalZoom
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: None
+                                    -
+                                        id: 13
+                                        name: Contrast
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: Normal
+                                    -
+                                        id: 14
+                                        name: Saturation
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: Normal
+                                    -
+                                        id: 15
+                                        name: Sharpness
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 16
+                                        name: ISOSpeed
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:15;'
+                                                text: 15
+                                    -
+                                        id: 17
+                                        name: MeteringMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:3;'
+                                                text: Evaluative
+                                    -
+                                        id: 18
+                                        name: FocusType
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:1;'
+                                                text: Auto
+                                    -
+                                        id: 19
+                                        name: AFPointSelected
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:16385;'
+                                                text: 'Auto AF point selection'
+                                    -
+                                        id: 20
+                                        name: ExposureMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: Easy
+                                    -
+                                        id: 22
+                                        name: LensType
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\Short
+                                                value: 'i:65535;'
+                                                text: 65535
+                                    -
+                                        id: 23
+                                        name: LongFocalLength
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\Short
+                                                value: 'i:662;'
+                                                text: 662
+                                    -
+                                        id: 24
+                                        name: ShortFocalLength
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\Short
+                                                value: 'i:186;'
+                                                text: 186
+                                    -
+                                        id: 25
+                                        name: FocalUnits
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:32;'
+                                                text: 32
+                                    -
+                                        id: 26
+                                        name: MaxAperture
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:157;'
+                                                text: 157
+                                    -
+                                        id: 27
+                                        name: MinAperture
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:192;'
+                                                text: 192
+                                    -
+                                        id: 28
+                                        name: FlashActivity
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:-1;'
+                                                text: -1
+                                    -
+                                        id: 29
+                                        name: FlashDetails
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 32
+                                        name: FocusContinuous
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 33
+                                        name: AESetting
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 'Normal AE'
+                                    -
+                                        id: 34
+                                        name: ImageStabilization
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:-1;'
+                                                text: -1
+                                    -
+                                        id: 35
+                                        name: DisplayAperture
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:53;'
+                                                text: 53
+                                    -
+                                        id: 36
+                                        name: ZoomSourceWidth
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:2592;'
+                                                text: 2592
+                                    -
+                                        id: 37
+                                        name: ZoomTargetWidth
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:2592;'
+                                                text: 2592
+                                    -
+                                        id: 39
+                                        name: SpotMeteringMode
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: Center
+                                    -
+                                        id: 40
+                                        name: PhotoEffect
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 'Off'
+                                    -
+                                        id: 41
+                                        name: ManualFlashOutput
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 42
+                                        name: ColorTone
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:32767;'
+                                                text: 32767
+                                    -
+                                        id: 46
+                                        name: SRAWQuality
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:2;'
+                                                text: 'sRAW2 (sRAW)'
                             CanonShotInformation:
                                 class: ExifEye\core\Block\IfdIndexShort
-                                entries:
-                                    ISOSpeedUsed:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:128;'
-                                        text: 128
-                                    MeasuredEV:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:54;'
-                                        text: 54
-                                    TargetAperture:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:154;'
-                                        text: 154
-                                    TargetShutterSpeed:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:96;'
-                                        text: 96
-                                    WhiteBalanceSetting:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: Auto
-                                    SlowShutter:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 'Off'
-                                    SequenceNumber:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    AFPointUsed:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    FlashBias:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    AutoExposureBracketing:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 'Off'
-                                    SubjectDistance:
-                                        class: ExifEye\core\Entry\Short
-                                        value: 'i:106;'
-                                        text: 106
-                                    Aperture:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:157;'
-                                        text: 157
-                                    ShutterSpeed:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:96;'
-                                        text: 96
-                                    MeasuredEV2:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 0
-                                    CameraType:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:250;'
-                                        text: Compact
-                                    AutoRotate:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: None
-                                    NDFilter:
-                                        class: ExifEye\core\Entry\SignedShort
-                                        value: 'i:0;'
-                                        text: 'Off'
+                                tags:
+                                    -
+                                        id: 2
+                                        name: ISOSpeedUsed
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:128;'
+                                                text: 128
+                                    -
+                                        id: 3
+                                        name: MeasuredEV
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:54;'
+                                                text: 54
+                                    -
+                                        id: 4
+                                        name: TargetAperture
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:154;'
+                                                text: 154
+                                    -
+                                        id: 5
+                                        name: TargetShutterSpeed
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:96;'
+                                                text: 96
+                                    -
+                                        id: 7
+                                        name: WhiteBalanceSetting
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: Auto
+                                    -
+                                        id: 8
+                                        name: SlowShutter
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 'Off'
+                                    -
+                                        id: 9
+                                        name: SequenceNumber
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 14
+                                        name: AFPointUsed
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 15
+                                        name: FlashBias
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 16
+                                        name: AutoExposureBracketing
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 'Off'
+                                    -
+                                        id: 19
+                                        name: SubjectDistance
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\Short
+                                                value: 'i:106;'
+                                                text: 106
+                                    -
+                                        id: 21
+                                        name: Aperture
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:157;'
+                                                text: 157
+                                    -
+                                        id: 22
+                                        name: ShutterSpeed
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:96;'
+                                                text: 96
+                                    -
+                                        id: 23
+                                        name: MeasuredEV2
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 0
+                                    -
+                                        id: 26
+                                        name: CameraType
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:250;'
+                                                text: Compact
+                                    -
+                                        id: 27
+                                        name: AutoRotate
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: None
+                                    -
+                                        id: 28
+                                        name: NDFilter
+                                        entries:
+                                            -
+                                                class: ExifEye\core\Entry\SignedShort
+                                                value: 'i:0;'
+                                                text: 'Off'
     IFD1:
         class: ExifEye\core\Block\Ifd
-        entries:
-            Compression:
-                class: ExifEye\core\Entry\Short
-                value: 'i:6;'
-                text: 'JPEG compression'
-            XResolution:
-                class: ExifEye\core\Entry\Rational
-                value: 'a:2:{i:0;i:180;i:1;i:1;}'
-                text: 180/1
-            YResolution:
-                class: ExifEye\core\Entry\Rational
-                value: 'a:2:{i:0;i:180;i:1;i:1;}'
-                text: 180/1
-            ResolutionUnit:
-                class: ExifEye\core\Entry\Short
-                value: 'i:2;'
-                text: Inch
+        tags:
+            -
+                id: 259
+                name: Compression
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Short
+                        value: 'i:6;'
+                        text: 'JPEG compression'
+            -
+                id: 282
+                name: XResolution
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Rational
+                        value: 'a:2:{i:0;i:180;i:1;i:1;}'
+                        text: 180/1
+            -
+                id: 283
+                name: YResolution
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Rational
+                        value: 'a:2:{i:0;i:180;i:1;i:1;}'
+                        text: 180/1
+            -
+                id: 296
+                name: ResolutionUnit
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Short
+                        value: 'i:2;'
+                        text: Inch
 errors:
     entries:
         -

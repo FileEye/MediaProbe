@@ -2,63 +2,115 @@ jpeg: nikon-coolscan-iv.jpg
 blocks:
     IFD0:
         class: ExifEye\core\Block\Ifd
-        entries:
-            Make:
-                class: ExifEye\core\Entry\Ascii
-                value: 's:5:"Nikon";'
-                text: Nikon
-            XResolution:
-                class: ExifEye\core\Entry\Rational
-                value: 'a:2:{i:0;i:2000;i:1;i:1;}'
-                text: 2000/1
-            YResolution:
-                class: ExifEye\core\Entry\Rational
-                value: 'a:2:{i:0;i:2000;i:1;i:1;}'
-                text: 2000/1
-            ResolutionUnit:
-                class: ExifEye\core\Entry\Short
-                value: 'i:2;'
-                text: Inch
-            DateTime:
-                class: ExifEye\core\Entry\Time
-                value: 'd:1090023875;'
-                text: '2004:07:17 00:24:35'
-            YCbCrPositioning:
-                class: ExifEye\core\Entry\Short
-                value: 'i:1;'
-                text: centered
+        tags:
+            -
+                id: 271
+                name: Make
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Ascii
+                        value: 's:5:"Nikon";'
+                        text: Nikon
+            -
+                id: 282
+                name: XResolution
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Rational
+                        value: 'a:2:{i:0;i:2000;i:1;i:1;}'
+                        text: 2000/1
+            -
+                id: 283
+                name: YResolution
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Rational
+                        value: 'a:2:{i:0;i:2000;i:1;i:1;}'
+                        text: 2000/1
+            -
+                id: 296
+                name: ResolutionUnit
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Short
+                        value: 'i:2;'
+                        text: Inch
+            -
+                id: 306
+                name: DateTime
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Time
+                        value: 'd:1090023875;'
+                        text: '2004:07:17 00:24:35'
+            -
+                id: 531
+                name: YCbCrPositioning
+                entries:
+                    -
+                        class: ExifEye\core\Entry\Short
+                        value: 'i:1;'
+                        text: centered
         blocks:
             Exif:
                 class: ExifEye\core\Block\Ifd
-                entries:
-                    ExifVersion:
-                        class: ExifEye\core\Entry\Version
-                        value: 'd:2.1;'
-                        text: 'Exif Version 2.1'
-                    ComponentsConfiguration:
-                        class: ExifEye\core\Entry\Undefined
-                        value: !!binary czo0OiIBAgMAIjs=
-                        text: 'Y Cb Cr -'
-                    MakerNote:
-                        class: ExifEye\core\Entry\MakerNote
-                        value: !!binary czozMjoiAgABAAcABAAAADAxMDAQDgQAAQAAABYBAAAAAAAABQAiOw==
-                        text: '32 bytes unknown MakerNote data'
-                    FlashPixVersion:
-                        class: ExifEye\core\Entry\Version
-                        value: 'i:1;'
-                        text: 'FlashPix Version 1.0'
-                    ColorSpace:
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:1;'
-                        text: sRGB
-                    PixelXDimension:
-                        class: ExifEye\core\Entry\Long
-                        value: 'i:960;'
-                        text: 960
-                    PixelYDimension:
-                        class: ExifEye\core\Entry\Long
-                        value: 'i:755;'
-                        text: 755
+                tags:
+                    -
+                        id: 36864
+                        name: ExifVersion
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Version
+                                value: 'd:2.1;'
+                                text: 'Exif Version 2.1'
+                    -
+                        id: 37121
+                        name: ComponentsConfiguration
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Undefined
+                                value: !!binary czo0OiIBAgMAIjs=
+                                text: 'Y Cb Cr -'
+                    -
+                        id: 37500
+                        name: MakerNote
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\MakerNote
+                                value: !!binary czozMjoiAgABAAcABAAAADAxMDAQDgQAAQAAABYBAAAAAAAABQAiOw==
+                                text: '32 bytes unknown MakerNote data'
+                    -
+                        id: 40960
+                        name: FlashPixVersion
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Version
+                                value: 'i:1;'
+                                text: 'FlashPix Version 1.0'
+                    -
+                        id: 40961
+                        name: ColorSpace
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Short
+                                value: 'i:1;'
+                                text: sRGB
+                    -
+                        id: 40962
+                        name: PixelXDimension
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Long
+                                value: 'i:960;'
+                                text: 960
+                    -
+                        id: 40963
+                        name: PixelYDimension
+                        entries:
+                            -
+                                class: ExifEye\core\Entry\Long
+                                value: 'i:755;'
+                                text: 755
             GPS:
                 class: ExifEye\core\Block\Ifd
 errors: {  }
