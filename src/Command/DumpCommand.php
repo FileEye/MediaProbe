@@ -50,6 +50,7 @@ class DumpCommand extends Command
         $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG');
 
         foreach ($finder as $file) {
+            ExifEye::clearExceptions();
             $yaml = $this->fileToTest($file);
             $output->write($yaml);
         }
@@ -64,7 +65,7 @@ class DumpCommand extends Command
         $indent = 0;
         $json = [];
 
-        $jpeg = new Jpeg($file);
+        $jpeg = new Jpeg((string) $file);
         $json['jpeg'] = $file->getBaseName();
         $this->jpegToTest('$jpeg', $jpeg, $json);
         $exceptions = ExifEye::getExceptions();
