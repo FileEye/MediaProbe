@@ -80,7 +80,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         foreach ($entries as $entry) {
             $ifdEntry = $ifd->xxGetTagById($entry->getId())->xxGetEntry();
             if ($ifdEntry->getFormat() == Format::ASCII) {
-                $ifdValue = $ifd->getEntry($entry->getId())->getValue();
+                $ifdValue = $ifd->xxGetTagById($entry->getId())->xxGetEntry()->getValue();
                 $entryValue = $entry->getValue();
                 // cut off after the first nul byte
                 // since $ifdValue comes from parsed ifd,
