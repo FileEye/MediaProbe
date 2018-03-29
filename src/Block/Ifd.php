@@ -120,6 +120,14 @@ class Ifd extends BlockBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public static function loadFromData(DataWindow $data_window, $offset, $options = [])
+    {
+        // @todo
+    }
+
+    /**
      * Load data into a Image File Directory (IFD).
      *
      * @param DataWindow $d
