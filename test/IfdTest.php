@@ -13,7 +13,8 @@ class IfdTest extends ExifEyeTestCaseBase
     {
         $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
 
-        $this->assertEquals(sizeof($ifd->getIterator()), 0);
+//        $this->assertEquals(sizeof($ifd->getIterator()), 0);
+        $this->assertCount(0, $ifd->getEntries());
 
         $desc = new Ascii($ifd->getType(), 0x010E, ['Hello?']);
         $date = new Time($ifd->getType(), 0x0132, [12345678]);
@@ -21,10 +22,12 @@ class IfdTest extends ExifEyeTestCaseBase
         $ifd->addEntry($desc);
         $ifd->addEntry($date);
 
-        $this->assertEquals(sizeof($ifd->getIterator()), 2);
+//        $this->assertEquals(sizeof($ifd->getIterator()), 2);
+        $this->assertCount(2, $ifd->getEntries());
 
         $entries = [];
-        foreach ($ifd as $tag => $entry) {
+//        foreach ($ifd as $tag => $entry) {
+        foreach ($ifd->getEntries() as $tag => $entry) {
             $entries[$tag] = $entry;
         }
 
@@ -32,7 +35,7 @@ class IfdTest extends ExifEyeTestCaseBase
         $this->assertSame($entries[0x0132], $date);
     }
 
-    public function testArrayAccess()
+/*    public function testArrayAccess()
     {
         $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
 
@@ -50,5 +53,5 @@ class IfdTest extends ExifEyeTestCaseBase
         unset($ifd[0x0132]);
 
         $this->assertFalse(isset($ifd[0x0132]));
-    }
+    }*/
 }

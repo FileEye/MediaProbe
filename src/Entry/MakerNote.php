@@ -132,6 +132,6 @@ class MakerNote extends Undefined
         $ifd = new $ifd_class($maker_note_ifd_id);
         $ifd->load($d, $maker_note->getDataOffset());
         $exif_ifd->addSubIfd($ifd);
-        $exif_ifd->offsetUnset(Spec::getTagIdByName($exif_ifd->getType(), 'MakerNote'));
+        //$exif_ifd->offsetUnset(Spec::getTagIdByName($exif_ifd->getType(), 'MakerNote'));
     }
 }
