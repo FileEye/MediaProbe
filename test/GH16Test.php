@@ -33,38 +33,26 @@ class GH16Test extends ExifEyeTestCaseBase
 
         $data = new DataWindow(file_get_contents($this->file));
 
-        if (Jpeg::isValid($data)) {
-            $jpeg = new Jpeg();
-            $jpeg->load($data);
-            $exif = $jpeg->getExif();
+        $jpeg = new Jpeg();
+        $jpeg->load($data);
+        $exif = $jpeg->getExif();
+        $tiff = $exif->getTiff();
+        $ifd0 = $tiff->getIfd();
+        $this->assertCount(1, $ifd0->xxGetSubBlocks());
 
-            if (null === $exif) {
-                $exif = new Exif();
-                $jpeg->setExif($exif);
-                $tiff = new Tiff();
-                $exif->setTiff($tiff);
-            }
-
-            $tiff = $exif->getTiff();
-
-            $ifd0 = $tiff->getIfd();
-            if (null === $ifd0) {
-                $ifd0 = new Ifd(Ifd::IFD0);
-                $tiff->setIfd($ifd0);
-            }
-        }
         $entry = new WindowsString($ifd0->getType(), 0x9C9F, [$subject]); /* xx */
         $tag = new Tag($ifd0->getType(), 0x9C9F, $entry->getFormat(), $entry->getComponents(), null/* xx */);
         $ifd0->xxAddSubBlock($tag);
         $tag->xxAddEntry($entry);
+        $this->assertCount(1, $ifd0->xxGetSubBlocks());
 
-ExifEye::setDebug(true);
         file_put_contents($this->file, $jpeg->getBytes());
 
         $jpeg = new Jpeg($this->file);
         $exif = $jpeg->getExif();
         $tiff = $exif->getTiff();
         $ifd0 = $tiff->getIfd();
+        $this->assertCount(1, $ifd0->xxGetSubBlocks());
         $written_subject = $ifd0->xxGetTagByName('WindowsXPSubject')->xxGetEntry()->getValue();
         $this->assertEquals($subject, $written_subject);
     }
