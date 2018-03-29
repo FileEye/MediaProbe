@@ -57,19 +57,16 @@ class CameraTest extends ExifEyeTestCaseBase
     {
         $this->assertInstanceOf($expected['class'], $ifd);
 
-        if (isset($expected['entries'])) {
-            $this->assertCount(count($expected['entries']), $ifd->xxGetSubBlocks(), "Block: '{$ifd->getName()}' - entries count");
-            foreach ($expected['entries'] as $test_entry => $test_entry_data) {
-                $matches = [];
-                if (preg_match('/\[\[\[(\d+)\]\]\]/', $test_entry, $matches) === 1) {
-                    $tag = $ifd->xxGetTagById((int) $matches[1]);
-                } else {
-                    $tag = $ifd->xxGetTagByName($test_entry);
-                }
-                $entry = $tag->xxGetEntry();
-                $this->assertInstanceOf($test_entry_data['class'], $entry, "Block: '{$ifd->getName()}' Entry: '$test_entry'");
-                $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue(), "Block: '{$ifd->getName()}' Entry: '$test_entry'");
-                $this->assertEquals($test_entry_data['text'], $entry->getText(), "Block: '{$ifd->getName()}' Entry: '$test_entry'");
+        if (isset($expected['tags'])) {
+            $tags = $ifd->xxGetSubBlocks();
+            $this->assertCount(count($expected['tags']), $tags, "IFD: '{$ifd->getName()}' - TAGs count");
+            for ($i = 0; $i < count($tags); $i++) {
+                $this->assertEquals($expected['tags'][$i]['id'], $tags[$i]->getId(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals($expected['tags'][$i]['name'], $tags[$i]->getName(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $entry = $tags[$i]->xxGetEntry();
+                $this->assertInstanceOf($expected['tags'][$i]['entries'][0]['class'], $entry, "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals(unserialize($expected['tags'][$i]['entries'][0]['value']), $entry->getValue(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals($expected['tags'][$i]['entries'][0]['text'], $entry->getText(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
             }
         }
 
