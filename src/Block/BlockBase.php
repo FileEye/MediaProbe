@@ -3,6 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\EntryBase;
 
 /**
  * Class representing an Exif TAG.
