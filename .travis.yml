@@ -42,8 +42,8 @@ script:
   #- php bin/exifeye dump test/broken_images/gh-10-b.jpg
   #- php bin/exifeye dump test/broken_images/gh-11.jpg
   #- php bin/exifeye dump test/broken_images/misplaced-exif.jpg
-  #- php bin/exifeye dump test/imagetests/apple-iphone6s.jpg
-  #- php bin/exifeye dump test/imagetests/apple-iphone7.JPG
+  - php bin/exifeye dump test/imagetests/apple-iphone6s.jpg
+  - php bin/exifeye dump test/imagetests/apple-iphone7.JPG
   #- php bin/exifeye dump test/imagetests/canon-eos-650d.jpg
   #- php bin/exifeye dump test/imagetests/canon-ixus-ii.jpg
   #- php bin/exifeye dump test/imagetests/canon-powershot-s60.jpg

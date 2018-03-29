@@ -14,6 +14,7 @@ use ExifEye\core\Entry\JpegContent;
 use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tiff;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -45,16 +46,26 @@ class DumpCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $basename = substr($input->getArgument('file-path'), 0, - strlen(strrchr($input->getArgument('file-path'), '.')));
-        $image_filename = $input->getArgument('file-path');
+        $finder = new Finder();
+        $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG');
+
+        foreach ($finder as $file) {
+            $yaml = $this->fileToTest($file);
+            $output->write($yaml);
+        }
+    }
+
+    protected function fileToTest($file)
+    {
+        $basename = substr($file, 0, - strlen(strrchr($file, '.')));
         $thumb_filename = $basename . '-thumb.jpg';
         $test_filename = $basename . '.php';
         $test_name = str_replace('-', '_', $basename);
         $indent = 0;
         $json = [];
 
-        $jpeg = new Jpeg($image_filename);
-        $json['jpeg'] = $image_filename;
+        $jpeg = new Jpeg($file);
+        $json['jpeg'] = $file->getBaseName();
         $this->jpegToTest('$jpeg', $jpeg, $json);
         $exceptions = ExifEye::getExceptions();
         if (count($exceptions) == 0) {
@@ -65,8 +76,7 @@ class DumpCommand extends Command
                 $json['errors']['entries'][$i]['message'] = $exceptions[$i]->getMessage();
             }
         }
-        $yaml = Yaml::dump($json, 20);
-        $output->write($yaml);
+        return Yaml::dump($json, 20);
     }
 
     protected function jpegToTest($name, Jpeg $jpeg, &$json)

@@ -20,7 +20,7 @@ class CameraTest extends ExifEyeTestCaseBase
         $finder->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
         $result = [];
         foreach ($finder as $file) {
-            $result[] = [$file->getFileName()];
+            $result[] = [$file];
         }
         return $result;
     }
@@ -30,7 +30,7 @@ class CameraTest extends ExifEyeTestCaseBase
      */
     public function testParse($imageDumpFile)
     {
-        $test = Yaml::parseFile(dirname(__FILE__) . '/imagetests/' . $imageDumpFile);
+        $test = Yaml::parse($imageDumpFile->getContents());
 
         $jpeg = new Jpeg(dirname(__FILE__) . '/imagetests/' . $test['jpeg']);
 
