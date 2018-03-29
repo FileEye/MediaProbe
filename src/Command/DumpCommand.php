@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ExifEye\core\ExifEye;
+use ExifEye\core\Format;
 use ExifEye\core\Spec;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
