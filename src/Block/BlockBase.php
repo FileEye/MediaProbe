@@ -90,7 +90,7 @@ abstract class BlockBase
      * @param BlockBase $sub_block
      *            the sub-block that will be added.
      */
-    public function addSubBlock(BlockBase $sub_block)
+    public function xxAddSubBlock(BlockBase $sub_block)
     {
         $this->subBlocks[] = $sub_block;
     }
