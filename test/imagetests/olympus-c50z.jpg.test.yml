@@ -6,91 +6,102 @@ blocks:
             -
                 id: 270
                 name: ImageDescription
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Ascii
-                        value: 's:31:"OLYMPUS DIGITAL CAMERA         ";'
-                        text: 'OLYMPUS DIGITAL CAMERA         '
+                entry:
+                    class: ExifEye\core\Entry\Ascii
+                    format: Ascii
+                    components: 32
+                    value: 's:31:"OLYMPUS DIGITAL CAMERA         ";'
+                    text: 'OLYMPUS DIGITAL CAMERA         '
             -
                 id: 271
                 name: Make
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Ascii
-                        value: 's:23:"OLYMPUS OPTICAL CO.,LTD";'
-                        text: 'OLYMPUS OPTICAL CO.,LTD'
+                entry:
+                    class: ExifEye\core\Entry\Ascii
+                    format: Ascii
+                    components: 24
+                    value: 's:23:"OLYMPUS OPTICAL CO.,LTD";'
+                    text: 'OLYMPUS OPTICAL CO.,LTD'
             -
                 id: 272
                 name: Model
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Ascii
-                        value: 's:16:"X-2,C-50Z       ";'
-                        text: 'X-2,C-50Z       '
+                entry:
+                    class: ExifEye\core\Entry\Ascii
+                    format: Ascii
+                    components: 17
+                    value: 's:16:"X-2,C-50Z       ";'
+                    text: 'X-2,C-50Z       '
             -
                 id: 274
                 name: Orientation
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:1;'
-                        text: 'top - left'
+                entry:
+                    class: ExifEye\core\Entry\Short
+                    format: Short
+                    components: 1
+                    value: 'i:1;'
+                    text: 'top - left'
             -
                 id: 282
                 name: XResolution
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:144;i:1;i:1;}'
-                        text: 144/1
+                entry:
+                    class: ExifEye\core\Entry\Rational
+                    format: Rational
+                    components: 1
+                    value: 'a:2:{i:0;i:144;i:1;i:1;}'
+                    text: 144/1
             -
                 id: 283
                 name: YResolution
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:144;i:1;i:1;}'
-                        text: 144/1
+                entry:
+                    class: ExifEye\core\Entry\Rational
+                    format: Rational
+                    components: 1
+                    value: 'a:2:{i:0;i:144;i:1;i:1;}'
+                    text: 144/1
             -
                 id: 296
                 name: ResolutionUnit
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:2;'
-                        text: Inch
+                entry:
+                    class: ExifEye\core\Entry\Short
+                    format: Short
+                    components: 1
+                    value: 'i:2;'
+                    text: Inch
             -
                 id: 305
                 name: Software
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Ascii
-                        value: 's:31:"28-1012                        ";'
-                        text: '28-1012                        '
+                entry:
+                    class: ExifEye\core\Entry\Ascii
+                    format: Ascii
+                    components: 32
+                    value: 's:31:"28-1012                        ";'
+                    text: '28-1012                        '
             -
                 id: 306
                 name: DateTime
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Time
-                        value: 'b:0;'
-                        text: '0000:00:00 00:00:00'
+                entry:
+                    class: ExifEye\core\Entry\Time
+                    format: Ascii
+                    components: 20
+                    value: 'b:0;'
+                    text: '0000:00:00 00:00:00'
             -
                 id: 531
                 name: YCbCrPositioning
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:2;'
-                        text: co-sited
+                entry:
+                    class: ExifEye\core\Entry\Short
+                    format: Short
+                    components: 1
+                    value: 'i:2;'
+                    text: co-sited
             -
                 id: 50341
                 name: PrintIM
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Undefined
-                        value: !!binary czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
-                        text: (undefined)
+                entry:
+                    class: ExifEye\core\Entry\Undefined
+                    format: Undefined
+                    components: 244
+                    value: !!binary czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
+                    text: (undefined)
         blocks:
             Exif:
                 class: ExifEye\core\Block\Ifd
@@ -98,243 +109,273 @@ blocks:
                     -
                         id: 33434
                         name: ExposureTime
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Rational
-                                value: 'a:2:{i:0;i:1;i:1;i:80;}'
-                                text: '1/80 sec.'
+                        entry:
+                            class: ExifEye\core\Entry\Rational
+                            format: Rational
+                            components: 1
+                            value: 'a:2:{i:0;i:1;i:1;i:80;}'
+                            text: '1/80 sec.'
                     -
                         id: 33437
                         name: FNumber
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Rational
-                                value: 'a:2:{i:0;i:45;i:1;i:10;}'
-                                text: f/4.5
+                        entry:
+                            class: ExifEye\core\Entry\Rational
+                            format: Rational
+                            components: 1
+                            value: 'a:2:{i:0;i:45;i:1;i:10;}'
+                            text: f/4.5
                     -
                         id: 34850
                         name: ExposureProgram
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:5;'
-                                text: 'Creative program (biased toward depth of field)'
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:5;'
+                            text: 'Creative program (biased toward depth of field)'
                     -
                         id: 34855
                         name: ISOSpeedRatings
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:80;'
-                                text: 80
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:80;'
+                            text: 80
                     -
                         id: 36864
                         name: ExifVersion
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Version
-                                value: 'd:2.2;'
-                                text: 'Exif Version 2.2'
+                        entry:
+                            class: ExifEye\core\Entry\Version
+                            format: Undefined
+                            components: 4
+                            value: 'd:2.2;'
+                            text: 'Exif Version 2.2'
                     -
                         id: 36867
                         name: DateTimeOriginal
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Time
-                                value: 'b:0;'
-                                text: '0000:00:00 00:00:00'
+                        entry:
+                            class: ExifEye\core\Entry\Time
+                            format: Ascii
+                            components: 20
+                            value: 'b:0;'
+                            text: '0000:00:00 00:00:00'
                     -
                         id: 36868
                         name: DateTimeDigitized
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Time
-                                value: 'b:0;'
-                                text: '0000:00:00 00:00:00'
+                        entry:
+                            class: ExifEye\core\Entry\Time
+                            format: Ascii
+                            components: 20
+                            value: 'b:0;'
+                            text: '0000:00:00 00:00:00'
                     -
                         id: 37121
                         name: ComponentsConfiguration
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Undefined
-                                value: !!binary czo0OiIBAgMAIjs=
-                                text: 'Y Cb Cr -'
+                        entry:
+                            class: ExifEye\core\Entry\Undefined
+                            format: Undefined
+                            components: 4
+                            value: !!binary czo0OiIBAgMAIjs=
+                            text: 'Y Cb Cr -'
                     -
                         id: 37380
                         name: ExposureBiasValue
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\SignedRational
-                                value: 'a:2:{i:0;i:0;i:1;i:10;}'
-                                text: '0.0'
+                        entry:
+                            class: ExifEye\core\Entry\SignedRational
+                            format: SignedRational
+                            components: 1
+                            value: 'a:2:{i:0;i:0;i:1;i:10;}'
+                            text: '0.0'
                     -
                         id: 37381
                         name: MaxApertureValue
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Rational
-                                value: 'a:2:{i:0;i:300;i:1;i:100;}'
-                                text: 300/100
+                        entry:
+                            class: ExifEye\core\Entry\Rational
+                            format: Rational
+                            components: 1
+                            value: 'a:2:{i:0;i:300;i:1;i:100;}'
+                            text: 300/100
                     -
                         id: 37383
                         name: MeteringMode
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:5;'
-                                text: Pattern
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:5;'
+                            text: Pattern
                     -
                         id: 37384
                         name: LightSource
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: Unknown
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: Unknown
                     -
                         id: 37385
                         name: Flash
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:25;'
-                                text: 'Flash fired, auto mode.'
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:25;'
+                            text: 'Flash fired, auto mode.'
                     -
                         id: 37386
                         name: FocalLength
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Rational
-                                value: 'a:2:{i:0;i:1883;i:1;i:100;}'
-                                text: '18.8 mm'
+                        entry:
+                            class: ExifEye\core\Entry\Rational
+                            format: Rational
+                            components: 1
+                            value: 'a:2:{i:0;i:1883;i:1;i:100;}'
+                            text: '18.8 mm'
                     -
                         id: 37500
                         name: MakerNote
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\MakerNote
-                                value: !!binary czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjs=
-                                text: '758 bytes unknown MakerNote data'
+                        entry:
+                            class: ExifEye\core\Entry\MakerNote
+                            format: Undefined
+                            components: 758
+                            value: !!binary czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjs=
+                            text: '758 bytes unknown MakerNote data'
                     -
                         id: 37510
                         name: UserComment
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\UserComment
-                                value: 's:117:"                                                                                                                     ";'
-                                text: '                                                                                                                     '
+                        entry:
+                            class: ExifEye\core\Entry\UserComment
+                            format: Undefined
+                            components: 125
+                            value: 's:117:"                                                                                                                     ";'
+                            text: '                                                                                                                     '
                     -
                         id: 40960
                         name: FlashPixVersion
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Version
-                                value: 'i:1;'
-                                text: 'FlashPix Version 1.0'
+                        entry:
+                            class: ExifEye\core\Entry\Version
+                            format: Undefined
+                            components: 4
+                            value: 'i:1;'
+                            text: 'FlashPix Version 1.0'
                     -
                         id: 40961
                         name: ColorSpace
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:1;'
-                                text: sRGB
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:1;'
+                            text: sRGB
                     -
                         id: 40962
                         name: PixelXDimension
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:2560;'
-                                text: 2560
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:2560;'
+                            text: 2560
                     -
                         id: 40963
                         name: PixelYDimension
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:1920;'
-                                text: 1920
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:1920;'
+                            text: 1920
                     -
                         id: 41728
                         name: FileSource
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Undefined
-                                value: !!binary czoxOiIDIjs=
-                                text: DSC
+                        entry:
+                            class: ExifEye\core\Entry\Undefined
+                            format: Undefined
+                            components: 1
+                            value: !!binary czoxOiIDIjs=
+                            text: DSC
                     -
                         id: 41985
                         name: CustomRendered
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: 'Normal process'
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: 'Normal process'
                     -
                         id: 41986
                         name: ExposureMode
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: 'Auto exposure'
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: 'Auto exposure'
                     -
                         id: 41987
                         name: WhiteBalance
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: 'Auto white balance'
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: 'Auto white balance'
                     -
                         id: 41988
                         name: DigitalZoomRatio
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Rational
-                                value: 'a:2:{i:0;i:100;i:1;i:100;}'
-                                text: 100/100
+                        entry:
+                            class: ExifEye\core\Entry\Rational
+                            format: Rational
+                            components: 1
+                            value: 'a:2:{i:0;i:100;i:1;i:100;}'
+                            text: 100/100
                     -
                         id: 41990
                         name: SceneCaptureType
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:2;'
-                                text: Portrait
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:2;'
+                            text: Portrait
                     -
                         id: 41991
                         name: GainControl
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: Normal
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: Normal
                     -
                         id: 41992
                         name: Contrast
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: Normal
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: Normal
                     -
                         id: 41993
                         name: Saturation
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: Normal
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: Normal
                     -
                         id: 41994
                         name: Sharpness
-                        entries:
-                            -
-                                class: ExifEye\core\Entry\Short
-                                value: 'i:0;'
-                                text: Normal
+                        entry:
+                            class: ExifEye\core\Entry\Short
+                            format: Short
+                            components: 1
+                            value: 'i:0;'
+                            text: Normal
                 blocks:
                     Interoperability:
                         class: ExifEye\core\Block\Ifd
@@ -342,52 +383,58 @@ blocks:
                             -
                                 id: 1
                                 name: InteroperabilityIndex
-                                entries:
-                                    -
-                                        class: ExifEye\core\Entry\Ascii
-                                        value: 's:3:"R98";'
-                                        text: R98
+                                entry:
+                                    class: ExifEye\core\Entry\Ascii
+                                    format: Ascii
+                                    components: 4
+                                    value: 's:3:"R98";'
+                                    text: R98
                             -
                                 id: 2
                                 name: InteroperabilityVersion
-                                entries:
-                                    -
-                                        class: ExifEye\core\Entry\Version
-                                        value: 'i:1;'
-                                        text: 'Interoperability Version 1.0'
+                                entry:
+                                    class: ExifEye\core\Entry\Version
+                                    format: Undefined
+                                    components: 4
+                                    value: 'i:1;'
+                                    text: 'Interoperability Version 1.0'
     IFD1:
         class: ExifEye\core\Block\Ifd
         tags:
             -
                 id: 259
                 name: Compression
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:6;'
-                        text: 'JPEG compression'
+                entry:
+                    class: ExifEye\core\Entry\Short
+                    format: Short
+                    components: 1
+                    value: 'i:6;'
+                    text: 'JPEG compression'
             -
                 id: 282
                 name: XResolution
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:72;i:1;i:1;}'
-                        text: 72/1
+                entry:
+                    class: ExifEye\core\Entry\Rational
+                    format: Rational
+                    components: 1
+                    value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                    text: 72/1
             -
                 id: 283
                 name: YResolution
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Rational
-                        value: 'a:2:{i:0;i:72;i:1;i:1;}'
-                        text: 72/1
+                entry:
+                    class: ExifEye\core\Entry\Rational
+                    format: Rational
+                    components: 1
+                    value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                    text: 72/1
             -
                 id: 296
                 name: ResolutionUnit
-                entries:
-                    -
-                        class: ExifEye\core\Entry\Short
-                        value: 'i:2;'
-                        text: Inch
+                entry:
+                    class: ExifEye\core\Entry\Short
+                    format: Short
+                    components: 1
+                    value: 'i:2;'
+                    text: Inch
 errors: {  }
