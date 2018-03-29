@@ -63,7 +63,7 @@ class GH16Test extends ExifEyeTestCaseBase
         $exif = $jpeg->getExif();
         $tiff = $exif->getTiff();
         $ifd0 = $tiff->getIfd();
-        $written_subject = $ifd->xxGetTagByName('Subject')->xxGetEntry()->getValue();
+        $written_subject = $ifd0->xxGetTagByName('Subject')->xxGetEntry()->getValue();
         $this->assertEquals($subject, $written_subject);
     }
 }

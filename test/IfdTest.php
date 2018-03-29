@@ -32,7 +32,7 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $entries = [];
         foreach ($ifd->xxGetSubBlocks() as $tag) {
-            $entries[$tag->getId()] = $tag->xxGetEntry()->getValue();
+            $entries[$tag->getId()] = $tag->xxGetEntry();
         }
 
         $this->assertSame($entries[0x010E], $desc);
