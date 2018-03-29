@@ -25,7 +25,7 @@ use ExifEye\core\Spec;
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class Ifd implements \IteratorAggregate, \ArrayAccess
+class Ifd extends BlockBase
 {
     /**
      * The IFD header bytes to skip.
@@ -431,100 +431,6 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
     }
 
     /**
-     * Does a given tag exist in this IFD?
-     *
-     * This methods is part of the ArrayAccess SPL interface for
-     * overriding array access of objects, it allows you to check for
-     * existance of an entry in the IFD:
-     *
-     * <code>
-     * if (isset($ifd[PelTag::FNUMBER]))
-     * // ... do something with the F-number.
-     * </code>
-     *
-     * @param int $tag
-     *            the offset to check.
-     *
-     * @return boolean whether the tag exists.
-     */
-    public function offsetExists($tag)
-    {
-        return isset($this->entries[$tag]);
-    }
-
-    /**
-     * Retrieve a given tag from this IFD.
-     *
-     * This methods is part of the ArrayAccess SPL interface for
-     * overriding array access of objects, it allows you to read entries
-     * from the IFD the same was as for an array:
-     *
-     * <code>
-     * $entry = $ifd[PelTag::FNUMBER];
-     * </code>
-     *
-     * @param int $tag
-     *            the tag to return. It is an error to ask for a tag
-     *            which is not in the IFD, just like asking for a non-existant
-     *            array entry.
-     *
-     * @return EntryBase the entry.
-     */
-    public function offsetGet($tag)
-    {
-        return $this->entries[$tag];
-    }
-
-    /**
-     * Set or update a given entry in this IFD.
-     *
-     * This methods is part of the ArrayAccess SPL interface for
-     * overriding array access of objects, it allows you to add new
-     * entries or replace esisting entries by doing:
-     *
-     * <code>
-     * $ifd[PelTag::EXPOSURE_BIAS_VALUE] = $entry;
-     * </code>
-     *
-     * Note that the actual array index passed is ignored! Instead the
-     * {@link PelTag} from the entry is used.
-     *
-     * @param int $entry_id
-     *            unused.
-     *
-     * @param EntryBase $e
-     *            the new value.
-     */
-    public function offsetSet($entry_id, $entry)
-    {
-        if ($entry instanceof EntryBase) {
-            $entry_id = $entry->getId();
-            $this->entries[$entry_id] = $entry;
-        } else {
-            throw new InvalidArgumentException('Argument 1 must be of the EntryBase type.');
-        }
-    }
-
-    /**
-     * Unset a given tag in this IFD.
-     *
-     * This methods is part of the ArrayAccess SPL interface for
-     * overriding array access of objects, it allows you to delete
-     * entries in the IFD by doing:
-     *
-     * <code>
-     * unset($ifd[PelTag::EXPOSURE_BIAS_VALUE])
-     * </code>
-     *
-     * @param int $tag
-     *            the offset to delete.
-     */
-    public function offsetUnset($tag)
-    {
-        unset($this->entries[$tag]);
-    }
-
-    /**
      * Retrieve an entry.
      *
      * @param int $tag
@@ -555,25 +461,6 @@ class Ifd implements \IteratorAggregate, \ArrayAccess
     public function getEntries()
     {
         return $this->entries;
-    }
-
-    /**
-     * Return an iterator for all entries contained in this IFD.
-     *
-     * Used with foreach as in
-     *
-     * <code>
-     * foreach ($ifd as $tag => $entry) {
-     * // $tag is now a PelTag and $entry is a EntryBase object.
-     * }
-     * </code>
-     *
-     * @return Iterator an iterator using the {@link PelTag tags} as
-     *         keys and the entries as values.
-     */
-    public function getIterator()
-    {
-        return new \ArrayIterator($this->entries);
     }
 
     /**
