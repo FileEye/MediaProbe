@@ -7,6 +7,7 @@ use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
+use ExifEye\core\ExifEye;
 use ExifEye\core\Entry\WindowsString;
 use ExifEye\core\Block\Jpeg;
 
