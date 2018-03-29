@@ -186,6 +186,10 @@ blocks:
                                 class: ExifEye\core\Entry\Short
                                 value: 'a:4:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;}'
                                 text: '0, 0, 0, 0'
+                            '[[[0]]]':
+                                class: ExifEye\core\Entry\Short
+                                value: 'a:5:{i:0;i:10;i:1;i:2;i:2;i:2;i:3;i:640;i:4;i:480;}'
+                                text: '10, 2, 2, 640, 480'
                             PictureInfo:
                                 class: ExifEye\core\Entry\Short
                                 value: 'a:28:{i:0;i:9;i:1;i:9;i:2;i:640;i:3;i:480;i:4;i:2592;i:5;i:216;i:6;i:467;i:7;i:39;i:8;i:65068;i:9;i:0;i:10;i:468;i:11;i:65068;i:12;i:0;i:13;i:468;i:14;i:65068;i:15;i:0;i:16;i:468;i:17;i:65494;i:18;i:65494;i:19;i:65494;i:20;i:0;i:21;i:0;i:22;i:0;i:23;i:42;i:24;i:42;i:25;i:42;i:26;i:32;i:27;i:5;}'
@@ -472,19 +476,19 @@ errors:
     entries:
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0003 in IFD ''CanonMakerNotes'' (3 of 17)...'
+            message: 'Unknown TAG 0x0003 in IFD ''CanonMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'' (5 of 17)...'
+            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'' (6 of 17)...'
+            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'' (14 of 17)...'
+            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0018 in IFD ''CanonMakerNotes'' (15 of 17)...'
+            message: 'Unknown TAG 0x0018 in IFD ''CanonMakerNotes'''
         -
             class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0019 in IFD ''CanonMakerNotes'' (16 of 17)...'
+            message: 'Unknown TAG 0x0019 in IFD ''CanonMakerNotes'''
