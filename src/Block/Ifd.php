@@ -346,6 +346,16 @@ class Ifd extends BlockBase
         return $this->type;
     }
 
+    public function xxGetTagByName($tag_name)
+    {
+        foreach ($this->getSubBlocks() as $sub_block) {
+            if ($sub_block->getName() === $tag_name) {
+                return $sub_block;
+            }
+        }
+        return null;
+    }
+
     /**
      * Is a given tag valid for this IFD?
      *

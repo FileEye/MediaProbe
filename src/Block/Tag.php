@@ -16,7 +16,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'TAG';
+    protected $type = 'Tag';
 
     protected $format;
     protected $components;

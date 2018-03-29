@@ -109,21 +109,21 @@ class MakerNote extends Undefined
         }
 
         // Get MakerNotes from Exif IFD.
-        if (!$maker_note = $exif_ifd->getEntry(Spec::getTagIdByName($exif_ifd->getType(), 'MakerNote'))) {
+        if (!$maker_note_tag = $exif_ifd->xxGetTagByName('MakerNote')) {
             return;
         }
 
         // Get Make tag from IFD0.
-        if (!$make = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), 'Make'))) {
+        if (!$make_tag = $ifd->xxGetTagByName('Make')) {
             return;
         }
 
         // Get Model tag from IFD0.
-        $model_entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), 'Model'));
-        $model = $model_entry ? $model_entry->getValue() : 'na';
+        $model_tag = $ifd->xxGetTagByName('Model');
+        $model = $model_tag ? $model_tag->xxGetEntry()->getValue() : 'na';
 
         // Get maker note IFD id.
-        if (!$maker_note_ifd_id = Spec::getMakerNoteIfd($make->getValue(), $model)) {
+        if (!$maker_note_ifd_id = Spec::getMakerNoteIfd($make_tag->xxGetEntry()->getValue(), $model)) {
             return;
         }
 
@@ -132,6 +132,5 @@ class MakerNote extends Undefined
         $ifd = new $ifd_class($maker_note_ifd_id);
         $ifd->load($d, $maker_note->getDataOffset());
         $exif_ifd->addSubIfd($ifd);
-        //$exif_ifd->offsetUnset(Spec::getTagIdByName($exif_ifd->getType(), 'MakerNote'));
     }
 }
