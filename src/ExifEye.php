@@ -175,6 +175,14 @@ class ExifEye
             self::warning('%s (%s:%s)', $e->getMessage(), basename($e->getFile()), $e->getLine());
         }
     }
+    public static function maybeThrowNoDebug(ExifEyeException $e)
+    {
+        if (self::$strict) {
+            throw $e;
+        } else {
+            self::$exceptions[] = $e;
+        }
+    }
 
     /**
      * Enable/disable strict parsing.

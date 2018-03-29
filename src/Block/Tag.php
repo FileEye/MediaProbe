@@ -22,6 +22,8 @@ class Tag extends BlockBase
     protected $value;
     protected $isOffset;
 
+    protected $entry;
+
     /**
      * Constructs a Tag block object.
      */
@@ -73,5 +75,14 @@ class Tag extends BlockBase
     public function isOffset()
     {
         return $this->isOffset;
+    }
+
+    public function xxAddEntry(EntryBase $entry)
+    {
+        $this->entry = $entry;
+    }
+    public function xxGetEntry()
+    {
+        return $this->entry;
     }
 }

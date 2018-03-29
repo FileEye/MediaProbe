@@ -192,7 +192,7 @@ class Ifd extends BlockBase
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag->getId())) {
-                ExifEye::maybeThrow(
+                ExifEye::maybeThrowNoDebug(
                     new IfdException(
                         "Unknown TAG 0x%04X in IFD '%s'",
                         $tag->getId(),
@@ -237,6 +237,8 @@ class Ifd extends BlockBase
 
             // Load a TAG entry.
             if ($entry = EntryBase::createFromData($this->type, $tag->getId(), $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
+                $tag->xxAddEntry($entry);
+                $this->addSubBlock($tag);
                 $this->addEntry($entry);
             }
         }
