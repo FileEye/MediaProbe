@@ -49,16 +49,6 @@ class Ifd extends BlockBase
     protected $tagsSkipOffset = 0;
 
     /**
-     * The entries held by this directory.
-     *
-     * Each tag in the directory is represented by a {@link EntryBase}
-     * object in this array.
-     *
-     * @var array
-     */
-    protected $entries = [];
-
-    /**
      * The type of this directory.
      *
      * Initialized in the constructor.
@@ -148,10 +138,10 @@ class Ifd extends BlockBase
         $thumb_offset = 0;
         $thumb_length = 0;
 
-        /* Read the number of entries */
+        /* Read the number of tags */
         $n = $d->getShort($offset + $this->headerSkipBytes);
         ExifEye::debug(
-            str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d entries at offset %d from %d bytes...",
+            str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d TAGs at offset %d from %d bytes...",
             $this->getName(),
             $n,
             $offset,
@@ -239,7 +229,6 @@ class Ifd extends BlockBase
             if ($entry = EntryBase::createFromData($this->type, $tag->getId(), $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
                 $tag->xxAddEntry($entry);
                 $this->addSubBlock($tag);
-                $this->addEntry($entry);
             }
         }
 
@@ -430,50 +419,6 @@ class Ifd extends BlockBase
     }
 
     /**
-     * Adds an entry to the directory.
-     *
-     * @param EntryBase $e
-     *            the entry that will be added.
-     */
-    public function addEntry(EntryBase $entry)
-    {
-        $this->entries[$entry->getId()] = $entry;
-    }
-
-    /**
-     * Retrieve an entry.
-     *
-     * @param int $tag
-     *            the tag identifying the entry.
-     *
-     * @return EntryBase the entry associated with the tag, or null if no
-     *         such entry exists.
-     */
-    public function getEntry($tag)
-    {
-        if (isset($this->entries[$tag])) {
-            return $this->entries[$tag];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Returns all entries contained in this IFD.
-     *
-     * @return array an array of {@link EntryBase} objects, or rather
-     *         descendant classes. The array has {@link PelTag}s as keys
-     *         and the entries as values.
-     *
-     * @see getEntry
-     * @see getIterator
-     */
-    public function getEntries()
-    {
-        return $this->entries;
-    }
-
-    /**
      * Returns available thumbnail data.
      *
      * @return string the bytes in the thumbnail, if any. If the IFD
@@ -590,7 +535,7 @@ class Ifd extends BlockBase
 
         ExifEye::debug('Bytes from IDF will start at offset %d within Exif data', $offset);
 
-        $n = count($this->entries) + count($this->sub);
+        $n = count($this->getSubBlocks()) + count($this->sub);
         if ($this->thumb_data !== null) {
             /*
              * We need two extra entries for the thumbnail offset and
@@ -609,17 +554,17 @@ class Ifd extends BlockBase
          */
         $end = $offset + 2 + 12 * $n + 4;
 
-        foreach ($this->entries as $tag => $entry) {
+        foreach ($this->getSubBlocks() as $tag => $sub_block) {
             /* Each entry is 12 bytes long. */
-            $bytes .= Convert::shortToBytes($entry->getId(), $order);
-            $bytes .= Convert::shortToBytes($entry->getFormat(), $order);
-            $bytes .= Convert::longToBytes($entry->getComponents(), $order);
+            $bytes .= Convert::shortToBytes($sub_block->xxGetEntry()->getId(), $order);
+            $bytes .= Convert::shortToBytes($sub_block->xxGetEntry()->getFormat(), $order);
+            $bytes .= Convert::longToBytes($sub_block->xxGetEntry()->getComponents(), $order);
 
             /*
              * Size? If bigger than 4 bytes, the actual data is not in
              * the entry but somewhere else.
              */
-            $data = $entry->getBytes($order);
+            $data = $sub_block->xxGetEntry()->getBytes($order);
             $s = strlen($data);
             if ($s > 4) {
                 ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
@@ -709,10 +654,10 @@ class Ifd extends BlockBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->entries));
+        $str = ExifEye::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->getSubBlocks()));
 
-        foreach ($this->entries as $entry) {
-            $str .= $entry->__toString();
+        foreach ($this->getSubBlocks() as $sub_block) {
+            $str .= $sub_block->xxGetEntry()->__toString();
         }
         $str .= ExifEye::fmt("Dumping %d sub IFDs...\n", count($this->sub));
 
