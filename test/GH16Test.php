@@ -20,7 +20,6 @@ class GH16Test extends ExifEyeTestCaseBase
         $this->file = dirname(__FILE__) . '/images/gh-16-tmp.jpg';
         $file = dirname(__FILE__) . '/images/gh-16.jpg';
         copy($file, $this->file);
-ExifEye::setStrictParsing(true);
     }
 
     public function tearDown()
@@ -59,6 +58,7 @@ ExifEye::setStrictParsing(true);
         $ifd0->xxAddSubBlock($tag);
         $tag->xxAddEntry($entry);
 
+ExifEye::setDebug(true);
         file_put_contents($this->file, $jpeg->getBytes());
 
         $jpeg = new Jpeg($this->file);

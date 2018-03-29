@@ -260,6 +260,7 @@ class ExifEye
             $args = func_get_args();
             $str = array_shift($args);
             vprintf($str . "\n", $args);
+dump(sprintf($str . "\n", $args));
         }
     }
 
