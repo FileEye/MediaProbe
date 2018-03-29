@@ -94,7 +94,7 @@ class IfdIndexShort extends Ifd
             if ($entry = EntryBase::createNew($this->type, $i + 1, [$item_value])) {
                 $tag = new Tag($this->getType(), $i + 1, $entry->getFormat(), $entry->getComponents(), null/* xx */);
                 $tag->xxAddEntry($entry);
-                $this->xxAddSubBlock($tag);
+                $this->xxAppendSubBlock($tag);
             }
         }
         ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());

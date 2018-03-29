@@ -92,7 +92,25 @@ abstract class BlockBase
      */
     public function xxAddSubBlock(BlockBase $sub_block)
     {
+        for ($i = 0; $i < count($this->xxGetSubBlocks()); $i++) {
+            if ($sub_block->getId() === $this->xxGetSubBlock($i)->getId()) {
+                $this->subBlocks[$i] = $sub_block;
+                return $this;
+            }
+        }
+        return $this->xxAppendSubBlock($sub_block);
+    }
+
+    /**
+     * Appends a sub-block.
+     *
+     * @param BlockBase $sub_block
+     *            the sub-block that will be appended.
+     */
+    public function xxAppendSubBlock(BlockBase $sub_block)
+    {
         $this->subBlocks[] = $sub_block;
+        return $this;
     }
 
     /**

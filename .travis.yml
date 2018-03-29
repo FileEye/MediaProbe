@@ -31,8 +31,8 @@ script:
   # TravisCI re-compile the specification PHP file from the YAML files.
   #- php bin/exifeye compile
   #- ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
-  #- ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ./test
-  - ./vendor/bin/phpunit test/GH16Test.php
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ./test
+  #- ./vendor/bin/phpunit test/GH16Test.php
   #- php examples/dump-image.php -d test/images/1024-2006_1011_093752.jpg
   #- php examples/dump-image.php -d test/imagetests/apple-iphone7.JPG
   #- php examples/dump-image.php -d test/imagetests/canon-eos-650d.jpg

@@ -228,7 +228,7 @@ class Ifd extends BlockBase
             // Load a TAG entry.
             if ($entry = EntryBase::createFromData($this->type, $tag->getId(), $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
                 $tag->xxAddEntry($entry);
-                $this->xxAddSubBlock($tag);
+                $this->xxAppendSubBlock($tag);
             }
         }
 

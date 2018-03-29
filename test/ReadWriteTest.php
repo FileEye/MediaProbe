@@ -39,7 +39,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
 
         foreach ($entries as $entry) {
             $tag = new Tag($entry->getIfdType(), $entry->getId(), $entry->getFormat(), $entry->getComponents(), null/* xx */);
-            $ifd->xxAddSubBlock($tag);
+            $ifd->xxAppendSubBlock($tag);
             $tag->xxAddEntry($entry);
         }
 
