@@ -41,7 +41,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             }
 
             $software_name = 'Example V2';
-            $software_tag = $ifd0->xxGetTagByName('Software')->getEntry();
+            $software_tag = $ifd0->xxGetTagByName('Software');
 
             if ($software_tag === null) {
                 $software = new Ascii($ifd0->getType(), 0x0131, [$software_name]); /* xx */

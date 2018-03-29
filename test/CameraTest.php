@@ -58,14 +58,15 @@ class CameraTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf($expected['class'], $ifd);
 
         if (isset($expected['entries'])) {
-            $this->assertCount(count($expected['entries']), $ifd->getEntries(), "Block: '{$ifd->getName()}' - entries count");
+            $this->assertCount(count($expected['entries']), $ifd->xxGetSubBlocks(), "Block: '{$ifd->getName()}' - entries count");
             foreach ($expected['entries'] as $test_entry => $test_entry_data) {
                 $matches = [];
                 if (preg_match('/\[\[\[(\d+)\]\]\]/', $test_entry, $matches) === 1) {
-                    $entry = $ifd->getEntry((int) $matches[1]);
+                    $tag = $ifd->xxGetTagById((int) $matches[1]);
                 } else {
-                    $entry = $ifd->getEntry(Spec::getTagIdByName($ifd->getType(), $test_entry));
+                    $tag = $ifd->xxGetTagByName($test_entry);
                 }
+                $entry = $tag->xxGetEntry();
                 $this->assertInstanceOf($test_entry_data['class'], $entry, "Block: '{$ifd->getName()}' Entry: '$test_entry'");
                 $this->assertEquals(unserialize($test_entry_data['value']), $entry->getValue(), "Block: '{$ifd->getName()}' Entry: '$test_entry'");
                 $this->assertEquals($test_entry_data['text'], $entry->getText(), "Block: '{$ifd->getName()}' Entry: '$test_entry'");

@@ -348,8 +348,18 @@ class Ifd extends BlockBase
 
     public function xxGetTagByName($tag_name)
     {
-        foreach ($this->getSubBlocks() as $sub_block) {
+        foreach ($this->xxGetSubBlocks() as $sub_block) {
             if ($sub_block->getName() === $tag_name) {
+                return $sub_block;
+            }
+        }
+        return null;
+    }
+
+    public function xxGetTagById($tag_id)
+    {
+        foreach ($this->xxGetSubBlocks() as $sub_block) {
+            if ($sub_block->getId() === $tag_id) {
                 return $sub_block;
             }
         }
@@ -545,7 +555,7 @@ class Ifd extends BlockBase
 
         ExifEye::debug('Bytes from IDF will start at offset %d within Exif data', $offset);
 
-        $n = count($this->getSubBlocks()) + count($this->sub);
+        $n = count($this->xxGetSubBlocks()) + count($this->sub);
         if ($this->thumb_data !== null) {
             /*
              * We need two extra entries for the thumbnail offset and
@@ -564,7 +574,7 @@ class Ifd extends BlockBase
          */
         $end = $offset + 2 + 12 * $n + 4;
 
-        foreach ($this->getSubBlocks() as $tag => $sub_block) {
+        foreach ($this->xxGetSubBlocks() as $tag => $sub_block) {
             /* Each entry is 12 bytes long. */
             $bytes .= Convert::shortToBytes($sub_block->xxGetEntry()->getId(), $order);
             $bytes .= Convert::shortToBytes($sub_block->xxGetEntry()->getFormat(), $order);
@@ -664,9 +674,9 @@ class Ifd extends BlockBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->getSubBlocks()));
+        $str = ExifEye::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->xxGetSubBlocks()));
 
-        foreach ($this->getSubBlocks() as $sub_block) {
+        foreach ($this->xxGetSubBlocks() as $sub_block) {
             $str .= $sub_block->xxGetEntry()->__toString();
         }
         $str .= ExifEye::fmt("Dumping %d sub IFDs...\n", count($this->sub));

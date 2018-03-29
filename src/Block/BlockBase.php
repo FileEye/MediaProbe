@@ -104,7 +104,7 @@ abstract class BlockBase
      * @return BlockBase the sub-block associated with the index, or null if no
      *         such block exists.
      */
-    public function getSubBlock($index)
+    public function xxGetSubBlock($index)
     {
         return isset($this->subBlocks[$index]) ? $this->subBlocks[$index] : null;
     }
@@ -114,7 +114,7 @@ abstract class BlockBase
      *
      * @return BlockBase[]
      */
-    public function getSubBlocks()
+    public function xxGetSubBlocks()
     {
         return $this->subBlocks;
     }
