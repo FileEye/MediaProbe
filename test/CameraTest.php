@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
+use ExifEye\core\Format;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 use ExifEye\core\Spec;
@@ -64,9 +65,11 @@ class CameraTest extends ExifEyeTestCaseBase
                 $this->assertEquals($expected['tags'][$i]['id'], $tags[$i]->getId(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
                 $this->assertEquals($expected['tags'][$i]['name'], $tags[$i]->getName(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
                 $entry = $tags[$i]->getEntry();
-                $this->assertInstanceOf($expected['tags'][$i]['entries'][0]['class'], $entry, "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals(unserialize($expected['tags'][$i]['entries'][0]['value']), $entry->getValue(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals($expected['tags'][$i]['entries'][0]['text'], $entry->getText(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertInstanceOf($expected['tags'][$i]['entry']['class'], $entry, "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals($expected['tags'][$i]['entry']['components'], $entry->getComponents(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals($expected['tags'][$i]['entry']['format'], Format::getName($entry->getFormat()), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals(unserialize($expected['tags'][$i]['entry']['value']), $entry->getValue(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
+                $this->assertEquals($expected['tags'][$i]['entry']['text'], $entry->getText(), "Ifd: '{$ifd->getName()}' Tag: '{$tags[$i]->getId()}'");
             }
         }
 
