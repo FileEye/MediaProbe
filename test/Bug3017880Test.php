@@ -45,8 +45,8 @@ class Bug3017880Test extends ExifEyeTestCaseBase
 
             if ($software_tag === null) {
                 $software = new Ascii($ifd0->getType(), 0x0131, [$software_name]); /* xx */
-                $tag = new Tag($ifd0->getType(), 0x0131, $software->getFormat(), $software->getComponents(), 0/* xx */);
-                $this->xxAddSubBlock($tag);
+                $tag = new Tag($ifd0->getType(), 0x0131, $software->getFormat(), $software->getComponents(), null/* xx */);
+                $ifd0->xxAddSubBlock($tag);
                 $tag->xxAddEntry($software);
                 $resave_file = 1;
             } else {

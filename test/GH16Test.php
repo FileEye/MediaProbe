@@ -51,7 +51,10 @@ class GH16Test extends ExifEyeTestCaseBase
                 $tiff->setIfd($ifd0);
             }
         }
-        $ifd0->addEntry(new WindowsString($ifd0->getType(), 0x9C9F, [$subject]));
+        $entry = new WindowsString($ifd0->getType(), 0x9C9F, [$subject]); /* xx */
+        $tag = new Tag($ifd0->getType(), 0x9C9F, $entry->getFormat(), $entry->getComponents(), null/* xx */);
+        $ifd0->xxAddSubBlock($tag);
+        $tag->xxAddEntry($entry);
 
         file_put_contents($this->file, $jpeg->getBytes());
 

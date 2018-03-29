@@ -92,7 +92,9 @@ class IfdIndexShort extends Ifd
                     break;
             }
             if ($entry = EntryBase::createNew($this->type, $i + 1, [$item_value])) {
-                $this->addEntry($entry);
+                $tag = new Tag($this->getType(), $i + 1, $entry->getFormat(), $entry->getComponents(), null/* xx */);
+                $tag->xxAddEntry($entry);
+                $this->xxAddSubBlock($tag);
             }
         }
         ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
