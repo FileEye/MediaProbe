@@ -12,7 +12,7 @@ class NumberSByteTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new SignedByte(0, 42, []);
+        $this->num = new SignedByte([]);
         $this->min = -128;
         $this->max = 127;
     }

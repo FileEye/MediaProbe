@@ -9,7 +9,7 @@ class NumberSRationalTest extends NumberTestCase
 {
     public function testOverflow()
     {
-        $entry = new SignedRational(0, 42, [[-1, 2]]);
+        $entry = new SignedRational([[-1, 2]]);
         $this->assertEquals($entry->getValue(), [-1, 2]);
 
         $caught = false;
@@ -42,7 +42,7 @@ class NumberSRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new SignedRational(0, 42, []);
+        $entry = new SignedRational([]);
         $this->assertEquals($entry->getValue(), []);
 
         $entry->setValue([[-1, 2], [3, 4], [5, -6]]);

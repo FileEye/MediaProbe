@@ -12,7 +12,7 @@ class NumberSShortTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new SignedShort(0, 42, []);
+        $this->num = new SignedShort([]);
         $this->min = -32768;
         $this->max = 32767;
     }

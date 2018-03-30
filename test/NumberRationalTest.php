@@ -9,7 +9,7 @@ class NumberRationalTest extends NumberTestCase
 {
     public function testOverflow()
     {
-        $entry = new Rational(0, 42, [[1, 2]]);
+        $entry = new Rational([[1, 2]]);
         $this->assertEquals($entry->getValue(), [1, 2]);
 
         $caught = false;
@@ -42,7 +42,7 @@ class NumberRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new Rational(0, 42, []);
+        $entry = new Rational([]);
         $this->assertEquals($entry->getValue(), []);
         $this->assertEquals($entry->getText(), '');
 
