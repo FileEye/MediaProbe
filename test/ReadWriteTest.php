@@ -78,7 +78,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
-            $ifdTag = $ifd->xxGetTagById($entry[0])
+            $ifdTag = $ifd->xxGetTagById($entry[0]);
             $ifdEntry = $ifdTag->getEntry();
             if ($ifdEntry->getFormat() == Format::ASCII) {
                 $ifdValue = $ifdTag->xxGetValue();
