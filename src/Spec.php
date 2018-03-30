@@ -299,20 +299,20 @@ class Spec
     /**
      * Returns the TAG text.
      *
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
+     * @param mixed $value
+     *            the TAG value.
      * @param bool $brief
      *            indicates to use brief output.
      *
      * @return string|null
      *            the TAG text, or NULL if not applicable.
      */
-    public static function getTagText(EntryBase $entry, $brief)
+    public static function getTagText($ifd_id, $tag_id, $value, $brief)
     {
-        $ifd_id = $entry->getIfdType();
-        $tag_id = $entry->getId();
-        $value = $entry->getValue();
-
         if (!isset(self::getMap()['tags'][$ifd_id][$tag_id]['text'])) {
             return null;
         }
@@ -320,7 +320,7 @@ class Spec
         // Return a text from a callback if defined.
         if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['text']['decode'])) {
             $decode = self::getMap()['tags'][$ifd_id][$tag_id]['text']['decode'];
-            return call_user_func($decode, $entry, $brief);
+            return call_user_func($decode, $ifd_id, $tag_id, $value, $brief);
         }
 
         // Return a text from a mapping list if defined.
