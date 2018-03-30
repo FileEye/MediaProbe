@@ -330,7 +330,7 @@ class Spec
             $map = self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'];
             // If the code to be mapped is a non-int, change to string.
             $id = is_int($value) ? $value : (string) $value;
-            return isset($map[$id]) ? ExifEye::tra($map[$id]) : null;
+            return isset($map[$id]) ? ExifEye::tra($map[$id]) : $entry->getText();
         }
 
         return $entry->getText();
