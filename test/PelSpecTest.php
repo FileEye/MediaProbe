@@ -101,7 +101,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
               'chunky format', 'ExifEye\core\Entry\Short', 'IFD0', 'PlanarConfiguration', [1],
           ],
           'IFD0/PlanarConfiguration - missing mapping' => [
-              null, 'ExifEye\core\Entry\Short', 'IFD0', 'PlanarConfiguration', [6.1],
+              6.1, 'ExifEye\core\Entry\Short', 'IFD0', 'PlanarConfiguration', [6.1],
           ],
           'CanonPanoramaInformation/PanoramaDirection - value 4' => [
               '2x2 Matrix (Clockwise)', 'ExifEye\core\Entry\SignedShort', 'CanonPanoramaInformation', 'PanoramaDirection', [4],
