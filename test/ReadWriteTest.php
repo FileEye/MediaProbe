@@ -38,9 +38,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
-        $tag = new Tag($ifd->getType(), $entry[0], $entry[1]->getFormat(), $entry[1]->getComponents(), null/* xx */);
-            $ifd->xxAppendSubBlock($tag);
-            $tag->setEntry($entry[1]);
+            $ifd->xxAppendSubBlock(new Tag($ifd->getType(), $entry[0], $entry[1]->getFormat(), $entry[1]->getComponents(), $entry[1]));
         }
 
         $tiff = new Tiff();

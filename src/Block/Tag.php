@@ -27,12 +27,13 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($ifd_id, $id, $format, $components, $data_element = null)
+    public function __construct($ifd_id, $id, $format, $components, EntryBase $entry, $data_element = null)
     {
         $this->id = $id;
         $this->format = $format;
         $this->components = $components;
         $this->dataElement = $data_element;
+        $this->entry = $entry;
 
         $this->ifdId = $ifd_id;
 
