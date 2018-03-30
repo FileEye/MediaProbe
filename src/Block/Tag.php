@@ -79,12 +79,29 @@ class Tag extends BlockBase
         return $this->isOffset;
     }
 
-    public function xxGetText()
+    public function xxGetText($brief = false)
     {
         if (!isset($this->entry)) {
             return null;
         }
-        return Spec::getTagText($this->ifdId, $this->id, $this->entry);
+        return Spec::getTagText($this->ifdId, $this->id, $this->entry, $brief);
     }
 
+    /**
+     * Turn this entry into a string.
+     *
+     * @return string a string representation of this entry. This is
+     *         mostly for debugging.
+     */
+    public function __toString()
+    {
+        $entry_name = Spec::getTagName($this->ifdId, $this->id) ?: '*** UNKNOWN ***';
+        $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, $entry_name);
+        if (isset($this->entry)){
+            $str .= $this->entry->__toString();
+        }
+        $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
+        $str .= ExifEye::fmt("    Text      : %s\n", $this->getText());
+        return $str;
+    }
 }
