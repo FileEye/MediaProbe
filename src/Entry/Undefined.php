@@ -77,6 +77,10 @@ class Undefined extends EntryBase
     /**
      * Decode text for an Exif/FileSource tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -85,7 +89,7 @@ class Undefined extends EntryBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeFileSource(EntryBase $entry, $brief = false)
+    public static function decodeFileSource($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         $value = $entry->getValue();
         switch (ord($value{0})) {
@@ -99,6 +103,10 @@ class Undefined extends EntryBase
     /**
      * Decode text for an Exif/SceneType tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -107,7 +115,7 @@ class Undefined extends EntryBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeSceneType(EntryBase $entry, $brief = false)
+    public static function decodeSceneType($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         $value = $entry->getValue();
         switch (ord($value{0})) {
@@ -121,6 +129,10 @@ class Undefined extends EntryBase
     /**
      * Decode text for an Exif/ComponentsConfiguration tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -129,7 +141,7 @@ class Undefined extends EntryBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeComponentsConfiguration(EntryBase $entry, $brief = false)
+    public static function decodeComponentsConfiguration($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         $value = $entry->getValue();
         $v = '';

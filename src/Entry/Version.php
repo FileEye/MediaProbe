@@ -105,6 +105,10 @@ class Version extends EntryBase
     /**
      * Decode text for an Exif/ExifVersion tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -113,7 +117,7 @@ class Version extends EntryBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeExifVersion(EntryBase $entry, $brief = false)
+    public static function decodeExifVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
@@ -126,6 +130,10 @@ class Version extends EntryBase
     /**
      * Decode text for an Exif/FlashPixVersion tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -134,7 +142,7 @@ class Version extends EntryBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeFlashPixVersion(EntryBase $entry, $brief = false)
+    public static function decodeFlashPixVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
@@ -147,6 +155,10 @@ class Version extends EntryBase
     /**
      * Decode text for an Interoperability/InteroperabilityVersion tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -155,7 +167,7 @@ class Version extends EntryBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeInteroperabilityVersion(EntryBase $entry, $brief = false)
+    public static function decodeInteroperabilityVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
