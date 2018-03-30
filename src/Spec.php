@@ -313,6 +313,8 @@ class Spec
      */
     public static function getTagText($ifd_id, $tag_id, EntryBase $entry, $brief)
     {
+        $value = $entry->getValue();
+
         if (!isset(self::getMap()['tags'][$ifd_id][$tag_id]['text'])) {
             return null;
         }
