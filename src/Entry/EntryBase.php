@@ -238,7 +238,7 @@ abstract class EntryBase
     {
         // If Spec can return the text, return it, otherwise implementations
         // will override.
-        return Spec::getTagText($this, $brief);
+// xx        return Spec::getTagText($this, $brief);
     }
 
     /**
