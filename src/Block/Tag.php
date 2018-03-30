@@ -84,9 +84,7 @@ class Tag extends BlockBase
         if (!isset($this->entry)) {
             return null;
         }
-        $ret = Spec::getTagText($this->ifdId, $this->id, $this->entry, $brief);
-if (is_array($ret)) dump($ret);
-        return $ret;
+        return Spec::getTagText($this->ifdId, $this->id, $this->entry, $brief);
     }
 
     /**

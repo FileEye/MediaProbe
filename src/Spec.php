@@ -316,7 +316,7 @@ class Spec
         $value = $entry->getValue();
 
         if (!isset(self::getMap()['tags'][$ifd_id][$tag_id]['text'])) {
-            return $value;
+            return $entry->getText();
         }
 
         // Return a text from a callback if defined.
@@ -333,6 +333,6 @@ class Spec
             return isset($map[$id]) ? ExifEye::tra($map[$id]) : null;
         }
 
-        return $value;
+        return $entry->getText();
     }
 }
