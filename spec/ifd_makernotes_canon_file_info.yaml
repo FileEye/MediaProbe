@@ -8,7 +8,7 @@ tags:
     0x0003:
         name: BracketMode
         title: 'Bracket Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Off'
@@ -19,15 +19,15 @@ tags:
     0x0004:
         name: BracketValue
         title: 'Bracket Value'
-        format: SShort
+        format: SignedShort
     0x0005:
         name: BracketShotNumber
         title: 'Bracket Shot Number'
-        format: SShort
+        format: SignedShort
     0x0006:
         name: RawJpgQuality
         title: 'Raw Jpg Quality'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 1: 'Economy'
@@ -40,7 +40,7 @@ tags:
     0x0007:
         name: RawJpgSize
         title: 'Raw Jpg Size'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Large'
@@ -63,7 +63,7 @@ tags:
     0x0008:
         name: NoiseReduction
         title: 'Noise Reduction'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Off'
@@ -73,7 +73,7 @@ tags:
     0x0009:
         name: WBBracketMode
         title: 'WB Bracket Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Off'
@@ -82,15 +82,15 @@ tags:
     0x000C:
         name: WBBracketValueAB
         title: 'WB Bracket Value AB'
-        format: SShort
+        format: SignedShort
     0x000D:
         name: WBBracketValueGM
         title: 'WB Bracket Value GM'
-        format: SShort
+        format: SignedShort
     0x000E:
         name: FilterEffect
         title: 'Filter Effect'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'None'
@@ -101,7 +101,7 @@ tags:
     0x000F:
         name: ToningEffect
         title: 'Toning Effect'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'None'
@@ -112,11 +112,11 @@ tags:
     0x0010:
         name: MacroMagnification
         title: 'Macro Magnification'
-        format: SShort
+        format: SignedShort
     0x0013:
         name: LiveViewShooting
         title: 'Live View Shooting'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Off'

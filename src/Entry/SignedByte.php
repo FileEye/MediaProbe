@@ -54,7 +54,7 @@ class SignedByte extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data->getSByte($i);
+            $args[] = $data->getSignedByte($i);
         }
         return $args;
     }

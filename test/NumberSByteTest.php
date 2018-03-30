@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\SignedByte;
 
-class NumberSByteTest extends NumberTestCase
+class NumberSignedByteTest extends NumberTestCase
 {
     /**
      * {@inheritdoc}

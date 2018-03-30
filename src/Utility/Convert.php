@@ -164,7 +164,7 @@ class Convert
      * @return integer the signed byte found at offset, e.g., an integer in
      *         the range -128 to 127.
      */
-    public static function bytesToSByte($bytes, $offset)
+    public static function bytesToSignedByte($bytes, $offset)
     {
         $n = self::bytesToByte($bytes, $offset);
         if ($n > 127) {
@@ -213,7 +213,7 @@ class Convert
      * @return integer the signed byte found at offset, e.g., an integer in
      *         the range -32768 to 32767.
      */
-    public static function bytesToSShort($bytes, $offset, $endian)
+    public static function bytesToSignedShort($bytes, $offset, $endian)
     {
         $n = self::bytesToShort($bytes, $offset, $endian);
         if ($n > 32767) {
@@ -264,7 +264,7 @@ class Convert
      * @return integer the signed long found at offset, e.g., an integer in
      *         the range -2147483648 to 2147483647.
      */
-    public static function bytesToSLong($bytes, $offset, $endian)
+    public static function bytesToSignedLong($bytes, $offset, $endian)
     {
         $n = self::bytesToLong($bytes, $offset, $endian);
         if ($n > 2147483647) {
@@ -312,11 +312,11 @@ class Convert
      * @return array the signed rational found at offset, e.g., an array
      *         with two integers in the range -2147483648 to 2147483647.
      */
-    public static function bytesToSRational($bytes, $offset, $endian)
+    public static function bytesToSignedRational($bytes, $offset, $endian)
     {
         return [
-            self::bytesToSLong($bytes, $offset, $endian),
-            self::bytesToSLong($bytes, $offset + 4, $endian)
+            self::bytesToSignedLong($bytes, $offset, $endian),
+            self::bytesToSignedLong($bytes, $offset + 4, $endian)
         ];
     }
 

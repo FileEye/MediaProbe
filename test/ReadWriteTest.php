@@ -115,7 +115,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF008, new Byte([])],
                 ],
             ],
-            'PEL SByte Read/Write Tests' => [
+            'PEL SignedByte Read/Write Tests' => [
                 [
                     [0xF101, new SignedByte([-128])],
                     [0xF102, new SignedByte([-127])],
@@ -140,7 +140,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF208, new Short([])],
                 ],
             ],
-            'PEL SShort Read/Write Tests' => [
+            'PEL SignedShort Read/Write Tests' => [
                 [
                     [0xF301, new SignedShort([-32768])],
                     [0xF302, new SignedShort([-32767])],

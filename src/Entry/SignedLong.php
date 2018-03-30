@@ -55,7 +55,7 @@ class SignedLong extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data->getSLong($i * 4);
+            $args[] = $data->getSignedLong($i * 4);
         }
         return $args;
     }

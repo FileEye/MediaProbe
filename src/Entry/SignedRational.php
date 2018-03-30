@@ -65,7 +65,7 @@ class SignedRational extends SignedLong
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data->getSRational($i * 8);
+            $args[] = $data->getSignedRational($i * 8);
         }
         return $args;
     }

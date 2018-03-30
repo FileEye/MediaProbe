@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\SignedShort;
 
-class NumberSShortTest extends NumberTestCase
+class NumberSignedShortTest extends NumberTestCase
 {
     /**
      * {@inheritdoc}

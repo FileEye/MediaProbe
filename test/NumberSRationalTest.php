@@ -5,7 +5,7 @@ namespace ExifEye\Test\core;
 use ExifEye\core\Entry\SignedRational;
 use ExifEye\core\Entry\Exception\OverflowException;
 
-class NumberSRationalTest extends NumberTestCase
+class NumberSignedRationalTest extends NumberTestCase
 {
     public function testOverflow()
     {

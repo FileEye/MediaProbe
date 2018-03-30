@@ -4,7 +4,7 @@ tags:
     0x0001:
         name: MacroMode
         title: 'Macro Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 1: 'Macro'
@@ -12,11 +12,11 @@ tags:
     0x0002:
         name: SelfTimer
         title: 'Self Timer'
-        format: SShort
+        format: SignedShort
     0x0003:
         name: Quality
         title: Quality
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 1: 'Economy'
@@ -29,7 +29,7 @@ tags:
     0x0004:
         name: FlashMode
         title: 'Flash Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Off'
@@ -43,7 +43,7 @@ tags:
     0x0005:
         name: DriveMode
         title: 'Drive Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Single'
@@ -58,7 +58,7 @@ tags:
     0x0007:
         name: FocusMode
         title: 'Focus Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'One-shot AF'
@@ -75,7 +75,7 @@ tags:
     0x0009:
         name: RecordMode
         title: 'Record Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 1: 'JPEG'
@@ -90,7 +90,7 @@ tags:
     0x000A:
         name: ImageSize
         title: 'Image Size'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 -1: 'n/a'
@@ -114,7 +114,7 @@ tags:
     0x000B:
         name: EasyShootingMode
         title: 'Easy Shooting Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Full auto'
@@ -191,7 +191,7 @@ tags:
     0x000C:
         name: DigitalZoom
         title: 'Digital Zoom'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'None'
@@ -201,29 +201,29 @@ tags:
     0x000D:
         name: Contrast
         title: Contrast
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Normal'
     0x000E:
         name: Saturation
         title: Saturation
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Normal'
     0x000F:
         name: Sharpness
         title: Sharpness
-        format: SShort
+        format: SignedShort
     0x0010:
         name: ISOSpeed
         title: 'ISO Speed'
-        format: SShort
+        format: SignedShort
     0x0011:
         name: MeteringMode
         title: 'Metering Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Default'
@@ -235,7 +235,7 @@ tags:
     0x0012:
         name: FocusType
         title: 'Focus Type'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Manual'
@@ -252,7 +252,7 @@ tags:
     0x0013:
         name: AFPointSelected
         title: 'AF Point Selected'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0x2005: 'Manual AF point selection'
@@ -266,7 +266,7 @@ tags:
     0x0014:
         name: ExposureMode
         title: 'Exposure Mode'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Easy'
@@ -645,31 +645,31 @@ tags:
     0x0019:
         name: FocalUnits
         title: 'Focal Units'
-        format: SShort
+        format: SignedShort
     0x001A:
         name: MaxAperture
         title: 'Max Aperture'
-        format: SShort
+        format: SignedShort
     0x001B:
         name: MinAperture
         title: 'Min Aperture'
-        format: SShort
+        format: SignedShort
     0x001C:
         name: FlashActivity
         title: 'Flash Activity'
-        format: SShort
+        format: SignedShort
     0x001D:
         name: FlashDetails
         title: 'Flash Details'
-        format: SShort
+        format: SignedShort
     0x0020:
         name: FocusContinuous
         title: 'Focus Continuous'
-        format: SShort
+        format: SignedShort
     0x0021:
         name: AESetting
         title: 'AE Setting'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Normal AE'
@@ -680,7 +680,7 @@ tags:
     0x0022:
         name: ImageStabilization
         title: 'Image Stabilization'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Off'
@@ -696,25 +696,25 @@ tags:
     0x0023:
         name: DisplayAperture
         title: 'Display Aperture'
-        format: SShort
+        format: SignedShort
     0x0024:
         name: ZoomSourceWidth
         title: 'Zoom Source Width'
-        format: SShort
+        format: SignedShort
     0x0025:
         name: ZoomTargetWidth
         title: 'Zoom Target Width'
-        format: SShort
+        format: SignedShort
     0x0027:
         name: SpotMeteringMode
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Center'
                 1: 'AF Point'
     0x0028:
         name: PhotoEffect
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Off'
@@ -728,7 +728,7 @@ tags:
     0x0029:
         name: ManualFlashOutput
         title: 'Manual Flash Output'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0x500: 'Full'
@@ -737,14 +737,14 @@ tags:
     0x002A:
         name: ColorTone
         title: 'Color Tone'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 0: 'Normal'
     0x002E:
         name: SRAWQuality
         title: 'SRAW Quality'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 1: 'sRAW1 (mRAW)'

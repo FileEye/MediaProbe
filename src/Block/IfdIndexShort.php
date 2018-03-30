@@ -79,13 +79,13 @@ class IfdIndexShort extends Ifd
                     $item_value = $d->getRational($offset + $i * 2);
                     break;
                 case Format::SBYTE:
-                    $item_value = $d->getSByte($offset + $i * 2);
+                    $item_value = $d->getSignedByte($offset + $i * 2);
                     break;
                 case Format::SSHORT:
-                    $item_value = $d->getSShort($offset + $i * 2);
+                    $item_value = $d->getSignedShort($offset + $i * 2);
                     break;
                 case Format::SLONG:
-                    $item_value = $d->getSLong($offset + $i * 2);
+                    $item_value = $d->getSignedLong($offset + $i * 2);
                     break;
                 case Format::SRATIONAL:
                     $item_value = $d->getSRattional($offset + $i * 2);

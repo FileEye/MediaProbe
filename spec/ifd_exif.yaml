@@ -120,7 +120,7 @@ tags:
         name: ShutterSpeedValue
         title: 'Shutter speed'
         components: 1
-        format: SRational
+        format: SignedRational
         text:
             decode: ExifEye\core\Entry\SignedRational::decodeShutterSpeedValue
     0x9202:
@@ -134,14 +134,14 @@ tags:
         name: BrightnessValue
         title: Brightness
         components: 1
-        format: SRational
+        format: SignedRational
         text:
             decode: ExifEye\core\Entry\SignedRational::decodeBrightnessValue
     0x9204:
         name: ExposureBiasValue
         title: 'Exposure Bias'
         components: 1
-        format: SRational
+        format: SignedRational
         text:
             decode: ExifEye\core\Entry\SignedRational::decodeExposureBiasValue
     0x9205:
@@ -153,7 +153,7 @@ tags:
         name: SubjectDistance
         title: 'Subject Distance'
         components: 1
-        format: SRational
+        format: SignedRational
         text:
             decode: ExifEye\core\Entry\Rational::decodeSubjectDistance
     0x9207:

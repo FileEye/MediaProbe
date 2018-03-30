@@ -55,7 +55,7 @@ class SignedShort extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data->getSShort($i * 2);
+            $args[] = $data->getSignedShort($i * 2);
         }
         return $args;
     }

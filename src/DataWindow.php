@@ -308,7 +308,7 @@ class DataWindow
      * @return integer the signed byte found at offset.
      * @throws DataWindowOffsetException
      */
-    public function getSByte($offset = 0)
+    public function getSignedByte($offset = 0)
     {
         /*
          * Validate the offset --- this throws an exception if offset is
@@ -320,7 +320,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed byte. */
-        return Convert::bytesToSByte($this->data, $offset);
+        return Convert::bytesToSignedByte($this->data, $offset);
     }
 
     /**
@@ -365,7 +365,7 @@ class DataWindow
      * @return integer the signed short found at offset.
      * @throws DataWindowOffsetException
      */
-    public function getSShort($offset = 0)
+    public function getSignedShort($offset = 0)
     {
         /*
          * Validate the offset+1 to see if we can safely get two bytes ---
@@ -378,7 +378,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed short. */
-        return Convert::bytesToSShort($this->data, $offset, $this->order);
+        return Convert::bytesToSignedShort($this->data, $offset, $this->order);
     }
 
     /**
@@ -423,7 +423,7 @@ class DataWindow
      * @return integer the signed long found at offset.
      * @throws DataWindowOffsetException
      */
-    public function getSLong($offset = 0)
+    public function getSignedLong($offset = 0)
     {
         /*
          * Validate the offset+3 to see if we can safely get four bytes
@@ -436,7 +436,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed long. */
-        return Convert::bytesToSLong($this->data, $offset, $this->order);
+        return Convert::bytesToSignedLong($this->data, $offset, $this->order);
     }
 
     /**
@@ -477,11 +477,11 @@ class DataWindow
      *         and denominator. Both of these numbers will be signed longs.
      * @throws DataWindowOffsetException
      */
-    public function getSRational($offset = 0)
+    public function getSignedRational($offset = 0)
     {
         return [
-            $this->getSLong($offset),
-            $this->getSLong($offset + 4)
+            $this->getSignedLong($offset),
+            $this->getSignedLong($offset + 4)
         ];
     }
 
