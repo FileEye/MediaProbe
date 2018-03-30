@@ -90,7 +90,10 @@ abstract class BlockBase
      *
      * @returns BlockBase
      */
-    abstract public static function loadFromData(DataWindow $data_window, $offset, $options = []);
+    public static function loadFromData(DataWindow $data_window, $offset, $options = [])
+    {
+        // @todo
+    }
 
     /**
      * Adds a sub-block.
