@@ -84,7 +84,9 @@ class Tag extends BlockBase
         if (!isset($this->entry)) {
             return null;
         }
-        return Spec::getTagText($this->ifdId, $this->id, $this->entry, $brief);
+        $ret = Spec::getTagText($this->ifdId, $this->id, $this->entry, $brief);
+if (is_array($ret)) dump($ret);
+        return $ret;
     }
 
     /**
@@ -101,7 +103,7 @@ class Tag extends BlockBase
             $str .= $this->entry->__toString();
         }
         $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
-        $str .= ExifEye::fmt("    Text      : %s\n", $this->getText());
+        $str .= ExifEye::fmt("    Text      : %s\n", $this->xxGetText());
         return $str;
     }
 }
