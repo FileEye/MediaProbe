@@ -100,7 +100,7 @@ class Tag extends BlockBase
         if (isset($this->entry)){
             $str .= $this->entry->__toString();
         }
-        $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getValue(), true));
+        $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->xxgetValue(), true));
         $str .= ExifEye::fmt("    Text      : %s\n", $this->xxGetText());
         return $str;
     }
