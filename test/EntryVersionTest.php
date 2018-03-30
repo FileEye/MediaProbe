@@ -10,7 +10,7 @@ class EntryVersionTest extends ExifEyeTestCaseBase
 {
     public function testVersion()
     {
-        $entry = new Version(Spec::getIfdIdByType('Exif'), 0xFDFD, []);
+        $entry = new Version([]);
 
         $this->assertEquals(0.0, $entry->getValue());
 

@@ -10,7 +10,7 @@ class EntryUserCommentTest extends ExifEyeTestCaseBase
 
     public function testUsercomment()
     {
-        $entry = new UserComment(Spec::getIfdIdByType('Exif'), 0x9286, []);
+        $entry = new UserComment([]);
         $this->assertEquals(8, $entry->getComponents());
         $this->assertEquals('', $entry->getValue());
         $this->assertEquals('ASCII', $entry->getEncoding());

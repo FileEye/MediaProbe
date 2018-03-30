@@ -38,9 +38,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
-            $tag = new Tag($entry->getIfdType(), $entry->getId(), $entry->getFormat(), $entry->getComponents(), null/* xx */);
+        $tag = new Tag($ifd->getType(), $entry[0], $entry[1]->getFormat(), $entry[1]->getComponents(), null/* xx */);
             $ifd->xxAppendSubBlock($tag);
-            $tag->setEntry($entry);
+            $tag->setEntry($entry[1]);
         }
 
         $tiff = new Tiff();
@@ -80,8 +80,8 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         foreach ($entries as $entry) {
             $ifdEntry = $ifd->xxGetTagById($entry->getId())->getEntry();
             if ($ifdEntry->getFormat() == Format::ASCII) {
-                $ifdValue = $ifd->xxGetTagById($entry->getId())->getEntry()->getValue();
-                $entryValue = $entry->getValue();
+                $ifdValue = $ifd->xxGetTagById($entry[0])->getEntry()->getValue();
+                $entryValue = $entry[1]->getValue();
                 // cut off after the first nul byte
                 // since $ifdValue comes from parsed ifd,
                 // it is already cut off
@@ -92,7 +92,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                 }
                 $this->assertEquals($ifdValue, $canonicalEntry);
             } else {
-                $this->assertEquals($ifdEntry->getValue(), $entry->getValue());
+                $this->assertEquals($ifdEntry->getValue(), $entry[1]->getValue());
             }
         }
 
@@ -104,85 +104,85 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         return [
             'PEL Byte Read/Write Tests' => [
                 [
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF001, [0]),
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF002, [1]),
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF003, [2]),
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF004, [253]),
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF005, [254]),
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF006, [255]),
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF007, [0, 1, 2, 253, 254, 255]),
-                    new Byte(Spec::getIfdIdByType('IFD0'), 0xF008, []),
+                    [0xF001, new Byte([0])],
+                    [0xF002, new Byte([1])],
+                    [0xF003, new Byte([2])],
+                    [0xF004, new Byte([253])],
+                    [0xF005, new Byte([254])],
+                    [0xF006, new Byte([255])],
+                    [0xF007, new Byte([0, 1, 2, 253, 254, 255])],
+                    [0xF008, new Byte([])],
                 ],
             ],
             'PEL SByte Read/Write Tests' => [
                 [
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF101, [-128]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF102, [-127]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF103, [-1]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF104, [0]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF105, [1]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF106, [126]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF107, [127]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF108, [-128, -1, 0, 1, 127]),
-                    new SignedByte(Spec::getIfdIdByType('IFD0'), 0xF109, []),
+                    [0xF101, new SignedByte([-128])],
+                    [0xF102, new SignedByte([-127])],
+                    [0xF103, new SignedByte([-1])],
+                    [0xF104, new SignedByte([0])],
+                    [0xF105, new SignedByte([1])],
+                    [0xF106, new SignedByte([126])],
+                    [0xF107, new SignedByte([127])],
+                    [0xF108, new SignedByte([-128, -1, 0, 1, 127])],
+                    [0xF109, new SignedByte([])],
                 ],
             ],
             'PEL Short Read/Write Tests' => [
                 [
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF201, [0]),
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF202, [1]),
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF203, [2]),
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF204, [65533]),
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF205, [65534]),
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF206, [65535]),
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF208, [0, 1, 65534, 65535]),
-                    new Short(Spec::getIfdIdByType('IFD0'), 0xF209, []),
+                    [0xF201, new Short([0])],
+                    [0xF202, new Short([1])],
+                    [0xF203, new Short([2])],
+                    [0xF204, new Short([65533])],
+                    [0xF205, new Short([65534])],
+                    [0xF206, new Short([65535])],
+                    [0xF207, new Short([0, 1, 65534, 65535])],
+                    [0xF208, new Short([])],
                 ],
             ],
             'PEL SShort Read/Write Tests' => [
                 [
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF301, [-32768]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF302, [-32767]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF303, [-1]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF304, [0]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF305, [1]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF306, [32766]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF307, [32767]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF308, [- 32768, - 1, 0, 1, 32767]),
-                    new SignedShort(Spec::getIfdIdByType('IFD0'), 0xF309, []),
+                    [0xF301, new SignedShort([-32768])],
+                    [0xF302, new SignedShort([-32767])],
+                    [0xF303, new SignedShort([-1])],
+                    [0xF304, new SignedShort([0])],
+                    [0xF305, new SignedShort([1])],
+                    [0xF306, new SignedShort([32766])],
+                    [0xF307, new SignedShort([32767])],
+                    [0xF308, new SignedShort([- 32768, - 1, 0, 1, 32767])],
+                    [0xF309, new SignedShort([])],
                 ],
             ],
             'PEL Long Read/Write Tests' => [
                 [
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF401, [0]),
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF402, [1]),
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF403, [2]),
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF404, [4294967293]),
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF405, [4294967294]),
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF406, [4294967295]),
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF408, [0, 1, 4294967295]),
-                    new Long(Spec::getIfdIdByType('IFD0'), 0xF409, []),
+                    [0xF401, new Long([0])],
+                    [0xF402, new Long([1])],
+                    [0xF403, new Long([2])],
+                    [0xF404, new Long([4294967293])],
+                    [0xF405, new Long([4294967294])],
+                    [0xF406, new Long([4294967295])],
+                    [0xF407, new Long([0, 1, 4294967295])],
+                    [0xF408, new Long([])],
                 ],
             ],
             'PEL SLong Read/Write Tests' => [
                 [
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF501, [-2147483648]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF502, [-2147483647]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF503, [-1]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF504, [0]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF505, [1]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF506, [2147483646]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF507, [2147483647]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF508, [-2147483648, 0, 2147483647]),
-                    new SignedLong(Spec::getIfdIdByType('IFD0'), 0xF509, []),
+                    [0xF501, new SignedLong([-2147483648])],
+                    [0xF502, new SignedLong([-2147483647])],
+                    [0xF503, new SignedLong([-1])],
+                    [0xF504, new SignedLong([0])],
+                    [0xF505, new SignedLong([1])],
+                    [0xF506, new SignedLong([2147483646])],
+                    [0xF507, new SignedLong([2147483647])],
+                    [0xF508, new SignedLong([-2147483648, 0, 2147483647])],
+                    [0xF509, new SignedLong([])],
                 ],
             ],
             'PEL Ascii Read/Write Tests' => [
                 [
-                    new Ascii(Spec::getIfdIdByType('IFD0'), 0xF601, []),
-                    new Ascii(Spec::getIfdIdByType('IFD0'), 0xF602, ['']),
-                    new Ascii(Spec::getIfdIdByType('IFD0'), 0xF603, ['Hello World!']),
-                    new Ascii(Spec::getIfdIdByType('IFD0'), 0xF604, ["\x00\x01\x02...\xFD\xFE\xFF"]),
+                    [0xF601, new Ascii([])],
+                    [0xF601, new Ascii([''])],
+                    [0xF601, new Ascii(['Hello World!'])],
+                    [0xF601, new Ascii(["\x00\x01\x02...\xFD\xFE\xFF"])],
                 ],
             ],
         ];

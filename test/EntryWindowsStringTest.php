@@ -15,7 +15,7 @@ class EntryWindowsStringTest extends ExifEyeTestCaseBase
         $test_str_ucs2 = mb_convert_encoding($test_str, 'UCS-2LE', 'auto');
         $test_str_ucs2_zt = $test_str_ucs2 . WindowsString::ZEROES;
 
-        $entry = new WindowsString(Spec::getIfdIdByType('IFD0'), 0x9C9B, [$test_str]);
+        $entry = new WindowsString([$test_str]);
         $this->assertNotEquals($entry->getBytes(Convert::LITTLE_ENDIAN), $entry->getValue());
         $this->assertEquals($test_str, $entry->getValue());
         $this->assertEquals($test_str_ucs2_zt, $entry->getBytes(Convert::LITTLE_ENDIAN));

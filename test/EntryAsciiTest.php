@@ -12,14 +12,14 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
 {
     public function testReturnValues()
     {
-        $entry = new Ascii(Spec::getIfdIdByType('Exif'), 0xFDFD, ['foo bar baz']);
+        $entry = new Ascii(['foo bar baz']);
         $this->assertEquals(12, $entry->getComponents());
         $this->assertEquals('foo bar baz', $entry->getValue());
     }
 
     public function testTime()
     {
-        $entry = new Time(Spec::getIfdIdByType('Exif'), 0xFDFD, [10]);
+        $entry = new Time([10]);
 
         $this->assertEquals(20, $entry->getComponents());
         $this->assertEquals(10, $entry->getValue());
@@ -61,8 +61,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
 
     public function testCopyright()
     {
-        $entry = new Copyright(Spec::getIfdIdByType('IFD0'), 0x8298, []);
-        $this->assertEquals($entry->getId(), 0x8298);
+        $entry = new Copyright([]);
         $value = $entry->getValue();
         $this->assertEquals('', $value[0]);
         $this->assertEquals('', $value[1]);
