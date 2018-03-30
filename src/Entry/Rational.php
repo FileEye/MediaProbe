@@ -104,6 +104,10 @@ class Rational extends Long
     /**
      * Decode text for an Exif/FNumber tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -112,7 +116,7 @@ class Rational extends Long
      * @return string
      *            the TAG text.
      */
-    public static function decodeFNumber(EntryBase $entry, $brief = false)
+    public static function decodeFNumber($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('f/%.01f', $entry->getValue()[0] / $entry->getValue()[1]);
     }
@@ -120,6 +124,10 @@ class Rational extends Long
     /**
      * Decode text for an Exif/ApertureValue tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -128,7 +136,7 @@ class Rational extends Long
      * @return string
      *            the TAG text.
      */
-    public static function decodeApertureValue(EntryBase $entry, $brief = false)
+    public static function decodeApertureValue($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('f/%.01f', pow(2, $entry->getValue()[0] / $entry->getValue()[1] / 2));
     }
@@ -136,6 +144,10 @@ class Rational extends Long
     /**
      * Decode text for an Exif/FocalLength tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -144,7 +156,7 @@ class Rational extends Long
      * @return string
      *            the TAG text.
      */
-    public static function decodeFocalLength(EntryBase $entry, $brief = false)
+    public static function decodeFocalLength($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('%.1f mm', $entry->getValue()[0] / $entry->getValue()[1]);
     }
@@ -152,6 +164,10 @@ class Rational extends Long
     /**
      * Decode text for an Exif/SubjectDistance tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -160,7 +176,7 @@ class Rational extends Long
      * @return string
      *            the TAG text.
      */
-    public static function decodeSubjectDistance(EntryBase $entry, $brief = false)
+    public static function decodeSubjectDistance($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         return ExifEye::fmt('%.1f m', $entry->getValue()[0] / $entry->getValue()[1]);
     }
@@ -168,6 +184,10 @@ class Rational extends Long
     /**
      * Decode text for an Exif/ExposureTime tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -176,7 +196,7 @@ class Rational extends Long
      * @return string
      *            the TAG text.
      */
-    public static function decodeExposureTime(EntryBase $entry, $brief = false)
+    public static function decodeExposureTime($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         if ($entry->getValue()[0] / $entry->getValue()[1] < 1) {
             return ExifEye::fmt('1/%d sec.', $entry->getValue()[1] / $entry->getValue()[0]);
@@ -205,6 +225,10 @@ class Rational extends Long
     /**
      * Decode text for a GPS/GPSLongitude tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -213,7 +237,7 @@ class Rational extends Long
      * @return string
      *            the TAG text.
      */
-    public static function decodeGPSLongitude(EntryBase $entry, $brief = false)
+    public static function decodeGPSLongitude($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         return static::formatDegrees($entry->getValue());
     }
@@ -221,6 +245,10 @@ class Rational extends Long
     /**
      * Decode text for a GPS/GPSLatitude tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -229,7 +257,7 @@ class Rational extends Long
      * @return string
      *            the TAG text.
      */
-    public static function decodeGPSLatitude(EntryBase $entry, $brief = false)
+    public static function decodeGPSLatitude($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         return static::formatDegrees($entry->getValue());
     }

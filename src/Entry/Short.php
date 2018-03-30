@@ -93,6 +93,10 @@ class Short extends NumberBase
     /**
      * Decode text for a IFD0/YCbCrSubSampling tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -101,7 +105,7 @@ class Short extends NumberBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeYCbCrSubSampling(EntryBase $entry, $brief = false)
+    public static function decodeYCbCrSubSampling($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         if ($entry->getValue()[0] == 2 && $entry->getValue()[1] == 1) {
             return 'YCbCr4:2:2';
