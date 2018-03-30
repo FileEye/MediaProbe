@@ -346,7 +346,7 @@ class Ifd extends BlockBase
         return $this->type;
     }
 
-    public function xxGetTagByName($tag_name)
+    public function getTagByName($tag_name)
     {
         foreach ($this->xxGetSubBlocks() as $sub_block) {
             if ($sub_block->getName() === $tag_name) {

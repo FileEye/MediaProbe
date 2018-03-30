@@ -22,6 +22,8 @@ class Tag extends BlockBase
     protected $dataElement;
     protected $isOffset;
 
+    protected $ifdId;
+
     /**
      * Constructs a Tag block object.
      */
@@ -31,6 +33,8 @@ class Tag extends BlockBase
         $this->format = $format;
         $this->components = $components;
         $this->dataElement = $data_element;
+
+        $this->ifdId = $ifd_id;
 
         // The data size. If bigger than 4 bytes, the actual data is not in the
         // entry but somewhere else, with the offset stored in the entry.
@@ -74,4 +78,13 @@ class Tag extends BlockBase
     {
         return $this->isOffset;
     }
+
+    public function xxGetText()
+    {
+        if (!isset($this->entry)) {
+            return null;
+        }
+        return Spec::getTagText($this->ifd_id, $this->id, $this->entry);
+    }
+
 }
