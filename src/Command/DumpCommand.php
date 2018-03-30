@@ -161,7 +161,7 @@ class DumpCommand extends Command
                 'class' => get_class($entry),
                 'format' => Format::getName($entry->getFormat()),
                 'components' => $entry->getComponents(),
-                'value' => serialize($entry->getValue()),
+                'value' => base64_encode(serialize($entry->getValue())),
                 'text' => $entry->getText(),
             ],
         ];
