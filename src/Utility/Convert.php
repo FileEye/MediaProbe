@@ -68,7 +68,7 @@ class Convert
      *
      * @return string the bytes representing the signed short.
      */
-    public static function sShortToBytes($value, $endian)
+    public static function signedShortToBytes($value, $endian)
     {
         // We can just use shortToBytes, since signed shorts fits well
         // within the 32 bit signed integers used in PHP.
@@ -88,7 +88,7 @@ class Convert
      *            treated as an unsigned 32 bit integer and the lower four bytes
      *            will be extracted. Treating the argument as an unsigned
      *            integer means that the absolute value will be used. Use
-     *            {@link sLongToBytes} to convert signed integers.
+     *            {@link signedLongToBytes} to convert signed integers.
      * @param boolean $endian
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
@@ -123,7 +123,7 @@ class Convert
      *
      * @return string the bytes representing the signed long.
      */
-    public static function sLongToBytes($value, $endian)
+    public static function signedLongToBytes($value, $endian)
     {
         // We can convert the number into bytes in the normal way using shifts
         // and modulo calculations here (in contrast with longToBytes) because

@@ -73,6 +73,6 @@ class SignedShort extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return Convert::sShortToBytes($number, $order);
+        return Convert::signedShortToBytes($number, $order);
     }
 }

@@ -59,7 +59,7 @@ tags:
     0x0013:
         name: ThumbnailImageValidArea
         title: 'Thumbnail Image Valid Area'
-        format: SShort
+        format: SignedShort
     0x0015:
         name: 'Serial Number Format'
         title: 'Serial number format'
@@ -67,7 +67,7 @@ tags:
     0x001A:
         name: SuperMacro
         title: 'Super macro'
-        format: SShort
+        format: SignedShort
     0x001E:
         name: FirmwareRevision
         title: 'Firmware Revision'
@@ -79,7 +79,7 @@ tags:
     0x0083:
         name: 'OriginalDecision Data Offset'
         title: 'Original decision data offset'
-        format: SLong
+        format: SignedLong
     0x0093:
         name: FileInfo
         title: 'File Info'
@@ -115,7 +115,7 @@ tags:
     0x00B4:
         name: ColorSpace
         title: 'Color Space'
-        format: SShort
+        format: SignedShort
         text:
             mapping:
                 1: 'sRGB'

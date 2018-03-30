@@ -73,6 +73,6 @@ class SignedLong extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return Convert::sLongToBytes($number, $order);
+        return Convert::signedLongToBytes($number, $order);
     }
 }
