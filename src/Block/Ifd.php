@@ -576,7 +576,7 @@ class Ifd extends BlockBase
 
         foreach ($this->xxGetSubBlocks() as $tag => $sub_block) {
             /* Each entry is 12 bytes long. */
-            $bytes .= Convert::shortToBytes($sub_block->getEntry()->getId(), $order);
+            $bytes .= Convert::shortToBytes($sub_block->getId(), $order);
             $bytes .= Convert::shortToBytes($sub_block->getEntry()->getFormat(), $order);
             $bytes .= Convert::longToBytes($sub_block->getEntry()->getComponents(), $order);
 
