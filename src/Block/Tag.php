@@ -19,18 +19,18 @@ class Tag extends BlockBase
 
     protected $format;
     protected $components;
-    protected $value;
+    protected $dataElement;
     protected $isOffset;
 
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($ifd_id, $id, $format, $components, $value)
+    public function __construct($ifd_id, $id, $format, $components, $data_element = null)
     {
         $this->id = $id;
         $this->format = $format;
         $this->components = $components;
-        $this->value = $value;
+        $this->dataElement = $data_element;
 
         // The data size. If bigger than 4 bytes, the actual data is not in the
         // entry but somewhere else, with the offset stored in the entry.
@@ -50,9 +50,9 @@ class Tag extends BlockBase
         $id = $data_window->getShort($offset);
         $format = $data_window->getShort($offset + 2);
         $components = $data_window->getLong($offset + 4);
-        $value = $data_window->getLong($offset + 8);
+        $data_element = $data_window->getLong($offset + 8);
 
-        return new static($ifd_id, $id, $format, $components, $value);
+        return new static($ifd_id, $id, $format, $components, $data_element);
     }
 
     public function getFormat()
@@ -65,9 +65,9 @@ class Tag extends BlockBase
         return $this->components;
     }
 
-    public function getValue()
+    public function getDataElement()
     {
-        return $this->value;
+        return $this->dataElement;
     }
 
     public function isOffset()

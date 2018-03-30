@@ -24,22 +24,22 @@ class Tags1Test extends ExifEyeTestCaseBase
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0);
 
         $ratingPercent = $ifd0->xxGetTagByName('RatingPercent')->getEntry();
-        $this->assertInstanceOf('ExifEye\core\Entry\Short', $ratingPercent);
-        $this->assertEquals(78, $ratingPercent->getValue());
+        $this->assertInstanceOf('ExifEye\core\Entry\Short', $ratingPercent->getEntry());
+        $this->assertEquals(78, $ratingPercent->xxGetValue());
 
         $exifIfd = $ifd0->getSubIfd(Spec::getIfdIdByType('Exif'));
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $exifIfd);
 
         $offsetTime = $exifIfd->xxGetTagByName('OffsetTime')->getEntry();
-        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $offsetTime);
-        $this->assertEquals('-09:00', $offsetTime->getValue());
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $offsetTime->getEntry());
+        $this->assertEquals('-09:00', $offsetTime->xxGetValue());
 
-        $offsetTimeDigitized = $exifIfd->xxGetTagByName('OffsetTimeDigitized')->getEntry();
-        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $offsetTimeDigitized);
-        $this->assertEquals('-10:00', $offsetTimeDigitized->getValue());
+        $offsetTimeDigitized = $exifIfd->xxGetTagByName('OffsetTimeDigitized');
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $offsetTimeDigitized->getEntry());
+        $this->assertEquals('-10:00', $offsetTimeDigitized->xxGetValue());
 
-        $offsetTimeOriginal = $exifIfd->xxGetTagByName('OffsetTimeOriginal')->getEntry();
-        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $offsetTimeOriginal);
-        $this->assertEquals('-11:00', $offsetTimeOriginal->getValue());
+        $offsetTimeOriginal = $exifIfd->xxGetTagByName('OffsetTimeOriginal');
+        $this->assertInstanceOf('ExifEye\core\Entry\Ascii', $offsetTimeOriginal->getEntry());
+        $this->assertEquals('-11:00', $offsetTimeOriginal->xxGetValue());
     }
 }

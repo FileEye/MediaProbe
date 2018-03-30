@@ -174,7 +174,7 @@ class Ifd extends BlockBase
                 $tag->getFormat(),
                 Format::getName($tag->getFormat()),
                 $tag->getComponents(),
-                $tag->getValue(),
+                $tag->getDataElement(),
                 $tag->isOffset() ? ' (offset)' : '',
                 $i + 1,
                 $n
