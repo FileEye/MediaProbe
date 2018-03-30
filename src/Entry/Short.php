@@ -115,6 +115,10 @@ class Short extends NumberBase
     /**
      * Decode text for an Exif/SubjectArea tag.
      *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
      * @param EntryBase $entry
      *            the TAG EntryBase object.
      * @param bool $brief
@@ -123,7 +127,7 @@ class Short extends NumberBase
      * @return string
      *            the TAG text.
      */
-    public static function decodeSubjectArea(EntryBase $entry, $brief = false)
+    public static function decodeSubjectArea($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
         switch ($entry->getComponents()) {
             case 2:
