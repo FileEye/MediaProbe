@@ -33,7 +33,7 @@ class Version extends Undefined
     public function setValue(array $data)
     {
         $version = isset($data[0]) ? $data[0] : 0.0;
-        $this->value[0] = $version . (floor($version) === $version ? '.0' : '');
+        $this->value[0] = (string) ($version . (floor($version) === $version ? '.0' : ''));
         $major = floor($version);
         $minor = ($version - $major) * 100;
         $strValue = sprintf('%02.0f%02.0f', $major, $minor);
@@ -58,7 +58,7 @@ class Version extends Undefined
         if ($short) {
             return $entry->getValue();
         } else {
-            return ExifEye::fmt('Version %s', $entry->getValue());
+            return ExifEye::fmt('Version %s', $this->getValue());
         }
     }
 
