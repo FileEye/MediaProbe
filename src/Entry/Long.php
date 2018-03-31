@@ -60,7 +60,7 @@ class Long extends NumberBase
      * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
+    public static function xxGetInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {

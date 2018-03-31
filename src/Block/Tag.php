@@ -3,6 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
@@ -29,13 +30,13 @@ class Tag extends BlockBase
      */
     public function __construct($ifd_id, $id, $format, $components, EntryBase $entry, $data_element = null)
     {
+        $this->ifdId = $ifd_id;
+
         $this->id = $id;
         $this->format = $format;
         $this->components = $components;
         $this->dataElement = $data_element;
         $this->entry = $entry;
-
-        $this->ifdId = $ifd_id;
 
         // The data size. If bigger than 4 bytes, the actual data is not in the
         // entry but somewhere else, with the offset stored in the entry.
@@ -52,12 +53,30 @@ class Tag extends BlockBase
     public static function loadFromData(DataWindow $data_window, $offset, $options = [])
     {
         $ifd_id = isset($options['ifd_id']) ? $options['ifd_id'] : null;
+
+        // Gets from the data window the TAG's elements.
         $id = $data_window->getShort($offset);
         $format = $data_window->getShort($offset + 2);
         $components = $data_window->getLong($offset + 4);
         $data_element = $data_window->getLong($offset + 8);
 
-        return new static($ifd_id, $id, $format, $components, $data_element);
+        // If the data size is bigger than 4 bytes, then actual data is not in
+        // the TAG's data element, but at the the offset stored in the data
+        // element.
+        $size = Format::getSize($format) * $components;
+        if ($size > 4) {
+            $data_offset = $data_element;
+            if (!$options['tagsAbsoluteOffset']) {
+                $data_offset += $options['ifd_offset'];
+            }
+            $data_offset += $options['tagsSkipOffset'];
+            $raw_data = $data_window->getBytes($data_offset, $size);
+        }
+        else {
+            $raw_data = $data_element;
+        }
+
+        return new static($ifd_id, $id, $format, $components, [], $data_element);
     }
 
     public function getFormat()

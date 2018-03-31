@@ -50,7 +50,7 @@ class Version extends EntryBase
      * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
+    public static function xxGetInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         if ($format != Format::UNDEFINED) {
             throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);

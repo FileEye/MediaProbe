@@ -33,20 +33,6 @@ use ExifEye\core\Spec;
 abstract class EntryBase
 {
     /**
-     * The ID of this entry.
-     *
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * The ID of the block containing this entry.
-     *
-     * @var int
-     */
-    protected $blockId;
-
-    /**
      * The bytes representing this entry.
      *
      * Subclasses must either override {@link getBytes()} or, if
@@ -128,7 +114,7 @@ abstract class EntryBase
      *
      * @return EntryBase a newly created entry, holding the data given.
      */
-    final public static function createFromData($ifd_id, $tag_id, DataWindow $data, $ifd_offset, $seq, $absolute_offset = true, $skip_offset = 0)
+    final public static function xxcreateFromData($ifd_id, $tag_id, DataWindow $data, $ifd_offset, $seq, $absolute_offset = true, $skip_offset = 0)
     {
         $format = $data->getShort($ifd_offset + 12 * $seq + 2);
         $components = $data->getLong($ifd_offset + 12 * $seq + 4);
@@ -182,7 +168,7 @@ abstract class EntryBase
      * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
+    public static function xxGetInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
     {
         throw new ExifEyeException('getInstanceArgumentsFromData() must be implemented.');
     }
@@ -234,12 +220,7 @@ abstract class EntryBase
      *
      * @return string the value as text.
      */
-    public function getText($brief = false)
-    {
-        // If Spec can return the text, return it, otherwise implementations
-        // will override.
-// xx        return Spec::getTagText($this, $brief);
-    }
+    abstract public function getText($brief = false); // xx
 
     /**
      * Get the value of this entry.

@@ -157,7 +157,12 @@ class Ifd extends BlockBase
         }
 
         for ($i = 0; $i < $n; $i++) {
-            $tag = Tag::loadFromData($d, $offset + 12 * $i, ['ifd_id' => $this->getType()]);
+            $tag = Tag::loadFromData($d, $offset + 12 * $i, [
+                'ifd_id' => $this->getType(),
+                'ifd_offset' => $offset,
+                'tagsAbsoluteOffset' => $this->tagsAbsoluteOffset,
+                'tagsSkipOffset' => $this->tagsSkipOffset,
+            ]);
 
             // Invalid TAG.
             if (!$tag) {
@@ -225,11 +230,8 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            // Load a TAG entry.
-            if ($entry = EntryBase::createFromData($this->type, $tag->getId(), $d, $offset, $i, $this->tagsAbsoluteOffset, $this->tagsSkipOffset)) {
-                $tag->setEntry($entry);
-                $this->xxAppendSubBlock($tag);
-            }
+            // Append the TAG to the IFD.
+            $this->xxAppendSubBlock($tag);
         }
 
         /* Offset to next IFD */
