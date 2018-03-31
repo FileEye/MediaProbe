@@ -75,8 +75,9 @@ class Tag extends BlockBase
         else {
             $raw_data = $data_element;
         }
+dump($raw_data);
 
-        return new static($ifd_id, $id, $format, $components, [], $data_element);
+        return new static($ifd_id, $id, $format, $components, new ExifEye\core\Entry\Ascii([]), $data_element);
     }
 
     public function getFormat()
