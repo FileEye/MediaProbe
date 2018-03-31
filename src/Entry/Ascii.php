@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\Format;
 
 /**
