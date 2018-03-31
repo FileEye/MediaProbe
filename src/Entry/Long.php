@@ -29,17 +29,17 @@ class Long extends NumberBase
     /**
      * {@inheritdoc}
      */
+    protected $format = Format::LONG;
+
+    /**
+     * {@inheritdoc}
+     */
     protected $min = 0;
 
     /**
      * {@inheritdoc}
      */
     protected $max = 4294967295;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::LONG;
 
     /**
      * {@inheritdoc}

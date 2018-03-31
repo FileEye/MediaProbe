@@ -20,17 +20,17 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
+    protected $format = Format::SSHORT;
+
+    /**
+     * {@inheritdoc}
+     */
     protected $min = -32768;
 
     /**
      * {@inheritdoc}
      */
     protected $max = 32767;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::SSHORT;
 
     /**
      * {@inheritdoc}

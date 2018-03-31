@@ -50,17 +50,6 @@ class WindowsString extends EntryBase
     protected $format = Format::BYTE;
 
     /**
-     * The string hold by this entry.
-     *
-     * This is the string that was given to the {@link __construct
-     * constructor} or later to {@link setValue}, without any extra NULL
-     * characters or any such nonsense.
-     *
-     * @var string
-     */
-    private $str;
-
-    /**
      * {@inheritdoc}
      */
     public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
@@ -107,36 +96,23 @@ class WindowsString extends EntryBase
         $l = strlen($s);
 
         $this->components = $l;
-        $this->str = $str;
+        $this->value[0] = $str;
         $this->bytes = $s;
     }
 
     /**
-     * Return the string of the entry.
-     *
-     * @return string the string held, without any extra NULL
-     *         characters. The string will be the same as the one given to
-     *         {@link setValue} or to the {@link __construct constructor}.
+     * {@inheritdoc}
      */
     public function getValue()
     {
-        return $this->str;
+        return $this->value[0];
     }
 
     /**
-     * Return the string of the entry.
-     *
-     * This methods returns the same as {@link getValue}.
-     *
-     * @param boolean $brief
-     *            not used.
-     *
-     * @return string the string held, without any extra NULL
-     *         characters. The string will be the same as the one given to
-     *         {@link setValue} or to the {@link __construct constructor}.
+     * {@inheritdoc}
      */
     public function getText($short = false)
     {
-        return $this->str;
+        return $this->getValue();
     }
 }

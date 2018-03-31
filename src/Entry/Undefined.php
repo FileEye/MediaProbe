@@ -20,13 +20,6 @@ class Undefined extends EntryBase
     protected $format = Format::UNDEFINED;
 
     /**
-     * The value held by this entry.
-     *
-     * @var array
-     */
-    protected $value = [];
-
-    /**
      * {@inheritdoc}
      */
     public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)

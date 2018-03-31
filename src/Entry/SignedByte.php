@@ -19,17 +19,17 @@ class SignedByte extends NumberBase
     /**
      * {@inheritdoc}
      */
+    protected $format = Format::SBYTE;
+
+    /**
+     * {@inheritdoc}
+     */
     protected $min = -128;
 
     /**
      * {@inheritdoc}
      */
     protected $max = 127;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::SBYTE;
 
     /**
      * {@inheritdoc}

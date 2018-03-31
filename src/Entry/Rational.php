@@ -35,22 +35,22 @@ class Rational extends Long
     /**
      * {@inheritdoc}
      */
-    protected $min = 0;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 4294967295;
-
-    /**
-     * {@inheritdoc}
-     */
     protected $format = Format::RATIONAL;
 
     /**
      * {@inheritdoc}
      */
     protected $dimension = 2;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $min = 0;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $max = 4294967295;
 
     /**
      * {@inheritdoc}

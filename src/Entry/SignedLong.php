@@ -20,17 +20,17 @@ class SignedLong extends NumberBase
     /**
      * {@inheritdoc}
      */
+    protected $format = Format::SLONG;
+
+    /**
+     * {@inheritdoc}
+     */
     protected $min = -2147483648;
 
     /**
      * {@inheritdoc}
      */
     protected $max = 2147483647;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::SLONG;
 
     /**
      * {@inheritdoc}

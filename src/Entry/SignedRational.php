@@ -25,22 +25,22 @@ class SignedRational extends SignedLong
     /**
      * {@inheritdoc}
      */
-    protected $min = -2147483648;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 2147483647;
-
-    /**
-     * {@inheritdoc}
-     */
     protected $format = Format::SRATIONAL;
 
     /**
      * {@inheritdoc}
      */
     protected $dimension = 2;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $min = -2147483648;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $max = 2147483647;
 
     /**
      * {@inheritdoc}

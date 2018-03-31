@@ -33,17 +33,17 @@ class Short extends NumberBase
     /**
      * {@inheritdoc}
      */
+    protected $format = Format::SHORT;
+
+    /**
+     * {@inheritdoc}
+     */
     protected $min = 0;
 
     /**
      * {@inheritdoc}
      */
     protected $max = 65535;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::SHORT;
 
     /**
      * {@inheritdoc}
