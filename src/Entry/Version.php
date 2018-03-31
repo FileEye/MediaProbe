@@ -32,11 +32,10 @@ class Version extends Undefined
      */
     public function setValue(array $data)
     {
-dump($data);
         $version = isset($data[0]) ? $data[0] : 0.0;
+        $this->value[0] = $version . (floor($version) === $version ? '.0' : '');
         $major = floor($version);
         $minor = ($version - $major) * 100;
-        $this->value[0] = $major . '.' . $minor;
         $strValue = sprintf('%02.0f%02.0f', $major, $minor);
         $this->components = strlen($strValue);
         $this->bytes = $strValue;
@@ -52,17 +51,15 @@ dump($data);
     }
 
     /**
-     * Validates a version string.
-     *
-     * @param string $value
-     *            the string version.
-     *
-     * @return string
-     *            the validated string version.
+     * {@inheritdoc}
      */
-    protected static function validateVersion($value)
+    public function getText($short = false)
     {
-        return sprintf('%02.0f%02.0f', $value[0], $value[1]);
+        if ($short) {
+            return $entry->getValue();
+        } else {
+            return ExifEye::fmt('Version %s', $entry->getValue());
+        }
     }
 
     /**
@@ -82,11 +79,10 @@ dump($data);
      */
     public static function decodeExifVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
-        $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return ExifEye::fmt('%s', $version);
+            return ExifEye::fmt('%s', $entry->getValue());
         } else {
-            return ExifEye::fmt('Exif Version %s', $version);
+            return ExifEye::fmt('Exif Version %s', $entry->getValue());
         }
     }
 
@@ -107,11 +103,10 @@ dump($data);
      */
     public static function decodeFlashPixVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
-        $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return ExifEye::fmt('%s', $version);
+            return ExifEye::fmt('%s', $entry->getValue());
         } else {
-            return ExifEye::fmt('FlashPix Version %s', $version);
+            return ExifEye::fmt('FlashPix Version %s', $entry->getValue());
         }
     }
 
@@ -132,11 +127,10 @@ dump($data);
      */
     public static function decodeInteroperabilityVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
-        $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return ExifEye::fmt('%s', $version);
+            return ExifEye::fmt('%s', $entry->getValue());
         } else {
-            return ExifEye::fmt('Interoperability Version %s', $version);
+            return ExifEye::fmt('Interoperability Version %s', $entry->getValue());
         }
     }
 }

@@ -53,6 +53,14 @@ class Undefined extends EntryBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getText($short = false)
+    {
+        return '(undefined)';
+    }
+
+    /**
      * Decode text for an Exif/FileSource tag.
      *
      * @param int $ifd_id
@@ -155,13 +163,5 @@ class Undefined extends EntryBase
             }
         }
         return $v;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getText($short = false)
-    {
-        return '(undefined)';
     }
 }
