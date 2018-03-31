@@ -27,27 +27,11 @@ class Undefined extends EntryBase
     protected $value = [];
 
     /**
-     * Get arguments for the instance constructor from file data.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param int $format
-     *            the format of the entry as defined in {@link Format}.
-     * @param int $components
-     *            the components in the entry.
-     * @param DataWindow $data
-     *            the data which will be used to construct the entry.
-     * @param int $data_offset
-     *            the offset of the main DataWindow where data is stored.
-     *
-     * @return array a list or arguments to be passed to the EntryBase subclass
-     *            constructor.
+     * {@inheritdoc}
      */
-    public static function xxGetInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data, $data_offset)
+    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
-        return [$data->getBytes()];
+        return [$data_window->getBytes($data_offset, $components)];
     }
 
     /**
