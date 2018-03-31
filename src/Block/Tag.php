@@ -80,7 +80,6 @@ class Tag extends BlockBase
         try {
             $class = Spec::getTagClass($ifd_id, $id, $format);
             $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $id, $format, $components, $data_window, $data_offset);
-dump($arguments);
             $entry = new $class($arguments);
         } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store
