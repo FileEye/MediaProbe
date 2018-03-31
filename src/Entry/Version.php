@@ -33,18 +33,21 @@ class Version extends Undefined
     public function setValue(array $data)
     {
         $version = isset($data[0]) ? $data[0] : 0.0;
-        $this->value[0] = floor($version);
-        $this->value[1] = ($version - $this->value[0]) * 100;
-        // @todo xx setbytes
+        $major = floor($version);
+        $minor = ($version - $major) * 100;
+        $this->value[0] = $major . '.' . $minor;
+        $strValue = sprintf('%02.0f%02.0f', $major, $minor);
+        $this->components = strlen($strValue);
+        $this->bytes = $strValue;
         return $this;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getValue() // xx
+    public function getValue()
     {
-        return $this->value;
+        return $this->value[0];
     }
 
     /**
