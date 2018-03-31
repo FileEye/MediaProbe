@@ -70,10 +70,12 @@ class WindowsString extends EntryBase
         }
 
         try {
-            return [$data_window->getBytes($data_offset, $components), true];
+            $bytes = $data_window->getBytes($data_offset, $components);
         } catch (DataWindowOffsetException $e) { // xx
-            return [$data_window->getBytes($data_offset, $components - 1), true];
+            $bytes = $data_window->getBytes($data_offset, $components - 1) . "\0";
         }
+
+        return [$bytes, true];
     }
 
     /**
