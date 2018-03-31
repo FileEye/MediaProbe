@@ -80,6 +80,6 @@ class Ascii extends EntryBase
      */
     public function getText($short = false)
     {
-        return $this->getValue;
+        return $this->getValue();
     }
 }
