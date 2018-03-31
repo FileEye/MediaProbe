@@ -81,14 +81,15 @@ class Tag extends BlockBase
             $class = Spec::getTagClass($ifd_id, $id, $format);
             $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $id, $format, $components, $data_window, $data_offset);
             $entry = new $class($arguments);
+
+            // Build and return the TAG object.
+            return new static($ifd_id, $id, $format, $components, $entry, $data_element);
         } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store
             // otherwise.
             ExifEye::maybeThrow($e);
+            return null;
         }
-
-        // Build and return the TAG object.
-        return new static($ifd_id, $id, $format, $components, $entry, $data_element);
     }
 
     public function getFormat()

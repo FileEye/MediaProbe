@@ -59,10 +59,10 @@ class UserComment extends Undefined
         if ($format != Format::UNDEFINED) {
             throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
         }
-        if ($data->getSize() < 8) {
+        if ($components < 8) {
             return [];
         } else {
-            return [$data->getBytes(8), rtrim($data->getBytes(0, 8))];
+            return [$data_window->getBytes($data_offset + 8, $components - 8), rtrim($data_window->getBytes($data_offset, 8))];
         }
     }
 

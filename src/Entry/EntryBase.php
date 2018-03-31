@@ -220,7 +220,10 @@ abstract class EntryBase
      *
      * @return string the value as text.
      */
-    abstract public function getText($brief = false); // xx
+    public function getText($brief = false)
+    {
+        // @todo xx
+    }
 
     /**
      * Get the value of this entry.
