@@ -5,6 +5,7 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\EntryBase;
 use ExifEye\core\ExifEye;
+use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
@@ -75,9 +76,20 @@ class Tag extends BlockBase
         else {
             $raw_data = $data_element;
         }
-dump($raw_data);
 
-        return new static($ifd_id, $id, $format, $components, new ExifEye\core\Entry\Ascii([]), $data_element);
+        // Build an ExifEye Entry from the raw data.
+        try {
+            $class = Spec::getTagClass($ifd_id, $tag_id, $format);
+            $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $raw_data);
+            $entry = new $class($arguments);
+        } catch (ExifEyeException $e) {
+            // Throw the exception when running in strict mode, store
+            // otherwise.
+            ExifEye::maybeThrow($e);
+        }
+
+        // Build and return the TAG object.
+        return new static($ifd_id, $id, $format, $components, $entry, $data_element);
     }
 
     public function getFormat()
