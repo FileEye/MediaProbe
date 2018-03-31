@@ -54,7 +54,7 @@ class UserComment extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         if ($format != Format::UNDEFINED) {
             throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
@@ -111,7 +111,7 @@ class UserComment extends Undefined
      *
      * @return string the user comment.
      */
-    public function getText($brief = false)
+    public function getText()
     {
         return $this->comment;
     }

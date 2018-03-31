@@ -34,7 +34,7 @@ class Version extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         if ($format != Format::UNDEFINED) {
             throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
@@ -158,33 +158,6 @@ class Version extends EntryBase
             return ExifEye::fmt('Interoperability %s', $version);
         } else {
             return ExifEye::fmt('Interoperability Version %s', $version);
-        }
-    }
-
-    /**
-     * Return a text string with the version.
-     *
-     * @param boolean $brief
-     *            controls if the output should be brief. Brief
-     *            output omits the word 'Version' so the result is just 'Exif x.y'
-     *            instead of 'Exif Version x.y' if the entry holds information
-     *            about the Exif version --- the output for FlashPix is similar.
-     *
-     * @return string the version number with the type of the tag,
-     *         either 'Exif' or 'FlashPix'.
-     */
-    public function getText($brief = false)
-    {
-        // If Spec can return the text, return it.
-        if (($tag_text = parent::getText($brief)) !== null) {
-            return $tag_text;
-        }
-
-        $version = static::validateVersion($this->value[0]);
-        if ($brief) {
-            return $version;
-        } else {
-            return ExifEye::fmt('Version %s', $version);
         }
     }
 }

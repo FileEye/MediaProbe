@@ -29,7 +29,6 @@ use ExifEye\core\Format;
  * to something different than 2 which means inches.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
  */
 class Rational extends Long
 {
@@ -56,7 +55,7 @@ class Rational extends Long
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {

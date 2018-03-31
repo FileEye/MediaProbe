@@ -29,17 +29,13 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         return [$data_window->getBytes($data_offset, $components)];
     }
 
     /**
-     * Set the data of this undefined entry.
-     *
-     * @param array $data
-     *            the data that this entry will be holding. Since the format is
-     *            undefined, no checking will be done on the data.
+     * {@inheritdoc}
      */
     public function setValue(array $data)
     {
@@ -49,9 +45,7 @@ class Undefined extends EntryBase
     }
 
     /**
-     * Get the data of this undefined entry.
-     *
-     * @return string the data that this entry is holding.
+     * {@inheritdoc}
      */
     public function getValue()
     {
@@ -164,23 +158,10 @@ class Undefined extends EntryBase
     }
 
     /**
-     * Get the value of this entry as text.
-     *
-     * The value will be returned in a format suitable for presentation.
-     *
-     * @param
-     *            boolean some values can be returned in a long or more
-     *            brief form, and this parameter controls that.
-     *
-     * @return string the value as text.
+     * {@inheritdoc}
      */
-    public function getText($brief = false)
+    public function getText()
     {
-        // If Spec can return the text, return it.
-        if (($tag_text = parent::getText($brief)) !== null) {
-            return $tag_text;
-        }
-
         return '(undefined)';
     }
 }

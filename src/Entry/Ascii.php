@@ -48,7 +48,7 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         try {
             $bytes = $data_window->getBytes($data_offset, $components);
@@ -67,17 +67,7 @@ class Ascii extends EntryBase
     }
 
     /**
-     * Give the entry a new ASCII value.
-     *
-     * This will overwrite the previous value. The value can be retrieved later
-     * with the {@link getValue} method.
-     *
-     * @param array $data
-     *            the new value of the entry. This should be given
-     *            without any trailing NULL character. The string must be plain
-     *            7-bit ASCII, the string should contain no high bytes.
-     *
-     * @todo Implement check for high bytes?
+     * {@inheritdoc}
      */
     public function setValue(array $data)
     {
@@ -88,11 +78,7 @@ class Ascii extends EntryBase
     }
 
     /**
-     * Return the ASCII string of the entry.
-     *
-     * @return string the string held, without any final NULL character.
-     *         The string will be the same as the one given to {@link setValue}
-     *         or to the {@link __construct constructor}.
+     * {@inheritdoc}
      */
     public function getValue()
     {
@@ -100,18 +86,9 @@ class Ascii extends EntryBase
     }
 
     /**
-     * Return the ASCII string of the entry.
-     *
-     * This methods returns the same as {@link getValue}.
-     *
-     * @param
-     *            boolean not used with ASCII entries.
-     *
-     * @return string the string held, without any final NULL character.
-     *         The string will be the same as the one given to {@link setValue}
-     *         or to the {@link __construct constructor}.
+     * {@inheritdoc}
      */
-    public function getText($brief = false)
+    public function getText()
     {
         return $this->str;
     }

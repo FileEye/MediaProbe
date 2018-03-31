@@ -63,7 +63,7 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         if ($format != Format::BYTE) {
             throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::BYTE);
@@ -71,7 +71,7 @@ class WindowsString extends EntryBase
 
         try {
             $bytes = $data_window->getBytes($data_offset, $components);
-        } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works 
+        } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works
             $bytes = $data_window->getBytes($data_offset, $components - 1) . "\0";
         }
 
@@ -135,7 +135,7 @@ class WindowsString extends EntryBase
      *         characters. The string will be the same as the one given to
      *         {@link setValue} or to the {@link __construct constructor}.
      */
-    public function getText($brief = false)
+    public function getText()
     {
         return $this->str;
     }

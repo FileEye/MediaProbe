@@ -21,7 +21,7 @@ class MakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         return [$data_window->getBytes($data_offset, $components), $data_offset];
     }
@@ -62,17 +62,9 @@ class MakerNote extends Undefined
     }
 
     /**
-     * Get the value of this entry as text.
-     *
-     * The value will be returned in a format suitable for presentation.
-     *
-     * @param
-     *            boolean some values can be returned in a long or more
-     *            brief form, and this parameter controls that.
-     *
-     * @return string the value as text.
+     * {@inheritdoc}
      */
-    public function getText($brief = false)
+    public function getText()
     {
         return $this->components . ' bytes unknown MakerNote data';
     }

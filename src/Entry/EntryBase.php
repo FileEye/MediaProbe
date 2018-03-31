@@ -9,42 +9,33 @@ use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
 /**
- * Common ancestor class of all {@link Ifd} entries.
+ * Base class for EntryInterface objects.
  *
- * As this class is abstract you cannot instantiate objects from it.
- * It only serves as a common ancestor to define the methods common to
- * all entries. The most important methods are {@link getValue()} and
- * {@link setValue()}, both of which is abstract in this class. The
- * descendants will give concrete implementations for them.
+ * As this class is abstract you cannot instantiate objects from it. It only
+ * serves as a common ancestor to define the methods common to all entries. The
+ * most important methods are ::getValue() and ::setValue(), both of which are
+ * abstract in this class. The descendants give concrete implementations for
+ * them.
  *
- * If you have some data coming from an image (some raw bytes), then
- * the static method {@link newFromData()} is helpful --- it will look
- * at the data and give you a proper decendent of {@link EntryBase}
- * back.
- *
- * If you instead want to have an entry for some data which take the
- * form of an integer, a string, a byte, or some other PHP type, then
- * don't use this class. You should instead create an object of the
- * right subclass ({@link Short} for short integers, {@link
- * Ascii} for strings, and so on) directly.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * If you have data coming from an image (some raw bytes), then the static
+ * method ::getInstanceArgumentsFromTagData is helpful --- it looks at the data
+ * and gives back an array of arguments that can be used in the descendent
+ * constructor.
  */
 abstract class EntryBase
 {
     /**
      * The bytes representing this entry.
      *
-     * Subclasses must either override {@link getBytes()} or, if
-     * possible, maintain this property so that it always contains a
-     * true representation of the entry.
+     * Subclasses must maintain this property so that it always contains a true
+     * representation of the entry.
      *
      * @var string
      */
     protected $bytes = '';
 
     /**
-     * The {@link Format} of this entry.
+     * The format of this entry.
      *
      * @var int
      */
@@ -60,10 +51,6 @@ abstract class EntryBase
     /**
      * Constructs an EntryInterface object.
      *
-     * @param integer $block_id
-     *            The ID of the block containing this entry.
-     * @param integer $entry_id
-     *            The ID of the entry.
      * @param array $data
      *            the data that this entry will be holding.
      */
@@ -92,7 +79,7 @@ abstract class EntryBase
     }
 
     /**
-     * Get arguments for the instance constructor from raw data.
+     * Get arguments for the instance constructor from raw TAG data.
      *
      * @param int $ifd_id
      *            the IFD id.
@@ -110,15 +97,15 @@ abstract class EntryBase
      * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
-        throw new ExifEyeException('getInstanceArgumentsFromData() must be implemented.');
+        throw new ExifEyeException('getInstanceArgumentsFromTagData() must be implemented.');
     }
 
     /**
-     * Return the format of this entry.
+     * Returns the format of this entry.
      *
-     * @return int the format of this entry.
+     * @return int
      */
     public function getFormat()
     {
@@ -126,9 +113,9 @@ abstract class EntryBase
     }
 
     /**
-     * Return the number of components of this entry.
+     * Returns the number of components of this entry.
      *
-     * @return int the number of components of this entry.
+     * @return int
      */
     public function getComponents()
     {
@@ -136,66 +123,50 @@ abstract class EntryBase
     }
 
     /**
-     * Turn this entry into bytes.
+     * Returns the bytes representing this entry.
      *
-     * @param
-     *            PelByteOrder the desired byte order, which must be either
-     *            {@link Convert::LITTLE_ENDIAN} or {@link Convert::BIG_ENDIAN}.
-     *
-     * @return string bytes representing this entry.
+     * @return string
      */
-    public function getBytes($o)
+    public function getBytes($o) // xx remove $o here
     {
         return $this->bytes;
     }
 
     /**
-     * Get the value of this entry as text.
+     * Returns the value of this entry.
      *
-     * The value will be returned in a format suitable for presentation,
-     * e.g., rationals will be returned as 'x/y', ASCII strings will be
-     * returned as themselves etc.
+     * The value returned will generally be the same as the one supplied to the
+     * constructor or with ::setValue(). For a formatted version of the value,
+     * use ::getText() instead.
      *
-     * @param
-     *            boolean some values can be returned in a long or more
-     *            brief form, and this parameter controls that.
-     *
-     * @return string the value as text.
+     * @return mixed
      */
-    public function getText($brief = false)
+    public function getValue()
     {
-        // @todo xx
+        return $this->getBytes();
     }
-
-    /**
-     * Get the value of this entry.
-     *
-     * The value returned will generally be the same as the one supplied
-     * to the constructor or with {@link setValue()}. For a formatted
-     * version of the value, one should use {@link getText()} instead.
-     *
-     * @return mixed the unformatted value.
-     */
-    abstract public function getValue();
 
     /**
      * Set the value of this entry.
      *
      * @param array
      *            the new value.
+     *
+     * @return $this
      */
     abstract public function setValue(array $value);
 
     /**
-     * Turn this entry into a string.
+     * Get the value of this entry as text.
      *
-     * @return string a string representation of this entry. This is
-     *         mostly for debugging.
+     * The value will be returned in a format suitable for presentation, e.g.
+     * rationals will be returned as 'x/y', ASCII strings will be returned as
+     * themselves etc.
+     *
+     * @return string
      */
-    public function __toString()
+    public function getText()
     {
-        $str = ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
-        $str .= ExifEye::fmt("    Components: %d\n", $this->components);
-        return $str;
+        return implode(' ', $this->getBytes());
     }
 }

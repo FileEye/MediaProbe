@@ -54,10 +54,7 @@ abstract class NumberBase extends EntryBase
     protected $dimension = 1;
 
     /**
-     * Change the value.
-     *
-     * @param array
-     *            the new value.
+     * {@inheritdoc}
      */
     public function setValue(array $data)
     {
@@ -89,10 +86,7 @@ abstract class NumberBase extends EntryBase
     }
 
     /**
-     * Return the numeric value held.
-     *
-     * @return int|array this will either be a single number if there is
-     *         only one component, or an array of numbers otherwise.
+     * {@inheritdoc}
      */
     public function getValue()
     {
@@ -216,16 +210,9 @@ abstract class NumberBase extends EntryBase
     }
 
     /**
-     * Get the numeric value of this entry as text.
-     *
-     * @param
-     *            boolean use brief output? The numbers will be separated
-     *            by a single space if brief output is requested, otherwise a space
-     *            and a comma will be used.
-     *
-     * @return string the numbers(s) held by this entry.
+     * {@inheritdoc}
      */
-    public function getText($brief = false)
+    public function getText()
     {
         if ($this->components == 0) {
             return '';
