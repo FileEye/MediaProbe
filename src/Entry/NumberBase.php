@@ -17,13 +17,6 @@ use ExifEye\core\Format;
 abstract class NumberBase extends EntryBase
 {
     /**
-     * The value held by this entry.
-     *
-     * @var array
-     */
-    protected $value = [];
-
-    /**
      * The minimum allowed value.
      *
      * Any attempt to change the value below this variable will result
@@ -58,31 +51,12 @@ abstract class NumberBase extends EntryBase
      */
     public function setValue(array $data)
     {
-        $this->setValueArray($data);
-    }
+      foreach ($data as $v) {
+          $this->validateNumber($v);
+      }
 
-    /**
-     * Change the value.
-     *
-     * This method can change both the number of components and the
-     * value of the components. Range checks will be made on the new
-     * value, and a {@link OverflowException} will be thrown if the
-     * value is found to be outside the legal range.
-     *
-     * @param
-     *            array the new values. The array must contain the new
-     *            numbers.
-     *
-     * @see getValue
-     */
-    public function setValueArray($value)
-    {
-        foreach ($value as $v) {
-            $this->validateNumber($v);
-        }
-
-        $this->components = count($value);
-        $this->value = $value;
+      $this->components = count($data);
+      $this->value = $data;
     }
 
     /**

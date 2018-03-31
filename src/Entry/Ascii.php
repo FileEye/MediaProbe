@@ -35,17 +35,6 @@ class Ascii extends EntryBase
     protected $format = Format::ASCII;
 
     /**
-     * The string hold by this entry.
-     *
-     * This is the string that was given to the {@link __construct
-     * constructor} or later to {@link setValue}, without any final NULL
-     * character.
-     *
-     * @var string
-     */
-    private $str;
-
-    /**
      * {@inheritdoc}
      */
     public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
@@ -72,8 +61,9 @@ class Ascii extends EntryBase
     public function setValue(array $data)
     {
         $str = isset($data[0]) ? $data[0] : '';
+
         $this->components = strlen($str) + 1;
-        $this->str = $str;
+        $this->value[0] = $str;
         $this->bytes = $str . chr(0x00);
     }
 
@@ -82,7 +72,7 @@ class Ascii extends EntryBase
      */
     public function getValue()
     {
-        return $this->str;
+        return $this->value[0];
     }
 
     /**
@@ -90,6 +80,6 @@ class Ascii extends EntryBase
      */
     public function getText($short = false)
     {
-        return $this->str;
+        return $this->getValue;
     }
 }

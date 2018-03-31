@@ -35,6 +35,16 @@ abstract class EntryBase
     protected $bytes = '';
 
     /**
+     * The value held by this entry.
+     *
+     * A representation of the value of the entry which is more suitable for
+     * handling than the bytes.
+     *
+     * @var array
+     */
+    protected $value = [];
+
+    /**
      * The format of this entry.
      *
      * @var int
@@ -139,11 +149,11 @@ abstract class EntryBase
      * constructor or with ::setValue(). For a formatted version of the value,
      * use ::getText() instead.
      *
-     * @return mixed
+     * @return array
      */
     public function getValue()
     {
-        return $this->getBytes();
+        return $this->value;
     }
 
     /**
