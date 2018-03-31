@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\Version;
+use ExifEye\core\Entry\Undefined;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\Convert;
 
@@ -10,9 +10,9 @@ class EntryVersionTest extends ExifEyeTestCaseBase
 {
     public function testVersion()
     {
-        $entry = new Version([]);
+        $entry = new Undefined([]);
 
-        $this->assertEquals(0.0, $entry->getValue());
+        $this->assertEquals([], $entry->getValue());
 
         $entry->setValue([2.0]);
         $this->assertEquals(2.0, $entry->getValue());
