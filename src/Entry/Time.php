@@ -199,6 +199,14 @@ class Time extends Ascii
         parent::setValue([$this->getValue(self::EXIF_STRING)]);
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getText($short = false)
+    {
+        return $this->getValue(self::EXIF_STRING);
+    }
+
     // The following four functions are used for converting back and
     // forth between the date formats. They are used in preference to
     // the ones from the PHP calendar extension to avoid having to
