@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Format;
 
@@ -67,7 +68,12 @@ class WindowsString extends EntryBase
         if ($format != Format::BYTE) {
             throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::BYTE);
         }
-        return [$data_window->getBytes($data_offset, $components), true];
+
+        try {
+            return [$data_window->getBytes($data_offset, $components), true];
+        } catch (DataWindowOffsetException $e) { // xx
+            return [$data_window->getBytes($data_offset, $components - 1), true];
+        }
     }
 
     /**
