@@ -163,9 +163,13 @@ abstract class EntryBase
      * rationals will be returned as 'x/y', ASCII strings will be returned as
      * themselves etc.
      *
+     * @param bool $short
+     *            (Optional) indicates to display a shorter text version if
+     *            possible.
+     *
      * @return string
      */
-    public function getText()
+    public function getText($short = false)
     {
         return implode(' ', $this->getBytes());
     }

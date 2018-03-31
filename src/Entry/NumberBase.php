@@ -212,7 +212,7 @@ abstract class NumberBase extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getText()
+    public function getText($short = false)
     {
         if ($this->components == 0) {
             return '';
@@ -220,7 +220,7 @@ abstract class NumberBase extends EntryBase
 
         $str = $this->formatNumber($this->value[0]);
         for ($i = 1; $i < $this->components; $i ++) {
-            $str .= ($brief ? ' ' : ', ');
+            $str .= ($short ? ' ' : ', ');
             $str .= $this->formatNumber($this->value[$i]);
         }
 

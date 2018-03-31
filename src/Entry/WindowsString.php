@@ -135,7 +135,7 @@ class WindowsString extends EntryBase
      *         characters. The string will be the same as the one given to
      *         {@link setValue} or to the {@link __construct constructor}.
      */
-    public function getText()
+    public function getText($short = false)
     {
         return $this->str;
     }

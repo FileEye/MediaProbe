@@ -129,9 +129,9 @@ class Copyright extends Ascii
      *
      * @return string the copyright information in a string.
      */
-    public function xxxxgetText($brief = false)
+    public function getText($short = false)
     {
-        if ($brief) {
+        if ($short) {
             $p = '';
             $e = '';
         } else {

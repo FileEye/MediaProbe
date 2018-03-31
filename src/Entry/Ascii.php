@@ -88,7 +88,7 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getText()
+    public function getText($short = false)
     {
         return $this->str;
     }
