@@ -49,7 +49,7 @@ class SignedRational extends SignedLong
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_window->getSignedRational($data->offset + ($i * 8));
+            $args[] = $data_window->getSignedRational($data_offset + ($i * 8));
         }
         return $args;
     }

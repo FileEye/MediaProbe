@@ -60,7 +60,7 @@ class Rational extends Long
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_window->getRational($data->offset + ($i * 8));
+            $args[] = $data_window->getRational($data_offset + ($i * 8));
         }
         return $args;
     }
