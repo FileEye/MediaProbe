@@ -71,7 +71,7 @@ class WindowsString extends EntryBase
 
         try {
             $bytes = $data_window->getBytes($data_offset, $components);
-        } catch (DataWindowOffsetException $e) { // xx
+        } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works 
             $bytes = $data_window->getBytes($data_offset, $components - 1) . "\0";
         }
 
