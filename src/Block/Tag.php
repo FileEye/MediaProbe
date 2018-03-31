@@ -71,16 +71,16 @@ class Tag extends BlockBase
                 $data_offset += $options['ifd_offset'];
             }
             $data_offset += $options['tagsSkipOffset'];
-            $raw_data = $data_window->getBytes($data_offset, $size);
         }
         else {
-            $raw_data = $data_element;
+            $data_offset = $offset + 8;
         }
-dump($raw_data);
+
         // Build an ExifEye Entry from the raw data.
         try {
             $class = Spec::getTagClass($ifd_id, $id, $format);
-            $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $id, $format, $components, $raw_data);
+            $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $id, $format, $components, $data_window, $data_offset);
+dump($arguments);
             $entry = new $class($arguments);
         } catch (ExifEyeException $e) {
             // Throw the exception when running in strict mode, store

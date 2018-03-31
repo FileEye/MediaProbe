@@ -160,14 +160,15 @@ abstract class EntryBase
      *            the format of the entry.
      * @param int $components
      *            the components in the entry.
-     * @param array $data
-     *            the raw data (array of bytes) which will be used to construct
-     *            the entry.
+     * @param DataWindow $data
+     *            the data which will be used to construct the entry.
+     * @param int $data_offset
+     *            the offset of the main DataWindow where data is stored.
      *
      * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, array $data)
+    public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         throw new ExifEyeException('getInstanceArgumentsFromData() must be implemented.');
     }

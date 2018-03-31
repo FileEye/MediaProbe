@@ -50,12 +50,12 @@ class Ascii extends EntryBase
     public static function getInstanceArgumentsFromData($ifd_id, $tag_id, $format, $components, $data)
     {
         // cut off string after the first nul byte
-        $canonicalString = strstr($data, "\0", true);
+        $canonicalString = strstr($data_window->getBytes(0), "\0", true);
         if ($canonicalString !== false) {
             return [$canonicalString];
         } else {
             // TODO throw exception if string isn't nul-terminated
-            return [$data];
+            return [$data_window->getBytes(0)];
         }
     }
 
