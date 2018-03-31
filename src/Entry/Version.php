@@ -32,6 +32,7 @@ class Version extends Undefined
      */
     public function setValue(array $data)
     {
+dump($data);
         $version = isset($data[0]) ? $data[0] : 0.0;
         $major = floor($version);
         $minor = ($version - $major) * 100;

@@ -12,7 +12,7 @@ class EntryVersionTest extends ExifEyeTestCaseBase
     {
         $entry = new Version([]);
 
-        $this->assertEquals([], $entry->getValue());
+        $this->assertEquals(0.0, $entry->getValue());
 
         $entry->setValue([2.0]);
         $this->assertEquals(2.0, $entry->getValue());
