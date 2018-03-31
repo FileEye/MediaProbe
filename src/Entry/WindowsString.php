@@ -67,7 +67,7 @@ class WindowsString extends EntryBase
         if ($format != Format::BYTE) {
             throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::BYTE);
         }
-        return [$data_window->getBytes($data_offset, $components - 1), true];
+        return [$data_window->getBytes($data_offset, $components), true];
     }
 
     /**
