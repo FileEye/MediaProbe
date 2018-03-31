@@ -92,64 +92,6 @@ abstract class EntryBase
     }
 
     /**
-     * Creates a EntryBase of the required subclass from file data.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param DataWindow $data
-     *            the data window that will provide the data.
-     * @param int $ifd_offset
-     *            the offset within the window where the directory will
-     *            be found.
-     * @param int $seq
-     *            the element's position in the {@link DataWindow} $data.
-     * @param bool $absolute_offset
-     *            (Optional) Defines if tag offsets are absolute or relative.
-     *            Defaults to true.
-     * @param int $skip_offset
-     *            (Optional) an additional offset to be added to the retrieved
-     *            offset. Defaults to 0.
-     *
-     * @return EntryBase a newly created entry, holding the data given.
-     */
-    final public static function xxcreateFromData($ifd_id, $tag_id, DataWindow $data, $ifd_offset, $seq, $absolute_offset = true, $skip_offset = 0)
-    {
-        $format = $data->getShort($ifd_offset + 12 * $seq + 2);
-        $components = $data->getLong($ifd_offset + 12 * $seq + 4);
-
-        // The data size. If bigger than 4 bytes, the actual data is
-        // not in the entry but somewhere else, with the offset stored
-        // in the entry.
-        $size = Format::getSize($format) * $components;
-        if ($size > 0) {
-            $data_offset = $ifd_offset + 12 * $seq + 8;
-            if ($size > 4) {
-                $data_offset = $data->getLong($data_offset);
-                if (!$absolute_offset) {
-                    $data_offset += $ifd_offset;
-                }
-                $data_offset += $skip_offset;
-            }
-            $sub_data = $data->getClone($data_offset, $size);
-        } else {
-            $data_offset = 0;
-            $sub_data = new DataWindow();
-        }
-
-        try {
-            $class = Spec::getTagClass($ifd_id, $tag_id, $format);
-            $arguments = call_user_func($class . '::getInstanceArgumentsFromData', $ifd_id, $tag_id, $format, $components, $sub_data, $data_offset);
-            return new $class($arguments);
-        } catch (ExifEyeException $e) {
-            // Throw the exception when running in strict mode, store
-            // otherwise.
-            ExifEye::maybeThrow($e);
-        }
-    }
-
-    /**
      * Get arguments for the instance constructor from raw data.
      *
      * @param int $ifd_id
