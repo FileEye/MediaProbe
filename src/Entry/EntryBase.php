@@ -171,6 +171,6 @@ abstract class EntryBase
      */
     public function getText($short = false)
     {
-        return implode(' ', $this->getBytes());
+        return implode(' ', $this->bytes);
     }
 }
