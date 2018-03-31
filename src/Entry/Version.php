@@ -40,7 +40,7 @@ class Version extends Undefined
         $this->value[0] = (string) ($version . ($minor === 0 ? '.0' : ''));
         $this->components = strlen($bytes);
         $this->bytes = $bytes;
-
+dump([$data, $major, $minor, $this]);
         return $this;
     }
 
