@@ -36,11 +36,13 @@ class Version
     {
         return $this->version;
     }
-    private static function validateVersion($value)
-    {
-        return floor($value) == $value ? $value .= '.0' : $value;
-    }
 */
+    protected static function validateVersion($value)
+    {
+        //return floor($value) == $value ? $value .= '.0' : $value;
+        return $value;
+    }
+
     /**
      * Decode text for an Exif/ExifVersion tag.
      *
@@ -58,7 +60,7 @@ class Version
      */
     public static function decodeExifVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
-        //$version = static::validateVersion($entry->getValue());
+        $version = static::validateVersion($entry->getValue());
         if ($brief) {
             return ExifEye::fmt('Exif %s', $version);
         } else {
@@ -83,7 +85,7 @@ class Version
      */
     public static function decodeFlashPixVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
-        //$version = static::validateVersion($entry->getValue());
+        $version = static::validateVersion($entry->getValue());
         if ($brief) {
             return ExifEye::fmt('FlashPix %s', $version);
         } else {
@@ -108,7 +110,7 @@ class Version
      */
     public static function decodeInteroperabilityVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
     {
-        //$version = static::validateVersion($entry->getValue());
+        $version = static::validateVersion($entry->getValue());
         if ($brief) {
             return ExifEye::fmt('Interoperability %s', $version);
         } else {
