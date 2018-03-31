@@ -227,11 +227,6 @@ abstract class NumberBase extends EntryBase
      */
     public function getText($brief = false)
     {
-        // If Spec can return the text, return it.
-// xx        if (($tag_text = parent::getText($brief)) !== null) {
-// xx            return $tag_text;
-// xx        }
-
         if ($this->components == 0) {
             return '';
         }
