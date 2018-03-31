@@ -74,6 +74,7 @@ tags:
         title: 'Exif Version'
         components: 4
         format: Undefined
+        class: ExifEye\core\Entry\Version
         text:
             decode: ExifEye\core\Entry\Version::decodeExifVersion
     0x9003:
@@ -271,6 +272,7 @@ tags:
         title: 'FlashPix Version'
         components: 4
         format: Undefined
+        class: ExifEye\core\Entry\Version
         text:
             decode: ExifEye\core\Entry\Version::decodeFlashPixVersion
     0xA001:

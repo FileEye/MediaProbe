@@ -10,15 +10,55 @@ use ExifEye\core\Format;
 /**
  * Class to hold version information.
  */
-class Version
+class Version extends Undefined
 {
+    protected $format = Format::UNDEFINED;
+
+    protected $value = [];
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    {
+        if ($format != Format::UNDEFINED) {
+            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
+        }
+        return [$data_window->getBytes($data_offset, $components) / 100];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setValue(array $data)
+    {
+        $version = isset($data[0]) ? $data[0] : 0.0;
+        $this->value[0] = floor($version);
+        $this->value[1] = ($version - $this->value[0]) * 100;
+        // @todo xx setbytes
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue() // xx
+    {
+        return $this->value;
+    }
+
+    /**
+     * Validates a version string.
+     *
+     * @param string $value
+     *            the string version.
+     *
+     * @return string
+     *            the validated string version.
+     */
     protected static function validateVersion($value)
     {
-        $version = ((int) $value) / 100;
-        $major = floor($version);
-        $minor = ($version - $major) * 100;
-        $value = sprintf('%02.0f%02.0f', $major, $minor);
-        return $value;
+        return sprintf('%02.0f%02.0f', $value[0], $value[1]);
     }
 
     /**
@@ -40,7 +80,7 @@ class Version
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return ExifEye::fmt('Exif %s', $version);
+            return ExifEye::fmt('%s', $version);
         } else {
             return ExifEye::fmt('Exif Version %s', $version);
         }
@@ -65,7 +105,7 @@ class Version
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return ExifEye::fmt('FlashPix %s', $version);
+            return ExifEye::fmt('%s', $version);
         } else {
             return ExifEye::fmt('FlashPix Version %s', $version);
         }
@@ -90,7 +130,7 @@ class Version
     {
         $version = static::validateVersion($entry->getValue());
         if ($brief) {
-            return ExifEye::fmt('Interoperability %s', $version);
+            return ExifEye::fmt('%s', $version);
         } else {
             return ExifEye::fmt('Interoperability Version %s', $version);
         }
