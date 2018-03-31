@@ -10,30 +10,11 @@ use ExifEye\core\Format;
 /**
  * Class to hold version information.
  */
-class Version extends EntryBase
+class Version
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::UNDEFINED;
-
-    /**
-     * The version held by this entry.
-     *
-     * @var float
-     */
+/*    protected $format = Format::UNDEFINED;
     private $version;
-
-    /**
-     * The value held by this entry.
-     *
-     * @var array
-     */
     protected $value = [];
-
-    /**
-     * {@inheritdoc}
-     */
     public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         if ($format != Format::UNDEFINED) {
@@ -41,14 +22,6 @@ class Version extends EntryBase
         }
         return [$data_window->getBytes($data_offset, $components) / 100];
     }
-
-    /**
-     * Set the version held by this entry.
-     *
-     * @param array $data
-     *            The size of the entries leave room for exactly four digits:
-     *            two digits on either side of the decimal point.
-     */
     public function setValue(array $data)
     {
         $this->version = isset($data[0]) ? $data[0] : 0.0;
@@ -59,33 +32,15 @@ class Version extends EntryBase
         $this->components = strlen($strValue);
         $this->bytes = $strValue;
     }
-
-    /**
-     * Return the version held by this entry.
-     *
-     * @return float This will be the same as the value
-     *         given to {@link setValue} or {@link __construct the
-     *         constructor}.
-     */
     public function getValue()
     {
         return $this->version;
     }
-
-    /**
-     * Validates a version string.
-     *
-     * @param string $value
-     *            the string version.
-     *
-     * @return string
-     *            the validated string version.
-     */
     private static function validateVersion($value)
     {
         return floor($value) == $value ? $value .= '.0' : $value;
     }
-
+*/
     /**
      * Decode text for an Exif/ExifVersion tag.
      *
