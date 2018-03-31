@@ -182,19 +182,19 @@ class PelSpecTest extends ExifEyeTestCaseBase
               '-0.5', 'ExifEye\core\Entry\SignedRational', 'Exif', 'ExposureBiasValue', [[-5, 10]],
           ],
           'Exif/ExifVersion - short' => [
-              'Exif 2.2', 'ExifEye\core\Entry\Undefined', 'Exif', 'ExifVersion', [2.2], true,
+              '2.2', 'ExifEye\core\Entry\Undefined', 'Exif', 'ExifVersion', [2.2], true,
           ],
           'Exif/ExifVersion - long' => [
               'Exif Version 2.2', 'ExifEye\core\Entry\Undefined', 'Exif', 'ExifVersion', [2.2],
           ],
           'Exif/FlashPixVersion - short' => [
-              'FlashPix 2.5', 'ExifEye\core\Entry\Undefined', 'Exif', 'FlashPixVersion', [2.5], true,
+              '2.5', 'ExifEye\core\Entry\Undefined', 'Exif', 'FlashPixVersion', [2.5], true,
           ],
           'Exif/FlashPixVersion - long' => [
               'FlashPix Version 2.5', 'ExifEye\core\Entry\Undefined', 'Exif', 'FlashPixVersion', [2.5],
           ],
           'Interoperability/InteroperabilityVersion - short' => [
-              'Interoperability 1.0', 'ExifEye\core\Entry\Undefined', 'Interoperability', 'InteroperabilityVersion', [1], true,
+              '1.0', 'ExifEye\core\Entry\Undefined', 'Interoperability', 'InteroperabilityVersion', [1], true,
           ],
           'Interoperability/InteroperabilityVersion - long' => [
               'Interoperability Version 1.0', 'ExifEye\core\Entry\Undefined', 'Interoperability', 'InteroperabilityVersion', [1],

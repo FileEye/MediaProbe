@@ -37,7 +37,7 @@ class Version extends Undefined
         $minor = ($version - $major) * 100;
         $bytes = sprintf('%02.0f%02.0f', $major, $minor);
 
-        $this->value[0] = (string) ($version . ($minor === 0 ? '.0' : ''));
+        $this->value[0] = (string) ($version . ($minor === 0.0 ? '.0' : ''));
         $this->components = strlen($bytes);
         $this->bytes = $bytes;
 dump([$data, $major, $minor, $this]);
