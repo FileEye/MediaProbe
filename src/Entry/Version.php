@@ -57,7 +57,7 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    public function getBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         $version = $this->getValue();
         $major = floor($version);

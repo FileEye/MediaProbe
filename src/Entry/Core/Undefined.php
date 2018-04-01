@@ -47,7 +47,7 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    public function getBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         return $this->value[0];
     }
