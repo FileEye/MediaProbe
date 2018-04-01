@@ -70,25 +70,6 @@ abstract class EntryBase
     }
 
     /**
-     * Creates a new EntryBase of the required subclass.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param array $arguments
-     *            a list or arguments to be passed to the EntryBase subclass
-     *            constructor.
-     *
-     * @return EntryBase a newly created entry, holding the data given.
-     */
-    final public static function createNew($ifd_id, $tag_id, array $arguments)
-    {
-        $class = Spec::getTagClass($ifd_id, $tag_id);
-        return new $class($arguments);
-    }
-
-    /**
      * Get arguments for the instance constructor from raw TAG data.
      *
      * @param int $ifd_id

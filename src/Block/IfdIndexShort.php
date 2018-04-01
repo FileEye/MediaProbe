@@ -91,7 +91,8 @@ class IfdIndexShort extends Ifd
                     $item_value = $d->getSRattional($offset + $i * 2);
                     break;
             }
-            if ($entry = EntryBase::createNew($this->type, $i + 1, [$item_value])) {
+            if ($class = Spec::getTagClass($this->type, $i + 1)) {
+                $entry = new $class([$item_value]);
                 $this->xxAppendSubBlock(new Tag($this->getType(), $i + 1, $entry->getFormat(), $entry->getComponents(), $entry));
             }
         }
