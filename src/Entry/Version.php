@@ -22,6 +22,7 @@ class Version extends Undefined
 // xx        if ($format != Format::UNDEFINED) {
 // xx            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
 // xx        }
+dump($format, $components, $data_offset);
         return [$data_window->getBytes($data_offset, $components) / 100];
     }
 
