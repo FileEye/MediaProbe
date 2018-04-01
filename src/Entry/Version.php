@@ -5,7 +5,7 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\EntryBase;
 use ExifEye\core\Entry\Core\Undefined;
-// xx use ExifEye\core\Entry\Exception\UnexpectedFormatException;
+use ExifEye\core\Entry\Exception\EntryException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
@@ -22,9 +22,12 @@ class Version extends Undefined
 // xx        if ($format != Format::UNDEFINED) {
 // xx            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
 // xx        }
-dump([$format, $components, $data_offset, $data_window->getBytes($data_offset, $components)]);
-
-        return [$data_window->getBytes($data_offset, $components) / 100];
+// xx dump([$format, $components, $data_offset, $data_window->getBytes($data_offset, $components)]);
+        $version = $data_window->getBytes($data_offset, $components);
+        if (!is_numeric($version)) {
+            throw new EntryException('Version data incorrect');
+        }
+        return [$version / 100];
     }
 
     /**
