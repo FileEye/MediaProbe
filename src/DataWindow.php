@@ -248,7 +248,6 @@ class DataWindow
             if ($start < 0) {
                 $start += $this->size;
             }
-
             $this->validateOffset($start);
         } else {
             $start = 0;
@@ -258,7 +257,6 @@ class DataWindow
             if ($size <= 0) {
                 $size += $this->size - $start;
             }
-
             $this->validateOffset($start + $size);
         } else {
             $size = $this->size - $start;

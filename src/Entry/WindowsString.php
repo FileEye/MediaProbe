@@ -50,6 +50,8 @@ class WindowsString extends EntryBase
      */
     protected $format = Format::BYTE;
 
+    protected $bytes = ''; // xx
+
     /**
      * {@inheritdoc}
      */
@@ -107,6 +109,14 @@ class WindowsString extends EntryBase
     public function getValue()
     {
         return $this->value[0];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    {
+        return $this->bytes;
     }
 
     /**

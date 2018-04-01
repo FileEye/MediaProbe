@@ -42,7 +42,6 @@ class Version extends Undefined
 
         $this->value[0] = (string) ($version . ($minor === 0.0 ? '.0' : ''));
         $this->components = strlen($bytes);
-        $this->bytes = $bytes;
 
         return $this;
     }
@@ -53,6 +52,17 @@ class Version extends Undefined
     public function getValue()
     {
         return $this->value[0];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    {
+        $version = $this->getValue();
+        $major = floor($version);
+        $minor = ($version - $major) * 100;
+        return sprintf('%02.0f%02.0f', $major, $minor);
     }
 
     /**

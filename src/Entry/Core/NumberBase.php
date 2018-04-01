@@ -136,24 +136,17 @@ abstract class NumberBase extends EntryBase
     abstract public function numberToBytes($number, $order);
 
     /**
-     * Turn this entry into bytes.
-     *
-     * @param
-     *            PelByteOrder the desired byte order, which must be either
-     *            {@link Convert::LITTLE_ENDIAN} or {@link
-     *            Convert::BIG_ENDIAN}.
-     *
-     * @return string bytes representing this entry.
+     * {@inheritdoc}
      */
-    public function getBytes($o)
+    public function getBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         $bytes = '';
         for ($i = 0; $i < $this->components; $i ++) {
             if ($this->dimension == 1) {
-                $bytes .= $this->numberToBytes($this->value[$i], $o);
+                $bytes .= $this->numberToBytes($this->value[$i], $byte_order);
             } else {
                 for ($j = 0; $j < $this->dimension; $j ++) {
-                    $bytes .= $this->numberToBytes($this->value[$i][$j], $o);
+                    $bytes .= $this->numberToBytes($this->value[$i][$j], $byte_order);
                 }
             }
         }

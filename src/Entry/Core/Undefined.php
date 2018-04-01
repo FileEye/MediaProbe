@@ -34,7 +34,6 @@ class Undefined extends EntryBase
     {
         $this->value[0] = $data[0];
         $this->components = strlen($data[0]);
-        $this->bytes = $data[0];
     }
 
     /**
@@ -42,7 +41,15 @@ class Undefined extends EntryBase
      */
     public function getValue()
     {
-        return $this->bytes;
+        return $this->value[0];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    {
+        return $this->value[0];
     }
 
     /**

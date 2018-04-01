@@ -7,6 +7,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Base class for EntryInterface objects.
@@ -24,16 +25,6 @@ use ExifEye\core\Spec;
  */
 abstract class EntryBase
 {
-    /**
-     * The bytes representing this entry.
-     *
-     * Subclasses must maintain this property so that it always contains a true
-     * representation of the entry.
-     *
-     * @var string
-     */
-    protected $bytes = '';
-
     /**
      * The value held by this entry.
      *
@@ -112,12 +103,13 @@ abstract class EntryBase
     /**
      * Returns the bytes representing this entry.
      *
+     * @param bool $byte_order
+     *            the byte order to use for numeric values, which must be either
+     *            Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN.
+     *
      * @return string
      */
-    public function getBytes($o) // xx remove $o here
-    {
-        return $this->bytes;
-    }
+    abstract public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
 
     /**
      * Returns the value of this entry.
@@ -158,6 +150,6 @@ abstract class EntryBase
      */
     public function getText($short = false)
     {
-        return explode(' ', $this->bytes);
+        return '(undefined)';
     }
 }

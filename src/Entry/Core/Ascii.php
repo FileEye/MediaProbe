@@ -64,7 +64,6 @@ class Ascii extends EntryBase
 
         $this->components = strlen($str) + 1;
         $this->value[0] = $str;
-        $this->bytes = $str . chr(0x00);
     }
 
     /**
@@ -73,6 +72,14 @@ class Ascii extends EntryBase
     public function getValue()
     {
         return $this->value[0];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    {
+        return $this->value[0] . chr(0x00);
     }
 
     /**
