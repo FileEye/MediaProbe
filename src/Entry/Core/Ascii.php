@@ -8,24 +8,6 @@ use ExifEye\core\Format;
 
 /**
  * Class for holding a plain ASCII string.
- *
- * The classes defined here are to be used for Exif entries holding
- * ASCII strings, such as {@link PelTag::MAKE}, {@link
- * PelTag::SOFTWARE}, and {@link PelTag::DATE_TIME}. For
- * entries holding normal textual ASCII strings the class {@link
- * Ascii} should be used, but for entries holding
- * timestamps the class {@link Time} would be more
- * convenient instead. Copyright information is handled by the {@link
- * Copyright} class.
- *
- * This class can hold a single ASCII string, and it will be used as in
- * <code>
- * $entry = $ifd->getEntry(PelTag::IMAGE_DESCRIPTION);
- * print($entry->getValue());
- * $entry->setValue('This is my image. I like it.');
- * </code>
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
 class Ascii extends EntryBase
 {

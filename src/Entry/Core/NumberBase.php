@@ -124,16 +124,16 @@ abstract class NumberBase extends EntryBase
      *
      * The method will be called once for each number held by the entry.
      *
-     * @param
-     *            int the number that should be converted.
+     * @param int $number
+     *            the number that should be converted.
      *
-     * @param
-     *            PelByteOrder one of {@link Convert::LITTLE_ENDIAN} and
-     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
+     * @param bool $byte_order
+     *            one of Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN,
+     *            specifying the target byte order.
      *
      * @return string bytes representing the number given.
      */
-    abstract public function numberToBytes($number, $order);
+    abstract protected function numberToBytes($number, $order);
 
     /**
      * {@inheritdoc}
@@ -154,24 +154,23 @@ abstract class NumberBase extends EntryBase
     }
 
     /**
-     * Format a number.
+     * Formats a number.
      *
-     * This method is called by {@link getText} to format numbers.
-     * Subclasses should override this method if they need more
-     * sophisticated behavior than the default, which is to just return
-     * the number as is.
+     * This method is called by ::getText to format numbers. Subclasses should
+     * override this method if they need more sophisticated behavior than the
+     * default, which is to just return the number as is.
      *
-     * @param
-     *            int the number which will be formatted.
+     * @param int $number
+     *            the number which will be formatted.
      *
-     * @param
-     *            boolean it could be that there is both a verbose and a
-     *            brief formatting available, and this argument controls that.
+     * @param bool $brief
+     *            boolean it could be that there is both a verbose and a brief
+     *            formatting available, and this argument controls that.
      *
      * @return string the number formatted as a string suitable for
      *         display.
      */
-    public function formatNumber($number, $brief = false)
+    protected function formatNumber($number, $brief = false)
     {
         return $number;
     }

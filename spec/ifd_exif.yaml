@@ -362,8 +362,7 @@ tags:
         title: 'File Source'
         components: 1
         format: Undefined
-        text:
-            decode: ExifEye\core\Entry\Core\Undefined::decodeFileSource
+        class: ExifEye\core\Entry\ExifFileSource
     0xA301:
         name: SceneType
         title: 'Scene Type'

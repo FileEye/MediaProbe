@@ -61,32 +61,6 @@ class Undefined extends EntryBase
     }
 
     /**
-     * Decode text for an Exif/FileSource tag.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
-     * @param bool $brief
-     *            (Optional) indicates to use brief output.
-     *
-     * @return string
-     *            the TAG text.
-     */
-    public static function decodeFileSource($ifd_id, $tag_id, EntryBase $entry, $brief = false)
-    {
-        $value = $entry->getValue();
-        switch (ord($value{0})) {
-            case 0x03:
-                return 'DSC';
-            default:
-                return sprintf('0x%02X', ord($value{0}));
-        }
-    }
-
-    /**
      * Decode text for an Exif/SceneType tag.
      *
      * @param int $ifd_id

@@ -13,10 +13,7 @@ use ExifEye\core\Utility\Convert;
  * Base class for EntryInterface objects.
  *
  * As this class is abstract you cannot instantiate objects from it. It only
- * serves as a common ancestor to define the methods common to all entries. The
- * most important methods are ::getValue() and ::setValue(), both of which are
- * abstract in this class. The descendants give concrete implementations for
- * them.
+ * serves as a common ancestor to define the methods common to all entries.
  *
  * If you have data coming from an image (some raw bytes), then the static
  * method ::getInstanceArgumentsFromTagData is helpful --- it looks at the data
@@ -25,16 +22,6 @@ use ExifEye\core\Utility\Convert;
  */
 abstract class EntryBase
 {
-    /**
-     * The value held by this entry.
-     *
-     * A representation of the value of the entry which is more suitable for
-     * handling than the bytes.
-     *
-     * @var array
-     */
-    protected $value = [];
-
     /**
      * The format of this entry.
      *
@@ -48,6 +35,16 @@ abstract class EntryBase
      * @var int
      */
     protected $components;
+
+    /**
+     * The value held by this entry.
+     *
+     * A representation of the value of the entry which is more suitable for
+     * handling than the bytes.
+     *
+     * @var array
+     */
+    protected $value = [];
 
     /**
      * Constructs an EntryInterface object.
@@ -101,15 +98,14 @@ abstract class EntryBase
     }
 
     /**
-     * Returns the bytes representing this entry.
+     * Set the value of this entry.
      *
-     * @param bool $byte_order
-     *            the byte order to use for numeric values, which must be either
-     *            Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN.
+     * @param array
+     *            the new value.
      *
-     * @return string
+     * @return $this
      */
-    abstract public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    abstract public function setValue(array $value);
 
     /**
      * Returns the value of this entry.
@@ -126,14 +122,15 @@ abstract class EntryBase
     }
 
     /**
-     * Set the value of this entry.
+     * Returns the bytes representing this entry.
      *
-     * @param array
-     *            the new value.
+     * @param bool $byte_order
+     *            the byte order to use for numeric values, which must be either
+     *            Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN.
      *
-     * @return $this
+     * @return string
      */
-    abstract public function setValue(array $value);
+    abstract public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
 
     /**
      * Get the value of this entry as text.

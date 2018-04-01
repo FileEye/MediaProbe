@@ -8,16 +8,15 @@ use ExifEye\core\Format;
 /**
  * Class for holding unsigned bytes.
  *
- * This class can hold bytes, either just a single byte or an array of
- * bytes. The class will be used to manipulate any of the Exif tags
- * which has format {@link Format::BYTE}.
- * The {@link WindowsString} class is used to manipulate strings in the
- * format Windows XP needs.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * This class can hold bytes, either just a single byte or an array of bytes.
  */
 class Byte extends NumberBase
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected $format = Format::BYTE;
+
     /**
      * {@inheritdoc}
      */
@@ -27,11 +26,6 @@ class Byte extends NumberBase
      * {@inheritdoc}
      */
     protected $max = 255;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::BYTE;
 
     /**
      * {@inheritdoc}
@@ -46,15 +40,7 @@ class Byte extends NumberBase
     }
 
     /**
-     * Convert a number into bytes.
-     *
-     * @param int $number
-     *            the number that should be converted.
-     * @param PelByteOrder $order
-     *            one of {@link Convert::LITTLE_ENDIAN} and
-     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
-     *
-     * @return string bytes representing the number given.
+     * {@inheritdoc}
      */
     public function numberToBytes($number, $order)
     {
