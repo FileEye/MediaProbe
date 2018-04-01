@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\SignedLong;
+use ExifEye\core\Entry\Core\SignedLong;
 
 class NumberSignedLongTest extends NumberTestCase
 {

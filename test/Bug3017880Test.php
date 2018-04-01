@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
-use ExifEye\core\Entry\Ascii;
+use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Jpeg;

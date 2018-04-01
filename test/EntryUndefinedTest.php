@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\Undefined;
+use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Spec;
 
 class EntryUndefinedTest extends ExifEyeTestCaseBase

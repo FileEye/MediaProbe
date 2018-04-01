@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\SignedByte;
+use ExifEye\core\Entry\Core\SignedByte;
 
 class NumberSignedByteTest extends NumberTestCase
 {

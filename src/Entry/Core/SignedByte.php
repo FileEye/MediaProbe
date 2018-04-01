@@ -1,36 +1,35 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-use ExifEye\core\Utility\Convert;
 
 /**
- * Class for holding signed shorts.
+ * Class for holding signed bytes.
  *
- * This class can hold shorts, either just a single short or an array
- * of shorts. The class will be used to manipulate any of the Exif
- * tags which has format {@link Format::SSHORT}.
+ * This class can hold bytes, either just a single byte or an array of
+ * bytes. The class will be used to manipulate any of the Exif tags
+ * which has format {@link Format::BYTE}.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class SignedShort extends NumberBase
+class SignedByte extends NumberBase
 {
     /**
      * {@inheritdoc}
      */
-    protected $format = Format::SSHORT;
+    protected $format = Format::SBYTE;
 
     /**
      * {@inheritdoc}
      */
-    protected $min = -32768;
+    protected $min = -128;
 
     /**
      * {@inheritdoc}
      */
-    protected $max = 32767;
+    protected $max = 127;
 
     /**
      * {@inheritdoc}
@@ -39,7 +38,7 @@ class SignedShort extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_window->getSignedShort($data_offset + ($i * 2));
+            $args[] = $data_window->getSignedByte($data_offset + $i);
         }
         return $args;
     }
@@ -49,7 +48,8 @@ class SignedShort extends NumberBase
      *
      * @param int $number
      *            the number that should be converted.
-     * @param boolean $order
+     *
+     * @param PelByteOrder $order
      *            one of {@link Convert::LITTLE_ENDIAN} and
      *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
      *
@@ -57,6 +57,6 @@ class SignedShort extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return Convert::signedShortToBytes($number, $order);
+        return chr($number);
     }
 }

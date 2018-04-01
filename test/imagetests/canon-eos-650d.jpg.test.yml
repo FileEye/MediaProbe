@@ -7,7 +7,7 @@ blocks:
                 id: 271
                 name: Make
                 entry:
-                    class: ExifEye\core\Entry\Ascii
+                    class: ExifEye\core\Entry\Core\Ascii
                     format: Ascii
                     components: 6
                     value: czo1OiJDYW5vbiI7
@@ -16,7 +16,7 @@ blocks:
                 id: 272
                 name: Model
                 entry:
-                    class: ExifEye\core\Entry\Ascii
+                    class: ExifEye\core\Entry\Core\Ascii
                     format: Ascii
                     components: 15
                     value: czoxNDoiQ2Fub24gRU9TIDY1MEQiOw==
@@ -25,7 +25,7 @@ blocks:
                 id: 274
                 name: Orientation
                 entry:
-                    class: ExifEye\core\Entry\Short
+                    class: ExifEye\core\Entry\Core\Short
                     format: Short
                     components: 1
                     value: aToxOw==
@@ -34,7 +34,7 @@ blocks:
                 id: 282
                 name: XResolution
                 entry:
-                    class: ExifEye\core\Entry\Rational
+                    class: ExifEye\core\Entry\Core\Rational
                     format: Rational
                     components: 1
                     value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
@@ -43,7 +43,7 @@ blocks:
                 id: 283
                 name: YResolution
                 entry:
-                    class: ExifEye\core\Entry\Rational
+                    class: ExifEye\core\Entry\Core\Rational
                     format: Rational
                     components: 1
                     value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
@@ -52,7 +52,7 @@ blocks:
                 id: 296
                 name: ResolutionUnit
                 entry:
-                    class: ExifEye\core\Entry\Short
+                    class: ExifEye\core\Entry\Core\Short
                     format: Short
                     components: 1
                     value: aToyOw==
@@ -70,7 +70,7 @@ blocks:
                 id: 315
                 name: Artist
                 entry:
-                    class: ExifEye\core\Entry\Ascii
+                    class: ExifEye\core\Entry\Core\Ascii
                     format: Ascii
                     components: 1
                     value: czowOiIiOw==
@@ -92,7 +92,7 @@ blocks:
                         id: 33434
                         name: ExposureTime
                         entry:
-                            class: ExifEye\core\Entry\Rational
+                            class: ExifEye\core\Entry\Core\Rational
                             format: Rational
                             components: 1
                             value: YToyOntpOjA7aToxO2k6MTtpOjgwMDt9
@@ -101,7 +101,7 @@ blocks:
                         id: 33437
                         name: FNumber
                         entry:
-                            class: ExifEye\core\Entry\Rational
+                            class: ExifEye\core\Entry\Core\Rational
                             format: Rational
                             components: 1
                             value: YToyOntpOjA7aTo2MztpOjE7aToxMDt9
@@ -110,7 +110,7 @@ blocks:
                         id: 34850
                         name: ExposureProgram
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aToyOw==
@@ -119,7 +119,7 @@ blocks:
                         id: 34855
                         name: ISOSpeedRatings
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aToxMjUwOw==
@@ -128,7 +128,7 @@ blocks:
                         id: 36864
                         name: ExifVersion
                         entry:
-                            class: ExifEye\core\Entry\Undefined
+                            class: ExifEye\core\Entry\Core\Undefined
                             format: Undefined
                             components: 4
                             value: ZDoyLjM7
@@ -155,7 +155,7 @@ blocks:
                         id: 37121
                         name: ComponentsConfiguration
                         entry:
-                            class: ExifEye\core\Entry\Undefined
+                            class: ExifEye\core\Entry\Core\Undefined
                             format: Undefined
                             components: 4
                             value: czo0OiIBAgMAIjs=
@@ -164,7 +164,7 @@ blocks:
                         id: 37377
                         name: ShutterSpeedValue
                         entry:
-                            class: ExifEye\core\Entry\SignedRational
+                            class: ExifEye\core\Entry\Core\SignedRational
                             format: SignedRational
                             components: 1
                             value: YToyOntpOjA7aTo2MzA3ODQ7aToxO2k6NjU1MzY7fQ==
@@ -173,7 +173,7 @@ blocks:
                         id: 37378
                         name: ApertureValue
                         entry:
-                            class: ExifEye\core\Entry\Rational
+                            class: ExifEye\core\Entry\Core\Rational
                             format: Rational
                             components: 1
                             value: YToyOntpOjA7aTozNTIyNTY7aToxO2k6NjU1MzY7fQ==
@@ -182,7 +182,7 @@ blocks:
                         id: 37380
                         name: ExposureBiasValue
                         entry:
-                            class: ExifEye\core\Entry\SignedRational
+                            class: ExifEye\core\Entry\Core\SignedRational
                             format: SignedRational
                             components: 1
                             value: YToyOntpOjA7aTowO2k6MTtpOjE7fQ==
@@ -191,7 +191,7 @@ blocks:
                         id: 37383
                         name: MeteringMode
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aTo1Ow==
@@ -200,7 +200,7 @@ blocks:
                         id: 37385
                         name: Flash
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aToxNjs=
@@ -209,7 +209,7 @@ blocks:
                         id: 37386
                         name: FocalLength
                         entry:
-                            class: ExifEye\core\Entry\Rational
+                            class: ExifEye\core\Entry\Core\Rational
                             format: Rational
                             components: 1
                             value: YToyOntpOjA7aTo2MDA7aToxO2k6MTt9
@@ -236,7 +236,7 @@ blocks:
                         id: 37520
                         name: SubSecTime
                         entry:
-                            class: ExifEye\core\Entry\Ascii
+                            class: ExifEye\core\Entry\Core\Ascii
                             format: Ascii
                             components: 3
                             value: czoyOiI5OCI7
@@ -245,7 +245,7 @@ blocks:
                         id: 37521
                         name: SubSecTimeOriginal
                         entry:
-                            class: ExifEye\core\Entry\Ascii
+                            class: ExifEye\core\Entry\Core\Ascii
                             format: Ascii
                             components: 3
                             value: czoyOiI5OCI7
@@ -254,7 +254,7 @@ blocks:
                         id: 37522
                         name: SubSecTimeDigitized
                         entry:
-                            class: ExifEye\core\Entry\Ascii
+                            class: ExifEye\core\Entry\Core\Ascii
                             format: Ascii
                             components: 3
                             value: czoyOiI5OCI7
@@ -263,7 +263,7 @@ blocks:
                         id: 40960
                         name: FlashPixVersion
                         entry:
-                            class: ExifEye\core\Entry\Undefined
+                            class: ExifEye\core\Entry\Core\Undefined
                             format: Undefined
                             components: 4
                             value: aToxOw==
@@ -272,7 +272,7 @@ blocks:
                         id: 40961
                         name: ColorSpace
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aToxOw==
@@ -281,7 +281,7 @@ blocks:
                         id: 40962
                         name: PixelXDimension
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aTowOw==
@@ -290,7 +290,7 @@ blocks:
                         id: 40963
                         name: PixelYDimension
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aTowOw==
@@ -299,7 +299,7 @@ blocks:
                         id: 41486
                         name: FocalPlaneXResolution
                         entry:
-                            class: ExifEye\core\Entry\Rational
+                            class: ExifEye\core\Entry\Core\Rational
                             format: Rational
                             components: 1
                             value: YToyOntpOjA7aTo1MTg0MDAwO2k6MTtpOjg5NDt9
@@ -308,7 +308,7 @@ blocks:
                         id: 41487
                         name: FocalPlaneYResolution
                         entry:
-                            class: ExifEye\core\Entry\Rational
+                            class: ExifEye\core\Entry\Core\Rational
                             format: Rational
                             components: 1
                             value: YToyOntpOjA7aTozNDU2MDAwO2k6MTtpOjU5Nzt9
@@ -317,7 +317,7 @@ blocks:
                         id: 41488
                         name: FocalPlaneResolutionUnit
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aToyOw==
@@ -326,7 +326,7 @@ blocks:
                         id: 41985
                         name: CustomRendered
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aTowOw==
@@ -335,7 +335,7 @@ blocks:
                         id: 41986
                         name: ExposureMode
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aTowOw==
@@ -344,7 +344,7 @@ blocks:
                         id: 41987
                         name: WhiteBalance
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aTowOw==
@@ -353,7 +353,7 @@ blocks:
                         id: 41990
                         name: SceneCaptureType
                         entry:
-                            class: ExifEye\core\Entry\Short
+                            class: ExifEye\core\Entry\Core\Short
                             format: Short
                             components: 1
                             value: aTowOw==
@@ -366,7 +366,7 @@ blocks:
                                 id: 1
                                 name: InteroperabilityIndex
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 4
                                     value: czozOiJSOTgiOw==
@@ -375,7 +375,7 @@ blocks:
                                 id: 2
                                 name: InteroperabilityVersion
                                 entry:
-                                    class: ExifEye\core\Entry\Undefined
+                                    class: ExifEye\core\Entry\Core\Undefined
                                     format: Undefined
                                     components: 4
                                     value: aToxOw==
@@ -387,7 +387,7 @@ blocks:
                                 id: 2
                                 name: FocalLength
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 4
                                     value: YTo0OntpOjA7aTowO2k6MTtpOjYwMDtpOjI7aTo2MzM0MztpOjM7aToyMTc3MDt9
@@ -396,7 +396,7 @@ blocks:
                                 id: 3
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 4
                                     value: YTo0OntpOjA7aTowO2k6MTtpOjA7aToyO2k6MDtpOjM7aTowO30=
@@ -405,7 +405,7 @@ blocks:
                                 id: 6
                                 name: ImageType
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 15
                                     value: czoxNDoiQ2Fub24gRU9TIDY1MEQiOw==
@@ -414,7 +414,7 @@ blocks:
                                 id: 7
                                 name: FirmwareVersion
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 23
                                     value: czoyMjoiRmlybXdhcmUgVmVyc2lvbiAxLjAuNCI7
@@ -423,7 +423,7 @@ blocks:
                                 id: 9
                                 name: OwnerName
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 1
                                     value: czowOiIiOw==
@@ -432,7 +432,7 @@ blocks:
                                 id: 13
                                 name: CameraInfo
                                 entry:
-                                    class: ExifEye\core\Entry\Undefined
+                                    class: ExifEye\core\Entry\Core\Undefined
                                     format: Undefined
                                     components: 1536
                                     value: czoxNTM2OiKqqoUzhTNlAAGaAaEAAwAAAAAAAAEAAAYAAACTmgBIAFQAUwJYAAEAAAAAAAADAAAAAAG7uwAgAAIAwP0AAAAAAAAAAAAAAAAAAAAAAAAAAABAWQAAAEsAAAAAAAAAAFbaWroAAAAAAAAAAAAAAAAAAAAAAAABAQAAAAAAAQAAAAAAAAAAAAAAAAAAABX2ECkEAAAAAAAAAAD/////DMzMAAAAAAMAAAAAAAAAAAAAAAAAAAAAAQAAAQABAAAAAAA8DwAAAAAAAAAAAAAGAAAABgAAAAYAAAAEAAAABAAAAAQAAAAAAAAAAQAAAAAAAAABAAAAhwAAAAEAAAABAAAAAQAAAAkAAAAAAAAAAFmmqgAAAAAAAAAAAAAAAAAAAAAAAAAAATJdAusAlgJYkXea7wj/AAAAAAAAAAAAAAAAAAQyAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAEAUAACADQAAHgkAAGgFAAAEAgAAsAIAANACAADgAQAAAAAAAAAAAADQAgAA4AEAANACAADgAQAAAAAAAAAAAADQAgAA4AEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///3////9/AAAAAAAAAAAAAgAAAAAAAAAAAAAKAgABAAEAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEBATEuMC40ADg3KDI4KQATagAMAAAAgEdJABgCmBlY/hMAvMsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI4AAABlAAAAZAAAAAAAAABKAAAAAAAAAGQAAABmAAAAZAAAAAgAAAAIAAAACAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADjAQAEAASUAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOMBAAQABJQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4wEABAAElAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADjAQAEAASUAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOMBAAQABJQCAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAwAAAAAAAAAAAAAA776t3u++rd4AAAAAAgAAAAAAAAAAAAAA776t3u++rd4AAAAABAAAAAAAAAAAAAAA776t3u++rd4AAAAAAAAAAAAAAAAAAAAA776t3u++rd4AAAAAAAAAAAAAAAAAAAAA776t3u++rd4AAAAAAwAAAO++rd7vvq3eAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAA776t3u++rd4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAACHAIcAhwAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAAEAAQAAAAAAAAAAJTrQ1ndAwAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAIwAAAAAAAAAAAAAAALg0AAD0NwEAAAAAAAAAAAAAAAAAAwAAAFMAAABYAAOAAAAAAAMAAABNAAAATgAAAAAAAAADAAAAMwAAADsAA4AAAAAAAwAAAFQAAABZAAOAAAAAAAMAAABXAAAAXgADgAAAAAADAAAAWAAAAF8AAAAiOw==
@@ -441,7 +441,7 @@ blocks:
                                 id: 16
                                 name: ModelID
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 1
                                     value: ZDoyMTQ3NDg0NDE3Ow==
@@ -450,7 +450,7 @@ blocks:
                                 id: 19
                                 name: ThumbnailImageValidArea
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 4
                                     value: YTo0OntpOjA7aTowO2k6MTtpOjE1OTtpOjI7aTo3O2k6MztpOjExMjt9
@@ -459,7 +459,7 @@ blocks:
                                 id: 25
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 1
                                     value: aToxOw==
@@ -468,7 +468,7 @@ blocks:
                                 id: 38
                                 name: AFinfo
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 139
                                     value: YToxMzk6e2k6MDtpOjI3ODtpOjE7aToyO2k6MjtpOjMxO2k6MztpOjk7aTo0O2k6NTE4NDtpOjU7aTozNDU2O2k6NjtpOjUxODQ7aTo3O2k6MzQ1NjtpOjg7aToxMjk7aTo5O2k6MTI5O2k6MTA7aToxMjk7aToxMTtpOjE4MTtpOjEyO2k6MjIyO2k6MTM7aToxODE7aToxNDtpOjEyOTtpOjE1O2k6MTI5O2k6MTY7aToxMjk7aToxNztpOjA7aToxODtpOjA7aToxOTtpOjA7aToyMDtpOjA7aToyMTtpOjA7aToyMjtpOjA7aToyMztpOjA7aToyNDtpOjA7aToyNTtpOjA7aToyNjtpOjA7aToyNztpOjA7aToyODtpOjA7aToyOTtpOjA7aTozMDtpOjA7aTozMTtpOjA7aTozMjtpOjA7aTozMztpOjA7aTozNDtpOjA7aTozNTtpOjA7aTozNjtpOjA7aTozNztpOjA7aTozODtpOjA7aTozOTtpOjE3MjtpOjQwO2k6MTcyO2k6NDE7aToxNzI7aTo0MjtpOjExNztpOjQzO2k6MjI0O2k6NDQ7aToxMTc7aTo0NTtpOjE3MjtpOjQ2O2k6MTcyO2k6NDc7aToxNzI7aTo0ODtpOjA7aTo0OTtpOjA7aTo1MDtpOjA7aTo1MTtpOjA7aTo1MjtpOjA7aTo1MztpOjA7aTo1NDtpOjA7aTo1NTtpOjA7aTo1NjtpOjA7aTo1NztpOjA7aTo1ODtpOjA7aTo1OTtpOjA7aTo2MDtpOjA7aTo2MTtpOjA7aTo2MjtpOjA7aTo2MztpOjA7aTo2NDtpOjA7aTo2NTtpOjA7aTo2NjtpOjA7aTo2NztpOjA7aTo2ODtpOjA7aTo2OTtpOjA7aTo3MDtpOjY0MTY4O2k6NzE7aTo2NDcxNztpOjcyO2k6NjQ3MTc7aTo3MztpOjA7aTo3NDtpOjA7aTo3NTtpOjA7aTo3NjtpOjgxOTtpOjc3O2k6ODE5O2k6Nzg7aToxMzY4O2k6Nzk7aTowO2k6ODA7aTowO2k6ODE7aTowO2k6ODI7aTowO2k6ODM7aTowO2k6ODQ7aTowO2k6ODU7aTowO2k6ODY7aTowO2k6ODc7aTowO2k6ODg7aTowO2k6ODk7aTowO2k6OTA7aTowO2k6OTE7aTowO2k6OTI7aTowO2k6OTM7aTowO2k6OTQ7aTowO2k6OTU7aTowO2k6OTY7aTowO2k6OTc7aTowO2k6OTg7aTowO2k6OTk7aTowO2k6MTAwO2k6MDtpOjEwMTtpOjA7aToxMDI7aTozODc7aToxMDM7aTo2NTE0OTtpOjEwNDtpOjc2MztpOjEwNTtpOjA7aToxMDY7aTo2NDc3MztpOjEwNztpOjM4NztpOjEwODtpOjY1MTQ5O2k6MTA5O2k6MDtpOjExMDtpOjA7aToxMTE7aTowO2k6MTEyO2k6MDtpOjExMztpOjA7aToxMTQ7aTowO2k6MTE1O2k6MDtpOjExNjtpOjA7aToxMTc7aTowO2k6MTE4O2k6MDtpOjExOTtpOjA7aToxMjA7aTowO2k6MTIxO2k6MDtpOjEyMjtpOjA7aToxMjM7aTowO2k6MTI0O2k6MDtpOjEyNTtpOjA7aToxMjY7aTowO2k6MTI3O2k6MDtpOjEyODtpOjA7aToxMjk7aTowO2k6MTMwO2k6MDtpOjEzMTtpOjA7aToxMzI7aToxNjtpOjEzMztpOjA7aToxMzQ7aToxNjtpOjEzNTtpOjA7aToxMzY7aTowO2k6MTM3O2k6MDtpOjEzODtpOjY1NTM1O30=
@@ -477,7 +477,7 @@ blocks:
                                 id: 53
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 4
                                     value: YTo0OntpOjA7aToxNjtpOjE7aTowO2k6MjtpOjIwO2k6MztpOjA7fQ==
@@ -486,7 +486,7 @@ blocks:
                                 id: 149
                                 name: LensModel
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 46
                                     value: czo0NToiVEFNUk9OIFNQIDE1MC02MDBtbSBGLzUtNi4zIERpIFZDIFVTRCBHMiBBMDIyIjs=
@@ -495,7 +495,7 @@ blocks:
                                 id: 150
                                 name: InternalSerialNumber
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 10
                                     value: czo5OiJEQTA4Mzg0MzYiOw==
@@ -504,7 +504,7 @@ blocks:
                                 id: 151
                                 name: DustRemovalData
                                 entry:
-                                    class: ExifEye\core\Entry\Undefined
+                                    class: ExifEye\core\Entry\Core\Undefined
                                     format: Undefined
                                     components: 1024
                                     value: czoxMDI0OiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIjs=
@@ -513,7 +513,7 @@ blocks:
                                 id: 152
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 4
                                     value: YTo0OntpOjA7aTowO2k6MTtpOjA7aToyO2k6MDtpOjM7aTowO30=
@@ -522,7 +522,7 @@ blocks:
                                 id: 153
                                 name: CustomFunctions
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 38
                                     value: YTozODp7aTowO2k6MTUyO2k6MTtpOjQ7aToyO2k6MTtpOjM7aTozMjtpOjQ7aToyO2k6NTtpOjI1NztpOjY7aToxO2k6NztpOjA7aTo4O2k6MjU5O2k6OTtpOjE7aToxMDtpOjA7aToxMTtpOjI7aToxMjtpOjIwO2k6MTM7aToxO2k6MTQ7aTo1MTU7aToxNTtpOjE7aToxNjtpOjA7aToxNztpOjM7aToxODtpOjMyO2k6MTk7aToyO2k6MjA7aToxMjk0O2k6MjE7aToxO2k6MjI7aTowO2k6MjM7aToxNTUxO2k6MjQ7aToxO2k6MjU7aTowO2k6MjY7aTo0O2k6Mjc7aTo0NDtpOjI4O2k6MztpOjI5O2k6MTc5MztpOjMwO2k6MTtpOjMxO2k6MDtpOjMyO2k6MTc5NjtpOjMzO2k6MTtpOjM0O2k6MDtpOjM1O2k6MjA2NTtpOjM2O2k6MTtpOjM3O2k6MDt9
@@ -531,7 +531,7 @@ blocks:
                                 id: 154
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 5
                                     value: YTo1OntpOjA7aTowO2k6MTtpOjUxODQ7aToyO2k6MzQ1NjtpOjM7aTowO2k6NDtpOjA7fQ==
@@ -540,7 +540,7 @@ blocks:
                                 id: 160
                                 name: ProcessingInfo
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 14
                                     value: YToxNDp7aTowO2k6Mjg7aToxO2k6MDtpOjI7aTozO2k6MztpOjA7aTo0O2k6MDtpOjU7aTowO2k6NjtpOjA7aTo3O2k6MDtpOjg7aTo2NTUzNTtpOjk7aTozOTAwO2k6MTA7aToxMzU7aToxMTtpOjA7aToxMjtpOjA7aToxMztpOjA7fQ==
@@ -549,7 +549,7 @@ blocks:
                                 id: 170
                                 name: MeasuredColor
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 6
                                     value: YTo2OntpOjA7aToxMjtpOjE7aTo2MzI7aToyO2k6MTAyNDtpOjM7aToxMDI0O2k6NDtpOjQ2ODtpOjU7aTowO30=
@@ -558,7 +558,7 @@ blocks:
                                 id: 180
                                 name: ColorSpace
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 1
                                     value: aToxOw==
@@ -567,7 +567,7 @@ blocks:
                                 id: 208
                                 name: VRDOffset
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 1
                                     value: aTowOw==
@@ -576,7 +576,7 @@ blocks:
                                 id: 224
                                 name: SensorInfo
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 17
                                     value: YToxNzp7aTowO2k6MzQ7aToxO2k6NTI4MDtpOjI7aTozNTI4O2k6MztpOjE7aTo0O2k6MTtpOjU7aTo4NDtpOjY7aTo2NDtpOjc7aTo1MjY3O2k6ODtpOjM1MTk7aTo5O2k6MDtpOjEwO2k6MDtpOjExO2k6MDtpOjEyO2k6MDtpOjEzO2k6MDtpOjE0O2k6MDtpOjE1O2k6MDtpOjE2O2k6MDt9
@@ -585,7 +585,7 @@ blocks:
                                 id: 16385
                                 name: ColorData
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 1312
                                     value: YToxMzEyOntpOjA7aToxMDtpOjE7aTo3NzU7aToyO2k6MTAyNDtpOjM7aToxMDI0O2k6NDtpOjM3MztpOjU7aTo1NDA7aTo2O2k6MTAyNDtpOjc7aToxMDI0O2k6ODtpOjUyMTtpOjk7aTozODA7aToxMDtpOjEwMjQ7aToxMTtpOjEwMjQ7aToxMjtpOjc0NDtpOjEzO2k6MTI1MztpOjE0O2k6MTY0MTtpOjE1O2k6MTY0MztpOjE2O2k6NjA0O2k6MTc7aToxMzU4O2k6MTg7aToyNTI2O2k6MTk7aToyNTI4O2k6MjA7aToxMjc4O2k6MjE7aTo2MzU7aToyMjtpOjE2NzQ7aToyMztpOjE2NzQ7aToyNDtpOjExOTU7aToyNTtpOjM7aToyNjtpOjY1NTM1O2k6Mjc7aToyNjU7aToyODtpOjI1OTtpOjI5O2k6MjcwO2k6MzA7aTowO2k6MzE7aToxNDI3O2k6MzI7aTozMTQ5O2k6MzM7aTozMTQyO2k6MzQ7aToxODY3O2k6MzU7aTo2NjU7aTozNjtpOjIyMDtpOjM3O2k6MjIwO2k6Mzg7aTozMTtpOjM5O2k6MTAxO2k6NDA7aTo2ODE7aTo0MTtpOjY3OTtpOjQyO2k6MTEwOTtpOjQzO2k6MTI3NTtpOjQ0O2k6MjI2NDtpOjQ1O2k6MjI2ODtpOjQ2O2k6NDE5O2k6NDc7aToxMTg1O2k6NDg7aToyNTIxO2k6NDk7aToyNTE2O2k6NTA7aToxNDkwO2k6NTE7aTo1NTI7aTo1MjtpOjE4NjtpOjUzO2k6MTg2O2k6NTQ7aToyODtpOjU1O2k6ODg7aTo1NjtpOjU3MztpOjU3O2k6NTc0O2k6NTg7aTo4OTQ7aTo1OTtpOjEwNjc7aTo2MDtpOjE4NDQ7aTo2MTtpOjE4NDg7aTo2MjtpOjM1OTtpOjYzO2k6MjAyMDtpOjY0O2k6MTAyNDtpOjY1O2k6MTAyNDtpOjY2O2k6MTg1OTtpOjY3O2k6NDQ2NztpOjY4O2k6MjAyMDtpOjY5O2k6MTAyNDtpOjcwO2k6MTAyNDtpOjcxO2k6MTg1OTtpOjcyO2k6NDQ2NztpOjczO2k6MjAyMDtpOjc0O2k6MTAyNDtpOjc1O2k6MTAyNDtpOjc2O2k6MTg1OTtpOjc3O2k6NDQ2NztpOjc4O2k6MjAyMDtpOjc5O2k6MTAyNDtpOjgwO2k6MTAyNDtpOjgxO2k6MTg1OTtpOjgyO2k6NDQ2NztpOjgzO2k6MTAyNDtpOjg0O2k6MTAyNDtpOjg1O2k6MTAyNDtpOjg2O2k6MTAyNDtpOjg3O2k6NDIwODtpOjg4O2k6MTAyNDtpOjg5O2k6MTAyNDtpOjkwO2k6MTAyNDtpOjkxO2k6MTAyNDtpOjkyO2k6NDIwODtpOjkzO2k6MjAyMDtpOjk0O2k6MTAyNDtpOjk1O2k6MTAyNDtpOjk2O2k6MTg1OTtpOjk3O2k6NDQ2NztpOjk4O2k6MjAyMDtpOjk5O2k6MTAyNDtpOjEwMDtpOjEwMjQ7aToxMDE7aToxODU5O2k6MTAyO2k6NDQ2NztpOjEwMztpOjIwMjA7aToxMDQ7aToxMDI0O2k6MTA1O2k6MTAyNDtpOjEwNjtpOjE4NTk7aToxMDc7aTo0NDY3O2k6MTA4O2k6MjAyMDtpOjEwOTtpOjEwMjQ7aToxMTA7aToxMDI0O2k6MTExO2k6MTg1OTtpOjExMjtpOjQ0Njc7aToxMTM7aToyMDIwO2k6MTE0O2k6MTAyNDtpOjExNTtpOjEwMjQ7aToxMTY7aToxODU5O2k6MTE3O2k6NDQ2NztpOjExODtpOjE5NDc7aToxMTk7aToxMDIzO2k6MTIwO2k6MTAyNDtpOjEyMTtpOjE5MzY7aToxMjI7aTo0MjI2O2k6MTIzO2k6NjE0O2k6MTI0O2k6MTE3MDtpOjEyNTtpOjExNzA7aToxMjY7aTo2MTk7aToxMjc7aTo0MjM1O2k6MTI4O2k6MjE0MDtpOjEyOTtpOjEwMjQ7aToxMzA7aToxMDI0O2k6MTMxO2k6MTYxMTtpOjEzMjtpOjUyMDA7aToxMzM7aToyNDY3O2k6MTM0O2k6MTAyNDtpOjEzNTtpOjEwMjQ7aToxMzY7aToxMzc2O2k6MTM3O2k6NzAwMDtpOjEzODtpOjIzMDA7aToxMzk7aToxMDI0O2k6MTQwO2k6MTAyNDtpOjE0MTtpOjE0ODU7aToxNDI7aTo2MDAwO2k6MTQzO2k6MTUzMTtpOjE0NDtpOjEwMjQ7aToxNDU7aToxMDI0O2k6MTQ2O2k6MjQwNTtpOjE0NztpOjMyMDA7aToxNDg7aToxODU5O2k6MTQ5O2k6MTAyNDtpOjE1MDtpOjEwMjQ7aToxNTE7aToyMjc1O2k6MTUyO2k6MzcyMDtpOjE1MztpOjE3ODM7aToxNTQ7aToxMDI0O2k6MTU1O2k6MTAyNDtpOjE1NjtpOjIwMDU7aToxNTc7aTozODk2O2k6MTU4O2k6MjM4MztpOjE1OTtpOjEwMjQ7aToxNjA7aToxMDI0O2k6MTYxO2k6MTQ3MTtpOjE2MjtpOjYyODI7aToxNjM7aToyMTQwO2k6MTY0O2k6MTAyNDtpOjE2NTtpOjEwMjQ7aToxNjY7aToxNjExO2k6MTY3O2k6NTE4OTtpOjE2ODtpOjIxNDA7aToxNjk7aToxMDI0O2k6MTcwO2k6MTAyNDtpOjE3MTtpOjE2MTE7aToxNzI7aTo1MTg5O2k6MTczO2k6MjE0MDtpOjE3NDtpOjEwMjQ7aToxNzU7aToxMDI0O2k6MTc2O2k6MTYxMTtpOjE3NztpOjUxODk7aToxNzg7aToyMTQwO2k6MTc5O2k6MTAyNDtpOjE4MDtpOjEwMjQ7aToxODE7aToxNjExO2k6MTgyO2k6NTE4OTtpOjE4MztpOjIxNDA7aToxODQ7aToxMDI0O2k6MTg1O2k6MTAyNDtpOjE4NjtpOjE2MTE7aToxODc7aTo1MTg5O2k6MTg4O2k6MTA1NDtpOjE4OTtpOjEwMjQ7aToxOTA7aToxMDI0O2k6MTkxO2k6MTA0ODtpOjE5MjtpOjQyMzU7aToxOTM7aToxMDU0O2k6MTk0O2k6MTAyNDtpOjE5NTtpOjEwMjQ7aToxOTY7aToxMDQ4O2k6MTk3O2k6NDIzNTtpOjE5ODtpOjEwNTQ7aToxOTk7aToxMDI0O2k6MjAwO2k6MTAyNDtpOjIwMTtpOjEwNDg7aToyMDI7aTo0MjM1O2k6MjAzO2k6MTA1NDtpOjIwNDtpOjEwMjQ7aToyMDU7aToxMDI0O2k6MjA2O2k6MTA0ODtpOjIwNztpOjQyMzU7aToyMDg7aToxMDU0O2k6MjA5O2k6MTAyNDtpOjIxMDtpOjEwMjQ7aToyMTE7aToxMDQ4O2k6MjEyO2k6NDIzNTtpOjIxMztpOjY1MjA2O2k6MjE0O2k6MzY1O2k6MjE1O2k6OTAxO2k6MjE2O2k6MTA5MDA7aToyMTc7aTo2NTIyNDtpOjIxODtpOjM3NDtpOjIxOTtpOjg3OTtpOjIyMDtpOjEwMDAwO2k6MjIxO2k6NjUyNjk7aToyMjI7aTozOTY7aToyMjM7aTo4MjI7aToyMjQ7aTo4MzAwO2k6MjI1O2k6NjUzMjM7aToyMjY7aTo0MjU7aToyMjc7aTo3NjI7aToyMjg7aTo3MDAwO2k6MjI5O2k6NjUzNzY7aToyMzA7aTo0NTY7aToyMzE7aTo3MDY7aToyMzI7aTo2MDAwO2k6MjMzO2k6NjU0MDM7aToyMzQ7aTo0NzI7aToyMzU7aTo2ODA7aToyMzY7aTo1NjAwO2k6MjM3O2k6NjU0MzI7aToyMzg7aTo0OTA7aToyMzk7aTo2NTE7aToyNDA7aTo1MjAwO2k6MjQxO2k6NjU0ODE7aToyNDI7aTo1MTg7aToyNDM7aTo2MDM7aToyNDQ7aTo0NzAwO2k6MjQ1O2k6MTtpOjI0NjtpOjU1NztpOjI0NztpOjU1NTtpOjI0ODtpOjQyMDA7aToyNDk7aTo1NTtpOjI1MDtpOjU5OTtpOjI1MTtpOjUxMztpOjI1MjtpOjM4MDA7aToyNTM7aToxMDI7aToyNTQ7aTo2MzY7aToyNTU7aTo0Nzc7aToyNTY7aTozNTAwO2k6MjU3O2k6MTYxO2k6MjU4O2k6Njg1O2k6MjU5O2k6NDM2O2k6MjYwO2k6MzIwMDtpOjI2MTtpOjIwNTtpOjI2MjtpOjcyNDtpOjI2MztpOjQwNjtpOjI2NDtpOjMwMDA7aToyNjU7aToyNTA7aToyNjY7aTo3NzY7aToyNjc7aTozODU7aToyNjg7aToyODAwO2k6MjY5O2k6MzY1O2k6MjcwO2k6OTEyO2k6MjcxO2k6MzI3O2k6MjcyO2k6MjQwMDtpOjI3MztpOjUwMDtpOjI3NDtpOjIwNjU7aToyNzU7aToyMDgxO2k6Mjc2O2k6MjA0ODtpOjI3NztpOjIwNDg7aToyNzg7aToyMDQ4O2k6Mjc5O2k6MjA0ODtpOjI4MDtpOjA7aToyODE7aTowO2k6MjgyO2k6MDtpOjI4MztpOjA7aToyODQ7aTowO2k6Mjg1O2k6MDtpOjI4NjtpOjA7aToyODc7aTowO2k6Mjg4O2k6MDtpOjI4OTtpOjA7aToyOTA7aTowO2k6MjkxO2k6MDtpOjI5MjtpOjA7aToyOTM7aTowO2k6Mjk0O2k6MDtpOjI5NTtpOjA7aToyOTY7aTowO2k6Mjk3O2k6MDtpOjI5ODtpOjA7aToyOTk7aTowO2k6MzAwO2k6MDtpOjMwMTtpOjA7aTozMDI7aTowO2k6MzAzO2k6MDtpOjMwNDtpOjA7aTozMDU7aTowO2k6MzA2O2k6MDtpOjMwNztpOjA7aTozMDg7aTowO2k6MzA5O2k6MDtpOjMxMDtpOjA7aTozMTE7aTowO2k6MzEyO2k6MDtpOjMxMztpOjA7aTozMTQ7aTowO2k6MzE1O2k6MDtpOjMxNjtpOjA7aTozMTc7aTowO2k6MzE4O2k6MDtpOjMxOTtpOjA7aTozMjA7aTowO2k6MzIxO2k6MDtpOjMyMjtpOjA7aTozMjM7aTowO2k6MzI0O2k6MDtpOjMyNTtpOjA7aTozMjY7aTowO2k6MzI3O2k6MDtpOjMyODtpOjA7aTozMjk7aTowO2k6MzMwO2k6MDtpOjMzMTtpOjA7aTozMzI7aTowO2k6MzMzO2k6MDtpOjMzNDtpOjA7aTozMzU7aTowO2k6MzM2O2k6MDtpOjMzNztpOjA7aTozMzg7aTowO2k6MzM5O2k6MDtpOjM0MDtpOjA7aTozNDE7aTowO2k6MzQyO2k6MDtpOjM0MztpOjA7aTozNDQ7aTowO2k6MzQ1O2k6MDtpOjM0NjtpOjA7aTozNDc7aToyO2k6MzQ4O2k6MDtpOjM0OTtpOjA7aTozNTA7aToxO2k6MzUxO2k6MjtpOjM1MjtpOjI7aTozNTM7aTo2O2k6MzU0O2k6MjtpOjM1NTtpOjM7aTozNTY7aToxO2k6MzU3O2k6MztpOjM1ODtpOjY7aTozNTk7aTowO2k6MzYwO2k6MjtpOjM2MTtpOjE7aTozNjI7aTo1O2k6MzYzO2k6ODc7aTozNjQ7aTozMztpOjM2NTtpOjU2O2k6MzY2O2k6OTU7aTozNjc7aToyMjA7aTozNjg7aTo4ODE7aTozNjk7aTo1MDk7aTozNzA7aTo1NTQ7aTozNzE7aTo1OTQ7aTozNzI7aTozNDM7aTozNzM7aTozMjY7aTozNzQ7aTo3MzE7aTozNzU7aToyO2k6Mzc2O2k6MDtpOjM3NztpOjE7aTozNzg7aTo1O2k6Mzc5O2k6NjM7aTozODA7aTo1MDtpOjM4MTtpOjExMztpOjM4MjtpOjMyMztpOjM4MztpOjUxNDtpOjM4NDtpOjE4NTg7aTozODU7aTo4NTU7aTozODY7aTo4NTU7aTozODc7aTo4MTY7aTozODg7aTo0MTA7aTozODk7aTozODM7aTozOTA7aTo3MTA7aTozOTE7aTowO2k6MzkyO2k6NjtpOjM5MztpOjg7aTozOTQ7aTo3MDtpOjM5NTtpOjMxODQ7aTozOTY7aToyNzcxO2k6Mzk3O2k6NjkyMTtpOjM5ODtpOjY3MTg7aTozOTk7aToxOTQyNDtpOjQwMDtpOjI3MjA4O2k6NDAxO2k6MTQzMTg7aTo0MDI7aTo2NzgxO2k6NDAzO2k6Mzg3NDtpOjQwNDtpOjE3NDc7aTo0MDU7aToxMjk1O2k6NDA2O2k6MjI1MDtpOjQwNztpOjEwO2k6NDA4O2k6MDtpOjQwOTtpOjA7aTo0MTA7aTowO2k6NDExO2k6MzI3Njg7aTo0MTI7aTowO2k6NDEzO2k6MTAyNDtpOjQxNDtpOjEwMjQ7aTo0MTU7aToxMDI0O2k6NDE2O2k6Mjc3MjtpOjQxNztpOjQwNTE7aTo0MTg7aTo3MTkyO2k6NDE5O2k6MzkyNztpOjQyMDtpOjY1Mzc4O2k6NDIxO2k6MTI7aTo0MjI7aTozOTIxO2k6NDIzO2k6NDI3MjtpOjQyNDtpOjE3MjtpOjQyNTtpOjY1NTIzO2k6NDI2O2k6NDI3OTtpOjQyNztpOjA7aTo0Mjg7aToyNTY7aTo0Mjk7aTo2O2k6NDMwO2k6NTcwMDM7aTo0MzE7aToxMTtpOjQzMjtpOjQ3MjE7aTo0MzM7aToxMDtpOjQzNDtpOjU5NjMyO2k6NDM1O2k6NTtpOjQzNjtpOjEzMDE7aTo0Mzc7aToxMDI0O2k6NDM4O2k6MTAyNDtpOjQzOTtpOjEwMjQ7aTo0NDA7aTowO2k6NDQxO2k6MDtpOjQ0MjtpOjA7aTo0NDM7aTo2NTUzMztpOjQ0NDtpOjA7aTo0NDU7aTo4MTkxO2k6NDQ2O2k6MjU2O2k6NDQ3O2k6MDtpOjQ0ODtpOjA7aTo0NDk7aToxMDI0O2k6NDUwO2k6Njc3O2k6NDUxO2k6NDM1O2k6NDUyO2k6NDgzO2k6NDUzO2k6NjYwO2k6NDU0O2k6Mzk4O2k6NDU1O2k6ODI0O2k6NDU2O2k6MDtpOjQ1NztpOjA7aTo0NTg7aTowO2k6NDU5O2k6MDtpOjQ2MDtpOjA7aTo0NjE7aTozMTtpOjQ2MjtpOjYzO2k6NDYzO2k6OTU7aTo0NjQ7aToxMjc7aTo0NjU7aToxNTk7aTo0NjY7aToxOTE7aTo0Njc7aToyMjM7aTo0Njg7aToyNTU7aTo0Njk7aTowO2k6NDcwO2k6Mjg7aTo0NzE7aTo2NDtpOjQ3MjtpOjk3O2k6NDczO2k6MTI5O2k6NDc0O2k6MTYwO2k6NDc1O2k6MTkxO2k6NDc2O2k6MjIzO2k6NDc3O2k6MjU1O2k6NDc4O2k6MTtpOjQ3OTtpOjA7aTo0ODA7aTo5NTtpOjQ4MTtpOjA7aTo0ODI7aToxNjtpOjQ4MztpOjMyO2k6NDg0O2k6NjQ7aTo0ODU7aTo5NjtpOjQ4NjtpOjEyODtpOjQ4NztpOjE5MjtpOjQ4ODtpOjA7aTo0ODk7aTo2NTUxNztpOjQ5MDtpOjY1NTE3O2k6NDkxO2k6NjU1MjA7aTo0OTI7aTo2NTUxNztpOjQ5MztpOjY1NTIwO2k6NDk0O2k6MDtpOjQ5NTtpOjEwMDA7aTo0OTY7aToxMDAzO2k6NDk3O2k6MTAwMztpOjQ5ODtpOjEwMDE7aTo0OTk7aToxMDA0O2k6NTAwO2k6MTAwMDtpOjUwMTtpOjk3MDtpOjUwMjtpOjExNjA7aTo1MDM7aTowO2k6NTA0O2k6MjA0NjtpOjUwNTtpOjIwNDY7aTo1MDY7aToyMDQ5O2k6NTA3O2k6MjA0OTtpOjUwODtpOjEwNzEwO2k6NTA5O2k6MTEyMjI7aTo1MTA7aToxMDAwMDtpOjUxMTtpOjA7aTo1MTI7aToxNTQ7aTo1MTM7aToxNDQ7aTo1MTQ7aToxMjA7aTo1MTU7aTo1O2k6NTE2O2k6MDtpOjUxNztpOjA7aTo1MTg7aTowO2k6NTE5O2k6MDtpOjUyMDtpOjA7aTo1MjE7aTowO2k6NTIyO2k6MDtpOjUyMztpOjA7aTo1MjQ7aTowO2k6NTI1O2k6MDtpOjUyNjtpOjA7aTo1Mjc7aTowO2k6NTI4O2k6MDtpOjUyOTtpOjA7aTo1MzA7aTowO2k6NTMxO2k6MDtpOjUzMjtpOjA7aTo1MzM7aTowO2k6NTM0O2k6MDtpOjUzNTtpOjA7aTo1MzY7aTowO2k6NTM3O2k6MDtpOjUzODtpOjA7aTo1Mzk7aTowO2k6NTQwO2k6MDtpOjU0MTtpOjA7aTo1NDI7aTowO2k6NTQzO2k6MDtpOjU0NDtpOjA7aTo1NDU7aTowO2k6NTQ2O2k6MDtpOjU0NztpOjA7aTo1NDg7aTowO2k6NTQ5O2k6MDtpOjU1MDtpOjA7aTo1NTE7aTowO2k6NTUyO2k6MDtpOjU1MztpOjA7aTo1NTQ7aTowO2k6NTU1O2k6MDtpOjU1NjtpOjA7aTo1NTc7aTowO2k6NTU4O2k6MDtpOjU1OTtpOjA7aTo1NjA7aTowO2k6NTYxO2k6MDtpOjU2MjtpOjA7aTo1NjM7aTowO2k6NTY0O2k6MDtpOjU2NTtpOjA7aTo1NjY7aTowO2k6NTY3O2k6MDtpOjU2ODtpOjA7aTo1Njk7aTowO2k6NTcwO2k6MDtpOjU3MTtpOjA7aTo1NzI7aTowO2k6NTczO2k6MDtpOjU3NDtpOjA7aTo1NzU7aTowO2k6NTc2O2k6MDtpOjU3NztpOjA7aTo1Nzg7aTowO2k6NTc5O2k6MDtpOjU4MDtpOjA7aTo1ODE7aTowO2k6NTgyO2k6MDtpOjU4MztpOjA7aTo1ODQ7aTowO2k6NTg1O2k6MDtpOjU4NjtpOjA7aTo1ODc7aTowO2k6NTg4O2k6MDtpOjU4OTtpOjA7aTo1OTA7aTowO2k6NTkxO2k6MDtpOjU5MjtpOjA7aTo1OTM7aTowO2k6NTk0O2k6MDtpOjU5NTtpOjA7aTo1OTY7aTowO2k6NTk3O2k6MDtpOjU5ODtpOjA7aTo1OTk7aTowO2k6NjAwO2k6MDtpOjYwMTtpOjA7aTo2MDI7aTowO2k6NjAzO2k6MDtpOjYwNDtpOjA7aTo2MDU7aTowO2k6NjA2O2k6MDtpOjYwNztpOjA7aTo2MDg7aTowO2k6NjA5O2k6MDtpOjYxMDtpOjA7aTo2MTE7aTowO2k6NjEyO2k6MDtpOjYxMztpOjA7aTo2MTQ7aTowO2k6NjE1O2k6MDtpOjYxNjtpOjA7aTo2MTc7aTowO2k6NjE4O2k6MDtpOjYxOTtpOjA7aTo2MjA7aTowO2k6NjIxO2k6MDtpOjYyMjtpOjA7aTo2MjM7aTowO2k6NjI0O2k6MDtpOjYyNTtpOjA7aTo2MjY7aTowO2k6NjI3O2k6MDtpOjYyODtpOjA7aTo2Mjk7aTowO2k6NjMwO2k6MDtpOjYzMTtpOjA7aTo2MzI7aTowO2k6NjMzO2k6MDtpOjYzNDtpOjA7aTo2MzU7aTowO2k6NjM2O2k6MDtpOjYzNztpOjA7aTo2Mzg7aTowO2k6NjM5O2k6MDtpOjY0MDtpOjA7aTo2NDE7aTowO2k6NjQyO2k6MDtpOjY0MztpOjA7aTo2NDQ7aTowO2k6NjQ1O2k6MDtpOjY0NjtpOjA7aTo2NDc7aTowO2k6NjQ4O2k6MDtpOjY0OTtpOjA7aTo2NTA7aTowO2k6NjUxO2k6MDtpOjY1MjtpOjA7aTo2NTM7aTowO2k6NjU0O2k6MDtpOjY1NTtpOjA7aTo2NTY7aTowO2k6NjU3O2k6MDtpOjY1ODtpOjA7aTo2NTk7aTowO2k6NjYwO2k6MDtpOjY2MTtpOjA7aTo2NjI7aTowO2k6NjYzO2k6MDtpOjY2NDtpOjA7aTo2NjU7aTowO2k6NjY2O2k6MDtpOjY2NztpOjA7aTo2Njg7aTowO2k6NjY5O2k6MDtpOjY3MDtpOjA7aTo2NzE7aTowO2k6NjcyO2k6MDtpOjY3MztpOjA7aTo2NzQ7aTowO2k6Njc1O2k6MDtpOjY3NjtpOjA7aTo2Nzc7aTowO2k6Njc4O2k6MDtpOjY3OTtpOjA7aTo2ODA7aTowO2k6NjgxO2k6MDtpOjY4MjtpOjA7aTo2ODM7aTowO2k6Njg0O2k6MDtpOjY4NTtpOjA7aTo2ODY7aTowO2k6Njg3O2k6MDtpOjY4ODtpOjA7aTo2ODk7aTowO2k6NjkwO2k6MDtpOjY5MTtpOjA7aTo2OTI7aTowO2k6NjkzO2k6MDtpOjY5NDtpOjA7aTo2OTU7aTowO2k6Njk2O2k6MDtpOjY5NztpOjA7aTo2OTg7aTowO2k6Njk5O2k6MDtpOjcwMDtpOjA7aTo3MDE7aTowO2k6NzAyO2k6MDtpOjcwMztpOjA7aTo3MDQ7aTowO2k6NzA1O2k6MDtpOjcwNjtpOjA7aTo3MDc7aTowO2k6NzA4O2k6MDtpOjcwOTtpOjA7aTo3MTA7aTowO2k6NzExO2k6MDtpOjcxMjtpOjA7aTo3MTM7aTowO2k6NzE0O2k6MDtpOjcxNTtpOjA7aTo3MTY7aTowO2k6NzE3O2k6MDtpOjcxODtpOjA7aTo3MTk7aTowO2k6NzIwO2k6MDtpOjcyMTtpOjA7aTo3MjI7aTowO2k6NzIzO2k6MDtpOjcyNDtpOjA7aTo3MjU7aTowO2k6NzI2O2k6MDtpOjcyNztpOjA7aTo3Mjg7aTowO2k6NzI5O2k6MDtpOjczMDtpOjA7aTo3MzE7aTowO2k6NzMyO2k6MDtpOjczMztpOjA7aTo3MzQ7aTowO2k6NzM1O2k6MDtpOjczNjtpOjA7aTo3Mzc7aTowO2k6NzM4O2k6MDtpOjczOTtpOjA7aTo3NDA7aTowO2k6NzQxO2k6MDtpOjc0MjtpOjA7aTo3NDM7aTowO2k6NzQ0O2k6MDtpOjc0NTtpOjA7aTo3NDY7aTowO2k6NzQ3O2k6MDtpOjc0ODtpOjA7aTo3NDk7aTowO2k6NzUwO2k6MDtpOjc1MTtpOjA7aTo3NTI7aTowO2k6NzUzO2k6MDtpOjc1NDtpOjA7aTo3NTU7aTowO2k6NzU2O2k6MDtpOjc1NztpOjA7aTo3NTg7aTowO2k6NzU5O2k6MDtpOjc2MDtpOjA7aTo3NjE7aTowO2k6NzYyO2k6MDtpOjc2MztpOjA7aTo3NjQ7aTowO2k6NzY1O2k6MDtpOjc2NjtpOjA7aTo3Njc7aTowO2k6NzY4O2k6MDtpOjc2OTtpOjA7aTo3NzA7aTowO2k6NzcxO2k6MDtpOjc3MjtpOjA7aTo3NzM7aTowO2k6Nzc0O2k6MDtpOjc3NTtpOjA7aTo3NzY7aTowO2k6Nzc3O2k6MDtpOjc3ODtpOjA7aTo3Nzk7aTowO2k6NzgwO2k6MDtpOjc4MTtpOjA7aTo3ODI7aTowO2k6NzgzO2k6MDtpOjc4NDtpOjA7aTo3ODU7aTowO2k6Nzg2O2k6MDtpOjc4NztpOjA7aTo3ODg7aTowO2k6Nzg5O2k6MDtpOjc5MDtpOjA7aTo3OTE7aTowO2k6NzkyO2k6MDtpOjc5MztpOjA7aTo3OTQ7aTowO2k6Nzk1O2k6MDtpOjc5NjtpOjA7aTo3OTc7aTowO2k6Nzk4O2k6MDtpOjc5OTtpOjA7aTo4MDA7aTowO2k6ODAxO2k6MDtpOjgwMjtpOjA7aTo4MDM7aTowO2k6ODA0O2k6MDtpOjgwNTtpOjA7aTo4MDY7aTowO2k6ODA3O2k6MDtpOjgwODtpOjA7aTo4MDk7aTowO2k6ODEwO2k6MDtpOjgxMTtpOjA7aTo4MTI7aTowO2k6ODEzO2k6MDtpOjgxNDtpOjA7aTo4MTU7aTowO2k6ODE2O2k6MDtpOjgxNztpOjA7aTo4MTg7aTowO2k6ODE5O2k6MDtpOjgyMDtpOjA7aTo4MjE7aTowO2k6ODIyO2k6MDtpOjgyMztpOjA7aTo4MjQ7aTowO2k6ODI1O2k6MDtpOjgyNjtpOjA7aTo4Mjc7aTowO2k6ODI4O2k6MDtpOjgyOTtpOjA7aTo4MzA7aTowO2k6ODMxO2k6MDtpOjgzMjtpOjA7aTo4MzM7aTowO2k6ODM0O2k6MDtpOjgzNTtpOjA7aTo4MzY7aTowO2k6ODM3O2k6MDtpOjgzODtpOjA7aTo4Mzk7aTowO2k6ODQwO2k6MDtpOjg0MTtpOjA7aTo4NDI7aTowO2k6ODQzO2k6MDtpOjg0NDtpOjA7aTo4NDU7aTowO2k6ODQ2O2k6MDtpOjg0NztpOjA7aTo4NDg7aTowO2k6ODQ5O2k6MDtpOjg1MDtpOjA7aTo4NTE7aTowO2k6ODUyO2k6MDtpOjg1MztpOjA7aTo4NTQ7aTowO2k6ODU1O2k6MDtpOjg1NjtpOjA7aTo4NTc7aTowO2k6ODU4O2k6MDtpOjg1OTtpOjA7aTo4NjA7aTowO2k6ODYxO2k6MDtpOjg2MjtpOjA7aTo4NjM7aTowO2k6ODY0O2k6MDtpOjg2NTtpOjA7aTo4NjY7aTowO2k6ODY3O2k6MDtpOjg2ODtpOjA7aTo4Njk7aTowO2k6ODcwO2k6MDtpOjg3MTtpOjA7aTo4NzI7aTowO2k6ODczO2k6MDtpOjg3NDtpOjA7aTo4NzU7aTowO2k6ODc2O2k6MDtpOjg3NztpOjA7aTo4Nzg7aTowO2k6ODc5O2k6MDtpOjg4MDtpOjA7aTo4ODE7aTowO2k6ODgyO2k6MDtpOjg4MztpOjA7aTo4ODQ7aTowO2k6ODg1O2k6MDtpOjg4NjtpOjA7aTo4ODc7aTowO2k6ODg4O2k6MDtpOjg4OTtpOjA7aTo4OTA7aTowO2k6ODkxO2k6MDtpOjg5MjtpOjA7aTo4OTM7aTowO2k6ODk0O2k6MDtpOjg5NTtpOjA7aTo4OTY7aTowO2k6ODk3O2k6MDtpOjg5ODtpOjA7aTo4OTk7aTowO2k6OTAwO2k6MDtpOjkwMTtpOjA7aTo5MDI7aTowO2k6OTAzO2k6MDtpOjkwNDtpOjA7aTo5MDU7aTowO2k6OTA2O2k6MDtpOjkwNztpOjA7aTo5MDg7aTowO2k6OTA5O2k6MDtpOjkxMDtpOjA7aTo5MTE7aTowO2k6OTEyO2k6NTU1NTc7aTo5MTM7aTowO2k6OTE0O2k6MTA7aTo5MTU7aTo2NTtpOjkxNjtpOjIxMDtpOjkxNztpOjI1NjtpOjkxODtpOjI1NjtpOjkxOTtpOjI1NjtpOjkyMDtpOjI1NjtpOjkyMTtpOjI1NjtpOjkyMjtpOjA7aTo5MjM7aToxMDtpOjkyNDtpOjcwO2k6OTI1O2k6MjEwO2k6OTI2O2k6MjU2O2k6OTI3O2k6MjU2O2k6OTI4O2k6MjU2O2k6OTI5O2k6MjU2O2k6OTMwO2k6MjU2O2k6OTMxO2k6NzA7aTo5MzI7aTo2NTtpOjkzMztpOjg1O2k6OTM0O2k6NDU7aTo5MzU7aTozOTtpOjkzNjtpOjIyNTtpOjkzNztpOjIyNTtpOjkzODtpOjU7aTo5Mzk7aTo2OTtpOjk0MDtpOjEyMTtpOjk0MTtpOjE2ODtpOjk0MjtpOjE5MjtpOjk0MztpOjE5OTtpOjk0NDtpOjA7aTo5NDU7aTowO2k6OTQ2O2k6MDtpOjk0NztpOjA7aTo5NDg7aTowO2k6OTQ5O2k6MDtpOjk1MDtpOjA7aTo5NTE7aTowO2k6OTUyO2k6MDtpOjk1MztpOjA7aTo5NTQ7aTowO2k6OTU1O2k6MDtpOjk1NjtpOjA7aTo5NTc7aTowO2k6OTU4O2k6MDtpOjk1OTtpOjA7aTo5NjA7aTowO2k6OTYxO2k6MDtpOjk2MjtpOjA7aTo5NjM7aTowO2k6OTY0O2k6MDtpOjk2NTtpOjA7aTo5NjY7aTowO2k6OTY3O2k6MDtpOjk2ODtpOjA7aTo5Njk7aTowO2k6OTcwO2k6MTE5O2k6OTcxO2k6MTI3O2k6OTcyO2k6MTY5O2k6OTczO2k6MTk4O2k6OTc0O2k6MDtpOjk3NTtpOjA7aTo5NzY7aTowO2k6OTc3O2k6MDtpOjk3ODtpOjA7aTo5Nzk7aTowO2k6OTgwO2k6MDtpOjk4MTtpOjA7aTo5ODI7aTowO2k6OTgzO2k6MDtpOjk4NDtpOjA7aTo5ODU7aTowO2k6OTg2O2k6MDtpOjk4NztpOjA7aTo5ODg7aTowO2k6OTg5O2k6MDtpOjk5MDtpOjA7aTo5OTE7aTowO2k6OTkyO2k6MDtpOjk5MztpOjA7aTo5OTQ7aTowO2k6OTk1O2k6MDtpOjk5NjtpOjA7aTo5OTc7aTowO2k6OTk4O2k6MDtpOjk5OTtpOjA7aToxMDAwO2k6MDtpOjEwMDE7aTowO2k6MTAwMjtpOjA7aToxMDAzO2k6MDtpOjEwMDQ7aTowO2k6MTAwNTtpOjA7aToxMDA2O2k6MDtpOjEwMDc7aTowO2k6MTAwODtpOjA7aToxMDA5O2k6MTM5MDtpOjEwMTA7aToxMDI0O2k6MTAxMTtpOjg1MTtpOjEwMTI7aTowO2k6MTAxMztpOjA7aToxMDE0O2k6MDtpOjEwMTU7aTowO2k6MTAxNjtpOjM3O2k6MTAxNztpOjk5O2k6MTAxODtpOjMyMzgyO2k6MTAxOTtpOjE1MztpOjEwMjA7aTowO2k6MTAyMTtpOjA7aToxMDIyO2k6MDtpOjEwMjM7aTowO2k6MTAyNDtpOjQ4NTtpOjEwMjU7aTo0OTtpOjEwMjY7aTowO2k6MTAyNztpOjUwNztpOjEwMjg7aToyODtpOjEwMjk7aTowO2k6MTAzMDtpOjA7aToxMDMxO2k6MDtpOjEwMzI7aTowO2k6MTAzMztpOjA7aToxMDM0O2k6MDtpOjEwMzU7aTowO2k6MTAzNjtpOjA7aToxMDM3O2k6MDtpOjEwMzg7aTowO2k6MTAzOTtpOjA7aToxMDQwO2k6MDtpOjEwNDE7aTowO2k6MTA0MjtpOjA7aToxMDQzO2k6MDtpOjEwNDQ7aTowO2k6MTA0NTtpOjA7aToxMDQ2O2k6MDtpOjEwNDc7aTowO2k6MTA0ODtpOjA7aToxMDQ5O2k6MDtpOjEwNTA7aTowO2k6MTA1MTtpOjA7aToxMDUyO2k6MDtpOjEwNTM7aTowO2k6MTA1NDtpOjA7aToxMDU1O2k6MDtpOjEwNTY7aTo1MjM7aToxMDU3O2k6MTAyNDtpOjEwNTg7aToxMDI0O2k6MTA1OTtpOjU2MztpOjEwNjA7aToxMDA7aToxMDYxO2k6MDtpOjEwNjI7aTo0MDtpOjEwNjM7aTo5OTtpOjEwNjQ7aTozMjM3NTtpOjEwNjU7aToxNDk7aToxMDY2O2k6MDtpOjEwNjc7aTowO2k6MTA2ODtpOjA7aToxMDY5O2k6MDtpOjEwNzA7aToxMDA7aToxMDcxO2k6MTM2O2k6MTA3MjtpOjEwMTtpOjEwNzM7aToxMzM7aToxMDc0O2k6NTE7aToxMDc1O2k6NzQ3O2k6MTA3NjtpOjI1NTtpOjEwNzc7aToyMjg1MTtpOjEwNzg7aTo2MDMwNTtpOjEwNzk7aTo5NDE7aToxMDgwO2k6MDtpOjEwODE7aTowO2k6MTA4MjtpOjA7aToxMDgzO2k6MDtpOjEwODQ7aTowO2k6MTA4NTtpOjA7aToxMDg2O2k6MDtpOjEwODc7aTowO2k6MTA4ODtpOjA7aToxMDg5O2k6MDtpOjEwOTA7aTowO2k6MTA5MTtpOjA7aToxMDkyO2k6MDtpOjEwOTM7aTowO2k6MTA5NDtpOjA7aToxMDk1O2k6MDtpOjEwOTY7aTowO2k6MTA5NztpOjA7aToxMDk4O2k6MDtpOjEwOTk7aTowO2k6MTEwMDtpOjA7aToxMTAxO2k6MDtpOjExMDI7aTowO2k6MTEwMztpOjA7aToxMTA0O2k6MDtpOjExMDU7aTowO2k6MTEwNjtpOjI4O2k6MTEwNztpOjYyO2k6MTEwODtpOjk3O2k6MTEwOTtpOjEyOTtpOjExMTA7aToxNjA7aToxMTExO2k6MTkxO2k6MTExMjtpOjIyMztpOjExMTM7aToyNTU7aToxMTE0O2k6MDtpOjExMTU7aTowO2k6MTExNjtpOjA7aToxMTE3O2k6MDtpOjExMTg7aTowO2k6MTExOTtpOjA7aToxMTIwO2k6MDtpOjExMjE7aTowO2k6MTEyMjtpOjA7aToxMTIzO2k6OTU7aToxMTI0O2k6MDtpOjExMjU7aTo3MDtpOjExMjY7aTozOTtpOjExMjc7aToyMjU7aToxMTI4O2k6MDtpOjExMjk7aTowO2k6MTEzMDtpOjA7aToxMTMxO2k6MDtpOjExMzI7aTowO2k6MTEzMztpOjA7aToxMTM0O2k6MDtpOjExMzU7aToyOTtpOjExMzY7aTo2NTtpOjExMzc7aTo5ODtpOjExMzg7aToxMzA7aToxMTM5O2k6MTYxO2k6MTE0MDtpOjE5MTtpOjExNDE7aToyMjM7aToxMTQyO2k6MjU1O2k6MTE0MztpOjI7aToxMTQ0O2k6MztpOjExNDU7aTo0O2k6MTE0NjtpOjU7aToxMTQ3O2k6MTA7aToxMTQ4O2k6MTY7aToxMTQ5O2k6MjI7aToxMTUwO2k6Mzc7aToxMTUxO2k6NzY7aToxMTUyO2k6MTE5O2k6MTE1MztpOjE3MjtpOjExNTQ7aToxOTY7aToxMTU1O2k6MjE2O2k6MTE1NjtpOjIzMDtpOjExNTc7aToyMzY7aToxMTU4O2k6MjMzO2k6MTE1OTtpOjIxMTtpOjExNjA7aToxNzg7aToxMTYxO2k6MTIyO2k6MTE2MjtpOjkwO2k6MTE2MztpOjY1O2k6MTE2NDtpOjQ5O2k6MTE2NTtpOjM4O2k6MTE2NjtpOjMwO2k6MTE2NztpOjI5O2k6MTE2ODtpOjI5O2k6MTE2OTtpOjMwO2k6MTE3MDtpOjMyO2k6MTE3MTtpOjMzO2k6MTE3MjtpOjM1O2k6MTE3MztpOjM2O2k6MTE3NDtpOjM4O2k6MTE3NTtpOjQwO2k6MTE3NjtpOjQyO2k6MTE3NztpOjQ1O2k6MTE3ODtpOjQ2O2k6MTE3OTtpOjQ4O2k6MTE4MDtpOjUxO2k6MTE4MTtpOjUzO2k6MTE4MjtpOjU5O2k6MTE4MztpOjYyO2k6MTE4NDtpOjY1O2k6MTE4NTtpOjY4O2k6MTE4NjtpOjcxO2k6MTE4NztpOjc0O2k6MTE4ODtpOjc0O2k6MTE4OTtpOjczO2k6MTE5MDtpOjY5O2k6MTE5MTtpOjYzO2k6MTE5MjtpOjU3O2k6MTE5MztpOjQ5O2k6MTE5NDtpOjQyO2k6MTE5NTtpOjM2O2k6MTE5NjtpOjI4O2k6MTE5NztpOjI0O2k6MTE5ODtpOjE5O2k6MTE5OTtpOjE2O2k6MTIwMDtpOjEzO2k6MTIwMTtpOjEwO2k6MTIwMjtpOjg7aToxMjAzO2k6NjtpOjEyMDQ7aTo0O2k6MTIwNTtpOjI7aToxMjA2O2k6MDtpOjEyMDc7aToyNTU7aToxMjA4O2k6MTI7aToxMjA5O2k6MTM2O2k6MTIxMDtpOjEwMTtpOjEyMTE7aToyMjg1MTtpOjEyMTI7aTo2MDMwNTtpOjEyMTM7aTowO2k6MTIxNDtpOjA7aToxMjE1O2k6MDtpOjEyMTY7aTowO2k6MTIxNztpOjA7aToxMjE4O2k6NzQ3O2k6MTIxOTtpOjI1NTtpOjEyMjA7aTo1MTtpOjEyMjE7aTo1MDM7aToxMjIyO2k6Njk7aToxMjIzO2k6MDtpOjEyMjQ7aTo1MDU7aToxMjI1O2k6Mjg7aToxMjI2O2k6MDtpOjEyMjc7aTozMjA7aToxMjI4O2k6MDtpOjEyMjk7aTowO2k6MTIzMDtpOjEzMztpOjEyMzE7aTowO2k6MTIzMjtpOjA7aToxMjMzO2k6NjtpOjEyMzQ7aToxMDA7aToxMjM1O2k6MTAwO2k6MTIzNjtpOjA7aToxMjM3O2k6NDg4MTA7aToxMjM4O2k6MDtpOjEyMzk7aToyMTg0OTtpOjEyNDA7aTo0MTU3MTtpOjEyNDE7aToyMTg0OTtpOjEyNDI7aTowO2k6MTI0MztpOjA7aToxMjQ0O2k6MTAwO2k6MTI0NTtpOjEwMDtpOjEyNDY7aTowO2k6MTI0NztpOjEwMDtpOjEyNDg7aTowO2k6MTI0OTtpOjA7aToxMjUwO2k6MTAwO2k6MTI1MTtpOjEwMDtpOjEyNTI7aToxMDA7aToxMjUzO2k6MDtpOjEyNTQ7aToxMDA7aToxMjU1O2k6MTAwO2k6MTI1NjtpOjEwMDtpOjEyNTc7aToxMDA7aToxMjU4O2k6MTAwO2k6MTI1OTtpOjA7aToxMjYwO2k6MTAwO2k6MTI2MTtpOjA7aToxMjYyO2k6MjI7aToxMjYzO2k6MTtpOjEyNjQ7aTowO2k6MTI2NTtpOjEwMDtpOjEyNjY7aToxMDA7aToxMjY3O2k6MDtpOjEyNjg7aToxMzc7aToxMjY5O2k6Nzc7aToxMjcwO2k6MjI4NTE7aToxMjcxO2k6NjAzMDE7aToxMjcyO2k6MDtpOjEyNzM7aTowO2k6MTI3NDtpOjA7aToxMjc1O2k6MDtpOjEyNzY7aTowO2k6MTI3NztpOjc0NztpOjEyNzg7aToyNTU7aToxMjc5O2k6NDY7aToxMjgwO2k6MzI0MDM7aToxMjgxO2k6MTQ5O2k6MTI4MjtpOjA7aToxMjgzO2k6MDtpOjEyODQ7aTowO2k6MTI4NTtpOjA7aToxMjg2O2k6MjI4NTE7aToxMjg3O2k6NjAzMDU7aToxMjg4O2k6OTQxO2k6MTI4OTtpOjEzNjtpOjEyOTA7aTowO2k6MTI5MTtpOjA7aToxMjkyO2k6MDtpOjEyOTM7aTowO2k6MTI5NDtpOjEwMDtpOjEyOTU7aToxMDA7aToxMjk2O2k6MDtpOjEyOTc7aTowO2k6MTI5ODtpOjI5O2k6MTI5OTtpOjY1O2k6MTMwMDtpOjk4O2k6MTMwMTtpOjEzMDtpOjEzMDI7aToxNjE7aToxMzAzO2k6MTkxO2k6MTMwNDtpOjIyMztpOjEzMDU7aToyNTU7aToxMzA2O2k6MDtpOjEzMDc7aTowO2k6MTMwODtpOjUyMztpOjEzMDk7aToxMDI0O2k6MTMxMDtpOjEwMjQ7aToxMzExO2k6NTYzO30=
@@ -594,7 +594,7 @@ blocks:
                                 id: 16392
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 3
                                     value: YTozOntpOjA7aToxMzU7aToxO2k6MTM1O2k6MjtpOjEzNTt9
@@ -603,7 +603,7 @@ blocks:
                                 id: 16393
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Short
+                                    class: ExifEye\core\Entry\Core\Short
                                     format: Short
                                     components: 3
                                     value: YTozOntpOjA7aTowO2k6MTtpOjA7aToyO2k6MDt9
@@ -612,7 +612,7 @@ blocks:
                                 id: 16400
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 1
                                     value: czowOiIiOw==
@@ -621,7 +621,7 @@ blocks:
                                 id: 16401
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Undefined
+                                    class: ExifEye\core\Entry\Core\Undefined
                                     format: Undefined
                                     components: 252
                                     value: czoyNTI6IgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACI7
@@ -630,7 +630,7 @@ blocks:
                                 id: 16402
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Ascii
+                                    class: ExifEye\core\Entry\Core\Ascii
                                     format: Ascii
                                     components: 1
                                     value: czowOiIiOw==
@@ -639,7 +639,7 @@ blocks:
                                 id: 16403
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 11
                                     value: YToxMTp7aTowO2k6NDQ7aToxO2k6MDtpOjI7aTowO2k6MztpOjEwO2k6NDtkOjQyOTQ5NjcyOTU7aTo1O2k6MDtpOjY7aToxMDtpOjc7aTowO2k6ODtpOjEwO2k6OTtpOjA7aToxMDtpOjEwO30=
@@ -648,7 +648,7 @@ blocks:
                                 id: 16405
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Undefined
+                                    class: ExifEye\core\Entry\Core\Undefined
                                     format: Undefined
                                     components: 452
                                     value: czo0NTI6IgAgxAEAAAAAAAAAAAAAAAAAAAAAzBBAFIANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIjs=
@@ -657,7 +657,7 @@ blocks:
                                 id: 16406
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 7
                                     value: YTo3OntpOjA7aToyODtpOjE7aTowO2k6MjtpOjE7aTozO2k6MDtpOjQ7aToxO2k6NTtpOjA7aTo2O2k6MDt9
@@ -666,7 +666,7 @@ blocks:
                                 id: 16408
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 7
                                     value: YTo3OntpOjA7aToyODtpOjE7aTowO2k6MjtpOjA7aTozO2k6MDtpOjQ7aTowO2k6NTtpOjM7aTo2O2k6MDt9
@@ -675,7 +675,7 @@ blocks:
                                 id: 16409
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Undefined
+                                    class: ExifEye\core\Entry\Core\Undefined
                                     format: Undefined
                                     components: 30
                                     value: czozMDoiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIjs=
@@ -684,7 +684,7 @@ blocks:
                                 id: 16416
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 5
                                     value: YTo1OntpOjA7aToyMDtpOjE7aTowO2k6MjtpOjA7aTozO2k6MDtpOjQ7aTowO30=
@@ -693,7 +693,7 @@ blocks:
                                 id: 16421
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 9
                                     value: YTo5OntpOjA7aTozNjtpOjE7aTowO2k6MjtpOjA7aTozO2k6MDtpOjQ7aTowO2k6NTtpOjA7aTo2O2k6MDtpOjc7aTowO2k6ODtpOjA7fQ==
@@ -702,7 +702,7 @@ blocks:
                                 id: 16423
                                 name: null
                                 entry:
-                                    class: ExifEye\core\Entry\Long
+                                    class: ExifEye\core\Entry\Core\Long
                                     format: Long
                                     components: 5
                                     value: YTo1OntpOjA7aToyMDtpOjE7aTozMjkyMjA7aToyO2Q6MjI2NDkyNDIwMDtpOjM7aToxMTc0NDA1MTI7aTo0O2k6MzE1ODA2NDt9
@@ -715,7 +715,7 @@ blocks:
                                         id: 1
                                         name: MacroMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToyOw==
@@ -724,7 +724,7 @@ blocks:
                                         id: 2
                                         name: SelfTimer
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -733,7 +733,7 @@ blocks:
                                         id: 3
                                         name: Quality
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTo0Ow==
@@ -742,7 +742,7 @@ blocks:
                                         id: 4
                                         name: FlashMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -751,7 +751,7 @@ blocks:
                                         id: 5
                                         name: DriveMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -760,7 +760,7 @@ blocks:
                                         id: 7
                                         name: FocusMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -769,7 +769,7 @@ blocks:
                                         id: 9
                                         name: RecordMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTo2Ow==
@@ -778,7 +778,7 @@ blocks:
                                         id: 10
                                         name: ImageSize
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -787,7 +787,7 @@ blocks:
                                         id: 11
                                         name: EasyShootingMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxOw==
@@ -796,7 +796,7 @@ blocks:
                                         id: 12
                                         name: DigitalZoom
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -805,7 +805,7 @@ blocks:
                                         id: 13
                                         name: Contrast
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -814,7 +814,7 @@ blocks:
                                         id: 14
                                         name: Saturation
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -823,7 +823,7 @@ blocks:
                                         id: 15
                                         name: Sharpness
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTozMjc2Nzs=
@@ -832,7 +832,7 @@ blocks:
                                         id: 16
                                         name: ISOSpeed
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxNTs=
@@ -841,7 +841,7 @@ blocks:
                                         id: 17
                                         name: MeteringMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTozOw==
@@ -850,7 +850,7 @@ blocks:
                                         id: 18
                                         name: FocusType
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToyOw==
@@ -859,7 +859,7 @@ blocks:
                                         id: 19
                                         name: AFPointSelected
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -868,7 +868,7 @@ blocks:
                                         id: 20
                                         name: ExposureMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxOw==
@@ -877,7 +877,7 @@ blocks:
                                         id: 22
                                         name: LensType
                                         entry:
-                                            class: ExifEye\core\Entry\Short
+                                            class: ExifEye\core\Entry\Core\Short
                                             format: Short
                                             components: 1
                                             value: aTo3NDc7
@@ -886,7 +886,7 @@ blocks:
                                         id: 23
                                         name: LongFocalLength
                                         entry:
-                                            class: ExifEye\core\Entry\Short
+                                            class: ExifEye\core\Entry\Core\Short
                                             format: Short
                                             components: 1
                                             value: aTo2MDA7
@@ -895,7 +895,7 @@ blocks:
                                         id: 24
                                         name: ShortFocalLength
                                         entry:
-                                            class: ExifEye\core\Entry\Short
+                                            class: ExifEye\core\Entry\Core\Short
                                             format: Short
                                             components: 1
                                             value: aToxNTA7
@@ -904,7 +904,7 @@ blocks:
                                         id: 25
                                         name: FocalUnits
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxOw==
@@ -913,7 +913,7 @@ blocks:
                                         id: 26
                                         name: MaxAperture
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxNjg7
@@ -922,7 +922,7 @@ blocks:
                                         id: 27
                                         name: MinAperture
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTozNDA7
@@ -931,7 +931,7 @@ blocks:
                                         id: 28
                                         name: FlashActivity
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -940,7 +940,7 @@ blocks:
                                         id: 29
                                         name: FlashDetails
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -949,7 +949,7 @@ blocks:
                                         id: 32
                                         name: FocusContinuous
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -958,7 +958,7 @@ blocks:
                                         id: 33
                                         name: AESetting
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -967,7 +967,7 @@ blocks:
                                         id: 34
                                         name: ImageStabilization
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -976,7 +976,7 @@ blocks:
                                         id: 35
                                         name: DisplayAperture
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -985,7 +985,7 @@ blocks:
                                         id: 36
                                         name: ZoomSourceWidth
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -994,7 +994,7 @@ blocks:
                                         id: 37
                                         name: ZoomTargetWidth
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1003,7 +1003,7 @@ blocks:
                                         id: 39
                                         name: SpotMeteringMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -1012,7 +1012,7 @@ blocks:
                                         id: 40
                                         name: PhotoEffect
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -1021,7 +1021,7 @@ blocks:
                                         id: 41
                                         name: ManualFlashOutput
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1030,7 +1030,7 @@ blocks:
                                         id: 42
                                         name: ColorTone
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1039,7 +1039,7 @@ blocks:
                                         id: 46
                                         name: SRAWQuality
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1051,7 +1051,7 @@ blocks:
                                         id: 2
                                         name: ISOSpeedUsed
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToyNzY7
@@ -1060,7 +1060,7 @@ blocks:
                                         id: 3
                                         name: MeasuredEV
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToyMDQ7
@@ -1069,7 +1069,7 @@ blocks:
                                         id: 4
                                         name: TargetAperture
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxNzI7
@@ -1078,7 +1078,7 @@ blocks:
                                         id: 5
                                         name: TargetShutterSpeed
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTozMDg7
@@ -1087,7 +1087,7 @@ blocks:
                                         id: 7
                                         name: WhiteBalanceSetting
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1096,7 +1096,7 @@ blocks:
                                         id: 8
                                         name: SlowShutter
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTozOw==
@@ -1105,7 +1105,7 @@ blocks:
                                         id: 9
                                         name: SequenceNumber
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1114,7 +1114,7 @@ blocks:
                                         id: 14
                                         name: AFPointUsed
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1123,7 +1123,7 @@ blocks:
                                         id: 15
                                         name: FlashBias
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1132,7 +1132,7 @@ blocks:
                                         id: 16
                                         name: AutoExposureBracketing
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1141,7 +1141,7 @@ blocks:
                                         id: 19
                                         name: SubjectDistance
                                         entry:
-                                            class: ExifEye\core\Entry\Short
+                                            class: ExifEye\core\Entry\Core\Short
                                             format: Short
                                             components: 1
                                             value: aTowOw==
@@ -1150,7 +1150,7 @@ blocks:
                                         id: 21
                                         name: Aperture
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxNzI7
@@ -1159,7 +1159,7 @@ blocks:
                                         id: 22
                                         name: ShutterSpeed
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTozMDg7
@@ -1168,7 +1168,7 @@ blocks:
                                         id: 23
                                         name: MeasuredEV2
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToxMzc7
@@ -1177,7 +1177,7 @@ blocks:
                                         id: 26
                                         name: CameraType
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aToyNDg7
@@ -1186,7 +1186,7 @@ blocks:
                                         id: 27
                                         name: AutoRotate
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -1195,7 +1195,7 @@ blocks:
                                         id: 28
                                         name: NDFilter
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -1207,7 +1207,7 @@ blocks:
                                         id: 1
                                         name: FileNumber
                                         entry:
-                                            class: ExifEye\core\Entry\Long
+                                            class: ExifEye\core\Entry\Core\Long
                                             format: Long
                                             components: 1
                                             value: aTowOw==
@@ -1216,7 +1216,7 @@ blocks:
                                         id: 3
                                         name: BracketMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1225,7 +1225,7 @@ blocks:
                                         id: 4
                                         name: BracketValue
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1234,7 +1234,7 @@ blocks:
                                         id: 5
                                         name: BracketShotNumber
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1243,7 +1243,7 @@ blocks:
                                         id: 6
                                         name: RawJpgQuality
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1252,7 +1252,7 @@ blocks:
                                         id: 7
                                         name: RawJpgSize
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1261,7 +1261,7 @@ blocks:
                                         id: 8
                                         name: NoiseReduction
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -1270,7 +1270,7 @@ blocks:
                                         id: 9
                                         name: WBBracketMode
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1279,7 +1279,7 @@ blocks:
                                         id: 12
                                         name: WBBracketValueAB
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1288,7 +1288,7 @@ blocks:
                                         id: 13
                                         name: WBBracketValueGM
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1297,7 +1297,7 @@ blocks:
                                         id: 14
                                         name: FilterEffect
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -1306,7 +1306,7 @@ blocks:
                                         id: 15
                                         name: ToningEffect
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTotMTs=
@@ -1315,7 +1315,7 @@ blocks:
                                         id: 16
                                         name: MacroMagnification
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTo3Mjs=
@@ -1324,7 +1324,7 @@ blocks:
                                         id: 19
                                         name: LiveViewShooting
                                         entry:
-                                            class: ExifEye\core\Entry\SignedShort
+                                            class: ExifEye\core\Entry\Core\SignedShort
                                             format: SignedShort
                                             components: 1
                                             value: aTowOw==
@@ -1333,7 +1333,7 @@ blocks:
                                         id: 20
                                         name: FocusDistanceUpper
                                         entry:
-                                            class: ExifEye\core\Entry\Short
+                                            class: ExifEye\core\Entry\Core\Short
                                             format: Short
                                             components: 1
                                             value: aTo1NjIyOw==
@@ -1342,7 +1342,7 @@ blocks:
                                         id: 21
                                         name: FocusDistanceLower
                                         entry:
-                                            class: ExifEye\core\Entry\Short
+                                            class: ExifEye\core\Entry\Core\Short
                                             format: Short
                                             components: 1
                                             value: aTo0MTM3Ow==
@@ -1351,7 +1351,7 @@ blocks:
                                         id: 25
                                         name: FlashExposureLock
                                         entry:
-                                            class: ExifEye\core\Entry\Short
+                                            class: ExifEye\core\Entry\Core\Short
                                             format: Short
                                             components: 1
                                             value: aTowOw==
@@ -1363,7 +1363,7 @@ blocks:
                         id: 0
                         name: GPSVersionID
                         entry:
-                            class: ExifEye\core\Entry\Byte
+                            class: ExifEye\core\Entry\Core\Byte
                             format: Byte
                             components: 4
                             value: YTo0OntpOjA7aToyO2k6MTtpOjM7aToyO2k6MDtpOjM7aTowO30=
@@ -1375,7 +1375,7 @@ blocks:
                 id: 259
                 name: Compression
                 entry:
-                    class: ExifEye\core\Entry\Short
+                    class: ExifEye\core\Entry\Core\Short
                     format: Short
                     components: 1
                     value: aTowOw==
@@ -1384,7 +1384,7 @@ blocks:
                 id: 282
                 name: XResolution
                 entry:
-                    class: ExifEye\core\Entry\Rational
+                    class: ExifEye\core\Entry\Core\Rational
                     format: Rational
                     components: 1
                     value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
@@ -1393,7 +1393,7 @@ blocks:
                 id: 283
                 name: YResolution
                 entry:
-                    class: ExifEye\core\Entry\Rational
+                    class: ExifEye\core\Entry\Core\Rational
                     format: Rational
                     components: 1
                     value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
@@ -1402,7 +1402,7 @@ blocks:
                 id: 296
                 name: ResolutionUnit
                 entry:
-                    class: ExifEye\core\Entry\Short
+                    class: ExifEye\core\Entry\Core\Short
                     format: Short
                     components: 1
                     value: aToyOw==

@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\SignedRational;
+use ExifEye\core\Entry\Core\SignedRational;
 use ExifEye\core\Entry\Exception\OverflowException;
 
 class NumberSignedRationalTest extends NumberTestCase

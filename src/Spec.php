@@ -25,16 +25,16 @@ class Spec
      * @var array
      */
     private static $defaultTagClasses = [
-        Format::ASCII => 'ExifEye\\core\\Entry\\Ascii',
-        Format::BYTE => 'ExifEye\\core\\Entry\\Byte',
-        Format::SHORT => 'ExifEye\\core\\Entry\\Short',
-        Format::LONG => 'ExifEye\\core\\Entry\\Long',
-        Format::RATIONAL => 'ExifEye\\core\\Entry\\Rational',
-        Format::SBYTE => 'ExifEye\\core\\Entry\\SignedByte',
-        Format::SSHORT => 'ExifEye\\core\\Entry\\SignedShort',
-        Format::SLONG => 'ExifEye\\core\\Entry\\SignedLong',
-        Format::SRATIONAL => 'ExifEye\\core\\Entry\\SignedRational',
-        Format::UNDEFINED => 'ExifEye\\core\\Entry\\Undefined',
+        Format::ASCII => 'ExifEye\\core\\Entry\\Core\\Ascii',
+        Format::BYTE => 'ExifEye\\core\\Entry\\Core\\Byte',
+        Format::SHORT => 'ExifEye\\core\\Entry\\Core\\Short',
+        Format::LONG => 'ExifEye\\core\\Entry\\Core\\Long',
+        Format::RATIONAL => 'ExifEye\\core\\Entry\\Core\\Rational',
+        Format::SBYTE => 'ExifEye\\core\\Entry\\Core\\SignedByte',
+        Format::SSHORT => 'ExifEye\\core\\Entry\\Core\\SignedShort',
+        Format::SLONG => 'ExifEye\\core\\Entry\\Core\\SignedLong',
+        Format::SRATIONAL => 'ExifEye\\core\\Entry\\Core\\SignedRational',
+        Format::UNDEFINED => 'ExifEye\\core\\Entry\\Core\\Undefined',
     ];
 
     /**

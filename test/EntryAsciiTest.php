@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Utility\Convert;
-use ExifEye\core\Entry\Ascii;
+use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Entry\Copyright;
 use ExifEye\core\Entry\Time;
 use ExifEye\core\Spec;

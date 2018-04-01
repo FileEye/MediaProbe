@@ -1,37 +1,36 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\Convert;
 
 /**
- * Class for holding unsigned bytes.
+ * Class for holding signed longs.
  *
- * This class can hold bytes, either just a single byte or an array of
- * bytes. The class will be used to manipulate any of the Exif tags
- * which has format {@link Format::BYTE}.
- * The {@link WindowsString} class is used to manipulate strings in the
- * format Windows XP needs.
+ * This class can hold longs, either just a single long or an array of
+ * longs. The class will be used to manipulate any of the Exif tags
+ * which can have format {@link Format::SLONG}.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class Byte extends NumberBase
+class SignedLong extends NumberBase
 {
     /**
      * {@inheritdoc}
      */
-    protected $min = 0;
+    protected $format = Format::SLONG;
 
     /**
      * {@inheritdoc}
      */
-    protected $max = 255;
+    protected $min = -2147483648;
 
     /**
      * {@inheritdoc}
      */
-    protected $format = Format::BYTE;
+    protected $max = 2147483647;
 
     /**
      * {@inheritdoc}
@@ -40,7 +39,7 @@ class Byte extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_window->getByte($data_offset + $i);
+            $args[] = $data_window->getSignedLong($data_offset + ($i * 4));
         }
         return $args;
     }
@@ -48,16 +47,16 @@ class Byte extends NumberBase
     /**
      * Convert a number into bytes.
      *
-     * @param int $number
-     *            the number that should be converted.
-     * @param PelByteOrder $order
-     *            one of {@link Convert::LITTLE_ENDIAN} and
+     * @param
+     *            int the number that should be converted.
+     * @param
+     *            PelByteOrder one of {@link Convert::LITTLE_ENDIAN} and
      *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
      *
      * @return string bytes representing the number given.
      */
     public function numberToBytes($number, $order)
     {
-        return chr($number);
+        return Convert::signedLongToBytes($number, $order);
     }
 }

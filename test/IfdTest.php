@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
-use ExifEye\core\Entry\Ascii;
+use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Entry\Time;
 use ExifEye\core\Spec;
 

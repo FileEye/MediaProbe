@@ -4,6 +4,7 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
+use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Entry\Exception\WrongComponentCountException;
 use ExifEye\core\InvalidArgumentException;

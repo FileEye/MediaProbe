@@ -4,6 +4,7 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
+use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Format;
 
@@ -40,14 +41,9 @@ use ExifEye\core\Format;
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class WindowsString extends EntryBase
+class WindowsString extends Byte
 {
     const ZEROES = "\x0\x0";
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::BYTE;
 
     /**
      * {@inheritdoc}

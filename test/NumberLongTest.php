@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\Long;
+use ExifEye\core\Entry\Core\Long;
 
 class NumberLongTest extends NumberTestCase
 {

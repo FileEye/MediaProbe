@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\Rational;
+use ExifEye\core\Entry\Core\Rational;
 use ExifEye\core\Entry\Exception\OverflowException;
 
 class NumberRationalTest extends NumberTestCase

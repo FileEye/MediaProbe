@@ -1,6 +1,6 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;

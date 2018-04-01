@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\Short;
+use ExifEye\core\Entry\Core\Short;
 
 class NumberShortTest extends NumberTestCase
 {

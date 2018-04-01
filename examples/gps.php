@@ -41,10 +41,10 @@ use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Spec;
-use ExifEye\core\Entry\Ascii;
-use ExifEye\core\Entry\Byte;
+use ExifEye\core\Entry\Core\Ascii;
+use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\Entry\UserComment;
-use ExifEye\core\Entry\Rational;
+use ExifEye\core\Entry\Core\Rational;
 
 /**
  * Convert a decimal degree into degrees, minutes, and seconds.
