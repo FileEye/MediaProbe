@@ -7,7 +7,7 @@ use ExifEye\core\Block\Tag;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\DataWindowWindowException;
-use ExifEye\core\Entry\EntryBase;
+use ExifEye\core\Entry\Core\EntryBase;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\InvalidArgumentException;

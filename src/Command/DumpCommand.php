@@ -12,7 +12,7 @@ use ExifEye\core\Spec;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Entry\JpegContent;
-use ExifEye\core\Entry\EntryBase;
+use ExifEye\core\Entry\Core\EntryBase;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;

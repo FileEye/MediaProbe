@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\EntryBase;
+use ExifEye\core\Entry\Core\EntryBase;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
