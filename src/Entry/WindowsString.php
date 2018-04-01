@@ -48,6 +48,11 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
+    protected $format = Format::BYTE;
+
+    /**
+     * {@inheritdoc}
+     */
     public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
     {
         if ($format != Format::BYTE) {
