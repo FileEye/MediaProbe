@@ -22,7 +22,7 @@ class MakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         return [$data_window->getBytes($data_offset, $components), $data_offset];
     }

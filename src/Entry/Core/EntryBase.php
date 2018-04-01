@@ -72,10 +72,6 @@ abstract class EntryBase
     /**
      * Get arguments for the instance constructor from raw TAG data.
      *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
      * @param int $format
      *            the format of the entry.
      * @param int $components
@@ -88,7 +84,7 @@ abstract class EntryBase
      * @return array a list or arguments to be passed to the EntryBase subclass
      *            constructor.
      */
-    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         throw new ExifEyeException('getInstanceArgumentsFromTagData() must be implemented.');
     }

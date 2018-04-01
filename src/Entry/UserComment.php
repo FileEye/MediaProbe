@@ -4,7 +4,7 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Entry\Exception\UnexpectedFormatException;
+// xx use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
@@ -55,11 +55,11 @@ class UserComment extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-        if ($format != Format::UNDEFINED) {
-            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
-        }
+// xx        if ($format != Format::UNDEFINED) {
+// xx            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
+// xx        }
         if ($components < 8) {
             return [];
         } else {

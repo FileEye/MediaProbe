@@ -53,11 +53,11 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($ifd_id, $tag_id, $format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-        if ($format != Format::BYTE) {
-            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::BYTE);
-        }
+// xx        if ($format != Format::BYTE) {
+// xx            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::BYTE);
+// xx        }
 
         try {
             $bytes = $data_window->getBytes($data_offset, $components);
