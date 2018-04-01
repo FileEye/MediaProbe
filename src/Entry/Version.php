@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\Core\EntryBase;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\ExifEye;
