@@ -367,8 +367,7 @@ tags:
         title: 'Scene Type'
         components: 1
         format: Undefined
-        text:
-            decode: ExifEye\core\Entry\Core\Undefined::decodeSceneType
+        class: ExifEye\core\Entry\ExifSceneType
     0xA401:
         name: CustomRendered
         title: 'Custom Rendered'
