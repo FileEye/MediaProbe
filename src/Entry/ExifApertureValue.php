@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Entry\Core\Rational;
+use ExifEye\core\ExifEye;
 
 /**
  * Decode text for an Exif/ApertureValue tag.
