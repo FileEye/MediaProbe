@@ -28,7 +28,6 @@ class JpegContent
      */
     public function __construct(DataWindow $data)
     {
-dump('cl->' . get_class($data));
         $this->data = $data;
     }
 
@@ -41,6 +40,11 @@ dump('cl->' . get_class($data));
      */
     public function getBytes()
     {
+// xx why this??? $this->data should never be null but this happened when
+// renamed getBytes to toBytes in entry classes
+        if ($this->data === null) {
+            return '';
+        }
         return $this->data->getBytes();
     }
 }
