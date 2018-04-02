@@ -563,7 +563,7 @@ class Jpeg
             if ($m == JpegMarker::SOI || $m == JpegMarker::EOI) {
                 continue;
             }
-dump(get_class($c));
+
             $data = $c->getBytes();
             $size = strlen($data) + 2;
 
