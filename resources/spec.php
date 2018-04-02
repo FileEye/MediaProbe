@@ -282,7 +282,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeGPSLatitude',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeGPSLatitude',
         ),
       ),
       3 =>
@@ -306,7 +306,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeGPSLongitude',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeGPSLongitude',
         ),
       ),
       5 =>
@@ -602,7 +602,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeExposureTime',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeExposureTime',
         ),
       ),
       33437 =>
@@ -616,7 +616,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeFNumber',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeFNumber',
         ),
       ),
       34850 =>
@@ -782,10 +782,7 @@ return array (
         array (
           0 => 7,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Undefined::decodeComponentsConfiguration',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifComponentsConfiguration',
       ),
       37122 =>
       array (
@@ -808,7 +805,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\SignedRational::decodeShutterSpeedValue',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\SignedRational::decodeShutterSpeedValue',
         ),
       ),
       37378 =>
@@ -822,7 +819,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeApertureValue',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeApertureValue',
         ),
       ),
       37379 =>
@@ -836,7 +833,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\SignedRational::decodeBrightnessValue',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\SignedRational::decodeBrightnessValue',
         ),
       ),
       37380 =>
@@ -850,7 +847,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\SignedRational::decodeExposureBiasValue',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\SignedRational::decodeExposureBiasValue',
         ),
       ),
       37381 =>
@@ -874,7 +871,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeSubjectDistance',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeSubjectDistance',
         ),
       ),
       37383 =>
@@ -987,7 +984,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Rational::decodeFocalLength',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeFocalLength',
         ),
       ),
       37396 =>
@@ -1000,7 +997,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Short::decodeSubjectArea',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Short::decodeSubjectArea',
         ),
       ),
       37500 =>
@@ -1236,10 +1233,7 @@ return array (
         array (
           0 => 7,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Undefined::decodeFileSource',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifFileSource',
       ),
       41729 =>
       array (
@@ -1250,10 +1244,7 @@ return array (
         array (
           0 => 7,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Undefined::decodeSceneType',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifSceneType',
       ),
       41985 =>
       array (
@@ -1958,6 +1949,7 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             0 => 'Large',
             1 => 'Medium',
             2 => 'Small',
@@ -2588,6 +2580,7 @@ return array (
             36910 => 'Canon EF 70-300mm f/4-5.6 IS II USM',
             36912 => 'Canon EF-S 18-135mm f/3.5-5.6 IS USM',
             61494 => 'Canon CN-E 85mm T1.3 L F',
+            65535 => 'n/a',
           ),
         ),
       ),
@@ -3699,7 +3692,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Short::decodeYCbCrSubSampling',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Short::decodeYCbCrSubSampling',
         ),
       ),
       531 =>
@@ -4174,7 +4167,7 @@ return array (
         ),
         'text' =>
         array (
-          'decode' => 'ExifEye\\core\\Entry\\Short::decodeYCbCrSubSampling',
+          'decode' => 'ExifEye\\core\\Entry\\Core\\Short::decodeYCbCrSubSampling',
         ),
       ),
       531 =>
