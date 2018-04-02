@@ -28,6 +28,7 @@ class JpegContent
      */
     public function __construct(DataWindow $data)
     {
+dump('cl->' . get_class($data));
         $this->data = $data;
     }
 
@@ -40,7 +41,6 @@ class JpegContent
      */
     public function getBytes()
     {
-dump('cl->' . get_class($this->data));
         return $this->data->getBytes();
     }
 }
