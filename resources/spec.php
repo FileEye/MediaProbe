@@ -280,10 +280,7 @@ return array (
         array (
           0 => 5,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeGPSLatitude',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\GPSDegrees',
       ),
       3 =>
       array (
@@ -304,10 +301,7 @@ return array (
         array (
           0 => 5,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeGPSLongitude',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\GPSDegrees',
       ),
       5 =>
       array (
@@ -600,10 +594,7 @@ return array (
         array (
           0 => 5,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeExposureTime',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifExposureTime',
       ),
       33437 =>
       array (
@@ -614,10 +605,7 @@ return array (
         array (
           0 => 5,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeFNumber',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifFNumber',
       ),
       34850 =>
       array (
@@ -817,10 +805,7 @@ return array (
         array (
           0 => 5,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeApertureValue',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifApertureValue',
       ),
       37379 =>
       array (
@@ -869,10 +854,7 @@ return array (
         array (
           0 => 10,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeSubjectDistance',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifSubjectDistance',
       ),
       37383 =>
       array (
@@ -982,10 +964,7 @@ return array (
         array (
           0 => 5,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Rational::decodeFocalLength',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifFocalLength',
       ),
       37396 =>
       array (
