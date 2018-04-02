@@ -12,7 +12,7 @@ class ExifComponentsConfiguration extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         $value = $this->getValue();
         $v = '';

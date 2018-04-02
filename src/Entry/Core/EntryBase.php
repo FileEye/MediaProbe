@@ -130,7 +130,7 @@ abstract class EntryBase
      *
      * @return string
      */
-    abstract public function getBytes($byte_order = Convert::LITTLE_ENDIAN);
+    abstract public function toBytes($byte_order = Convert::LITTLE_ENDIAN);
 
     /**
      * Get the value of this entry as text.
@@ -145,7 +145,7 @@ abstract class EntryBase
      *
      * @return string
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         return '(undefined)';
     }

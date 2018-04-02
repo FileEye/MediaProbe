@@ -11,15 +11,13 @@ tags:
         title: 'Exposure Time'
         components: 1
         format: Rational
-        text:
-            decode: ExifEye\core\Entry\Core\Rational::decodeExposureTime
+        class: ExifEye\core\Entry\ExifExposureTime
     0x829D:
         name: FNumber
         title: FNumber
         components: 1
         format: Rational
-        text:
-            decode: ExifEye\core\Entry\Core\Rational::decodeFNumber
+        class: ExifEye\core\Entry\ExifFNumber
     0x8822:
         name: ExposureProgram
         title: 'Exposure Program'
@@ -127,8 +125,7 @@ tags:
         title: Aperture
         components: 1
         format: Rational
-        text:
-            decode: ExifEye\core\Entry\Core\Rational::decodeApertureValue
+        class: ExifEye\core\Entry\ExifApertureValue
     0x9203:
         name: BrightnessValue
         title: Brightness
@@ -153,8 +150,7 @@ tags:
         title: 'Subject Distance'
         components: 1
         format: SignedRational
-        text:
-            decode: ExifEye\core\Entry\Core\Rational::decodeSubjectDistance
+        class: ExifEye\core\Entry\ExifSubjectDistance
     0x9207:
         name: MeteringMode
         title: 'Metering Mode'
@@ -232,8 +228,7 @@ tags:
         title: 'Focal Length'
         components: 1
         format: Rational
-        text:
-            decode: ExifEye\core\Entry\Core\Rational::decodeFocalLength
+        class: ExifEye\core\Entry\ExifFocalLength
     0x9214:
         name: SubjectArea
         title: 'Subject Area'

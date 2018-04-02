@@ -16,8 +16,7 @@ tags:
         title: GPSLatitude
         components: 3
         format: Rational
-        text:
-            decode: ExifEye\core\Entry\Core\Rational::decodeGPSLatitude
+        class: ExifEye\core\Entry\GPSDegrees
     0x0003:
         name: GPSLongitudeRef
         title: GPSLongitudeRef
@@ -28,8 +27,7 @@ tags:
         title: GPSLongitude
         components: 3
         format: Rational
-        text:
-            decode: ExifEye\core\Entry\Core\Rational::decodeGPSLongitude
+        class: ExifEye\core\Entry\GPSDegrees
     0x0005:
         name: GPSAltitudeRef
         title: GPSAltitudeRef

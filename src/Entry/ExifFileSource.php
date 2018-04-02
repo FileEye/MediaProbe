@@ -12,7 +12,7 @@ class ExifFileSource extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         $value = $this->getValue();
         switch (ord($value{0})) {

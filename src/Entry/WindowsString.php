@@ -114,7 +114,7 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         return $this->bytes;
     }
@@ -122,7 +122,7 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         return $this->getValue();
     }

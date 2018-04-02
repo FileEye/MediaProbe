@@ -112,7 +112,7 @@ class UserComment extends Undefined
      *
      * @return string the user comment.
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         return $this->comment;
     }

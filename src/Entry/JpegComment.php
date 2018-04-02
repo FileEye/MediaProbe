@@ -71,7 +71,7 @@ class JpegComment extends JpegContent
      *
      * @return string bytes representing this comment.
      */
-    public function getBytes()
+    public function toBytes()
     {
         return $this->comment;
     }

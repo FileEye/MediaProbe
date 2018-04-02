@@ -203,7 +203,7 @@ class Time extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         return $this->getValue(self::EXIF_STRING);
     }

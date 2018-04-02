@@ -11,8 +11,6 @@ use ExifEye\core\Format;
  * Abstract class for numbers.
  *
  * This class can hold numbers, with range checks.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
 abstract class NumberBase extends EntryBase
 {
@@ -20,7 +18,7 @@ abstract class NumberBase extends EntryBase
      * The minimum allowed value.
      *
      * Any attempt to change the value below this variable will result
-     * in a {@link OverflowException} being thrown.
+     * in a OverflowException being thrown.
      *
      * @var int
      */
@@ -30,7 +28,7 @@ abstract class NumberBase extends EntryBase
      * The maximum allowed value.
      *
      * Any attempt to change the value over this variable will result in
-     * a {@link OverflowException} being thrown.
+     * a OverflowException being thrown.
      *
      * @var int
      */
@@ -39,8 +37,8 @@ abstract class NumberBase extends EntryBase
     /**
      * The dimension of the number held.
      *
-     * Normal numbers have a dimension of one, pairs have a dimension of
-     * two, etc.
+     * Normal numbers have a dimension of one, pairs have a dimension of two,
+     * etc.
      *
      * @var int
      */
@@ -74,16 +72,16 @@ abstract class NumberBase extends EntryBase
     /**
      * Validate a number.
      *
-     * This method will check that the number given is within the range
-     * given my {@link getMin()} and {@link getMax()}, inclusive. If
-     * not, then a {@link OverflowException} is thrown.
+     * This method will check that the number given is within the range given
+     * by ::getMin() and ::getMax(), inclusive. If not, then a OverflowException
+     * is thrown.
      *
-     * @param
-     *            int|array the number in question.
+     * @param int|array $n
+     *            the number in question.
      *
-     * @return void nothing, but will throw a {@link
-     *         OverflowException} if the number is found to be outside the
-     *         legal range and {@link ExifEye::$strict} is true.
+     * @return void nothing, but will throw an OverflowException if the number
+     *         is found to be outside the legal range and ExifEye::$strict is
+     *         true.
      */
     public function validateNumber($n)
     {
@@ -103,11 +101,11 @@ abstract class NumberBase extends EntryBase
     /**
      * Add a number.
      *
-     * This appends a number to the numbers already held by this entry,
-     * thereby increasing the number of components by one.
+     * This appends a number to the numbers already held by this entry, thereby
+     * increasing the number of components by one.
      *
-     * @param
-     *            int|array the number to be added.
+     * @param int $n
+     *            the number to be added.
      */
     public function addNumber($n)
     {
@@ -138,7 +136,7 @@ abstract class NumberBase extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         $bytes = '';
         for ($i = 0; $i < $this->components; $i ++) {
@@ -167,8 +165,7 @@ abstract class NumberBase extends EntryBase
      *            boolean it could be that there is both a verbose and a brief
      *            formatting available, and this argument controls that.
      *
-     * @return string the number formatted as a string suitable for
-     *         display.
+     * @return string the number formatted as a string suitable for display.
      */
     protected function formatNumber($number, $brief = false)
     {
@@ -178,7 +175,7 @@ abstract class NumberBase extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         if ($this->components == 0) {
             return '';

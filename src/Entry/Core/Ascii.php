@@ -59,7 +59,7 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         return $this->value[0] . chr(0x00);
     }
@@ -67,7 +67,7 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         return $this->getValue();
     }

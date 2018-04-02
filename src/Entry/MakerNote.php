@@ -65,7 +65,7 @@ class MakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getText($short = false)
+    public function toString($short = false)
     {
         return $this->components . ' bytes unknown MakerNote data';
     }
