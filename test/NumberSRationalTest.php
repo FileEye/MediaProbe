@@ -47,14 +47,14 @@ class NumberSignedRationalTest extends NumberTestCase
 
         $entry->setValue([[-1, 2], [3, 4], [5, -6]]);
         $this->assertEquals($entry->getValue(), [[-1, 2], [3, 4], [5, -6]]);
-        $this->assertEquals($entry->getText(), '-1/2, 3/4, -5/6');
+        $this->assertEquals($entry->toString(), '-1/2, 3/4, -5/6');
 
         $entry->setValue([[-7, -8]]);
         $this->assertEquals($entry->getValue(), [-7, -8]);
-        $this->assertEquals($entry->getText(), '7/8');
+        $this->assertEquals($entry->toString(), '7/8');
 
         $entry->setValue([[0, 2147483647]]);
         $this->assertEquals($entry->getValue(), [0, 2147483647]);
-        $this->assertEquals($entry->getText(), '0/2147483647');
+        $this->assertEquals($entry->toString(), '0/2147483647');
     }
 }

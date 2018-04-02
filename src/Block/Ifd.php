@@ -586,7 +586,7 @@ class Ifd extends BlockBase
              * Size? If bigger than 4 bytes, the actual data is not in
              * the entry but somewhere else.
              */
-            $data = $sub_block->getEntry()->getBytes($order);
+            $data = $sub_block->getEntry()->toBytes($order);
             $s = strlen($data);
             if ($s > 4) {
                 ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);

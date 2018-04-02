@@ -316,7 +316,7 @@ class Spec
         $value = $entry->getValue();
 
         if (!isset(self::getMap()['tags'][$ifd_id][$tag_id]['text'])) {
-            return $entry->getText();
+            return $entry->toString();
         }
 
         // Return a text from a callback if defined.
@@ -330,9 +330,9 @@ class Spec
             $map = self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'];
             // If the code to be mapped is a non-int, change to string.
             $id = is_int($value) ? $value : (string) $value;
-            return isset($map[$id]) ? ExifEye::tra($map[$id]) : $entry->getText();
+            return isset($map[$id]) ? ExifEye::tra($map[$id]) : $entry->toString();
         }
 
-        return $entry->getText();
+        return $entry->toString();
     }
 }

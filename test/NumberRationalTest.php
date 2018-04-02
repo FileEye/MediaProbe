@@ -44,18 +44,18 @@ class NumberRationalTest extends NumberTestCase
     {
         $entry = new Rational([]);
         $this->assertEquals($entry->getValue(), []);
-        $this->assertEquals($entry->getText(), '');
+        $this->assertEquals($entry->toString(), '');
 
         $entry->setValue([[1, 2], [3, 4], [5, 6]]);
         $this->assertEquals($entry->getValue(), [[1, 2], [3, 4], [5, 6]]);
-        $this->assertEquals($entry->getText(), '1/2, 3/4, 5/6');
+        $this->assertEquals($entry->toString(), '1/2, 3/4, 5/6');
 
         $entry->setValue([[7, 8]]);
         $this->assertEquals($entry->getValue(), [7, 8]);
-        $this->assertEquals($entry->getText(), '7/8');
+        $this->assertEquals($entry->toString(), '7/8');
 
         $entry->setValue([[0, 4294967295]]);
         $this->assertEquals($entry->getValue(), [0, 4294967295]);
-        $this->assertEquals($entry->getText(), '0/4294967295');
+        $this->assertEquals($entry->toString(), '0/4294967295');
     }
 }

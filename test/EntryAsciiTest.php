@@ -26,7 +26,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals(10, $entry->getValue(Time::UNIX_TIMESTAMP));
         $this->assertEquals('1970:01:01 00:00:10', $entry->getValue(Time::EXIF_STRING));
         $this->assertEquals(2440588 + 10 / 86400, $entry->getValue(Time::JULIAN_DAY_COUNT));
-        $this->assertEquals('1970:01:01 00:00:10', $entry->getText());
+        $this->assertEquals('1970:01:01 00:00:10', $entry->toString());
 
         // Malformed Exif timestamp.
         $entry->setValue(['1970!01-01 00 00 30', Time::EXIF_STRING]);
@@ -65,31 +65,31 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         $value = $entry->getValue();
         $this->assertEquals('', $value[0]);
         $this->assertEquals('', $value[1]);
-        $this->assertEquals('', $entry->getText(false));
-        $this->assertEquals('', $entry->getText(true));
+        $this->assertEquals('', $entry->toString(false));
+        $this->assertEquals('', $entry->toString(true));
 
         $entry->setValue(['A']);
         $value = $entry->getValue();
         $this->assertEquals('A', $value[0]);
         $this->assertEquals('', $value[1]);
-        $this->assertEquals('A (Photographer)', $entry->getText(false));
-        $this->assertEquals('A', $entry->getText(true));
+        $this->assertEquals('A (Photographer)', $entry->toString(false));
+        $this->assertEquals('A', $entry->toString(true));
         $this->assertEquals('A' . chr(0), $entry->getBytes(Convert::LITTLE_ENDIAN));
 
         $entry->setValue(['', 'B']);
         $value = $entry->getValue();
         $this->assertEquals('', $value[0]);
         $this->assertEquals('B', $value[1]);
-        $this->assertEquals('B (Editor)', $entry->getText(false));
-        $this->assertEquals('B', $entry->getText(true));
+        $this->assertEquals('B (Editor)', $entry->toString(false));
+        $this->assertEquals('B', $entry->toString(true));
         $this->assertEquals(' ' . chr(0) . 'B' . chr(0), $entry->getBytes(Convert::LITTLE_ENDIAN));
 
         $entry->setValue(['A', 'B']);
         $value = $entry->getValue();
         $this->assertEquals('A', $value[0]);
         $this->assertEquals('B', $value[1]);
-        $this->assertEquals('A (Photographer) - B (Editor)', $entry->getText(false));
-        $this->assertEquals('A - B', $entry->getText(true));
+        $this->assertEquals('A (Photographer) - B (Editor)', $entry->toString(false));
+        $this->assertEquals('A - B', $entry->toString(true));
         $this->assertEquals('A' . chr(0) . 'B' . chr(0), $entry->getBytes(Convert::LITTLE_ENDIAN));
     }
 }

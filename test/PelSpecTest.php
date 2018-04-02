@@ -123,52 +123,52 @@ class PelSpecTest extends ExifEyeTestCaseBase
               '6, 7', 'ExifEye\core\Entry\Core\Short', 'IFD0', 'YCbCrSubSampling', [6, 7],
           ],
           'Exif/SubjectArea - value 6, 7' => [
-              '(x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [6, 7],
+              '(x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [6, 7],
           ],
           'Exif/SubjectArea - value 5, 6, 7' => [
-              'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [5, 6, 7],
+              'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [5, 6, 7],
           ],
           'Exif/SubjectArea - value 4, 5, 6, 7' => [
-              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [4, 5, 6, 7],
+              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [4, 5, 6, 7],
           ],
           'Exif/SubjectArea - wrong components' => [
-              'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [6],
+              'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [6],
           ],
           'Exif/FNumber - value 60, 10' => [
-              'f/6.0', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'FNumber', [[60, 10]],
+              'f/6.0', 'ExifEye\core\Entry\ExifFNumber', 'Exif', 'FNumber', [[60, 10]],
           ],
           'Exif/FNumber - value 26, 10' => [
-              'f/2.6', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'FNumber', [[26, 10]],
+              'f/2.6', 'ExifEye\core\Entry\ExifFNumber', 'Exif', 'FNumber', [[26, 10]],
           ],
           'Exif/ApertureValue - value 60, 10' => [
-              'f/8.0', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'ApertureValue', [[60, 10]],
+              'f/8.0', 'ExifEye\core\Entry\ExifApertureValue', 'Exif', 'ApertureValue', [[60, 10]],
           ],
           'Exif/ApertureValue - value 26, 10' => [
-              'f/2.5', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'ApertureValue', [[26, 10]],
+              'f/2.5', 'ExifEye\core\Entry\ExifApertureValue', 'Exif', 'ApertureValue', [[26, 10]],
           ],
           'Exif/FocalLength - value 60, 10' => [
-              '6.0 mm', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'FocalLength', [[60, 10]],
+              '6.0 mm', 'ExifEye\core\Entry\ExifFocalLength', 'Exif', 'FocalLength', [[60, 10]],
           ],
           'Exif/FocalLength - value 26, 10' => [
-              '2.6 mm', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'FocalLength', [[26, 10]],
+              '2.6 mm', 'ExifEye\core\Entry\ExifFocalLength', 'Exif', 'FocalLength', [[26, 10]],
           ],
           'Exif/SubjectDistance - value 60, 10' => [
-              '6.0 m', 'ExifEye\core\Entry\Core\SignedRational', 'Exif', 'SubjectDistance', [[60, 10]],
+              '6.0 m', 'ExifEye\core\Entry\ExifSubjectDistance', 'Exif', 'SubjectDistance', [[60, 10]],
           ],
           'Exif/SubjectDistance - value 26, 10' => [
-              '2.6 m', 'ExifEye\core\Entry\Core\SignedRational', 'Exif', 'SubjectDistance', [[26, 10]],
+              '2.6 m', 'ExifEye\core\Entry\ExifSubjectDistance', 'Exif', 'SubjectDistance', [[26, 10]],
           ],
           'Exif/ExposureTime - value 60, 10' => [
-              '6 sec.', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'ExposureTime', [[60, 10]],
+              '6 sec.', 'ExifEye\core\Entry\ExifExposureTime', 'Exif', 'ExposureTime', [[60, 10]],
           ],
           'Exif/ExposureTime - value 5, 10' => [
-              '1/2 sec.', 'ExifEye\core\Entry\Core\Rational', 'Exif', 'ExposureTime', [[5, 10]],
+              '1/2 sec.', 'ExifEye\core\Entry\ExifExposureTime', 'Exif', 'ExposureTime', [[5, 10]],
           ],
           'GPS/GPSLongitude' => [
-              '30° 45\' 28" (30.76°)', 'ExifEye\core\Entry\Core\Rational', 'GPS', 'GPSLongitude', [[30, 1], [45, 1], [28, 1]],
+              '30° 45\' 28" (30.76°)', 'ExifEye\core\Entry\GPSDegrees', 'GPS', 'GPSLongitude', [[30, 1], [45, 1], [28, 1]],
           ],
           'GPS/GPSLatitude' => [
-              '50° 33\' 12" (50.55°)', 'ExifEye\core\Entry\Core\Rational', 'GPS', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
+              '50° 33\' 12" (50.55°)', 'ExifEye\core\Entry\GPSDegrees', 'GPS', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
           ],
           'Exif/ShutterSpeedValue - value 5, 10' => [
               '5/10 sec. (APEX: 1)', 'ExifEye\core\Entry\Core\SignedRational', 'Exif', 'ShutterSpeedValue', [[5, 10]],
@@ -201,13 +201,13 @@ class PelSpecTest extends ExifEyeTestCaseBase
               'Interoperability Version 1.0', 'ExifEye\core\Entry\Core\Undefined', 'Interoperability', 'InteroperabilityVersion', [1],
           ],
           'Exif/ComponentsConfiguration' => [
-              'Y Cb Cr -', 'ExifEye\core\Entry\Core\Undefined', 'Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
+              'Y Cb Cr -', 'ExifEye\core\Entry\ExifComponentsConfiguration', 'Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
           ],
           'Exif/FileSource' => [
-              'DSC', 'ExifEye\core\Entry\Core\Undefined', 'Exif', 'FileSource', ["\x03"],
+              'DSC', 'ExifEye\core\Entry\ExifFileSource', 'Exif', 'FileSource', ["\x03"],
           ],
           'Exif/SceneType' => [
-              'Directly photographed', 'ExifEye\core\Entry\Core\Undefined', 'Exif', 'SceneType', ["\x01"],
+              'Directly photographed', 'ExifEye\core\Entry\ExifSceneType', 'Exif', 'SceneType', ["\x01"],
           ],
         ];
     }
