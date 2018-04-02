@@ -123,16 +123,16 @@ class PelSpecTest extends ExifEyeTestCaseBase
               '6, 7', 'ExifEye\core\Entry\Core\Short', 'IFD0', 'YCbCrSubSampling', [6, 7],
           ],
           'Exif/SubjectArea - value 6, 7' => [
-              '(x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [6, 7],
+              '(x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [6, 7],
           ],
           'Exif/SubjectArea - value 5, 6, 7' => [
-              'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [5, 6, 7],
+              'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [5, 6, 7],
           ],
           'Exif/SubjectArea - value 4, 5, 6, 7' => [
-              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [4, 5, 6, 7],
+              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [4, 5, 6, 7],
           ],
           'Exif/SubjectArea - wrong components' => [
-              'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [6],
+              'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [6],
           ],
           'Exif/FNumber - value 60, 10' => [
               'f/6.0', 'ExifEye\core\Entry\ExifFNumber', 'Exif', 'FNumber', [[60, 10]],

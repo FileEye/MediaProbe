@@ -74,7 +74,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals('', $value[1]);
         $this->assertEquals('A (Photographer)', $entry->toString(false));
         $this->assertEquals('A', $entry->toString(true));
-        $this->assertEquals('A' . chr(0), $entry->getBytes(Convert::LITTLE_ENDIAN));
+        $this->assertEquals('A' . chr(0), $entry->toBytes(Convert::LITTLE_ENDIAN));
 
         $entry->setValue(['', 'B']);
         $value = $entry->getValue();
@@ -82,7 +82,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals('B', $value[1]);
         $this->assertEquals('B (Editor)', $entry->toString(false));
         $this->assertEquals('B', $entry->toString(true));
-        $this->assertEquals(' ' . chr(0) . 'B' . chr(0), $entry->getBytes(Convert::LITTLE_ENDIAN));
+        $this->assertEquals(' ' . chr(0) . 'B' . chr(0), $entry->toBytes(Convert::LITTLE_ENDIAN));
 
         $entry->setValue(['A', 'B']);
         $value = $entry->getValue();
@@ -90,6 +90,6 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         $this->assertEquals('B', $value[1]);
         $this->assertEquals('A (Photographer) - B (Editor)', $entry->toString(false));
         $this->assertEquals('A - B', $entry->toString(true));
-        $this->assertEquals('A' . chr(0) . 'B' . chr(0), $entry->getBytes(Convert::LITTLE_ENDIAN));
+        $this->assertEquals('A' . chr(0) . 'B' . chr(0), $entry->toBytes(Convert::LITTLE_ENDIAN));
     }
 }
