@@ -78,7 +78,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
 
         $entry->setValue(['', 'B']);
         $value = $entry->getValue();
-        $this->assertEquals('', $value[0]);
+        $this->assertEquals(' ', $value[0]);
         $this->assertEquals('B', $value[1]);
         $this->assertEquals('B (Editor)', $entry->toString(false));
         $this->assertEquals('B', $entry->toString(true));
