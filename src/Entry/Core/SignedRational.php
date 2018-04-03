@@ -54,10 +54,10 @@ class SignedRational extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function formatNumber($number, $brief = false)
+    protected function formatNumber($number, $short = false)
     {
         if ($number[1] < 0) {
-            /* Turn output like 1/-2 into -1/2. */
+            // Turn output like 1/-2 into -1/2.
             return (- $number[0]) . '/' . (- $number[1]);
         } else {
             return $number[0] . '/' . $number[1];

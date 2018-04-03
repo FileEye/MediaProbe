@@ -1,4 +1,4 @@
-EntryInterface<?php
+<?php
 
 namespace ExifEye\core;
 

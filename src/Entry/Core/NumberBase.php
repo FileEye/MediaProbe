@@ -161,13 +161,13 @@ abstract class NumberBase extends EntryBase
      * @param int $number
      *            the number which will be formatted.
      *
-     * @param bool $brief
-     *            boolean it could be that there is both a verbose and a brief
+     * @param bool $short
+     *            it could be that there is both a verbose and a short
      *            formatting available, and this argument controls that.
      *
      * @return string the number formatted as a string suitable for display.
      */
-    protected function formatNumber($number, $brief = false)
+    protected function formatNumber($number, $short = false)
     {
         return $number;
     }

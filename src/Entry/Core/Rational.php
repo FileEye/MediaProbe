@@ -53,7 +53,7 @@ class Rational extends Long
     /**
      * {@inheritdoc}
      */
-    public function formatNumber($number, $brief = false)
+    protected function formatNumber($number, $short = false)
     {
         return $number[0] . '/' . $number[1];
     }
