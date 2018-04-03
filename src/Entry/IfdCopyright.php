@@ -98,9 +98,9 @@ class IfdCopyright extends Ascii
             $e = ' ' . ExifEye::tra('(Editor)');
         }
 
-        if ($this->value[0] !== '' && $this->value[1] !== '') {
+        if ($this->value[0] !== '' && $this->value[0] !== ' ' && $this->value[1] !== '') {
             return $this->value[0] . $p . ' - ' . $this->value[1] . $e;
-        } elseif ($this->value[0] != '') {
+        } elseif ($this->value[0] != '' && $this->value[0] !== ' ') {
             return $this->value[0] . $p;
         } elseif ($this->value[1] != '') {
             return $this->value[1] . $e;
