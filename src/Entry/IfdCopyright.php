@@ -39,9 +39,7 @@ class IfdCopyright extends Ascii
      */
     public function setValue(array $data)
     {
-dump($data);
         $this->value = array_replace(['', ''], $data);
-dump($this->value);
 
         if ($this->value[0] === '' && $this->value[1] !== '') {
             $this->value[0] = ' ';
