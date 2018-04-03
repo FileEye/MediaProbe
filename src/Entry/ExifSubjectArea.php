@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Entry\Core\Short;
+use ExifEye\core\ExifEye;
 
 /**
  * Decode text for an Exif/SubjectArea tag.
