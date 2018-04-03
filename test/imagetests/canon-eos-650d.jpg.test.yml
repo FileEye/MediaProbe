@@ -79,7 +79,7 @@ blocks:
                 id: 33432
                 name: Copyright
                 entry:
-                    class: ExifEye\core\Entry\Copyright
+                    class: ExifEye\core\Entry\IfdCopyright
                     format: Ascii
                     components: 1
                     value: YToyOntpOjA7czowOiIiO2k6MTtzOjA6IiI7fQ==
@@ -164,7 +164,7 @@ blocks:
                         id: 37377
                         name: ShutterSpeedValue
                         entry:
-                            class: ExifEye\core\Entry\Core\SignedRational
+                            class: ExifEye\core\Entry\ExifShutterSpeedValue
                             format: SignedRational
                             components: 1
                             value: YToyOntpOjA7aTo2MzA3ODQ7aToxO2k6NjU1MzY7fQ==
@@ -182,7 +182,7 @@ blocks:
                         id: 37380
                         name: ExposureBiasValue
                         entry:
-                            class: ExifEye\core\Entry\Core\SignedRational
+                            class: ExifEye\core\Entry\ExifExposureBiasValue
                             format: SignedRational
                             components: 1
                             value: YToyOntpOjA7aTowO2k6MTtpOjE7fQ==

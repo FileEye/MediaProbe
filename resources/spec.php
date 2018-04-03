@@ -791,10 +791,7 @@ return array (
         array (
           0 => 10,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\SignedRational::decodeShutterSpeedValue',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifShutterSpeedValue',
       ),
       37378 =>
       array (
@@ -816,10 +813,7 @@ return array (
         array (
           0 => 10,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\SignedRational::decodeBrightnessValue',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifBrightnessValue',
       ),
       37380 =>
       array (
@@ -830,10 +824,7 @@ return array (
         array (
           0 => 10,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\SignedRational::decodeExposureBiasValue',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifExposureBiasValue',
       ),
       37381 =>
       array (
@@ -3720,12 +3711,11 @@ return array (
       array (
         'name' => 'Copyright',
         'title' => 'Copyright',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
         ),
-        'class' => 'ExifEye\\core\\Entry\\Copyright',
+        'class' => 'ExifEye\\core\\Entry\\IfdCopyright',
       ),
       34665 =>
       array (
@@ -4197,7 +4187,7 @@ return array (
         array (
           0 => 2,
         ),
-        'class' => 'ExifEye\\core\\Entry\\Copyright',
+        'class' => 'ExifEye\\core\\Entry\\IfdCopyright',
       ),
       34665 =>
       array (
