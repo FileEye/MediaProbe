@@ -8,6 +8,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Class for holding copyright information.
