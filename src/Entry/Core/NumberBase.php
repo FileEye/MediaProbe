@@ -60,7 +60,7 @@ abstract class NumberBase extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getValue()
+    public function getValue(array $options = [])
     {
         if ($this->components == 1) {
             return $this->value[0];
@@ -175,8 +175,10 @@ abstract class NumberBase extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
+        $short = isset($options['short']) ? $options['short'] : false;
+
         if ($this->components == 0) {
             return '';
         }

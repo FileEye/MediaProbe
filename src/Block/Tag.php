@@ -3,7 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\Entry\Core\EntryBase;
+use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
@@ -29,7 +29,7 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($ifd_id, $id, $format, $components, EntryBase $entry, $data_element = null)
+    public function __construct($ifd_id, $id, $format, $components, EntryInterface $entry, $data_element = null)
     {
         $this->ifdId = $ifd_id;
 

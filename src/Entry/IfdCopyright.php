@@ -52,7 +52,7 @@ class IfdCopyright extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function getValue()
+    public function getValue(array $options = [])
     {
         return $this->value;
     }
@@ -84,8 +84,9 @@ class IfdCopyright extends Ascii
      *
      * @return string the copyright information in a string.
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
+        $short = isset($options['short']) ? $options['short'] : false;
         if ($short) {
             $p = '';
             $e = '';

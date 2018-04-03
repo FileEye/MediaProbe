@@ -44,7 +44,7 @@ class Exif extends JpegContent
      * The new object will be empty --- use the {@link load()} method to
      * load Exif data from a {@link DataWindow} object, or use the
      * {@link setTiff()} to change the {@link Tiff} object, which is
-     * the true holder of the Exif {@link EntryBase entries}.
+     * the true holder of the Exif {@link EntryInterface entries}.
      */
     public function __construct()
     {

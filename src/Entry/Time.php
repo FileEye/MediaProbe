@@ -107,8 +107,9 @@ class Time extends Ascii
      *         count and the fractional part denotes the time of day (0.25 means
      *         6:00, 0.75 means 18:00).
      */
-    public function getValue($type = self::UNIX_TIMESTAMP)
+    public function getValue(array $options = [])
     {
+        $short = isset($options['type']) ? $options['type'] : self::UNIX_TIMESTAMP;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
                 $seconds = $this->convertJdToUnix($this->day_count);
@@ -203,7 +204,7 @@ class Time extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
         return $this->getValue(self::EXIF_STRING);
     }

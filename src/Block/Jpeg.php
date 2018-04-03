@@ -91,7 +91,7 @@ class Jpeg
      * // Create container for the Exif information:
      * $exif = new Exif();
      * // Now Add a Tiff object with a Ifd object with one or more
-     * // EntryBase objects to $exif... Finally add $exif to $jpeg:
+     * // objects to $exif... Finally add $exif to $jpeg:
      * $jpeg->setExif($exif);
      * </code>
      *

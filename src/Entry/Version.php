@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\Entry\Core\EntryBase;
+use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Entry\Exception\EntryException;
 use ExifEye\core\ExifEye;
@@ -49,7 +49,7 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getValue()
+    public function getValue(array $options = [])
     {
         return $this->value[0];
     }
@@ -68,8 +68,9 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
+        $short = isset($options['short']) ? $options['short'] : false;
         if ($short) {
             return $this->getValue();
         } else {
@@ -84,15 +85,15 @@ class Version extends Undefined
      *            the IFD id.
      * @param int $tag_id
      *            the TAG id.
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
+     * @param EntryInterface $entry
+     *            the TAG EntryInterface object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeExifVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
+    public static function decodeExifVersion($ifd_id, $tag_id, EntryInterface $entry, $brief = false)
     {
         if ($brief) {
             return ExifEye::fmt('%s', $entry->getValue());
@@ -108,15 +109,15 @@ class Version extends Undefined
      *            the IFD id.
      * @param int $tag_id
      *            the TAG id.
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
+     * @param EntryInterface $entry
+     *            the TAG EntryInterface object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeFlashPixVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
+    public static function decodeFlashPixVersion($ifd_id, $tag_id, EntryInterface $entry, $brief = false)
     {
         if ($brief) {
             return ExifEye::fmt('%s', $entry->getValue());
@@ -132,15 +133,15 @@ class Version extends Undefined
      *            the IFD id.
      * @param int $tag_id
      *            the TAG id.
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
+     * @param EntryInterface $entry
+     *            the TAG EntryInterface object.
      * @param bool $brief
      *            (Optional) indicates to use brief output.
      *
      * @return string
      *            the TAG text.
      */
-    public static function decodeInteroperabilityVersion($ifd_id, $tag_id, EntryBase $entry, $brief = false)
+    public static function decodeInteroperabilityVersion($ifd_id, $tag_id, EntryInterface $entry, $brief = false)
     {
         if ($brief) {
             return ExifEye::fmt('%s', $entry->getValue());

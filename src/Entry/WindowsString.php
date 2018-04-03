@@ -106,7 +106,7 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getValue()
+    public function getValue(array $options = [])
     {
         return $this->value[0];
     }
@@ -122,7 +122,7 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
         return $this->getValue();
     }

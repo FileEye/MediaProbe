@@ -7,7 +7,7 @@ use ExifEye\core\Block\Tag;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\DataWindowWindowException;
-use ExifEye\core\Entry\Core\EntryBase;
+use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\InvalidArgumentException;
@@ -21,7 +21,7 @@ use ExifEye\core\Spec;
  *
  * {@link Tiff TIFF data} is structured as a number of Image File
  * Directories, IFDs for short. Each IFD contains a number of {@link
- * EntryBase entries}, some data and finally a link to the next IFD.
+ * EntryInterface entries}, some data and finally a link to the next IFD.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
@@ -93,7 +93,7 @@ class Ifd extends BlockBase
      * Construct a new Image File Directory (IFD).
      *
      * The IFD will be empty, use the {@link addEntry()} method to add
-     * an {@link EntryBase}. Use the {@link setNext()} method to link
+     * an {@link EntryInterface}. Use the {@link setNext()} method to link
      * this IFD to another.
      *
      * @param int $type
@@ -605,7 +605,7 @@ class Ifd extends BlockBase
 
         if ($this->thumb_data !== null) {
             ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
-            // TODO: make EntryBase a class that can be constructed with
+            // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the newt four lines.
             $bytes .= Convert::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
             $bytes .= Convert::shortToBytes(Format::LONG, $order);

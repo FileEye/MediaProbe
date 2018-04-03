@@ -1,8 +1,8 @@
-<?php
+EntryInterface<?php
 
 namespace ExifEye\core;
 
-use ExifEye\core\Entry\Core\EntryBase;
+use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
@@ -303,7 +303,7 @@ class Spec
      *            the IFD id.
      * @param int $tag_id
      *            the TAG id.
-     * @param EntryBase $entry
+     * @param EntryInterface $entry
      *            the TAG entry.
      * @param bool $brief
      *            indicates to use brief output.
@@ -311,7 +311,7 @@ class Spec
      * @return string|null
      *            the TAG text, or NULL if not applicable.
      */
-    public static function getTagText($ifd_id, $tag_id, EntryBase $entry, $brief)
+    public static function getTagText($ifd_id, $tag_id, EntryInterface $entry, $brief)
     {
         $value = $entry->getValue();
 

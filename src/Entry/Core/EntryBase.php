@@ -3,11 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\Format;
-use ExifEye\core\Spec;
-use ExifEye\core\Utility\Convert;
 
 /**
  * Base class for EntryInterface objects.
@@ -20,7 +16,7 @@ use ExifEye\core\Utility\Convert;
  * and gives back an array of arguments that can be used in the descendent
  * constructor.
  */
-abstract class EntryBase
+abstract class EntryBase implements EntryInterface
 {
     /**
      * The format of this entry.
@@ -58,19 +54,7 @@ abstract class EntryBase
     }
 
     /**
-     * Get arguments for the instance constructor from raw TAG data.
-     *
-     * @param int $format
-     *            the format of the entry.
-     * @param int $components
-     *            the components in the entry.
-     * @param DataWindow $data
-     *            the data which will be used to construct the entry.
-     * @param int $data_offset
-     *            the offset of the main DataWindow where data is stored.
-     *
-     * @return array a list or arguments to be passed to the EntryBase subclass
-     *            constructor.
+     * {@inheritdoc}
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
@@ -78,9 +62,7 @@ abstract class EntryBase
     }
 
     /**
-     * Returns the format of this entry.
-     *
-     * @return int
+     * {@inheritdoc}
      */
     public function getFormat()
     {
@@ -88,9 +70,7 @@ abstract class EntryBase
     }
 
     /**
-     * Returns the number of components of this entry.
-     *
-     * @return int
+     * {@inheritdoc}
      */
     public function getComponents()
     {
@@ -98,55 +78,10 @@ abstract class EntryBase
     }
 
     /**
-     * Set the value of this entry.
-     *
-     * @param array
-     *            the new value.
-     *
-     * @return $this
+     * {@inheritdoc}
      */
-    abstract public function setValue(array $value);
-
-    /**
-     * Returns the value of this entry.
-     *
-     * The value returned will generally be the same as the one supplied to the
-     * constructor or with ::setValue(). For a formatted version of the value,
-     * use ::getText() instead.
-     *
-     * @return array
-     */
-    public function getValue()
+    public function getValue(array $options = [])
     {
         return $this->value;
-    }
-
-    /**
-     * Returns the bytes representing this entry.
-     *
-     * @param bool $byte_order
-     *            the byte order to use for numeric values, which must be either
-     *            Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN.
-     *
-     * @return string
-     */
-    abstract public function toBytes($byte_order = Convert::LITTLE_ENDIAN);
-
-    /**
-     * Get the value of this entry as text.
-     *
-     * The value will be returned in a format suitable for presentation, e.g.
-     * rationals will be returned as 'x/y', ASCII strings will be returned as
-     * themselves etc.
-     *
-     * @param bool $short
-     *            (Optional) indicates to display a shorter text version if
-     *            possible.
-     *
-     * @return string
-     */
-    public function toString($short = false)
-    {
-        return '(undefined)';
     }
 }

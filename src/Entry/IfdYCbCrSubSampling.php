@@ -12,7 +12,7 @@ class IfdYCbCrSubSampling extends Short
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
         if ($this->getValue()[0] == 2 && $this->getValue()[1] == 1) {
             return 'YCbCr4:2:2';

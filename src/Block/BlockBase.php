@@ -3,7 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\Entry\Core\EntryBase;
+use ExifEye\core\Entry\Core\EntryInterface;
 
 /**
  * Class representing an Exif TAG.
@@ -48,7 +48,7 @@ abstract class BlockBase
     /**
      * The block's associated entry.
      *
-     * @var EntryBase[]
+     * @var EntryInterface
      */
     protected $entry;
 
@@ -151,11 +151,11 @@ abstract class BlockBase
     /**
      * Sets the block's associated entry.
      *
-     * @param EntryBase $entry
+     * @param EntryInterface $entry
      *
      * @return $this
      */
-    public function setEntry(EntryBase $entry)
+    public function setEntry(EntryInterface $entry)
     {
         $this->entry = $entry;
     }
@@ -163,7 +163,7 @@ abstract class BlockBase
     /**
      * Gets the block's associated entry.
      *
-     * @return EntryBase
+     * @return EntryInterface
      */
     public function getEntry()
     {

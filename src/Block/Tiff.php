@@ -14,7 +14,7 @@ use ExifEye\core\Spec;
  *
  * Exif data is actually an extension of the TIFF file format. TIFF
  * images consist of a number of {@link Ifd Image File Directories}
- * (IFDs), each containing a number of {@link EntryBase entries}. The
+ * (IFDs), each containing a number of {@link EntryInterface entries}. The
  * IFDs are linked to each other --- one can get hold of the first one
  * with the {@link getIfd()} method.
  *

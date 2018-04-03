@@ -61,7 +61,7 @@ class JpegComment extends JpegContent
      *
      * @return string the comment.
      */
-    public function getValue()
+    public function getValue(array $options = [])
     {
         return $this->comment;
     }

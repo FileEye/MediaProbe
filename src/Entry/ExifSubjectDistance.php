@@ -13,7 +13,7 @@ class ExifSubjectDistance extends Rational
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
         return ExifEye::fmt('%.1f m', $this->getValue()[0] / $this->getValue()[1]);
     }

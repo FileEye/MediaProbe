@@ -13,7 +13,7 @@ class ExifSubjectArea extends Short
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
         switch ($this->getComponents()) {
             case 2:

@@ -92,7 +92,7 @@ class UserComment extends Undefined
      *
      * @return string the user comment.
      */
-    public function getValue()
+    public function getValue(array $options = [])
     {
         return $this->comment;
     }
@@ -112,7 +112,7 @@ class UserComment extends Undefined
      *
      * @return string the user comment.
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
         return $this->comment;
     }

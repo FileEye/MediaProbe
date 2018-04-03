@@ -12,7 +12,7 @@ class ExifBrightnessValue extends SignedRational
     /**
      * {@inheritdoc}
      */
-    public function toString($short = false)
+    public function toString(array $options = [])
     {
         // TODO: figure out the APEX thing, or remove this so that it is
         // handled by the default code.
