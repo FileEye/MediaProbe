@@ -9,10 +9,7 @@ use ExifEye\core\Format;
  * Class for holding signed bytes.
  *
  * This class can hold bytes, either just a single byte or an array of
- * bytes. The class will be used to manipulate any of the Exif tags
- * which has format {@link Format::BYTE}.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * bytes.
  */
 class SignedByte extends NumberBase
 {
@@ -44,16 +41,7 @@ class SignedByte extends NumberBase
     }
 
     /**
-     * Convert a number into bytes.
-     *
-     * @param int $number
-     *            the number that should be converted.
-     *
-     * @param PelByteOrder $order
-     *            one of {@link Convert::LITTLE_ENDIAN} and
-     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
-     *
-     * @return string bytes representing the number given.
+     * {@inheritdoc}
      */
     public function numberToBytes($number, $order)
     {

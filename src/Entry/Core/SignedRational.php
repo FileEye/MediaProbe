@@ -15,10 +15,7 @@ use ExifEye\core\Format;
  * the denominator, in that order.
  *
  * The class can hold either just a single rational or an array of
- * rationals. The class will be used to manipulate any of the Exif
- * tags which can have format {@link Format::SRATIONAL}.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * rationals.
  */
 class SignedRational extends SignedLong
 {
@@ -55,20 +52,7 @@ class SignedRational extends SignedLong
     }
 
     /**
-     * Format a rational number.
-     *
-     * The rational will be returned as a string with a slash '/'
-     * between the numerator and denominator. Care is taken to display
-     * '-1/2' instead of the ugly but mathematically equivalent '1/-2'.
-     *
-     * @param
-     *            array the rational which will be formatted.
-     *
-     * @param
-     *            boolean not used.
-     *
-     * @return string the rational formatted as a string suitable for
-     *         display.
+     * {@inheritdoc}
      */
     public function formatNumber($number, $brief = false)
     {
@@ -78,68 +62,5 @@ class SignedRational extends SignedLong
         } else {
             return $number[0] . '/' . $number[1];
         }
-    }
-
-    /**
-     * Decode text for an Exif/ShutterSpeedValue tag.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
-     * @param bool $brief
-     *            (Optional) indicates to use brief output.
-     *
-     * @return string
-     *            the TAG text.
-     */
-    public static function decodeShutterSpeedValue($ifd_id, $tag_id, EntryBase $entry, $brief = false)
-    {
-        return ExifEye::fmt('%.0f/%.0f sec. (APEX: %d)', $entry->getValue()[0], $entry->getValue()[1], pow(sqrt(2), $entry->getValue()[0] / $entry->getValue()[1]));
-    }
-
-    /**
-     * Decode text for an Exif/BrightnessValue tag.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
-     * @param bool $brief
-     *            (Optional) indicates to use brief output.
-     *
-     * @return string
-     *            the TAG text.
-     */
-    public static function decodeBrightnessValue($ifd_id, $tag_id, EntryBase $entry, $brief = false)
-    {
-        // TODO: figure out the APEX thing, or remove this so that it is
-        // handled by the default code.
-        return sprintf('%d/%d', $entry->getValue()[0], $entry->getValue()[1]);
-        // FIXME: How do I calculate the APEX value?
-    }
-
-    /**
-     * Decode text for an Exif/ExposureBiasValue tag.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     * @param EntryBase $entry
-     *            the TAG EntryBase object.
-     * @param bool $brief
-     *            (Optional) indicates to use brief output.
-     *
-     * @return string
-     *            the TAG text.
-     */
-    public static function decodeExposureBiasValue($ifd_id, $tag_id, EntryBase $entry, $brief = false)
-    {
-        return sprintf('%s%.01f', $entry->getValue()[0] * $entry->getValue()[1] > 0 ? '+' : '', $entry->getValue()[0] / $entry->getValue()[1]);
     }
 }

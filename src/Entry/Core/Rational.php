@@ -51,18 +51,7 @@ class Rational extends Long
     }
 
     /**
-     * Format a rational number.
-     *
-     * The rational will be returned as a string with a slash '/' between the
-     * numerator and denominator.
-     *
-     * @param array $number
-     *            array the rational which will be formatted.
-     *
-     * @param bool $brief
-     *            not used.
-     *
-     * @return string the rational formatted as a string suitable for display.
+     * {@inheritdoc}
      */
     public function formatNumber($number, $brief = false)
     {

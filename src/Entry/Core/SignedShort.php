@@ -10,10 +10,7 @@ use ExifEye\core\Utility\Convert;
  * Class for holding signed shorts.
  *
  * This class can hold shorts, either just a single short or an array
- * of shorts. The class will be used to manipulate any of the Exif
- * tags which has format {@link Format::SSHORT}.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * of shorts.
  */
 class SignedShort extends NumberBase
 {
@@ -45,15 +42,7 @@ class SignedShort extends NumberBase
     }
 
     /**
-     * Convert a number into bytes.
-     *
-     * @param int $number
-     *            the number that should be converted.
-     * @param boolean $order
-     *            one of {@link Convert::LITTLE_ENDIAN} and
-     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
-     *
-     * @return string bytes representing the number given.
+     * {@inheritdoc}
      */
     public function numberToBytes($number, $order)
     {

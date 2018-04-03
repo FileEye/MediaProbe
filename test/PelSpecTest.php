@@ -171,16 +171,16 @@ class PelSpecTest extends ExifEyeTestCaseBase
               '50° 33\' 12" (50.55°)', 'ExifEye\core\Entry\GPSDegrees', 'GPS', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
           ],
           'Exif/ShutterSpeedValue - value 5, 10' => [
-              '5/10 sec. (APEX: 1)', 'ExifEye\core\Entry\Core\SignedRational', 'Exif', 'ShutterSpeedValue', [[5, 10]],
+              '5/10 sec. (APEX: 1)', 'ExifEye\core\Entry\ExifShutterSpeedValue', 'Exif', 'ShutterSpeedValue', [[5, 10]],
           ],
           'Exif/BrightnessValue - value 5, 10' => [
-              '5/10', 'ExifEye\core\Entry\Core\SignedRational', 'Exif', 'BrightnessValue', [[5, 10]],
+              '5/10', 'ExifEye\core\Entry\ExifBrightnessValue', 'Exif', 'BrightnessValue', [[5, 10]],
           ],
           'Exif/ExposureBiasValue - value 5, 10' => [
-              '+0.5', 'ExifEye\core\Entry\Core\SignedRational', 'Exif', 'ExposureBiasValue', [[5, 10]],
+              '+0.5', 'ExifEye\core\Entry\ExifExposureBiasValue', 'Exif', 'ExposureBiasValue', [[5, 10]],
           ],
           'Exif/ExposureBiasValue - value -5, 10' => [
-              '-0.5', 'ExifEye\core\Entry\Core\SignedRational', 'Exif', 'ExposureBiasValue', [[-5, 10]],
+              '-0.5', 'ExifEye\core\Entry\ExifExposureBiasValue', 'Exif', 'ExposureBiasValue', [[-5, 10]],
           ],
           'Exif/ExifVersion - short' => [
               '2.2', 'ExifEye\core\Entry\Core\Undefined', 'Exif', 'ExifVersion', [2.2], true,

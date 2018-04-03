@@ -44,16 +44,7 @@ class Short extends NumberBase
     }
 
     /**
-     * Convert a number into bytes.
-     *
-     * @param int $number
-     *            the number that should be converted.
-     *
-     * @param boolean $order
-     *            one of Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN,
-     *            specifying the target byte order.
-     *
-     * @return string bytes representing the number given.
+     * {@inheritdoc}
      */
     public function numberToBytes($number, $order)
     {

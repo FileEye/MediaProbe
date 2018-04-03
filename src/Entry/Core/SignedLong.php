@@ -10,10 +10,7 @@ use ExifEye\core\Utility\Convert;
  * Class for holding signed longs.
  *
  * This class can hold longs, either just a single long or an array of
- * longs. The class will be used to manipulate any of the Exif tags
- * which can have format {@link Format::SLONG}.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * longs.
  */
 class SignedLong extends NumberBase
 {
@@ -45,15 +42,7 @@ class SignedLong extends NumberBase
     }
 
     /**
-     * Convert a number into bytes.
-     *
-     * @param
-     *            int the number that should be converted.
-     * @param
-     *            PelByteOrder one of {@link Convert::LITTLE_ENDIAN} and
-     *            {@link Convert::BIG_ENDIAN}, specifying the target byte order.
-     *
-     * @return string bytes representing the number given.
+     * {@inheritdoc}
      */
     public function numberToBytes($number, $order)
     {

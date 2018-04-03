@@ -118,8 +118,7 @@ tags:
         title: 'Shutter speed'
         components: 1
         format: SignedRational
-        text:
-            decode: ExifEye\core\Entry\Core\SignedRational::decodeShutterSpeedValue
+        class: ExifEye\core\Entry\ExifShutterSpeedValue
     0x9202:
         name: ApertureValue
         title: Aperture
@@ -131,15 +130,13 @@ tags:
         title: Brightness
         components: 1
         format: SignedRational
-        text:
-            decode: ExifEye\core\Entry\Core\SignedRational::decodeBrightnessValue
+        class: ExifEye\core\Entry\ExifBrightnessValue
     0x9204:
         name: ExposureBiasValue
         title: 'Exposure Bias'
         components: 1
         format: SignedRational
-        text:
-            decode: ExifEye\core\Entry\Core\SignedRational::decodeExposureBiasValue
+        class: ExifEye\core\Entry\ExifExposureBiasValue
     0x9205:
         name: MaxApertureValue
         title: 'Max Aperture Value'
