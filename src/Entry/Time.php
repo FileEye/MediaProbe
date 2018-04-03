@@ -109,7 +109,7 @@ class Time extends Ascii
      */
     public function getValue(array $options = [])
     {
-        $short = isset($options['type']) ? $options['type'] : self::UNIX_TIMESTAMP;
+        $type = isset($options['type']) ? $options['type'] : self::UNIX_TIMESTAMP;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
                 $seconds = $this->convertJdToUnix($this->day_count);

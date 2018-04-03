@@ -8,6 +8,7 @@ use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Entry\Exception\EntryException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\Convert;
 
 /**
  * Class to hold version information.
