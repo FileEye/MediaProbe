@@ -57,6 +57,14 @@ dump($this->value);
     /**
      * {@inheritdoc}
      */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         if ($this->value[1] === '') {
