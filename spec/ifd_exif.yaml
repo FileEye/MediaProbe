@@ -233,8 +233,7 @@ tags:
         name: SubjectArea
         title: 'Subject Area'
         format: Short
-        text:
-            decode: ExifEye\core\Entry\Core\Short::decodeSubjectArea
+        class: ExifEye\core\Entry\SubjectArea
     0x927C:
         name: MakerNote
         title: 'Maker Note'

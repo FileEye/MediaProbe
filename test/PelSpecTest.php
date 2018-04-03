@@ -114,25 +114,25 @@ class PelSpecTest extends ExifEyeTestCaseBase
               'Canon EF 24-105mm f/4L IS USM', 'ExifEye\core\Entry\Core\Short', 'CanonCameraSettings', 'LensType', [493.1],
           ],
           'IFD0/YCbCrSubSampling - value 2, 1' => [
-              'YCbCr4:2:2', 'ExifEye\core\Entry\Core\Short', 'IFD0', 'YCbCrSubSampling', [2, 1],
+              'YCbCr4:2:2', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'IFD0', 'YCbCrSubSampling', [2, 1],
           ],
           'IFD0/YCbCrSubSampling - value 2, 2' => [
-              'YCbCr4:2:0', 'ExifEye\core\Entry\Core\Short', 'IFD0', 'YCbCrSubSampling', [2, 2],
+              'YCbCr4:2:0', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'IFD0', 'YCbCrSubSampling', [2, 2],
           ],
           'IFD0/YCbCrSubSampling - value 6, 7' => [
-              '6, 7', 'ExifEye\core\Entry\Core\Short', 'IFD0', 'YCbCrSubSampling', [6, 7],
+              '6, 7', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'IFD0', 'YCbCrSubSampling', [6, 7],
           ],
           'Exif/SubjectArea - value 6, 7' => [
-              '(x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [6, 7],
+              '(x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [6, 7],
           ],
           'Exif/SubjectArea - value 5, 6, 7' => [
-              'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [5, 6, 7],
+              'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [5, 6, 7],
           ],
           'Exif/SubjectArea - value 4, 5, 6, 7' => [
-              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [4, 5, 6, 7],
+              'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [4, 5, 6, 7],
           ],
           'Exif/SubjectArea - wrong components' => [
-              'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\Core\Short', 'Exif', 'SubjectArea', [6],
+              'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\ExifSubjectArea', 'Exif', 'SubjectArea', [6],
           ],
           'Exif/FNumber - value 60, 10' => [
               'f/6.0', 'ExifEye\core\Entry\ExifFNumber', 'Exif', 'FNumber', [[60, 10]],
