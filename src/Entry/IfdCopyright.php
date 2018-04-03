@@ -26,7 +26,7 @@ class IfdCopyright extends Ascii
     {
         $v = explode("\0", $data_window->getBytes($data_offset, $components));
         $v[1] = isset($v[1]) ? $v[1] : '';
-        return [$v[0], $v[1]];
+        return $v;
     }
 
     /**
@@ -41,10 +41,6 @@ class IfdCopyright extends Ascii
     public function setValue(array $data)
     {
         $this->value = array_replace(['', ''], $data);
-
-        if ($this->value[0] === '' && $this->value[1] !== '') {
-            $this->value[0] = ' ';
-        }
 
         if ($this->value[1] === '') {
             $this->components = strlen($this->value[0]) + 1;
@@ -98,9 +94,9 @@ class IfdCopyright extends Ascii
             $e = ' ' . ExifEye::tra('(Editor)');
         }
 
-        if ($this->value[0] !== '' && $this->value[0] !== ' ' && $this->value[1] !== '') {
+        if ($this->value[0] !== '' && $this->value[1] !== '') {
             return $this->value[0] . $p . ' - ' . $this->value[1] . $e;
-        } elseif ($this->value[0] != '' && $this->value[0] !== ' ') {
+        } elseif ($this->value[0] != '') {
             return $this->value[0] . $p;
         } elseif ($this->value[1] != '') {
             return $this->value[1] . $e;
