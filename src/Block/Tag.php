@@ -61,6 +61,8 @@ class Tag extends BlockBase
         $components = $data_window->getLong($offset + 4);
         $data_element = $data_window->getLong($offset + 8);
 
+        // @todo warn if components or format are not as expected
+
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
         // element.
