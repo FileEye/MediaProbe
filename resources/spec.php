@@ -974,10 +974,7 @@ return array (
         array (
           0 => 3,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Short::decodeSubjectArea',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifSubjectArea',
       ),
       37500 =>
       array (
@@ -3669,10 +3666,7 @@ return array (
         array (
           0 => 3,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Short::decodeYCbCrSubSampling',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\IfdYCbCrSubSampling',
       ),
       531 =>
       array (
@@ -4144,10 +4138,7 @@ return array (
         array (
           0 => 3,
         ),
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Core\\Short::decodeYCbCrSubSampling',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\IfdYCbCrSubSampling',
       ),
       531 =>
       array (
