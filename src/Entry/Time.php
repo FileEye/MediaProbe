@@ -198,7 +198,7 @@ class Time extends Ascii
 
         // Now finally update the string which will be used when this is
         // turned into bytes.
-        parent::setValue([$this->getValue(self::EXIF_STRING)]);
+        parent::setValue([$this->getValue(['type' => self::EXIF_STRING])]);
     }
 
     /**
@@ -206,7 +206,7 @@ class Time extends Ascii
      */
     public function toString(array $options = [])
     {
-        return $this->getValue(self::EXIF_STRING);
+        return $this->getValue(['type' => self::EXIF_STRING]);
     }
 
     // The following four functions are used for converting back and

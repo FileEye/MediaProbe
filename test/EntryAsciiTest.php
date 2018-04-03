@@ -65,31 +65,32 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         $value = $entry->getValue();
         $this->assertEquals('', $value[0]);
         $this->assertEquals('', $value[1]);
-        $this->assertEquals('', $entry->toString(false));
-        $this->assertEquals('', $entry->toString(true));
+        $this->assertEquals('', $entry->toString());
+        $this->assertEquals('', $entry->toString(['short' => false]));
+        $this->assertEquals('', $entry->toString(['short' => true]));
 
         $entry->setValue(['A']);
         $value = $entry->getValue();
         $this->assertEquals('A', $value[0]);
         $this->assertEquals('', $value[1]);
-        $this->assertEquals('A (Photographer)', $entry->toString(false));
-        $this->assertEquals('A', $entry->toString(true));
+        $this->assertEquals('A (Photographer)', $entry->toString(['short' => false]));
+        $this->assertEquals('A', $entry->toString(['short' => true]));
         $this->assertEquals('A' . chr(0), $entry->toBytes());
 
         $entry->setValue(['', 'B']);
         $value = $entry->getValue();
         $this->assertEquals('', $value[0]);
         $this->assertEquals('B', $value[1]);
-        $this->assertEquals('B (Editor)', $entry->toString(false));
-        $this->assertEquals('B', $entry->toString(true));
+        $this->assertEquals('B (Editor)', $entry->toString(['short' => false]));
+        $this->assertEquals('B', $entry->toString(['short' => true]));
         $this->assertEquals(chr(0) . 'B' . chr(0), $entry->toBytes());
 
         $entry->setValue(['A', 'B']);
         $value = $entry->getValue();
         $this->assertEquals('A', $value[0]);
         $this->assertEquals('B', $value[1]);
-        $this->assertEquals('A (Photographer) - B (Editor)', $entry->toString(false));
-        $this->assertEquals('A - B', $entry->toString(true));
+        $this->assertEquals('A (Photographer) - B (Editor)', $entry->toString(['short' => false]));
+        $this->assertEquals('A - B', $entry->toString(['short' => true]));
         $this->assertEquals('A' . chr(0) . 'B' . chr(0), $entry->toBytes());
     }
 }
