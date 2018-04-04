@@ -5,8 +5,6 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
 use ExifEye\core\Entry\Core\Ascii;
-// xx use ExifEye\core\Entry\Exception\UnexpectedFormatException;
-// xx use ExifEye\core\Entry\Exception\WrongComponentCountException;
 use ExifEye\core\InvalidArgumentException;
 
 /**
@@ -76,12 +74,6 @@ class Time extends Ascii
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-// xx        if ($format != Format::ASCII) {
-// xx            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::ASCII);
-// xx        }
-// xx        if ($components != 20) {
-// xx            throw new WrongComponentCountException($ifd_id, $tag_id, $components, 20);
-// xx        }
         // TODO: handle timezones.
         return [$data_window->getBytes($data_offset, $components - 1), static::EXIF_STRING];
     }

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\Block\Exception\IfdException;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
@@ -55,13 +56,39 @@ class Tag extends BlockBase
     {
         $ifd_id = isset($options['ifd_id']) ? $options['ifd_id'] : null;
 
-        // Gets from the data window the TAG's elements.
+        // Gets the TAG's elements from the data window.
         $id = $data_window->getShort($offset);
         $format = $data_window->getShort($offset + 2);
         $components = $data_window->getLong($offset + 4);
         $data_element = $data_window->getLong($offset + 8);
 
-        // @todo warn if components or format are not as expected
+        // Warn if format is not as expected.
+        $expected_format = Spec::getTagFormat($ifd_id, $id);
+        if ($expected_format !== null and !in_array($format, $expected_format)) {
+            $expected_format_names = [];
+            foreach ($expected_format as $expected_format_id) {
+                $expected_format_names[] = Format::getName($expected_format_id);
+            }
+            throw new TagException(
+                "Wrong data format '%s' for TAG '%s' in IFD '%s', expected '%s'",
+                Format::getName($format),
+                $this->getName(),
+                Spec::getIfdType($ifd_id),
+                implode(', ', $expected_format_names[]
+            );
+        }
+
+        // Warn if components are not as expected.
+        $expected_components = Spec::getTagComponents($ifd_id, $id);
+        if ($expected_components !== null and $components !== $expected_components) {
+            throw new TagException(
+                "Unexpected number of data components '%d' for TAG '%s' in IFD '%s', expected '%d'",
+                $components,
+                $this->getName(),
+                Spec::getIfdType($ifd_id),
+                $expected_components
+            );
+        }
 
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data

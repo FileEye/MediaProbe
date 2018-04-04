@@ -5,7 +5,6 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\Entry\Core\EntryBase;
-use ExifEye\core\Entry\Exception\UnexpectedFormatException;
 use ExifEye\core\Format;
 
 /**
@@ -57,10 +56,6 @@ class WindowsString extends EntryBase
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-// xx        if ($format != Format::BYTE) {
-// xx            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::BYTE);
-// xx        }
-
         try {
             $bytes = $data_window->getBytes($data_offset, $components);
         } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works

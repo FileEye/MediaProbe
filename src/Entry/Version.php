@@ -20,10 +20,6 @@ class Version extends Undefined
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-// xx        if ($format != Format::UNDEFINED) {
-// xx            throw new UnexpectedFormatException($ifd_id, $tag_id, $format, Format::UNDEFINED);
-// xx        }
-// xx dump([$format, $components, $data_offset, $data_window->getBytes($data_offset, $components)]);
         $version = $data_window->getBytes($data_offset, $components);
         if (!is_numeric($version)) {
             throw new EntryException('Version data incorrect');

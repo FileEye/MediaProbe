@@ -248,6 +248,22 @@ class Spec
     }
 
     /**
+     * Returns the TAG components.
+     *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
+     *
+     * @return int|null
+     *            the TAG count of data components.
+     */
+    public static function getTagName($ifd_id, $tag_id)
+    {
+        return isset(self::getMap()['tags'][$ifd_id][$tag_id]['components']) ? self::getMap()['tags'][$ifd_id][$tag_id]['components'] : null;
+    }
+
+    /**
      * Returns the TAG class.
      *
      * @param int $ifd_id

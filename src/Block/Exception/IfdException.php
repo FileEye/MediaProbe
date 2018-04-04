@@ -5,9 +5,7 @@ namespace ExifEye\core\Block\Exception;
 use ExifEye\core\ExifEyeException;
 
 /**
- * Exception indicating a general problem with the IFD.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * Exception indicating a general problem with an IFD.
  */
 class IfdException extends ExifEyeException
 {
