@@ -2,7 +2,7 @@
 
 namespace ExifEye\core\Block;
 
-use ExifEye\core\Block\Exception\IfdException;
+use ExifEye\core\Block\Exception\TagException;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
