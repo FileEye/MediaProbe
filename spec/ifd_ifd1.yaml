@@ -40,27 +40,22 @@ tags:
     0x010D:
         name: DocumentName
         title: 'Document Name'
-        components: Any
         format: Ascii
     0x010E:
         name: ImageDescription
         title: 'Image Description'
-        components: Any
         format: Ascii
     0x010F:
         name: Make
         title: Manufacturer
-        components: Any
         format: Ascii
     0x0110:
         name: Model
         title: Model
-        components: Any
         format: Ascii
     0x0111:
         name: StripOffsets
         title: 'Strip Offsets'
-        components: Any
         format: [Short, Long]
     0x0112:
         name: Orientation
@@ -90,7 +85,6 @@ tags:
     0x0117:
         name: StripByteCounts
         title: 'Strip Byte Count'
-        components: Any
         format: [Short, Long]
     0x011A:
         name: XResolution
@@ -128,7 +122,6 @@ tags:
     0x0131:
         name: Software
         title: Software
-        components: Any
         format: Ascii
     0x0132:
         name: DateTime
@@ -139,7 +132,6 @@ tags:
     0x013B:
         name: Artist
         title: Artist
-        components: Any
         format: Ascii
     0x013E:
         name: WhitePoint
@@ -199,7 +191,6 @@ tags:
     0x8298:
         name: Copyright
         title: Copyright
-        components: Any
         format: Ascii
         class: ExifEye\core\Entry\IfdCopyright
     0x8769:
@@ -213,35 +204,28 @@ tags:
     0x9C9B:
         name: WindowsXPTitle
         title: 'Windows XP Title'
-        components: Any
-        format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9C:
         name: WindowsXPComment
         title: 'Windows XP Comment'
-        components: Any
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9D:
         name: WindowsXPAuthor
         title: 'Windows XP Author'
-        components: Any
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9E:
         name: WindowsXPKeywords
         title: 'Windows XP Keywords'
-        components: Any
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9F:
         name: WindowsXPSubject
         title: 'Windows XP Subject'
-        components: Any
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0xC4A5:
         name: PrintIM
         title: 'Print IM'
-        components: Unknown
         format: Undefined
