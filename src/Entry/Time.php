@@ -6,6 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\InvalidArgumentException;
+use ExifEye\core\Utility\ConvertTime;
 
 /**
  * Class for holding a date and time.
@@ -104,19 +105,17 @@ class Time extends Ascii
         $type = isset($options['type']) ? $options['type'] : self::UNIX_TIMESTAMP;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
-                $seconds = $this->convertJdToUnix($this->day_count);
+                $seconds = ConvertTime::julianDayToUnix($this->day_count);
                 if ($seconds === false) {
-                    /*
-                     * We get false if the Julian Day Count is outside the range
-                     * of a UNIX timestamp.
-                     */
+                    // We get false if the Julian Day Count is outside the range
+                    // of a UNIX timestamp.
                     return false;
                 } else {
                     return $seconds + $this->seconds;
                 }
                 break;
             case self::EXIF_STRING:
-                list ($year, $month, $day) = $this->convertJdToGregorian($this->day_count);
+                list ($year, $month, $day) = ConvertTime::julianDayToGregorian($this->day_count);
                 $hours = (int) ($this->seconds / 3600);
                 $minutes = (int) ($this->seconds % 3600 / 60);
                 $seconds = $this->seconds % 60;
@@ -156,7 +155,7 @@ class Time extends Ascii
         $type = isset($data[1]) ? $data[1] : self::UNIX_TIMESTAMP;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
-                $this->day_count = $this->convertUnixToJd($timestamp);
+                $this->day_count = ConevrtTime::unixToJulianDay($timestamp);
                 $this->seconds = $timestamp % 86400;
                 break;
 
@@ -169,7 +168,7 @@ class Time extends Ascii
                         $d[$i] = 0;
                     }
                 }
-                $this->day_count = $this->convertGregorianToJd($d[0], $d[1], $d[2]);
+                $this->day_count = ConvertTime::gregorianToJulianDay($d[0], $d[1], $d[2]);
                 $this->seconds = $d[3] * 3600 + $d[4] * 60 + $d[5];
                 break;
 
@@ -199,102 +198,5 @@ class Time extends Ascii
     public function toString(array $options = [])
     {
         return $this->getValue(['type' => self::EXIF_STRING]);
-    }
-
-    // The following four functions are used for converting back and
-    // forth between the date formats. They are used in preference to
-    // the ones from the PHP calendar extension to avoid having to
-    // fiddle with timezones and to avoid depending on the extension.
-    //
-    // See http://www.hermetic.ch/cal_stud/jdn.htm#comp for a reference.
-
-    /**
-     * Converts a date in year/month/day format to a Julian Day count.
-     *
-     * @param integer $year
-     *            the year.
-     * @param integer $month
-     *            the month, 1 to 12.
-     * @param integer $day
-     *            the day in the month.
-     * @return integer the Julian Day count.
-     */
-    public function convertGregorianToJd($year, $month, $day)
-    {
-        // Special case mapping 0/0/0 -> 0
-        if ($year == 0 || $month == 0 || $day == 0) {
-            return 0;
-        }
-
-        $m1412 = ($month <= 2) ? - 1 : 0;
-        return floor((1461 * ($year + 4800 + $m1412)) / 4) + floor((367 * ($month - 2 - 12 * $m1412)) / 12) -
-             floor((3 * floor(($year + 4900 + $m1412) / 100)) / 4) + $day - 32075;
-    }
-
-    /**
-     * Converts a Julian Day count to a year/month/day triple.
-     *
-     * @param
-     *            int the Julian Day count.
-     * @return array an array with three entries: year, month, day.
-     */
-    public function convertJdToGregorian($jd)
-    {
-        // Special case mapping 0 -> 0/0/0
-        if ($jd == 0) {
-            return [
-                0,
-                0,
-                0
-            ];
-        }
-
-        $l = $jd + 68569;
-        $n = floor((4 * $l) / 146097);
-        $l = $l - floor((146097 * $n + 3) / 4);
-        $i = floor((4000 * ($l + 1)) / 1461001);
-        $l = $l - floor((1461 * $i) / 4) + 31;
-        $j = floor((80 * $l) / 2447);
-        $d = $l - floor((2447 * $j) / 80);
-        $l = floor($j / 11);
-        $m = $j + 2 - (12 * $l);
-        $y = 100 * ($n - 49) + $i + $l;
-        return [
-            $y,
-            $m,
-            $d
-        ];
-    }
-
-    /**
-     * Converts a UNIX timestamp to a Julian Day count.
-     *
-     * @param integer $timestamp
-     *            the timestamp.
-     * @return integer the Julian Day count.
-     */
-    public function convertUnixToJd($timestamp)
-    {
-        return (int) (floor($timestamp / 86400) + 2440588);
-    }
-
-    /**
-     * Converts a Julian Day count to a UNIX timestamp.
-     *
-     * @param integer $jd
-     *            the Julian Day count.
-     *
-     * @return mixed $timestamp the integer timestamp or false if the
-     *         day count cannot be represented as a UNIX timestamp.
-     */
-    public function convertJdToUnix($jd)
-    {
-        if ($jd > 0) {
-            $timestamp = ($jd - 2440588) * 86400;
-            if ($timestamp >= 0) {
-                return $timestamp;
-            }
-        }
-        return false;
     }
 }
