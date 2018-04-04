@@ -112,10 +112,12 @@ tags:
         name: MeasuredColor
         title: 'Measured color'
         format: Short
+        components: 4
     0x00B4:
         name: ColorSpace
         title: 'Color Space'
-        format: SignedShort
+        format: Short
+        components: 1
         text:
             mapping:
                 1: 'sRGB'
