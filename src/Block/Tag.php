@@ -69,25 +69,25 @@ class Tag extends BlockBase
             foreach ($expected_format as $expected_format_id) {
                 $expected_format_names[] = Format::getName($expected_format_id);
             }
-            throw new TagException(
+            ExifEye::maybeThrow(new TagException(
                 "Wrong data format '%s' for TAG '%s' in IFD '%s', expected '%s'",
                 Format::getName($format),
                 Spec::getTagName($ifd_id, $id),
                 Spec::getIfdType($ifd_id),
                 implode(', ', $expected_format_names)
-            );
+            ));
         }
 
         // Warn if components are not as expected.
         $expected_components = Spec::getTagComponents($ifd_id, $id);
         if ($expected_components !== null and $components !== $expected_components) {
-            throw new TagException(
+            ExifEye::maybeThrow(new TagException(
                 "Unexpected number of data components '%d' for TAG '%s' in IFD '%s', expected '%d'",
                 $components,
                 Spec::getTagName($ifd_id, $id),
                 Spec::getIfdType($ifd_id),
                 $expected_components
-            );
+            ));
         }
 
         // If the data size is bigger than 4 bytes, then actual data is not in
