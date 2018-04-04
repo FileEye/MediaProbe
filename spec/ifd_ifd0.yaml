@@ -4,7 +4,7 @@ alias:
   - '0'
   - 'Main'
 postLoad:
-  - ExifEye\core\Entry\MakerNote::tagToIfd
+  - ExifEye\core\Entry\ExifMakerNote::tagToIfd
 tags:
     0x0100:
         name: ImageWidth

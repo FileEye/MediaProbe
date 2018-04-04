@@ -10,15 +10,8 @@ use ExifEye\core\Block\Ifd;
 /**
  * Class used to hold data for MakerNote tags.
  */
-class MakerNote extends Undefined
+class ExifMakerNote extends Undefined
 {
-    /**
-     * The offset of the MakerNote IFD vs the main DataWindow.
-     *
-     * @var int
-     */
-    protected $dataOffset;
-
     /**
      * {@inheritdoc}
      */
@@ -37,29 +30,16 @@ class MakerNote extends Undefined
      */
     public function setValue(array $data)
     {
-        parent::setValue([$data[0]]);
-        $this->setDataOffset($data[1]);
+        $this->value = $data;
+        $this->components = strlen($data[0]);
     }
 
     /**
-     * Set the offset of the MakerNote IFD vs the main DataWindow.
-     *
-     * @param int $data_offset
-     *            the offset of the main DataWindow where data is stored.
+     * {@inheritdoc}
      */
-    public function setDataOffset($data_offset)
+    public function getValue(array $options = [])
     {
-        $this->dataOffset = $data_offset;
-    }
-
-    /**
-     * Get the offset of the MakerNote IFD vs the main DataWindow.
-     *
-     * @return int
-     */
-    public function getDataOffset()
-    {
-        return $this->dataOffset;
+        return $this->value;
     }
 
     /**
@@ -107,7 +87,7 @@ class MakerNote extends Undefined
         // Load maker note into IFD.
         $ifd_class = Spec::getIfdClass($maker_note_ifd_id);
         $ifd = new $ifd_class($maker_note_ifd_id);
-        $ifd->load($d, $maker_note_tag->getEntry()->getDataOffset());
+        $ifd->load($d, $maker_note_tag->getEntry()->getValue()[1]);
         $exif_ifd->addSubIfd($ifd);
     }
 }
