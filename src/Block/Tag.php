@@ -74,7 +74,7 @@ class Tag extends BlockBase
                 Format::getName($format),
                 Spec::getTagName($ifd_id, $id),
                 Spec::getIfdType($ifd_id),
-                implode(', ', $expected_format_names[])
+                implode(', ', $expected_format_names)
             );
         }
 
