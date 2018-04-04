@@ -75,7 +75,6 @@ class Time extends Ascii
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-        // TODO: handle timezones.
         return [$data_window->getBytes($data_offset, $components - 1), static::EXIF_STRING];
     }
 
@@ -102,7 +101,7 @@ class Time extends Ascii
      */
     public function getValue(array $options = [])
     {
-        $type = isset($options['type']) ? $options['type'] : self::UNIX_TIMESTAMP;
+        $type = isset($options['type']) ? $options['type'] : self::EXIF_STRING;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
                 $seconds = ConvertTime::julianDayToUnix($this->day_count);
@@ -152,7 +151,7 @@ class Time extends Ascii
     public function setValue(array $data)
     {
         $timestamp = $data[0];
-        $type = isset($data[1]) ? $data[1] : self::UNIX_TIMESTAMP;
+        $type = isset($data[1]) ? $data[1] : self::EXIF_STRING;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
                 $this->day_count = ConvertTime::unixToJulianDay($timestamp);
@@ -189,14 +188,6 @@ class Time extends Ascii
 
         // Now finally update the string which will be used when this is
         // turned into bytes.
-        parent::setValue([$this->getValue(['type' => self::EXIF_STRING])]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toString(array $options = [])
-    {
-        return $this->getValue(['type' => self::EXIF_STRING]);
+        parent::setValue([$this->getValue()]);
     }
 }
