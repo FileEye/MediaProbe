@@ -258,7 +258,7 @@ class Spec
      * @return int|null
      *            the TAG count of data components.
      */
-    public static function getTagName($ifd_id, $tag_id)
+    public static function getTagComponents($ifd_id, $tag_id)
     {
         return isset(self::getMap()['tags'][$ifd_id][$tag_id]['components']) ? self::getMap()['tags'][$ifd_id][$tag_id]['components'] : null;
     }
