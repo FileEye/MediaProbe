@@ -72,7 +72,7 @@ class Tag extends BlockBase
             throw new TagException(
                 "Wrong data format '%s' for TAG '%s' in IFD '%s', expected '%s'",
                 Format::getName($format),
-                $this->getName(),
+                Spec::getTagName($ifd_id, $id),
                 Spec::getIfdType($ifd_id),
                 implode(', ', $expected_format_names[])
             );
@@ -84,7 +84,7 @@ class Tag extends BlockBase
             throw new TagException(
                 "Unexpected number of data components '%d' for TAG '%s' in IFD '%s', expected '%d'",
                 $components,
-                $this->getName(),
+                Spec::getTagName($ifd_id, $id),
                 Spec::getIfdType($ifd_id),
                 $expected_components
             );
