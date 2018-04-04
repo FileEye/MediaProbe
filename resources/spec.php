@@ -69,7 +69,7 @@ return array (
     ),
     10 =>
     array (
-      0 => 'ExifEye\\core\\Entry\\MakerNote::tagToIfd',
+      0 => 'ExifEye\\core\\Entry\\ExifMakerNote::tagToIfd',
     ),
     11 =>
     array (
@@ -161,7 +161,6 @@ return array (
       array (
         'name' => 'RelatedImageFileFormat',
         'title' => 'Related Image File Format',
-        'components' => 'Unknown',
         'format' =>
         array (
           0 => 2,
@@ -171,7 +170,7 @@ return array (
       array (
         'name' => 'RelatedImageWidth',
         'title' => 'Related Image Width',
-        'components' => 'Unknown',
+        'components' => 1,
         'format' =>
         array (
           0 => 3,
@@ -181,7 +180,7 @@ return array (
       array (
         'name' => 'RelatedImageLength',
         'title' => 'Related Image Length',
-        'components' => 'Unknown',
+        'components' => 1,
         'format' =>
         array (
           0 => 3,
@@ -337,7 +336,6 @@ return array (
       array (
         'name' => 'GPSSatellites',
         'title' => 'GPSSatellites',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -437,7 +435,6 @@ return array (
       array (
         'name' => 'GPSMapDatum',
         'title' => 'GPSMapDatum',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -527,7 +524,6 @@ return array (
       array (
         'name' => 'GPSProcessingMethod',
         'title' => 'GPSProcessingMethod',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 7,
@@ -537,7 +533,6 @@ return array (
       array (
         'name' => 'GPSAreaInformation',
         'title' => 'GPSAreaInformation',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 7,
@@ -579,7 +574,6 @@ return array (
       array (
         'name' => 'CFAPattern',
         'title' => 'CFA Pattern',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 7,
@@ -636,7 +630,6 @@ return array (
       array (
         'name' => 'SpectralSensitivity',
         'title' => 'Spectral Sensitivity',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -646,7 +639,6 @@ return array (
       array (
         'name' => 'ISOSpeedRatings',
         'title' => 'ISO Speed Ratings',
-        'components' => 2,
         'format' =>
         array (
           0 => 3,
@@ -656,7 +648,6 @@ return array (
       array (
         'name' => 'OECF',
         'title' => 'OECF',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 7,
@@ -975,13 +966,12 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\MakerNote',
+        'class' => 'ExifEye\\core\\Entry\\ExifMakerNote',
       ),
       37510 =>
       array (
         'name' => 'UserComment',
         'title' => 'User Comment',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 7,
@@ -992,7 +982,6 @@ return array (
       array (
         'name' => 'SubSecTime',
         'title' => 'SubSec Time',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -1002,7 +991,6 @@ return array (
       array (
         'name' => 'SubSecTimeOriginal',
         'title' => 'SubSec Time Original',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -1012,7 +1000,6 @@ return array (
       array (
         'name' => 'SubSecTimeDigitized',
         'title' => 'SubSec Time Digitized',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -1078,7 +1065,6 @@ return array (
       array (
         'name' => 'RelatedSoundFile',
         'title' => 'Related Sound File',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -1104,7 +1090,6 @@ return array (
       array (
         'name' => 'SpatialFrequencyResponse',
         'title' => 'Spatial Frequency Response',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 7,
@@ -1285,7 +1270,7 @@ return array (
         'components' => 1,
         'format' =>
         array (
-          0 => 5,
+          0 => 3,
         ),
       ),
       41990 =>
@@ -1390,7 +1375,6 @@ return array (
       array (
         'name' => 'DeviceSettingDescription',
         'title' => 'Device Setting Description',
-        'components' => 'Unknown',
       ),
       41996 =>
       array (
@@ -1565,10 +1549,6 @@ return array (
       array (
         'name' => 'CameraInfo',
         'title' => 'Camera Info',
-        'format' =>
-        array (
-          0 => 3,
-        ),
       ),
       15 =>
       array (
@@ -1590,7 +1570,7 @@ return array (
         'title' => 'Picture Info',
         'format' =>
         array (
-          0 => 7,
+          0 => 3,
         ),
       ),
       19 =>
@@ -1599,8 +1579,9 @@ return array (
         'title' => 'Thumbnail Image Valid Area',
         'format' =>
         array (
-          0 => 8,
+          0 => 3,
         ),
+        'components' => 4,
       ),
       21 =>
       array (
@@ -1677,7 +1658,7 @@ return array (
         'title' => 'Dust removal data',
         'format' =>
         array (
-          0 => 2,
+          0 => 7,
         ),
       ),
       153 =>
@@ -1718,8 +1699,9 @@ return array (
         'title' => 'Color Space',
         'format' =>
         array (
-          0 => 8,
+          0 => 3,
         ),
+        'components' => 1,
         'text' =>
         array (
           'mapping' =>
@@ -3398,7 +3380,6 @@ return array (
       array (
         'name' => 'DocumentName',
         'title' => 'Document Name',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3408,7 +3389,6 @@ return array (
       array (
         'name' => 'ImageDescription',
         'title' => 'Image Description',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3418,7 +3398,6 @@ return array (
       array (
         'name' => 'Make',
         'title' => 'Manufacturer',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3428,7 +3407,6 @@ return array (
       array (
         'name' => 'Model',
         'title' => 'Model',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3438,7 +3416,6 @@ return array (
       array (
         'name' => 'StripOffsets',
         'title' => 'Strip Offsets',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 3,
@@ -3494,7 +3471,6 @@ return array (
       array (
         'name' => 'StripByteCounts',
         'title' => 'Strip Byte Count',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 3,
@@ -3571,7 +3547,6 @@ return array (
       array (
         'name' => 'Software',
         'title' => 'Software',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3592,7 +3567,6 @@ return array (
       array (
         'name' => 'Artist',
         'title' => 'Artist',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3733,7 +3707,6 @@ return array (
       array (
         'name' => 'WindowsXPTitle',
         'title' => 'Windows XP Title',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -3744,7 +3717,6 @@ return array (
       array (
         'name' => 'WindowsXPComment',
         'title' => 'Windows XP Comment',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -3755,7 +3727,6 @@ return array (
       array (
         'name' => 'WindowsXPAuthor',
         'title' => 'Windows XP Author',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -3766,7 +3737,6 @@ return array (
       array (
         'name' => 'WindowsXPKeywords',
         'title' => 'Windows XP Keywords',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -3777,7 +3747,6 @@ return array (
       array (
         'name' => 'WindowsXPSubject',
         'title' => 'Windows XP Subject',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -3788,7 +3757,6 @@ return array (
       array (
         'name' => 'PrintIM',
         'title' => 'Print IM',
-        'components' => 'Unknown',
         'format' =>
         array (
           0 => 7,
@@ -3869,7 +3837,6 @@ return array (
       array (
         'name' => 'DocumentName',
         'title' => 'Document Name',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3879,7 +3846,6 @@ return array (
       array (
         'name' => 'ImageDescription',
         'title' => 'Image Description',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3889,7 +3855,6 @@ return array (
       array (
         'name' => 'Make',
         'title' => 'Manufacturer',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3899,7 +3864,6 @@ return array (
       array (
         'name' => 'Model',
         'title' => 'Model',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -3909,7 +3873,6 @@ return array (
       array (
         'name' => 'StripOffsets',
         'title' => 'Strip Offsets',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 3,
@@ -3965,7 +3928,6 @@ return array (
       array (
         'name' => 'StripByteCounts',
         'title' => 'Strip Byte Count',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 3,
@@ -4042,7 +4004,6 @@ return array (
       array (
         'name' => 'Software',
         'title' => 'Software',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -4063,7 +4024,6 @@ return array (
       array (
         'name' => 'Artist',
         'title' => 'Artist',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -4182,7 +4142,6 @@ return array (
       array (
         'name' => 'Copyright',
         'title' => 'Copyright',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 2,
@@ -4205,18 +4164,12 @@ return array (
       array (
         'name' => 'WindowsXPTitle',
         'title' => 'Windows XP Title',
-        'components' => 'Any',
-        'format' =>
-        array (
-          0 => 1,
-        ),
         'class' => 'ExifEye\\core\\Entry\\WindowsString',
       ),
       40092 =>
       array (
         'name' => 'WindowsXPComment',
         'title' => 'Windows XP Comment',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -4227,7 +4180,6 @@ return array (
       array (
         'name' => 'WindowsXPAuthor',
         'title' => 'Windows XP Author',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -4238,7 +4190,6 @@ return array (
       array (
         'name' => 'WindowsXPKeywords',
         'title' => 'Windows XP Keywords',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -4249,7 +4200,6 @@ return array (
       array (
         'name' => 'WindowsXPSubject',
         'title' => 'Windows XP Subject',
-        'components' => 'Any',
         'format' =>
         array (
           0 => 1,
@@ -4260,7 +4210,6 @@ return array (
       array (
         'name' => 'PrintIM',
         'title' => 'Print IM',
-        'components' => 'Unknown',
         'format' =>
         array (
           0 => 7,
