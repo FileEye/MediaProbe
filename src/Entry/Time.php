@@ -155,7 +155,7 @@ class Time extends Ascii
         $type = isset($data[1]) ? $data[1] : self::UNIX_TIMESTAMP;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
-                $this->day_count = ConevrtTime::unixToJulianDay($timestamp);
+                $this->day_count = ConvertTime::unixToJulianDay($timestamp);
                 $this->seconds = $timestamp % 86400;
                 break;
 
