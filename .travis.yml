@@ -2,11 +2,11 @@ language: php
 sudo: false
 
 php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - 7.1
+  #- 5.4
+  #- 5.5
+  #- 5.6
+  #- 7.0
+  #- 7.1
   - 7.2
   - nightly
 
@@ -40,9 +40,9 @@ script:
   #- php examples/dump-image.php -d  test/broken_images/misplaced-exif.jpg
   #- php examples/dump-image.php -d test/images/gh-16.jpg
   #- php examples/dump-image.php -d test/imagetests/apple-iphone7.JPG
-  - php examples/dump-image.php -d test/imagetests/canon-eos-650d.jpg
-  - php examples/dump-image.php -d test/imagetests/canon-ixus-ii.jpg
-  - php examples/dump-image.php -d test/imagetests/canon-powershot-s60.jpg
+  #- php examples/dump-image.php -d test/imagetests/canon-eos-650d.jpg
+  #- php examples/dump-image.php -d test/imagetests/canon-ixus-ii.jpg
+  #- php examples/dump-image.php -d test/imagetests/canon-powershot-s60.jpg
   #- php examples/dump-image.php -d test/images/gh-16.jpg
   #- php bin/exifeye dump test/broken_images/gh-10-a.jpg
   #- php bin/exifeye dump test/broken_images/gh-10-b.jpg
