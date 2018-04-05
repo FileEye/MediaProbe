@@ -11,25 +11,9 @@ use ExifEye\core\Utility\ConvertTime;
 /**
  * Class for holding a date and time.
  *
- * This class can hold a timestamp, and it will be used as
- * in this example where the time is advanced by one week:
- * <code>
- * $entry = $ifd->getEntry(PelTag::DATE_TIME_ORIGINAL);
- * $time = $entry->getValue();
- * print('The image was taken on the ' . date('jS', $time));
- * $entry->setValue($time + 7 * 24 * 3600);
- * </code>
- *
- * The example used a standard UNIX timestamp, which is the default
- * for this class.
- *
- * But the Exif format defines dates outside the range of a UNIX
- * timestamp (about 1970 to 2038) and so you can also get access to
- * the timestamp in two other formats: a simple string or a Julian Day
- * Count. Please see the Calendar extension in the PHP Manual for more
- * information about the Julian Day Count.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * This class holds a timestamp as it is specifed by the EXIF specs. The
+ * ::getValue and ::setValue methods can get/set value in different formats
+ * like UNIX timestamp or Julian Day count.
  */
 class Time extends Ascii
 {
@@ -47,28 +31,6 @@ class Time extends Ascii
      * Constant denoting a Julian Day Count.
      */
     const JULIAN_DAY_COUNT = 3;
-
-    /**
-     * The Julian Day Count of the timestamp held by this entry.
-     *
-     * This is an integer counting the number of whole days since
-     * January 1st, 4713 B.C. The fractional part of the timestamp held
-     * by this entry is stored in {@link $seconds}.
-     *
-     * @var int
-     */
-    private $day_count;
-
-    /**
-     * The number of seconds into the day of the timestamp held by this
-     * entry.
-     *
-     * The number of whole days is stored in {@link $day_count} and the
-     * number of seconds left-over is stored here.
-     *
-     * @var int
-     */
-    private $seconds;
 
     /**
      * {@inheritdoc}
@@ -102,25 +64,35 @@ class Time extends Ascii
     public function getValue(array $options = [])
     {
         $type = isset($options['type']) ? $options['type'] : self::EXIF_STRING;
+        // Clean the timestamp: some timestamps are broken other
+        // separators than ':' and ' '.
+        $d = preg_split('/[^0-9]+/', $value[0]);
+        for ($i = 0; $i < 6; $i ++) {
+            if (empty($d[$i])) {
+                $d[$i] = 0;
+            }
+        }
+        $day_count = ConvertTime::gregorianToJulianDay($d[0], $d[1], $d[2]);
+        $xseconds = $d[3] * 3600 + $d[4] * 60 + $d[5];
         switch ($type) {
             case self::UNIX_TIMESTAMP:
-                $seconds = ConvertTime::julianDayToUnix($this->day_count);
+                $seconds = ConvertTime::julianDayToUnix($day_count);
                 if ($seconds === false) {
                     // We get false if the Julian Day Count is outside the range
                     // of a UNIX timestamp.
                     return false;
                 } else {
-                    return $seconds + $this->seconds;
+                    return $seconds + $xseconds;
                 }
                 break;
             case self::EXIF_STRING:
-                list ($year, $month, $day) = ConvertTime::julianDayToGregorian($this->day_count);
-                $hours = (int) ($this->seconds / 3600);
-                $minutes = (int) ($this->seconds % 3600 / 60);
-                $seconds = $this->seconds % 60;
+                list ($year, $month, $day) = ConvertTime::julianDayToGregorian($day_count);
+                $hours = (int) ($xseconds / 3600);
+                $minutes = (int) ($xseconds % 3600 / 60);
+                $seconds = $xseconds % 60;
                 return sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds);
             case self::JULIAN_DAY_COUNT:
-                return $this->day_count + $this->seconds / 86400;
+                return $day_count + $xseconds / 86400;
             default:
                 throw new InvalidArgumentException(
                     'Expected UNIX_TIMESTAMP (%d), ' . 'EXIF_STRING (%d), or ' . 'JULIAN_DAY_COUNT (%d) for $type, got %d.',
@@ -154,26 +126,41 @@ class Time extends Ascii
         $type = isset($data[1]) ? $data[1] : self::EXIF_STRING;
         switch ($type) {
             case self::UNIX_TIMESTAMP:
-                $this->day_count = ConvertTime::unixToJulianDay($timestamp);
-                $this->seconds = $timestamp % 86400;
+/*                $this->day_count = ConvertTime::unixToJulianDay($timestamp);
+                $this->seconds = $timestamp % 86400;*/
+                $day_count = ConvertTime::unixToJulianDay($timestamp);
+                $seconds = $timestamp % 86400;*/
+                list ($year, $month, $day) = ConvertTime::julianDayToGregorian($day_count);
+                $hours = (int) ($seconds / 3600);
+                $minutes = (int) ($seconds % 3600 / 60);
+                $seconds = $seconds % 60;
+                parent::setValue([sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds)]);
                 break;
 
             case self::EXIF_STRING:
                 // Clean the timestamp: some timestamps are broken other
                 // separators than ':' and ' '.
-                $d = preg_split('/[^0-9]+/', $timestamp);
+/*                $d = preg_split('/[^0-9]+/', $timestamp);
                 for ($i = 0; $i < 6; $i ++) {
                     if (empty($d[$i])) {
                         $d[$i] = 0;
                     }
                 }
                 $this->day_count = ConvertTime::gregorianToJulianDay($d[0], $d[1], $d[2]);
-                $this->seconds = $d[3] * 3600 + $d[4] * 60 + $d[5];
+                $this->seconds = $d[3] * 3600 + $d[4] * 60 + $d[5];*/
+                parent::setValue([$timestamp]);
                 break;
 
             case self::JULIAN_DAY_COUNT:
-                $this->day_count = (int) floor($timestamp);
-                $this->seconds = (int) (86400 * ($timestamp - floor($timestamp)));
+/*                $this->day_count = (int) floor($timestamp);
+                $this->seconds = (int) (86400 * ($timestamp - floor($timestamp)));*/
+                $day_count = (int) floor($timestamp);
+                $seconds = (int) (86400 * ($timestamp - floor($timestamp)));
+                list ($year, $month, $day) = ConvertTime::julianDayToGregorian($day_count);
+                $hours = (int) ($seconds / 3600);
+                $minutes = (int) ($seconds % 3600 / 60);
+                $seconds = $seconds % 60;
+                parent::setValue([sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds)]);
                 break;
 
             default:
@@ -188,6 +175,6 @@ class Time extends Ascii
 
         // Now finally update the string which will be used when this is
         // turned into bytes.
-        parent::setValue([$this->getValue()]);
+        //parent::setValue([$this->getValue()]);
     }
 }
