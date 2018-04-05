@@ -129,7 +129,7 @@ class Time extends Ascii
 /*                $this->day_count = ConvertTime::unixToJulianDay($timestamp);
                 $this->seconds = $timestamp % 86400;*/
                 $day_count = ConvertTime::unixToJulianDay($timestamp);
-                $seconds = $timestamp % 86400;*/
+                $seconds = $timestamp % 86400;
                 list ($year, $month, $day) = ConvertTime::julianDayToGregorian($day_count);
                 $hours = (int) ($seconds / 3600);
                 $minutes = (int) ($seconds % 3600 / 60);
