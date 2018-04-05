@@ -66,7 +66,7 @@ class Time extends Ascii
         $type = isset($options['type']) ? $options['type'] : self::EXIF_STRING;
         // Clean the timestamp: some timestamps are broken other
         // separators than ':' and ' '.
-        $d = preg_split('/[^0-9]+/', $value[0]);
+        $d = preg_split('/[^0-9]+/', $this->value[0]);
         for ($i = 0; $i < 6; $i ++) {
             if (empty($d[$i])) {
                 $d[$i] = 0;
