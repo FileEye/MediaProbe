@@ -40,7 +40,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
 
         $entry->setValue(['0000:00:00 00:00:00']);
         $this->assertFalse($entry->getValue(['type' => Time::UNIX_TIMESTAMP]));
-        $this->assertEquals('0000:00:00 00:00:00', $entry->getValue();
+        $this->assertEquals('0000:00:00 00:00:00', $entry->getValue());
         $this->assertEquals(0, $entry->getValue(['type' => Time::JULIAN_DAY_COUNT]));
 
         $entry->setValue(['9999:12:31 23:59:59']);
