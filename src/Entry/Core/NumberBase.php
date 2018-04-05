@@ -49,12 +49,12 @@ abstract class NumberBase extends EntryBase
      */
     public function setValue(array $data)
     {
-      foreach ($data as $v) {
-          $this->validateNumber($v);
-      }
+        foreach ($data as $v) {
+            $this->validateNumber($v);
+        }
 
-      $this->components = count($data);
-      $this->value = $data;
+        $this->components = count($data);
+        $this->value = $data;
     }
 
     /**

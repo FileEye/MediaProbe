@@ -100,8 +100,7 @@ class Tag extends BlockBase
                 $data_offset += $options['ifd_offset'];
             }
             $data_offset += $options['tagsSkipOffset'];
-        }
-        else {
+        } else {
             $data_offset = $offset + 8;
         }
 

@@ -87,7 +87,7 @@ abstract class ConvertTime
      * @param int $jd
      *            the Julian Day count.
      *
-     * @return mixed 
+     * @return mixed
      *            the integer timestamp or false if the day count cannot be
      *            represented as a UNIX timestamp.
      */

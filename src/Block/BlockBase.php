@@ -179,5 +179,4 @@ abstract class BlockBase
     {
         return isset($this->entry) ? $this->entry->getText() : null;
     }
-
 }

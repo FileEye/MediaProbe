@@ -129,11 +129,9 @@ class Time extends Ascii
                 $hours = (int) ($seconds / 3600);
                 $minutes = (int) ($seconds % 3600 / 60);
                 $seconds = $seconds % 60;
-                parent::setValue([sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds)]);
-                break;
+                return parent::setValue([sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds)]);
             case self::EXIF_STRING:
-                parent::setValue([$timestamp]);
-                break;
+                return parent::setValue([$timestamp]);
             case self::JULIAN_DAY_COUNT:
                 $day_count = (int) floor($timestamp);
                 $seconds = (int) (86400 * ($timestamp - floor($timestamp)));
@@ -141,8 +139,7 @@ class Time extends Ascii
                 $hours = (int) ($seconds / 3600);
                 $minutes = (int) ($seconds % 3600 / 60);
                 $seconds = $seconds % 60;
-                parent::setValue([sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds)]);
-                break;
+                return parent::setValue([sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds)]);
         }
 
         throw new InvalidArgumentException(
