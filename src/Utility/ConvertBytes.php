@@ -17,7 +17,7 @@ namespace ExifEye\core\Utility;
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class Convert
+class ConvertBytes
 {
     /**
      * Little-endian (Intel) byte order.

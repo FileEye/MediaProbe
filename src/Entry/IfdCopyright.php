@@ -8,7 +8,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class for holding copyright information.
@@ -52,7 +52,7 @@ class IfdCopyright extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         if ($this->value[1] === '') {
             return $this->value[0] .  chr(0x00);

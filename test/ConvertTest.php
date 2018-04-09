@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 class ConvertTest extends ExifEyeTestCaseBase
 {
@@ -11,40 +11,40 @@ class ConvertTest extends ExifEyeTestCaseBase
 
     public function testLongLittle()
     {
-        $o = Convert::LITTLE_ENDIAN;
+        $o = ConvertBytes::LITTLE_ENDIAN;
 
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 0, $o), 0x00000000);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 1, $o), 0x01000000);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 2, $o), 0x23010000);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 3, $o), 0x45230100);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 4, $o), 0x67452301);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 5, $o), 0x89674523);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 6, $o), 0xAB896745);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 7, $o), 0xCDAB8967);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 8, $o), 0xEFCDAB89);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 9, $o), 0xFFEFCDAB);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 10, $o), 0xFFFFEFCD);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 11, $o), 0xFFFFFFEF);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 12, $o), 0xFFFFFFFF);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 0, $o), 0x00000000);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 1, $o), 0x01000000);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 2, $o), 0x23010000);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 3, $o), 0x45230100);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 4, $o), 0x67452301);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 5, $o), 0x89674523);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 6, $o), 0xAB896745);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 7, $o), 0xCDAB8967);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 8, $o), 0xEFCDAB89);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 9, $o), 0xFFEFCDAB);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 10, $o), 0xFFFFEFCD);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 11, $o), 0xFFFFFFEF);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 12, $o), 0xFFFFFFFF);
     }
 
     public function testLongBig()
     {
-        $o = Convert::BIG_ENDIAN;
+        $o = ConvertBytes::BIG_ENDIAN;
 
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 0, $o), 0x00000000);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 1, $o), 0x00000001);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 2, $o), 0x00000123);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 3, $o), 0x00012345);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 4, $o), 0x01234567);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 5, $o), 0x23456789);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 6, $o), 0x456789AB);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 7, $o), 0x6789ABCD);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 8, $o), 0x89ABCDEF);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 9, $o), 0xABCDEFFF);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 10, $o), 0xCDEFFFFF);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 11, $o), 0xEFFFFFFF);
-        $this->assertEquals(Convert::bytesToLong($this->bytes, 12, $o), 0xFFFFFFFF);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 0, $o), 0x00000000);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 1, $o), 0x00000001);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 2, $o), 0x00000123);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 3, $o), 0x00012345);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 4, $o), 0x01234567);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 5, $o), 0x23456789);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 6, $o), 0x456789AB);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 7, $o), 0x6789ABCD);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 8, $o), 0x89ABCDEF);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 9, $o), 0xABCDEFFF);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 10, $o), 0xCDEFFFFF);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 11, $o), 0xEFFFFFFF);
+        $this->assertEquals(ConvertBytes::bytesToLong($this->bytes, 12, $o), 0xFFFFFFFF);
     }
 
     public function testSignedLongLittle()
@@ -53,7 +53,7 @@ class ConvertTest extends ExifEyeTestCaseBase
         $this->markTestIncomplete(
             'Does not work on 64bit systems!'
         );
-        $o = Convert::LITTLE_ENDIAN;
+        $o = ConvertBytes::LITTLE_ENDIAN;
 
         /*
          * The easiest way to calculate the numbers to compare with, is to
@@ -61,19 +61,19 @@ class ConvertTest extends ExifEyeTestCaseBase
          * operators PHP will return a proper signed 32 bit integer.
          */
 
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 0, $o), 0x00 << 24 | 0x00 << 16 | 0x00 << 8 | 0x00);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 1, $o), 0x01 << 24 | 0x00 << 16 | 0x00 << 8 | 0x00);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 2, $o), 0x23 << 24 | 0x01 << 16 | 0x00 << 8 | 0x00);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 3, $o), 0x45 << 24 | 0x23 << 16 | 0x01 << 8 | 0x00);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 4, $o), 0x67 << 24 | 0x45 << 16 | 0x23 << 8 | 0x01);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 5, $o), 0x89 << 24 | 0x67 << 16 | 0x45 << 8 | 0x23);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 6, $o), 0xAB << 24 | 0x89 << 16 | 0x67 << 8 | 0x45);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 7, $o), 0xCD << 24 | 0xAB << 16 | 0x89 << 8 | 0x67);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 8, $o), 0xEF << 24 | 0xCD << 16 | 0xAB << 8 | 0x89);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 9, $o), 0xFF << 24 | 0xEF << 16 | 0xCD << 8 | 0xAB);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 10, $o), 0xFF << 24 | 0xFF << 16 | 0xEF << 8 | 0xCD);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 11, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xEF);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 12, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 0, $o), 0x00 << 24 | 0x00 << 16 | 0x00 << 8 | 0x00);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 1, $o), 0x01 << 24 | 0x00 << 16 | 0x00 << 8 | 0x00);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 2, $o), 0x23 << 24 | 0x01 << 16 | 0x00 << 8 | 0x00);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 3, $o), 0x45 << 24 | 0x23 << 16 | 0x01 << 8 | 0x00);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 4, $o), 0x67 << 24 | 0x45 << 16 | 0x23 << 8 | 0x01);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 5, $o), 0x89 << 24 | 0x67 << 16 | 0x45 << 8 | 0x23);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 6, $o), 0xAB << 24 | 0x89 << 16 | 0x67 << 8 | 0x45);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 7, $o), 0xCD << 24 | 0xAB << 16 | 0x89 << 8 | 0x67);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 8, $o), 0xEF << 24 | 0xCD << 16 | 0xAB << 8 | 0x89);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 9, $o), 0xFF << 24 | 0xEF << 16 | 0xCD << 8 | 0xAB);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 10, $o), 0xFF << 24 | 0xFF << 16 | 0xEF << 8 | 0xCD);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 11, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xEF);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 12, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
     }
 
     public function testSignedLongBig()
@@ -83,144 +83,144 @@ class ConvertTest extends ExifEyeTestCaseBase
             'Does not work on 64bit systems!'
         );
 
-        $o = Convert::BIG_ENDIAN;
+        $o = ConvertBytes::BIG_ENDIAN;
 
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 0, $o), 0x00 << 24 | 0x00 << 16 | 0x00 << 8 | 0x00);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 1, $o), 0x00 << 24 | 0x00 << 16 | 0x00 << 8 | 0x01);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 2, $o), 0x00 << 24 | 0x00 << 16 | 0x01 << 8 | 0x23);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 3, $o), 0x00 << 24 | 0x01 << 16 | 0x23 << 8 | 0x45);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 4, $o), 0x01 << 24 | 0x23 << 16 | 0x45 << 8 | 0x67);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 5, $o), 0x23 << 24 | 0x45 << 16 | 0x67 << 8 | 0x89);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 6, $o), 0x45 << 24 | 0x67 << 16 | 0x89 << 8 | 0xAB);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 7, $o), 0x67 << 24 | 0x89 << 16 | 0xAB << 8 | 0xCD);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 8, $o), 0x89 << 24 | 0xAB << 16 | 0xCD << 8 | 0xEF);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 9, $o), 0xAB << 24 | 0xCD << 16 | 0xEF << 8 | 0xFF);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 10, $o), 0xCD << 24 | 0xEF << 16 | 0xFF << 8 | 0xFF);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 11, $o), 0xEF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
-        $this->assertEquals(Convert::bytesToSignedLong($this->bytes, 12, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 0, $o), 0x00 << 24 | 0x00 << 16 | 0x00 << 8 | 0x00);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 1, $o), 0x00 << 24 | 0x00 << 16 | 0x00 << 8 | 0x01);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 2, $o), 0x00 << 24 | 0x00 << 16 | 0x01 << 8 | 0x23);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 3, $o), 0x00 << 24 | 0x01 << 16 | 0x23 << 8 | 0x45);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 4, $o), 0x01 << 24 | 0x23 << 16 | 0x45 << 8 | 0x67);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 5, $o), 0x23 << 24 | 0x45 << 16 | 0x67 << 8 | 0x89);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 6, $o), 0x45 << 24 | 0x67 << 16 | 0x89 << 8 | 0xAB);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 7, $o), 0x67 << 24 | 0x89 << 16 | 0xAB << 8 | 0xCD);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 8, $o), 0x89 << 24 | 0xAB << 16 | 0xCD << 8 | 0xEF);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 9, $o), 0xAB << 24 | 0xCD << 16 | 0xEF << 8 | 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 10, $o), 0xCD << 24 | 0xEF << 16 | 0xFF << 8 | 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 11, $o), 0xEF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToSignedLong($this->bytes, 12, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
     }
 
     public function testShortLittle()
     {
-        $o = Convert::LITTLE_ENDIAN;
+        $o = ConvertBytes::LITTLE_ENDIAN;
 
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 0, $o), 0x0000);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 1, $o), 0x0000);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 2, $o), 0x0000);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 3, $o), 0x0100);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 4, $o), 0x2301);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 5, $o), 0x4523);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 6, $o), 0x6745);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 7, $o), 0x8967);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 8, $o), 0xAB89);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 9, $o), 0xCDAB);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 10, $o), 0xEFCD);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 11, $o), 0xFFEF);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 12, $o), 0xFFFF);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 13, $o), 0xFFFF);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 14, $o), 0xFFFF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 0, $o), 0x0000);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 1, $o), 0x0000);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 2, $o), 0x0000);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 3, $o), 0x0100);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 4, $o), 0x2301);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 5, $o), 0x4523);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 6, $o), 0x6745);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 7, $o), 0x8967);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 8, $o), 0xAB89);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 9, $o), 0xCDAB);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 10, $o), 0xEFCD);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 11, $o), 0xFFEF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 12, $o), 0xFFFF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 13, $o), 0xFFFF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 14, $o), 0xFFFF);
     }
 
     public function testShortBig()
     {
-        $o = Convert::BIG_ENDIAN;
+        $o = ConvertBytes::BIG_ENDIAN;
 
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 0, $o), 0x0000);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 1, $o), 0x0000);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 2, $o), 0x0000);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 3, $o), 0x0001);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 4, $o), 0x0123);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 5, $o), 0x2345);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 6, $o), 0x4567);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 7, $o), 0x6789);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 8, $o), 0x89AB);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 9, $o), 0xABCD);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 10, $o), 0xCDEF);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 11, $o), 0xEFFF);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 12, $o), 0xFFFF);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 13, $o), 0xFFFF);
-        $this->assertEquals(Convert::bytesToShort($this->bytes, 14, $o), 0xFFFF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 0, $o), 0x0000);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 1, $o), 0x0000);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 2, $o), 0x0000);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 3, $o), 0x0001);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 4, $o), 0x0123);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 5, $o), 0x2345);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 6, $o), 0x4567);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 7, $o), 0x6789);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 8, $o), 0x89AB);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 9, $o), 0xABCD);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 10, $o), 0xCDEF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 11, $o), 0xEFFF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 12, $o), 0xFFFF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 13, $o), 0xFFFF);
+        $this->assertEquals(ConvertBytes::bytesToShort($this->bytes, 14, $o), 0xFFFF);
     }
 
     public function testSignedShortLittle()
     {
-        $o = Convert::LITTLE_ENDIAN;
+        $o = ConvertBytes::LITTLE_ENDIAN;
 
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 0, $o), 0);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 1, $o), 0);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 2, $o), 0);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 3, $o), 256);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 4, $o), 8961);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 5, $o), 17699);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 6, $o), 26437);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 7, $o), - 30361);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 8, $o), - 21623);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 9, $o), - 12885);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 10, $o), - 4147);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 11, $o), - 17);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 12, $o), - 1);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 13, $o), - 1);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 14, $o), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 0, $o), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 1, $o), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 2, $o), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 3, $o), 256);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 4, $o), 8961);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 5, $o), 17699);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 6, $o), 26437);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 7, $o), - 30361);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 8, $o), - 21623);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 9, $o), - 12885);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 10, $o), - 4147);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 11, $o), - 17);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 12, $o), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 13, $o), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 14, $o), - 1);
     }
 
     public function testSignedShortBig()
     {
-        $o = Convert::BIG_ENDIAN;
+        $o = ConvertBytes::BIG_ENDIAN;
 
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 0, $o), 0);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 1, $o), 0);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 2, $o), 0);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 3, $o), 1);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 4, $o), 291);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 5, $o), 9029);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 6, $o), 17767);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 7, $o), 26505);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 8, $o), - 30293);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 9, $o), - 21555);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 10, $o), - 12817);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 11, $o), - 4097);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 12, $o), - 1);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 13, $o), - 1);
-        $this->assertEquals(Convert::bytesToSignedShort($this->bytes, 14, $o), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 0, $o), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 1, $o), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 2, $o), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 3, $o), 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 4, $o), 291);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 5, $o), 9029);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 6, $o), 17767);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 7, $o), 26505);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 8, $o), - 30293);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 9, $o), - 21555);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 10, $o), - 12817);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 11, $o), - 4097);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 12, $o), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 13, $o), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedShort($this->bytes, 14, $o), - 1);
     }
 
     public function testByte()
     {
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 0), 0x00);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 1), 0x00);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 2), 0x00);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 3), 0x00);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 4), 0x01);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 5), 0x23);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 6), 0x45);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 7), 0x67);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 8), 0x89);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 9), 0xAB);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 10), 0xCD);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 11), 0xEF);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 12), 0xFF);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 13), 0xFF);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 14), 0xFF);
-        $this->assertEquals(Convert::bytesToByte($this->bytes, 15), 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 0), 0x00);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 1), 0x00);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 2), 0x00);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 3), 0x00);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 4), 0x01);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 5), 0x23);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 6), 0x45);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 7), 0x67);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 8), 0x89);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 9), 0xAB);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 10), 0xCD);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 11), 0xEF);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 12), 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 13), 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 14), 0xFF);
+        $this->assertEquals(ConvertBytes::bytesToByte($this->bytes, 15), 0xFF);
     }
 
     public function testSignedByte()
     {
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 0), 0);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 1), 0);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 2), 0);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 3), 0);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 4), 1);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 5), 35);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 6), 69);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 7), 103);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 8), - 119);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 9), - 85);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 10), - 51);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 11), - 17);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 12), - 1);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 13), - 1);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 14), - 1);
-        $this->assertEquals(Convert::bytesToSignedByte($this->bytes, 15), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 0), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 1), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 2), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 3), 0);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 4), 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 5), 35);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 6), 69);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 7), 103);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 8), - 119);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 9), - 85);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 10), - 51);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 11), - 17);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 12), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 13), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 14), - 1);
+        $this->assertEquals(ConvertBytes::bytesToSignedByte($this->bytes, 15), - 1);
     }
 }

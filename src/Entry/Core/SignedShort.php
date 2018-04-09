@@ -4,7 +4,7 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class for holding signed shorts.
@@ -46,6 +46,6 @@ class SignedShort extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return Convert::signedShortToBytes($number, $order);
+        return ConvertBytes::signedShortToBytes($number, $order);
     }
 }

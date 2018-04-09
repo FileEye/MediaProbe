@@ -6,6 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\Entry\Core\EntryBase;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class used to manipulate strings in the format Windows XP uses.
@@ -109,7 +110,7 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         return $this->bytes;
     }

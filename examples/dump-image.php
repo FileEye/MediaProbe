@@ -31,7 +31,7 @@ require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\DataWindow;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 
@@ -82,7 +82,7 @@ if (Jpeg::isValid($data)) {
     $img = new Tiff();
 } else {
     print("Unrecognized image format! The first 16 bytes follow:\n");
-    Convert::bytesToDump($data->getBytes(0, 16));
+    ConvertBytes::bytesToDump($data->getBytes(0, 16));
     exit(1);
 }
 

@@ -48,7 +48,7 @@ use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Spec;
 
@@ -183,7 +183,7 @@ if (Jpeg::isValid($data)) {
      * Complain loudly, dump the first 16 bytes, and exit.
      */
     println('Unrecognized image format! The first 16 bytes follow:');
-    Convert::bytesToDump($data->getBytes(0, 16));
+    ConvertBytes::bytesToDump($data->getBytes(0, 16));
     exit(1);
 }
 

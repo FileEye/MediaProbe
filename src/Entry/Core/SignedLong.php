@@ -4,7 +4,7 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class for holding signed longs.
@@ -46,6 +46,6 @@ class SignedLong extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return Convert::signedLongToBytes($number, $order);
+        return ConvertBytes::signedLongToBytes($number, $order);
     }
 }

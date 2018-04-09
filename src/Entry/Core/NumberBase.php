@@ -126,7 +126,7 @@ abstract class NumberBase extends EntryBase
      *            the number that should be converted.
      *
      * @param bool $byte_order
-     *            one of Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN,
+     *            one of ConvertBytes::LITTLE_ENDIAN or ConvertBytes::BIG_ENDIAN,
      *            specifying the target byte order.
      *
      * @return string bytes representing the number given.
@@ -136,7 +136,7 @@ abstract class NumberBase extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         $bytes = '';
         for ($i = 0; $i < $this->components; $i ++) {

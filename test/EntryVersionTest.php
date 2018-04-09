@@ -3,8 +3,6 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\Version;
-use ExifEye\core\Spec;
-use ExifEye\core\Utility\Convert;
 
 class EntryVersionTest extends ExifEyeTestCaseBase
 {

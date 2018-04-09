@@ -4,7 +4,7 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class for holding unsigned longs.
@@ -45,6 +45,6 @@ class Long extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return Convert::longToBytes($number, $order);
+        return ConvertBytes::longToBytes($number, $order);
     }
 }

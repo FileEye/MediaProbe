@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Inetrface for Entry objects.
@@ -70,11 +70,11 @@ interface EntryInterface
      *
      * @param bool $byte_order
      *            the byte order to use for numeric values, which must be either
-     *            Convert::LITTLE_ENDIAN or Convert::BIG_ENDIAN.
+     *            ConvertBytes::LITTLE_ENDIAN or ConvertBytes::BIG_ENDIAN.
      *
      * @return string
      */
-    public function toBytes($byte_order = Convert::LITTLE_ENDIAN);
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN);
 
     /**
      * Get the value of this entry as text.

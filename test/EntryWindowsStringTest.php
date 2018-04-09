@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\WindowsString;
 use ExifEye\core\Spec;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 class EntryWindowsStringTest extends ExifEyeTestCaseBase
 {
@@ -16,20 +16,20 @@ class EntryWindowsStringTest extends ExifEyeTestCaseBase
         $test_str_ucs2_zt = $test_str_ucs2 . WindowsString::ZEROES;
 
         $entry = new WindowsString([$test_str]);
-        $this->assertNotEquals($entry->toBytes(Convert::LITTLE_ENDIAN), $entry->getValue());
+        $this->assertNotEquals($entry->toBytes(ConvertBytes::LITTLE_ENDIAN), $entry->getValue());
         $this->assertEquals($test_str, $entry->getValue());
-        $this->assertEquals($test_str_ucs2_zt, $entry->toBytes(Convert::LITTLE_ENDIAN));
+        $this->assertEquals($test_str_ucs2_zt, $entry->toBytes(ConvertBytes::LITTLE_ENDIAN));
 
         // correct zero-terminated data from the exif
         $entry->setValue([$test_str_ucs2_zt, true]);
-        $this->assertNotEquals($entry->toBytes(Convert::LITTLE_ENDIAN), $entry->getValue());
+        $this->assertNotEquals($entry->toBytes(ConvertBytes::LITTLE_ENDIAN), $entry->getValue());
         $this->assertEquals($test_str, $entry->getValue());
-        $this->assertEquals($test_str_ucs2_zt, $entry->toBytes(Convert::LITTLE_ENDIAN));
+        $this->assertEquals($test_str_ucs2_zt, $entry->toBytes(ConvertBytes::LITTLE_ENDIAN));
 
         // incorrect data from exif
         $entry->setValue([$test_str_ucs2, true]);
-        $this->assertNotEquals($entry->toBytes(Convert::LITTLE_ENDIAN), $entry->getValue());
+        $this->assertNotEquals($entry->toBytes(ConvertBytes::LITTLE_ENDIAN), $entry->getValue());
         $this->assertEquals($test_str, $entry->getValue());
-        $this->assertEquals($test_str_ucs2_zt, $entry->toBytes(Convert::LITTLE_ENDIAN));
+        $this->assertEquals($test_str_ucs2_zt, $entry->toBytes(ConvertBytes::LITTLE_ENDIAN));
     }
 }

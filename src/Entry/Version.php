@@ -8,7 +8,7 @@ use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Entry\Exception\EntryException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class to hold version information.
@@ -54,7 +54,7 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         $version = $this->getValue();
         $major = floor($version);

@@ -13,7 +13,7 @@ use ExifEye\core\Format;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
 use ExifEye\core\JpegMarker;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
 /**
@@ -548,7 +548,7 @@ class Ifd extends BlockBase
      * @param boolean $order
      *            the byte order that should be used when
      *            turning integers into bytes. This should be one of {@link
-     *            Convert::LITTLE_ENDIAN} and {@link Convert::BIG_ENDIAN}.
+     *            ConvertBytes::LITTLE_ENDIAN} and {@link ConvertBytes::BIG_ENDIAN}.
      */
     public function getBytes($offset, $order)
     {
@@ -566,7 +566,7 @@ class Ifd extends BlockBase
             $n += 2;
         }
 
-        $bytes .= Convert::shortToBytes($n, $order);
+        $bytes .= ConvertBytes::shortToBytes($n, $order);
 
         /*
          * Initialize offset of extra data. This included the bytes
@@ -578,9 +578,9 @@ class Ifd extends BlockBase
 
         foreach ($this->xxGetSubBlocks() as $tag => $sub_block) {
             /* Each entry is 12 bytes long. */
-            $bytes .= Convert::shortToBytes($sub_block->getId(), $order);
-            $bytes .= Convert::shortToBytes($sub_block->getEntry()->getFormat(), $order);
-            $bytes .= Convert::longToBytes($sub_block->getEntry()->getComponents(), $order);
+            $bytes .= ConvertBytes::shortToBytes($sub_block->getId(), $order);
+            $bytes .= ConvertBytes::shortToBytes($sub_block->getEntry()->getFormat(), $order);
+            $bytes .= ConvertBytes::longToBytes($sub_block->getEntry()->getComponents(), $order);
 
             /*
              * Size? If bigger than 4 bytes, the actual data is not in
@@ -590,7 +590,7 @@ class Ifd extends BlockBase
             $s = strlen($data);
             if ($s > 4) {
                 ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
-                $bytes .= Convert::longToBytes($end, $order);
+                $bytes .= ConvertBytes::longToBytes($end, $order);
                 $extra_bytes .= $data;
                 $end += $s;
             } else {
@@ -607,15 +607,15 @@ class Ifd extends BlockBase
             ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the newt four lines.
-            $bytes .= Convert::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
-            $bytes .= Convert::shortToBytes(Format::LONG, $order);
-            $bytes .= Convert::longToBytes(1, $order);
-            $bytes .= Convert::longToBytes($this->thumb_data->getSize(), $order);
+            $bytes .= ConvertBytes::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
+            $bytes .= ConvertBytes::shortToBytes(Format::LONG, $order);
+            $bytes .= ConvertBytes::longToBytes(1, $order);
+            $bytes .= ConvertBytes::longToBytes($this->thumb_data->getSize(), $order);
 
-            $bytes .= Convert::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
-            $bytes .= Convert::shortToBytes(Format::LONG, $order);
-            $bytes .= Convert::longToBytes(1, $order);
-            $bytes .= Convert::longToBytes($end, $order);
+            $bytes .= ConvertBytes::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
+            $bytes .= ConvertBytes::shortToBytes(Format::LONG, $order);
+            $bytes .= ConvertBytes::longToBytes(1, $order);
+            $bytes .= ConvertBytes::longToBytes($end, $order);
 
             $extra_bytes .= $this->thumb_data->getBytes();
             $end += $this->thumb_data->getSize();
@@ -631,21 +631,21 @@ class Ifd extends BlockBase
             } elseif (Spec::getIfdType($type) === 'Interoperability') {
                 $tag = Spec::getTagIdByName($this->type, 'InteroperabilityIFDPointer');
             } else {
-                // Convert::BIG_ENDIAN is the default used by Convert
-                $tag = Convert::BIG_ENDIAN;
+                // ConvertBytes::BIG_ENDIAN is the default used by Convert
+                $tag = ConvertBytes::BIG_ENDIAN;
             }
             /* Make an aditional entry with the pointer. */
-            $bytes .= Convert::shortToBytes($tag, $order);
+            $bytes .= ConvertBytes::shortToBytes($tag, $order);
             /* Next the format, which is always unsigned long. */
-            $bytes .= Convert::shortToBytes(Format::LONG, $order);
+            $bytes .= ConvertBytes::shortToBytes(Format::LONG, $order);
             /* There is only one component. */
-            $bytes .= Convert::longToBytes(1, $order);
+            $bytes .= ConvertBytes::longToBytes(1, $order);
 
             $data = $sub->getBytes($end, $order);
             $s = strlen($data);
             $sub_bytes .= $data;
 
-            $bytes .= Convert::longToBytes($end, $order);
+            $bytes .= ConvertBytes::longToBytes($end, $order);
             $end += $s;
         }
 
@@ -658,7 +658,7 @@ class Ifd extends BlockBase
 
         ExifEye::debug('Link to next IFD: %d', $link);
 
-        $bytes .= Convert::longtoBytes($link, $order);
+        $bytes .= ConvertBytes::longtoBytes($link, $order);
 
         $bytes .= $extra_bytes . $sub_bytes;
 

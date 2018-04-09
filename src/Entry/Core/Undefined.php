@@ -4,6 +4,7 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class for holding data of undefined format.
@@ -43,7 +44,7 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         return $this->value[0];
     }

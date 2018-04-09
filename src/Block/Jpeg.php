@@ -11,7 +11,7 @@ use ExifEye\core\InvalidDataException;
 use ExifEye\core\JpegContent;
 use ExifEye\core\JpegInvalidMarkerException;
 use ExifEye\core\JpegMarker;
-use ExifEye\core\Utility\Convert;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class for handling JPEG data.
@@ -160,7 +160,7 @@ class Jpeg
         ExifEye::debug('Parsing %d bytes...', $d->getSize());
 
         /* JPEG data is stored in big-endian format. */
-        $d->setByteOrder(Convert::BIG_ENDIAN);
+        $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
         /*
          * Run through the data to read the sections in the image. After
@@ -567,7 +567,7 @@ class Jpeg
             $data = $c->getBytes();
             $size = strlen($data) + 2;
 
-            $bytes .= Convert::shortToBytes($size, Convert::BIG_ENDIAN);
+            $bytes .= ConvertBytes::shortToBytes($size, ConvertBytes::BIG_ENDIAN);
             $bytes .= $data;
 
             /* In case of SOS, we need to write the JPEG data. */
@@ -648,7 +648,7 @@ class Jpeg
     public static function isValid(DataWindow $d)
     {
         /* JPEG data is stored in big-endian format. */
-        $d->setByteOrder(Convert::BIG_ENDIAN);
+        $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
         $i = self::getJpgSectionStart($d);
 
