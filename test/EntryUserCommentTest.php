@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\Entry\UserComment;
+use ExifEye\core\Entry\ExifUserComment;
 use ExifEye\core\Spec;
 
 class EntryUserCommentTest extends ExifEyeTestCaseBase

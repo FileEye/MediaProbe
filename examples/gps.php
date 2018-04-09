@@ -43,7 +43,7 @@ use ExifEye\core\Block\Tiff;
 use ExifEye\core\Spec;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Entry\Core\Byte;
-use ExifEye\core\Entry\UserComment;
+use ExifEye\core\Entry\ExifUserComment;
 use ExifEye\core\Entry\Core\Rational;
 
 /**
@@ -171,7 +171,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * first IFD.
      */
     $exif_ifd = new Ifd(Spec::getIfdIdByType('Exif'));
-    $exif_ifd->addEntry(new UserComment($comment));
+    $exif_ifd->addEntry(new ExifUserComment($comment));
     $ifd0->addSubIfd($exif_ifd);
 
     $inter_ifd = new Ifd(Spec::getIfdIdByType('Interoperability'));

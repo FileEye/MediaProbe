@@ -6,6 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class for an EXIF user comment.
