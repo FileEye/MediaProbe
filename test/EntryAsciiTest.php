@@ -30,7 +30,7 @@ class EntryAsciiTest extends ExifEyeTestCaseBase
         // Malformed Exif timestamp.
         $entry->setValue(['1970!01-01 00 00 30']);
         $this->assertEquals('1970:01:01 00:00:30', $entry->getValue());
-        $this->assertEquals('1970:01:01 00:00:30' . chr(0), $entry->toBytes());
+        $this->assertEquals('1970!01-01 00 00 30' . chr(0), $entry->toBytes());
 
         $entry->setValue([2415021.75, Time::JULIAN_DAY_COUNT]);
         // This is Jan 1st 1900 at 18:00, outside the range of a UNIX

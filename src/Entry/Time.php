@@ -33,14 +33,6 @@ class Time extends Ascii
     const JULIAN_DAY_COUNT = 3;
 
     /**
-     * {@inheritdoc}
-     */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
-    {
-        return [$data_window->getBytes($data_offset, $components - 1), static::EXIF_STRING];
-    }
-
-    /**
      * Return the timestamp of the entry.
      *
      * The timestamp held by this entry is returned in one of three formats:
