@@ -38,9 +38,9 @@ abstract class EntryBase implements EntryInterface
      * A representation of the value of the entry which is more suitable for
      * handling than the bytes.
      *
-     * @var array
+     * @var mixed
      */
-    protected $value = [];
+    protected $value;
 
     /**
      * Constructs an EntryInterface object.

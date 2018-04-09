@@ -56,7 +56,7 @@ interface EntryInterface
      *
      * The value returned will generally be the same as the one supplied to the
      * constructor or with ::setValue(). For a formatted version of the value,
-     * use ::getText() instead.
+     * use ::toString() instead.
      *
      * @param array $options
      *            (optional) an array of options to format the value.
