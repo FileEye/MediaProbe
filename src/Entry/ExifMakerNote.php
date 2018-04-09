@@ -37,14 +37,6 @@ class ExifMakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
-    {
-        return $this->value;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = [])
     {
         return $this->components . ' bytes MakerNote data';

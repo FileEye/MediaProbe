@@ -12,12 +12,13 @@ class EntryUserCommentTest extends ExifEyeTestCaseBase
     {
         $entry = new UserComment([]);
         $this->assertEquals(8, $entry->getComponents());
-        $this->assertEquals('', $entry->getValue());
-        $this->assertEquals('ASCII', $entry->getEncoding());
+        $this->assertEquals(['', 'ASCII'], $entry->getValue());
+        $this->assertEquals('', $entry->toString());
+        $this->assertEquals("ASCII\x0\x0\x0", $entry->toBytes());
 
         $entry->setValue(['Hello!']);
         $this->assertEquals(14, $entry->getComponents());
-        $this->assertEquals('Hello!', $entry->getValue());
-        $this->assertEquals('ASCII', $entry->getEncoding());
+        $this->assertEquals(['Hello!', 'ASCII'], $entry->getValue());
+        $this->assertEquals("ASCII\x0\x0\x0Hello!", $entry->toBytes());
     }
 }
