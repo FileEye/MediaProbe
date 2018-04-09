@@ -63,14 +63,14 @@ class Time extends Ascii
     {
         $type = isset($options['type']) ? $options['type'] : self::EXIF_STRING;
 
-        if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT]) {
-          throw new InvalidArgumentException(
-              'Expected UNIX_TIMESTAMP (%d), ' . 'EXIF_STRING (%d), or ' . 'JULIAN_DAY_COUNT (%d) for \'type\', got %s.',
-              self::UNIX_TIMESTAMP,
-              self::EXIF_STRING,
-              self::JULIAN_DAY_COUNT,
-              $type
-          );
+        if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
+            throw new InvalidArgumentException(
+                'Expected UNIX_TIMESTAMP (%d), ' . 'EXIF_STRING (%d), or ' . 'JULIAN_DAY_COUNT (%d) for \'type\', got %s.',
+                self::UNIX_TIMESTAMP,
+                self::EXIF_STRING,
+                self::JULIAN_DAY_COUNT,
+                $type
+            );
         }
 
         // Clean the timestamp: some timestamps are broken other
@@ -119,14 +119,14 @@ class Time extends Ascii
     {
         $type = isset($data[1]) ? $data[1] : self::EXIF_STRING;
 
-        if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT]) {
-          throw new InvalidArgumentException(
-              'Expected UNIX_TIMESTAMP (%d), ' . 'EXIF_STRING (%d), or ' . 'JULIAN_DAY_COUNT (%d) for \'type\', got %s.',
-              self::UNIX_TIMESTAMP,
-              self::EXIF_STRING,
-              self::JULIAN_DAY_COUNT,
-              $type
-          );
+        if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
+            throw new InvalidArgumentException(
+                'Expected UNIX_TIMESTAMP (%d), ' . 'EXIF_STRING (%d), or ' . 'JULIAN_DAY_COUNT (%d) for \'type\', got %s.',
+                self::UNIX_TIMESTAMP,
+                self::EXIF_STRING,
+                self::JULIAN_DAY_COUNT,
+                $type
+            );
         }
 
         switch ($type) {
