@@ -8,7 +8,7 @@ use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
 /**
- * Class for a user comment.
+ * Class for an EXIF user comment.
  *
  * This class is used to hold user comments, which can come in several different
  * character encodings.
@@ -46,7 +46,7 @@ class UserComment extends Undefined
     public function setValue(array $data)
     {
         $this->value = array_replace(['', 'ASCII'], $data);
-        $this->components = 8 + strlen($data[0]);
+        $this->components = 8 + strlen($this->value[0]);
     }
 
     /**
