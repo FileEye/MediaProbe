@@ -58,7 +58,7 @@ interface EntryInterface
      * constructor or with ::setValue(). For a formatted version of the value,
      * use ::getText() instead.
      *
-     * @param array
+     * @param array $options
      *            (optional) an array of options to format the value.
      *
      * @return mixed
@@ -83,7 +83,7 @@ interface EntryInterface
      * rationals will be returned as 'x/y', ASCII strings will be returned as
      * themselves etc.
      *
-     * @param array
+     * @param array $options
      *            (optional) an array of options to format the value.
      *
      * @return string

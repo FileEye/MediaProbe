@@ -52,14 +52,6 @@ class IfdCopyright extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
-    {
-        return $this->value;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
         if ($this->value[1] === '') {

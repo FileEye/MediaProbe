@@ -45,15 +45,7 @@ class Ascii extends EntryBase
         $str = isset($data[0]) ? $data[0] : '';
 
         $this->components = strlen($str) + 1;
-        $this->value[0] = $str;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getValue(array $options = [])
-    {
-        return $this->value[0];
+        $this->value = $str;
     }
 
     /**
@@ -61,7 +53,7 @@ class Ascii extends EntryBase
      */
     public function toBytes($byte_order = Convert::LITTLE_ENDIAN)
     {
-        return $this->value[0] . chr(0x00);
+        return $this->value . chr(0x00);
     }
 
     /**
