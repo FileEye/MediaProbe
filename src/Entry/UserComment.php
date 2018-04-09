@@ -46,6 +46,7 @@ class UserComment extends Undefined
     public function setValue(array $data)
     {
         $this->value = array_replace(['', 'ASCII'], $data);
+        $this->components = 8 + strlen($data[0]);
     }
 
     /**
