@@ -46,7 +46,7 @@ class UserComment extends Undefined
     public function setValue(array $data)
     {
         $this->value = array_replace(['', 'ASCII'], $data);
-        parent::setValue([str_pad(value[1], 8, chr(0)) . value[0]]);
+        parent::setValue([str_pad($this->value[1], 8, chr(0)) . $this->value[0]]);
     }
 
     /**
