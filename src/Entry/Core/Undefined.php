@@ -29,16 +29,8 @@ class Undefined extends EntryBase
      */
     public function setValue(array $data)
     {
-        $this->value[0] = $data[0];
+        $this->value = $data[0];
         $this->components = strlen($data[0]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getValue(array $options = [])
-    {
-        return $this->value[0];
     }
 
     /**
@@ -46,7 +38,7 @@ class Undefined extends EntryBase
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
-        return $this->value[0];
+        return $this->value;
     }
 
     /**
