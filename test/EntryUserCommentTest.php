@@ -3,14 +3,13 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\ExifUserComment;
-use ExifEye\core\Spec;
 
 class EntryUserCommentTest extends ExifEyeTestCaseBase
 {
 
     public function testUsercomment()
     {
-        $entry = new UserComment([]);
+        $entry = new ExifUserComment([]);
         $this->assertEquals(8, $entry->getComponents());
         $this->assertEquals(['', 'ASCII'], $entry->getValue());
         $this->assertEquals('', $entry->toString());

@@ -21,7 +21,7 @@ use ExifEye\core\Utility\ConvertBytes;
  * then the empty string should be passed as encoding, thereby specifying that
  * the encoding is undefined.
  */
-class UserComment extends Undefined
+class ExifUserComment extends Undefined
 {
     /**
      * {@inheritdoc}
