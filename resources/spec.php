@@ -976,7 +976,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\UserComment',
+        'class' => 'ExifEye\\core\\Entry\\ExifUserComment',
       ),
       37520 =>
       array (
