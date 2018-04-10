@@ -196,7 +196,7 @@ class Tiff
         }
 
         /* TIFF magic number --- fixed value. */
-        $bytes .= ConvertBytes::shortToBytes(self::TIFF_HEADER, $order);
+        $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $order);
 
         if ($this->ifd !== null) {
             /*
@@ -205,7 +205,7 @@ class Tiff
              * header, and 4 bytes for the IFD 0 offset make 8 bytes
              * together).
              */
-            $bytes .= ConvertBytes::longToBytes(8, $order);
+            $bytes .= ConvertBytes::fromLong(8, $order);
 
             /*
              * The argument specifies the offset of this IFD. The IFD will
@@ -215,7 +215,7 @@ class Tiff
              */
             $bytes .= $this->ifd->getBytes(8, $order);
         } else {
-            $bytes .= ConvertBytes::longToBytes(0, $order);
+            $bytes .= ConvertBytes::fromLong(0, $order);
         }
 
         return $bytes;

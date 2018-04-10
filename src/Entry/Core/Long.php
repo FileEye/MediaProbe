@@ -45,6 +45,6 @@ class Long extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return ConvertBytes::longToBytes($number, $order);
+        return ConvertBytes::fromLong($number, $order);
     }
 }

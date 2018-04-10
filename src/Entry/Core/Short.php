@@ -47,6 +47,6 @@ class Short extends NumberBase
      */
     public function numberToBytes($number, $order)
     {
-        return ConvertBytes::shortToBytes($number, $order);
+        return ConvertBytes::fromShort($number, $order);
     }
 }

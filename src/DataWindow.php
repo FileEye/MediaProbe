@@ -290,7 +290,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return an unsigned byte. */
-        return ConvertBytes::bytesToByte($this->data, $offset);
+        return ConvertBytes::toByte($this->data, $offset);
     }
 
     /**
@@ -318,7 +318,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed byte. */
-        return ConvertBytes::bytesToSignedByte($this->data, $offset);
+        return ConvertBytes::toSignedByte($this->data, $offset);
     }
 
     /**
@@ -347,7 +347,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return an unsigned short. */
-        return ConvertBytes::bytesToShort($this->data, $offset, $this->order);
+        return ConvertBytes::toShort($this->data, $offset, $this->order);
     }
 
     /**
@@ -376,7 +376,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed short. */
-        return ConvertBytes::bytesToSignedShort($this->data, $offset, $this->order);
+        return ConvertBytes::toSignedShort($this->data, $offset, $this->order);
     }
 
     /**
@@ -405,7 +405,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return an unsigned long. */
-        return ConvertBytes::bytesToLong($this->data, $offset, $this->order);
+        return ConvertBytes::toLong($this->data, $offset, $this->order);
     }
 
     /**
@@ -434,7 +434,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return a signed long. */
-        return ConvertBytes::bytesToSignedLong($this->data, $offset, $this->order);
+        return ConvertBytes::toSignedLong($this->data, $offset, $this->order);
     }
 
     /**

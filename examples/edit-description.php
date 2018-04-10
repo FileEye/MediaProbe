@@ -183,7 +183,7 @@ if (Jpeg::isValid($data)) {
      * Complain loudly, dump the first 16 bytes, and exit.
      */
     println('Unrecognized image format! The first 16 bytes follow:');
-    ConvertBytes::bytesToDump($data->getBytes(0, 16));
+    ConvertBytes::dump($data->getBytes(0, 16));
     exit(1);
 }
 

@@ -6,9 +6,9 @@ namespace ExifEye\core\Utility;
  * Conversion functions to and from bytes and integers.
  *
  * The functions found in this class are used to convert bytes into integers of
- * several sizes ({@link bytesToShort}, {@link bytesToLong}, and
- * {@link bytesToRational}) and convert integers of several sizes into bytes
- * ({@link shortToBytes} and {@link longToBytes}).
+ * several sizes ({@link toShort}, {@link toLong}, and
+ * {@link toRational}) and convert integers of several sizes into bytes
+ * ({@link fromShort} and {@link fromLong}).
  *
  * All the methods are static and they all rely on an argument that specifies
  * the byte order to be used, this must be one of the class constants
@@ -48,7 +48,7 @@ class ConvertBytes
      *
      * @return string the bytes representing the unsigned short.
      */
-    public static function shortToBytes($value, $endian)
+    public static function fromShort($value, $endian)
     {
         if ($endian == self::LITTLE_ENDIAN) {
             return chr($value) . chr($value >> 8);
@@ -68,11 +68,11 @@ class ConvertBytes
      *
      * @return string the bytes representing the signed short.
      */
-    public static function signedShortToBytes($value, $endian)
+    public static function fromSignedShort($value, $endian)
     {
-        // We can just use shortToBytes, since signed shorts fits well
+        // We can just use fromShort, since signed shorts fits well
         // within the 32 bit signed integers used in PHP.
-        return self::shortToBytes($value, $endian);
+        return self::fromShort($value, $endian);
     }
 
     /**
@@ -88,13 +88,13 @@ class ConvertBytes
      *            treated as an unsigned 32 bit integer and the lower four bytes
      *            will be extracted. Treating the argument as an unsigned
      *            integer means that the absolute value will be used. Use
-     *            {@link signedLongToBytes} to convert signed integers.
+     *            {@link fromSignedLong} to convert signed integers.
      * @param boolean $endian
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the unsigned long.
      */
-    public static function longToBytes($value, $endian)
+    public static function fromLong($value, $endian)
     {
         // We cannot convert the number to bytes in the normal way (using shifts
         // and modulo calculations) because the PHP operator >> and function
@@ -123,10 +123,10 @@ class ConvertBytes
      *
      * @return string the bytes representing the signed long.
      */
-    public static function signedLongToBytes($value, $endian)
+    public static function fromSignedLong($value, $endian)
     {
         // We can convert the number into bytes in the normal way using shifts
-        // and modulo calculations here (in contrast with longToBytes) because
+        // and modulo calculations here (in contrast with fromLong) because
         // PHP automatically handles 32 bit signed integers for us.
         if ($endian == self::LITTLE_ENDIAN) {
             return (chr($value) . chr($value >> 8) . chr($value >> 16) . chr($value >> 24));
@@ -147,7 +147,7 @@ class ConvertBytes
      * @return integer $offset the unsigned byte found at offset, e.g., an
      *         integer in the range 0 to 255.
      */
-    public static function bytesToByte($bytes, $offset)
+    public static function toByte($bytes, $offset)
     {
         return ord($bytes{$offset});
     }
@@ -164,9 +164,9 @@ class ConvertBytes
      * @return integer the signed byte found at offset, e.g., an integer in
      *         the range -128 to 127.
      */
-    public static function bytesToSignedByte($bytes, $offset)
+    public static function toSignedByte($bytes, $offset)
     {
-        $n = self::bytesToByte($bytes, $offset);
+        $n = self::toByte($bytes, $offset);
         if ($n > 127) {
             return $n - 256;
         } else {
@@ -189,7 +189,7 @@ class ConvertBytes
      * @return integer the unsigned short found at offset, e.g., an integer
      *         in the range 0 to 65535.
      */
-    public static function bytesToShort($bytes, $offset, $endian)
+    public static function toShort($bytes, $offset, $endian)
     {
         if ($endian == self::LITTLE_ENDIAN) {
             return (ord($bytes{$offset + 1}) * 256 + ord($bytes{$offset}));
@@ -213,9 +213,9 @@ class ConvertBytes
      * @return integer the signed byte found at offset, e.g., an integer in
      *         the range -32768 to 32767.
      */
-    public static function bytesToSignedShort($bytes, $offset, $endian)
+    public static function toSignedShort($bytes, $offset, $endian)
     {
-        $n = self::bytesToShort($bytes, $offset, $endian);
+        $n = self::toShort($bytes, $offset, $endian);
         if ($n > 32767) {
             return $n - 65536;
         } else {
@@ -238,7 +238,7 @@ class ConvertBytes
      * @return integer the unsigned long found at offset, e.g., an integer
      *         in the range 0 to 4294967295.
      */
-    public static function bytesToLong($bytes, $offset, $endian)
+    public static function toLong($bytes, $offset, $endian)
     {
         if ($endian == self::LITTLE_ENDIAN) {
             return (ord($bytes{$offset + 3}) * 16777216 + ord($bytes{$offset + 2}) * 65536 +
@@ -264,9 +264,9 @@ class ConvertBytes
      * @return integer the signed long found at offset, e.g., an integer in
      *         the range -2147483648 to 2147483647.
      */
-    public static function bytesToSignedLong($bytes, $offset, $endian)
+    public static function toSignedLong($bytes, $offset, $endian)
     {
-        $n = self::bytesToLong($bytes, $offset, $endian);
+        $n = self::toLong($bytes, $offset, $endian);
         if ($n > 2147483647) {
             return $n - 4294967296;
         } else {
@@ -289,11 +289,11 @@ class ConvertBytes
      * @return array the unsigned rational found at offset, e.g., an
      *         array with two integers in the range 0 to 4294967295.
      */
-    public static function bytesToRational($bytes, $offset, $endian)
+    public static function toRational($bytes, $offset, $endian)
     {
         return [
-            self::bytesToLong($bytes, $offset, $endian),
-            self::bytesToLong($bytes, $offset + 4, $endian)
+            self::toLong($bytes, $offset, $endian),
+            self::toLong($bytes, $offset + 4, $endian)
         ];
     }
 
@@ -312,11 +312,11 @@ class ConvertBytes
      * @return array the signed rational found at offset, e.g., an array
      *         with two integers in the range -2147483648 to 2147483647.
      */
-    public static function bytesToSignedRational($bytes, $offset, $endian)
+    public static function toSignedRational($bytes, $offset, $endian)
     {
         return [
-            self::bytesToSignedLong($bytes, $offset, $endian),
-            self::bytesToSignedLong($bytes, $offset + 4, $endian)
+            self::toSignedLong($bytes, $offset, $endian),
+            self::toSignedLong($bytes, $offset + 4, $endian)
         ];
     }
 
@@ -336,7 +336,7 @@ class ConvertBytes
      *
      * @return void
      */
-    public static function bytesToDump($bytes, $max = 0)
+    public static function dump($bytes, $max = 0)
     {
         $s = strlen($bytes);
 

@@ -567,7 +567,7 @@ class Jpeg
             $data = $c->getBytes();
             $size = strlen($data) + 2;
 
-            $bytes .= ConvertBytes::shortToBytes($size, ConvertBytes::BIG_ENDIAN);
+            $bytes .= ConvertBytes::fromShort($size, ConvertBytes::BIG_ENDIAN);
             $bytes .= $data;
 
             /* In case of SOS, we need to write the JPEG data. */

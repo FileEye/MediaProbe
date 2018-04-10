@@ -566,7 +566,7 @@ class Ifd extends BlockBase
             $n += 2;
         }
 
-        $bytes .= ConvertBytes::shortToBytes($n, $order);
+        $bytes .= ConvertBytes::fromShort($n, $order);
 
         /*
          * Initialize offset of extra data. This included the bytes
@@ -578,9 +578,9 @@ class Ifd extends BlockBase
 
         foreach ($this->xxGetSubBlocks() as $tag => $sub_block) {
             /* Each entry is 12 bytes long. */
-            $bytes .= ConvertBytes::shortToBytes($sub_block->getId(), $order);
-            $bytes .= ConvertBytes::shortToBytes($sub_block->getEntry()->getFormat(), $order);
-            $bytes .= ConvertBytes::longToBytes($sub_block->getEntry()->getComponents(), $order);
+            $bytes .= ConvertBytes::fromShort($sub_block->getId(), $order);
+            $bytes .= ConvertBytes::fromShort($sub_block->getEntry()->getFormat(), $order);
+            $bytes .= ConvertBytes::fromLong($sub_block->getEntry()->getComponents(), $order);
 
             /*
              * Size? If bigger than 4 bytes, the actual data is not in
@@ -590,7 +590,7 @@ class Ifd extends BlockBase
             $s = strlen($data);
             if ($s > 4) {
                 ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
-                $bytes .= ConvertBytes::longToBytes($end, $order);
+                $bytes .= ConvertBytes::fromLong($end, $order);
                 $extra_bytes .= $data;
                 $end += $s;
             } else {
@@ -607,15 +607,15 @@ class Ifd extends BlockBase
             ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the newt four lines.
-            $bytes .= ConvertBytes::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
-            $bytes .= ConvertBytes::shortToBytes(Format::LONG, $order);
-            $bytes .= ConvertBytes::longToBytes(1, $order);
-            $bytes .= ConvertBytes::longToBytes($this->thumb_data->getSize(), $order);
+            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
+            $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
+            $bytes .= ConvertBytes::fromLong(1, $order);
+            $bytes .= ConvertBytes::fromLong($this->thumb_data->getSize(), $order);
 
-            $bytes .= ConvertBytes::shortToBytes(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
-            $bytes .= ConvertBytes::shortToBytes(Format::LONG, $order);
-            $bytes .= ConvertBytes::longToBytes(1, $order);
-            $bytes .= ConvertBytes::longToBytes($end, $order);
+            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
+            $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
+            $bytes .= ConvertBytes::fromLong(1, $order);
+            $bytes .= ConvertBytes::fromLong($end, $order);
 
             $extra_bytes .= $this->thumb_data->getBytes();
             $end += $this->thumb_data->getSize();
@@ -635,17 +635,17 @@ class Ifd extends BlockBase
                 $tag = ConvertBytes::BIG_ENDIAN;
             }
             /* Make an aditional entry with the pointer. */
-            $bytes .= ConvertBytes::shortToBytes($tag, $order);
+            $bytes .= ConvertBytes::fromShort($tag, $order);
             /* Next the format, which is always unsigned long. */
-            $bytes .= ConvertBytes::shortToBytes(Format::LONG, $order);
+            $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
             /* There is only one component. */
-            $bytes .= ConvertBytes::longToBytes(1, $order);
+            $bytes .= ConvertBytes::fromLong(1, $order);
 
             $data = $sub->getBytes($end, $order);
             $s = strlen($data);
             $sub_bytes .= $data;
 
-            $bytes .= ConvertBytes::longToBytes($end, $order);
+            $bytes .= ConvertBytes::fromLong($end, $order);
             $end += $s;
         }
 
@@ -658,7 +658,7 @@ class Ifd extends BlockBase
 
         ExifEye::debug('Link to next IFD: %d', $link);
 
-        $bytes .= ConvertBytes::longtoBytes($link, $order);
+        $bytes .= ConvertBytes::fromLong($link, $order);
 
         $bytes .= $extra_bytes . $sub_bytes;
 

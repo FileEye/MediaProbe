@@ -82,7 +82,7 @@ if (Jpeg::isValid($data)) {
     $img = new Tiff();
 } else {
     print("Unrecognized image format! The first 16 bytes follow:\n");
-    ConvertBytes::bytesToDump($data->getBytes(0, 16));
+    ConvertBytes::dump($data->getBytes(0, 16));
     exit(1);
 }
 
