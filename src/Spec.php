@@ -335,12 +335,6 @@ class Spec
             return $entry->toString();
         }
 
-        // Return a text from a callback if defined.
-        if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['text']['decode'])) {
-            $decode = self::getMap()['tags'][$ifd_id][$tag_id]['text']['decode'];
-            return call_user_func($decode, $ifd_id, $tag_id, $entry, $brief);
-        }
-
         // Return a text from a mapping list if defined.
         if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping']) && is_scalar($value)) {
             $map = self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'];

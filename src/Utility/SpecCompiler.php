@@ -27,7 +27,7 @@ class SpecCompiler
     /**
      * Map of expected TAG/text level array keys.
      */
-    private $tagTextKeys = ['mapping', 'decode'];
+    private $tagTextKeys = ['mapping'];
 
     /** @var int */
     private $nextIfdId;

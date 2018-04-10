@@ -68,9 +68,7 @@ tags:
         title: 'Exif Version'
         components: 4
         format: Undefined
-        class: ExifEye\core\Entry\Version
-        text:
-            decode: ExifEye\core\Entry\Version::decodeExifVersion
+        class: ExifEye\core\Entry\ExifVersion
     0x9003:
         name: DateTimeOriginal
         title: 'Date and Time (original)'
@@ -254,9 +252,7 @@ tags:
         title: 'FlashPix Version'
         components: 4
         format: Undefined
-        class: ExifEye\core\Entry\Version
-        text:
-            decode: ExifEye\core\Entry\Version::decodeFlashPixVersion
+        class: ExifEye\core\Entry\ExifFlashPixVersion
     0xA001:
         name: ColorSpace
         title: 'Color Space'
