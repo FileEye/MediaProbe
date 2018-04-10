@@ -10,5 +10,5 @@ class ExifFlashPixVersion extends VersionBase
     /**
      * {@inheritdoc}
      */
-    protected $stringElement = 'FlashPix';
+    protected static $stringElement = 'FlashPix';
 }

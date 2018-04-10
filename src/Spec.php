@@ -329,20 +329,19 @@ class Spec
      */
     public static function getTagText($ifd_id, $tag_id, EntryInterface $entry, $brief)
     {
-        $value = $entry->getValue();
-
         if (!isset(self::getMap()['tags'][$ifd_id][$tag_id]['text'])) {
-            return $entry->toString();
+            return $entry->toString(['short' => $brief]);
         }
 
         // Return a text from a mapping list if defined.
+        $value = $entry->getValue();
         if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping']) && is_scalar($value)) {
             $map = self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'];
             // If the code to be mapped is a non-int, change to string.
             $id = is_int($value) ? $value : (string) $value;
-            return isset($map[$id]) ? ExifEye::tra($map[$id]) : $entry->toString();
+            return isset($map[$id]) ? ExifEye::tra($map[$id]) : $entry->toString(['short' => $brief]);
         }
 
-        return $entry->toString();
+        return $entry->toString(['short' => $brief]);
     }
 }

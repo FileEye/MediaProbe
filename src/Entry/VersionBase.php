@@ -20,7 +20,7 @@ class VersionBase extends Undefined
      *
      * @var string
      */
-    protected $stringElement = '';
+    protected static $stringElement = '';
 
     /**
      * {@inheritdoc}
@@ -70,7 +70,7 @@ class VersionBase extends Undefined
         if ($short) {
             return $this->getValue();
         } else {
-            return ExifEye::fmt('%s Version %s', $this->stringElement, $this->getValue());
+            return trim(ExifEye::fmt('%s Version %s', $this->stringElement, $this->getValue()));
         }
     }
 }

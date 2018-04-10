@@ -10,5 +10,5 @@ class InteroperabilityVersion extends VersionBase
     /**
      * {@inheritdoc}
      */
-    protected $stringElement = 'Interoperability';
+    protected static $stringElement = 'Interoperability';
 }

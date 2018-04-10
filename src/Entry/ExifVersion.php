@@ -10,5 +10,5 @@ class ExifVersion extends VersionBase
     /**
      * {@inheritdoc}
      */
-    protected $stringElement = 'Exif';
+    protected static $stringElement = 'Exif';
 }
