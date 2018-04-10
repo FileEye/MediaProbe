@@ -42,6 +42,7 @@ class VersionBase extends Undefined
     {
         $version = isset($data[0]) ? $data[0] : 0.0;
         $major = floor($version);
+dump([$version, $major]);
         $minor = ($version - $major) * 100;
         $bytes = sprintf('%02.0f%02.0f', $major, $minor);
 
