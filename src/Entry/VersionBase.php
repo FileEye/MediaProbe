@@ -70,7 +70,7 @@ class VersionBase extends Undefined
         if ($short) {
             return $this->getValue();
         } else {
-            return trim(ExifEye::fmt('%s Version %s', $this->stringElement, $this->getValue()));
+            return trim(ExifEye::fmt('%s Version %s', static::$stringElement, $this->getValue()));
         }
     }
 }
