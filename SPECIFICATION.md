@@ -79,7 +79,7 @@ The TAG entry is identified by the HEX value of the EXIF tag, like `0x0106` in t
 | format     | A string/array of strings identifying the expected data format of the tag. |
 | class      | (Optional) A string identifying the TAG's PHP class. If not specified, the default class for the TAG format will be used. |
 | ifd        | (Optional) If specified, identifies the TAG as a pointer to a sub-IFD, as the string of the relative IFD type.  |
-| text       | (Optional) If specified, instructs PEL to decode the value of the TAG to a text string. This can be done either as a mapping between the value and the text (defined by the `mapping:` array), or by calling a callback method (indicated by the `decode:` key). |
+| text       | (Optional) If specified, instructs PEL to decode the value of the TAG to a text string. This can be done with a mapping between the value and the text (defined by the `mapping:` array). |
 
 ## `pel compile` command
 
