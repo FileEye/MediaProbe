@@ -31,6 +31,8 @@ class Undefined extends EntryBase
     {
         $this->value = $data[0];
         $this->components = strlen($data[0]);
+
+        return $this;
     }
 
     /**

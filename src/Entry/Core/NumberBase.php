@@ -55,6 +55,8 @@ abstract class NumberBase extends EntryBase
 
         $this->components = count($data);
         $this->value = $data;
+
+        return $this;
     }
 
     /**

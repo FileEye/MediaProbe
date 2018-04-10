@@ -97,6 +97,8 @@ class WindowsString extends EntryBase
         $this->components = $l;
         $this->value[0] = $str;
         $this->bytes = $s;
+
+        return $this;
     }
 
     /**

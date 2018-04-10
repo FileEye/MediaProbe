@@ -47,6 +47,8 @@ class Ascii extends EntryBase
 
         $this->components = strlen($str) + 1;
         $this->value = $str;
+
+        return $this;
     }
 
     /**

@@ -47,6 +47,8 @@ class IfdCopyright extends Ascii
         } else {
             $this->components = strlen($this->value[0]) + 1 + strlen($this->value[1]) + 1;
         }
+
+        return $this;
     }
 
     /**

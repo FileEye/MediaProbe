@@ -32,6 +32,8 @@ class ExifMakerNote extends Undefined
     {
         $this->value = $data;
         $this->components = strlen($data[0]);
+
+        return $this;
     }
 
     /**

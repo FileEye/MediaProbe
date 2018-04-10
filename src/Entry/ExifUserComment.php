@@ -48,6 +48,8 @@ class ExifUserComment extends Undefined
     {
         $this->value = array_replace(['', 'ASCII'], $data);
         $this->components = 8 + strlen($this->value[0]);
+
+        return $this;
     }
 
     /**
