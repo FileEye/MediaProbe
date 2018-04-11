@@ -4,7 +4,7 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
-use ExifEye\core\Entry\Core\EntryBase;
+use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -26,29 +26,10 @@ use ExifEye\core\Utility\ConvertBytes;
  * PelTag::XP_SUBJECT} tags. If another tag is used the data will no
  * longer be correctly decoded when reloaded with PEL. (The data will
  * be loaded as an {@link Byte} entry, which isn't as useful.)
- *
- * This class is to be used as in
- * <code>
- * $title = $ifd->getEntry(PelTag::XP_TITLE);
- * print($title->getValue());
- * $title->setValue('My favorite cat');
- * </code>
- * or if no entry is present one can add a new one with
- * <code>
- * $title = new WindowsString(PelTag::XP_TITLE, 'A cute dog.');
- * $ifd->addEntry($title);
- * </code>
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class WindowsString extends EntryBase
+class WindowsString extends Byte
 {
     const ZEROES = "\x0\x0";
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $format = Format::BYTE;
 
     protected $bytes = ''; // xx
 
@@ -57,11 +38,11 @@ class WindowsString extends EntryBase
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-        try {
+//        try {
             $bytes = $data_window->getBytes($data_offset, $components);
-        } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works
-            $bytes = $data_window->getBytes($data_offset, $components - 1) . "\0";
-        }
+//        } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works
+//            $bytes = $data_window->getBytes($data_offset, $components - 1) . "\0";
+//        }
 
         return [$bytes, true];
     }
