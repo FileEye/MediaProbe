@@ -34,9 +34,9 @@ class EntryVersionTest extends ExifEyeTestCaseBase
 
         // Invalid version data.
         $entry->setValue(['afol']);
-        $this->assertEquals(2.01, $entry->getValue());
-        $this->assertEquals('Version 2.01', $entry->toString(['short' => false]));
-        $this->assertEquals('2.01', $entry->toString(['short' => true]));
-        $this->assertEquals('0201', $entry->toBytes());
+        $this->assertEquals(0.0, $entry->getValue());
+        $this->assertEquals('Version 0.0', $entry->toString(['short' => false]));
+        $this->assertEquals('0.0', $entry->toString(['short' => true]));
+        $this->assertEquals('0000', $entry->toBytes());
     }
 }

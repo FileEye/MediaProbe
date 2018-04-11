@@ -28,7 +28,7 @@ class VersionBase extends Undefined
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         $version = $data_window->getBytes($data_offset, $components);
-        return is_numeric($version) ? [$version / 100] : $version;
+        return is_numeric($version) ? [$version / 100] : [$version];
     }
 
     /**
