@@ -41,7 +41,7 @@ before_install:
 
   # Copy staged /vendor to running path.
   - mkdir -p $HOME/build/mondrake/pel/vendor
-  - cp -r $EXIFEYE_STAGING_DIR/vendor $HOME/build/mondrake/pel/vendor
+  - cp -r $EXIFEYE_STAGING_DIR/vendor $HOME/build/mondrake/pel
   - cd $HOME/build/mondrake/pel
 
 install:
