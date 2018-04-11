@@ -151,11 +151,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\Version',
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Version::decodeInteroperabilityVersion',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\InteroperabilityVersion',
       ),
       4096 =>
       array (
@@ -694,11 +690,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\Version',
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Version::decodeExifVersion',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifVersion',
       ),
       36867 =>
       array (
@@ -1014,11 +1006,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\Version',
-        'text' =>
-        array (
-          'decode' => 'ExifEye\\core\\Entry\\Version::decodeFlashPixVersion',
-        ),
+        'class' => 'ExifEye\\core\\Entry\\ExifFlashPixVersion',
       ),
       40961 =>
       array (
