@@ -5,6 +5,7 @@ namespace ExifEye\core\Entry;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\Entry\Exception\EntryException;
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
 
