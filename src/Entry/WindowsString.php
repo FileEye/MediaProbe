@@ -41,7 +41,7 @@ class WindowsString extends Byte
         /* Check if we have enough data. */
         $size = $data_window->getSize();
         if ($data_offset + $components > $size - 1) {
-            ExifEye::maybeThrow(throw new EntryException('%s components %d adjusted to %d to avoid data window overflow', get_class(), $components, $size - $data_offset - 1));
+            ExifEye::maybeThrow(new EntryException('%s components %d adjusted to %d to avoid data window overflow', get_class(), $components, $size - $data_offset - 1));
             $components = $size - $data_offset - 1;
         }
         $bytes = $data_window->getBytes($data_offset, $components);
