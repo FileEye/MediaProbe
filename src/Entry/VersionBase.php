@@ -28,11 +28,7 @@ class VersionBase extends Undefined
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         $version = $data_window->getBytes($data_offset, $components);
-        if (!is_numeric($version)) {
-            ExifEye::maybeThrow(new EntryException('Incorrect version data for (%s)', static::$stringElement));
-            $version = 0;
-        }
-        return [$version / 100];
+        return is_numeric($version) ? [$version / 100] : $version;
     }
 
     /**
@@ -41,8 +37,11 @@ class VersionBase extends Undefined
     public function setValue(array $data)
     {
         $version = isset($data[0]) ? $data[0] : 0.0;
+        if (!is_numeric($version)) {
+            ExifEye::maybeThrow(new EntryException('Incorrect version data for (%s)', static::$stringElement));
+            $version = 0;
+        }
         $major = floor($version);
-dump([$version, $major]);
         $minor = ($version - $major) * 100;
         $bytes = sprintf('%02.0f%02.0f', $major, $minor);
 
