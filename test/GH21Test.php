@@ -10,6 +10,7 @@ class GH21Test extends ExifEyeTestCaseBase
 
     public function setUp()
     {
+        parent::setUp();
         $this->file = dirname(__FILE__) . '/images/gh-21-tmp.jpg';
         $file = dirname(__FILE__) . '/images/gh-21.jpg';
         copy($file, $this->file);
