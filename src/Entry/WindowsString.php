@@ -38,12 +38,14 @@ class WindowsString extends Byte
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-//        try {
-            $bytes = $data_window->getBytes($data_offset, $components);
-//        } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works
-//            $bytes = $data_window->getBytes($data_offset, $components - 1) . "\0";
-//        }
-
+        /* Check if we have enough data. */
+        $size = $data_window->getSize();
+        if ($components < $size) {
+//            ExifEye::maybeThrow(new EntryException('%s expected data size %d adjusted to %d', get_class(), $components, $size));
+            throw new EntryException('%s expected data size %d adjusted to %d', get_class(), $components, $size);
+            $components = $size;
+        }
+        $bytes = $data_window->getBytes($data_offset, $components);
         return [$bytes, true];
     }
 
