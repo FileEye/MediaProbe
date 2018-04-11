@@ -38,7 +38,7 @@ class VersionBase extends Undefined
     {
         $version = isset($data[0]) ? $data[0] : 0.0;
         if (!is_numeric($version)) {
-            ExifEye::maybeThrow(new EntryException('Incorrect version data \'%s\' for (%s)', $version, static::$stringElement));
+            ExifEye::maybeThrow(new EntryException('Incorrect version data for (%s)', static::$stringElement));
             $version = 0;
         }
         $major = floor($version);
