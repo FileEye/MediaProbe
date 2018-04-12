@@ -140,10 +140,10 @@ class PelSpecTest extends ExifEyeTestCaseBase
               'f/2.6', 'ExifEye\core\Entry\ExifFNumber', 'Exif', 'FNumber', [[26, 10]],
           ],
           'Exif/ApertureValue - value 60, 10' => [
-              'f/8.0', 'ExifEye\core\Entry\ExifApertureValue', 'Exif', 'ApertureValue', [[60, 10]],
+              '8.0', 'ExifEye\core\Entry\ExifApertureValue', 'Exif', 'ApertureValue', [[60, 10]],
           ],
           'Exif/ApertureValue - value 26, 10' => [
-              'f/2.5', 'ExifEye\core\Entry\ExifApertureValue', 'Exif', 'ApertureValue', [[26, 10]],
+              '2.5', 'ExifEye\core\Entry\ExifApertureValue', 'Exif', 'ApertureValue', [[26, 10]],
           ],
           'Exif/FocalLength - value 60, 10' => [
               '6.0 mm', 'ExifEye\core\Entry\ExifFocalLength', 'Exif', 'FocalLength', [[60, 10]],
