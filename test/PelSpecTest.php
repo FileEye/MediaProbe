@@ -173,7 +173,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
               '5/10 sec. (APEX: 1)', 'ExifEye\core\Entry\ExifShutterSpeedValue', 'Exif', 'ShutterSpeedValue', [[5, 10]],
           ],
           'Exif/BrightnessValue - value 5, 10' => [
-              '5/10', 'ExifEye\core\Entry\ExifBrightnessValue', 'Exif', 'BrightnessValue', [[5, 10]],
+              '0.5', 'ExifEye\core\Entry\ExifBrightnessValue', 'Exif', 'BrightnessValue', [[5, 10]],
           ],
           'Exif/ExposureBiasValue - value 5, 10' => [
               '+0.5', 'ExifEye\core\Entry\ExifExposureBiasValue', 'Exif', 'ExposureBiasValue', [[5, 10]],

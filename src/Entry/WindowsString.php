@@ -72,6 +72,7 @@ class WindowsString extends Byte
         $str = $data[0];
         $convert_encoding = isset($data[1]) ? $data[1] : false;
         $zlen = strlen(static::ZEROES);
+        $s = $str;
         if ($convert_encoding) {
             $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
         }
