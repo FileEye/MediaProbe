@@ -56,7 +56,7 @@ class WindowsString extends Byte
 
         $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
 
-        return [$bytes, true];
+        return [$bytes];
     }
 
     /**
