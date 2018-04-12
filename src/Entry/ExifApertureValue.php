@@ -15,6 +15,6 @@ class ExifApertureValue extends Rational
      */
     public function toString(array $options = [])
     {
-        return ExifEye::fmt('f/%.01f', pow(2, $this->getValue()[0] / $this->getValue()[1] / 2));
+        return ExifEye::fmt('%.01f', pow(2, $this->getValue()[0] / $this->getValue()[1] / 2));
     }
 }

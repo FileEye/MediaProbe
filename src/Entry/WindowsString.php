@@ -47,10 +47,15 @@ class WindowsString extends Byte
         } else {
             $bytes_to_get = $components;
         }
+
         $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
+
         if ($bytes_to_get < $components) {
             $bytes = str_pad($bytes, $components, "\x0");
         }
+
+        $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
+
         return [$bytes, true];
     }
 
@@ -65,15 +70,9 @@ class WindowsString extends Byte
     public function setValue(array $data)
     {
         $str = $data[0];
-        $from_exif = isset($data[1]) ? $data[1] : false;
+        $convert_encoding = isset($data[1]) ? $data[1] : false;
         $zlen = strlen(static::ZEROES);
-        if (false !== $from_exif) {
-            $s = $str;
-            if (substr($str, -$zlen, $zlen) == static::ZEROES) {
-                $str = substr($str, 0, -$zlen);
-            }
-            $str = mb_convert_encoding($str, 'UTF-8', 'UCS-2LE');
-        } else {
+        if ($convert_encoding) {
             $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
         }
 
