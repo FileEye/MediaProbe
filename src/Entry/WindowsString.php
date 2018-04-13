@@ -32,8 +32,6 @@ class WindowsString extends Byte
 {
     const ZEROES = "\x0\x0";
 
-    protected $bytes = ''; // xx
-
     /**
      * {@inheritdoc}
      */
@@ -61,17 +59,11 @@ dump(['2', $bytes]);
     }
 
     /**
-     * Set the version held by this entry.
-     *
-     * @param array $data
-     *            key 0 - holds the new value of the entry.
-     *            key 1 - is internal use only, tells that string is UCS-2LE
-     *            encoded, as PHP fails to detect this encoding.
+     * {@inheritdoc}
      */
     public function setValue(array $data)
     {
         $str = $data[0];
-        $convert_encoding = isset($data[1]) ? $data[1] : false;
         $zlen = strlen(static::ZEROES);
         $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
 
@@ -81,9 +73,8 @@ dump(['2', $bytes]);
         $l = strlen($s);
 
         $this->components = $l;
-        $this->value[0] = $s;
-        $this->bytes = $s;
-dump(['setValue', $data, $this]);
+        $this->value = $s;
+dump(['setValue', $data, $this, $this->toString()]);
         return $this;
     }
 
@@ -92,7 +83,7 @@ dump(['setValue', $data, $this]);
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0];
+        return $this->value;
     }
 
     /**
@@ -100,7 +91,7 @@ dump(['setValue', $data, $this]);
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
-        return $this->bytes;
+        return $this->getValue();
     }
 
     /**
