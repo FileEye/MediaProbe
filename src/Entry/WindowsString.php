@@ -74,7 +74,7 @@ dump(['2', $bytes]);
 
         $windows_string = mb_convert_encoding($data[0], 'UCS-2LE', 'auto');
         $this->components = strlen($windows_string);
-        $this->value = $windows_string;
+        $this->value = $data[0];
 dump(['setValue', $data, $this, $this->toString()]);
         return $this;
     }
@@ -92,7 +92,7 @@ dump(['setValue', $data, $this, $this->toString()]);
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
-        return $this->getValue();
+        return $this->getValue() . "\x0\x0";
     }
 
     /**
