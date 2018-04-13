@@ -63,17 +63,18 @@ dump(['2', $bytes]);
      */
     public function setValue(array $data)
     {
-        $str = $data[0];
+/*        $str = $data[0];
         $zlen = strlen(static::ZEROES);
         $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
 
         if (substr($s, -$zlen, $zlen) != static::ZEROES) {
             $s .= static::ZEROES;
         }
-        $l = strlen($s);
+        $l = strlen($s);*/
 
-        $this->components = $l;
-        $this->value = $s;
+        $windows_string = mb_convert_encoding($data[0], 'UCS-2LE', 'auto');
+        $this->components = strlen($windows_string);
+        $this->value = $windows_string;
 dump(['setValue', $data, $this, $this->toString()]);
         return $this;
     }
@@ -99,6 +100,6 @@ dump(['setValue', $data, $this, $this->toString()]);
      */
     public function toString(array $options = [])
     {
-        return strstr($this->getValue(), "\0", true);
+        return $this->getValue();
     }
 }
