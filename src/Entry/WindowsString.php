@@ -47,14 +47,7 @@ class WindowsString extends Byte
         }
 
         $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
-dump(['1', $bytes_to_get, $components, $bytes]);
-//        if ($bytes_to_get < $components) {
-//            $bytes = str_pad($bytes, $components, "\x0");
-//        }
-
         $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
-dump(['2', $bytes]);
-
         return [$bytes];
     }
 
@@ -63,19 +56,9 @@ dump(['2', $bytes]);
      */
     public function setValue(array $data)
     {
-/*        $str = $data[0];
-        $zlen = strlen(static::ZEROES);
-        $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
-
-        if (substr($s, -$zlen, $zlen) != static::ZEROES) {
-            $s .= static::ZEROES;
-        }
-        $l = strlen($s);*/
-
         $windows_string = mb_convert_encoding($data[0], 'UCS-2LE', 'auto');
         $this->components = strlen($windows_string) + 2;
         $this->value = [$data[0], $windows_string];
-dump(['setValue', $data, $this, $this->toString()]);
         return $this;
     }
 
