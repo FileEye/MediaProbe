@@ -269,11 +269,13 @@ class ExifEye
      */
     public static function debug($format)
     {
-        $args = func_get_args();
-        $str = array_shift($args);
         if (self::$debug) {
+            $args = func_get_args();
+            $str = array_shift($args);
             vprintf($str . "\n", $args);
         }
+        $args = func_get_args();
+        $str = array_shift($args);
         $msg = sprintf($str, $args);
         static::logger()->debug($msg);
     }
@@ -296,11 +298,13 @@ class ExifEye
      */
     public static function warning($format)
     {
-        $args = func_get_args();
-        $str = array_shift($args);
         if (self::$debug) {
+            $args = func_get_args();
+            $str = array_shift($args);
             vprintf('Warning: ' . $str . "\n", $args);
         }
+        $args = func_get_args();
+        $str = array_shift($args);
         $msg = sprintf($str, $args);
         static::logger()->warning($msg);
     }
