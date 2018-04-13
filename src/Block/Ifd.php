@@ -587,7 +587,6 @@ class Ifd extends BlockBase
              * the entry but somewhere else.
              */
             $data = $sub_block->getEntry()->toBytes($order);
-dump([dechex($sub_block->getId()), $sub_block->getEntry()->getComponents(), $data]);
             $s = strlen($data);
             if ($s > 4) {
                 ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
