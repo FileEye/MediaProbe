@@ -6,7 +6,6 @@ use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
-use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Entry\WindowsString;
 use ExifEye\core\Block\Jpeg;
@@ -32,10 +31,7 @@ class GH16Test extends ExifEyeTestCaseBase
     {
         $subject = "Превед, медвед!";
 
-        $data = new DataWindow(file_get_contents($this->file));
-
-        $jpeg = new Jpeg();
-        $jpeg->load($data);
+        $jpeg = new Jpeg($this->file);
         $exif = $jpeg->getExif();
         $tiff = $exif->getTiff();
         $ifd0 = $tiff->getIfd();
