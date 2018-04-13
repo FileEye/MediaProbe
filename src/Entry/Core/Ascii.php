@@ -28,7 +28,11 @@ class Ascii extends EntryBase
         $size = $data_window->getSize();
         if ($data_offset + $components > $size - 1) {
             $bytes_to_get = $size - $data_offset - 1;
-            ExifEye::maybeThrow(new EntryException('%s reading %d bytes instead of %d to avoid data window overflow', get_class(), $bytes_to_get, $components));
+            ExifEye::logger->error('{class} reading {actual} bytes instead of {expected} to avoid data window overflow', [
+                'class' => get_class(),
+                'actual' => $bytes_to_get,
+                'expected' => $components,
+            ]);
         } else {
             $bytes_to_get = $components;
         }

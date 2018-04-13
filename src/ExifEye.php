@@ -4,6 +4,7 @@ namespace ExifEye\core;
 
 use Monolog\Logger;
 use Monolog\Handler\TestHandler;
+use Monolog\Processor\PsrLogMessageProcessor;
 
 /**
  * Class with miscellaneous static methods.
@@ -191,8 +192,9 @@ class ExifEye
     public static function logger()
     {
         if (!isset(static::$logger)) {
-            static::$logger = new Logger('exifeye');
-            static::$logger->pushHandler(new TestHandler(Logger::WARNING));
+            static::$logger = (new Logger('exifeye'))
+              ->pushHandler(new TestHandler(Logger::WARNING))
+              ->pushProcessor(new PsrLogMessageProcessor());
         }
         return static::$logger;
     }

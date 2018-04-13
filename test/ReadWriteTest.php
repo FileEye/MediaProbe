@@ -181,7 +181,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF601, new Ascii([])],
                     [0xF602, new Ascii([''])],
                     [0xF603, new Ascii(['Hello World!'])],
-                    [0xF604, new Ascii(["\x00\x01\x02...\xFD\xFE\xFF"])],
+                    [0xF604, new Ascii(["\x00\x01\x02...\xFD\xFE\xFF"])],  // xx for some reason this generates data window overflow
                 ],
             ],
         ];
