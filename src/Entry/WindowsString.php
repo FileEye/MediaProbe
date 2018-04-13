@@ -49,12 +49,13 @@ class WindowsString extends Byte
         }
 
         $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
-
+dump(['1', $bytes_to_get, $components, $bytes]);
         if ($bytes_to_get < $components) {
             $bytes = str_pad($bytes, $components, "\x0");
         }
 
         $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
+dump(['2', $bytes]);
 
         return [$bytes];
     }
@@ -72,10 +73,7 @@ class WindowsString extends Byte
         $str = $data[0];
         $convert_encoding = isset($data[1]) ? $data[1] : false;
         $zlen = strlen(static::ZEROES);
-        $s = $str;
-        //if ($convert_encoding) {
-            $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
-        //}
+        $s = mb_convert_encoding($str, 'UCS-2LE', 'auto');
 
         if (substr($s, -$zlen, $zlen) != static::ZEROES) {
             $s .= static::ZEROES;
@@ -83,9 +81,9 @@ class WindowsString extends Byte
         $l = strlen($s);
 
         $this->components = $l;
-        $this->value[0] = $str;
+        $this->value[0] = $s;
         $this->bytes = $s;
-
+dump(['setValue', $data, $this]);
         return $this;
     }
 
@@ -102,7 +100,7 @@ class WindowsString extends Byte
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
-        return $this->bytes . static::ZEROES;
+        return $this->bytes;
     }
 
     /**
