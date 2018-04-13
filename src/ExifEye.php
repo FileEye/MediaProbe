@@ -269,9 +269,9 @@ class ExifEye
      */
     public static function debug($format)
     {
+        $args = func_get_args();
+        $str = array_shift($args);
         if (self::$debug) {
-            $args = func_get_args();
-            $str = array_shift($args);
             vprintf($str . "\n", $args);
         }
         static::logger()->debug(sprintf($str, $args));
@@ -295,9 +295,9 @@ class ExifEye
      */
     public static function warning($format)
     {
+        $args = func_get_args();
+        $str = array_shift($args);
         if (self::$debug) {
-            $args = func_get_args();
-            $str = array_shift($args);
             vprintf('Warning: ' . $str . "\n", $args);
         }
         static::logger()->warning(sprintf($str, $args));
