@@ -84,10 +84,11 @@ class DumpCommand extends Command
         }
 
         foreach (ExifEye::logger()->getHandlers() as $handler) {
-          if ($handler instanceof Monolog\Handler\TestHandler) {
-            $json['log'] = $handler->getRecords();
-            break;
-          }
+            dump($handler);
+            if ($handler instanceof Monolog\Handler\TestHandler) {
+                $json['log'] = $handler->getRecords();
+                break;
+            }
         }
 
         return Yaml::dump($json, 20);
