@@ -12,26 +12,16 @@ use ExifEye\core\Utility\ConvertBytes;
 /**
  * Class used to manipulate strings in the format Windows XP uses.
  *
- * When examining the file properties of an image in Windows XP one
- * can fill in title, comment, author, keyword, and subject fields.
- * Filling those fields and pressing OK will result in the data being
- * written into the Exif data in the image.
+ * When examining the file properties of an image in Windows XP one can fill in
+ * title, comment, author, keyword, and subject fields.
+ * Filling those fields and pressing OK will result in the data being written
+ * into the Exif data in the image.
  *
- * The data is written in a non-standard format and can thus not be
- * loaded directly --- this class is needed to translate it into
- * normal strings.
- *
- * It is important that entries from this class are only created with
- * the {@link PelTag::XP_TITLE}, {@link PelTag::XP_COMMENT}, {@link
- * PelTag::XP_AUTHOR}, {@link PelTag::XP_KEYWORD}, and {@link
- * PelTag::XP_SUBJECT} tags. If another tag is used the data will no
- * longer be correctly decoded when reloaded with PEL. (The data will
- * be loaded as an {@link Byte} entry, which isn't as useful.)
+ * The data is written in a non-standard format and can thus not be loaded
+ * directly --- this class is needed to translate it into normal PHP strings.
  */
 class WindowsString extends Byte
 {
-    const ZEROES = "\x0\x0";
-
     /**
      * {@inheritdoc}
      */
@@ -45,8 +35,8 @@ class WindowsString extends Byte
         } else {
             $bytes_to_get = $components;
         }
-
         $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
+
         $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
         return [$bytes];
     }
@@ -63,7 +53,11 @@ class WindowsString extends Byte
     }
 
     /**
-     * {@inheritdoc}
+     * Returns the value of the string.
+     *
+     * @return array
+     *            key 0 - the string in PHP format.
+     *            key 1 - the string in Windows format (UCS-2LE).
      */
     public function getValue(array $options = [])
     {

@@ -12,7 +12,7 @@ class EntryWindowsStringTest extends ExifEyeTestCaseBase
     {
         $test_str = 'Tést';
         $test_str_ucs2 = mb_convert_encoding($test_str, 'UCS-2LE', 'UTF-8');
-        $test_str_ucs2_zt = $test_str_ucs2 . WindowsString::ZEROES;
+        $test_str_ucs2_zt = $test_str_ucs2 . "\x0\x0";
 
         $entry = new WindowsString([$test_str]);
         $this->assertEquals(10, $entry->getComponents());
@@ -21,7 +21,7 @@ class EntryWindowsStringTest extends ExifEyeTestCaseBase
 
         $test_str = "Превед, медвед!";
         $test_str_ucs2 = mb_convert_encoding($test_str, 'UCS-2LE', 'UTF-8');
-        $test_str_ucs2_zt = $test_str_ucs2 . WindowsString::ZEROES;
+        $test_str_ucs2_zt = $test_str_ucs2 . "\x0\x0";
 
         $entry = new WindowsString([$test_str]);
         $this->assertEquals(32, $entry->getComponents());

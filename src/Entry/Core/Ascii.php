@@ -22,11 +22,15 @@ class Ascii extends EntryBase
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
-        try {
-            $bytes = $data_window->getBytes($data_offset, $components);
-        } catch (DataWindowOffsetException $e) { // xx there's sth wrong in how the file output works
-            $bytes = $data_window->getBytes($data_offset, $components - 1) . "\0";
+        // Cap bytes to get to remaining data window size.
+        $size = $data_window->getSize();
+        if ($data_offset + $components > $size - 1) {
+            $bytes_to_get = $size - $data_offset - 1;
+            ExifEye::maybeThrow(new EntryException('%s reading %d bytes instead of %d to avoid data window overflow', get_class(), $bytes_to_get, $components));
+        } else {
+            $bytes_to_get = $components;
         }
+        $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
 
         // cut off string after the first nul byte
         $canonicalString = strstr($bytes, "\0", true);
