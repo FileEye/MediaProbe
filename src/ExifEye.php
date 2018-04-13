@@ -192,7 +192,7 @@ class ExifEye
     {
         if (!isset(static::$logger)) {
             static::$logger = new Logger('exifeye');
-            static::$logger->pushHandler(new TestHandler());
+            static::$logger->pushHandler(new TestHandler(Logger::WARNING));
         }
         return static::$logger;
     }
