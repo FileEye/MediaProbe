@@ -48,9 +48,9 @@ class WindowsString extends Byte
 
         $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
 dump(['1', $bytes_to_get, $components, $bytes]);
-        if ($bytes_to_get < $components) {
-            $bytes = str_pad($bytes, $components, "\x0");
-        }
+//        if ($bytes_to_get < $components) {
+//            $bytes = str_pad($bytes, $components, "\x0");
+//        }
 
         $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
 dump(['2', $bytes]);
