@@ -73,8 +73,8 @@ dump(['2', $bytes]);
         $l = strlen($s);*/
 
         $windows_string = mb_convert_encoding($data[0], 'UCS-2LE', 'auto');
-        $this->components = strlen($windows_string);
-        $this->value = $data[0];
+        $this->components = strlen($windows_string) + 2;
+        $this->value = [$data[0], $windows_string];
 dump(['setValue', $data, $this, $this->toString()]);
         return $this;
     }
@@ -92,7 +92,7 @@ dump(['setValue', $data, $this, $this->toString()]);
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
-        return $this->getValue() . "\x0\x0";
+        return $this->getValue()[1] . "\x0\x0";
     }
 
     /**
@@ -100,6 +100,6 @@ dump(['setValue', $data, $this, $this->toString()]);
      */
     public function toString(array $options = [])
     {
-        return $this->getValue();
+        return $this->getValue()[0];
     }
 }

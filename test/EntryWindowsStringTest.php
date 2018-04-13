@@ -15,8 +15,8 @@ class EntryWindowsStringTest extends ExifEyeTestCaseBase
         $test_str_ucs2_zt = $test_str_ucs2 . WindowsString::ZEROES;
 
         $entry = new WindowsString([$test_str]);
-        $this->assertNotEquals($entry->toBytes(), $entry->getValue());
-        $this->assertEquals($test_str, $entry->getValue());
+        $this->assertEquals(10, $entry->getComponents());
+        $this->assertEquals([$test_str, $test_str_ucs2], $entry->getValue());
         $this->assertEquals($test_str_ucs2_zt, $entry->toBytes());
 
         $test_str = "Превед, медвед!";
@@ -24,8 +24,8 @@ class EntryWindowsStringTest extends ExifEyeTestCaseBase
         $test_str_ucs2_zt = $test_str_ucs2 . WindowsString::ZEROES;
 
         $entry = new WindowsString([$test_str]);
-        $this->assertNotEquals($entry->toBytes(), $entry->getValue());
-        $this->assertEquals($test_str, $entry->getValue());
+        $this->assertEquals(10, $entry->getComponents());
+        $this->assertEquals([$test_str, $test_str_ucs2], $entry->getValue());
         $this->assertEquals($test_str_ucs2_zt, $entry->toBytes());
     }
 }
