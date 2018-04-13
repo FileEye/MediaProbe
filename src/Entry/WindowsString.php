@@ -110,6 +110,6 @@ class WindowsString extends Byte
      */
     public function toString(array $options = [])
     {
-        return $this->getValue();
+        return strstr($this->getValue(), "\0", true);
     }
 }
