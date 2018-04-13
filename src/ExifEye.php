@@ -274,7 +274,8 @@ class ExifEye
         if (self::$debug) {
             vprintf($str . "\n", $args);
         }
-        static::logger()->debug(sprintf($str, $args));
+        $msg = sprintf($str, $args);
+        static::logger()->debug($msg);
     }
 
     /**
@@ -300,7 +301,8 @@ class ExifEye
         if (self::$debug) {
             vprintf('Warning: ' . $str . "\n", $args);
         }
-        static::logger()->warning(sprintf($str, $args));
+        $msg = sprintf($str, $args);
+        static::logger()->warning($msg);
     }
 
     /**
