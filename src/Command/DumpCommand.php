@@ -82,6 +82,9 @@ class DumpCommand extends Command
                 $json['errors']['entries'][$i]['message'] = $exceptions[$i]->getMessage();
             }
         }
+
+        $json['log'] = ExifEye::logger()->getRecords();
+
         return Yaml::dump($json, 20);
     }
 

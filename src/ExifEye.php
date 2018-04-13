@@ -2,6 +2,9 @@
 
 namespace ExifEye\core;
 
+use Monolog\Logger;
+use Monolog\Handler\TestHandler;
+
 /**
  * Class with miscellaneous static methods.
  *
@@ -58,6 +61,7 @@ class ExifEye
      * accumulated here instead of being thrown.
      */
     private static $exceptions = [];
+    private static $logger;
 
     /**
      * Quality setting for encoding JPEG images.
@@ -152,6 +156,7 @@ class ExifEye
     public static function clearExceptions()
     {
         self::$exceptions = [];
+        static::$logger = null;
     }
 
     /**
@@ -182,6 +187,14 @@ class ExifEye
         } else {
             self::$exceptions[] = $e;
         }
+    }
+    public static function logger()
+    {
+        if (!isset(static::$logger)) {
+            static::$logger = new Logger('exifeye');
+            static::$logger->pushHandler(new TestHandler());
+        }
+        return static::$logger;
     }
 
     /**
@@ -261,6 +274,7 @@ class ExifEye
             $str = array_shift($args);
             vprintf($str . "\n", $args);
         }
+        static::logger()->debug(sprintf($str, $args));
     }
 
     /**
@@ -286,6 +300,7 @@ class ExifEye
             $str = array_shift($args);
             vprintf('Warning: ' . $str . "\n", $args);
         }
+        static::logger()->warning(sprintf($str, $args));
     }
 
     /**
