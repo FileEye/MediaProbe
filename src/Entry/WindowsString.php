@@ -42,8 +42,8 @@ class WindowsString extends Byte
         // Cap bytes to get to remaining data window size.
         $size = $data_window->getSize();
         if ($data_offset + $components > $size - 1) {
-            ExifEye::maybeThrow(new EntryException('%s components %d adjusted to %d to avoid data window overflow', get_class(), $components, $size - $data_offset - 1));
             $bytes_to_get = $size - $data_offset - 1;
+            ExifEye::maybeThrow(new EntryException('%s reading %d bytes instead of %d to avoid data window overflow', get_class(), $bytes_to_get, $components));
         } else {
             $bytes_to_get = $components;
         }
@@ -102,7 +102,7 @@ class WindowsString extends Byte
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
-        return $this->bytes;
+        return $this->bytes . static::ZEROES;
     }
 
     /**
