@@ -276,6 +276,7 @@ class ExifEye
         }
         $args = func_get_args();
         $str = array_shift($args);
+        $args = empty($args) ? [] : $args;
         $msg = sprintf($str, $args);
         static::logger()->debug($msg);
     }
@@ -305,6 +306,7 @@ class ExifEye
         }
         $args = func_get_args();
         $str = array_shift($args);
+        $args = empty($args) ? [] : $args;
         $msg = sprintf($str, $args);
         static::logger()->warning($msg);
     }
