@@ -269,17 +269,12 @@ class ExifEye
      */
     public static function debug($format)
     {
-        if (self::$debug) {
-            $args = func_get_args();
-            $str = array_shift($args);
-            vprintf($str . "\n", $args);
-        }
         $args = func_get_args();
         $str = array_shift($args);
-        $args = empty($args) ? [] : $args;
-dump([$str, $args]);
-        $msg = sprintf($str, $args);
-        static::logger()->debug($msg);
+        if (self::$debug) {
+            vprintf($str . "\n", $args);
+        }
+        static::logger()->debug(vsprintf($str, $args));
     }
 
     /**
@@ -300,16 +295,12 @@ dump([$str, $args]);
      */
     public static function warning($format)
     {
-        if (self::$debug) {
-            $args = func_get_args();
-            $str = array_shift($args);
-            vprintf('Warning: ' . $str . "\n", $args);
-        }
         $args = func_get_args();
         $str = array_shift($args);
-        $args = empty($args) ? [] : $args;
-        $msg = sprintf($str, $args);
-        static::logger()->warning($msg);
+        if (self::$debug) {
+            vprintf('Warning: ' . $str . "\n", $args);
+        }
+        static::logger()->warning(vsprintf($str, $args));
     }
 
     /**
