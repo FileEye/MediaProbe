@@ -37,9 +37,11 @@ class WindowsString extends Byte
                 'expected' => $components,
             ]);
             $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
+            dump(['1', $components, $bytes_to_get, $bytes]);
             if ($bytes_to_get % 2 === 1) {
                 $bytes .= "\x0";
             }
+            dump(['2', $bytes]);
         } else {
             $bytes = $data_window->getBytes($data_offset, $components);
         }
