@@ -25,40 +25,16 @@ abstract class NumberTestCase extends ExifEyeTestCaseBase
         $this->num->setValue([0]);
         $this->assertSame(0, $this->num->getValue());
 
-        $caught = false;
-        try {
-            $this->num->setValue([$this->min - 1]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
+        $this->num->setValue([$this->min - 1]);
         $this->assertSame(0, $this->num->getValue());
 
-        $caught = false;
-        try {
-            $this->num->setValue([$this->max + 1]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
+        $this->num->setValue([$this->max + 1]);
         $this->assertSame(0, $this->num->getValue());
 
-        $caught = false;
-        try {
-            $this->num->setValue([0, $this->max + 1]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
+        $this->num->setValue([0, $this->max + 1]);
         $this->assertSame(0, $this->num->getValue());
 
-        $caught = false;
-        try {
-            $this->num->setValue([0, $this->min - 1]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
+        $this->num->setValue([0, $this->min - 1]);
         $this->assertSame(0, $this->num->getValue());
     }
 
