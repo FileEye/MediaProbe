@@ -31,7 +31,7 @@ class WindowsString extends Byte
         $size = $data_window->getSize();
         if ($data_offset + $components > $size - 1) {
             $bytes_to_get = $size - $data_offset - 1;
-            ExifEye::logger()->warning('{class} reading {actual} bytes instead of {expected} to avoid data window overflow', [
+            ExifEye::logger()->error('{class} reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'class' => get_class(),
                 'actual' => $bytes_to_get,
                 'expected' => $components,
@@ -40,6 +40,14 @@ class WindowsString extends Byte
             $bytes_to_get = $components;
         }
         $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
+
+        // Cut off string before the first pair of NUL bytes.
+        $str = strstr($bytes, "\x0\x0", true);
+        if ($str !== false) {
+            $bytes = $str;
+        } else {
+            ExifEye::logger()->warning('WindowsString entry missing final NUL characters.');
+        }
 
         $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
         return [$bytes];
