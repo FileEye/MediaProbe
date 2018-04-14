@@ -47,12 +47,12 @@ class WindowsString extends Byte
         }
 
         // Cut off string before the first pair of NUL bytes.
-        $str = strstr($bytes, "\x0\x0", true);
+/*        $str = strstr($bytes, "\x0\x0", true);
         if ($str !== false) {
             $bytes = $str;
         } else {
             ExifEye::logger()->warning('WindowsString entry missing final NUL characters.');
-        }
+        }*/
 
         return [mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')];
     }
