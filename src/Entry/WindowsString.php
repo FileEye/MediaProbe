@@ -36,10 +36,13 @@ class WindowsString extends Byte
                 'actual' => $bytes_to_get,
                 'expected' => $components,
             ]);
+            $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
+            if ($bytes_to_get % 2 === 1) {
+                $bytes .= "\x0";
+            }
         } else {
-            $bytes_to_get = $components;
+            $bytes = $data_window->getBytes($data_offset, $components);
         }
-        $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
 
         // Cut off string before the first pair of NUL bytes.
         $str = strstr($bytes, "\x0\x0", true);
@@ -49,8 +52,7 @@ class WindowsString extends Byte
             ExifEye::logger()->warning('WindowsString entry missing final NUL characters.');
         }
 
-        $bytes = mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE');
-        return [$bytes];
+        return [mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')];
     }
 
     /**
