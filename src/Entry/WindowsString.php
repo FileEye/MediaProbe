@@ -31,8 +31,7 @@ class WindowsString extends Byte
         $size = $data_window->getSize();
         if ($data_offset + $components > $size - 1) {
             $bytes_to_get = $size - $data_offset - 1;
-            ExifEye::logger()->error('{class} reading {actual} bytes instead of {expected} to avoid data window overflow', [
-                'class' => get_class(),
+            ExifEye::logger()->error('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
                 'expected' => $components,
             ]);
