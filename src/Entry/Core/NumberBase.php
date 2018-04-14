@@ -3,7 +3,6 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\Entry\Exception\OverflowException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 
@@ -17,18 +16,12 @@ abstract class NumberBase extends EntryBase
     /**
      * The minimum allowed value.
      *
-     * Any attempt to change the value below this variable will result
-     * in a OverflowException being thrown.
-     *
      * @var int
      */
     protected $min;
 
     /**
      * The maximum allowed value.
-     *
-     * Any attempt to change the value over this variable will result in
-     * a OverflowException being thrown.
      *
      * @var int
      */
@@ -75,26 +68,31 @@ abstract class NumberBase extends EntryBase
      * Validate a number.
      *
      * This method will check that the number given is within the range given
-     * by ::getMin() and ::getMax(), inclusive. If not, then a OverflowException
-     * is thrown.
+     * by ::getMin() and ::getMax(), inclusive.
      *
      * @param int|array $n
      *            the number in question.
      *
-     * @return void nothing, but will throw an OverflowException if the number
-     *         is found to be outside the legal range and ExifEye::$strict is
-     *         true.
+     * @return void
      */
     public function validateNumber($n)
     {
         if ($this->dimension == 1) {
             if ($n < $this->min || $n > $this->max) {
-                ExifEye::maybeThrow(new OverflowException($n, $this->min, $this->max));
+                ExifEye::logger()->error('Value {value} out of range [{min},{max}]', [
+                    'value' => $n,
+                    'min' => $this->min,
+                    'max' => $this->max,
+                ]);
             }
         } else {
             for ($i = 0; $i < $this->dimension; $i ++) {
                 if ($n[$i] < $this->min || $n[$i] > $this->max) {
-                    ExifEye::maybeThrow(new OverflowException($n[$i], $this->min, $this->max));
+                    ExifEye::logger()->error('Value {value} out of range [{min},{max}]', [
+                        'value' => $n[$i],
+                        'min' => $this->min,
+                        'max' => $this->max,
+                    ]);
                 }
             }
         }
