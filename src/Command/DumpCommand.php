@@ -91,7 +91,14 @@ class DumpCommand extends Command
             }
         }*/
         $handler = ExifEye::logger()->getHandlers()[0];
-        $json['log'] = $handler->getRecords();
+        $json['log'] = [];
+        foreach ($handler->getRecords() as $record) {
+            $json['log'][] = [
+                'level_name' => $record['level_name'],
+                'message' => $record['message'],
+                'method' => $record['extra']['class'] . '::' . $record['extra']['function'],
+            ];
+        }
 
         return Yaml::dump($json, 20);
     }

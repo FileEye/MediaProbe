@@ -37,22 +37,9 @@ class WindowsString extends Byte
                 'expected' => $components,
             ]);
             $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
-/*            dump(['1', $components, $bytes_to_get, $bytes]);
-            if ($bytes_to_get % 2 === 1) {
-                $bytes .= "\x0";
-            }
-            dump(['2', $bytes]);*/
         } else {
             $bytes = $data_window->getBytes($data_offset, $components);
         }
-
-        // Cut off string before the first pair of NUL bytes.
-/*        $str = strstr($bytes, "\x0\x0", true);
-        if ($str !== false) {
-            $bytes = $str;
-        } else {
-            ExifEye::logger()->warning('WindowsString entry missing final NUL characters.');
-        }*/
 
         return [mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')];
     }
