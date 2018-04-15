@@ -3,7 +3,6 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
-use ExifEye\core\Entry\Exception\OverflowException;
 
 abstract class NumberTestCase extends ExifEyeTestCaseBase
 {

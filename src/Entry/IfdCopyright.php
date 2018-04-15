@@ -40,6 +40,8 @@ class IfdCopyright extends Ascii
      */
     public function setValue(array $data)
     {
+        parent::setValue($data);
+
         $this->value = array_replace(['', ''], $data);
 
         if ($this->value[1] === '') {

@@ -42,7 +42,14 @@ interface EntryInterface
     public function getComponents();
 
     /**
-     * Set the value of this entry.
+     * Gets validity of the entry.
+     *
+     * @return bool
+     */
+    public function isValid();
+
+    /**
+     * Sets the value of this entry.
      *
      * @param array
      *            the new value.
@@ -77,7 +84,7 @@ interface EntryInterface
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN);
 
     /**
-     * Get the value of this entry as text.
+     * Gets the value of this entry as text.
      *
      * The value will be returned in a format suitable for presentation, e.g.
      * rationals will be returned as 'x/y', ASCII strings will be returned as

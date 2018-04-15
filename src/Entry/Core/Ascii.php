@@ -54,6 +54,8 @@ class Ascii extends EntryBase
      */
     public function setValue(array $data)
     {
+        parent::setValue($data);
+
         $str = isset($data[0]) ? $data[0] : '';
 
         $this->components = strlen($str) + 1;

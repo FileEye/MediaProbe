@@ -42,6 +42,8 @@ abstract class NumberBase extends EntryBase
      */
     public function setValue(array $data)
     {
+        parent::setValue($data);
+
         foreach ($data as $v) {
             $this->validateNumber($v);
         }
@@ -75,7 +77,7 @@ abstract class NumberBase extends EntryBase
      *
      * @return void
      */
-    public function validateNumber($n)
+    public function validateNumber(&$n)
     {
         if ($this->dimension == 1) {
             if ($n < $this->min || $n > $this->max) {
@@ -84,6 +86,8 @@ abstract class NumberBase extends EntryBase
                     'min' => $this->min,
                     'max' => $this->max,
                 ]);
+                $n = 0;
+                $this->valid = false;
             }
         } else {
             for ($i = 0; $i < $this->dimension; $i ++) {
@@ -93,6 +97,8 @@ abstract class NumberBase extends EntryBase
                         'min' => $this->min,
                         'max' => $this->max,
                     ]);
+                    $n[$i] = 0;
+                    $this->valid = false;
                 }
             }
         }

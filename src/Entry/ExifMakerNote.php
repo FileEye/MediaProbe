@@ -30,6 +30,8 @@ class ExifMakerNote extends Undefined
      */
     public function setValue(array $data)
     {
+        parent::setValue($data);
+
         $this->value = $data;
         $this->components = strlen($data[0]);
 

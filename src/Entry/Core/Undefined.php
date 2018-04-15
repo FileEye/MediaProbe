@@ -29,6 +29,8 @@ class Undefined extends EntryBase
      */
     public function setValue(array $data)
     {
+        parent::setValue($data);
+
         $this->value = $data[0];
         $this->components = strlen($data[0]);
 

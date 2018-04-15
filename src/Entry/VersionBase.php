@@ -36,12 +36,15 @@ class VersionBase extends Undefined
      */
     public function setValue(array $data)
     {
+        parent::setValue($data);
+
         $version = isset($data[0]) ? $data[0] : 0.0;
         if (!is_numeric($version)) {
             ExifEye::logger()->warning('Incorrect version data for ({element})', [
                 'element' => static::$stringElement,
             ]);
             $version = 0;
+            $this->valid = false;
         }
         $major = floor($version);
         $minor = ($version - $major) * 100;

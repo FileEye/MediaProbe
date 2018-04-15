@@ -43,6 +43,13 @@ abstract class EntryBase implements EntryInterface
     protected $value;
 
     /**
+     * Whether this entry is valid.
+     *
+     * @var int
+     */
+    protected $valid = true;
+
+    /**
      * Constructs an EntryInterface object.
      *
      * @param array $data
@@ -75,6 +82,23 @@ abstract class EntryBase implements EntryInterface
     public function getComponents()
     {
         return $this->components;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValid()
+    {
+        return $this->valid;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setValue(array $value)
+    {
+        $this->valid = true;
+        return $this;
     }
 
     /**
