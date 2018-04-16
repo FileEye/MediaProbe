@@ -22,19 +22,28 @@ abstract class NumberTestCase extends ExifEyeTestCaseBase
     public function testOverflow()
     {
         $this->num->setValue([0]);
+        $this->assertTrue($this->num->isValid());
         $this->assertSame(0, $this->num->getValue());
 
         $this->num->setValue([$this->min - 1]);
+        $this->assertFalse($this->num->isValid());
         $this->assertSame(0, $this->num->getValue());
 
         $this->num->setValue([$this->max + 1]);
+        $this->assertFalse($this->num->isValid());
         $this->assertSame(0, $this->num->getValue());
 
         $this->num->setValue([0, $this->max + 1]);
-        $this->assertSame(0, $this->num->getValue());
+        $this->assertFalse($this->num->isValid());
+        $this->assertSame([0, 0], $this->num->getValue());
 
         $this->num->setValue([0, $this->min - 1]);
-        $this->assertSame(0, $this->num->getValue());
+        $this->assertFalse($this->num->isValid());
+        $this->assertSame([0, 0], $this->num->getValue());
+
+        $this->num->setValue([$this->min, $this->max]);
+        $this->assertTrue($this->num->isValid());
+        $this->assertSame([$this->min, $this->max], $this->num->getValue());
     }
 
     public function testReturnValues()
