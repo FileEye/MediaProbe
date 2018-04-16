@@ -2,6 +2,7 @@
 
 namespace ExifEye\Test\core;
 
+use ExifEye\core\Block\Tag;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 

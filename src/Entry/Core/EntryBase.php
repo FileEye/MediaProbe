@@ -124,6 +124,6 @@ abstract class EntryBase implements EntryInterface
     public function toString(array $options = [])
     {
         $brief = isset($options['short']) ? $options['short'] : false;  // xx
-        return Spec::getTagText($parent_block->getIfdId(), $parent_block->getId(), $this, $brief);
+        return Spec::getTagText($this->parentBlock->getIfdId(), $this->parentBlock->getId(), $this, $brief); // xx
     }
 }
