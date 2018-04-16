@@ -205,7 +205,7 @@ class Ifd extends BlockBase
                     $ifd_class = Spec::getIfdClass($type);
                     $ifd = new $ifd_class($type);
                     try {
-                        $ifd->load($d, $o, $tag->getComponents(), $nesting_level + 1);
+                        $ifd->load($d, $o, $tag->getEntry()->getComponents(), $nesting_level + 1);
                         $this->sub[$type] = $ifd;
                     } catch (DataWindowOffsetException $e) {
                         ExifEye::maybeThrow(new IfdException($e->getMessage()));

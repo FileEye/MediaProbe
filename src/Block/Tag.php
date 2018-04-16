@@ -20,23 +20,16 @@ class Tag extends BlockBase
      */
     protected $type = 'Tag';
 
-    protected $format;
-    protected $components;
-    protected $dataElement;
-
     protected $ifdId;
 
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($ifd_id, $id, EntryInterface $entry, $format = null, $components = null, $data_element = null)
+    public function __construct($ifd_id, $id, EntryInterface $entry)
     {
         $this->ifdId = $ifd_id;
 
         $this->id = $id;
-        $this->format = $format;
-        $this->components = $components;
-        $this->dataElement = $data_element;
 
         $this->name = Spec::getTagName($ifd_id, $id);
         $this->hasSpecification = (bool) $this->name;
@@ -112,21 +105,6 @@ class Tag extends BlockBase
     public function getIfdId() // xx
     {
         return $this->ifdId;
-    }
-
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-    public function getComponents()
-    {
-        return $this->components;
-    }
-
-    public function getDataElement()
-    {
-        return $this->dataElement;
     }
 
     /**
