@@ -108,6 +108,11 @@ class Tag extends BlockBase
         return $tag;
     }
 
+    public function getIfdId() // xx
+    {
+        return $this->ifdId;
+    }
+
     public function getFormat()
     {
         return $this->format;
