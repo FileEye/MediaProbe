@@ -2,11 +2,12 @@
 
 namespace ExifEye\core\Entry\Core;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
- * Inetrface for Entry objects.
+ * Interface for Entry objects.
  */
 interface EntryInterface
 {
@@ -26,6 +27,16 @@ interface EntryInterface
      *            subclass constructor.
      */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset);
+
+    /**
+     * Sets the parent block of this entry.
+     *
+     * @param BlockBase
+     *            the parent block.
+     *
+     * @return $this
+     */
+    public function setParentBlock(BlockBase $parent_block = null);
 
     /**
      * Returns the format of this entry.

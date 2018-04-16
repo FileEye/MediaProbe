@@ -195,6 +195,7 @@ class ExifEye
         if (!isset(static::$logger)) {
             static::$logger = (new Logger('exifeye'))
               ->pushHandler(new TestHandler(Logger::INFO))
+              ->pushHandler(new StreamHandler('php://stdout'))
               ->pushProcessor(new PsrLogMessageProcessor())
               ->pushProcessor(new IntrospectionProcessor());
         }
@@ -275,9 +276,9 @@ class ExifEye
     {
         $args = func_get_args();
         $str = array_shift($args);
-        if (self::$debug) {
+/*        if (self::$debug) {
             vprintf($str . "\n", $args);
-        }
+        }*/
         static::logger()->debug(vsprintf($str, $args));
     }
 
@@ -301,9 +302,9 @@ class ExifEye
     {
         $args = func_get_args();
         $str = array_shift($args);
-        if (self::$debug) {
+/*        if (self::$debug) {
             vprintf('Warning: ' . $str . "\n", $args);
-        }
+        }*/
         static::logger()->warning(vsprintf($str, $args));
     }
 
