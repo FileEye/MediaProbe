@@ -66,6 +66,7 @@ abstract class EntryBase implements EntryInterface
      */
     public function __construct(array $data, BlockBase $parent_block = null)
     {
+        $this->parentBlock = $parent_block;
         $this->setValue($data);
     }
 
