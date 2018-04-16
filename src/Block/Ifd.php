@@ -172,7 +172,7 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            ExifEye::debug(
+/*            ExifEye::debug(
                 str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d Value: %d%s (%d of %d)...',
                 $tag->getId(),
                 $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
@@ -183,7 +183,7 @@ class Ifd extends BlockBase
                 $tag->isOffset() ? ' (offset)' : '',
                 $i + 1,
                 $n
-            );
+            );*/
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag->getId())) {
