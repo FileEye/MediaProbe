@@ -23,14 +23,13 @@ class Tag extends BlockBase
     protected $format;
     protected $components;
     protected $dataElement;
-    protected $isOffset;
 
     protected $ifdId;
 
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($ifd_id, $id, $format, $components, EntryInterface $entry, $data_element = null)
+    public function __construct($ifd_id, $id, $format, $components, $data_element = null)
     {
         $this->ifdId = $ifd_id;
 
@@ -38,12 +37,6 @@ class Tag extends BlockBase
         $this->format = $format;
         $this->components = $components;
         $this->dataElement = $data_element;
-        $this->entry = $entry;
-
-        // The data size. If bigger than 4 bytes, the actual data is not in the
-        // entry but somewhere else, with the offset stored in the entry.
-        $size = Format::getSize($this->format) * $this->components;
-        $this->isOffset = ($size > 4);
 
         $this->name = Spec::getTagName($ifd_id, $id);
         $this->hasSpecification = (bool) $this->name;
@@ -105,19 +98,14 @@ class Tag extends BlockBase
         }
 
         // Build an ExifEye Entry from the raw data.
-        try {
-            $class = Spec::getTagClass($ifd_id, $id, $format);
-            $arguments = call_user_func($class . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
-            $entry = new $class($arguments);
+        $entry_class_name = Spec::getTagClass($ifd_id, $id, $format);
+        $arguments = call_user_func($entry_class_name . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
 
-            // Build and return the TAG object.
-            return new static($ifd_id, $id, $format, $components, $entry, $data_element);
-        } catch (ExifEyeException $e) {
-            // Throw the exception when running in strict mode, store
-            // otherwise.
-            ExifEye::maybeThrow($e);
-            return null;
-        }
+        // Build and return the TAG object.
+        $tag = new static($ifd_id, $id, $format, $components, $data_element);
+        $entry = new $entry_class_name($arguments, $tag);
+        $tag->setEntry($entry);
+        return $tag;
     }
 
     public function getFormat()
@@ -135,19 +123,6 @@ class Tag extends BlockBase
         return $this->dataElement;
     }
 
-    public function isOffset()
-    {
-        return $this->isOffset;
-    }
-
-    public function xxGetText($brief = false)
-    {
-        if (!isset($this->entry)) {
-            return null;
-        }
-        return Spec::getTagText($this->ifdId, $this->id, $this->entry, $brief);
-    }
-
     /**
      * Turn this entry into a string.
      *
@@ -160,7 +135,7 @@ class Tag extends BlockBase
         $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, $entry_name);
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
         $str .= ExifEye::fmt("    Components: %d\n", $this->components);
-        $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->xxgetValue(), true));
+        $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getEntry()->getValue(), true));
         $str .= ExifEye::fmt("    Text      : %s\n", $this->xxGetText());
         return $str;
     }

@@ -169,14 +169,4 @@ abstract class BlockBase
     {
         return $this->entry;
     }
-
-    public function xxGetValue()
-    {
-        return isset($this->entry) ? $this->entry->getValue() : null;
-    }
-
-    public function xxGetText($brief = false)
-    {
-        return isset($this->entry) ? $this->entry->getText() : null;
-    }
 }

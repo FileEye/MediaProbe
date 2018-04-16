@@ -79,7 +79,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
             $ifdTag = $ifd->xxGetTagById($entry[0]);
             $ifdEntry = $ifdTag->getEntry();
             if ($ifdEntry->getFormat() == Format::ASCII) {
-                $ifdValue = $ifdTag->xxGetValue();
+                $ifdValue = $ifdTag->getEntry()->getValue();
                 $entryValue = $entry[1]->getValue();
                 // cut off after the first nul byte
                 // since $ifdValue comes from parsed ifd,
@@ -91,7 +91,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                 }
                 $this->assertEquals($ifdValue, $canonicalEntry);
             } else {
-                $this->assertEquals($ifdTag->xxGetValue(), $entry[1]->getValue());
+                $this->assertEquals($ifdTag->getEntry()->getValue(), $entry[1]->getValue());
             }
         }
 

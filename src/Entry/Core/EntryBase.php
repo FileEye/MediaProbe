@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry\Core;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEyeException;
 
@@ -18,6 +19,13 @@ use ExifEye\core\ExifEyeException;
  */
 abstract class EntryBase implements EntryInterface
 {
+    /**
+     * The parent BlockBase object of this entry.
+     *
+     * @var \ExifEye\core\Block\BlockBase
+     */
+    protected $parentBlock;
+
     /**
      * The format of this entry.
      *
@@ -55,7 +63,7 @@ abstract class EntryBase implements EntryInterface
      * @param array $data
      *            the data that this entry will be holding.
      */
-    public function __construct(array $data)
+    public function __construct(array $data, BlockBase $parent_block = null)
     {
         $this->setValue($data);
     }
