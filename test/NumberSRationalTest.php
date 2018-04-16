@@ -10,23 +10,23 @@ class NumberSignedRationalTest extends NumberTestCase
     public function testOverflow()
     {
         $entry = new SignedRational([[-1, 2]]);
-        $this->assertTrue($this->num->isValid());
+        $this->assertTrue($entry->isValid());
         $this->assertEquals([-1, 2], $entry->getValue());
 
         $entry->setValue([[-10, -20], [-1, -2147483649]]);
-        $this->assertFalse($this->num->isValid());
+        $this->assertFalse($entry->isValid());
         $this->assertEquals([[-10, -20], [-1, 0]], $entry->getValue());
 
         $entry->setValue([[3, 4], [1, 2147483648]]);
-        $this->assertFalse($this->num->isValid());
+        $this->assertFalse($entry->isValid());
         $this->assertEquals([[3, 4], [1, 0]], $entry->getValue());
 
         $entry->setValue([[3, 4], [4294967296, 1]]);
-        $this->assertFalse($this->num->isValid());
+        $this->assertFalse($entry->isValid());
         $this->assertEquals([[3, 4], [0, 1]], $entry->getValue());
 
         $entry->setValue([[3, 4], [0, 2147483647]]);
-        $this->assertTrue($this->num->isValid());
+        $this->assertTrue($entry->isValid());
         $this->assertEquals([[3, 4], [0, 2147483647]], $entry->getValue());
     }
 
