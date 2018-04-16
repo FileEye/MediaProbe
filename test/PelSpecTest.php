@@ -89,8 +89,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $entry_class_name = Spec::getTagClass($ifd_id, $tag_id);
         $entry = new $entry_class_name($args);
         $this->assertInstanceOf($expected_class, $entry);
-        $tag = new Tag($ifd_id, $tag_id, $entry->getFormat(), $entry->getComponents());
-        $tag->setEntry($entry);
+        $tag = new Tag($ifd_id, $tag_id, $entry);
         $options['short'] = $brief;  // xx
         $this->assertEquals($expected_text, $entry->toString($options));
     }

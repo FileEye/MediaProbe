@@ -3,7 +3,6 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
-use ExifEye\core\Block\Format;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Block\Ifd;
@@ -45,10 +44,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $software_tag = $ifd0->getTagByName('Software');
 
             if ($software_tag === null) {
-                $software_tag = new Tag($ifd0->getType(), 0x0131, Format::ASCII, strlen($software_name) + 1); // xx
-                $software = new Ascii([$software_name], $software_tag); // xx
-                $software_tag->setEntry($software);
-                $ifd0->xxAddSubBlock($software_tag);
+                $ifd0->xxAddSubBlock(new Tag($ifd0->getType(), 0x0131, new Ascii([$software_name])));
                 $resave_file = 1;
             } else {
                 $software_tag->getEntry()->setValue([$software_name]);

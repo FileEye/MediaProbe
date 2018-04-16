@@ -66,8 +66,9 @@ abstract class EntryBase implements EntryInterface
      */
     public function __construct(array $data, BlockBase $parent_block = null)
     {
-        $this->parentBlock = $parent_block;
-        $this->setValue($data);
+        $this
+            ->setParentBlock($parent_block)
+            ->setValue($data);
     }
 
     /**
@@ -76,6 +77,15 @@ abstract class EntryBase implements EntryInterface
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         throw new ExifEyeException('getInstanceArgumentsFromTagData() must be implemented.');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setParentBlock(BlockBase $parent_block = null)
+    {
+        $this->parentBlock = $parent_block;
+        return $this;
     }
 
     /**

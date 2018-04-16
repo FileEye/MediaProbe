@@ -29,7 +29,7 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($ifd_id, $id, $format, $components, $data_element = null)
+    public function __construct($ifd_id, $id, EntryInterface $entry, $format = null, $components = null, $data_element = null)
     {
         $this->ifdId = $ifd_id;
 
@@ -40,6 +40,9 @@ class Tag extends BlockBase
 
         $this->name = Spec::getTagName($ifd_id, $id);
         $this->hasSpecification = (bool) $this->name;
+
+        $entry->setParentBlock = $this;
+        $this->setEntry($entry);
     }
 
     /**
@@ -102,9 +105,7 @@ class Tag extends BlockBase
         $arguments = call_user_func($entry_class_name . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
 
         // Build and return the TAG object.
-        $tag = new static($ifd_id, $id, $format, $components, $data_element);
-        $entry = new $entry_class_name($arguments, $tag);
-        $tag->setEntry($entry);
+        $tag = new static($ifd_id, $id, new $entry_class_name($arguments), $format, $components, $data_element);
         return $tag;
     }
 
