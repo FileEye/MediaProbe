@@ -172,17 +172,15 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            ExifEye::logger()->debug(
-                str_repeat("  ", $nesting_level) . 'Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
-                    'tag_id' => $tag->getId(),
-                    'tag_name' => $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
-                    'format_id' => $tag->getEntry()->getFormat(),
-                    'format_names' => Format::getName($tag->getEntry()->getFormat()),
-                    'components' => $tag->getEntry()->getComponents(),
-                    'count' => $i + 1,
-                    'total' => $n,
-                ]
-            );
+            ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . 'Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
+                'tag_id' => $tag->getId(),
+                'tag_name' => $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
+                'format_id' => $tag->getEntry()->getFormat(),
+                'format_names' => Format::getName($tag->getEntry()->getFormat()),
+                'components' => $tag->getEntry()->getComponents(),
+                'count' => $i + 1,
+                'total' => $n,
+            ]);
 
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($tag->getId())) {

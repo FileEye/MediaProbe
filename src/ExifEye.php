@@ -3,6 +3,7 @@
 namespace ExifEye\core;
 
 use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 use Monolog\Handler\TestHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 use Monolog\Processor\IntrospectionProcessor;
