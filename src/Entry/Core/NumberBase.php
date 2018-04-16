@@ -183,6 +183,10 @@ abstract class NumberBase extends EntryBase
      */
     public function toString(array $options = [])
     {
+        if ($str = parent::toString($options)) {
+            return $str;
+        }
+
         $short = isset($options['short']) ? $options['short'] : false;
 
         if ($this->components == 0) {

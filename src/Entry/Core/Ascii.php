@@ -77,6 +77,6 @@ class Ascii extends EntryBase
      */
     public function toString(array $options = [])
     {
-        return $this->getValue();
+        return parent::toString($options) ?: $this->getValue();
     }
 }

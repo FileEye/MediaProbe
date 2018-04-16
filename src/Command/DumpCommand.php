@@ -180,7 +180,7 @@ class DumpCommand extends Command
                 'components' => $entry->getComponents(),
                 'value' => base64_encode(serialize($tag->getEntry()->getValue())),
                 'clear_value' => serialize($tag->getEntry()->getValue()),
-                'text' => $tag->getEntry()->getText(),
+                'text' => $tag->getEntry()->toString(),
             ],
         ];
     }

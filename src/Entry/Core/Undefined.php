@@ -50,6 +50,6 @@ class Undefined extends EntryBase
      */
     public function toString(array $options = [])
     {
-        return '(undefined)';
+        return parent::toString($options) ?: '(undefined)';
     }
 }
