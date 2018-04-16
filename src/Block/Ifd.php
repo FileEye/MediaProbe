@@ -176,7 +176,7 @@ class Ifd extends BlockBase
                 'tag_id' => $tag->getId(),
                 'tag_name' => $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
                 'format_id' => $tag->getEntry()->getFormat(),
-                'format_names' => Format::getName($tag->getEntry()->getFormat()),
+                'format_name' => Format::getName($tag->getEntry()->getFormat()),
                 'components' => $tag->getEntry()->getComponents(),
                 'count' => $i + 1,
                 'total' => $n,
@@ -233,7 +233,11 @@ class Ifd extends BlockBase
 
         /* Offset to next IFD */
         $o = $d->getLong($offset + 12 * $n);
-        ExifEye::debug(str_repeat("  ", $nesting_level) . 'Current offset is %d, link at %d points to %d.', $offset, $offset + 12 * $n, $o);
+        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . 'Current offset is {offset}, link at {link} points to {destination}.', [
+            'offset' => $offset,
+            'link' => $offset + 12 * $n,
+            'destination' => $o,
+        ]);
 
         if ($o > 0) {
             /* Sanity check: we need 6 bytes */
@@ -249,7 +253,9 @@ class Ifd extends BlockBase
             }
         }
 
-        ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
+        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '{ifd}'.", [
+            'ifd' => $this->getName(),
+        ]);
 
         // Invoke post-load callbacks.
         foreach (Spec::getIfdPostLoadCallbacks($this->type) as $callback) {
@@ -552,7 +558,9 @@ class Ifd extends BlockBase
         $bytes = '';
         $extra_bytes = '';
 
-        ExifEye::debug('Bytes from IDF will start at offset %d within Exif data', $offset);
+        ExifEye::logger()->debug('Bytes from IDF will start at offset {offset} within Exif data', [
+            'offset' => $offset,
+        ]);
 
         $n = count($this->xxGetSubBlocks()) + count($this->sub);
         if ($this->thumb_data !== null) {
@@ -586,12 +594,17 @@ class Ifd extends BlockBase
             $data = $sub_block->getEntry()->toBytes($order);
             $s = strlen($data);
             if ($s > 4) {
-                ExifEye::debug('Data size %d too big, storing at offset %d instead.', $s, $end);
+                ExifEye::logger()->debug('Data size {size} too big, storing at offset {offset} instead.', [
+                    'size' => $s,
+                    'offset' => $end,
+                ]);
                 $bytes .= ConvertBytes::fromLong($end, $order);
                 $extra_bytes .= $data;
                 $end += $s;
             } else {
-                ExifEye::debug('Data size %d fits.', $s);
+                ExifEye::logger()->debug('Data size {size} fits.', [
+                    'size' => $s,
+                ]);
                 /*
                  * Copy data directly, pad with NULL bytes as necessary to
                  * fill out the four bytes available.
@@ -601,7 +614,10 @@ class Ifd extends BlockBase
         }
 
         if ($this->thumb_data !== null) {
-            ExifEye::debug('Appending %d bytes of thumbnail data at %d', $this->thumb_data->getSize(), $end);
+            ExifEye::logger()->debug('Appending {size} bytes of thumbnail data at {offset}', [
+                'size' => $this->thumb_data->getSize(),
+                'offset' => $end,
+            ]);
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the newt four lines.
             $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
@@ -653,7 +669,9 @@ class Ifd extends BlockBase
             $link = $end;
         }
 
-        ExifEye::debug('Link to next IFD: %d', $link);
+        ExifEye::logger()->debug('Link to next IFD: {link}', [
+            'link' => $link,
+        ]);
 
         $bytes .= ConvertBytes::fromLong($link, $order);
 

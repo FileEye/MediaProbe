@@ -56,11 +56,10 @@ class Time extends Ascii
         $type = isset($options['type']) ? $options['type'] : self::EXIF_STRING;
 
         if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
-            if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
-                ExifEye::logger()->warning('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
-                    'type' => $type,
-                ]);
-            }
+            ExifEye::logger()->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
+                'type' => $type,
+            ]);
+            return false;
         }
 
         // Clean the timestamp: some timestamps are broken other
@@ -79,7 +78,13 @@ class Time extends Ascii
                 $day_count_to_seconds = ConvertTime::julianDayToUnix($day_count);
                 // We get false if the Julian Day Count is outside the range
                 // of a UNIX timestamp.
-                return $day_count_to_seconds !== false ? $day_count_to_seconds + $seconds_count : false;
+                if ($day_count_to_seconds === false) {
+                    ExifEye::logger()->error('Cannot convert timestamp {timestamp} to UNIX format', [
+                        'timestamp' => $this->value,
+                    ]);
+                    return false;
+                }
+                return $day_count_to_seconds + $seconds_count;
             case self::EXIF_STRING:
                 list ($year, $month, $day) = ConvertTime::julianDayToGregorian($day_count);
                 $hours = (int) ($seconds_count / 3600);
@@ -110,9 +115,10 @@ class Time extends Ascii
         $type = isset($data[1]) ? $data[1] : self::EXIF_STRING;
 
         if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
-            ExifEye::logger()->warning('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
+            ExifEye::logger()->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
                 'type' => $type,
             ]);
+            $this->valid = false;
         }
 
         switch ($type) {
@@ -120,12 +126,13 @@ class Time extends Ascii
                 $day_count = ConvertTime::unixToJulianDay($data[0]);
                 $seconds = $data[0] % 86400;
                 break;
-            case self::EXIF_STRING:
-                $value = $data[0];
-                break;
             case self::JULIAN_DAY_COUNT:
                 $day_count = (int) floor($data[0]);
                 $seconds = (int) (86400 * ($data[0] - floor($data[0])));
+                break;
+            case self::EXIF_STRING:
+            default:
+                $value = $data[0];
                 break;
         }
 
