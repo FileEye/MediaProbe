@@ -29,12 +29,11 @@ class IfdIndexShort extends Ifd
      */
     public function load(DataWindow $d, $offset, $components = 1, $nesting_level = 0)
     {
-        ExifEye::debug(
-            str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d entries at offset %d...",
-            $this->getName(),
-            $components,
-            $offset
-        );
+        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "** Constructing IFD '{name}' with {components} entries at offset {offset}...", [
+            'name' => $this->getName(),
+            'components' => $components,
+            'offset' => $offset,
+        ]);
 
         $index_size = $d->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
@@ -44,26 +43,24 @@ class IfdIndexShort extends Ifd
         for ($i = 0; $i < $components; $i++) {
             // Check if PEL can support this TAG.
             if (!$this->isValidTag($i + 1)) {
-                ExifEye::debug(
-                    str_repeat("  ", $nesting_level) . "No specification available for tag 0x%04X, skipping (%d of %d)...",
-                    $i + 1,
-                    $i + 1,
-                    $components
-                );
+                ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "No specification available for tag 0x{tag}, skipping ({count} of {total})...", [
+                    'tag' => dechex($i + 1),
+                    'count' => $i + 1,
+                    'offset' => $components,
+                ]);
                 continue;
             }
 
             $item_format = Spec::getTagFormat($this->type, $i + 1)[0];
-            ExifEye::debug(
-                str_repeat("  ", $nesting_level) . 'Tag 0x%04X: (%s) Fmt: %d (%s) Components: %d (%d of %d)...',
-                $i + 1,
-                Spec::getTagName($this->type, $i + 1),
-                $item_format,
-                Format::getName($item_format),
-                1,
-                $i + 1,
-                $components
-            );
+            ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . 'Tag 0x{tag}: ({tag_name}) Fmt: {format} ({format_name}) Components: {components} ({count} of {total})...', [
+                'tag' => dechex($i + 1),
+                'tag_name' => Spec::getTagName($this->type, $i + 1),
+                'format' => $item_format,
+                'format_name' => Format::getName($item_format),
+                'components' => 1,
+                'count' => $i + 1,
+                'offset' => $components,
+            ]);
             switch ($item_format) {
                 case Format::BYTE:
                     $item_value = $d->getByte($offset + $i * 2);
@@ -95,6 +92,8 @@ class IfdIndexShort extends Ifd
                 $this->xxAppendSubBlock(new Tag($this->getType(), $i + 1, $entry));
             }
         }
-        ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
+        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '{ifd}'.", [
+            'ifd' => $this->getName(),
+        ]);
     }
 }

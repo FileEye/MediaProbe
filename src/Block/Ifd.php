@@ -140,13 +140,12 @@ class Ifd extends BlockBase
 
         /* Read the number of tags */
         $n = $d->getShort($offset + $this->headerSkipBytes);
-        ExifEye::debug(
-            str_repeat("  ", $nesting_level) . "** Constructing IFD '%s' with %d TAGs at offset %d from %d bytes...",
-            $this->getName(),
-            $n,
-            $offset,
-            $d->getSize()
-        );
+        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "** Constructing IFD '{name}' with {tags} TAGs at offset {offset} from {total} bytes...", [
+            'name' => $this->getName(),
+            'tags' => $n,
+            'offset' => $offset,
+            'total' => $d->getSize(),
+        ]);
 
         $offset += 2 + $this->headerSkipBytes;
 
@@ -173,7 +172,7 @@ class Ifd extends BlockBase
             }
 
             ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . 'Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
-                'tag_id' => $tag->getId(),
+                'tag_id' => dechex($tag->getId()),
                 'tag_name' => $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
                 'format_id' => $tag->getEntry()->getFormat(),
                 'format_name' => Format::getName($tag->getEntry()->getFormat()),

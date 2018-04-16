@@ -107,13 +107,13 @@ class Jpeg
         }
 
         if (is_string($data)) {
-            ExifEye::debug('Initializing Jpeg object from %s', $data);
+            ExifEye::logger()->debug('Initializing Jpeg object from {data}', ['data' => $data]);
             $this->loadFile($data);
         } elseif ($data instanceof DataWindow) {
-            ExifEye::debug('Initializing Jpeg object from DataWindow.');
+            ExifEye::logger()->debug('Initializing Jpeg object from DataWindow.');
             $this->load($data);
         } elseif (is_resource($data) && get_resource_type($data) == 'gd') {
-            ExifEye::debug('Initializing Jpeg object from image resource.');
+            ExifEye::logger()->debug('Initializing Jpeg object from image resource.');
             $this->load(new DataWindow($data));
         } else {
             throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
@@ -157,7 +157,7 @@ class Jpeg
      */
     public function load(DataWindow $d)
     {
-        ExifEye::debug('Parsing %d bytes...', $d->getSize());
+        ExifEye::logger()->debug('Parsing {size} bytes...', ['size' => $d->getSize()]);
 
         /* JPEG data is stored in big-endian format. */
         $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
@@ -193,7 +193,7 @@ class Jpeg
                  */
                 $len = $d->getShort(0) - 2;
 
-                ExifEye::debug('Found %s section of length %d', JpegMarker::getName($marker), $len);
+                ExifEye::logger()->debug('Found {name} section of length {size}', ['name' => JpegMarker::getName($marker), 'size' => $len]);
 
                 /* Skip past the length. */
                 $d->setWindowStart(2);
@@ -239,7 +239,7 @@ class Jpeg
                         }
 
                         $this->jpeg_data = $d->getClone(0, $length - 2);
-                        ExifEye::debug('JPEG data: ' . $this->jpeg_data->__toString());
+                        ExifEye::logger()->debug('JPEG data: {data}', ['data' => $this->jpeg_data->__toString()]);
 
                         /* Append the EOI. */
                         $this->appendSection(JpegMarker::EOI, new JpegContent(new DataWindow()));

@@ -257,31 +257,6 @@ class ExifEye
     }
 
     /**
-     * Conditionally output debug information.
-     *
-     * This method works just like printf() except that it always
-     * terminates the output with a newline, and that it only outputs
-     * something if the {@link ExifEye::$debug} is true.
-     *
-     * @param string $format
-     *            the format string.
-     *
-     * @param mixed ...$args
-     *            any number of arguments can be given. The
-     *            arguments will be available for the format string as usual with
-     *            sprintf().
-     */
-    public static function debug($format)
-    {
-        $args = func_get_args();
-        $str = array_shift($args);
-/*        if (self::$debug) {
-            vprintf($str . "\n", $args);
-        }*/
-        static::logger()->debug(vsprintf($str, $args));
-    }
-
-    /**
      * Conditionally output a warning.
      *
      * This method works just like printf() except that it prepends the

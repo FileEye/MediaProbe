@@ -72,10 +72,10 @@ class Tiff
             return;
         }
         if (is_string($data)) {
-            ExifEye::debug('Initializing Tiff object from %s', $data);
+            ExifEye::logger()->debug('Initializing Tiff object from {data}', ['data' => $data]);
             $this->loadFile($data);
         } elseif ($data instanceof DataWindow) {
-            ExifEye::debug('Initializing Tiff object from DataWindow.');
+            ExifEye::logger()->debug('Initializing Tiff object from DataWindow.');
             $this->load($data);
         } else {
             throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
@@ -97,7 +97,7 @@ class Tiff
      */
     public function load(DataWindow $d)
     {
-        ExifEye::debug('Parsing %d bytes of TIFF data...', $d->getSize());
+        ExifEye::logger()->debug('Parsing {size} bytes of TIFF data...', ['size' => $d->getSize()]);
 
         /*
          * There must be at least 8 bytes available: 2 bytes for the byte
@@ -109,10 +109,10 @@ class Tiff
         }
         /* Byte order */
         if ($d->strcmp(0, 'II')) {
-            ExifEye::debug('Found Intel byte order');
+            ExifEye::logger()->debug('Found Intel byte order');
             $d->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
         } elseif ($d->strcmp(0, 'MM')) {
-            ExifEye::debug('Found Motorola byte order');
+            ExifEye::logger()->debug('Found Motorola byte order');
             $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
         } else {
             throw new InvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $d->getByte(0), $d->getByte(1));
@@ -124,7 +124,7 @@ class Tiff
         }
         /* IFD 0 offset */
         $offset = $d->getLong(4);
-        ExifEye::debug('First IFD at offset %d.', $offset);
+        ExifEye::logger()->debug('First IFD at offset {offset}.', ['offset' => $offset]);
 
         if ($offset > 0) {
             /*
@@ -278,7 +278,7 @@ class Tiff
         if ($d->strcmp(0, 'II')) {
             $d->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
         } elseif ($d->strcmp(0, 'MM')) {
-            ExifEye::debug('Found Motorola byte order');
+            ExifEye::logger()->debug('Found Motorola byte order');
             $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
         } else {
             return false;
