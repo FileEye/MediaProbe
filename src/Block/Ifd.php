@@ -165,9 +165,6 @@ class Ifd extends BlockBase
 
             // Invalid TAG.
             if (!$tag) {
-                ExifEye::maybeThrow(
-                    new IfdException("Invalid TAG 0x0000 in IFD '%s'", $this->getName())
-                );
                 continue;
             }
 
@@ -181,15 +178,12 @@ class Ifd extends BlockBase
                 'total' => $n,
             ]);
 
-            // Check if PEL can support this TAG.
+            // Check if ExifEye has a definition for this TAG.
             if (!$this->isValidTag($tag->getId())) {
-                ExifEye::maybeThrowNoDebug(
-                    new IfdException(
-                        "Unknown TAG 0x%04X in IFD '%s'",
-                        $tag->getId(),
-                        $this->getName()
-                    )
-                );
+                ExifEye::logger()->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag} in IFD '{ifd_name}'", [
+                    'tag_id' => dechex($tag->getId()),
+                    'ifd_name' => $this->getName(),
+                ]);
             }
 
             // Load a subIfd.
