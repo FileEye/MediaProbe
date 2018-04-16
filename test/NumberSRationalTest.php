@@ -10,40 +10,31 @@ class NumberSignedRationalTest extends NumberTestCase
     public function testOverflow()
     {
         $entry = new SignedRational([[-1, 2]]);
-        $this->assertEquals($entry->getValue(), [-1, 2]);
+        $this->assertTrue($this->num->isValid());
+        $this->assertEquals([-1, 2], $entry->getValue());
 
-        $caught = false;
-        try {
-            $entry->setValue([[-10, -20], [-1, -2147483649]]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
-        $this->assertEquals($entry->getValue(), [-1, 2]);
+        $entry->setValue([[-10, -20], [-1, -2147483649]]);
+        $this->assertFalse($this->num->isValid());
+        $this->assertEquals([[-10, -20], [-1, 0]], $entry->getValue());
 
-        $caught = false;
-        try {
-            $entry->setValue([[3, 4], [1, 2147483648]]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
-        $this->assertEquals($entry->getValue(), [-1, 2]);
+        $entry->setValue([[3, 4], [1, 2147483648]]);
+        $this->assertFalse($this->num->isValid());
+        $this->assertEquals([[3, 4], [1, 0]], $entry->getValue());
 
-        $caught = false;
-        try {
-            $entry->setValue([[3, 4], [4294967296, 1]]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
-        $this->assertEquals($entry->getValue(), [-1, 2]);
+        $entry->setValue([[3, 4], [4294967296, 1]]);
+        $this->assertFalse($this->num->isValid());
+        $this->assertEquals([[3, 4], [0, 1]], $entry->getValue());
+
+        $entry->setValue([[3, 4], [0, 2147483647]]);
+        $this->assertTrue($this->num->isValid());
+        $this->assertEquals([[3, 4], [0, 2147483647]], $entry->getValue());
     }
 
     public function testReturnValues()
     {
         $entry = new SignedRational([]);
         $this->assertEquals($entry->getValue(), []);
+        $this->assertEquals($entry->toString(), '');
 
         $entry->setValue([[-1, 2], [3, 4], [5, -6]]);
         $this->assertEquals($entry->getValue(), [[-1, 2], [3, 4], [5, -6]]);

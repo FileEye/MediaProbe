@@ -10,34 +10,24 @@ class NumberRationalTest extends NumberTestCase
     public function testOverflow()
     {
         $entry = new Rational([[1, 2]]);
-        $this->assertEquals($entry->getValue(), [1, 2]);
+        $this->assertTrue($this->num->isValid());
+        $this->assertEquals([1, 2], $entry->getValue());
 
-        $caught = false;
-        try {
-            $entry->setValue([[3, 4], [-1, 2], [7, 8]]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
-        $this->assertEquals($entry->getValue(), [1, 2]);
+        $entry->setValue([[3, 4], [-1, 2], [7, 8]]);
+        $this->assertFalse($this->num->isValid());
+        $this->assertEquals([[3, 4], [0, 2], [7, 8]], $entry->getValue());
 
-        $caught = false;
-        try {
-            $entry->setValue([[3, 4], [1, 4294967296]]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
-        $this->assertEquals($entry->getValue(), [1, 2]);
+        $entry->setValue([[3, 4], [1, 4294967296]]);
+        $this->assertFalse($this->num->isValid());
+        $this->assertEquals([[3, 4], [1, 0]], $entry->getValue());
 
-        $caught = false;
-        try {
-            $entry->setValue([[3, 4], [4294967296, 1]]);
-        } catch (OverflowException $e) {
-            $caught = true;
-        }
-        $this->assertTrue($caught);
-        $this->assertEquals($entry->getValue(), [1, 2]);
+        $entry->setValue([[3, 4], [4294967296, 1]]);
+        $this->assertFalse($this->num->isValid());
+        $this->assertEquals([[3, 4], [0, 1]], $entry->getValue());
+
+        $entry->setValue([[3, 4], [0, 4294967295]]);
+        $this->assertTrue($this->num->isValid());
+        $this->assertEquals([[3, 4], [0, 4294967295]], $entry->getValue());
     }
 
     public function testReturnValues()
