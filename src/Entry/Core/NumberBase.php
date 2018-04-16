@@ -44,7 +44,7 @@ abstract class NumberBase extends EntryBase
     {
         parent::setValue($data);
 
-        foreach ($data as $v) {
+        foreach ($data as &$v) {
             $this->validateNumber($v);
         }
 

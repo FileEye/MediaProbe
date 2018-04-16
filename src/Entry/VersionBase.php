@@ -36,7 +36,7 @@ class VersionBase extends Undefined
      */
     public function setValue(array $data)
     {
-        parent::setValue($data);
+        $this->valid = true;
 
         $version = isset($data[0]) ? $data[0] : 0.0;
         if (!is_numeric($version)) {

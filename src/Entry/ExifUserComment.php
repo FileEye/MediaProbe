@@ -46,7 +46,7 @@ class ExifUserComment extends Undefined
      */
     public function setValue(array $data)
     {
-        parent::setValue($data);
+        $this->valid = true;
 
         $this->value = array_replace(['', 'ASCII'], $data);
         $this->components = 8 + strlen($this->value[0]);
