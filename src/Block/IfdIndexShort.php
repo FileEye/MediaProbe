@@ -92,7 +92,7 @@ class IfdIndexShort extends Ifd
             }
             if ($class = Spec::getTagClass($this->type, $i + 1)) {
                 $entry = new $class([$item_value]);
-                $this->xxAppendSubBlock(new Tag($this->getType(), $i + 1, $entry->getFormat(), $entry->getComponents(), $entry));
+                $this->xxAppendSubBlock(new Tag($this->getType(), $i + 1, $entry, $entry->getFormat(), $entry->getComponents()));
             }
         }
         ExifEye::debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '%s'.", $this->getName());
