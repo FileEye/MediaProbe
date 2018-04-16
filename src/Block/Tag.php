@@ -41,7 +41,7 @@ class Tag extends BlockBase
         $this->name = Spec::getTagName($ifd_id, $id);
         $this->hasSpecification = (bool) $this->name;
 
-        $entry->setParentBlock = $this;
+        $entry->setParentBlock($this);
         $this->setEntry($entry);
     }
 
