@@ -34,6 +34,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
+use Monolog\Handler\StreamHandler;
 
 $prog = array_shift($argv);
 $file = '';
@@ -87,6 +88,7 @@ if (Jpeg::isValid($data)) {
 }
 
 /* Try loading the data. */
+ExifEye::logger()->pushHandler(new StreamHandler('php://stdout'));
 $img->load($data);
 
 print($img);

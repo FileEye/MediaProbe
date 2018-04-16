@@ -117,10 +117,10 @@ class Tag extends BlockBase
     {
         $entry_name = Spec::getTagName($this->ifdId, $this->id) ?: '*** UNKNOWN ***';
         $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, $entry_name);
-        $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->format, Format::getName($this->format));
-        $str .= ExifEye::fmt("    Components: %d\n", $this->components);
+        $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->getEntry()->getFormat(), Format::getName($this->getEntry()->getFormat()));
+        $str .= ExifEye::fmt("    Components: %d\n", $this->getEntry()->getComponents());
         $str .= ExifEye::fmt("    Value     : %s\n", print_r($this->getEntry()->getValue(), true));
-        $str .= ExifEye::fmt("    Text      : %s\n", $this->xxGetText());
+        $str .= ExifEye::fmt("    Text      : %s\n", $this->getEntry()->toString());
         return $str;
     }
 }

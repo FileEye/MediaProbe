@@ -3,7 +3,6 @@
 namespace ExifEye\core;
 
 use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 use Monolog\Handler\TestHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 use Monolog\Processor\IntrospectionProcessor;
@@ -196,7 +195,6 @@ class ExifEye
         if (!isset(static::$logger)) {
             static::$logger = (new Logger('exifeye'))
               ->pushHandler(new TestHandler(Logger::INFO))
-              ->pushHandler(new StreamHandler('php://stdout'))
               ->pushProcessor(new PsrLogMessageProcessor())
               ->pushProcessor(new IntrospectionProcessor());
         }
