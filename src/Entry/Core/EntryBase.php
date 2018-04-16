@@ -5,6 +5,7 @@ namespace ExifEye\core\Entry\Core;
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEyeException;
+use ExifEye\core\Spec;
 
 /**
  * Base class for EntryInterface objects.
