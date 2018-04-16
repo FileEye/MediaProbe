@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\Format;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
@@ -37,8 +38,10 @@ class GH16Test extends ExifEyeTestCaseBase
         $ifd0 = $tiff->getIfd();
         $this->assertCount(1, $ifd0->xxGetSubBlocks());
 
-        $entry = new WindowsString([$subject]);
-        $ifd0->xxAddSubBlock(new Tag($ifd0->getType(), 0x9C9F, $entry->getFormat(), $entry->getComponents(), $entry));
+        $tag = new Tag($ifd0->getType(), 0x9C9F, Format::BYTE, (strlen($subject) * 2) + 1; // xx
+        $entry = new WindowsString([$subject], $tag);
+        $tag->setEntry($entry);
+        $ifd0->xxAddSubBlock();
         $this->assertCount(1, $ifd0->xxGetSubBlocks());
 
         $jpeg->saveFile($this->file);
