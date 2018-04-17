@@ -3,12 +3,13 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\ElementBase;
 use ExifEye\core\Entry\Core\EntryInterface;
 
 /**
  * Class representing an Exif TAG.
  */
-abstract class BlockBase
+abstract class BlockBase extends ElementBase
 {
     /**
      * The type of this block.
