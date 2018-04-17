@@ -362,8 +362,7 @@ blocks:
                     value: aToyOw==
                     clear_value: 'i:2;'
                     text: Inch
-errors:
-    entries:
-        -
-            class: ExifEye\core\ExifEyeException
-            message: 'Found trailing content after EOI: 1396 bytes'
+errors: {  }
+warnings:
+    -
+        message: 'Found trailing content after EOI: 1396 bytes (Jpeg.php:249)'

@@ -176,7 +176,7 @@ blocks:
                             components: 1
                             value: YToyOntpOjA7aToxNTQ7aToxO2k6MzI7fQ==
                             clear_value: 'a:2:{i:0;i:154;i:1;i:32;}'
-                            text: 5.3
+                            text: '5.3'
                     -
                         id: 37380
                         name: ExposureBiasValue
@@ -1174,23 +1174,17 @@ blocks:
                     value: aToyOw==
                     clear_value: 'i:2;'
                     text: Inch
-errors:
-    entries:
-        -
-            class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0003 in IFD ''CanonMakerNotes'''
-        -
-            class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'''
-        -
-            class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'''
-        -
-            class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0000 in IFD ''CanonMakerNotes'''
-        -
-            class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0018 in IFD ''CanonMakerNotes'''
-        -
-            class: ExifEye\core\Block\Exception\IfdException
-            message: 'Unknown TAG 0x0019 in IFD ''CanonMakerNotes'''
+errors: {  }
+warnings:
+    -
+        message: 'Unknown TAG 0x3 in IFD ''CanonMakerNotes'''
+    -
+        message: 'Unknown TAG 0x0 in IFD ''CanonMakerNotes'''
+    -
+        message: 'Unknown TAG 0x0 in IFD ''CanonMakerNotes'''
+    -
+        message: 'Unknown TAG 0x0 in IFD ''CanonMakerNotes'''
+    -
+        message: 'Unknown TAG 0x18 in IFD ''CanonMakerNotes'''
+    -
+        message: 'Unknown TAG 0x19 in IFD ''CanonMakerNotes'''

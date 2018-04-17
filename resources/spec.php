@@ -768,7 +768,7 @@ return array (
       37377 =>
       array (
         'name' => 'ShutterSpeedValue',
-        'title' => 'Shutter speed',
+        'title' => 'Shutter Speed Value',
         'components' => 1,
         'format' =>
         array (
@@ -779,7 +779,7 @@ return array (
       37378 =>
       array (
         'name' => 'ApertureValue',
-        'title' => 'Aperture',
+        'title' => 'Aperture Value',
         'components' => 1,
         'format' =>
         array (
@@ -790,7 +790,7 @@ return array (
       37379 =>
       array (
         'name' => 'BrightnessValue',
-        'title' => 'Brightness',
+        'title' => 'Brightness Value',
         'components' => 1,
         'format' =>
         array (
