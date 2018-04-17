@@ -49,8 +49,27 @@ class CameraTest extends ExifEyeTestCaseBase
 
         // @todo readd testing of thumbnail correctness
 
-        if (isset($test['errors']['entries'])) {
-            $this->assertCount(count($test['errors']['entries']), ExifEye::getExceptions());
+        $handler = ExifEye::logger()->getHandlers()[0];
+        $errors = 0;
+        $warnings = 0;
+        foreach ($handler->getRecords() as $record) {
+            switch ($record['level_name']) {
+                case 'WARNING':
+                    ++$warnings;
+                    break;
+                case 'ERROR':
+                    ++$errors;
+                    break;
+                default:
+                    continue;
+            }
+        }
+
+        if (isset($test['errors'])) {
+            $this->assertCount(count($test['errors']), $errors);
+        }
+        if (isset($test['warnings'])) {
+            $this->assertCount(count($test['warnings']), $warnings);
         }
     }
 
