@@ -180,7 +180,7 @@ class Ifd extends BlockBase
 
             // Check if ExifEye has a definition for this TAG.
             if (!$this->isValidTag($tag->getId())) {
-                ExifEye::logger()->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag} in IFD '{ifd_name}'", [
+                ExifEye::logger()->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag_id} in IFD '{ifd_name}'", [
                     'tag_id' => dechex($tag->getId()),
                     'ifd_name' => $this->getName(),
                 ]);
