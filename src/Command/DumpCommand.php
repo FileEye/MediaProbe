@@ -96,11 +96,13 @@ class DumpCommand extends Command
         foreach ($handler->getRecords() as $record) {
             switch ($record['level_name']) {
                 case 'WARNING':
-                  $key = 'warnings';
-                  break;
+                    $key = 'warnings';
+                    break;
                 case 'ERROR':
-                  $key = 'errors';
-                  break;
+                    $key = 'errors';
+                    break;
+                default:
+                    continue;
             }
             $json[$key][] = [
                 'message' => $record['message'],
