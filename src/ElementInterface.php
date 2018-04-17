@@ -7,7 +7,7 @@ namespace ExifEye\core;
  *
  * ExifEye Block and Entry objects all implement this interface.
  */
-interface EntryInterface
+interface ElementInterface
 {
     /**
      * Sets the parent element of this element.
