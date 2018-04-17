@@ -66,10 +66,10 @@ class CameraTest extends ExifEyeTestCaseBase
         }
 
         if (isset($test['errors'])) {
-            $this->assertCount(count($test['errors']), $errors);
+            $this->assertEquals(count($test['errors']), $errors);
         }
         if (isset($test['warnings'])) {
-            $this->assertCount(count($test['warnings']), $warnings);
+            $this->assertEquals(count($test['warnings']), $warnings);
         }
     }
 
