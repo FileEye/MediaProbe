@@ -228,32 +228,6 @@ class ExifEye
     }
 
     /**
-     * Conditionally output a warning.
-     *
-     * This method works just like printf() except that it prepends the
-     * output with the string 'Warning: ', terminates the output with a
-     * newline, and that it only outputs something if the PEL_DEBUG
-     * defined to some true value.
-     *
-     * @param string $format
-     *            the format string.
-     *
-     * @param mixed ...$args
-     *            any number of arguments can be given. The
-     *            arguments will be available for the format string as usual with
-     *            sprintf().
-     */
-    public static function warning($format)
-    {
-        $args = func_get_args();
-        $str = array_shift($args);
-/*        if (self::$debug) {
-            vprintf('Warning: ' . $str . "\n", $args);
-        }*/
-        static::logger()->warning(vsprintf($str, $args));
-    }
-
-    /**
      * Translate a string.
      *
      * This static function will use Gettext to translate a string. By
