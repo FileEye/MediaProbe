@@ -43,7 +43,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public static function loadFromData(DataWindow $data_window, $offset, $options = [])
+    public static function loadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
     {
         $ifd_id = isset($options['ifd_id']) ? $options['ifd_id'] : null;
 
@@ -99,7 +99,7 @@ class Tag extends BlockBase
         $entry = new $entry_class_name($arguments);
 
         // Build and return the TAG object.
-        $tag = new static($ifd_id, $id, $entry);
+        $tag = new static($parent, $id, $entry);
         return $tag;
     }
 

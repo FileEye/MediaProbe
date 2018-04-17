@@ -112,7 +112,7 @@ class Ifd extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public static function loadFromData(DataWindow $data_window, $offset, $options = [])
+    public static function loadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
     {
         // @todo
     }
@@ -158,7 +158,7 @@ class Ifd extends BlockBase
         }
 
         for ($i = 0; $i < $n; $i++) {
-            $tag = Tag::loadFromData($d, $offset + 12 * $i, [
+            $tag = Tag::loadFromData($this, $d, $offset + 12 * $i, [
                 'ifd_id' => $this->getType(),
                 'ifd_offset' => $offset,
                 'tagsAbsoluteOffset' => $this->tagsAbsoluteOffset,

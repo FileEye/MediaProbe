@@ -81,6 +81,8 @@ abstract class BlockBase extends ElementBase
     /**
      * Loads data into a block.
      *
+     * @param BlockBase $parent
+     *            the parent Block.
      * @param DataWindow $data_window
      *            the data window that will provide the data.
      * @param int $offset
@@ -91,7 +93,7 @@ abstract class BlockBase extends ElementBase
      *
      * @returns BlockBase
      */
-    public static function loadFromData(DataWindow $data_window, $offset, $options = [])
+    public static function loadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
     {
         // @todo
     }
