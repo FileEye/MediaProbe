@@ -73,7 +73,7 @@ class DumpCommand extends Command
         $jpeg = new Jpeg((string) $file);
         $json['jpeg'] = $file->getBaseName();
         $this->jpegToTest('$jpeg', $jpeg, $json);
-        $exceptions = ExifEye::getExceptions();
+/*        $exceptions = ExifEye::getExceptions();
         if (count($exceptions) == 0) {
             $json['errors'] = [];
         } else {
@@ -81,7 +81,7 @@ class DumpCommand extends Command
                 $json['errors']['entries'][$i]['class'] = get_class($exceptions[$i]);
                 $json['errors']['entries'][$i]['message'] = $exceptions[$i]->getMessage();
             }
-        }
+        }*/
 
 /*        foreach (ExifEye::logger()->getHandlers() as $handler) {
             if ($handler instanceof Monolog\Handler\TestHandler) {
@@ -91,12 +91,19 @@ class DumpCommand extends Command
             }
         }*/
         $handler = ExifEye::logger()->getHandlers()[0];
-        $json['log'] = [];
+        $json['errors'] = [];
+        $json['warnings'] = [];
         foreach ($handler->getRecords() as $record) {
-            $json['log'][] = [
-                'level_name' => $record['level_name'],
+            switch ($record['level_name']) {
+                case 'WARNING':
+                  $key = 'warnings';
+                  break;
+                case 'ERROR':
+                  $key = 'errors';
+                  break;
+            }
+            $json[$key][] = [
                 'message' => $record['message'],
-                'method' => $record['extra']['class'] . '::' . $record['extra']['function'],
             ];
         }
 
