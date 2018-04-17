@@ -56,13 +56,6 @@ class ExifEye
      */
     private static $strict = false;
 
-    /**
-     * Stored exceptions.
-     *
-     * When {@link ExifEye::$strict} is set to false exceptions will be
-     * accumulated here instead of being thrown.
-     */
-    private static $exceptions = [];
     private static $logger;
 
     /**
@@ -113,51 +106,13 @@ class ExifEye
     }
 
     /**
-     * Return list of stored exceptions.
-     *
-     * When ExifyEye is parsing in non-strict mode, it will store most
-     * exceptions instead of throwing them. Use this method to get hold
-     * of them when a call returns.
-     *
-     * Code for using this could look like this:
-     *
-     * <code>
-     * ExifEye::setStrictParsing(true);
-     * ExifEye::clearExceptions();
-     *
-     * $jpeg = new Jpeg($file);
-     *
-     * // Check for exceptions.
-     * foreach (ExifEye::getExceptions() as $e) {
-     *   printf("Exception: %s\n", $e->getMessage());
-     *   if ($e instanceof EntryException) {
-     *     // Warn about entries that couldn't be loaded.
-     *     printf("Warning: Problem with %s.\n",
-     *     Spec::getTagName(($e->getType(), $e->getId()));
-     *   }
-     * }
-     * </code>
-     *
-     * This gives applications total control over the amount of error
-     * messages shown and (hopefully) provides the necessary information
-     * for proper error recovery.
-     *
-     * @return array the exceptions.
-     */
-    public static function getExceptions()
-    {
-        return self::$exceptions;
-    }
-
-    /**
      * Clear list of stored exceptions.
      *
      * Use this function before a call to some method if you intend to
      * check for exceptions afterwards.
      */
-    public static function clearExceptions()
+    public static function clearLogger()
     {
-        self::$exceptions = [];
         static::$logger = null;
     }
 

@@ -14,6 +14,7 @@ class NoExifTest extends ExifEyeTestCaseBase
         $exif = $jpeg->getExif();
         $this->assertNull($exif);
 
-        $this->assertTrue(count(ExifEye::getExceptions()) == 0);
+        $handler = ExifEye::logger()->getHandlers()[0]; // xx
+        $this->assertEmpty($handler->getRecords());
     }
 }

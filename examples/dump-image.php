@@ -88,19 +88,13 @@ if (Jpeg::isValid($data)) {
     exit(1);
 }
 
-/* Try loading the data. */
+/* Set logging */
 $log_handler = new StreamHandler('php://stdout');
 $log_formatter = new LineFormatter("%level_name% > %message% \n");
 $log_handler->setFormatter($log_formatter);
 ExifEye::logger()->pushHandler($log_handler);
+
+/* Try loading the data. */
 $img->load($data);
 
 print($img);
-
-/* Deal with any exceptions: */
-if (count(ExifEye::getExceptions()) > 0) {
-    print("\nThe following errors were encountered while loading the image:\n");
-    foreach (ExifEye::getExceptions() as $e) {
-        print("\n" . $e->__toString());
-    }
-}

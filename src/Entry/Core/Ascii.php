@@ -4,7 +4,6 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
-use ExifEye\core\Entry\Exception\EntryException;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;

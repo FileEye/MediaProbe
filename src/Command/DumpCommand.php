@@ -54,7 +54,7 @@ class DumpCommand extends Command
         $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG')->notName('*-thumb*');
 
         foreach ($finder as $file) {
-            ExifEye::clearExceptions();
+            ExifEye::clearLogger();
             $yaml = $this->fileToTest($file);
             $output->write($yaml);
             $fs->dumpFile((string) $file . '.test.yml', $yaml);
@@ -73,15 +73,6 @@ class DumpCommand extends Command
         $jpeg = new Jpeg((string) $file);
         $json['jpeg'] = $file->getBaseName();
         $this->jpegToTest('$jpeg', $jpeg, $json);
-/*        $exceptions = ExifEye::getExceptions();
-        if (count($exceptions) == 0) {
-            $json['errors'] = [];
-        } else {
-            for ($i = 0; $i < count($exceptions); $i ++) {
-                $json['errors']['entries'][$i]['class'] = get_class($exceptions[$i]);
-                $json['errors']['entries'][$i]['message'] = $exceptions[$i]->getMessage();
-            }
-        }*/
 
 /*        foreach (ExifEye::logger()->getHandlers() as $handler) {
             if ($handler instanceof Monolog\Handler\TestHandler) {

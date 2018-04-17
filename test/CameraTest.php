@@ -49,7 +49,7 @@ class CameraTest extends ExifEyeTestCaseBase
 
         // @todo readd testing of thumbnail correctness
 
-        $handler = ExifEye::logger()->getHandlers()[0];
+        $handler = ExifEye::logger()->getHandlers()[0]; // xx
         $errors = 0;
         $warnings = 0;
         foreach ($handler->getRecords() as $record) {
