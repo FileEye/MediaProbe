@@ -37,7 +37,7 @@ class GH16Test extends ExifEyeTestCaseBase
         $ifd0 = $tiff->getIfd();
         $this->assertCount(1, $ifd0->xxGetSubBlocks());
 
-        $ifd0->xxAddSubBlock(new Tag($ifd0->getType(), 0x9C9F, new WindowsString([$subject])));
+        $ifd0->xxAddSubBlock(new Tag($ifd0, 0x9C9F, new WindowsString([$subject])));
         $this->assertCount(1, $ifd0->xxGetSubBlocks());
 
         $jpeg->saveFile($this->file);

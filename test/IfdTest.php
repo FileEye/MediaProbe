@@ -17,12 +17,12 @@ class IfdTest extends ExifEyeTestCaseBase
         $this->assertCount(0, $ifd->xxGetSubBlocks());
 
         $desc = new Ascii(['Hello?']);
-        $tag = new Tag($ifd->getType(), 0x010E, $desc);
+        $tag = new Tag($ifd, 0x010E, $desc);
         $tag->setEntry($desc);
         $ifd->xxAddSubBlock($tag);
 
         $date = new Time([12345678]);
-        $tag_1 = new Tag($ifd->getType(), 0x0132, $date);
+        $tag_1 = new Tag($ifd, 0x0132, $date);
         $tag_1->setEntry($date);
         $ifd->xxAddSubBlock($tag_1);
 

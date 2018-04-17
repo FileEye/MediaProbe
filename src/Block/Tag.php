@@ -20,22 +20,24 @@ class Tag extends BlockBase
      */
     protected $type = 'Tag';
 
-    protected $ifdId;
-
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($ifd_id, $id, EntryInterface $entry)
+    public function __construct(Ifd $ifd, $id, EntryInterface $entry)
     {
-        $this->ifdId = $ifd_id;
+        $this->setParentElement($ifd);
 
         $this->id = $id;
-
-        $this->name = Spec::getTagName($ifd_id, $id);
+        $this->name = Spec::getTagName($this->getParentIfd()->getId(), $id);
         $this->hasSpecification = (bool) $this->name;
 
         $entry->setParentElement($this);
         $this->setEntry($entry);
+    }
+
+    public function getParentIfd() // xx
+    {
+        return $this->getParentElement();
     }
 
     /**
@@ -101,11 +103,6 @@ class Tag extends BlockBase
         return $tag;
     }
 
-    public function getIfdId() // xx
-    {
-        return $this->ifdId;
-    }
-
     /**
      * Turn this entry into a string.
      *
@@ -114,7 +111,7 @@ class Tag extends BlockBase
      */
     public function __toString()
     {
-        $entry_name = Spec::getTagName($this->ifdId, $this->id) ?: '*** UNKNOWN ***';
+        $entry_name = Spec::getTagName($this->getParentIfd()->getId(), $this->getId()) ?: '*** UNKNOWN ***';
         $str = ExifEye::fmt("  Tag: 0x%04X (%s)\n", $this->id, $entry_name);
         $str .= ExifEye::fmt("    Format    : %d (%s)\n", $this->getEntry()->getFormat(), Format::getName($this->getEntry()->getFormat()));
         $str .= ExifEye::fmt("    Components: %d\n", $this->getEntry()->getComponents());

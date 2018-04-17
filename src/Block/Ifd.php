@@ -105,8 +105,8 @@ class Ifd extends BlockBase
         if (Spec::getIfdType($type) === null) {
             throw new IfdException('Unknown IFD type: %d', $type);
         }
-
-        $this->type = $type;
+        $this->type = $type; // xx
+        $this->id = $type;
     }
 
     /**
