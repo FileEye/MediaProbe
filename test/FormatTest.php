@@ -18,15 +18,7 @@ class FormatTest extends ExifEyeTestCaseBase
         $this->assertEquals('Ascii', Format::getName(Format::ASCII));
         $this->assertEquals('Float', Format::getName(Format::FLOAT));
         $this->assertEquals('Undefined', Format::getName(Format::UNDEFINED));
-        //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
-        //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
-        if (method_exists($this, 'expectException')) {
-            $this->expectException('ExifEye\core\ExifEyeException');
-            $this->expectExceptionMessage("Unknown format: 0x64");
-        } else {
-            $this->setExpectedException('ExifEye\core\ExifEyeException', "Unknown format: 0x64");
-        }
-        Format::getName(100);
+        $this->assertNull(Format::getName(100));
     }
 
     public function testGetIdFromName()
@@ -42,14 +34,6 @@ class FormatTest extends ExifEyeTestCaseBase
         $this->assertEquals(1, Format::getSize(Format::ASCII));
         $this->assertEquals(4, Format::getSize(Format::FLOAT));
         $this->assertEquals(1, Format::getSize(Format::UNDEFINED));
-        //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
-        //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
-        if (method_exists($this, 'expectException')) {
-            $this->expectException('ExifEye\core\ExifEyeException');
-            $this->expectExceptionMessage("Unknown format: 0x64");
-        } else {
-            $this->setExpectedException('ExifEye\core\ExifEyeException', "Unknown format: 0x64");
-        }
-        Format::getSize(100);
+        $this->assertNull(Format::getSize(100));
     }
 }
