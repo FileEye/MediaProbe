@@ -29,16 +29,6 @@ interface EntryInterface
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset);
 
     /**
-     * Sets the parent block of this entry.
-     *
-     * @param BlockBase
-     *            the parent block.
-     *
-     * @return $this
-     */
-    public function setParentBlock(BlockBase $parent_block = null);
-
-    /**
      * Returns the format of this entry.
      *
      * @return int
@@ -51,13 +41,6 @@ interface EntryInterface
      * @return int
      */
     public function getComponents();
-
-    /**
-     * Gets validity of the entry.
-     *
-     * @return bool
-     */
-    public function isValid();
 
     /**
      * Sets the value of this entry.

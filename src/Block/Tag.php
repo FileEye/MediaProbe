@@ -34,7 +34,7 @@ class Tag extends BlockBase
         $this->name = Spec::getTagName($ifd_id, $id);
         $this->hasSpecification = (bool) $this->name;
 
-        $entry->setParentBlock($this);
+        $entry->setParentElement($this);
         $this->setEntry($entry);
     }
 
@@ -94,9 +94,10 @@ class Tag extends BlockBase
         // Build an ExifEye Entry from the raw data.
         $entry_class_name = Spec::getTagClass($ifd_id, $id, $format);
         $arguments = call_user_func($entry_class_name . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
+        $entry = new $entry_class_name($arguments);
 
         // Build and return the TAG object.
-        $tag = new static($ifd_id, $id, new $entry_class_name($arguments), $format, $components, $data_element);
+        $tag = new static($ifd_id, $id, $entry);
         return $tag;
     }
 

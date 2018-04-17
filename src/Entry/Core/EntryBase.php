@@ -4,6 +4,7 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
+use ExifEye\core\ElementBase;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Spec;
 
@@ -18,15 +19,8 @@ use ExifEye\core\Spec;
  * and gives back an array of arguments that can be used in the descendent
  * constructor.
  */
-abstract class EntryBase implements EntryInterface
+abstract class EntryBase extends ElementBase implements EntryInterface
 {
-    /**
-     * The parent BlockBase object of this entry.
-     *
-     * @var \ExifEye\core\Block\BlockBase
-     */
-    protected $parentBlock;
-
     /**
      * The format of this entry.
      *
@@ -52,23 +46,14 @@ abstract class EntryBase implements EntryInterface
     protected $value;
 
     /**
-     * Whether this entry is valid.
-     *
-     * @var int
-     */
-    protected $valid = true;
-
-    /**
      * Constructs an EntryInterface object.
      *
      * @param array $data
      *            the data that this entry will be holding.
      */
-    public function __construct(array $data, BlockBase $parent_block = null)
+    public function __construct(array $data)
     {
-        $this
-            ->setParentBlock($parent_block)
-            ->setValue($data);
+        $this->setValue($data);
     }
 
     /**
@@ -77,15 +62,6 @@ abstract class EntryBase implements EntryInterface
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         throw new ExifEyeException('getInstanceArgumentsFromTagData() must be implemented.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setParentBlock(BlockBase $parent_block = null)
-    {
-        $this->parentBlock = $parent_block;
-        return $this;
     }
 
     /**
@@ -102,14 +78,6 @@ abstract class EntryBase implements EntryInterface
     public function getComponents()
     {
         return $this->components;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isValid()
-    {
-        return $this->valid;
     }
 
     /**
@@ -134,9 +102,8 @@ abstract class EntryBase implements EntryInterface
      */
     public function toString(array $options = [])
     {
-        if (isset($this->parentBlock)) {
-            $brief = isset($options['short']) ? $options['short'] : false;  // xx
-            return Spec::getTagText($this->parentBlock->getIfdId(), $this->parentBlock->getId(), $this, $brief); // xx
+        if ($parent = $this->getParentElement()) {
+            return Spec::getTagText($parent, $this, $options); // xx
         }
         return null;
     }

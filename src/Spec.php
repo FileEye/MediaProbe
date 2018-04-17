@@ -2,6 +2,7 @@
 
 namespace ExifEye\core;
 
+use ExifEye\core\Block\Tag;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
@@ -315,21 +316,21 @@ class Spec
     /**
      * Returns the TAG text.
      *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
+     * @param \ExifEye\core\Block\Tag $tag
+     *            the TAG.
      * @param EntryInterface $entry
      *            the TAG entry.
-     * @param bool $brief
-     *            indicates to use brief output.
+     * @param array $options
+     *            (optional) an array of options to format the value.
      *
      * @return string|null
      *            the TAG text, or NULL if not applicable.
      */
-    public static function getTagText($ifd_id, $tag_id, EntryInterface $entry, $brief)
+    public static function getTagText(Tag $tag, EntryInterface $entry, $options[]) // xx move to generic element
     {
         // Return a text from a mapping list if defined.
+        $ifd_id = $tag->getIfdId();
+        $tag_id = $tag->getId();
         if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'])) {
             $value = $entry->getValue();
             if (is_scalar($value)) {

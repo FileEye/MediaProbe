@@ -1,0 +1,63 @@
+<?php
+
+namespace ExifEye\core;
+
+/**
+ * Base class for ElementInterface objects.
+ *
+ * As this class is abstract you cannot instantiate objects from it. It only
+ * serves as a common ancestor to define the methods common to all ExifEye
+ * elements (Block and Entry objects).
+ */
+abstract class ElementBase implements ElementInterface
+{
+    /**
+     * The parent Element object of this element.
+     *
+     * @var \ExifEye\core\ElementInterface
+     */
+    protected $parentElement;
+
+    /**
+     * Whether this element is valid.
+     *
+     * @var bool
+     */
+    protected $valid = true;
+
+    /**
+     * Constructs an Element object.
+     *
+     * @param \ExifEye\core\ElementInterface $parent
+     *            the parent element of this element.
+     */
+    public function __construct(ElementInterface $parent = null)
+    {
+        $this->parentElement = $parent;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setParentElement(ElementInterface $parent)
+    {
+        $this->parentElement = $parent;
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getParentElement()
+    {
+        return $this->parentElement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isValid()
+    {
+        return $this->valid;
+    }
+}
