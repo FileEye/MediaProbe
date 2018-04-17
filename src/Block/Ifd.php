@@ -152,7 +152,9 @@ class Ifd extends BlockBase
         /* Check if we have enough data. */
         if ($offset + 12 * $n > $d->getSize()) {
             $n = floor(($offset - $d->getSize()) / 12);
-            ExifEye::maybeThrow(new IfdException('Adjusted to: %d.', $n));
+            ExifEye::logger()->warning('Adjusted to: {tags}.', [
+                'tags' => $n,
+            ]);
         }
 
         for ($i = 0; $i < $n; $i++) {
@@ -198,10 +200,12 @@ class Ifd extends BlockBase
                         $ifd->load($d, $o, $tag->getEntry()->getComponents(), $nesting_level + 1);
                         $this->sub[$type] = $ifd;
                     } catch (DataWindowOffsetException $e) {
-                        ExifEye::maybeThrow(new IfdException($e->getMessage()));
+                        ExifEye::logger()->error($e->getMessage());
                     }
                 } else {
-                    ExifEye::maybeThrow(new IfdException('Bogus offset to next IFD: %d, same as offset being loaded from.', $o));
+                    ExifEye::logger()->error('Bogus offset to next IFD: {offset}, same as offset being loaded from.', [
+                        'offset' => $o,
+                    ]);
                 }
                 continue;
             }
@@ -235,13 +239,16 @@ class Ifd extends BlockBase
         if ($o > 0) {
             /* Sanity check: we need 6 bytes */
             if ($o > $d->getSize() - 6) {
-                ExifEye::maybeThrow(new IfdException('Bogus offset to next IFD: ' . '%d > %d!', $o, $d->getSize() - 6));
+                ExifEye::logger()->error('Bogus offset to next IFD: {offset} > {size}!', [
+                    'offset' => $o,
+                    'size' => $d->getSize() - 6,
+                ]);
             } else {
-                if (Spec::getIfdType($this->type) === '1') {
+                if (Spec::getIfdType($this->type) === 'IFD1') {
                     // IFD1 shouldn't link further...
-                    ExifEye::maybeThrow(new IfdException('IFD1 links to another IFD!'));
+                    ExifEye::logger()->error('IFD1 links to another IFD!');
                 }
-                $this->next = new Ifd(Spec::getIfdIdByType('1'));
+                $this->next = new Ifd(Spec::getIfdIdByType('IFD1'));
                 $this->next->load($d, $o);
             }
         }
@@ -289,13 +296,10 @@ class Ifd extends BlockBase
              * check the length before we store the thumbnail.
              */
             if ($offset + $length > $d->getSize()) {
-                ExifEye::maybeThrow(
-                    new IfdException(
-                        'Thumbnail length %d bytes ' . 'adjusted to %d bytes.',
-                        $length,
-                        $d->getSize() - $offset
-                    )
-                );
+                ExifEye::logger()->warning('Thumbnail length {length} bytes adjusted to {adjusted_length} bytes.', [
+                    'length' => $length,
+                    'adjusted_length' => $d->getSize() - $offset,
+                ]);
                 $length = $d->getSize() - $offset;
             }
 
@@ -303,7 +307,7 @@ class Ifd extends BlockBase
             try {
                 $this->setThumbnail($d->getClone($offset, $length));
             } catch (DataWindowWindowException $e) {
-                ExifEye::maybeThrow(new IfdException($e->getMessage()));
+                ExifEye::logger()->error($e->getMessage());
             }
         }
     }
@@ -329,7 +333,9 @@ class Ifd extends BlockBase
         }
 
         if ($size != $d->getSize()) {
-            ExifEye::maybeThrow(new IfdException('Decrementing thumbnail size ' . 'to %d bytes', $size));
+            ExifEye::logger()->warning('Decrementing thumbnail size to {size} bytes', [
+                'size' => $size,
+            ]);
         }
         $this->thumb_data = $d->getClone(0, $size);
     }

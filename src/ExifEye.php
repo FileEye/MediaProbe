@@ -161,35 +161,6 @@ class ExifEye
         static::$logger = null;
     }
 
-    /**
-     * Conditionally throw an exception.
-     *
-     * This method will throw the passed exception when strict parsing
-     * in effect (see {@link setStrictParsing()}). Otherwise the
-     * exception is stored (it can be accessed with {@link
-     * getExceptions()}) and a warning is issued (with {@link
-     * ExifEye::warning}).
-     *
-     * @param ExifEyeException $e
-     *            the exceptions.
-     */
-    public static function maybeThrow(ExifEyeException $e)
-    {
-        if (self::$strict) {
-            throw $e;
-        } else {
-            self::$exceptions[] = $e;
-            self::warning('%s (%s:%s)', $e->getMessage(), basename($e->getFile()), $e->getLine());
-        }
-    }
-    public static function maybeThrowNoDebug(ExifEyeException $e)
-    {
-        if (self::$strict) {
-            throw $e;
-        } else {
-            self::$exceptions[] = $e;
-        }
-    }
     public static function logger()
     {
         if (!isset(static::$logger)) {

@@ -37,7 +37,9 @@ class IfdIndexShort extends Ifd
 
         $index_size = $d->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
-            ExifEye::maybeThrow(new InvalidDataException('Size of %s does not match the number of entries.', $this->getName()));
+            ExifEye::logger()->error('Size of {ifd_type} does not match the number of entries.', [
+                'ifd_type' => $this->getName(),
+            ]);
         }
         $offset += 2;
         for ($i = 0; $i < $components; $i++) {

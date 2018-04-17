@@ -175,14 +175,14 @@ abstract class Format
      * @param integer $type
      *            as defined in {@link Format}
      *
-     * @return string
+     * @return string|null
      */
     public static function getName($type)
     {
         if (array_key_exists($type, self::$formatName)) {
             return self::$formatName[$type];
         }
-        ExifEye::maybeThrow(new ExifEyeException(ExifEye::fmt('Unknown format: 0x%X', $type)));
+        return null;
     }
 
     /**
@@ -211,13 +211,13 @@ abstract class Format
      * @param integer $type
      *            as defined in {@link Format}
      *
-     * @return integer
+     * @return integer|null
      */
     public static function getSize($type)
     {
         if (array_key_exists($type, self::$formatLength)) {
             return self::$formatLength[$type];
         }
-        ExifEye::maybeThrow(new ExifEyeException(ExifEye::fmt('Unknown format: 0x%X', $type)));
+        return null;
     }
 }

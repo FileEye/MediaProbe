@@ -58,25 +58,23 @@ class Tag extends BlockBase
             foreach ($expected_format as $expected_format_id) {
                 $expected_format_names[] = Format::getName($expected_format_id);
             }
-            ExifEye::maybeThrow(new TagException(
-                "Wrong data format '%s' for TAG '%s' in IFD '%s', expected '%s'",
-                Format::getName($format),
-                Spec::getTagName($ifd_id, $id),
-                Spec::getIfdType($ifd_id),
-                implode(', ', $expected_format_names)
-            ));
+            ExifEye::logger()->warning("Wrong data format '{format_name}' for TAG '{tag_name}' in IFD '{ifd_type}', expected '{expected_format_names}'", [
+                'format_name' => Format::getName($format),
+                'tag_name' => Spec::getTagName($ifd_id, $id),
+                'ifd_type' => Spec::getIfdType($ifd_id),
+                'expected_format_names' => implode(', ', $expected_format_names),
+            ]);
         }
 
         // Warn if components are not as expected.
         $expected_components = Spec::getTagComponents($ifd_id, $id);
         if ($expected_components !== null and $components !== $expected_components) {
-            ExifEye::maybeThrow(new TagException(
-                "Unexpected number of data components '%d' for TAG '%s' in IFD '%s', expected '%d'",
-                $components,
-                Spec::getTagName($ifd_id, $id),
-                Spec::getIfdType($ifd_id),
-                $expected_components
-            ));
+            ExifEye::logger()->warning("Unexpected number of data components: {components} for TAG '{tag_name}' in IFD '{ifd_type}', expected {expected_components}", [
+                'components' => $components,
+                'tag_name' => Spec::getTagName($ifd_id, $id),
+                'ifd_type' => Spec::getIfdType($ifd_id),
+                'expected_components' => $expected_components,
+            ]);
         }
 
         // If the data size is bigger than 4 bytes, then actual data is not in
