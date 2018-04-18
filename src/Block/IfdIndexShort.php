@@ -14,6 +14,11 @@ use ExifEye\core\Spec;
 class IfdIndexShort extends Ifd
 {
     /**
+     * {@inheritdoc}
+     */
+    protected $type = 'IfdIndexShort';
+
+    /**
      * Load data into a Image File Directory (IFD).
      *
      * @param DataWindow $d
@@ -53,10 +58,10 @@ class IfdIndexShort extends Ifd
                 continue;
             }
 
-            $item_format = Spec::getTagFormat($this->type, $i + 1)[0];
+            $item_format = Spec::getTagFormat($this->getId(), $i + 1)[0];
             ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . 'Tag 0x{tag}: ({tag_name}) Fmt: {format} ({format_name}) Components: {components} ({count} of {total})...', [
                 'tag' => dechex($i + 1),
-                'tag_name' => Spec::getTagName($this->type, $i + 1),
+                'tag_name' => Spec::getTagName($this->getId(), $i + 1),
                 'format' => $item_format,
                 'format_name' => Format::getName($item_format),
                 'components' => 1,
@@ -89,7 +94,7 @@ class IfdIndexShort extends Ifd
                     $item_value = $d->getSRattional($offset + $i * 2);
                     break;
             }
-            if ($class = Spec::getTagClass($this->type, $i + 1)) {
+            if ($class = Spec::getTagClass($this->getId(), $i + 1)) {
                 $entry = new $class([$item_value]);
                 $this->xxAppendSubBlock(new Tag($this, $i + 1, $entry));
             }
