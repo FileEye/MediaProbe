@@ -166,7 +166,8 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . 'Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
+            ExifEye::logger()->debug('{path} Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
+                'path' => $tag->getElementPath(),
                 'tag_id' => dechex($tag->getId()),
                 'tag_name' => $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
                 'format_id' => $tag->getEntry()->getFormat(),

@@ -101,6 +101,20 @@ abstract class ElementBase implements ElementInterface
     /**
      * {@inheritdoc}
      */
+    public function getElementPath()
+    {
+        $path[] = $this->getType() . ':' . $this->getName();
+        $tmp = $this->getParentElement();
+        while ($tmp) {
+            $path[] = $tmp->getType() . ':' . $tmp->getName();
+            $tmp = $tmp->getParentElement();
+        }
+        return implode('/', array_reverse($path));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function isValid()
     {
         return $this->valid;
