@@ -72,7 +72,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $ifd = $tiff->getIfd();
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd);
 
-        $this->assertEquals($ifd->getType(), Spec::getIfdIdByType('IFD0'));
+        $this->assertEquals($ifd->getId(), Spec::getIfdIdByType('IFD0'));
         $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {

@@ -165,7 +165,7 @@ class DumpCommand extends Command
 
     protected function tagToTest($name, Tag $tag, Ifd $ifd, &$json)
     {
-        $ifd_type = $ifd->getType();
+        $ifd_type = $ifd->getId();
 
         $tag_id = $tag->getId();
         $tag_name = $tag->getName();

@@ -28,6 +28,11 @@ use ExifEye\core\Spec;
 class Ifd extends BlockBase
 {
     /**
+     * {@inheritdoc}
+     */
+    protected $type = 'Ifd';
+
+    /**
      * The IFD header bytes to skip.
      *
      * @var array
@@ -47,15 +52,6 @@ class Ifd extends BlockBase
      * @var array
      */
     protected $tagsSkipOffset = 0;
-
-    /**
-     * The type of this directory.
-     *
-     * Initialized in the constructor.
-     *
-     * @var int
-     */
-    protected $type;
 
     /**
      * The next directory.
@@ -100,13 +96,14 @@ class Ifd extends BlockBase
      *            the type of this IFD, as found in Spec. A
      *            {@link IfdException} will be thrown if unknown.
      */
-    public function __construct($type)
+    public function __construct($id)
     {
-        if (Spec::getIfdType($type) === null) {
-            throw new IfdException('Unknown IFD type: %d', $type);
+        if (Spec::getIfdType($id) === null) {
+            throw new IfdException('Unknown IFD type: %d', $id);
         }
-        $this->type = $type; // xx
-        $this->id = $type;
+        $this->id = $id;
+        $this->name = Spec::getIfdType($id);
+        $this->hasSpecification = (bool) $this->name;
     }
 
     /**
@@ -159,7 +156,6 @@ class Ifd extends BlockBase
 
         for ($i = 0; $i < $n; $i++) {
             $tag = Tag::loadFromData($this, $d, $offset + 12 * $i, [
-                'ifd_id' => $this->getType(),
                 'ifd_offset' => $offset,
                 'tagsAbsoluteOffset' => $this->tagsAbsoluteOffset,
                 'tagsSkipOffset' => $this->tagsSkipOffset,
@@ -189,9 +185,9 @@ class Ifd extends BlockBase
             }
 
             // Load a subIfd.
-            if (Spec::isTagAnIfdPointer($this->type, $tag->getId())) {
+            if (Spec::isTagAnIfdPointer($this->getId(), $tag->getId())) {
                 // If the tag is an IFD pointer, loads the IFD.
-                $type = Spec::getIfdIdFromTag($this->type, $tag->getId());
+                $type = Spec::getIfdIdFromTag($this->getId(), $tag->getId());
                 $o = $d->getLong($offset + 12 * $i + 8);
                 if ($starting_offset != $o) {
                     $ifd_class = Spec::getIfdClass($type);
@@ -211,13 +207,13 @@ class Ifd extends BlockBase
             }
 
             // Manage Thumbnail data.
-            if (Spec::getTagName($this->type, $tag->getId()) === 'JPEGInterchangeFormat') {
+            if (Spec::getTagName($this->getId(), $tag->getId()) === 'JPEGInterchangeFormat') {
                 // Aka 'Thumbnail Offset'.
                 $thumb_offset = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
                 continue;
             }
-            if (Spec::getTagName($this->type, $tag->getId()) === 'JPEGInterchangeFormatLength') {
+            if (Spec::getTagName($this->getId(), $tag->getId()) === 'JPEGInterchangeFormatLength') {
                 // Aka 'Thumbnail Length'.
                 $thumb_length = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
@@ -244,7 +240,7 @@ class Ifd extends BlockBase
                     'size' => $d->getSize() - 6,
                 ]);
             } else {
-                if (Spec::getIfdType($this->type) === 'IFD1') {
+                if (Spec::getIfdType($this->getId()) === 'IFD1') {
                     // IFD1 shouldn't link further...
                     ExifEye::logger()->error('IFD1 links to another IFD!');
                 }
@@ -258,7 +254,7 @@ class Ifd extends BlockBase
         ]);
 
         // Invoke post-load callbacks.
-        foreach (Spec::getIfdPostLoadCallbacks($this->type) as $callback) {
+        foreach (Spec::getIfdPostLoadCallbacks($this->getId()) as $callback) {
             call_user_func($callback, $d, $this);
         }
     }
@@ -340,16 +336,6 @@ class Ifd extends BlockBase
         $this->thumb_data = $d->getClone(0, $size);
     }
 
-    /**
-     * Get the type of this directory.
-     *
-     * @return int the type of this directory, as identified in Spec.
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
     public function getTagByName($tag_name)
     {
         foreach ($this->xxGetSubBlocks() as $sub_block) {
@@ -402,7 +388,7 @@ class Ifd extends BlockBase
      */
     public function getValidTags()
     {
-        return Spec::getIfdSupportedTagIds($this->type);
+        return Spec::getIfdSupportedTagIds($this->getId());
 
         /*
          * TODO: Where do these tags belong?
@@ -414,32 +400,6 @@ class Ifd extends BlockBase
          * PelTag::INTER_COLOR_PROFILE,
          * PelTag::CFA_REPEAT_PATTERN_DIM,
          */
-    }
-
-    /**
-     * Get the name of an IFD type.
-     *
-     * @param int $type
-     *            the type of the directory, as identified in Spec.
-     *
-     * @return string the name of type.
-     */
-    public static function getTypeName($type)
-    {
-        if (Spec::getIfdType($type) !== null) {
-            return Spec::getIfdType($type);
-        }
-        throw new IfdException('Unknown IFD type: %d', $type);
-    }
-
-    /**
-     * Get the name of this directory.
-     *
-     * @return string the name of this directory.
-     */
-    public function getName()
-    {
-        return $this->getTypeName($this->type);
     }
 
     /**
@@ -619,12 +579,12 @@ class Ifd extends BlockBase
             ]);
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the newt four lines.
-            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormatLength'), $order);
+            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'JPEGInterchangeFormatLength'), $order);
             $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
             $bytes .= ConvertBytes::fromLong(1, $order);
             $bytes .= ConvertBytes::fromLong($this->thumb_data->getSize(), $order);
 
-            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->type, 'JPEGInterchangeFormat'), $order);
+            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'JPEGInterchangeFormat'), $order);
             $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
             $bytes .= ConvertBytes::fromLong(1, $order);
             $bytes .= ConvertBytes::fromLong($end, $order);
@@ -637,11 +597,11 @@ class Ifd extends BlockBase
         $sub_bytes = '';
         foreach ($this->sub as $type => $sub) {
             if (Spec::getIfdType($type) === 'Exif') {
-                $tag = Spec::getTagIdByName($this->type, 'ExifIFDPointer');
+                $tag = Spec::getTagIdByName($this->getId(), 'ExifIFDPointer');
             } elseif (Spec::getIfdType($type) === 'GPS') {
-                $tag = Spec::getTagIdByName($this->type, 'GPSInfoIFDPointer');
+                $tag = Spec::getTagIdByName($this->getId(), 'GPSInfoIFDPointer');
             } elseif (Spec::getIfdType($type) === 'Interoperability') {
-                $tag = Spec::getTagIdByName($this->type, 'InteroperabilityIFDPointer');
+                $tag = Spec::getTagIdByName($this->getId(), 'InteroperabilityIFDPointer');
             } else {
                 // ConvertBytes::BIG_ENDIAN is the default used by Convert
                 $tag = ConvertBytes::BIG_ENDIAN;

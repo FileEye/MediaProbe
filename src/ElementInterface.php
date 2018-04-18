@@ -28,6 +28,27 @@ interface ElementInterface
     public function getParentElement();
 
     /**
+     * Returns the type of this element.
+     *
+     * @return string
+     */
+    public function getType();
+
+    /**
+     * Returns the id of this element.
+     *
+     * @return int
+     */
+    public function getId();
+
+    /**
+     * Returns the name of this element.
+     *
+     * @return string
+     */
+    public function getName();
+
+    /**
      * Gets validity of the element.
      *
      * @return bool

@@ -15,6 +15,11 @@ class ExifMakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
+    protected $name = 'MakerNote';
+
+    /**
+     * {@inheritdoc}
+     */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         return [$data_window->getBytes($data_offset, $components), $data_offset];

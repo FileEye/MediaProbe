@@ -15,6 +15,11 @@ use ExifEye\core\Utility\ConvertBytes;
 class VersionBase extends Undefined
 {
     /**
+     * {@inheritdoc}
+     */
+    protected $name = 'Version';
+
+    /**
      * The string element part of the long text description.
      *
      * @var string

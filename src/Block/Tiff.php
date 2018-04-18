@@ -156,8 +156,8 @@ class Tiff
      */
     public function setIfd(Ifd $ifd)
     {
-        if ($ifd->getType() != Spec::getIfdIdByType('IFD0')) {
-            throw new InvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getType(), Spec::getIfdIdByType('IFD0'));
+        if ($ifd->getId() != Spec::getIfdIdByType('IFD0')) {
+            throw new InvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getId(), Spec::getIfdIdByType('IFD0'));
         }
         $this->ifd = $ifd;
     }

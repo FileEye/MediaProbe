@@ -177,11 +177,11 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
     $inter_ifd = new Ifd(Spec::getIfdIdByType('Interoperability'));
     $ifd0->addSubIfd($inter_ifd);
 
-    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getType(), 'Model'), $model));
-    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getType(), 'DateTime'), $date_time));
-    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getType(), 'ImageDescription'), $description));
+    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getId(), 'Model'), $model));
+    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getId(), 'DateTime'), $date_time));
+    $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getId(), 'ImageDescription'), $description));
 
-    $gps_ifd->addEntry(new Byte(Spec::getTagIdByName($gps_ifd->getType(), 'GPSVersionID'), 2, 2, 0, 0));
+    $gps_ifd->addEntry(new Byte(Spec::getTagIdByName($gps_ifd->getId(), 'GPSVersionID'), 2, 2, 0, 0));
 
     /*
      * Use the convertDecimalToDMS function to convert the latitude from
@@ -192,26 +192,26 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
     /* We interpret a negative latitude as being south. */
     $latitude_ref = ($latitude < 0) ? 'S' : 'N';
 
-    $gps_ifd->addEntry(new Ascii(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLatitudeRef'), $latitude_ref));
-    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLatitude'), $hours, $minutes, $seconds));
+    $gps_ifd->addEntry(new Ascii(Spec::getTagIdByName($gps_ifd->getId(), 'GPSLatitudeRef'), $latitude_ref));
+    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getId(), 'GPSLatitude'), $hours, $minutes, $seconds));
 
     /* The longitude works like the latitude. */
     list ($hours, $minutes, $seconds) = convertDecimalToDMS($longitude);
     $longitude_ref = ($longitude < 0) ? 'W' : 'E';
 
-    $gps_ifd->addEntry(new Ascii(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLongitudeRef'), $longitude_ref));
-    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getType(), 'GPSLongitude'), $hours, $minutes, $seconds));
+    $gps_ifd->addEntry(new Ascii(Spec::getTagIdByName($gps_ifd->getId(), 'GPSLongitudeRef'), $longitude_ref));
+    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getId(), 'GPSLongitude'), $hours, $minutes, $seconds));
 
     /*
      * Add the altitude. The absolute value is stored here, the sign is
      * stored in the GPS_ALTITUDE_REF tag below.
      */
-    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getType(), 'GPSAltitude'), [abs($altitude), 1]));
+    $gps_ifd->addEntry(new Rational(Spec::getTagIdByName($gps_ifd->getId(), 'GPSAltitude'), [abs($altitude), 1]));
     /*
      * The reference is set to 1 (true) if the altitude is below sea
      * level, or 0 (false) otherwise.
      */
-    $gps_ifd->addEntry(new Byte(Spec::getTagIdByName($gps_ifd->getType(), 'GPSAltitudeRef'), (int) ($altitude < 0)));
+    $gps_ifd->addEntry(new Byte(Spec::getTagIdByName($gps_ifd->getId(), 'GPSAltitudeRef'), (int) ($altitude < 0)));
 
     /* Finally we store the data in the output file. */
     file_put_contents($output, $jpeg->getBytes());

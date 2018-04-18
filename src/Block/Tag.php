@@ -45,8 +45,6 @@ class Tag extends BlockBase
      */
     public static function loadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
     {
-        $ifd_id = isset($options['ifd_id']) ? $options['ifd_id'] : null;
-
         // Gets the TAG's elements from the data window.
         $id = $data_window->getShort($offset);
         $format = $data_window->getShort($offset + 2);
@@ -54,7 +52,7 @@ class Tag extends BlockBase
         $data_element = $data_window->getLong($offset + 8);
 
         // Warn if format is not as expected.
-        $expected_format = Spec::getTagFormat($ifd_id, $id);
+        $expected_format = Spec::getTagFormat($parent->getId(), $id);
         if ($expected_format !== null and !in_array($format, $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
@@ -62,19 +60,19 @@ class Tag extends BlockBase
             }
             ExifEye::logger()->warning("Wrong data format '{format_name}' for TAG '{tag_name}' in IFD '{ifd_type}', expected '{expected_format_names}'", [
                 'format_name' => Format::getName($format),
-                'tag_name' => Spec::getTagName($ifd_id, $id),
-                'ifd_type' => Spec::getIfdType($ifd_id),
+                'tag_name' => Spec::getTagName($parent->getId(), $id),
+                'ifd_type' => Spec::getIfdType($parent->getId()),
                 'expected_format_names' => implode(', ', $expected_format_names),
             ]);
         }
 
         // Warn if components are not as expected.
-        $expected_components = Spec::getTagComponents($ifd_id, $id);
+        $expected_components = Spec::getTagComponents($parent->getId(), $id);
         if ($expected_components !== null and $components !== $expected_components) {
             ExifEye::logger()->warning("Unexpected number of data components: {components} for TAG '{tag_name}' in IFD '{ifd_type}', expected {expected_components}", [
                 'components' => $components,
-                'tag_name' => Spec::getTagName($ifd_id, $id),
-                'ifd_type' => Spec::getIfdType($ifd_id),
+                'tag_name' => Spec::getTagName($parent->getId(), $id),
+                'ifd_type' => Spec::getIfdType($parent->getId()),
                 'expected_components' => $expected_components,
             ]);
         }
@@ -94,7 +92,7 @@ class Tag extends BlockBase
         }
 
         // Build an ExifEye Entry from the raw data.
-        $entry_class_name = Spec::getTagClass($ifd_id, $id, $format);
+        $entry_class_name = Spec::getTagClass($parent->getId(), $id, $format);
         $arguments = call_user_func($entry_class_name . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
         $entry = new $entry_class_name($arguments);
 

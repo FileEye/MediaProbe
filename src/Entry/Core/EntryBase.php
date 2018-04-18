@@ -22,6 +22,16 @@ use ExifEye\core\Spec;
 abstract class EntryBase extends ElementBase implements EntryInterface
 {
     /**
+     * {@inheritdoc}
+     */
+    protected $type = 'Entry';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $id = 0;
+
+    /**
      * The format of this entry.
      *
      * @var int

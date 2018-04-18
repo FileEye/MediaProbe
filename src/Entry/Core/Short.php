@@ -18,6 +18,11 @@ class Short extends NumberBase
     /**
      * {@inheritdoc}
      */
+    protected $name = 'Short';
+
+    /**
+     * {@inheritdoc}
+     */
     protected $format = Format::SHORT;
 
     /**

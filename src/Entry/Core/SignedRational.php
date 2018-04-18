@@ -22,6 +22,11 @@ class SignedRational extends SignedLong
     /**
      * {@inheritdoc}
      */
+    protected $name = 'SignedRational';
+
+    /**
+     * {@inheritdoc}
+     */
     protected $format = Format::SRATIONAL;
 
     /**

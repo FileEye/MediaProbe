@@ -15,6 +15,11 @@ class Byte extends NumberBase
     /**
      * {@inheritdoc}
      */
+    protected $name = 'Byte';
+
+    /**
+     * {@inheritdoc}
+     */
     protected $format = Format::BYTE;
 
     /**

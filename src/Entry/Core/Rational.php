@@ -21,6 +21,11 @@ class Rational extends Long
     /**
      * {@inheritdoc}
      */
+    protected $name = 'Rational';
+
+    /**
+     * {@inheritdoc}
+     */
     protected $format = Format::RATIONAL;
 
     /**

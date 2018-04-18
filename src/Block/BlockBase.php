@@ -12,27 +12,6 @@ use ExifEye\core\Entry\Core\EntryInterface;
 abstract class BlockBase extends ElementBase
 {
     /**
-     * The type of this block.
-     *
-     * @var string
-     */
-    protected $type;
-
-    /**
-     * The ID of this block.
-     *
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * The name of this block.
-     *
-     * @var string
-     */
-    protected $name;
-
-    /**
      * The block has a specification description.
      *
      * @var string
@@ -52,26 +31,6 @@ abstract class BlockBase extends ElementBase
      * @var EntryInterface
      */
     protected $entry;
-
-    /**
-     * Returns the type of this block.
-     *
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
 
     public function hasSpecification()
     {

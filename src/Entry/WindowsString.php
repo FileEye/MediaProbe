@@ -24,6 +24,11 @@ class WindowsString extends Byte
     /**
      * {@inheritdoc}
      */
+    protected $name = 'WindowsString';
+
+    /**
+     * {@inheritdoc}
+     */
     public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
     {
         // Cap bytes to get to remaining data window size.

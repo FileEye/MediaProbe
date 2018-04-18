@@ -19,6 +19,11 @@ use ExifEye\core\Utility\ConvertTime;
 class Time extends Ascii
 {
     /**
+     * {@inheritdoc}
+     */
+    protected $name = 'Time';
+
+    /**
      * Constant denoting a UNIX timestamp.
      */
     const UNIX_TIMESTAMP = 1;

@@ -19,6 +19,27 @@ abstract class ElementBase implements ElementInterface
     protected $parentElement;
 
     /**
+     * The type of this element.
+     *
+     * @var string
+     */
+    protected $type;
+
+    /**
+     * The id of this element.
+     *
+     * @var int
+     */
+    protected $id;
+
+    /**
+     * The name of this element.
+     *
+     * @var string
+     */
+    protected $name;
+
+    /**
      * Whether this element is valid.
      *
      * @var bool
@@ -34,6 +55,30 @@ abstract class ElementBase implements ElementInterface
     public function __construct(ElementInterface $parent = null)
     {
         $this->parentElement = $parent;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
