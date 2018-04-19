@@ -6,13 +6,11 @@ use ExifEye\core\Block\Exception\IfdException;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
-use ExifEye\core\DataWindowWindowException;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
-use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -132,9 +130,6 @@ class Ifd extends BlockBase
     {
         $starting_offset = $offset;
 
-        $thumb_offset = 0;
-        $thumb_length = 0;
-
         /* Read the number of tags */
         $n = $d->getShort($offset + $this->headerSkipBytes);
         ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "** Constructing IFD '{name}' with {tags} TAGs at offset {offset} from {total} bytes...", [
@@ -246,83 +241,6 @@ class Ifd extends BlockBase
         }
     }
 
-    /**
-     * Extract thumbnail data safely.
-     *
-     * It is safe to call this method repeatedly with either the offset
-     * or the length set to zero, since it requires both of these
-     * arguments to be positive before the thumbnail is extracted.
-     *
-     * When both parameters are set it will check the length against the
-     * available data and adjust as necessary. Only then is the
-     * thumbnail data loaded.
-     *
-     * @param DataWindow $d
-     *            the data from which the thumbnail will be
-     *            extracted.
-     *
-     * @param int $offset
-     *            the offset into the data.
-     *
-     * @param int $length
-     *            the length of the thumbnail.
-     */
-    protected function safeSetThumbnail(DataWindow $d, $offset, $length)
-    {
-        /*
-         * Load the thumbnail if both the offset and the length is
-         * available.
-         */
-        if ($offset > 0 && $length > 0) {
-            /*
-             * Some images have a broken length, so we try to carefully
-             * check the length before we store the thumbnail.
-             */
-            if ($offset + $length > $d->getSize()) {
-                ExifEye::logger()->warning('Thumbnail length {length} bytes adjusted to {adjusted_length} bytes.', [
-                    'length' => $length,
-                    'adjusted_length' => $d->getSize() - $offset,
-                ]);
-                $length = $d->getSize() - $offset;
-            }
-
-            /* Now set the thumbnail normally. */
-            try {
-                $this->setThumbnail($d->getClone($offset, $length));
-            } catch (DataWindowWindowException $e) {
-                ExifEye::logger()->error($e->getMessage());
-            }
-        }
-    }
-
-    /**
-     * Set thumbnail data.
-     *
-     * Use this to embed an arbitrary JPEG image within this IFD. The
-     * data will be checked to ensure that it has a proper {@link
-     * JpegMarker::EOI} at the end. If not, then the length is
-     * adjusted until one if found. An {@link IfdException} might be
-     * thrown (depending on {@link ExifEye::$strict}) this case.
-     *
-     * @param DataWindow $d
-     *            the thumbnail data.
-     */
-    public function setThumbnail(DataWindow $d)
-    {
-        $size = $d->getSize();
-        /* Now move backwards until we find the EOI JPEG marker. */
-        while ($d->getByte($size - 2) != 0xFF || $d->getByte($size - 1) != JpegMarker::EOI) {
-            $size --;
-        }
-
-        if ($size != $d->getSize()) {
-            ExifEye::logger()->warning('Decrementing thumbnail size to {size} bytes', [
-                'size' => $size,
-            ]);
-        }
-        $this->thumb_data = $d->getClone(0, $size);
-    }
-
     public function getTagByName($tag_name)
     {
         foreach ($this->xxGetSubBlocks() as $sub_block) {
@@ -387,26 +305,6 @@ class Ifd extends BlockBase
          * PelTag::INTER_COLOR_PROFILE,
          * PelTag::CFA_REPEAT_PATTERN_DIM,
          */
-    }
-
-    /**
-     * Returns available thumbnail data.
-     *
-     * @return string the bytes in the thumbnail, if any. If the IFD
-     *         does not contain any thumbnail data, the empty string is
-     *         returned.
-     *
-     * @todo Throw an exception instead when no data is available?
-     *
-     * @todo Return the $this->thumb_data object instead of the bytes?
-     */
-    public function getThumbnailData()
-    {
-        if ($this->thumb_data !== null) {
-            return $this->thumb_data->getBytes();
-        } else {
-            return '';
-        }
     }
 
     /**

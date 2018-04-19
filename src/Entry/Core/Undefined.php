@@ -55,6 +55,6 @@ class Undefined extends EntryBase
      */
     public function toString(array $options = [])
     {
-        return parent::toString($options) ?: '(undefined)';
+        return parent::toString($options) ?: $this->components . ' bytes of undefined data';
     }
 }
