@@ -208,7 +208,7 @@ class Ifd extends BlockBase
             }
 
             // Manage Thumbnail data.
-            if (Spec::getTagName($this->getId(), $tag->getId()) === 'JPEGInterchangeFormat') {
+/*            if (Spec::getTagName($this->getId(), $tag->getId()) === 'JPEGInterchangeFormat') {
                 // Aka 'Thumbnail Offset'.
                 $thumb_offset = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
@@ -219,7 +219,7 @@ class Ifd extends BlockBase
                 $thumb_length = $d->getLong($offset + 12 * $i + 8);
                 $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
                 continue;
-            }
+            }*/
 
             // Append the TAG to the IFD.
             $this->xxAppendSubBlock($tag);
@@ -579,13 +579,13 @@ class Ifd extends BlockBase
                 'offset' => $end,
             ]);
             // TODO: make EntryInterface a class that can be constructed with
-            // arguments corresponding to the newt four lines.
-            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'JPEGInterchangeFormatLength'), $order);
+            // arguments corresponding to the next four lines.
+            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailLength'), $order);
             $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
             $bytes .= ConvertBytes::fromLong(1, $order);
             $bytes .= ConvertBytes::fromLong($this->thumb_data->getSize(), $order);
 
-            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'JPEGInterchangeFormat'), $order);
+            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailOffset'), $order);
             $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
             $bytes .= ConvertBytes::fromLong(1, $order);
             $bytes .= ConvertBytes::fromLong($end, $order);

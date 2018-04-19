@@ -3,6 +3,8 @@ class: ExifEye\core\Block\Ifd
 alias:
   - '1'
   - 'Thumbnail'
+postLoad:
+  - ExifEye\core\Block\Thumbnail::toBlock
 tags:
     0x0100:
         name: ImageWidth
@@ -144,13 +146,17 @@ tags:
         components: 6
         format: Rational
     0x0201:
-        name: JPEGInterchangeFormat
-        title: 'JPEG Interchange Format'
+        name: ThumbnailOffset
+        #alias:
+        #  - 'JPEGInterchangeFormat'
+        title: 'Thumbnail Offset'
         components: 1
         format: Long
     0x0202:
-        name: JPEGInterchangeFormatLength
-        title: 'JPEG Interchange Format Length'
+        name: ThumbnailLength
+        #alias:
+        #  - 'JPEGInterchangeFormatLength'
+        title: 'Thumbnail Length'
         components: 1
         format: Long
     0x0211:
