@@ -466,7 +466,7 @@ class Ifd extends BlockBase
      */
     public function addSubIfd(Ifd $sub)
     {
-        $this->sub[$sub->type] = $sub;
+        $this->sub[$sub->getId()] = $sub;
     }
 
     /**
