@@ -2,6 +2,7 @@
 
 namespace ExifEye\core;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
@@ -326,7 +327,7 @@ class Spec
      * @return string|null
      *            the TAG text, or NULL if not applicable.
      */
-    public static function getTagText(Tag $tag, EntryInterface $entry, $options = []) // xx move to generic element
+    public static function getTagText(BlockBase $tag, EntryInterface $entry, $options = []) // xx move to generic element
     {
         // Return a text from a mapping list if defined.
         $ifd_id = $tag->getParentIfd()->getId();
