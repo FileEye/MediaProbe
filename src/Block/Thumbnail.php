@@ -134,6 +134,6 @@ class Thumbnail extends BlockBase
      */
     public function __toString()
     {
-        return ExifEye::fmt("  Thumbnail   : %d of data\n", $this->getEntry()->getComponents());
+        return ExifEye::fmt("  Thumbnail   : %s\n", $this->getEntry()->toString());
     }
 }
