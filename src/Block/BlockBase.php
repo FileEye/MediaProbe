@@ -65,7 +65,7 @@ abstract class BlockBase extends ElementBase
      */
     public function xxAddSubBlock(BlockBase $sub_block)
     {
-        $type = $sub_block->getType()
+        $type = $sub_block->getType();
         for ($i = 0; $i < count($this->xxGetSubBlocks($type)); $i++) {
             if ($sub_block->getId() === $this->xxGetSubBlock($type, $i)->getId()) {
                 $this->subBlocks[$type][$i] = $sub_block;
