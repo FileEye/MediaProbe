@@ -472,16 +472,16 @@ class Ifd extends BlockBase
     /**
      * Return a sub IFD.
      *
-     * @param int $type
-     *            the type of the sub IFD.
+     * @param int $id
+     *            the id of the sub IFD.
      *
-     * @return Ifd the IFD associated with the type, or null if that
+     * @return Ifd the IFD associated with the id, or null if that
      *         sub IFD does not exist.
      */
-    public function getSubIfd($type)
+    public function getSubIfd($id)
     {
-        if (isset($this->sub[$type])) {
-            return $this->sub[$type];
+        if (isset($this->sub[$id])) {
+            return $this->sub[$id];
         } else {
             return null;
         }
@@ -490,7 +490,7 @@ class Ifd extends BlockBase
     /**
      * Get all sub IFDs.
      *
-     * @return array an associative array with (IFD-type, {@link
+     * @return array an associative array with (IFD-id, {@link
      *         Ifd}) pairs.
      */
     public function getSubIfds()
