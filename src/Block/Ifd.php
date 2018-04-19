@@ -207,20 +207,6 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            // Manage Thumbnail data.
-/*            if (Spec::getTagName($this->getId(), $tag->getId()) === 'JPEGInterchangeFormat') {
-                // Aka 'Thumbnail Offset'.
-                $thumb_offset = $d->getLong($offset + 12 * $i + 8);
-                $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
-                continue;
-            }
-            if (Spec::getTagName($this->getId(), $tag->getId()) === 'JPEGInterchangeFormatLength') {
-                // Aka 'Thumbnail Length'.
-                $thumb_length = $d->getLong($offset + 12 * $i + 8);
-                $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
-                continue;
-            }*/
-
             // Append the TAG to the IFD.
             $this->xxAppendSubBlock($tag);
         }

@@ -3,6 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
+use ExifEye\core\ExifEye;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Spec;
 use ExifEye\core\Block\Ifd;
@@ -45,12 +46,14 @@ class Thumbnail extends BlockBase
      */
     public static function toBlock(DataWindow $d, Ifd $ifd)
     {
-        if ($ifd->getTagByName('ThumbnailOffset') && $ifd->getTagByName('ThumbnailLength')) {
-            ExifEye::logger()->debug('{path} JPEG thumbnail at offset {offset} of length {length}', [
-                'path' => $ifd->getElementPath(),
-                'offset' => $ifd->getTagByName('ThumbnailOffset')->getEntry()->getValue(),
-                'length' => $ifd->getTagByName('ThumbnailLength')->getEntry()->getValue(),
-            ]);
+        if (!$ifd->getTagByName('ThumbnailOffset') || !$ifd->getTagByName('ThumbnailLength')) {
+            return;
         }
+
+        ExifEye::logger()->debug('{path} JPEG thumbnail at offset {offset} of length {length}', [
+            'path' => $ifd->getElementPath(),
+            'offset' => $ifd->getTagByName('ThumbnailOffset')->getEntry()->getValue(),
+            'length' => $ifd->getTagByName('ThumbnailLength')->getEntry()->getValue(),
+        ]);
     }
 }
