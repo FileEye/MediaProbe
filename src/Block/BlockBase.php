@@ -108,7 +108,11 @@ abstract class BlockBase extends ElementBase
      */
     public function xxGetSubBlocks($type = null)
     {
-        return $type !== null ? $this->subBlocks[$type] : $this->subBlocks;
+        if ($type === null) {
+            return $this->subBlocks
+        } else {
+            return isset($this->subBlocks[$type]) ? $this->subBlocks[$type] : null;
+        }
     }
 
     /**

@@ -62,7 +62,7 @@ class ExifMakerNote extends Undefined
     public static function tagToIfd(DataWindow $d, Ifd $ifd)
     {
         // Get the Exif subIfd if existing.
-        if (!$exif_ifd = $ifd->getSubIfd(Spec::getIfdIdByType('Exif'))) {
+        if (!$exif_ifd = $ifd->xxGetSubBlock('Ifd', Spec::getIfdIdByType('Exif'))) {
             return;
         }
 
