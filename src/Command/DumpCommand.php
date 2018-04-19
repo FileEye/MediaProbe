@@ -9,6 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Entry\JpegContent;
@@ -163,7 +164,7 @@ class DumpCommand extends Command
         }*/
     }
 
-    protected function tagToTest($name, Tag $tag, Ifd $ifd, &$json)
+    protected function tagToTest($name, BlockBase $tag, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getId();
 
