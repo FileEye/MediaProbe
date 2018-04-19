@@ -97,6 +97,7 @@ class CameraTest extends ExifEyeTestCaseBase
             foreach ($expected['blocks'] as $test_block => $test_block_data) {
 dump($test_block);
                 $block = $ifd->getSubIfd(Spec::getIfdIdByType($test_block));
+dump(Spec::getIfdIdByType($test_block));
 dump($block->getName());
                 $this->assertIfd($test_block_data, $block);
             }
