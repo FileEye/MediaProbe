@@ -15,46 +15,42 @@ class Thumbnail extends BlockBase
     /**
      * {@inheritdoc}
      */
+    protected $type = 'Thumbnail';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $id = 0;
+
+    /**
+     * {@inheritdoc}
+     */
     protected $name = 'Thumbnail';
 
     /**
-     * Converts a maker note tag to an IFD structure for dumping.
-     *
-     * @param DataWindow $d
-     *            the data window that will provide the data.
-     * @param Ifd $ifd
-     *            the root Ifd object.
+     * Constructs a Tag block object.
+     */
+    public function __construct(Ifd $ifd, $id, EntryInterface $entry)
+    {
+        $this->setParentElement($ifd);
+
+        $this->hasSpecification = false;
+
+/*        $entry->setParentElement($this);
+        $this->setEntry($entry);*/
+    }
+
+    /**
+     * xx
      */
     public static function toBlock(DataWindow $d, Ifd $ifd)
     {
-        // Get the Exif subIfd if existing.
-        if (!$exif_ifd = $ifd->getSubIfd(Spec::getIfdIdByType('Exif'))) {
-            return;
+        if ($ifd->getTagByName('ThumbnailOffset') && $ifd->getTagByName('ThumbnailLength')) {
+            ExifEye::logger()->debug('{path} JPEG thumbnail at offset {offset} of length {length}', [
+                'path' => $ifd->getElementPath(),
+                'offset' => $ifd->getTagByName('ThumbnailOffset')->getEntry()->getValue(),
+                'length' => $ifd->getTagByName('ThumbnailLength')->getEntry()->getValue(),
+            ]);
         }
-
-        // Get MakerNotes from Exif IFD.
-        if (!$maker_note_tag = $exif_ifd->getTagByName('MakerNote')) {
-            return;
-        }
-
-        // Get Make tag from IFD0.
-        if (!$make_tag = $ifd->getTagByName('Make')) {
-            return;
-        }
-
-        // Get Model tag from IFD0.
-        $model_tag = $ifd->getTagByName('Model');
-        $model = $model_tag ? $model_tag->getEntry()->getValue() : 'na';
-
-        // Get maker note IFD id.
-        if (!$maker_note_ifd_id = Spec::getMakerNoteIfd($make_tag->getEntry()->getValue(), $model)) {
-            return;
-        }
-
-        // Load maker note into IFD.
-        $ifd_class = Spec::getIfdClass($maker_note_ifd_id);
-        $ifd = new $ifd_class($maker_note_ifd_id);
-        $ifd->load($d, $maker_note_tag->getEntry()->getValue()[1]);
-        $exif_ifd->addSubIfd($ifd);
     }
 }
