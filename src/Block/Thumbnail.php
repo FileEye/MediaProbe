@@ -2,13 +2,14 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowWindowException;
-use ExifEye\core\ExifEye;
+use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Spec;
-use ExifEye\core\Block\Ifd;
+use ExifEye\core\ExifEye;
 use ExifEye\core\JpegMarker;
+use ExifEye\core\Spec;
 
 /**
  * Class used to hold data for a JPEG Thumbnail.
