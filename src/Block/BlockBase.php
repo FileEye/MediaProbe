@@ -111,7 +111,7 @@ abstract class BlockBase extends ElementBase
         if ($type === null) {
             return $this->subBlocks;
         } else {
-            return isset($this->subBlocks[$type]) ? $this->subBlocks[$type] : null;
+            return isset($this->subBlocks[$type]) ? $this->subBlocks[$type] : [];
         }
     }
 
