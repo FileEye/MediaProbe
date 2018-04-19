@@ -14,7 +14,7 @@ class IfdTest extends ExifEyeTestCaseBase
     {
         $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
 
-        $this->assertCount(0, $ifd->xxGetSubBlocks());
+        $this->assertCount(0, $ifd->xxGetSubBlocks('Tag'));
 
         $desc = new Ascii(['Hello?']);
         $tag = new Tag($ifd, 0x010E, $desc);
@@ -26,10 +26,10 @@ class IfdTest extends ExifEyeTestCaseBase
         $tag_1->setEntry($date);
         $ifd->xxAddSubBlock($tag_1);
 
-        $this->assertCount(2, $ifd->xxGetSubBlocks());
+        $this->assertCount(2, $ifd->xxGetSubBlocks('Tag'));
 
         $entries = [];
-        foreach ($ifd->xxGetSubBlocks() as $tag) {
+        foreach ($ifd->xxGetSubBlocks('Tag') as $tag) {
             $entries[$tag->getId()] = $tag->getEntry();
         }
 

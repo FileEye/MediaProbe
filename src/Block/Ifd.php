@@ -62,15 +62,6 @@ class Ifd extends BlockBase
     protected $next = null;
 
     /**
-     * Sub-directories pointed to by this directory.
-     *
-     * This will be an array of ({@link PelTag}, {@link Ifd}) pairs.
-     *
-     * @var array
-     */
-    protected $sub = [];
-
-    /**
      * The thumbnail data.
      *
      * This will be initialized in the constructor, or be left as null
@@ -190,7 +181,7 @@ class Ifd extends BlockBase
                     $ifd = new $ifd_class($type);
                     try {
                         $ifd->load($d, $o, $tag->getEntry()->getComponents(), $nesting_level + 1);
-                        $this->sub[$type] = $ifd;
+                        $this->xxAddSubBlock($ifd);
                     } catch (DataWindowOffsetException $e) {
                         ExifEye::logger()->error($e->getMessage());
                     }
@@ -243,7 +234,7 @@ class Ifd extends BlockBase
 
     public function getTagByName($tag_name)
     {
-        foreach ($this->xxGetSubBlocks() as $sub_block) {
+        foreach ($this->xxGetSubBlocks('Tag') as $sub_block) {
             if ($sub_block->getName() === $tag_name) {
                 return $sub_block;
             }
@@ -253,7 +244,7 @@ class Ifd extends BlockBase
 
     public function xxGetTagById($tag_id)
     {
-        foreach ($this->xxGetSubBlocks() as $sub_block) {
+        foreach ($this->xxGetSubBlocks('Tag') as $sub_block) {
             if ($sub_block->getId() === $tag_id) {
                 return $sub_block;
             }
@@ -341,48 +332,6 @@ class Ifd extends BlockBase
     }
 
     /**
-     * Add a sub-IFD.
-     *
-     * Any previous sub-IFD of the same type will be overwritten.
-     *
-     * @param Ifd $sub
-     *            the sub IFD.
-     */
-    public function addSubIfd(Ifd $sub)
-    {
-        $this->sub[$sub->getId()] = $sub;
-    }
-
-    /**
-     * Return a sub IFD.
-     *
-     * @param int $id
-     *            the id of the sub IFD.
-     *
-     * @return Ifd the IFD associated with the id, or null if that
-     *         sub IFD does not exist.
-     */
-    public function getSubIfd($id)
-    {
-        if (isset($this->sub[$id])) {
-            return $this->sub[$id];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Get all sub IFDs.
-     *
-     * @return array an associative array with (IFD-id, {@link
-     *         Ifd}) pairs.
-     */
-    public function getSubIfds()
-    {
-        return $this->sub;
-    }
-
-    /**
      * Turn this directory into bytes.
      *
      * This directory will be turned into a byte string, with the
@@ -406,7 +355,7 @@ class Ifd extends BlockBase
             'offset' => $offset,
         ]);
 
-        $n = count($this->xxGetSubBlocks()) + count($this->sub);
+        $n = count($this->xxGetSubBlocks('Tag')) + count($this->xxGetSubBlocks('Ifd'));
         if ($this->thumb_data !== null) {
             /*
              * We need two extra entries for the thumbnail offset and
@@ -425,7 +374,7 @@ class Ifd extends BlockBase
          */
         $end = $offset + 2 + 12 * $n + 4;
 
-        foreach ($this->xxGetSubBlocks() as $tag => $sub_block) {
+        foreach ($this->xxGetSubBlocks('Tag') as $tag => $sub_block) {
             /* Each entry is 12 bytes long. */
             $bytes .= ConvertBytes::fromShort($sub_block->getId(), $order);
             $bytes .= ConvertBytes::fromShort($sub_block->getEntry()->getFormat(), $order);
@@ -480,12 +429,12 @@ class Ifd extends BlockBase
 
         /* Find bytes from sub IFDs. */
         $sub_bytes = '';
-        foreach ($this->sub as $type => $sub) {
-            if (Spec::getIfdType($type) === 'Exif') {
+        foreach ($this->xxGetSubBlocks('Ifd') as $sub) {
+            if (Spec::getIfdType($sub->getType()) === 'Exif') {
                 $tag = Spec::getTagIdByName($this->getId(), 'ExifIFDPointer');
-            } elseif (Spec::getIfdType($type) === 'GPS') {
+            } elseif (Spec::getIfdType($sub->getType()) === 'GPS') {
                 $tag = Spec::getTagIdByName($this->getId(), 'GPSInfoIFDPointer');
-            } elseif (Spec::getIfdType($type) === 'Interoperability') {
+            } elseif (Spec::getIfdType($sub->getType()) === 'Interoperability') {
                 $tag = Spec::getTagIdByName($this->getId(), 'InteroperabilityIFDPointer');
             } else {
                 // ConvertBytes::BIG_ENDIAN is the default used by Convert
@@ -535,14 +484,16 @@ class Ifd extends BlockBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("Dumping IFD %s with %d entries...\n", $this->getName(), count($this->xxGetSubBlocks()));
+        $str = ExifEye::fmt("Dumping IFD '%s' ...\n", $this->getName());
 
-        foreach ($this->xxGetSubBlocks() as $sub_block) {
-            $str .= $sub_block->__toString();
+        foreach ($this->xxGetSubBlocks() as $type => $sub_blocks) {
+            foreach ($sub_blocks as $sub_blocks) {
+                $str .= $sub_block->__toString();
+            }
         }
-        $str .= ExifEye::fmt("Dumping %d sub IFDs...\n", count($this->sub));
+        $str .= ExifEye::fmt("Dumping %d sub IFDs...\n", count($this->xxGetSubBlocks('Ifd')));
 
-        foreach ($this->sub as $type => $ifd) {
+        foreach ($this->xxGetSubBlocks('Ifd') as $type => $ifd) {
             $str .= $ifd->__toString();
         }
         if ($this->next !== null) {

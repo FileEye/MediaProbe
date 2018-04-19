@@ -164,7 +164,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * below the first IFD.
      */
     $gps_ifd = new Ifd(Spec::getIfdIdByType('GPS'));
-    $ifd0->addSubIfd($gps_ifd);
+    $ifd0->xxAddSubBlock($gps_ifd);
 
     /*
      * The USER_COMMENT tag must be put in a Exif sub-IFD under the
@@ -172,10 +172,10 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      */
     $exif_ifd = new Ifd(Spec::getIfdIdByType('Exif'));
     $exif_ifd->addEntry(new ExifUserComment($comment));
-    $ifd0->addSubIfd($exif_ifd);
+    $ifd0->xxAddSubBlock($exif_ifd);
 
     $inter_ifd = new Ifd(Spec::getIfdIdByType('Interoperability'));
-    $ifd0->addSubIfd($inter_ifd);
+    $ifd0->xxAddSubBlock($inter_ifd);
 
     $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getId(), 'Model'), $model));
     $ifd0->addEntry(new Ascii(Spec::getTagIdByName($ifd0->getId(), 'DateTime'), $date_time));

@@ -65,9 +65,10 @@ abstract class BlockBase extends ElementBase
      */
     public function xxAddSubBlock(BlockBase $sub_block)
     {
-        for ($i = 0; $i < count($this->xxGetSubBlocks()); $i++) {
-            if ($sub_block->getId() === $this->xxGetSubBlock($i)->getId()) {
-                $this->subBlocks[$i] = $sub_block;
+        $type = $sub_block->getType()
+        for ($i = 0; $i < count($this->xxGetSubBlocks($type)); $i++) {
+            if ($sub_block->getId() === $this->xxGetSubBlock($type, $i)->getId()) {
+                $this->subBlocks[$type][$i] = $sub_block;
                 return $this;
             }
         }
@@ -82,7 +83,7 @@ abstract class BlockBase extends ElementBase
      */
     public function xxAppendSubBlock(BlockBase $sub_block)
     {
-        $this->subBlocks[] = $sub_block;
+        $this->subBlocks[$sub_block->getType()][] = $sub_block;
         return $this;
     }
 
@@ -95,9 +96,9 @@ abstract class BlockBase extends ElementBase
      * @return BlockBase the sub-block associated with the index, or null if no
      *         such block exists.
      */
-    public function xxGetSubBlock($index)
+    public function xxGetSubBlock($type, $index)
     {
-        return isset($this->subBlocks[$index]) ? $this->subBlocks[$index] : null;
+        return isset($this->subBlocks[$type][$index]) ? $this->subBlocks[$type][$index] : null;
     }
 
     /**
@@ -105,9 +106,9 @@ abstract class BlockBase extends ElementBase
      *
      * @return BlockBase[]
      */
-    public function xxGetSubBlocks()
+    public function xxGetSubBlocks($type = null)
     {
-        return $this->subBlocks;
+        return $type !== null ? $this->subBlocks[$type] : $this->subBlocks;
     }
 
     /**
