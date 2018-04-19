@@ -69,10 +69,12 @@ return array (
     ),
     10 =>
     array (
-      0 => 'ExifEye\\core\\Entry\\ExifMakerNote::tagToIfd',
+      0 => 'ExifEye\\core\\Block\\Thumbnail::toBlock',
+      1 => 'ExifEye\\core\\Entry\\ExifMakerNote::tagToIfd',
     ),
     11 =>
     array (
+      0 => 'ExifEye\\core\\Block\\Thumbnail::toBlock',
     ),
   ),
   'ifdsByType' =>
@@ -3911,8 +3913,8 @@ return array (
       ),
       513 =>
       array (
-        'name' => 'JPEGInterchangeFormat',
-        'title' => 'JPEG Interchange Format',
+        'name' => 'ThumbnailOffset',
+        'title' => 'Thumbnail Offset',
         'components' => 1,
         'format' =>
         array (
@@ -3921,8 +3923,8 @@ return array (
       ),
       514 =>
       array (
-        'name' => 'JPEGInterchangeFormatLength',
-        'title' => 'JPEG Interchange Format Length',
+        'name' => 'ThumbnailLength',
+        'title' => 'Thumbnail Length',
         'components' => 1,
         'format' =>
         array (
@@ -4368,8 +4370,8 @@ return array (
       ),
       513 =>
       array (
-        'name' => 'JPEGInterchangeFormat',
-        'title' => 'JPEG Interchange Format',
+        'name' => 'ThumbnailOffset',
+        'title' => 'Thumbnail Offset',
         'components' => 1,
         'format' =>
         array (
@@ -4378,8 +4380,8 @@ return array (
       ),
       514 =>
       array (
-        'name' => 'JPEGInterchangeFormatLength',
-        'title' => 'JPEG Interchange Format Length',
+        'name' => 'ThumbnailLength',
+        'title' => 'Thumbnail Length',
         'components' => 1,
         'format' =>
         array (
@@ -4813,8 +4815,8 @@ return array (
       'Artist' => 315,
       'WhitePoint' => 318,
       'PrimaryChromaticities' => 319,
-      'JPEGInterchangeFormat' => 513,
-      'JPEGInterchangeFormatLength' => 514,
+      'ThumbnailOffset' => 513,
+      'ThumbnailLength' => 514,
       'YCbCrCoefficients' => 529,
       'YCbCrSubSampling' => 530,
       'YCbCrPositioning' => 531,
@@ -4857,8 +4859,8 @@ return array (
       'Artist' => 315,
       'WhitePoint' => 318,
       'PrimaryChromaticities' => 319,
-      'JPEGInterchangeFormat' => 513,
-      'JPEGInterchangeFormatLength' => 514,
+      'ThumbnailOffset' => 513,
+      'ThumbnailLength' => 514,
       'YCbCrCoefficients' => 529,
       'YCbCrSubSampling' => 530,
       'YCbCrPositioning' => 531,
