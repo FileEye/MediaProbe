@@ -24,7 +24,7 @@ class Thumbnail extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $id = 0;
+    protected $id = -1;
 
     /**
      * {@inheritdoc}
