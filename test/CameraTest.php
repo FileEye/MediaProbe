@@ -75,7 +75,7 @@ class CameraTest extends ExifEyeTestCaseBase
 
     protected function assertIfd($expected, $ifd)
     {
-        $this->assertInstanceOf($expected['class'], $ifd);
+        $this->assertInstanceOf($expected['class'], $ifd, $expected['id'] . $expected['name']);
 
         if (isset($expected['blocks']['Tag'])) {
             $expected_tags = $expected['blocks']['Tag'];
