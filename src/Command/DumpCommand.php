@@ -145,15 +145,20 @@ class DumpCommand extends Command
 
     protected function ifdToTest($name, $number, Ifd $ifd, &$json)
     {
-        $tags = $ifd->xxGetSubBlocks();
-        foreach ($tags as $tag) {
-            $this->tagToTest('$tag', $tag, $ifd, $json);
+        $sub_blocks = $ifd->xxGetSubBlocks();
+        foreach ($sub_blocks as $type => $sub_blocks) {
+            foreach ($sub_blocks as $sub_block) {
+                if ($type === 'Tag') {
+                    $this->tagToTest('$tag', $tag, $ifd, $json);
+                } elseif ($type === 'Ifd') {
+                    $json['blocks'][$sub_block->getName()]['class'] = get_class($sub_block);
+                    $this->ifdToTest('$ifd', 0, $sub_block, $json['blocks'][$sub_block->getName()]);
+                }
+            }
         }
-        $sub_ifds = $ifd->getSubIfds();
+/*        $sub_ifds = $ifd->getSubIfds();
         $n = 0;
         foreach ($sub_ifds as $type => $sub_ifd) {
-            $json['blocks'][$sub_ifd->getName()]['class'] = get_class($sub_ifd);
-            $this->ifdToTest('$ifd', $n, $sub_ifd, $json['blocks'][$sub_ifd->getName()]);
             $n ++;
         }
 /*        $n = 1;
@@ -164,7 +169,7 @@ class DumpCommand extends Command
         }*/
     }
 
-    protected function tagToTest($name, BlockBase $tag, Ifd $ifd, &$json)
+    protected function tagToTest($name, Tag $tag, Ifd $ifd, &$json)
     {
         $ifd_type = $ifd->getId();
 
