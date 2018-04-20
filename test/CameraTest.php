@@ -76,6 +76,12 @@ class CameraTest extends ExifEyeTestCaseBase
     protected function assertIfd($expected, $ifd)
     {
         dump([$ifd->getName(), $ifd->getElementPath()]);
+        $b = $ifd->xxGetSubBlocks();
+        foreach ($b as $type) {
+            foreach ($type as $block) {
+                $this->assertIfd([], $block);
+            }
+        }
         if (empty($expected)) {
             return;
         }
@@ -98,12 +104,6 @@ class CameraTest extends ExifEyeTestCaseBase
             }
         }
 
-        $b = $ifd->xxGetSubBlocks();
-        foreach ($b as $type) {
-            foreach ($type as $block) {
-                $this->assertIfd([], $block);
-            }
-        }
 /*        if (isset($expected['blocks']['Ifd'])) {
             $expected_ifds = $expected['blocks']['Ifd'];
             $this->assertCount(count($expected_ifds), $ifd->xxGetSubBlocks('Ifd'), "Block: '{$ifd->getName()}' - sub-blocks count");
