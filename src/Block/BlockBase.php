@@ -153,9 +153,20 @@ abstract class BlockBase extends ElementBase
     public function toDumpArray()
     {
         $dump = parent::toDumpArray();
+
+        // Dump Entry if existing.
         if ($this->getEntry()) {
             $dump['Entry'] = $this->getEntry()->toDumpArray();
         }
+
+        // Dump sub-Blocks.
+        foreach ($this->xxGetSubBlocks() as $type => $sub_blocks) {
+            $dump['blocks'][$type] = [];
+            foreach ($sub_blocks as $sub_block) {
+                dump['blocks'][$type][] = $sub_block->toDumpArray();
+            }
+        }
+
         return $dump;
     }
 }

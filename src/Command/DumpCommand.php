@@ -130,33 +130,14 @@ class DumpCommand extends Command
     {
         $ifd = $tiff->getIfd();
         if ($ifd instanceof Ifd) {
-            $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
-            $this->ifdToTest('$ifd', 0, $ifd, $json['blocks'][$ifd->getName()]);
+            $json['blocks'][$ifd->getName()] = $ifd->toDumpArray();
             $n = 1;
             while ($ifd = $ifd->getNextIfd()) {
-                $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
-                $this->ifdToTest('$ifd', $n, $ifd, $json['blocks'][$ifd->getName()]);
+                $json['blocks'][$ifd->getName()] = $ifd->toDumpArray();
                 $n ++;
             }
         } else {
             $json['blocks'][$ifd->getName()] = [];
-        }
-    }
-
-    protected function ifdToTest($name, $number, Ifd $ifd, &$json)
-    {
-        $all_sub_blocks = $ifd->xxGetSubBlocks();
-        foreach ($all_sub_blocks as $type => $sub_blocks) {
-            $json['blocks'][$type] = [];
-            foreach ($sub_blocks as $sub_block) {
-                $json['blocks'][$type][] = $sub_block->toDumpArray();
-/*                if ($sub_block instanceof Tag) {
-                    $json['blocks'][$type][] = $sub_block->toDumpArray();
-                } elseif ($sub_block instanceof Ifd) {
-                    $json['blocks'][$type][$sub_block->getName()]['class'] = get_class($sub_block);
-                    $this->ifdToTest('$ifd', 0, $sub_block, $json['blocks'][$type][$sub_block->getName()]);
-                }*/
-            }
         }
     }
 }
