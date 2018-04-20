@@ -149,7 +149,7 @@ class DumpCommand extends Command
         foreach ($sub_blocks as $type => $sub_blocks) {
             foreach ($sub_blocks as $sub_block) {
                 if ($type === 'Tag') {
-                    $this->tagToTest('$tag', $tag, $ifd, $json);
+                    $this->tagToTest('$tag', $sub_block, $ifd, $json);
                 } elseif ($type === 'Ifd') {
                     $json['blocks'][$sub_block->getName()]['class'] = get_class($sub_block);
                     $this->ifdToTest('$ifd', 0, $sub_block, $json['blocks'][$sub_block->getName()]);
