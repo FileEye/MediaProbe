@@ -78,7 +78,7 @@ class CameraTest extends ExifEyeTestCaseBase
         dump([$ifd->getName(), $ifd->getElementPath()]);
         $b = $ifd->xxGetSubBlocks('Ifd');
         foreach ($b as $block) {
-            $this->assertIfd([], $block)
+            $this->assertIfd([], $block);
         }
         return;
 
