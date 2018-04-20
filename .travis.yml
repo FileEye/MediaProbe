@@ -79,5 +79,5 @@ script:
   #- php bin/exifeye dump test/imagetests/canon-powershot-s60.jpg
   #- php bin/exifeye dump test/broken_images/
 
-#after_script:
-#  - php vendor/bin/coveralls -v
+after_script:
+  - php vendor/bin/coveralls -v
