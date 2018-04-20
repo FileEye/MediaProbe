@@ -54,4 +54,11 @@ interface ElementInterface
      * @return bool
      */
     public function isValid();
+
+    /**
+     * Returns a dump of the element in an array.
+     *
+     * @return array
+     */
+    public function toDumpArray();
 }

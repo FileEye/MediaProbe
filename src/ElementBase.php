@@ -119,4 +119,18 @@ abstract class ElementBase implements ElementInterface
     {
         return $this->valid;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toDumpArray()
+    {
+        return [
+            'path' = $this->getElementPath(),
+            'class' = get_class($this),
+            'id' = $this->getId(),
+            'name' = $this->getName(),
+            'valid' = $this->isValid(),
+        ];
+    }
 }

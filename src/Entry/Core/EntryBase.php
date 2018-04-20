@@ -6,6 +6,7 @@ use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ElementBase;
 use ExifEye\core\ExifEyeException;
+use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
 /**
@@ -116,5 +117,19 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             return Spec::getTagText($parent, $this, $options); // xx
         }
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toDumpArray()
+    {
+        return array_merge(parent::toDumpArray(), [
+            'format' => Format::getName($this->getFormat()),
+            'components' => $this->getComponents(),
+            'value' => base64_encode(serialize($this->getValue())),
+            'clear_value' => serialize($this->getValue()),
+            'text' => $this->toString(),
+        ];
     }
 }

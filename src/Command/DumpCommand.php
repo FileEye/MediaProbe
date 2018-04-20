@@ -157,17 +157,6 @@ class DumpCommand extends Command
                 }
             }
         }
-/*        $sub_ifds = $ifd->getSubIfds();
-        $n = 0;
-        foreach ($sub_ifds as $type => $sub_ifd) {
-            $n ++;
-        }
-/*        $n = 1;
-        while ($ifd = $ifd->getNextIfd()) {
-            $json['blocks'][$ifd->getName()]['class'] = get_class($ifd);
-            $this->ifdToTest('$ifd', $n, $ifd, $json['blocks'][$ifd->getName()]);
-            $n ++;
-        }*/
     }
 
     protected function tagToTest($name, Tag $tag, Ifd $ifd, &$json)
@@ -181,14 +170,15 @@ class DumpCommand extends Command
         $json[] = [
             'id' => $tag_id,
             'name' => $tag_name,
-            'entry' => [
+            'entry' => $tag->toDumpArray(),
+/*            [
                 'class' => get_class($entry),
                 'format' => Format::getName($entry->getFormat()),
                 'components' => $entry->getComponents(),
                 'value' => base64_encode(serialize($tag->getEntry()->getValue())),
                 'clear_value' => serialize($tag->getEntry()->getValue()),
                 'text' => $tag->getEntry()->toString(),
-            ],
+            ],*/
         ];
     }
 }
