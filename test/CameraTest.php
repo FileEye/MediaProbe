@@ -102,7 +102,8 @@ $xxx = [];
 foreach($ifd->xxGetSubBlocks('Ifd') as $x){
   $xxx[] = $x->getId();
 }
-dump([$ifd->getElementPath(), $test_block_data['id'], implode('-', $xxx), (bool) $block]);
+//dump([$ifd->getElementPath(), $test_block_data['id'], implode('-', $xxx), (bool) $block]);
+dump([$ifd->getElementPath(), $test_block_data['id'], implode('-', $xxx), $ifd->xxGetSubBlocks('Ifd'), (bool) $block]);
                 $this->assertIfd($test_block_data, $block);
             }
         }
