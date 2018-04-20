@@ -130,6 +130,6 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             'value' => base64_encode(serialize($this->getValue())),
             'clear_value' => serialize($this->getValue()),
             'text' => $this->toString(),
-        ];
+        ]);
     }
 }
