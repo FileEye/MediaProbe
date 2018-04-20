@@ -98,9 +98,11 @@ class CameraTest extends ExifEyeTestCaseBase
             }
         }
 
-        $b = $ifd->xxGetSubBlocks('Ifd');
-        foreach ($b as $block) {
-            $this->assertIfd([], $block);
+        $b = $ifd->xxGetSubBlocks();
+        foreach ($b as $type) {
+            foreach ($type as $block) {
+                $this->assertIfd([], $block);
+            }
         }
 /*        if (isset($expected['blocks']['Ifd'])) {
             $expected_ifds = $expected['blocks']['Ifd'];
