@@ -145,14 +145,15 @@ class DumpCommand extends Command
 
     protected function ifdToTest($name, $number, Ifd $ifd, &$json)
     {
-        $sub_blocks = $ifd->xxGetSubBlocks();
-        foreach ($sub_blocks as $type => $sub_blocks) {
+        $all_sub_blocks = $ifd->xxGetSubBlocks();
+        foreach ($all_sub_blocks as $type => $sub_blocks) {
+            $json['blocks'][$type] = [];
             foreach ($sub_blocks as $sub_block) {
-                if ($type === 'Tag') {
+                if ($sub_block instanceof Tag) {
                     $this->tagToTest('$tag', $sub_block, $ifd, $json);
-                } elseif ($type === 'Ifd') {
-                    $json['blocks'][$sub_block->getName()]['class'] = get_class($sub_block);
-                    $this->ifdToTest('$ifd', 0, $sub_block, $json['blocks'][$sub_block->getName()]);
+                } elseif ($sub_block instanceof Ifd) {
+                    $json['blocks'][$type][$sub_block->getName()]['class'] = get_class($sub_block);
+                    $this->ifdToTest('$ifd', 0, $sub_block, $json['blocks'][$type][$sub_block->getName()]);
                 }
             }
         }
