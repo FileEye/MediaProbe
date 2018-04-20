@@ -97,12 +97,12 @@ class CameraTest extends ExifEyeTestCaseBase
             $expected_ifds = $expected['blocks']['Ifd'];
             $this->assertCount(count($expected_ifds), $ifd->xxGetSubBlocks('Ifd'), "Block: '{$ifd->getName()}' - sub-blocks count");
             foreach ($expected_ifds as $test_block_data) {
-                $block = $ifd->xxGetSubBlock('Ifd', 0)->xxGetSubBlock('Ifd', $test_block_data['id']);
+                $block = $ifd->xxGetSubBlock('Ifd', $test_block_data['id']);
 $xxx = [];
 foreach($ifd->xxGetSubBlocks('Ifd') as $x){
   $xxx[] = $x->getId();
 }
-dump([$test_block_data['id'], implode('-', $xxx), (bool) $block]);
+dump([$ifd->getElementPath(), $test_block_data['id'], implode('-', $xxx), (bool) $block]);
                 $this->assertIfd($test_block_data, $block);
             }
         }
