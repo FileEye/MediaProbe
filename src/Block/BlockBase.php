@@ -146,4 +146,16 @@ abstract class BlockBase extends ElementBase
     {
         return $this->entry;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toDumpArray()
+    {
+        $dump = parent::toDumpArray();
+        if ($this->getEntry()) {
+            $dump['Entry'] = $this->getEntry()->toDumpArray();
+        }
+        return $dump;
+    }
 }

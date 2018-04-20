@@ -150,35 +150,13 @@ class DumpCommand extends Command
             $json['blocks'][$type] = [];
             foreach ($sub_blocks as $sub_block) {
                 if ($sub_block instanceof Tag) {
-                    $this->tagToTest('$tag', $sub_block, $ifd, $json['blocks'][$type]);
+    //                $this->tagToTest('$tag', $sub_block, $ifd, $json['blocks'][$type]);
+                    $json['blocks'][$type][] = $sub_block->toDumpArray();
                 } elseif ($sub_block instanceof Ifd) {
                     $json['blocks'][$type][$sub_block->getName()]['class'] = get_class($sub_block);
                     $this->ifdToTest('$ifd', 0, $sub_block, $json['blocks'][$type][$sub_block->getName()]);
                 }
             }
         }
-    }
-
-    protected function tagToTest($name, Tag $tag, Ifd $ifd, &$json)
-    {
-        $ifd_type = $ifd->getId();
-
-        $tag_id = $tag->getId();
-        $tag_name = $tag->getName();
-        $entry = $tag->getEntry();
-
-        $json[] = [
-            'id' => $tag_id,
-            'name' => $tag_name,
-            'entry' => $tag->toDumpArray(),
-/*            [
-                'class' => get_class($entry),
-                'format' => Format::getName($entry->getFormat()),
-                'components' => $entry->getComponents(),
-                'value' => base64_encode(serialize($tag->getEntry()->getValue())),
-                'clear_value' => serialize($tag->getEntry()->getValue()),
-                'text' => $tag->getEntry()->toString(),
-            ],*/
-        ];
     }
 }
