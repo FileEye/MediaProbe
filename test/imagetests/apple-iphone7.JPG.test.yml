@@ -1,739 +1,1119 @@
 jpeg: apple-iphone7.JPG
 blocks:
     IFD0:
+        path: 'Ifd:IFD0'
         class: ExifEye\core\Block\Ifd
-        tags:
-            -
-                id: 271
-                name: Make
-                entry:
-                    class: ExifEye\core\Entry\Core\Ascii
-                    format: Ascii
-                    components: 6
-                    value: czo1OiJBcHBsZSI7
-                    clear_value: 's:5:"Apple";'
-                    text: Apple
-            -
-                id: 272
-                name: Model
-                entry:
-                    class: ExifEye\core\Entry\Core\Ascii
-                    format: Ascii
-                    components: 9
-                    value: czo4OiJpUGhvbmUgNyI7
-                    clear_value: 's:8:"iPhone 7";'
-                    text: 'iPhone 7'
-            -
-                id: 274
-                name: Orientation
-                entry:
-                    class: ExifEye\core\Entry\Core\Short
-                    format: Short
-                    components: 1
-                    value: aToxOw==
-                    clear_value: 'i:1;'
-                    text: 'top - left'
-            -
-                id: 282
-                name: XResolution
-                entry:
-                    class: ExifEye\core\Entry\Core\Rational
-                    format: Rational
-                    components: 1
-                    value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
-                    clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
-                    text: 72/1
-            -
-                id: 283
-                name: YResolution
-                entry:
-                    class: ExifEye\core\Entry\Core\Rational
-                    format: Rational
-                    components: 1
-                    value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
-                    clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
-                    text: 72/1
-            -
-                id: 296
-                name: ResolutionUnit
-                entry:
-                    class: ExifEye\core\Entry\Core\Short
-                    format: Short
-                    components: 1
-                    value: aToyOw==
-                    clear_value: 'i:2;'
-                    text: Inch
-            -
-                id: 305
-                name: Software
-                entry:
-                    class: ExifEye\core\Entry\Core\Ascii
-                    format: Ascii
-                    components: 7
-                    value: czo2OiIxMS4yLjEiOw==
-                    clear_value: 's:6:"11.2.1";'
-                    text: 11.2.1
-            -
-                id: 306
-                name: DateTime
-                entry:
-                    class: ExifEye\core\Entry\Time
-                    format: Ascii
-                    components: 20
-                    value: czoxOToiMjAxODowMjoyNCAxMjoyNjo1MSI7
-                    clear_value: 's:19:"2018:02:24 12:26:51";'
-                    text: '2018:02:24 12:26:51'
+        id: 10
+        name: IFD0
+        valid: true
         blocks:
-            Exif:
-                class: ExifEye\core\Block\Ifd
-                tags:
-                    -
-                        id: 33434
-                        name: ExposureTime
-                        entry:
-                            class: ExifEye\core\Entry\ExifExposureTime
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aToxO2k6MTtpOjg3NzI7fQ==
-                            clear_value: 'a:2:{i:0;i:1;i:1;i:8772;}'
-                            text: '1/8772 sec.'
-                    -
-                        id: 33437
-                        name: FNumber
-                        entry:
-                            class: ExifEye\core\Entry\ExifFNumber
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aTo5O2k6MTtpOjU7fQ==
-                            clear_value: 'a:2:{i:0;i:9;i:1;i:5;}'
-                            text: f/1.8
-                    -
-                        id: 34850
-                        name: ExposureProgram
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aToyOw==
-                            clear_value: 'i:2;'
-                            text: 'Normal program'
-                    -
-                        id: 34855
-                        name: ISOSpeedRatings
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aToyNTs=
-                            clear_value: 'i:25;'
-                            text: 25
-                    -
-                        id: 36864
-                        name: ExifVersion
-                        entry:
-                            class: ExifEye\core\Entry\ExifVersion
-                            format: Undefined
-                            components: 4
-                            value: czo0OiIyLjIxIjs=
-                            clear_value: 's:4:"2.21";'
-                            text: 'Exif Version 2.21'
-                    -
-                        id: 36867
-                        name: DateTimeOriginal
-                        entry:
-                            class: ExifEye\core\Entry\Time
-                            format: Ascii
-                            components: 20
-                            value: czoxOToiMjAxODowMjoyNCAxMjoyNjo1MSI7
-                            clear_value: 's:19:"2018:02:24 12:26:51";'
-                            text: '2018:02:24 12:26:51'
-                    -
-                        id: 36868
-                        name: DateTimeDigitized
-                        entry:
-                            class: ExifEye\core\Entry\Time
-                            format: Ascii
-                            components: 20
-                            value: czoxOToiMjAxODowMjoyNCAxMjoyNjo1MSI7
-                            clear_value: 's:19:"2018:02:24 12:26:51";'
-                            text: '2018:02:24 12:26:51'
-                    -
-                        id: 37121
-                        name: ComponentsConfiguration
-                        entry:
-                            class: ExifEye\core\Entry\ExifComponentsConfiguration
-                            format: Undefined
-                            components: 4
-                            value: czo0OiIBAgMAIjs=
-                            clear_value: !!binary czo0OiIBAgMAIjs=
-                            text: 'Y Cb Cr -'
-                    -
-                        id: 37377
-                        name: ShutterSpeedValue
-                        entry:
-                            class: ExifEye\core\Entry\ExifShutterSpeedValue
-                            format: SignedRational
-                            components: 1
-                            value: YToyOntpOjA7aToxNDg2NztpOjE7aToxMTM1O30=
-                            clear_value: 'a:2:{i:0;i:14867;i:1;i:1135;}'
-                            text: '14867/1135 sec. (APEX: 93)'
-                    -
-                        id: 37378
-                        name: ApertureValue
-                        entry:
-                            class: ExifEye\core\Entry\ExifApertureValue
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aToyMTU5O2k6MTtpOjEyNzM7fQ==
-                            clear_value: 'a:2:{i:0;i:2159;i:1;i:1273;}'
-                            text: '1.8'
-                    -
-                        id: 37379
-                        name: BrightnessValue
-                        entry:
-                            class: ExifEye\core\Entry\ExifBrightnessValue
-                            format: SignedRational
-                            components: 1
-                            value: YToyOntpOjA7aToxNTkwNztpOjE7aToxMzA4O30=
-                            clear_value: 'a:2:{i:0;i:15907;i:1;i:1308;}'
-                            text: '12.161314984709'
-                    -
-                        id: 37380
-                        name: ExposureBiasValue
-                        entry:
-                            class: ExifEye\core\Entry\ExifExposureBiasValue
-                            format: SignedRational
-                            components: 1
-                            value: YToyOntpOjA7aTowO2k6MTtpOjE7fQ==
-                            clear_value: 'a:2:{i:0;i:0;i:1;i:1;}'
-                            text: '0.0'
-                    -
-                        id: 37383
-                        name: MeteringMode
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aTo1Ow==
-                            clear_value: 'i:5;'
-                            text: Pattern
-                    -
-                        id: 37385
-                        name: Flash
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aToxNjs=
-                            clear_value: 'i:16;'
-                            text: 'Flash did not fire, compulsory flash mode.'
-                    -
-                        id: 37386
-                        name: FocalLength
-                        entry:
-                            class: ExifEye\core\Entry\ExifFocalLength
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aTozOTk7aToxO2k6MTAwO30=
-                            clear_value: 'a:2:{i:0;i:399;i:1;i:100;}'
-                            text: '4.0 mm'
-                    -
-                        id: 37396
-                        name: SubjectArea
-                        entry:
-                            class: ExifEye\core\Entry\ExifSubjectArea
-                            format: Short
-                            components: 4
-                            value: YTo0OntpOjA7aToyMDE1O2k6MTtpOjE1MTE7aToyO2k6MjIxNztpOjM7aToxMzMwO30=
-                            clear_value: 'a:4:{i:0;i:2015;i:1;i:1511;i:2;i:2217;i:3;i:1330;}'
-                            text: 'Within rectangle (width 2015, height 1511) around (x,y) = (2217,1330)'
-                    -
-                        id: 37500
-                        name: MakerNote
-                        entry:
-                            class: ExifEye\core\Entry\ExifMakerNote
-                            format: Undefined
-                            components: 1024
-                            value: YToyOntpOjA7czoxMDI0OiJBcHBsZSBpT1MAAAFNTQATAAEACQAAAAEAAAAJAAIABwAAAi4AAAD4AAMABwAAAGgAAAMmAAQACQAAAAEAAAABAAUACQAAAAEAAAClAAYACQAAAAEAAACiAAcACQAAAAEAAAABAAgACgAAAAMAAAOOAAwACgAAAAIAAAOmAA0ACQAAAAEAAAAoAA4ACQAAAAEAAAAEABAACQAAAAEAAAABABEAAgAAACUAAAO2ABQACQAAAAEAAAABABYAAgAAAB0AAAPcABcACQAAAAEAAAAAABkACQAAAAEAAAAAABoAAgAAAAYAAAP6AB8ACQAAAAEAAAAAAAAAAGJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDGJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA////lzQAAGjkAAAEZAAAOJQAAAkcAABRzAAAAiQAAAQAAAAA9AAAAIDZBQjU1OEU0LUMzMEEtNDg3Ri05NDQzLTI5RjRCM0NDMUY0RQAAQWFvbmpxMXlKZVBrblNTWUYvVHUwcjAwY1RMOQAAcTgyNXMAIjtpOjE7aTo2ODg7fQ==
-                            clear_value: !!binary YToyOntpOjA7czoxMDI0OiJBcHBsZSBpT1MAAAFNTQATAAEACQAAAAEAAAAJAAIABwAAAi4AAAD4AAMABwAAAGgAAAMmAAQACQAAAAEAAAABAAUACQAAAAEAAAClAAYACQAAAAEAAACiAAcACQAAAAEAAAABAAgACgAAAAMAAAOOAAwACgAAAAIAAAOmAA0ACQAAAAEAAAAoAA4ACQAAAAEAAAAEABAACQAAAAEAAAABABEAAgAAACUAAAO2ABQACQAAAAEAAAABABYAAgAAAB0AAAPcABcACQAAAAEAAAAAABkACQAAAAEAAAAAABoAAgAAAAYAAAP6AB8ACQAAAAEAAAAAAAAAAGJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDGJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA////lzQAAGjkAAAEZAAAOJQAAAkcAABRzAAAAiQAAAQAAAAA9AAAAIDZBQjU1OEU0LUMzMEEtNDg3Ri05NDQzLTI5RjRCM0NDMUY0RQAAQWFvbmpxMXlKZVBrblNTWUYvVHUwcjAwY1RMOQAAcTgyNXMAIjtpOjE7aTo2ODg7fQ==
-                            text: '1024 bytes MakerNote data'
-                    -
-                        id: 37521
-                        name: SubSecTimeOriginal
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 4
-                            value: czozOiI2MTEiOw==
-                            clear_value: 's:3:"611";'
-                            text: '611'
-                    -
-                        id: 37522
-                        name: SubSecTimeDigitized
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 4
-                            value: czozOiI2MTEiOw==
-                            clear_value: 's:3:"611";'
-                            text: '611'
-                    -
-                        id: 40960
-                        name: FlashPixVersion
-                        entry:
-                            class: ExifEye\core\Entry\ExifFlashPixVersion
-                            format: Undefined
-                            components: 4
-                            value: czozOiIxLjAiOw==
-                            clear_value: 's:3:"1.0";'
-                            text: 'FlashPix Version 1.0'
-                    -
-                        id: 40961
-                        name: ColorSpace
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aToxOw==
-                            clear_value: 'i:1;'
-                            text: sRGB
-                    -
-                        id: 40962
-                        name: PixelXDimension
-                        entry:
-                            class: ExifEye\core\Entry\Core\Long
-                            format: Long
-                            components: 1
-                            value: aTo0MDMyOw==
-                            clear_value: 'i:4032;'
-                            text: 4032
-                    -
-                        id: 40963
-                        name: PixelYDimension
-                        entry:
-                            class: ExifEye\core\Entry\Core\Long
-                            format: Long
-                            components: 1
-                            value: aTozMDI0Ow==
-                            clear_value: 'i:3024;'
-                            text: 3024
-                    -
-                        id: 41495
-                        name: SensingMethod
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aToyOw==
-                            clear_value: 'i:2;'
-                            text: 'One-chip color area sensor'
-                    -
-                        id: 41729
-                        name: SceneType
-                        entry:
-                            class: ExifEye\core\Entry\ExifSceneType
-                            format: Undefined
-                            components: 1
-                            value: czoxOiIBIjs=
-                            clear_value: !!binary czoxOiIBIjs=
-                            text: 'Directly photographed'
-                    -
-                        id: 41986
-                        name: ExposureMode
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aTowOw==
-                            clear_value: 'i:0;'
-                            text: 'Auto exposure'
-                    -
-                        id: 41987
-                        name: WhiteBalance
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aTowOw==
-                            clear_value: 'i:0;'
-                            text: 'Auto white balance'
-                    -
-                        id: 41989
-                        name: FocalLengthIn35mmFilm
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aToyODs=
-                            clear_value: 'i:28;'
-                            text: 28
-                    -
-                        id: 41990
-                        name: SceneCaptureType
-                        entry:
-                            class: ExifEye\core\Entry\Core\Short
-                            format: Short
-                            components: 1
-                            value: aTowOw==
-                            clear_value: 'i:0;'
-                            text: Standard
-                    -
-                        id: 42034
-                        name: LensInfo
-                        entry:
-                            class: ExifEye\core\Entry\Core\Rational
-                            format: Rational
-                            components: 4
-                            value: YTo0OntpOjA7YToyOntpOjA7aTozOTk7aToxO2k6MTAwO31pOjE7YToyOntpOjA7aTozOTk7aToxO2k6MTAwO31pOjI7YToyOntpOjA7aTo5O2k6MTtpOjU7fWk6MzthOjI6e2k6MDtpOjk7aToxO2k6NTt9fQ==
-                            clear_value: 'a:4:{i:0;a:2:{i:0;i:399;i:1;i:100;}i:1;a:2:{i:0;i:399;i:1;i:100;}i:2;a:2:{i:0;i:9;i:1;i:5;}i:3;a:2:{i:0;i:9;i:1;i:5;}}'
-                            text: '399/100, 399/100, 9/5, 9/5'
-                    -
-                        id: 42035
-                        name: LensMake
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 6
-                            value: czo1OiJBcHBsZSI7
-                            clear_value: 's:5:"Apple";'
-                            text: Apple
-                    -
-                        id: 42036
-                        name: LensModel
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 34
-                            value: czozMzoiaVBob25lIDcgYmFjayBjYW1lcmEgMy45OW1tIGYvMS44Ijs=
-                            clear_value: 's:33:"iPhone 7 back camera 3.99mm f/1.8";'
-                            text: 'iPhone 7 back camera 3.99mm f/1.8'
-                blocks:
-                    AppleMakerNotes:
-                        class: ExifEye\core\Block\IfdMakerNoteApple
-                        tags:
+            Tag:
+                -
+                    path: 'Ifd:IFD0/Tag:Make'
+                    class: ExifEye\core\Block\Tag
+                    id: 271
+                    name: Make
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:Make/Entry:Ascii'
+                        class: ExifEye\core\Entry\Core\Ascii
+                        valid: true
+                        format: Ascii
+                        components: 6
+                        value: czo1OiJBcHBsZSI7
+                        clear_value: 's:5:"Apple";'
+                        text: Apple
+                -
+                    path: 'Ifd:IFD0/Tag:Model'
+                    class: ExifEye\core\Block\Tag
+                    id: 272
+                    name: Model
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:Model/Entry:Ascii'
+                        class: ExifEye\core\Entry\Core\Ascii
+                        valid: true
+                        format: Ascii
+                        components: 9
+                        value: czo4OiJpUGhvbmUgNyI7
+                        clear_value: 's:8:"iPhone 7";'
+                        text: 'iPhone 7'
+                -
+                    path: 'Ifd:IFD0/Tag:Orientation'
+                    class: ExifEye\core\Block\Tag
+                    id: 274
+                    name: Orientation
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:Orientation/Entry:Short'
+                        class: ExifEye\core\Entry\Core\Short
+                        valid: true
+                        format: Short
+                        components: 1
+                        value: aToxOw==
+                        clear_value: 'i:1;'
+                        text: 'top - left'
+                -
+                    path: 'Ifd:IFD0/Tag:XResolution'
+                    class: ExifEye\core\Block\Tag
+                    id: 282
+                    name: XResolution
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:XResolution/Entry:Rational'
+                        class: ExifEye\core\Entry\Core\Rational
+                        valid: true
+                        format: Rational
+                        components: 1
+                        value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
+                        clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                        text: 72/1
+                -
+                    path: 'Ifd:IFD0/Tag:YResolution'
+                    class: ExifEye\core\Block\Tag
+                    id: 283
+                    name: YResolution
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:YResolution/Entry:Rational'
+                        class: ExifEye\core\Entry\Core\Rational
+                        valid: true
+                        format: Rational
+                        components: 1
+                        value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
+                        clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                        text: 72/1
+                -
+                    path: 'Ifd:IFD0/Tag:ResolutionUnit'
+                    class: ExifEye\core\Block\Tag
+                    id: 296
+                    name: ResolutionUnit
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:ResolutionUnit/Entry:Short'
+                        class: ExifEye\core\Entry\Core\Short
+                        valid: true
+                        format: Short
+                        components: 1
+                        value: aToyOw==
+                        clear_value: 'i:2;'
+                        text: Inch
+                -
+                    path: 'Ifd:IFD0/Tag:Software'
+                    class: ExifEye\core\Block\Tag
+                    id: 305
+                    name: Software
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:Software/Entry:Ascii'
+                        class: ExifEye\core\Entry\Core\Ascii
+                        valid: true
+                        format: Ascii
+                        components: 7
+                        value: czo2OiIxMS4yLjEiOw==
+                        clear_value: 's:6:"11.2.1";'
+                        text: 11.2.1
+                -
+                    path: 'Ifd:IFD0/Tag:DateTime'
+                    class: ExifEye\core\Block\Tag
+                    id: 306
+                    name: DateTime
+                    valid: true
+                    Entry:
+                        path: 'Ifd:IFD0/Tag:DateTime/Entry:Time'
+                        class: ExifEye\core\Entry\Time
+                        valid: true
+                        format: Ascii
+                        components: 20
+                        value: czoxOToiMjAxODowMjoyNCAxMjoyNjo1MSI7
+                        clear_value: 's:19:"2018:02:24 12:26:51";'
+                        text: '2018:02:24 12:26:51'
+            Ifd:
+                -
+                    path: 'Ifd:IFD0/Ifd:Exif'
+                    class: ExifEye\core\Block\Ifd
+                    id: 4
+                    name: Exif
+                    valid: true
+                    blocks:
+                        Tag:
                             -
-                                id: 1
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureTime'
+                                class: ExifEye\core\Block\Tag
+                                id: 33434
+                                name: ExposureTime
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureTime/Entry:Rational'
+                                    class: ExifEye\core\Entry\ExifExposureTime
+                                    valid: true
+                                    format: Rational
                                     components: 1
-                                    value: aTo5Ow==
-                                    clear_value: 'i:9;'
-                                    text: 9
+                                    value: YToyOntpOjA7aToxO2k6MTtpOjg3NzI7fQ==
+                                    clear_value: 'a:2:{i:0;i:1;i:1;i:8772;}'
+                                    text: '1/8772 sec.'
                             -
-                                id: 2
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\Undefined
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FNumber'
+                                class: ExifEye\core\Block\Tag
+                                id: 33437
+                                name: FNumber
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FNumber/Entry:Rational'
+                                    class: ExifEye\core\Entry\ExifFNumber
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aTo5O2k6MTtpOjU7fQ==
+                                    clear_value: 'a:2:{i:0;i:9;i:1;i:5;}'
+                                    text: f/1.8
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureProgram'
+                                class: ExifEye\core\Block\Tag
+                                id: 34850
+                                name: ExposureProgram
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureProgram/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
+                                    components: 1
+                                    value: aToyOw==
+                                    clear_value: 'i:2;'
+                                    text: 'Normal program'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ISOSpeedRatings'
+                                class: ExifEye\core\Block\Tag
+                                id: 34855
+                                name: ISOSpeedRatings
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ISOSpeedRatings/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
+                                    components: 1
+                                    value: aToyNTs=
+                                    clear_value: 'i:25;'
+                                    text: 25
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExifVersion'
+                                class: ExifEye\core\Block\Tag
+                                id: 36864
+                                name: ExifVersion
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExifVersion/Entry:Version'
+                                    class: ExifEye\core\Entry\ExifVersion
+                                    valid: true
                                     format: Undefined
-                                    components: 558
-                                    value: czo1NTg6ImJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
-                                    clear_value: !!binary czo1NTg6ImJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
-                                    text: '558 bytes of undefined data'
+                                    components: 4
+                                    value: czo0OiIyLjIxIjs=
+                                    clear_value: 's:4:"2.21";'
+                                    text: 'Exif Version 2.21'
                             -
-                                id: 3
-                                name: RunTime
-                                entry:
-                                    class: ExifEye\core\Entry\Core\Undefined
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeOriginal'
+                                class: ExifEye\core\Block\Tag
+                                id: 36867
+                                name: DateTimeOriginal
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeOriginal/Entry:Time'
+                                    class: ExifEye\core\Entry\Time
+                                    valid: true
+                                    format: Ascii
+                                    components: 20
+                                    value: czoxOToiMjAxODowMjoyNCAxMjoyNjo1MSI7
+                                    clear_value: 's:19:"2018:02:24 12:26:51";'
+                                    text: '2018:02:24 12:26:51'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeDigitized'
+                                class: ExifEye\core\Block\Tag
+                                id: 36868
+                                name: DateTimeDigitized
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeDigitized/Entry:Time'
+                                    class: ExifEye\core\Entry\Time
+                                    valid: true
+                                    format: Ascii
+                                    components: 20
+                                    value: czoxOToiMjAxODowMjoyNCAxMjoyNjo1MSI7
+                                    clear_value: 's:19:"2018:02:24 12:26:51";'
+                                    text: '2018:02:24 12:26:51'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ComponentsConfiguration'
+                                class: ExifEye\core\Block\Tag
+                                id: 37121
+                                name: ComponentsConfiguration
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ComponentsConfiguration/Entry:Undefined'
+                                    class: ExifEye\core\Entry\ExifComponentsConfiguration
+                                    valid: true
                                     format: Undefined
-                                    components: 104
-                                    value: czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
-                                    clear_value: !!binary czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
-                                    text: '104 bytes of undefined data'
+                                    components: 4
+                                    value: czo0OiIBAgMAIjs=
+                                    clear_value: !!binary czo0OiIBAgMAIjs=
+                                    text: 'Y Cb Cr -'
                             -
-                                id: 4
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
-                                    components: 1
-                                    value: aToxOw==
-                                    clear_value: 'i:1;'
-                                    text: 1
-                            -
-                                id: 5
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
-                                    components: 1
-                                    value: aToxNjU7
-                                    clear_value: 'i:165;'
-                                    text: 165
-                            -
-                                id: 6
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
-                                    components: 1
-                                    value: aToxNjI7
-                                    clear_value: 'i:162;'
-                                    text: 162
-                            -
-                                id: 7
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
-                                    components: 1
-                                    value: aToxOw==
-                                    clear_value: 'i:1;'
-                                    text: 1
-                            -
-                                id: 8
-                                name: AccelerationVector
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedRational
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ShutterSpeedValue'
+                                class: ExifEye\core\Block\Tag
+                                id: 37377
+                                name: ShutterSpeedValue
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ShutterSpeedValue/Entry:SignedRational'
+                                    class: ExifEye\core\Entry\ExifShutterSpeedValue
+                                    valid: true
                                     format: SignedRational
-                                    components: 3
-                                    value: YTozOntpOjA7YToyOntpOjA7ZDotNjcwNztpOjE7aTo2NzEzO31pOjE7YToyOntpOjA7aToyODE7aToxO2k6MzYyMTt9aToyO2E6Mjp7aTowO2k6NTgzO2k6MTtpOjUyMzU7fX0=
-                                    clear_value: 'a:3:{i:0;a:2:{i:0;d:-6707;i:1;i:6713;}i:1;a:2:{i:0;i:281;i:1;i:3621;}i:2;a:2:{i:0;i:583;i:1;i:5235;}}'
-                                    text: '-6707/6713, 281/3621, 583/5235'
+                                    components: 1
+                                    value: YToyOntpOjA7aToxNDg2NztpOjE7aToxMTM1O30=
+                                    clear_value: 'a:2:{i:0;i:14867;i:1;i:1135;}'
+                                    text: '14867/1135 sec. (APEX: 93)'
                             -
-                                id: 12
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedRational
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ApertureValue'
+                                class: ExifEye\core\Block\Tag
+                                id: 37378
+                                name: ApertureValue
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ApertureValue/Entry:Rational'
+                                    class: ExifEye\core\Entry\ExifApertureValue
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aToyMTU5O2k6MTtpOjEyNzM7fQ==
+                                    clear_value: 'a:2:{i:0;i:2159;i:1;i:1273;}'
+                                    text: '1.8'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:BrightnessValue'
+                                class: ExifEye\core\Block\Tag
+                                id: 37379
+                                name: BrightnessValue
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:BrightnessValue/Entry:SignedRational'
+                                    class: ExifEye\core\Entry\ExifBrightnessValue
+                                    valid: true
                                     format: SignedRational
-                                    components: 2
-                                    value: YToyOntpOjA7YToyOntpOjA7aToxMzc7aToxO2k6MjU2O31pOjE7YToyOntpOjA7aTo2MTtpOjE7aTozMjt9fQ==
-                                    clear_value: 'a:2:{i:0;a:2:{i:0;i:137;i:1;i:256;}i:1;a:2:{i:0;i:61;i:1;i:32;}}'
-                                    text: '137/256, 61/32'
-                            -
-                                id: 13
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
                                     components: 1
-                                    value: aTo0MDs=
-                                    clear_value: 'i:40;'
-                                    text: 40
+                                    value: YToyOntpOjA7aToxNTkwNztpOjE7aToxMzA4O30=
+                                    clear_value: 'a:2:{i:0;i:15907;i:1;i:1308;}'
+                                    text: '12.161314984709'
                             -
-                                id: 14
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureBiasValue'
+                                class: ExifEye\core\Block\Tag
+                                id: 37380
+                                name: ExposureBiasValue
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureBiasValue/Entry:SignedRational'
+                                    class: ExifEye\core\Entry\ExifExposureBiasValue
+                                    valid: true
+                                    format: SignedRational
                                     components: 1
-                                    value: aTo0Ow==
-                                    clear_value: 'i:4;'
-                                    text: 4
+                                    value: YToyOntpOjA7aTowO2k6MTtpOjE7fQ==
+                                    clear_value: 'a:2:{i:0;i:0;i:1;i:1;}'
+                                    text: '0.0'
                             -
-                                id: 16
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:MeteringMode'
+                                class: ExifEye\core\Block\Tag
+                                id: 37383
+                                name: MeteringMode
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:MeteringMode/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
+                                    components: 1
+                                    value: aTo1Ow==
+                                    clear_value: 'i:5;'
+                                    text: Pattern
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:Flash'
+                                class: ExifEye\core\Block\Tag
+                                id: 37385
+                                name: Flash
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:Flash/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
+                                    components: 1
+                                    value: aToxNjs=
+                                    clear_value: 'i:16;'
+                                    text: 'Flash did not fire, compulsory flash mode.'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLength'
+                                class: ExifEye\core\Block\Tag
+                                id: 37386
+                                name: FocalLength
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLength/Entry:Rational'
+                                    class: ExifEye\core\Entry\ExifFocalLength
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aTozOTk7aToxO2k6MTAwO30=
+                                    clear_value: 'a:2:{i:0;i:399;i:1;i:100;}'
+                                    text: '4.0 mm'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SubjectArea'
+                                class: ExifEye\core\Block\Tag
+                                id: 37396
+                                name: SubjectArea
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SubjectArea/Entry:Short'
+                                    class: ExifEye\core\Entry\ExifSubjectArea
+                                    valid: true
+                                    format: Short
+                                    components: 4
+                                    value: YTo0OntpOjA7aToyMDE1O2k6MTtpOjE1MTE7aToyO2k6MjIxNztpOjM7aToxMzMwO30=
+                                    clear_value: 'a:4:{i:0;i:2015;i:1;i:1511;i:2;i:2217;i:3;i:1330;}'
+                                    text: 'Within rectangle (width 2015, height 1511) around (x,y) = (2217,1330)'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:MakerNote'
+                                class: ExifEye\core\Block\Tag
+                                id: 37500
+                                name: MakerNote
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:MakerNote/Entry:MakerNote'
+                                    class: ExifEye\core\Entry\ExifMakerNote
+                                    valid: true
+                                    format: Undefined
+                                    components: 1024
+                                    value: YToyOntpOjA7czoxMDI0OiJBcHBsZSBpT1MAAAFNTQATAAEACQAAAAEAAAAJAAIABwAAAi4AAAD4AAMABwAAAGgAAAMmAAQACQAAAAEAAAABAAUACQAAAAEAAAClAAYACQAAAAEAAACiAAcACQAAAAEAAAABAAgACgAAAAMAAAOOAAwACgAAAAIAAAOmAA0ACQAAAAEAAAAoAA4ACQAAAAEAAAAEABAACQAAAAEAAAABABEAAgAAACUAAAO2ABQACQAAAAEAAAABABYAAgAAAB0AAAPcABcACQAAAAEAAAAAABkACQAAAAEAAAAAABoAAgAAAAYAAAP6AB8ACQAAAAEAAAAAAAAAAGJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDGJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA////lzQAAGjkAAAEZAAAOJQAAAkcAABRzAAAAiQAAAQAAAAA9AAAAIDZBQjU1OEU0LUMzMEEtNDg3Ri05NDQzLTI5RjRCM0NDMUY0RQAAQWFvbmpxMXlKZVBrblNTWUYvVHUwcjAwY1RMOQAAcTgyNXMAIjtpOjE7aTo2ODg7fQ==
+                                    clear_value: !!binary YToyOntpOjA7czoxMDI0OiJBcHBsZSBpT1MAAAFNTQATAAEACQAAAAEAAAAJAAIABwAAAi4AAAD4AAMABwAAAGgAAAMmAAQACQAAAAEAAAABAAUACQAAAAEAAAClAAYACQAAAAEAAACiAAcACQAAAAEAAAABAAgACgAAAAMAAAOOAAwACgAAAAIAAAOmAA0ACQAAAAEAAAAoAA4ACQAAAAEAAAAEABAACQAAAAEAAAABABEAAgAAACUAAAO2ABQACQAAAAEAAAABABYAAgAAAB0AAAPcABcACQAAAAEAAAAAABkACQAAAAEAAAAAABoAAgAAAAYAAAP6AB8ACQAAAAEAAAAAAAAAAGJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDGJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA////lzQAAGjkAAAEZAAAOJQAAAkcAABRzAAAAiQAAAQAAAAA9AAAAIDZBQjU1OEU0LUMzMEEtNDg3Ri05NDQzLTI5RjRCM0NDMUY0RQAAQWFvbmpxMXlKZVBrblNTWUYvVHUwcjAwY1RMOQAAcTgyNXMAIjtpOjE7aTo2ODg7fQ==
+                                    text: '1024 bytes MakerNote data'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeOriginal'
+                                class: ExifEye\core\Block\Tag
+                                id: 37521
+                                name: SubSecTimeOriginal
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeOriginal/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 4
+                                    value: czozOiI2MTEiOw==
+                                    clear_value: 's:3:"611";'
+                                    text: '611'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeDigitized'
+                                class: ExifEye\core\Block\Tag
+                                id: 37522
+                                name: SubSecTimeDigitized
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeDigitized/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 4
+                                    value: czozOiI2MTEiOw==
+                                    clear_value: 's:3:"611";'
+                                    text: '611'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FlashPixVersion'
+                                class: ExifEye\core\Block\Tag
+                                id: 40960
+                                name: FlashPixVersion
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FlashPixVersion/Entry:Version'
+                                    class: ExifEye\core\Entry\ExifFlashPixVersion
+                                    valid: true
+                                    format: Undefined
+                                    components: 4
+                                    value: czozOiIxLjAiOw==
+                                    clear_value: 's:3:"1.0";'
+                                    text: 'FlashPix Version 1.0'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ColorSpace'
+                                class: ExifEye\core\Block\Tag
+                                id: 40961
+                                name: ColorSpace
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ColorSpace/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
                                     components: 1
                                     value: aToxOw==
                                     clear_value: 'i:1;'
-                                    text: 1
+                                    text: sRGB
                             -
-                                id: 17
-                                name: ContentIdentifier
-                                entry:
-                                    class: ExifEye\core\Entry\Core\Ascii
-                                    format: Ascii
-                                    components: 37
-                                    value: czozNjoiNkFCNTU4RTQtQzMwQS00ODdGLTk0NDMtMjlGNEIzQ0MxRjRFIjs=
-                                    clear_value: 's:36:"6AB558E4-C30A-487F-9443-29F4B3CC1F4E";'
-                                    text: 6AB558E4-C30A-487F-9443-29F4B3CC1F4E
-                            -
-                                id: 20
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelXDimension'
+                                class: ExifEye\core\Block\Tag
+                                id: 40962
+                                name: PixelXDimension
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelXDimension/Entry:Long'
+                                    class: ExifEye\core\Entry\Core\Long
+                                    valid: true
+                                    format: Long
                                     components: 1
-                                    value: aToxOw==
-                                    clear_value: 'i:1;'
-                                    text: 1
+                                    value: aTo0MDMyOw==
+                                    clear_value: 'i:4032;'
+                                    text: 4032
                             -
-                                id: 22
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\Ascii
-                                    format: Ascii
-                                    components: 29
-                                    value: czoyODoiQWFvbmpxMXlKZVBrblNTWUYvVHUwcjAwY1RMOSI7
-                                    clear_value: 's:28:"Aaonjq1yJePknSSYF/Tu0r00cTL9";'
-                                    text: Aaonjq1yJePknSSYF/Tu0r00cTL9
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelYDimension'
+                                class: ExifEye\core\Block\Tag
+                                id: 40963
+                                name: PixelYDimension
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelYDimension/Entry:Long'
+                                    class: ExifEye\core\Entry\Core\Long
+                                    valid: true
+                                    format: Long
+                                    components: 1
+                                    value: aTozMDI0Ow==
+                                    clear_value: 'i:3024;'
+                                    text: 3024
                             -
-                                id: 23
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SensingMethod'
+                                class: ExifEye\core\Block\Tag
+                                id: 41495
+                                name: SensingMethod
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SensingMethod/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
+                                    components: 1
+                                    value: aToyOw==
+                                    clear_value: 'i:2;'
+                                    text: 'One-chip color area sensor'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneType'
+                                class: ExifEye\core\Block\Tag
+                                id: 41729
+                                name: SceneType
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneType/Entry:Undefined'
+                                    class: ExifEye\core\Entry\ExifSceneType
+                                    valid: true
+                                    format: Undefined
+                                    components: 1
+                                    value: czoxOiIBIjs=
+                                    clear_value: !!binary czoxOiIBIjs=
+                                    text: 'Directly photographed'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureMode'
+                                class: ExifEye\core\Block\Tag
+                                id: 41986
+                                name: ExposureMode
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureMode/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
                                     components: 1
                                     value: aTowOw==
                                     clear_value: 'i:0;'
-                                    text: 0
+                                    text: 'Auto exposure'
                             -
-                                id: 25
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:WhiteBalance'
+                                class: ExifEye\core\Block\Tag
+                                id: 41987
+                                name: WhiteBalance
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:WhiteBalance/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
                                     components: 1
                                     value: aTowOw==
                                     clear_value: 'i:0;'
-                                    text: 0
+                                    text: 'Auto white balance'
                             -
-                                id: 26
-                                name: null
-                                entry:
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLengthIn35mmFilm'
+                                class: ExifEye\core\Block\Tag
+                                id: 41989
+                                name: FocalLengthIn35mmFilm
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLengthIn35mmFilm/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
+                                    components: 1
+                                    value: aToyODs=
+                                    clear_value: 'i:28;'
+                                    text: 28
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneCaptureType'
+                                class: ExifEye\core\Block\Tag
+                                id: 41990
+                                name: SceneCaptureType
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneCaptureType/Entry:Short'
+                                    class: ExifEye\core\Entry\Core\Short
+                                    valid: true
+                                    format: Short
+                                    components: 1
+                                    value: aTowOw==
+                                    clear_value: 'i:0;'
+                                    text: Standard
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:LensInfo'
+                                class: ExifEye\core\Block\Tag
+                                id: 42034
+                                name: LensInfo
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:LensInfo/Entry:Rational'
+                                    class: ExifEye\core\Entry\Core\Rational
+                                    valid: true
+                                    format: Rational
+                                    components: 4
+                                    value: YTo0OntpOjA7YToyOntpOjA7aTozOTk7aToxO2k6MTAwO31pOjE7YToyOntpOjA7aTozOTk7aToxO2k6MTAwO31pOjI7YToyOntpOjA7aTo5O2k6MTtpOjU7fWk6MzthOjI6e2k6MDtpOjk7aToxO2k6NTt9fQ==
+                                    clear_value: 'a:4:{i:0;a:2:{i:0;i:399;i:1;i:100;}i:1;a:2:{i:0;i:399;i:1;i:100;}i:2;a:2:{i:0;i:9;i:1;i:5;}i:3;a:2:{i:0;i:9;i:1;i:5;}}'
+                                    text: '399/100, 399/100, 9/5, 9/5'
+                            -
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:LensMake'
+                                class: ExifEye\core\Block\Tag
+                                id: 42035
+                                name: LensMake
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:LensMake/Entry:Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
                                     format: Ascii
                                     components: 6
-                                    value: czo1OiJxODI1cyI7
-                                    clear_value: 's:5:"q825s";'
-                                    text: q825s
+                                    value: czo1OiJBcHBsZSI7
+                                    clear_value: 's:5:"Apple";'
+                                    text: Apple
                             -
-                                id: 31
-                                name: null
-                                entry:
-                                    class: ExifEye\core\Entry\Core\SignedLong
-                                    format: SignedLong
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:LensModel'
+                                class: ExifEye\core\Block\Tag
+                                id: 42036
+                                name: LensModel
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:LensModel/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 34
+                                    value: czozMzoiaVBob25lIDcgYmFjayBjYW1lcmEgMy45OW1tIGYvMS44Ijs=
+                                    clear_value: 's:33:"iPhone 7 back camera 3.99mm f/1.8";'
+                                    text: 'iPhone 7 back camera 3.99mm f/1.8'
+                        Ifd:
+                            -
+                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes'
+                                class: ExifEye\core\Block\IfdMakerNoteApple
+                                id: 2
+                                name: AppleMakerNotes
+                                valid: true
+                                blocks:
+                                    Tag:
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 1
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aTo5Ow==
+                                                clear_value: 'i:9;'
+                                                text: 9
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 2
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:Undefined'
+                                                class: ExifEye\core\Entry\Core\Undefined
+                                                valid: true
+                                                format: Undefined
+                                                components: 558
+                                                value: czo1NTg6ImJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
+                                                clear_value: !!binary czo1NTg6ImJwbGlzdDAwTxECAEwASQBGAEQAQQA/AD0AOwA6ADkANwA2ADUANQA1ADUAVABRAE4ATABJAEYAQwBBAD8APgA8ADsAOwA6ADkAOQBfAFsAWABVAFIATgBLAEkARgBHAFAATgBAAHMAkQCrAGwAaQBkAGAAXQBZAFUAUgBQAIMAnAChAIkApgCRAK8AfgB6AIYAfgBtAHcAYwBfAG4ApQCrAKIAkABpAKcA/wCbAKQAtQC5AIgAkwB2AHIA0wCpALQAogCoAM8A+wDeALAA2gCqAJoAewCRANwAagCTAKgAkgCTADYAcQBdADMAvQCsAOEA2wCTAIUAcgBaAH0AlQCdAHsAMgBCAEEAOQCgALMAugC5AMcAiQCZAHsAfQCNAKkAWwAyAGIANwAlAJYAvQDTAFgBJwI2AeYAbgG9AJgAtgBbAC0AVAAtACcAiQFbAY0BnwGfAb0BEgKCAhwCqQEGAj0AMQBYAC8AJgAvATgBagFQAZABMQFmAdIBLgInAtcBKQArAC8ANAA7AGoAcwCbAI0A1QDqAK0AqgDxABQB4AAsADAANwBcAEsAigCnAHYAewCsANMAsAFMAfwA/gCuAC4ALAArAEwAbAAQAVAB2wC+APUAMgF2AU8CwAG3AH0AWgBxALoA2gDXADEAkQBkAEMAlQBSAUMBYAFBAQ8BFwEIARoBKQEiAREBAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
+                                                text: '558 bytes of data'
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:RunTime'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 3
+                                            name: RunTime
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:RunTime/Entry:Undefined'
+                                                class: ExifEye\core\Entry\Core\Undefined
+                                                valid: true
+                                                format: Undefined
+                                                components: 104
+                                                value: czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
+                                                clear_value: !!binary czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwAAijxS5iwVEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
+                                                text: '104 bytes of data'
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 4
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aToxOw==
+                                                clear_value: 'i:1;'
+                                                text: 1
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 5
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aToxNjU7
+                                                clear_value: 'i:165;'
+                                                text: 165
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 6
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aToxNjI7
+                                                clear_value: 'i:162;'
+                                                text: 162
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 7
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aToxOw==
+                                                clear_value: 'i:1;'
+                                                text: 1
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:AccelerationVector'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 8
+                                            name: AccelerationVector
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:AccelerationVector/Entry:SignedRational'
+                                                class: ExifEye\core\Entry\Core\SignedRational
+                                                valid: true
+                                                format: SignedRational
+                                                components: 3
+                                                value: YTozOntpOjA7YToyOntpOjA7ZDotNjcwNztpOjE7aTo2NzEzO31pOjE7YToyOntpOjA7aToyODE7aToxO2k6MzYyMTt9aToyO2E6Mjp7aTowO2k6NTgzO2k6MTtpOjUyMzU7fX0=
+                                                clear_value: 'a:3:{i:0;a:2:{i:0;d:-6707;i:1;i:6713;}i:1;a:2:{i:0;i:281;i:1;i:3621;}i:2;a:2:{i:0;i:583;i:1;i:5235;}}'
+                                                text: '-6707/6713, 281/3621, 583/5235'
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 12
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedRational'
+                                                class: ExifEye\core\Entry\Core\SignedRational
+                                                valid: true
+                                                format: SignedRational
+                                                components: 2
+                                                value: YToyOntpOjA7YToyOntpOjA7aToxMzc7aToxO2k6MjU2O31pOjE7YToyOntpOjA7aTo2MTtpOjE7aTozMjt9fQ==
+                                                clear_value: 'a:2:{i:0;a:2:{i:0;i:137;i:1;i:256;}i:1;a:2:{i:0;i:61;i:1;i:32;}}'
+                                                text: '137/256, 61/32'
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 13
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aTo0MDs=
+                                                clear_value: 'i:40;'
+                                                text: 40
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 14
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aTo0Ow==
+                                                clear_value: 'i:4;'
+                                                text: 4
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 16
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aToxOw==
+                                                clear_value: 'i:1;'
+                                                text: 1
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:ContentIdentifier'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 17
+                                            name: ContentIdentifier
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:ContentIdentifier/Entry:Ascii'
+                                                class: ExifEye\core\Entry\Core\Ascii
+                                                valid: true
+                                                format: Ascii
+                                                components: 37
+                                                value: czozNjoiNkFCNTU4RTQtQzMwQS00ODdGLTk0NDMtMjlGNEIzQ0MxRjRFIjs=
+                                                clear_value: 's:36:"6AB558E4-C30A-487F-9443-29F4B3CC1F4E";'
+                                                text: 6AB558E4-C30A-487F-9443-29F4B3CC1F4E
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 20
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aToxOw==
+                                                clear_value: 'i:1;'
+                                                text: 1
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 22
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:Ascii'
+                                                class: ExifEye\core\Entry\Core\Ascii
+                                                valid: true
+                                                format: Ascii
+                                                components: 29
+                                                value: czoyODoiQWFvbmpxMXlKZVBrblNTWUYvVHUwcjAwY1RMOSI7
+                                                clear_value: 's:28:"Aaonjq1yJePknSSYF/Tu0r00cTL9";'
+                                                text: Aaonjq1yJePknSSYF/Tu0r00cTL9
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 23
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aTowOw==
+                                                clear_value: 'i:0;'
+                                                text: 0
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 25
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aTowOw==
+                                                clear_value: 'i:0;'
+                                                text: 0
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 26
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:Ascii'
+                                                class: ExifEye\core\Entry\Core\Ascii
+                                                valid: true
+                                                format: Ascii
+                                                components: 6
+                                                value: czo1OiJxODI1cyI7
+                                                clear_value: 's:5:"q825s";'
+                                                text: q825s
+                                        -
+                                            path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:'
+                                            class: ExifEye\core\Block\Tag
+                                            id: 31
+                                            name: null
+                                            valid: true
+                                            Entry:
+                                                path: 'Ifd:IFD0/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                class: ExifEye\core\Entry\Core\SignedLong
+                                                valid: true
+                                                format: SignedLong
+                                                components: 1
+                                                value: aTowOw==
+                                                clear_value: 'i:0;'
+                                                text: 0
+                -
+                    path: 'Ifd:IFD0/Ifd:GPS'
+                    class: ExifEye\core\Block\Ifd
+                    id: 3
+                    name: GPS
+                    valid: true
+                    blocks:
+                        Tag:
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitudeRef'
+                                class: ExifEye\core\Block\Tag
+                                id: 1
+                                name: GPSLatitudeRef
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitudeRef/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 2
+                                    value: czoxOiJOIjs=
+                                    clear_value: 's:1:"N";'
+                                    text: 'N'
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitude'
+                                class: ExifEye\core\Block\Tag
+                                id: 2
+                                name: GPSLatitude
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitude/Entry:Rational'
+                                    class: ExifEye\core\Entry\GPSDegrees
+                                    valid: true
+                                    format: Rational
+                                    components: 3
+                                    value: YTozOntpOjA7YToyOntpOjA7aTo0NjtpOjE7aToxO31pOjE7YToyOntpOjA7aTozMjtpOjE7aToxO31pOjI7YToyOntpOjA7aTo0NTQwO2k6MTtpOjEwMDt9fQ==
+                                    clear_value: 'a:3:{i:0;a:2:{i:0;i:46;i:1;i:1;}i:1;a:2:{i:0;i:32;i:1;i:1;}i:2;a:2:{i:0;i:4540;i:1;i:100;}}'
+                                    text: '46° 32'' 45.4" (46.55°)'
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitudeRef'
+                                class: ExifEye\core\Block\Tag
+                                id: 3
+                                name: GPSLongitudeRef
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitudeRef/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 2
+                                    value: czoxOiJFIjs=
+                                    clear_value: 's:1:"E";'
+                                    text: E
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitude'
+                                class: ExifEye\core\Block\Tag
+                                id: 4
+                                name: GPSLongitude
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitude/Entry:Rational'
+                                    class: ExifEye\core\Entry\GPSDegrees
+                                    valid: true
+                                    format: Rational
+                                    components: 3
+                                    value: YTozOntpOjA7YToyOntpOjA7aToxMTtpOjE7aToxO31pOjE7YToyOntpOjA7aTo1OTtpOjE7aToxO31pOjI7YToyOntpOjA7aTozNTI1O2k6MTtpOjEwMDt9fQ==
+                                    clear_value: 'a:3:{i:0;a:2:{i:0;i:11;i:1;i:1;}i:1;a:2:{i:0;i:59;i:1;i:1;}i:2;a:2:{i:0;i:3525;i:1;i:100;}}'
+                                    text: '11° 59'' 35.25" (11.99°)'
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitudeRef'
+                                class: ExifEye\core\Block\Tag
+                                id: 5
+                                name: GPSAltitudeRef
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitudeRef/Entry:Byte'
+                                    class: ExifEye\core\Entry\Core\Byte
+                                    valid: true
+                                    format: Byte
                                     components: 1
                                     value: aTowOw==
                                     clear_value: 'i:0;'
                                     text: 0
-            GPS:
-                class: ExifEye\core\Block\Ifd
-                tags:
-                    -
-                        id: 1
-                        name: GPSLatitudeRef
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 2
-                            value: czoxOiJOIjs=
-                            clear_value: 's:1:"N";'
-                            text: 'N'
-                    -
-                        id: 2
-                        name: GPSLatitude
-                        entry:
-                            class: ExifEye\core\Entry\GPSDegrees
-                            format: Rational
-                            components: 3
-                            value: YTozOntpOjA7YToyOntpOjA7aTo0NjtpOjE7aToxO31pOjE7YToyOntpOjA7aTozMjtpOjE7aToxO31pOjI7YToyOntpOjA7aTo0NTQwO2k6MTtpOjEwMDt9fQ==
-                            clear_value: 'a:3:{i:0;a:2:{i:0;i:46;i:1;i:1;}i:1;a:2:{i:0;i:32;i:1;i:1;}i:2;a:2:{i:0;i:4540;i:1;i:100;}}'
-                            text: '46° 32'' 45.4" (46.55°)'
-                    -
-                        id: 3
-                        name: GPSLongitudeRef
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 2
-                            value: czoxOiJFIjs=
-                            clear_value: 's:1:"E";'
-                            text: E
-                    -
-                        id: 4
-                        name: GPSLongitude
-                        entry:
-                            class: ExifEye\core\Entry\GPSDegrees
-                            format: Rational
-                            components: 3
-                            value: YTozOntpOjA7YToyOntpOjA7aToxMTtpOjE7aToxO31pOjE7YToyOntpOjA7aTo1OTtpOjE7aToxO31pOjI7YToyOntpOjA7aTozNTI1O2k6MTtpOjEwMDt9fQ==
-                            clear_value: 'a:3:{i:0;a:2:{i:0;i:11;i:1;i:1;}i:1;a:2:{i:0;i:59;i:1;i:1;}i:2;a:2:{i:0;i:3525;i:1;i:100;}}'
-                            text: '11° 59'' 35.25" (11.99°)'
-                    -
-                        id: 5
-                        name: GPSAltitudeRef
-                        entry:
-                            class: ExifEye\core\Entry\Core\Byte
-                            format: Byte
-                            components: 1
-                            value: aTowOw==
-                            clear_value: 'i:0;'
-                            text: 0
-                    -
-                        id: 6
-                        name: GPSAltitude
-                        entry:
-                            class: ExifEye\core\Entry\Core\Rational
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aTo3Njg2MztpOjE7aTozNDt9
-                            clear_value: 'a:2:{i:0;i:76863;i:1;i:34;}'
-                            text: 76863/34
-                    -
-                        id: 12
-                        name: GPSSpeedRef
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 2
-                            value: czoxOiJLIjs=
-                            clear_value: 's:1:"K";'
-                            text: K
-                    -
-                        id: 13
-                        name: GPSSpeed
-                        entry:
-                            class: ExifEye\core\Entry\Core\Rational
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aTozNjk7aToxO2k6MjE0MjQ7fQ==
-                            clear_value: 'a:2:{i:0;i:369;i:1;i:21424;}'
-                            text: 369/21424
-                    -
-                        id: 16
-                        name: GPSImgDirectionRef
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 2
-                            value: czoxOiJUIjs=
-                            clear_value: 's:1:"T";'
-                            text: T
-                    -
-                        id: 17
-                        name: GPSImgDirection
-                        entry:
-                            class: ExifEye\core\Entry\Core\Rational
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aToxNjc4OTtpOjE7aTozODM7fQ==
-                            clear_value: 'a:2:{i:0;i:16789;i:1;i:383;}'
-                            text: 16789/383
-                    -
-                        id: 23
-                        name: GPSDestBearingRef
-                        entry:
-                            class: ExifEye\core\Entry\Core\Ascii
-                            format: Ascii
-                            components: 2
-                            value: czoxOiJUIjs=
-                            clear_value: 's:1:"T";'
-                            text: T
-                    -
-                        id: 24
-                        name: GPSDestBearing
-                        entry:
-                            class: ExifEye\core\Entry\Core\Rational
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aToxNjc4OTtpOjE7aTozODM7fQ==
-                            clear_value: 'a:2:{i:0;i:16789;i:1;i:383;}'
-                            text: 16789/383
-                    -
-                        id: 31
-                        name: GPSHPositioningError
-                        entry:
-                            class: ExifEye\core\Entry\Core\Rational
-                            format: Rational
-                            components: 1
-                            value: YToyOntpOjA7aToyNDtpOjE7aToxO30=
-                            clear_value: 'a:2:{i:0;i:24;i:1;i:1;}'
-                            text: 24/1
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitude'
+                                class: ExifEye\core\Block\Tag
+                                id: 6
+                                name: GPSAltitude
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitude/Entry:Rational'
+                                    class: ExifEye\core\Entry\Core\Rational
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aTo3Njg2MztpOjE7aTozNDt9
+                                    clear_value: 'a:2:{i:0;i:76863;i:1;i:34;}'
+                                    text: 76863/34
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeedRef'
+                                class: ExifEye\core\Block\Tag
+                                id: 12
+                                name: GPSSpeedRef
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeedRef/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 2
+                                    value: czoxOiJLIjs=
+                                    clear_value: 's:1:"K";'
+                                    text: K
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeed'
+                                class: ExifEye\core\Block\Tag
+                                id: 13
+                                name: GPSSpeed
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeed/Entry:Rational'
+                                    class: ExifEye\core\Entry\Core\Rational
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aTozNjk7aToxO2k6MjE0MjQ7fQ==
+                                    clear_value: 'a:2:{i:0;i:369;i:1;i:21424;}'
+                                    text: 369/21424
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirectionRef'
+                                class: ExifEye\core\Block\Tag
+                                id: 16
+                                name: GPSImgDirectionRef
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirectionRef/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 2
+                                    value: czoxOiJUIjs=
+                                    clear_value: 's:1:"T";'
+                                    text: T
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirection'
+                                class: ExifEye\core\Block\Tag
+                                id: 17
+                                name: GPSImgDirection
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirection/Entry:Rational'
+                                    class: ExifEye\core\Entry\Core\Rational
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aToxNjc4OTtpOjE7aTozODM7fQ==
+                                    clear_value: 'a:2:{i:0;i:16789;i:1;i:383;}'
+                                    text: 16789/383
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearingRef'
+                                class: ExifEye\core\Block\Tag
+                                id: 23
+                                name: GPSDestBearingRef
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearingRef/Entry:Ascii'
+                                    class: ExifEye\core\Entry\Core\Ascii
+                                    valid: true
+                                    format: Ascii
+                                    components: 2
+                                    value: czoxOiJUIjs=
+                                    clear_value: 's:1:"T";'
+                                    text: T
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearing'
+                                class: ExifEye\core\Block\Tag
+                                id: 24
+                                name: GPSDestBearing
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearing/Entry:Rational'
+                                    class: ExifEye\core\Entry\Core\Rational
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aToxNjc4OTtpOjE7aTozODM7fQ==
+                                    clear_value: 'a:2:{i:0;i:16789;i:1;i:383;}'
+                                    text: 16789/383
+                            -
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSHPositioningError'
+                                class: ExifEye\core\Block\Tag
+                                id: 31
+                                name: GPSHPositioningError
+                                valid: true
+                                Entry:
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSHPositioningError/Entry:Rational'
+                                    class: ExifEye\core\Entry\Core\Rational
+                                    valid: true
+                                    format: Rational
+                                    components: 1
+                                    value: YToyOntpOjA7aToyNDtpOjE7aToxO30=
+                                    clear_value: 'a:2:{i:0;i:24;i:1;i:1;}'
+                                    text: 24/1
 errors: {  }
 warnings:
     -
