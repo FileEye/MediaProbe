@@ -90,7 +90,7 @@ class Thumbnail extends BlockBase
         try {
 dump([$offset, $length]); 
             $thumbnail_data = static::setThumbnail($data_window->getClone($offset, $length));
-dump([strlen($thumbnail_data]); 
+dump([strlen($thumbnail_data)]); 
             $thumbnail_entry = new Undefined([$thumbnail_data]);
             $thumbnail_block = new static($ifd, $thumbnail_entry);
             $ifd->xxAddSubBlock($thumbnail_block);
