@@ -124,12 +124,14 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function toDumpArray()
     {
-        return array_merge(parent::toDumpArray(), [
+        $dump = array_merge(parent::toDumpArray(), [
             'format' => Format::getName($this->getFormat()),
             'components' => $this->getComponents(),
             'value' => base64_encode(serialize($this->getValue())),
             'clear_value' => serialize($this->getValue()),
             'text' => $this->toString(),
         ]);
+        unset($dump['id'], $dump['name']);
+        return $dump;
     }
 }
