@@ -136,4 +136,14 @@ class Thumbnail extends BlockBase
     {
         return ExifEye::fmt("  Thumbnail   : %s\n", $this->getEntry()->toString());
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toDumpArray()
+    {
+        $dump = parent::toDumpArray();
+        unset($dump['id'], $dump['name']);
+        return $dump;
+    }
 }

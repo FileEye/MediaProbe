@@ -85,7 +85,7 @@ class Ifd extends BlockBase
      *            the type of this IFD, as found in Spec. A
      *            {@link IfdException} will be thrown if unknown.
      */
-    public function __construct($id)
+    public function __construct($id, $parent = null)
     {
         if (Spec::getIfdType($id) === null) {
             throw new IfdException('Unknown IFD type: %d', $id);
@@ -93,6 +93,10 @@ class Ifd extends BlockBase
         $this->id = $id;
         $this->name = Spec::getIfdType($id);
         $this->hasSpecification = (bool) $this->name;
+
+        if ($parent) {
+            $this->setParentElement($parent);
+        }
     }
 
     /**
@@ -178,7 +182,7 @@ class Ifd extends BlockBase
                 $o = $d->getLong($offset + 12 * $i + 8);
                 if ($starting_offset != $o) {
                     $ifd_class = Spec::getIfdClass($type);
-                    $ifd = new $ifd_class($type);
+                    $ifd = new $ifd_class($type, $this);
                     try {
                         $ifd->load($d, $o, $tag->getEntry()->getComponents(), $nesting_level + 1);
                         $this->xxAddSubBlock($ifd);
