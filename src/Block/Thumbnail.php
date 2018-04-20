@@ -88,7 +88,6 @@ class Thumbnail extends BlockBase
 
         // Now set the thumbnail normally.
         try {
-dump([$offset, $length]); 
             $thumbnail_data = static::setThumbnail($data_window->getClone($offset, $length));
             $thumbnail_entry = new Undefined([$thumbnail_data]);
             $thumbnail_block = new static($ifd, $thumbnail_entry);
@@ -113,12 +112,11 @@ dump([$offset, $length]);
     public static function setThumbnail(DataWindow $data_window)
     {
         $size = $data_window->getSize();
-dump([$size]); 
+
         // Now move backwards until we find the EOI JPEG marker.
         while ($data_window->getByte($size - 2) != 0xFF || $data_window->getByte($size - 1) != JpegMarker::EOI) {
             $size --;
         }
-dump([$size]); 
 
         if ($size != $data_window->getSize()) {
             ExifEye::logger()->warning('Decrementing thumbnail size to {size} bytes', [
