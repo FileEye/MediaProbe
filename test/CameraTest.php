@@ -75,7 +75,7 @@ class CameraTest extends ExifEyeTestCaseBase
 
     protected function assertIfd($expected, $ifd)
     {
-        $this->assertInstanceOf($expected['class'], $ifd, $expected['id'] . $expected['name']);
+        $this->assertInstanceOf($expected['class'], $ifd);
 
         if (isset($expected['blocks']['Tag'])) {
             $expected_tags = $expected['blocks']['Tag'];
@@ -93,13 +93,13 @@ class CameraTest extends ExifEyeTestCaseBase
             }
         }
 
-/*        if (isset($expected['blocks']['Ifd'])) {
+        if (isset($expected['blocks']['Ifd'])) {
             $expected_ifds = $expected['blocks']['Ifd'];
             $this->assertCount(count($expected_ifds), $ifd->xxGetSubBlocks('Ifd'), "Block: '{$ifd->getName()}' - sub-blocks count");
-            foreach ($expected_ifds as $test_block => $test_block_data) {
+/*            foreach ($expected_ifds as $test_block => $test_block_data) {
                 $block = $ifd->xxGetSubBlock('Ifd', Spec::getIfdIdByType($test_block));
                 $this->assertIfd($test_block_data, $block);
-            }
-        }*/
+            }*/
+        }
     }
 }
