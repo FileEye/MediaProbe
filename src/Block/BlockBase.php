@@ -163,7 +163,7 @@ abstract class BlockBase extends ElementBase
         foreach ($this->xxGetSubBlocks() as $type => $sub_blocks) {
             $dump['blocks'][$type] = [];
             foreach ($sub_blocks as $sub_block) {
-                dump['blocks'][$type][] = $sub_block->toDumpArray();
+                $dump['blocks'][$type][] = $sub_block->toDumpArray();
             }
         }
 
