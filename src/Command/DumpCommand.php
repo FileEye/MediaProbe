@@ -178,7 +178,7 @@ class DumpCommand extends Command
         $tag_name = $tag->getName();
         $entry = $tag->getEntry();
 
-        $json['tags'][] = [
+        $json[] = [
             'id' => $tag_id,
             'name' => $tag_name,
             'entry' => [
