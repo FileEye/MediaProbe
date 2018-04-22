@@ -101,15 +101,17 @@ abstract class ElementBase implements ElementInterface
     /**
      * {@inheritdoc}
      */
-    public function getElementPath()
+    public function getPath()
     {
-        $path[] = $this->getType() . ':' . $this->getName();
-        $tmp = $this->getParentElement();
-        while ($tmp) {
-            $path[] = $tmp->getType() . ':' . $tmp->getName();
-            $tmp = $tmp->getParentElement();
-        }
-        return implode('/', array_reverse($path));
+        return $this->getParentElement() ? $this->getParentElement()->getPath() . '/' . $this->getElementPathFragment() : $this->getElementPathFragment();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getElementPathFragment()
+    {
+        return $this->getType() . ':' . $this->getName();
     }
 
     /**
@@ -126,7 +128,7 @@ abstract class ElementBase implements ElementInterface
     public function toDumpArray()
     {
         return [
-            'path' => $this->getElementPath(),
+            'path' => $this->getPath(),
             'class' => get_class($this),
             'id' => $this->getId(),
             'name' => $this->getName(),

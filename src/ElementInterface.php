@@ -49,6 +49,20 @@ interface ElementInterface
     public function getName();
 
     /**
+     * Returns the full path of this element.
+     *
+     * @return string
+     */
+    public function getPath();
+
+    /**
+     * Returns the path fragment of this element.
+     *
+     * @return string
+     */
+    public function getElementPathFragment();
+
+    /**
      * Gets validity of the element.
      *
      * @return bool

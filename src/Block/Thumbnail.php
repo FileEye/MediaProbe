@@ -63,7 +63,7 @@ class Thumbnail extends BlockBase
         // available and positive.
         if ($offset <= 0 || $length <= 0) {
             ExifEye::logger()->warning('{path} Invalid JPEG thumbnail for offset {offset} and length {length}', [
-                'path' => $ifd->getElementPath(),
+                'path' => $ifd->getPath(),
                 'offset' => $offset,
                 'length' => $length,
             ]);
@@ -71,7 +71,7 @@ class Thumbnail extends BlockBase
         }
 
         ExifEye::logger()->debug('{path} JPEG thumbnail found at offset {offset} of length {length}', [
-            'path' => $ifd->getElementPath(),
+            'path' => $ifd->getPath(),
             'offset' => $offset,
             'length' => $length,
         ]);
