@@ -47,8 +47,6 @@ class CameraTest extends ExifEyeTestCaseBase
             $this->assertBlock($test['blocks']['IFD1'], $ifd0->getNextIfd());
         }
 
-        // @todo readd testing of thumbnail correctness
-
         $handler = ExifEye::logger()->getHandlers()[0]; // xx
         $errors = 0;
         $warnings = 0;
@@ -91,11 +89,9 @@ class CameraTest extends ExifEyeTestCaseBase
         if (isset($expected['blocks'])) {
             foreach ($expected['blocks'] as $block_type => $expected_blocks) {
                 foreach ($expected_blocks as $i => $expected_block) {
-//dump([$block->getElementPath(), $expected_block, (bool) $block->xxGetSubBlockByIndex($block_type, $i)]);
                     $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($block_type, $i));
                 }
             }
         }
-
     }
 }
