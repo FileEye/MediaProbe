@@ -2,6 +2,10 @@
 
 namespace ExifEye\core;
 
+use ExifEye\core\ExifEye;
+use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerTrait;
+
 /**
  * Base class for ElementInterface objects.
  *
@@ -9,8 +13,10 @@ namespace ExifEye\core;
  * serves as a common ancestor to define the methods common to all ExifEye
  * elements (Block and Entry objects).
  */
-abstract class ElementBase implements ElementInterface
+abstract class ElementBase implements ElementInterface, LoggerInterface
 {
+    use LoggerTrait;
+
     /**
      * The parent Element object of this element.
      *
@@ -134,5 +140,13 @@ abstract class ElementBase implements ElementInterface
             'name' => $this->getName(),
             'valid' => $this->isValid(),
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function log($level, $message, array $context = [])
+    {
+        ExifEye::logger()->log($level, $message, $context);
     }
 }
