@@ -86,6 +86,7 @@ class CameraTest extends ExifEyeTestCaseBase
         }
 
         // Recursively check sub-blocks.
+        // xx @todo add checking count of blocks by type
         if (isset($expected['blocks'])) {
             foreach ($expected['blocks'] as $block_type => $expected_blocks) {
                 foreach ($expected_blocks as $i => $expected_block) {
