@@ -88,10 +88,12 @@ class CameraTest extends ExifEyeTestCaseBase
         }
 
         // Recursively check sub-blocks.
-        foreach ($expected['blocks'] as $block_type => $expected_blocks) {
-            foreach ($expected_blocks as $i => $expected_block) {
-//dump([$block->getElementPath(), $expected_block, $block->xxGetSubBlocks($expected_type)]);
-                $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($block_type, $i));
+        if (isset($expected['blocks'])) {
+            foreach ($expected['blocks'] as $block_type => $expected_blocks) {
+                foreach ($expected_blocks as $i => $expected_block) {
+dump([$block->getElementPath(), $expected_block, (bool) $block->xxGetSubBlockByIndex($block_type, $i)]);
+                    $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($block_type, $i));
+                }
             }
         }
 /*        if (empty($expected)) {
