@@ -81,7 +81,7 @@ abstract class NumberBase extends EntryBase
     {
         if ($this->dimension == 1) {
             if ($n < $this->min || $n > $this->max) {
-                ExifEye::logger()->error('Value {value} out of range [{min},{max}]', [
+                $this->error('Value {value} out of range [{min},{max}]', [
                     'value' => $n,
                     'min' => $this->min,
                     'max' => $this->max,
@@ -92,7 +92,7 @@ abstract class NumberBase extends EntryBase
         } else {
             for ($i = 0; $i < $this->dimension; $i ++) {
                 if ($n[$i] < $this->min || $n[$i] > $this->max) {
-                    ExifEye::logger()->error('Value {value} out of range [{min},{max}]', [
+                    $this->error('Value {value} out of range [{min},{max}]', [
                         'value' => $n[$i],
                         'min' => $this->min,
                         'max' => $this->max,

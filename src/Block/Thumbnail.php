@@ -62,7 +62,7 @@ class Thumbnail extends BlockBase
         // Load the thumbnail only if both the offset and the length are
         // available and positive.
         if ($offset <= 0 || $length <= 0) {
-            ExifEye::logger()->warning('{path} Invalid JPEG thumbnail for offset {offset} and length {length}', [
+            $ifd->warning('{path} Invalid JPEG thumbnail for offset {offset} and length {length}', [
                 'path' => $ifd->getPath(),
                 'offset' => $offset,
                 'length' => $length,
@@ -70,7 +70,7 @@ class Thumbnail extends BlockBase
             return;
         }
 
-        ExifEye::logger()->debug('{path} JPEG thumbnail found at offset {offset} of length {length}', [
+        $ifd->debug('{path} JPEG thumbnail found at offset {offset} of length {length}', [
             'path' => $ifd->getPath(),
             'offset' => $offset,
             'length' => $length,
@@ -79,7 +79,7 @@ class Thumbnail extends BlockBase
         // Some images have a broken length, so we try to carefully check
         // the length before we store the thumbnail.
         if ($offset + $length > $data_window->getSize()) {
-            ExifEye::logger()->warning('Thumbnail length {length} bytes adjusted to {adjusted_length} bytes.', [
+            $ifd->warning('Thumbnail length {length} bytes adjusted to {adjusted_length} bytes.', [
                 'length' => $length,
                 'adjusted_length' => $data_window->getSize() - $offset,
             ]);
@@ -93,7 +93,7 @@ class Thumbnail extends BlockBase
             $thumbnail_block = new static($ifd, $thumbnail_entry);
             $ifd->xxAddSubBlock($thumbnail_block);
         } catch (DataWindowWindowException $e) {
-            ExifEye::logger()->error($e->getMessage());
+            $ifd->error($e->getMessage());
         }
     }
 

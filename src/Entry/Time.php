@@ -62,7 +62,7 @@ class Time extends Ascii
         $type = isset($options['type']) ? $options['type'] : self::EXIF_STRING;
 
         if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
-            ExifEye::logger()->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
+            $this->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
                 'type' => $type,
             ]);
             return false;
@@ -85,7 +85,7 @@ class Time extends Ascii
                 // We get false if the Julian Day Count is outside the range
                 // of a UNIX timestamp.
                 if ($day_count_to_seconds === false) {
-                    ExifEye::logger()->error('Cannot convert timestamp {timestamp} to UNIX format', [
+                    $this->error('Cannot convert timestamp {timestamp} to UNIX format', [
                         'timestamp' => $this->value,
                     ]);
                     return false;
@@ -121,7 +121,7 @@ class Time extends Ascii
         $type = isset($data[1]) ? $data[1] : self::EXIF_STRING;
 
         if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
-            ExifEye::logger()->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
+            $this->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
                 'type' => $type,
             ]);
             $this->valid = false;

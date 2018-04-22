@@ -143,7 +143,7 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            ExifEye::logger()->debug('{path} Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
+            $this->debug('{path} Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
                 'path' => $tag->getPath(),
                 'tag_id' => dechex($tag->getId()),
                 'tag_name' => $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
@@ -174,10 +174,10 @@ class Ifd extends BlockBase
                         $ifd->load($d, $o, $tag->getEntry()->getComponents(), $nesting_level + 1);
                         $this->xxAddSubBlock($ifd);
                     } catch (DataWindowOffsetException $e) {
-                        ExifEye::logger()->error($e->getMessage());
+                        $this->error($e->getMessage());
                     }
                 } else {
-                    ExifEye::logger()->error('Bogus offset to next IFD: {offset}, same as offset being loaded from.', [
+                    $this->error('Bogus offset to next IFD: {offset}, same as offset being loaded from.', [
                         'offset' => $o,
                     ]);
                 }
@@ -190,7 +190,7 @@ class Ifd extends BlockBase
 
         /* Offset to next IFD */
         $o = $d->getLong($offset + 12 * $n);
-        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . 'Current offset is {offset}, link at {link} points to {destination}.', [
+        $this->debug(str_repeat("  ", $nesting_level) . 'Current offset is {offset}, link at {link} points to {destination}.', [
             'offset' => $offset,
             'link' => $offset + 12 * $n,
             'destination' => $o,
@@ -199,21 +199,21 @@ class Ifd extends BlockBase
         if ($o > 0) {
             /* Sanity check: we need 6 bytes */
             if ($o > $d->getSize() - 6) {
-                ExifEye::logger()->error('Bogus offset to next IFD: {offset} > {size}!', [
+                $this->error('Bogus offset to next IFD: {offset} > {size}!', [
                     'offset' => $o,
                     'size' => $d->getSize() - 6,
                 ]);
             } else {
                 if (Spec::getIfdType($this->getId()) === 'IFD1') {
                     // IFD1 shouldn't link further...
-                    ExifEye::logger()->error('IFD1 links to another IFD!');
+                    $this->error('IFD1 links to another IFD!');
                 }
                 $this->next = new Ifd(Spec::getIfdIdByType('IFD1'));
                 $this->next->load($d, $o);
             }
         }
 
-        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '{ifd}'.", [
+        $this->debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '{ifd}'.", [
             'ifd' => $this->getName(),
         ]);
 
@@ -342,7 +342,7 @@ class Ifd extends BlockBase
         $bytes = '';
         $extra_bytes = '';
 
-        ExifEye::logger()->debug('Bytes from IDF will start at offset {offset} within Exif data', [
+        $this->debug('Bytes from IDF will start at offset {offset} within Exif data', [
             'offset' => $offset,
         ]);
 
@@ -378,7 +378,7 @@ class Ifd extends BlockBase
             $data = $sub_block->getEntry()->toBytes($order);
             $s = strlen($data);
             if ($s > 4) {
-                ExifEye::logger()->debug('Data size {size} too big, storing at offset {offset} instead.', [
+                $this->debug('Data size {size} too big, storing at offset {offset} instead.', [
                     'size' => $s,
                     'offset' => $end,
                 ]);
@@ -386,7 +386,7 @@ class Ifd extends BlockBase
                 $extra_bytes .= $data;
                 $end += $s;
             } else {
-                ExifEye::logger()->debug('Data size {size} fits.', [
+                $this->debug('Data size {size} fits.', [
                     'size' => $s,
                 ]);
                 /*
@@ -398,7 +398,7 @@ class Ifd extends BlockBase
         }
 
         if ($this->xxGetSubBlock('Thumbnail', 0) !== null) {
-            ExifEye::logger()->debug('Appending {size} bytes of thumbnail data at {offset}', [
+            $this->debug('Appending {size} bytes of thumbnail data at {offset}', [
                 'size' => $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents(),
                 'offset' => $end,
             ]);
@@ -453,7 +453,7 @@ class Ifd extends BlockBase
             $link = $end;
         }
 
-        ExifEye::logger()->debug('Link to next IFD: {link}', [
+        $this->debug('Link to next IFD: {link}', [
             'link' => $link,
         ]);
 

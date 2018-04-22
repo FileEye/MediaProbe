@@ -62,7 +62,7 @@ class Exif extends JpegContent
      */
     public function load(DataWindow $d)
     {
-        ExifEye::logger()->debug('Parsing {size} bytes of Exif data...', ['size' => $d->getSize()]);
+        $this->debug('Parsing {size} bytes of Exif data...', ['size' => $d->getSize()]);
 
         /* There must be at least 6 bytes for the Exif header. */
         if ($d->getSize() < 6) {

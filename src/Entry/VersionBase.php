@@ -44,7 +44,7 @@ class VersionBase extends Undefined
 
         $version = isset($data[0]) ? $data[0] : 0.0;
         if (!is_numeric($version)) {
-            ExifEye::logger()->error('Incorrect version data for ({element})', [
+            $this->error('Incorrect version data for ({element})', [
                 'element' => static::$stringElement,
             ]);
             $version = 0;

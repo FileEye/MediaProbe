@@ -63,7 +63,7 @@ class Tag extends BlockBase
             foreach ($expected_format as $expected_format_id) {
                 $expected_format_names[] = Format::getName($expected_format_id);
             }
-            ExifEye::logger()->warning("Wrong data format '{format_name}' for TAG '{tag_name}' in IFD '{ifd_type}', expected '{expected_format_names}'", [
+            $parent->warning("Wrong data format '{format_name}' for TAG '{tag_name}' in IFD '{ifd_type}', expected '{expected_format_names}'", [
                 'format_name' => Format::getName($format),
                 'tag_name' => Spec::getTagName($parent->getId(), $id),
                 'ifd_type' => Spec::getIfdType($parent->getId()),
@@ -74,7 +74,7 @@ class Tag extends BlockBase
         // Warn if components are not as expected.
         $expected_components = Spec::getTagComponents($parent->getId(), $id);
         if ($expected_components !== null and $components !== $expected_components) {
-            ExifEye::logger()->warning("Unexpected number of data components: {components} for TAG '{tag_name}' in IFD '{ifd_type}', expected {expected_components}", [
+            $parent->warning("Unexpected number of data components: {components} for TAG '{tag_name}' in IFD '{ifd_type}', expected {expected_components}", [
                 'components' => $components,
                 'tag_name' => Spec::getTagName($parent->getId(), $id),
                 'ifd_type' => Spec::getIfdType($parent->getId()),
