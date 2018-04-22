@@ -87,12 +87,10 @@ class CameraTest extends ExifEyeTestCaseBase
             $this->assertEquals($expected['Entry']['text'], $tags[$i]->getEntry()->toString(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
         }
 
-        foreach ($expected['blocks'] as $expected_blocks) {
-            $i = 0;
-            foreach ($expected_blocks as $expected_type => $expected_block) {
-dump([$block->getElementPath(), $expected_block, $block->xxGetSubBlocks($expected_type)]);
-                $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($expected_type, $i));
-                $i++;
+        foreach ($expected['blocks'] as $block_type => $expected_blocks) {
+            foreach ($expected_blocks as $i => $expected_block) {
+//dump([$block->getElementPath(), $expected_block, $block->xxGetSubBlocks($expected_type)]);
+                $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($block_type, $i));
             }
         }
 /*        if (empty($expected)) {
