@@ -90,8 +90,9 @@ class CameraTest extends ExifEyeTestCaseBase
         foreach ($expected['blocks'] as $expected_blocks) {
             $i = 0;
             foreach ($expected_blocks as $expected_type => $expected_block) {
-dump([$block->getElementPath(), $expected_block]);
-                $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($expected_type, $i++));
+dump([$block->getElementPath(), $expected_block, $block->xxGetSubBlockByIndex($expected_type, $i)]);
+                $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($expected_type, $i));
+                $i++;
             }
         }
 /*        if (empty($expected)) {
