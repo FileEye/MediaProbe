@@ -62,19 +62,6 @@ class Ifd extends BlockBase
     protected $next = null;
 
     /**
-     * The thumbnail data.
-     *
-     * This will be initialized in the constructor, or be left as null
-     * if there are no thumbnail as part of this directory.
-     *
-     * @var DataWindow
-     */
-    protected $thumb_data = null;
-    // TODO: use this format to choose between the
-    // JPEG_INTERCHANGE_FORMAT and STRIP_OFFSETS tags.
-    // private $thumb_format;
-
-    /**
      * Construct a new Image File Directory (IFD).
      *
      * The IFD will be empty, use the {@link addEntry()} method to add
