@@ -91,47 +91,11 @@ class CameraTest extends ExifEyeTestCaseBase
         if (isset($expected['blocks'])) {
             foreach ($expected['blocks'] as $block_type => $expected_blocks) {
                 foreach ($expected_blocks as $i => $expected_block) {
-dump([$block->getElementPath(), $expected_block, (bool) $block->xxGetSubBlockByIndex($block_type, $i)]);
+//dump([$block->getElementPath(), $expected_block, (bool) $block->xxGetSubBlockByIndex($block_type, $i)]);
                     $this->assertBlock($expected_block, $block->xxGetSubBlockByIndex($block_type, $i));
                 }
             }
         }
-/*        if (empty($expected)) {
-            return;
-        }
 
-        $this->assertInstanceOf($expected['class'], $block);
-
-        if (isset($expected['blocks']['Tag'])) {
-            $expected_tags = $expected['blocks']['Tag'];
-            $tags = $block->xxGetSubBlocks('Tag');
-            $this->assertCount(count($expected_tags), $tags, "IFD: '{$block->getName()}' - TAGs count");
-            for ($i = 0; $i < count($tags); $i++) {
-                $this->assertEquals($expected_tags[$i]['id'], $tags[$i]->getId(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals($expected_tags[$i]['name'], $tags[$i]->getName(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $entry = $tags[$i]->getEntry();
-                $this->assertInstanceOf($expected_tags[$i]['Entry']['class'], $entry, "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals($expected_tags[$i]['Entry']['components'], $entry->getComponents(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals($expected_tags[$i]['Entry']['format'], Format::getName($entry->getFormat()), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals(unserialize(base64_decode($expected_tags[$i]['Entry']['value'])), $tags[$i]->getEntry()->getValue(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-                $this->assertEquals($expected_tags[$i]['Entry']['text'], $tags[$i]->getEntry()->toString(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-            }
-        }
-
-/*        if (isset($expected['blocks']['Ifd'])) {
-            $expected_ifds = $expected['blocks']['Ifd'];
-            $this->assertCount(count($expected_ifds), $block->xxGetSubBlocks('Ifd'), "Block: '{$block->getName()}' - sub-blocks count");
-            foreach ($expected_ifds as $test_block_data) {
-                $block = $block->xxGetSubBlock('Ifd', $test_block_data['id']);
-foreach($block->xxGetSubBlocks('Ifd') as $x){
-  $xxx[] = $x->getId();
-  $xxy[] = $x->getName();
-  $xxz[] = $x->getElementPath();
-}
-//dump([$block->getElementPath(), $test_block_data['id'], implode('-', $xxx), (bool) $block]);
-dump([$block->getName(), $block->getElementPath(), $test_block_data['id'], implode('-', $xxx), implode('-', $xxy), implode('-', $xxz), (bool) $block]);
-//                $this->assertBlock($test_block_data, $block);
-            }
-        }*/
     }
 }
