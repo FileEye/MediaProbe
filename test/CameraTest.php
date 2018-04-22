@@ -80,13 +80,14 @@ class CameraTest extends ExifEyeTestCaseBase
         // Check entry.
         if (isset($expected['Entry'])) {
             $entry = $block->getEntry();
-            $this->assertInstanceOf($expected['Entry']['class'], $entry, "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-            $this->assertEquals($expected['Entry']['components'], $entry->getComponents(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-            $this->assertEquals($expected['Entry']['format'], Format::getName($entry->getFormat()), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-            $this->assertEquals(unserialize(base64_decode($expected['Entry']['value'])), $tags[$i]->getEntry()->getValue(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
-            $this->assertEquals($expected['Entry']['text'], $tags[$i]->getEntry()->toString(), "Ifd: '{$block->getName()}' Tag: '{$tags[$i]->getId()}'");
+            $this->assertInstanceOf($expected['Entry']['class'], $entry, $block->getElementPath());
+            $this->assertEquals($expected['Entry']['components'], $entry->getComponents(), $block->getElementPath());
+            $this->assertEquals($expected['Entry']['format'], Format::getName($entry->getFormat()), $block->getElementPath());
+            $this->assertEquals(unserialize(base64_decode($expected['Entry']['value'])), $entry->getValue(), $block->getElementPath());
+            $this->assertEquals($expected['Entry']['text'], $entry->toString(), $block->getElementPath());
         }
 
+        // Recursively check sub-blocks.
         foreach ($expected['blocks'] as $block_type => $expected_blocks) {
             foreach ($expected_blocks as $i => $expected_block) {
 //dump([$block->getElementPath(), $expected_block, $block->xxGetSubBlocks($expected_type)]);
