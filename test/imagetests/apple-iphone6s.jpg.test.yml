@@ -9,13 +9,13 @@ blocks:
         blocks:
             Tag:
                 -
-                    path: 'Ifd:IFD0/Tag:Make'
+                    path: 'Ifd:IFD0/Tag:0x010f:Make'
                     class: ExifEye\core\Block\Tag
                     id: 271
                     name: Make
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:Make/Entry:Ascii'
+                        path: 'Ifd:IFD0/Tag:0x010f:Make/Entry+Ascii'
                         class: ExifEye\core\Entry\Core\Ascii
                         valid: true
                         format: Ascii
@@ -24,13 +24,13 @@ blocks:
                         clear_value: 's:5:"Apple";'
                         text: Apple
                 -
-                    path: 'Ifd:IFD0/Tag:Model'
+                    path: 'Ifd:IFD0/Tag:0x0110:Model'
                     class: ExifEye\core\Block\Tag
                     id: 272
                     name: Model
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:Model/Entry:Ascii'
+                        path: 'Ifd:IFD0/Tag:0x0110:Model/Entry+Ascii'
                         class: ExifEye\core\Entry\Core\Ascii
                         valid: true
                         format: Ascii
@@ -39,13 +39,13 @@ blocks:
                         clear_value: 's:9:"iPhone 6s";'
                         text: 'iPhone 6s'
                 -
-                    path: 'Ifd:IFD0/Tag:Orientation'
+                    path: 'Ifd:IFD0/Tag:0x0112:Orientation'
                     class: ExifEye\core\Block\Tag
                     id: 274
                     name: Orientation
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:Orientation/Entry:Short'
+                        path: 'Ifd:IFD0/Tag:0x0112:Orientation/Entry+Short'
                         class: ExifEye\core\Entry\Core\Short
                         valid: true
                         format: Short
@@ -54,13 +54,13 @@ blocks:
                         clear_value: 'i:6;'
                         text: 'right - top'
                 -
-                    path: 'Ifd:IFD0/Tag:XResolution'
+                    path: 'Ifd:IFD0/Tag:0x011a:XResolution'
                     class: ExifEye\core\Block\Tag
                     id: 282
                     name: XResolution
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:XResolution/Entry:Rational'
+                        path: 'Ifd:IFD0/Tag:0x011a:XResolution/Entry+Rational'
                         class: ExifEye\core\Entry\Core\Rational
                         valid: true
                         format: Rational
@@ -69,13 +69,13 @@ blocks:
                         clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
                         text: 72/1
                 -
-                    path: 'Ifd:IFD0/Tag:YResolution'
+                    path: 'Ifd:IFD0/Tag:0x011b:YResolution'
                     class: ExifEye\core\Block\Tag
                     id: 283
                     name: YResolution
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:YResolution/Entry:Rational'
+                        path: 'Ifd:IFD0/Tag:0x011b:YResolution/Entry+Rational'
                         class: ExifEye\core\Entry\Core\Rational
                         valid: true
                         format: Rational
@@ -84,13 +84,13 @@ blocks:
                         clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
                         text: 72/1
                 -
-                    path: 'Ifd:IFD0/Tag:ResolutionUnit'
+                    path: 'Ifd:IFD0/Tag:0x0128:ResolutionUnit'
                     class: ExifEye\core\Block\Tag
                     id: 296
                     name: ResolutionUnit
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:ResolutionUnit/Entry:Short'
+                        path: 'Ifd:IFD0/Tag:0x0128:ResolutionUnit/Entry+Short'
                         class: ExifEye\core\Entry\Core\Short
                         valid: true
                         format: Short
@@ -99,13 +99,13 @@ blocks:
                         clear_value: 'i:2;'
                         text: Inch
                 -
-                    path: 'Ifd:IFD0/Tag:Software'
+                    path: 'Ifd:IFD0/Tag:0x0131:Software'
                     class: ExifEye\core\Block\Tag
                     id: 305
                     name: Software
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:Software/Entry:Ascii'
+                        path: 'Ifd:IFD0/Tag:0x0131:Software/Entry+Ascii'
                         class: ExifEye\core\Entry\Core\Ascii
                         valid: true
                         format: Ascii
@@ -114,13 +114,13 @@ blocks:
                         clear_value: 's:6:"11.0.3";'
                         text: 11.0.3
                 -
-                    path: 'Ifd:IFD0/Tag:DateTime'
+                    path: 'Ifd:IFD0/Tag:0x0132:DateTime'
                     class: ExifEye\core\Block\Tag
                     id: 306
                     name: DateTime
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:DateTime/Entry:Time'
+                        path: 'Ifd:IFD0/Tag:0x0132:DateTime/Entry+Time'
                         class: ExifEye\core\Entry\Time
                         valid: true
                         format: Ascii
@@ -129,13 +129,13 @@ blocks:
                         clear_value: 's:19:"2017:12:07 12:02:40";'
                         text: '2017:12:07 12:02:40'
                 -
-                    path: 'Ifd:IFD0/Tag:YCbCrPositioning'
+                    path: 'Ifd:IFD0/Tag:0x0213:YCbCrPositioning'
                     class: ExifEye\core\Block\Tag
                     id: 531
                     name: YCbCrPositioning
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD0/Tag:YCbCrPositioning/Entry:Short'
+                        path: 'Ifd:IFD0/Tag:0x0213:YCbCrPositioning/Entry+Short'
                         class: ExifEye\core\Entry\Core\Short
                         valid: true
                         format: Short
@@ -153,13 +153,13 @@ blocks:
                     blocks:
                         Tag:
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureTime'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x829a:ExposureTime'
                                 class: ExifEye\core\Block\Tag
                                 id: 33434
                                 name: ExposureTime
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureTime/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x829a:ExposureTime/Entry+Rational'
                                     class: ExifEye\core\Entry\ExifExposureTime
                                     valid: true
                                     format: Rational
@@ -168,13 +168,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:1;i:1;i:33;}'
                                     text: '1/33 sec.'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FNumber'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x829d:FNumber'
                                 class: ExifEye\core\Block\Tag
                                 id: 33437
                                 name: FNumber
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FNumber/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x829d:FNumber/Entry+Rational'
                                     class: ExifEye\core\Entry\ExifFNumber
                                     valid: true
                                     format: Rational
@@ -183,13 +183,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:11;i:1;i:5;}'
                                     text: f/2.2
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureProgram'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x8822:ExposureProgram'
                                 class: ExifEye\core\Block\Tag
                                 id: 34850
                                 name: ExposureProgram
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureProgram/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x8822:ExposureProgram/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -198,13 +198,13 @@ blocks:
                                     clear_value: 'i:2;'
                                     text: 'Normal program'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ISOSpeedRatings'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x8827:ISOSpeedRatings'
                                 class: ExifEye\core\Block\Tag
                                 id: 34855
                                 name: ISOSpeedRatings
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ISOSpeedRatings/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x8827:ISOSpeedRatings/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -213,13 +213,13 @@ blocks:
                                     clear_value: 'i:64;'
                                     text: 64
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExifVersion'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9000:ExifVersion'
                                 class: ExifEye\core\Block\Tag
                                 id: 36864
                                 name: ExifVersion
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExifVersion/Entry:Version'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9000:ExifVersion/Entry+Version'
                                     class: ExifEye\core\Entry\ExifVersion
                                     valid: true
                                     format: Undefined
@@ -228,13 +228,13 @@ blocks:
                                     clear_value: 's:4:"2.21";'
                                     text: 'Exif Version 2.21'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeOriginal'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9003:DateTimeOriginal'
                                 class: ExifEye\core\Block\Tag
                                 id: 36867
                                 name: DateTimeOriginal
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeOriginal/Entry:Time'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9003:DateTimeOriginal/Entry+Time'
                                     class: ExifEye\core\Entry\Time
                                     valid: true
                                     format: Ascii
@@ -243,13 +243,13 @@ blocks:
                                     clear_value: 's:19:"2017:12:07 12:02:40";'
                                     text: '2017:12:07 12:02:40'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeDigitized'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9004:DateTimeDigitized'
                                 class: ExifEye\core\Block\Tag
                                 id: 36868
                                 name: DateTimeDigitized
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:DateTimeDigitized/Entry:Time'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9004:DateTimeDigitized/Entry+Time'
                                     class: ExifEye\core\Entry\Time
                                     valid: true
                                     format: Ascii
@@ -258,13 +258,13 @@ blocks:
                                     clear_value: 's:19:"2017:12:07 12:02:40";'
                                     text: '2017:12:07 12:02:40'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ComponentsConfiguration'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9101:ComponentsConfiguration'
                                 class: ExifEye\core\Block\Tag
                                 id: 37121
                                 name: ComponentsConfiguration
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ComponentsConfiguration/Entry:Undefined'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9101:ComponentsConfiguration/Entry+Undefined'
                                     class: ExifEye\core\Entry\ExifComponentsConfiguration
                                     valid: true
                                     format: Undefined
@@ -273,13 +273,13 @@ blocks:
                                     clear_value: !!binary czo0OiIBAgMAIjs=
                                     text: 'Y Cb Cr -'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ShutterSpeedValue'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9201:ShutterSpeedValue'
                                 class: ExifEye\core\Block\Tag
                                 id: 37377
                                 name: ShutterSpeedValue
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ShutterSpeedValue/Entry:SignedRational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9201:ShutterSpeedValue/Entry+SignedRational'
                                     class: ExifEye\core\Entry\ExifShutterSpeedValue
                                     valid: true
                                     format: SignedRational
@@ -288,13 +288,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:2297;i:1;i:454;}'
                                     text: '2297/454 sec. (APEX: 5)'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ApertureValue'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9202:ApertureValue'
                                 class: ExifEye\core\Block\Tag
                                 id: 37378
                                 name: ApertureValue
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ApertureValue/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9202:ApertureValue/Entry+Rational'
                                     class: ExifEye\core\Entry\ExifApertureValue
                                     valid: true
                                     format: Rational
@@ -303,13 +303,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:7983;i:1;i:3509;}'
                                     text: '2.2'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:BrightnessValue'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9203:BrightnessValue'
                                 class: ExifEye\core\Block\Tag
                                 id: 37379
                                 name: BrightnessValue
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:BrightnessValue/Entry:SignedRational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9203:BrightnessValue/Entry+SignedRational'
                                     class: ExifEye\core\Entry\ExifBrightnessValue
                                     valid: true
                                     format: SignedRational
@@ -318,13 +318,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:5870;i:1;i:1573;}'
                                     text: '3.7317228226319'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureBiasValue'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9204:ExposureBiasValue'
                                 class: ExifEye\core\Block\Tag
                                 id: 37380
                                 name: ExposureBiasValue
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureBiasValue/Entry:SignedRational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9204:ExposureBiasValue/Entry+SignedRational'
                                     class: ExifEye\core\Entry\ExifExposureBiasValue
                                     valid: true
                                     format: SignedRational
@@ -333,13 +333,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:0;i:1;i:1;}'
                                     text: '0.0'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:MeteringMode'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9207:MeteringMode'
                                 class: ExifEye\core\Block\Tag
                                 id: 37383
                                 name: MeteringMode
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:MeteringMode/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9207:MeteringMode/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -348,13 +348,13 @@ blocks:
                                     clear_value: 'i:5;'
                                     text: Pattern
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:Flash'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9209:Flash'
                                 class: ExifEye\core\Block\Tag
                                 id: 37385
                                 name: Flash
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:Flash/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9209:Flash/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -363,13 +363,13 @@ blocks:
                                     clear_value: 'i:16;'
                                     text: 'Flash did not fire, compulsory flash mode.'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLength'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x920a:FocalLength'
                                 class: ExifEye\core\Block\Tag
                                 id: 37386
                                 name: FocalLength
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLength/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x920a:FocalLength/Entry+Rational'
                                     class: ExifEye\core\Entry\ExifFocalLength
                                     valid: true
                                     format: Rational
@@ -378,13 +378,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:83;i:1;i:20;}'
                                     text: '4.2 mm'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SubjectArea'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9214:SubjectArea'
                                 class: ExifEye\core\Block\Tag
                                 id: 37396
                                 name: SubjectArea
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SubjectArea/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9214:SubjectArea/Entry+Short'
                                     class: ExifEye\core\Entry\ExifSubjectArea
                                     valid: true
                                     format: Short
@@ -393,13 +393,13 @@ blocks:
                                     clear_value: 'a:4:{i:0;i:2015;i:1;i:1511;i:2;i:2217;i:3;i:1330;}'
                                     text: 'Within rectangle (width 2015, height 1511) around (x,y) = (2217,1330)'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:MakerNote'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x927c:MakerNote'
                                 class: ExifEye\core\Block\Tag
                                 id: 37500
                                 name: MakerNote
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:MakerNote/Entry:MakerNote'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x927c:MakerNote/Entry+MakerNote'
                                     class: ExifEye\core\Entry\ExifMakerNote
                                     valid: true
                                     format: Undefined
@@ -408,13 +408,13 @@ blocks:
                                     clear_value: !!binary YToyOntpOjA7czo5MjQ6IkFwcGxlIGlPUwAAAU1NAA8AAQAJAAAAAQAAAAkAAgAHAAACLgAAAMgAAwAHAAAAaAAAAvYABAAJAAAAAQAAAAEABQAJAAAAAQAAAN0ABgAJAAAAAQAAAN8ABwAJAAAAAQAAAAEACAAKAAAAAwAAA14ACQAJAAAAAQAAERMADgAJAAAAAQAAAAQAEQACAAAAJQAAA3YAFAAJAAAAAQAAAAQAFwAJAAAAAQAAAAAAGQAJAAAAAQAAAAAAHwAJAAAAAQAAAAAAAAAAYnBsaXN0MDBPEQIARAENAewA4ADCADYBUAGlAK8AlwCHAOcAlwCHAHMAXACVAMcAnwCPAbQAnwGoAbwAoACaAJ0AHQGMAJMAegBjAIgAxwDNAFABCwEvAVUBFwHIAI0AyAAoAYcArgCDAGYAmQDIAHcBqQE4ASgB+wAZAagAlADVADMBfADCAIYAcACNAIkAaAHuAUAB+wDkADMBEgEEAfwABgHgAOgAogBqAG4ApwBUAbYBTgHMANQAZwFJAT0BKwEYAQsB7gCxAHUAeAC9AD4BbQFaAUwBVgFyAVkBhAE2AR0B9QDaAMEAswBxAJIAGQFdAUEBpQF7AV0BVAGSAUIBMgH0AAYBwADFAOMABAE7AWABcgGjAYoBQwFHAWkBPAEtAfAABQHdAM8AUwCSABkBWQFgAUwBEgExAUUBTQElARkB/QD+AMgArwBOAFYAXQBcAFwAWABVAN0AtQCvACkBBAHVAOMAkAB/AEwAUgBXAFMAUQBUAFAA2QBsAFoAOwHnAF4AXwAnADEASgBRAFYAVQBOAE8ATQDLAGMAWwA3AcwAYQBuAFMAMQABAe4ApQClAHEATgBLALwAcABVACsBwwBeAHkAbAAzAPQAHwH2APYA+gDLAHwAsgB1AFEAEQGqAGAA/AB0AEEAmABbATIB/gCRAI8AsQDaAJEAVgANAd8AzABQAWwAUAAACAAAAAAAAAIBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAIMYnBsaXN0MDDUAQIDBAUGBwhVZmxhZ3NVdmFsdWVZdGltZXNjYWxlVWVwb2NoEAETAAFgoar+bqgSO5rKABAACBEXHSctLzg9AAAAAAAAAQEAAAAAAAAACQAAAAAAAAAAAAAAAAAAAD8AAAR7AAAwZf//8ycAABcg///1dgAAC3cyODNERDFENC01M0M3LTRDOUMtQkIyMy1GREY5Rjk1NDM2RDEAACI7aToxO2k6NzAwO30=
                                     text: '924 bytes MakerNote data'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeOriginal'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9291:SubSecTimeOriginal'
                                 class: ExifEye\core\Block\Tag
                                 id: 37521
                                 name: SubSecTimeOriginal
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeOriginal/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9291:SubSecTimeOriginal/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -423,13 +423,13 @@ blocks:
                                     clear_value: 's:3:"160";'
                                     text: '160'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeDigitized'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9292:SubSecTimeDigitized'
                                 class: ExifEye\core\Block\Tag
                                 id: 37522
                                 name: SubSecTimeDigitized
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SubSecTimeDigitized/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0x9292:SubSecTimeDigitized/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -438,13 +438,13 @@ blocks:
                                     clear_value: 's:3:"160";'
                                     text: '160'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FlashPixVersion'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa000:FlashPixVersion'
                                 class: ExifEye\core\Block\Tag
                                 id: 40960
                                 name: FlashPixVersion
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FlashPixVersion/Entry:Version'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa000:FlashPixVersion/Entry+Version'
                                     class: ExifEye\core\Entry\ExifFlashPixVersion
                                     valid: true
                                     format: Undefined
@@ -453,13 +453,13 @@ blocks:
                                     clear_value: 's:3:"1.0";'
                                     text: 'FlashPix Version 1.0'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ColorSpace'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa001:ColorSpace'
                                 class: ExifEye\core\Block\Tag
                                 id: 40961
                                 name: ColorSpace
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ColorSpace/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa001:ColorSpace/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -468,13 +468,13 @@ blocks:
                                     clear_value: 'i:1;'
                                     text: sRGB
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelXDimension'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa002:PixelXDimension'
                                 class: ExifEye\core\Block\Tag
                                 id: 40962
                                 name: PixelXDimension
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelXDimension/Entry:Long'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa002:PixelXDimension/Entry+Long'
                                     class: ExifEye\core\Entry\Core\Long
                                     valid: true
                                     format: Long
@@ -483,13 +483,13 @@ blocks:
                                     clear_value: 'i:4032;'
                                     text: 4032
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelYDimension'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa003:PixelYDimension'
                                 class: ExifEye\core\Block\Tag
                                 id: 40963
                                 name: PixelYDimension
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:PixelYDimension/Entry:Long'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa003:PixelYDimension/Entry+Long'
                                     class: ExifEye\core\Entry\Core\Long
                                     valid: true
                                     format: Long
@@ -498,13 +498,13 @@ blocks:
                                     clear_value: 'i:3024;'
                                     text: 3024
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SensingMethod'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa217:SensingMethod'
                                 class: ExifEye\core\Block\Tag
                                 id: 41495
                                 name: SensingMethod
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SensingMethod/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa217:SensingMethod/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -513,13 +513,13 @@ blocks:
                                     clear_value: 'i:2;'
                                     text: 'One-chip color area sensor'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneType'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa301:SceneType'
                                 class: ExifEye\core\Block\Tag
                                 id: 41729
                                 name: SceneType
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneType/Entry:Undefined'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa301:SceneType/Entry+Undefined'
                                     class: ExifEye\core\Entry\ExifSceneType
                                     valid: true
                                     format: Undefined
@@ -528,13 +528,13 @@ blocks:
                                     clear_value: !!binary czoxOiIBIjs=
                                     text: 'Directly photographed'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureMode'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa402:ExposureMode'
                                 class: ExifEye\core\Block\Tag
                                 id: 41986
                                 name: ExposureMode
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:ExposureMode/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa402:ExposureMode/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -543,13 +543,13 @@ blocks:
                                     clear_value: 'i:0;'
                                     text: 'Auto exposure'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:WhiteBalance'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa403:WhiteBalance'
                                 class: ExifEye\core\Block\Tag
                                 id: 41987
                                 name: WhiteBalance
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:WhiteBalance/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa403:WhiteBalance/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -558,13 +558,13 @@ blocks:
                                     clear_value: 'i:0;'
                                     text: 'Auto white balance'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLengthIn35mmFilm'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa405:FocalLengthIn35mmFilm'
                                 class: ExifEye\core\Block\Tag
                                 id: 41989
                                 name: FocalLengthIn35mmFilm
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:FocalLengthIn35mmFilm/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa405:FocalLengthIn35mmFilm/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -573,13 +573,13 @@ blocks:
                                     clear_value: 'i:29;'
                                     text: 29
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneCaptureType'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa406:SceneCaptureType'
                                 class: ExifEye\core\Block\Tag
                                 id: 41990
                                 name: SceneCaptureType
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:SceneCaptureType/Entry:Short'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa406:SceneCaptureType/Entry+Short'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -588,13 +588,13 @@ blocks:
                                     clear_value: 'i:0;'
                                     text: Standard
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:LensInfo'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa432:LensInfo'
                                 class: ExifEye\core\Block\Tag
                                 id: 42034
                                 name: LensInfo
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:LensInfo/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa432:LensInfo/Entry+Rational'
                                     class: ExifEye\core\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -603,13 +603,13 @@ blocks:
                                     clear_value: 'a:4:{i:0;a:2:{i:0;i:83;i:1;i:20;}i:1;a:2:{i:0;i:83;i:1;i:20;}i:2;a:2:{i:0;i:11;i:1;i:5;}i:3;a:2:{i:0;i:11;i:1;i:5;}}'
                                     text: '83/20, 83/20, 11/5, 11/5'
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:LensMake'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa433:LensMake'
                                 class: ExifEye\core\Block\Tag
                                 id: 42035
                                 name: LensMake
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:LensMake/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa433:LensMake/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -618,13 +618,13 @@ blocks:
                                     clear_value: 's:5:"Apple";'
                                     text: Apple
                             -
-                                path: 'Ifd:IFD0/Ifd:Exif/Tag:LensModel'
+                                path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa434:LensModel'
                                 class: ExifEye\core\Block\Tag
                                 id: 42036
                                 name: LensModel
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:LensModel/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:Exif/Tag:0xa434:LensModel/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -642,13 +642,13 @@ blocks:
                                 blocks:
                                     Tag:
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0001'
                                             class: ExifEye\core\Block\Tag
                                             id: 1
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0001/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -657,13 +657,13 @@ blocks:
                                                 clear_value: 'i:9;'
                                                 text: 9
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0002'
                                             class: ExifEye\core\Block\Tag
                                             id: 2
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:Undefined'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0002/Entry+Undefined'
                                                 class: ExifEye\core\Entry\Core\Undefined
                                                 valid: true
                                                 format: Undefined
@@ -672,13 +672,13 @@ blocks:
                                                 clear_value: !!binary czo1NTg6ImJwbGlzdDAwTxECAEQBDQHsAOAAwgA2AVABpQCvAJcAhwDnAJcAhwBzAFwAlQDHAJ8AjwG0AJ8BqAG8AKAAmgCdAB0BjACTAHoAYwCIAMcAzQBQAQsBLwFVARcByACNAMgAKAGHAK4AgwBmAJkAyAB3AakBOAEoAfsAGQGoAJQA1QAzAXwAwgCGAHAAjQCJAGgB7gFAAfsA5AAzARIBBAH8AAYB4ADoAKIAagBuAKcAVAG2AU4BzADUAGcBSQE9ASsBGAELAe4AsQB1AHgAvQA+AW0BWgFMAVYBcgFZAYQBNgEdAfUA2gDBALMAcQCSABkBXQFBAaUBewFdAVQBkgFCATIB9AAGAcAAxQDjAAQBOwFgAXIBowGKAUMBRwFpATwBLQHwAAUB3QDPAFMAkgAZAVkBYAFMARIBMQFFAU0BJQEZAf0A/gDIAK8ATgBWAF0AXABcAFgAVQDdALUArwApAQQB1QDjAJAAfwBMAFIAVwBTAFEAVABQANkAbABaADsB5wBeAF8AJwAxAEoAUQBWAFUATgBPAE0AywBjAFsANwHMAGEAbgBTADEAAQHuAKUApQBxAE4ASwC8AHAAVQArAcMAXgB5AGwAMwD0AB8B9gD2APoAywB8ALIAdQBRABEBqgBgAPwAdABBAJgAWwEyAf4AkQCPALEA2gCRAFYADQHfAMwAUAFsAFAAAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
                                                 text: '558 bytes of data'
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:RunTime'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0003:RunTime'
                                             class: ExifEye\core\Block\Tag
                                             id: 3
                                             name: RunTime
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:RunTime/Entry:Undefined'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0003:RunTime/Entry+Undefined'
                                                 class: ExifEye\core\Entry\Core\Undefined
                                                 valid: true
                                                 format: Undefined
@@ -687,13 +687,13 @@ blocks:
                                                 clear_value: !!binary czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwABYKGq/m6oEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
                                                 text: '104 bytes of data'
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0004'
                                             class: ExifEye\core\Block\Tag
                                             id: 4
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0004/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -702,13 +702,13 @@ blocks:
                                                 clear_value: 'i:1;'
                                                 text: 1
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0005'
                                             class: ExifEye\core\Block\Tag
                                             id: 5
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0005/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -717,13 +717,13 @@ blocks:
                                                 clear_value: 'i:221;'
                                                 text: 221
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0006'
                                             class: ExifEye\core\Block\Tag
                                             id: 6
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0006/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -732,13 +732,13 @@ blocks:
                                                 clear_value: 'i:223;'
                                                 text: 223
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0007'
                                             class: ExifEye\core\Block\Tag
                                             id: 7
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0007/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -747,13 +747,13 @@ blocks:
                                                 clear_value: 'i:1;'
                                                 text: 1
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:AccelerationVector'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0008:AccelerationVector'
                                             class: ExifEye\core\Block\Tag
                                             id: 8
                                             name: AccelerationVector
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:AccelerationVector/Entry:SignedRational'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0008:AccelerationVector/Entry+SignedRational'
                                                 class: ExifEye\core\Entry\Core\SignedRational
                                                 valid: true
                                                 format: SignedRational
@@ -762,13 +762,13 @@ blocks:
                                                 clear_value: 'a:3:{i:0;a:2:{i:0;i:1147;i:1;i:12389;}i:1;a:2:{i:0;d:-3289;i:1;i:5920;}i:2;a:2:{i:0;d:-2698;i:1;i:2935;}}'
                                                 text: '1147/12389, -3289/5920, -2698/2935'
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0009'
                                             class: ExifEye\core\Block\Tag
                                             id: 9
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0009/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -777,13 +777,13 @@ blocks:
                                                 clear_value: 'i:4371;'
                                                 text: 4371
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x000e'
                                             class: ExifEye\core\Block\Tag
                                             id: 14
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x000e/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -792,13 +792,13 @@ blocks:
                                                 clear_value: 'i:4;'
                                                 text: 4
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:ContentIdentifier'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0011:ContentIdentifier'
                                             class: ExifEye\core\Block\Tag
                                             id: 17
                                             name: ContentIdentifier
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:ContentIdentifier/Entry:Ascii'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0011:ContentIdentifier/Entry+Ascii'
                                                 class: ExifEye\core\Entry\Core\Ascii
                                                 valid: true
                                                 format: Ascii
@@ -807,13 +807,13 @@ blocks:
                                                 clear_value: 's:36:"283DD1D4-53C7-4C9C-BB23-FDF9F95436D1";'
                                                 text: 283DD1D4-53C7-4C9C-BB23-FDF9F95436D1
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0014'
                                             class: ExifEye\core\Block\Tag
                                             id: 20
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0014/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -822,13 +822,13 @@ blocks:
                                                 clear_value: 'i:4;'
                                                 text: 4
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0017'
                                             class: ExifEye\core\Block\Tag
                                             id: 23
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0017/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -837,13 +837,13 @@ blocks:
                                                 clear_value: 'i:0;'
                                                 text: 0
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0019'
                                             class: ExifEye\core\Block\Tag
                                             id: 25
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x0019/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -852,13 +852,13 @@ blocks:
                                                 clear_value: 'i:0;'
                                                 text: 0
                                         -
-                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:'
+                                            path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x001f'
                                             class: ExifEye\core\Block\Tag
                                             id: 31
                                             name: null
                                             valid: true
                                             Entry:
-                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:/Entry:SignedLong'
+                                                path: 'Ifd:IFD0/Ifd:Exif/Ifd:AppleMakerNotes/Tag:0x001f/Entry+SignedLong'
                                                 class: ExifEye\core\Entry\Core\SignedLong
                                                 valid: true
                                                 format: SignedLong
@@ -875,13 +875,13 @@ blocks:
                     blocks:
                         Tag:
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitudeRef'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0001:GPSLatitudeRef'
                                 class: ExifEye\core\Block\Tag
                                 id: 1
                                 name: GPSLatitudeRef
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitudeRef/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0001:GPSLatitudeRef/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -890,13 +890,13 @@ blocks:
                                     clear_value: 's:1:"N";'
                                     text: 'N'
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitude'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0002:GPSLatitude'
                                 class: ExifEye\core\Block\Tag
                                 id: 2
                                 name: GPSLatitude
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLatitude/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0002:GPSLatitude/Entry+Rational'
                                     class: ExifEye\core\Entry\GPSDegrees
                                     valid: true
                                     format: Rational
@@ -905,13 +905,13 @@ blocks:
                                     clear_value: 'a:3:{i:0;a:2:{i:0;i:45;i:1;i:1;}i:1;a:2:{i:0;i:28;i:1;i:1;}i:2;a:2:{i:0;i:5312;i:1;i:100;}}'
                                     text: '45° 28'' 53.12" (45.48°)'
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitudeRef'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0003:GPSLongitudeRef'
                                 class: ExifEye\core\Block\Tag
                                 id: 3
                                 name: GPSLongitudeRef
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitudeRef/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0003:GPSLongitudeRef/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -920,13 +920,13 @@ blocks:
                                     clear_value: 's:1:"E";'
                                     text: E
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitude'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0004:GPSLongitude'
                                 class: ExifEye\core\Block\Tag
                                 id: 4
                                 name: GPSLongitude
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSLongitude/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0004:GPSLongitude/Entry+Rational'
                                     class: ExifEye\core\Entry\GPSDegrees
                                     valid: true
                                     format: Rational
@@ -935,13 +935,13 @@ blocks:
                                     clear_value: 'a:3:{i:0;a:2:{i:0;i:9;i:1;i:1;}i:1;a:2:{i:0;i:11;i:1;i:1;}i:2;a:2:{i:0;i:4183;i:1;i:100;}}'
                                     text: '9° 11'' 41.83" (9.19°)'
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitudeRef'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0005:GPSAltitudeRef'
                                 class: ExifEye\core\Block\Tag
                                 id: 5
                                 name: GPSAltitudeRef
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitudeRef/Entry:Byte'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0005:GPSAltitudeRef/Entry+Byte'
                                     class: ExifEye\core\Entry\Core\Byte
                                     valid: true
                                     format: Byte
@@ -950,13 +950,13 @@ blocks:
                                     clear_value: 'i:0;'
                                     text: 0
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitude'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0006:GPSAltitude'
                                 class: ExifEye\core\Block\Tag
                                 id: 6
                                 name: GPSAltitude
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSAltitude/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0006:GPSAltitude/Entry+Rational'
                                     class: ExifEye\core\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -965,13 +965,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:9248;i:1;i:83;}'
                                     text: 9248/83
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSTimeStamp'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0007:GPSTimeStamp'
                                 class: ExifEye\core\Block\Tag
                                 id: 7
                                 name: GPSTimeStamp
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSTimeStamp/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0007:GPSTimeStamp/Entry+Rational'
                                     class: ExifEye\core\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -980,13 +980,13 @@ blocks:
                                     clear_value: 'a:3:{i:0;a:2:{i:0;i:11;i:1;i:1;}i:1;a:2:{i:0;i:2;i:1;i:1;}i:2;a:2:{i:0;i:3777;i:1;i:100;}}'
                                     text: '11/1, 2/1, 3777/100'
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeedRef'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x000c:GPSSpeedRef'
                                 class: ExifEye\core\Block\Tag
                                 id: 12
                                 name: GPSSpeedRef
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeedRef/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x000c:GPSSpeedRef/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -995,13 +995,13 @@ blocks:
                                     clear_value: 's:1:"K";'
                                     text: K
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeed'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x000d:GPSSpeed'
                                 class: ExifEye\core\Block\Tag
                                 id: 13
                                 name: GPSSpeed
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSSpeed/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x000d:GPSSpeed/Entry+Rational'
                                     class: ExifEye\core\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -1010,13 +1010,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:0;i:1;i:1;}'
                                     text: 0/1
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirectionRef'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0010:GPSImgDirectionRef'
                                 class: ExifEye\core\Block\Tag
                                 id: 16
                                 name: GPSImgDirectionRef
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirectionRef/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0010:GPSImgDirectionRef/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -1025,13 +1025,13 @@ blocks:
                                     clear_value: 's:1:"T";'
                                     text: T
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirection'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0011:GPSImgDirection'
                                 class: ExifEye\core\Block\Tag
                                 id: 17
                                 name: GPSImgDirection
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSImgDirection/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0011:GPSImgDirection/Entry+Rational'
                                     class: ExifEye\core\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -1040,13 +1040,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:44423;i:1;i:451;}'
                                     text: 44423/451
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearingRef'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0017:GPSDestBearingRef'
                                 class: ExifEye\core\Block\Tag
                                 id: 23
                                 name: GPSDestBearingRef
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearingRef/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0017:GPSDestBearingRef/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -1055,13 +1055,13 @@ blocks:
                                     clear_value: 's:1:"T";'
                                     text: T
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearing'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0018:GPSDestBearing'
                                 class: ExifEye\core\Block\Tag
                                 id: 24
                                 name: GPSDestBearing
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDestBearing/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x0018:GPSDestBearing/Entry+Rational'
                                     class: ExifEye\core\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -1070,13 +1070,13 @@ blocks:
                                     clear_value: 'a:2:{i:0;i:44423;i:1;i:451;}'
                                     text: 44423/451
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDateStamp'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x001d:GPSDateStamp'
                                 class: ExifEye\core\Block\Tag
                                 id: 29
                                 name: GPSDateStamp
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSDateStamp/Entry:Ascii'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x001d:GPSDateStamp/Entry+Ascii'
                                     class: ExifEye\core\Entry\Core\Ascii
                                     valid: true
                                     format: Ascii
@@ -1085,13 +1085,13 @@ blocks:
                                     clear_value: 's:10:"2017:12:07";'
                                     text: '2017:12:07'
                             -
-                                path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSHPositioningError'
+                                path: 'Ifd:IFD0/Ifd:GPS/Tag:0x001f:GPSHPositioningError'
                                 class: ExifEye\core\Block\Tag
                                 id: 31
                                 name: GPSHPositioningError
                                 valid: true
                                 Entry:
-                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:GPSHPositioningError/Entry:Rational'
+                                    path: 'Ifd:IFD0/Ifd:GPS/Tag:0x001f:GPSHPositioningError/Entry+Rational'
                                     class: ExifEye\core\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -1108,13 +1108,13 @@ blocks:
         blocks:
             Tag:
                 -
-                    path: 'Ifd:IFD1/Tag:Compression'
+                    path: 'Ifd:IFD1/Tag:0x0103:Compression'
                     class: ExifEye\core\Block\Tag
                     id: 259
                     name: Compression
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD1/Tag:Compression/Entry:Short'
+                        path: 'Ifd:IFD1/Tag:0x0103:Compression/Entry+Short'
                         class: ExifEye\core\Entry\Core\Short
                         valid: true
                         format: Short
@@ -1123,13 +1123,13 @@ blocks:
                         clear_value: 'i:6;'
                         text: 'JPEG compression'
                 -
-                    path: 'Ifd:IFD1/Tag:XResolution'
+                    path: 'Ifd:IFD1/Tag:0x011a:XResolution'
                     class: ExifEye\core\Block\Tag
                     id: 282
                     name: XResolution
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD1/Tag:XResolution/Entry:Rational'
+                        path: 'Ifd:IFD1/Tag:0x011a:XResolution/Entry+Rational'
                         class: ExifEye\core\Entry\Core\Rational
                         valid: true
                         format: Rational
@@ -1138,13 +1138,13 @@ blocks:
                         clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
                         text: 72/1
                 -
-                    path: 'Ifd:IFD1/Tag:YResolution'
+                    path: 'Ifd:IFD1/Tag:0x011b:YResolution'
                     class: ExifEye\core\Block\Tag
                     id: 283
                     name: YResolution
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD1/Tag:YResolution/Entry:Rational'
+                        path: 'Ifd:IFD1/Tag:0x011b:YResolution/Entry+Rational'
                         class: ExifEye\core\Entry\Core\Rational
                         valid: true
                         format: Rational
@@ -1153,13 +1153,13 @@ blocks:
                         clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
                         text: 72/1
                 -
-                    path: 'Ifd:IFD1/Tag:ResolutionUnit'
+                    path: 'Ifd:IFD1/Tag:0x0128:ResolutionUnit'
                     class: ExifEye\core\Block\Tag
                     id: 296
                     name: ResolutionUnit
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD1/Tag:ResolutionUnit/Entry:Short'
+                        path: 'Ifd:IFD1/Tag:0x0128:ResolutionUnit/Entry+Short'
                         class: ExifEye\core\Entry\Core\Short
                         valid: true
                         format: Short
@@ -1168,13 +1168,13 @@ blocks:
                         clear_value: 'i:2;'
                         text: Inch
                 -
-                    path: 'Ifd:IFD1/Tag:ThumbnailOffset'
+                    path: 'Ifd:IFD1/Tag:0x0201:ThumbnailOffset'
                     class: ExifEye\core\Block\Tag
                     id: 513
                     name: ThumbnailOffset
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD1/Tag:ThumbnailOffset/Entry:Long'
+                        path: 'Ifd:IFD1/Tag:0x0201:ThumbnailOffset/Entry+Long'
                         class: ExifEye\core\Entry\Core\Long
                         valid: true
                         format: Long
@@ -1183,13 +1183,13 @@ blocks:
                         clear_value: 'i:2102;'
                         text: 2102
                 -
-                    path: 'Ifd:IFD1/Tag:ThumbnailLength'
+                    path: 'Ifd:IFD1/Tag:0x0202:ThumbnailLength'
                     class: ExifEye\core\Block\Tag
                     id: 514
                     name: ThumbnailLength
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD1/Tag:ThumbnailLength/Entry:Long'
+                        path: 'Ifd:IFD1/Tag:0x0202:ThumbnailLength/Entry+Long'
                         class: ExifEye\core\Entry\Core\Long
                         valid: true
                         format: Long
@@ -1203,7 +1203,7 @@ blocks:
                     class: ExifEye\core\Block\Thumbnail
                     valid: true
                     Entry:
-                        path: 'Ifd:IFD1/Thumbnail:Thumbnail/Entry:Undefined'
+                        path: 'Ifd:IFD1/Thumbnail:Thumbnail/Entry+Undefined'
                         class: ExifEye\core\Entry\Core\Undefined
                         valid: true
                         format: Undefined
