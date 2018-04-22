@@ -114,7 +114,7 @@ class Ifd extends BlockBase
 
         /* Read the number of tags */
         $n = $d->getShort($offset + $this->headerSkipBytes);
-        ExifEye::logger()->debug(str_repeat("  ", $nesting_level) . "** Constructing IFD '{name}' with {tags} TAGs at offset {offset} from {total} bytes...", [
+        $this->debug("** Constructing IFD '{name}' with {tags} TAGs at offset {offset} from {total} bytes...", [
             'name' => $this->getName(),
             'tags' => $n,
             'offset' => $offset,
@@ -126,7 +126,7 @@ class Ifd extends BlockBase
         /* Check if we have enough data. */
         if ($offset + 12 * $n > $d->getSize()) {
             $n = floor(($offset - $d->getSize()) / 12);
-            ExifEye::logger()->warning('Adjusted to: {tags}.', [
+            $this->warning('Adjusted to: {tags}.', [
                 'tags' => $n,
             ]);
         }
@@ -156,7 +156,7 @@ class Ifd extends BlockBase
 
             // Check if ExifEye has a definition for this TAG.
             if (!$this->isValidTag($tag->getId())) {
-                ExifEye::logger()->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag_id} in IFD '{ifd_name}'", [
+                $this->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag_id} in IFD '{ifd_name}'", [
                     'tag_id' => dechex($tag->getId()),
                     'ifd_name' => $this->getName(),
                 ]);
