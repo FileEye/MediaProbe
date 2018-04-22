@@ -347,7 +347,7 @@ class Ifd extends BlockBase
         ]);
 
         $n = count($this->xxGetSubBlocks('Tag')) + count($this->xxGetSubBlocks('Ifd'));
-        if ($this->thumb_data !== null) {
+        if ($this->xxGetSubBlock('Thumbnail', 0) !== null) {
             /*
              * We need two extra entries for the thumbnail offset and
              * length.
@@ -397,9 +397,9 @@ class Ifd extends BlockBase
             }
         }
 
-        if ($this->thumb_data !== null) {
+        if ($this->xxGetSubBlock('Thumbnail', 0) !== null) {
             ExifEye::logger()->debug('Appending {size} bytes of thumbnail data at {offset}', [
-                'size' => $this->thumb_data->getSize(),
+                'size' => $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents(),
                 'offset' => $end,
             ]);
             // TODO: make EntryInterface a class that can be constructed with
@@ -407,15 +407,15 @@ class Ifd extends BlockBase
             $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailLength'), $order);
             $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
             $bytes .= ConvertBytes::fromLong(1, $order);
-            $bytes .= ConvertBytes::fromLong($this->thumb_data->getSize(), $order);
+            $bytes .= ConvertBytes::fromLong($this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents(), $order);
 
             $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailOffset'), $order);
             $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
             $bytes .= ConvertBytes::fromLong(1, $order);
             $bytes .= ConvertBytes::fromLong($end, $order);
 
-            $extra_bytes .= $this->thumb_data->getBytes();
-            $end += $this->thumb_data->getSize();
+            $extra_bytes .= $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->toBytes();
+            $end += $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents();
         }
 
         /* Find bytes from sub IFDs. */

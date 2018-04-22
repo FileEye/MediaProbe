@@ -40,7 +40,9 @@ class Tag extends BlockBase
      */
     public function getElementPathFragment()
     {
-        return $this->getType() . ':0x' . str_pad(dechex($this->getId()), 4, '0', STR_PAD_LEFT);
+        $tag_path = $this->getType() . ':0x' . str_pad(dechex($this->getId()), 4, '0', STR_PAD_LEFT);
+        $tag_path .= $this->getName() ? ':' . $this->getName() : '';
+        return $tag_path;
     }
 
     /**
