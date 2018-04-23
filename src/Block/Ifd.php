@@ -114,8 +114,7 @@ class Ifd extends BlockBase
 
         /* Read the number of tags */
         $n = $d->getShort($offset + $this->headerSkipBytes);
-        $this->debug("** Constructing IFD '{name}' with {tags} TAGs at offset {offset} from {total} bytes...", [
-            'name' => $this->getName(),
+        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes...", [
             'tags' => $n,
             'offset' => $offset,
             'total' => $d->getSize(),
@@ -143,15 +142,10 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            $this->debug('{path} Tag 0x{tag_id}: ({tag_name}) Fmt: {format_id} ({format_name}) Components: {components} ({count} of {total})...', [
-                'path' => $tag->getPath(),
-                'tag_id' => dechex($tag->getId()),
-                'tag_name' => $tag->hasSpecification() ? $tag->getName() : '* Unknown *',
+            $this->debug('Loaded with format {format_id} ({format_name}), {components} components', [
                 'format_id' => $tag->getEntry()->getFormat(),
                 'format_name' => Format::getName($tag->getEntry()->getFormat()),
                 'components' => $tag->getEntry()->getComponents(),
-                'count' => $i + 1,
-                'total' => $n,
             ]);
 
             // Check if ExifEye has a definition for this TAG.
