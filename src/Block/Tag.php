@@ -34,16 +34,20 @@ class Tag extends BlockBase
         $entry->setParentElement($this);
         $this->setEntry($entry);
 
-        $this->debug('Loaded: Format: {format_id} ({format_name}), Components: {components}, Text: {text}', [
-            'format_id' => $this->getEntry()->getFormat(),
-            'format_name' => Format::getName($this->getEntry()->getFormat()),
-            'components' => $this->getEntry()->getComponents(),
-            'text' => $this->getEntry()->toString(),
-        ]);
 
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasSpecification()) {
-            $this->warning("No specification available for this TAG");
+            $this->warning("No tag info available; Fmt {format_name}, Cmp {components}, Txt '{text}'", [
+                'format_name' => Format::getName($this->getEntry()->getFormat()),
+                'components' => $this->getEntry()->getComponents(),
+                'text' => $this->getEntry()->toString(),
+            ]);
+        } else {
+            $this->debug("Fmt {format_name}, Cmp {components}, Txt '{text}'", [
+                'format_name' => Format::getName($this->getEntry()->getFormat()),
+                'components' => $this->getEntry()->getComponents(),
+                'text' => $this->getEntry()->toString(),
+            ]);
         }
     }
 

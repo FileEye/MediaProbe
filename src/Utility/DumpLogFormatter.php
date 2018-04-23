@@ -35,11 +35,8 @@ class DumpLogFormatter extends LineFormatter
             $output .= str_repeat(' ', static::MAX_PATH) . ' > ';
         }
 
-        // Indentation.
-        $output .= str_repeat('  ', $nesting);
-
         // Message.
-        $output .= $record['message'];
+        $output .= substr(str_repeat('  ', $nesting) . $record['message'], static::MAX_PATH + 20);
 
         $output .= "\n";
         return $output;
