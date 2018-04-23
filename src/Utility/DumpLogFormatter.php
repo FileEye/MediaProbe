@@ -9,7 +9,7 @@ use Monolog\Formatter\LineFormatter;
  */
 class DumpLogFormatter extends LineFormatter
 {
-    const MAX_PATH = 50;
+    const MAX_PATH = 40;
 
     /**
      * {@inheritdoc}
@@ -24,10 +24,10 @@ class DumpLogFormatter extends LineFormatter
             $path = $record['context']['path'];
             $nesting = count(explode('/', $path));
             if (strlen($path) < static::MAX_PATH) {
-                $path = str_pad($path, static::MAX_PATH, ' ');
+                $path = str_pad($path, static::MAX_PATH, ' ', STR_PAD_LEFT);
             }
             if (strlen($path) > static::MAX_PATH) {
-                $path = '...' . substr($path, -27);
+                $path = '...' . substr($path, -static::MAX_PATH + 3);
             }
             $output .= $path . ' > ';
         } else {
@@ -36,7 +36,7 @@ class DumpLogFormatter extends LineFormatter
         }
 
         // Indentation.
-        $output .= str_repeat(' ', $nesting);
+        $output .= str_repeat('  ', $nesting);
 
         // Message.
         $output .= $record['message'];
