@@ -9,7 +9,7 @@ use Monolog\Formatter\LineFormatter;
  */
 class DumpLogFormatter extends LineFormatter
 {
-    const MAX_PATH = 50
+    const MAX_PATH = 50;
 
     /**
      * {@inheritdoc}
