@@ -14,8 +14,19 @@ class DumpLogFormatter extends LineFormatter
      */
     public function format(array $record)
     {
-dump($record);
         $output = str_pad($record['level_name'], 7, ' ') . ' > ';
+        if (isset($record['context']['path']) {
+            $path = $record['context']['path'];
+            if (strlen($path) < 30) {
+                $path = str_pad($path, 30, ' ');
+            }
+            if (strlen($path) > 30) {
+                $path = '...' . substr($path, -27);
+            }
+            $output .= $path . ' > ';
+        } else {
+            $output .= str_pad(' ', 30, ' ') . ' > ';
+        }
         $output .= "\n";
         return $output;
     }
