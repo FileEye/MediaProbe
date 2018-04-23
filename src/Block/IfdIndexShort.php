@@ -34,40 +34,22 @@ class IfdIndexShort extends Ifd
      */
     public function load(DataWindow $d, $offset, $components = 1, $nesting_level = 0)
     {
-        $this->debug(str_repeat("  ", $nesting_level) . "** Constructing IFD '{name}' with {components} entries at offset {offset}...", [
-            'name' => $this->getName(),
-            'components' => $components,
+        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes - START...", [
+            'tags' => $components,
             'offset' => $offset,
+            'total' => $d->getSize(),
         ]);
 
         $index_size = $d->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
-            $this->error('Size of {ifd_type} does not match the number of entries.', [
+            $this->warning('Size of {ifd_type} does not match the number of entries.', [
                 'ifd_type' => $this->getName(),
             ]);
         }
         $offset += 2;
         for ($i = 0; $i < $components; $i++) {
-            // Check if PEL can support this TAG.
-            if (!$this->isValidTag($i + 1)) {
-                $this->debug(str_repeat("  ", $nesting_level) . "No specification available for tag 0x{tag}, skipping ({count} of {total})...", [
-                    'tag' => dechex($i + 1),
-                    'count' => $i + 1,
-                    'offset' => $components,
-                ]);
-                continue;
-            }
-
+            // Check if this tag ($i + 1) should be skipped.
             $item_format = Spec::getTagFormat($this->getId(), $i + 1)[0];
-            $this->debug(str_repeat("  ", $nesting_level) . 'Tag 0x{tag}: ({tag_name}) Fmt: {format} ({format_name}) Components: {components} ({count} of {total})...', [
-                'tag' => dechex($i + 1),
-                'tag_name' => Spec::getTagName($this->getId(), $i + 1),
-                'format' => $item_format,
-                'format_name' => Format::getName($item_format),
-                'components' => 1,
-                'count' => $i + 1,
-                'offset' => $components,
-            ]);
             switch ($item_format) {
                 case Format::BYTE:
                     $item_value = $d->getByte($offset + $i * 2);
@@ -99,8 +81,10 @@ class IfdIndexShort extends Ifd
                 $this->xxAppendSubBlock(new Tag($this, $i + 1, $entry));
             }
         }
-        $this->debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '{ifd}'.", [
-            'ifd' => $this->getName(),
+        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes - .....END", [
+            'tags' => $components,
+            'offset' => $offset,
+            'total' => $d->getSize(),
         ]);
     }
 }

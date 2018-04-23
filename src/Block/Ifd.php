@@ -114,7 +114,7 @@ class Ifd extends BlockBase
 
         /* Read the number of tags */
         $n = $d->getShort($offset + $this->headerSkipBytes);
-        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes...", [
+        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes - START...", [
             'tags' => $n,
             'offset' => $offset,
             'total' => $d->getSize(),
@@ -193,15 +193,19 @@ class Ifd extends BlockBase
             }
         }
 
-        $this->debug("** End of loading");
+        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes - .....END", [
+            'tags' => $n,
+            'offset' => $offset,
+            'total' => $d->getSize(),
+        ]);
 
         // Invoke post-load callbacks.
         foreach (Spec::getIfdPostLoadCallbacks($this->getId()) as $callback) {
-            $this->debug("** Executing post-load callback {callback}" , [
+            $this->debug("** Post-load: {callback} - START...", [
                 'callback' => $callback,
             ]);
             call_user_func($callback, $d, $this);
-            $this->debug("** End of executing post-load callback {callback}" , [
+            $this->debug("** Post-load: {callback} - .....END", [
                 'callback' => $callback,
             ]);
         }
