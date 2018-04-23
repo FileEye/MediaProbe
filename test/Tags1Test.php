@@ -27,7 +27,7 @@ class Tags1Test extends ExifEyeTestCaseBase
         $this->assertInstanceOf('ExifEye\core\Entry\Core\Short', $ratingPercent->getEntry());
         $this->assertEquals(78, $ratingPercent->getEntry()->getValue());
 
-        $exifIfd = $ifd0->xxGetSubBlockByName('Ifd', Spec::getIfdIdByType('Exif'));
+        $exifIfd = $ifd0->xxGetSubBlockByName('Ifd', 'Exif');
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $exifIfd);
 
         $offsetTime = $exifIfd->xxGetSubBlockByName('Tag', 'OffsetTime');
