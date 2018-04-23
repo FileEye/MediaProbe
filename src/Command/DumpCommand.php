@@ -97,7 +97,7 @@ class DumpCommand extends Command
                     continue;
             }
             $json[$key][] = [
-                'path' => $record['path'],
+                'path' => $record,
                 'message' => $record['message'],
             ];
         }
