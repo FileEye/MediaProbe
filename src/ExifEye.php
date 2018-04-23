@@ -121,8 +121,8 @@ class ExifEye
         if (!isset(static::$logger)) {
             static::$logger = (new Logger('exifeye'))
               ->pushHandler(new TestHandler(Logger::INFO))
-              ->pushProcessor(new PsrLogMessageProcessor())
-              ->pushProcessor(new IntrospectionProcessor());
+              ->pushProcessor(new PsrLogMessageProcessor());
+              //->pushProcessor(new IntrospectionProcessor());
         }
         return static::$logger;
     }
