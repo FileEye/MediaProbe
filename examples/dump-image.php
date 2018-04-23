@@ -35,7 +35,7 @@ use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use Monolog\Handler\StreamHandler;
-use Monolog\Formatter\LineFormatter;
+use ExifEye\core\Utility\DumpLogFormatter;
 
 $prog = array_shift($argv);
 $file = '';
@@ -90,7 +90,7 @@ if (Jpeg::isValid($data)) {
 
 /* Set logging */
 $log_handler = new StreamHandler('php://stdout');
-$log_formatter = new LineFormatter("%level_name% > %context.path% > %message% \n");
+$log_formatter = new DumpLogFormatter();
 $log_handler->setFormatter($log_formatter);
 ExifEye::logger()->pushHandler($log_handler);
 
