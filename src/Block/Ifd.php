@@ -142,20 +142,6 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            $tag->debug('Loaded with format {format_id} ({format_name}), {components} components', [
-                'format_id' => $tag->getEntry()->getFormat(),
-                'format_name' => Format::getName($tag->getEntry()->getFormat()),
-                'components' => $tag->getEntry()->getComponents(),
-            ]);
-
-            // Check if ExifEye has a definition for this TAG.
-            if (!$this->isValidTag($tag->getId())) {
-                $tag->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag_id} in IFD '{ifd_name}'", [
-                    'tag_id' => dechex($tag->getId()),
-                    'ifd_name' => $this->getName(),
-                ]);
-            }
-
             // Load a subIfd.
             if (Spec::isTagAnIfdPointer($this->getId(), $tag->getId())) {
                 // If the tag is an IFD pointer, loads the IFD.
@@ -207,13 +193,17 @@ class Ifd extends BlockBase
             }
         }
 
-        $this->debug(str_repeat("  ", $nesting_level) . "** End of loading IFD '{ifd}'.", [
-            'ifd' => $this->getName(),
-        ]);
+        $this->debug("** End of loading");
 
         // Invoke post-load callbacks.
         foreach (Spec::getIfdPostLoadCallbacks($this->getId()) as $callback) {
+            $this->debug("** Executing post-load callback {callback}" , [
+                'callback' => $callback,
+            ]);
             call_user_func($callback, $d, $this);
+            $this->debug("** End of executing post-load callback {callback}" , [
+                'callback' => $callback,
+            ]);
         }
     }
 
@@ -235,52 +225,6 @@ class Ifd extends BlockBase
             }
         }
         return null;
-    }
-
-    /**
-     * Is a given tag valid for this IFD?
-     *
-     * Different types of IFDs can contain different kinds of tags ---
-     * the {@link IFD0} type, for example, cannot contain a {@link
-     * PelTag::GPS_LONGITUDE} tag.
-     *
-     * A special exception is tags with values above 0xF000. They are
-     * treated as private tags and will be allowed everywhere (use this
-     * for testing or for implementing your own types of tags).
-     *
-     * @param int $tag
-     *            the tag.
-     *
-     * @return boolean true if the tag is considered valid in this IFD,
-     *         false otherwise.
-     *
-     * @see getValidTags()
-     */
-    public function isValidTag($tag)
-    {
-        return $tag > 0xF000 || in_array($tag, $this->getValidTags());
-    }
-
-    /**
-     * Returns a list of valid tags for this IFD.
-     *
-     * @return array an array of {@link PelTag}s which are valid for
-     *         this IFD.
-     */
-    public function getValidTags()
-    {
-        return Spec::getIfdSupportedTagIds($this->getId());
-
-        /*
-         * TODO: Where do these tags belong?
-         * PelTag::FILL_ORDER,
-         * PelTag::TRANSFER_RANGE,
-         * PelTag::JPEG_PROC,
-         * PelTag::BATTERY_LEVEL,
-         * PelTag::IPTC_NAA,
-         * PelTag::INTER_COLOR_PROFILE,
-         * PelTag::CFA_REPEAT_PATTERN_DIM,
-         */
     }
 
     /**

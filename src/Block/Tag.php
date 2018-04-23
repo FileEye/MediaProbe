@@ -29,10 +29,22 @@ class Tag extends BlockBase
 
         $this->id = $id;
         $this->name = Spec::getTagName($this->getParentElement()->getId(), $id);
-        $this->hasSpecification = (bool) $this->name;
+        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($ifd->getId()));
 
         $entry->setParentElement($this);
         $this->setEntry($entry);
+
+        $this->debug('Loaded: Format: {format_id} ({format_name}), Components: {components}, Text: {text}', [
+            'format_id' => $this->getEntry()->getFormat(),
+            'format_name' => Format::getName($this->getEntry()->getFormat()),
+            'components' => $this->getEntry()->getComponents(),
+            'text' => $this->getEntry()->toString(),
+        ]);
+
+        // Check if ExifEye has a definition for this TAG.
+        if (!$this->hasSpecification()) {
+            $this->warning("No specification available for this TAG");
+        }
     }
 
     /**
@@ -122,4 +134,15 @@ class Tag extends BlockBase
         $str .= ExifEye::fmt("    Text      : %s\n", $this->getEntry()->toString());
         return $str;
     }
+
+    /*
+     * TODO: Where do these tags belong?
+     * PelTag::FILL_ORDER,
+     * PelTag::TRANSFER_RANGE,
+     * PelTag::JPEG_PROC,
+     * PelTag::BATTERY_LEVEL,
+     * PelTag::IPTC_NAA,
+     * PelTag::INTER_COLOR_PROFILE,
+     * PelTag::CFA_REPEAT_PATTERN_DIM,
+     */
 }
