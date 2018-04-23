@@ -34,7 +34,7 @@ class IfdIndexShort extends Ifd
      */
     public function load(DataWindow $d, $offset, $components = 1, $nesting_level = 0)
     {
-        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes - START...", [
+        $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
             'tags' => $components,
             'offset' => $offset,
             'total' => $d->getSize(),
@@ -75,16 +75,16 @@ class IfdIndexShort extends Ifd
                 case Format::SRATIONAL:
                     $item_value = $d->getSRattional($offset + $i * 2);
                     break;
+                default:
+                    $item_value = $d->getShort($offset + $i * 2);
+                    $item_format = Format::SHORT;
+                    break;
             }
-            if ($class = Spec::getTagClass($this->getId(), $i + 1)) {
+            if ($class = Spec::getTagClass($this->getId(), $i + 1, $item_format)) {
                 $entry = new $class([$item_value]);
                 $this->xxAppendSubBlock(new Tag($this, $i + 1, $entry));
             }
         }
-        $this->debug("** Loading with {tags} TAGs at offset {offset} from {total} bytes - .....END", [
-            'tags' => $components,
-            'offset' => $offset,
-            'total' => $d->getSize(),
-        ]);
+        $this->debug(".....END Loading");
     }
 }
