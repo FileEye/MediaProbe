@@ -2,7 +2,7 @@
 
 namespace ExifEye\core\Utility;
 
-use Monolog\Formatter\LineFormatter
+use Monolog\Formatter\LineFormatter;
 
 /**
  * Formats incoming records into a one-line suitable for dump debug.
