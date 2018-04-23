@@ -266,6 +266,21 @@ class Spec
     }
 
     /**
+     * Returns whether the TAG should be skipped.
+     *
+     * @param int $ifd_id
+     *            the IFD id.
+     * @param int $tag_id
+     *            the TAG id.
+     *
+     * @return bool
+     */
+    public static function getTagSkip($ifd_id, $tag_id)
+    {
+        return isset(self::getMap()['tags'][$ifd_id][$tag_id]['skip']) ? self::getMap()['tags'][$ifd_id][$tag_id]['skip'] : false;
+    }
+
+    /**
      * Returns the TAG class.
      *
      * @param int $ifd_id

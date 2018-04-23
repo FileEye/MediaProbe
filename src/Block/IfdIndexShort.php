@@ -49,6 +49,9 @@ class IfdIndexShort extends Ifd
         $offset += 2;
         for ($i = 0; $i < $components; $i++) {
             // Check if this tag ($i + 1) should be skipped.
+            if (Spec::getTagSkip($this->getId(), $i + 1)) {
+                continue;
+            };
             $item_format = Spec::getTagFormat($this->getId(), $i + 1)[0];
             switch ($item_format) {
                 case Format::BYTE:

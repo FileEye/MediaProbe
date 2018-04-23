@@ -80,6 +80,7 @@ The TAG entry is identified by the HEX value of the EXIF tag, like `0x0106` in t
 | class      | (Optional) A string identifying the TAG's PHP class. If not specified, the default class for the TAG format will be used. |
 | ifd        | (Optional) If specified, identifies the TAG as a pointer to a sub-IFD, as the string of the relative IFD type.  |
 | text       | (Optional) If specified, instructs PEL to decode the value of the TAG to a text string. This can be done with a mapping between the value and the text (defined by the `mapping:` array). |
+| skip       | (Optional) If specified and true, instructs ExifEye to skip loading the relevant data. |
 
 ## `pel compile` command
 

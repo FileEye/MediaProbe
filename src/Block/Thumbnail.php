@@ -62,16 +62,14 @@ class Thumbnail extends BlockBase
         // Load the thumbnail only if both the offset and the length are
         // available and positive.
         if ($offset <= 0 || $length <= 0) {
-            $ifd->warning('{path} Invalid JPEG thumbnail for offset {offset} and length {length}', [
-                'path' => $ifd->getPath(),
+            $ifd->warning('Invalid JPEG thumbnail for offset {offset} and length {length}', [
                 'offset' => $offset,
                 'length' => $length,
             ]);
             return;
         }
 
-        $ifd->debug('{path} JPEG thumbnail found at offset {offset} of length {length}', [
-            'path' => $ifd->getPath(),
+        $ifd->debug('JPEG thumbnail found at offset {offset} of length {length}', [
             'offset' => $offset,
             'length' => $length,
         ]);

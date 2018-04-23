@@ -22,7 +22,7 @@ class SpecCompiler
     /**
      * Map of expected TAG level array keys.
      */
-    private $tagKeys = ['name', 'title', 'components', 'format', 'class', 'ifd', 'text'];
+    private $tagKeys = ['name', 'title', 'components', 'format', 'class', 'ifd', 'text', 'skip'];
 
     /**
      * Map of expected TAG/text level array keys.
