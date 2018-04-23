@@ -142,7 +142,7 @@ class Ifd extends BlockBase
                 continue;
             }
 
-            $this->debug('Loaded with format {format_id} ({format_name}), {components} components', [
+            $tag->debug('Loaded with format {format_id} ({format_name}), {components} components', [
                 'format_id' => $tag->getEntry()->getFormat(),
                 'format_name' => Format::getName($tag->getEntry()->getFormat()),
                 'components' => $tag->getEntry()->getComponents(),
@@ -150,7 +150,7 @@ class Ifd extends BlockBase
 
             // Check if ExifEye has a definition for this TAG.
             if (!$this->isValidTag($tag->getId())) {
-                $this->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag_id} in IFD '{ifd_name}'", [
+                $tag->warning(str_repeat("  ", $nesting_level) . "Unknown TAG 0x{tag_id} in IFD '{ifd_name}'", [
                     'tag_id' => dechex($tag->getId()),
                     'ifd_name' => $this->getName(),
                 ]);
