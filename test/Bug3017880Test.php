@@ -41,7 +41,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             }
 
             $software_name = 'Example V2';
-            $software_tag = $ifd0->getTagByName('Software');
+            $software_tag = $ifd0->xxGetSubBlockByName('Tag', 'Software');
 
             if ($software_tag === null) {
                 $ifd0->xxAddSubBlock(new Tag($ifd0, 0x0131, new Ascii([$software_name])));

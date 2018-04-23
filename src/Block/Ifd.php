@@ -170,7 +170,7 @@ class Ifd extends BlockBase
 
         /* Offset to next IFD */
         $o = $d->getLong($offset + 12 * $n);
-        $this->debug(str_repeat("  ", $nesting_level) . 'Current offset is {offset}, link at {link} points to {destination}.', [
+        $this->debug('Current offset is {offset}, link at {link} points to {destination}.', [
             'offset' => $offset,
             'link' => $offset + 12 * $n,
             'destination' => $o,
@@ -205,16 +205,6 @@ class Ifd extends BlockBase
                 'callback' => $callback,
             ]);
         }
-    }
-
-    public function getTagByName($tag_name)
-    {
-        foreach ($this->xxGetSubBlocks('Tag') as $sub_block) {
-            if ($sub_block->getName() === $tag_name) {
-                return $sub_block;
-            }
-        }
-        return null;
     }
 
     public function xxGetTagById($tag_id)

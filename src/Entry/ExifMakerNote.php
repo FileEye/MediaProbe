@@ -67,17 +67,17 @@ class ExifMakerNote extends Undefined
         }
 
         // Get MakerNotes from Exif IFD.
-        if (!$maker_note_tag = $exif_ifd->getTagByName('MakerNote')) {
+        if (!$maker_note_tag = $exif_ifd->xxGetSubBlockByName('Tag', 'MakerNote')) {
             return;
         }
 
         // Get Make tag from IFD0.
-        if (!$make_tag = $ifd->getTagByName('Make')) {
+        if (!$make_tag = $ifd->xxGetSubBlockByName('Tag', 'Make')) {
             return;
         }
 
         // Get Model tag from IFD0.
-        $model_tag = $ifd->getTagByName('Model');
+        $model_tag = $ifd->xxGetSubBlockByName('Tag', 'Model');
         $model = $model_tag ? $model_tag->getEntry()->getValue() : 'na';
 
         // Get maker note IFD id.

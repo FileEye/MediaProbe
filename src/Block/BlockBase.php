@@ -97,6 +97,16 @@ abstract class BlockBase extends ElementBase
         return null;
     }
 
+    public function xxGetSubBlockByName($type, $name)
+    {
+        foreach ($this->xxGetSubBlocks($type) as $sub_block) {
+            if ($sub_block->getName() === $name) {
+                return $sub_block;
+            }
+        }
+        return null;
+    }
+
     /**
      * Retrieves a sub-block.
      *

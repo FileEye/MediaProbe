@@ -18,10 +18,10 @@ class GH77Test extends ExifEyeTestCaseBase
         $tiff = $app1->getTiff();
         $ifd0 = $tiff->getIfd();
 
-        $model = $ifd0->getTagByName('Model')->getEntry()->getValue();
+        $model = $ifd0->xxGetSubBlockByName('Tag', 'Model')->getEntry()->getValue();
         $this->assertEquals($model, "Canon EOS 5D Mark III");
 
-        $copyright_entry = $ifd0->getTagByName('Copyright')->getEntry();
+        $copyright_entry = $ifd0->xxGetSubBlockByName('Tag', 'Copyright')->getEntry();
         $this->assertInstanceOf('ExifEye\core\Entry\IfdCopyright', $copyright_entry);
         $this->assertEquals(['Copyright 2016', ''], $copyright_entry->getValue());
         $this->assertEquals('Copyright 2016 (Photographer)', $copyright_entry->toString());
