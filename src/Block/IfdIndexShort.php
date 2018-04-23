@@ -76,8 +76,8 @@ class IfdIndexShort extends Ifd
                     $item_value = $d->getSRattional($offset + $i * 2);
                     break;
                 default:
-                    $item_value = $d->getShort($offset + $i * 2);
-                    $item_format = Format::SHORT;
+                    $item_value = $d->getSignedShort($offset + $i * 2);
+                    $item_format = Format::SSHORT;
                     break;
             }
             if ($class = Spec::getTagClass($this->getId(), $i + 1, $item_format)) {
