@@ -9,24 +9,38 @@ use Monolog\Formatter\LineFormatter;
  */
 class DumpLogFormatter extends LineFormatter
 {
+    const MAX_PATH = 50
+
     /**
      * {@inheritdoc}
      */
     public function format(array $record)
     {
+        // Level.
         $output = str_pad($record['level_name'], 7, ' ') . ' > ';
+
+        // Path.
         if (isset($record['context']['path'])) {
             $path = $record['context']['path'];
-            if (strlen($path) < 30) {
-                $path = str_pad($path, 30, ' ');
+            $nesting = count(explode('/', $path));
+            if (strlen($path) < static::MAX_PATH) {
+                $path = str_pad($path, static::MAX_PATH, ' ');
             }
-            if (strlen($path) > 30) {
+            if (strlen($path) > static::MAX_PATH) {
                 $path = '...' . substr($path, -27);
             }
             $output .= $path . ' > ';
         } else {
-            $output .= str_pad(' ', 30, ' ') . ' > ';
+            $nesting = 0;
+            $output .= str_repeat(' ', static::MAX_PATH) . ' > ';
         }
+
+        // Indentation.
+        $output .= str_repeat(' ', $nesting);
+
+        // Message.
+        $output .= $record['message'];
+
         $output .= "\n";
         return $output;
     }
