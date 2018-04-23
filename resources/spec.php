@@ -3097,6 +3097,16 @@ return array (
           0 => 4,
         ),
       ),
+      2 =>
+      array (
+        'name' => 2,
+        'title' => '0x0002',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'skip' => true,
+      ),
       3 =>
       array (
         'name' => 'BracketMode',
@@ -4747,6 +4757,7 @@ return array (
     7 =>
     array (
       'FileNumber' => 1,
+      2 => 2,
       'BracketMode' => 3,
       'BracketValue' => 4,
       'BracketShotNumber' => 5,
