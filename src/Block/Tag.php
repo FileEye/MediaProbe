@@ -51,7 +51,7 @@ class Tag extends BlockBase
             foreach ($expected_format as $expected_format_id) {
                 $expected_format_names[] = Format::getName($expected_format_id);
             }
-            $parent->warning("Found {format_name} data format, expected '{expected_format_names}'", [
+            $this->warning("Found {format_name} data format, expected '{expected_format_names}'", [
                 'format_name' => Format::getName($format),
                 'expected_format_names' => implode(', ', $expected_format_names),
             ]);
@@ -60,7 +60,7 @@ class Tag extends BlockBase
         // Warn if components are not as expected.
         $expected_components = Spec::getTagComponents($this->getParentElement()->getId(), $id);
         if ($expected_components !== null && $components !== null && $components !== $expected_components) {
-            $parent->warning("Found {components} data components, expected {expected_components}", [
+            $this->warning("Found {components} data components, expected {expected_components}", [
                 'components' => $components,
                 'expected_components' => $expected_components,
             ]);
