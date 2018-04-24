@@ -45,6 +45,28 @@ class Tag extends BlockBase
         }
 
         $this->setEntry(new $entry_class($entry_arguments, $this));
+
+        // Warn if format is not as expected.
+        $expected_format = Spec::getTagFormat($parent->getId(), $id);
+        if ($expected_format !== null && $format !== null && !in_array($format, $expected_format)) {
+            $expected_format_names = [];
+            foreach ($expected_format as $expected_format_id) {
+                $expected_format_names[] = Format::getName($expected_format_id);
+            }
+            $parent->warning("Found {format_name} data format, expected '{expected_format_names}'", [
+                'format_name' => Format::getName($format),
+                'expected_format_names' => implode(', ', $expected_format_names),
+            ]);
+        }
+
+        // Warn if components are not as expected.
+        $expected_components = Spec::getTagComponents($parent->getId(), $id);
+        if ($expected_components !== null $components !== null && $components !== $expected_components) {
+            $parent->warning("Found {components} data components, expected {expected_components}", [
+                'components' => $components,
+                'expected_components' => $expected_components,
+            ]);
+        }
     }
 
     /**
@@ -67,32 +89,6 @@ class Tag extends BlockBase
         $format = $data_window->getShort($offset + 2);
         $components = $data_window->getLong($offset + 4);
         $data_element = $data_window->getLong($offset + 8);
-
-        // Warn if format is not as expected.
-        $expected_format = Spec::getTagFormat($parent->getId(), $id);
-        if ($expected_format !== null and !in_array($format, $expected_format)) {
-            $expected_format_names = [];
-            foreach ($expected_format as $expected_format_id) {
-                $expected_format_names[] = Format::getName($expected_format_id);
-            }
-            $parent->warning("Wrong data format '{format_name}' for TAG '{tag_name}' in IFD '{ifd_type}', expected '{expected_format_names}'", [
-                'format_name' => Format::getName($format),
-                'tag_name' => Spec::getTagName($parent->getId(), $id),
-                'ifd_type' => Spec::getIfdType($parent->getId()),
-                'expected_format_names' => implode(', ', $expected_format_names),
-            ]);
-        }
-
-        // Warn if components are not as expected.
-        $expected_components = Spec::getTagComponents($parent->getId(), $id);
-        if ($expected_components !== null and $components !== $expected_components) {
-            $parent->warning("Unexpected number of data components: {components} for TAG '{tag_name}' in IFD '{ifd_type}', expected {expected_components}", [
-                'components' => $components,
-                'tag_name' => Spec::getTagName($parent->getId(), $id),
-                'ifd_type' => Spec::getIfdType($parent->getId()),
-                'expected_components' => $expected_components,
-            ]);
-        }
 
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
