@@ -44,10 +44,8 @@ class Tag extends BlockBase
             ]);
         }
 
-        $this->setEntry(new $entry_class($entry_arguments, $this));
-
         // Warn if format is not as expected.
-        $expected_format = Spec::getTagFormat($parent->getId(), $id);
+        $expected_format = Spec::getTagFormat($this->getParentElement()->getId(), $id);
         if ($expected_format !== null && $format !== null && !in_array($format, $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
@@ -60,13 +58,15 @@ class Tag extends BlockBase
         }
 
         // Warn if components are not as expected.
-        $expected_components = Spec::getTagComponents($parent->getId(), $id);
+        $expected_components = Spec::getTagComponents($this->getParentElement()->getId(), $id);
         if ($expected_components !== null && $components !== null && $components !== $expected_components) {
             $parent->warning("Found {components} data components, expected {expected_components}", [
                 'components' => $components,
                 'expected_components' => $expected_components,
             ]);
         }
+
+        $this->setEntry(new $entry_class($entry_arguments, $this));
     }
 
     /**
