@@ -5,6 +5,7 @@ namespace ExifEye\core\Entry\Core;
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ElementBase;
+use ExifEye\core\ElementInterface;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
@@ -62,8 +63,11 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      * @param array $data
      *            the data that this entry will be holding.
      */
-    public function __construct(array $data)
+    public function __construct(array $data, ElementInterface $parent = null)
     {
+        if ($parent) {
+            $this->setParentElement($parent);
+        }
         $this->setValue($data);
     }
 

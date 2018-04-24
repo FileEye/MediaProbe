@@ -207,16 +207,6 @@ class Ifd extends BlockBase
         }
     }
 
-    public function xxGetTagById($tag_id)
-    {
-        foreach ($this->xxGetSubBlocks('Tag') as $sub_block) {
-            if ($sub_block->getId() === $tag_id) {
-                return $sub_block;
-            }
-        }
-        return null;
-    }
-
     /**
      * Make this directory point to a new directory.
      *
