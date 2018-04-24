@@ -410,14 +410,7 @@ class Ifd extends BlockBase
                 $str .= $sub_block->__toString();
             }
         }
-        $str .= ExifEye::fmt("Dumping %d sub IFDs...\n", count($this->xxGetSubBlocks('Ifd')));
 
-        foreach ($this->xxGetSubBlocks('Ifd') as $type => $ifd) {
-            $str .= $ifd->__toString();
-        }
-        if ($this->next !== null) {
-            $str .= $this->next->__toString();
-        }
         return $str;
     }
 }
