@@ -23,7 +23,7 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct(Ifd $ifd, $id, $entry_class, $entry_arguments)
+    public function __construct(Ifd $ifd, $id, $entry_class, $entry_arguments, $format = null, $components = null)
     {
         $this->setParentElement($ifd);
 
@@ -31,22 +31,20 @@ class Tag extends BlockBase
         $this->name = Spec::getTagName($this->getParentElement()->getId(), $id);
         $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($ifd->getId()));
 
-        $this->setEntry(new $entry_class($entry_arguments, $this));
-
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasSpecification()) {
-            $this->warning("No tag info available; Fmt {format_name}, Cmp {components}, Txt '{text}'", [
-                'format_name' => Format::getName($this->getEntry()->getFormat()),
-                'components' => $this->getEntry()->getComponents(),
-                'text' => $this->getEntry()->toString(),
+            $this->warning("No tag info available; Format {format_name}, Components {components}", [
+                'format_name' => Format::getName($format),
+                'components' => $components,
             ]);
         } else {
-            $this->debug("Fmt {format_name}, Cmp {components}, Txt '{text}'", [
-                'format_name' => Format::getName($this->getEntry()->getFormat()),
-                'components' => $this->getEntry()->getComponents(),
-                'text' => $this->getEntry()->toString(),
+            $this->debug("Format {format_name}, Components {components}", [
+                'format_name' => Format::getName($format),
+                'components' => $components,
             ]);
         }
+
+        $this->setEntry(new $entry_class($entry_arguments, $this));
     }
 
     /**
@@ -113,7 +111,7 @@ class Tag extends BlockBase
         // Build and return the TAG object.
         $entry_class = Spec::getEntryClass($parent->getId(), $id, $format);
         $entry_arguments = call_user_func($entry_class . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
-        $tag = new static($parent, $id, $entry_class, $entry_arguments);
+        $tag = new static($parent, $id, $entry_class, $entry_arguments, $format, $components);
         return $tag;
     }
 
@@ -131,15 +129,4 @@ class Tag extends BlockBase
         $entry_title = Spec::getTagTitle($this->getParentElement()->getId(), $this->getId()) ?: '*** UNKNOWN ***';
         return substr(str_pad($entry_title, 30, ' '), 0, 30) . ' = ' . $this->getEntry()->toString() . "\n";
     }
-
-    /*
-     * TODO: Where do these tags belong?
-     * PelTag::FILL_ORDER,
-     * PelTag::TRANSFER_RANGE,
-     * PelTag::JPEG_PROC,
-     * PelTag::BATTERY_LEVEL,
-     * PelTag::IPTC_NAA,
-     * PelTag::INTER_COLOR_PROFILE,
-     * PelTag::CFA_REPEAT_PATTERN_DIM,
-     */
 }
