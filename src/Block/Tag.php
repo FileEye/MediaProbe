@@ -113,7 +113,7 @@ class Tag extends BlockBase
         }
 
         // Build an ExifEye Entry from the raw data.
-        $entry_class_name = Spec::getTagClass($parent->getId(), $id, $format);
+        $entry_class_name = Spec::getEntryClass($parent->getId(), $id, $format);
         $arguments = call_user_func($entry_class_name . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
         $entry = new $entry_class_name($arguments);
 

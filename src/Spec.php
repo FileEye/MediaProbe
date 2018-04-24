@@ -291,7 +291,7 @@ class Spec
      * @return string
      *            the TAG class.
      */
-    public static function getTagClass($ifd_id, $tag_id, $format = null)
+    public static function getEntryClass($ifd_id, $tag_id, $format = null)
     {
         // Return the specific tag class, if defined.
         if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['class'])) {

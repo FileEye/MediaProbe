@@ -61,12 +61,12 @@ class PelSpecTest extends ExifEyeTestCaseBase
     }
 
     /**
-     * Tests the Spec::getTagClass method.
+     * Tests the Spec::getEntryClass method.
      */
-    public function testGetTagClass()
+    public function testgetEntryClass()
     {
-        $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Spec::getTagClass(Spec::getIfdIdByType('Exif'), 0x9286));
-        $this->assertEquals('ExifEye\core\Entry\Time', Spec::getTagClass(Spec::getIfdIdByType('Exif'), 0x9003));
+        $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Spec::getEntryClass(Spec::getIfdIdByType('Exif'), 0x9286));
+        $this->assertEquals('ExifEye\core\Entry\Time', Spec::getEntryClass(Spec::getIfdIdByType('Exif'), 0x9003));
         //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {
@@ -75,7 +75,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
         } else {
             $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 0x0003 (ImageHeight) in ifd: 'CanonPictureInformation'");
         }
-        $this->assertNull(Spec::getTagClass(Spec::getIfdIdByType('CanonPictureInformation'), 0x0003));
+        $this->assertNull(Spec::getEntryClass(Spec::getIfdIdByType('CanonPictureInformation'), 0x0003));
     }
 
     /**
@@ -88,7 +88,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $ifd_id = Spec::getIfdIdByType($ifd);
         $ifd = new Ifd($ifd_id);
         $tag_id = Spec::getTagIdByName($ifd_id, $tag);
-        $entry_class_name = Spec::getTagClass($ifd_id, $tag_id);
+        $entry_class_name = Spec::getEntryClass($ifd_id, $tag_id);
         $entry = new $entry_class_name($args);
         $this->assertInstanceOf($expected_class, $entry);
         $tag = new Tag($ifd, $tag_id, $entry);
