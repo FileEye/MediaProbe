@@ -128,7 +128,7 @@ return array (
       ),
       26 =>
       array (
-        'name' => 'AFPointsUsed(20D)',
+        'name' => 'AFPointsUsed20D',
         'title' => 'AF Points Used (20D)',
       ),
     ),
@@ -251,17 +251,18 @@ return array (
       0 =>
       array (
         'name' => 'GPSVersionID',
-        'title' => 'GPSVersionID',
+        'title' => 'GPS Version',
         'components' => 4,
         'format' =>
         array (
           0 => 1,
         ),
+        'class' => 'ExifEye\\core\\Entry\\GPSVersionId',
       ),
       1 =>
       array (
         'name' => 'GPSLatitudeRef',
-        'title' => 'GPSLatitudeRef',
+        'title' => 'LatitudeRef',
         'components' => 2,
         'format' =>
         array (
@@ -271,7 +272,7 @@ return array (
       2 =>
       array (
         'name' => 'GPSLatitude',
-        'title' => 'GPSLatitude',
+        'title' => 'Latitude',
         'components' => 3,
         'format' =>
         array (
@@ -282,7 +283,7 @@ return array (
       3 =>
       array (
         'name' => 'GPSLongitudeRef',
-        'title' => 'GPSLongitudeRef',
+        'title' => 'LongitudeRef',
         'components' => 2,
         'format' =>
         array (
@@ -292,7 +293,7 @@ return array (
       4 =>
       array (
         'name' => 'GPSLongitude',
-        'title' => 'GPSLongitude',
+        'title' => 'Longitude',
         'components' => 3,
         'format' =>
         array (
@@ -303,7 +304,7 @@ return array (
       5 =>
       array (
         'name' => 'GPSAltitudeRef',
-        'title' => 'GPSAltitudeRef',
+        'title' => 'AltitudeRef',
         'components' => 1,
         'format' =>
         array (
@@ -313,7 +314,7 @@ return array (
       6 =>
       array (
         'name' => 'GPSAltitude',
-        'title' => 'GPSAltitude',
+        'title' => 'Altitude',
         'components' => 1,
         'format' =>
         array (
@@ -323,7 +324,7 @@ return array (
       7 =>
       array (
         'name' => 'GPSTimeStamp',
-        'title' => 'GPSTimeStamp',
+        'title' => 'TimeStamp',
         'components' => 3,
         'format' =>
         array (
@@ -333,7 +334,7 @@ return array (
       8 =>
       array (
         'name' => 'GPSSatellites',
-        'title' => 'GPSSatellites',
+        'title' => 'Satellites',
         'format' =>
         array (
           0 => 2,
@@ -342,7 +343,7 @@ return array (
       9 =>
       array (
         'name' => 'GPSStatus',
-        'title' => 'GPSStatus',
+        'title' => 'Status',
         'components' => 2,
         'format' =>
         array (
@@ -352,7 +353,7 @@ return array (
       10 =>
       array (
         'name' => 'GPSMeasureMode',
-        'title' => 'GPSMeasureMode',
+        'title' => 'Measure Mode',
         'components' => 2,
         'format' =>
         array (
@@ -362,7 +363,7 @@ return array (
       11 =>
       array (
         'name' => 'GPSDOP',
-        'title' => 'GPSDOP',
+        'title' => 'DOP',
         'components' => 1,
         'format' =>
         array (
@@ -372,7 +373,7 @@ return array (
       12 =>
       array (
         'name' => 'GPSSpeedRef',
-        'title' => 'GPSSpeedRef',
+        'title' => 'SpeedRef',
         'components' => 2,
         'format' =>
         array (
@@ -382,7 +383,7 @@ return array (
       13 =>
       array (
         'name' => 'GPSSpeed',
-        'title' => 'GPSSpeed',
+        'title' => 'Speed',
         'components' => 1,
         'format' =>
         array (
@@ -392,7 +393,7 @@ return array (
       14 =>
       array (
         'name' => 'GPSTrackRef',
-        'title' => 'GPSTrackRef',
+        'title' => 'TrackRef',
         'components' => 2,
         'format' =>
         array (
@@ -402,7 +403,7 @@ return array (
       15 =>
       array (
         'name' => 'GPSTrack',
-        'title' => 'GPSTrack',
+        'title' => 'Track',
         'components' => 1,
         'format' =>
         array (
@@ -412,7 +413,7 @@ return array (
       16 =>
       array (
         'name' => 'GPSImgDirectionRef',
-        'title' => 'GPSImgDirectionRef',
+        'title' => 'ImgDirectionRef',
         'components' => 2,
         'format' =>
         array (
@@ -422,7 +423,7 @@ return array (
       17 =>
       array (
         'name' => 'GPSImgDirection',
-        'title' => 'GPSImgDirection',
+        'title' => 'Image Direction',
         'components' => 1,
         'format' =>
         array (
@@ -432,7 +433,7 @@ return array (
       18 =>
       array (
         'name' => 'GPSMapDatum',
-        'title' => 'GPSMapDatum',
+        'title' => 'Map Datum',
         'format' =>
         array (
           0 => 2,
@@ -441,7 +442,7 @@ return array (
       19 =>
       array (
         'name' => 'GPSDestLatitudeRef',
-        'title' => 'GPSDestLatitudeRef',
+        'title' => 'DestLatitudeRef',
         'components' => 2,
         'format' =>
         array (
@@ -451,7 +452,7 @@ return array (
       20 =>
       array (
         'name' => 'GPSDestLatitude',
-        'title' => 'GPSDestLatitude',
+        'title' => 'DestLatitude',
         'components' => 3,
         'format' =>
         array (
@@ -461,7 +462,7 @@ return array (
       21 =>
       array (
         'name' => 'GPSDestLongitudeRef',
-        'title' => 'GPSDestLongitudeRef',
+        'title' => 'DestLongitudeRef',
         'components' => 2,
         'format' =>
         array (
@@ -471,7 +472,7 @@ return array (
       22 =>
       array (
         'name' => 'GPSDestLongitude',
-        'title' => 'GPSDestLongitude',
+        'title' => 'DestLongitude',
         'components' => 3,
         'format' =>
         array (
@@ -481,7 +482,7 @@ return array (
       23 =>
       array (
         'name' => 'GPSDestBearingRef',
-        'title' => 'GPSDestBearingRef',
+        'title' => 'DestBearingRef',
         'components' => 2,
         'format' =>
         array (
@@ -491,7 +492,7 @@ return array (
       24 =>
       array (
         'name' => 'GPSDestBearing',
-        'title' => 'GPSDestBearing',
+        'title' => 'DestBearing',
         'components' => 1,
         'format' =>
         array (
@@ -501,7 +502,7 @@ return array (
       25 =>
       array (
         'name' => 'GPSDestDistanceRef',
-        'title' => 'GPSDestDistanceRef',
+        'title' => 'DestDistanceRef',
         'components' => 2,
         'format' =>
         array (
@@ -511,7 +512,7 @@ return array (
       26 =>
       array (
         'name' => 'GPSDestDistance',
-        'title' => 'GPSDestDistance',
+        'title' => 'DestDistance',
         'components' => 1,
         'format' =>
         array (
@@ -521,7 +522,7 @@ return array (
       27 =>
       array (
         'name' => 'GPSProcessingMethod',
-        'title' => 'GPSProcessingMethod',
+        'title' => 'Processing Method',
         'format' =>
         array (
           0 => 7,
@@ -530,7 +531,7 @@ return array (
       28 =>
       array (
         'name' => 'GPSAreaInformation',
-        'title' => 'GPSAreaInformation',
+        'title' => 'Area Information',
         'format' =>
         array (
           0 => 7,
@@ -539,7 +540,7 @@ return array (
       29 =>
       array (
         'name' => 'GPSDateStamp',
-        'title' => 'GPSDateStamp',
+        'title' => 'Date Stamp',
         'components' => 11,
         'format' =>
         array (
@@ -549,7 +550,7 @@ return array (
       30 =>
       array (
         'name' => 'GPSDifferential',
-        'title' => 'GPSDifferential',
+        'title' => 'Differential',
         'components' => 1,
         'format' =>
         array (
@@ -559,7 +560,7 @@ return array (
       31 =>
       array (
         'name' => 'GPSHPositioningError',
-        'title' => 'GPS Horizontal Positioning Error',
+        'title' => 'Horizontal Positioning Error',
         'format' =>
         array (
           0 => 5,
@@ -2098,6 +2099,7 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             1 => 'Economy',
             2 => 'Normal',
             3 => 'Fine',
@@ -2110,7 +2112,7 @@ return array (
       ),
       4 =>
       array (
-        'name' => 'FlashMode',
+        'name' => 'CanonFlashMode',
         'title' => 'Flash Mode',
         'format' =>
         array (
@@ -2120,6 +2122,7 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             0 => 'Off',
             1 => 'Auto',
             2 => 'On',
@@ -2133,8 +2136,8 @@ return array (
       ),
       5 =>
       array (
-        'name' => 'DriveMode',
-        'title' => 'Drive Mode',
+        'name' => 'ContinuousDrive',
+        'title' => 'Continuous Drive Mode',
         'format' =>
         array (
           0 => 8,
@@ -2202,12 +2205,14 @@ return array (
             7 => 'CR2+JPEG',
             9 => 'MOV',
             10 => 'MP4',
+            11 => 'CRM',
+            13 => 'CR3',
           ),
         ),
       ),
       10 =>
       array (
-        'name' => 'ImageSize',
+        'name' => 'CanonImageSize',
         'title' => 'Image Size',
         'format' =>
         array (
@@ -2235,12 +2240,13 @@ return array (
             130 => 'Small Movie',
             137 => '1280x720 Movie',
             142 => '1920x1080 Movie',
+            143 => '4096x2160 Movie',
           ),
         ),
       ),
       11 =>
       array (
-        'name' => 'EasyShootingMode',
+        'name' => 'EasyMode',
         'title' => 'Easy Shooting Mode',
         'format' =>
         array (
@@ -2386,7 +2392,7 @@ return array (
       ),
       16 =>
       array (
-        'name' => 'ISOSpeed',
+        'name' => 'CameraISO',
         'title' => 'ISO Speed',
         'format' =>
         array (
@@ -2416,8 +2422,8 @@ return array (
       ),
       18 =>
       array (
-        'name' => 'FocusType',
-        'title' => 'Focus Type',
+        'name' => 'FocusRange',
+        'title' => 'Focus Range',
         'format' =>
         array (
           0 => 8,
@@ -2442,8 +2448,8 @@ return array (
       ),
       19 =>
       array (
-        'name' => 'AFPointSelected',
-        'title' => 'AF Point Selected',
+        'name' => 'AFPoint',
+        'title' => 'Auto Focus Point Selected',
         'format' =>
         array (
           0 => 8,
@@ -2465,7 +2471,7 @@ return array (
       ),
       20 =>
       array (
-        'name' => 'ExposureMode',
+        'name' => 'CanonExposureMode',
         'title' => 'Exposure Mode',
         'format' =>
         array (
@@ -2854,8 +2860,8 @@ return array (
       ),
       23 =>
       array (
-        'name' => 'LongFocalLength',
-        'title' => 'Long Focal Length',
+        'name' => 'MaxFocalLength',
+        'title' => 'Max Focal Length',
         'format' =>
         array (
           0 => 3,
@@ -2863,8 +2869,8 @@ return array (
       ),
       24 =>
       array (
-        'name' => 'ShortFocalLength',
-        'title' => 'Short Focal Length',
+        'name' => 'MinFocalLength',
+        'title' => 'Min Focal Length',
         'format' =>
         array (
           0 => 3,
@@ -2923,11 +2929,20 @@ return array (
         array (
           0 => 8,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Single',
+            1 => 'Continuous',
+            8 => 'Manual',
+          ),
+        ),
       ),
       33 =>
       array (
         'name' => 'AESetting',
-        'title' => 'AE Setting',
+        'title' => 'Auto Exposure Setting',
         'format' =>
         array (
           0 => 8,
@@ -2999,6 +3014,7 @@ return array (
       39 =>
       array (
         'name' => 'SpotMeteringMode',
+        'title' => 'Spot Metering Mode',
         'format' =>
         array (
           0 => 8,
@@ -3015,6 +3031,7 @@ return array (
       40 =>
       array (
         'name' => 'PhotoEffect',
+        'title' => 'Photo Effect',
         'format' =>
         array (
           0 => 8,
@@ -3046,9 +3063,11 @@ return array (
         array (
           'mapping' =>
           array (
+            0 => 'n/a',
             1280 => 'Full',
             1282 => 'Medium',
             1284 => 'Low',
+            32767 => 'n/a',
           ),
         ),
       ),
@@ -3080,6 +3099,7 @@ return array (
         array (
           'mapping' =>
           array (
+            0 => 'n/a',
             1 => 'sRAW1 (mRAW)',
             2 => 'sRAW2 (sRAW)',
           ),
@@ -3157,6 +3177,7 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             1 => 'Economy',
             2 => 'Normal',
             3 => 'Fine',
@@ -3179,6 +3200,7 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             0 => 'Large',
             1 => 'Medium',
             2 => 'Small',
@@ -3196,13 +3218,14 @@ return array (
             130 => 'Small Movie',
             137 => '1280x720 Movie',
             142 => '1920x1080 Movie',
+            143 => '4096x2160 Movie',
           ),
         ),
       ),
       8 =>
       array (
-        'name' => 'NoiseReduction',
-        'title' => 'Noise Reduction',
+        'name' => 'LongExposureNoiseReduction2',
+        'title' => 'Long Exposure Noise Reduction',
         'format' =>
         array (
           0 => 8,
@@ -3358,10 +3381,19 @@ return array (
     ),
     8 =>
     array (
+      1 =>
+      array (
+        'name' => 'AutoISO',
+        'title' => 'Auto ISO Speed Used',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
       2 =>
       array (
-        'name' => 'ISOSpeedUsed',
-        'title' => 'ISO Speed Used',
+        'name' => 'BaseISO',
+        'title' => 'Base ISO Speed Used',
         'format' =>
         array (
           0 => 8,
@@ -3389,6 +3421,15 @@ return array (
       array (
         'name' => 'TargetShutterSpeed',
         'title' => 'Target Shutter Speed',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
+      6 =>
+      array (
+        'name' => 'ExposureCompensation',
+        'title' => 'Exposure Compensation',
         'format' =>
         array (
           0 => 8,
@@ -3443,6 +3484,7 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             0 => 'Off',
             1 => 'Night Scene',
             2 => 'On',
@@ -3459,10 +3501,37 @@ return array (
           0 => 8,
         ),
       ),
+      10 =>
+      array (
+        'name' => 'OpticalZoomCode',
+        'title' => 'Optical Zoom Code',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
+      12 =>
+      array (
+        'name' => 'CameraTemperature',
+        'title' => 'Camera Temperature',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
+      13 =>
+      array (
+        'name' => 'FlashGuideNumber',
+        'title' => 'Flash Guide Number',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
       14 =>
       array (
-        'name' => 'AFPointUsed',
-        'title' => 'AF Point Used',
+        'name' => 'AFPointsInFocus',
+        'title' => 'Auto Focus Points In Focus',
         'format' =>
         array (
           0 => 8,
@@ -3484,8 +3553,8 @@ return array (
       ),
       15 =>
       array (
-        'name' => 'FlashBias',
-        'title' => 'Flash Bias',
+        'name' => 'FlashExposureComp',
+        'title' => 'Flash Exposure Compensation',
         'format' =>
         array (
           0 => 8,
@@ -3511,10 +3580,46 @@ return array (
           ),
         ),
       ),
+      17 =>
+      array (
+        'name' => 'AEBBracketValue',
+        'title' => 'AEB Bracket Value',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
+      18 =>
+      array (
+        'name' => 'ControlMode',
+        'title' => 'Control Mode',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'n/a',
+            1 => 'Camera Local Control',
+            3 => 'Computer Remote Control',
+          ),
+        ),
+      ),
       19 =>
       array (
-        'name' => 'SubjectDistance',
-        'title' => 'Subject Distance',
+        'name' => 'FocusDistanceUpper',
+        'title' => 'Focus Distance Upper',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      20 =>
+      array (
+        'name' => 'FocusDistanceLower',
+        'title' => 'Focus Distance Lower',
         'format' =>
         array (
           0 => 3,
@@ -3522,8 +3627,8 @@ return array (
       ),
       21 =>
       array (
-        'name' => 'Aperture',
-        'title' => 'Aperture',
+        'name' => 'FNumber',
+        'title' => 'FNumber',
         'format' =>
         array (
           0 => 8,
@@ -3531,8 +3636,8 @@ return array (
       ),
       22 =>
       array (
-        'name' => 'ShutterSpeed',
-        'title' => 'Shutter Speed',
+        'name' => 'ExposureTime',
+        'title' => 'Exposure Time',
         'format' =>
         array (
           0 => 8,
@@ -3541,7 +3646,16 @@ return array (
       23 =>
       array (
         'name' => 'MeasuredEV2',
-        'title' => 'Measured EV 2',
+        'title' => 'Measured Exposure Value',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
+      24 =>
+      array (
+        'name' => 'BulbDuration',
+        'title' => 'Bulb Duration',
         'format' =>
         array (
           0 => 8,
@@ -3559,6 +3673,7 @@ return array (
         array (
           'mapping' =>
           array (
+            0 => 'n/a',
             248 => 'EOS High-end',
             250 => 'Compact',
             252 => 'EOS Mid-range',
@@ -3578,6 +3693,7 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             0 => 'None',
             1 => 'Rotate 90 CW',
             2 => 'Rotate 180',
@@ -3597,9 +3713,28 @@ return array (
         array (
           'mapping' =>
           array (
+            -1 => 'n/a',
             0 => 'Off',
             1 => 'On',
           ),
+        ),
+      ),
+      29 =>
+      array (
+        'name' => 'SelfTimer2',
+        'title' => 'Self Timer',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+      ),
+      33 =>
+      array (
+        'name' => 'FlashOutput',
+        'title' => 'Flash Output',
+        'format' =>
+        array (
+          0 => 8,
         ),
       ),
     ),
@@ -4555,7 +4690,7 @@ return array (
       'ImageWidthAsShot' => 4,
       'ImageHeightAsShot' => 5,
       'AFPointsUsed' => 22,
-      'AFPointsUsed(20D)' => 26,
+      'AFPointsUsed20D' => 26,
     ),
     1 =>
     array (
@@ -4719,24 +4854,24 @@ return array (
       'MacroMode' => 1,
       'SelfTimer' => 2,
       'Quality' => 3,
-      'FlashMode' => 4,
-      'DriveMode' => 5,
+      'CanonFlashMode' => 4,
+      'ContinuousDrive' => 5,
       'FocusMode' => 7,
       'RecordMode' => 9,
-      'ImageSize' => 10,
-      'EasyShootingMode' => 11,
+      'CanonImageSize' => 10,
+      'EasyMode' => 11,
       'DigitalZoom' => 12,
       'Contrast' => 13,
       'Saturation' => 14,
       'Sharpness' => 15,
-      'ISOSpeed' => 16,
+      'CameraISO' => 16,
       'MeteringMode' => 17,
-      'FocusType' => 18,
-      'AFPointSelected' => 19,
-      'ExposureMode' => 20,
+      'FocusRange' => 18,
+      'AFPoint' => 19,
+      'CanonExposureMode' => 20,
       'LensType' => 22,
-      'LongFocalLength' => 23,
-      'ShortFocalLength' => 24,
+      'MaxFocalLength' => 23,
+      'MinFocalLength' => 24,
       'FocalUnits' => 25,
       'MaxAperture' => 26,
       'MinAperture' => 27,
@@ -4763,7 +4898,7 @@ return array (
       'BracketShotNumber' => 5,
       'RawJpgQuality' => 6,
       'RawJpgSize' => 7,
-      'NoiseReduction' => 8,
+      'LongExposureNoiseReduction2' => 8,
       'WBBracketMode' => 9,
       'WBBracketValueAB' => 12,
       'WBBracketValueGM' => 13,
@@ -4777,23 +4912,34 @@ return array (
     ),
     8 =>
     array (
-      'ISOSpeedUsed' => 2,
+      'AutoISO' => 1,
+      'BaseISO' => 2,
       'MeasuredEV' => 3,
       'TargetAperture' => 4,
       'TargetShutterSpeed' => 5,
+      'ExposureCompensation' => 6,
       'WhiteBalanceSetting' => 7,
       'SlowShutter' => 8,
       'SequenceNumber' => 9,
-      'AFPointUsed' => 14,
-      'FlashBias' => 15,
+      'OpticalZoomCode' => 10,
+      'CameraTemperature' => 12,
+      'FlashGuideNumber' => 13,
+      'AFPointsInFocus' => 14,
+      'FlashExposureComp' => 15,
       'AutoExposureBracketing' => 16,
-      'SubjectDistance' => 19,
-      'Aperture' => 21,
-      'ShutterSpeed' => 22,
+      'AEBBracketValue' => 17,
+      'ControlMode' => 18,
+      'FocusDistanceUpper' => 19,
+      'FocusDistanceLower' => 20,
+      'FNumber' => 21,
+      'ExposureTime' => 22,
       'MeasuredEV2' => 23,
+      'BulbDuration' => 24,
       'CameraType' => 26,
       'AutoRotate' => 27,
       'NDFilter' => 28,
+      'SelfTimer2' => 29,
+      'FlashOutput' => 33,
     ),
     9 =>
     array (
