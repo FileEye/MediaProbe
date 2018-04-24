@@ -83,9 +83,8 @@ class IfdIndexShort extends Ifd
                     $item_format = Format::SSHORT;
                     break;
             }
-            if ($class = Spec::getEntryClass($this->getId(), $i + 1, $item_format)) {
-                $entry = new $class([$item_value]);
-                $this->xxAppendSubBlock(new Tag($this, $i + 1, $entry));
+            if ($entry_class = Spec::getEntryClass($this->getId(), $i + 1, $item_format)) {
+                $this->xxAppendSubBlock(new Tag($this, $i + 1, $entry_class, [$item_value]));
             }
         }
         $this->debug(".....END Loading");

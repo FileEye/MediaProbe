@@ -23,7 +23,7 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct(Ifd $ifd, $id, EntryInterface $entry)
+    public function __construct(Ifd $ifd, $id, $entry_class, $entry_arguments)
     {
         $this->setParentElement($ifd);
 
@@ -31,9 +31,7 @@ class Tag extends BlockBase
         $this->name = Spec::getTagName($this->getParentElement()->getId(), $id);
         $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($ifd->getId()));
 
-        $entry->setParentElement($this);
-        $this->setEntry($entry);
-
+        $this->setEntry(new $entry_class($entry_arguments, $this));
 
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasSpecification()) {
@@ -112,13 +110,10 @@ class Tag extends BlockBase
             $data_offset = $offset + 8;
         }
 
-        // Build an ExifEye Entry from the raw data.
-        $entry_class_name = Spec::getEntryClass($parent->getId(), $id, $format);
-        $arguments = call_user_func($entry_class_name . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
-        $entry = new $entry_class_name($arguments);
-
         // Build and return the TAG object.
-        $tag = new static($parent, $id, $entry);
+        $entry_class = Spec::getEntryClass($parent->getId(), $id, $format);
+        $entry_arguments = call_user_func($entry_class . '::getInstanceentry_argumentsFromTagData', $format, $components, $data_window, $data_offset);
+        $tag = new static($parent, $id, $entry_class, $entry_arguments);
         return $tag;
     }
 
