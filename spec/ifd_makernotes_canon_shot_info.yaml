@@ -1,9 +1,13 @@
 type: 'CanonShotInformation'
 class: ExifEye\core\Block\IfdIndexShort
 tags:
+    0x0001:
+        name: AutoISO
+        title: 'Auto ISO Speed Used'
+        format: SignedShort
     0x0002:
-        name: ISOSpeedUsed
-        title: 'ISO Speed Used'
+        name: BaseISO
+        title: 'Base ISO Speed Used'
         format: SignedShort
     0x0003:
         name: MeasuredEV
@@ -16,6 +20,10 @@ tags:
     0x0005:
         name: TargetShutterSpeed
         title: 'Target Shutter Speed'
+        format: SignedShort
+    0x0006:
+        name: ExposureCompensation
+        title: 'Exposure Compensation'
         format: SignedShort
     0x0007:
         name: WhiteBalanceSetting
@@ -51,6 +59,7 @@ tags:
         format: SignedShort
         text:
             mapping:
+                -1: 'n/a'
                 0: 'Off'
                 1: 'Night Scene'
                 2: 'On'
@@ -59,9 +68,21 @@ tags:
         name: SequenceNumber
         title: 'Sequence Number'
         format: SignedShort
+    0x000A:
+        name: OpticalZoomCode
+        title: 'Optical Zoom Code'
+        format: SignedShort
+    0x000C:
+        name: CameraTemperature
+        title: 'Camera Temperature'
+        format: SignedShort
+    0x000D:
+        name: FlashGuideNumber
+        title: 'Flash Guide Number'
+        format: SignedShort
     0x000E:
-        name: AFPointUsed
-        title: 'AF Point Used'
+        name: AFPointsInFocus
+        title: 'Auto Focus Points In Focus'
         format: SignedShort
         text:
             mapping:
@@ -74,8 +95,8 @@ tags:
                 0x3006: 'Left+Center'
                 0x3007: 'All'
     0x000F:
-        name: FlashBias
-        title: 'Flash Bias'
+        name: FlashExposureComp
+        title: 'Flash Exposure Compensation'
         format: SignedShort
     0x0010:
         name: AutoExposureBracketing
@@ -88,21 +109,42 @@ tags:
                 1: 'On (shot 1)'
                 2: 'On (shot 2)'
                 3: 'On (shot 3)'
+    0x0011:
+        name: AEBBracketValue
+        title: 'AEB Bracket Value'
+        format: SignedShort
+    0x0012:
+        name: ControlMode
+        title: 'Control Mode'
+        format: SignedShort
+        text:
+            mapping:
+                0: 'n/a'
+                1: 'Camera Local Control'
+                3: 'Computer Remote Control'
     0x0013:
-        name: SubjectDistance
-        title: 'Subject Distance'
+        name: FocusDistanceUpper
+        title: 'Focus Distance Upper'
+        format: Short
+    0x0014:
+        name: FocusDistanceLower
+        title: 'Focus Distance Lower'
         format: Short
     0x0015:
-        name: Aperture
-        title: Aperture
+        name: FNumber
+        title: FNumber
         format: SignedShort
     0x0016:
-        name: ShutterSpeed
-        title: 'Shutter Speed'
+        name: ExposureTime
+        title: 'Exposure Time'
         format: SignedShort
     0x0017:
         name: MeasuredEV2
-        title: 'Measured EV 2'
+        title: 'Measured Exposure Value'
+        format: SignedShort
+    0x0018:
+        name: BulbDuration
+        title: 'Bulb Duration'
         format: SignedShort
     0x001A:
         name: CameraType
@@ -110,6 +152,7 @@ tags:
         format: SignedShort
         text:
             mapping:
+                0: 'n/a'
                 248: 'EOS High-end'
                 250: 'Compact'
                 252: 'EOS Mid-range'
@@ -120,6 +163,7 @@ tags:
         format: SignedShort
         text:
             mapping:
+                -1: 'n/a'
                 0: 'None'
                 1: 'Rotate 90 CW'
                 2: 'Rotate 180'
@@ -130,5 +174,14 @@ tags:
         format: SignedShort
         text:
             mapping:
+                -1: 'n/a'
                 0: 'Off'
                 1: 'On'
+    0x001D:
+        name: SelfTimer2
+        title: 'Self Timer'
+        format: SignedShort
+    0x0021:
+        name: FlashOutput
+        title: 'Flash Output'
+        format: SignedShort

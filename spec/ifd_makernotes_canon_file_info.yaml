@@ -35,6 +35,7 @@ tags:
         format: SignedShort
         text:
             mapping:
+                -1: 'n/a'
                 1: 'Economy'
                 2: 'Normal'
                 3: 'Fine'
@@ -48,6 +49,7 @@ tags:
         format: SignedShort
         text:
             mapping:
+                -1: 'n/a'
                 0: 'Large'
                 1: 'Medium'
                 2: 'Small'
@@ -65,9 +67,10 @@ tags:
                 130: 'Small Movie'
                 137: '1280x720 Movie'
                 142: '1920x1080 Movie'
+                143: '4096x2160 Movie'
     0x0008:
-        name: NoiseReduction
-        title: 'Noise Reduction'
+        name: LongExposureNoiseReduction2
+        title: 'Long Exposure Noise Reduction'
         format: SignedShort
         text:
             mapping:

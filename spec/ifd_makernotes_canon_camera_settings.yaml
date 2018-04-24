@@ -19,6 +19,7 @@ tags:
         format: SignedShort
         text:
             mapping:
+                -1: 'n/a'
                 1: 'Economy'
                 2: 'Normal'
                 3: 'Fine'
@@ -27,11 +28,12 @@ tags:
                 130: 'Normal Movie'
                 131: 'Movie (2)'
     0x0004:
-        name: FlashMode
+        name: CanonFlashMode
         title: 'Flash Mode'
         format: SignedShort
         text:
             mapping:
+                -1: 'n/a'
                 0: 'Off'
                 1: 'Auto'
                 2: 'On'
@@ -41,8 +43,8 @@ tags:
                 6: 'Red-eye reduction (On)'
                 16: 'External flash'
     0x0005:
-        name: DriveMode
-        title: 'Drive Mode'
+        name: ContinuousDrive
+        title: 'Continuous Drive Mode'
         format: SignedShort
         text:
             mapping:
@@ -87,8 +89,10 @@ tags:
                 7: 'CR2+JPEG'
                 9: 'MOV'
                 10: 'MP4'
+                11: 'CRM'
+                13: 'CR3'
     0x000A:
-        name: ImageSize
+        name: CanonImageSize
         title: 'Image Size'
         format: SignedShort
         text:
@@ -111,8 +115,9 @@ tags:
                 130: 'Small Movie'
                 137: '1280x720 Movie'
                 142: '1920x1080 Movie'
+                143: '4096x2160 Movie'
     0x000B:
-        name: EasyShootingMode
+        name: EasyMode
         title: 'Easy Shooting Mode'
         format: SignedShort
         text:
@@ -217,7 +222,7 @@ tags:
         title: Sharpness
         format: SignedShort
     0x0010:
-        name: ISOSpeed
+        name: CameraISO
         title: 'ISO Speed'
         format: SignedShort
     0x0011:
@@ -233,8 +238,8 @@ tags:
                 4: 'Partial'
                 5: 'Center-weighted average'
     0x0012:
-        name: FocusType
-        title: 'Focus Type'
+        name: FocusRange
+        title: 'Focus Range'
         format: SignedShort
         text:
             mapping:
@@ -250,8 +255,8 @@ tags:
                 9: 'Super Macro'
                 10: 'Infinity'
     0x0013:
-        name: AFPointSelected
-        title: 'AF Point Selected'
+        name: AFPoint
+        title: 'Auto Focus Point Selected'
         format: SignedShort
         text:
             mapping:
@@ -264,7 +269,7 @@ tags:
                 0x4001: 'Auto AF point selection'
                 0x4006: 'Face Detect'
     0x0014:
-        name: ExposureMode
+        name: CanonExposureMode
         title: 'Exposure Mode'
         format: SignedShort
         text:
@@ -635,12 +640,12 @@ tags:
                 61494: 'Canon CN-E 85mm T1.3 L F'
                 65535: 'n/a'
     0x0017:
-        name: LongFocalLength
-        title: 'Long Focal Length'
+        name: MaxFocalLength
+        title: 'Max Focal Length'
         format: Short
     0x0018:
-        name: ShortFocalLength
-        title: 'Short Focal Length'
+        name: MinFocalLength
+        title: 'Min Focal Length'
         format: Short
     0x0019:
         name: FocalUnits
@@ -659,6 +664,7 @@ tags:
         title: 'Flash Activity'
         format: SignedShort
     0x001D:
+        # decode appropriately per bit
         name: FlashDetails
         title: 'Flash Details'
         format: SignedShort
@@ -666,9 +672,14 @@ tags:
         name: FocusContinuous
         title: 'Focus Continuous'
         format: SignedShort
+        text:
+            mapping:
+                0: 'Single'
+                1: 'Continuous'
+                8: 'Manual'
     0x0021:
         name: AESetting
-        title: 'AE Setting'
+        title: 'Auto Exposure Setting'
         format: SignedShort
         text:
             mapping:
@@ -707,6 +718,7 @@ tags:
         format: SignedShort
     0x0027:
         name: SpotMeteringMode
+        title: 'Spot Metering Mode'
         format: SignedShort
         text:
             mapping:
@@ -714,6 +726,7 @@ tags:
                 1: 'AF Point'
     0x0028:
         name: PhotoEffect
+        title: 'Photo Effect'
         format: SignedShort
         text:
             mapping:
@@ -731,9 +744,11 @@ tags:
         format: SignedShort
         text:
             mapping:
+                0: 'n/a'
                 0x500: 'Full'
                 0x502: 'Medium'
                 0x504: 'Low'
+                0x7fff: 'n/a'
     0x002A:
         name: ColorTone
         title: 'Color Tone'
@@ -747,5 +762,6 @@ tags:
         format: SignedShort
         text:
             mapping:
+                0: 'n/a'
                 1: 'sRAW1 (mRAW)'
                 2: 'sRAW2 (sRAW)'

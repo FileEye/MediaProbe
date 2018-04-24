@@ -3,158 +3,159 @@ class: ExifEye\core\Block\Ifd
 tags:
     0x0000:
         name: GPSVersionID
-        title: GPSVersionID
+        title: 'GPS Version'
         components: 4
         format: Byte
+        class: ExifEye\core\Entry\GPSVersion
     0x0001:
         name: GPSLatitudeRef
-        title: GPSLatitudeRef
+        title: LatitudeRef
         components: 2
         format: Ascii
     0x0002:
         name: GPSLatitude
-        title: GPSLatitude
+        title: Latitude
         components: 3
         format: Rational
         class: ExifEye\core\Entry\GPSDegrees
     0x0003:
         name: GPSLongitudeRef
-        title: GPSLongitudeRef
+        title: LongitudeRef
         components: 2
         format: Ascii
     0x0004:
         name: GPSLongitude
-        title: GPSLongitude
+        title: Longitude
         components: 3
         format: Rational
         class: ExifEye\core\Entry\GPSDegrees
     0x0005:
         name: GPSAltitudeRef
-        title: GPSAltitudeRef
+        title: AltitudeRef
         components: 1
         format: Byte
     0x0006:
         name: GPSAltitude
-        title: GPSAltitude
+        title: Altitude
         components: 1
         format: Rational
     0x0007:
         name: GPSTimeStamp
-        title: GPSTimeStamp
+        title: TimeStamp
         components: 3
         format: Rational
     0x0008:
         name: GPSSatellites
-        title: GPSSatellites
+        title: Satellites
         format: Ascii
     0x0009:
         name: GPSStatus
-        title: GPSStatus
+        title: Status
         components: 2
         format: Ascii
     0x000A:
         name: GPSMeasureMode
-        title: GPSMeasureMode
+        title: 'Measure Mode'
         components: 2
         format: Ascii
     0x000B:
         name: GPSDOP
-        title: GPSDOP
+        title: DOP
         components: 1
         format: Rational
     0x000C:
         name: GPSSpeedRef
-        title: GPSSpeedRef
+        title: SpeedRef
         components: 2
         format: Ascii
     0x000D:
         name: GPSSpeed
-        title: GPSSpeed
+        title: Speed
         components: 1
         format: Rational
     0x000E:
         name: GPSTrackRef
-        title: GPSTrackRef
+        title: TrackRef
         components: 2
         format: Ascii
     0x000F:
         name: GPSTrack
-        title: GPSTrack
+        title: Track
         components: 1
         format: Rational
     0x0010:
         name: GPSImgDirectionRef
-        title: GPSImgDirectionRef
+        title: ImgDirectionRef
         components: 2
         format: Ascii
     0x0011:
         name: GPSImgDirection
-        title: GPSImgDirection
+        title: 'Image Direction'
         components: 1
         format: Rational
     0x0012:
         name: GPSMapDatum
-        title: GPSMapDatum
+        title: 'Map Datum'
         format: Ascii
     0x0013:
         name: GPSDestLatitudeRef
-        title: GPSDestLatitudeRef
+        title: DestLatitudeRef
         components: 2
         format: Ascii
     0x0014:
         name: GPSDestLatitude
-        title: GPSDestLatitude
+        title: DestLatitude
         components: 3
         format: Rational
     0x0015:
         name: GPSDestLongitudeRef
-        title: GPSDestLongitudeRef
+        title: DestLongitudeRef
         components: 2
         format: Ascii
     0x0016:
         name: GPSDestLongitude
-        title: GPSDestLongitude
+        title: DestLongitude
         components: 3
         format: Rational
     0x0017:
         name: GPSDestBearingRef
-        title: GPSDestBearingRef
+        title: DestBearingRef
         components: 2
         format: Ascii
     0x0018:
         name: GPSDestBearing
-        title: GPSDestBearing
+        title: DestBearing
         components: 1
         format: Rational
     0x0019:
         name: GPSDestDistanceRef
-        title: GPSDestDistanceRef
+        title: DestDistanceRef
         components: 2
         format: Ascii
     0x001A:
         name: GPSDestDistance
-        title: GPSDestDistance
+        title: DestDistance
         components: 1
         format: Rational
     0x001B:
         name: GPSProcessingMethod
-        title: GPSProcessingMethod
+        title: 'Processing Method'
         format: Undefined
     0x001C:
         name: GPSAreaInformation
-        title: GPSAreaInformation
+        title: 'Area Information'
         format: Undefined
     0x001D:
         name: GPSDateStamp
-        title: GPSDateStamp
+        title: 'Date Stamp'
         components: 11
         format: Ascii
     0x001E:
         name: GPSDifferential
-        title: GPSDifferential
+        title: Differential
         components: 1
         format: Short
     0x001F:
         name: GPSHPositioningError
-        title: 'GPS Horizontal Positioning Error'
+        title: 'Horizontal Positioning Error'
         format: Rational
