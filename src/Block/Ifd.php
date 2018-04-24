@@ -403,9 +403,18 @@ class Ifd extends BlockBase
      */
     public function __toString()
     {
-        $str = ExifEye::fmt("Dumping IFD '%s' ...\n", $this->getName());
+        $str = ExifEye::fmt(">>>> %s\n", $this->getName());
 
+        // Dump all tags first.
+        foreach ($this->xxGetSubBlocks('Tag') as $sub_block) {
+            $str .= $sub_block->__toString();
+        }
+
+        // Then dump the rest sub-blocks.
         foreach ($this->xxGetSubBlocks() as $type => $sub_blocks) {
+            if ($type === 'Tag') {
+                continue;
+            }
             foreach ($sub_blocks as $sub_block) {
                 $str .= $sub_block->__toString();
             }

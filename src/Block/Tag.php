@@ -130,6 +130,9 @@ class Tag extends BlockBase
      */
     public function __toString()
     {
+        if (!$this->getName()) {
+            return '';
+        }
         $entry_title = Spec::getTagTitle($this->getParentElement()->getId(), $this->getId()) ?: '*** UNKNOWN ***';
         return substr(str_pad($entry_title, 30, ' '), 0, 30) . ' = ' . $this->getEntry()->toString() . "\n";
     }
