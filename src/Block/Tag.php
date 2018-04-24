@@ -51,7 +51,7 @@ class Tag extends BlockBase
             foreach ($expected_format as $expected_format_id) {
                 $expected_format_names[] = Format::getName($expected_format_id);
             }
-            $this->warning("Found {format_name} data format, expected '{expected_format_names}'", [
+            $this->warning("Found {format_name} data format, expected {expected_format_names}", [
                 'format_name' => Format::getName($format),
                 'expected_format_names' => implode(', ', $expected_format_names),
             ]);
@@ -66,7 +66,11 @@ class Tag extends BlockBase
             ]);
         }
 
+        // Set the Tag's entry.
         $this->setEntry(new $entry_class($entry_arguments, $this));
+        $this->debug("Text: {text}", [
+            'text' => $this->getEntry()->toString(),
+        ]);
     }
 
     /**

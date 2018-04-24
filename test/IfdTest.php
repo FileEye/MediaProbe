@@ -16,22 +16,20 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $this->assertCount(0, $ifd->xxGetSubBlocks('Tag'));
 
-        $desc = new Ascii(['Hello?'], $ifd);
-        $tag = new Tag($ifd, 0x010E, 'ExifEye\core\Entry\Core\Ascii', ['Hello?']);
-        $ifd->xxAddSubBlock($tag);
+        $desc = new Ascii(['Hello?']);
+        $ifd->xxAddSubBlock(new Tag($ifd, 0x010E, 'ExifEye\core\Entry\Core\Ascii', ['Hello?']));
 
-        $date = new Time([12345678], $ifd);
-        $tag_1 = new Tag($ifd, 0x0132, 'ExifEye\core\Entry\Time', [12345678]);
-        $ifd->xxAddSubBlock($tag_1);
+        $date = new Time([12345678]);
+        $ifd->xxAddSubBlock(new Tag($ifd, 0x0132, 'ExifEye\core\Entry\Time', [12345678]));
 
         $this->assertCount(2, $ifd->xxGetSubBlocks('Tag'));
 
-        $entries = [];
+        $tags = [];
         foreach ($ifd->xxGetSubBlocks('Tag') as $tag) {
-            $entries[$tag->getId()] = $tag->getEntry();
+            $tags[$tag->getId()] = $tag->getEntry();
         }
 
-        $this->assertSame($entries[0x010E], $desc);
-        $this->assertSame($entries[0x0132], $date);
+        $this->assertSame($tags[0x010E]->getValue(), $desc->getValue());
+        $this->assertSame($tags[0x0132]->getValue(), $date->getValue());
     }
 }
