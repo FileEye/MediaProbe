@@ -112,7 +112,7 @@ class Tag extends BlockBase
 
         // Build and return the TAG object.
         $entry_class = Spec::getEntryClass($parent->getId(), $id, $format);
-        $entry_arguments = call_user_func($entry_class . '::getInstanceentry_argumentsFromTagData', $format, $components, $data_window, $data_offset);
+        $entry_arguments = call_user_func($entry_class . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
         $tag = new static($parent, $id, $entry_class, $entry_arguments);
         return $tag;
     }
