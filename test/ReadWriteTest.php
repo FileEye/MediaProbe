@@ -178,7 +178,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
             ],
             'PEL Ascii Read/Write Tests' => [
                 [
-                    [0xF601, 'ExifEye\core\Entry\Core\Ascii', [], []],
+                    [0xF601, 'ExifEye\core\Entry\Core\Ascii', [], ''],
                     [0xF602, 'ExifEye\core\Entry\Core\Ascii', [''], ''],
                     [0xF603, 'ExifEye\core\Entry\Core\Ascii', ['Hello World!'], 'Hello World!'],
                     [0xF604, 'ExifEye\core\Entry\Core\Ascii', ["\x00\x01\x02...\xFD\xFE\xFF"], "\x00\x01\x02...\xFD\xFE\xFF"],  // xx for some reason this generates data window overflow
