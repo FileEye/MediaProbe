@@ -80,9 +80,9 @@ class ConvertTest extends ExifEyeTestCaseBase
         $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 7, $o), 1737075661);
         $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 8, $o), -1985229329);
         $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 9, $o), -1412567041);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 10, $o), 0xCD << 24 | 0xEF << 16 | 0xFF << 8 | 0xFF);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 11, $o), 0xEF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 12, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 10, $o), -839909377);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 11, $o), -268435457);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 12, $o), -1);
     }
 
     public function testShortLittle()
