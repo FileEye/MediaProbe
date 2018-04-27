@@ -80,7 +80,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
             $ifdEntry = $ifdTag->getEntry();
             if ($ifdEntry->getFormat() == Format::ASCII) {
                 $ifdValue = $ifdTag->getEntry()->getValue();
-                $entryValue = $entry[1]->getValue();
+                $entryValue = $entry[3];
                 // cut off after the first nul byte
                 // since $ifdValue comes from parsed ifd,
                 // it is already cut off
@@ -110,7 +110,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF005, 'ExifEye\core\Entry\Core\Byte', [254], 254],
                     [0xF006, 'ExifEye\core\Entry\Core\Byte', [255], 255],
                     [0xF007, 'ExifEye\core\Entry\Core\Byte', [0, 1, 2, 253, 254, 255], [0, 1, 2, 253, 254, 255]],
-                    [0xF008, 'ExifEye\core\Entry\Core\Byte', [], null],
+                    [0xF008, 'ExifEye\core\Entry\Core\Byte', [], []],
                 ],
             ],
             'PEL SignedByte Read/Write Tests' => [
@@ -123,7 +123,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF106, 'ExifEye\core\Entry\Core\SignedByte', [126], 126],
                     [0xF107, 'ExifEye\core\Entry\Core\SignedByte', [127], 127],
                     [0xF108, 'ExifEye\core\Entry\Core\SignedByte', [-128, -1, 0, 1, 127], [-128, -1, 0, 1, 127]],
-                    [0xF109, 'ExifEye\core\Entry\Core\SignedByte', [], null],
+                    [0xF109, 'ExifEye\core\Entry\Core\SignedByte', [], []],
                 ],
             ],
             'PEL Short Read/Write Tests' => [
@@ -135,7 +135,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF205, 'ExifEye\core\Entry\Core\Short', [65534], 65534],
                     [0xF206, 'ExifEye\core\Entry\Core\Short', [65535], 65535],
                     [0xF207, 'ExifEye\core\Entry\Core\Short', [0, 1, 65534, 65535], [0, 1, 65534, 65535]],
-                    [0xF208, 'ExifEye\core\Entry\Core\Short', [], null],
+                    [0xF208, 'ExifEye\core\Entry\Core\Short', [], []],
                 ],
             ],
             'PEL SignedShort Read/Write Tests' => [
@@ -148,7 +148,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF306, 'ExifEye\core\Entry\Core\SignedShort', [32766], 32766],
                     [0xF307, 'ExifEye\core\Entry\Core\SignedShort', [32767], 32767],
                     [0xF308, 'ExifEye\core\Entry\Core\SignedShort', [- 32768, - 1, 0, 1, 32767], [- 32768, - 1, 0, 1, 32767]],
-                    [0xF309, 'ExifEye\core\Entry\Core\SignedShort', [], null],
+                    [0xF309, 'ExifEye\core\Entry\Core\SignedShort', [], []],
                 ],
             ],
             'PEL Long Read/Write Tests' => [
@@ -160,7 +160,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF405, 'ExifEye\core\Entry\Core\Long', [4294967294], 4294967294],
                     [0xF406, 'ExifEye\core\Entry\Core\Long', [4294967295], 4294967295],
                     [0xF407, 'ExifEye\core\Entry\Core\Long', [0, 1, 4294967295], [0, 1, 4294967295]],
-                    [0xF408, 'ExifEye\core\Entry\Core\Long', [], null],
+                    [0xF408, 'ExifEye\core\Entry\Core\Long', [], []],
                 ],
             ],
             'PEL SLong Read/Write Tests' => [
@@ -173,12 +173,12 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF506, 'ExifEye\core\Entry\Core\SignedLong', [2147483646], 2147483646],
                     [0xF507, 'ExifEye\core\Entry\Core\SignedLong', [2147483647], 2147483647],
                     [0xF508, 'ExifEye\core\Entry\Core\SignedLong', [-2147483648, 0, 2147483647], [-2147483648, 0, 2147483647]],
-                    [0xF509, 'ExifEye\core\Entry\Core\SignedLong', [], null],
+                    [0xF509, 'ExifEye\core\Entry\Core\SignedLong', [], []],
                 ],
             ],
             'PEL Ascii Read/Write Tests' => [
                 [
-                    [0xF601, 'ExifEye\core\Entry\Core\Ascii', [], null],
+                    [0xF601, 'ExifEye\core\Entry\Core\Ascii', [], []],
                     [0xF602, 'ExifEye\core\Entry\Core\Ascii', [''], ''],
                     [0xF603, 'ExifEye\core\Entry\Core\Ascii', ['Hello World!'], 'Hello World!'],
                     [0xF604, 'ExifEye\core\Entry\Core\Ascii', ["\x00\x01\x02...\xFD\xFE\xFF"], "\x00\x01\x02...\xFD\xFE\xFF"],  // xx for some reason this generates data window overflow

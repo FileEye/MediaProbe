@@ -50,9 +50,9 @@ class ConvertTest extends ExifEyeTestCaseBase
     public function testSignedLongLittle()
     {
         // TODO: Does not work on 64bit systems!
-        $this->markTestIncomplete(
+/*        $this->markTestIncomplete(
             'Does not work on 64bit systems!'
-        );
+        );*/
         $o = ConvertBytes::LITTLE_ENDIAN;
 
         /*
@@ -79,10 +79,10 @@ class ConvertTest extends ExifEyeTestCaseBase
     public function testSignedLongBig()
     {
         // TODO: Does not work on 64bit systems
-        $this->markTestIncomplete(
+/*        $this->markTestIncomplete(
             'Does not work on 64bit systems!'
         );
-
+*/
         $o = ConvertBytes::BIG_ENDIAN;
 
         $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 0, $o), 0x00 << 24 | 0x00 << 16 | 0x00 << 8 | 0x00);
