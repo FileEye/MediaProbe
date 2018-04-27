@@ -57,13 +57,13 @@ class ConvertTest extends ExifEyeTestCaseBase
         $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 3, $o), 1159921920);
         $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 4, $o), 1732584193);
         $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 5, $o), -1989720797);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 6, $o), 0xAB << 24 | 0x89 << 16 | 0x67 << 8 | 0x45);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 7, $o), 0xCD << 24 | 0xAB << 16 | 0x89 << 8 | 0x67);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 8, $o), 0xEF << 24 | 0xCD << 16 | 0xAB << 8 | 0x89);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 9, $o), 0xFF << 24 | 0xEF << 16 | 0xCD << 8 | 0xAB);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 10, $o), 0xFF << 24 | 0xFF << 16 | 0xEF << 8 | 0xCD);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 11, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xEF);
-        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 12, $o), 0xFF << 24 | 0xFF << 16 | 0xFF << 8 | 0xFF);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 6, $o), -1417058491);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 7, $o), -844396185);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 8, $o), -271733879);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 9, $o), -1061461);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 10, $o), -4147);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 11, $o), -17);
+        $this->assertEquals(ConvertBytes::toSignedLong($this->bytes, 12, $o), -1);
     }
 
     public function testSignedLongBig()
