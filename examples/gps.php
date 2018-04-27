@@ -157,7 +157,7 @@ function addGpsInfo($input, $output, $description, $comment, $model, $longitude,
      * data.
      */
     $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'));
-    $tiff->setIfd($ifd0);
+    $tiff->xxAddSubBlock($ifd0);
 
     /*
      * Create a sub-IFD for holding GPS information. GPS data must be

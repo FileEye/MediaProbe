@@ -37,7 +37,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $ifd0 = $tiff->getIfd();
             if ($ifd0 === null) {
                 $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'));
-                $tiff->setIfd($ifd0);
+                $tiff->xxAddSubBlock($ifd0);
             }
 
             $software_name = 'Example V2';

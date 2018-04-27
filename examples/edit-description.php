@@ -206,7 +206,7 @@ if ($ifd0 == null) {
      */
     println('No IFD found, adding new.');
     $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'));
-    $tiff->setIfd($ifd0);
+    $tiff->xxAddSubBlock($ifd0);
 }
 
 /*

@@ -35,9 +35,8 @@ use ExifEye\core\Spec;
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
  */
-class Tiff
+class Tiff extends BlockBase
 {
-
     /**
      * TIFF header.
      *
@@ -46,13 +45,19 @@ class Tiff
     const TIFF_HEADER = 0x002A;
 
     /**
-     * The first Image File Directory, if any.
-     *
-     * If set, then the type of the IFD must be {@link Ifd::IFD0}.
-     *
-     * @var Ifd
+     * {@inheritdoc}
      */
-    private $ifd = null;
+    protected $type = 'Tiff';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $id = 0;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $name = 'Tiff';
 
     /**
      * Construct a new object for holding TIFF data.
@@ -66,19 +71,23 @@ class Tiff
      *
      * @param boolean|string|DataWindow $data;
      */
-    public function __construct($data = false)
+    public function __construct($data = false, $parent = null)
     {
         if ($data === false) {
             return;
         }
         if (is_string($data)) {
-            ExifEye::logger()->debug('Initializing Tiff object from {data}', ['data' => $data]);
+            $this->debug('Initializing Tiff object from {data}', ['data' => $data]);
             $this->loadFile($data);
         } elseif ($data instanceof DataWindow) {
-            ExifEye::logger()->debug('Initializing Tiff object from DataWindow.');
+            $this->debug('Initializing Tiff object from DataWindow.');
             $this->load($data);
         } else {
             throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
+        }
+
+        if ($parent) {
+            $this->setParentElement($parent);
         }
     }
 
@@ -97,7 +106,7 @@ class Tiff
      */
     public function load(DataWindow $d)
     {
-        ExifEye::logger()->debug('Parsing {size} bytes of TIFF data...', ['size' => $d->getSize()]);
+        $this->debug('Parsing {size} bytes of TIFF data...', ['size' => $d->getSize()]);
 
         /*
          * There must be at least 8 bytes available: 2 bytes for the byte
@@ -109,10 +118,10 @@ class Tiff
         }
         /* Byte order */
         if ($d->strcmp(0, 'II')) {
-            ExifEye::logger()->debug('Found Intel byte order');
+            $this->debug('Found Intel byte order');
             $d->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
         } elseif ($d->strcmp(0, 'MM')) {
-            ExifEye::logger()->debug('Found Motorola byte order');
+            $this->debug('Found Motorola byte order');
             $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
         } else {
             throw new InvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $d->getByte(0), $d->getByte(1));
@@ -124,15 +133,16 @@ class Tiff
         }
         /* IFD 0 offset */
         $offset = $d->getLong(4);
-        ExifEye::logger()->debug('First IFD at offset {offset}.', ['offset' => $offset]);
+        $this->debug('First IFD at offset {offset}.', ['offset' => $offset]);
 
         if ($offset > 0) {
             /*
              * Parse the first IFD, this will automatically parse the
              * following IFDs and any sub IFDs.
              */
-            $this->ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
-            $this->ifd->load($d, $offset);
+            $ifd = new Ifd(Spec::getIfdIdByType('IFD0'), $this);
+            $this->xxAddSubBlock($ifd);
+            $ifd->load($d, $offset);
         }
     }
 
@@ -148,21 +158,6 @@ class Tiff
     }
 
     /**
-     * Set the first IFD.
-     *
-     * @param Ifd $ifd
-     *            the new first IFD, which must be of type {@link
-     *            Ifd::IFD0}.
-     */
-    public function setIfd(Ifd $ifd)
-    {
-        if ($ifd->getId() != Spec::getIfdIdByType('IFD0')) {
-            throw new InvalidDataException('Invalid type of IFD: %d, expected %d.', $ifd->getId(), Spec::getIfdIdByType('IFD0'));
-        }
-        $this->ifd = $ifd;
-    }
-
-    /**
      * Return the first IFD.
      *
      * @return Ifd the first IFD contained in the TIFF data, if any.
@@ -170,7 +165,7 @@ class Tiff
      */
     public function getIfd()
     {
-        return $this->ifd;
+        return $this->xxGetSubBlockByIndex('Ifd', 0);
     }
 
     /**
@@ -198,7 +193,7 @@ class Tiff
         /* TIFF magic number --- fixed value. */
         $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $order);
 
-        if ($this->ifd !== null) {
+        if ($this->xxGetSubBlockByIndex('Ifd', 0) !== null) {
             /*
              * IFD 0 offset. We will always start IDF 0 at an offset of 8
              * bytes (2 bytes for byte order, another 2 bytes for the TIFF
@@ -213,7 +208,7 @@ class Tiff
              * all those offsets are absolute offsets counted from the
              * beginning of the data.
              */
-            $bytes .= $this->ifd->getBytes(8, $order);
+            $bytes .= $this->xxGetSubBlockByIndex('Ifd', 0)->getBytes(8, $order);
         } else {
             $bytes .= ConvertBytes::fromLong(0, $order);
         }
@@ -245,8 +240,8 @@ class Tiff
     public function __toString()
     {
         $str = ExifEye::fmt("Dumping TIFF data...\n");
-        if ($this->ifd !== null) {
-            $str .= $this->ifd->__toString();
+        if ($this->xxGetSubBlockByIndex('Ifd', 0) !== null) {
+            $str .= $this->xxGetSubBlockByIndex('Ifd', 0)->__toString();
         }
 
         return $str;

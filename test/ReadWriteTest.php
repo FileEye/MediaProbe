@@ -43,7 +43,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
 
         $tiff = new Tiff();
         $this->assertNull($tiff->getIfd());
-        $tiff->setIfd($ifd);
+        $tiff->xxAddSubBlock($ifd);
         $this->assertNotNull($tiff->getIfd());
 
         $exif = new Exif();
