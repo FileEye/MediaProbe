@@ -45,6 +45,14 @@ class Thumbnail extends BlockBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getElementPathFragment()
+    {
+        return $this->getType();
+    }
+
+    /**
      * xx
      * @param DataWindow $data_window
      *            the data from which the thumbnail will be
@@ -69,11 +77,6 @@ class Thumbnail extends BlockBase
             return;
         }
 
-        $ifd->debug('JPEG thumbnail found at offset {offset} of length {length}', [
-            'offset' => $offset,
-            'length' => $length,
-        ]);
-
         // Some images have a broken length, so we try to carefully check
         // the length before we store the thumbnail.
         if ($offset + $length > $data_window->getSize()) {
@@ -89,6 +92,10 @@ class Thumbnail extends BlockBase
             $thumbnail_data = static::setThumbnail($data_window->getClone($offset, $length));
             $thumbnail_entry = new Undefined([$thumbnail_data]);
             $thumbnail_block = new static($ifd, $thumbnail_entry);
+            $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
+                'offset' => $offset,
+                'length' => $length,
+            ]);
             $ifd->xxAddSubBlock($thumbnail_block);
         } catch (DataWindowWindowException $e) {
             $ifd->error($e->getMessage());
@@ -134,15 +141,5 @@ class Thumbnail extends BlockBase
     public function __toString()
     {
         return ExifEye::fmt("  Thumbnail   : %s\n", $this->getEntry()->toString());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toDumpArray()
-    {
-        $dump = parent::toDumpArray();
-        unset($dump['id'], $dump['name']);
-        return $dump;
     }
 }
