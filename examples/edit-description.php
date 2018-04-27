@@ -168,7 +168,7 @@ if (Jpeg::isValid($data)) {
         println('Found existing APP1 section.');
         $tiff = $exif->getTiff();
     }
-} elseif (Tiff::isValid($data)) {
+} elseif (Tiff::xxisValid($data)) {
     /*
      * The data was recognized as TIFF data. We prepare a Tiff
      * object to hold it, and record in $file that the Tiff object is

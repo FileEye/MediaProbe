@@ -79,7 +79,7 @@ foreach ($argv as $file) {
         }
 
         $tiff = $app1->getTiff();
-    } elseif (Tiff::isValid($data)) {
+    } elseif (Tiff::xxisValid($data)) {
         $tiff = new Tiff($data);
     } else {
         println('Unrecognized image format! Skipping.');

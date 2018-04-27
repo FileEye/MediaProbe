@@ -80,7 +80,7 @@ $data = new DataWindow(file_get_contents($file));
 
 if (Jpeg::isValid($data)) {
     $img = new Jpeg();
-} elseif (Tiff::isValid($data)) {
+} elseif (Tiff::xxisValid($data)) {
     $img = new Tiff();
 } else {
     print("Unrecognized image format! The first 16 bytes follow:\n");

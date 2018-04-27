@@ -262,7 +262,7 @@ class Tiff extends BlockBase
      *
      * @see Jpeg::isValid()
      */
-    public static function isValid(DataWindow $d)
+    public static function xxIsValid(DataWindow $d)
     {
         /* First check that we have enough data. */
         if ($d->getSize() < 8) {
