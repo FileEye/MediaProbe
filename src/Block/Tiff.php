@@ -215,24 +215,20 @@ class Tiff extends BlockBase
             $bytes = 'MM';
         }
 
-        /* TIFF magic number --- fixed value. */
+        // TIFF magic number --- fixed value.
         $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $order);
 
         if ($this->xxGetSubBlockByName('Ifd', 'IFD0') !== null) {
-            /*
-             * IFD 0 offset. We will always start IDF 0 at an offset of 8
-             * bytes (2 bytes for byte order, another 2 bytes for the TIFF
-             * header, and 4 bytes for the IFD 0 offset make 8 bytes
-             * together).
-             */
+            // IFD 0 offset. We will always start IDF 0 at an offset of 8
+            // bytes (2 bytes for byte order, another 2 bytes for the TIFF
+            // header, and 4 bytes for the IFD 0 offset make 8 bytes
+            // together).
             $bytes .= ConvertBytes::fromLong(8, $order);
 
-            /*
-             * The argument specifies the offset of this IFD. The IFD will
-             * use this to calculate offsets from the entries to their data,
-             * all those offsets are absolute offsets counted from the
-             * beginning of the data.
-             */
+            // The argument specifies the offset of this IFD. The IFD will
+            // use this to calculate offsets from the entries to their data,
+            // all those offsets are absolute offsets counted from the
+            // beginning of the data.
             $bytes .= $this->xxGetSubBlockByName('Ifd', 'IFD0')->toBytes(8, $order);
         } else {
             $bytes .= ConvertBytes::fromLong(0, $order);
