@@ -218,18 +218,30 @@ class Tiff extends BlockBase
         // TIFF magic number --- fixed value.
         $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $order);
 
-        if ($this->xxGetSubBlockByName('Ifd', 'IFD0') !== null) {
-            // IFD 0 offset. We will always start IDF 0 at an offset of 8
+        $ifd0 = $this->xxGetSubBlockByName('Ifd', 'IFD0');
+        if ($ifd0) {
+            // IFD0 offset. We will always start IFD0 at an offset of 8
             // bytes (2 bytes for byte order, another 2 bytes for the TIFF
-            // header, and 4 bytes for the IFD 0 offset make 8 bytes
-            // together).
+            // header, and 4 bytes for the IFD0 offset make 8 bytes together).
             $bytes .= ConvertBytes::fromLong(8, $order);
 
             // The argument specifies the offset of this IFD. The IFD will
             // use this to calculate offsets from the entries to their data,
             // all those offsets are absolute offsets counted from the
             // beginning of the data.
-            $bytes .= $this->xxGetSubBlockByName('Ifd', 'IFD0')->toBytes(8, $order);
+            $ifd0_bytes = $ifd0->toBytes(8, $order);
+            $bytes .= $ifd0_bytes;
+
+            // Deal with IFD1.
+            $ifd1 = $this->xxGetSubBlockByName('Ifd', 'IFD1');
+            if (!$ifd1) {
+                // No IFD1, link to next IFD is 0.
+                $bytes .= ConvertBytes::fromLong(0, $order);
+            } else {
+                $bytes .= ConvertBytes::fromLong(8 + strlen($ifd0_bytes), $order);
+                $bytes .= $ifd1->toBytes(8 + strlen($ifd0_bytes), $order);
+                $bytes .= ConvertBytes::fromLong(0, $order);
+            }
         } else {
             $bytes .= ConvertBytes::fromLong(0, $order);
         }

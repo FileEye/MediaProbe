@@ -189,29 +189,20 @@ class Ifd extends BlockBase
     public function toBytes($offset, $order)
     {
         $bytes = '';
-        $extra_bytes = '';
-
-        $this->debug('Bytes from IDF will start at offset {offset} within Exif data', [
-            'offset' => $offset,
-        ]);
+        $data_area = '';
 
         $n = count($this->xxGetSubBlocks('Tag')) + count($this->xxGetSubBlocks('Ifd'));
         if ($this->xxGetSubBlock('Thumbnail', 0) !== null) {
-            /*
-             * We need two extra entries for the thumbnail offset and
-             * length.
-             */
+            // We need two extra entries for the thumbnail offset and length.
             $n += 2;
         }
 
         $bytes .= ConvertBytes::fromShort($n, $order);
 
-        /*
-         * Initialize offset of extra data. This included the bytes
-         * preceding this IFD, the bytes needed for the count of entries,
-         * the entries themselves (and sub entries), the extra data in the
-         * entries, and the IFD link.
-         */
+        // Initialize offset of extra data. This included the bytes preceding
+        // this IFD, the bytes needed for the count of entries, the entries
+        // themselves (and sub entries), the extra data in the entries, and the
+        // IFD link.
         $end = $offset + 2 + 12 * $n + 4;
 
         foreach ($this->xxGetSubBlocks('Tag') as $tag => $sub_block) {
@@ -232,7 +223,7 @@ class Ifd extends BlockBase
                     'offset' => $end,
                 ]);
                 $bytes .= ConvertBytes::fromLong($end, $order);
-                $extra_bytes .= $data;
+                $data_area .= $data;
                 $end += $s;
             } else {
                 $this->debug('Data size {size} fits.', [
@@ -263,7 +254,7 @@ class Ifd extends BlockBase
             $bytes .= ConvertBytes::fromLong(1, $order);
             $bytes .= ConvertBytes::fromLong($end, $order);
 
-            $extra_bytes .= $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->toBytes();
+            $data_area .= $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->toBytes();
             $end += $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents();
         }
 
@@ -295,25 +286,9 @@ class Ifd extends BlockBase
             $end += $s;
         }
 
-        /* Make link to next IFD, if any */
-/*        if ($this->isLastIFD()) {
-            $link = 0;
-        } else {
-            $link = $end;
-        }
+//        $bytes .= ConvertBytes::fromLong(0, $order);  // xx
+        $bytes .= $data_area . $sub_bytes;
 
-        $this->debug('Link to next IFD: {link}', [
-            'link' => $link,
-        ]);
-
-        $bytes .= ConvertBytes::fromLong($link, $order);
-*/
-        $bytes .= ConvertBytes::fromLong(0, $order);  // xx
-        $bytes .= $extra_bytes . $sub_bytes;
-
-/*        if (! $this->isLastIfd()) {
-            $bytes .= $this->next->getBytes($end, $order);
-        }*/
         return $bytes;
     }
 
