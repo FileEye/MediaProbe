@@ -308,6 +308,7 @@ class Ifd extends BlockBase
 
         $bytes .= ConvertBytes::fromLong($link, $order);
 */
+        $bytes .= ConvertBytes::fromLong(0, $order);  // xx
         $bytes .= $extra_bytes . $sub_bytes;
 
 /*        if (! $this->isLastIfd()) {
