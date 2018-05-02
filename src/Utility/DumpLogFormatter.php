@@ -2,12 +2,12 @@
 
 namespace ExifEye\core\Utility;
 
-use Monolog\Formatter\LineFormatter;
+use Bramus\Monolog\Formatter\ColoredLineFormatter;
 
 /**
  * Formats incoming records into a one-line suitable for dump debug.
  */
-class DumpLogFormatter extends LineFormatter
+class DumpLogFormatter extends ColoredLineFormatter
 {
     const MAX_PATH = 40;
 
@@ -38,7 +38,6 @@ class DumpLogFormatter extends LineFormatter
         // Message.
         $output .= substr(str_repeat('  ', $nesting) . $record['message'], 0, static::MAX_PATH * 2);
 
-        $output .= "\n";
-        return $output;
+        return $this->getColorScheme()->getColorizeString($record['level']). $output . $this->getColorScheme()->getResetString() . "\n";
     }
 }
