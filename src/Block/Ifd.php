@@ -186,7 +186,7 @@ class Ifd extends BlockBase
      *            turning integers into bytes. This should be one of {@link
      *            ConvertBytes::LITTLE_ENDIAN} and {@link ConvertBytes::BIG_ENDIAN}.
      */
-    public function getBytes($offset, $order)
+    public function toBytes($offset, $order)
     {
         $bytes = '';
         $extra_bytes = '';
@@ -296,7 +296,7 @@ class Ifd extends BlockBase
         }
 
         /* Make link to next IFD, if any */
-        if ($this->isLastIFD()) {
+/*        if ($this->isLastIFD()) {
             $link = 0;
         } else {
             $link = $end;
@@ -307,12 +307,12 @@ class Ifd extends BlockBase
         ]);
 
         $bytes .= ConvertBytes::fromLong($link, $order);
-
+*/
         $bytes .= $extra_bytes . $sub_bytes;
 
-        if (! $this->isLastIfd()) {
+/*        if (! $this->isLastIfd()) {
             $bytes .= $this->next->getBytes($end, $order);
-        }
+        }*/
         return $bytes;
     }
 

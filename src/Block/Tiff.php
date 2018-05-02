@@ -218,7 +218,7 @@ class Tiff extends BlockBase
         /* TIFF magic number --- fixed value. */
         $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $order);
 
-        if ($this->xxGetSubBlockByIndex('Ifd', 0) !== null) {
+        if ($this->xxGetSubBlockByName('Ifd', 'IFD0') !== null) {
             /*
              * IFD 0 offset. We will always start IDF 0 at an offset of 8
              * bytes (2 bytes for byte order, another 2 bytes for the TIFF
@@ -233,7 +233,7 @@ class Tiff extends BlockBase
              * all those offsets are absolute offsets counted from the
              * beginning of the data.
              */
-            $bytes .= $this->xxGetSubBlockByIndex('Ifd', 0)->getBytes(8, $order);
+            $bytes .= $this->xxGetSubBlockByName('Ifd', 'IFD0')->toBytes(8, $order);
         } else {
             $bytes .= ConvertBytes::fromLong(0, $order);
         }
