@@ -139,18 +139,35 @@ class Tiff extends BlockBase
         if ($d->getShort(2) != self::TIFF_HEADER) {
             throw new InvalidDataException('Missing TIFF magic value.');
         }
-        /* IFD 0 offset */
+
+        // IFD0.
         $offset = $d->getLong(4);
         $this->debug('First IFD at offset {offset}.', ['offset' => $offset]);
 
         if ($offset > 0) {
-            /*
-             * Parse the first IFD, this will automatically parse the
-             * following IFDs and any sub IFDs.
-             */
-            $ifd = new Ifd(Spec::getIfdIdByType('IFD0'), $this);
-            $this->xxAddSubBlock($ifd);
-            $ifd->load($d, $offset);
+            // Parse IFD0, this will automatically parse any sub IFDs.
+            $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'), $this);
+            $this->xxAddSubBlock($ifd0);
+            $next_offset = $ifd0->load($d, $offset);
+        }
+
+        // Next IFD. @todo iterate on next_offset
+        if ($next_offset > 0) {
+            // Sanity check: we need 6 bytes.
+            if ($next_offset > $d->getSize() - 6) {
+                $this->error('Bogus offset to next IFD: {offset} > {size}!', [
+                    'offset' => $next_offset,
+                    'size' => $d->getSize() - 6,
+                ]);
+            } else {
+/*                if (Spec::getIfdType($this->getId()) === 'IFD1') {
+                    // IFD1 shouldn't link further...
+                    $this->error('IFD1 links to another IFD!');
+                }*/
+                $ifd1 = new Ifd(Spec::getIfdIdByType('IFD1'), $this);
+                $this->xxAddSubBlock($ifd1);
+                $next_offset = $ifd1->load($d, $next_offset);
+            }
         }
     }
 

@@ -28,11 +28,8 @@ class IfdIndexShort extends Ifd
      *            be found.
      * @param int $components
      *            (Optional) the number of components held by this IFD.
-     * @param int $nesting_level
-     *            (Optional) the level of nesting of this IFD in the overall
-     *            structure.
      */
-    public function load(DataWindow $d, $offset, $components = 1, $nesting_level = 0)
+    public function load(DataWindow $d, $offset, $components = 1)
     {
         $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
             'tags' => $components,

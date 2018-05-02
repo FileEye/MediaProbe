@@ -52,16 +52,6 @@ class Ifd extends BlockBase
     protected $tagsSkipOffset = 0;
 
     /**
-     * The next directory.
-     *
-     * This will be initialized in the constructor, or be left as null
-     * if this is the last directory.
-     *
-     * @var Ifd
-     */
-    protected $next = null;
-
-    /**
      * Construct a new Image File Directory (IFD).
      *
      * The IFD will be empty, use the {@link addEntry()} method to add
@@ -104,11 +94,8 @@ class Ifd extends BlockBase
      *            be found.
      * @param int $components
      *            (Optional) the number of components held by this IFD.
-     * @param int $nesting_level
-     *            (Optional) the level of nesting of this IFD in the overall
-     *            structure.
      */
-    public function load(DataWindow $d, $offset, $components = 1, $nesting_level = 0)
+    public function load(DataWindow $d, $offset, $components = 1)
     {
         $starting_offset = $offset;
 
@@ -151,7 +138,7 @@ class Ifd extends BlockBase
                     $ifd_class = Spec::getIfdClass($type);
                     $ifd = new $ifd_class($type, $this);
                     try {
-                        $ifd->load($d, $o, $tag->getEntry()->getComponents(), $nesting_level + 1);
+                        $ifd->load($d, $o, $tag->getEntry()->getComponents());
                         $this->xxAddSubBlock($ifd);
                     } catch (DataWindowOffsetException $e) {
                         $this->error($e->getMessage());
@@ -168,31 +155,6 @@ class Ifd extends BlockBase
             $this->xxAppendSubBlock($tag);
         }
 
-        /* Offset to next IFD */
-        $o = $d->getLong($offset + 12 * $n);
-        $this->debug('Current offset is {offset}, link at {link} points to {destination}.', [
-            'offset' => $offset,
-            'link' => $offset + 12 * $n,
-            'destination' => $o,
-        ]);
-
-        if ($o > 0) {
-            /* Sanity check: we need 6 bytes */
-            if ($o > $d->getSize() - 6) {
-                $this->error('Bogus offset to next IFD: {offset} > {size}!', [
-                    'offset' => $o,
-                    'size' => $d->getSize() - 6,
-                ]);
-            } else {
-                if (Spec::getIfdType($this->getId()) === 'IFD1') {
-                    // IFD1 shouldn't link further...
-                    $this->error('IFD1 links to another IFD!');
-                }
-                $this->next = new Ifd(Spec::getIfdIdByType('IFD1'));
-                $this->next->load($d, $o);
-            }
-        }
-
         $this->debug(".....END Loading");
 
         // Invoke post-load callbacks.
@@ -205,39 +167,8 @@ class Ifd extends BlockBase
                 'callback' => $callback,
             ]);
         }
-    }
 
-    /**
-     * Make this directory point to a new directory.
-     *
-     * @param Ifd $i
-     *            the IFD that this directory will point to.
-     */
-    public function setNextIfd(Ifd $i)
-    {
-        $this->next = $i;
-    }
-
-    /**
-     * Return the IFD pointed to by this directory.
-     *
-     * @return Ifd the next IFD, following this IFD. If this is the
-     *         last IFD, null is returned.
-     */
-    public function getNextIfd()
-    {
-        return $this->next;
-    }
-
-    /**
-     * Check if this is the last IFD.
-     *
-     * @return boolean true if there are no following IFD, false
-     *         otherwise.
-     */
-    public function isLastIfd()
-    {
-        return $this->next === null;
+        return $d->getLong($offset + 12 * $n);
     }
 
     /**

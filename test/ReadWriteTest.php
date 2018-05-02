@@ -35,7 +35,6 @@ class ReadWriteTest extends ExifEyeTestCaseBase
     public function testWriteRead(array $entries)
     {
         $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
-        $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
             $ifd->xxAppendSubBlock(new Tag($ifd, $entry[0], $entry[1], $entry[2]));
@@ -68,12 +67,11 @@ class ReadWriteTest extends ExifEyeTestCaseBase
 
         $tiff = $exif->getTiff();
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
+        $this->assertCount(1, $tiff->xxGetSubBlocks('Ifd'));
 
         $ifd = $tiff->getIfd();
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd);
-
         $this->assertEquals($ifd->getId(), Spec::getIfdIdByType('IFD0'));
-        $this->assertTrue($ifd->isLastIfd());
 
         foreach ($entries as $entry) {
             $ifdTag = $ifd->xxGetSubBlock('Tag', $entry[0]);
