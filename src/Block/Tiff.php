@@ -73,6 +73,9 @@ class Tiff extends BlockBase
      */
     public function __construct($data = false, $parent = null)
     {
+        if ($parent) {
+            $this->setParentElement($parent);
+        }
         if ($data === false) {
             return;
         }
@@ -84,10 +87,6 @@ class Tiff extends BlockBase
             $this->loadFromData($data);
         } else {
             throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
-        }
-
-        if ($parent) {
-            $this->setParentElement($parent);
         }
     }
 

@@ -21,7 +21,7 @@ use ExifEye\core\JpegContent;
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class Exif extends JpegContent
+class Exif extends BlockBase
 {
     /**
      * Exif header.
@@ -32,11 +32,19 @@ class Exif extends JpegContent
     const EXIF_HEADER = "Exif\0\0";
 
     /**
-     * The Tiff object contained within.
-     *
-     * @var Tiff
+     * {@inheritdoc}
      */
-    private $tiff = null;
+    protected $type = 'Exif';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $id = 0;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $name = 'Exif';
 
     /**
      * Construct a new Exif object.
@@ -46,9 +54,11 @@ class Exif extends JpegContent
      * {@link setTiff()} to change the {@link Tiff} object, which is
      * the true holder of the Exif {@link EntryInterface entries}.
      */
-    public function __construct()
+    public function __construct($parent = null)
     {
-        // nothing to be done
+        if ($parent) {
+            $this->setParentElement($parent);
+        }
     }
 
     /**
@@ -58,26 +68,29 @@ class Exif extends JpegContent
      * {@link Tiff} object. This TIFF object can be accessed with
      * the {@link getTiff()} method.
      *
-     * @param DataWindow $d
+     * @param DataWindow $data_window
      */
-    public function load(DataWindow $d)
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
-        ExifEye::logger()->debug('Parsing {size} bytes of Exif data...', ['size' => $d->getSize()]);
+        $this->debug('Parsing {size} bytes of Exif data...', ['size' => $data_window->getSize()]);
 
         /* There must be at least 6 bytes for the Exif header. */
-        if ($d->getSize() < 6) {
-            throw new InvalidDataException('Expected at least 6 bytes of Exif ' . 'data, found just %d bytes.', $d->getSize());
+        if ($data_window->getSize() < 6) {
+            $this->error('Expected at least 6 bytes of Exif data, found just {size} bytes.', ['size' => $data_window->getSize()]);
+            return;
         }
         /* Verify the Exif header */
-        if ($d->strcmp(0, self::EXIF_HEADER)) {
-            $d->setWindowStart(strlen(self::EXIF_HEADER));
+        if ($data_window->strcmp(0, self::EXIF_HEADER)) {
+            $data_window->setWindowStart(strlen(self::EXIF_HEADER));
         } else {
-            throw new InvalidDataException('Exif header not found.');
+            $this->error('Exif header not found.');
+            return;
         }
 
         /* The rest of the data is TIFF data. */
-        $this->tiff = new Tiff();
-        $this->tiff->loadFromData($d);
+        $tiff = new Tiff(false, $this);
+        $tiff->loadFromData($data_window);
+        $this->xxAddSubBlock($tiff);
     }
 
     /**
@@ -92,7 +105,7 @@ class Exif extends JpegContent
      */
     public function setTiff(Tiff $tiff)
     {
-        $this->tiff = $tiff;
+        $this->xxAddSubBlock($tiff);
     }
 
     /**
@@ -105,7 +118,7 @@ class Exif extends JpegContent
      */
     public function getTiff()
     {
-        return $this->tiff;
+        return $this->xxGetSubBlock('Tiff', 0);
     }
 
     /**
@@ -115,7 +128,7 @@ class Exif extends JpegContent
      */
     public function getBytes()
     {
-        return self::EXIF_HEADER . $this->tiff->getBytes();
+        return self::EXIF_HEADER . $this->xxGetSubBlock('Tiff', 0)->getBytes();
     }
 
     /**
@@ -126,6 +139,6 @@ class Exif extends JpegContent
      */
     public function __toString()
     {
-        return ExifEye::tra("Dumping Exif data...\n") . $this->tiff->__toString();
+        return ExifEye::tra("Dumping Exif data...\n") . $this->xxGetSubBlock('Tiff', 0)->__toString();
     }
 }
