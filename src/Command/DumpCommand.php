@@ -85,8 +85,12 @@ class DumpCommand extends Command
         $handler = ExifEye::logger()->getHandlers()[0];
         $json['errors'] = [];
         $json['warnings'] = [];
+        $json['notices'] = [];
         foreach ($handler->getRecords() as $record) {
             switch ($record['level_name']) {
+                case 'NOTICE':
+                    $key = 'notices';
+                    break;
                 case 'WARNING':
                     $key = 'warnings';
                     break;
