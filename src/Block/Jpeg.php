@@ -429,7 +429,7 @@ class Jpeg
      * @param
      *            JpegContent the content of the new section.
      */
-    public function appendSection($marker, JpegContent $content)
+    public function appendSection($marker, /*JpegContent*/ $content)
     {
         $this->sections[] = [
             $marker,

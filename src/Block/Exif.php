@@ -62,6 +62,14 @@ class Exif extends BlockBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getElementPathFragment()
+    {
+        return $this->getType();
+    }
+
+    /**
      * Load and parse Exif data.
      *
      * This will populate the object with Exif data, contained as a
