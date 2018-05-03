@@ -84,10 +84,8 @@ class Ifd extends BlockBase
      * @param int $offset
      *            the offset within the window where the directory will
      *            be found.
-     * @param int $components
-     *            (Optional) the number of components held by this IFD.
      */
-    public function load(DataWindow $d, $offset, $components = 1)
+    public function load(DataWindow $d, $offset)
     {
         $starting_offset = $offset;
 

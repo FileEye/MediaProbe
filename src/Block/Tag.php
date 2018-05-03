@@ -33,7 +33,7 @@ class Tag extends BlockBase
 
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasSpecification()) {
-            $this->warning("No tag info available; Format {format_name}, Components {components}", [
+            $this->notice("No tag info available; Format {format_name}, Components {components}", [
                 'format_name' => Format::getName($format),
                 'components' => $components,
             ]);
