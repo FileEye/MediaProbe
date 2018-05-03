@@ -201,12 +201,13 @@ class Jpeg
                 if ($marker == JpegMarker::APP1) {
                     try {
                         $content = new Exif();
-                        $content->load($d->getClone(0, $len));
+                        $content->loadFromData($d->getClone(0, $len));
                     } catch (InvalidDataException $e) {
                         /*
                          * We store the data as normal JPEG content if it could
                          * not be parsed as Exif data.
                          */
+                        // xx not excpetion anynmore
                         $content = new JpegContent($d->getClone(0, $len));
                     }
 
@@ -454,7 +455,7 @@ class Jpeg
      *            use 0 to insert it at the very beginning, use 1 to insert it
      *            between sections 1 and 2, etc.
      */
-    public function insertSection($marker, JpegContent $content, $offset)
+    public function insertSection($marker, /*JpegContent*/ $content, $offset)
     {
         array_splice($this->sections, $offset, 0, [
             [
