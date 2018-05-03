@@ -133,16 +133,14 @@ class DumpCommand extends Command
 
     protected function tiffToTest($name, Tiff $tiff, &$json)
     {
-        $ifd = $tiff->getIfd();
-        if ($ifd instanceof Ifd) {
+        // xx enable iteration for all next ifds
+        $ifd = $tiff->xxGetSubBlockByName('Ifd', 'IFD0');
+        if ($ifd) {
             $json['blocks'][$ifd->getName()] = $ifd->toDumpArray();
-            $n = 1;
-            while ($ifd = $ifd->getNextIfd()) {
-                $json['blocks'][$ifd->getName()] = $ifd->toDumpArray();
-                $n ++;
-            }
-        } else {
-            $json['blocks'][$ifd->getName()] = [];
+        }
+        $ifd = $tiff->xxGetSubBlockByName('Ifd', 'IFD1');
+        if ($ifd) {
+            $json['blocks'][$ifd->getName()] = $ifd->toDumpArray();
         }
     }
 }
