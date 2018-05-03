@@ -89,7 +89,7 @@ class Ifd extends BlockBase
     {
         $starting_offset = $offset;
 
-        /* Read the number of tags */
+        // Get the number of tags.
         $n = $data_window->getShort($offset + $this->headerSkipBytes);
         $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
             'tags' => $n,
@@ -99,7 +99,7 @@ class Ifd extends BlockBase
 
         $offset += 2 + $this->headerSkipBytes;
 
-        /* Check if we have enough data. */
+        // Check if we have enough data.
         if ($offset + 12 * $n > $data_window->getSize()) {
             $n = floor(($offset - $data_window->getSize()) / 12);
             $this->warning('Adjusted to: {tags}.', [
@@ -107,17 +107,34 @@ class Ifd extends BlockBase
             ]);
         }
 
+        // Load Tags.
         for ($i = 0; $i < $n; $i++) {
-            $tag = Tag::xxLoadFromData($this, $data_window, $offset + 12 * $i, [
-                'ifd_offset' => $offset,
-                'tagsAbsoluteOffset' => $this->tagsAbsoluteOffset,
-                'tagsSkipOffset' => $this->tagsSkipOffset,
-            ]);
+            $i_offset = $offset + 12 * $i;
 
-            // Invalid TAG.
-            if (!$tag) {
-                continue;
+            // Gets the TAG's elements from the data window.
+            $tag_id = $data_window->getShort($i_offset);
+            $tag_format = $data_window->getShort($i_offset + 2);
+            $tag_components = $data_window->getLong($i_offset + 4);
+            $tag_data_element = $data_window->getLong($i_offset + 8);
+
+            // If the data size is bigger than 4 bytes, then actual data is not in
+            // the TAG's data element, but at the the offset stored in the data
+            // element.
+            $tag_size = Format::getSize($tag_format) * $tag_components;
+            if ($tag_size > 4) {
+                $tag_data_offset = $tag_data_element;
+                if (!$this->tagsAbsoluteOffset) {
+                    $tag_data_offset += $offset;
+                }
+                $tag_data_offset += $this->tagsSkipOffset;
+            } else {
+                $tag_data_offset = $i_offset + 8;
             }
+
+            // Build the TAG object.
+            $tag_entry_class = Spec::getEntryClass($this->getId(), $tag_id, $tag_format);
+            $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $tag_format, $tag_components, $data_window, $tag_data_offset);
+            $tag = new Tag($this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
 
             // Load a subIfd.
             if (Spec::isTagAnIfdPointer($this->getId(), $tag->getId())) {

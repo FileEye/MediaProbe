@@ -84,38 +84,6 @@ class Tag extends BlockBase
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public static function xxLoadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
-    {
-        // Gets the TAG's elements from the data window.
-        $id = $data_window->getShort($offset);
-        $format = $data_window->getShort($offset + 2);
-        $components = $data_window->getLong($offset + 4);
-        $data_element = $data_window->getLong($offset + 8);
-
-        // If the data size is bigger than 4 bytes, then actual data is not in
-        // the TAG's data element, but at the the offset stored in the data
-        // element.
-        $size = Format::getSize($format) * $components;
-        if ($size > 4) {
-            $data_offset = $data_element;
-            if (!$options['tagsAbsoluteOffset']) {
-                $data_offset += $options['ifd_offset'];
-            }
-            $data_offset += $options['tagsSkipOffset'];
-        } else {
-            $data_offset = $offset + 8;
-        }
-
-        // Build and return the TAG object.
-        $entry_class = Spec::getEntryClass($parent->getId(), $id, $format);
-        $entry_arguments = call_user_func($entry_class . '::getInstanceArgumentsFromTagData', $format, $components, $data_window, $data_offset);
-        $tag = new static($parent, $id, $entry_class, $entry_arguments, $format, $components);
-        return $tag;
-    }
-
-    /**
      * Turn this entry into a string.
      *
      * @return string a string representation of this entry. This is
