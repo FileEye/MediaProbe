@@ -29,8 +29,10 @@ class IfdIndexShort extends Ifd
      * @param int $components
      *            (Optional) the number of components held by this IFD.
      */
-    public function loadFromData(DataWindow $data_window, $offset, $components = 1)
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
+        $components = $options['components'];
+
         $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
             'tags' => $components,
             'offset' => $offset,

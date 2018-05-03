@@ -40,18 +40,19 @@ abstract class BlockBase extends ElementBase
     /**
      * Loads data into a block.
      *
-     * @param BlockBase $parent
-     *            the parent Block.
      * @param DataWindow $data_window
      *            the data window that will provide the data.
      * @param int $offset
-     *            the offset within the window where the directory will
+     *            (Optional) the offset within the window where the block will
      *            be found.
      * @param array $options
      *            (Optional) an array with additional options for the load.
      *
      * @returns BlockBase
      */
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    {
+    }
 
     /**
      * Adds a sub-block.

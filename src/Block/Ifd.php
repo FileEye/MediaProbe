@@ -85,7 +85,7 @@ class Ifd extends BlockBase
      *            the offset within the window where the directory will
      *            be found.
      */
-    public function loadFromData(DataWindow $data_window, $offset)
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
         $starting_offset = $offset;
 
@@ -145,7 +145,7 @@ class Ifd extends BlockBase
                     $ifd_class = Spec::getIfdClass($type);
                     $ifd = new $ifd_class($type, $this);
                     try {
-                        $ifd->loadFromData($data_window, $o, $tag->getEntry()->getComponents());
+                        $ifd->loadFromData($data_window, $o, ['components' => $tag->getEntry()->getComponents()]);
                         $this->xxAddSubBlock($ifd);
                     } catch (DataWindowOffsetException $e) {
                         $this->error($e->getMessage());

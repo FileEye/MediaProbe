@@ -112,7 +112,7 @@ class Tiff extends BlockBase
      *            constructed. This should be valid TIFF data, coming either
      *            directly from a TIFF image or from the Exif data in a JPEG image.
      */
-    public function loadFromData(DataWindow $data_window)
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
         $this->debug('Parsing {size} bytes of TIFF data...', ['size' => $data_window->getSize()]);
 
