@@ -84,21 +84,22 @@ class Exif extends BlockBase
 
         /* There must be at least 6 bytes for the Exif header. */
         if ($data_window->getSize() < 6) {
-            $this->error('Expected at least 6 bytes of Exif data, found just {size} bytes.', ['size' => $data_window->getSize()]);
-            return;
+            $this->debug('Expected at least 6 bytes of Exif data, found just {size} bytes.', ['size' => $data_window->getSize()]);
+            return false;
         }
         /* Verify the Exif header */
         if ($data_window->strcmp(0, self::EXIF_HEADER)) {
             $data_window->setWindowStart(strlen(self::EXIF_HEADER));
         } else {
-            $this->error('Exif header not found.');
-            return;
+            $this->debug('Exif header not found.');
+            return false;
         }
 
         /* The rest of the data is TIFF data. */
         $tiff = new Tiff(false, $this);
         $tiff->loadFromData($data_window);
         $this->xxAddSubBlock($tiff);
+        return true;
     }
 
     /**

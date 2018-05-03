@@ -199,18 +199,12 @@ class Jpeg
                 $d->setWindowStart(2);
 
                 if ($marker == JpegMarker::APP1) {
-                    try {
-                        $content = new Exif();
-                        $content->loadFromData($d->getClone(0, $len));
-                    } catch (InvalidDataException $e) {
-                        /*
-                         * We store the data as normal JPEG content if it could
-                         * not be parsed as Exif data.
-                         */
-                        // xx not excpetion anynmore
+                    $content = new Exif();
+                    if ($content->loadFromData($d->getClone(0, $len) === false) {
+                        // We store the data as normal JPEG content if it could
+                        // not be parsed as Exif data.
                         $content = new JpegContent($d->getClone(0, $len));
                     }
-
                     $this->appendSection($marker, $content);
                     /* Skip past the data. */
                     $d->setWindowStart($len);
