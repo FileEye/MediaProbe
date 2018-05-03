@@ -86,7 +86,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public static function loadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
+    public static function xxLoadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
     {
         // Gets the TAG's elements from the data window.
         $id = $data_window->getShort($offset);

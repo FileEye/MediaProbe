@@ -79,36 +79,36 @@ class Ifd extends BlockBase
     /**
      * Load data into a Image File Directory (IFD).
      *
-     * @param DataWindow $d
+     * @param DataWindow $data_window
      *            the data window that will provide the data.
      * @param int $offset
      *            the offset within the window where the directory will
      *            be found.
      */
-    public function load(DataWindow $d, $offset)
+    public function loadFromData(DataWindow $data_window, $offset)
     {
         $starting_offset = $offset;
 
         /* Read the number of tags */
-        $n = $d->getShort($offset + $this->headerSkipBytes);
+        $n = $data_window->getShort($offset + $this->headerSkipBytes);
         $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
             'tags' => $n,
             'offset' => $offset,
-            'total' => $d->getSize(),
+            'total' => $data_window->getSize(),
         ]);
 
         $offset += 2 + $this->headerSkipBytes;
 
         /* Check if we have enough data. */
-        if ($offset + 12 * $n > $d->getSize()) {
-            $n = floor(($offset - $d->getSize()) / 12);
+        if ($offset + 12 * $n > $data_window->getSize()) {
+            $n = floor(($offset - $data_window->getSize()) / 12);
             $this->warning('Adjusted to: {tags}.', [
                 'tags' => $n,
             ]);
         }
 
         for ($i = 0; $i < $n; $i++) {
-            $tag = Tag::loadFromData($this, $d, $offset + 12 * $i, [
+            $tag = Tag::xxLoadFromData($this, $data_window, $offset + 12 * $i, [
                 'ifd_offset' => $offset,
                 'tagsAbsoluteOffset' => $this->tagsAbsoluteOffset,
                 'tagsSkipOffset' => $this->tagsSkipOffset,
@@ -123,12 +123,12 @@ class Ifd extends BlockBase
             if (Spec::isTagAnIfdPointer($this->getId(), $tag->getId())) {
                 // If the tag is an IFD pointer, loads the IFD.
                 $type = Spec::getIfdIdFromTag($this->getId(), $tag->getId());
-                $o = $d->getLong($offset + 12 * $i + 8);
+                $o = $data_window->getLong($offset + 12 * $i + 8);
                 if ($starting_offset != $o) {
                     $ifd_class = Spec::getIfdClass($type);
                     $ifd = new $ifd_class($type, $this);
                     try {
-                        $ifd->load($d, $o, $tag->getEntry()->getComponents());
+                        $ifd->loadFromData($data_window, $o, $tag->getEntry()->getComponents());
                         $this->xxAddSubBlock($ifd);
                     } catch (DataWindowOffsetException $e) {
                         $this->error($e->getMessage());
@@ -152,13 +152,13 @@ class Ifd extends BlockBase
             $this->debug("START... {callback}", [
                 'callback' => $callback,
             ]);
-            call_user_func($callback, $d, $this);
+            call_user_func($callback, $data_window, $this);
             $this->debug(".....END {callback}", [
                 'callback' => $callback,
             ]);
         }
 
-        return $d->getLong($offset + 12 * $n);
+        return $data_window->getLong($offset + 12 * $n);
     }
 
     /**

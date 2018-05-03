@@ -21,7 +21,7 @@ class IfdIndexShort extends Ifd
     /**
      * Load data into a Image File Directory (IFD).
      *
-     * @param DataWindow $d
+     * @param DataWindow $data_window
      *            the data window that will provide the data.
      * @param int $offset
      *            the offset within the window where the directory will
@@ -29,15 +29,15 @@ class IfdIndexShort extends Ifd
      * @param int $components
      *            (Optional) the number of components held by this IFD.
      */
-    public function load(DataWindow $d, $offset, $components = 1)
+    public function loadFromData(DataWindow $data_window, $offset, $components = 1)
     {
         $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
             'tags' => $components,
             'offset' => $offset,
-            'total' => $d->getSize(),
+            'total' => $data_window->getSize(),
         ]);
 
-        $index_size = $d->getShort($offset);
+        $index_size = $data_window->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
             $this->warning('Size of {ifd_type} does not match the number of entries.', [
                 'ifd_type' => $this->getName(),
@@ -52,31 +52,31 @@ class IfdIndexShort extends Ifd
             $item_format = Spec::getTagFormat($this->getId(), $i + 1)[0];
             switch ($item_format) {
                 case Format::BYTE:
-                    $item_value = $d->getByte($offset + $i * 2);
+                    $item_value = $data_window->getByte($offset + $i * 2);
                     break;
                 case Format::SHORT:
-                    $item_value = $d->getShort($offset + $i * 2);
+                    $item_value = $data_window->getShort($offset + $i * 2);
                     break;
                 case Format::LONG:
-                    $item_value = $d->getLong($offset + $i * 2);
+                    $item_value = $data_window->getLong($offset + $i * 2);
                     break;
                 case Format::RATIONAL:
-                    $item_value = $d->getRational($offset + $i * 2);
+                    $item_value = $data_window->getRational($offset + $i * 2);
                     break;
                 case Format::SBYTE:
-                    $item_value = $d->getSignedByte($offset + $i * 2);
+                    $item_value = $data_window->getSignedByte($offset + $i * 2);
                     break;
                 case Format::SSHORT:
-                    $item_value = $d->getSignedShort($offset + $i * 2);
+                    $item_value = $data_window->getSignedShort($offset + $i * 2);
                     break;
                 case Format::SLONG:
-                    $item_value = $d->getSignedLong($offset + $i * 2);
+                    $item_value = $data_window->getSignedLong($offset + $i * 2);
                     break;
                 case Format::SRATIONAL:
-                    $item_value = $d->getSRattional($offset + $i * 2);
+                    $item_value = $data_window->getSRattional($offset + $i * 2);
                     break;
                 default:
-                    $item_value = $d->getSignedShort($offset + $i * 2);
+                    $item_value = $data_window->getSignedShort($offset + $i * 2);
                     $item_format = Format::SSHORT;
                     break;
             }

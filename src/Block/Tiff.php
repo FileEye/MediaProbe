@@ -81,7 +81,7 @@ class Tiff extends BlockBase
             $this->loadFile($data);
         } elseif ($data instanceof DataWindow) {
             $this->debug('Initializing Tiff object from DataWindow.');
-            $this->load($data);
+            $this->loadFromData($data);
         } else {
             throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
         }
@@ -112,52 +112,52 @@ class Tiff extends BlockBase
      *            constructed. This should be valid TIFF data, coming either
      *            directly from a TIFF image or from the Exif data in a JPEG image.
      */
-    public function load(DataWindow $d)
+    public function loadFromData(DataWindow $data_window)
     {
-        $this->debug('Parsing {size} bytes of TIFF data...', ['size' => $d->getSize()]);
+        $this->debug('Parsing {size} bytes of TIFF data...', ['size' => $data_window->getSize()]);
 
         /*
          * There must be at least 8 bytes available: 2 bytes for the byte
          * order, 2 bytes for the TIFF header, and 4 bytes for the offset
          * to the first IFD.
          */
-        if ($d->getSize() < 8) {
-            throw new InvalidDataException('Expected at least 8 bytes of TIFF ' . 'data, found just %d bytes.', $d->getSize());
+        if ($data_window->getSize() < 8) {
+            throw new InvalidDataException('Expected at least 8 bytes of TIFF ' . 'data, found just %d bytes.', $data_window->getSize());
         }
         /* Byte order */
-        if ($d->strcmp(0, 'II')) {
+        if ($data_window->strcmp(0, 'II')) {
             $this->debug('Found Intel byte order');
-            $d->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
-        } elseif ($d->strcmp(0, 'MM')) {
+            $data_window->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
+        } elseif ($data_window->strcmp(0, 'MM')) {
             $this->debug('Found Motorola byte order');
-            $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
+            $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
         } else {
-            throw new InvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $d->getByte(0), $d->getByte(1));
+            throw new InvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $data_window->getByte(0), $data_window->getByte(1));
         }
 
         /* Verify the TIFF header */
-        if ($d->getShort(2) != self::TIFF_HEADER) {
+        if ($data_window->getShort(2) != self::TIFF_HEADER) {
             throw new InvalidDataException('Missing TIFF magic value.');
         }
 
         // IFD0.
-        $offset = $d->getLong(4);
+        $offset = $data_window->getLong(4);
         $this->debug('First IFD at offset {offset}.', ['offset' => $offset]);
 
         if ($offset > 0) {
             // Parse IFD0, this will automatically parse any sub IFDs.
             $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'), $this);
             $this->xxAddSubBlock($ifd0);
-            $next_offset = $ifd0->load($d, $offset);
+            $next_offset = $ifd0->loadFromData($data_window, $offset);
         }
 
         // Next IFD. @todo iterate on next_offset
         if ($next_offset > 0) {
             // Sanity check: we need 6 bytes.
-            if ($next_offset > $d->getSize() - 6) {
+            if ($next_offset > $data_window->getSize() - 6) {
                 $this->error('Bogus offset to next IFD: {offset} > {size}!', [
                     'offset' => $next_offset,
-                    'size' => $d->getSize() - 6,
+                    'size' => $data_window->getSize() - 6,
                 ]);
             } else {
 /*                if (Spec::getIfdType($this->getId()) === 'IFD1') {
@@ -166,7 +166,7 @@ class Tiff extends BlockBase
                 }*/
                 $ifd1 = new Ifd(Spec::getIfdIdByType('IFD1'), $this);
                 $this->xxAddSubBlock($ifd1);
-                $next_offset = $ifd1->load($d, $next_offset);
+                $next_offset = $ifd1->loadFromData($data_window, $next_offset);
             }
         }
     }
@@ -179,7 +179,7 @@ class Tiff extends BlockBase
      */
     public function loadFile($filename)
     {
-        $this->load(new DataWindow(file_get_contents($filename)));
+        $this->loadFromData(new DataWindow(file_get_contents($filename)));
     }
 
     /**
@@ -288,7 +288,7 @@ class Tiff extends BlockBase
      * if the data could be a valid TIFF data. This means that the
      * check is more like a heuristic than a rigorous check.
      *
-     * @param DataWindow $d
+     * @param DataWindow $data_window
      *            the bytes that will be examined.
      *
      * @return boolean true if the data looks like valid TIFF data,
@@ -296,24 +296,24 @@ class Tiff extends BlockBase
      *
      * @see Jpeg::isValid()
      */
-    public static function xxIsValid(DataWindow $d)
+    public static function xxIsValid(DataWindow $data_window)
     {
         /* First check that we have enough data. */
-        if ($d->getSize() < 8) {
+        if ($data_window->getSize() < 8) {
             return false;
         }
 
         /* Byte order */
-        if ($d->strcmp(0, 'II')) {
-            $d->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
-        } elseif ($d->strcmp(0, 'MM')) {
+        if ($data_window->strcmp(0, 'II')) {
+            $data_window->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
+        } elseif ($data_window->strcmp(0, 'MM')) {
             ExifEye::logger()->debug('Found Motorola byte order');
-            $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
+            $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
         } else {
             return false;
         }
 
         /* Verify the TIFF header */
-        return $d->getShort(2) == self::TIFF_HEADER;
+        return $data_window->getShort(2) == self::TIFF_HEADER;
     }
 }

@@ -77,7 +77,7 @@ class Exif extends JpegContent
 
         /* The rest of the data is TIFF data. */
         $this->tiff = new Tiff();
-        $this->tiff->load($d);
+        $this->tiff->loadFromData($d);
     }
 
     /**
