@@ -230,17 +230,18 @@ class Tiff extends BlockBase
             // all those offsets are absolute offsets counted from the
             // beginning of the data.
             $ifd0_bytes = $ifd0->toBytes(8, $order);
-            $bytes .= $ifd0_bytes;
 
             // Deal with IFD1.
             $ifd1 = $this->xxGetSubBlockByName('Ifd', 'IFD1');
             if (!$ifd1) {
                 // No IFD1, link to next IFD is 0.
-                $bytes .= ConvertBytes::fromLong(0, $order);
+                $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong(0, $order) . $ifd0_bytes['data_area'];
             } else {
-                $bytes .= ConvertBytes::fromLong(8 + strlen($ifd0_bytes), $order);
-                $bytes .= $ifd1->toBytes(8 + strlen($ifd0_bytes), $order);
-                $bytes .= ConvertBytes::fromLong(0, $order);
+                $ifd0_length = strlen($ifd0_bytes['ifd_area']) + 4 + strlen($ifd0_bytes['data_area']);
+                $ifd1_offset = 8 + $ifd0_length;
+                $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong($ifd1_offset, $order) . $ifd0_bytes['data_area'];
+                $ifd1_bytes = $ifd1->toBytes($ifd1_offset, $order);
+                $bytes .= $ifd1_bytes['ifd_area'] . ConvertBytes::fromLong(0, $order) . $ifd1_bytes['data_area'];
             }
         } else {
             $bytes .= ConvertBytes::fromLong(0, $order);

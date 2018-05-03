@@ -77,14 +77,6 @@ class Ifd extends BlockBase
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public static function loadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
-    {
-        // @todo
-    }
-
-    /**
      * Load data into a Image File Directory (IFD).
      *
      * @param DataWindow $d
@@ -188,77 +180,64 @@ class Ifd extends BlockBase
      */
     public function toBytes($offset, $order)
     {
-        $bytes = '';
+        $ifd_area = '';
         $data_area = '';
 
+        // Determine number of IFD entries.
         $n = count($this->xxGetSubBlocks('Tag')) + count($this->xxGetSubBlocks('Ifd'));
         if ($this->xxGetSubBlock('Thumbnail', 0) !== null) {
             // We need two extra entries for the thumbnail offset and length.
             $n += 2;
         }
+        $ifd_area .= ConvertBytes::fromShort($n, $order);
 
-        $bytes .= ConvertBytes::fromShort($n, $order);
-
-        // Initialize offset of extra data. This included the bytes preceding
+        // Initialize offset of data area. This included the bytes preceding
         // this IFD, the bytes needed for the count of entries, the entries
         // themselves (and sub entries), the extra data in the entries, and the
         // IFD link.
         $end = $offset + 2 + 12 * $n + 4;
 
+        // Process the Tags.
         foreach ($this->xxGetSubBlocks('Tag') as $tag => $sub_block) {
-            /* Each entry is 12 bytes long. */
-            $bytes .= ConvertBytes::fromShort($sub_block->getId(), $order);
-            $bytes .= ConvertBytes::fromShort($sub_block->getEntry()->getFormat(), $order);
-            $bytes .= ConvertBytes::fromLong($sub_block->getEntry()->getComponents(), $order);
+            // Each entry is 12 bytes long.
+            $ifd_area .= ConvertBytes::fromShort($sub_block->getId(), $order);
+            $ifd_area .= ConvertBytes::fromShort($sub_block->getEntry()->getFormat(), $order);
+            $ifd_area .= ConvertBytes::fromLong($sub_block->getEntry()->getComponents(), $order);
 
-            /*
-             * Size? If bigger than 4 bytes, the actual data is not in
-             * the entry but somewhere else.
-             */
+            // Size? If bigger than 4 bytes, the actual data is not in
+            // the entry but somewhere else.
             $data = $sub_block->getEntry()->toBytes($order);
             $s = strlen($data);
             if ($s > 4) {
-                $this->debug('Data size {size} too big, storing at offset {offset} instead.', [
-                    'size' => $s,
-                    'offset' => $end,
-                ]);
-                $bytes .= ConvertBytes::fromLong($end, $order);
+                $ifd_area .= ConvertBytes::fromLong($end, $order);
                 $data_area .= $data;
                 $end += $s;
             } else {
-                $this->debug('Data size {size} fits.', [
-                    'size' => $s,
-                ]);
-                /*
-                 * Copy data directly, pad with NULL bytes as necessary to
-                 * fill out the four bytes available.
-                 */
-                $bytes .= $data . str_repeat(chr(0), 4 - $s);
+                // Copy data directly, pad with NULL bytes as necessary to
+                // fill out the four bytes available.
+                $ifd_area .= $data . str_repeat(chr(0), 4 - $s);
             }
         }
 
-        if ($this->xxGetSubBlock('Thumbnail', 0) !== null) {
-            $this->debug('Appending {size} bytes of thumbnail data at {offset}', [
-                'size' => $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents(),
-                'offset' => $end,
-            ]);
+        // Process the Thumbnail. @todo avoid double writing of tags
+        if ($this->xxGetSubBlock('Thumbnail', 0)) {
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the next four lines.
-            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailLength'), $order);
-            $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
-            $bytes .= ConvertBytes::fromLong(1, $order);
-            $bytes .= ConvertBytes::fromLong($this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailLength'), $order);
+            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
+            $ifd_area .= ConvertBytes::fromLong(1, $order);
+            $ifd_area .= ConvertBytes::fromLong($this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents(), $order);
 
-            $bytes .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailOffset'), $order);
-            $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
-            $bytes .= ConvertBytes::fromLong(1, $order);
-            $bytes .= ConvertBytes::fromLong($end, $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailOffset'), $order);
+            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
+            $ifd_area .= ConvertBytes::fromLong(1, $order);
+            $ifd_area .= ConvertBytes::fromLong($end, $order);
 
             $data_area .= $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->toBytes();
             $end += $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents();
         }
 
-        /* Find bytes from sub IFDs. */
+        // Process sub IFDs.
         $sub_bytes = '';
         foreach ($this->xxGetSubBlocks('Ifd') as $sub) {
             if (Spec::getIfdType($sub->getType()) === 'Exif') {
@@ -268,28 +247,25 @@ class Ifd extends BlockBase
             } elseif (Spec::getIfdType($sub->getType()) === 'Interoperability') {
                 $tag = Spec::getTagIdByName($this->getId(), 'InteroperabilityIFDPointer');
             } else {
-                // ConvertBytes::BIG_ENDIAN is the default used by Convert
+                // ConvertBytes::BIG_ENDIAN is the default used by Convert.
                 $tag = ConvertBytes::BIG_ENDIAN;
             }
-            /* Make an aditional entry with the pointer. */
-            $bytes .= ConvertBytes::fromShort($tag, $order);
-            /* Next the format, which is always unsigned long. */
-            $bytes .= ConvertBytes::fromShort(Format::LONG, $order);
-            /* There is only one component. */
-            $bytes .= ConvertBytes::fromLong(1, $order);
+            // Make an additional entry with the pointer.
+            $ifd_area .= ConvertBytes::fromShort($tag, $order);
+            // Next the format, which is always unsigned long.
+            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
+            // There is only one component.
+            $ifd_area .= ConvertBytes::fromLong(1, $order);
 
             $data = $sub->getBytes($end, $order);
             $s = strlen($data);
             $sub_bytes .= $data;
 
-            $bytes .= ConvertBytes::fromLong($end, $order);
+            $ifd_area .= ConvertBytes::fromLong($end, $order);
             $end += $s;
         }
 
-//        $bytes .= ConvertBytes::fromLong(0, $order);  // xx
-        $bytes .= $data_area . $sub_bytes;
-
-        return $bytes;
+        return ['ifd_area' => $ifd_area, 'data_area' => $data_area];
     }
 
     /**

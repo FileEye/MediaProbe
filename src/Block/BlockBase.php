@@ -52,10 +52,6 @@ abstract class BlockBase extends ElementBase
      *
      * @returns BlockBase
      */
-    public static function loadFromData(BlockBase $parent, DataWindow $data_window, $offset, $options = [])
-    {
-        // @todo
-    }
 
     /**
      * Adds a sub-block.
