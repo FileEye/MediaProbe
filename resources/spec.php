@@ -3840,6 +3840,23 @@ return array (
           ),
         ),
       ),
+      266 =>
+      array (
+        'name' => 'FillOrder',
+        'title' => 'Fill Order',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Normal',
+            2 => 'Reversed',
+          ),
+        ),
+      ),
       269 =>
       array (
         'name' => 'DocumentName',
@@ -4056,6 +4073,32 @@ return array (
           0 => 5,
         ),
       ),
+      342 =>
+      array (
+        'name' => 'TransferRange',
+        'title' => 'Transfer Range',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      512 =>
+      array (
+        'name' => 'JPEGProc',
+        'title' => 'JPEG Proc',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Baseline',
+            14 => 'Lossless',
+          ),
+        ),
+      ),
       513 =>
       array (
         'name' => 'ThumbnailOffset',
@@ -4145,6 +4188,15 @@ return array (
           0 => 3,
         ),
       ),
+      33423 =>
+      array (
+        'name' => 'BatteryLevel',
+        'title' => 'Battery Level',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
       33432 =>
       array (
         'name' => 'Copyright',
@@ -4154,6 +4206,15 @@ return array (
           0 => 2,
         ),
         'class' => 'ExifEye\\core\\Entry\\IfdCopyright',
+      ),
+      33723 =>
+      array (
+        'name' => 'IPTC-NAA',
+        'title' => 'IPTC-NAA',
+        'format' =>
+        array (
+          0 => 4,
+        ),
       ),
       34665 =>
       array (
@@ -4297,6 +4358,23 @@ return array (
           ),
         ),
       ),
+      266 =>
+      array (
+        'name' => 'FillOrder',
+        'title' => 'Fill Order',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Normal',
+            2 => 'Reversed',
+          ),
+        ),
+      ),
       269 =>
       array (
         'name' => 'DocumentName',
@@ -4513,6 +4591,32 @@ return array (
           0 => 5,
         ),
       ),
+      342 =>
+      array (
+        'name' => 'TransferRange',
+        'title' => 'Transfer Range',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      512 =>
+      array (
+        'name' => 'JPEGProc',
+        'title' => 'JPEG Proc',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Baseline',
+            14 => 'Lossless',
+          ),
+        ),
+      ),
       513 =>
       array (
         'name' => 'ThumbnailOffset',
@@ -4602,6 +4706,15 @@ return array (
           0 => 3,
         ),
       ),
+      33423 =>
+      array (
+        'name' => 'BatteryLevel',
+        'title' => 'Battery Level',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
       33432 =>
       array (
         'name' => 'Copyright',
@@ -4611,6 +4724,15 @@ return array (
           0 => 2,
         ),
         'class' => 'ExifEye\\core\\Entry\\IfdCopyright',
+      ),
+      33723 =>
+      array (
+        'name' => 'IPTC-NAA',
+        'title' => 'IPTC-NAA',
+        'format' =>
+        array (
+          0 => 4,
+        ),
       ),
       34665 =>
       array (
@@ -4953,6 +5075,7 @@ return array (
       'BitsPerSample' => 258,
       'Compression' => 259,
       'PhotometricInterpretation' => 262,
+      'FillOrder' => 266,
       'DocumentName' => 269,
       'ImageDescription' => 270,
       'Make' => 271,
@@ -4972,6 +5095,8 @@ return array (
       'Artist' => 315,
       'WhitePoint' => 318,
       'PrimaryChromaticities' => 319,
+      'TransferRange' => 342,
+      'JPEGProc' => 512,
       'ThumbnailOffset' => 513,
       'ThumbnailLength' => 514,
       'YCbCrCoefficients' => 529,
@@ -4980,7 +5105,9 @@ return array (
       'ReferenceBlackWhite' => 532,
       'Rating' => 18246,
       'RatingPercent' => 18249,
+      'BatteryLevel' => 33423,
       'Copyright' => 33432,
+      'IPTC-NAA' => 33723,
       'ExifIFDPointer' => 34665,
       'GPSInfoIFDPointer' => 34853,
       'WindowsXPTitle' => 40091,
@@ -4997,6 +5124,7 @@ return array (
       'BitsPerSample' => 258,
       'Compression' => 259,
       'PhotometricInterpretation' => 262,
+      'FillOrder' => 266,
       'DocumentName' => 269,
       'ImageDescription' => 270,
       'Make' => 271,
@@ -5016,6 +5144,8 @@ return array (
       'Artist' => 315,
       'WhitePoint' => 318,
       'PrimaryChromaticities' => 319,
+      'TransferRange' => 342,
+      'JPEGProc' => 512,
       'ThumbnailOffset' => 513,
       'ThumbnailLength' => 514,
       'YCbCrCoefficients' => 529,
@@ -5024,7 +5154,9 @@ return array (
       'ReferenceBlackWhite' => 532,
       'Rating' => 18246,
       'RatingPercent' => 18249,
+      'BatteryLevel' => 33423,
       'Copyright' => 33432,
+      'IPTC-NAA' => 33723,
       'ExifIFDPointer' => 34665,
       'GPSInfoIFDPointer' => 34853,
       'WindowsXPTitle' => 40091,
