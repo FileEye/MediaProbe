@@ -16,19 +16,13 @@ use ExifEye\core\Spec;
 
 /**
  * Class representing an Image File Directory (IFD).
- *
- * {@link Tiff TIFF data} is structured as a number of Image File
- * Directories, IFDs for short. Each IFD contains a number of {@link
- * EntryInterface entries}, some data and finally a link to the next IFD.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
 class Ifd extends BlockBase
 {
     /**
      * {@inheritdoc}
      */
-    protected $type = 'Ifd';
+    protected $type = 'ifd';
 
     /**
      * The IFD header bytes to skip.
@@ -53,37 +47,23 @@ class Ifd extends BlockBase
 
     /**
      * Construct a new Image File Directory (IFD).
-     *
-     * The IFD will be empty, use the {@link addEntry()} method to add
-     * an {@link EntryInterface}. Use the {@link setNext()} method to link
-     * this IFD to another.
-     *
-     * @param int $type
-     *            the type of this IFD, as found in Spec. A
-     *            {@link IfdException} will be thrown if unknown.
      */
-    public function __construct($id, $parent = null)
+    public function __construct(BlockBase $parent_block, $id)
     {
-        if (Spec::getIfdType($id) === null) {
-            throw new IfdException('Unknown IFD type: %d', $id);
-        }
-        $this->id = $id;
-        $this->name = Spec::getIfdType($id);
-        $this->hasSpecification = (bool) $this->name;
+        parent::__construct($parent_block);
 
-        if ($parent) {
-            $this->setParentElement($parent);
+        $this->setAttribute('id', $id);
+        if ($name = Spec::getIfdType($id)) {
+            $this->setAttribute('name', $name);
+            $this->hasSpecification = true;
+        } else {
+            $this->setAttribute('name', 'Unknown');
+            $this->hasSpecification = false;
         }
     }
 
     /**
-     * Load data into a Image File Directory (IFD).
-     *
-     * @param DataWindow $data_window
-     *            the data window that will provide the data.
-     * @param int $offset
-     *            the offset within the window where the directory will
-     *            be found.
+     * {@inheritdoc}
      */
     public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
@@ -132,21 +112,21 @@ class Ifd extends BlockBase
             }
 
             // Build the TAG object.
-            $tag_entry_class = Spec::getEntryClass($this->getId(), $tag_id, $tag_format);
+            $tag_entry_class = Spec::getEntryClass($this->getAttribute('id'), $tag_id, $tag_format);
             $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $tag_format, $tag_components, $data_window, $tag_data_offset);
             $tag = new Tag($this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
 
             // Load a subIfd.
-            if (Spec::isTagAnIfdPointer($this->getId(), $tag->getId())) {
+            if (Spec::isTagAnIfdPointer($this->getAttribute('id'), $tag->getAttribute('id'))) {
                 // If the tag is an IFD pointer, loads the IFD.
-                $type = Spec::getIfdIdFromTag($this->getId(), $tag->getId());
+                $type = Spec::getIfdIdFromTag($this->getAttribute('id'), $tag->getAttribute('id'));
                 $o = $data_window->getLong($offset + 12 * $i + 8);
                 if ($starting_offset != $o) {
                     $ifd_class = Spec::getIfdClass($type);
-                    $ifd = new $ifd_class($type, $this);
+                    $ifd = new $ifd_class($this, $type);
                     try {
                         $ifd->loadFromData($data_window, $o, ['components' => $tag->getEntry()->getComponents()]);
-                        $this->xxAddSubBlock($ifd);
+                        $this->remove("tag[@name='" . $tag->getAttribute('name') . "']");
                     } catch (DataWindowOffsetException $e) {
                         $this->error($e->getMessage());
                     }
@@ -157,15 +137,12 @@ class Ifd extends BlockBase
                 }
                 continue;
             }
-
-            // Append the TAG to the IFD.
-            $this->xxAppendSubBlock($tag);
         }
 
         $this->debug(".....END Loading");
 
         // Invoke post-load callbacks.
-        foreach (Spec::getIfdPostLoadCallbacks($this->getId()) as $callback) {
+        foreach (Spec::getIfdPostLoadCallbacks($this->getAttribute('id')) as $callback) {
             $this->debug("START... {callback}", [
                 'callback' => $callback,
             ]);
@@ -179,19 +156,7 @@ class Ifd extends BlockBase
     }
 
     /**
-     * Turn this directory into bytes.
-     *
-     * This directory will be turned into a byte string, with the
-     * specified byte order. The offsets will be calculated from the
-     * offset given.
-     *
-     * @param int $offset
-     *            the offset of the first byte of this directory.
-     *
-     * @param boolean $order
-     *            the byte order that should be used when
-     *            turning integers into bytes. This should be one of {@link
-     *            ConvertBytes::LITTLE_ENDIAN} and {@link ConvertBytes::BIG_ENDIAN}.
+     * {@inheritdoc}
      */
     public function toBytes($offset, $order)
     {
@@ -199,8 +164,8 @@ class Ifd extends BlockBase
         $data_area = '';
 
         // Determine number of IFD entries.
-        $n = count($this->xxGetSubBlocks('Tag')) + count($this->xxGetSubBlocks('Ifd'));
-        if ($this->xxGetSubBlock('Thumbnail', 0) !== null) {
+        $n = count($this->query('tag')) + count($this->query('ifd'));
+        if ($this->first("thumbnail") !== null) {
             // We need two extra entries for the thumbnail offset and length.
             $n += 2;
         }
@@ -213,9 +178,9 @@ class Ifd extends BlockBase
         $end = $offset + 2 + 12 * $n + 4;
 
         // Process the Tags.
-        foreach ($this->xxGetSubBlocks('Tag') as $tag => $sub_block) {
+        foreach ($this->query('tag') as $tag => $sub_block) {
             // Each entry is 12 bytes long.
-            $ifd_area .= ConvertBytes::fromShort($sub_block->getId(), $order);
+            $ifd_area .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $order);
             $ifd_area .= ConvertBytes::fromShort($sub_block->getEntry()->getFormat(), $order);
             $ifd_area .= ConvertBytes::fromLong($sub_block->getEntry()->getComponents(), $order);
 
@@ -235,32 +200,32 @@ class Ifd extends BlockBase
         }
 
         // Process the Thumbnail. @todo avoid double writing of tags
-        if ($this->xxGetSubBlock('Thumbnail', 0)) {
+        if ($this->first("thumbnail")) {
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the next four lines.
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailLength'), $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getAttribute('id'), 'ThumbnailLength'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
-            $ifd_area .= ConvertBytes::fromLong($this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromLong($this->first("thumbnail")->getEntry()->getComponents(), $order);
 
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getId(), 'ThumbnailOffset'), $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getAttribute('id'), 'ThumbnailOffset'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
             $ifd_area .= ConvertBytes::fromLong($end, $order);
 
-            $data_area .= $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->toBytes();
-            $end += $this->xxGetSubBlock('Thumbnail', 0)->getEntry()->getComponents();
+            $data_area .= $this->first("thumbnail")->getEntry()->toBytes();
+            $end += $this->first("thumbnail")->getEntry()->getComponents();
         }
 
         // Process sub IFDs.
         $sub_bytes = '';
-        foreach ($this->xxGetSubBlocks('Ifd') as $sub) {
+        foreach ($this->query('ifd') as $sub) {
             if (Spec::getIfdType($sub->getType()) === 'Exif') {
-                $tag = Spec::getTagIdByName($this->getId(), 'ExifIFDPointer');
+                $tag = Spec::getTagIdByName($this->getAttribute('id'), 'ExifIFDPointer');
             } elseif (Spec::getIfdType($sub->getType()) === 'GPS') {
-                $tag = Spec::getTagIdByName($this->getId(), 'GPSInfoIFDPointer');
+                $tag = Spec::getTagIdByName($this->getAttribute('id'), 'GPSInfoIFDPointer');
             } elseif (Spec::getIfdType($sub->getType()) === 'Interoperability') {
-                $tag = Spec::getTagIdByName($this->getId(), 'InteroperabilityIFDPointer');
+                $tag = Spec::getTagIdByName($this->getAttribute('id'), 'InteroperabilityIFDPointer');
             } else {
                 // ConvertBytes::BIG_ENDIAN is the default used by Convert.
                 $tag = ConvertBytes::BIG_ENDIAN;
@@ -284,27 +249,25 @@ class Ifd extends BlockBase
     }
 
     /**
-     * Turn this directory into text.
-     *
-     * @return string information about the directory, mainly for
-     *         debugging.
+     * {@inheritdoc}
      */
     public function __toString()
     {
-        $str = ExifEye::fmt(">>>> %s\n", $this->getName());
+        $str = ExifEye::fmt(">>>> %s\n", $this->getAttribute('name'));
+
+        $sub_elements = $this->query('*');
 
         // Dump all tags first.
-        foreach ($this->xxGetSubBlocks('Tag') as $sub_block) {
-            $str .= $sub_block->__toString();
+        foreach ($sub_elements as $element) {
+            if ($element->getType() === 'tag') {
+                $str .= $element->__toString();
+            }
         }
 
         // Then dump the rest sub-blocks.
-        foreach ($this->xxGetSubBlocks() as $type => $sub_blocks) {
-            if ($type === 'Tag') {
-                continue;
-            }
-            foreach ($sub_blocks as $sub_block) {
-                $str .= $sub_block->__toString();
+        foreach ($sub_elements as $element) {
+            if ($element->getType() !== 'tag') {
+                $str .= $element->__toString();
             }
         }
 

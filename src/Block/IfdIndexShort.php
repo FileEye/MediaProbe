@@ -16,7 +16,7 @@ class IfdIndexShort extends Ifd
     /**
      * {@inheritdoc}
      */
-    protected $type = 'IfdIndexShort';
+    protected $type = 'ifdIndexShort';
 
     /**
      * Load data into a Image File Directory (IFD).
@@ -41,17 +41,17 @@ class IfdIndexShort extends Ifd
 
         $index_size = $data_window->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
-            $this->warning('Size of {ifd_type} does not match the number of entries.', [
-                'ifd_type' => $this->getName(),
+            $this->warning('Size of {ifd_name} does not match the number of entries.', [
+                'ifd_name' => $this->getAttribute('name'),
             ]);
         }
         $offset += 2;
         for ($i = 0; $i < $components; $i++) {
             // Check if this tag ($i + 1) should be skipped.
-            if (Spec::getTagSkip($this->getId(), $i + 1)) {
+            if (Spec::getTagSkip($this->getAttribute('id'), $i + 1)) {
                 continue;
             };
-            $item_format = Spec::getTagFormat($this->getId(), $i + 1)[0];
+            $item_format = Spec::getTagFormat($this->getAttribute('id'), $i + 1)[0];
             switch ($item_format) {
                 case Format::BYTE:
                     $item_value = $data_window->getByte($offset + $i * 2);
@@ -82,8 +82,8 @@ class IfdIndexShort extends Ifd
                     $item_format = Format::SSHORT;
                     break;
             }
-            if ($entry_class = Spec::getEntryClass($this->getId(), $i + 1, $item_format)) {
-                $this->xxAppendSubBlock(new Tag($this, $i + 1, $entry_class, [$item_value], $item_format, 1));
+            if ($entry_class = Spec::getEntryClass($this->getAttribute('id'), $i + 1, $item_format)) {
+                new Tag($this, $i + 1, $entry_class, [$item_value], $item_format, 1);
             }
         }
         $this->debug(".....END Loading");

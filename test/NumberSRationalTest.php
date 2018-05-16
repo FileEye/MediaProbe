@@ -9,7 +9,7 @@ class NumberSignedRationalTest extends NumberTestCase
 {
     public function testOverflow()
     {
-        $entry = new SignedRational([[-1, 2]]);
+        $entry = new SignedRational($this->mockParentElement, [[-1, 2]]);
         $this->assertTrue($entry->isValid());
         $this->assertEquals([-1, 2], $entry->getValue());
 
@@ -32,7 +32,7 @@ class NumberSignedRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new SignedRational([]);
+        $entry = new SignedRational($this->mockParentElement, []);
         $this->assertEquals($entry->getValue(), []);
         $this->assertEquals($entry->toString(), '');
 

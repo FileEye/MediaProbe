@@ -345,8 +345,8 @@ class Spec
     public static function getTagText(BlockBase $tag, EntryInterface $entry, $options = []) // xx move to generic element
     {
         // Return a text from a mapping list if defined.
-        $ifd_id = $tag->getParentElement()->getId();
-        $tag_id = $tag->getId();
+        $ifd_id = $tag->getParentElement()->getAttribute('id');
+        $tag_id = $tag->getAttribute('id');
         if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'])) {
             $value = $entry->getValue();
             if (is_scalar($value)) {

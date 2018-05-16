@@ -29,22 +29,20 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             if ($exif === null) {
                 $exif = new Exif();
                 $jpeg->setExif($exif);
-                $tiff = new Tiff();
-                $exif->setTiff($tiff);
+                $tiff = new Tiff(false, $exif);
             }
 
-            $tiff = $exif->getTiff();
-            $ifd0 = $tiff->getIfd();
+            $tiff = $exif->first("tiff");
+            $ifd0 = $exif->first("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd(Spec::getIfdIdByType('IFD0'));
-                $tiff->xxAddSubBlock($ifd0);
+                $ifd0 = new Ifd($tiff, Spec::getIfdIdByType('IFD0'));
             }
 
             $software_name = 'Example V2';
-            $software_tag = $ifd0->xxGetSubBlockByName('Tag', 'Software');
+            $software_tag = $ifd0->first("tag[@name='Software']");
 
             if ($software_tag === null) {
-                $ifd0->xxAddSubBlock(new Tag($ifd0, 0x0131, 'ExifEye\core\Entry\Core\Ascii', [$software_name]));
+                new Tag($ifd0, 0x0131, 'ExifEye\core\Entry\Core\Ascii', [$software_name]);
                 $resave_file = 1;
             } else {
                 $software_tag->getEntry()->setValue([$software_name]);

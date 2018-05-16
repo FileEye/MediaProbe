@@ -4,12 +4,12 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\ExifUserComment;
 
-class EntryUserCommentTest extends ExifEyeTestCaseBase
+class EntryUserCommentTest extends EntryTestBase
 {
 
     public function testUsercomment()
     {
-        $entry = new ExifUserComment([]);
+        $entry = new ExifUserComment($this->mockParentElement, []);
         $this->assertEquals(8, $entry->getComponents());
         $this->assertEquals(['', 'ASCII'], $entry->getValue());
         $this->assertEquals('', $entry->toString());

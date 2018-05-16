@@ -18,7 +18,7 @@ use ExifEye\core\Block\Ifd;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
-class ReadWriteTest extends ExifEyeTestCaseBase
+class AReadWriteTest extends ExifEyeTestCaseBase
 {
     /**
      * {@inheritdoc}
@@ -30,54 +30,60 @@ class ReadWriteTest extends ExifEyeTestCaseBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function tearDown()
+    {
+        parent::tearDown();
+        unlink(dirname(__FILE__) . '/test-output.jpg');
+    }
+
+    /**
      * @dataProvider writeEntryProvider
      */
     public function testWriteRead(array $entries)
     {
-        $ifd = new Ifd(Spec::getIfdIdByType('IFD0'));
-
-        foreach ($entries as $entry) {
-            $ifd->xxAppendSubBlock(new Tag($ifd, $entry[0], $entry[1], $entry[2]));
-        }
-
-        $tiff = new Tiff();
-        $this->assertNull($tiff->getIfd());
-        $tiff->xxAddSubBlock($ifd);
-        $this->assertNotNull($tiff->getIfd());
-
-        $exif = new Exif();
-        $this->assertNull($exif->getTiff());
-        $exif->setTiff($tiff);
-        $this->assertNotNull($exif->getTiff());
-
         $jpeg = new Jpeg(dirname(__FILE__) . '/images/no-exif.jpg');
         $this->assertNull($jpeg->getExif());
+
+        $exif = new Exif();
         $jpeg->setExif($exif);
         $this->assertNotNull($jpeg->getExif());
+        $this->assertNull($exif->first("tiff"));
 
-        $jpeg->saveFile('test-output.jpg');
-        $this->assertTrue(file_exists('test-output.jpg'));
-        $this->assertTrue(filesize('test-output.jpg') > 0);
+        $tiff = new Tiff(false, $exif);
+        $this->assertNotNull($exif->first("tiff"));
+        $this->assertNull($tiff->first("ifd[@name='IFD0']"));
 
-        /* Now read the file and see if the entries are still there. */
-        $jpeg = new Jpeg('test-output.jpg');
+        $ifd = new Ifd($tiff, Spec::getIfdIdByType('IFD0'));
+        foreach ($entries as $entry) {
+            new Tag($ifd, $entry[0], $entry[1], $entry[2]);
+        }
+        $this->assertNotNull($tiff->first("ifd[@name='IFD0']"));
 
-        $exif = $jpeg->getExif();
+        $this->assertFalse(file_exists(dirname(__FILE__) . '/test-output.jpg'));
+        $jpeg->saveFile(dirname(__FILE__) . '/test-output.jpg');
+        $this->assertTrue(file_exists(dirname(__FILE__) . '/test-output.jpg'));
+        $this->assertTrue(filesize(dirname(__FILE__) . '/test-output.jpg') > 0);
+
+        // Now read the file and see if the entries are still there.
+        $r_jpeg = new Jpeg(dirname(__FILE__) . '/test-output.jpg');
+
+        $exif = $r_jpeg->getExif();
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);
 
-        $tiff = $exif->getTiff();
+        $tiff = $exif->first("tiff");
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
-        $this->assertCount(1, $tiff->xxGetSubBlocks('Ifd'));
+        $this->assertCount(1, $tiff->query("ifd"));
 
-        $ifd = $tiff->getIfd();
+        $ifd = $tiff->first("ifd[@name='IFD0']");
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd);
-        $this->assertEquals($ifd->getId(), Spec::getIfdIdByType('IFD0'));
+        $this->assertEquals($ifd->getAttribute('id'), Spec::getIfdIdByType('IFD0'));
 
-        foreach ($entries as $entry) {
-            $ifdTag = $ifd->xxGetSubBlock('Tag', $entry[0]);
-            $ifdEntry = $ifdTag->getEntry();
-            if ($ifdEntry->getFormat() == Format::ASCII) {
-                $ifdValue = $ifdTag->getEntry()->getValue();
+        foreach ($entries as $entry_name => $entry) {
+            $tagEntry = $ifd->first('tag[@id="' . (int) $entry[0] . '"]/entry');
+            if ($tagEntry->getFormat() == Format::ASCII) {
+                $ifdValue = $tagEntry->getValue();
                 $entryValue = $entry[3];
                 // cut off after the first nul byte
                 // since $ifdValue comes from parsed ifd,
@@ -89,11 +95,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                 }
                 $this->assertEquals($ifdValue, $canonicalEntry);
             } else {
-                $this->assertEquals($ifdTag->getEntry()->getValue(), $entry[3]);
+                $this->assertEquals($tagEntry->getValue(), $entry[3]);
             }
         }
-
-        unlink('test-output.jpg');
     }
 
     public function writeEntryProvider()

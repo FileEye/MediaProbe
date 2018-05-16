@@ -26,12 +26,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
-    protected $type = 'Entry';
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $id = 0;
+    protected $type = 'entry';
 
     /**
      * The format of this entry.
@@ -63,20 +58,10 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      * @param array $data
      *            the data that this entry will be holding.
      */
-    public function __construct(array $data, ElementInterface $parent = null)
+    public function __construct(ElementInterface $parent, array $data)
     {
-        if ($parent) {
-            $this->setParentElement($parent);
-        }
+        parent::__construct($parent);
         $this->setValue($data);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getElementPathFragment()
-    {
-        return $this->getType() . '+' . $this->getName();
     }
 
     /**
@@ -143,7 +128,6 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             'clear_value' => serialize($this->getValue()),
             'text' => $this->toString(),
         ]);
-        unset($dump['id'], $dump['name']);
         return $dump;
     }
 }

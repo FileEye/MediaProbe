@@ -214,7 +214,7 @@ if ($ifd0 == null) {
  * ImageDescription entry if it is present. If the IFD does not
  * contain such an entry, null will be returned.
  */
-$desc = $ifd0->getEntry(Spec::getTagIdByName($ifd0->getId(), 'ImageDescription'));
+$desc = $ifd0->getEntry(Spec::getTagIdByName($ifd0->getAttribute('id'), 'ImageDescription'));
 
 /* We need to check if the image already had a description stored. */
 if ($desc == null) {
@@ -226,7 +226,7 @@ if ($desc == null) {
      * the description. The constructor for Ascii needs to know
      * the tag and contents of the new entry.
      */
-    $desc = new Ascii(Spec::getTagIdByName($ifd0->getId(), 'ImageDescription'), $description);
+    $desc = new Ascii(Spec::getTagIdByName($ifd0->getAttribute('id'), 'ImageDescription'), $description);
 
     /*
      * This will insert the newly created entry with the description

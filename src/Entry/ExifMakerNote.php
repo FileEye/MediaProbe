@@ -62,23 +62,23 @@ class ExifMakerNote extends Undefined
     public static function tagToIfd(DataWindow $d, Ifd $ifd)
     {
         // Get the Exif subIfd if existing.
-        if (!$exif_ifd = $ifd->xxGetSubBlock('Ifd', Spec::getIfdIdByType('Exif'))) {
+        if (!$exif_ifd = $ifd->first("ifd[@name='Exif']")) {
             return;
         }
 
         // Get MakerNotes from Exif IFD.
-        if (!$maker_note_tag = $exif_ifd->xxGetSubBlockByName('Tag', 'MakerNote')) {
+        if (!$maker_note_tag = $exif_ifd->first("tag[@name='MakerNote']")) {
             return;
         }
 
         // Get Make tag from IFD0.
-        if (!$make_tag = $ifd->xxGetSubBlockByName('Tag', 'Make')) {
+        if (!$make_tag = $ifd->first("tag[@name='Make']")) {
             return;
         }
 
         // Get Model tag from IFD0.
-        $model_tag = $ifd->xxGetSubBlockByName('Tag', 'Model');
-        $model = $model_tag ? $model_tag->getEntry()->getValue() : 'na';
+        $model_tag = $ifd->first("tag[@name='Model']");
+        $model = $model_tag && $model_tag->getEntry() ? $model_tag->getEntry()->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
 
         // Get maker note IFD id.
         if (!$maker_note_ifd_id = Spec::getMakerNoteIfd($make_tag->getEntry()->getValue(), $model)) {
@@ -87,8 +87,7 @@ class ExifMakerNote extends Undefined
 
         // Load maker note into IFD.
         $ifd_class = Spec::getIfdClass($maker_note_ifd_id);
-        $ifd = new $ifd_class($maker_note_ifd_id, $exif_ifd);
+        $ifd = new $ifd_class($exif_ifd, $maker_note_ifd_id);
         $ifd->loadFromData($d, $maker_note_tag->getEntry()->getValue()[1]);
-        $exif_ifd->xxAddSubBlock($ifd);
     }
 }

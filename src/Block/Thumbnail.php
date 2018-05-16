@@ -19,37 +19,15 @@ class Thumbnail extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'Thumbnail';
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $id = 0;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $name = 'Thumbnail';
+    protected $type = 'thumbnail';
 
     /**
      * Constructs a Thumbnail block object.
      */
-    public function __construct(Ifd $ifd, EntryInterface $entry)
+    public function __construct(Ifd $ifd)
     {
-        $this->setParentElement($ifd);
-
+        parent::__construct($ifd);
         $this->hasSpecification = false;
-
-        $entry->setParentElement($this);
-        $this->setEntry($entry);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getElementPathFragment()
-    {
-        return $this->getType();
     }
 
     /**
@@ -60,12 +38,12 @@ class Thumbnail extends BlockBase
      */
     public static function toBlock(DataWindow $data_window, Ifd $ifd)
     {
-        if (!$ifd->xxGetSubBlockByName('Tag', 'ThumbnailOffset') || !$ifd->xxGetSubBlockByName('Tag', 'ThumbnailLength')) {
+        if (!$ifd->first("tag[@name='ThumbnailOffset']") || !$ifd->first("tag[@name='ThumbnailLength']")) {
             return;
         }
 
-        $offset = $ifd->xxGetSubBlockByName('Tag', 'ThumbnailOffset')->getEntry()->getValue();
-        $length = $ifd->xxGetSubBlockByName('Tag', 'ThumbnailLength')->getEntry()->getValue();
+        $offset = $ifd->first("tag[@name='ThumbnailOffset']")->getEntry()->getValue();
+        $length = $ifd->first("tag[@name='ThumbnailLength']")->getEntry()->getValue();
 
         // Load the thumbnail only if both the offset and the length are
         // available and positive.
@@ -89,14 +67,13 @@ class Thumbnail extends BlockBase
 
         // Now set the thumbnail normally.
         try {
-            $thumbnail_data = static::setThumbnail($data_window->getClone($offset, $length));
-            $thumbnail_entry = new Undefined([$thumbnail_data]);
-            $thumbnail_block = new static($ifd, $thumbnail_entry);
+            $thumbnail_block = new static($ifd);
+            $thumbnail_data = static::xxsetThumbnail($data_window->getClone($offset, $length));
+            $thumbnail_entry = new Undefined($thumbnail_block, [$thumbnail_data]);
             $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
                 'offset' => $offset,
                 'length' => $length,
             ]);
-            $ifd->xxAddSubBlock($thumbnail_block);
         } catch (DataWindowWindowException $e) {
             $ifd->error($e->getMessage());
         }
@@ -114,7 +91,7 @@ class Thumbnail extends BlockBase
      * @param DataWindow $d
      *            the thumbnail data.
      */
-    public static function setThumbnail(DataWindow $data_window)
+    protected static function xxsetThumbnail(DataWindow $data_window)
     {
         $size = $data_window->getSize();
 
@@ -140,6 +117,10 @@ class Thumbnail extends BlockBase
      */
     public function __toString()
     {
-        return ExifEye::fmt("  Thumbnail   : %s\n", $this->getEntry()->toString());
+        $str = ExifEye::fmt(">>>> Thumbnail\n");
+        foreach ($this->query('entry') as $sub_block) {
+            $str .= $sub_block->toString();
+        }
+        return $str;
     }
 }

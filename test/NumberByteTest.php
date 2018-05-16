@@ -12,7 +12,7 @@ class NumberByteTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new Byte([]);
+        $this->num = new Byte($this->mockParentElement, []);
         $this->min = 0;
         $this->max = 255;
     }

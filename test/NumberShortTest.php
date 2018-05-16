@@ -12,7 +12,7 @@ class NumberShortTest extends NumberTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->num = new Short([]);
+        $this->num = new Short($this->mockParentElement, []);
         $this->min = 0;
         $this->max = 65535;
     }

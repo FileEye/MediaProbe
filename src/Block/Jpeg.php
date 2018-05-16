@@ -561,7 +561,7 @@ class Jpeg
                 continue;
             }
 
-            $data = $c->getBytes();
+            $data = $c->toBytes();
             $size = strlen($data) + 2;
 
             $bytes .= ConvertBytes::fromShort($size, ConvertBytes::BIG_ENDIAN);

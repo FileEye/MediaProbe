@@ -10,16 +10,6 @@ namespace ExifEye\core;
 interface ElementInterface
 {
     /**
-     * Sets the parent element of this element.
-     *
-     * @param \ExifEye\core\ElementInterface $parent
-     *            the parent element of this element.
-     *
-     * @return $this
-     */
-    public function setParentElement(ElementInterface $parent);
-
-    /**
      * Gets the parent element of this element.
      *
      * @return \ExifEye\core\ElementInterface
@@ -35,32 +25,15 @@ interface ElementInterface
     public function getType();
 
     /**
-     * Returns the id of this element.
+     * Returns a context path for this element.
      *
-     * @return int
-     */
-    public function getId();
-
-    /**
-     * Returns the name of this element.
+     * It gives whereabouts of the element within the overall structure of the
+     * image. Note that this is not an XPath compliant path, it is mainly used
+     * for logging purposes.
      *
      * @return string
      */
-    public function getName();
-
-    /**
-     * Returns the full path of this element.
-     *
-     * @return string
-     */
-    public function getPath();
-
-    /**
-     * Returns the path fragment of this element.
-     *
-     * @return string
-     */
-    public function getElementPathFragment();
+    public function getContextPath();
 
     /**
      * Gets validity of the element.

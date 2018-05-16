@@ -2,6 +2,7 @@
 
 namespace ExifEye\core;
 
+use ExifEye\core\DOM\ExifEyeDOMElement;
 use ExifEye\core\ExifEye;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
@@ -18,11 +19,11 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     use LoggerTrait;
 
     /**
-     * The parent Element object of this element.
+     * The DOM node associated to this element.
      *
-     * @var \ExifEye\core\ElementInterface
+     * @var \DOMNode
      */
-    protected $parentElement;
+    public $DOMNode;
 
     /**
      * The type of this element.
@@ -30,20 +31,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      * @var string
      */
     protected $type;
-
-    /**
-     * The id of this element.
-     *
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * The name of this element.
-     *
-     * @var string
-     */
-    protected $name;
 
     /**
      * Whether this element is valid.
@@ -60,7 +47,83 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function __construct(ElementInterface $parent = null)
     {
-        $this->parentElement = $parent;
+        if (!$parent || !is_object($parent->DOMNode)) {
+            $doc = new \DOMDocument();
+            $doc->registerNodeClass('DOMElement', 'ExifEye\core\DOM\ExifEyeDOMElement');
+            $parent_node = $doc;
+        } else {
+            $parent_node = $parent->DOMNode;
+            $doc = $parent->DOMNode->ownerDocument;
+        }
+        $this->DOMNode = $doc->createElement($this->getType());
+        $parent_node->appendChild($this->DOMNode);
+        $this->DOMNode->setExifEyeElement($this);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAttributes()
+    {
+        $attr = [];
+        foreach ($this->DOMNode->attributes as $attribute) {
+            $attr[$attribute->name] = $attribute->value;
+        }
+        return $attr;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setAttribute($name, $value)
+    {
+        return $this->DOMNode->setAttribute($name, $value);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAttribute($name)
+    {
+        return $this->DOMNode->getAttribute($name);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function first($expression)
+    {
+        $ret = $this->query($expression);
+        if ($ret) {
+            return $ret[0];
+        }
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove($expression)
+    {
+        $ret = $this->query($expression);
+        if ($ret) {
+            $ret[0]->DOMNode->resetExifEyeElement();
+            $ret[0]->DOMNode->parentNode->removeChild($ret[0]->DOMNode);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function query($expression)
+    {
+        $x_path = new \DOMXPath($this->DOMNode->ownerDocument);
+        $node_list = $x_path->query($expression, $this->DOMNode);
+        $ret = [];
+        for ($i = 0; $i < $node_list->length; $i++) {
+            $ret[] = $node_list->item($i)->getExifEyeElement();
+        }
+        return $ret;
     }
 
     /**
@@ -74,50 +137,17 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setParentElement(ElementInterface $parent)
-    {
-        $this->parentElement = $parent;
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getParentElement()
     {
-        return $this->parentElement;
+        return $this->DOMNode->parentNode && !($this->DOMNode->parentNode instanceof \DOMDocument) ? $this->DOMNode->parentNode->getExifEyeElement() : null;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getPath()
+    public function getContextPath()
     {
-        return $this->getParentElement() ? $this->getParentElement()->getPath() . '/' . $this->getElementPathFragment() : $this->getElementPathFragment();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getElementPathFragment()
-    {
-        return $this->getType() . ':' . $this->getName();
+        return $this->DOMNode ? $this->DOMNode->getContextPath() : '';
     }
 
     /**
@@ -134,10 +164,8 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function toDumpArray()
     {
         return [
-            'path' => $this->getPath(),
+            'path' => $this->getContextPath(),
             'class' => get_class($this),
-            'id' => $this->getId(),
-            'name' => $this->getName(),
             'valid' => $this->isValid(),
         ];
     }
@@ -147,7 +175,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function log($level, $message, array $context = [])
     {
-        $context['path'] = $this->getPath();
+        $context['path'] = $this->getContextPath();
         ExifEye::logger()->log($level, $message, $context);
     }
 }

@@ -4,11 +4,11 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\VersionBase;
 
-class EntryVersionTest extends ExifEyeTestCaseBase
+class EntryVersionTest extends EntryTestBase
 {
     public function testVersion()
     {
-        $entry = new VersionBase([]);
+        $entry = new VersionBase($this->mockParentElement, []);
         $this->assertEquals(0.0, $entry->getValue());
         $this->assertEquals('Version 0.0', $entry->toString());
         $this->assertEquals('0.0', $entry->toString(['short' => true]));

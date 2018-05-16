@@ -18,18 +18,21 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'Tag';
+    protected $type = 'tag';
 
     /**
      * Constructs a Tag block object.
      */
-    public function __construct(Ifd $ifd, $id, $entry_class, $entry_arguments, $format = null, $components = null)
+    public function __construct(BlockBase $parent_block, $id, $entry_class, $entry_data, $format = null, $components = null)
     {
-        $this->setParentElement($ifd);
+        parent::__construct($parent_block);
 
-        $this->id = $id;
-        $this->name = Spec::getTagName($this->getParentElement()->getId(), $id);
-        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($ifd->getId()));
+        $this->setAttribute('id', $id);
+        $tag_name = Spec::getTagName($parent_block->getAttribute('id'), $id);
+        if ($tag_name !== null) {
+            $this->setAttribute('name', $tag_name);
+        }
+        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($parent_block->getAttribute('id')));
 
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasSpecification()) {
@@ -45,7 +48,7 @@ class Tag extends BlockBase
         }
 
         // Warn if format is not as expected.
-        $expected_format = Spec::getTagFormat($this->getParentElement()->getId(), $id);
+        $expected_format = Spec::getTagFormat($parent_block->getAttribute('id'), $id);
         if ($expected_format !== null && $format !== null && !in_array($format, $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
@@ -58,7 +61,7 @@ class Tag extends BlockBase
         }
 
         // Warn if components are not as expected.
-        $expected_components = Spec::getTagComponents($this->getParentElement()->getId(), $id);
+        $expected_components = Spec::getTagComponents($parent_block->getAttribute('id'), $id);
         if ($expected_components !== null && $components !== null && $components !== $expected_components) {
             $this->warning("Found {components} data components, expected {expected_components}", [
                 'components' => $components,
@@ -67,34 +70,21 @@ class Tag extends BlockBase
         }
 
         // Set the Tag's entry.
-        $this->setEntry(new $entry_class($entry_arguments, $this));
+        $entry = new $entry_class($this, $entry_data);
         $this->debug("Text: {text}", [
-            'text' => $this->getEntry()->toString(),
+            'text' => $entry->toString(),
         ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getElementPathFragment()
-    {
-        $tag_path = $this->getType() . ':0x' . str_pad(dechex($this->getId()), 4, '0', STR_PAD_LEFT);
-        $tag_path .= $this->getName() ? ':' . $this->getName() : '';
-        return $tag_path;
-    }
-
-    /**
-     * Turn this entry into a string.
-     *
-     * @return string a string representation of this entry. This is
-     *         mostly for debugging.
-     */
     public function __toString()
     {
-        if (!$this->getName()) {
+        if (!$this->getAttribute('name')) {
             return '';
         }
-        $entry_title = Spec::getTagTitle($this->getParentElement()->getId(), $this->getId()) ?: '*** UNKNOWN ***';
+        $entry_title = Spec::getTagTitle($this->getParentElement()->getAttribute('id'), $this->getAttribute('id')) ?: '*** UNKNOWN ***';
         return substr(str_pad($entry_title, 30, ' '), 0, 30) . ' = ' . $this->getEntry()->toString() . "\n";
     }
 }

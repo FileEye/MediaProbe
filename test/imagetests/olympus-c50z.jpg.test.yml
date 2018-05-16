@@ -1,790 +1,899 @@
 jpeg: olympus-c50z.jpg
-blocks:
-    IFD0:
-        path: 'Tiff/Ifd:IFD0'
-        class: ExifEye\core\Block\Ifd
-        id: 10
-        name: IFD0
-        valid: true
-        blocks:
-            Tag:
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x010e:ImageDescription'
-                    class: ExifEye\core\Block\Tag
-                    id: 270
-                    name: ImageDescription
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x010e:ImageDescription/Entry+Ascii'
-                        class: ExifEye\core\Entry\Core\Ascii
-                        valid: true
-                        format: Ascii
-                        components: 32
-                        value: czozMToiT0xZTVBVUyBESUdJVEFMIENBTUVSQSAgICAgICAgICI7
-                        clear_value: 's:31:"OLYMPUS DIGITAL CAMERA         ";'
-                        text: 'OLYMPUS DIGITAL CAMERA         '
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x010f:Make'
-                    class: ExifEye\core\Block\Tag
-                    id: 271
-                    name: Make
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x010f:Make/Entry+Ascii'
-                        class: ExifEye\core\Entry\Core\Ascii
-                        valid: true
-                        format: Ascii
-                        components: 24
-                        value: czoyMzoiT0xZTVBVUyBPUFRJQ0FMIENPLixMVEQiOw==
-                        clear_value: 's:23:"OLYMPUS OPTICAL CO.,LTD";'
-                        text: 'OLYMPUS OPTICAL CO.,LTD'
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x0110:Model'
-                    class: ExifEye\core\Block\Tag
-                    id: 272
-                    name: Model
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x0110:Model/Entry+Ascii'
-                        class: ExifEye\core\Entry\Core\Ascii
-                        valid: true
-                        format: Ascii
-                        components: 17
-                        value: czoxNjoiWC0yLEMtNTBaICAgICAgICI7
-                        clear_value: 's:16:"X-2,C-50Z       ";'
-                        text: 'X-2,C-50Z       '
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x0112:Orientation'
-                    class: ExifEye\core\Block\Tag
-                    id: 274
-                    name: Orientation
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x0112:Orientation/Entry+Short'
-                        class: ExifEye\core\Entry\Core\Short
-                        valid: true
-                        format: Short
-                        components: 1
-                        value: aToxOw==
-                        clear_value: 'i:1;'
-                        text: 'top - left'
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x011a:XResolution'
-                    class: ExifEye\core\Block\Tag
-                    id: 282
-                    name: XResolution
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x011a:XResolution/Entry+Rational'
-                        class: ExifEye\core\Entry\Core\Rational
-                        valid: true
-                        format: Rational
-                        components: 1
-                        value: YToyOntpOjA7aToxNDQ7aToxO2k6MTt9
-                        clear_value: 'a:2:{i:0;i:144;i:1;i:1;}'
-                        text: 144/1
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x011b:YResolution'
-                    class: ExifEye\core\Block\Tag
-                    id: 283
-                    name: YResolution
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x011b:YResolution/Entry+Rational'
-                        class: ExifEye\core\Entry\Core\Rational
-                        valid: true
-                        format: Rational
-                        components: 1
-                        value: YToyOntpOjA7aToxNDQ7aToxO2k6MTt9
-                        clear_value: 'a:2:{i:0;i:144;i:1;i:1;}'
-                        text: 144/1
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x0128:ResolutionUnit'
-                    class: ExifEye\core\Block\Tag
-                    id: 296
-                    name: ResolutionUnit
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x0128:ResolutionUnit/Entry+Short'
-                        class: ExifEye\core\Entry\Core\Short
-                        valid: true
-                        format: Short
-                        components: 1
-                        value: aToyOw==
-                        clear_value: 'i:2;'
-                        text: Inch
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x0131:Software'
-                    class: ExifEye\core\Block\Tag
-                    id: 305
-                    name: Software
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x0131:Software/Entry+Ascii'
-                        class: ExifEye\core\Entry\Core\Ascii
-                        valid: true
-                        format: Ascii
-                        components: 32
-                        value: czozMToiMjgtMTAxMiAgICAgICAgICAgICAgICAgICAgICAgICI7
-                        clear_value: 's:31:"28-1012                        ";'
-                        text: '28-1012                        '
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x0132:DateTime'
-                    class: ExifEye\core\Block\Tag
-                    id: 306
-                    name: DateTime
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x0132:DateTime/Entry+Time'
-                        class: ExifEye\core\Entry\Time
-                        valid: true
-                        format: Ascii
-                        components: 20
-                        value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
-                        clear_value: 's:19:"0000:00:00 00:00:00";'
-                        text: '0000:00:00 00:00:00'
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0x0213:YCbCrPositioning'
-                    class: ExifEye\core\Block\Tag
-                    id: 531
-                    name: YCbCrPositioning
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0x0213:YCbCrPositioning/Entry+Short'
-                        class: ExifEye\core\Entry\Core\Short
-                        valid: true
-                        format: Short
-                        components: 1
-                        value: aToyOw==
-                        clear_value: 'i:2;'
-                        text: co-sited
-                -
-                    path: 'Tiff/Ifd:IFD0/Tag:0xc4a5:PrintIM'
-                    class: ExifEye\core\Block\Tag
-                    id: 50341
-                    name: PrintIM
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD0/Tag:0xc4a5:PrintIM/Entry+Undefined'
-                        class: ExifEye\core\Entry\Core\Undefined
-                        valid: true
-                        format: Undefined
-                        components: 244
-                        value: czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
-                        clear_value: !!binary czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
-                        text: '244 bytes of data'
-            Ifd:
-                -
-                    path: 'Tiff/Ifd:IFD0/Ifd:Exif'
-                    class: ExifEye\core\Block\Ifd
-                    id: 4
-                    name: Exif
-                    valid: true
-                    blocks:
-                        Tag:
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x829a:ExposureTime'
-                                class: ExifEye\core\Block\Tag
-                                id: 33434
-                                name: ExposureTime
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x829a:ExposureTime/Entry+Rational'
-                                    class: ExifEye\core\Entry\ExifExposureTime
-                                    valid: true
-                                    format: Rational
-                                    components: 1
-                                    value: YToyOntpOjA7aToxO2k6MTtpOjgwO30=
-                                    clear_value: 'a:2:{i:0;i:1;i:1;i:80;}'
-                                    text: '1/80 sec.'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x829d:FNumber'
-                                class: ExifEye\core\Block\Tag
-                                id: 33437
-                                name: FNumber
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x829d:FNumber/Entry+Rational'
-                                    class: ExifEye\core\Entry\ExifFNumber
-                                    valid: true
-                                    format: Rational
-                                    components: 1
-                                    value: YToyOntpOjA7aTo0NTtpOjE7aToxMDt9
-                                    clear_value: 'a:2:{i:0;i:45;i:1;i:10;}'
-                                    text: f/4.5
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x8822:ExposureProgram'
-                                class: ExifEye\core\Block\Tag
-                                id: 34850
-                                name: ExposureProgram
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x8822:ExposureProgram/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTo1Ow==
-                                    clear_value: 'i:5;'
-                                    text: 'Creative program (biased toward depth of field)'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x8827:ISOSpeedRatings'
-                                class: ExifEye\core\Block\Tag
-                                id: 34855
-                                name: ISOSpeedRatings
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x8827:ISOSpeedRatings/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTo4MDs=
-                                    clear_value: 'i:80;'
-                                    text: 80
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9000:ExifVersion'
-                                class: ExifEye\core\Block\Tag
-                                id: 36864
-                                name: ExifVersion
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9000:ExifVersion/Entry+Version'
-                                    class: ExifEye\core\Entry\ExifVersion
-                                    valid: true
-                                    format: Undefined
-                                    components: 4
-                                    value: czozOiIyLjIiOw==
-                                    clear_value: 's:3:"2.2";'
-                                    text: 'Exif Version 2.2'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9003:DateTimeOriginal'
-                                class: ExifEye\core\Block\Tag
-                                id: 36867
-                                name: DateTimeOriginal
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9003:DateTimeOriginal/Entry+Time'
-                                    class: ExifEye\core\Entry\Time
-                                    valid: true
-                                    format: Ascii
-                                    components: 20
-                                    value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
-                                    clear_value: 's:19:"0000:00:00 00:00:00";'
-                                    text: '0000:00:00 00:00:00'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9004:DateTimeDigitized'
-                                class: ExifEye\core\Block\Tag
-                                id: 36868
-                                name: DateTimeDigitized
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9004:DateTimeDigitized/Entry+Time'
-                                    class: ExifEye\core\Entry\Time
-                                    valid: true
-                                    format: Ascii
-                                    components: 20
-                                    value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
-                                    clear_value: 's:19:"0000:00:00 00:00:00";'
-                                    text: '0000:00:00 00:00:00'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9101:ComponentsConfiguration'
-                                class: ExifEye\core\Block\Tag
-                                id: 37121
-                                name: ComponentsConfiguration
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9101:ComponentsConfiguration/Entry+Undefined'
-                                    class: ExifEye\core\Entry\ExifComponentsConfiguration
-                                    valid: true
-                                    format: Undefined
-                                    components: 4
-                                    value: czo0OiIBAgMAIjs=
-                                    clear_value: !!binary czo0OiIBAgMAIjs=
-                                    text: 'Y Cb Cr -'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9204:ExposureBiasValue'
-                                class: ExifEye\core\Block\Tag
-                                id: 37380
-                                name: ExposureBiasValue
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9204:ExposureBiasValue/Entry+SignedRational'
-                                    class: ExifEye\core\Entry\ExifExposureBiasValue
-                                    valid: true
-                                    format: SignedRational
-                                    components: 1
-                                    value: YToyOntpOjA7aTowO2k6MTtpOjEwO30=
-                                    clear_value: 'a:2:{i:0;i:0;i:1;i:10;}'
-                                    text: '0.0'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9205:MaxApertureValue'
-                                class: ExifEye\core\Block\Tag
-                                id: 37381
-                                name: MaxApertureValue
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9205:MaxApertureValue/Entry+Rational'
-                                    class: ExifEye\core\Entry\Core\Rational
-                                    valid: true
-                                    format: Rational
-                                    components: 1
-                                    value: YToyOntpOjA7aTozMDA7aToxO2k6MTAwO30=
-                                    clear_value: 'a:2:{i:0;i:300;i:1;i:100;}'
-                                    text: 300/100
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9207:MeteringMode'
-                                class: ExifEye\core\Block\Tag
-                                id: 37383
-                                name: MeteringMode
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9207:MeteringMode/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTo1Ow==
-                                    clear_value: 'i:5;'
-                                    text: Pattern
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9208:LightSource'
-                                class: ExifEye\core\Block\Tag
-                                id: 37384
-                                name: LightSource
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9208:LightSource/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: Unknown
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9209:Flash'
-                                class: ExifEye\core\Block\Tag
-                                id: 37385
-                                name: Flash
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9209:Flash/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aToyNTs=
-                                    clear_value: 'i:25;'
-                                    text: 'Flash fired, auto mode.'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x920a:FocalLength'
-                                class: ExifEye\core\Block\Tag
-                                id: 37386
-                                name: FocalLength
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x920a:FocalLength/Entry+Rational'
-                                    class: ExifEye\core\Entry\ExifFocalLength
-                                    valid: true
-                                    format: Rational
-                                    components: 1
-                                    value: YToyOntpOjA7aToxODgzO2k6MTtpOjEwMDt9
-                                    clear_value: 'a:2:{i:0;i:1883;i:1;i:100;}'
-                                    text: '18.8 mm'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x927c:MakerNote'
-                                class: ExifEye\core\Block\Tag
-                                id: 37500
-                                name: MakerNote
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x927c:MakerNote/Entry+MakerNote'
-                                    class: ExifEye\core\Entry\ExifMakerNote
-                                    valid: true
-                                    format: Undefined
-                                    components: 758
-                                    value: YToyOntpOjA7czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjtpOjE7aTo3NTI7fQ==
-                                    clear_value: !!binary YToyOntpOjA7czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjtpOjE7aTo3NTI7fQ==
-                                    text: '758 bytes MakerNote data'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9286:UserComment'
-                                class: ExifEye\core\Block\Tag
-                                id: 37510
-                                name: UserComment
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0x9286:UserComment/Entry+Undefined'
-                                    class: ExifEye\core\Entry\ExifUserComment
-                                    valid: true
-                                    format: Undefined
-                                    components: 125
-                                    value: YToyOntpOjA7czoxMTc6IiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICI7aToxO3M6MDoiIjt9
-                                    clear_value: 'a:2:{i:0;s:117:"                                                                                                                     ";i:1;s:0:"";}'
-                                    text: '                                                                                                                     '
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa000:FlashPixVersion'
-                                class: ExifEye\core\Block\Tag
-                                id: 40960
-                                name: FlashPixVersion
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa000:FlashPixVersion/Entry+Version'
-                                    class: ExifEye\core\Entry\ExifFlashPixVersion
-                                    valid: true
-                                    format: Undefined
-                                    components: 4
-                                    value: czozOiIxLjAiOw==
-                                    clear_value: 's:3:"1.0";'
-                                    text: 'FlashPix Version 1.0'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa001:ColorSpace'
-                                class: ExifEye\core\Block\Tag
-                                id: 40961
-                                name: ColorSpace
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa001:ColorSpace/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aToxOw==
-                                    clear_value: 'i:1;'
-                                    text: sRGB
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa002:PixelXDimension'
-                                class: ExifEye\core\Block\Tag
-                                id: 40962
-                                name: PixelXDimension
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa002:PixelXDimension/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aToyNTYwOw==
-                                    clear_value: 'i:2560;'
-                                    text: 2560
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa003:PixelYDimension'
-                                class: ExifEye\core\Block\Tag
-                                id: 40963
-                                name: PixelYDimension
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa003:PixelYDimension/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aToxOTIwOw==
-                                    clear_value: 'i:1920;'
-                                    text: 1920
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa300:FileSource'
-                                class: ExifEye\core\Block\Tag
-                                id: 41728
-                                name: FileSource
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa300:FileSource/Entry+Undefined'
-                                    class: ExifEye\core\Entry\ExifFileSource
-                                    valid: true
-                                    format: Undefined
-                                    components: 1
-                                    value: czoxOiIDIjs=
-                                    clear_value: !!binary czoxOiIDIjs=
-                                    text: DSC
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa401:CustomRendered'
-                                class: ExifEye\core\Block\Tag
-                                id: 41985
-                                name: CustomRendered
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa401:CustomRendered/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: 'Normal process'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa402:ExposureMode'
-                                class: ExifEye\core\Block\Tag
-                                id: 41986
-                                name: ExposureMode
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa402:ExposureMode/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: 'Auto exposure'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa403:WhiteBalance'
-                                class: ExifEye\core\Block\Tag
-                                id: 41987
-                                name: WhiteBalance
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa403:WhiteBalance/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: 'Auto white balance'
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa404:DigitalZoomRatio'
-                                class: ExifEye\core\Block\Tag
-                                id: 41988
-                                name: DigitalZoomRatio
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa404:DigitalZoomRatio/Entry+Rational'
-                                    class: ExifEye\core\Entry\Core\Rational
-                                    valid: true
-                                    format: Rational
-                                    components: 1
-                                    value: YToyOntpOjA7aToxMDA7aToxO2k6MTAwO30=
-                                    clear_value: 'a:2:{i:0;i:100;i:1;i:100;}'
-                                    text: 100/100
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa406:SceneCaptureType'
-                                class: ExifEye\core\Block\Tag
-                                id: 41990
-                                name: SceneCaptureType
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa406:SceneCaptureType/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aToyOw==
-                                    clear_value: 'i:2;'
-                                    text: Portrait
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa407:GainControl'
-                                class: ExifEye\core\Block\Tag
-                                id: 41991
-                                name: GainControl
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa407:GainControl/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: Normal
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa408:Contrast'
-                                class: ExifEye\core\Block\Tag
-                                id: 41992
-                                name: Contrast
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa408:Contrast/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: Normal
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa409:Saturation'
-                                class: ExifEye\core\Block\Tag
-                                id: 41993
-                                name: Saturation
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa409:Saturation/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: Normal
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa40a:Sharpness'
-                                class: ExifEye\core\Block\Tag
-                                id: 41994
-                                name: Sharpness
-                                valid: true
-                                Entry:
-                                    path: 'Tiff/Ifd:IFD0/Ifd:Exif/Tag:0xa40a:Sharpness/Entry+Short'
-                                    class: ExifEye\core\Entry\Core\Short
-                                    valid: true
-                                    format: Short
-                                    components: 1
-                                    value: aTowOw==
-                                    clear_value: 'i:0;'
-                                    text: Normal
-                        Ifd:
-                            -
-                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Ifd:Interoperability'
-                                class: ExifEye\core\Block\Ifd
-                                id: 1
-                                name: Interoperability
-                                valid: true
-                                blocks:
-                                    Tag:
-                                        -
-                                            path: 'Tiff/Ifd:IFD0/Ifd:Exif/Ifd:Interoperability/Tag:0x0001:InteroperabilityIndex'
-                                            class: ExifEye\core\Block\Tag
-                                            id: 1
-                                            name: InteroperabilityIndex
-                                            valid: true
-                                            Entry:
-                                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Ifd:Interoperability/Tag:0x0001:InteroperabilityIndex/Entry+Ascii'
-                                                class: ExifEye\core\Entry\Core\Ascii
-                                                valid: true
-                                                format: Ascii
-                                                components: 4
-                                                value: czozOiJSOTgiOw==
-                                                clear_value: 's:3:"R98";'
-                                                text: R98
-                                        -
-                                            path: 'Tiff/Ifd:IFD0/Ifd:Exif/Ifd:Interoperability/Tag:0x0002:InteroperabilityVersion'
-                                            class: ExifEye\core\Block\Tag
-                                            id: 2
-                                            name: InteroperabilityVersion
-                                            valid: true
-                                            Entry:
-                                                path: 'Tiff/Ifd:IFD0/Ifd:Exif/Ifd:Interoperability/Tag:0x0002:InteroperabilityVersion/Entry+Version'
-                                                class: ExifEye\core\Entry\InteroperabilityVersion
-                                                valid: true
-                                                format: Undefined
-                                                components: 4
-                                                value: czozOiIxLjAiOw==
-                                                clear_value: 's:3:"1.0";'
-                                                text: 'Interoperability Version 1.0'
-    IFD1:
-        path: 'Tiff/Ifd:IFD1'
-        class: ExifEye\core\Block\Ifd
-        id: 11
-        name: IFD1
-        valid: true
-        blocks:
-            Tag:
-                -
-                    path: 'Tiff/Ifd:IFD1/Tag:0x0103:Compression'
-                    class: ExifEye\core\Block\Tag
-                    id: 259
-                    name: Compression
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD1/Tag:0x0103:Compression/Entry+Short'
-                        class: ExifEye\core\Entry\Core\Short
-                        valid: true
-                        format: Short
-                        components: 1
-                        value: aTo2Ow==
-                        clear_value: 'i:6;'
-                        text: 'JPEG compression'
-                -
-                    path: 'Tiff/Ifd:IFD1/Tag:0x011a:XResolution'
-                    class: ExifEye\core\Block\Tag
-                    id: 282
-                    name: XResolution
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD1/Tag:0x011a:XResolution/Entry+Rational'
-                        class: ExifEye\core\Entry\Core\Rational
-                        valid: true
-                        format: Rational
-                        components: 1
-                        value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
-                        clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
-                        text: 72/1
-                -
-                    path: 'Tiff/Ifd:IFD1/Tag:0x011b:YResolution'
-                    class: ExifEye\core\Block\Tag
-                    id: 283
-                    name: YResolution
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD1/Tag:0x011b:YResolution/Entry+Rational'
-                        class: ExifEye\core\Entry\Core\Rational
-                        valid: true
-                        format: Rational
-                        components: 1
-                        value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
-                        clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
-                        text: 72/1
-                -
-                    path: 'Tiff/Ifd:IFD1/Tag:0x0128:ResolutionUnit'
-                    class: ExifEye\core\Block\Tag
-                    id: 296
-                    name: ResolutionUnit
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD1/Tag:0x0128:ResolutionUnit/Entry+Short'
-                        class: ExifEye\core\Entry\Core\Short
-                        valid: true
-                        format: Short
-                        components: 1
-                        value: aToyOw==
-                        clear_value: 'i:2;'
-                        text: Inch
-                -
-                    path: 'Tiff/Ifd:IFD1/Tag:0x0201:ThumbnailOffset'
-                    class: ExifEye\core\Block\Tag
-                    id: 513
-                    name: ThumbnailOffset
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD1/Tag:0x0201:ThumbnailOffset/Entry+Long'
-                        class: ExifEye\core\Entry\Core\Long
-                        valid: true
-                        format: Long
-                        components: 1
-                        value: aTo3MjA2Ow==
-                        clear_value: 'i:7206;'
-                        text: 7206
-                -
-                    path: 'Tiff/Ifd:IFD1/Tag:0x0202:ThumbnailLength'
-                    class: ExifEye\core\Block\Tag
-                    id: 514
-                    name: ThumbnailLength
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD1/Tag:0x0202:ThumbnailLength/Entry+Long'
-                        class: ExifEye\core\Entry\Core\Long
-                        valid: true
-                        format: Long
-                        components: 1
-                        value: aTo1ODk0Ow==
-                        clear_value: 'i:5894;'
-                        text: 5894
-            Thumbnail:
-                -
-                    path: 'Tiff/Ifd:IFD1/Thumbnail'
-                    class: ExifEye\core\Block\Thumbnail
-                    id: 0
-                    name: Thumbnail
-                    valid: true
-                    Entry:
-                        path: 'Tiff/Ifd:IFD1/Thumbnail/Entry+Undefined'
-                        class: ExifEye\core\Entry\Core\Undefined
-                        valid: true
-                        format: Undefined
-                        components: 5894
-                        value: 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
-                        clear_value: !!binary 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
-                        text: '5894 bytes of data'
+elements:
+    path: /exif
+    class: ExifEye\core\Block\Exif
+    valid: true
+    elements:
+        tiff:
+            -
+                path: /exif/tiff
+                class: ExifEye\core\Block\Tiff
+                valid: true
+                elements:
+                    ifd:
+                        -
+                            path: '/exif/tiff/ifd:10:IFD0'
+                            class: ExifEye\core\Block\Ifd
+                            valid: true
+                            id: '10'
+                            name: IFD0
+                            elements:
+                                tag:
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:270:ImageDescription'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '270'
+                                        name: ImageDescription
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:270:ImageDescription/entry'
+                                                    class: ExifEye\core\Entry\Core\Ascii
+                                                    valid: true
+                                                    format: Ascii
+                                                    components: 32
+                                                    value: czozMToiT0xZTVBVUyBESUdJVEFMIENBTUVSQSAgICAgICAgICI7
+                                                    clear_value: 's:31:"OLYMPUS DIGITAL CAMERA         ";'
+                                                    text: 'OLYMPUS DIGITAL CAMERA         '
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:271:Make'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '271'
+                                        name: Make
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:271:Make/entry'
+                                                    class: ExifEye\core\Entry\Core\Ascii
+                                                    valid: true
+                                                    format: Ascii
+                                                    components: 24
+                                                    value: czoyMzoiT0xZTVBVUyBPUFRJQ0FMIENPLixMVEQiOw==
+                                                    clear_value: 's:23:"OLYMPUS OPTICAL CO.,LTD";'
+                                                    text: 'OLYMPUS OPTICAL CO.,LTD'
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:272:Model'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '272'
+                                        name: Model
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:272:Model/entry'
+                                                    class: ExifEye\core\Entry\Core\Ascii
+                                                    valid: true
+                                                    format: Ascii
+                                                    components: 17
+                                                    value: czoxNjoiWC0yLEMtNTBaICAgICAgICI7
+                                                    clear_value: 's:16:"X-2,C-50Z       ";'
+                                                    text: 'X-2,C-50Z       '
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:274:Orientation'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '274'
+                                        name: Orientation
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:274:Orientation/entry'
+                                                    class: ExifEye\core\Entry\Core\Short
+                                                    valid: true
+                                                    format: Short
+                                                    components: 1
+                                                    value: aToxOw==
+                                                    clear_value: 'i:1;'
+                                                    text: 'top - left'
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:282:XResolution'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '282'
+                                        name: XResolution
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:282:XResolution/entry'
+                                                    class: ExifEye\core\Entry\Core\Rational
+                                                    valid: true
+                                                    format: Rational
+                                                    components: 1
+                                                    value: YToyOntpOjA7aToxNDQ7aToxO2k6MTt9
+                                                    clear_value: 'a:2:{i:0;i:144;i:1;i:1;}'
+                                                    text: 144/1
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:283:YResolution'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '283'
+                                        name: YResolution
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:283:YResolution/entry'
+                                                    class: ExifEye\core\Entry\Core\Rational
+                                                    valid: true
+                                                    format: Rational
+                                                    components: 1
+                                                    value: YToyOntpOjA7aToxNDQ7aToxO2k6MTt9
+                                                    clear_value: 'a:2:{i:0;i:144;i:1;i:1;}'
+                                                    text: 144/1
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:296:ResolutionUnit'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '296'
+                                        name: ResolutionUnit
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:296:ResolutionUnit/entry'
+                                                    class: ExifEye\core\Entry\Core\Short
+                                                    valid: true
+                                                    format: Short
+                                                    components: 1
+                                                    value: aToyOw==
+                                                    clear_value: 'i:2;'
+                                                    text: Inch
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:305:Software'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '305'
+                                        name: Software
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:305:Software/entry'
+                                                    class: ExifEye\core\Entry\Core\Ascii
+                                                    valid: true
+                                                    format: Ascii
+                                                    components: 32
+                                                    value: czozMToiMjgtMTAxMiAgICAgICAgICAgICAgICAgICAgICAgICI7
+                                                    clear_value: 's:31:"28-1012                        ";'
+                                                    text: '28-1012                        '
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:306:DateTime'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '306'
+                                        name: DateTime
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:306:DateTime/entry'
+                                                    class: ExifEye\core\Entry\Time
+                                                    valid: true
+                                                    format: Ascii
+                                                    components: 20
+                                                    value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
+                                                    clear_value: 's:19:"0000:00:00 00:00:00";'
+                                                    text: '0000:00:00 00:00:00'
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:531:YCbCrPositioning'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '531'
+                                        name: YCbCrPositioning
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:531:YCbCrPositioning/entry'
+                                                    class: ExifEye\core\Entry\Core\Short
+                                                    valid: true
+                                                    format: Short
+                                                    components: 1
+                                                    value: aToyOw==
+                                                    clear_value: 'i:2;'
+                                                    text: co-sited
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/tag:50341:PrintIM'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '50341'
+                                        name: PrintIM
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/tag:50341:PrintIM/entry'
+                                                    class: ExifEye\core\Entry\Core\Undefined
+                                                    valid: true
+                                                    format: Undefined
+                                                    components: 244
+                                                    value: czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
+                                                    clear_value: !!binary czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
+                                                    text: '244 bytes of data'
+                                ifd:
+                                    -
+                                        path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif'
+                                        class: ExifEye\core\Block\Ifd
+                                        valid: true
+                                        id: '4'
+                                        name: Exif
+                                        elements:
+                                            tag:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:33434:ExposureTime'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '33434'
+                                                    name: ExposureTime
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:33434:ExposureTime/entry'
+                                                                class: ExifEye\core\Entry\ExifExposureTime
+                                                                valid: true
+                                                                format: Rational
+                                                                components: 1
+                                                                value: YToyOntpOjA7aToxO2k6MTtpOjgwO30=
+                                                                clear_value: 'a:2:{i:0;i:1;i:1;i:80;}'
+                                                                text: '1/80 sec.'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:33437:FNumber'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '33437'
+                                                    name: FNumber
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:33437:FNumber/entry'
+                                                                class: ExifEye\core\Entry\ExifFNumber
+                                                                valid: true
+                                                                format: Rational
+                                                                components: 1
+                                                                value: YToyOntpOjA7aTo0NTtpOjE7aToxMDt9
+                                                                clear_value: 'a:2:{i:0;i:45;i:1;i:10;}'
+                                                                text: f/4.5
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:34850:ExposureProgram'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '34850'
+                                                    name: ExposureProgram
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:34850:ExposureProgram/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTo1Ow==
+                                                                clear_value: 'i:5;'
+                                                                text: 'Creative program (biased toward depth of field)'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:34855:ISOSpeedRatings'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '34855'
+                                                    name: ISOSpeedRatings
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:34855:ISOSpeedRatings/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTo4MDs=
+                                                                clear_value: 'i:80;'
+                                                                text: 80
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:36864:ExifVersion'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '36864'
+                                                    name: ExifVersion
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:36864:ExifVersion/entry'
+                                                                class: ExifEye\core\Entry\ExifVersion
+                                                                valid: true
+                                                                format: Undefined
+                                                                components: 4
+                                                                value: czozOiIyLjIiOw==
+                                                                clear_value: 's:3:"2.2";'
+                                                                text: 'Exif Version 2.2'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:36867:DateTimeOriginal'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '36867'
+                                                    name: DateTimeOriginal
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:36867:DateTimeOriginal/entry'
+                                                                class: ExifEye\core\Entry\Time
+                                                                valid: true
+                                                                format: Ascii
+                                                                components: 20
+                                                                value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
+                                                                clear_value: 's:19:"0000:00:00 00:00:00";'
+                                                                text: '0000:00:00 00:00:00'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:36868:DateTimeDigitized'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '36868'
+                                                    name: DateTimeDigitized
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:36868:DateTimeDigitized/entry'
+                                                                class: ExifEye\core\Entry\Time
+                                                                valid: true
+                                                                format: Ascii
+                                                                components: 20
+                                                                value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
+                                                                clear_value: 's:19:"0000:00:00 00:00:00";'
+                                                                text: '0000:00:00 00:00:00'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37121:ComponentsConfiguration'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37121'
+                                                    name: ComponentsConfiguration
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37121:ComponentsConfiguration/entry'
+                                                                class: ExifEye\core\Entry\ExifComponentsConfiguration
+                                                                valid: true
+                                                                format: Undefined
+                                                                components: 4
+                                                                value: czo0OiIBAgMAIjs=
+                                                                clear_value: !!binary czo0OiIBAgMAIjs=
+                                                                text: 'Y Cb Cr -'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37380:ExposureBiasValue'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37380'
+                                                    name: ExposureBiasValue
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37380:ExposureBiasValue/entry'
+                                                                class: ExifEye\core\Entry\ExifExposureBiasValue
+                                                                valid: true
+                                                                format: SignedRational
+                                                                components: 1
+                                                                value: YToyOntpOjA7aTowO2k6MTtpOjEwO30=
+                                                                clear_value: 'a:2:{i:0;i:0;i:1;i:10;}'
+                                                                text: '0.0'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37381:MaxApertureValue'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37381'
+                                                    name: MaxApertureValue
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37381:MaxApertureValue/entry'
+                                                                class: ExifEye\core\Entry\Core\Rational
+                                                                valid: true
+                                                                format: Rational
+                                                                components: 1
+                                                                value: YToyOntpOjA7aTozMDA7aToxO2k6MTAwO30=
+                                                                clear_value: 'a:2:{i:0;i:300;i:1;i:100;}'
+                                                                text: 300/100
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37383:MeteringMode'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37383'
+                                                    name: MeteringMode
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37383:MeteringMode/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTo1Ow==
+                                                                clear_value: 'i:5;'
+                                                                text: Pattern
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37384:LightSource'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37384'
+                                                    name: LightSource
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37384:LightSource/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: Unknown
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37385:Flash'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37385'
+                                                    name: Flash
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37385:Flash/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aToyNTs=
+                                                                clear_value: 'i:25;'
+                                                                text: 'Flash fired, auto mode.'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37386:FocalLength'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37386'
+                                                    name: FocalLength
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37386:FocalLength/entry'
+                                                                class: ExifEye\core\Entry\ExifFocalLength
+                                                                valid: true
+                                                                format: Rational
+                                                                components: 1
+                                                                value: YToyOntpOjA7aToxODgzO2k6MTtpOjEwMDt9
+                                                                clear_value: 'a:2:{i:0;i:1883;i:1;i:100;}'
+                                                                text: '18.8 mm'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37500:MakerNote'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37500'
+                                                    name: MakerNote
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37500:MakerNote/entry'
+                                                                class: ExifEye\core\Entry\ExifMakerNote
+                                                                valid: true
+                                                                format: Undefined
+                                                                components: 758
+                                                                value: YToyOntpOjA7czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjtpOjE7aTo3NTI7fQ==
+                                                                clear_value: !!binary YToyOntpOjA7czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjtpOjE7aTo3NTI7fQ==
+                                                                text: '758 bytes MakerNote data'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37510:UserComment'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '37510'
+                                                    name: UserComment
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:37510:UserComment/entry'
+                                                                class: ExifEye\core\Entry\ExifUserComment
+                                                                valid: true
+                                                                format: Undefined
+                                                                components: 125
+                                                                value: YToyOntpOjA7czoxMTc6IiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICI7aToxO3M6MDoiIjt9
+                                                                clear_value: 'a:2:{i:0;s:117:"                                                                                                                     ";i:1;s:0:"";}'
+                                                                text: '                                                                                                                     '
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40960:FlashPixVersion'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '40960'
+                                                    name: FlashPixVersion
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40960:FlashPixVersion/entry'
+                                                                class: ExifEye\core\Entry\ExifFlashPixVersion
+                                                                valid: true
+                                                                format: Undefined
+                                                                components: 4
+                                                                value: czozOiIxLjAiOw==
+                                                                clear_value: 's:3:"1.0";'
+                                                                text: 'FlashPix Version 1.0'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40961:ColorSpace'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '40961'
+                                                    name: ColorSpace
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40961:ColorSpace/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aToxOw==
+                                                                clear_value: 'i:1;'
+                                                                text: sRGB
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40962:PixelXDimension'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '40962'
+                                                    name: PixelXDimension
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40962:PixelXDimension/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aToyNTYwOw==
+                                                                clear_value: 'i:2560;'
+                                                                text: 2560
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40963:PixelYDimension'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '40963'
+                                                    name: PixelYDimension
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:40963:PixelYDimension/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aToxOTIwOw==
+                                                                clear_value: 'i:1920;'
+                                                                text: 1920
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41728:FileSource'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41728'
+                                                    name: FileSource
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41728:FileSource/entry'
+                                                                class: ExifEye\core\Entry\ExifFileSource
+                                                                valid: true
+                                                                format: Undefined
+                                                                components: 1
+                                                                value: czoxOiIDIjs=
+                                                                clear_value: !!binary czoxOiIDIjs=
+                                                                text: DSC
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41985:CustomRendered'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41985'
+                                                    name: CustomRendered
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41985:CustomRendered/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: 'Normal process'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41986:ExposureMode'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41986'
+                                                    name: ExposureMode
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41986:ExposureMode/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: 'Auto exposure'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41987:WhiteBalance'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41987'
+                                                    name: WhiteBalance
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41987:WhiteBalance/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: 'Auto white balance'
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41988:DigitalZoomRatio'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41988'
+                                                    name: DigitalZoomRatio
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41988:DigitalZoomRatio/entry'
+                                                                class: ExifEye\core\Entry\Core\Rational
+                                                                valid: true
+                                                                format: Rational
+                                                                components: 1
+                                                                value: YToyOntpOjA7aToxMDA7aToxO2k6MTAwO30=
+                                                                clear_value: 'a:2:{i:0;i:100;i:1;i:100;}'
+                                                                text: 100/100
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41990:SceneCaptureType'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41990'
+                                                    name: SceneCaptureType
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41990:SceneCaptureType/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aToyOw==
+                                                                clear_value: 'i:2;'
+                                                                text: Portrait
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41991:GainControl'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41991'
+                                                    name: GainControl
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41991:GainControl/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: Normal
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41992:Contrast'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41992'
+                                                    name: Contrast
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41992:Contrast/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: Normal
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41993:Saturation'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41993'
+                                                    name: Saturation
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41993:Saturation/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: Normal
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41994:Sharpness'
+                                                    class: ExifEye\core\Block\Tag
+                                                    valid: true
+                                                    id: '41994'
+                                                    name: Sharpness
+                                                    elements:
+                                                        entry:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/tag:41994:Sharpness/entry'
+                                                                class: ExifEye\core\Entry\Core\Short
+                                                                valid: true
+                                                                format: Short
+                                                                components: 1
+                                                                value: aTowOw==
+                                                                clear_value: 'i:0;'
+                                                                text: Normal
+                                            ifd:
+                                                -
+                                                    path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/ifd:1:Interoperability'
+                                                    class: ExifEye\core\Block\Ifd
+                                                    valid: true
+                                                    id: '1'
+                                                    name: Interoperability
+                                                    elements:
+                                                        tag:
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/ifd:1:Interoperability/tag:1:InteroperabilityIndex'
+                                                                class: ExifEye\core\Block\Tag
+                                                                valid: true
+                                                                id: '1'
+                                                                name: InteroperabilityIndex
+                                                                elements:
+                                                                    entry:
+                                                                        -
+                                                                            path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/ifd:1:Interoperability/tag:1:InteroperabilityIndex/entry'
+                                                                            class: ExifEye\core\Entry\Core\Ascii
+                                                                            valid: true
+                                                                            format: Ascii
+                                                                            components: 4
+                                                                            value: czozOiJSOTgiOw==
+                                                                            clear_value: 's:3:"R98";'
+                                                                            text: R98
+                                                            -
+                                                                path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/ifd:1:Interoperability/tag:2:InteroperabilityVersion'
+                                                                class: ExifEye\core\Block\Tag
+                                                                valid: true
+                                                                id: '2'
+                                                                name: InteroperabilityVersion
+                                                                elements:
+                                                                    entry:
+                                                                        -
+                                                                            path: '/exif/tiff/ifd:10:IFD0/ifd:4:Exif/ifd:1:Interoperability/tag:2:InteroperabilityVersion/entry'
+                                                                            class: ExifEye\core\Entry\InteroperabilityVersion
+                                                                            valid: true
+                                                                            format: Undefined
+                                                                            components: 4
+                                                                            value: czozOiIxLjAiOw==
+                                                                            clear_value: 's:3:"1.0";'
+                                                                            text: 'Interoperability Version 1.0'
+                        -
+                            path: '/exif/tiff/ifd:11:IFD1'
+                            class: ExifEye\core\Block\Ifd
+                            valid: true
+                            id: '11'
+                            name: IFD1
+                            elements:
+                                tag:
+                                    -
+                                        path: '/exif/tiff/ifd:11:IFD1/tag:259:Compression'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '259'
+                                        name: Compression
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:11:IFD1/tag:259:Compression/entry'
+                                                    class: ExifEye\core\Entry\Core\Short
+                                                    valid: true
+                                                    format: Short
+                                                    components: 1
+                                                    value: aTo2Ow==
+                                                    clear_value: 'i:6;'
+                                                    text: 'JPEG compression'
+                                    -
+                                        path: '/exif/tiff/ifd:11:IFD1/tag:282:XResolution'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '282'
+                                        name: XResolution
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:11:IFD1/tag:282:XResolution/entry'
+                                                    class: ExifEye\core\Entry\Core\Rational
+                                                    valid: true
+                                                    format: Rational
+                                                    components: 1
+                                                    value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
+                                                    clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                                                    text: 72/1
+                                    -
+                                        path: '/exif/tiff/ifd:11:IFD1/tag:283:YResolution'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '283'
+                                        name: YResolution
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:11:IFD1/tag:283:YResolution/entry'
+                                                    class: ExifEye\core\Entry\Core\Rational
+                                                    valid: true
+                                                    format: Rational
+                                                    components: 1
+                                                    value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
+                                                    clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                                                    text: 72/1
+                                    -
+                                        path: '/exif/tiff/ifd:11:IFD1/tag:296:ResolutionUnit'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '296'
+                                        name: ResolutionUnit
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:11:IFD1/tag:296:ResolutionUnit/entry'
+                                                    class: ExifEye\core\Entry\Core\Short
+                                                    valid: true
+                                                    format: Short
+                                                    components: 1
+                                                    value: aToyOw==
+                                                    clear_value: 'i:2;'
+                                                    text: Inch
+                                    -
+                                        path: '/exif/tiff/ifd:11:IFD1/tag:513:ThumbnailOffset'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '513'
+                                        name: ThumbnailOffset
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:11:IFD1/tag:513:ThumbnailOffset/entry'
+                                                    class: ExifEye\core\Entry\Core\Long
+                                                    valid: true
+                                                    format: Long
+                                                    components: 1
+                                                    value: aTo3MjA2Ow==
+                                                    clear_value: 'i:7206;'
+                                                    text: 7206
+                                    -
+                                        path: '/exif/tiff/ifd:11:IFD1/tag:514:ThumbnailLength'
+                                        class: ExifEye\core\Block\Tag
+                                        valid: true
+                                        id: '514'
+                                        name: ThumbnailLength
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:11:IFD1/tag:514:ThumbnailLength/entry'
+                                                    class: ExifEye\core\Entry\Core\Long
+                                                    valid: true
+                                                    format: Long
+                                                    components: 1
+                                                    value: aTo1ODk0Ow==
+                                                    clear_value: 'i:5894;'
+                                                    text: 5894
+                                thumbnail:
+                                    -
+                                        path: '/exif/tiff/ifd:11:IFD1/thumbnail'
+                                        class: ExifEye\core\Block\Thumbnail
+                                        valid: true
+                                        elements:
+                                            entry:
+                                                -
+                                                    path: '/exif/tiff/ifd:11:IFD1/thumbnail/entry'
+                                                    class: ExifEye\core\Entry\Core\Undefined
+                                                    valid: true
+                                                    format: Undefined
+                                                    components: 5894
+                                                    value: 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
+                                                    clear_value: !!binary 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
+                                                    text: '5894 bytes of data'
 errors: {  }
 warnings: {  }
 notices: {  }

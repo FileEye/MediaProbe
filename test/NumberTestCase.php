@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
 
-abstract class NumberTestCase extends ExifEyeTestCaseBase
+abstract class NumberTestCase extends EntryTestBase
 {
     protected $min;
     protected $max;

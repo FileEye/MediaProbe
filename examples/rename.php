@@ -100,7 +100,7 @@ foreach ($argv as $file) {
     }
 
     $ifd0 = $tiff->getIfd();
-    $entry = $ifd0->getEntry(Spec::getTagIdByName($ifd0->getId(), 'DateTime'));
+    $entry = $ifd0->getEntry(Spec::getTagIdByName($ifd0->getAttribute('id'), 'DateTime'));
 
     if ($entry == null) {
         println('Skipping %s because no DATE_TIME tag was found.', $file);

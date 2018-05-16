@@ -4,6 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
+use ExifEye\core\Block\Tiff;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
@@ -83,13 +84,19 @@ class PelSpecTest extends ExifEyeTestCaseBase
      *
      * @dataProvider getTagTextProvider
      */
-    public function testGetTagText($expected_text, $expected_class, $ifd, $tag, array $args, $brief = false)
+    public function testGetTagText($expected_text, $expected_class, $ifd_name, $tag, array $args, $brief = false)
     {
-        $ifd_id = Spec::getIfdIdByType($ifd);
-        $ifd = new Ifd($ifd_id);
+        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $ifd_id = Spec::getIfdIdByType($ifd_name);
+        $ifd = new Ifd($tiff_mock, Spec::getIfdIdByType($ifd_name));
+
         $tag_id = Spec::getTagIdByName($ifd_id, $tag);
         $entry_class_name = Spec::getEntryClass($ifd_id, $tag_id);
         $tag = new Tag($ifd, $tag_id, $entry_class_name, $args);
+
         $this->assertInstanceOf($expected_class, $tag->getEntry());
         $options['short'] = $brief;  // xx
         $this->assertEquals($expected_text, $tag->getEntry()->toString($options));

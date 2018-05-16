@@ -113,34 +113,9 @@ class DumpCommand extends Command
     {
         $exif = $jpeg->getExif();
         if ($exif == null) {
-            $json['blocks'] = [];
+            $json['elements'] = [];
         } else {
-            $this->exifToTest('$exif', $exif, $json);
-        }
-    }
-
-    protected function exifToTest($name, $content, &$json)
-    {
-        if ($content instanceof Exif) {
-            $tiff = $content->getTiff();
-            if ($tiff instanceof Tiff) {
-                $this->tiffToTest('$tiff', $tiff, $json);
-            } else {
-                $json['blocks'] = [];
-            }
-        }
-    }
-
-    protected function tiffToTest($name, Tiff $tiff, &$json)
-    {
-        // xx enable iteration for all next ifds
-        $ifd = $tiff->xxGetSubBlockByName('Ifd', 'IFD0');
-        if ($ifd) {
-            $json['blocks'][$ifd->getName()] = $ifd->toDumpArray();
-        }
-        $ifd = $tiff->xxGetSubBlockByName('Ifd', 'IFD1');
-        if ($ifd) {
-            $json['blocks'][$ifd->getName()] = $ifd->toDumpArray();
+            $json['elements'] = $exif->toDumpArray();
         }
     }
 }
