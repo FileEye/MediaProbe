@@ -90,14 +90,6 @@ class CameraTest extends ExifEyeTestCaseBase
         if (isset($expected['elements'])) {
             foreach ($expected['elements'] as $type => $expected_type_elements) {
                 foreach ($expected_type_elements as $i => $expected_element) {
-                    if ($element->query($type)[$i] === null) {
-                        $str = "\n\n<<< DOM >>>\n\n";
-                        $formatter = new \PrettyXml\Formatter();
-                        $formatter->setIndentSize(1);
-                        $str .= $formatter->format($element->DOMNode->ownerDocument->saveXML());
-                        $str .= "\n\n<<< DOM >>>\n\n";
-                        dump($str);
-                    }
                     $this->assertElement($expected_element, $element->query($type)[$i]);
                 }
             }

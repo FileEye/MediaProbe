@@ -29,8 +29,7 @@ cache:
 
 before_install:
   # Remove XDebug.
-  #- if [ ! "$TRAVIS_PHP_VERSION" == "7.2" ] && [ ! "$TRAVIS_PHP_VERSION" == "nightly" ]; then phpenv config-rm xdebug.ini; fi
-  - if [ ! "$TRAVIS_PHP_VERSION" == "nightly" ]; then phpenv config-rm xdebug.ini; fi
+  - if [ ! "$TRAVIS_PHP_VERSION" == "7.2" ] && [ ! "$TRAVIS_PHP_VERSION" == "nightly" ]; then phpenv config-rm xdebug.ini; fi
 
   # Stage ExifEye to get dependencies.
   - |
@@ -58,8 +57,12 @@ script:
   - php bin/exifeye compile
   #- php bin/exifeye dump test/imagetests/
   - ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
-  #- ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ./test
-  - ./vendor/bin/phpunit ./test
+  - |
+      if [ "$TRAVIS_PHP_VERSION" == "7.2" ]; then
+        ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ./test
+      else
+        ./vendor/bin/phpunit ./test
+      fi
   #- ./vendor/bin/phpunit test/ReadWriteTest.php
   #- php examples/dump-image.php -d  test/broken_images/gh-10-a.jpg
   #- php examples/dump-image.php -d  test/broken_images/gh-10-b.jpg
@@ -85,4 +88,4 @@ script:
   #- php bin/exifeye dump test/broken_images/
 
 after_script:
-  - php vendor/bin/coveralls -v
+  - if [ "$TRAVIS_PHP_VERSION" == "7.2" ]; then ./vendor/bin/php-coveralls -v --coverage_clover build/logs/clover.xml; fi

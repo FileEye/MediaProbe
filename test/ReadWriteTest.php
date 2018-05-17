@@ -18,7 +18,7 @@ use ExifEye\core\Block\Ifd;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
-class AReadWriteTest extends ExifEyeTestCaseBase
+class ReadWriteTest extends ExifEyeTestCaseBase
 {
     /**
      * {@inheritdoc}
@@ -36,6 +36,7 @@ class AReadWriteTest extends ExifEyeTestCaseBase
     {
         parent::tearDown();
         unlink(dirname(__FILE__) . '/test-output.jpg');
+        gc_collect_cycles();
     }
 
     /**
@@ -65,6 +66,9 @@ class AReadWriteTest extends ExifEyeTestCaseBase
         $jpeg->saveFile(dirname(__FILE__) . '/test-output.jpg');
         $this->assertTrue(file_exists(dirname(__FILE__) . '/test-output.jpg'));
         $this->assertTrue(filesize(dirname(__FILE__) . '/test-output.jpg') > 0);
+
+        // Release the object loaded while reading from file.
+        $jpeg = null;
 
         // Now read the file and see if the entries are still there.
         $r_jpeg = new Jpeg(dirname(__FILE__) . '/test-output.jpg');
