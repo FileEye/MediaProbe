@@ -2,6 +2,7 @@
 
 namespace ExifEye\Test\core;
 
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\Utility\SpecCompiler;
 use ExifEye\core\Spec;
 use PHPUnit\Framework\TestCase;
@@ -116,11 +117,17 @@ class SpecCompilerTest extends TestCase
         Spec::setMap($this->testResourceDirectory . '/spec.php');
         $this->assertCount(2, Spec::getIfdTypes());
 
-        $this->assertEquals(0x0100, Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'ImageWidth'));
-        $this->assertEquals(0x8769, Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'ExifIFDPointer'));
-        $this->assertEquals(0x829A, Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'ExposureTime'));
+        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $ifd_0 = new Ifd($tiff_mock, 'IFD0');
+        $ifd_exif = new Ifd($ifd_0, 'Exif');
+
+        $this->assertEquals(0x0100, Spec::getTagIdByName($ifd_0, 'ImageWidth'));
+        $this->assertEquals(0x8769, Spec::getTagIdByName($ifd_0, 'ExifIFDPointer'));
+        $this->assertEquals(0x829A, Spec::getTagIdByName($ifd_exif, 'ExposureTime'));
 
         // Compression is missing from the stub specs.
-        $this->assertNull(Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'Compression'));
+        $this->assertNull(Spec::getTagIdByName($ifd_0, 'Compression'));
     }
 }

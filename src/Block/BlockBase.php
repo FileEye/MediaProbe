@@ -16,7 +16,7 @@ abstract class BlockBase extends ElementBase
      *
      * @var string
      */
-    protected $hasSpecification;
+    protected $hasSpecification = false;
 
     public function hasSpecification()
     {

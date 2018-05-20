@@ -2,7 +2,6 @@
 
 namespace ExifEye\core\Block;
 
-use ExifEye\core\Block\Exception\IfdException;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\DataWindow;
 use ExifEye\core\DataWindowOffsetException;
@@ -48,18 +47,12 @@ class Ifd extends BlockBase
     /**
      * Construct a new Image File Directory (IFD).
      */
-    public function __construct(BlockBase $parent_block, $id)
+    public function __construct(BlockBase $parent_block, $name)
     {
         parent::__construct($parent_block);
 
-        $this->setAttribute('id', $id);
-        if ($name = Spec::getIfdType($id)) {
-            $this->setAttribute('name', $name);
-            $this->hasSpecification = true;
-        } else {
-            $this->setAttribute('name', 'Unknown');
-            $this->hasSpecification = false;
-        }
+        $this->setAttribute('name', $name);
+        $this->hasSpecification = Spec::getIfdIdByType($name) ? true : false;
     }
 
     /**
@@ -112,18 +105,18 @@ class Ifd extends BlockBase
             }
 
             // Build the TAG object.
-            $tag_entry_class = Spec::getEntryClass($this->getAttribute('id'), $tag_id, $tag_format);
+            $tag_entry_class = Spec::getEntryClass($this, $tag_id, $tag_format);
             $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $tag_format, $tag_components, $data_window, $tag_data_offset);
             $tag = new Tag($this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
 
             // Load a subIfd.
-            if (Spec::isTagAnIfdPointer($this->getAttribute('id'), $tag->getAttribute('id'))) {
+            if (Spec::isTagAnIfdPointer($this, $tag->getAttribute('id'))) {
                 // If the tag is an IFD pointer, loads the IFD.
-                $type = Spec::getIfdIdFromTag($this->getAttribute('id'), $tag->getAttribute('id'));
+                $ifd_name = Spec::getIfdNameFromTag($this, $tag->getAttribute('id'));
                 $o = $data_window->getLong($offset + 12 * $i + 8);
                 if ($starting_offset != $o) {
-                    $ifd_class = Spec::getIfdClass($type);
-                    $ifd = new $ifd_class($this, $type);
+                    $ifd_class = Spec::getIfdClass($ifd_name);
+                    $ifd = new $ifd_class($this, $ifd_name);
                     try {
                         $ifd->loadFromData($data_window, $o, ['components' => $tag->getEntry()->getComponents()]);
                         $this->remove("tag[@name='" . $tag->getAttribute('name') . "']");
@@ -142,7 +135,7 @@ class Ifd extends BlockBase
         $this->debug(".....END Loading");
 
         // Invoke post-load callbacks.
-        foreach (Spec::getIfdPostLoadCallbacks($this->getAttribute('id')) as $callback) {
+        foreach (Spec::getIfdPostLoadCallbacks($this) as $callback) {
             $this->debug("START... {callback}", [
                 'callback' => $callback,
             ]);
@@ -203,12 +196,12 @@ class Ifd extends BlockBase
         if ($this->first("thumbnail")) {
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the next four lines.
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getAttribute('id'), 'ThumbnailLength'), $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailLength'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
             $ifd_area .= ConvertBytes::fromLong($this->first("thumbnail")->getEntry()->getComponents(), $order);
 
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this->getAttribute('id'), 'ThumbnailOffset'), $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailOffset'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
             $ifd_area .= ConvertBytes::fromLong($end, $order);
@@ -220,12 +213,12 @@ class Ifd extends BlockBase
         // Process sub IFDs.
         $sub_bytes = '';
         foreach ($this->query('ifd') as $sub) {
-            if (Spec::getIfdType($sub->getType()) === 'Exif') {
-                $tag = Spec::getTagIdByName($this->getAttribute('id'), 'ExifIFDPointer');
-            } elseif (Spec::getIfdType($sub->getType()) === 'GPS') {
-                $tag = Spec::getTagIdByName($this->getAttribute('id'), 'GPSInfoIFDPointer');
-            } elseif (Spec::getIfdType($sub->getType()) === 'Interoperability') {
-                $tag = Spec::getTagIdByName($this->getAttribute('id'), 'InteroperabilityIFDPointer');
+            if ($sub->getType() === 'Exif') {
+                $tag = Spec::getTagIdByName($this, 'ExifIFDPointer');
+            } elseif ($sub->getType() === 'GPS') {
+                $tag = Spec::getTagIdByName($this, 'GPSInfoIFDPointer');
+            } elseif ($sub->getType() === 'Interoperability') {
+                $tag = Spec::getTagIdByName($this, 'InteroperabilityIFDPointer');
             } else {
                 // ConvertBytes::BIG_ENDIAN is the default used by Convert.
                 $tag = ConvertBytes::BIG_ENDIAN;
@@ -246,31 +239,5 @@ class Ifd extends BlockBase
         }
 
         return ['ifd_area' => $ifd_area, 'data_area' => $data_area];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        $str = ExifEye::fmt(">>>> %s\n", $this->getAttribute('name'));
-
-        $sub_elements = $this->query('*');
-
-        // Dump all tags first.
-        foreach ($sub_elements as $element) {
-            if ($element->getType() === 'tag') {
-                $str .= $element->__toString();
-            }
-        }
-
-        // Then dump the rest sub-blocks.
-        foreach ($sub_elements as $element) {
-            if ($element->getType() !== 'tag') {
-                $str .= $element->__toString();
-            }
-        }
-
-        return $str;
     }
 }

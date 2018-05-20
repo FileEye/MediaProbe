@@ -56,7 +56,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertNotNull($exif->first("tiff"));
         $this->assertNull($tiff->first("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd($tiff, Spec::getIfdIdByType('IFD0'));
+        $ifd = new Ifd($tiff, 'IFD0');
         foreach ($entries as $entry) {
             new Tag($ifd, $entry[0], $entry[1], $entry[2]);
         }
@@ -82,7 +82,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
 
         $ifd = $tiff->first("ifd[@name='IFD0']");
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd);
-        $this->assertEquals($ifd->getAttribute('id'), Spec::getIfdIdByType('IFD0'));
+        $this->assertEquals($ifd->getAttribute('name'), 'IFD0');
 
         foreach ($entries as $entry_name => $entry) {
             $tagEntry = $ifd->first('tag[@id="' . (int) $entry[0] . '"]/entry');

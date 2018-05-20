@@ -66,12 +66,4 @@ class Exif extends BlockBase
     {
         return self::EXIF_HEADER . $this->first('tiff')->toBytes();
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        return ExifEye::tra("Dumping Exif data...\n") . $this->first('tiff')->__toString();
-    }
 }

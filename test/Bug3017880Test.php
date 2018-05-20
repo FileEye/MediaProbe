@@ -35,7 +35,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $tiff = $exif->first("tiff");
             $ifd0 = $exif->first("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd($tiff, Spec::getIfdIdByType('IFD0'));
+                $ifd0 = new Ifd($tiff, 'IFD0');
             }
 
             $software_name = 'Example V2';

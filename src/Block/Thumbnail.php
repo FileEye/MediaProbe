@@ -108,19 +108,4 @@ class Thumbnail extends BlockBase
 
         return $data_window->getClone(0, $size)->getBytes();
     }
-
-    /**
-     * Turn this entry into a string.
-     *
-     * @return string a string representation of this entry. This is
-     *         mostly for debugging.
-     */
-    public function __toString()
-    {
-        $str = ExifEye::fmt(">>>> Thumbnail\n");
-        foreach ($this->query('entry') as $sub_block) {
-            $str .= $sub_block->toString();
-        }
-        return $str;
-    }
 }

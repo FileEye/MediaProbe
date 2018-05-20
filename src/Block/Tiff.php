@@ -5,7 +5,6 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidArgumentException;
-use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -29,7 +28,7 @@ class Tiff extends BlockBase
     /**
      * Construct a new object for holding TIFF data.
      */
-    public function __construct($data, Exif $parent)
+    public function __construct($data, Exif $parent = null)
     {
         parent::__construct($parent);
 
@@ -52,15 +51,17 @@ class Tiff extends BlockBase
      */
     public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
-        // xx todo remove exceptions
-
         $this->debug('Parsing {size} bytes of TIFF data...', ['size' => $data_window->getSize()]);
 
-        // There must be at least 8 bytes available: 2 bytes for the byte order,
-        // 2 bytes for the TIFF header, and 4 bytes for the offset to the first
-        // IFD.
+        // There must be at least 8 bytes available: 2 bytes for the byte
+        // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
+        // the first IFD.
         if ($data_window->getSize() < 8) {
-            throw new InvalidDataException('Expected at least 8 bytes of TIFF ' . 'data, found just %d bytes.', $data_window->getSize());
+            $this->error('Expected at least 8 bytes of TIFF data, found only {size} bytes', [
+                'size' => $data_window->getSize(),
+            ]);
+            $this->valid = false;
+            return false;
         }
 
         // Byte order.
@@ -71,12 +72,19 @@ class Tiff extends BlockBase
             $this->debug('Found Motorola byte order');
             $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
         } else {
-            throw new InvalidDataException('Unknown byte order found in TIFF ' . 'data: 0x%2X%2X', $data_window->getByte(0), $data_window->getByte(1));
+            $this->error('Unknown byte order found in TIFF data: 0x{byte0} 0x{byte1}', [
+                'byte0' => dechex($data_window->getByte(0)),
+                'byte1' => dechex($data_window->getByte(1)),
+            ]);
+            $this->valid = false;
+            return false;
         }
 
         // Verify the TIFF header.
         if ($data_window->getShort(2) != self::TIFF_HEADER) {
-            throw new InvalidDataException('Missing TIFF magic value.');
+            $this->error('Missing TIFF magic value');
+            $this->valid = false;
+            return false;
         }
 
         // IFD0.
@@ -85,11 +93,11 @@ class Tiff extends BlockBase
 
         if ($offset > 0) {
             // Parse IFD0, this will automatically parse any sub IFDs.
-            $ifd0 = new Ifd($this, Spec::getIfdIdByType('IFD0'));
+            $ifd0 = new Ifd($this, 'IFD0');
             $next_offset = $ifd0->loadFromData($data_window, $offset);
         }
 
-        // Next IFD. @todo iterate on next_offset
+        // Next IFD. xx @todo iterate on next_offset
         if ($next_offset > 0) {
             // Sanity check: we need 6 bytes.
             if ($next_offset > $data_window->getSize() - 6) {
@@ -102,7 +110,7 @@ class Tiff extends BlockBase
                     // IFD1 shouldn't link further...
                     $this->error('IFD1 links to another IFD!');
                 }*/
-                $ifd1 = new Ifd($this, Spec::getIfdIdByType('IFD1'));
+                $ifd1 = new Ifd($this, 'IFD1');
                 $next_offset = $ifd1->loadFromData($data_window, $next_offset);
             }
         }
@@ -178,53 +186,5 @@ class Tiff extends BlockBase
     public function saveFile($filename)
     {
         return file_put_contents($filename, $this->getBytes());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        $str = ExifEye::fmt("Dumping TIFF data...\n");
-        foreach ($this->query("*") as $element) {
-            $str .= $element->__toString();
-        }
-        return $str;
-    }
-
-    /**
-     * Check if data is valid TIFF data.
-     *
-     * This will read just enough data from the data window to determine
-     * if the data could be a valid TIFF data. This means that the
-     * check is more like a heuristic than a rigorous check.
-     *
-     * @param DataWindow $data_window
-     *            the bytes that will be examined.
-     *
-     * @return boolean true if the data looks like valid TIFF data,
-     *         false otherwise.
-     *
-     * @see Jpeg::isValid()
-     */
-    public static function xxIsValid(DataWindow $data_window)
-    {
-        /* First check that we have enough data. */
-        if ($data_window->getSize() < 8) {
-            return false;
-        }
-
-        /* Byte order */
-        if ($data_window->strcmp(0, 'II')) {
-            $data_window->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
-        } elseif ($data_window->strcmp(0, 'MM')) {
-            ExifEye::logger()->debug('Found Motorola byte order');
-            $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
-        } else {
-            return false;
-        }
-
-        /* Verify the TIFF header */
-        return $data_window->getShort(2) == self::TIFF_HEADER;
     }
 }

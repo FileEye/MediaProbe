@@ -2,7 +2,6 @@
 
 namespace ExifEye\core\Block;
 
-use ExifEye\core\Block\Exception\TagException;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
@@ -28,11 +27,11 @@ class Tag extends BlockBase
         parent::__construct($parent_block);
 
         $this->setAttribute('id', $id);
-        $tag_name = Spec::getTagName($parent_block->getAttribute('id'), $id);
+        $tag_name = Spec::getTagName($parent_block, $id);
         if ($tag_name !== null) {
             $this->setAttribute('name', $tag_name);
         }
-        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($parent_block->getAttribute('id')));
+        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($parent_block));
 
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasSpecification()) {
@@ -48,7 +47,7 @@ class Tag extends BlockBase
         }
 
         // Warn if format is not as expected.
-        $expected_format = Spec::getTagFormat($parent_block->getAttribute('id'), $id);
+        $expected_format = Spec::getTagFormat($parent_block, $id);
         if ($expected_format !== null && $format !== null && !in_array($format, $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
@@ -61,7 +60,7 @@ class Tag extends BlockBase
         }
 
         // Warn if components are not as expected.
-        $expected_components = Spec::getTagComponents($parent_block->getAttribute('id'), $id);
+        $expected_components = Spec::getTagComponents($parent_block, $id);
         if ($expected_components !== null && $components !== null && $components !== $expected_components) {
             $this->warning("Found {components} data components, expected {expected_components}", [
                 'components' => $components,
@@ -74,17 +73,5 @@ class Tag extends BlockBase
         $this->debug("Text: {text}", [
             'text' => $entry->toString(),
         ]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        if (!$this->getAttribute('name')) {
-            return '';
-        }
-        $entry_title = Spec::getTagTitle($this->getParentElement()->getAttribute('id'), $this->getAttribute('id')) ?: '*** UNKNOWN ***';
-        return substr(str_pad($entry_title, 30, ' '), 0, 30) . ' = ' . $this->getEntry()->toString() . "\n";
     }
 }

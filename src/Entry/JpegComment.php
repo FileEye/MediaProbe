@@ -75,14 +75,4 @@ class JpegComment extends JpegContent
     {
         return $this->comment;
     }
-
-    /**
-     * Return a string representation of this object.
-     *
-     * @return string the same as {@link getValue()}.
-     */
-    public function __toString()
-    {
-        return $this->getValue();
-    }
 }

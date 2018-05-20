@@ -17,7 +17,7 @@ class IfdTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd($tiff_mock, Spec::getIfdIdByType('IFD0'));
+        $ifd = new Ifd($tiff_mock, 'IFD0');
 
         $this->assertCount(0, $ifd->query('tag'));
 

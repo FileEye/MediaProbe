@@ -24,18 +24,34 @@
  * Boston, MA 02110-1301 USA
  */
 
-/* Make PEL speak the users language, if it is available. */
-setlocale(LC_ALL, '');
-
-require_once dirname(__FILE__) . '/../vendor/autoload.php';
-
+use ExifEye\core\ElementInterface;
+use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
+use ExifEye\core\Spec;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use Monolog\Handler\StreamHandler;
 use ExifEye\core\Utility\DumpLogFormatter;
+
+function dump_element(ElementInterface $element)
+{
+    if ($element instanceof EntryInterface) {
+        $ifd_name = $element->getParentElement()->getParentElement()->getAttribute('name');
+        $tag_title = Spec::getTagTitle($element->getParentElement()->getParentElement(), $element->getParentElement()->getAttribute('id')) ?: '*** UNKNOWN ***';
+        print substr(str_pad($ifd_name . '/' . $tag_title, 30, ' '), 0, 30) . ' = ' . $element->toString() . "\n";
+    }
+
+    foreach ($element->query('*') as $sub_element) {
+        dump_element($sub_element);
+    }
+}
+
+/* Make PEL speak the users language, if it is available. */
+setlocale(LC_ALL, '');
+
+require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 $prog = array_shift($argv);
 $file = '';
@@ -70,31 +86,31 @@ if (! is_readable($file)) {
     exit(1);
 }
 
-/*
- * We typically need lots of RAM to parse TIFF images since they tend
- * to be big and uncompressed.
- */
-ini_set('memory_limit', '32M');
-
-$data = new DataWindow(file_get_contents($file));
-
-if (Jpeg::isValid($data)) {
-    $img = new Jpeg();
-} elseif (Tiff::xxisValid($data)) {
-    $img = new Tiff();
-} else {
-    print("Unrecognized image format! The first 16 bytes follow:\n");
-    ConvertBytes::dump($data->getBytes(0, 16));
-    exit(1);
-}
-
 /* Set logging */
 $log_handler = new StreamHandler('php://stdout');
 $log_formatter = new DumpLogFormatter();
 $log_handler->setFormatter($log_formatter);
 ExifEye::logger()->pushHandler($log_handler);
 
-/* Try loading the data. */
-$img->load($data);
+/* Load data from file */
+$data = new DataWindow(file_get_contents($file));
 
-print($img);
+/* Check data validity and load to object */
+if (Jpeg::isValid($data)) {
+    $img = new Jpeg();
+    $img->load($data);
+    $root = $img->getExif();
+} else {
+    $img = new Tiff($data);
+    if ($img->isValid()) {
+        $root = $img;
+    }
+}
+
+if (!isset($root)) {
+    print("Unrecognized image format! The first 16 bytes follow:\n");
+    ConvertBytes::dump($data->getBytes(0, 16));
+    exit(1);
+}
+
+dump_element($root);

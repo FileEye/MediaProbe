@@ -532,7 +532,7 @@ class DataWindow
      *         the number of bytes accessible, the total number of bytes, and
      *         the window start and stop.
      */
-    public function __toString()
+    public function toString()
     {
         return ExifEye::fmt(
             'DataWindow: %d bytes in [%d, %d] of %d bytes',

@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdIndexShort;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Format;
@@ -18,47 +19,57 @@ class PelSpecTest extends ExifEyeTestCaseBase
      */
     public function testDefaultSpec()
     {
+        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $ifd_0 = new Ifd($tiff_mock, 'IFD0');
+        $ifd_exif = new Ifd($tiff_mock, 'Exif');
+        $ifd_canon_camera_settings = new IfdIndexShort($tiff_mock, 'CanonCameraSettings');
+
         // Test retrieving IFD id by type.
         $this->assertEquals(Spec::getIfdIdByType('IFD0'), Spec::getIfdIdByType('0'));
         $this->assertEquals(Spec::getIfdIdByType('IFD0'), Spec::getIfdIdByType('Main'));
         $this->assertNotNull(Spec::getIfdIdByType('CanonMakerNotes'));
 
         // Test retrieving IFD class.
-        $this->assertEquals('ExifEye\core\Block\Ifd', Spec::getIfdClass(Spec::getIfdIdByType('IFD0')));
-        $this->assertEquals('ExifEye\core\Block\IfdIndexShort', Spec::getIfdClass(Spec::getIfdIdByType('CanonCameraSettings')));
+        $this->assertEquals('ExifEye\core\Block\Ifd', Spec::getIfdClass('IFD0'));
+        $this->assertEquals('ExifEye\core\Block\IfdIndexShort', Spec::getIfdClass('CanonCameraSettings'));
 
         // Test retrieving IFD post-load callbacks.
-        $this->assertEquals(['ExifEye\core\Block\Thumbnail::toBlock', 'ExifEye\core\Entry\ExifMakerNote::tagToIfd'], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('IFD0')));
-        $this->assertEquals([], Spec::getIfdPostLoadCallbacks(Spec::getIfdIdByType('CanonCameraSettings')));
+        $this->assertEquals([
+            'ExifEye\core\Block\Thumbnail::toBlock',
+            'ExifEye\core\Entry\ExifMakerNote::tagToIfd',
+        ], Spec::getIfdPostLoadCallbacks($ifd_0));
+        $this->assertEquals([], Spec::getIfdPostLoadCallbacks($ifd_canon_camera_settings));
 
         // Test retrieving maker note IFD.
-        $this->assertEquals(Spec::getIfdIdByType('CanonMakerNotes'), Spec::getMakerNoteIfd('Canon', 'any'));
-        $this->assertNull(Spec::getMakerNoteIfd('Minolta', 'any'));
+        $this->assertEquals('CanonMakerNotes', Spec::getMakerNoteIfdName('Canon', 'any'));
+        $this->assertNull(Spec::getMakerNoteIfdName('Minolta', 'any'));
 
         // Test retrieving TAG name.
-        $this->assertEquals('ExifIFDPointer', Spec::getTagName(Spec::getIfdIdByType('IFD0'), 0x8769));
-        $this->assertEquals('ExposureTime', Spec::getTagName(Spec::getIfdIdByType('Exif'), 0x829A));
-        $this->assertEquals('Compression', Spec::getTagName(Spec::getIfdIdByType('IFD0'), 0x0103));
+        $this->assertEquals('ExifIFDPointer', Spec::getTagName($ifd_0, 0x8769));
+        $this->assertEquals('ExposureTime', Spec::getTagName($ifd_exif, 0x829A));
+        $this->assertEquals('Compression', Spec::getTagName($ifd_0, 0x0103));
 
         // Test retrieving TAG id by name.
-        $this->assertEquals(0x8769, Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'ExifIFDPointer'));
-        $this->assertEquals(0x829A, Spec::getTagIdByName(Spec::getIfdIdByType('Exif'), 'ExposureTime'));
-        $this->assertEquals(0x0103, Spec::getTagIdByName(Spec::getIfdIdByType('IFD0'), 'Compression'));
+        $this->assertEquals(0x8769, Spec::getTagIdByName($ifd_0, 'ExifIFDPointer'));
+        $this->assertEquals(0x829A, Spec::getTagIdByName($ifd_exif, 'ExposureTime'));
+        $this->assertEquals(0x0103, Spec::getTagIdByName($ifd_0, 'Compression'));
 
         // Check methods identifying an IFD pointer TAG.
-        $this->assertTrue(Spec::isTagAnIfdPointer(Spec::getIfdIdByType('IFD0'), 0x8769));
-        $this->assertEquals(Spec::getIfdIdByType('Exif'), Spec::getIfdIdFromTag(Spec::getIfdIdByType('IFD0'), 0x8769));
-        $this->assertFalse(Spec::isTagAnIfdPointer(Spec::getIfdIdByType('Exif'), 0x829A));
-        $this->assertNull(Spec::getIfdIdFromTag(Spec::getIfdIdByType('IFD0'), 0x829A));
+        $this->assertTrue(Spec::isTagAnIfdPointer($ifd_0, 0x8769));
+        $this->assertEquals('Exif', Spec::getIfdNameFromTag($ifd_0, 0x8769));
+        $this->assertFalse(Spec::isTagAnIfdPointer($ifd_exif, 0x829A));
+        $this->assertNull(Spec::getIfdNameFromTag($ifd_0, 0x829A));
 
         // Check getTagFormat.
-        $this->assertEquals([Format::UNDEFINED], Spec::getTagFormat(Spec::getIfdIdByType('Exif'), 0x9286));
-        $this->assertEquals([Format::SHORT, Format::LONG], Spec::getTagFormat(Spec::getIfdIdByType('Exif'), 0xA002));
+        $this->assertEquals([Format::UNDEFINED], Spec::getTagFormat($ifd_exif, 0x9286));
+        $this->assertEquals([Format::SHORT, Format::LONG], Spec::getTagFormat($ifd_exif, 0xA002));
 
         // Check getTagTitle.
-        $this->assertEquals('Exif IFD Pointer', Spec::getTagTitle(Spec::getIfdIdByType('IFD0'), 0x8769));
-        $this->assertEquals('Exposure Time', Spec::getTagTitle(Spec::getIfdIdByType('Exif'), 0x829A));
-        $this->assertEquals('Compression', Spec::getTagTitle(Spec::getIfdIdByType('IFD0'), 0x0103));
+        $this->assertEquals('Exif IFD Pointer', Spec::getTagTitle($ifd_0, 0x8769));
+        $this->assertEquals('Exposure Time', Spec::getTagTitle($ifd_exif, 0x829A));
+        $this->assertEquals('Compression', Spec::getTagTitle($ifd_0, 0x0103));
     }
 
     /**
@@ -66,8 +77,14 @@ class PelSpecTest extends ExifEyeTestCaseBase
      */
     public function testgetEntryClass()
     {
-        $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Spec::getEntryClass(Spec::getIfdIdByType('Exif'), 0x9286));
-        $this->assertEquals('ExifEye\core\Entry\Time', Spec::getEntryClass(Spec::getIfdIdByType('Exif'), 0x9003));
+        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $ifd_exif = new Ifd($tiff_mock, 'Exif');
+        $ifd_canon_picture_information = new IfdIndexShort($tiff_mock, 'CanonPictureInformation');
+
+        $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Spec::getEntryClass($ifd_exif, 0x9286));
+        $this->assertEquals('ExifEye\core\Entry\Time', Spec::getEntryClass($ifd_exif, 0x9003));
         //@todo drop the else part once PHP < 5.6 (hence PHPUnit 4.8.36) support is removed.
         //@todo change below to ExifEyeException::class once PHP 5.4 support is removed.
         if (method_exists($this, 'expectException')) {
@@ -76,7 +93,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
         } else {
             $this->setExpectedException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 0x0003 (ImageHeight) in ifd: 'CanonPictureInformation'");
         }
-        $this->assertNull(Spec::getEntryClass(Spec::getIfdIdByType('CanonPictureInformation'), 0x0003));
+        $this->assertNull(Spec::getEntryClass($ifd_canon_picture_information, 0x0003));
     }
 
     /**
@@ -90,11 +107,10 @@ class PelSpecTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd_id = Spec::getIfdIdByType($ifd_name);
-        $ifd = new Ifd($tiff_mock, Spec::getIfdIdByType($ifd_name));
+        $ifd = new Ifd($tiff_mock, $ifd_name);
 
-        $tag_id = Spec::getTagIdByName($ifd_id, $tag);
-        $entry_class_name = Spec::getEntryClass($ifd_id, $tag_id);
+        $tag_id = Spec::getTagIdByName($ifd, $tag);
+        $entry_class_name = Spec::getEntryClass($ifd, $tag_id);
         $tag = new Tag($ifd, $tag_id, $entry_class_name, $args);
 
         $this->assertInstanceOf($expected_class, $tag->getEntry());

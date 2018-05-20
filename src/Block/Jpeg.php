@@ -234,7 +234,7 @@ class Jpeg
                         }
 
                         $this->jpeg_data = $d->getClone(0, $length - 2);
-                        ExifEye::logger()->debug('JPEG data: {data}', ['data' => $this->jpeg_data->__toString()]);
+                        ExifEye::logger()->debug('JPEG data: {data}', ['data' => $this->jpeg_data->toString()]);
 
                         /* Append the EOI. */
                         $this->appendSection(JpegMarker::EOI, new JpegContent(new DataWindow()));
@@ -589,41 +589,6 @@ class Jpeg
     public function saveFile($filename)
     {
         return file_put_contents($filename, $this->getBytes());
-    }
-
-    /**
-     * Make a string representation of this JPEG object.
-     *
-     * This is mainly usefull for debugging. It will show the structure
-     * of the image, and its sections.
-     *
-     * @return string debugging information about this JPEG object.
-     */
-    public function __toString()
-    {
-        $str = ExifEye::tra("Dumping JPEG data...\n");
-        $count_sections = count($this->sections);
-        for ($i = 0; $i < $count_sections; $i ++) {
-            $m = $this->sections[$i][0];
-            $c = $this->sections[$i][1];
-            $str .= ExifEye::fmt("Section %d (marker 0x%02X - %s):\n", $i, $m, JpegMarker::getName($m));
-            $str .= ExifEye::fmt("  Description: %s\n", JpegMarker::getDescription($m));
-
-            if ($m == JpegMarker::SOI || $m == JpegMarker::EOI) {
-                continue;
-            }
-
-            if ($c instanceof Exif) {
-                $str .= ExifEye::tra("  Content    : Exif data\n");
-                $str .= $c->__toString() . "\n";
-            } elseif ($c instanceof JpegComment) {
-                $str .= ExifEye::fmt("  Content    : %s\n", $c->getValue());
-            } else {
-                $str .= ExifEye::tra("  Content    : Unknown\n");
-            }
-        }
-
-        return $str;
     }
 
     /**

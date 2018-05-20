@@ -3818,7 +3818,46 @@ return array (
           'mapping' =>
           array (
             1 => 'Uncompressed',
-            6 => 'JPEG compression',
+            2 => 'CCITT 1D',
+            3 => 'T4/Group 3 Fax',
+            4 => 'T6/Group 4 Fax',
+            5 => 'LZW',
+            6 => 'JPEG (old-style)',
+            7 => 'JPEG',
+            8 => 'Adobe Deflate',
+            9 => 'JBIG B&W',
+            10 => 'JBIG Color',
+            99 => 'JPEG',
+            262 => 'Kodak 262',
+            32766 => 'Next',
+            32767 => 'Sony ARW Compressed',
+            32769 => 'Packed RAW',
+            32770 => 'Samsung SRW Compressed',
+            32771 => 'CCIRLEW',
+            32772 => 'Samsung SRW Compressed 2',
+            32773 => 'PackBits',
+            32809 => 'Thunderscan',
+            32867 => 'Kodak KDC Compressed',
+            32895 => 'IT8CTPAD',
+            32896 => 'IT8LW',
+            32897 => 'IT8MP',
+            32898 => 'IT8BL',
+            32908 => 'PixarFilm',
+            32909 => 'PixarLog',
+            32946 => 'Deflate',
+            32947 => 'DCS',
+            34661 => 'JBIG',
+            34676 => 'SGILog',
+            34677 => 'SGILog24',
+            34712 => 'JPEG 2000',
+            34713 => 'Nikon NEF Compressed',
+            34715 => 'JBIG2 TIFF FX',
+            34718 => 'Microsoft Document Imaging (MDI) Binary Level Codec',
+            34719 => 'Microsoft Document Imaging (MDI) Progressive Transform Codec',
+            34720 => 'Microsoft Document Imaging (MDI) Vector',
+            34892 => 'Lossy JPEG',
+            65000 => 'Kodak DCR Compressed',
+            65535 => 'Pentax PEF Compressed',
           ),
         ),
       ),
@@ -4053,6 +4092,24 @@ return array (
           0 => 2,
         ),
       ),
+      317 =>
+      array (
+        'name' => 'Predictor',
+        'title' => 'Predictor',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'None',
+            2 => 'Horizontal differencing',
+          ),
+        ),
+      ),
       318 =>
       array (
         'name' => 'WhitePoint',
@@ -4071,6 +4128,35 @@ return array (
         'format' =>
         array (
           0 => 5,
+        ),
+      ),
+      338 =>
+      array (
+        'name' => 'ExtraSamples',
+        'title' => 'Extra Samples',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unspecified',
+            1 => 'Associated Alpha',
+            2 => 'Unassociated Alpha',
+          ),
+        ),
+      ),
+      339 =>
+      array (
+        'name' => 'SampleFormat',
+        'title' => 'Sample Format',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 3,
         ),
       ),
       342 =>
@@ -4167,6 +4253,16 @@ return array (
         array (
           0 => 5,
         ),
+      ),
+      700 =>
+      array (
+        'name' => 'ApplicationNotes',
+        'title' => 'Application Notes',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\IfdApplicationNotes',
       ),
       18246 =>
       array (
@@ -4336,7 +4432,46 @@ return array (
           'mapping' =>
           array (
             1 => 'Uncompressed',
-            6 => 'JPEG compression',
+            2 => 'CCITT 1D',
+            3 => 'T4/Group 3 Fax',
+            4 => 'T6/Group 4 Fax',
+            5 => 'LZW',
+            6 => 'JPEG (old-style)',
+            7 => 'JPEG',
+            8 => 'Adobe Deflate',
+            9 => 'JBIG B&W',
+            10 => 'JBIG Color',
+            99 => 'JPEG',
+            262 => 'Kodak 262',
+            32766 => 'Next',
+            32767 => 'Sony ARW Compressed',
+            32769 => 'Packed RAW',
+            32770 => 'Samsung SRW Compressed',
+            32771 => 'CCIRLEW',
+            32772 => 'Samsung SRW Compressed 2',
+            32773 => 'PackBits',
+            32809 => 'Thunderscan',
+            32867 => 'Kodak KDC Compressed',
+            32895 => 'IT8CTPAD',
+            32896 => 'IT8LW',
+            32897 => 'IT8MP',
+            32898 => 'IT8BL',
+            32908 => 'PixarFilm',
+            32909 => 'PixarLog',
+            32946 => 'Deflate',
+            32947 => 'DCS',
+            34661 => 'JBIG',
+            34676 => 'SGILog',
+            34677 => 'SGILog24',
+            34712 => 'JPEG 2000',
+            34713 => 'Nikon NEF Compressed',
+            34715 => 'JBIG2 TIFF FX',
+            34718 => 'Microsoft Document Imaging (MDI) Binary Level Codec',
+            34719 => 'Microsoft Document Imaging (MDI) Progressive Transform Codec',
+            34720 => 'Microsoft Document Imaging (MDI) Vector',
+            34892 => 'Lossy JPEG',
+            65000 => 'Kodak DCR Compressed',
+            65535 => 'Pentax PEF Compressed',
           ),
         ),
       ),
@@ -4571,6 +4706,24 @@ return array (
           0 => 2,
         ),
       ),
+      317 =>
+      array (
+        'name' => 'Predictor',
+        'title' => 'Predictor',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'None',
+            2 => 'Horizontal differencing',
+          ),
+        ),
+      ),
       318 =>
       array (
         'name' => 'WhitePoint',
@@ -4589,6 +4742,35 @@ return array (
         'format' =>
         array (
           0 => 5,
+        ),
+      ),
+      338 =>
+      array (
+        'name' => 'ExtraSamples',
+        'title' => 'Extra Samples',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unspecified',
+            1 => 'Associated Alpha',
+            2 => 'Unassociated Alpha',
+          ),
+        ),
+      ),
+      339 =>
+      array (
+        'name' => 'SampleFormat',
+        'title' => 'Sample Format',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 3,
         ),
       ),
       342 =>
@@ -4685,6 +4867,16 @@ return array (
         array (
           0 => 5,
         ),
+      ),
+      700 =>
+      array (
+        'name' => 'ApplicationNotes',
+        'title' => 'Application Notes',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\IfdApplicationNotes',
       ),
       18246 =>
       array (
@@ -5093,8 +5285,11 @@ return array (
       'Software' => 305,
       'DateTime' => 306,
       'Artist' => 315,
+      'Predictor' => 317,
       'WhitePoint' => 318,
       'PrimaryChromaticities' => 319,
+      'ExtraSamples' => 338,
+      'SampleFormat' => 339,
       'TransferRange' => 342,
       'JPEGProc' => 512,
       'ThumbnailOffset' => 513,
@@ -5103,6 +5298,7 @@ return array (
       'YCbCrSubSampling' => 530,
       'YCbCrPositioning' => 531,
       'ReferenceBlackWhite' => 532,
+      'ApplicationNotes' => 700,
       'Rating' => 18246,
       'RatingPercent' => 18249,
       'BatteryLevel' => 33423,
@@ -5142,8 +5338,11 @@ return array (
       'Software' => 305,
       'DateTime' => 306,
       'Artist' => 315,
+      'Predictor' => 317,
       'WhitePoint' => 318,
       'PrimaryChromaticities' => 319,
+      'ExtraSamples' => 338,
+      'SampleFormat' => 339,
       'TransferRange' => 342,
       'JPEGProc' => 512,
       'ThumbnailOffset' => 513,
@@ -5152,6 +5351,7 @@ return array (
       'YCbCrSubSampling' => 530,
       'YCbCrPositioning' => 531,
       'ReferenceBlackWhite' => 532,
+      'ApplicationNotes' => 700,
       'Rating' => 18246,
       'RatingPercent' => 18249,
       'BatteryLevel' => 33423,
