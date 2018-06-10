@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\JpegSegment;
 use ExifEye\core\ExifEye;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Block\Jpeg;
@@ -30,7 +31,8 @@ class MisplacedExifTest extends ExifEyeTestCaseBase
             ++$idx;
         }
         $this->assertNotNull($exifIdx);
-        $newExif = new Exif();
+        $app1_segment = new JpegSegment('APP1');
+        $newExif = new Exif($app1_segment);
         $jpeg->setExif($newExif);
         // Ensure EXIF is set to correct position among sections
         $sections2 = $jpeg->getSections();

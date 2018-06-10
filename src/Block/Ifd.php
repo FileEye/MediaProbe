@@ -199,15 +199,15 @@ class Ifd extends BlockBase
             $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailLength'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
-            $ifd_area .= ConvertBytes::fromLong($this->first("thumbnail")->getEntry()->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromLong($this->first("thumbnail/entry")->getComponents(), $order);
 
             $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailOffset'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
             $ifd_area .= ConvertBytes::fromLong($end, $order);
 
-            $data_area .= $this->first("thumbnail")->getEntry()->toBytes();
-            $end += $this->first("thumbnail")->getEntry()->getComponents();
+            $data_area .= $this->first("thumbnail/entry")->toBytes();
+            $end += $this->first("thumbnail/entry")->getComponents();
         }
 
         // Process sub IFDs.

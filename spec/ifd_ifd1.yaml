@@ -19,7 +19,6 @@ tags:
     0x0102:
         name: BitsPerSample
         title: 'Bits per Sample'
-        components: 3
         format: Short
     0x0103:
         name: Compression
@@ -76,8 +75,20 @@ tags:
         format: Short
         text:
             mapping:
+                0: 'WhiteIsZero'
+                1: 'BlackIsZero'
                 2: 'RGB'
+                3: 'RGB Palette'
+                4: 'Transparency Mask'
+                5: 'CMYK'
                 6: 'YCbCr'
+                8: 'CIELab'
+                9: 'ICCLab'
+                10: 'ITULab'
+                32803: 'Color Filter Array'
+                32844: 'Pixar LogL'
+                32845: 'Pixar LogLuv'
+                34892: 'Linear Raw'
     0x010A:
         name: FillOrder
         title: 'Fill Order'

@@ -4,6 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
+use ExifEye\core\Block\JpegSegment;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Core\Ascii;
@@ -47,7 +48,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $jpeg = new Jpeg(dirname(__FILE__) . '/images/no-exif.jpg');
         $this->assertNull($jpeg->getExif());
 
-        $exif = new Exif();
+        $app1_segment = new JpegSegment('APP1');
+
+        $exif = new Exif($app1_segment);
         $jpeg->setExif($exif);
         $this->assertNotNull($jpeg->getExif());
         $this->assertNull($exif->first("tiff"));
