@@ -5,7 +5,6 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\InvalidDataException;
-use ExifEye\core\JpegContent;
 
 /**
  * Class representing Exif data.
@@ -39,19 +38,8 @@ class Exif extends BlockBase
     {
         $this->debug('Parsing {size} bytes of Exif data...', ['size' => $data_window->getSize()]);
 
-        // There must be at least 6 bytes for the Exif header.
-        if ($data_window->getSize() < 6) {
-            $this->debug('Expected at least 6 bytes of Exif data, found just {size} bytes.', ['size' => $data_window->getSize()]);
-            return false;
-        }
-
-        // Verify the Exif header.
-        if ($data_window->strcmp(0, self::EXIF_HEADER)) {
-            $data_window->setWindowStart(strlen(self::EXIF_HEADER));
-        } else {
-            $this->debug('Exif header not found.');
-            return false;
-        }
+        // Skip the EXIF header.
+        $data_window->setWindowStart(strlen(self::EXIF_HEADER));
 
         // The rest is TIFF data.
         $tiff = new Tiff(false, $this);
@@ -65,5 +53,20 @@ class Exif extends BlockBase
     public function toBytes()
     {
         return self::EXIF_HEADER . $this->first('tiff')->toBytes();
+    }
+
+    public static function isExifSegment(DataWindow $data_window)
+    {
+        // There must be at least 6 bytes for the Exif header.
+        if ($data_window->getSize() < 6) {
+            return false;
+        }
+
+        // Verify the Exif header.
+        if ($data_window->strcmp(0, self::EXIF_HEADER)) {
+            return true;
+        }
+
+        return false;
     }
 }

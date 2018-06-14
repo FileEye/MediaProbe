@@ -10,6 +10,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
+use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -26,11 +27,13 @@ class JpegSegment extends BlockBase
     /**
      * Construct a new JPEG segment object.
      */
-    public function __construct($name, BlockBase $parent_block = null)
+    public function __construct($id, Jpeg $jpeg, JpegSegment $reference = null)
     {
-        parent::__construct($parent_block);
-
+        parent::__construct($jpeg, $reference);
+        $this->setAttribute('id', $id);
+        $name = JpegMarker::getName($id);
         $this->setAttribute('name', $name);
+        $this->debug('{name} segment - {desc}', ['name' => $name, 'desc' => JpegMarker::getDescription($id)]);
     }
 
     /**
@@ -40,8 +43,13 @@ class JpegSegment extends BlockBase
     {
         $this->debug("START... Loading");
 
-        $exif = new Exif($this);
-        $ret = $exif->loadFromData($data_window, $offset);
+        if (Exif::isExifSegment($data_window)) {
+            $exif = new Exif($this);
+            $ret = $exif->loadFromData($data_window, $offset);
+        } else {
+            $this->debug('Exif header not found.');
+            $ret = false;
+        }
 
         $this->debug(".....END Loading");
 
@@ -51,8 +59,12 @@ class JpegSegment extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($offset, $order)
+    public function toBytes()
     {
-        return 'xxx';
+        $bytes = '';
+        foreach ($this->query("*") as $sub) {
+            $bytes .= $sub->toBytes();
+        }
+        return $bytes;
     }
 }

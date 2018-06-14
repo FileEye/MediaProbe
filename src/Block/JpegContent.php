@@ -1,6 +1,6 @@
 <?php
 
-namespace ExifEye\core;
+namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
 
@@ -16,8 +16,13 @@ use ExifEye\core\DataWindow;
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class JpegContent
+class JpegContent extends BlockBase
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected $type = 'jpegContent';
+
     private $data = null;
 
     /**
@@ -26,8 +31,9 @@ class JpegContent
      * @param DataWindow $data
      *            the content.
      */
-    public function __construct(DataWindow $data)
+    public function __construct(BlockBase $parent_block, DataWindow $data)
     {
+        parent::__construct($parent_block);
         $this->data = $data;
     }
 

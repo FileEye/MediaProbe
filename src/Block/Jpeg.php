@@ -3,12 +3,10 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\Entry\JpegComment;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\InvalidDataException;
-use ExifEye\core\JpegContent;
 use ExifEye\core\JpegInvalidMarkerException;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\ConvertBytes;
@@ -48,25 +46,12 @@ use ExifEye\core\Utility\ConvertBytes;
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  * @package PEL
  */
-class Jpeg
+class Jpeg extends BlockBase
 {
-
     /**
-     * The sections in the JPEG data.
-     *
-     * A JPEG file is built up as a sequence of sections, each section
-     * is identified with a {@link JpegMarker}. Some sections can
-     * occur more than once in the JPEG stream (the {@link
-     * JpegMarker::DQT DQT} and {@link JpegMarker::DHT DTH}
-     * markers for example) and so this is an array of ({@link
-     * JpegMarker}, {@link JpegContent}) pairs.
-     *
-     * The content can be either generic {@link JpegContent JPEG
-     * content} or {@link Exif Exif data}.
-     *
-     * @var array
+     * {@inheritdoc}
      */
-    protected $sections = [];
+    protected $type = 'jpeg';
 
     /**
      * The JPEG image data.
@@ -102,18 +87,20 @@ class Jpeg
      */
     public function __construct($data = false)
     {
+        parent::__construct();
+
         if ($data === false) {
             return;
         }
 
         if (is_string($data)) {
-            ExifEye::logger()->debug('Initializing Jpeg object from {data}', ['data' => $data]);
+            $this->debug('Initializing Jpeg object from {data}', ['data' => $data]);
             $this->loadFile($data);
         } elseif ($data instanceof DataWindow) {
-            ExifEye::logger()->debug('Initializing Jpeg object from DataWindow.');
+            $this->debug('Initializing Jpeg object from DataWindow.');
             $this->load($data);
         } elseif (is_resource($data) && get_resource_type($data) == 'gd') {
-            ExifEye::logger()->debug('Initializing Jpeg object from image resource.');
+            $this->debug('Initializing Jpeg object from image resource.');
             $this->load(new DataWindow($data));
         } else {
             throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
@@ -157,7 +144,7 @@ class Jpeg
      */
     public function load(DataWindow $d)
     {
-        ExifEye::logger()->debug('Parsing {size} bytes...', ['size' => $d->getSize()]);
+        $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $d->getSize()]);
 
         /* JPEG data is stored in big-endian format. */
         $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
@@ -184,8 +171,7 @@ class Jpeg
             $d->setWindowStart($i + 1);
 
             if ($marker == JpegMarker::SOI || $marker == JpegMarker::EOI) {
-                $content = new JpegContent(new DataWindow());
-                $this->appendSection($marker, $content);
+                $segment = new JpegSegment($marker, $this);
             } else {
                 /*
                  * Read the length of the section. The length includes the
@@ -193,38 +179,25 @@ class Jpeg
                  */
                 $len = $d->getShort(0) - 2;
 
-                ExifEye::logger()->debug('Found {name} section of length {size}', ['name' => JpegMarker::getName($marker), 'size' => $len]);
-
                 /* Skip past the length. */
                 $d->setWindowStart(2);
 
                 if ($marker == JpegMarker::APP1) {
-                    $app1_segment = new JpegSegment(JpegMarker::getName($marker));
+                    $app1_segment = new JpegSegment($marker, $this);
                     if ($app1_segment->loadFromData($d->getClone(0, $len)) === false) {
                         // We store the data as normal JPEG content if it could
                         // not be parsed as Exif data.
-                        $content = new JpegContent($d->getClone(0, $len));
-                    } else {
-                        $content = $app1_segment->first('exif');
+                        new JpegContent($app1_segment, $d->getClone(0, $len));
                     }
-                    $this->appendSection($marker, $content);
                     $d->setWindowStart($len);
-/*                    $content = new Exif();
-                    if ($content->loadFromData($d->getClone(0, $len)) === false) {
-                        // We store the data as normal JPEG content if it could
-                        // not be parsed as Exif data.
-                        $content = new JpegContent($d->getClone(0, $len));
-                    }
-                    $this->appendSection($marker, $content);
-                    $d->setWindowStart($len); */
                 } elseif ($marker == JpegMarker::COM) {
-                    $content = new JpegComment();
-                    $content->load($d->getClone(0, $len));
-                    $this->appendSection($marker, $content);
+                    $com_segment = new JpegSegment($marker, $this);
+                    $content = new JpegComment($com_segment);
+                    $content->loadFromData($d->getClone(0, $len));
                     $d->setWindowStart($len);
                 } else {
-                    $content = new JpegContent($d->getClone(0, $len));
-                    $this->appendSection($marker, $content);
+                    $segment = new JpegSegment($marker, $this);
+                    $content = new JpegContent($segment, $d->getClone(0, $len));
                     /* Skip past the data. */
                     $d->setWindowStart($len);
 
@@ -243,30 +216,28 @@ class Jpeg
                         }
 
                         $this->jpeg_data = $d->getClone(0, $length - 2);
-                        ExifEye::logger()->debug('JPEG data: {data}', ['data' => $this->jpeg_data->toString()]);
+                        $this->debug('JPEG data: {data}', ['data' => $this->jpeg_data->toString()]);
 
-                        /* Append the EOI. */
-                        $this->appendSection(JpegMarker::EOI, new JpegContent(new DataWindow()));
+                        // Append the EOI.
+                        $eoi_segment = new JpegSegment(JpegMarker::EOI, $this);
 
-                        /* Now check to see if there are any trailing data. */
+                        // Now check to see if there are any trailing data.
                         if ($length != $d->getSize()) {
-                            ExifEye::logger()->error('Found trailing content after EOI: {size} bytes', [
+                            $this->warning('Found trailing content after EOI: {size} bytes', [
                                 'size' => $d->getSize() - $length,
                             ]);
-                            $content = new JpegContent($d->getClone($length));
-                            /*
-                             * We don't have a proper JPEG marker for trailing
-                             * garbage, so we just use 0x00...
-                             */
-                            $this->appendSection(0x00, $content);
+                            // We don't have a proper JPEG marker for trailing
+                            // garbage, so we just use 0x00...
+                            $trail_segment = new JpegSegment(0x00, $this);
+                            new JpegContent($trail_segment, $d->getClone($length));
                         }
 
-                        /* Done with the loop. */
+                        // Done with the loop.
                         break;
                     }
                 }
             }
-        } /* while ($d->getSize() > 0) */
+        }
     }
 
     /**
@@ -278,271 +249,6 @@ class Jpeg
     public function loadFile($filename)
     {
         $this->load(new DataWindow(file_get_contents($filename)));
-    }
-
-    /**
-     * Set Exif data.
-     *
-     * Use this to set the Exif data in the image. This will overwrite
-     * any old Exif information in the image.
-     *
-     * @param
-     *            Exif the Exif data.
-     */
-    public function setExif(Exif $exif)
-    {
-        $app0_offset = 1;
-        $app1_offset = - 1;
-
-        /* Search through all sections looking for APP0 or APP1. */
-        $sections_count = count($this->sections);
-        for ($i = 0; $i < $sections_count; $i ++) {
-            if (! empty($this->sections[$i][0])) {
-                $section = $this->sections[$i];
-                if ($section[0] == JpegMarker::APP0) {
-                    $app0_offset = $i;
-                } elseif (($section[0] == JpegMarker::APP1) && ($section[1] instanceof Exif)) {
-                    $app1_offset = $i;
-                    break;
-                }
-            }
-        }
-
-        /*
-         * Store the Exif data at the appropriate place, either where the
-         * old Exif data was stored ($app1_offset) or right after APP0
-         * ($app0_offset+1).
-         */
-        if ($app1_offset > 0) {
-            $this->sections[$app1_offset][1] = $exif;
-        } else {
-            $this->insertSection(JpegMarker::APP1, $exif, $app0_offset + 1);
-        }
-    }
-
-    /**
-     * Set ICC data.
-     *
-     * Use this to set the ICC data in the image. This will overwrite
-     * any old ICC information in the image.
-     *
-     * @param
-     *            JpegContent the ICC data.
-     */
-    public function setICC(JpegContent $icc)
-    {
-        $app1_offset = 1;
-        $app2_offset = - 1;
-
-        /* Search through all sections looking for APP0 or APP1. */
-        $count_sections = count($this->sections);
-        for ($i = 0; $i < $count_sections; $i ++) {
-            if (! empty($this->sections[$i][0])) {
-                if ($this->sections[$i][0] == JpegMarker::APP1) {
-                    $app1_offset = $i;
-                } elseif ($this->sections[$i][0] == JpegMarker::APP2) {
-                    $app2_offset = $i;
-                    break;
-                }
-            }
-        }
-
-        /*
-         * Store the Exif data at the appropriate place, either where the
-         * old Exif data was stored ($app1_offset) or right after APP0
-         * ($app0_offset+1).
-         */
-        if ($app2_offset > 0) {
-            $this->sections[$app1_offset][1] = $icc;
-        } else {
-            $this->insertSection(JpegMarker::APP2, $icc, $app1_offset + 1);
-        }
-    }
-
-    /**
-     * Get first valid APP1 Exif section data.
-     *
-     * Use this to get the @{link Exif Exif data} stored.
-     *
-     * @return Exif the Exif data found or null if the image has no
-     *         Exif data.
-     */
-    public function getExif()
-    {
-        $sections_count = count($this->sections);
-        for ($i = 0; $i < $sections_count; $i ++) {
-            $section = $this->getSection(JpegMarker::APP1, $i);
-            if ($section instanceof Exif) {
-                return $section;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Get ICC data.
-     *
-     * Use this to get the @{link JpegContent ICC data} stored.
-     *
-     * @return JpegContent the ICC data found or null if the image has no
-     *         ICC data.
-     */
-    public function getICC()
-    {
-        $icc = $this->getSection(JpegMarker::APP2);
-        if ($icc instanceof JpegContent) {
-            return $icc;
-        }
-        return null;
-    }
-
-    /**
-     * Clear any Exif data.
-     *
-     * This method will only clear @{link JpegMarker::APP1} EXIF sections found.
-     */
-    public function clearExif()
-    {
-        $idx = 0;
-        while ($idx < count($this->sections)) {
-            $s = $this->sections[$idx];
-            if (($s[0] == JpegMarker::APP1) && ($s[1] instanceof Exif)) {
-                array_splice($this->sections, $idx, 1);
-                $idx--;
-            } else {
-                ++ $idx;
-            }
-        }
-    }
-
-    /**
-     * Append a new section.
-     *
-     * Used only when loading an image. If it used again later, then the
-     * section will end up after the @{link JpegMarker::EOI EOI
-     * marker} and will probably not be useful.
-     *
-     * Please use @{link setExif()} instead if you intend to add Exif
-     * information to an image as that function will know the right
-     * place to insert the data.
-     *
-     * @param
-     *            JpegMarker the marker identifying the new section.
-     *
-     * @param
-     *            JpegContent the content of the new section.
-     */
-    public function appendSection($marker, /*JpegContent*/ $content)
-    {
-        $this->sections[] = [
-            $marker,
-            $content
-        ];
-    }
-
-    /**
-     * Insert a new section.
-     *
-     * Please use @{link setExif()} instead if you intend to add Exif
-     * information to an image as that function will know the right
-     * place to insert the data.
-     *
-     * @param
-     *            JpegMarker the marker for the new section.
-     *
-     * @param
-     *            JpegContent the content of the new section.
-     *
-     * @param
-     *            int the offset where the new section will be inserted ---
-     *            use 0 to insert it at the very beginning, use 1 to insert it
-     *            between sections 1 and 2, etc.
-     */
-    public function insertSection($marker, /*JpegContent*/ $content, $offset)
-    {
-        array_splice($this->sections, $offset, 0, [
-            [
-                $marker,
-                $content
-            ]
-        ]);
-    }
-
-    /**
-     * Get a section corresponding to a particular marker.
-     *
-     * Please use the {@link getExif()} if you just need the Exif data.
-     *
-     * This will search through the sections of this JPEG object,
-     * looking for a section identified with the specified {@link
-     * JpegMarker marker}. The {@link JpegContent content} will
-     * then be returned. The optional argument can be used to skip over
-     * some of the sections. So if one is looking for the, say, third
-     * {@link JpegMarker::DHT DHT} section one would do:
-     *
-     * <code>
-     * $dht3 = $jpeg->getSection(JpegMarker::DHT, 2);
-     * </code>
-     *
-     * @param
-     *            JpegMarker the marker identifying the section.
-     *
-     * @param
-     *            int the number of sections to be skipped. This must be a
-     *            non-negative integer.
-     *
-     * @return JpegContent the content found, or null if there is no
-     *         content available.
-     */
-    public function getSection($marker, $skip = 0)
-    {
-        foreach ($this->sections as $s) {
-            if ($s[0] == $marker) {
-                if ($skip > 0) {
-                    $skip --;
-                } else {
-                    return $s[1];
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Get all sections.
-     *
-     * @return array an array of ({@link JpegMarker}, {@link
-     *         JpegContent}) pairs. Each pair is an array with the {@link
-     *         JpegMarker} as the first element and the {@link
-     *         JpegContent} as the second element, so the return type is an
-     *         array of arrays.
-     *
-     *         So to loop through all the sections in a given JPEG image do
-     *         this:
-     *
-     *         <code>
-     *         foreach ($jpeg->getSections() as $section) {
-     *         $marker = $section[0];
-     *         $content = $section[1];
-     *         // Use $marker and $content here.
-     *         }
-     *         </code>
-     *
-     *         instead of this:
-     *
-     *         <code>
-     *         foreach ($jpeg->getSections() as $marker => $content) {
-     *         // Does not work the way you would think...
-     *         }
-     *         </code>
-     *
-     *         The problem is that there could be several sections with the same
-     *         marker, and thus a simple associative array does not suffice.
-     */
-    public function getSections()
-    {
-        return $this->sections;
     }
 
     /**
@@ -559,24 +265,24 @@ class Jpeg
     {
         $bytes = '';
 
-        foreach ($this->sections as $section) {
-            $m = $section[0];
-            $c = $section[1];
+        foreach ($this->query("segment") as $segment) {
+            $m = $segment->getAttribute('id');
 
-            /* Write the marker */
+            // Add the marker.
             $bytes .= "\xFF" . JpegMarker::getBytes($m);
-            /* Skip over empty markers. */
+
+            // Skip over empty markers.
             if ($m == JpegMarker::SOI || $m == JpegMarker::EOI) {
                 continue;
             }
 
-            $data = $c->toBytes();
+            // Add the segment bytes.
+            $data = $segment->toBytes();
             $size = strlen($data) + 2;
-
             $bytes .= ConvertBytes::fromShort($size, ConvertBytes::BIG_ENDIAN);
             $bytes .= $data;
 
-            /* In case of SOS, we need to write the JPEG data. */
+            // In case of SOS, we need to write the JPEG data.
             if ($m == JpegMarker::SOS) {
                 $bytes .= $this->jpeg_data->getBytes();
             }
@@ -616,7 +322,7 @@ class Jpeg
      *
      * @see Tiff::isValid()
      */
-    public static function isValid(DataWindow $d)
+    public static function xxisValid(DataWindow $d)
     {
         /* JPEG data is stored in big-endian format. */
         $d->setByteOrder(ConvertBytes::BIG_ENDIAN);

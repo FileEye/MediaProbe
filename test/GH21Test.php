@@ -2,7 +2,10 @@
 
 namespace ExifEye\Test\core;
 
+use ExifEye\core\DataWindow;
+use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
+use ExifEye\core\Block\JpegSegment;
 
 class GH21Test extends ExifEyeTestCaseBase
 {
@@ -47,18 +50,24 @@ class GH21Test extends ExifEyeTestCaseBase
             $original_h
         );
 
-        $output_jpeg = new Jpeg($scaled);
+        $out_jpeg = new Jpeg($scaled);
 
-        $exif = $input_jpeg->getExif();
+        $exif = $input_jpeg->first("segment/exif");
 
-        if ($exif !== null) {
-            $output_jpeg->setExif($exif);
-        }
+        // Find the COM segment in the output file.
+        $out_com_segment = $out_jpeg->first("segment[@name='COM']");
 
-        file_put_contents($this->file, $output_jpeg->getBytes());
+        // Insert the APP1 segment before the COM one.
+        $out_app1_segment = new JpegSegment(0xE1, $out_jpeg, $out_com_segment);
 
+        // Add the EXIF block to the APP1 segment.
+        $exif_block = new Exif($out_app1_segment);
+        $exif_block->loadFromData(new DataWindow($exif->toBytes()));
+
+        file_put_contents($this->file, $out_jpeg->getBytes());
+        
         $jpeg = new Jpeg($this->file);
-        $exifin = $jpeg->getExif();
+        $exifin = $jpeg->first("segment/exif");
         $this->assertEquals($exif, $exifin);
     }
 }

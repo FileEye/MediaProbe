@@ -46,13 +46,16 @@ class ReadWriteTest extends ExifEyeTestCaseBase
     public function testWriteRead(array $entries)
     {
         $jpeg = new Jpeg(dirname(__FILE__) . '/images/no-exif.jpg');
-        $this->assertNull($jpeg->getExif());
+        $this->assertNull($jpeg->first("segment/exif"));
 
-        $app1_segment = new JpegSegment('APP1');
+        // Find the COM segment.
+        $com_segment = $jpeg->first("segment[@name='COM']");
+
+        // Insert the APP1 segment before the COM one.
+        $app1_segment = new JpegSegment(0xE1, $jpeg, $com_segment);
 
         $exif = new Exif($app1_segment);
-        $jpeg->setExif($exif);
-        $this->assertNotNull($jpeg->getExif());
+        $this->assertNotNull($jpeg->first("segment/exif"));
         $this->assertNull($exif->first("tiff"));
 
         $tiff = new Tiff(false, $exif);
@@ -76,10 +79,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         // Now read the file and see if the entries are still there.
         $r_jpeg = new Jpeg(dirname(__FILE__) . '/test-output.jpg');
 
-        $exif = $r_jpeg->getExif();
-        $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);
+        $this->assertInstanceOf('ExifEye\core\Block\Exif', $r_jpeg->first("segment/exif"));
 
-        $tiff = $exif->first("tiff");
+        $tiff = $r_jpeg->first("segment/exif/tiff");
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
         $this->assertCount(1, $tiff->query("ifd"));
 

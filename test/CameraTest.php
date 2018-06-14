@@ -16,6 +16,15 @@ use Symfony\Component\Yaml\Yaml;
  */
 class CameraTest extends ExifEyeTestCaseBase
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function tearDown()
+    {
+        parent::tearDown();
+        gc_collect_cycles();
+    }
+
     public function imageFileProvider()
     {
         $finder = new Finder();
@@ -36,7 +45,7 @@ class CameraTest extends ExifEyeTestCaseBase
 
         $jpeg = new Jpeg(dirname(__FILE__) . '/imagetests/' . $test['jpeg']);
 
-        $exif = $jpeg->getExif();
+        $exif = $jpeg->first("segment/exif");
 
         if (isset($test['elements'])) {
             $this->assertElement($test['elements'], $exif);

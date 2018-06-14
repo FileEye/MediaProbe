@@ -14,13 +14,10 @@ class Tags1Test extends ExifEyeTestCaseBase
         ExifEye::setStrictParsing(true);
         $jpeg = new Jpeg(dirname(__FILE__) . '/images/test-tags-1.jpg');
 
-        $exif = $jpeg->getExif();
-        $this->assertInstanceOf('ExifEye\core\Block\Exif', $exif);
+        $this->assertInstanceOf('ExifEye\core\Block\Exif', $jpeg->first("segment/exif"));
+        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $jpeg->first("segment/exif/tiff"));
 
-        $tiff = $exif->first("tiff");
-        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
-
-        $ifd0 = $tiff->first("ifd[@name='IFD0']");
+        $ifd0 = $jpeg->first("segment/exif/tiff/ifd[@name='IFD0']");
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0);
 
         $ratingPercent = $ifd0->first("tag[@name='RatingPercent']");

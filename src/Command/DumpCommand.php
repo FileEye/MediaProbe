@@ -12,7 +12,6 @@ use ExifEye\core\Spec;
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Entry\JpegContent;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
@@ -111,7 +110,7 @@ class DumpCommand extends Command
 
     protected function jpegToTest($name, Jpeg $jpeg, &$json)
     {
-        $exif = $jpeg->getExif();
+        $exif = $jpeg->first("segment/exif");
         if ($exif == null) {
             $json['elements'] = [];
         } else {

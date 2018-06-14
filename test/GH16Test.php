@@ -31,7 +31,7 @@ class GH16Test extends ExifEyeTestCaseBase
     {
         // Parse test file.
         $jpeg = new Jpeg($this->file);
-        $exif = $jpeg->getExif();
+        $exif = $jpeg->first("segment/exif");
         $ifd0 = $exif->first("tiff/ifd[@name='IFD0']");
         $this->assertCount(1, $ifd0->query("tag"));
         $this->assertEquals('Ïðåâåä, ìåäâåä!', $ifd0->first("tag[@name='WindowsXPSubject']/entry")->toString());
@@ -46,7 +46,7 @@ class GH16Test extends ExifEyeTestCaseBase
 
         // Parse the test file again and check the Tag's new value was saved.
         $r_jpeg = new Jpeg($this->file);
-        $r_exif = $r_jpeg->getExif();
+        $r_exif = $r_jpeg->first("segment/exif");
         $r_ifd0 = $r_exif->first("tiff/ifd[@name='IFD0']");
         $this->assertCount(1, $r_exif->query("tiff/ifd[@name='IFD0']/tag"));
         $this->assertEquals($new_entry_value, $r_ifd0->first("tag[@name='WindowsXPSubject']/entry")->toString());

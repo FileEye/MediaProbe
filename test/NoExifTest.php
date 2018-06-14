@@ -11,7 +11,7 @@ class NoExifTest extends ExifEyeTestCaseBase
     {
         $jpeg = new Jpeg(dirname(__FILE__) . '/images/no-exif.jpg');
 
-        $exif = $jpeg->getExif();
+        $exif = $jpeg->first("segment/exif");
         $this->assertNull($exif);
 
         $handler = ExifEye::logger()->getHandlers()[0]; // xx

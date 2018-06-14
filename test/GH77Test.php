@@ -13,7 +13,7 @@ class GH77Test extends ExifEyeTestCaseBase
         $file = dirname(__FILE__) . '/images/gh-77.jpg';
 
         $input_jpeg = new Jpeg($file);
-        $app1 = $input_jpeg->getExif();
+        $app1 = $input_jpeg->first("segment/exif");
 
         $ifd0 = $app1->first("tiff/ifd[@name='IFD0']");
 

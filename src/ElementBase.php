@@ -42,10 +42,13 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * Constructs an Element object.
      *
-     * @param \ExifEye\core\ElementInterface $parent
-     *            the parent element of this element.
+     * @param \ExifEye\core\ElementInterface|null $parent
+     *            (Optional) the parent element of this element.
+     * @param \ExifEye\core\ElementInterface|null $reference
+     *            (Optional) if specified, the new element will be inserted
+     *            before the reference element.
      */
-    public function __construct(ElementInterface $parent = null)
+    public function __construct(ElementInterface $parent = null, ElementInterface $reference = null)
     {
         if (!$parent || !is_object($parent->DOMNode)) {
             $doc = new \DOMDocument();
@@ -55,8 +58,15 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             $parent_node = $parent->DOMNode;
             $doc = $parent->DOMNode->ownerDocument;
         }
+
         $this->DOMNode = $doc->createElement($this->getType());
-        $parent_node->appendChild($this->DOMNode);
+
+        if ($reference) {
+            $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
+        } else {
+            $parent_node->appendChild($this->DOMNode);
+        }
+
         $this->DOMNode->setExifEyeElement($this);
     }
 

@@ -96,10 +96,10 @@ ExifEye::logger()->pushHandler($log_handler);
 $data = new DataWindow(file_get_contents($file));
 
 /* Check data validity and load to object */
-if (Jpeg::isValid($data)) {
+if (Jpeg::xxisValid($data)) {
     $img = new Jpeg();
     $img->load($data);
-    $root = $img->getExif();
+    $root = $img;
 } else {
     $img = new Tiff($data);
     if ($img->isValid()) {
