@@ -3798,7 +3798,6 @@ return array (
       array (
         'name' => 'BitsPerSample',
         'title' => 'Bits per Sample',
-        'components' => 3,
         'format' =>
         array (
           0 => 3,
@@ -3874,8 +3873,20 @@ return array (
         array (
           'mapping' =>
           array (
+            0 => 'WhiteIsZero',
+            1 => 'BlackIsZero',
             2 => 'RGB',
+            3 => 'RGB Palette',
+            4 => 'Transparency Mask',
+            5 => 'CMYK',
             6 => 'YCbCr',
+            8 => 'CIELab',
+            9 => 'ICCLab',
+            10 => 'ITULab',
+            32803 => 'Color Filter Array',
+            32844 => 'Pixar LogL',
+            32845 => 'Pixar LogLuv',
+            34892 => 'Linear Raw',
           ),
         ),
       ),
@@ -4412,7 +4423,6 @@ return array (
       array (
         'name' => 'BitsPerSample',
         'title' => 'Bits per Sample',
-        'components' => 3,
         'format' =>
         array (
           0 => 3,
@@ -4488,8 +4498,20 @@ return array (
         array (
           'mapping' =>
           array (
+            0 => 'WhiteIsZero',
+            1 => 'BlackIsZero',
             2 => 'RGB',
+            3 => 'RGB Palette',
+            4 => 'Transparency Mask',
+            5 => 'CMYK',
             6 => 'YCbCr',
+            8 => 'CIELab',
+            9 => 'ICCLab',
+            10 => 'ITULab',
+            32803 => 'Color Filter Array',
+            32844 => 'Pixar LogL',
+            32845 => 'Pixar LogLuv',
+            34892 => 'Linear Raw',
           ),
         ),
       ),
