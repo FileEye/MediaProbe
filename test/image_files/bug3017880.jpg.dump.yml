@@ -1,0 +1,121 @@
+fileName: bug3017880.jpg
+mimeType: image/jpeg
+elements:
+    path: /jpeg
+    class: ExifEye\core\Block\Jpeg
+    valid: true
+    elements:
+        segment:
+            -
+                path: '/jpeg/segment:216:SOI'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '216'
+                name: SOI
+            -
+                path: '/jpeg/segment:219:DQT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '219'
+                name: DQT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:219:DQT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:225:APP1'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '225'
+                name: APP1
+                elements:
+                    exif:
+                        -
+                            path: '/jpeg/segment:225:APP1/exif'
+                            class: ExifEye\core\Block\Exif
+                            valid: true
+                            elements:
+                                tiff:
+                                    -
+                                        path: '/jpeg/segment:225:APP1/exif/tiff'
+                                        class: ExifEye\core\Block\Tiff
+                                        valid: true
+                                        elements:
+                                            ifd:
+                                                -
+                                                    path: '/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0'
+                                                    class: ExifEye\core\Block\Ifd
+                                                    valid: true
+                                                    name: IFD0
+                                                    elements:
+                                                        tag:
+                                                            -
+                                                                path: '/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software'
+                                                                class: ExifEye\core\Block\Tag
+                                                                valid: true
+                                                                id: '305'
+                                                                name: Software
+                                                                elements:
+                                                                    entry:
+                                                                        -
+                                                                            path: '/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software/entry'
+                                                                            class: ExifEye\core\Entry\Core\Ascii
+                                                                            valid: true
+                                                                            format: Ascii
+                                                                            components: 11
+                                                                            value: czoxMDoiRXhhbXBsZSBWMiI7
+                                                                            clear_value: 's:10:"Example V2";'
+                                                                            text: 'Example V2'
+            -
+                path: '/jpeg/segment:192:SOF0'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '192'
+                name: SOF0
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:192:SOF0/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:196:DHT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '196'
+                name: DHT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:218:SOS'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '218'
+                name: SOS
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:218:SOS/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:217:EOI'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '217'
+                name: EOI
+errors: {  }
+warnings:
+    -
+        path: '*** missing ***'
+        message: 'Ascii entry reading 10 bytes instead of 11 to avoid data window overflow'
+notices:
+    -
+        path: '*** missing ***'
+        message: 'Ascii entry ''Example V2'' missing final NUL character.'

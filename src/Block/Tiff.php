@@ -28,22 +28,9 @@ class Tiff extends BlockBase
     /**
      * Construct a new object for holding TIFF data.
      */
-    public function __construct($data, Exif $parent = null)
+    public function __construct(Exif $parent = null)
     {
         parent::__construct($parent);
-
-        if ($data === false) {
-            return;
-        }
-        if (is_string($data)) {
-            $this->debug('Initializing Tiff object from {data}', ['data' => $data]);
-            $this->loadFile($data);
-        } elseif ($data instanceof DataWindow) {
-            $this->debug('Initializing Tiff object from DataWindow.');
-            $this->loadFromData($data);
-        } else {
-            throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
-        }
     }
 
     /**
@@ -117,17 +104,6 @@ class Tiff extends BlockBase
     }
 
     /**
-     * Load data from a file into a TIFF object.
-     *
-     * @param string $filename
-     *            the filename. This must be a readable file.
-     */
-    public function loadFile($filename)
-    {
-        $this->loadFromData(new DataWindow(file_get_contents($filename)));
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function toBytes($order = ConvertBytes::LITTLE_ENDIAN)
@@ -171,20 +147,5 @@ class Tiff extends BlockBase
         }
 
         return $bytes;
-    }
-
-    /**
-     * Save the TIFF object as a TIFF image in a file.
-     *
-     * @param
-     *            string the filename to save in. An existing file with the
-     *            same name will be overwritten!
-     *
-     * @return integer|FALSE The number of bytes that were written to the
-     *         file, or FALSE on failure.
-     */
-    public function saveFile($filename)
-    {
-        return file_put_contents($filename, $this->getBytes());
     }
 }

@@ -6,6 +6,7 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\JpegSegment;
+use ExifEye\core\Image;
 
 class GH21Test extends ExifEyeTestCaseBase
 {
@@ -14,8 +15,8 @@ class GH21Test extends ExifEyeTestCaseBase
     public function setUp()
     {
         parent::setUp();
-        $this->file = dirname(__FILE__) . '/images/gh-21-tmp.jpg';
-        $file = dirname(__FILE__) . '/images/gh-21.jpg';
+        $this->file = dirname(__FILE__) . '/image_files/gh-21-tmp.jpg';
+        $file = dirname(__FILE__) . '/image_files/gh-21.jpg';
         copy($file, $this->file);
     }
 
@@ -27,9 +28,10 @@ class GH21Test extends ExifEyeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         $scale = 0.75;
-        $input_jpeg = new Jpeg($this->file);
+        $input_image = Image::loadFromFile($this->file);
+        $input_jpeg = $input_image->root();
 
-        $original = ImageCreateFromString($input_jpeg->getBytes());
+        $original = ImageCreateFromString($input_jpeg->toBytes());
         $original_w = ImagesX($original);
         $original_h = ImagesY($original);
 
@@ -50,7 +52,8 @@ class GH21Test extends ExifEyeTestCaseBase
             $original_h
         );
 
-        $out_jpeg = new Jpeg($scaled);
+        $out_image = Image::loadFromData(new DataWindow($scaled));
+        $out_jpeg = $out_image->root();
 
         $exif = $input_jpeg->first("segment/exif");
 
@@ -64,9 +67,10 @@ class GH21Test extends ExifEyeTestCaseBase
         $exif_block = new Exif($out_app1_segment);
         $exif_block->loadFromData(new DataWindow($exif->toBytes()));
 
-        file_put_contents($this->file, $out_jpeg->getBytes());
+        $out_image->saveToFile($this->file);
         
-        $jpeg = new Jpeg($this->file);
+        $image = Image::loadFromFile($this->file);
+        $jpeg = $image->root();
         $exifin = $jpeg->first("segment/exif");
         $this->assertEquals($exif, $exifin);
     }

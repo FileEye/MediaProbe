@@ -42,7 +42,7 @@ class Exif extends BlockBase
         $data_window->setWindowStart(strlen(self::EXIF_HEADER));
 
         // The rest is TIFF data.
-        $tiff = new Tiff(false, $this);
+        $tiff = new Tiff($this);
         $tiff->loadFromData($data_window);
         return true;
     }

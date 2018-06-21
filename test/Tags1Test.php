@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
+use ExifEye\core\Image;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Spec;
@@ -12,7 +13,8 @@ class Tags1Test extends ExifEyeTestCaseBase
     public function testTags()
     {
         ExifEye::setStrictParsing(true);
-        $jpeg = new Jpeg(dirname(__FILE__) . '/images/test-tags-1.jpg');
+        $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/test-tags-1.jpg');
+        $jpeg = $image->root();
 
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $jpeg->first("segment/exif"));
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $jpeg->first("segment/exif/tiff"));

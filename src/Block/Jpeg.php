@@ -61,53 +61,6 @@ class Jpeg extends BlockBase
     private $jpeg_data = null;
 
     /**
-     * Construct a new JPEG object.
-     *
-     * The new object will be empty unless an argument is given from
-     * which it can initialize itself. This can either be the filename
-     * of a JPEG image, a {@link DataWindow} object or a PHP image
-     * resource handle.
-     *
-     * New Exif data (in the form of a {@link Exif} object) can be
-     * inserted with the {@link setExif()} method:
-     *
-     * <code>
-     * $jpeg = new Jpeg($data);
-     * // Create container for the Exif information:
-     * $exif = new Exif();
-     * // Now Add a Tiff object with a Ifd object with one or more
-     * // objects to $exif... Finally add $exif to $jpeg:
-     * $jpeg->setExif($exif);
-     * </code>
-     *
-     * @param
-     *            mixed the data that this JPEG. This can either be a
-     *            filename, a {@link DataWindow} object, or a PHP image resource
-     *            handle.
-     */
-    public function __construct($data = false)
-    {
-        parent::__construct();
-
-        if ($data === false) {
-            return;
-        }
-
-        if (is_string($data)) {
-            $this->debug('Initializing Jpeg object from {data}', ['data' => $data]);
-            $this->loadFile($data);
-        } elseif ($data instanceof DataWindow) {
-            $this->debug('Initializing Jpeg object from DataWindow.');
-            $this->load($data);
-        } elseif (is_resource($data) && get_resource_type($data) == 'gd') {
-            $this->debug('Initializing Jpeg object from image resource.');
-            $this->load(new DataWindow($data));
-        } else {
-            throw new InvalidArgumentException('Bad type for $data: %s', gettype($data));
-        }
-    }
-
-    /**
      * JPEG sections start with 0xFF. The first byte that is not
      * 0xFF is a marker (hopefully).
      *
@@ -241,17 +194,6 @@ class Jpeg extends BlockBase
     }
 
     /**
-     * Load data from a file into a JPEG object.
-     *
-     * @param
-     *            string the filename. This must be a readable file.
-     */
-    public function loadFile($filename)
-    {
-        $this->load(new DataWindow(file_get_contents($filename)));
-    }
-
-    /**
      * Turn this JPEG object into bytes.
      *
      * The bytes returned by this method is ready to be stored in a file
@@ -261,7 +203,7 @@ class Jpeg extends BlockBase
      * @return string bytes representing this JPEG object, including all
      *         its sections and their associated data.
      */
-    public function getBytes()
+    public function toBytes()
     {
         $bytes = '';
 
@@ -289,46 +231,5 @@ class Jpeg extends BlockBase
         }
 
         return $bytes;
-    }
-
-    /**
-     * Save the JPEG object as a JPEG image in a file.
-     *
-     * @param
-     *            string the filename to save in. An existing file with the
-     *            same name will be overwritten!
-     *
-     * @return integer|FALSE The number of bytes that were written to the
-     *         file, or FALSE on failure.
-     */
-    public function saveFile($filename)
-    {
-        return file_put_contents($filename, $this->getBytes());
-    }
-
-    /**
-     * Test data to see if it could be a valid JPEG image.
-     *
-     * The function will only look at the first few bytes of the data,
-     * and try to determine if it could be a valid JPEG image based on
-     * those bytes. This means that the check is more like a heuristic
-     * than a rigorous check.
-     *
-     * @param
-     *            DataWindow the bytes that will be checked.
-     *
-     * @return boolean true if the bytes look like the beginning of a
-     *         JPEG image, false otherwise.
-     *
-     * @see Tiff::isValid()
-     */
-    public static function xxisValid(DataWindow $d)
-    {
-        /* JPEG data is stored in big-endian format. */
-        $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
-
-        $i = self::getJpgSectionStart($d);
-
-        return $d->getByte($i) == JpegMarker::SOI;
     }
 }

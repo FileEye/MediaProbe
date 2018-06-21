@@ -1,0 +1,154 @@
+fileName: no-exif.jpg
+mimeType: image/jpeg
+elements:
+    path: /jpeg
+    class: ExifEye\core\Block\Jpeg
+    valid: true
+    elements:
+        segment:
+            -
+                path: '/jpeg/segment:216:SOI'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '216'
+                name: SOI
+            -
+                path: '/jpeg/segment:224:APP0'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '224'
+                name: APP0
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:224:APP0/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:254:COM'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '254'
+                name: COM
+                elements:
+                    jpegComment:
+                        -
+                            path: '/jpeg/segment:254:COM/jpegComment'
+                            class: ExifEye\core\Block\JpegComment
+                            valid: true
+                            elements:
+                                entry:
+                                    -
+                                        path: '/jpeg/segment:254:COM/jpegComment/entry'
+                                        class: ExifEye\core\Entry\Core\Ascii
+                                        valid: true
+                                        format: Ascii
+                                        components: 46
+                                        value: czo0NToiVGVzdCBpbWFnZSBmb3IgUEVMLCB3aXRoIG5vIEVYSUYgaW5mb3JtYXRpb24uIjs=
+                                        clear_value: 's:45:"Test image for PEL, with no EXIF information.";'
+                                        text: 'Test image for PEL, with no EXIF information.'
+            -
+                path: '/jpeg/segment:219:DQT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '219'
+                name: DQT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:219:DQT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:219:DQT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '219'
+                name: DQT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:219:DQT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:192:SOF0'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '192'
+                name: SOF0
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:192:SOF0/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:196:DHT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '196'
+                name: DHT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:196:DHT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '196'
+                name: DHT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:196:DHT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '196'
+                name: DHT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:196:DHT'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '196'
+                name: DHT
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:218:SOS'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '218'
+                name: SOS
+                elements:
+                    jpegContent:
+                        -
+                            path: '/jpeg/segment:218:SOS/jpegContent'
+                            class: ExifEye\core\Block\JpegContent
+                            valid: true
+            -
+                path: '/jpeg/segment:217:EOI'
+                class: ExifEye\core\Block\JpegSegment
+                valid: true
+                id: '217'
+                name: EOI
+errors: {  }
+warnings: {  }
+notices: {  }

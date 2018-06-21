@@ -7,6 +7,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
+use ExifEye\core\Image;
 use ExifEye\core\Spec;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
@@ -14,7 +15,7 @@ use Symfony\Component\Yaml\Yaml;
 /**
  * Test camera images stored in the imagetest directory.
  */
-class CameraTest extends ExifEyeTestCaseBase
+class ImageFilesTest extends ExifEyeTestCaseBase
 {
     /**
      * {@inheritdoc}
@@ -28,7 +29,7 @@ class CameraTest extends ExifEyeTestCaseBase
     public function imageFileProvider()
     {
         $finder = new Finder();
-        $finder->files()->in(dirname(__FILE__) . '/imagetests')->name('*.test.yml');
+        $finder->files()->in(dirname(__FILE__) . '/image_files')->name('*.dump.yml');
         $result = [];
         foreach ($finder as $file) {
             $result[$file->getBasename()] = [$file];
@@ -43,12 +44,10 @@ class CameraTest extends ExifEyeTestCaseBase
     {
         $test = Yaml::parse($imageDumpFile->getContents());
 
-        $jpeg = new Jpeg(dirname(__FILE__) . '/imagetests/' . $test['jpeg']);
-
-        $exif = $jpeg->first("segment/exif");
+        $image = Image::loadFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
 
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $exif);
+            $this->assertElement($test['elements'], $image->root());
         }
 
         $handler = ExifEye::logger()->getHandlers()[0]; // xx

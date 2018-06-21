@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ExifEye\core\ExifEye;
+use ExifEye\core\Image;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 use ExifEye\core\Block\BlockBase;
@@ -51,28 +52,26 @@ class DumpCommand extends Command
         $fs = new Filesystem();
 
         $finder = new Finder();
-        $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG')->notName('*-thumb*');
+        $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG')->name('*.tiff');
 
         foreach ($finder as $file) {
             ExifEye::clearLogger();
-            $yaml = $this->fileToTest($file);
+            $yaml = $this->fileToDump($file);
             $output->write($yaml);
-            $fs->dumpFile((string) $file . '.test.yml', $yaml);
+            $fs->dumpFile((string) $file . '.dump.yml', $yaml);
         }
     }
 
-    protected function fileToTest($file)
+    protected function fileToDump($file)
     {
         $basename = substr($file, 0, - strlen(strrchr($file, '.')));
-        $thumb_filename = $basename . '-thumb.jpg';
-        $test_filename = $basename . '.php';
-        $test_name = str_replace('-', '_', $basename);
         $indent = 0;
         $json = [];
 
-        $jpeg = new Jpeg((string) $file);
-        $json['jpeg'] = $file->getBaseName();
-        $this->jpegToTest('$jpeg', $jpeg, $json);
+        $image = Image::loadFromFile((string) $file);
+        $json['fileName'] = $file->getBaseName();
+        $json['mimeType'] = $image->getMimeType();
+        $json['elements'] = $image->root()->toDumpArray();
 
 /*        foreach (ExifEye::logger()->getHandlers() as $handler) {
             if ($handler instanceof Monolog\Handler\TestHandler) {
@@ -100,21 +99,11 @@ class DumpCommand extends Command
                     continue;
             }
             $json[$key][] = [
-                'path' => $record['context']['path'],
+                'path' => isset($record['context']['path']) ? $record['context']['path'] : '*** missing ***',
                 'message' => $record['message'],
             ];
         }
 
-        return Yaml::dump($json, 20);
-    }
-
-    protected function jpegToTest($name, Jpeg $jpeg, &$json)
-    {
-        $exif = $jpeg->first("segment/exif");
-        if ($exif == null) {
-            $json['elements'] = [];
-        } else {
-            $json['elements'] = $exif->toDumpArray();
-        }
+        return Yaml::dump($json, 40);
     }
 }

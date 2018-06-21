@@ -18,6 +18,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
+use ExifEye\core\Image;
 
 class ReadWriteTest extends ExifEyeTestCaseBase
 {
@@ -45,7 +46,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
      */
     public function testWriteRead(array $entries)
     {
-        $jpeg = new Jpeg(dirname(__FILE__) . '/images/no-exif.jpg');
+        $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/no-exif.jpg');
+        $jpeg = $image->root();
+
         $this->assertNull($jpeg->first("segment/exif"));
 
         // Find the COM segment.
@@ -58,7 +61,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertNotNull($jpeg->first("segment/exif"));
         $this->assertNull($exif->first("tiff"));
 
-        $tiff = new Tiff(false, $exif);
+        $tiff = new Tiff($exif);
         $this->assertNotNull($exif->first("tiff"));
         $this->assertNull($tiff->first("ifd[@name='IFD0']"));
 
@@ -69,7 +72,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertNotNull($tiff->first("ifd[@name='IFD0']"));
 
         $this->assertFalse(file_exists(dirname(__FILE__) . '/test-output.jpg'));
-        $jpeg->saveFile(dirname(__FILE__) . '/test-output.jpg');
+        $image->saveToFile(dirname(__FILE__) . '/test-output.jpg');
         $this->assertTrue(file_exists(dirname(__FILE__) . '/test-output.jpg'));
         $this->assertTrue(filesize(dirname(__FILE__) . '/test-output.jpg') > 0);
 
@@ -77,7 +80,8 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $jpeg = null;
 
         // Now read the file and see if the entries are still there.
-        $r_jpeg = new Jpeg(dirname(__FILE__) . '/test-output.jpg');
+        $r_image = Image::loadFromFile(dirname(__FILE__) . '/test-output.jpg');
+        $r_jpeg = $r_image->root();
 
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $r_jpeg->first("segment/exif"));
 

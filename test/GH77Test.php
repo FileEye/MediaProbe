@@ -5,14 +5,17 @@ namespace ExifEye\Test\core;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\ExifEye;
+use ExifEye\core\Image;
 
 class GH77Test extends ExifEyeTestCaseBase
 {
     public function testReturnModel()
     {
-        $file = dirname(__FILE__) . '/images/gh-77.jpg';
+        $file = dirname(__FILE__) . '/image_files/gh-77.jpg';
 
-        $input_jpeg = new Jpeg($file);
+        $image = Image::loadFromFile($file);
+        $input_jpeg = $image->root();
+
         $app1 = $input_jpeg->first("segment/exif");
 
         $ifd0 = $app1->first("tiff/ifd[@name='IFD0']");

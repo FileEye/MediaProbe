@@ -3,13 +3,15 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
+use ExifEye\core\Image;
 use ExifEye\core\Block\Jpeg;
 
 class NoExifTest extends ExifEyeTestCaseBase
 {
     public function testRead()
     {
-        $jpeg = new Jpeg(dirname(__FILE__) . '/images/no-exif.jpg');
+        $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/no-exif.jpg');
+        $jpeg = $image->root();
 
         $exif = $jpeg->first("segment/exif");
         $this->assertNull($exif);
