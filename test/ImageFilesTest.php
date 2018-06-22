@@ -47,7 +47,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         $image = Image::loadFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
 
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $image->root());
+            $this->assertElement($test['elements'], $image->first("*"));
         }
 
         $handler = ExifEye::logger()->getHandlers()[0]; // xx

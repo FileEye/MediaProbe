@@ -61,21 +61,11 @@ class Jpeg extends BlockBase
     private $jpeg_data = null;
 
     /**
-     * JPEG sections start with 0xFF. The first byte that is not
-     * 0xFF is a marker (hopefully).
-     *
-     * @param DataWindow $d
-     *
-     * @return integer
+     * Construct a new object for holding JPEG data.
      */
-    protected static function getJpgSectionStart($d)
+    public function __construct(BlockBase $parent = null)
     {
-        for ($i = 0; $i < 7; $i ++) {
-            if ($d->getByte($i) != 0xFF) {
-                 break;
-            }
-        }
-        return $i;
+        parent::__construct($parent);
     }
 
     /**
@@ -95,12 +85,12 @@ class Jpeg extends BlockBase
      *            DataWindow the data that will be turned into JPEG
      *            sections.
      */
-    public function load(DataWindow $d)
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
-        $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $d->getSize()]);
+        $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $data_window->getSize()]);
 
         /* JPEG data is stored in big-endian format. */
-        $d->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
         /*
          * Run through the data to read the sections in the image. After
@@ -108,10 +98,10 @@ class Jpeg extends BlockBase
          * moved forward, and after the last section we'll terminate with
          * no data left in the window.
          */
-        while ($d->getSize() > 0) {
-            $i = $this->getJpgSectionStart($d);
+        while ($data_window->getSize() > 0) {
+            $i = $this->getJpgSectionStart($data_window);
 
-            $marker = $d->getByte($i);
+            $marker = $data_window->getByte($i);
 
             if (!JpegMarker::isValid($marker)) {
                 throw new JpegInvalidMarkerException($marker, $i);
@@ -121,7 +111,7 @@ class Jpeg extends BlockBase
              * Move window so first byte becomes first byte in this
              * section.
              */
-            $d->setWindowStart($i + 1);
+            $data_window->setWindowStart($i + 1);
 
             if ($marker == JpegMarker::SOI || $marker == JpegMarker::EOI) {
                 $segment = new JpegSegment($marker, $this);
@@ -130,29 +120,29 @@ class Jpeg extends BlockBase
                  * Read the length of the section. The length includes the
                  * two bytes used to store the length.
                  */
-                $len = $d->getShort(0) - 2;
+                $len = $data_window->getShort(0) - 2;
 
                 /* Skip past the length. */
-                $d->setWindowStart(2);
+                $data_window->setWindowStart(2);
 
                 if ($marker == JpegMarker::APP1) {
                     $app1_segment = new JpegSegment($marker, $this);
-                    if ($app1_segment->loadFromData($d->getClone(0, $len)) === false) {
+                    if ($app1_segment->loadFromData($data_window->getClone(0, $len)) === false) {
                         // We store the data as normal JPEG content if it could
                         // not be parsed as Exif data.
-                        new JpegContent($app1_segment, $d->getClone(0, $len));
+                        new JpegContent($app1_segment, $data_window->getClone(0, $len));
                     }
-                    $d->setWindowStart($len);
+                    $data_window->setWindowStart($len);
                 } elseif ($marker == JpegMarker::COM) {
                     $com_segment = new JpegSegment($marker, $this);
                     $content = new JpegComment($com_segment);
-                    $content->loadFromData($d->getClone(0, $len));
-                    $d->setWindowStart($len);
+                    $content->loadFromData($data_window->getClone(0, $len));
+                    $data_window->setWindowStart($len);
                 } else {
                     $segment = new JpegSegment($marker, $this);
-                    $content = new JpegContent($segment, $d->getClone(0, $len));
+                    $content = new JpegContent($segment, $data_window->getClone(0, $len));
                     /* Skip past the data. */
-                    $d->setWindowStart($len);
+                    $data_window->setWindowStart($len);
 
                     /* In case of SOS, image data will follow. */
                     if ($marker == JpegMarker::SOS) {
@@ -163,26 +153,26 @@ class Jpeg extends BlockBase
                          * a JpegContent object.
                          */
 
-                        $length = $d->getSize();
-                        while ($d->getByte($length - 2) != 0xFF || $d->getByte($length - 1) != JpegMarker::EOI) {
+                        $length = $data_window->getSize();
+                        while ($data_window->getByte($length - 2) != 0xFF || $data_window->getByte($length - 1) != JpegMarker::EOI) {
                             $length --;
                         }
 
-                        $this->jpeg_data = $d->getClone(0, $length - 2);
+                        $this->jpeg_data = $data_window->getClone(0, $length - 2);
                         $this->debug('JPEG data: {data}', ['data' => $this->jpeg_data->toString()]);
 
                         // Append the EOI.
                         $eoi_segment = new JpegSegment(JpegMarker::EOI, $this);
 
                         // Now check to see if there are any trailing data.
-                        if ($length != $d->getSize()) {
+                        if ($length != $data_window->getSize()) {
                             $this->warning('Found trailing content after EOI: {size} bytes', [
-                                'size' => $d->getSize() - $length,
+                                'size' => $data_window->getSize() - $length,
                             ]);
                             // We don't have a proper JPEG marker for trailing
                             // garbage, so we just use 0x00...
                             $trail_segment = new JpegSegment(0x00, $this);
-                            new JpegContent($trail_segment, $d->getClone($length));
+                            new JpegContent($trail_segment, $data_window->getClone($length));
                         }
 
                         // Done with the loop.
@@ -231,5 +221,23 @@ class Jpeg extends BlockBase
         }
 
         return $bytes;
+    }
+
+    /**
+     * JPEG sections start with 0xFF. The first byte that is not
+     * 0xFF is a marker (hopefully).
+     *
+     * @param DataWindow $d
+     *
+     * @return integer
+     */
+    protected function getJpgSectionStart($d)
+    {
+        for ($i = 0; $i < 7; $i ++) {
+            if ($d->getByte($i) != 0xFF) {
+                 break;
+            }
+        }
+        return $i;
     }
 }

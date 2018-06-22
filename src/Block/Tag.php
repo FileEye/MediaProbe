@@ -74,4 +74,11 @@ class Tag extends BlockBase
             'text' => $entry->toString(),
         ]);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    {
+    }
 }

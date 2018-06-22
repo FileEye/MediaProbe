@@ -36,23 +36,7 @@ abstract class BlockBase extends ElementBase
      *
      * @returns BlockBase
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
-    {
-    }
-
-    /**
-     * Gets the block's associated entry.
-     *
-     * @return EntryInterface
-     */
-    public function getEntry()
-    {
-        $entry = $this->query('entry');
-        if ($entry) {
-            return $entry[0];
-        }
-        return null;
-    }
+    abstract public function loadFromData(DataWindow $data_window, $offset = 0, array $options = []);
 
     /**
      * {@inheritdoc}

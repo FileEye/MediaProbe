@@ -118,7 +118,7 @@ class Ifd extends BlockBase
                     $ifd_class = Spec::getIfdClass($ifd_name);
                     $ifd = new $ifd_class($this, $ifd_name);
                     try {
-                        $ifd->loadFromData($data_window, $o, ['components' => $tag->getEntry()->getComponents()]);
+                        $ifd->loadFromData($data_window, $o, ['components' => $tag->first("entry")->getComponents()]);
                         $this->remove("tag[@name='" . $tag->getAttribute('name') . "']");
                     } catch (DataWindowOffsetException $e) {
                         $this->error($e->getMessage());
@@ -174,12 +174,12 @@ class Ifd extends BlockBase
         foreach ($this->query('tag') as $tag => $sub_block) {
             // Each entry is 12 bytes long.
             $ifd_area .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $order);
-            $ifd_area .= ConvertBytes::fromShort($sub_block->getEntry()->getFormat(), $order);
-            $ifd_area .= ConvertBytes::fromLong($sub_block->getEntry()->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromShort($sub_block->first("entry")->getFormat(), $order);
+            $ifd_area .= ConvertBytes::fromLong($sub_block->first("entry")->getComponents(), $order);
 
             // Size? If bigger than 4 bytes, the actual data is not in
             // the entry but somewhere else.
-            $data = $sub_block->getEntry()->toBytes($order);
+            $data = $sub_block->first("entry")->toBytes($order);
             $s = strlen($data);
             if ($s > 4) {
                 $ifd_area .= ConvertBytes::fromLong($end, $order);

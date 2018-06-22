@@ -29,7 +29,7 @@ class GH21Test extends ExifEyeTestCaseBase
     {
         $scale = 0.75;
         $input_image = Image::loadFromFile($this->file);
-        $input_jpeg = $input_image->root();
+        $input_jpeg = $input_image->first("jpeg");
 
         $original = ImageCreateFromString($input_jpeg->toBytes());
         $original_w = ImagesX($original);
@@ -52,8 +52,8 @@ class GH21Test extends ExifEyeTestCaseBase
             $original_h
         );
 
-        $out_image = Image::loadFromData(new DataWindow($scaled));
-        $out_jpeg = $out_image->root();
+        $out_image = Image::createFromData(new DataWindow($scaled));
+        $out_jpeg = $out_image->first("jpeg");
 
         $exif = $input_jpeg->first("segment/exif");
 
@@ -70,7 +70,7 @@ class GH21Test extends ExifEyeTestCaseBase
         $out_image->saveToFile($this->file);
         
         $image = Image::loadFromFile($this->file);
-        $jpeg = $image->root();
+        $jpeg = $image->first("jpeg");
         $exifin = $jpeg->first("segment/exif");
         $this->assertEquals($exif, $exifin);
     }

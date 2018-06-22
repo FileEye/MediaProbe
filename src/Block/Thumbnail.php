@@ -31,6 +31,13 @@ class Thumbnail extends BlockBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    {
+    }
+
+    /**
      * xx
      * @param DataWindow $data_window
      *            the data from which the thumbnail will be

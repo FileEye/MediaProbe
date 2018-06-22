@@ -11,7 +11,7 @@ class NoExifTest extends ExifEyeTestCaseBase
     public function testRead()
     {
         $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/no-exif.jpg');
-        $jpeg = $image->root();
+        $jpeg = $image->first("jpeg");
 
         $exif = $jpeg->first("segment/exif");
         $this->assertNull($exif);

@@ -38,6 +38,13 @@ class JpegContent extends BlockBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    {
+    }
+
+    /**
      * Return the bytes of the content.
      *
      * @return string bytes representing this JPEG content. These bytes

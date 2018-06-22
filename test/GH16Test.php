@@ -32,7 +32,7 @@ class GH16Test extends ExifEyeTestCaseBase
     {
         // Parse test file.
         $image = Image::loadFromFile($this->file);
-        $jpeg = $image->root();
+        $jpeg = $image->first("jpeg");
         $exif = $jpeg->first("segment/exif");
         $ifd0 = $exif->first("tiff/ifd[@name='IFD0']");
         $this->assertCount(1, $ifd0->query("tag"));
@@ -48,7 +48,7 @@ class GH16Test extends ExifEyeTestCaseBase
 
         // Parse the test file again and check the Tag's new value was saved.
         $r_image = Image::loadFromFile($this->file);
-        $r_jpeg = $r_image->root();
+        $r_jpeg = $r_image->first("jpeg");
         $r_exif = $r_jpeg->first("segment/exif");
         $r_ifd0 = $r_exif->first("tiff/ifd[@name='IFD0']");
         $this->assertCount(1, $r_exif->query("tiff/ifd[@name='IFD0']/tag"));
