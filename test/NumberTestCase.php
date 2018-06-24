@@ -10,15 +10,6 @@ abstract class NumberTestCase extends EntryTestBase
     protected $max;
     protected $num;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function setUp()
-    {
-        parent::setUp();
-        ExifEye::setStrictParsing(true);
-    }
-
     public function testOverflow()
     {
         $this->num->setValue([0]);

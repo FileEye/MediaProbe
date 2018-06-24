@@ -12,32 +12,31 @@ class Tags1Test extends ExifEyeTestCaseBase
 {
     public function testTags()
     {
-        ExifEye::setStrictParsing(true);
-        $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/test-tags-1.jpg');
-        $jpeg = $image->first("jpeg");
+        $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/test-tags-1.jpg', null, 'error');
+        $jpeg = $image->getElement("jpeg");
 
-        $this->assertInstanceOf('ExifEye\core\Block\Exif', $jpeg->first("segment/exif"));
-        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $jpeg->first("segment/exif/tiff"));
+        $this->assertInstanceOf('ExifEye\core\Block\Exif', $jpeg->getElement("segment/exif"));
+        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $jpeg->getElement("segment/exif/tiff"));
 
-        $ifd0 = $jpeg->first("segment/exif/tiff/ifd[@name='IFD0']");
+        $ifd0 = $jpeg->getElement("segment/exif/tiff/ifd[@name='IFD0']");
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0);
 
-        $ratingPercent = $ifd0->first("tag[@name='RatingPercent']/entry");
+        $ratingPercent = $ifd0->getElement("tag[@name='RatingPercent']/entry");
         $this->assertInstanceOf('ExifEye\core\Entry\Core\Short', $ratingPercent);
         $this->assertEquals(78, $ratingPercent->getValue());
 
-        $exifIfd = $ifd0->first("ifd[@name='Exif']");
+        $exifIfd = $ifd0->getElement("ifd[@name='Exif']");
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $exifIfd);
 
-        $offsetTime = $exifIfd->first("tag[@name='OffsetTime']/entry");
+        $offsetTime = $exifIfd->getElement("tag[@name='OffsetTime']/entry");
         $this->assertInstanceOf('ExifEye\core\Entry\Core\Ascii', $offsetTime);
         $this->assertEquals('-09:00', $offsetTime->getValue());
 
-        $offsetTimeDigitized = $exifIfd->first("tag[@name='OffsetTimeDigitized']/entry");
+        $offsetTimeDigitized = $exifIfd->getElement("tag[@name='OffsetTimeDigitized']/entry");
         $this->assertInstanceOf('ExifEye\core\Entry\Core\Ascii', $offsetTimeDigitized);
         $this->assertEquals('-10:00', $offsetTimeDigitized->getValue());
 
-        $offsetTimeOriginal = $exifIfd->first("tag[@name='OffsetTimeOriginal']/entry");
+        $offsetTimeOriginal = $exifIfd->getElement("tag[@name='OffsetTimeOriginal']/entry");
         $this->assertInstanceOf('ExifEye\core\Entry\Core\Ascii', $offsetTimeOriginal);
         $this->assertEquals('-11:00', $offsetTimeOriginal->getValue());
     }

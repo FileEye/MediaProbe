@@ -4,7 +4,7 @@ namespace ExifEye\core\Block;
 
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\DataWindow;
-use ExifEye\core\DataWindowWindowException;
+use ExifEye\core\DataWindowException;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
@@ -45,12 +45,12 @@ class Thumbnail extends BlockBase
      */
     public static function toBlock(DataWindow $data_window, Ifd $ifd)
     {
-        if (!$ifd->first("tag[@name='ThumbnailOffset']") || !$ifd->first("tag[@name='ThumbnailLength']")) {
+        if (!$ifd->getElement("tag[@name='ThumbnailOffset']") || !$ifd->getElement("tag[@name='ThumbnailLength']")) {
             return;
         }
 
-        $offset = $ifd->first("tag[@name='ThumbnailOffset']/entry")->getValue();
-        $length = $ifd->first("tag[@name='ThumbnailLength']/entry")->getValue();
+        $offset = $ifd->getElement("tag[@name='ThumbnailOffset']/entry")->getValue();
+        $length = $ifd->getElement("tag[@name='ThumbnailLength']/entry")->getValue();
 
         // Load the thumbnail only if both the offset and the length are
         // available and positive.
@@ -93,7 +93,7 @@ class Thumbnail extends BlockBase
                 'offset' => $offset,
                 'length' => $length,
             ]);
-        } catch (DataWindowWindowException $e) {
+        } catch (DataWindowException $e) {
             $ifd->error($e->getMessage());
         }
     }

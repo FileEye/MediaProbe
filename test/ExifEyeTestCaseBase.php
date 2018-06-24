@@ -10,7 +10,5 @@ class ExifEyeTestCaseBase extends TestCase
     public function setUp()
     {
         parent::setUp();
-        ExifEye::setStrictParsing(false);
-        ExifEye::clearLogger();
     }
 }

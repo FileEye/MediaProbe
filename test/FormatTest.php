@@ -7,12 +7,6 @@ use ExifEye\core\Format;
 
 class FormatTest extends ExifEyeTestCaseBase
 {
-    public function setUp()
-    {
-        parent::setUp();
-        ExifEye::setStrictParsing(true);
-    }
-
     public function testGetName()
     {
         $this->assertEquals('Ascii', Format::getName(Format::ASCII));

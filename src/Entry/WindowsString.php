@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\ExifEye;
@@ -29,13 +30,13 @@ class WindowsString extends Byte
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
     {
         // Cap bytes to get to remaining data window size.
         $size = $data_window->getSize();
         if ($data_offset + $components > $size - 1) {
             $bytes_to_get = $size - $data_offset - 1;
-            ExifEye::logger()->warning('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
+            $parent_block->warning('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
                 'expected' => $components,
             ]);

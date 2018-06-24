@@ -4,7 +4,6 @@ namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
-use ExifEye\core\InvalidDataException;
 
 /**
  * Class representing Exif data.
@@ -52,7 +51,7 @@ class Exif extends BlockBase
      */
     public function toBytes()
     {
-        return self::EXIF_HEADER . $this->first('tiff')->toBytes();
+        return self::EXIF_HEADER . $this->getElement('tiff')->toBytes();
     }
 
     public static function isExifSegment(DataWindow $data_window)

@@ -21,7 +21,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $success = 1; // return true by default, as this function may not resave the file, but it's still success
             $resave_file = 0;
             $image = Image::loadFromFile($filename);
-            $jpeg = $image->first("jpeg");
+            $jpeg = $image->getElement("jpeg");
             $this->assertInstanceOf('\ExifEye\core\Block\Jpeg', $jpeg);
 
             // should all exif data on photo be cleared (gd and iu will always strip it anyway, so only
@@ -37,20 +37,20 @@ class Bug3017880Test extends ExifEyeTestCaseBase
                 $tiff = new Tiff($exif);
             }
 
-            $tiff = $exif->first("tiff");
-            $ifd0 = $exif->first("tiff/ifd[@name='IFD0']");
+            $tiff = $exif->getElement("tiff");
+            $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
                 $ifd0 = new Ifd($tiff, 'IFD0');
             }
 
             $software_name = 'Example V2';
-            $software_tag = $ifd0->first("tag[@name='Software']");
+            $software_tag = $ifd0->getElement("tag[@name='Software']");
 
             if ($software_tag === null) {
                 new Tag($ifd0, 0x0131, 'ExifEye\core\Entry\Core\Ascii', [$software_name]);
                 $resave_file = 1;
             } else {
-                $software_tag->first("entry")->setValue([$software_name]);
+                $software_tag->getElement("entry")->setValue([$software_name]);
                 $resave_file = 1;
             }
 

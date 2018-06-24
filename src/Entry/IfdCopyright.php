@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\ExifEye;
@@ -22,7 +23,7 @@ class IfdCopyright extends Ascii
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
     {
         $v = explode("\0", $data_window->getBytes($data_offset, $components));
         $v[1] = isset($v[1]) ? $v[1] : '';

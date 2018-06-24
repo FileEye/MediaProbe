@@ -41,6 +41,6 @@ class JpegComment extends BlockBase
      */
     public function toBytes()
     {
-        return $this->first("entry")->toBytes();
+        return $this->getElement("entry")->toBytes();
     }
 }

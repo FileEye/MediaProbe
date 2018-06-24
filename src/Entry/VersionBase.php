@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
@@ -29,7 +30,7 @@ class VersionBase extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
     {
         $version = $data_window->getBytes($data_offset, $components);
         return is_numeric($version) ? [$version / 100] : [$version];

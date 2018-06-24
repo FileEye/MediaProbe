@@ -31,7 +31,7 @@ class IfdTest extends ExifEyeTestCaseBase
 
         $tags = [];
         foreach ($ifd->query('tag') as $tag) {
-            $tags[$tag->getAttribute('id')] = $tag->first("entry");
+            $tags[$tag->getAttribute('id')] = $tag->getElement("entry");
         }
 
         $this->assertSame($tags[0x010E]->getValue(), $desc->getValue());

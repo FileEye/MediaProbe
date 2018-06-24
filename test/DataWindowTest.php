@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\DataWindowOffsetException;
+use ExifEye\core\DataWindowException;
 use ExifEye\core\Utility\ConvertBytes;
 
 class DataWindowTest extends ExifEyeTestCaseBase
@@ -42,7 +42,7 @@ class DataWindowTest extends ExifEyeTestCaseBase
         $caught = false;
         try {
             $clone->getBytes(0, 6);
-        } catch (DataWindowOffsetException $e) {
+        } catch (DataWindowException $e) {
             $caught = true;
         }
         $this->assertTrue($caught);

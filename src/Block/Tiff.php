@@ -4,7 +4,6 @@ namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
-use ExifEye\core\InvalidArgumentException;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -117,7 +116,7 @@ class Tiff extends BlockBase
         // TIFF magic number --- fixed value.
         $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $order);
 
-        $ifd0 = $this->first("ifd[@name='IFD0']");
+        $ifd0 = $this->getElement("ifd[@name='IFD0']");
         if ($ifd0) {
             // IFD0 offset. We will always start IFD0 at an offset of 8
             // bytes (2 bytes for byte order, another 2 bytes for the TIFF
@@ -131,7 +130,7 @@ class Tiff extends BlockBase
             $ifd0_bytes = $ifd0->toBytes(8, $order);
 
             // Deal with IFD1.
-            $ifd1 = $this->first("ifd[@name='IFD1']");
+            $ifd1 = $this->getElement("ifd[@name='IFD1']");
             if (!$ifd1) {
                 // No IFD1, link to next IFD is 0.
                 $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong(0, $order) . $ifd0_bytes['data_area'];

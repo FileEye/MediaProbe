@@ -4,12 +4,9 @@ namespace ExifEye\core\Block;
 
 use ExifEye\core\Block\Tag;
 use ExifEye\core\DataWindow;
-use ExifEye\core\DataWindowOffsetException;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use ExifEye\core\InvalidArgumentException;
-use ExifEye\core\InvalidDataException;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;

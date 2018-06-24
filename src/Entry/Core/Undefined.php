@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry\Core;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
@@ -24,7 +25,7 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
     {
         return [$data_window->getBytes($data_offset, $components)];
     }

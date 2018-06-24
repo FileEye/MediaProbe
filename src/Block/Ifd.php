@@ -4,12 +4,10 @@ namespace ExifEye\core\Block;
 
 use ExifEye\core\Block\Tag;
 use ExifEye\core\DataWindow;
-use ExifEye\core\DataWindowOffsetException;
+use ExifEye\core\DataWindowException;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use ExifEye\core\InvalidArgumentException;
-use ExifEye\core\InvalidDataException;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -106,7 +104,7 @@ class Ifd extends BlockBase
 
             // Build the TAG object.
             $tag_entry_class = Spec::getEntryClass($this, $tag_id, $tag_format);
-            $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $tag_format, $tag_components, $data_window, $tag_data_offset);
+            $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $tag_format, $tag_components, $data_window, $tag_data_offset);
             $tag = new Tag($this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
 
             // Load a subIfd.
@@ -118,9 +116,9 @@ class Ifd extends BlockBase
                     $ifd_class = Spec::getIfdClass($ifd_name);
                     $ifd = new $ifd_class($this, $ifd_name);
                     try {
-                        $ifd->loadFromData($data_window, $o, ['components' => $tag->first("entry")->getComponents()]);
+                        $ifd->loadFromData($data_window, $o, ['components' => $tag->getElement("entry")->getComponents()]);
                         $this->remove("tag[@name='" . $tag->getAttribute('name') . "']");
-                    } catch (DataWindowOffsetException $e) {
+                    } catch (DataWindowException $e) {
                         $this->error($e->getMessage());
                     }
                 } else {
@@ -158,7 +156,7 @@ class Ifd extends BlockBase
 
         // Determine number of IFD entries.
         $n = count($this->query('tag')) + count($this->query('ifd'));
-        if ($this->first("thumbnail") !== null) {
+        if ($this->getElement("thumbnail") !== null) {
             // We need two extra entries for the thumbnail offset and length.
             $n += 2;
         }
@@ -174,12 +172,12 @@ class Ifd extends BlockBase
         foreach ($this->query('tag') as $tag => $sub_block) {
             // Each entry is 12 bytes long.
             $ifd_area .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $order);
-            $ifd_area .= ConvertBytes::fromShort($sub_block->first("entry")->getFormat(), $order);
-            $ifd_area .= ConvertBytes::fromLong($sub_block->first("entry")->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromShort($sub_block->getElement("entry")->getFormat(), $order);
+            $ifd_area .= ConvertBytes::fromLong($sub_block->getElement("entry")->getComponents(), $order);
 
             // Size? If bigger than 4 bytes, the actual data is not in
             // the entry but somewhere else.
-            $data = $sub_block->first("entry")->toBytes($order);
+            $data = $sub_block->getElement("entry")->toBytes($order);
             $s = strlen($data);
             if ($s > 4) {
                 $ifd_area .= ConvertBytes::fromLong($end, $order);
@@ -193,21 +191,21 @@ class Ifd extends BlockBase
         }
 
         // Process the Thumbnail. @todo avoid double writing of tags
-        if ($this->first("thumbnail")) {
+        if ($this->getElement("thumbnail")) {
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the next four lines.
             $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailLength'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
-            $ifd_area .= ConvertBytes::fromLong($this->first("thumbnail/entry")->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromLong($this->getElement("thumbnail/entry")->getComponents(), $order);
 
             $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailOffset'), $order);
             $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
             $ifd_area .= ConvertBytes::fromLong(1, $order);
             $ifd_area .= ConvertBytes::fromLong($end, $order);
 
-            $data_area .= $this->first("thumbnail/entry")->toBytes();
-            $end += $this->first("thumbnail/entry")->getComponents();
+            $data_area .= $this->getElement("thumbnail/entry")->toBytes();
+            $end += $this->getElement("thumbnail/entry")->getComponents();
         }
 
         // Process sub IFDs.

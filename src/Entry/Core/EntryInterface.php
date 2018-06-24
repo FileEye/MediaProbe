@@ -26,7 +26,7 @@ interface EntryInterface
      * @return array a list or arguments to be passed to the EntryInterface
      *            subclass constructor.
      */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset);
+    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset);
 
     /**
      * Returns the format of this entry.

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Format;
@@ -26,7 +27,7 @@ class ExifUserComment extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
     {
         if ($components < 8) {
             return [];

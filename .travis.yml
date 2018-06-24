@@ -21,7 +21,7 @@ matrix:
   fast_finish: true
   allow_failures:
     - php: hhvm
-#    - php: nightly
+    - php: nightly
 
 cache:
   directories:
@@ -62,22 +62,21 @@ script:
       else
         ./vendor/bin/phpunit ./test
       fi
-  #- php examples/dump-image.php -d  test/image_files/broken_images/gh-10-a.jpg
-  #- php examples/dump-image.php -d  test/image_files/broken_images/gh-10-b.jpg
-  #- php examples/dump-image.php -d  test/image_files/broken_images/gh-11.jpg
-  #- php examples/dump-image.php -d  test/image_files/broken_images/misplaced-exif.jpg
-  #- php examples/dump-image.php -d test/images/no-exif.jpg
-  #- php examples/dump-image.php -d test/images/gh-21.jpg
-  #- php examples/dump-image.php -d test/images/gh-16.jpg
+  #- php examples/dump-image.php -d -s test/image_files/broken_images/gh-10-a.jpg
+  #- php examples/dump-image.php -d -s test/image_files/broken_images/gh-10-b.jpg
+  #- php examples/dump-image.php -d -s test/image_files/broken_images/gh-11.jpg
+  #- php examples/dump-image.php -d -s test/image_files/broken_images/misplaced-exif.jpg
+  #- php examples/dump-image.php -d test/image_files/no-exif.jpg
+  #- php examples/dump-image.php -d test/image_files/gh-21.jpg
+  #- php examples/dump-image.php -d test/image_files/gh-16.jpg
   #- php examples/dump-image.php -d test/image_files/sample-1.tiff
   #- php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg
   #- php examples/dump-image.php -d test/imagetests/apple-iphone7.JPG
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg
   #- php examples/dump-image.php -d test/imagetests/nikon-e5000.jpg
   #- php examples/dump-image.php -d test/imagetests/pentax-istDS.jpg
-  #- php examples/dump-image.php -d test/imagetests/canon-ixus-ii.jpg
-  #- php examples/dump-image.php -d test/imagetests/canon-powershot-s60.jpg
-  #- php examples/dump-image.php -d test/images/gh-16.jpg
+  #- php examples/dump-image.php -d test/image_files/camera_samples/canon-ixus-ii.jpg
+  #- php examples/dump-image.php -d test/image_files/camera_samples/canon-powershot-s60.jpg
   #- php bin/exifeye dump test/broken_images/gh-10-a.jpg
   #- php bin/exifeye dump test/broken_images/gh-10-b.jpg
   #- php bin/exifeye dump test/broken_images/gh-11.jpg

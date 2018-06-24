@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry\Core;
 
+use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
@@ -47,7 +48,7 @@ class SignedRational extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData($format, $components, DataWindow $data_window, $data_offset)
+    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
     {
         $args = [];
         for ($i = 0; $i < $components; $i ++) {

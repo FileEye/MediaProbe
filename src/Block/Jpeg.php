@@ -5,9 +5,6 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\InvalidArgumentException;
-use ExifEye\core\InvalidDataException;
-use ExifEye\core\JpegInvalidMarkerException;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -69,21 +66,7 @@ class Jpeg extends BlockBase
     }
 
     /**
-     * Load data into a JPEG object.
-     *
-     * The data supplied will be parsed and turned into an object
-     * structure representing the image. This structure can then be
-     * manipulated and later turned back into an string of bytes.
-     *
-     * This methods can be called at any time after a JPEG object has
-     * been constructed, also after the {@link appendSection()} has been
-     * called to append custom sections. Loading several JPEG images
-     * into one object will accumulate the sections, but there will only
-     * be one {@link JpegMarker::SOS} section at any given time.
-     *
-     * @param
-     *            DataWindow the data that will be turned into JPEG
-     *            sections.
+     * {@inheritdoc}
      */
     public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
     {
@@ -104,7 +87,10 @@ class Jpeg extends BlockBase
             $marker = $data_window->getByte($i);
 
             if (!JpegMarker::isValid($marker)) {
-                throw new JpegInvalidMarkerException($marker, $i);
+                $this->error('Invalid marker found at offset {offset}: 0x{marker}', [
+                    'offset' => $offset,
+                    'marker' => dec2hex($marker),
+                ]);
             }
 
             /*

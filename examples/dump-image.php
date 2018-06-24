@@ -7,34 +7,23 @@
  * writing all Exif headers in JPEG and TIFF images using PHP.
  *
  * Copyright (C) 2004, 2005, 2006 Martin Geisler.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program in the file COPYING; if not, write to the
- * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301 USA
  */
 
 use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
+use ExifEye\core\ExifEyeException;
 use ExifEye\core\Image;
 use ExifEye\core\Spec;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
-use Monolog\Handler\StreamHandler;
 use ExifEye\core\Utility\DumpLogFormatter;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\TestHandler;
+use Monolog\Processor\PsrLogMessageProcessor;
 
 function dump_element(ElementInterface $element)
 {
@@ -56,14 +45,22 @@ require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 $prog = array_shift($argv);
 $file = '';
+$logger = null;
+$fail_on_error = false;
 
 while (! empty($argv)) {
     switch ($argv[0]) {
         case '-d':
-            ExifEye::setDebug(true);
+            $logger = new Logger('dump-image');
+            $log_handler = new StreamHandler('php://stdout');
+            $log_formatter = new DumpLogFormatter();
+            $log_handler->setFormatter($log_formatter);
+            $logger
+                ->pushHandler($log_handler)
+                ->pushProcessor(new PsrLogMessageProcessor());
             break;
         case '-s':
-            ExifEye::setStrictParsing(true);
+            $fail_on_error = 'error';
             break;
         default:
             $file = $argv[0];
@@ -82,23 +79,26 @@ if (empty($file)) {
     exit(1);
 }
 
-if (! is_readable($file)) {
-    printf("Unable to read %s!\n", $file);
+if (!is_readable($file)) {
+    printf("dump-image: Unable to read %s!\n", $file);
     exit(1);
 }
 
-/* Set logging */
-$log_handler = new StreamHandler('php://stdout');
-$log_formatter = new DumpLogFormatter();
-$log_handler->setFormatter($log_formatter);
-ExifEye::logger()->pushHandler($log_handler);
-
-/* Load data from file */
-$image = Image::loadFromFile($file);
-
-if ($image === null) {
-    print("dump-image: Unrecognized image format!\n");
-    exit(1);
+try {
+    /* Load data from file */
+    $image = Image::loadFromFile($file, $logger, $fail_on_error);
+    if ($image === null) {
+        print("dump-image: Unrecognized image format!\n");
+        exit(1);
+    }
+} catch (ExifEyeException $e) {
+    $err = $e->getMessage();
 }
 
-dump_element($image);
+if (!isset($err)) {
+    dump_element($image);
+} else {
+    print("dump-image: Error while reading image: " . $err . "\n");
+}
+
+exit(0);  // xx decide exit code
