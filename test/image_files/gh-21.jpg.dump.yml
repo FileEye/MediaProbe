@@ -1,19 +1,19 @@
 fileName: gh-21.jpg
-mimeType: image/jpeg
+mimeType: null
 elements:
-    path: /jpeg
+    path: /image/jpeg
     class: ExifEye\core\Block\Jpeg
     valid: true
     elements:
         segment:
             -
-                path: '/jpeg/segment:216:SOI'
+                path: '/image/jpeg/segment:216:SOI'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '216'
                 name: SOI
             -
-                path: '/jpeg/segment:224:APP0'
+                path: '/image/jpeg/segment:224:APP0'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '224'
@@ -21,11 +21,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:224:APP0/jpegContent'
+                            path: '/image/jpeg/segment:224:APP0/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:225:APP1'
+                path: '/image/jpeg/segment:225:APP1'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '225'
@@ -33,26 +33,26 @@ elements:
                 elements:
                     exif:
                         -
-                            path: '/jpeg/segment:225:APP1/exif'
+                            path: '/image/jpeg/segment:225:APP1/exif'
                             class: ExifEye\core\Block\Exif
                             valid: true
                             elements:
                                 tiff:
                                     -
-                                        path: '/jpeg/segment:225:APP1/exif/tiff'
+                                        path: '/image/jpeg/segment:225:APP1/exif/tiff'
                                         class: ExifEye\core\Block\Tiff
                                         valid: true
                                         elements:
                                             ifd:
                                                 -
-                                                    path: '/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0'
+                                                    path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0'
                                                     class: ExifEye\core\Block\Ifd
                                                     valid: true
                                                     name: IFD0
                                                     elements:
                                                         tag:
                                                             -
-                                                                path: '/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject'
+                                                                path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject'
                                                                 class: ExifEye\core\Block\Tag
                                                                 valid: true
                                                                 id: '40095'
@@ -60,7 +60,7 @@ elements:
                                                                 elements:
                                                                     entry:
                                                                         -
-                                                                            path: '/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject/entry'
+                                                                            path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject/entry'
                                                                             class: ExifEye\core\Entry\WindowsString
                                                                             valid: true
                                                                             format: Byte
@@ -69,7 +69,7 @@ elements:
                                                                             clear_value: !!binary YToyOntpOjA7czoyNzoiw4/DsMOlw6LDpcOkLCDDrMOlw6TDosOlw6QhIjtpOjE7czozMDoizwDwAOUA4gDlAOQALAAgAOwA5QDkAOIA5QDkACEAIjt9
                                                                             text: 'Ïðåâåä, ìåäâåä!'
             -
-                path: '/jpeg/segment:254:COM'
+                path: '/image/jpeg/segment:254:COM'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '254'
@@ -77,13 +77,13 @@ elements:
                 elements:
                     jpegComment:
                         -
-                            path: '/jpeg/segment:254:COM/jpegComment'
+                            path: '/image/jpeg/segment:254:COM/jpegComment'
                             class: ExifEye\core\Block\JpegComment
                             valid: true
                             elements:
                                 entry:
                                     -
-                                        path: '/jpeg/segment:254:COM/jpegComment/entry'
+                                        path: '/image/jpeg/segment:254:COM/jpegComment/entry'
                                         class: ExifEye\core\Entry\Core\Ascii
                                         valid: true
                                         format: Ascii
@@ -92,7 +92,7 @@ elements:
                                         clear_value: 's:17:"Created with GIMP";'
                                         text: 'Created with GIMP'
             -
-                path: '/jpeg/segment:219:DQT'
+                path: '/image/jpeg/segment:219:DQT'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '219'
@@ -100,11 +100,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:219:DQT/jpegContent'
+                            path: '/image/jpeg/segment:219:DQT/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:219:DQT'
+                path: '/image/jpeg/segment:219:DQT'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '219'
@@ -112,11 +112,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:219:DQT/jpegContent'
+                            path: '/image/jpeg/segment:219:DQT/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:192:SOF0'
+                path: '/image/jpeg/segment:192:SOF0'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '192'
@@ -124,11 +124,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:192:SOF0/jpegContent'
+                            path: '/image/jpeg/segment:192:SOF0/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:196:DHT'
+                path: '/image/jpeg/segment:196:DHT'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '196'
@@ -136,11 +136,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            path: '/image/jpeg/segment:196:DHT/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:196:DHT'
+                path: '/image/jpeg/segment:196:DHT'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '196'
@@ -148,11 +148,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            path: '/image/jpeg/segment:196:DHT/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:196:DHT'
+                path: '/image/jpeg/segment:196:DHT'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '196'
@@ -160,11 +160,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            path: '/image/jpeg/segment:196:DHT/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:196:DHT'
+                path: '/image/jpeg/segment:196:DHT'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '196'
@@ -172,11 +172,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:196:DHT/jpegContent'
+                            path: '/image/jpeg/segment:196:DHT/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:218:SOS'
+                path: '/image/jpeg/segment:218:SOS'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '218'
@@ -184,11 +184,11 @@ elements:
                 elements:
                     jpegContent:
                         -
-                            path: '/jpeg/segment:218:SOS/jpegContent'
+                            path: '/image/jpeg/segment:218:SOS/jpegContent'
                             class: ExifEye\core\Block\JpegContent
                             valid: true
             -
-                path: '/jpeg/segment:217:EOI'
+                path: '/image/jpeg/segment:217:EOI'
                 class: ExifEye\core\Block\JpegSegment
                 valid: true
                 id: '217'
@@ -196,6 +196,6 @@ elements:
 errors: {  }
 warnings:
     -
-        path: '*** missing ***'
+        path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0'
         message: 'WindowsString entry reading 31 bytes instead of 32 to avoid data window overflow'
 notices: {  }
