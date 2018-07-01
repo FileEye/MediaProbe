@@ -6,34 +6,34 @@ use ExifEye\core\ElementInterface;
 
 class ExifEyeDOMElement extends \DOMElement
 {
+    /**
+     * The ExifeEye Element object associated to this node.
+     *
+     * @var \ExifEye\core\ElementInterface
+     */
     protected $exifEyeElement;
 
+    /**
+     * Sets the ExifeEye Element object associated to this node.
+     *
+     * @param \ExifEye\core\ElementInterface
+     *            the Element of this node.
+     *
+     * @return void
+     */
     public function setExifEyeElement(ElementInterface $element)
     {
         $this->exifEyeElement = $element;
     }
 
-    public function resetExifEyeElement()
-    {
-        $this->exifEyeElement = null;
-    }
-
+    /**
+     * Gets the ExifeEye Element object associated to this node.
+     *
+     * @return \ExifEye\core\ElementInterface
+     *            the Element of this node.
+     */
     public function getExifEyeElement()
     {
         return $this->exifEyeElement;
-    }
-
-    public function getContextPath()
-    {
-        $parent_path = $this->parentNode && !($this->parentNode instanceof \DOMDocument) ? $this->parentNode->getContextPath() : '';
-
-        $current_fragment = '/' . $this->nodeName;
-        if ($this->attributes->length) {
-            foreach ($this->attributes as $attribute) {
-                $current_fragment .= ':' . $attribute->value;
-            }
-        }
-
-        return $parent_path . $current_fragment;
     }
 }

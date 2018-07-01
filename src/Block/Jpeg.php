@@ -179,11 +179,11 @@ class Jpeg extends BlockBase
      * @return string bytes representing this JPEG object, including all
      *         its sections and their associated data.
      */
-    public function toBytes()
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         $bytes = '';
 
-        foreach ($this->query("segment") as $segment) {
+        foreach ($this->getMultipleElements("segment") as $segment) {
             $m = $segment->getAttribute('id');
 
             // Add the marker.

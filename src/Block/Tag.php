@@ -8,6 +8,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class representing an Exif TAG as an ExifEye block.
@@ -79,6 +80,29 @@ class Tag extends BlockBase
      * {@inheritdoc}
      */
     public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        return $this->getElement("entry")->getValue($options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString(array $options = [])
+    {
+        return $this->getElement("entry")->toString($options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN)
     {
     }
 }

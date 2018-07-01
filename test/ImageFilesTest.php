@@ -45,6 +45,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         $test = Yaml::parse($imageDumpFile->getContents());
 
         $image = Image::loadFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
+//dump(@exif_read_data($imageDumpFile->getPath() . '/' . $test['fileName']));
 
         if (isset($test['elements'])) {
             $this->assertElement($test['elements'], $image->getElement("*"));
@@ -80,7 +81,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         if (isset($expected['elements'])) {
             foreach ($expected['elements'] as $type => $expected_type_elements) {
                 foreach ($expected_type_elements as $i => $expected_element) {
-                    $this->assertElement($expected_element, $element->query($type)[$i]);
+                    $this->assertElement($expected_element, $element->getMultipleElements($type)[$i]);
                 }
             }
         }

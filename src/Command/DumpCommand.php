@@ -72,35 +72,29 @@ class DumpCommand extends Command
         $json['mimeType'] = $image->getMimeType();
         $json['elements'] = $image->getElement("*")->toDumpArray();
 
-/*        foreach (ExifEye::logger()->getHandlers() as $handler) {
-            if ($handler instanceof Monolog\Handler\TestHandler) {
-                dump($handler->getRecords());
-                $json['log'] = $handler->getRecords();
-                break;
-            }
-        }*/
-        $handler = ExifEye::logger()->getHandlers()[0];
         $json['errors'] = [];
         $json['warnings'] = [];
         $json['notices'] = [];
-        foreach ($handler->getRecords() as $record) {
-            switch ($record['level_name']) {
-                case 'NOTICE':
-                    $key = 'notices';
-                    break;
-                case 'WARNING':
-                    $key = 'warnings';
-                    break;
-                case 'ERROR':
-                    $key = 'errors';
-                    break;
-                default:
-                    continue;
+        foreach ($image->dumpLog() as $log_levels) {
+            foreach ($log_levels as $record) {
+                switch ($record['level_name']) {
+                    case 'NOTICE':
+                        $key = 'notices';
+                        break;
+                    case 'WARNING':
+                        $key = 'warnings';
+                        break;
+                    case 'ERROR':
+                        $key = 'errors';
+                        break;
+                    default:
+                        continue;
+                }
+                $json[$key][] = [
+                    'path' => isset($record['context']['path']) ? $record['context']['path'] : '*** missing ***',
+                    'message' => $record['message'],
+                ];
             }
-            $json[$key][] = [
-                'path' => isset($record['context']['path']) ? $record['context']['path'] : '*** missing ***',
-                'message' => $record['message'],
-            ];
         }
 
         return Yaml::dump($json, 40);

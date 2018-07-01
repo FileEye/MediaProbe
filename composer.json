@@ -23,11 +23,12 @@
     "license": "GPL-2.0",
     "require": {
         "php": ">=5.4.0",
+        "ext-gd": "*",
         "psr/log": "*",
         "monolog/monolog": "*"
     },
     "require-dev" : {
-        "ext-gd": "*",
+        "ext-exif": "*",
         "phpunit/phpunit": "*",
         "squizlabs/php_codesniffer": "*",
         "satooshi/php-coveralls": "*",

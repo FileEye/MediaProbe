@@ -79,7 +79,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
 
         $tiff = $r_jpeg->getElement("segment/exif/tiff");
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
-        $this->assertCount(1, $tiff->query("ifd"));
+        $this->assertCount(1, $tiff->getMultipleElements("ifd"));
 
         $ifd = $tiff->getElement("ifd[@name='IFD0']");
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd);

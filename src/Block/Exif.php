@@ -4,6 +4,7 @@ namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class representing Exif data.
@@ -49,7 +50,7 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes()
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         return self::EXIF_HEADER . $this->getElement('tiff')->toBytes();
     }

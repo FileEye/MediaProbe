@@ -45,7 +45,7 @@ class Time extends Ascii
      * timestamp, or as a fractional Julian Day Count.
      *
      * @param array
-     *            (optional) an array of options to format the value.
+     *            (Optional) an array of options to format the value.
      *
      * @return mixed the timestamp held by this entry in the correct form as
      *         indicated by the 'type' option. For UNIX_TIMESTAMP this is an

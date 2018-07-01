@@ -361,7 +361,7 @@ class Spec
      * @param EntryInterface $entry
      *            the TAG entry.
      * @param array $options
-     *            (optional) an array of options to format the value.
+     *            (Optional) an array of options to format the value.
      *
      * @return string|null
      *            the TAG text, or NULL if not applicable.

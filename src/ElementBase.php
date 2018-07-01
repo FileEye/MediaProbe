@@ -25,7 +25,14 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      *
      * @var \DOMNode
      */
-    public $DOMNode;
+    protected $DOMNode;
+
+    /**
+     * The Xpath object associated to the root element.
+     *
+     * @var \DOMXPath|null
+     */
+    protected $XPath;
 
     /**
      * The type of this element.
@@ -52,13 +59,18 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function __construct(ElementInterface $parent = null, ElementInterface $reference = null)
     {
+        // If $parent is null, this Element is the root of the DOM document that
+        // stores the image structure.
         if (!$parent || !is_object($parent->DOMNode)) {
             $doc = new \DOMDocument();
+            // @todo change syntax to ExifEyeDOMElement::class when dropping
+            // PHP 5.4 support.
             $doc->registerNodeClass('DOMElement', 'ExifEye\core\DOM\ExifEyeDOMElement');
+            $this->XPath = new \DOMXPath($doc);
             $parent_node = $doc;
         } else {
-            $parent_node = $parent->DOMNode;
             $doc = $parent->DOMNode->ownerDocument;
+            $parent_node = $parent->DOMNode;
         }
 
         $this->DOMNode = $doc->createElement($this->getType());
@@ -69,7 +81,78 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             $parent_node->appendChild($this->DOMNode);
         }
 
+        // Assign this Element as the payload of the DOM node.
         $this->DOMNode->setExifEyeElement($this);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRootElement()
+    {
+        return $this->DOMNode->ownerDocument->documentElement->getExifEyeElement();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getParentElement()
+    {
+        return $this->DOMNode->getExifEyeElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getExifEyeElement() : null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMultipleElements($expression)
+    {
+        $node_list = $this->getRootElement()->XPath->query($expression, $this->DOMNode);
+        $ret = [];
+        for ($i = 0; $i < $node_list->length; $i++) {
+            $ret[] = $node_list->item($i)->getExifEyeElement();
+        }
+        return $ret;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getElement($expression)
+    {
+        $ret = $this->getMultipleElements($expression);
+        switch (count($ret)) {
+            case 0:
+                return null;
+            case 1:
+                return $ret[0];
+            default:
+                throw new ExifEyeException("Multiple elements returned for '%s'", $expression);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeElement($expression)
+    {
+        $ret = $this->getMultipleElements($expression);
+        switch (count($ret)) {
+            case 0:
+                return false;
+            case 1:
+                $ret[0]->DOMNode->parentNode->removeChild($ret[0]->DOMNode);
+                return true;
+            default:
+                throw new ExifEyeException("Multiple elements exist for '%s', cannot remove from structure", $expression);
+        }
     }
 
     /**
@@ -103,67 +186,20 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getElement($expression)
-    {
-        $ret = $this->query($expression);
-        switch (count($ret)) {
-            case 0:
-                return null;
-            case 1:
-                return $ret[0];
-            default:
-                throw new ExifEyeException("Multiple elements returned for '%s'", $expression);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function remove($expression)
-    {
-        $ret = $this->query($expression);
-        if ($ret) {
-            $ret[0]->DOMNode->resetExifEyeElement();
-            $ret[0]->DOMNode->parentNode->removeChild($ret[0]->DOMNode);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function query($expression)
-    {
-        $x_path = new \DOMXPath($this->DOMNode->ownerDocument);
-        $node_list = $x_path->query($expression, $this->DOMNode);
-        $ret = [];
-        for ($i = 0; $i < $node_list->length; $i++) {
-            $ret[] = $node_list->item($i)->getExifEyeElement();
-        }
-        return $ret;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getParentElement()
-    {
-        return $this->DOMNode->parentNode && !($this->DOMNode->parentNode instanceof \DOMDocument) ? $this->DOMNode->parentNode->getExifEyeElement() : null;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getContextPath()
     {
-        return $this->DOMNode ? $this->DOMNode->getContextPath() : '';
+        // Get the path before this element.
+        $parent_path = $this->getParentElement() ? $this->getParentElement()->getContextPath() : '';
+
+        // Build the path fragment related to this node.
+        $current_fragment = '/' . $this->DOMNode->nodeName;
+        if ($this->DOMNode->attributes->length) {
+            foreach ($this->DOMNode->attributes as $attribute) {
+                $current_fragment .= ':' . $attribute->value;
+            }
+        }
+
+        return $parent_path . $current_fragment;
     }
 
     /**
@@ -172,6 +208,22 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function isValid()
     {
         return $this->valid;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        throw new ExifEyeException("'%s' does not support the getValue method.", $this->getType());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString(array $options = [])
+    {
+        throw new ExifEyeException("'%s' does not support the toString method.", $this->getType());
     }
 
     /**
@@ -192,15 +244,15 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function log($level, $message, array $context = [])
     {
         $context['path'] = $this->getContextPath();
-        $root_element = $this->DOMNode->ownerDocument->documentElement->getExifEyeElement();
-        if (method_exists($root_element, 'logger')) {  // xx should be logging anyway
-            $root_element->logger()->log($level, $message, $context);
-        }
-        if (method_exists($root_element, 'externalLogger') && $root_element->externalLogger()) {  // xx should be logging anyway
-            $root_element->externalLogger()->log($level, $message, $context);
-        }
-        if (method_exists($root_element, 'getFailLevel') && $root_element->getFailLevel() !== false && Logger::toMonologLevel($level) >= $root_element->getFailLevel()) {  // xx should be logging anyway
-            throw new ExifEyeException($message);
+        $root_element = $this->getRootElement();
+        if (property_exists($root_element, 'logger')) {  // xx should be logging anyway
+            $root_element->logger->log($level, $message, $context);
+            if ($root_element->externalLogger) {  // xx should be logging anyway
+                $root_element->externalLogger->log($level, $message, $context);
+            }
+            if ($root_element->failLevel !== false && Logger::toMonologLevel($level) >= $root_element->failLevel) {  // xx should be logging anyway
+                throw new ExifEyeException($message);
+            }
         }
     }
 }

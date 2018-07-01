@@ -117,7 +117,7 @@ class Ifd extends BlockBase
                     $ifd = new $ifd_class($this, $ifd_name);
                     try {
                         $ifd->loadFromData($data_window, $o, ['components' => $tag->getElement("entry")->getComponents()]);
-                        $this->remove("tag[@name='" . $tag->getAttribute('name') . "']");
+                        $this->removeElement("tag[@name='" . $tag->getAttribute('name') . "']");
                     } catch (DataWindowException $e) {
                         $this->error($e->getMessage());
                     }
@@ -149,18 +149,18 @@ class Ifd extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($offset, $order)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
         $ifd_area = '';
         $data_area = '';
 
         // Determine number of IFD entries.
-        $n = count($this->query('tag')) + count($this->query('ifd'));
+        $n = count($this->getMultipleElements('tag')) + count($this->getMultipleElements('ifd'));
         if ($this->getElement("thumbnail") !== null) {
             // We need two extra entries for the thumbnail offset and length.
             $n += 2;
         }
-        $ifd_area .= ConvertBytes::fromShort($n, $order);
+        $ifd_area .= ConvertBytes::fromShort($n, $byte_order);
 
         // Initialize offset of data area. This included the bytes preceding
         // this IFD, the bytes needed for the count of entries, the entries
@@ -169,18 +169,18 @@ class Ifd extends BlockBase
         $end = $offset + 2 + 12 * $n + 4;
 
         // Process the Tags.
-        foreach ($this->query('tag') as $tag => $sub_block) {
+        foreach ($this->getMultipleElements('tag') as $tag => $sub_block) {
             // Each entry is 12 bytes long.
-            $ifd_area .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $order);
-            $ifd_area .= ConvertBytes::fromShort($sub_block->getElement("entry")->getFormat(), $order);
-            $ifd_area .= ConvertBytes::fromLong($sub_block->getElement("entry")->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
+            $ifd_area .= ConvertBytes::fromShort($sub_block->getElement("entry")->getFormat(), $byte_order);
+            $ifd_area .= ConvertBytes::fromLong($sub_block->getElement("entry")->getComponents(), $byte_order);
 
             // Size? If bigger than 4 bytes, the actual data is not in
             // the entry but somewhere else.
-            $data = $sub_block->getElement("entry")->toBytes($order);
+            $data = $sub_block->getElement("entry")->toBytes($byte_order);
             $s = strlen($data);
             if ($s > 4) {
-                $ifd_area .= ConvertBytes::fromLong($end, $order);
+                $ifd_area .= ConvertBytes::fromLong($end, $byte_order);
                 $data_area .= $data;
                 $end += $s;
             } else {
@@ -194,15 +194,15 @@ class Ifd extends BlockBase
         if ($this->getElement("thumbnail")) {
             // TODO: make EntryInterface a class that can be constructed with
             // arguments corresponding to the next four lines.
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailLength'), $order);
-            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
-            $ifd_area .= ConvertBytes::fromLong(1, $order);
-            $ifd_area .= ConvertBytes::fromLong($this->getElement("thumbnail/entry")->getComponents(), $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailLength'), $byte_order);
+            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $byte_order);
+            $ifd_area .= ConvertBytes::fromLong(1, $byte_order);
+            $ifd_area .= ConvertBytes::fromLong($this->getElement("thumbnail/entry")->getComponents(), $byte_order);
 
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailOffset'), $order);
-            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
-            $ifd_area .= ConvertBytes::fromLong(1, $order);
-            $ifd_area .= ConvertBytes::fromLong($end, $order);
+            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailOffset'), $byte_order);
+            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $byte_order);
+            $ifd_area .= ConvertBytes::fromLong(1, $byte_order);
+            $ifd_area .= ConvertBytes::fromLong($end, $byte_order);
 
             $data_area .= $this->getElement("thumbnail/entry")->toBytes();
             $end += $this->getElement("thumbnail/entry")->getComponents();
@@ -210,7 +210,7 @@ class Ifd extends BlockBase
 
         // Process sub IFDs.
         $sub_bytes = '';
-        foreach ($this->query('ifd') as $sub) {
+        foreach ($this->getMultipleElements('ifd') as $sub) {
             if ($sub->getType() === 'Exif') {
                 $tag = Spec::getTagIdByName($this, 'ExifIFDPointer');
             } elseif ($sub->getType() === 'GPS') {
@@ -222,17 +222,17 @@ class Ifd extends BlockBase
                 $tag = ConvertBytes::BIG_ENDIAN;
             }
             // Make an additional entry with the pointer.
-            $ifd_area .= ConvertBytes::fromShort($tag, $order);
+            $ifd_area .= ConvertBytes::fromShort($tag, $byte_order);
             // Next the format, which is always unsigned long.
-            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $order);
+            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $byte_order);
             // There is only one component.
-            $ifd_area .= ConvertBytes::fromLong(1, $order);
+            $ifd_area .= ConvertBytes::fromLong(1, $byte_order);
 
-            $data = $sub->getBytes($end, $order);
+            $data = $sub->getBytes($end, $byte_order);
             $s = strlen($data);
             $sub_bytes .= $data;
 
-            $ifd_area .= ConvertBytes::fromLong($end, $order);
+            $ifd_area .= ConvertBytes::fromLong($end, $byte_order);
             $end += $s;
         }
 

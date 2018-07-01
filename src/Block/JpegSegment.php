@@ -56,10 +56,10 @@ class JpegSegment extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes()
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
         $bytes = '';
-        foreach ($this->query("*") as $sub) {
+        foreach ($this->getMultipleElements("*") as $sub) {
             $bytes .= $sub->toBytes();
         }
         return $bytes;

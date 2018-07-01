@@ -20,7 +20,7 @@ class GH77Test extends ExifEyeTestCaseBase
 
         $ifd0 = $app1->getElement("tiff/ifd[@name='IFD0']");
 
-        $model = $ifd0->getElement("tag[@name='Model']/entry")->getValue();
+        $model = $ifd0->getElement("tag[@name='Model']")->getValue();
         $this->assertEquals($model, "Canon EOS 5D Mark III");
 
         $copyright_entry = $ifd0->getElement("tag[@name='Copyright']/entry");

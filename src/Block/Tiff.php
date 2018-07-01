@@ -127,7 +127,7 @@ class Tiff extends BlockBase
             // use this to calculate offsets from the entries to their data,
             // all those offsets are absolute offsets counted from the
             // beginning of the data.
-            $ifd0_bytes = $ifd0->toBytes(8, $order);
+            $ifd0_bytes = $ifd0->toBytes($order, 8);
 
             // Deal with IFD1.
             $ifd1 = $this->getElement("ifd[@name='IFD1']");
@@ -138,7 +138,7 @@ class Tiff extends BlockBase
                 $ifd0_length = strlen($ifd0_bytes['ifd_area']) + 4 + strlen($ifd0_bytes['data_area']);
                 $ifd1_offset = 8 + $ifd0_length;
                 $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong($ifd1_offset, $order) . $ifd0_bytes['data_area'];
-                $ifd1_bytes = $ifd1->toBytes($ifd1_offset, $order);
+                $ifd1_bytes = $ifd1->toBytes($order, $ifd1_offset);
                 $bytes .= $ifd1_bytes['ifd_area'] . ConvertBytes::fromLong(0, $order) . $ifd1_bytes['data_area'];
             }
         } else {

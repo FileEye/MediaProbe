@@ -10,6 +10,7 @@ use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
 use ExifEye\core\JpegMarker;
 use ExifEye\core\Spec;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class used to hold data for a JPEG Thumbnail.
@@ -34,6 +35,13 @@ class Thumbnail extends BlockBase
      * {@inheritdoc}
      */
     public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN)
     {
     }
 

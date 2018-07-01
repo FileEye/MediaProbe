@@ -33,7 +33,7 @@ function dump_element(ElementInterface $element)
         print substr(str_pad($ifd_name . '/' . $tag_title, 30, ' '), 0, 30) . ' = ' . $element->toString() . "\n";
     }
 
-    foreach ($element->query('*') as $sub_element) {
+    foreach ($element->getMultipleElements('*') as $sub_element) {
         dump_element($sub_element);
     }
 }
