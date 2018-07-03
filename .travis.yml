@@ -71,22 +71,13 @@ script:
   #- php examples/dump-image.php -d test/image_files/gh-16.jpg
   #- php examples/dump-image.php -d test/image_files/sample-1.tiff
   #- php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg
-  #- php examples/dump-image.php -d test/imagetests/apple-iphone7.JPG
+  #- php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone7.JPG
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg
-  #- php examples/dump-image.php -d test/imagetests/nikon-e5000.jpg
-  #- php examples/dump-image.php -d test/imagetests/pentax-istDS.jpg
+  #- php examples/dump-image.php -d test/image_files/camera_samples/nikon-d50.JPG
+  #- php examples/dump-image.php -d test/image_files/camera_samples/nikon-e5000.jpg
+  #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-ixus-ii.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-powershot-s60.jpg
-  #- php bin/exifeye dump test/broken_images/gh-10-a.jpg
-  #- php bin/exifeye dump test/broken_images/gh-10-b.jpg
-  #- php bin/exifeye dump test/broken_images/gh-11.jpg
-  #- php bin/exifeye dump test/broken_images/misplaced-exif.jpg
-  #- php bin/exifeye dump test/imagetests/apple-iphone6s.jpg
-  #- php bin/exifeye dump test/imagetests/apple-iphone7.JPG
-  #- php bin/exifeye dump test/imagetests/canon-eos-650d.jpg
-  #- php bin/exifeye dump test/imagetests/canon-ixus-ii.jpg
-  #- php bin/exifeye dump test/imagetests/canon-powershot-s60.jpg
-  #- php bin/exifeye dump test/broken_images/
 
 after_script:
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/php-coveralls -v --coverage_clover build/logs/clover.xml; fi

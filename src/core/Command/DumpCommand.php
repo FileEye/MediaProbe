@@ -56,7 +56,7 @@ class DumpCommand extends Command
 
         foreach ($finder as $file) {
             $yaml = $this->fileToDump($file);
-            $output->write($yaml);
+            // $output->write($yaml);
             $fs->dumpFile((string) $file . '.dump.yml', $yaml);
         }
     }

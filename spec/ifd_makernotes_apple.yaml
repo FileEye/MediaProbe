@@ -1,12 +1,12 @@
 type: 'AppleMakerNotes'
-class: ExifEye\core\Block\IfdMakerNoteApple
+class: ExifEye\Apple\Block\MakerNote
 makerNotes:
   - 'Apple'
 tags:
     0x0003:
         name: RunTime
         title: 'Apple Run Time'
-        #ifd: 'CanonCameraSettings'
+        ifd: 'AppleRunTime'
     0x0008:
         name: AccelerationVector
         title: 'Acceleration Vector'

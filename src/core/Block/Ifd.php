@@ -116,7 +116,10 @@ class Ifd extends BlockBase
                     $ifd_class = Spec::getIfdClass($ifd_name);
                     $ifd = new $ifd_class($this, $ifd_name);
                     try {
-                        $ifd->loadFromData($data_window, $o, ['components' => $tag->getElement("entry")->getComponents()]);
+                        $ifd->loadFromData($data_window, $o, [
+                            'data_offset' => $tag_data_offset,
+                            'components' => $tag_components,
+                        ]);
                         $this->removeElement("tag[@name='" . $tag->getAttribute('name') . "']");
                     } catch (DataWindowException $e) {
                         $this->error($e->getMessage());

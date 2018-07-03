@@ -1,8 +1,10 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace ExifEye\Apple\Block;
 
-class IfdMakerNoteApple extends Ifd
+use ExifEye\core\Block\Ifd;
+
+class MakerNote extends Ifd
 {
     /**
      * The IFD header bytes to skip.

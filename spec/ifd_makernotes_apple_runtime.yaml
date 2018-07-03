@@ -1,0 +1,19 @@
+type: 'AppleRunTime'
+class: ExifEye\Apple\Block\RunTime
+tags:
+    0x0001:
+        name: flags
+        title: 'Flags'
+        format: Ascii
+    0x0002:
+        name: value
+        title: 'Value'
+        format: Ascii
+    0x0003:
+        name: timescale
+        title: 'Timescale'
+        format: Ascii
+    0x0004:
+        name: epoch
+        title: 'Epoch'
+        format: Ascii

@@ -10,30 +10,32 @@ return array (
     0 => 'CanonPictureInformation',
     1 => 'Interoperability',
     2 => 'AppleMakerNotes',
-    3 => 'GPS',
-    4 => 'Exif',
-    5 => 'CanonMakerNotes',
-    6 => 'CanonCameraSettings',
-    7 => 'CanonFileInformation',
-    8 => 'CanonShotInformation',
-    9 => 'CanonPanoramaInformation',
-    10 => 'IFD0',
-    11 => 'IFD1',
+    3 => 'AppleRunTime',
+    4 => 'GPS',
+    5 => 'Exif',
+    6 => 'CanonMakerNotes',
+    7 => 'CanonCameraSettings',
+    8 => 'CanonFileInformation',
+    9 => 'CanonShotInformation',
+    10 => 'CanonPanoramaInformation',
+    11 => 'IFD0',
+    12 => 'IFD1',
   ),
   'ifdClasses' =>
   array (
     0 => '???',
     1 => 'ExifEye\\core\\Block\\Ifd',
-    2 => 'ExifEye\\core\\Block\\IfdMakerNoteApple',
-    3 => 'ExifEye\\core\\Block\\Ifd',
+    2 => 'ExifEye\\Apple\\Block\\MakerNote',
+    3 => 'ExifEye\\Apple\\Block\\RunTime',
     4 => 'ExifEye\\core\\Block\\Ifd',
     5 => 'ExifEye\\core\\Block\\Ifd',
-    6 => 'ExifEye\\core\\Block\\IfdIndexShort',
+    6 => 'ExifEye\\core\\Block\\Ifd',
     7 => 'ExifEye\\core\\Block\\IfdIndexShort',
     8 => 'ExifEye\\core\\Block\\IfdIndexShort',
     9 => 'ExifEye\\core\\Block\\IfdIndexShort',
-    10 => 'ExifEye\\core\\Block\\Ifd',
+    10 => 'ExifEye\\core\\Block\\IfdIndexShort',
     11 => 'ExifEye\\core\\Block\\Ifd',
+    12 => 'ExifEye\\core\\Block\\Ifd',
   ),
   'ifdPostLoadCallbacks' =>
   array (
@@ -69,10 +71,13 @@ return array (
     ),
     10 =>
     array (
+    ),
+    11 =>
+    array (
       0 => 'ExifEye\\core\\Block\\Thumbnail::toBlock',
       1 => 'ExifEye\\core\\Entry\\ExifMakerNote::tagToIfd',
     ),
-    11 =>
+    12 =>
     array (
       0 => 'ExifEye\\core\\Block\\Thumbnail::toBlock',
     ),
@@ -83,19 +88,20 @@ return array (
     'Interoperability' => 1,
     'Interop' => 1,
     'AppleMakerNotes' => 2,
-    'GPS' => 3,
-    'Exif' => 4,
-    'CanonMakerNotes' => 5,
-    'CanonCameraSettings' => 6,
-    'CanonFileInformation' => 7,
-    'CanonShotInformation' => 8,
-    'CanonPanoramaInformation' => 9,
-    'IFD0' => 10,
-    0 => 10,
-    'Main' => 10,
-    'IFD1' => 11,
-    1 => 11,
-    'Thumbnail' => 11,
+    'AppleRunTime' => 3,
+    'GPS' => 4,
+    'Exif' => 5,
+    'CanonMakerNotes' => 6,
+    'CanonCameraSettings' => 7,
+    'CanonFileInformation' => 8,
+    'CanonShotInformation' => 9,
+    'CanonPanoramaInformation' => 10,
+    'IFD0' => 11,
+    0 => 11,
+    'Main' => 11,
+    'IFD1' => 12,
+    1 => 12,
+    'Thumbnail' => 12,
   ),
   'tags' =>
   array (
@@ -191,6 +197,7 @@ return array (
       array (
         'name' => 'RunTime',
         'title' => 'Apple Run Time',
+        'ifd' => 3,
       ),
       8 =>
       array (
@@ -247,6 +254,45 @@ return array (
       ),
     ),
     3 =>
+    array (
+      1 =>
+      array (
+        'name' => 'flags',
+        'title' => 'Flags',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      2 =>
+      array (
+        'name' => 'value',
+        'title' => 'Value',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      3 =>
+      array (
+        'name' => 'timescale',
+        'title' => 'Timescale',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      4 =>
+      array (
+        'name' => 'epoch',
+        'title' => 'Epoch',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+    ),
+    4 =>
     array (
       0 =>
       array (
@@ -567,7 +613,7 @@ return array (
         ),
       ),
     ),
-    4 =>
+    5 =>
     array (
       41730 =>
       array (
@@ -1462,13 +1508,13 @@ return array (
         ),
       ),
     ),
-    5 =>
+    6 =>
     array (
       1 =>
       array (
         'name' => 'CameraSettings',
         'title' => 'Camera Settings',
-        'ifd' => 6,
+        'ifd' => 7,
       ),
       2 =>
       array (
@@ -1483,13 +1529,13 @@ return array (
       array (
         'name' => 'ShotInfo',
         'title' => 'Shot Info',
-        'ifd' => 8,
+        'ifd' => 9,
       ),
       5 =>
       array (
         'name' => 'Panorama',
         'title' => 'Panorama',
-        'ifd' => 9,
+        'ifd' => 10,
       ),
       6 =>
       array (
@@ -1952,7 +1998,7 @@ return array (
       array (
         'name' => 'FileInfo',
         'title' => 'File Info',
-        'ifd' => 7,
+        'ifd' => 8,
       ),
       149 =>
       array (
@@ -2059,7 +2105,7 @@ return array (
         ),
       ),
     ),
-    6 =>
+    7 =>
     array (
       1 =>
       array (
@@ -3106,7 +3152,7 @@ return array (
         ),
       ),
     ),
-    7 =>
+    8 =>
     array (
       1 =>
       array (
@@ -3379,7 +3425,7 @@ return array (
         ),
       ),
     ),
-    8 =>
+    9 =>
     array (
       1 =>
       array (
@@ -3738,7 +3784,7 @@ return array (
         ),
       ),
     ),
-    9 =>
+    10 =>
     array (
       2 =>
       array (
@@ -3767,631 +3813,6 @@ return array (
             3 => 'Top to Bottom',
             4 => '2x2 Matrix (Clockwise)',
           ),
-        ),
-      ),
-    ),
-    10 =>
-    array (
-      256 =>
-      array (
-        'name' => 'ImageWidth',
-        'title' => 'Image Width',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-          1 => 4,
-        ),
-      ),
-      257 =>
-      array (
-        'name' => 'ImageLength',
-        'title' => 'Image Length',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-          1 => 4,
-        ),
-      ),
-      258 =>
-      array (
-        'name' => 'BitsPerSample',
-        'title' => 'Bits per Sample',
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      259 =>
-      array (
-        'name' => 'Compression',
-        'title' => 'Compression',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            1 => 'Uncompressed',
-            2 => 'CCITT 1D',
-            3 => 'T4/Group 3 Fax',
-            4 => 'T6/Group 4 Fax',
-            5 => 'LZW',
-            6 => 'JPEG (old-style)',
-            7 => 'JPEG',
-            8 => 'Adobe Deflate',
-            9 => 'JBIG B&W',
-            10 => 'JBIG Color',
-            99 => 'JPEG',
-            262 => 'Kodak 262',
-            32766 => 'Next',
-            32767 => 'Sony ARW Compressed',
-            32769 => 'Packed RAW',
-            32770 => 'Samsung SRW Compressed',
-            32771 => 'CCIRLEW',
-            32772 => 'Samsung SRW Compressed 2',
-            32773 => 'PackBits',
-            32809 => 'Thunderscan',
-            32867 => 'Kodak KDC Compressed',
-            32895 => 'IT8CTPAD',
-            32896 => 'IT8LW',
-            32897 => 'IT8MP',
-            32898 => 'IT8BL',
-            32908 => 'PixarFilm',
-            32909 => 'PixarLog',
-            32946 => 'Deflate',
-            32947 => 'DCS',
-            34661 => 'JBIG',
-            34676 => 'SGILog',
-            34677 => 'SGILog24',
-            34712 => 'JPEG 2000',
-            34713 => 'Nikon NEF Compressed',
-            34715 => 'JBIG2 TIFF FX',
-            34718 => 'Microsoft Document Imaging (MDI) Binary Level Codec',
-            34719 => 'Microsoft Document Imaging (MDI) Progressive Transform Codec',
-            34720 => 'Microsoft Document Imaging (MDI) Vector',
-            34892 => 'Lossy JPEG',
-            65000 => 'Kodak DCR Compressed',
-            65535 => 'Pentax PEF Compressed',
-          ),
-        ),
-      ),
-      262 =>
-      array (
-        'name' => 'PhotometricInterpretation',
-        'title' => 'Photometric Interpretation',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            0 => 'WhiteIsZero',
-            1 => 'BlackIsZero',
-            2 => 'RGB',
-            3 => 'RGB Palette',
-            4 => 'Transparency Mask',
-            5 => 'CMYK',
-            6 => 'YCbCr',
-            8 => 'CIELab',
-            9 => 'ICCLab',
-            10 => 'ITULab',
-            32803 => 'Color Filter Array',
-            32844 => 'Pixar LogL',
-            32845 => 'Pixar LogLuv',
-            34892 => 'Linear Raw',
-          ),
-        ),
-      ),
-      266 =>
-      array (
-        'name' => 'FillOrder',
-        'title' => 'Fill Order',
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            1 => 'Normal',
-            2 => 'Reversed',
-          ),
-        ),
-      ),
-      269 =>
-      array (
-        'name' => 'DocumentName',
-        'title' => 'Document Name',
-        'format' =>
-        array (
-          0 => 2,
-        ),
-      ),
-      270 =>
-      array (
-        'name' => 'ImageDescription',
-        'title' => 'Image Description',
-        'format' =>
-        array (
-          0 => 2,
-        ),
-      ),
-      271 =>
-      array (
-        'name' => 'Make',
-        'title' => 'Manufacturer',
-        'format' =>
-        array (
-          0 => 2,
-        ),
-      ),
-      272 =>
-      array (
-        'name' => 'Model',
-        'title' => 'Model',
-        'format' =>
-        array (
-          0 => 2,
-        ),
-      ),
-      273 =>
-      array (
-        'name' => 'StripOffsets',
-        'title' => 'Strip Offsets',
-        'format' =>
-        array (
-          0 => 3,
-          1 => 4,
-        ),
-      ),
-      274 =>
-      array (
-        'name' => 'Orientation',
-        'title' => 'Orientation',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            1 => 'top - left',
-            2 => 'top - right',
-            3 => 'bottom - right',
-            4 => 'bottom - left',
-            5 => 'left - top',
-            6 => 'right - top',
-            7 => 'right - bottom',
-            8 => 'left - bottom',
-          ),
-        ),
-      ),
-      277 =>
-      array (
-        'name' => 'SamplesPerPixel',
-        'title' => 'Samples per Pixel',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      278 =>
-      array (
-        'name' => 'RowsPerStrip',
-        'title' => 'Rows per Strip',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-          1 => 4,
-        ),
-      ),
-      279 =>
-      array (
-        'name' => 'StripByteCounts',
-        'title' => 'Strip Byte Count',
-        'format' =>
-        array (
-          0 => 3,
-          1 => 4,
-        ),
-      ),
-      282 =>
-      array (
-        'name' => 'XResolution',
-        'title' => 'x-Resolution',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 5,
-        ),
-      ),
-      283 =>
-      array (
-        'name' => 'YResolution',
-        'title' => 'y-Resolution',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 5,
-        ),
-      ),
-      284 =>
-      array (
-        'name' => 'PlanarConfiguration',
-        'title' => 'Planar Configuration',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            1 => 'chunky format',
-            2 => 'planar format',
-          ),
-        ),
-      ),
-      296 =>
-      array (
-        'name' => 'ResolutionUnit',
-        'title' => 'Resolution Unit',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            2 => 'Inch',
-            3 => 'Centimeter',
-          ),
-        ),
-      ),
-      301 =>
-      array (
-        'name' => 'TransferFunction',
-        'title' => 'Transfer Function',
-        'components' => 3,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      305 =>
-      array (
-        'name' => 'Software',
-        'title' => 'Software',
-        'format' =>
-        array (
-          0 => 2,
-        ),
-      ),
-      306 =>
-      array (
-        'name' => 'DateTime',
-        'title' => 'Date and Time',
-        'components' => 20,
-        'format' =>
-        array (
-          0 => 2,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\Time',
-      ),
-      315 =>
-      array (
-        'name' => 'Artist',
-        'title' => 'Artist',
-        'format' =>
-        array (
-          0 => 2,
-        ),
-      ),
-      317 =>
-      array (
-        'name' => 'Predictor',
-        'title' => 'Predictor',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            1 => 'None',
-            2 => 'Horizontal differencing',
-          ),
-        ),
-      ),
-      318 =>
-      array (
-        'name' => 'WhitePoint',
-        'title' => 'White Point',
-        'components' => 2,
-        'format' =>
-        array (
-          0 => 5,
-        ),
-      ),
-      319 =>
-      array (
-        'name' => 'PrimaryChromaticities',
-        'title' => 'Primary Chromaticities',
-        'components' => 6,
-        'format' =>
-        array (
-          0 => 5,
-        ),
-      ),
-      338 =>
-      array (
-        'name' => 'ExtraSamples',
-        'title' => 'Extra Samples',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            0 => 'Unspecified',
-            1 => 'Associated Alpha',
-            2 => 'Unassociated Alpha',
-          ),
-        ),
-      ),
-      339 =>
-      array (
-        'name' => 'SampleFormat',
-        'title' => 'Sample Format',
-        'components' => 4,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      342 =>
-      array (
-        'name' => 'TransferRange',
-        'title' => 'Transfer Range',
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      512 =>
-      array (
-        'name' => 'JPEGProc',
-        'title' => 'JPEG Proc',
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            1 => 'Baseline',
-            14 => 'Lossless',
-          ),
-        ),
-      ),
-      513 =>
-      array (
-        'name' => 'ThumbnailOffset',
-        'title' => 'Thumbnail Offset',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 4,
-        ),
-      ),
-      514 =>
-      array (
-        'name' => 'ThumbnailLength',
-        'title' => 'Thumbnail Length',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 4,
-        ),
-      ),
-      529 =>
-      array (
-        'name' => 'YCbCrCoefficients',
-        'title' => 'YCbCr Coefficients',
-        'components' => 3,
-        'format' =>
-        array (
-          0 => 5,
-        ),
-      ),
-      530 =>
-      array (
-        'name' => 'YCbCrSubSampling',
-        'title' => 'YCbCr Sub-Sampling',
-        'components' => 2,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\IfdYCbCrSubSampling',
-      ),
-      531 =>
-      array (
-        'name' => 'YCbCrPositioning',
-        'title' => 'YCbCr Positioning',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-        'text' =>
-        array (
-          'mapping' =>
-          array (
-            1 => 'centered',
-            2 => 'co-sited',
-          ),
-        ),
-      ),
-      532 =>
-      array (
-        'name' => 'ReferenceBlackWhite',
-        'title' => 'Reference Black/White',
-        'components' => 6,
-        'format' =>
-        array (
-          0 => 5,
-        ),
-      ),
-      700 =>
-      array (
-        'name' => 'ApplicationNotes',
-        'title' => 'Application Notes',
-        'format' =>
-        array (
-          0 => 1,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\IfdApplicationNotes',
-      ),
-      18246 =>
-      array (
-        'name' => 'Rating',
-        'title' => 'Star Rating',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      18249 =>
-      array (
-        'name' => 'RatingPercent',
-        'title' => 'Percent Rating',
-        'components' => 1,
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      33423 =>
-      array (
-        'name' => 'BatteryLevel',
-        'title' => 'Battery Level',
-        'format' =>
-        array (
-          0 => 3,
-        ),
-      ),
-      33432 =>
-      array (
-        'name' => 'Copyright',
-        'title' => 'Copyright',
-        'format' =>
-        array (
-          0 => 2,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\IfdCopyright',
-      ),
-      33723 =>
-      array (
-        'name' => 'IPTC-NAA',
-        'title' => 'IPTC-NAA',
-        'format' =>
-        array (
-          0 => 4,
-        ),
-      ),
-      34665 =>
-      array (
-        'name' => 'ExifIFDPointer',
-        'title' => 'Exif IFD Pointer',
-        'ifd' => 4,
-      ),
-      34853 =>
-      array (
-        'name' => 'GPSInfoIFDPointer',
-        'title' => 'GPS Info IFD Pointer',
-        'ifd' => 3,
-      ),
-      40091 =>
-      array (
-        'name' => 'WindowsXPTitle',
-        'title' => 'Windows XP Title',
-        'format' =>
-        array (
-          0 => 1,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\WindowsString',
-      ),
-      40092 =>
-      array (
-        'name' => 'WindowsXPComment',
-        'title' => 'Windows XP Comment',
-        'format' =>
-        array (
-          0 => 1,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\WindowsString',
-      ),
-      40093 =>
-      array (
-        'name' => 'WindowsXPAuthor',
-        'title' => 'Windows XP Author',
-        'format' =>
-        array (
-          0 => 1,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\WindowsString',
-      ),
-      40094 =>
-      array (
-        'name' => 'WindowsXPKeywords',
-        'title' => 'Windows XP Keywords',
-        'format' =>
-        array (
-          0 => 1,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\WindowsString',
-      ),
-      40095 =>
-      array (
-        'name' => 'WindowsXPSubject',
-        'title' => 'Windows XP Subject',
-        'format' =>
-        array (
-          0 => 1,
-        ),
-        'class' => 'ExifEye\\core\\Entry\\WindowsString',
-      ),
-      50341 =>
-      array (
-        'name' => 'PrintIM',
-        'title' => 'Print IM',
-        'format' =>
-        array (
-          0 => 7,
         ),
       ),
     ),
@@ -4952,13 +4373,638 @@ return array (
       array (
         'name' => 'ExifIFDPointer',
         'title' => 'Exif IFD Pointer',
-        'ifd' => 4,
+        'ifd' => 5,
       ),
       34853 =>
       array (
         'name' => 'GPSInfoIFDPointer',
         'title' => 'GPS Info IFD Pointer',
-        'ifd' => 3,
+        'ifd' => 4,
+      ),
+      40091 =>
+      array (
+        'name' => 'WindowsXPTitle',
+        'title' => 'Windows XP Title',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
+      ),
+      40092 =>
+      array (
+        'name' => 'WindowsXPComment',
+        'title' => 'Windows XP Comment',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
+      ),
+      40093 =>
+      array (
+        'name' => 'WindowsXPAuthor',
+        'title' => 'Windows XP Author',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
+      ),
+      40094 =>
+      array (
+        'name' => 'WindowsXPKeywords',
+        'title' => 'Windows XP Keywords',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
+      ),
+      40095 =>
+      array (
+        'name' => 'WindowsXPSubject',
+        'title' => 'Windows XP Subject',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\WindowsString',
+      ),
+      50341 =>
+      array (
+        'name' => 'PrintIM',
+        'title' => 'Print IM',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+      ),
+    ),
+    12 =>
+    array (
+      256 =>
+      array (
+        'name' => 'ImageWidth',
+        'title' => 'Image Width',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+          1 => 4,
+        ),
+      ),
+      257 =>
+      array (
+        'name' => 'ImageLength',
+        'title' => 'Image Length',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+          1 => 4,
+        ),
+      ),
+      258 =>
+      array (
+        'name' => 'BitsPerSample',
+        'title' => 'Bits per Sample',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      259 =>
+      array (
+        'name' => 'Compression',
+        'title' => 'Compression',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Uncompressed',
+            2 => 'CCITT 1D',
+            3 => 'T4/Group 3 Fax',
+            4 => 'T6/Group 4 Fax',
+            5 => 'LZW',
+            6 => 'JPEG (old-style)',
+            7 => 'JPEG',
+            8 => 'Adobe Deflate',
+            9 => 'JBIG B&W',
+            10 => 'JBIG Color',
+            99 => 'JPEG',
+            262 => 'Kodak 262',
+            32766 => 'Next',
+            32767 => 'Sony ARW Compressed',
+            32769 => 'Packed RAW',
+            32770 => 'Samsung SRW Compressed',
+            32771 => 'CCIRLEW',
+            32772 => 'Samsung SRW Compressed 2',
+            32773 => 'PackBits',
+            32809 => 'Thunderscan',
+            32867 => 'Kodak KDC Compressed',
+            32895 => 'IT8CTPAD',
+            32896 => 'IT8LW',
+            32897 => 'IT8MP',
+            32898 => 'IT8BL',
+            32908 => 'PixarFilm',
+            32909 => 'PixarLog',
+            32946 => 'Deflate',
+            32947 => 'DCS',
+            34661 => 'JBIG',
+            34676 => 'SGILog',
+            34677 => 'SGILog24',
+            34712 => 'JPEG 2000',
+            34713 => 'Nikon NEF Compressed',
+            34715 => 'JBIG2 TIFF FX',
+            34718 => 'Microsoft Document Imaging (MDI) Binary Level Codec',
+            34719 => 'Microsoft Document Imaging (MDI) Progressive Transform Codec',
+            34720 => 'Microsoft Document Imaging (MDI) Vector',
+            34892 => 'Lossy JPEG',
+            65000 => 'Kodak DCR Compressed',
+            65535 => 'Pentax PEF Compressed',
+          ),
+        ),
+      ),
+      262 =>
+      array (
+        'name' => 'PhotometricInterpretation',
+        'title' => 'Photometric Interpretation',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'WhiteIsZero',
+            1 => 'BlackIsZero',
+            2 => 'RGB',
+            3 => 'RGB Palette',
+            4 => 'Transparency Mask',
+            5 => 'CMYK',
+            6 => 'YCbCr',
+            8 => 'CIELab',
+            9 => 'ICCLab',
+            10 => 'ITULab',
+            32803 => 'Color Filter Array',
+            32844 => 'Pixar LogL',
+            32845 => 'Pixar LogLuv',
+            34892 => 'Linear Raw',
+          ),
+        ),
+      ),
+      266 =>
+      array (
+        'name' => 'FillOrder',
+        'title' => 'Fill Order',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Normal',
+            2 => 'Reversed',
+          ),
+        ),
+      ),
+      269 =>
+      array (
+        'name' => 'DocumentName',
+        'title' => 'Document Name',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      270 =>
+      array (
+        'name' => 'ImageDescription',
+        'title' => 'Image Description',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      271 =>
+      array (
+        'name' => 'Make',
+        'title' => 'Manufacturer',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      272 =>
+      array (
+        'name' => 'Model',
+        'title' => 'Model',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      273 =>
+      array (
+        'name' => 'StripOffsets',
+        'title' => 'Strip Offsets',
+        'format' =>
+        array (
+          0 => 3,
+          1 => 4,
+        ),
+      ),
+      274 =>
+      array (
+        'name' => 'Orientation',
+        'title' => 'Orientation',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'top - left',
+            2 => 'top - right',
+            3 => 'bottom - right',
+            4 => 'bottom - left',
+            5 => 'left - top',
+            6 => 'right - top',
+            7 => 'right - bottom',
+            8 => 'left - bottom',
+          ),
+        ),
+      ),
+      277 =>
+      array (
+        'name' => 'SamplesPerPixel',
+        'title' => 'Samples per Pixel',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      278 =>
+      array (
+        'name' => 'RowsPerStrip',
+        'title' => 'Rows per Strip',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+          1 => 4,
+        ),
+      ),
+      279 =>
+      array (
+        'name' => 'StripByteCounts',
+        'title' => 'Strip Byte Count',
+        'format' =>
+        array (
+          0 => 3,
+          1 => 4,
+        ),
+      ),
+      282 =>
+      array (
+        'name' => 'XResolution',
+        'title' => 'x-Resolution',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
+      283 =>
+      array (
+        'name' => 'YResolution',
+        'title' => 'y-Resolution',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
+      284 =>
+      array (
+        'name' => 'PlanarConfiguration',
+        'title' => 'Planar Configuration',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'chunky format',
+            2 => 'planar format',
+          ),
+        ),
+      ),
+      296 =>
+      array (
+        'name' => 'ResolutionUnit',
+        'title' => 'Resolution Unit',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            2 => 'Inch',
+            3 => 'Centimeter',
+          ),
+        ),
+      ),
+      301 =>
+      array (
+        'name' => 'TransferFunction',
+        'title' => 'Transfer Function',
+        'components' => 3,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      305 =>
+      array (
+        'name' => 'Software',
+        'title' => 'Software',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      306 =>
+      array (
+        'name' => 'DateTime',
+        'title' => 'Date and Time',
+        'components' => 20,
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\Time',
+      ),
+      315 =>
+      array (
+        'name' => 'Artist',
+        'title' => 'Artist',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+      ),
+      317 =>
+      array (
+        'name' => 'Predictor',
+        'title' => 'Predictor',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'None',
+            2 => 'Horizontal differencing',
+          ),
+        ),
+      ),
+      318 =>
+      array (
+        'name' => 'WhitePoint',
+        'title' => 'White Point',
+        'components' => 2,
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
+      319 =>
+      array (
+        'name' => 'PrimaryChromaticities',
+        'title' => 'Primary Chromaticities',
+        'components' => 6,
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
+      338 =>
+      array (
+        'name' => 'ExtraSamples',
+        'title' => 'Extra Samples',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unspecified',
+            1 => 'Associated Alpha',
+            2 => 'Unassociated Alpha',
+          ),
+        ),
+      ),
+      339 =>
+      array (
+        'name' => 'SampleFormat',
+        'title' => 'Sample Format',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      342 =>
+      array (
+        'name' => 'TransferRange',
+        'title' => 'Transfer Range',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      512 =>
+      array (
+        'name' => 'JPEGProc',
+        'title' => 'JPEG Proc',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Baseline',
+            14 => 'Lossless',
+          ),
+        ),
+      ),
+      513 =>
+      array (
+        'name' => 'ThumbnailOffset',
+        'title' => 'Thumbnail Offset',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+      ),
+      514 =>
+      array (
+        'name' => 'ThumbnailLength',
+        'title' => 'Thumbnail Length',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+      ),
+      529 =>
+      array (
+        'name' => 'YCbCrCoefficients',
+        'title' => 'YCbCr Coefficients',
+        'components' => 3,
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
+      530 =>
+      array (
+        'name' => 'YCbCrSubSampling',
+        'title' => 'YCbCr Sub-Sampling',
+        'components' => 2,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\IfdYCbCrSubSampling',
+      ),
+      531 =>
+      array (
+        'name' => 'YCbCrPositioning',
+        'title' => 'YCbCr Positioning',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'centered',
+            2 => 'co-sited',
+          ),
+        ),
+      ),
+      532 =>
+      array (
+        'name' => 'ReferenceBlackWhite',
+        'title' => 'Reference Black/White',
+        'components' => 6,
+        'format' =>
+        array (
+          0 => 5,
+        ),
+      ),
+      700 =>
+      array (
+        'name' => 'ApplicationNotes',
+        'title' => 'Application Notes',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\IfdApplicationNotes',
+      ),
+      18246 =>
+      array (
+        'name' => 'Rating',
+        'title' => 'Star Rating',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      18249 =>
+      array (
+        'name' => 'RatingPercent',
+        'title' => 'Percent Rating',
+        'components' => 1,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      33423 =>
+      array (
+        'name' => 'BatteryLevel',
+        'title' => 'Battery Level',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+      ),
+      33432 =>
+      array (
+        'name' => 'Copyright',
+        'title' => 'Copyright',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'class' => 'ExifEye\\core\\Entry\\IfdCopyright',
+      ),
+      33723 =>
+      array (
+        'name' => 'IPTC-NAA',
+        'title' => 'IPTC-NAA',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+      ),
+      34665 =>
+      array (
+        'name' => 'ExifIFDPointer',
+        'title' => 'Exif IFD Pointer',
+        'ifd' => 5,
+      ),
+      34853 =>
+      array (
+        'name' => 'GPSInfoIFDPointer',
+        'title' => 'GPS Info IFD Pointer',
+        'ifd' => 4,
       ),
       40091 =>
       array (
@@ -5047,6 +5093,13 @@ return array (
     ),
     3 =>
     array (
+      'flags' => 1,
+      'value' => 2,
+      'timescale' => 3,
+      'epoch' => 4,
+    ),
+    4 =>
+    array (
       'GPSVersionID' => 0,
       'GPSLatitudeRef' => 1,
       'GPSLatitude' => 2,
@@ -5080,7 +5133,7 @@ return array (
       'GPSDifferential' => 30,
       'GPSHPositioningError' => 31,
     ),
-    4 =>
+    5 =>
     array (
       'CFAPattern' => 41730,
       'ExposureTime' => 33434,
@@ -5152,7 +5205,7 @@ return array (
       'LensSerialNumber' => 42037,
       'Gamma' => 42240,
     ),
-    5 =>
+    6 =>
     array (
       'CameraSettings' => 1,
       'FocalLength' => 2,
@@ -5185,7 +5238,7 @@ return array (
       'SensorInfo' => 224,
       'ColorData' => 16385,
     ),
-    6 =>
+    7 =>
     array (
       'MacroMode' => 1,
       'SelfTimer' => 2,
@@ -5225,7 +5278,7 @@ return array (
       'ColorTone' => 42,
       'SRAWQuality' => 46,
     ),
-    7 =>
+    8 =>
     array (
       'FileNumber' => 1,
       2 => 2,
@@ -5246,7 +5299,7 @@ return array (
       'FocusDistanceLower' => 21,
       'FlashExposureLock' => 25,
     ),
-    8 =>
+    9 =>
     array (
       'AutoISO' => 1,
       'BaseISO' => 2,
@@ -5277,12 +5330,12 @@ return array (
       'SelfTimer2' => 29,
       'FlashOutput' => 33,
     ),
-    9 =>
+    10 =>
     array (
       'PanoramaFrame' => 2,
       'PanoramaDirection' => 5,
     ),
-    10 =>
+    11 =>
     array (
       'ImageWidth' => 256,
       'ImageLength' => 257,
@@ -5335,7 +5388,7 @@ return array (
       'WindowsXPSubject' => 40095,
       'PrintIM' => 50341,
     ),
-    11 =>
+    12 =>
     array (
       'ImageWidth' => 256,
       'ImageLength' => 257,
@@ -5392,6 +5445,6 @@ return array (
   'makerNotes' =>
   array (
     'Apple' => 2,
-    'Canon' => 5,
+    'Canon' => 6,
   ),
 );

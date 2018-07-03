@@ -51,7 +51,7 @@ class Spec
     private static function getMap()
     {
         if (!isset(self::$map)) {
-            self::setMap(__DIR__ . '/../resources/spec.php');
+            self::setMap(__DIR__ . '/../../resources/spec.php');
         }
         return self::$map;
     }

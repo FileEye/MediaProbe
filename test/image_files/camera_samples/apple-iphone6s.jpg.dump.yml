@@ -747,7 +747,7 @@ elements:
                                                                     ifd:
                                                                         -
                                                                             path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes'
-                                                                            class: ExifEye\core\Block\IfdMakerNoteApple
+                                                                            class: ExifEye\Apple\Block\MakerNote
                                                                             valid: true
                                                                             name: AppleMakerNotes
                                                                             elements:
@@ -784,23 +784,6 @@ elements:
                                                                                                     value: czo1NTg6ImJwbGlzdDAwTxECAEQBDQHsAOAAwgA2AVABpQCvAJcAhwDnAJcAhwBzAFwAlQDHAJ8AjwG0AJ8BqAG8AKAAmgCdAB0BjACTAHoAYwCIAMcAzQBQAQsBLwFVARcByACNAMgAKAGHAK4AgwBmAJkAyAB3AakBOAEoAfsAGQGoAJQA1QAzAXwAwgCGAHAAjQCJAGgB7gFAAfsA5AAzARIBBAH8AAYB4ADoAKIAagBuAKcAVAG2AU4BzADUAGcBSQE9ASsBGAELAe4AsQB1AHgAvQA+AW0BWgFMAVYBcgFZAYQBNgEdAfUA2gDBALMAcQCSABkBXQFBAaUBewFdAVQBkgFCATIB9AAGAcAAxQDjAAQBOwFgAXIBowGKAUMBRwFpATwBLQHwAAUB3QDPAFMAkgAZAVkBYAFMARIBMQFFAU0BJQEZAf0A/gDIAK8ATgBWAF0AXABcAFgAVQDdALUArwApAQQB1QDjAJAAfwBMAFIAVwBTAFEAVABQANkAbABaADsB5wBeAF8AJwAxAEoAUQBWAFUATgBPAE0AywBjAFsANwHMAGEAbgBTADEAAQHuAKUApQBxAE4ASwC8AHAAVQArAcMAXgB5AGwAMwD0AB8B9gD2APoAywB8ALIAdQBRABEBqgBgAPwAdABBAJgAWwEyAf4AkQCPALEA2gCRAFYADQHfAMwAUAFsAFAAAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
                                                                                                     clear_value: !!binary czo1NTg6ImJwbGlzdDAwTxECAEQBDQHsAOAAwgA2AVABpQCvAJcAhwDnAJcAhwBzAFwAlQDHAJ8AjwG0AJ8BqAG8AKAAmgCdAB0BjACTAHoAYwCIAMcAzQBQAQsBLwFVARcByACNAMgAKAGHAK4AgwBmAJkAyAB3AakBOAEoAfsAGQGoAJQA1QAzAXwAwgCGAHAAjQCJAGgB7gFAAfsA5AAzARIBBAH8AAYB4ADoAKIAagBuAKcAVAG2AU4BzADUAGcBSQE9ASsBGAELAe4AsQB1AHgAvQA+AW0BWgFMAVYBcgFZAYQBNgEdAfUA2gDBALMAcQCSABkBXQFBAaUBewFdAVQBkgFCATIB9AAGAcAAxQDjAAQBOwFgAXIBowGKAUMBRwFpATwBLQHwAAUB3QDPAFMAkgAZAVkBYAFMARIBMQFFAU0BJQEZAf0A/gDIAK8ATgBWAF0AXABcAFgAVQDdALUArwApAQQB1QDjAJAAfwBMAFIAVwBTAFEAVABQANkAbABaADsB5wBeAF8AJwAxAEoAUQBWAFUATgBPAE0AywBjAFsANwHMAGEAbgBTADEAAQHuAKUApQBxAE4ASwC8AHAAVQArAcMAXgB5AGwAMwD0AB8B9gD2APoAywB8ALIAdQBRABEBqgBgAPwAdABBAJgAWwEyAf4AkQCPALEA2gCRAFYADQHfAMwAUAFsAFAAAAgAAAAAAAACAQAAAAAAAAABAAAAAAAAAAAAAAAAAAACDCI7
                                                                                                     text: '558 bytes of data'
-                                                                                    -
-                                                                                        path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/tag:3:RunTime'
-                                                                                        class: ExifEye\core\Block\Tag
-                                                                                        valid: true
-                                                                                        id: '3'
-                                                                                        name: RunTime
-                                                                                        elements:
-                                                                                            entry:
-                                                                                                -
-                                                                                                    path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/tag:3:RunTime/entry'
-                                                                                                    class: ExifEye\core\Entry\Core\Undefined
-                                                                                                    valid: true
-                                                                                                    format: Undefined
-                                                                                                    components: 104
-                                                                                                    value: czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwABYKGq/m6oEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
-                                                                                                    clear_value: !!binary czoxMDQ6ImJwbGlzdDAw1AECAwQFBgcIVWZsYWdzVXZhbHVlWXRpbWVzY2FsZVVlcG9jaBABEwABYKGq/m6oEjuaygAQAAgRFx0nLS84PQAAAAAAAAEBAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAA/Ijs=
-                                                                                                    text: '104 bytes of data'
                                                                                     -
                                                                                         path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/tag:4'
                                                                                         class: ExifEye\core\Block\Tag
@@ -995,6 +978,82 @@ elements:
                                                                                                     value: aTowOw==
                                                                                                     clear_value: 'i:0;'
                                                                                                     text: 0
+                                                                                ifd:
+                                                                                    -
+                                                                                        path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime'
+                                                                                        class: ExifEye\Apple\Block\RunTime
+                                                                                        valid: true
+                                                                                        name: AppleRunTime
+                                                                                        elements:
+                                                                                            tag:
+                                                                                                -
+                                                                                                    path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:1:flags'
+                                                                                                    class: ExifEye\core\Block\Tag
+                                                                                                    valid: true
+                                                                                                    id: '1'
+                                                                                                    name: flags
+                                                                                                    elements:
+                                                                                                        entry:
+                                                                                                            -
+                                                                                                                path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:1:flags/entry'
+                                                                                                                class: ExifEye\core\Entry\Core\Ascii
+                                                                                                                valid: true
+                                                                                                                format: Ascii
+                                                                                                                components: 2
+                                                                                                                value: aToxOw==
+                                                                                                                clear_value: 'i:1;'
+                                                                                                                text: 1
+                                                                                                -
+                                                                                                    path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:2:value'
+                                                                                                    class: ExifEye\core\Block\Tag
+                                                                                                    valid: true
+                                                                                                    id: '2'
+                                                                                                    name: value
+                                                                                                    elements:
+                                                                                                        entry:
+                                                                                                            -
+                                                                                                                path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:2:value/entry'
+                                                                                                                class: ExifEye\core\Entry\Core\Ascii
+                                                                                                                valid: true
+                                                                                                                format: Ascii
+                                                                                                                components: 16
+                                                                                                                value: czoxNToiMzg3NzIyNDUxNTEzMDAwIjs=
+                                                                                                                clear_value: 's:15:"387722451513000";'
+                                                                                                                text: '387722451513000'
+                                                                                                -
+                                                                                                    path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:3:timescale'
+                                                                                                    class: ExifEye\core\Block\Tag
+                                                                                                    valid: true
+                                                                                                    id: '3'
+                                                                                                    name: timescale
+                                                                                                    elements:
+                                                                                                        entry:
+                                                                                                            -
+                                                                                                                path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:3:timescale/entry'
+                                                                                                                class: ExifEye\core\Entry\Core\Ascii
+                                                                                                                valid: true
+                                                                                                                format: Ascii
+                                                                                                                components: 11
+                                                                                                                value: aToxMDAwMDAwMDAwOw==
+                                                                                                                clear_value: 'i:1000000000;'
+                                                                                                                text: 1000000000
+                                                                                                -
+                                                                                                    path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:4:epoch'
+                                                                                                    class: ExifEye\core\Block\Tag
+                                                                                                    valid: true
+                                                                                                    id: '4'
+                                                                                                    name: epoch
+                                                                                                    elements:
+                                                                                                        entry:
+                                                                                                            -
+                                                                                                                path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:AppleMakerNotes/ifd:AppleRunTime/tag:4:epoch/entry'
+                                                                                                                class: ExifEye\core\Entry\Core\Ascii
+                                                                                                                valid: true
+                                                                                                                format: Ascii
+                                                                                                                components: 2
+                                                                                                                value: aTowOw==
+                                                                                                                clear_value: 'i:0;'
+                                                                                                                text: 0
                                                             -
                                                                 path: '/image/jpeg/segment:225:APP1/exif/tiff/ifd:IFD0/ifd:GPS'
                                                                 class: ExifEye\core\Block\Ifd

@@ -24,8 +24,10 @@
     "require": {
         "php": ">=5.4.0",
         "ext-gd": "*",
+        "ext-gmp": "*",
         "psr/log": "*",
-        "monolog/monolog": "*"
+        "monolog/monolog": "*",
+        "rodneyrehm/plist": "*"
     },
     "require-dev" : {
         "ext-exif": "*",
@@ -42,7 +44,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ExifEye\\core\\": "src/"
+            "ExifEye\\": "src/"
         }
     },
     "autoload-dev": {
