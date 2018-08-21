@@ -40,16 +40,16 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/no-exif.jpg', null, 'error');
         $jpeg = $image->getElement("jpeg");
 
-        $this->assertNull($jpeg->getElement("segment/exif"));
+        $this->assertNull($jpeg->getElement("jpegSegment/exif"));
 
         // Find the COM segment.
-        $com_segment = $jpeg->getElement("segment[@name='COM']");
+        $com_segment = $jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
         $app1_segment = new JpegSegment(0xE1, $jpeg, $com_segment);
 
         $exif = new Exif($app1_segment);
-        $this->assertNotNull($jpeg->getElement("segment/exif"));
+        $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
         $tiff = new Tiff($exif);
@@ -75,9 +75,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $r_jpeg = $r_image->getElement("jpeg");
 
 
-        $this->assertInstanceOf('ExifEye\core\Block\Exif', $r_jpeg->getElement("segment/exif"));
+        $this->assertInstanceOf('ExifEye\core\Block\Exif', $r_jpeg->getElement("jpegSegment/exif"));
 
-        $tiff = $r_jpeg->getElement("segment/exif/tiff");
+        $tiff = $r_jpeg->getElement("jpegSegment/exif/tiff");
         $this->assertInstanceOf('ExifEye\core\Block\Tiff', $tiff);
         $this->assertCount(1, $tiff->getMultipleElements("ifd"));
 

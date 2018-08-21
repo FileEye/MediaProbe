@@ -19,7 +19,7 @@ class JpegSegment extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'segment';
+    protected $type = 'jpegSegment';
 
     /**
      * Construct a new JPEG segment object.

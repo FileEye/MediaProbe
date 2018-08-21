@@ -47,20 +47,16 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         $image = Image::loadFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
 //dump(@exif_read_data($imageDumpFile->getPath() . '/' . $test['fileName']));
 
+        $this->assertEquals($test['mimeType'], $image->getMimeType());
+
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $image->getElement("*"));
+            $this->assertElement($test['elements'], $image);
         }
 
-        $log_dump = $image->dumpLog();
-
-        if (isset($test['errors'])) {
-            $this->assertEquals(count($test['errors']), isset($log_dump['ERROR']) ? count($log_dump['ERROR']) : 0);
-        }
-        if (isset($test['warnings'])) {
-            $this->assertEquals(count($test['warnings']), isset($log_dump['WARNING']) ? count($log_dump['WARNING']) : 0);
-        }
-        if (isset($test['notices'])) {
-            $this->assertEquals(count($test['notices']), isset($log_dump['NOTICE']) ? count($log_dump['NOTICE']) : 0);
+        foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
+            if (isset($test['log'][$level])) {
+                $this->assertEquals(count($test['log'][$level]), count($image->dumpLog($level)));
+            }
         }
     }
 

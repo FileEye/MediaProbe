@@ -63,40 +63,21 @@ class DumpCommand extends Command
 
     protected function fileToDump($file)
     {
-        $basename = substr($file, 0, - strlen(strrchr($file, '.')));
-        $indent = 0;
-        $json = [];
+        $yaml = [];
 
         $image = Image::loadFromFile((string) $file);
-        $json['fileName'] = $file->getBaseName();
-        $json['mimeType'] = $image->getMimeType();
-        $json['elements'] = $image->getElement("*")->toDumpArray();
-
-        $json['errors'] = [];
-        $json['warnings'] = [];
-        $json['notices'] = [];
-        foreach ($image->dumpLog() as $log_levels) {
-            foreach ($log_levels as $record) {
-                switch ($record['level_name']) {
-                    case 'NOTICE':
-                        $key = 'notices';
-                        break;
-                    case 'WARNING':
-                        $key = 'warnings';
-                        break;
-                    case 'ERROR':
-                        $key = 'errors';
-                        break;
-                    default:
-                        continue;
-                }
-                $json[$key][] = [
+        $yaml['fileName'] = $file->getBaseName();
+        $yaml['mimeType'] = $image->getMimeType();
+        $yaml['elements'] = $image->toDumpArray();
+        $yaml['log'] = [];
+        foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
+            foreach ($image->dumpLog($level) as $record) {
+                $yaml['log'][$level][] = [
                     'path' => isset($record['context']['path']) ? $record['context']['path'] : '*** missing ***',
                     'message' => $record['message'],
                 ];
             }
         }
-
-        return Yaml::dump($json, 40);
+        return Yaml::dump($yaml, 40);
     }
 }

@@ -12,12 +12,17 @@ use ExifEye\core\Entry\Core\EntryInterface;
 abstract class BlockBase extends ElementBase
 {
     /**
-     * The block has a specification description.
+     * The block has an ExifEye specification description.
      *
-     * @var string
+     * @var bool
      */
     protected $hasSpecification = false;
 
+    /**
+     * Determines if the Block has an ExifEye specification.
+     *
+     * @returns bool
+     */
     public function hasSpecification()
     {
         return $this->hasSpecification;

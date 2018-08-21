@@ -18,7 +18,7 @@ class MisplacedExifTest extends ExifEyeTestCaseBase
         $jpeg = $image->getElement("jpeg");
 
         // Assert we just have loaded correct file for the test.
-        $app1 = $jpeg->getMultipleElements("segment[@name='APP1']");
+        $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(2, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $app1[1]->getElement("exif"));
@@ -28,7 +28,7 @@ class MisplacedExifTest extends ExifEyeTestCaseBase
         $newExif = new Exif($app1_segment);
 
         // Ensure new APP1 segment is set to correct position among segments.
-        $app1 = $jpeg->getMultipleElements("segment[@name='APP1']");
+        $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(3, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $app1[1]->getElement("exif"));
@@ -36,10 +36,10 @@ class MisplacedExifTest extends ExifEyeTestCaseBase
         $this->assertSame($newExif, $app1[2]->getElement("exif"));
 
         // Remove the first APP1 segment containing a valid EXIF block.
-        $jpeg->removeElement("segment[exif][1]");
+        $jpeg->removeElement("jpegSegment[exif][1]");
 
         // Assert that only EXIF section is gone and all other shifted correctly.
-        $app1 = $jpeg->getMultipleElements("segment[@name='APP1']");
+        $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(2, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $app1[1]->getElement("exif"));

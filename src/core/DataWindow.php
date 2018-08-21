@@ -81,7 +81,7 @@ class DataWindow
              * we have to buffer the output...
              */
             ob_start();
-            ImageJpeg($data, null, 75); // xx check quality
+            ImageJpeg($data, null);
             $this->data = ob_get_clean();
         } else {
             throw new DataWindowException('Bad type for $data: %s', gettype($data));

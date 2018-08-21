@@ -16,7 +16,7 @@ class GH77Test extends ExifEyeTestCaseBase
         $image = Image::loadFromFile($file);
         $input_jpeg = $image->getElement("jpeg");
 
-        $app1 = $input_jpeg->getElement("segment/exif");
+        $app1 = $input_jpeg->getElement("jpegSegment/exif");
 
         $ifd0 = $app1->getElement("tiff/ifd[@name='IFD0']");
 

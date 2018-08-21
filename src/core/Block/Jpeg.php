@@ -46,6 +46,11 @@ use ExifEye\core\Utility\ConvertBytes;
 class Jpeg extends BlockBase
 {
     /**
+     * JPEG header.
+     */
+    const JPEG_HEADER = "\xFF\xD8\xFF";
+
+    /**
      * {@inheritdoc}
      */
     protected $type = 'jpeg';
@@ -58,7 +63,7 @@ class Jpeg extends BlockBase
     private $jpeg_data = null;
 
     /**
-     * Construct a new object for holding JPEG data.
+     * Constructs a Block for holding a JPEG image.
      */
     public function __construct(BlockBase $parent = null)
     {
@@ -72,15 +77,13 @@ class Jpeg extends BlockBase
     {
         $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $data_window->getSize()]);
 
-        /* JPEG data is stored in big-endian format. */
+        // JPEG data is stored in big-endian format.
         $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
-        /*
-         * Run through the data to read the sections in the image. After
-         * each section is read, the start of the data window will be
-         * moved forward, and after the last section we'll terminate with
-         * no data left in the window.
-         */
+        // Run through the data to read the sections in the image. After each
+        // section is read, the start of the data window will be moved forward,
+        // and after the last section we will terminate with no data left in the
+        // window.
         while ($data_window->getSize() > 0) {
             $i = $this->getJpgSectionStart($data_window);
 
@@ -93,22 +96,17 @@ class Jpeg extends BlockBase
                 ]);
             }
 
-            /*
-             * Move window so first byte becomes first byte in this
-             * section.
-             */
+            // Move window so first byte becomes first byte in this section.
             $data_window->setWindowStart($i + 1);
 
             if ($marker == JpegMarker::SOI || $marker == JpegMarker::EOI) {
                 $segment = new JpegSegment($marker, $this);
             } else {
-                /*
-                 * Read the length of the section. The length includes the
-                 * two bytes used to store the length.
-                 */
+                // Read the length of the section. The length includes the two
+                // bytes used to store the length.
                 $len = $data_window->getShort(0) - 2;
 
-                /* Skip past the length. */
+                // Skip past the length.
                 $data_window->setWindowStart(2);
 
                 if ($marker == JpegMarker::APP1) {
@@ -183,7 +181,7 @@ class Jpeg extends BlockBase
     {
         $bytes = '';
 
-        foreach ($this->getMultipleElements("segment") as $segment) {
+        foreach ($this->getMultipleElements("jpegSegment") as $segment) {
             $m = $segment->getAttribute('id');
 
             // Add the marker.
@@ -225,5 +223,15 @@ class Jpeg extends BlockBase
             }
         }
         return $i;
+    }
+
+    /**
+     * Returns the MIME type of the image.
+     *
+     * @returns string
+     */
+    public function getMimeType()
+    {
+        return 'image/jpeg';
     }
 }

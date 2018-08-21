@@ -15,10 +15,10 @@ class Tags1Test extends ExifEyeTestCaseBase
         $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/test-tags-1.jpg', null, 'error');
         $jpeg = $image->getElement("jpeg");
 
-        $this->assertInstanceOf('ExifEye\core\Block\Exif', $jpeg->getElement("segment/exif"));
-        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $jpeg->getElement("segment/exif/tiff"));
+        $this->assertInstanceOf('ExifEye\core\Block\Exif', $jpeg->getElement("jpegSegment/exif"));
+        $this->assertInstanceOf('ExifEye\core\Block\Tiff', $jpeg->getElement("jpegSegment/exif/tiff"));
 
-        $ifd0 = $jpeg->getElement("segment/exif/tiff/ifd[@name='IFD0']");
+        $ifd0 = $jpeg->getElement("jpegSegment/exif/tiff/ifd[@name='IFD0']");
         $this->assertInstanceOf('ExifEye\core\Block\Ifd', $ifd0);
 
         $ratingPercent = $ifd0->getElement("tag[@name='RatingPercent']/entry");
