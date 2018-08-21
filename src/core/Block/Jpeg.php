@@ -5,8 +5,8 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\ConvertBytes;
+use ExifEye\core\Spec;
 
 /**
  * Class for handling JPEG data.
@@ -14,10 +14,10 @@ use ExifEye\core\Utility\ConvertBytes;
  * The {@link Jpeg} class defined here provides an abstraction for
  * dealing with a JPEG file. The file will be contain a number of
  * sections containing some {@link JpegContent content} identified
- * by a {@link JpegMarker marker}.
+ * by a marker.
  *
- * The {@link getExif()} method is used get hold of the {@link
- * JpegMarker::APP1 APP1} section which stores Exif data. So if
+ * The {@link getExif()} method is used get hold of the
+ * APP1 section which stores Exif data. So if
  * the name of the JPEG file is stored in $filename, then one would
  * get hold of the Exif data by saying:
  *
@@ -89,7 +89,7 @@ class Jpeg extends BlockBase
 
             $marker = $data_window->getByte($i);
 
-            if (!JpegMarker::isValid($marker)) {
+            if (!in_array($marker, Spec::getTypeSupportedElementIds($this->getType()))) {
                 $this->error('Invalid marker found at offset {offset}: 0x{marker}', [
                     'offset' => $offset,
                     'marker' => dec2hex($marker),
@@ -99,7 +99,9 @@ class Jpeg extends BlockBase
             // Move window so first byte becomes first byte in this section.
             $data_window->setWindowStart($i + 1);
 
-            if ($marker == JpegMarker::SOI || $marker == JpegMarker::EOI) {
+            $element_name = Spec::getElementName($this->getType(), $marker);
+
+            if ($element_name === 'SOI' || $element_name === 'EOI') {
                 $segment = new JpegSegment($marker, $this);
             } else {
                 // Read the length of the section. The length includes the two
@@ -109,7 +111,7 @@ class Jpeg extends BlockBase
                 // Skip past the length.
                 $data_window->setWindowStart(2);
 
-                if ($marker == JpegMarker::APP1) {
+                if ($element_name === 'APP1') {
                     $app1_segment = new JpegSegment($marker, $this);
                     if ($app1_segment->loadFromData($data_window->getClone(0, $len)) === false) {
                         // We store the data as normal JPEG content if it could
@@ -117,7 +119,7 @@ class Jpeg extends BlockBase
                         new JpegContent($app1_segment, $data_window->getClone(0, $len));
                     }
                     $data_window->setWindowStart($len);
-                } elseif ($marker == JpegMarker::COM) {
+                } elseif ($element_name === 'COM') {
                     $com_segment = new JpegSegment($marker, $this);
                     $content = new JpegComment($com_segment);
                     $content->loadFromData($data_window->getClone(0, $len));
@@ -129,7 +131,7 @@ class Jpeg extends BlockBase
                     $data_window->setWindowStart($len);
 
                     /* In case of SOS, image data will follow. */
-                    if ($marker == JpegMarker::SOS) {
+                    if ($element_name === 'SOS') {
                         /*
                          * Some images have some trailing (garbage?) following the
                          * EOI marker. To handle this we seek backwards until we
@@ -138,7 +140,7 @@ class Jpeg extends BlockBase
                          */
 
                         $length = $data_window->getSize();
-                        while ($data_window->getByte($length - 2) != 0xFF || $data_window->getByte($length - 1) != JpegMarker::EOI) {
+                        while ($data_window->getByte($length - 2) != 0xFF || $data_window->getByte($length - 1) != Spec::getElementIdByName($this->getType(), 'EOI')) {
                             $length --;
                         }
 
@@ -146,7 +148,7 @@ class Jpeg extends BlockBase
                         $this->debug('JPEG data: {data}', ['data' => $this->jpeg_data->toString()]);
 
                         // Append the EOI.
-                        $eoi_segment = new JpegSegment(JpegMarker::EOI, $this);
+                        $eoi_segment = new JpegSegment(Spec::getElementIdByName($this->getType(), 'EOI'), $this);
 
                         // Now check to see if there are any trailing data.
                         if ($length != $data_window->getSize()) {
@@ -185,10 +187,11 @@ class Jpeg extends BlockBase
             $m = $segment->getAttribute('id');
 
             // Add the marker.
-            $bytes .= "\xFF" . JpegMarker::getBytes($m);
+            $bytes .= "\xFF";
+            $bytes .= chr($m);
 
             // Skip over empty markers.
-            if ($m == JpegMarker::SOI || $m == JpegMarker::EOI) {
+            if ($m == Spec::getElementIdByName($this->getType(), 'SOI') || $m == Spec::getElementIdByName($this->getType(), 'EOI')) {
                 continue;
             }
 
@@ -199,7 +202,7 @@ class Jpeg extends BlockBase
             $bytes .= $data;
 
             // In case of SOS, we need to write the JPEG data.
-            if ($m == JpegMarker::SOS) {
+            if ($m == Spec::getElementIdByName($this->getType(), 'SOS')) {
                 $bytes .= $this->jpeg_data->getBytes();
             }
         }

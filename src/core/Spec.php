@@ -206,6 +206,69 @@ class Spec
     }
 
     /**
+     * Returns the element ids supported by a type.
+     *
+     * @param string $type
+     *            the type.
+     *
+     * @return array
+     *            an simple array, with values the element ids supported by
+     *            the type.
+     */
+    public static function getTypeSupportedElementIds($type)
+    {
+        return array_keys(self::getMap()['elements'][$type]);
+    }
+
+    /**
+     * Returns the name of an element.
+     *
+     * @param string $parent_type
+     *            the type where this element is placed.
+     * @param string|int $element_id
+     *            the element id.
+     *
+     * @return string|null
+     *            the element name.
+     */
+    public static function getElementName($parent_type, $element_id)
+    {
+        return isset(self::getMap()['elements'][$parent_type][$element_id]['name']) ? self::getMap()['elements'][$parent_type][$element_id]['name'] : null;
+    }
+
+    /**
+     * Returns the id of an element given its name.
+     *
+     * @param string $parent_type
+     *            the type where this element is placed.
+     * @param string $element_name
+     *            the element id.
+     *
+     * @return int|string|null
+     *            the element id.
+     */
+    public static function getElementIdByName($parent_type, $element_name)
+    {
+        return isset(self::getMap()['elementsByName'][$parent_type][$element_name]) ? self::getMap()['elementsByName'][$parent_type][$element_name] : null;
+    }
+
+    /**
+     * Returns the title of an element.
+     *
+     * @param string $parent_type
+     *            the type where this element is placed.
+     * @param string|int $element_id
+     *            the element id.
+     *
+     * @return string|null
+     *            the element title.
+     */
+    public static function getElementTitle($parent_type, $element_id)
+    {
+        return isset(self::getMap()['elements'][$parent_type][$element_id]['title']) ? self::getMap()['elements'][$parent_type][$element_id]['title'] : null;
+    }
+
+    /**
      * Returns the TAG name.
      *
      * @param int $ifd_id

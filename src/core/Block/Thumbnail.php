@@ -8,7 +8,6 @@ use ExifEye\core\DataWindowException;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
-use ExifEye\core\JpegMarker;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -85,7 +84,7 @@ class Thumbnail extends BlockBase
             $dataxx = $data_window->getClone($offset, $length);
             $size = $dataxx->getSize();
             // Now move backwards until we find the EOI JPEG marker.
-            while ($dataxx->getByte($size - 2) != 0xFF || $dataxx->getByte($size - 1) != JpegMarker::EOI) {
+            while ($dataxx->getByte($size - 2) != 0xFF || $dataxx->getByte($size - 1) != Spec::getElementIdByName('jpeg', 'EOI')) {
                 $size --;
             }
             if ($size != $dataxx->getSize()) {

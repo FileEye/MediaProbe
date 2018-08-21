@@ -128,6 +128,7 @@ DATA;
         // 'elements' entry.
         foreach ($input['elements'] as $id => $element) {
             $this->map['elements'][$input['type']][$id] = $element;
+            $this->map['elementsByName'][$input['type']][$element['name']] = $id;
         }
     }
 

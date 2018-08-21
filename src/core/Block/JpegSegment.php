@@ -7,7 +7,6 @@ use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
-use ExifEye\core\JpegMarker;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -28,9 +27,9 @@ class JpegSegment extends BlockBase
     {
         parent::__construct($jpeg, $reference);
         $this->setAttribute('id', $id);
-        $name = JpegMarker::getName($id);
+        $name = Spec::getElementName($jpeg->getType(), $id);
         $this->setAttribute('name', $name);
-        $this->debug('{name} segment - {desc}', ['name' => $name, 'desc' => JpegMarker::getDescription($id)]);
+        $this->debug('{name} segment - {desc}', ['name' => $name, 'desc' => Spec::getElementTitle($jpeg->getType(), $id)]);
     }
 
     /**

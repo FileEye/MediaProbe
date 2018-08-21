@@ -74,7 +74,6 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $r_image = Image::loadFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
         $r_jpeg = $r_image->getElement("jpeg");
 
-
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $r_jpeg->getElement("jpegSegment/exif"));
 
         $tiff = $r_jpeg->getElement("jpegSegment/exif/tiff");

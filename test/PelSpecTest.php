@@ -6,6 +6,7 @@ use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\IfdIndexShort;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
@@ -236,5 +237,35 @@ class PelSpecTest extends ExifEyeTestCaseBase
               'Directly photographed', 'ExifEye\core\Entry\ExifSceneType', 'Exif', 'SceneType', ["\x01"],
           ],
         ];
+    }
+
+    public function testJpegSegmentIds()
+    {
+        $this->assertEquals(0xC0, Spec::getElementIdByName('jpeg', 'SOF0'));
+        $this->assertEquals(0xD3, Spec::getElementIdByName('jpeg', 'RST3'));
+        $this->assertEquals(0xE3, Spec::getElementIdByName('jpeg', 'APP3'));
+        $this->assertEquals(0xFB, Spec::getElementIdByName('jpeg', 'JPG11'));
+        $this->assertEquals(0xD8, Spec::getElementIdByName('jpeg', 'SOI'));
+        $this->assertEquals(0xD9, Spec::getElementIdByName('jpeg', 'EOI'));
+        $this->assertEquals(0xDA, Spec::getElementIdByName('jpeg', 'SOS'));
+        $this->assertEquals(null, Spec::getElementIdByName('jpeg', 'missing'));
+    }
+
+    public function testJpegSegmentNames()
+    {
+        $this->assertEquals('SOF0', Spec::getElementName('jpeg', 0xC0));
+        $this->assertEquals('RST3', Spec::getElementName('jpeg', 0xD3));
+        $this->assertEquals('APP3', Spec::getElementName('jpeg', 0xE3));
+        $this->assertEquals('JPG11', Spec::getElementName('jpeg', 0xFB));
+        $this->assertEquals(null, Spec::getElementName('jpeg', 100));
+    }
+
+    public function testJpegSegmentTitles()
+    {
+        $this->assertEquals('Encoding (baseline)', Spec::getElementTitle('jpeg', 0xC0));
+        $this->assertEquals(ExifEye::fmt('Restart %d', 3), Spec::getElementTitle('jpeg', 0xD3));
+        $this->assertEquals(ExifEye::fmt('Application segment %d', 3), Spec::getElementTitle('jpeg', 0xE3));
+        $this->assertEquals(ExifEye::fmt('Extension %d', 11), Spec::getElementTitle('jpeg', 0xFB));
+        $this->assertEquals(null, Spec::getElementTitle('jpeg', 100));
     }
 }
