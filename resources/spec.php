@@ -5447,4 +5447,392 @@ return array (
     'Apple' => 2,
     'Canon' => 6,
   ),
+  'types' =>
+  array (
+    'jpeg' => 'ExifEye\\core\\Block\\Jpeg',
+  ),
+  'elements' =>
+  array (
+    'jpeg' =>
+    array (
+      192 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF0',
+        'title' => 'Encoding (baseline)',
+      ),
+      193 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF1',
+        'title' => 'Encoding (extended sequential)',
+      ),
+      194 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF2',
+        'title' => 'Encoding (progressive)',
+      ),
+      195 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF3',
+        'title' => 'Encoding (lossless)',
+      ),
+      196 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'DHT',
+        'title' => 'Define Huffman table',
+      ),
+      197 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF5',
+        'title' => 'Encoding (differential sequential)',
+      ),
+      198 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF6',
+        'title' => 'Encoding (differential progressive)',
+      ),
+      199 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF7',
+        'title' => 'Encoding (differential lossless)',
+      ),
+      200 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG',
+        'title' => 'Extension',
+      ),
+      201 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF9',
+        'title' => 'Encoding (extended sequential, arithmetic)',
+      ),
+      202 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF10',
+        'title' => 'Encoding (progressive, arithmetic)',
+      ),
+      203 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF11',
+        'title' => 'Encoding (lossless, arithmetic)',
+      ),
+      204 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'DAC',
+        'title' => 'Define arithmetic coding conditioning',
+      ),
+      205 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF13',
+        'title' => 'Encoding (differential sequential, arithmetic)',
+      ),
+      206 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF14',
+        'title' => 'Encoding (differential progressive, arithmetic)',
+      ),
+      207 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOF15',
+        'title' => 'Encoding (differential lossless, arithmetic)',
+      ),
+      208 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST0',
+        'title' => 'Restart 0',
+      ),
+      209 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST1',
+        'title' => 'Restart 1',
+      ),
+      210 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST2',
+        'title' => 'Restart 2',
+      ),
+      211 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST3',
+        'title' => 'Restart 3',
+      ),
+      212 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST4',
+        'title' => 'Restart 4',
+      ),
+      213 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST5',
+        'title' => 'Restart 5',
+      ),
+      214 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST6',
+        'title' => 'Restart 6',
+      ),
+      215 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'RST7',
+        'title' => 'Restart 7',
+      ),
+      216 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOI',
+        'title' => 'Start of image',
+      ),
+      217 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'EOI',
+        'title' => 'End of image',
+      ),
+      218 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'SOS',
+        'title' => 'Start of scan',
+      ),
+      219 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'DQT',
+        'title' => 'Define quantization table',
+      ),
+      220 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'DNL',
+        'title' => 'Define number of lines',
+      ),
+      221 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'DRI',
+        'title' => 'Define restart interval',
+      ),
+      222 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'DHP',
+        'title' => 'Define hierarchical progression',
+      ),
+      223 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'EXP',
+        'title' => 'Expand reference component',
+      ),
+      224 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP0',
+        'title' => 'Application segment 0',
+      ),
+      225 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP1',
+        'title' => 'Application segment 1',
+      ),
+      226 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP2',
+        'title' => 'Application segment 2',
+      ),
+      227 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP3',
+        'title' => 'Application segment 3',
+      ),
+      228 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP4',
+        'title' => 'Application segment 4',
+      ),
+      229 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP5',
+        'title' => 'Application segment 5',
+      ),
+      230 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP6',
+        'title' => 'Application segment 6',
+      ),
+      231 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP7',
+        'title' => 'Application segment 7',
+      ),
+      232 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP8',
+        'title' => 'Application segment 8',
+      ),
+      233 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP9',
+        'title' => 'Application segment 9',
+      ),
+      234 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP10',
+        'title' => 'Application segment 10',
+      ),
+      235 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP11',
+        'title' => 'Application segment 11',
+      ),
+      236 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP12',
+        'title' => 'Application segment 12',
+      ),
+      237 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP13',
+        'title' => 'Application segment 13',
+      ),
+      238 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP14',
+        'title' => 'Application segment 14',
+      ),
+      239 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'APP15',
+        'title' => 'Application segment 5',
+      ),
+      240 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG0',
+        'title' => 'Extension 0',
+      ),
+      241 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG1',
+        'title' => 'Extension 1',
+      ),
+      242 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG2',
+        'title' => 'Extension 2',
+      ),
+      243 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG3',
+        'title' => 'Extension 3',
+      ),
+      244 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG4',
+        'title' => 'Extension 4',
+      ),
+      245 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG5',
+        'title' => 'Extension 5',
+      ),
+      246 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG6',
+        'title' => 'Extension 6',
+      ),
+      247 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG7',
+        'title' => 'Extension 7',
+      ),
+      248 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG8',
+        'title' => 'Extension 8',
+      ),
+      249 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG9',
+        'title' => 'Extension 9',
+      ),
+      250 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG10',
+        'title' => 'Extension 10',
+      ),
+      251 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG11',
+        'title' => 'Extension 11',
+      ),
+      252 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG12',
+        'title' => 'Extension 12',
+      ),
+      253 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'JPG13',
+        'title' => 'Extension 13',
+      ),
+      254 =>
+      array (
+        'type' => 'jpegSegment',
+        'name' => 'COM',
+        'title' => 'Comment',
+      ),
+    ),
+  ),
 );

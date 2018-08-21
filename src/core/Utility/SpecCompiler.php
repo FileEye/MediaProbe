@@ -69,12 +69,16 @@ class SpecCompiler
      */
     public function compile($yamlDirectory, $resourcesDirectory)
     {
-        $files = $this->finder->files()->in($yamlDirectory)->name('ifd*.yaml');
+        $files = $this->finder->files()->in($yamlDirectory)->name('*.yaml');
 
         // Process the files. Each file corresponds to an IFD specification.
         foreach ($files as $file) {
             $ifd = Yaml::parse($file->getContents());
-            $this->mapIfd($ifd, $file);
+            if (strpos($file->getBasename(), 'ifd_') === 0) {
+                $this->mapIfd($ifd, $file);
+            } else {
+                $this->mapElementType($ifd, $file);
+            }
         }
 
         // Re-process the IFDs and TAGs for any task needing the entire
@@ -106,6 +110,25 @@ DATA;
         $data .= ' ';
         $data .= preg_replace('/\s+$/m', '', var_export($this->map, true)) . ';';
         $this->fs->dumpFile($resourcesDirectory . '/spec.php', $data);
+    }
+
+    /**
+     * Processes an element type into the compiled map.
+     *
+     * @param array $input
+     *            the array from the specification file.
+     * @param SplFileInfo $file
+     *            the YAML specification file being processed.
+     */
+    protected function mapElementType(array $input, SplFileInfo $file)
+    {
+        // 'types' entry.
+        $this->map['types'][$input['type']] = $input['class'];
+
+        // 'elements' entry.
+        foreach ($input['elements'] as $id => $element) {
+            $this->map['elements'][$input['type']][$id] = $element;
+        }
     }
 
     /**
