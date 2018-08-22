@@ -1,4 +1,5 @@
 type: jpeg
+title: JPEG image
 class: ExifEye\core\Block\Jpeg
 elements:
     0xC0:
@@ -135,8 +136,8 @@ elements:
         title: 'Application segment 0'
     0xE1:
         # When a JPEG image contains Exif data, the data will normally be
-        # stored in this section.
-        type: jpegSegment
+        # stored in this segment.
+        class: ExifEye\core\Block\JpegSegmentApp1
         name: APP1
         title: 'Application segment 1'
     0xE2:
@@ -252,6 +253,6 @@ elements:
         name: JPG13
         title: 'Extension 13'
     0xFE:
-        type: jpegSegment
+        class: ExifEye\core\Block\JpegSegmentCom
         name: COM
         title: 'Comment'

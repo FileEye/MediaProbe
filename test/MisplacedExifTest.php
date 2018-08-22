@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Image;
 use ExifEye\core\Block\Exif;
-use ExifEye\core\Block\JpegSegment;
+use ExifEye\core\Block\JpegSegmentApp1;
 use ExifEye\core\Block\Jpeg;
 
 class MisplacedExifTest extends ExifEyeTestCaseBase
@@ -24,7 +24,7 @@ class MisplacedExifTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $app1[1]->getElement("exif"));
 
         // Add a new APP1 segment.
-        $app1_segment = new JpegSegment(0xE1, $jpeg);
+        $app1_segment = new JpegSegmentApp1(0xE1, $jpeg);
         $newExif = new Exif($app1_segment);
 
         // Ensure new APP1 segment is set to correct position among segments.

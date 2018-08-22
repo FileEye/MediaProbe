@@ -4,7 +4,7 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Block\JpegSegment;
+use ExifEye\core\Block\JpegSegmentApp1;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Core\Ascii;
@@ -46,7 +46,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $com_segment = $jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $app1_segment = new JpegSegment(0xE1, $jpeg, $com_segment);
+        $app1_segment = new JpegSegmentApp1(0xE1, $jpeg, $com_segment);
 
         $exif = new Exif($app1_segment);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));

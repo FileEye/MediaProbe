@@ -5,7 +5,7 @@ namespace ExifEye\Test\core;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Block\JpegSegment;
+use ExifEye\core\Block\JpegSegmentApp1;
 use ExifEye\core\Image;
 
 class GH21Test extends ExifEyeTestCaseBase
@@ -61,7 +61,7 @@ class GH21Test extends ExifEyeTestCaseBase
         $out_com_segment = $out_jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $out_app1_segment = new JpegSegment(0xE1, $out_jpeg, $out_com_segment);
+        $out_app1_segment = new JpegSegmentApp1(0xE1, $out_jpeg, $out_com_segment);
 
         // Add the EXIF block to the APP1 segment.
         $exif_block = new Exif($out_app1_segment);

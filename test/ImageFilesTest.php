@@ -68,7 +68,9 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         if ($element instanceof EntryInterface) {
             $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
             $this->assertEquals($expected['format'], Format::getName($element->getFormat()), $element->getContextPath());
-            $this->assertEquals(unserialize(base64_decode($expected['value'])), $element->getValue(), $element->getContextPath());
+            if (isset($expected['value'])) {
+                $this->assertEquals(unserialize(base64_decode($expected['value'])), $element->getValue(), $element->getContextPath());
+            }
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
         }
 

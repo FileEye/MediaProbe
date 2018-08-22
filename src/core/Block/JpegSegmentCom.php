@@ -7,24 +7,10 @@ use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
- * Class representing JPEG comments.
+ * Class representing a JPEG comment segment.
  */
-class JpegComment extends BlockBase
+class JpegSegmentCom extends JpegSegmentBase
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $type = 'jpegComment';
-
-    /**
-     * Constructs a JpegComment block object.
-     */
-    public function __construct(JpegSegment $parent)
-    {
-        parent::__construct($parent);
-        $this->hasSpecification = false;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -32,9 +18,10 @@ class JpegComment extends BlockBase
     {
         // Set the Comments's entry.
         $entry = new Ascii($this, [$data_window->getBytes()]);
-        $this->debug("Text: {text}", [
+        $entry->debug("Text: {text}", [
             'text' => $entry->toString(),
         ]);
+        return $this;
     }
 
     /**

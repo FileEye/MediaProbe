@@ -72,6 +72,122 @@ class Spec
     }
 
     /**
+     * Returns the handling class of a type.
+     *
+     * @param string $type
+     *            the type.
+     *
+     * @return string|null
+     *            the element handling class.
+     */
+    public static function getTypeHandlingClass($type)
+    {
+        return isset(self::getMap()['types'][$type]) ? self::getMap()['types'][$type] : null;
+    }
+
+    /**
+     * Returns the element ids supported by a type.
+     *
+     * @param string $type
+     *            the type.
+     *
+     * @return array
+     *            an simple array, with values the element ids supported by
+     *            the type.
+     */
+    public static function getTypeSupportedElementIds($type)
+    {
+        return array_keys(self::getMap()['elements'][$type]);
+    }
+
+    /**
+     * Returns the type of an element.
+     *
+     * @param string $type
+     *            the type where this element is placed.
+     * @param string|int $element_id
+     *            the element id.
+     *
+     * @return string|null
+     *            the element type.
+     */
+    public static function getElementType($type, $element_id)
+    {
+        return isset(self::getMap()['elements'][$type][$element_id]['type']) ? self::getMap()['elements'][$type][$element_id]['type'] : null;
+    }
+
+    /**
+     * Returns the name of an element.
+     *
+     * @param string $type
+     *            the type where this element is placed.
+     * @param string|int $element_id
+     *            the element id.
+     *
+     * @return string|null
+     *            the element name.
+     */
+    public static function getElementName($type, $element_id)
+    {
+        return isset(self::getMap()['elements'][$type][$element_id]['name']) ? self::getMap()['elements'][$type][$element_id]['name'] : null;
+    }
+
+    /**
+     * Returns the id of an element given its name.
+     *
+     * @param string $type
+     *            the type where this element is placed.
+     * @param string $element_name
+     *            the element id.
+     *
+     * @return int|string|null
+     *            the element id.
+     */
+    public static function getElementIdByName($type, $element_name)
+    {
+        return isset(self::getMap()['elementsByName'][$type][$element_name]) ? self::getMap()['elementsByName'][$type][$element_name] : null;
+    }
+
+    /**
+     * Returns the title of an element.
+     *
+     * @param string $type
+     *            the type where this element is placed.
+     * @param string|int $element_id
+     *            the element id.
+     *
+     * @return string|null
+     *            the element title.
+     */
+    public static function getElementTitle($type, $element_id)
+    {
+        return isset(self::getMap()['elements'][$type][$element_id]['title']) ? self::getMap()['elements'][$type][$element_id]['title'] : null;
+    }
+
+    /**
+     * Returns the handling class of an element.
+     *
+     * @param string $type
+     *            the type where this element is placed.
+     * @param string|int $element_id
+     *            the element id.
+     *
+     * @return string|null
+     *            the element handling class.
+     */
+    public static function getElementHandlingClass($type, $element_id)
+    {
+        if (isset(self::getMap()['elements'][$type][$element_id]['class'])) {
+            return self::getMap()['elements'][$type][$element_id]['class'];
+        }
+        $element_type = self::getElementType($type, $element_id);
+        if ($element_type !== null) {
+            return self::getTypeHandlingClass($element_type);
+        }
+        return null;
+    }
+
+    /**
      * Returns the IFD types in the specification.
      *
      * @return array
@@ -203,69 +319,6 @@ class Spec
         $xx_block_id = self::getIfdIdByType($block->getAttribute('name'));
 
         return self::getMap()['ifdPostLoadCallbacks'][$xx_block_id];
-    }
-
-    /**
-     * Returns the element ids supported by a type.
-     *
-     * @param string $type
-     *            the type.
-     *
-     * @return array
-     *            an simple array, with values the element ids supported by
-     *            the type.
-     */
-    public static function getTypeSupportedElementIds($type)
-    {
-        return array_keys(self::getMap()['elements'][$type]);
-    }
-
-    /**
-     * Returns the name of an element.
-     *
-     * @param string $parent_type
-     *            the type where this element is placed.
-     * @param string|int $element_id
-     *            the element id.
-     *
-     * @return string|null
-     *            the element name.
-     */
-    public static function getElementName($parent_type, $element_id)
-    {
-        return isset(self::getMap()['elements'][$parent_type][$element_id]['name']) ? self::getMap()['elements'][$parent_type][$element_id]['name'] : null;
-    }
-
-    /**
-     * Returns the id of an element given its name.
-     *
-     * @param string $parent_type
-     *            the type where this element is placed.
-     * @param string $element_name
-     *            the element id.
-     *
-     * @return int|string|null
-     *            the element id.
-     */
-    public static function getElementIdByName($parent_type, $element_name)
-    {
-        return isset(self::getMap()['elementsByName'][$parent_type][$element_name]) ? self::getMap()['elementsByName'][$parent_type][$element_name] : null;
-    }
-
-    /**
-     * Returns the title of an element.
-     *
-     * @param string $parent_type
-     *            the type where this element is placed.
-     * @param string|int $element_id
-     *            the element id.
-     *
-     * @return string|null
-     *            the element title.
-     */
-    public static function getElementTitle($parent_type, $element_id)
-    {
-        return isset(self::getMap()['elements'][$parent_type][$element_id]['title']) ? self::getMap()['elements'][$parent_type][$element_id]['title'] : null;
     }
 
     /**

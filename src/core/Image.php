@@ -173,15 +173,7 @@ class Image extends BlockBase
     {
         $image_handler = new $this->imageClass($this);
         $image_handler->loadFromData($data_window);
-        return;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
-    {
-        return $this->getElement('*')->toBytes();
+        return $this;
     }
 
     /**

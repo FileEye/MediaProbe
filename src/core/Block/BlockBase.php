@@ -5,6 +5,7 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ElementBase;
 use ExifEye\core\Entry\Core\EntryInterface;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class representing an Exif TAG.
@@ -42,6 +43,18 @@ abstract class BlockBase extends ElementBase
      * @returns BlockBase
      */
     abstract public function loadFromData(DataWindow $data_window, $offset = 0, array $options = []);
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
+    {
+        $bytes = '';
+        foreach ($this->getMultipleElements("*") as $sub) {
+            $bytes .= $sub->toBytes();
+        }
+        return $bytes;
+    }
 
     /**
      * {@inheritdoc}

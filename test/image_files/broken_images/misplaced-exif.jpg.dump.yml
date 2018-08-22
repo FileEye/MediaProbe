@@ -25,26 +25,32 @@ elements:
                             id: '224'
                             name: APP0
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:224:APP0/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:224:APP0/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 14
+                                        text: '14 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:225:APP1'
-                            class: ExifEye\core\Block\JpegSegment
+                            class: ExifEye\core\Block\JpegSegmentApp1
                             valid: true
                             id: '225'
                             name: APP1
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:225:APP1/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:225:APP1/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 454
+                                        text: '454 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:225:APP1'
-                            class: ExifEye\core\Block\JpegSegment
+                            class: ExifEye\core\Block\JpegSegmentApp1
                             valid: true
                             id: '225'
                             name: APP1
@@ -262,27 +268,21 @@ elements:
                                                                                         text: '1457 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:254:COM'
-                            class: ExifEye\core\Block\JpegSegment
+                            class: ExifEye\core\Block\JpegSegmentCom
                             valid: true
                             id: '254'
                             name: COM
                             elements:
-                                jpegComment:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:254:COM/jpegComment'
-                                        class: ExifEye\core\Block\JpegComment
+                                        path: '/image/jpeg/jpegSegment:254:COM/entry'
+                                        class: ExifEye\core\Entry\Core\Ascii
                                         valid: true
-                                        elements:
-                                            entry:
-                                                -
-                                                    path: '/image/jpeg/jpegSegment:254:COM/jpegComment/entry'
-                                                    class: ExifEye\core\Entry\Core\Ascii
-                                                    valid: true
-                                                    format: Ascii
-                                                    components: 18
-                                                    value: czoxNzoiQ3JlYXRlZCB3aXRoIEdJTVAiOw==
-                                                    clear_value: 's:17:"Created with GIMP";'
-                                                    text: 'Created with GIMP'
+                                        format: Ascii
+                                        components: 18
+                                        value: czoxNzoiQ3JlYXRlZCB3aXRoIEdJTVAiOw==
+                                        clear_value: 's:17:"Created with GIMP";'
+                                        text: 'Created with GIMP'
                         -
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
@@ -290,11 +290,14 @@ elements:
                             id: '219'
                             name: DQT
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:219:DQT/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:219:DQT/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 65
+                                        text: '65 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
@@ -302,11 +305,14 @@ elements:
                             id: '219'
                             name: DQT
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:219:DQT/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:219:DQT/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 65
+                                        text: '65 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:194:SOF2'
                             class: ExifEye\core\Block\JpegSegment
@@ -314,11 +320,14 @@ elements:
                             id: '194'
                             name: SOF2
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:194:SOF2/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:194:SOF2/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 15
+                                        text: '15 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
@@ -326,11 +335,14 @@ elements:
                             id: '196'
                             name: DHT
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:196:DHT/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:196:DHT/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 24
+                                        text: '24 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
@@ -338,11 +350,14 @@ elements:
                             id: '196'
                             name: DHT
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:196:DHT/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:196:DHT/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 18
+                                        text: '18 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:218:SOS'
                             class: ExifEye\core\Block\JpegSegment
@@ -350,11 +365,14 @@ elements:
                             id: '218'
                             name: SOS
                             elements:
-                                jpegContent:
+                                entry:
                                     -
-                                        path: '/image/jpeg/jpegSegment:218:SOS/jpegContent'
-                                        class: ExifEye\core\Block\JpegContent
+                                        path: '/image/jpeg/jpegSegment:218:SOS/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
+                                        format: Undefined
+                                        components: 10
+                                        text: '10 bytes of data'
                         -
                             path: '/image/jpeg/jpegSegment:217:EOI'
                             class: ExifEye\core\Block\JpegSegment

@@ -26,7 +26,7 @@ class Exif extends BlockBase
     /**
      * Construct a new Exif object.
      */
-    public function __construct(JpegSegment $parent_block)
+    public function __construct(JpegSegmentApp1 $parent_block)
     {
         parent::__construct($parent_block);
     }

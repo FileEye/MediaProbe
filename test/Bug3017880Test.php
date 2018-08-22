@@ -29,7 +29,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             // $jpeg->clearExif();
 
             if ($exif === null) {
-                $app1_segment_mock = $this->getMockBuilder('ExifEye\core\Block\JpegSegment')
+                $app1_segment_mock = $this->getMockBuilder('ExifEye\core\Block\JpegSegmentApp1')
                     ->disableOriginalConstructor()
                     ->getMock();
 
