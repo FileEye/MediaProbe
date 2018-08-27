@@ -9,16 +9,4 @@ namespace ExifEye\core\Block;
  */
 class JpegSegment extends JpegSegmentBase
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function toDumpArray()
-    {
-        $dump = parent::toDumpArray();
-
-        unset($dump['elements']['entry'][0]['value']);
-        unset($dump['elements']['entry'][0]['clear_value']);
-
-        return $dump;
-    }
 }

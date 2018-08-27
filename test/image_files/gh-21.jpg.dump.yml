@@ -1,24 +1,29 @@
 fileName: gh-21.jpg
 mimeType: image/jpeg
+fileContentHash: 3071b8c9ad96b0ef3c7906f2a09a8b2238d0d8318f68bf7573ec6424f3d1fc34
 elements:
+    type: image
     path: /image
     class: ExifEye\core\Image
     valid: true
     elements:
         jpeg:
             -
+                type: jpeg
                 path: /image/jpeg
                 class: ExifEye\core\Block\Jpeg
                 valid: true
                 elements:
                     jpegSegment:
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:216:SOI'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
                             id: '216'
                             name: SOI
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:224:APP0'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -27,13 +32,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:224:APP0/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 16
+                                        bytesHash: 561b0b9f969d16c5d3a62db01df610f0fbacd33315eee2e2f3b7acf61817f277
                                         text: '16 bytes of data [ 00 10 4A 46 49 46 ... 00 48 00 48 00 00 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:225:APP1'
                             class: ExifEye\core\Block\JpegSegmentApp1
                             valid: true
@@ -42,18 +50,21 @@ elements:
                             elements:
                                 exif:
                                     -
+                                        type: exif
                                         path: '/image/jpeg/jpegSegment:225:APP1/exif'
                                         class: ExifEye\core\Block\Exif
                                         valid: true
                                         elements:
                                             tiff:
                                                 -
+                                                    type: tiff
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
                                                     class: ExifEye\core\Block\Tiff
                                                     valid: true
                                                     elements:
                                                         ifd:
                                                             -
+                                                                type: ifd
                                                                 path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
                                                                 class: ExifEye\core\Block\Ifd
                                                                 valid: true
@@ -61,6 +72,7 @@ elements:
                                                                 elements:
                                                                     tag:
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -69,15 +81,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject/entry'
                                                                                         class: ExifEye\core\Entry\WindowsString
                                                                                         valid: true
                                                                                         format: Byte
                                                                                         components: 34
-                                                                                        value: YToyOntpOjA7czoyNzoiw4/DsMOlw6LDpcOkLCDDrMOlw6TDosOlw6QhIjtpOjE7czozMjoizwDwAOUA4gDlAOQALAAgAOwA5QDkAOIA5QDkACEAAAAiO30=
-                                                                                        clear_value: !!binary YToyOntpOjA7czoyNzoiw4/DsMOlw6LDpcOkLCDDrMOlw6TDosOlw6QhIjtpOjE7czozMjoizwDwAOUA4gDlAOQALAAgAOwA5QDkAOIA5QDkACEAAAAiO30=
+                                                                                        bytesHash: 418784b174d5d00941270b2ab2b17844adf62d86cd145e478e4399b30a779e94
                                                                                         text: 'Ïðåâåä, ìåäâåä!'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:254:COM'
                             class: ExifEye\core\Block\JpegSegmentCom
                             valid: true
@@ -86,15 +99,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:254:COM/entry'
                                         class: ExifEye\core\Entry\Core\Ascii
                                         valid: true
                                         format: Ascii
                                         components: 18
-                                        value: czoxNzoiQ3JlYXRlZCB3aXRoIEdJTVAiOw==
-                                        clear_value: 's:17:"Created with GIMP";'
+                                        bytesHash: 13b9871a286d9d10af675161201c67198c4db756b96cedbfe944be8aa623416d
                                         text: 'Created with GIMP'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -103,13 +117,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:219:DQT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 67
+                                        bytesHash: 22cfd38c30070d9a445a1a97fc720700b1af4033e84411c276ea0a74829cadd7
                                         text: '67 bytes of data [ 00 43 00 01 01 01 ... 01 01 01 01 01 01 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -118,13 +135,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:219:DQT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 67
+                                        bytesHash: 53bc94543f9e554e5b1347f86f5fc2f850e4c1ef9d0b8030e42874440f97b29e
                                         text: '67 bytes of data [ 00 43 01 01 01 01 ... 01 01 01 01 01 01 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:192:SOF0'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -133,13 +153,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:192:SOF0/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 17
+                                        bytesHash: efef0053b02efd1aa7a04e255e9bc82efccb57417e7eea943975198d838c0fe4
                                         text: '17 bytes of data [ 00 11 08 02 58 02 ... 02 11 01 03 11 01 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -148,13 +171,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 31
+                                        bytesHash: 8f4c896f59b6283a5100412e3f0b69297291b0c68a87f22d096d8fd99905ec29
                                         text: '31 bytes of data [ 00 1F 00 01 00 01 ... 04 0A 02 03 0B 01 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -163,13 +189,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 85
+                                        bytesHash: 6bdd78c0bf98a1639a690b485e63465d673fb8dbe0feaea5a911f16b6208b9ca
                                         text: '85 bytes of data [ 00 55 10 00 02 01 ... 35 3A 44 75 A1 C1 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -178,13 +207,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 29
+                                        bytesHash: acd9a92fc2c4b69de1cade1a8c4f5b5815c6bd3be7de0450fbd5636f8f030964
                                         text: '29 bytes of data [ 00 1D 01 01 00 01 ... 06 07 08 02 01 09 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -193,13 +225,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 68
+                                        bytesHash: 281a4eeb0c540d765cb1647f7611631d34e8a2c82146410c06a46ce03922ee77
                                         text: '68 bytes of data [ 00 44 11 00 02 02 ... E1 82 F1 36 63 92 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:218:SOS'
                             class: ExifEye\core\Block\JpegSegmentSos
                             valid: true
@@ -208,13 +243,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:218:SOS/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 119243
+                                        bytesHash: 3f49bb2ec77efba7b0f7ee85dc6579a0f7145bf66f1c04d0eedfb8161cca15db
                                         text: '119243 bytes of data [ 00 0C 03 01 00 02 ... 8A 44 52 22 91 3F ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:217:EOI'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true

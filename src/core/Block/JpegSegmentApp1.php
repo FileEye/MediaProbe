@@ -59,18 +59,4 @@ class JpegSegmentApp1 extends JpegSegmentBase
 
         return parent::toBytes();
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toDumpArray()
-    {
-        $dump = parent::toDumpArray();
-
-        // xx only if not exif
-        unset($dump['elements']['entry'][0]['value']);
-        unset($dump['elements']['entry'][0]['clear_value']);
-
-        return $dump;
-    }
 }

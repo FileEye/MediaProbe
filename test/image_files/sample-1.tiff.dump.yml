@@ -1,18 +1,22 @@
 fileName: sample-1.tiff
 mimeType: image/tiff
+fileContentHash: 26f4b11c45ad3e56a530d03967ff4627892b3264183b85fefba194ff1fe3e08e
 elements:
+    type: image
     path: /image
     class: ExifEye\core\Image
     valid: true
     elements:
         tiff:
             -
+                type: tiff
                 path: /image/tiff
                 class: ExifEye\core\Block\Tiff
                 valid: true
                 elements:
                     ifd:
                         -
+                            type: ifd
                             path: '/image/tiff/ifd:IFD0'
                             class: ExifEye\core\Block\Ifd
                             valid: true
@@ -20,6 +24,7 @@ elements:
                             elements:
                                 tag:
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:256:ImageWidth'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -28,15 +33,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:256:ImageWidth/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aToxNzQ7
-                                                    clear_value: 'i:174;'
+                                                    bytesHash: 1421d51105459aa9b26a2c454a4c542cd9b4b21842c842811e95d1b4bfecfa6d
                                                     text: 174
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:257:ImageLength'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -45,15 +51,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:257:ImageLength/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aTozODs=
-                                                    clear_value: 'i:38;'
+                                                    bytesHash: 512f843c7b45913b2109e87cb29cc3857d2dcb48a02d304515e1e5eabd64bd29
                                                     text: 38
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:258:BitsPerSample'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -62,15 +69,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:258:BitsPerSample/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 4
-                                                    value: YTo0OntpOjA7aTo4O2k6MTtpOjg7aToyO2k6ODtpOjM7aTo4O30=
-                                                    clear_value: 'a:4:{i:0;i:8;i:1;i:8;i:2;i:8;i:3;i:8;}'
+                                                    bytesHash: e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196
                                                     text: '8, 8, 8, 8'
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:259:Compression'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -79,15 +87,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:259:Compression/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aTo1Ow==
-                                                    clear_value: 'i:5;'
+                                                    bytesHash: 2921a11f25dadaa24aa79a548e4e81508c2e5e56af2d833d65e2bcce448ce2f5
                                                     text: LZW
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:262:PhotometricInterpretation'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -96,15 +105,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:262:PhotometricInterpretation/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aToyOw==
-                                                    clear_value: 'i:2;'
+                                                    bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                     text: RGB
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:273:StripOffsets'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -113,15 +123,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:273:StripOffsets/entry'
                                                     class: ExifEye\core\Entry\Core\Long
                                                     valid: true
                                                     format: Long
                                                     components: 1
-                                                    value: aTo4Ow==
-                                                    clear_value: 'i:8;'
+                                                    bytesHash: dc765660b06ee03dd16fd7ca5b957e8c805161ac2c4af28c5a100ab2ab432ca1
                                                     text: 8
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:274:Orientation'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -130,15 +141,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:274:Orientation/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aToxOw==
-                                                    clear_value: 'i:1;'
+                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
                                                     text: 'top - left'
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:277:SamplesPerPixel'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -147,15 +159,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:277:SamplesPerPixel/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aTo0Ow==
-                                                    clear_value: 'i:4;'
+                                                    bytesHash: c0ba8a33ac67f44abff5984dfbb6f56c46b880ac2b86e1f23e7fa9c402c53ae7
                                                     text: 4
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:278:RowsPerStrip'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -164,15 +177,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:278:RowsPerStrip/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aTozODs=
-                                                    clear_value: 'i:38;'
+                                                    bytesHash: 512f843c7b45913b2109e87cb29cc3857d2dcb48a02d304515e1e5eabd64bd29
                                                     text: 38
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:279:StripByteCounts'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -181,15 +195,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:279:StripByteCounts/entry'
                                                     class: ExifEye\core\Entry\Core\Long
                                                     valid: true
                                                     format: Long
                                                     components: 1
-                                                    value: aTo2MzkxOw==
-                                                    clear_value: 'i:6391;'
+                                                    bytesHash: 1b852c4d9d6f7537987b9deb5dea4cec200aff1fe3544c1e58f2bab5537a10ed
                                                     text: 6391
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:284:PlanarConfiguration'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -198,15 +213,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:284:PlanarConfiguration/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aToxOw==
-                                                    clear_value: 'i:1;'
+                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
                                                     text: 'chunky format'
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:317:Predictor'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -215,15 +231,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:317:Predictor/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aToyOw==
-                                                    clear_value: 'i:2;'
+                                                    bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                     text: 'Horizontal differencing'
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:338:ExtraSamples'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -232,15 +249,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:338:ExtraSamples/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 1
-                                                    value: aToxOw==
-                                                    clear_value: 'i:1;'
+                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
                                                     text: 'Associated Alpha'
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:339:SampleFormat'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -249,15 +267,16 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:339:SampleFormat/entry'
                                                     class: ExifEye\core\Entry\Core\Short
                                                     valid: true
                                                     format: Short
                                                     components: 4
-                                                    value: YTo0OntpOjA7aToxO2k6MTtpOjE7aToyO2k6MTtpOjM7aToxO30=
-                                                    clear_value: 'a:4:{i:0;i:1;i:1;i:1;i:2;i:1;i:3;i:1;}'
+                                                    bytesHash: efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70
                                                     text: '1, 1, 1, 1'
                                     -
+                                        type: tag
                                         path: '/image/tiff/ifd:IFD0/tag:700:ApplicationNotes'
                                         class: ExifEye\core\Block\Tag
                                         valid: true
@@ -266,12 +285,12 @@ elements:
                                         elements:
                                             entry:
                                                 -
+                                                    type: entry
                                                     path: '/image/tiff/ifd:IFD0/tag:700:ApplicationNotes/entry'
                                                     class: ExifEye\core\Entry\IfdApplicationNotes
                                                     valid: true
                                                     format: Byte
                                                     components: 323
-                                                    value: YTozMjM6e2k6MDtpOjYwO2k6MTtpOjEyMDtpOjI7aTo1ODtpOjM7aToxMjA7aTo0O2k6MTA5O2k6NTtpOjExMjtpOjY7aToxMDk7aTo3O2k6MTAxO2k6ODtpOjExNjtpOjk7aTo5NztpOjEwO2k6MzI7aToxMTtpOjEyMDtpOjEyO2k6MTA5O2k6MTM7aToxMDg7aToxNDtpOjExMDtpOjE1O2k6MTE1O2k6MTY7aTo1ODtpOjE3O2k6MTIwO2k6MTg7aTo2MTtpOjE5O2k6MzQ7aToyMDtpOjk3O2k6MjE7aToxMDA7aToyMjtpOjExMTtpOjIzO2k6OTg7aToyNDtpOjEwMTtpOjI1O2k6NTg7aToyNjtpOjExMDtpOjI3O2k6MTE1O2k6Mjg7aTo1ODtpOjI5O2k6MTA5O2k6MzA7aToxMDE7aTozMTtpOjExNjtpOjMyO2k6OTc7aTozMztpOjQ3O2k6MzQ7aTozNDtpOjM1O2k6MzI7aTozNjtpOjEyMDtpOjM3O2k6NTg7aTozODtpOjEyMDtpOjM5O2k6MTA5O2k6NDA7aToxMTI7aTo0MTtpOjExNjtpOjQyO2k6MTA3O2k6NDM7aTo2MTtpOjQ0O2k6MzQ7aTo0NTtpOjg4O2k6NDY7aTo3NztpOjQ3O2k6ODA7aTo0ODtpOjMyO2k6NDk7aTo2NztpOjUwO2k6MTExO2k6NTE7aToxMTQ7aTo1MjtpOjEwMTtpOjUzO2k6MzI7aTo1NDtpOjUzO2k6NTU7aTo0NjtpOjU2O2k6NDk7aTo1NztpOjQ2O2k6NTg7aTo1MDtpOjU5O2k6MzQ7aTo2MDtpOjYyO2k6NjE7aToxMDtpOjYyO2k6MzI7aTo2MztpOjMyO2k6NjQ7aTozMjtpOjY1O2k6NjA7aTo2NjtpOjExNDtpOjY3O2k6MTAwO2k6Njg7aToxMDI7aTo2OTtpOjU4O2k6NzA7aTo4MjtpOjcxO2k6Njg7aTo3MjtpOjcwO2k6NzM7aTozMjtpOjc0O2k6MTIwO2k6NzU7aToxMDk7aTo3NjtpOjEwODtpOjc3O2k6MTEwO2k6Nzg7aToxMTU7aTo3OTtpOjU4O2k6ODA7aToxMTQ7aTo4MTtpOjEwMDtpOjgyO2k6MTAyO2k6ODM7aTo2MTtpOjg0O2k6MzQ7aTo4NTtpOjEwNDtpOjg2O2k6MTE2O2k6ODc7aToxMTY7aTo4ODtpOjExMjtpOjg5O2k6NTg7aTo5MDtpOjQ3O2k6OTE7aTo0NztpOjkyO2k6MTE5O2k6OTM7aToxMTk7aTo5NDtpOjExOTtpOjk1O2k6NDY7aTo5NjtpOjExOTtpOjk3O2k6NTE7aTo5ODtpOjQ2O2k6OTk7aToxMTE7aToxMDA7aToxMTQ7aToxMDE7aToxMDM7aToxMDI7aTo0NztpOjEwMztpOjQ5O2k6MTA0O2k6NTc7aToxMDU7aTo1NztpOjEwNjtpOjU3O2k6MTA3O2k6NDc7aToxMDg7aTo0ODtpOjEwOTtpOjUwO2k6MTEwO2k6NDc7aToxMTE7aTo1MDtpOjExMjtpOjUwO2k6MTEzO2k6NDU7aToxMTQ7aToxMTQ7aToxMTU7aToxMDA7aToxMTY7aToxMDI7aToxMTc7aTo0NTtpOjExODtpOjExNTtpOjExOTtpOjEyMTtpOjEyMDtpOjExMDtpOjEyMTtpOjExNjtpOjEyMjtpOjk3O2k6MTIzO2k6MTIwO2k6MTI0O2k6NDU7aToxMjU7aToxMTA7aToxMjY7aToxMTU7aToxMjc7aTozNTtpOjEyODtpOjM0O2k6MTI5O2k6NjI7aToxMzA7aToxMDtpOjEzMTtpOjMyO2k6MTMyO2k6MzI7aToxMzM7aTozMjtpOjEzNDtpOjMyO2k6MTM1O2k6MzI7aToxMzY7aTozMjtpOjEzNztpOjYwO2k6MTM4O2k6MTE0O2k6MTM5O2k6MTAwO2k6MTQwO2k6MTAyO2k6MTQxO2k6NTg7aToxNDI7aTo2ODtpOjE0MztpOjEwMTtpOjE0NDtpOjExNTtpOjE0NTtpOjk5O2k6MTQ2O2k6MTE0O2k6MTQ3O2k6MTA1O2k6MTQ4O2k6MTEyO2k6MTQ5O2k6MTE2O2k6MTUwO2k6MTA1O2k6MTUxO2k6MTExO2k6MTUyO2k6MTEwO2k6MTUzO2k6MzI7aToxNTQ7aToxMTQ7aToxNTU7aToxMDA7aToxNTY7aToxMDI7aToxNTc7aTo1ODtpOjE1ODtpOjk3O2k6MTU5O2k6OTg7aToxNjA7aToxMTE7aToxNjE7aToxMTc7aToxNjI7aToxMTY7aToxNjM7aTo2MTtpOjE2NDtpOjM0O2k6MTY1O2k6MzQ7aToxNjY7aToxMDtpOjE2NztpOjMyO2k6MTY4O2k6MzI7aToxNjk7aTozMjtpOjE3MDtpOjMyO2k6MTcxO2k6MzI7aToxNzI7aTozMjtpOjE3MztpOjMyO2k6MTc0O2k6MzI7aToxNzU7aTozMjtpOjE3NjtpOjMyO2k6MTc3O2k6MzI7aToxNzg7aTozMjtpOjE3OTtpOjEyMDtpOjE4MDtpOjEwOTtpOjE4MTtpOjEwODtpOjE4MjtpOjExMDtpOjE4MztpOjExNTtpOjE4NDtpOjU4O2k6MTg1O2k6MTE2O2k6MTg2O2k6MTA1O2k6MTg3O2k6MTAyO2k6MTg4O2k6MTAyO2k6MTg5O2k6NjE7aToxOTA7aTozNDtpOjE5MTtpOjEwNDtpOjE5MjtpOjExNjtpOjE5MztpOjExNjtpOjE5NDtpOjExMjtpOjE5NTtpOjU4O2k6MTk2O2k6NDc7aToxOTc7aTo0NztpOjE5ODtpOjExMDtpOjE5OTtpOjExNTtpOjIwMDtpOjQ2O2k6MjAxO2k6OTc7aToyMDI7aToxMDA7aToyMDM7aToxMTE7aToyMDQ7aTo5ODtpOjIwNTtpOjEwMTtpOjIwNjtpOjQ2O2k6MjA3O2k6OTk7aToyMDg7aToxMTE7aToyMDk7aToxMDk7aToyMTA7aTo0NztpOjIxMTtpOjExNjtpOjIxMjtpOjEwNTtpOjIxMztpOjEwMjtpOjIxNDtpOjEwMjtpOjIxNTtpOjQ3O2k6MjE2O2k6NDk7aToyMTc7aTo0NjtpOjIxODtpOjQ4O2k6MjE5O2k6NDc7aToyMjA7aTozNDtpOjIyMTtpOjYyO2k6MjIyO2k6MTA7aToyMjM7aTozMjtpOjIyNDtpOjMyO2k6MjI1O2k6MzI7aToyMjY7aTozMjtpOjIyNztpOjMyO2k6MjI4O2k6MzI7aToyMjk7aTozMjtpOjIzMDtpOjMyO2k6MjMxO2k6MzI7aToyMzI7aTo2MDtpOjIzMztpOjExNjtpOjIzNDtpOjEwNTtpOjIzNTtpOjEwMjtpOjIzNjtpOjEwMjtpOjIzNztpOjU4O2k6MjM4O2k6Njc7aToyMzk7aToxMTE7aToyNDA7aToxMDk7aToyNDE7aToxMTI7aToyNDI7aToxMTQ7aToyNDM7aToxMDE7aToyNDQ7aToxMTU7aToyNDU7aToxMTU7aToyNDY7aToxMDU7aToyNDc7aToxMTE7aToyNDg7aToxMTA7aToyNDk7aTo2MjtpOjI1MDtpOjUzO2k6MjUxO2k6NjA7aToyNTI7aTo0NztpOjI1MztpOjExNjtpOjI1NDtpOjEwNTtpOjI1NTtpOjEwMjtpOjI1NjtpOjEwMjtpOjI1NztpOjU4O2k6MjU4O2k6Njc7aToyNTk7aToxMTE7aToyNjA7aToxMDk7aToyNjE7aToxMTI7aToyNjI7aToxMTQ7aToyNjM7aToxMDE7aToyNjQ7aToxMTU7aToyNjU7aToxMTU7aToyNjY7aToxMDU7aToyNjc7aToxMTE7aToyNjg7aToxMTA7aToyNjk7aTo2MjtpOjI3MDtpOjEwO2k6MjcxO2k6MzI7aToyNzI7aTozMjtpOjI3MztpOjMyO2k6Mjc0O2k6MzI7aToyNzU7aTozMjtpOjI3NjtpOjMyO2k6Mjc3O2k6NjA7aToyNzg7aTo0NztpOjI3OTtpOjExNDtpOjI4MDtpOjEwMDtpOjI4MTtpOjEwMjtpOjI4MjtpOjU4O2k6MjgzO2k6Njg7aToyODQ7aToxMDE7aToyODU7aToxMTU7aToyODY7aTo5OTtpOjI4NztpOjExNDtpOjI4ODtpOjEwNTtpOjI4OTtpOjExMjtpOjI5MDtpOjExNjtpOjI5MTtpOjEwNTtpOjI5MjtpOjExMTtpOjI5MztpOjExMDtpOjI5NDtpOjYyO2k6Mjk1O2k6MTA7aToyOTY7aTozMjtpOjI5NztpOjMyO2k6Mjk4O2k6MzI7aToyOTk7aTo2MDtpOjMwMDtpOjQ3O2k6MzAxO2k6MTE0O2k6MzAyO2k6MTAwO2k6MzAzO2k6MTAyO2k6MzA0O2k6NTg7aTozMDU7aTo4MjtpOjMwNjtpOjY4O2k6MzA3O2k6NzA7aTozMDg7aTo2MjtpOjMwOTtpOjEwO2k6MzEwO2k6NjA7aTozMTE7aTo0NztpOjMxMjtpOjEyMDtpOjMxMztpOjU4O2k6MzE0O2k6MTIwO2k6MzE1O2k6MTA5O2k6MzE2O2k6MTEyO2k6MzE3O2k6MTA5O2k6MzE4O2k6MTAxO2k6MzE5O2k6MTE2O2k6MzIwO2k6OTc7aTozMjE7aTo2MjtpOjMyMjtpOjEwO30=
-                                                    clear_value: 'a:323:{i:0;i:60;i:1;i:120;i:2;i:58;i:3;i:120;i:4;i:109;i:5;i:112;i:6;i:109;i:7;i:101;i:8;i:116;i:9;i:97;i:10;i:32;i:11;i:120;i:12;i:109;i:13;i:108;i:14;i:110;i:15;i:115;i:16;i:58;i:17;i:120;i:18;i:61;i:19;i:34;i:20;i:97;i:21;i:100;i:22;i:111;i:23;i:98;i:24;i:101;i:25;i:58;i:26;i:110;i:27;i:115;i:28;i:58;i:29;i:109;i:30;i:101;i:31;i:116;i:32;i:97;i:33;i:47;i:34;i:34;i:35;i:32;i:36;i:120;i:37;i:58;i:38;i:120;i:39;i:109;i:40;i:112;i:41;i:116;i:42;i:107;i:43;i:61;i:44;i:34;i:45;i:88;i:46;i:77;i:47;i:80;i:48;i:32;i:49;i:67;i:50;i:111;i:51;i:114;i:52;i:101;i:53;i:32;i:54;i:53;i:55;i:46;i:56;i:49;i:57;i:46;i:58;i:50;i:59;i:34;i:60;i:62;i:61;i:10;i:62;i:32;i:63;i:32;i:64;i:32;i:65;i:60;i:66;i:114;i:67;i:100;i:68;i:102;i:69;i:58;i:70;i:82;i:71;i:68;i:72;i:70;i:73;i:32;i:74;i:120;i:75;i:109;i:76;i:108;i:77;i:110;i:78;i:115;i:79;i:58;i:80;i:114;i:81;i:100;i:82;i:102;i:83;i:61;i:84;i:34;i:85;i:104;i:86;i:116;i:87;i:116;i:88;i:112;i:89;i:58;i:90;i:47;i:91;i:47;i:92;i:119;i:93;i:119;i:94;i:119;i:95;i:46;i:96;i:119;i:97;i:51;i:98;i:46;i:99;i:111;i:100;i:114;i:101;i:103;i:102;i:47;i:103;i:49;i:104;i:57;i:105;i:57;i:106;i:57;i:107;i:47;i:108;i:48;i:109;i:50;i:110;i:47;i:111;i:50;i:112;i:50;i:113;i:45;i:114;i:114;i:115;i:100;i:116;i:102;i:117;i:45;i:118;i:115;i:119;i:121;i:120;i:110;i:121;i:116;i:122;i:97;i:123;i:120;i:124;i:45;i:125;i:110;i:126;i:115;i:127;i:35;i:128;i:34;i:129;i:62;i:130;i:10;i:131;i:32;i:132;i:32;i:133;i:32;i:134;i:32;i:135;i:32;i:136;i:32;i:137;i:60;i:138;i:114;i:139;i:100;i:140;i:102;i:141;i:58;i:142;i:68;i:143;i:101;i:144;i:115;i:145;i:99;i:146;i:114;i:147;i:105;i:148;i:112;i:149;i:116;i:150;i:105;i:151;i:111;i:152;i:110;i:153;i:32;i:154;i:114;i:155;i:100;i:156;i:102;i:157;i:58;i:158;i:97;i:159;i:98;i:160;i:111;i:161;i:117;i:162;i:116;i:163;i:61;i:164;i:34;i:165;i:34;i:166;i:10;i:167;i:32;i:168;i:32;i:169;i:32;i:170;i:32;i:171;i:32;i:172;i:32;i:173;i:32;i:174;i:32;i:175;i:32;i:176;i:32;i:177;i:32;i:178;i:32;i:179;i:120;i:180;i:109;i:181;i:108;i:182;i:110;i:183;i:115;i:184;i:58;i:185;i:116;i:186;i:105;i:187;i:102;i:188;i:102;i:189;i:61;i:190;i:34;i:191;i:104;i:192;i:116;i:193;i:116;i:194;i:112;i:195;i:58;i:196;i:47;i:197;i:47;i:198;i:110;i:199;i:115;i:200;i:46;i:201;i:97;i:202;i:100;i:203;i:111;i:204;i:98;i:205;i:101;i:206;i:46;i:207;i:99;i:208;i:111;i:209;i:109;i:210;i:47;i:211;i:116;i:212;i:105;i:213;i:102;i:214;i:102;i:215;i:47;i:216;i:49;i:217;i:46;i:218;i:48;i:219;i:47;i:220;i:34;i:221;i:62;i:222;i:10;i:223;i:32;i:224;i:32;i:225;i:32;i:226;i:32;i:227;i:32;i:228;i:32;i:229;i:32;i:230;i:32;i:231;i:32;i:232;i:60;i:233;i:116;i:234;i:105;i:235;i:102;i:236;i:102;i:237;i:58;i:238;i:67;i:239;i:111;i:240;i:109;i:241;i:112;i:242;i:114;i:243;i:101;i:244;i:115;i:245;i:115;i:246;i:105;i:247;i:111;i:248;i:110;i:249;i:62;i:250;i:53;i:251;i:60;i:252;i:47;i:253;i:116;i:254;i:105;i:255;i:102;i:256;i:102;i:257;i:58;i:258;i:67;i:259;i:111;i:260;i:109;i:261;i:112;i:262;i:114;i:263;i:101;i:264;i:115;i:265;i:115;i:266;i:105;i:267;i:111;i:268;i:110;i:269;i:62;i:270;i:10;i:271;i:32;i:272;i:32;i:273;i:32;i:274;i:32;i:275;i:32;i:276;i:32;i:277;i:60;i:278;i:47;i:279;i:114;i:280;i:100;i:281;i:102;i:282;i:58;i:283;i:68;i:284;i:101;i:285;i:115;i:286;i:99;i:287;i:114;i:288;i:105;i:289;i:112;i:290;i:116;i:291;i:105;i:292;i:111;i:293;i:110;i:294;i:62;i:295;i:10;i:296;i:32;i:297;i:32;i:298;i:32;i:299;i:60;i:300;i:47;i:301;i:114;i:302;i:100;i:303;i:102;i:304;i:58;i:305;i:82;i:306;i:68;i:307;i:70;i:308;i:62;i:309;i:10;i:310;i:60;i:311;i:47;i:312;i:120;i:313;i:58;i:314;i:120;i:315;i:109;i:316;i:112;i:317;i:109;i:318;i:101;i:319;i:116;i:320;i:97;i:321;i:62;i:322;i:10;}'
+                                                    bytesHash: 395dcc364f390cfa373c4cd4a37d62f10b547d51d24510386c4fc3a3f106d7e2
                                                     text: "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.1.2\">\n   <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n      <rdf:Description rdf:about=\"\"\n            xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\">\n         <tiff:Compression>5</tiff:Compression>\n      </rdf:Description>\n   </rdf:RDF>\n</x:xmpmeta>\n"
 log: {  }

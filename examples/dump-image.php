@@ -101,4 +101,7 @@ if (!isset($err)) {
     print("dump-image: Error while reading image: " . $err . "\n");
 }
 
+// Dump via exif_read_data(). 
+dump(@exif_read_data($file));
+
 exit(0);  // xx decide exit code

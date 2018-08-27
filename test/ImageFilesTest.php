@@ -42,12 +42,14 @@ class ImageFilesTest extends ExifEyeTestCaseBase
      */
     public function testParse($imageDumpFile)
     {
-        $test = Yaml::parse($imageDumpFile->getContents());
+        $test_file_content = $imageDumpFile->getContents();
+
+        $test = Yaml::parse($test_file_content);
 
         $image = Image::loadFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
-//dump(@exif_read_data($imageDumpFile->getPath() . '/' . $test['fileName']));
 
         $this->assertEquals($test['mimeType'], $image->getMimeType());
+//$this->assertEquals($test['fileContentHash'], hash('sha256', $test_file_content));
 
         if (isset($test['elements'])) {
             $this->assertElement($test['elements'], $image);
@@ -58,6 +60,10 @@ class ImageFilesTest extends ExifEyeTestCaseBase
                 $this->assertEquals(count($test['log'][$level]), count($image->dumpLog($level)));
             }
         }
+
+        // Test loading the image to GD; it fails hard in case of errors.
+/*        $gd_resource = imagecreatefromstring($image->toBytes());
+        imagedestroy($gd_resource);*/
     }
 
     protected function assertElement($expected, $element)
@@ -66,10 +72,10 @@ class ImageFilesTest extends ExifEyeTestCaseBase
 
         // Check entry.
         if ($element instanceof EntryInterface) {
-            $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
             $this->assertEquals($expected['format'], Format::getName($element->getFormat()), $element->getContextPath());
-            if (isset($expected['value'])) {
-                $this->assertEquals(unserialize(base64_decode($expected['value'])), $element->getValue(), $element->getContextPath());
+            $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
+            if (isset($expected['bytesHash'])) {
+                $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
             }
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
         }

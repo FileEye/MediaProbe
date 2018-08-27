@@ -3,10 +3,11 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\Ifd;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Spec;
-use ExifEye\core\Block\Ifd;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class used to hold data for MakerNote tags.
@@ -50,6 +51,14 @@ class ExifMakerNote extends Undefined
     public function toString(array $options = [])
     {
         return $this->components . ' bytes MakerNote data';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
+    {
+        return 'xx @todo';
     }
 
     /**

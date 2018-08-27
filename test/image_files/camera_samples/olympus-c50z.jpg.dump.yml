@@ -1,24 +1,29 @@
 fileName: olympus-c50z.jpg
 mimeType: image/jpeg
+fileContentHash: f40982af05e9720eb61350d2129d52be3e7c082e774483469fcfbbb59111ddb0
 elements:
+    type: image
     path: /image
     class: ExifEye\core\Image
     valid: true
     elements:
         jpeg:
             -
+                type: jpeg
                 path: /image/jpeg
                 class: ExifEye\core\Block\Jpeg
                 valid: true
                 elements:
                     jpegSegment:
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:216:SOI'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
                             id: '216'
                             name: SOI
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:224:APP0'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -27,13 +32,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:224:APP0/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 16
+                                        bytesHash: 561b0b9f969d16c5d3a62db01df610f0fbacd33315eee2e2f3b7acf61817f277
                                         text: '16 bytes of data [ 00 10 4A 46 49 46 ... 00 48 00 48 00 00 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:225:APP1'
                             class: ExifEye\core\Block\JpegSegmentApp1
                             valid: true
@@ -42,18 +50,21 @@ elements:
                             elements:
                                 exif:
                                     -
+                                        type: exif
                                         path: '/image/jpeg/jpegSegment:225:APP1/exif'
                                         class: ExifEye\core\Block\Exif
                                         valid: true
                                         elements:
                                             tiff:
                                                 -
+                                                    type: tiff
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
                                                     class: ExifEye\core\Block\Tiff
                                                     valid: true
                                                     elements:
                                                         ifd:
                                                             -
+                                                                type: ifd
                                                                 path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
                                                                 class: ExifEye\core\Block\Ifd
                                                                 valid: true
@@ -61,6 +72,7 @@ elements:
                                                                 elements:
                                                                     tag:
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:270:ImageDescription'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -69,15 +81,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:270:ImageDescription/entry'
                                                                                         class: ExifEye\core\Entry\Core\Ascii
                                                                                         valid: true
                                                                                         format: Ascii
                                                                                         components: 32
-                                                                                        value: czozMToiT0xZTVBVUyBESUdJVEFMIENBTUVSQSAgICAgICAgICI7
-                                                                                        clear_value: 's:31:"OLYMPUS DIGITAL CAMERA         ";'
+                                                                                        bytesHash: 928e8c1456d56c8adacedcd696e1b60caaed1c32ce4e2cbf5ea09a16da7680ad
                                                                                         text: 'OLYMPUS DIGITAL CAMERA         '
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:271:Make'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -86,15 +99,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:271:Make/entry'
                                                                                         class: ExifEye\core\Entry\Core\Ascii
                                                                                         valid: true
                                                                                         format: Ascii
                                                                                         components: 24
-                                                                                        value: czoyMzoiT0xZTVBVUyBPUFRJQ0FMIENPLixMVEQiOw==
-                                                                                        clear_value: 's:23:"OLYMPUS OPTICAL CO.,LTD";'
+                                                                                        bytesHash: 272d754b9539bb25d8b8293224ab2e1a1e88e19ea24cfd5b87708330bb21023d
                                                                                         text: 'OLYMPUS OPTICAL CO.,LTD'
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:272:Model'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -103,15 +117,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:272:Model/entry'
                                                                                         class: ExifEye\core\Entry\Core\Ascii
                                                                                         valid: true
                                                                                         format: Ascii
                                                                                         components: 17
-                                                                                        value: czoxNjoiWC0yLEMtNTBaICAgICAgICI7
-                                                                                        clear_value: 's:16:"X-2,C-50Z       ";'
+                                                                                        bytesHash: 7a7ef66d69f1cef2da8a49a62eb870bf4d3bfffe33c1ad0c5ae43945f0eded3f
                                                                                         text: 'X-2,C-50Z       '
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:274:Orientation'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -120,15 +135,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:274:Orientation/entry'
                                                                                         class: ExifEye\core\Entry\Core\Short
                                                                                         valid: true
                                                                                         format: Short
                                                                                         components: 1
-                                                                                        value: aToxOw==
-                                                                                        clear_value: 'i:1;'
+                                                                                        bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
                                                                                         text: 'top - left'
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:282:XResolution'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -137,15 +153,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:282:XResolution/entry'
                                                                                         class: ExifEye\core\Entry\Core\Rational
                                                                                         valid: true
                                                                                         format: Rational
                                                                                         components: 1
-                                                                                        value: YToyOntpOjA7aToxNDQ7aToxO2k6MTt9
-                                                                                        clear_value: 'a:2:{i:0;i:144;i:1;i:1;}'
+                                                                                        bytesHash: a5f1ad4d4e88c945db9225ce3df9b336860b47f6c2fc3bf0560a1b2961ce85ad
                                                                                         text: 144/1
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:283:YResolution'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -154,15 +171,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:283:YResolution/entry'
                                                                                         class: ExifEye\core\Entry\Core\Rational
                                                                                         valid: true
                                                                                         format: Rational
                                                                                         components: 1
-                                                                                        value: YToyOntpOjA7aToxNDQ7aToxO2k6MTt9
-                                                                                        clear_value: 'a:2:{i:0;i:144;i:1;i:1;}'
+                                                                                        bytesHash: a5f1ad4d4e88c945db9225ce3df9b336860b47f6c2fc3bf0560a1b2961ce85ad
                                                                                         text: 144/1
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:296:ResolutionUnit'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -171,15 +189,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:296:ResolutionUnit/entry'
                                                                                         class: ExifEye\core\Entry\Core\Short
                                                                                         valid: true
                                                                                         format: Short
                                                                                         components: 1
-                                                                                        value: aToyOw==
-                                                                                        clear_value: 'i:2;'
+                                                                                        bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                                                         text: Inch
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -188,15 +207,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software/entry'
                                                                                         class: ExifEye\core\Entry\Core\Ascii
                                                                                         valid: true
                                                                                         format: Ascii
                                                                                         components: 32
-                                                                                        value: czozMToiMjgtMTAxMiAgICAgICAgICAgICAgICAgICAgICAgICI7
-                                                                                        clear_value: 's:31:"28-1012                        ";'
+                                                                                        bytesHash: b7e6ddcabe525d4fc601acd7c4b0c70f760171a6504770b658a5299cadbbb401
                                                                                         text: '28-1012                        '
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:306:DateTime'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -205,15 +225,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:306:DateTime/entry'
                                                                                         class: ExifEye\core\Entry\Time
                                                                                         valid: true
                                                                                         format: Ascii
                                                                                         components: 20
-                                                                                        value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
-                                                                                        clear_value: 's:19:"0000:00:00 00:00:00";'
+                                                                                        bytesHash: a64fe69c067c506f32cfd0a5814529debccd2c88f3b2300a9b92a076d55e5006
                                                                                         text: '0000:00:00 00:00:00'
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:531:YCbCrPositioning'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -222,15 +243,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:531:YCbCrPositioning/entry'
                                                                                         class: ExifEye\core\Entry\Core\Short
                                                                                         valid: true
                                                                                         format: Short
                                                                                         components: 1
-                                                                                        value: aToyOw==
-                                                                                        clear_value: 'i:2;'
+                                                                                        bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                                                         text: co-sited
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:50341:PrintIM'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -239,16 +261,17 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:50341:PrintIM/entry'
                                                                                         class: ExifEye\core\Entry\Core\Undefined
                                                                                         valid: true
                                                                                         format: Undefined
                                                                                         components: 244
-                                                                                        value: czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
-                                                                                        clear_value: !!binary czoyNDQ6IlByaW50SU0AMDI1MAAAFAABABIAEgACAAEAAAADAIgAAAAHAAAAAAAIAAAAAAAJAAAAAAAKAAAAAAALANAAAAAMAAAAAAANAAAAAAAOAOgAAAAAAQEAAAABAf8AAAACAYAAAAADAYAAAAAEAYAAAAAFAYAAAAAGAYAAAAAHAYCAgAAQAYAAAAAJEQAAECcAAAsPAAAQJwAAlwUAABAnAACwCAAAECcAAAEcAAAQJwAAXgIAABAnAACLAAAAECcAAMsDAAAQJwAA5RsAABAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiOw==
+                                                                                        bytesHash: e83f5ef53f48caccccbbb0e93c7631516cb06246d320258a791f2154ec1f5e38
                                                                                         text: '244 bytes of data [ 50 72 69 6E 74 49 ... 00 00 00 00 00 00 ]'
                                                                     ifd:
                                                                         -
+                                                                            type: ifd
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif'
                                                                             class: ExifEye\core\Block\Ifd
                                                                             valid: true
@@ -256,6 +279,7 @@ elements:
                                                                             elements:
                                                                                 tag:
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:33434:ExposureTime'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -264,15 +288,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:33434:ExposureTime/entry'
                                                                                                     class: ExifEye\core\Entry\ExifExposureTime
                                                                                                     valid: true
                                                                                                     format: Rational
                                                                                                     components: 1
-                                                                                                    value: YToyOntpOjA7aToxO2k6MTtpOjgwO30=
-                                                                                                    clear_value: 'a:2:{i:0;i:1;i:1;i:80;}'
+                                                                                                    bytesHash: e2d855a4712494c438546fd09ff14c41874421f20afd9f2a7f038ef3ef1b8355
                                                                                                     text: '1/80 sec.'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:33437:FNumber'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -281,15 +306,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:33437:FNumber/entry'
                                                                                                     class: ExifEye\core\Entry\ExifFNumber
                                                                                                     valid: true
                                                                                                     format: Rational
                                                                                                     components: 1
-                                                                                                    value: YToyOntpOjA7aTo0NTtpOjE7aToxMDt9
-                                                                                                    clear_value: 'a:2:{i:0;i:45;i:1;i:10;}'
+                                                                                                    bytesHash: 8c2a498cd75ffea43a421447384d43fefd92b18f09567eed254daf8f980acfc5
                                                                                                     text: f/4.5
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:34850:ExposureProgram'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -298,15 +324,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:34850:ExposureProgram/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTo1Ow==
-                                                                                                    clear_value: 'i:5;'
+                                                                                                    bytesHash: 2921a11f25dadaa24aa79a548e4e81508c2e5e56af2d833d65e2bcce448ce2f5
                                                                                                     text: 'Creative program (biased toward depth of field)'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:34855:ISOSpeedRatings'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -315,15 +342,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:34855:ISOSpeedRatings/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTo4MDs=
-                                                                                                    clear_value: 'i:80;'
+                                                                                                    bytesHash: 6fd27b6685dd017d06230f819aafdbd609480ce22aa2590ed1ed2f46c6af6716
                                                                                                     text: 80
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36864:ExifVersion'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -332,15 +360,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36864:ExifVersion/entry'
                                                                                                     class: ExifEye\core\Entry\ExifVersion
                                                                                                     valid: true
                                                                                                     format: Undefined
                                                                                                     components: 4
-                                                                                                    value: czozOiIyLjIiOw==
-                                                                                                    clear_value: 's:3:"2.2";'
+                                                                                                    bytesHash: 42ca2cc50238a49486ffbdacfe7229988db5049c4bb1c5f1de26fdb0883a48a0
                                                                                                     text: 'Exif Version 2.2'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36867:DateTimeOriginal'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -349,15 +378,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36867:DateTimeOriginal/entry'
                                                                                                     class: ExifEye\core\Entry\Time
                                                                                                     valid: true
                                                                                                     format: Ascii
                                                                                                     components: 20
-                                                                                                    value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
-                                                                                                    clear_value: 's:19:"0000:00:00 00:00:00";'
+                                                                                                    bytesHash: a64fe69c067c506f32cfd0a5814529debccd2c88f3b2300a9b92a076d55e5006
                                                                                                     text: '0000:00:00 00:00:00'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36868:DateTimeDigitized'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -366,15 +396,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36868:DateTimeDigitized/entry'
                                                                                                     class: ExifEye\core\Entry\Time
                                                                                                     valid: true
                                                                                                     format: Ascii
                                                                                                     components: 20
-                                                                                                    value: czoxOToiMDAwMDowMDowMCAwMDowMDowMCI7
-                                                                                                    clear_value: 's:19:"0000:00:00 00:00:00";'
+                                                                                                    bytesHash: a64fe69c067c506f32cfd0a5814529debccd2c88f3b2300a9b92a076d55e5006
                                                                                                     text: '0000:00:00 00:00:00'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37121:ComponentsConfiguration'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -383,15 +414,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37121:ComponentsConfiguration/entry'
                                                                                                     class: ExifEye\core\Entry\ExifComponentsConfiguration
                                                                                                     valid: true
                                                                                                     format: Undefined
                                                                                                     components: 4
-                                                                                                    value: czo0OiIBAgMAIjs=
-                                                                                                    clear_value: !!binary czo0OiIBAgMAIjs=
+                                                                                                    bytesHash: 1666d9845b241586380fe85194c47f1d1868c4d7d30ba806ecc6d581df9eeadc
                                                                                                     text: 'Y Cb Cr -'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37380:ExposureBiasValue'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -400,15 +432,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37380:ExposureBiasValue/entry'
                                                                                                     class: ExifEye\core\Entry\ExifExposureBiasValue
                                                                                                     valid: true
                                                                                                     format: SignedRational
                                                                                                     components: 1
-                                                                                                    value: YToyOntpOjA7aTowO2k6MTtpOjEwO30=
-                                                                                                    clear_value: 'a:2:{i:0;i:0;i:1;i:10;}'
+                                                                                                    bytesHash: dd73a46975594b97bfef18db6ea376dafa119d27bfa7b0e2f94e0e3e67420f42
                                                                                                     text: '0.0'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37381:MaxApertureValue'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -417,15 +450,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37381:MaxApertureValue/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Rational
                                                                                                     valid: true
                                                                                                     format: Rational
                                                                                                     components: 1
-                                                                                                    value: YToyOntpOjA7aTozMDA7aToxO2k6MTAwO30=
-                                                                                                    clear_value: 'a:2:{i:0;i:300;i:1;i:100;}'
+                                                                                                    bytesHash: c73e371206c5120a1e96e936236e0a9e4d531bc400bbb059ec59152ec9a5cf51
                                                                                                     text: 300/100
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37383:MeteringMode'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -434,15 +468,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37383:MeteringMode/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTo1Ow==
-                                                                                                    clear_value: 'i:5;'
+                                                                                                    bytesHash: 2921a11f25dadaa24aa79a548e4e81508c2e5e56af2d833d65e2bcce448ce2f5
                                                                                                     text: Pattern
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37384:LightSource'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -451,15 +486,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37384:LightSource/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: Unknown
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37385:Flash'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -468,15 +504,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37385:Flash/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aToyNTs=
-                                                                                                    clear_value: 'i:25;'
+                                                                                                    bytesHash: 4cab73ce2a7e6220975001c8a354143267a3c1ce8bf7692313e654481e616a93
                                                                                                     text: 'Flash fired, auto mode.'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37386:FocalLength'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -485,15 +522,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37386:FocalLength/entry'
                                                                                                     class: ExifEye\core\Entry\ExifFocalLength
                                                                                                     valid: true
                                                                                                     format: Rational
                                                                                                     components: 1
-                                                                                                    value: YToyOntpOjA7aToxODgzO2k6MTtpOjEwMDt9
-                                                                                                    clear_value: 'a:2:{i:0;i:1883;i:1;i:100;}'
+                                                                                                    bytesHash: 1a037f2e317352413d51b02dac4badb5855764e8bf575c9247ac2c50a235dde0
                                                                                                     text: '18.8 mm'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37500:MakerNote'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -502,15 +540,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37500:MakerNote/entry'
                                                                                                     class: ExifEye\core\Entry\ExifMakerNote
                                                                                                     valid: true
                                                                                                     format: Undefined
                                                                                                     components: 758
-                                                                                                    value: YToyOntpOjA7czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjtpOjE7aTo3NTI7fQ==
-                                                                                                    clear_value: !!binary YToyOntpOjA7czo3NTg6Ik9MWU1QAAEAPgAAAgQAAwAAACQPAAABAgMAAQAAAAIAAAACAgMAAQAAAAAAAAADAgMAAQAAAAAAAAAEAgUAAQAAADgPAAAFAgUAAQAAAEAPAAAGAggABgAAAEgPAAAHAgIABgAAAFQPAAAJAgcAIAAAAFoPAAAAEAoAAQAAAHwPAAABEAoAAQAAAIQPAAACEAoAAQAAAIwPAAADEAoAAQAAAJQPAAAEEAMAAQAAAAAAAAAFEAMAAgAAAAAAAAAGEAoAAQAAAKQPAAAJEAMAAQAAAAEAAAAKEAMAAQAAAAAAAAALEAMAAQAAAAAAAAAMEAUAAQAAALgPAAANEAMAAQAAABwAUQEOEAMAAQAAAFEBAgAPEAMAAQAAAAIAAAAQEAMAAQAAAAAAAAAREAMACQAAADYQAAASEAMABAAAAEgQAAATEAMAAQAAAAAAAAAUEAMAAQAAAAAAAQAVEAMAAgAAAAEAAAAWEAMAAQAAAAAAcAEXEAMAAgAAAHABQAAYEAMAAgAAACYBQAAaEAIAIAAAANwPAAAbEAQAAQAAAAAAAAAcEAQAAQAAAAAAAAAdEAQAAQAAAOi4AwAeEAQAAQAAAAAAAAAfEAQAAQAAAAAAAAAgEAQAAQAAAAAAAAAhEAQAAQAAALAnAAAiEAQAAQAAACBuDwQjEAoAAQAAABwQAAAkEAMAAQAAADYAAAAlEAoAAQAAACgQAAAmEAMAAQAAAAAAAAAnEAMAAQAAAAAAAAAoEAMAAQAAAAAAZAEpEAMAAQAAAAIAAAIqEAMAAQAAAAACGAArEAMABgAAAFQQAAAsEAMAAgAAAAoAAAAtEAMAAQAAAAAIAAAuEAQAAQAAAAAKAAAvEAQAAQAAAIAHAAAwEAMAAQAAAAIAAAAxEAQACAAAAHQQAAAzEAQA0AIAAKAQAAA4EAMAAQAAAAAAAAA7EAMAAQAAACEBvgE8EAMAAQAAAL4BAAA9EAoAAQAAAOQbAAA+EAoAAQAAAOwbAAAAAAAAIjtpOjE7aTo3NTI7fQ==
+                                                                                                    bytesHash: d527e0288c543ee26ef6076919b394f9d81b834f295205184951e91d7512dcc8
                                                                                                     text: '758 bytes MakerNote data'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37510:UserComment'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -519,15 +558,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37510:UserComment/entry'
                                                                                                     class: ExifEye\core\Entry\ExifUserComment
                                                                                                     valid: true
                                                                                                     format: Undefined
                                                                                                     components: 125
-                                                                                                    value: YToyOntpOjA7czoxMTc6IiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICI7aToxO3M6MDoiIjt9
-                                                                                                    clear_value: 'a:2:{i:0;s:117:"                                                                                                                     ";i:1;s:0:"";}'
+                                                                                                    bytesHash: 652413a4822d78c1bed4ebe59bd1c942bca07b6834f9685231bf6337b3971ab1
                                                                                                     text: '                                                                                                                     '
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40960:FlashPixVersion'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -536,15 +576,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40960:FlashPixVersion/entry'
                                                                                                     class: ExifEye\core\Entry\ExifFlashPixVersion
                                                                                                     valid: true
                                                                                                     format: Undefined
                                                                                                     components: 4
-                                                                                                    value: czozOiIxLjAiOw==
-                                                                                                    clear_value: 's:3:"1.0";'
+                                                                                                    bytesHash: 5e7b571a60a7c187d6a4cb8bbedbe4e69d4caa49b51d9ddf3320afd793f146bf
                                                                                                     text: 'FlashPix Version 1.0'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40961:ColorSpace'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -553,15 +594,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40961:ColorSpace/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aToxOw==
-                                                                                                    clear_value: 'i:1;'
+                                                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
                                                                                                     text: sRGB
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40962:PixelXDimension'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -570,15 +612,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40962:PixelXDimension/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aToyNTYwOw==
-                                                                                                    clear_value: 'i:2560;'
+                                                                                                    bytesHash: 67ebbd370daa02ba9aadd05d8e091e862d0d8bcadafdf2a22360240a42fe922e
                                                                                                     text: 2560
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40963:PixelYDimension'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -587,15 +630,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:40963:PixelYDimension/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aToxOTIwOw==
-                                                                                                    clear_value: 'i:1920;'
+                                                                                                    bytesHash: 1417a296c21274cec9c3d2c91ca16a5dff7840833de2a46b05c29e5de9900d9f
                                                                                                     text: 1920
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41728:FileSource'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -604,15 +648,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41728:FileSource/entry'
                                                                                                     class: ExifEye\core\Entry\ExifFileSource
                                                                                                     valid: true
                                                                                                     format: Undefined
                                                                                                     components: 1
-                                                                                                    value: czoxOiIDIjs=
-                                                                                                    clear_value: !!binary czoxOiIDIjs=
+                                                                                                    bytesHash: 084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff29c5
                                                                                                     text: DSC
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41985:CustomRendered'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -621,15 +666,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41985:CustomRendered/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: 'Normal process'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41986:ExposureMode'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -638,15 +684,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41986:ExposureMode/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: 'Auto exposure'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41987:WhiteBalance'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -655,15 +702,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41987:WhiteBalance/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: 'Auto white balance'
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41988:DigitalZoomRatio'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -672,15 +720,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41988:DigitalZoomRatio/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Rational
                                                                                                     valid: true
                                                                                                     format: Rational
                                                                                                     components: 1
-                                                                                                    value: YToyOntpOjA7aToxMDA7aToxO2k6MTAwO30=
-                                                                                                    clear_value: 'a:2:{i:0;i:100;i:1;i:100;}'
+                                                                                                    bytesHash: 4bab72a3567e1cbe07543b08ed09f50fc8539601d4f883d27ac3fe61b0fd6a5f
                                                                                                     text: 100/100
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41990:SceneCaptureType'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -689,15 +738,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41990:SceneCaptureType/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aToyOw==
-                                                                                                    clear_value: 'i:2;'
+                                                                                                    bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                                                                     text: Portrait
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41991:GainControl'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -706,15 +756,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41991:GainControl/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: Normal
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41992:Contrast'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -723,15 +774,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41992:Contrast/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: Normal
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41993:Saturation'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -740,15 +792,16 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41993:Saturation/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: Normal
                                                                                     -
+                                                                                        type: tag
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41994:Sharpness'
                                                                                         class: ExifEye\core\Block\Tag
                                                                                         valid: true
@@ -757,16 +810,17 @@ elements:
                                                                                         elements:
                                                                                             entry:
                                                                                                 -
+                                                                                                    type: entry
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:41994:Sharpness/entry'
                                                                                                     class: ExifEye\core\Entry\Core\Short
                                                                                                     valid: true
                                                                                                     format: Short
                                                                                                     components: 1
-                                                                                                    value: aTowOw==
-                                                                                                    clear_value: 'i:0;'
+                                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                                     text: Normal
                                                                                 ifd:
                                                                                     -
+                                                                                        type: ifd
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:Interoperability'
                                                                                         class: ExifEye\core\Block\Ifd
                                                                                         valid: true
@@ -774,6 +828,7 @@ elements:
                                                                                         elements:
                                                                                             tag:
                                                                                                 -
+                                                                                                    type: tag
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:Interoperability/tag:1:InteroperabilityIndex'
                                                                                                     class: ExifEye\core\Block\Tag
                                                                                                     valid: true
@@ -782,15 +837,16 @@ elements:
                                                                                                     elements:
                                                                                                         entry:
                                                                                                             -
+                                                                                                                type: entry
                                                                                                                 path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:Interoperability/tag:1:InteroperabilityIndex/entry'
                                                                                                                 class: ExifEye\core\Entry\Core\Ascii
                                                                                                                 valid: true
                                                                                                                 format: Ascii
                                                                                                                 components: 4
-                                                                                                                value: czozOiJSOTgiOw==
-                                                                                                                clear_value: 's:3:"R98";'
+                                                                                                                bytesHash: 3c013d3ab26e4330d8b866ea2aa1b79258d1cfaddf3e411f48876b520903f6d5
                                                                                                                 text: R98
                                                                                                 -
+                                                                                                    type: tag
                                                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:Interoperability/tag:2:InteroperabilityVersion'
                                                                                                     class: ExifEye\core\Block\Tag
                                                                                                     valid: true
@@ -799,15 +855,16 @@ elements:
                                                                                                     elements:
                                                                                                         entry:
                                                                                                             -
+                                                                                                                type: entry
                                                                                                                 path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/ifd:Interoperability/tag:2:InteroperabilityVersion/entry'
                                                                                                                 class: ExifEye\core\Entry\InteroperabilityVersion
                                                                                                                 valid: true
                                                                                                                 format: Undefined
                                                                                                                 components: 4
-                                                                                                                value: czozOiIxLjAiOw==
-                                                                                                                clear_value: 's:3:"1.0";'
+                                                                                                                bytesHash: 5e7b571a60a7c187d6a4cb8bbedbe4e69d4caa49b51d9ddf3320afd793f146bf
                                                                                                                 text: 'Interoperability Version 1.0'
                                                             -
+                                                                type: ifd
                                                                 path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1'
                                                                 class: ExifEye\core\Block\Ifd
                                                                 valid: true
@@ -815,6 +872,7 @@ elements:
                                                                 elements:
                                                                     tag:
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:259:Compression'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -823,15 +881,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:259:Compression/entry'
                                                                                         class: ExifEye\core\Entry\Core\Short
                                                                                         valid: true
                                                                                         format: Short
                                                                                         components: 1
-                                                                                        value: aTo2Ow==
-                                                                                        clear_value: 'i:6;'
+                                                                                        bytesHash: ceb827ad3d3884fd4d50ae6099d6d50c09a21e72ebd309708e8b69d93df19e55
                                                                                         text: 'JPEG (old-style)'
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:282:XResolution'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -840,15 +899,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:282:XResolution/entry'
                                                                                         class: ExifEye\core\Entry\Core\Rational
                                                                                         valid: true
                                                                                         format: Rational
                                                                                         components: 1
-                                                                                        value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
-                                                                                        clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                                                                                        bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
                                                                                         text: 72/1
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:283:YResolution'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -857,15 +917,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:283:YResolution/entry'
                                                                                         class: ExifEye\core\Entry\Core\Rational
                                                                                         valid: true
                                                                                         format: Rational
                                                                                         components: 1
-                                                                                        value: YToyOntpOjA7aTo3MjtpOjE7aToxO30=
-                                                                                        clear_value: 'a:2:{i:0;i:72;i:1;i:1;}'
+                                                                                        bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
                                                                                         text: 72/1
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:296:ResolutionUnit'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -874,15 +935,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:296:ResolutionUnit/entry'
                                                                                         class: ExifEye\core\Entry\Core\Short
                                                                                         valid: true
                                                                                         format: Short
                                                                                         components: 1
-                                                                                        value: aToyOw==
-                                                                                        clear_value: 'i:2;'
+                                                                                        bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                                                         text: Inch
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:513:ThumbnailOffset'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -891,15 +953,16 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:513:ThumbnailOffset/entry'
                                                                                         class: ExifEye\core\Entry\Core\Long
                                                                                         valid: true
                                                                                         format: Long
                                                                                         components: 1
-                                                                                        value: aTo3MjA2Ow==
-                                                                                        clear_value: 'i:7206;'
+                                                                                        bytesHash: efd05b09b99864be08e72929198f444a032c5947a28b24d92d440e14ebad2ad6
                                                                                         text: 7206
                                                                         -
+                                                                            type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:514:ThumbnailLength'
                                                                             class: ExifEye\core\Block\Tag
                                                                             valid: true
@@ -908,31 +971,33 @@ elements:
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:514:ThumbnailLength/entry'
                                                                                         class: ExifEye\core\Entry\Core\Long
                                                                                         valid: true
                                                                                         format: Long
                                                                                         components: 1
-                                                                                        value: aTo1ODk0Ow==
-                                                                                        clear_value: 'i:5894;'
+                                                                                        bytesHash: 3000d37233a5d6153986e4689a09fcb26f2d0d8833a227a6f5e9c9c793c92caa
                                                                                         text: 5894
                                                                     thumbnail:
                                                                         -
+                                                                            type: thumbnail
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/thumbnail'
                                                                             class: ExifEye\core\Block\Thumbnail
                                                                             valid: true
                                                                             elements:
                                                                                 entry:
                                                                                     -
+                                                                                        type: entry
                                                                                         path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/thumbnail/entry'
                                                                                         class: ExifEye\core\Entry\Core\Undefined
                                                                                         valid: true
                                                                                         format: Undefined
                                                                                         components: 5894
-                                                                                        value: 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
-                                                                                        clear_value: !!binary czo1ODk0OiL/2P/bAMUACQYHCAcGCQgICAoKCQsNFg8NDAwNGxMUEBYgHCEhHxwfHiMnMisjJS8mHh8sOywvNDU4OTghKj1CPTZBMjc4NgEKCgoNDA0aDw8aNiQfJDY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2AgoKCg0MDRoPDxo2JB8kNjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2Njb/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/wAARCAB4AKADASEAAhEBAxEC/9oADAMBAAIRAxEAPwDk3kLRPAzABUyD6VJLFIumZaQMpRhnPA79a8CcuVaHC9rjYNKZGsrverAAbsHtS6nFGqRq2Tlzg+hq3P30l5/mDbKEkTxndhdp/ujFEalm25OSenY1u3crnvqOkUC5aONVDA8sy9Kr3BaVyqnjoAvemnorjT0RcLC1iUY3D1Jxisu+Md07tzs4A29TVU2+bmFBu/MRRqAckDpxmi5kBZABn39Kvdl9S1aM1pEzJMkrSDIzyF/GqUlzcNKXaRvMz/DUqKbuJb3ZJNLLKVlLjcmOtaEd+kkGT8rkYxUziuWyJlG60M640+fyTMFLRbuWHampbtJtXIUEdcVaqLlLU9BlxA0AJb7vYmpIWTau4sffr+lO943Q73V0aGmyNLcSKRuMi8Ejg1teZvsmgMeEZtxB6jtXFXXLK3oZTVmPt5THpa2zMTsmG1gOQvoaW+2ShAuxvqMkVg5tzv8A10E7MyNSjVVjYuxwcZ9arWvmT3iYOFU5/CuynK8bsqOuoPJM0zMY1YBtwJPaus8AaTb6jfTXl5Erw24yIz0dj0yPTr+ldNGmrpdCmrKxU+IWoj+0X020t4ba3iQBwkSrvJw3X8q40DIC5OM+tXJ3k2OKSQ6RgsgXJxjJNNaRZd7eUx+XjDADNRFdSorqyNSyrwB19M01m+cHJ5NXJDZdgms9u24Rlc/dZTx+NWIbATSEpKrI33T6VzTco6vYxd1qdLpJl0qGax1NIjBKuF3gZzjjHqK5m4I81wmFxwOe1c8OZ1H2EtR1i6T/ALm5XrwAehqu8brPJBHAz7Tj5eldKVny30KS1auanlPbarBJEAEY9OwOK0G5PPeuWo1KMX1FU1imMVslkzjBDfWnM3U1HKkiWrRRBcQLcIEY4GcmlhiWCPZEMY6Z5p87tyiT0sVNEsJ9avktUbJJ+dv7i9zXrllpltoemCO3IKgcuQMtnvXrUYqN5Gkk7nJeMLO0u7U3Mir5yEElRyw9z+FcFJeK8boLeLy8EqqDBB9c1jN3m0mFjLZpSxBT2qWIE4wOe9bNWib20J1t5AcOhDnsRikYSwsMBVKnlsVMrMTsyxH5d+SrRAMB1FOSOWz3fITGOcL1zWGy5GzJ6e6yY3guQHuHYuw2jzJDlRUElybeUx7EB4+YnJxU+z+yhuPQ1oLvzrSW1jeOWM4+cRBWz169aiguWgiUcFt58wd2A96ylT5m4kqOti9NGCVyRgNkN1pzcGsFtYh7WK6oBcecDkMuD9QaV3APXNaS1SCWthC/5mn5AQszADuT2qHEkqSR3WnWzwRsAl3y0kfIZM8YP9Ks3Wsaiulw6YZna0jAG4ZBIzxkjnAru5pbL+kbcyH2pYKHWRmgaPAjcevfmp7PwRcX0IltJkCMMjeMfh70qd3LlijPnd7CXHhX+y5wmoEvkfKUGFP0NOtdLsIGLrEC57tzU1pTjJxQOpLYo6vbiKRHaQ7CcsR1A71j3DeYiIowFyOnNVRT5dTWmnypspTMy/6sYI6sOtXba/mEKbsTDHzg9a2qQU46mk4poe+nR3bOLYFpsZ2FwAPatTRVTSJMk20k5+V4pEWRf1H8qwlUlyW6kXly2sV554xeSGLAdzlkVSNtXVtrR9OZllhS5Ub23Ftx9sdBWVpJ3fUUYt7mn/Z7QXCjY7rn7q96iuYltrkC4jIjbJ2rIAykdulc8VeSZnvuR3ESy7mhiMSE5Vc5x+NUZEKhixwVGRx1rW+hK3HKBx70MPMOzkDvii2onuWo4flGU3AdM813PhyytRarMhDSFeT3Ht7V1YTllU1GkWdT02zuIy11Epx/H0I/GpreSCOFWV0ihUYBJ2qK7XOEavm1+CK5epgeMNTsJrZbeOUSzqwIMZyF9eehrmIrqVRhSu3HPy8/nXHXnGU7xE3ZlXUrpAiqY98mcgViyGaRmkZmDE9MYxRRj7up0U17hUnjZ8kkHHvURnKONinb3FdCV1Y1S0NNdStVgSOKxKtjEk4blvbBFV571zKj2iGIgjbk5x9KzVOf2mLl92zHTahcS6gkl/IJJduPMQAH8SKfPIpuAzSoQexbJJqeTlatsJxalpselwyzCFlV1BkHznaOfzzj8Kx9Sju5HEckavn+MpkEe9eZ7vPcwk1e9jRkWT7N57pE8QULhE2/mP61z97cWRukhUNvb+Flyv51UJOctN3qTbmYya3MSLIxxu5xtOAPr0qOK4toxuLhj/sgmnFyktEQkJNqW8YiVl/2mFLp+o3tjMZorgp/ez0b61vCPJr1HfU77wxqy65ps/2uSORlfaVQYwMDH9ai8VpYw6DKzMFEOCm31yB/WvRUVKnzy3synfZnAArLh4pgR6Dn86YZpYXy0QKdyp/pXAl0M7dGWFg8+N0duGBJJHesopIGMEzbmT7p6kf/AFquj1R0UHe6IhDGm7cjFz68Y96jEQDHDLyP7oNdN3c6rBHGQSsuBjuRUbgLnJyvY4xTGV2iJJycZ9qiNs4cB2T25yatEs9c0qGWS7ENwyJCQSHQElfr7U43KDUXtwwbZ0Yd6+faSszivZlj7WiDk8+grHa509794ktwJTgliowCPT3rRVHeyKaTYy7DXJEKIZHc4CgZJrjblSl5IkoaHDlSrcYrahcl2vYLuQWbhNysSMgg5ogc3EDFgCAwx9f8muhpx1BXj7xa0u7bSrkzJPJESMME6H2NXL7XIJ4syTSy7jyn+OeKOaVrIlqT2Kkdxp83IcI/pgqfzFd94N8P6VqWmG7LfaX3FWjY/c/A1rQSdS0w5ZbM09Q8PWEsZRIFhk7MgwRVXRtAt7IeZPDHLc9C5XOPTGa7PZxVRTQWs9DS1G0s5bORryJGjVSTleR9DXj0vEshjQom47Qee9Ku9jpw63JISRC4ZQRkHOKYSjA+YOvSuRP3mjdO8mhGUJtJCY6/d61Ya1jeNJvlLZ5CgcelE5NK45aI7S2umjO/qRxj1FUZo3luZZkkESyHJUDpXj8vve9scUo3M5r2FZ1tvOcyxsNpwWJ+hpIU8y+MzMflO75mwTz3qpRafMlpYhN81mxdc1DZtktC9ud+U2Mdw991czKk9w5YqzEnJZuSa7KFlHme5Tshi2E7OA6NjPQck1pSg2qhJbYw5A2AL1+vvWrmnohOaasUrlyzEHg46GqOOTVJWGhhUjkV1fg3VNT0vzL20IdQQskTf8tAOfzFO7WqKSuekaXrx8R2s00Nm0FxCPnjL7s56c4FOee6tNOku54CzIM7O9bxnUk1NLSzF7tjkb7XLrVY3jkASM8iNP8A9fNYptAZAx2huw2/0NY+0c/eZ2UeVw90c0Sk/wCqJY/xDgH8KRNM818lSGP8BX+tSnafyKsudj10iKAZnMg3DIXAIFKto4Zii4TbjGKitJ7dLMmp/mbc9tcbV8iAoqL8xkPJPcmsWTUzloiB5nseK86nJTk1E4FJtkmnQwaRr9ldzSEkusgkYEA59M1ammEut3c58qJDIxLOvyrzxWlTma1Q3ZfEdB4aggvbY3lzbwyEynywye2Cfxp2vaFbXUby29uqTqvy7BjPtjpXsUaK9hyvqTJJ7HOaVpt3NMyrDhkOGL8BTRr2kalH5U7Qb40OWKHdgd/euWGGm1zEx3KXinRo7e1W5SQNKu0Pg8EH/wDWK5Vk5B9amnPnVzoqu8rl/SNGm1OfYvyov3nI6e31rfktZLeDyYIxHjI256/jVzlZWFdwhzG/8K9Xt7TUNRt7qNI3dV25bO7BOR+tdd4rv7OLSrmVJkUMhVR1ySOK66E4qluSrWPLLaO4u22xKsjgZ4wCamtJPsk+25gBwfmBHNcN2tUOlOVPW2h09rcW1zA3kiE45zgnHtirD7RHzDGhIBwOM1SmmzvjJS1RnyOqvkRFQepHOKq3N4HgBAH7tvm+X8qipzOSsTPexHa+J4NVZzq12tqEjzHCFwjn3riHmJnlud42q5Klu/PYVhQo8s2zkhTvK51JuW1LwrvIVpdNPysoy3ltzn0wDVPwz9o1m5fTvP8AKWdvMYYJDsOQMZ9e9acmre9hSVro6fw1qsOmyvYXisqF8bs/6tuhzXXlA37yI748cMDkV6OFqXhydUZR2KRnjadoVTDE5JA6mr8WyKMtMyqgHLdMVdCrz819LOxbjax554h1CwvWeO0iJBbAZ+wz2+tYws4j83lj8BXmOWrcdE2zOpLoiDzZ9LuVuIifKyNyg43D0rp7e5tb9FmiYlGGRuHP0o0auWpXpcvmEukW8xc+X8zDIZeDmsX+zrnLQvK0ioTtDMTip57OzMrtIjEbwv1ZWHfPNXNP+ztM7XeWAGQxY9fendL3rF03d2excvY7MRefZttmxxtO3ce4OahjlvJzgggheOeD7VaTtd6HbG0dYlaGa8SSRcshX7pqeWPyp4HcGSG4Xa3OMHPr+tRKUeZNClNOSZyIu7F9TmcQvLbFjtQyYwO3OKgnZnVY4pVKAkqOuPzFdFOMtOYUYM1dCuZ7a9jhthvlnQo4b7pQ/ez2rqvB8ltplxcyGwlkaAbVnjjaTDduANue/Ws66mvgRFRWejsdVHqmlXkSXGo6TE121z5C/KA0nHDYP6jtW5aRxxW/loixoOiqOBWuXRd5Nu9v+HMnGK1RxHiHxWdF1aWCKzV8KMSsc4z7Vzeta1e6hDtluy8R6BeFFFepO7j0v/VxN22M20gmBBfn0OM1sWysPRh7dvwrklJGMnqVtds2lthLF8wT7wHb3rM0TUJrScQkl4jkrH6t9e3StIe8rGtKz91ndW10soBHBxyv92mXCj7RvHQjmsmk1dEtdDLvo43IJdEJOAWOBXSHwhi1t3tH8wthnc9x7UpO65eo4K3vdDO1HSpucTRgI2G3DnNZTxXcEy+XE5bGQUzg1cJLnSO5P3rCyfaJZgXiICjnJ5qK5aadUSMHy1OMZ5pS5ZVLLcxk/e1MSDTmurK5ubGBJFhIV2OAMn69ajGmOrrEkWJjt3YIYuT2GOK6k5JammqTbOh0XQn0K9l1G7humlWIhEngKDJ44OT+laFn4pGhJc2VvAJIpX3BWckAY45FcU6k60uW1vPc5nUUndmPLq7vfRXbYzG4ZUA+VemcD8K7uHxRp/2MytOMAZ9/pXoYOUaUXFkJ3Z5xrFwdS1Ga7d9queEA6DtWfc3McSRqFOATuBPUGsX789CoJSlYms9XW3bbKokt0bbkD5se1dDZ3FtcfPBIHTqD0P41nVpNLmRpVoqMbovBVYEYB9a5HV7M2GpK4XEZfcv09Kik7Mwi7M1IbphPH87Iz4CkEAD61tNcxylUWZCR98joKUYciSOiVJ8qKGo2wnIjMm/e6lTxtH612nhLWo7KGHS7yQA9InGcYz05ondK66Fum+WzNfxHpolgeaMZYITkc1xFkZvNISQIQDjeODUK10y6MulwOm6he3QWKCZzIeCq4Qn61vafoS2tnNLcpi8U7WjBzj60403zSlP5GNV+80jB0OSOz8OywW9nKiohy+wspY9yfX0rM8aaXiy0aGyZ4xfMC0Y4fPGTtHJHua7o8zd5I6Oa6SiUW1jWNL8xpr+V0tTstGkwWO3354/Oqs+pXmsSC9v2VpWXAIULkDp0rF0YRk5xuvnoc9eNk2yseelOWHceTwKpuyOUsw2wx6t1qheFGuXgAy4TaTjOM9vrSptuRrQV6hTZ/wDRVGSjKCrso5p0rvA0ZtZ2RguNy9jnJHpWqadzt3TL9jr9+kLuwSYKeWK9PrirF7qKajZBZk2zr842jjFYVKSjK8TlnTV3Yqw2kP2V/wB8TLu4TPG33PqakEht52lkDi2VgHz0we/v/wDWqufnlZ/1t+poqnMWrqc2jAPHviUgqS+MjrnPoal0/wATJ9tBhzEVB/d5A/XvQryu10NVPmZ6V4W117zR3u7iZZGMpDITnYOwxXPapAltqQntpEeHzVMsQ5aIE8/hXDKap1PZvp/VznTcZXPRPtMdtEk9u6i2RN29z8uMdc1z8OoadqV1LJHds0md7YG32wDWc5RkmpP3dwd3sUdG+2NbLpN9MPIiXcVJHJz8ozjOO/FRaroWpXEU0sN9ZK6/c2pubGP7xAP0r0YpXtKWp6Pvcq0PPdR1i90lJtOvbK1mdfk3PECQPXgZ/Gq8V/DfQptbDouCmMYH9a1lT0unp+RyYiN4vuPjVcbjg47VJvVenasnqeeZUmtP9p8iCQqoOWZRkt6gZFVY5d7rKuQRJuLkYJI9fWumnTUUn1PQoQUY36iiUIzAZxuyKkWYybcndhgRkc45/wAazfUnnWpKZWt7WW3hchLhxuAHDc8VpXli9qgldlIYY3Bhn8qzlJJ3e7KTja7KG/DZHepo5ZB3DDuDyKTRzM0HRLjTYwYwpyVBIOQP8OuKxIIFhjdlyHzyc5zRRb5mn5Gvw6PrY0rG+e2UmNmV3XDkMeR6Vdg1O4B8xJmSQEEPuOQRU1oJzcjKcne5ctGvtSlaCfUJls5MtNtcgZ9MdK3TfWMK2iWscPykplV+Y49TXLPRcqJcr79DHbxKlxcJcXtzcGQuBwAwdfTHTFdLD4/hill222EVdsKKNvHYnt+ld3JNKyPVqVILc848W6tNql3JM4keWR9xG7Kj6en6VmpatY+VNKcSsRkA9FPr71vGyjbuZT96+heMyoHywCrzn2rPuNTkmPkQRhSRyT1/+tUQhfc4qdK797oRWto0D+a03A4CgcAmrUEcKuN6BkAO3AweRWkp31R1Ka5eYq3KmN8/wnvSebGqouPnJ65qFrsZRSbuampWLadbxpKS0zBJc4+4GwRn0J6496ga5vbqDa0TxKgHzOoUN2BIxyefWhwi9+hqopXbLMPkLAN4Z593IzhMfzqSJ3iYFNox3xzWLtc5m0neJM18wyGOSQR+fWsoSKilUGctzk1dKFpXGm5blhNuM4qRCAc54qG7mTNq38p9NEZu/LmALRoh3bj7gdKkt4L62lgitoCZpwSXY8+/HauVQTk0+o4wu7H/2SI7
+                                                                                        bytesHash: 57bad1067ab230df509b502bfc2b9014a1ee9c2b5a850ef6aef3bd8f01ac09a9
                                                                                         text: '5894 bytes of data [ FF D8 FF DB 00 C5 ... 8E 30 BB B1 FF D9 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -941,13 +1006,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:219:DQT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 67
+                                        bytesHash: 76f0f4fdb799e43d27b18a6f01ed4548e8457db7819a05b4a54a2226d8a702f6
                                         text: '67 bytes of data [ 00 43 00 08 06 06 ... 32 3C 2E 33 34 32 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -956,13 +1024,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:219:DQT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 67
+                                        bytesHash: 545327dce00193dba1b6420d16137f7e605bb8b0129d15d82ae80895cae1a09e
                                         text: '67 bytes of data [ 00 43 01 09 09 09 ... 32 32 32 32 32 32 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:192:SOF0'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -971,13 +1042,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:192:SOF0/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 17
+                                        bytesHash: 11a24282e1ef954dca7b86eafd53cd276afbff0fdcf9e4cf7c129e399ea8f715
                                         text: '17 bytes of data [ 00 11 08 01 90 02 ... 02 11 01 03 11 01 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -986,13 +1060,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 28
+                                        bytesHash: 87d6d672966600bf7ad053e097dad2bc1e3e6df34336722eb228cadf4fbaec63
                                         text: '28 bytes of data [ 00 1C 00 00 02 03 ... 03 06 01 00 07 08 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -1001,13 +1078,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 66
+                                        bytesHash: 34f8503fa6add5026028ba4caea2faf2425ed4cc8d5ceeb41ad1122dbe2d3d3d
                                         text: '66 bytes of data [ 00 42 10 00 02 01 ... 53 92 B2 34 93 A2 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -1016,13 +1096,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 25
+                                        bytesHash: d2252ee453da0dde6faa7246301c7b3b83f27be73f0d0fabbbdf221702b358e7
                                         text: '25 bytes of data [ 00 19 01 00 03 01 ... 01 02 03 04 00 05 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
@@ -1031,13 +1114,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:196:DHT/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 49
+                                        bytesHash: 3fc3b0b9f274ba36a2d438296a4d302de4fecf874a2030632815d00197684ab9
                                         text: '49 bytes of data [ 00 31 11 00 02 02 ... A1 C1 F0 15 33 D1 ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:218:SOS'
                             class: ExifEye\core\Block\JpegSegmentSos
                             valid: true
@@ -1046,13 +1132,16 @@ elements:
                             elements:
                                 entry:
                                     -
+                                        type: entry
                                         path: '/image/jpeg/jpegSegment:218:SOS/entry'
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
                                         components: 44401
+                                        bytesHash: f7fa06bbae02d6ab1cd1f6a18b4a386bfbff368d1d0d7984ea4b359674b55a30
                                         text: '44401 bytes of data [ 00 0C 03 01 00 02 ... 96 3F F4 FF 00 DC ]'
                         -
+                            type: jpegSegment
                             path: '/image/jpeg/jpegSegment:217:EOI'
                             class: ExifEye\core\Block\JpegSegment
                             valid: true
