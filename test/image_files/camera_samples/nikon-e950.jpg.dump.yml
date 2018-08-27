@@ -31,8 +31,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 14
-                                        text: '14 bytes of data'
+                                        components: 16
+                                        text: '16 bytes of data [ 00 10 4A 46 49 46 ... 00 48 00 48 00 00 ]'
                         -
                             path: '/image/jpeg/jpegSegment:225:APP1'
                             class: ExifEye\core\Block\JpegSegmentApp1
@@ -795,7 +795,7 @@ elements:
                                                                                         components: 4923
                                                                                         value: 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
                                                                                         clear_value: !!binary czo0OTIzOiL/2P/bAMUACwcICQgHCwkJCQwLCw0QGhEQDw8QIBcYExomIigoJiIlJCowPTMqLTkuJCU1SDU5P0FERUQpM0tQSkJPPUNEQQELDAwQDhAfEREfQSwlLEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBAgsMDBAOEB8RER9BLCUsQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/wAARCAB4AKADASEAAhEBAxEB/9oADAMBAAIRAxEAPwDzKyAAckngVHa8ufof6VXYnuP27VZjzkk10XgpFl1MgscBl+XHDYBbGfqv86b2uOO6O2tzun+RQivIcqMDGAD/AD9Kvsdm4tkKDtz1xXmtq92diTsc5euhnllJLqrYztAyuM4J9M9/f8q+m3zxz8RCaS4HyqeFVcEBsn/Ac+ua5qXx8z1KltZHc26Z0C2VCSTL8h3ZyNijJP8An61jPFZ6hA8d5ao6feIdc7TgZx3HHoc9K9CKvKKMXomc7q3giwV0NtK0Jlb5YzyOegBP+Jrn7vwffR7zDskSMZZmYR4/764PfgHPU9jVyquMrSWhlyJq6ZkrCfu44HGaUgCQjkBQfbB7frWpJCXHmHHI9SM1dAQpv/iBLcLj3zx+H50+hL3H26Mto5xjc6g8duen5CpYk3yyFcHA4z/vE9fTiotoy+o3VIQi5Hdv/rVRUlUBHYD8adO4VER2wPlyN0+Vh+lLp65m6dh/P/61aJbEEqD90uehzVuwvZbOFpYWMcqybgy9QQCAPp8xzQ78rsJbna6dqmqpdR299p0yvM6xZlh8hyxxj5W4LH0U+la3iCC4stR+yeZvxHlkQFs5/DOcV5uJj7t0dcJWdmcueGkQ75A+9ycA5GODz6AHt2zVTTblmuUub+4cRxuC7MSxdCOy/wDAf1PpXPTulc0lua9x8RooLAWyWvnyRkjlhtAPX8cYFc7dePNXYbLUxWyE5wqBj+OePTtXrRuuVvdI4273S6kP/CX+I4ws6atcxNKcnYQinGccDj1pbrxbrOo27R6jNHexhGjUSIFKlhyflxk8Dk5zilKCkrME7O5lpcpkiQFTjv69KTzBtZg4OeMHuBz/ADAq0Irw7PMBfJXPOKvOx+yyY+Vf4QT7j+lDAnU/6HBtPAlIb8hV2FSzGQMOdgAHbn/61LoyuqDVbfeqk9s4p0XgvxHNZx3cWkTPDIquhUAllPQgDn0qKbSdmOavYwoSq2RyOcvz+AApLIfJIR97jn06mtlujJj1w8C4PTk/ga6n4feHl8QalJb+aY4o0MjPs3cFgAACOpyee3XtR0Gtz2OXRtHvdUOpTRJdXUBBVy24xFTkYUdDlfrwRWZ4r0P7bNFeW0EO52BlkmbaBwAp5PH0A/nXLWpuUGkaQkrpmEPDdhGXluneeWM4YrKFQqGAwBjJ4I5yPWvMdb1S2l1OSG3LfZEZk3ggmTBOG+lZUIJP0Naj09ShLboQWiPAGDjv71SdcHrXYc6JJFPlRjLEAdPSo1ZlyAaAJwRcyxoSBxSLE2wlSchiPbimLYagKsDgKeo461oRZmt3VgT8pIxx2zQMWMTJZuzwgIGB3Y6HIxznnvWpp+ZmIBXnyyO2QOT/ADNSndOw3ui1eIXRWC9jwPpn+lekaHr94mg6fEiRqgtIgrbDuA2AZ64rnqTcHoaxipHhu3/Qz9M/qKks+IJHHOSR17Yrr6mD2CNREFHUMM/jXVfD64a0url/Oijj+z7iZYw69R1z0oldRbQJXep1d58QFSby4bprucAlggVowQdw6/Lx1yO34VT07xO1xI0eqTr5235ZnPG3PQknjr+tcjhUcfeOhOCehn+OdeS0002NpMrS3QyShGAnf8683AZj8oyRV0Y2iTUd2WrGcxsY24Dep6Gm3cZjmwf4sEfStjIdcMUkRHBBQDPP8qjZQWbsd3BPpQAyI+XOpPY81oqwhLn+DgjI5OeaBMd5McseUbcG5xjkc0kS7SY2BAPv2piH6i7kQw5IUDdjPX/P9at6PIoukwTlEIH5f/qpJaFPc2EAlii3YxsHIruNA0a8bS7BRFIxNsmG5VMbc89jx/n1560W9Eb05JbnjDHZZgEZ3DH05z/SlsyFgBcFk3ZYA9RXX1OcsTRrbkYIkjcbkbsR9PX2qvcTGRlQNhF6DoPyFSMfATCGDE7lIIx68df1q/qF1vEZ3HEi7fTGOmfxFS9xoy7xPlVs85wwqEr5TLKuev60xFy4i86AMq4285qqZi8QSTkr0NAEkrCeLK/wjvUIG6Vcg8nt3oAc0LmRyR1bGQOpqzfRk+SmcsMg5PTgUxXGTWskHCkkY5KnGe9OtZWfCtx/CT0yKNg3Hu5mnyc44x/Wr+l4MzLwcqc5HIIB/of1pgatvLssUkboq5PA6Zr0zRr6KTTbKNtUnhb7LGOVwikKOM5H59K56zst7am1PXpc8JuhiCMDHb+VKgxbJ0Oc4/OukwH2u/yjA5JUjIx2NXIrOQWjy+QzujhPlGcA5x/T86XqMqrAiYAk3HuaV1klIaVsgDAJqCi1aQR3ENzCzYdELg56cjNR6Vppv5prUD94qFkyO4NUiWE1ldWcLR3MTLuUlcisx42RjwSD3ApDGBtgI9RzV3SrVr/UoIowcFgGwM4GaAOv8T6WttbRyRRARJ821Rgs2MZP4Vxd0XeQO2VP8I71b1RK3LKXEVySACGOOPXtSLF5MoOfkyCSf8akobEdgOPrUmnzKJ2LNjKkfjjFMRtqw/s4Yzgpz7g5rvdIdV0m1ZvmzCmAvJ4AGcDtx6etc2J+D5m9H4jx29P+rX0H9KkwBbR9e38jXV1Zz9CS3ZUlTIJ5xgHFdX4da0YSadMTvulBUsPRf8n60m7WHYz722j0+/lieIOVi3HJ6Es3446c1mGOGWTdmRIy33VYn/PBrFX6lmt4Z0iV5rl2jYIVKru75Of6Vo+G9DuLbW5bmVCsa7lXPfPP9f0rRMlo6XUbGO9tHiYdeh9K8vv7eaxuXt5Bh4zkdsimxIqSxJK5CcNknBGK7bwHpiwW73D4LucfTHagOh02otAlo7T42AZPOK8v1u4ie9l8khVY8AjoPT2q38JK3KkQWTg43joR3qwrExFW5IHBGOlZlkQ2sVAGB0OD1pI1Mc+NhHfHQ0wNe3mVrBUOM+ueeP8A9dey6Jp2mjQ7CeaVgxtI/MbIwoKKcE445OR3Jx1qKkVKNmVTbi9D59vCPNwO2amlICRjI6dPwrXqyOwgX5yehJ4OfY13vhGziW1NyEPmjCnI6/KDnHrzWkI8xDdjXdoJZGkurMCT7oLJk4+v41DFZW4YMkCqo6cdKxlZ7mq02ZfgiVAeBmpwMCkhMdxtOa5TxV4fbUJluLYKsw4YnuKok5k6NPC6meHaehIGK7Xw5GF01NnQE9Omc0ktRvY5DxZq91c3kluQVgRsbQc5we9YAELhcMAx96qQoomgQgBSAfQ098FWkzxg4PSo6lPYjVsAEccduKerkOWDdcEjbjt+tMCaBtsRAYABufyr3bwsy3vg+wma2yEsxFuKq5O0Y+Vec8jv6dPQlsC3Pni7z9oYZqaR/nRMHoaruIVH/ehuoQE/XH/669L8NabfwaIb6VQlk7h2lL5cA7UJVQCWIIPBx2qlUVNOTJcXLRHbaVpdpK0oEDzQL8qStLuDn1wAD+vHSsfU9Jn01gzRnyW6N1x7HFY+2dSWxp7NQRUDCnB8e9MQu4kHimnlaYjM1Js7Y0ALOdo+tX7WJLS0SIfdRcZNWiGef+KrmGTU22QqVBwXVs5OOuOlYEqxlsqNpz25zSkVEkkk8u1wr4Y/yq0kCppySMfrn3/yamO5T2Kx7bakblQBzxyapCFXgHt+Ne+fDf8A5EvTu3En/oxqTGj51m+a6Iz1IFTOP3gxzxR3EPAGGHOSAPpnH/169s8Kay8HhKGNor+Egu32lYFaJBvJ4JwCO3POfwpTfLEcVdm5Y6hqUxTZc6Zep5e8hHdZCMdSADznHGPwq1i9u4xBc29rsYYd1JkUke3ykdOOSfyrKLk0XK17GTeeE5C260nTHdXBA/Dr+tYNzbXVheC3uY9hIyO4I9RWqMxzkBaSCCW6njtoRmSQ4Ht70wOIt9UF74ojEbuYFkYRhlHIwfStjxhey2+llITgyHaTjOBjmqjtcl72PNp9yOfnDe/c0sPPXqeazLJLtdsSA5yeee9a0u5NOG4DKrtIOcDOf17fj+VR3B7GWTjntnAqYHgDG4noBTJFjbO0A9a96+GpB8E6cRyP3v8A6Nek9hrc+eGGbvj+9U7czH6cflQBJDklfXevH4mvoHw3p0B8NWEcqEholf5yWUEnOdrDGSSccfieCXPawluaj6daC7+1JGyXGCokXORkH8OM9x7VcrNKxd7hWD4wERtYC2PNEh2/THP/ALLVLcT2OVeRQKvbF0vwpqWuziWKbyGS3ZeCpYbVYdx8zdfQZoegkeWeG4fM1uDBz5eWYenB/wDrV1XiqEy6VJIoyYvn5APA61S+El7nmqc7pWGfQVPCgKZJABbHHbNQaEl4oeaCNBknH1PatbUzHHYiLGCSApz19f8AP/1qqKJbMZyTgAng0StsKnPYHpTEPjkMhX5sAnGSema92+GAWbwJp4LucNJwGK4/eNxxikM+foyWugcdyeKsNkyNjsKaAmscvdQZHJkBxivpPSLRrTTLSCRiZIoERuTjIUCm/hEty5x0orMspatq1ppMCy3TkbztRFxub6D2riNe8QjVLnMQxFHkIM8+5PvVxXUiT6GT9oNxf2unwqZJriVUCLycd2+gGSfpXR/FtntfB8UFufLja4jjKDgFQrED6ZVT+FKW447Hn/g60aKKS9lUK8nCgen/AOuq3jW8vHZLOIFbdxl2H8WO1W9IkJ3kcmcmQRkcdcCraKWlgiAHXp9KyRox0g83V4l5GT29/wD9dX9eZd8cfJYcjHAArReZLM4IDjsc+tQXGemOwpMLjIQe2DkevSvXfhb4ls9O8PNaXXmnFxIysi5VV2qTkk8dTz0HcjIyRi5aIJO2rPI4PmuiR05NSAncw469TSQy5pBQX9tnG0Bj19M/4V9Lwzwz5MMqSY67GBx+VVJOwLc8k8WfEnVzeXNnYr9gijdoiCo830O4n7p4PTBGepxmuSPi7xBjcda1AD/r5f8AxqNh3uZ9xrN/OEWa7nkVDlFaQkLwBx6cAD6AUyPVbuI/LOwOM8801JrQTVzT8N+L73QNVl1KFIZp5ITCfPDFduQeACMcqK1NU+Il3rkkI1K1gMcfKrCCAD3PJOT/AJ9aaavdg1dWEj8SWCxhEUxY4C7cY/Kqd9IuoW8k4kDMgJUA8dOlXJqREU0c1b5Fz+8xubr/ALNXLD99fkg/cTioiWx0Hz+IFDAYXnn2Gf6U25m867Z3kUgfKpA6gVRI1ym7AZfzFMZVIBUg4HQVTS7iTZGwZTmNSARzjtXX+CNSt7PTJYru4hSN5zwXCupwoz16e46EfkUtJpvYJ6xOLsziUn0FSp1Oe+M1mi2T6dE8t7HEv3mGB7En/wCvXpF9frZ2U103SJC2GbGT2Gfc4FdmHejOer0PL7q6kuriWeRizyOXJYjOSfamITJlcdP5VxN3dzoSsrCO2AAR8w6AVAXbkVIwDEDFAZicZ6mgZMpLDBOf60bmQ/KxU+xoEM6EnNWLG5NvMWPGRjPoOtVF2Ymh9q+b6SQlWwGHPft3+tQzYVsDOCM89qbEiMsemKTzCOOlQWBkpAxPegCS3P3z7VJu+Q/rVoll/wAPknVIQBu+5n25H+FdR4ruDFoU6h9pcqg+bBPI4H4Z/CuyirUpMwqWckjz9mxU0JwN2PxrgOgjmck5zz61EeTQNCZNPX0PSgByt6Uu4j3oAQsPpRk0ASQytE7MDjcMGnXEnmnJ6+maq+libakOxjyBSY71JQhoGAPX2oA//9kiOw==
-                                                                                        text: '4923 bytes of data'
+                                                                                        text: '4923 bytes of data [ FF D8 FF DB 00 C5 ... D7 DA 80 3F FF D9 ]'
                         -
                             path: '/image/jpeg/jpegSegment:237:APP13'
                             class: ExifEye\core\Block\JpegSegment
@@ -809,8 +809,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 4258
-                                        text: '4258 bytes of data'
+                                        components: 4260
+                                        text: '4260 bytes of data [ 10 A4 50 68 6F 74 ... 00 00 00 01 01 00 ]'
                         -
                             path: '/image/jpeg/jpegSegment:238:APP14'
                             class: ExifEye\core\Block\JpegSegment
@@ -824,8 +824,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 12
-                                        text: '12 bytes of data'
+                                        components: 14
+                                        text: '14 bytes of data [ 00 0E 41 64 6F 62 ... 64 40 00 00 00 01 ]'
                         -
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
@@ -839,8 +839,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 130
-                                        text: '130 bytes of data'
+                                        components: 132
+                                        text: '132 bytes of data [ 00 84 00 04 03 03 ... 0C 0C 0C 0C 0C 0C ]'
                         -
                             path: '/image/jpeg/jpegSegment:192:SOF0'
                             class: ExifEye\core\Block\JpegSegment
@@ -854,8 +854,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 15
-                                        text: '15 bytes of data'
+                                        components: 17
+                                        text: '17 bytes of data [ 00 11 08 04 B0 06 ... 02 11 01 03 11 01 ]'
                         -
                             path: '/image/jpeg/jpegSegment:221:DRI'
                             class: ExifEye\core\Block\JpegSegment
@@ -869,8 +869,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 2
-                                        text: '2 bytes of data'
+                                        components: 4
+                                        text: '4 bytes of data [ 00 04 00 C8 ]'
                         -
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
@@ -884,11 +884,11 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 416
-                                        text: '416 bytes of data'
+                                        components: 418
+                                        text: '418 bytes of data [ 01 A2 00 00 00 07 ... AA BA CA DA EA FA ]'
                         -
                             path: '/image/jpeg/jpegSegment:218:SOS'
-                            class: ExifEye\core\Block\JpegSegment
+                            class: ExifEye\core\Block\JpegSegmentSos
                             valid: true
                             id: '218'
                             name: SOS
@@ -899,8 +899,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 10
-                                        text: '10 bytes of data'
+                                        components: 339331
+                                        text: '339331 bytes of data [ 00 0C 03 01 00 02 ... 62 AD 52 A7 15 7F ]'
                         -
                             path: '/image/jpeg/jpegSegment:217:EOI'
                             class: ExifEye\core\Block\JpegSegment

@@ -101,6 +101,24 @@ class Spec
     }
 
     /**
+     * Returns the property value of an element.
+     *
+     * @param string $type
+     *            the type where this element is placed.
+     * @param string|int $element_id
+     *            the element id.
+     * @param string $property
+     *            the property.
+     *
+     * @return string|null
+     *            the element property value or null if not found.
+     */
+    public static function getElementPropertyValue($type, $element_id, $property)
+    {
+        return isset(self::getMap()['elements'][$type][$element_id][$property]) ? self::getMap()['elements'][$type][$element_id][$property] : null;
+    }
+
+    /**
      * Returns the type of an element.
      *
      * @param string $type
@@ -113,7 +131,7 @@ class Spec
      */
     public static function getElementType($type, $element_id)
     {
-        return isset(self::getMap()['elements'][$type][$element_id]['type']) ? self::getMap()['elements'][$type][$element_id]['type'] : null;
+        return self::getElementPropertyValue($type, $element_id, 'type');
     }
 
     /**
@@ -129,7 +147,7 @@ class Spec
      */
     public static function getElementName($type, $element_id)
     {
-        return isset(self::getMap()['elements'][$type][$element_id]['name']) ? self::getMap()['elements'][$type][$element_id]['name'] : null;
+        return self::getElementPropertyValue($type, $element_id, 'name');
     }
 
     /**
@@ -161,7 +179,7 @@ class Spec
      */
     public static function getElementTitle($type, $element_id)
     {
-        return isset(self::getMap()['elements'][$type][$element_id]['title']) ? self::getMap()['elements'][$type][$element_id]['title'] : null;
+        return self::getElementPropertyValue($type, $element_id, 'title');
     }
 
     /**
@@ -177,8 +195,9 @@ class Spec
      */
     public static function getElementHandlingClass($type, $element_id)
     {
-        if (isset(self::getMap()['elements'][$type][$element_id]['class'])) {
-            return self::getMap()['elements'][$type][$element_id]['class'];
+        $class = self::getElementPropertyValue($type, $element_id, 'class');
+        if ($class !== null) {
+            return $class;
         }
         $element_type = self::getElementType($type, $element_id);
         if ($element_type !== null) {

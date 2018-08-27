@@ -31,8 +31,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 14
-                                        text: '14 bytes of data'
+                                        components: 16
+                                        text: '16 bytes of data [ 00 10 4A 46 49 46 ... 00 48 00 48 00 00 ]'
                         -
                             path: '/image/jpeg/jpegSegment:254:COM'
                             class: ExifEye\core\Block\JpegSegmentCom
@@ -63,8 +63,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 65
-                                        text: '65 bytes of data'
+                                        components: 67
+                                        text: '67 bytes of data [ 00 43 00 05 03 04 ... 1E 24 1C 1E 1F 1E ]'
                         -
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
@@ -78,8 +78,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 65
-                                        text: '65 bytes of data'
+                                        components: 67
+                                        text: '67 bytes of data [ 00 43 01 05 05 05 ... 1E 1E 1E 1E 1E 1E ]'
                         -
                             path: '/image/jpeg/jpegSegment:192:SOF0'
                             class: ExifEye\core\Block\JpegSegment
@@ -93,8 +93,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 15
-                                        text: '15 bytes of data'
+                                        components: 17
+                                        text: '17 bytes of data [ 00 11 08 01 00 01 ... 02 11 01 03 11 01 ]'
                         -
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
@@ -108,8 +108,38 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 26
-                                        text: '26 bytes of data'
+                                        components: 28
+                                        text: '28 bytes of data [ 00 1C 00 00 02 03 ... 05 06 01 00 07 08 ]'
+                        -
+                            path: '/image/jpeg/jpegSegment:196:DHT'
+                            class: ExifEye\core\Block\JpegSegment
+                            valid: true
+                            id: '196'
+                            name: DHT
+                            elements:
+                                entry:
+                                    -
+                                        path: '/image/jpeg/jpegSegment:196:DHT/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
+                                        valid: true
+                                        format: Undefined
+                                        components: 42
+                                        text: '42 bytes of data [ 00 2A 10 01 01 00 ... 14 42 61 15 23 71 ]'
+                        -
+                            path: '/image/jpeg/jpegSegment:196:DHT'
+                            class: ExifEye\core\Block\JpegSegment
+                            valid: true
+                            id: '196'
+                            name: DHT
+                            elements:
+                                entry:
+                                    -
+                                        path: '/image/jpeg/jpegSegment:196:DHT/entry'
+                                        class: ExifEye\core\Entry\Core\Undefined
+                                        valid: true
+                                        format: Undefined
+                                        components: 28
+                                        text: '28 bytes of data [ 00 1C 01 01 00 02 ... 05 06 07 01 00 08 ]'
                         -
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
@@ -124,40 +154,10 @@ elements:
                                         valid: true
                                         format: Undefined
                                         components: 40
-                                        text: '40 bytes of data'
-                        -
-                            path: '/image/jpeg/jpegSegment:196:DHT'
-                            class: ExifEye\core\Block\JpegSegment
-                            valid: true
-                            id: '196'
-                            name: DHT
-                            elements:
-                                entry:
-                                    -
-                                        path: '/image/jpeg/jpegSegment:196:DHT/entry'
-                                        class: ExifEye\core\Entry\Core\Undefined
-                                        valid: true
-                                        format: Undefined
-                                        components: 26
-                                        text: '26 bytes of data'
-                        -
-                            path: '/image/jpeg/jpegSegment:196:DHT'
-                            class: ExifEye\core\Block\JpegSegment
-                            valid: true
-                            id: '196'
-                            name: DHT
-                            elements:
-                                entry:
-                                    -
-                                        path: '/image/jpeg/jpegSegment:196:DHT/entry'
-                                        class: ExifEye\core\Entry\Core\Undefined
-                                        valid: true
-                                        format: Undefined
-                                        components: 38
-                                        text: '38 bytes of data'
+                                        text: '40 bytes of data [ 00 28 11 01 01 00 ... 15 21 16 32 33 23 ]'
                         -
                             path: '/image/jpeg/jpegSegment:218:SOS'
-                            class: ExifEye\core\Block\JpegSegment
+                            class: ExifEye\core\Block\JpegSegmentSos
                             valid: true
                             id: '218'
                             name: SOS
@@ -168,8 +168,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 10
-                                        text: '10 bytes of data'
+                                        components: 3972
+                                        text: '3972 bytes of data [ 00 0C 03 01 00 02 ... 7A 2A 99 65 EA 6F ]'
                         -
                             path: '/image/jpeg/jpegSegment:217:EOI'
                             class: ExifEye\core\Block\JpegSegment

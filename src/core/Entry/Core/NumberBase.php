@@ -5,6 +5,7 @@ namespace ExifEye\core\Entry\Core;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Abstract class for numbers.

@@ -55,15 +55,15 @@ class Exif extends BlockBase
         return self::EXIF_HEADER . $this->getElement('tiff')->toBytes();
     }
 
-    public static function isExifSegment(DataWindow $data_window)
+    public static function isExifSegment(DataWindow $data_window, $offset = 0)
     {
         // There must be at least 6 bytes for the Exif header.
-        if ($data_window->getSize() < 6) {
+        if ($data_window->getSize() - $offset < 6) {
             return false;
         }
 
         // Verify the Exif header.
-        if ($data_window->strcmp(0, self::EXIF_HEADER)) {
+        if ($data_window->strcmp($offset, self::EXIF_HEADER)) {
             return true;
         }
 

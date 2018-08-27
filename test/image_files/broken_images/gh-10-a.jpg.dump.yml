@@ -712,8 +712,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 15
-                                        text: '15 bytes of data'
+                                        components: 17
+                                        text: '17 bytes of data [ 00 11 44 75 63 6B ... 00 00 00 3C 00 00 ]'
                         -
                             path: '/image/jpeg/jpegSegment:225:APP1'
                             class: ExifEye\core\Block\JpegSegmentApp1
@@ -727,8 +727,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 4636
-                                        text: '4636 bytes of data'
+                                        components: 4638
+                                        text: '4638 bytes of data [ 12 1E 68 74 74 70 ... 3D 27 77 27 3F 3E ]'
                         -
                             path: '/image/jpeg/jpegSegment:226:APP2'
                             class: ExifEye\core\Block\JpegSegment
@@ -742,8 +742,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 3158
-                                        text: '3158 bytes of data'
+                                        components: 3160
+                                        text: '3160 bytes of data [ 0C 58 49 43 43 5F ... FE DC FF 6D FF FF ]'
                         -
                             path: '/image/jpeg/jpegSegment:238:APP14'
                             class: ExifEye\core\Block\JpegSegment
@@ -757,8 +757,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 12
-                                        text: '12 bytes of data'
+                                        components: 14
+                                        text: '14 bytes of data [ 00 0E 41 64 6F 62 ... 64 C0 00 00 00 01 ]'
                         -
                             path: '/image/jpeg/jpegSegment:219:DQT'
                             class: ExifEye\core\Block\JpegSegment
@@ -772,8 +772,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 130
-                                        text: '130 bytes of data'
+                                        components: 132
+                                        text: '132 bytes of data [ 00 84 00 06 04 04 ... 1F 1F 1F 1F 1F 1F ]'
                         -
                             path: '/image/jpeg/jpegSegment:192:SOF0'
                             class: ExifEye\core\Block\JpegSegment
@@ -787,8 +787,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 15
-                                        text: '15 bytes of data'
+                                        components: 17
+                                        text: '17 bytes of data [ 00 11 08 00 DC 01 ... 02 11 01 03 11 01 ]'
                         -
                             path: '/image/jpeg/jpegSegment:196:DHT'
                             class: ExifEye\core\Block\JpegSegment
@@ -802,11 +802,11 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 416
-                                        text: '416 bytes of data'
+                                        components: 418
+                                        text: '418 bytes of data [ 01 A2 00 00 00 07 ... AA BA CA DA EA FA ]'
                         -
                             path: '/image/jpeg/jpegSegment:218:SOS'
-                            class: ExifEye\core\Block\JpegSegment
+                            class: ExifEye\core\Block\JpegSegmentSos
                             valid: true
                             id: '218'
                             name: SOS
@@ -817,8 +817,8 @@ elements:
                                         class: ExifEye\core\Entry\Core\Undefined
                                         valid: true
                                         format: Undefined
-                                        components: 10
-                                        text: '10 bytes of data'
+                                        components: 24705
+                                        text: '24705 bytes of data [ 00 0C 03 01 00 02 ... F6 2D 5B 7F B2 7F ]'
                         -
                             path: '/image/jpeg/jpegSegment:217:EOI'
                             class: ExifEye\core\Block\JpegSegment
@@ -829,7 +829,7 @@ log:
     ERROR:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
-            message: 'Window [1002, 712] does not fit in window [0, 712]'
+            message: 'Offset -1 not within [0, 14812]'
     WARNING:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:306:DateTime'
@@ -840,6 +840,3 @@ log:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36868:DateTimeDigitized'
             message: 'Found 21 data components, expected 20'
-        -
-            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
-            message: 'Thumbnail length 14812 bytes adjusted to -290 bytes.'

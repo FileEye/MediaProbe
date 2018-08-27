@@ -105,4 +105,47 @@ class ExifEye
             return $str;
         }
     }
+
+    /**
+     * Dumps a string of bytes in a human readable sequence of hex couples.
+     *
+     * @param string $input
+     * @param int @dump_length
+     *
+     * @return string
+     */
+    public static function dumpHex($input, $dump_length = 4)
+    {
+        $input_length = strlen($input);
+
+        if ($input_length === 0) {
+            return null;
+        }
+
+        $ret = '[ ';
+
+        if ($input_length <= $dump_length) {
+            $dump_length = $input_length;
+            $tmp = substr($input, 0, $dump_length);
+            $tmp = bin2hex($tmp);
+            $tmp = strtoupper($tmp);
+            $ret .= chunk_split($tmp, 2, ' ');
+        } else {
+            $left_length = round($dump_length / 2);
+            $tmp = substr($input, 0, $left_length);
+            $tmp = bin2hex($tmp);
+            $tmp = strtoupper($tmp);
+            $ret .= chunk_split($tmp, 2, ' ');
+            $ret .= '... ';
+            $right_length = $dump_length - $left_length;
+            $tmp = substr($input, -$right_length);
+            $tmp = bin2hex($tmp);
+            $tmp = strtoupper($tmp);
+            $ret .= chunk_split($tmp, 2, ' ');
+        }
+
+        $ret .= ']';
+
+        return $ret;
+    }
 }

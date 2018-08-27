@@ -5,44 +5,11 @@ namespace ExifEye\core\Block;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
-use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
- * Class for handling JPEG data.
- *
- * The {@link Jpeg} class defined here provides an abstraction for
- * dealing with a JPEG file. The file will be contain a number of
- * segments containing some content identified
- * by a marker.
- *
- * The {@link getExif()} method is used get hold of the
- * APP1 section which stores Exif data. So if
- * the name of the JPEG file is stored in $filename, then one would
- * get hold of the Exif data by saying:
- *
- * <code>
- * $jpeg = new Jpeg($filename);
- * $exif = $jpeg->getExif();
- * $tiff = $exif->getTiff();
- * $ifd0 = $tiff->getIfd();
- * $exif = $ifd0->getSubIfd(Ifd::EXIF);
- * $ifd1 = $ifd0->getNextIfd();
- * </code>
- *
- * The $idf0 and $ifd1 variables will then be two {@link Tiff TIFF}
- * {@link Ifd Image File Directories}, in which the data is stored
- * under the keys found in {@link PelTag}.
- *
- * Should one have some image data (in the form of a {@link
- * DataWindow}) of an unknown type, then the {@link
- * Jpeg::isValid()} function is handy: it will quickly test if the
- * data could be valid JPEG data. The {@link Tiff::isValid()}
- * function does the same for TIFF images.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- * @package PEL
+ * Class for handling a JPEG image data.
  */
 class Jpeg extends BlockBase
 {
@@ -50,8 +17,6 @@ class Jpeg extends BlockBase
      * JPEG header.
      */
     const JPEG_HEADER = "\xFF\xD8\xFF";
-
-    private $jpeg_data;
 
     /**
      * {@inheritdoc}
@@ -77,149 +42,56 @@ class Jpeg extends BlockBase
         $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
         // Run through the data to read the segments in the image. After each
-        // segment is read, the start of the data window will be moved forward,
-        // and after the last section we will terminate with no data left in the
-        // window.
-        while ($data_window->getSize() > 0) {
-            $i = $this->getJpgSectionStart($data_window);
-
+        // segment is read, the offset will be moved forward, and after the last
+        // segment we will terminate.
+        $i = $offset;
+        while ($i < $data_window->getSize()) {
+            // Get next JPEG marker.
+            $i = $this->getJpegMarkerOffset($data_window, $i);
             $segment_id = $data_window->getByte($i);
 
+            // Warn if an unidentified segment is detected.
             if (!in_array($segment_id, Spec::getTypeSupportedElementIds($this->getType()))) {
-                $this->error('Invalid marker found at offset {offset}: 0x{marker}', [
-                    'offset' => $offset,
-                    'marker' => dechex($segment_id),
+                $this->warning('Invalid marker 0x{marker} found @ offset {offset}', [
+                    'offset' => $i,
+                    'marker' => strtoupper(dechex($segment_id)),
                 ]);
             }
 
-            $segment_name = Spec::getElementName($this->getType(), $segment_id);
+            // Create and load the ExifEye JPEG segment object.
             $segment_class = Spec::getElementHandlingClass($this->getType(), $segment_id);
             $segment = new $segment_class($segment_id, $this);
+            $segment->loadFromData($data_window, ++$i);
 
-            // Move window so first byte becomes first byte in this section.
-            $data_window->setWindowStart($i + 1);
-
-            if (!in_array($segment_name, ['SOI', 'EOI'])) {
-                // Read the length of the section. The length includes the two
-                // bytes used to store the length.
-                $len = $data_window->getShort(0) - 2;
-
-                // Skip past the length.
-                $data_window->setWindowStart(2);
-
-                if ($segment_name === 'APP1') {
-                    if ($segment->loadFromData($data_window->getClone(0, $len)) === false) {
-                        // We store the data as normal JPEG content if it could
-                        // not be parsed as Exif data.
-                        $dxx = $data_window->getClone(0, $len);
-                        new Undefined($segment, [$dxx->getBytes()]);
-                    }
-                    $data_window->setWindowStart($len);
-                } elseif ($segment_name === 'COM') {
-                    $segment->loadFromData($data_window->getClone(0, $len));
-                    $data_window->setWindowStart($len);
-                } else {
-                    $segment->loadFromData($data_window->getClone(0, $len));
-
-                    // Skip past the data.
-                    $data_window->setWindowStart($len);
-
-                    // In case of SOS, image data will follow.
-                    if ($segment_name === 'SOS') {
-                        // Some images have some trailing (garbage?) following the
-                        // EOI marker. To handle this we seek backwards until we
-                        // find the EOI marker. Any trailing content is stored as
-                        // a Undefined Entry object.
-                        $length = $data_window->getSize();
-                        while ($data_window->getByte($length - 2) != 0xFF || $data_window->getByte($length - 1) != Spec::getElementIdByName($this->getType(), 'EOI')) {
-                            $length --;
-                        }
-
-                        $this->jpeg_data = $data_window->getClone(0, $length - 2);
-                        $this->debug('JPEG data: {data}', ['data' => $this->jpeg_data->toString()]);
-
-                        // Append the EOI.
-                        $eoi_segment = new $segment_class(Spec::getElementIdByName($this->getType(), 'EOI'), $this);
-
-                        // Now check to see if there are any trailing data.
-                        if ($length != $data_window->getSize()) {
-                            $this->warning('Found trailing content after EOI: {size} bytes', [
-                                'size' => $data_window->getSize() - $length,
-                            ]);
-                            // We don't have a proper JPEG marker for trailing
-                            // garbage, so we just use 0x00...
-                            $trail_segment = new $segment_class(0x00, $this);
-                            $dxx = $data_window->getClone($length);
-                            new Undefined($trail_segment, [$dxx->getBytes()]);
-                        }
-
-                        // Done with the loop.
-                        break;
-                    }
-                }
+            // In case of image scan segment, the load is now complete.
+            if ($segment->getPayload() === 'scan') {
+                break;
             }
+
+            // Position to end of the segment. It is defined by the current
+            // offset + JPEG marker (2 bytes) + the bytes of the payload.
+            $i += $segment->getComponents();
         }
 
         return $this;
     }
 
     /**
-     * Turn this JPEG object into bytes.
+     * JPEG sections start with 0xFF. The first byte that is not 0xFF is a marker
+     * (hopefully).
      *
-     * The bytes returned by this method is ready to be stored in a file
-     * as a valid JPEG image. Use the {@link saveFile()} convenience
-     * method to do this.
+     * @param DataWindow $data_window
+     * @param int $offset
      *
-     * @return string bytes representing this JPEG object, including all
-     *         its sections and their associated data.
+     * @return int
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
+    protected function getJpegMarkerOffset($data_window, $offset)
     {
-        $bytes = '';
-
-        foreach ($this->getMultipleElements("*") as $segment) {
-            $m = $segment->getAttribute('id');
-
-            // Add the marker.
-            $bytes .= "\xFF";
-            $bytes .= chr($m);
-
-            // Skip over empty markers.
-            if ($m == Spec::getElementIdByName($this->getType(), 'SOI') || $m == Spec::getElementIdByName($this->getType(), 'EOI')) {
-                continue;
-            }
-
-            // Add the segment bytes.
-            $data = $segment->toBytes();
-            $size = strlen($data) + 2;
-            $bytes .= ConvertBytes::fromShort($size, ConvertBytes::BIG_ENDIAN);
-            $bytes .= $data;
-
-            // In case of SOS, we need to write the JPEG data.
-            if ($m == Spec::getElementIdByName($this->getType(), 'SOS')) {
-                $bytes .= $this->jpeg_data->getBytes();
+        for ($i = $offset; $i < $offset + 7; $i ++) {
+            if ($data_window->getByte($i) !== JpegSegment::JPEG_DELIMITER) {
+                return $i;
             }
         }
-
-        return $bytes;
-    }
-
-    /**
-     * JPEG sections start with 0xFF. The first byte that is not
-     * 0xFF is a marker (hopefully).
-     *
-     * @param DataWindow $d
-     *
-     * @return integer
-     */
-    protected function getJpgSectionStart($d)
-    {
-        for ($i = 0; $i < 7; $i ++) {
-            if ($d->getByte($i) != 0xFF) {
-                 break;
-            }
-        }
-        return $i;
     }
 
     /**

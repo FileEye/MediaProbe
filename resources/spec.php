@@ -5460,379 +5460,446 @@ return array (
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF0',
-        'title' => 'Encoding (baseline)',
+        'title' => 'Start of frame (baseline DCT)',
+        'payload' => 'variable',
       ),
       193 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF1',
-        'title' => 'Encoding (extended sequential)',
+        'title' => 'Start of frame (extended sequential)',
+        'payload' => 'variable',
       ),
       194 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF2',
-        'title' => 'Encoding (progressive)',
+        'title' => 'Start of frame (progressive DCT)',
+        'payload' => 'variable',
       ),
       195 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF3',
         'title' => 'Encoding (lossless)',
+        'payload' => 'variable',
       ),
       196 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'DHT',
         'title' => 'Define Huffman table',
+        'payload' => 'variable',
       ),
       197 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF5',
-        'title' => 'Encoding (differential sequential)',
+        'title' => 'Start of frame (differential sequential)',
+        'payload' => 'variable',
       ),
       198 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF6',
-        'title' => 'Encoding (differential progressive)',
+        'title' => 'Start of frame (differential progressive)',
+        'payload' => 'variable',
       ),
       199 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF7',
-        'title' => 'Encoding (differential lossless)',
+        'title' => 'Start of frame (differential lossless)',
+        'payload' => 'variable',
       ),
       200 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG',
         'title' => 'Extension',
+        'payload' => 'variable',
       ),
       201 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF9',
-        'title' => 'Encoding (extended sequential, arithmetic)',
+        'title' => 'Start of frame (extended sequential, arithmetic)',
+        'payload' => 'variable',
       ),
       202 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF10',
         'title' => 'Encoding (progressive, arithmetic)',
+        'payload' => 'variable',
       ),
       203 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF11',
         'title' => 'Encoding (lossless, arithmetic)',
+        'payload' => 'variable',
       ),
       204 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'DAC',
         'title' => 'Define arithmetic coding conditioning',
+        'payload' => 'variable',
       ),
       205 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF13',
         'title' => 'Encoding (differential sequential, arithmetic)',
+        'payload' => 'variable',
       ),
       206 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF14',
         'title' => 'Encoding (differential progressive, arithmetic)',
+        'payload' => 'variable',
       ),
       207 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOF15',
         'title' => 'Encoding (differential lossless, arithmetic)',
+        'payload' => 'variable',
       ),
       208 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST0',
         'title' => 'Restart 0',
+        'payload' => 'none',
       ),
       209 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST1',
         'title' => 'Restart 1',
+        'payload' => 'none',
       ),
       210 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST2',
         'title' => 'Restart 2',
+        'payload' => 'none',
       ),
       211 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST3',
         'title' => 'Restart 3',
+        'payload' => 'none',
       ),
       212 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST4',
         'title' => 'Restart 4',
+        'payload' => 'none',
       ),
       213 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST5',
         'title' => 'Restart 5',
+        'payload' => 'none',
       ),
       214 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST6',
         'title' => 'Restart 6',
+        'payload' => 'none',
       ),
       215 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'RST7',
         'title' => 'Restart 7',
+        'payload' => 'none',
       ),
       216 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'SOI',
         'title' => 'Start of image',
+        'payload' => 'none',
       ),
       217 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'EOI',
         'title' => 'End of image',
+        'payload' => 'none',
       ),
       218 =>
       array (
         'type' => 'jpegSegment',
+        'class' => 'ExifEye\\core\\Block\\JpegSegmentSos',
         'name' => 'SOS',
         'title' => 'Start of scan',
+        'payload' => 'scan',
       ),
       219 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'DQT',
         'title' => 'Define quantization table',
+        'payload' => 'variable',
       ),
       220 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'DNL',
         'title' => 'Define number of lines',
+        'payload' => 'variable',
       ),
       221 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'DRI',
         'title' => 'Define restart interval',
+        'payload' => 'fixed',
+        'components' => 4,
       ),
       222 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'DHP',
         'title' => 'Define hierarchical progression',
+        'payload' => 'variable',
       ),
       223 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'EXP',
         'title' => 'Expand reference component',
+        'payload' => 'variable',
       ),
       224 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP0',
         'title' => 'Application segment 0',
+        'payload' => 'variable',
       ),
       225 =>
       array (
+        'type' => 'jpegSegment',
         'class' => 'ExifEye\\core\\Block\\JpegSegmentApp1',
         'name' => 'APP1',
         'title' => 'Application segment 1',
+        'payload' => 'variable',
       ),
       226 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP2',
         'title' => 'Application segment 2',
+        'payload' => 'variable',
       ),
       227 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP3',
         'title' => 'Application segment 3',
+        'payload' => 'variable',
       ),
       228 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP4',
         'title' => 'Application segment 4',
+        'payload' => 'variable',
       ),
       229 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP5',
         'title' => 'Application segment 5',
+        'payload' => 'variable',
       ),
       230 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP6',
         'title' => 'Application segment 6',
+        'payload' => 'variable',
       ),
       231 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP7',
         'title' => 'Application segment 7',
+        'payload' => 'variable',
       ),
       232 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP8',
         'title' => 'Application segment 8',
+        'payload' => 'variable',
       ),
       233 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP9',
         'title' => 'Application segment 9',
+        'payload' => 'variable',
       ),
       234 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP10',
         'title' => 'Application segment 10',
+        'payload' => 'variable',
       ),
       235 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP11',
         'title' => 'Application segment 11',
+        'payload' => 'variable',
       ),
       236 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP12',
         'title' => 'Application segment 12',
+        'payload' => 'variable',
       ),
       237 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP13',
         'title' => 'Application segment 13',
+        'payload' => 'variable',
       ),
       238 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP14',
         'title' => 'Application segment 14',
+        'payload' => 'variable',
       ),
       239 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'APP15',
         'title' => 'Application segment 5',
+        'payload' => 'variable',
       ),
       240 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG0',
         'title' => 'Extension 0',
+        'payload' => 'variable',
       ),
       241 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG1',
         'title' => 'Extension 1',
+        'payload' => 'variable',
       ),
       242 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG2',
         'title' => 'Extension 2',
+        'payload' => 'variable',
       ),
       243 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG3',
         'title' => 'Extension 3',
+        'payload' => 'variable',
       ),
       244 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG4',
         'title' => 'Extension 4',
+        'payload' => 'variable',
       ),
       245 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG5',
         'title' => 'Extension 5',
+        'payload' => 'variable',
       ),
       246 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG6',
         'title' => 'Extension 6',
+        'payload' => 'variable',
       ),
       247 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG7',
         'title' => 'Extension 7',
+        'payload' => 'variable',
       ),
       248 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG8',
         'title' => 'Extension 8',
+        'payload' => 'variable',
       ),
       249 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG9',
         'title' => 'Extension 9',
+        'payload' => 'variable',
       ),
       250 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG10',
         'title' => 'Extension 10',
+        'payload' => 'variable',
       ),
       251 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG11',
         'title' => 'Extension 11',
+        'payload' => 'variable',
       ),
       252 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG12',
         'title' => 'Extension 12',
+        'payload' => 'variable',
       ),
       253 =>
       array (
         'type' => 'jpegSegment',
         'name' => 'JPG13',
         'title' => 'Extension 13',
+        'payload' => 'variable',
       ),
       254 =>
       array (
+        'type' => 'jpegSegment',
         'class' => 'ExifEye\\core\\Block\\JpegSegmentCom',
         'name' => 'COM',
         'title' => 'Comment',
+        'payload' => 'variable',
       ),
     ),
   ),

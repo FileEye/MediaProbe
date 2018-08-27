@@ -262,7 +262,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
 
     public function testJpegSegmentTitles()
     {
-        $this->assertEquals('Encoding (baseline)', Spec::getElementTitle('jpeg', 0xC0));
+        $this->assertEquals('Start of frame (baseline DCT)', Spec::getElementTitle('jpeg', 0xC0));
         $this->assertEquals(ExifEye::fmt('Restart %d', 3), Spec::getElementTitle('jpeg', 0xD3));
         $this->assertEquals(ExifEye::fmt('Application segment %d', 3), Spec::getElementTitle('jpeg', 0xE3));
         $this->assertEquals(ExifEye::fmt('Extension %d', 11), Spec::getElementTitle('jpeg', 0xFB));

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core;
 
+use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -216,8 +217,8 @@ class DataWindow
      */
     private function validateOffset($offset)
     {
-        if ($offset < 0 || $offset >= $this->size) {
-            throw new DataWindowException('Offset %d not within [%d, %d]', $offset, 0, $this->size - 1);
+        if ($offset < 0 || $offset > $this->size) {
+            throw new DataWindowException('Offset %d not within [%d, %d]', $offset, 0, $this->size);
         }
     }
 
@@ -405,7 +406,7 @@ class DataWindow
         $offset += $this->start;
 
         /* Return an unsigned long. */
-        return ConvertBytes::toLong($this->data, $offset, $this->order);
+        return ConvertBytes::toLong($this->data, (int) $offset, $this->order);
     }
 
     /**

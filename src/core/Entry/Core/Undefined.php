@@ -4,6 +4,7 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\DataWindow;
+use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -56,6 +57,10 @@ class Undefined extends EntryBase
      */
     public function toString(array $options = [])
     {
-        return parent::toString($options) ?: $this->components . ' bytes of data';
+        $str = parent::toString($options) ?: $this->components . ' bytes of data';
+        if ($dump = ExifEye::dumpHex($this->toBytes(), 12)) {
+            $str .= ' ' . $dump;
+        }
+        return $str;
     }
 }
