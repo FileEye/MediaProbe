@@ -7,147 +7,136 @@ elements:
     class: ExifEye\core\Image
     valid: true
     elements:
-        jpeg:
-            -
-                type: jpeg
-                path: /image/jpeg
-                class: ExifEye\core\Block\Jpeg
-                valid: true
-                elements:
-                    jpegSegment:
+        -
+            type: jpeg
+            path: /image/jpeg
+            class: ExifEye\core\Block\Jpeg
+            valid: true
+            elements:
+                -
+                    type: jpegSegment
+                    path: '/image/jpeg/jpegSegment:216:SOI'
+                    class: ExifEye\core\Block\JpegSegment
+                    valid: true
+                    id: '216'
+                    name: SOI
+                -
+                    type: jpegSegment
+                    path: '/image/jpeg/jpegSegment:219:DQT'
+                    class: ExifEye\core\Block\JpegSegment
+                    valid: true
+                    id: '219'
+                    name: DQT
+                    elements:
                         -
-                            type: jpegSegment
-                            path: '/image/jpeg/jpegSegment:216:SOI'
-                            class: ExifEye\core\Block\JpegSegment
+                            type: entry
+                            path: '/image/jpeg/jpegSegment:219:DQT/entry'
+                            class: ExifEye\core\Entry\Core\Undefined
                             valid: true
-                            id: '216'
-                            name: SOI
+                            format: Undefined
+                            components: 132
+                            bytesHash: e251d92b9de1e01252e2a81e06cf007c890f4b80893dc77b081fed0ccb09a597
+                            text: '132 bytes of data [ 00 84 00 09 06 06 ... 4F 4F 4F 4F 4F 4F ]'
+                -
+                    type: jpegSegment
+                    path: '/image/jpeg/jpegSegment:225:APP1'
+                    class: ExifEye\core\Block\JpegSegmentApp1
+                    valid: true
+                    id: '225'
+                    name: APP1
+                    elements:
                         -
-                            type: jpegSegment
-                            path: '/image/jpeg/jpegSegment:219:DQT'
-                            class: ExifEye\core\Block\JpegSegment
+                            type: exif
+                            path: '/image/jpeg/jpegSegment:225:APP1/exif'
+                            class: ExifEye\core\Block\Exif
                             valid: true
-                            id: '219'
-                            name: DQT
                             elements:
-                                entry:
-                                    -
-                                        type: entry
-                                        path: '/image/jpeg/jpegSegment:219:DQT/entry'
-                                        class: ExifEye\core\Entry\Core\Undefined
-                                        valid: true
-                                        format: Undefined
-                                        components: 132
-                                        bytesHash: e251d92b9de1e01252e2a81e06cf007c890f4b80893dc77b081fed0ccb09a597
-                                        text: '132 bytes of data [ 00 84 00 09 06 06 ... 4F 4F 4F 4F 4F 4F ]'
-                        -
-                            type: jpegSegment
-                            path: '/image/jpeg/jpegSegment:225:APP1'
-                            class: ExifEye\core\Block\JpegSegmentApp1
-                            valid: true
-                            id: '225'
-                            name: APP1
-                            elements:
-                                exif:
-                                    -
-                                        type: exif
-                                        path: '/image/jpeg/jpegSegment:225:APP1/exif'
-                                        class: ExifEye\core\Block\Exif
-                                        valid: true
-                                        elements:
-                                            tiff:
+                                -
+                                    type: tiff
+                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
+                                    class: ExifEye\core\Block\Tiff
+                                    valid: true
+                                    elements:
+                                        -
+                                            type: ifd
+                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
+                                            class: ExifEye\core\Block\Ifd
+                                            valid: true
+                                            name: IFD0
+                                            elements:
                                                 -
-                                                    type: tiff
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
-                                                    class: ExifEye\core\Block\Tiff
+                                                    type: tag
+                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software'
+                                                    class: ExifEye\core\Block\Tag
                                                     valid: true
+                                                    id: '305'
+                                                    name: Software
                                                     elements:
-                                                        ifd:
-                                                            -
-                                                                type: ifd
-                                                                path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
-                                                                class: ExifEye\core\Block\Ifd
-                                                                valid: true
-                                                                name: IFD0
-                                                                elements:
-                                                                    tag:
-                                                                        -
-                                                                            type: tag
-                                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software'
-                                                                            class: ExifEye\core\Block\Tag
-                                                                            valid: true
-                                                                            id: '305'
-                                                                            name: Software
-                                                                            elements:
-                                                                                entry:
-                                                                                    -
-                                                                                        type: entry
-                                                                                        path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software/entry'
-                                                                                        class: ExifEye\core\Entry\Core\Ascii
-                                                                                        valid: true
-                                                                                        format: Ascii
-                                                                                        components: 11
-                                                                                        bytesHash: 5175be687cf17efcc85c38d9b785fcab030f20065935a7fe7223a8a168f4e1d7
-                                                                                        text: 'Example V2'
+                                                        -
+                                                            type: entry
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:305:Software/entry'
+                                                            class: ExifEye\core\Entry\Core\Ascii
+                                                            valid: true
+                                                            format: Ascii
+                                                            components: 11
+                                                            bytesHash: 5175be687cf17efcc85c38d9b785fcab030f20065935a7fe7223a8a168f4e1d7
+                                                            text: 'Example V2'
+                -
+                    type: jpegSegment
+                    path: '/image/jpeg/jpegSegment:192:SOF0'
+                    class: ExifEye\core\Block\JpegSegment
+                    valid: true
+                    id: '192'
+                    name: SOF0
+                    elements:
                         -
-                            type: jpegSegment
-                            path: '/image/jpeg/jpegSegment:192:SOF0'
-                            class: ExifEye\core\Block\JpegSegment
+                            type: entry
+                            path: '/image/jpeg/jpegSegment:192:SOF0/entry'
+                            class: ExifEye\core\Entry\Core\Undefined
                             valid: true
-                            id: '192'
-                            name: SOF0
-                            elements:
-                                entry:
-                                    -
-                                        type: entry
-                                        path: '/image/jpeg/jpegSegment:192:SOF0/entry'
-                                        class: ExifEye\core\Entry\Core\Undefined
-                                        valid: true
-                                        format: Undefined
-                                        components: 17
-                                        bytesHash: f088169de6a87ecb097b0c4d5fb55dc5beae1909d5e9aebd6a2165da07931973
-                                        text: '17 bytes of data [ 00 11 08 00 78 00 ... 02 11 01 03 11 01 ]'
+                            format: Undefined
+                            components: 17
+                            bytesHash: f088169de6a87ecb097b0c4d5fb55dc5beae1909d5e9aebd6a2165da07931973
+                            text: '17 bytes of data [ 00 11 08 00 78 00 ... 02 11 01 03 11 01 ]'
+                -
+                    type: jpegSegment
+                    path: '/image/jpeg/jpegSegment:196:DHT'
+                    class: ExifEye\core\Block\JpegSegment
+                    valid: true
+                    id: '196'
+                    name: DHT
+                    elements:
                         -
-                            type: jpegSegment
-                            path: '/image/jpeg/jpegSegment:196:DHT'
-                            class: ExifEye\core\Block\JpegSegment
+                            type: entry
+                            path: '/image/jpeg/jpegSegment:196:DHT/entry'
+                            class: ExifEye\core\Entry\Core\Undefined
                             valid: true
-                            id: '196'
-                            name: DHT
-                            elements:
-                                entry:
-                                    -
-                                        type: entry
-                                        path: '/image/jpeg/jpegSegment:196:DHT/entry'
-                                        class: ExifEye\core\Entry\Core\Undefined
-                                        valid: true
-                                        format: Undefined
-                                        components: 418
-                                        bytesHash: 403d2314bbba2bba82dcc023a90ab42891e776dbfe4013913cf28a1ee18ff3ec
-                                        text: '418 bytes of data [ 01 A2 00 00 01 05 ... F5 F6 F7 F8 F9 FA ]'
+                            format: Undefined
+                            components: 418
+                            bytesHash: 403d2314bbba2bba82dcc023a90ab42891e776dbfe4013913cf28a1ee18ff3ec
+                            text: '418 bytes of data [ 01 A2 00 00 01 05 ... F5 F6 F7 F8 F9 FA ]'
+                -
+                    type: jpegSegment
+                    path: '/image/jpeg/jpegSegment:218:SOS'
+                    class: ExifEye\core\Block\JpegSegmentSos
+                    valid: true
+                    id: '218'
+                    name: SOS
+                    elements:
                         -
-                            type: jpegSegment
-                            path: '/image/jpeg/jpegSegment:218:SOS'
-                            class: ExifEye\core\Block\JpegSegmentSos
+                            type: entry
+                            path: '/image/jpeg/jpegSegment:218:SOS/entry'
+                            class: ExifEye\core\Entry\Core\Undefined
                             valid: true
-                            id: '218'
-                            name: SOS
-                            elements:
-                                entry:
-                                    -
-                                        type: entry
-                                        path: '/image/jpeg/jpegSegment:218:SOS/entry'
-                                        class: ExifEye\core\Entry\Core\Undefined
-                                        valid: true
-                                        format: Undefined
-                                        components: 4274
-                                        bytesHash: 7a7bdb1dc746cfce3afa05f5c98989f3872af045b1d2babfbc9c28f962c8b1ed
-                                        text: '4274 bytes of data [ 00 0C 03 01 00 02 ... 7B 0A B4 BA 0B CC ]'
-                        -
-                            type: jpegSegment
-                            path: '/image/jpeg/jpegSegment:217:EOI'
-                            class: ExifEye\core\Block\JpegSegment
-                            valid: true
-                            id: '217'
-                            name: EOI
+                            format: Undefined
+                            components: 4274
+                            bytesHash: 7a7bdb1dc746cfce3afa05f5c98989f3872af045b1d2babfbc9c28f962c8b1ed
+                            text: '4274 bytes of data [ 00 0C 03 01 00 02 ... 7B 0A B4 BA 0B CC ]'
+                -
+                    type: jpegSegment
+                    path: '/image/jpeg/jpegSegment:217:EOI'
+                    class: ExifEye\core\Block\JpegSegment
+                    valid: true
+                    id: '217'
+                    name: EOI
 log: {  }

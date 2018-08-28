@@ -72,21 +72,18 @@ class ImageFilesTest extends ExifEyeTestCaseBase
 
         // Check entry.
         if ($element instanceof EntryInterface) {
+            // No sub elements in the element being tested.
+            $this->assertNull($element->getElement('*'));
             $this->assertEquals($expected['format'], Format::getName($element->getFormat()), $element->getContextPath());
             $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
-            if (isset($expected['bytesHash'])) {
-                $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
-            }
+            $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
         }
 
         // Recursively check sub-blocks.
-        // xx @todo add checking count of blocks by type
         if (isset($expected['elements'])) {
-            foreach ($expected['elements'] as $type => $expected_type_elements) {
-                foreach ($expected_type_elements as $i => $expected_element) {
-                    $this->assertElement($expected_element, $element->getMultipleElements($type)[$i]);
-                }
+            foreach ($expected['elements'] as $i => $expected_element) {
+                $this->assertElement($expected_element, $element->getMultipleElements('*')[$i]);
             }
         }
     }

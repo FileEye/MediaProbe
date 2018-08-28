@@ -65,7 +65,7 @@ abstract class BlockBase extends ElementBase
 
         // Dump sub-Blocks.
         foreach ($this->getMultipleElements("*") as $sub_element) {
-            $dump['elements'][$sub_element->getType()][] = $sub_element->toDumpArray();
+            $dump['elements'][] = $sub_element->toDumpArray();
         }
 
         return $dump;
