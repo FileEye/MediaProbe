@@ -3,7 +3,6 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\DataWindow;
-use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -69,26 +68,18 @@ abstract class JpegSegmentBase extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
-        switch ($this->payload) {
-            case 'none':
-                // No need to load anything if the segment is a pure marker.
-                $this->components = 0;
-                return $this;
-            case 'variable':
-                // Read the length of the segment. The length includes the two
-                // bytes used to store the length.
-                $this->components = $data_window->getShort($offset);
-                // Load data in an Undefined entry.
-                $entry = new Undefined($this, [$data_window->getBytes($offset, $this->components)]);
-                break;
-            case 'fixed':
-                // Load data in an Undefined entry.
-                $entry = new Undefined($this, [$data_window->getBytes($offset, $this->components)]);
-                break;
+        if ($size) {
+            $this->debug('Loading data in [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes ...', [
+                'start' => $offset,
+                'end' => $offset + $size - 1,
+                'hstart' => strtoupper(dechex($offset)),
+                'hend' => strtoupper(dechex($offset + $size - 1)),
+                'size' => $size,
+            ]);
         }
-        $entry->debug("{text}", ['text' => $entry->toString()]);
+
         return $this;
     }
 

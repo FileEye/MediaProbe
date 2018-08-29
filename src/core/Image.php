@@ -73,14 +73,15 @@ class Image extends BlockBase
      *            the Image object if successful, or false if the file cannot
      *            be parsed.
      */
-    public static function loadFromFile($path, LoggerInterface $external_logger = null, $fail_level = false)
+    public static function createFromFile($path, LoggerInterface $external_logger = null, $fail_level = false)
     {
         $magic_file_info = new DataWindow(file_get_contents($path, false, null, 0, 10));
         $handling_class = static::determineImageHandlingClass($magic_file_info);
 
         if ($handling_class !== false) {
             $image = new static($handling_class, $external_logger, $fail_level);
-            $image->loadFromData(new DataWindow(file_get_contents($path)));
+            $data_window = new DataWindow(file_get_contents($path));
+            $image->loadFromData($data_window, 0, $data_window->getSize());
             return $image;
         }
 
@@ -108,7 +109,7 @@ class Image extends BlockBase
 
         if ($handling_class !== false) {
             $image = new static($handling_class, $external_logger, $fail_level);
-            $image->loadFromData($data_window);
+            $image->loadFromData($data_window, 0, $data_window->getSize());
             return $image;
         }
 
@@ -133,12 +134,9 @@ class Image extends BlockBase
         }
 
         // TIFF image?
-        $byte_order = $data_window->getBytes(0, 2);
-        if ($byte_order === 'II' || $byte_order === 'MM') {
-            $data_window->setByteOrder($byte_order === 'II' ? ConvertBytes::LITTLE_ENDIAN : ConvertBytes::BIG_ENDIAN);
-            if ($data_window->getShort(2) === Tiff::TIFF_HEADER) {
-                return '\ExifEye\core\Block\Tiff';
-            }
+        $byte_order = Tiff::getTiffSegmentByteOrder($data_window);
+        if ($byte_order !== null) {
+            return '\ExifEye\core\Block\Tiff';
         }
 
         return false;
@@ -169,10 +167,10 @@ class Image extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
         $image_handler = new $this->imageClass($this);
-        $image_handler->loadFromData($data_window);
+        $image_handler->loadFromData($data_window, $offset, $size, $options);
         return $this;
     }
 

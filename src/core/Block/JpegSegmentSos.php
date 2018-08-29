@@ -19,7 +19,7 @@ class JpegSegmentSos extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
         // This segment is last before End Of Image, and its length needs to be
         // determined by finding the EOI marker backwards from the end of data.
@@ -31,6 +31,15 @@ class JpegSegmentSos extends JpegSegmentBase
             $length --;
         }
         $this->components = $length - $offset - 2;
+        $end_offset = $offset + $this->components + 2;
+
+        $this->debug('Loading data in [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes ...', [
+            'start' => $offset,
+            'end' => $end_offset,
+            'hstart' => strtoupper(dechex($offset)),
+            'hend' => strtoupper(dechex($end_offset)),
+            'size' => $this->components,
+        ]);
 
         // Load data in an Undefined entry.
         $entry = new Undefined($this, [$data_window->getBytes($offset, $this->components)]);
@@ -40,14 +49,13 @@ class JpegSegmentSos extends JpegSegmentBase
         new JpegSegment(self::JPEG_EOI, $this->getParentElement());
 
         // Now check to see if there are any trailing data.
-        $end_offset = $offset + $this->components + 2;
         if ($end_offset < $size) {
-            $raw_components = $size - $end_offset;
-            $this->warning('Found trailing content after EOI: {size} bytes', ['size' => $raw_components]);
+            $raw_size = $size - $end_offset;
+            $this->warning('Found trailing content after EOI: {size} bytes', ['size' => $raw_size]);
             // There is no JPEG marker for trailing garbage, so we just load
             // the data in a RawData object.
             $trail = new RawData($this->getParentElement());
-            $trail->loadFromData($data_window, $end_offset, ['components' => $raw_components]);
+            $trail->loadFromData($data_window, $end_offset, $raw_size);
         }
 
         return $this;

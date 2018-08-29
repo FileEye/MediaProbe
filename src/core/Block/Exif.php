@@ -34,17 +34,28 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
-        $this->debug('Parsing {size} bytes of Exif data...', ['size' => $data_window->getSize()]);
+        $this->debug('Loading EXIF data in [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes ...', [
+            'start' => $offset,
+            'end' => $offset + $size - 1,
+            'hstart' => strtoupper(dechex($offset)),
+            'hend' => strtoupper(dechex($offset + $size - 1)),
+            'size' => $size,
+        ]);
 
-        // Skip the EXIF header.
-        $data_window->setWindowStart(strlen(self::EXIF_HEADER));
+        $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, $offset + strlen(self::EXIF_HEADER));
+        if ($tiff_order !== null) {
+            $tiff = new Tiff($this);
+            $tiff->loadFromData($data_window, $offset + strlen(self::EXIF_HEADER), $size - strlen(self::EXIF_HEADER));
+        } else {
+            // We store the data as normal JPEG content if it could not be
+            // parsed as Tiff data.
+            $entry = new Undefined($this, [$data_window->getBytes($offset, $size)]);
+            $entry->debug("TIFF header not found. Loaded {text}", ['text' => $entry->toString()]);
+        }
 
-        // The rest is TIFF data.
-        $tiff = new Tiff($this);
-        $tiff->loadFromData($data_window);
-        return true;
+        return $this;
     }
 
     /**
@@ -52,13 +63,16 @@ class Exif extends BlockBase
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
     {
-        return self::EXIF_HEADER . $this->getElement('tiff')->toBytes();
+        return self::EXIF_HEADER . $this->getElement('*')->toBytes();
     }
 
+    /**
+     * Determines if the data is an EXIF segment.
+     */
     public static function isExifSegment(DataWindow $data_window, $offset = 0)
     {
         // There must be at least 6 bytes for the Exif header.
-        if ($data_window->getSize() - $offset < 6) {
+        if ($data_window->getSize() - $offset < strlen(self::EXIF_HEADER)) {
             return false;
         }
 

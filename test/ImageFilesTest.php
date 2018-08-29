@@ -46,7 +46,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
 
         $test = Yaml::parse($test_file_content);
 
-        $image = Image::loadFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
+        $image = Image::createFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
 
         $this->assertEquals($test['mimeType'], $image->getMimeType());
 //$this->assertEquals($test['fileContentHash'], hash('sha256', $test_file_content));
@@ -69,6 +69,9 @@ class ImageFilesTest extends ExifEyeTestCaseBase
     protected function assertElement($expected, $element)
     {
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
+
+        // xx
+//        $this->assertNotNull($element->toBytes(), $element->getContextPath());
 
         // Check entry.
         if ($element instanceof EntryInterface) {

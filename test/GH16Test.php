@@ -31,7 +31,7 @@ class GH16Test extends ExifEyeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         // Parse test file.
-        $image = Image::loadFromFile($this->file);
+        $image = Image::createFromFile($this->file);
         $jpeg = $image->getElement("jpeg");
         $exif = $jpeg->getElement("jpegSegment/exif");
         $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
@@ -47,7 +47,7 @@ class GH16Test extends ExifEyeTestCaseBase
         $image->saveToFile($this->file);
 
         // Parse the test file again and check the Tag's new value was saved.
-        $r_image = Image::loadFromFile($this->file);
+        $r_image = Image::createFromFile($this->file);
         $r_jpeg = $r_image->getElement("jpeg");
         $r_exif = $r_jpeg->getElement("jpegSegment/exif");
         $r_ifd0 = $r_exif->getElement("tiff/ifd[@name='IFD0']");

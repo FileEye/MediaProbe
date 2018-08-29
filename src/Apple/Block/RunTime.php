@@ -13,7 +13,7 @@ class RunTime extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
         $this->debug("START... Loading");
 

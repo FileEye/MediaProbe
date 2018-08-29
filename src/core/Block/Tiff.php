@@ -36,43 +36,24 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
-        $this->debug('Parsing {size} bytes of TIFF data...', ['size' => $data_window->getSize()]);
+        $this->debug('Loading TIFF data in [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes ...', [
+            'start' => $offset,
+            'end' => $offset + $size - 1,
+            'hstart' => strtoupper(dechex($offset)),
+            'hend' => strtoupper(dechex($offset + $size - 1)),
+            'size' => $size,
+        ]);
 
-        // There must be at least 8 bytes available: 2 bytes for the byte
-        // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
-        // the first IFD.
-        if ($data_window->getSize() < 8) {
-            $this->error('Expected at least 8 bytes of TIFF data, found only {size} bytes', [
-                'size' => $data_window->getSize(),
-            ]);
-            $this->valid = false;
-            return false;
-        }
+        // Determine the byte order of the TIFF data.
+        $byte_order = self::getTiffSegmentByteOrder($data_window, $offset);
 
-        // Byte order.
-        if ($data_window->strcmp(0, 'II')) {
-            $this->debug('Found Intel byte order');
-            $data_window->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
-        } elseif ($data_window->strcmp(0, 'MM')) {
-            $this->debug('Found Motorola byte order');
-            $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
-        } else {
-            $this->error('Unknown byte order found in TIFF data: 0x{byte0} 0x{byte1}', [
-                'byte0' => dechex($data_window->getByte(0)),
-                'byte1' => dechex($data_window->getByte(1)),
-            ]);
-            $this->valid = false;
-            return false;
-        }
+        // xx Continue from here...
 
-        // Verify the TIFF header.
-        if ($data_window->getShort(2) != self::TIFF_HEADER) {
-            $this->error('Missing TIFF magic value');
-            $this->valid = false;
-            return false;
-        }
+
+        $data_window = $data_window->getClone($offset);
+        $data_window->setByteOrder($byte_order);
 
         // IFD0.
         $offset = $data_window->getLong(4);
@@ -157,5 +138,36 @@ class Tiff extends BlockBase
     public function getMimeType()
     {
         return 'image/tiff';
+    }
+
+    /**
+     * Determines if the data is a TIFF segment.
+     */
+    public static function getTiffSegmentByteOrder(DataWindow $data_window, $offset = 0)
+    {
+        // There must be at least 8 bytes available: 2 bytes for the byte
+        // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
+        // the first IFD.
+        if ($data_window->getSize() - $offset < 8) {
+            return null;
+        }
+
+        // Byte order.
+        $order_string = $data_window->getBytes($offset, 2);
+        if ($order_string === 'II') {
+            $order = ConvertBytes::LITTLE_ENDIAN;
+        } elseif ($order_string === 'MM') {
+            $order = ConvertBytes::BIG_ENDIAN;
+        } else {
+            return null;
+        }
+
+        // Verify the TIFF header.
+        $magic_string = $data_window->getBytes($offset + 2, 2);
+        if (ConvertBytes::toShort($magic_string, 0, $order) !== self::TIFF_HEADER) {
+            return null;
+        }
+
+        return $order;
     }
 }

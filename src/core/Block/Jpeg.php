@@ -34,9 +34,9 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
-        $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $data_window->getSize()]);
+        $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $size]);
 
         // JPEG data is stored in big-endian format.
         $data_window->setByteOrder(ConvertBytes::BIG_ENDIAN);
@@ -44,24 +44,44 @@ class Jpeg extends BlockBase
         // Run through the data to read the segments in the image. After each
         // segment is read, the offset will be moved forward, and after the last
         // segment we will terminate.
-        $i = $offset;
-        while ($i < $data_window->getSize()) {
+        $segment_offset = $offset;
+        while ($segment_offset < $size) {
             // Get next JPEG marker.
-            $i = $this->getJpegMarkerOffset($data_window, $i);
-            $segment_id = $data_window->getByte($i);
+            $segment_offset = $this->getJpegMarkerOffset($data_window, $segment_offset);
+            $segment_id = $data_window->getByte($segment_offset);
 
             // Warn if an unidentified segment is detected.
             if (!in_array($segment_id, Spec::getTypeSupportedElementIds($this->getType()))) {
                 $this->warning('Invalid marker 0x{marker} found @ offset {offset}', [
-                    'offset' => $i,
+                    'offset' => $segment_offset,
                     'marker' => strtoupper(dechex($segment_id)),
                 ]);
             }
 
-            // Create and load the ExifEye JPEG segment object.
+            $segment_offset++;
+
+            // Create the ExifEye JPEG segment object.
             $segment_class = Spec::getElementHandlingClass($this->getType(), $segment_id);
             $segment = new $segment_class($segment_id, $this);
-            $segment->loadFromData($data_window, ++$i);
+
+            // Get the JPEG segment size.
+            $payload = Spec::getElementPropertyValue($this->getType(), $segment_id, 'payload');
+            switch ($payload) {
+                case 'none':
+                    $segment_size = 0;
+                    break;
+                case 'variable':
+                    // Read the length of the segment. The length includes the two
+                    // bytes used to store the length.
+                    $segment_size = $data_window->getShort($segment_offset);
+                    break;
+                case 'fixed':
+                    $segment_size = Spec::getElementPropertyValue($this->getType(), $segment_id, 'components');
+                    break;
+            }
+
+            // Load the ExifEye JPEG segment object.
+            $segment->loadFromData($data_window, $segment_offset, $segment_size);
 
             // In case of image scan segment, the load is now complete.
             if ($segment->getPayload() === 'scan') {
@@ -69,8 +89,8 @@ class Jpeg extends BlockBase
             }
 
             // Position to end of the segment. It is defined by the current
-            // offset + JPEG marker (2 bytes) + the bytes of the payload.
-            $i += $segment->getComponents();
+            // offset + the bytes of the payload.
+            $segment_offset += $segment->getComponents();
         }
 
         return $this;

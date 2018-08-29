@@ -12,7 +12,7 @@ class Tags1Test extends ExifEyeTestCaseBase
 {
     public function testTags()
     {
-        $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/test-tags-1.jpg', null, 'error');
+        $image = Image::createFromFile(dirname(__FILE__) . '/image_files/test-tags-1.jpg', null, 'error');
         $jpeg = $image->getElement("jpeg");
 
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $jpeg->getElement("jpegSegment/exif"));

@@ -86,7 +86,7 @@ if (!is_readable($file)) {
 
 try {
     /* Load data from file */
-    $image = Image::loadFromFile($file, $logger, $fail_on_error);
+    $image = Image::createFromFile($file, $logger, $fail_on_error);
     if ($image === null) {
         print("dump-image: Unrecognized image format!\n");
         exit(1);

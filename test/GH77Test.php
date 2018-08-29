@@ -13,7 +13,7 @@ class GH77Test extends ExifEyeTestCaseBase
     {
         $file = dirname(__FILE__) . '/image_files/gh-77.jpg';
 
-        $image = Image::loadFromFile($file);
+        $image = Image::createFromFile($file);
         $input_jpeg = $image->getElement("jpeg");
 
         $app1 = $input_jpeg->getElement("jpegSegment/exif");

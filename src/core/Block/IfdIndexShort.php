@@ -28,7 +28,7 @@ class IfdIndexShort extends Ifd
      * @param int $components
      *            (Optional) the number of components held by this IFD.
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
         $components = $options['components'];
 

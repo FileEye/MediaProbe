@@ -56,7 +56,7 @@ class Ifd extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, array $options = [])
+    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
     {
         $starting_offset = $offset;
 
@@ -116,7 +116,7 @@ class Ifd extends BlockBase
                     $ifd_class = Spec::getIfdClass($ifd_name);
                     $ifd = new $ifd_class($this, $ifd_name);
                     try {
-                        $ifd->loadFromData($data_window, $o, [
+                        $ifd->loadFromData($data_window, $o, null, [
                             'data_offset' => $tag_data_offset,
                             'components' => $tag_components,
                         ]);
@@ -231,7 +231,8 @@ class Ifd extends BlockBase
             // There is only one component.
             $ifd_area .= ConvertBytes::fromLong(1, $byte_order);
 
-            $data = $sub->getBytes($end, $byte_order);
+            $data = $sub->toBytes($end, $byte_order);
+//if (is_array($data)) dump(get_class($sub));
             $s = strlen($data);
             $sub_bytes .= $data;
 

@@ -28,7 +28,7 @@ class GH21Test extends ExifEyeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         $scale = 0.75;
-        $input_image = Image::loadFromFile($this->file);
+        $input_image = Image::createFromFile($this->file);
         $input_jpeg = $input_image->getElement("jpeg");
 
         $original = ImageCreateFromString($input_jpeg->toBytes());
@@ -69,7 +69,7 @@ class GH21Test extends ExifEyeTestCaseBase
 
         $out_image->saveToFile($this->file);
 
-        $image = Image::loadFromFile($this->file);
+        $image = Image::createFromFile($this->file);
         $jpeg = $image->getElement("jpeg");
         $exifin = $jpeg->getElement("jpegSegment/exif");
         $this->assertEquals($exif, $exifin);

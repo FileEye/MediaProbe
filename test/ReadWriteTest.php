@@ -37,7 +37,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
      */
     public function testWriteRead(array $entries)
     {
-        $image = Image::loadFromFile(dirname(__FILE__) . '/image_files/no-exif.jpg', null, 'error');
+        $image = Image::createFromFile(dirname(__FILE__) . '/image_files/no-exif.jpg', null, 'error');
         $jpeg = $image->getElement("jpeg");
 
         $this->assertNull($jpeg->getElement("jpegSegment/exif"));
@@ -71,7 +71,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $jpeg = null;
 
         // Now read the file and see if the entries are still there.
-        $r_image = Image::loadFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
+        $r_image = Image::createFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
         $r_jpeg = $r_image->getElement("jpeg");
 
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $r_jpeg->getElement("jpegSegment/exif"));

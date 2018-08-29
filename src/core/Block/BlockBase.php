@@ -37,12 +37,14 @@ abstract class BlockBase extends ElementBase
      * @param int $offset
      *            (Optional) the offset within the window where the block will
      *            be found.
+     * @param int|null $size
+     *            (Optional) the size of the data from the offset.
      * @param array $options
      *            (Optional) an array with additional options for the load.
      *
      * @returns BlockBase
      */
-    abstract public function loadFromData(DataWindow $data_window, $offset = 0, array $options = []);
+    abstract public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = []);
 
     /**
      * {@inheritdoc}
