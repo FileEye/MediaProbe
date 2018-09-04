@@ -37,7 +37,7 @@ setlocale(LC_ALL, '');
 require_once '../autoload.php';
 
 use ExifEye\core\ExifEye;
-use ExifEye\core\DataWindow;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Spec;
 use ExifEye\core\Block\Tiff;

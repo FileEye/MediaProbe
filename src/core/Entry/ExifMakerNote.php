@@ -4,7 +4,7 @@ namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Block\Ifd;
-use ExifEye\core\DataWindow;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\ConvertBytes;

@@ -5,6 +5,8 @@ namespace ExifEye\core;
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
+use ExifEye\core\Data\DataElement;
+use ExifEye\core\Data\DataString;
 use ExifEye\core\Utility\ConvertBytes;
 use Psr\Log\LoggerInterface;
 use Monolog\Logger;

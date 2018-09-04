@@ -3,19 +3,11 @@
 namespace ExifEye\core\Utility;
 
 /**
- * Conversion functions to and from bytes and integers.
+ * Conversion functions to and from bytes and numerals.
  *
- * The functions found in this class are used to convert bytes into integers of
- * several sizes ({@link toShort}, {@link toLong}, and
- * {@link toRational}) and convert integers of several sizes into bytes
- * ({@link fromShort} and {@link fromLong}).
- *
- * All the methods are static and they all rely on an argument that specifies
- * the byte order to be used, this must be one of the class constants
- * {@link LITTLE_ENDIAN} or {@link BIG_ENDIAN}. These constants will be referred
- * to as the pseudo type PelByteOrder throughout the documentation.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * All the methods are static and rely on an argument that specifies the byte
+ * order to be used. This must be one of the class constants: LITTLE_ENDIAN
+ * or BIG_ENDIAN.
  */
 class ConvertBytes
 {
@@ -43,14 +35,14 @@ class ConvertBytes
      * @param integer $value
      *            the unsigned short that will be converted. The lower two bytes
      *            will be extracted regardless of the actual size passed.
-     * @param boolean $endian
+     * @param boolean $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the unsigned short.
      */
-    public static function fromShort($value, $endian)
+    public static function fromShort($value, $byte_order)
     {
-        if ($endian == self::LITTLE_ENDIAN) {
+        if ($byte_order == static::LITTLE_ENDIAN) {
             return chr($value) . chr($value >> 8);
         } else {
             return chr($value >> 8) . chr($value);
@@ -63,16 +55,16 @@ class ConvertBytes
      * @param integer $value
      *            the signed short that will be converted. The lower two bytes
      *            will be extracted regardless of the actual size passed.
-     * @param boolean $endian
+     * @param boolean $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the signed short.
      */
-    public static function fromSignedShort($value, $endian)
+    public static function fromSignedShort($value, $byte_order)
     {
         // We can just use fromShort, since signed shorts fits well
         // within the 32 bit signed integers used in PHP.
-        return self::fromShort($value, $endian);
+        return static::fromShort($value, $byte_order);
     }
 
     /**
@@ -89,12 +81,12 @@ class ConvertBytes
      *            will be extracted. Treating the argument as an unsigned
      *            integer means that the absolute value will be used. Use
      *            {@link fromSignedLong} to convert signed integers.
-     * @param boolean $endian
+     * @param boolean $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the unsigned long.
      */
-    public static function fromLong($value, $endian)
+    public static function fromLong($value, $byte_order)
     {
         // We cannot convert the number to bytes in the normal way (using shifts
         // and modulo calculations) because the PHP operator >> and function
@@ -102,7 +94,7 @@ class ConvertBytes
         // integer known to PHP. But luckily base_convert handles such big
         // numbers.
         $hex = str_pad(base_convert($value, 10, 16), 8, '0', STR_PAD_LEFT);
-        if ($endian == self::LITTLE_ENDIAN) {
+        if ($byte_order == static::LITTLE_ENDIAN) {
             return (chr(hexdec($hex{6} . $hex{7})) . chr(hexdec($hex{4} . $hex{5})) . chr(hexdec($hex{2} . $hex{3})) .
                  chr(hexdec($hex{0} . $hex{1})));
         } else {
@@ -118,17 +110,17 @@ class ConvertBytes
      *            the signed long that will be converted. The argument will be
      *            treated as a signed 32 bit integer, from which the lower four
      *            bytes will be extracted.
-     * @param boolean $endian
+     * @param boolean $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the signed long.
      */
-    public static function fromSignedLong($value, $endian)
+    public static function fromSignedLong($value, $byte_order)
     {
         // We can convert the number into bytes in the normal way using shifts
         // and modulo calculations here (in contrast with fromLong) because
         // PHP automatically handles 32 bit signed integers for us.
-        if ($endian == self::LITTLE_ENDIAN) {
+        if ($byte_order == static::LITTLE_ENDIAN) {
             return (chr($value) . chr($value >> 8) . chr($value >> 16) . chr($value >> 24));
         } else {
             return (chr($value >> 24) . chr($value >> 16) . chr($value >> 8) . chr($value));
@@ -140,38 +132,35 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            The byte found at the offset will be returned as an integer.
-     *            There must be at least one byte available at offset.
      *
-     * @return integer $offset the unsigned byte found at offset, e.g., an
-     *         integer in the range 0 to 255.
+     * @return integer
+     *            the unsigned byte found at the first position of the string.
      */
-    public static function toByte($bytes, $offset)
+    public static function toByte($bytes)
     {
-        return ord($bytes{$offset});
+        if (!is_string($bytes) || strlen($bytes) < 1) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
+        }
+        return ord($bytes[0]);
     }
 
     /**
-     * Extract a signed byte from bytes.
+     * Extract a signed byte from a string bytes.
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            The byte found at the offset will be returned as an integer.
-     *            There must be at least one byte available at offset.
      *
-     * @return integer the signed byte found at offset, e.g., an integer in
-     *         the range -128 to 127.
+     * @return integer
+     *            the signed byte found at the first position of the string, in
+     *            the range -128 to 127.
      */
-    public static function toSignedByte($bytes, $offset)
+    public static function toSignedByte($bytes)
     {
-        $n = self::toByte($bytes, $offset);
-        if ($n > 127) {
-            return $n - 256;
-        } else {
-            return $n;
+        if (!is_string($bytes) || strlen($bytes) < 1) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
         }
+        $n = static::toByte($bytes);
+        return $n > 127 ? $n - 256 : $n;
     }
 
     /**
@@ -179,22 +168,22 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            the offset. The short found at the offset will be returned as
-     *            an integer. There must be at least two bytes available
-     *            beginning at the offset given.
-     * @param boolean $endian
-     *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
+     * @param boolean $byte_order
+     *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer the unsigned short found at offset, e.g., an integer
-     *         in the range 0 to 65535.
+     * @return integer
+     *            the unsigned short found at the first position of the string,
+     *            in the range 0 to 65535.
      */
-    public static function toShort($bytes, $offset, $endian)
+    public static function toShort($bytes, $byte_order)
     {
-        if ($endian == self::LITTLE_ENDIAN) {
-            return (ord($bytes{$offset + 1}) * 256 + ord($bytes{$offset}));
+        if (!is_string($bytes) || strlen($bytes) < 2) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
+        }
+        if ($byte_order == static::LITTLE_ENDIAN) {
+            return (ord($bytes[1]) * 256 + ord($bytes[0]));
         } else {
-            return (ord($bytes{$offset}) * 256 + ord($bytes{$offset + 1}));
+            return (ord($bytes[0]) * 256 + ord($bytes[1]));
         }
     }
 
@@ -203,24 +192,20 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            The short found at offset will be returned as an integer.
-     *            There must be at least two bytes available beginning at the
-     *            offset given.
-     * @param boolean $endian
-     *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
+     * @param boolean $byte_order
+     *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer the signed byte found at offset, e.g., an integer in
-     *         the range -32768 to 32767.
+     * @return integer
+     *            the signed short found at the first position of the string, in
+     *            the range -32768 to 32767.
      */
-    public static function toSignedShort($bytes, $offset, $endian)
+    public static function toSignedShort($bytes, $byte_order)
     {
-        $n = self::toShort($bytes, $offset, $endian);
-        if ($n > 32767) {
-            return $n - 65536;
-        } else {
-            return $n;
+        if (!is_string($bytes) || strlen($bytes) < 2) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
         }
+        $n = static::toShort($bytes, $byte_order);
+        return $n > 32767 ? $n - 65536 : $n;
     }
 
     /**
@@ -228,24 +213,22 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            The long found at offset will be returned as an integer. There
-     *            must be at least four bytes available beginning at the offset
-     *            given.
-     * @param boolean $endian
-     *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
+     * @param boolean $byte_order
+     *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer the unsigned long found at offset, e.g., an integer
-     *         in the range 0 to 4294967295.
+     * @return integer
+     *            the unsigned long found at the first position of the string,
+     *            in the range 0 to 4294967295.
      */
-    public static function toLong($bytes, $offset, $endian)
+    public static function toLong($bytes, $byte_order)
     {
-        if ($endian == self::LITTLE_ENDIAN) {
-            return (ord($bytes{$offset + 3}) * 16777216 + ord($bytes{$offset + 2}) * 65536 +
-                 ord($bytes{$offset + 1}) * 256 + ord($bytes{$offset}));
+        if (!is_string($bytes) || strlen($bytes) < 4) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
+        }
+        if ($byte_order == static::LITTLE_ENDIAN) {
+            return (ord($bytes[3]) * 16777216 + ord($bytes[2]) * 65536 + ord($bytes[1]) * 256 + ord($bytes[0]));
         } else {
-            return (ord($bytes{$offset}) * 16777216 + ord($bytes{$offset + 1}) * 65536 + ord($bytes{$offset + 2}) * 256 +
-                 ord($bytes{$offset + 3}));
+            return (ord($bytes[0]) * 16777216 + ord($bytes[1]) * 65536 + ord($bytes[2]) * 256 + ord($bytes[3]));
         }
     }
 
@@ -254,24 +237,20 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            The long found at offset will be returned as an integer. There
-     *            must be at least four bytes available beginning at the offset
-     *            given.
-     * @param boolean $endian
-     *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
+     * @param boolean $byte_order
+     *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer the signed long found at offset, e.g., an integer in
-     *         the range -2147483648 to 2147483647.
+     * @return integer
+     *            the signed long found at the first position of the string,
+     *            in the range -2147483648 to 2147483647.
      */
-    public static function toSignedLong($bytes, $offset, $endian)
+    public static function toSignedLong($bytes, $byte_order)
     {
-        $n = self::toLong($bytes, $offset, $endian);
-        if ($n > 2147483647) {
-            return $n - 4294967296;
-        } else {
-            return $n;
+        if (!is_string($bytes) || strlen($bytes) < 4) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
         }
+        $n = static::toLong($bytes, $byte_order);
+        return $n > 2147483647 ? $n - 4294967296 : $n;
     }
 
     /**
@@ -279,21 +258,21 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            The rational found at offset will be returned as an array.
-     *            There must be at least eight bytes available beginning at the
-     *            offset given.
-     * @param boolean $endian
-     *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
+     * @param boolean $byte_order
+     *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return array the unsigned rational found at offset, e.g., an
-     *         array with two integers in the range 0 to 4294967295.
+     * @return array
+     *            the unsigned rational found at offset, an array with two
+     *            integers in the range 0 to 4294967295.
      */
-    public static function toRational($bytes, $offset, $endian)
+    public static function toRational($bytes, $byte_order)
     {
+        if (!is_string($bytes) || strlen($bytes) < 8) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
+        }
         return [
-            self::toLong($bytes, $offset, $endian),
-            self::toLong($bytes, $offset + 4, $endian)
+            static::toLong($bytes, $byte_order),
+            static::toLong(substr($bytes, 4), $byte_order),
         ];
     }
 
@@ -302,56 +281,21 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param integer $offset
-     *            The rational found at offset will be returned as an array.
-     *            There must be at least eight bytes available beginning at the
-     *            offset given.
-     * @param boolean $endian
-     *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
+     * @param boolean $byte_order
+     *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return array the signed rational found at offset, e.g., an array
-     *         with two integers in the range -2147483648 to 2147483647.
+     * @return array
+     *            the signed rational found at offset, an array with two
+     *            integers in the range -2147483648 to 2147483647.
      */
-    public static function toSignedRational($bytes, $offset, $endian)
+    public static function toSignedRational($bytes, $byte_order)
     {
+        if (!is_string($bytes) || strlen($bytes) < 8) {
+            throw new \InvalidArgumentException('Invalid input data for ' . __METHOD__);
+        }
         return [
-            self::toSignedLong($bytes, $offset, $endian),
-            self::toSignedLong($bytes, $offset + 4, $endian)
+            static::toSignedLong($bytes, $byte_order),
+            static::toSignedLong(substr($bytes, 4), $byte_order),
         ];
-    }
-
-    /**
-     * Format bytes for dumping.
-     *
-     * This method is for debug output, it will format a string as a
-     * hexadecimal dump suitable for display on a terminal. The output
-     * is printed directly to standard out.
-     *
-     * @param string $bytes
-     *            the bytes that will be dumped.
-     * @param integer $max
-     *            the maximum number of bytes to dump. If this is left out (or
-     *            left to the default of 0), then the entire string will be
-     *            dumped.
-     *
-     * @return void
-     */
-    public static function dump($bytes, $max = 0)
-    {
-        $s = strlen($bytes);
-
-        if ($max > 0) {
-            $s = min($max, $s);
-        }
-        $line = 24;
-
-        for ($i = 0; $i < $s; $i ++) {
-            printf('%02X ', ord($bytes{$i}));
-
-            if (($i + 1) % $line == 0) {
-                print("\n");
-            }
-        }
-        print("\n");
     }
 }

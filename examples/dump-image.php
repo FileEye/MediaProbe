@@ -15,7 +15,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Image;
 use ExifEye\core\Spec;
-use ExifEye\core\DataWindow;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;

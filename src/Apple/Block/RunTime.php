@@ -4,8 +4,8 @@ namespace ExifEye\Apple\Block;
 
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Tag;
-use ExifEye\core\DataElement;
-use ExifEye\core\DataWindow;
+use ExifEye\core\Data\DataElement;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ExifEye;
 use CFPropertyList\CFPropertyList;
 use ExifEye\core\Spec;

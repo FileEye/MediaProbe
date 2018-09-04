@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\DataString;
+use ExifEye\core\Data\DataString;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\JpegSegmentApp1;

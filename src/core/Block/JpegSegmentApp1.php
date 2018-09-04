@@ -2,8 +2,8 @@
 
 namespace ExifEye\core\Block;
 
-use ExifEye\core\DataElement;
-use ExifEye\core\DataWindow;
+use ExifEye\core\Data\DataElement;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Utility\ConvertBytes;
 

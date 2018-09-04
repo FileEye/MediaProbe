@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
-use ExifEye\core\DataWindow;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;

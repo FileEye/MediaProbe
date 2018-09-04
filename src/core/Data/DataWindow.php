@@ -1,6 +1,6 @@
 <?php
 
-namespace ExifEye\core;
+namespace ExifEye\core\Data;
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;

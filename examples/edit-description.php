@@ -46,7 +46,7 @@ require_once '../autoload.php';
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\Tiff;
-use ExifEye\core\DataWindow;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
