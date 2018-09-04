@@ -3,8 +3,9 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\Block\Tag;
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
-use ExifEye\core\DataWindowException;
+use ExifEye\core\DataException;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
@@ -56,23 +57,24 @@ class Ifd extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
         $starting_offset = $offset;
 
         // Get the number of tags.
-        $n = $data_window->getShort($offset + $this->headerSkipBytes);
-        $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
+        $n = $data_element->getShort($this->headerSkipBytes + $offset);
+        $this->debug("START... Loading with {tags} TAGs at w-offset {offset} from {total} bytes, r-offset {roffset}", [
             'tags' => $n,
             'offset' => $offset,
-            'total' => $data_window->getSize(),
+            'total' => $data_element->getSize(),
+            'roffset' => $data_element->getStart() + $offset,
         ]);
 
-        $offset += 2 + $this->headerSkipBytes;
+        $offset += $this->headerSkipBytes;
 
         // Check if we have enough data.
-        if ($offset + 12 * $n > $data_window->getSize()) {
-            $n = floor(($offset - $data_window->getSize()) / 12);
+        if (2 + 12 * $n > $data_element->getSize()) {
+            $n = floor(($offset - $data_element->getSize()) / 12);
             $this->warning('Adjusted to: {tags}.', [
                 'tags' => $n,
             ]);
@@ -80,13 +82,13 @@ class Ifd extends BlockBase
 
         // Load Tags.
         for ($i = 0; $i < $n; $i++) {
-            $i_offset = $offset + 12 * $i;
+            $i_offset = $offset + 2 + 12 * $i;
 
             // Gets the TAG's elements from the data window.
-            $tag_id = $data_window->getShort($i_offset);
-            $tag_format = $data_window->getShort($i_offset + 2);
-            $tag_components = $data_window->getLong($i_offset + 4);
-            $tag_data_element = $data_window->getLong($i_offset + 8);
+            $tag_id = $data_element->getShort($i_offset);
+            $tag_format = $data_element->getShort($i_offset + 2);
+            $tag_components = $data_element->getLong($i_offset + 4);
+            $tag_data_element = $data_element->getLong($i_offset + 8);
 
             // If the data size is bigger than 4 bytes, then actual data is not in
             // the TAG's data element, but at the the offset stored in the data
@@ -95,7 +97,7 @@ class Ifd extends BlockBase
             if ($tag_size > 4) {
                 $tag_data_offset = $tag_data_element;
                 if (!$this->tagsAbsoluteOffset) {
-                    $tag_data_offset += $offset;
+                    $tag_data_offset += $offset + 2;
                 }
                 $tag_data_offset += $this->tagsSkipOffset;
             } else {
@@ -104,24 +106,24 @@ class Ifd extends BlockBase
 
             // Build the TAG object.
             $tag_entry_class = Spec::getEntryClass($this, $tag_id, $tag_format);
-            $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $tag_format, $tag_components, $data_window, $tag_data_offset);
+            $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $tag_format, $tag_components, $data_element, $tag_data_offset);
             $tag = new Tag($this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
 
             // Load a subIfd.
             if (Spec::isTagAnIfdPointer($this, $tag->getAttribute('id'))) {
                 // If the tag is an IFD pointer, loads the IFD.
                 $ifd_name = Spec::getIfdNameFromTag($this, $tag->getAttribute('id'));
-                $o = $data_window->getLong($offset + 12 * $i + 8);
+                $o = $data_element->getLong($i_offset + 8);
                 if ($starting_offset != $o) {
                     $ifd_class = Spec::getIfdClass($ifd_name);
                     $ifd = new $ifd_class($this, $ifd_name);
                     try {
-                        $ifd->loadFromData($data_window, $o, null, [
+                        $ifd->loadFromData($data_element, $o, $size, [
                             'data_offset' => $tag_data_offset,
                             'components' => $tag_components,
                         ]);
                         $this->removeElement("tag[@name='" . $tag->getAttribute('name') . "']");
-                    } catch (DataWindowException $e) {
+                    } catch (DataException $e) {
                         $this->error($e->getMessage());
                     }
                 } else {
@@ -140,13 +142,13 @@ class Ifd extends BlockBase
             $this->debug("START... {callback}", [
                 'callback' => $callback,
             ]);
-            call_user_func($callback, $data_window, $this);
+            call_user_func($callback, $data_element, $this);
             $this->debug(".....END {callback}", [
                 'callback' => $callback,
             ]);
         }
 
-        return $data_window->getLong($offset + 12 * $n);
+        return $data_element->getLong($offset + 2 + 12 * $n);
     }
 
     /**

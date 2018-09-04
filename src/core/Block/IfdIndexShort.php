@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
@@ -20,7 +21,7 @@ class IfdIndexShort extends Ifd
     /**
      * Load data into a Image File Directory (IFD).
      *
-     * @param DataWindow $data_window
+     * @param DataWindow $data_element
      *            the data window that will provide the data.
      * @param int $offset
      *            the offset within the window where the directory will
@@ -28,17 +29,17 @@ class IfdIndexShort extends Ifd
      * @param int $components
      *            (Optional) the number of components held by this IFD.
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
         $components = $options['components'];
 
         $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
             'tags' => $components,
             'offset' => $offset,
-            'total' => $data_window->getSize(),
+            'total' => $data_element->getSize(),
         ]);
 
-        $index_size = $data_window->getShort($offset);
+        $index_size = $data_element->getShort($offset);
         if ($index_size / $components !== Format::getSize(Format::SHORT)) {
             $this->warning('Size of {ifd_name} does not match the number of entries.', [
                 'ifd_name' => $this->getAttribute('name'),
@@ -53,31 +54,31 @@ class IfdIndexShort extends Ifd
             $item_format = Spec::getTagFormat($this, $i + 1)[0];
             switch ($item_format) {
                 case Format::BYTE:
-                    $item_value = $data_window->getByte($offset + $i * 2);
+                    $item_value = $data_element->getByte($offset + $i * 2);
                     break;
                 case Format::SHORT:
-                    $item_value = $data_window->getShort($offset + $i * 2);
+                    $item_value = $data_element->getShort($offset + $i * 2);
                     break;
                 case Format::LONG:
-                    $item_value = $data_window->getLong($offset + $i * 2);
+                    $item_value = $data_element->getLong($offset + $i * 2);
                     break;
                 case Format::RATIONAL:
-                    $item_value = $data_window->getRational($offset + $i * 2);
+                    $item_value = $data_element->getRational($offset + $i * 2);
                     break;
                 case Format::SBYTE:
-                    $item_value = $data_window->getSignedByte($offset + $i * 2);
+                    $item_value = $data_element->getSignedByte($offset + $i * 2);
                     break;
                 case Format::SSHORT:
-                    $item_value = $data_window->getSignedShort($offset + $i * 2);
+                    $item_value = $data_element->getSignedShort($offset + $i * 2);
                     break;
                 case Format::SLONG:
-                    $item_value = $data_window->getSignedLong($offset + $i * 2);
+                    $item_value = $data_element->getSignedLong($offset + $i * 2);
                     break;
                 case Format::SRATIONAL:
-                    $item_value = $data_window->getSRattional($offset + $i * 2);
+                    $item_value = $data_element->getSRattional($offset + $i * 2);
                     break;
                 default:
-                    $item_value = $data_window->getSignedShort($offset + $i * 2);
+                    $item_value = $data_element->getSignedShort($offset + $i * 2);
                     $item_format = Format::SSHORT;
                     break;
             }

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Utility\ConvertBytes;
@@ -14,19 +15,19 @@ class JpegSegmentApp1 extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        parent::loadFromData($data_window, $offset, $size, $options);
+        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder(), $this);
 
         $this->components = $size;
 
-        if (Exif::isExifSegment($data_window, $offset + 2)) {
+        if (Exif::isExifSegment($data_window, 2)) {
             $exif = new Exif($this);
-            $ret = $exif->loadFromData($data_window, $offset + 2, $this->components - 2);
+            $ret = $exif->loadFromData($data_window, 2, $this->components - 2);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.
-            $entry = new Undefined($this, [$data_window->getBytes($offset, $this->components)]);
+            $entry = new Undefined($this, [$data_window->getBytes()]);
             $entry->debug("Exif header not found. Loaded {text}", ['text' => $entry->toString()]);
         }
 

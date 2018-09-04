@@ -2,7 +2,7 @@
 
 namespace ExifEye\Test\core;
 
-use ExifEye\core\DataWindow;
+use ExifEye\core\DataString;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\JpegSegmentApp1;
@@ -51,8 +51,11 @@ class GH21Test extends ExifEyeTestCaseBase
             $original_w,
             $original_h
         );
+        ob_start();
+        imagejpeg($scaled, null);
+        $scaled_bytes = ob_get_clean();
 
-        $out_image = Image::createFromData(new DataWindow($scaled));
+        $out_image = Image::createFromData(new DataString($scaled_bytes));
         $out_jpeg = $out_image->getElement("jpeg");
 
         $exif = $input_jpeg->getElement("jpegSegment/exif");
@@ -65,7 +68,8 @@ class GH21Test extends ExifEyeTestCaseBase
 
         // Add the EXIF block to the APP1 segment.
         $exif_block = new Exif($out_app1_segment);
-        $exif_block->loadFromData(new DataWindow($exif->toBytes()));
+        $data_string = new DataString($exif->toBytes());
+        $exif_block->loadFromData($data_string, 0, $data_string->getSize());
 
         $out_image->saveToFile($this->file);
 

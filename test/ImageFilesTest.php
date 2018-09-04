@@ -79,14 +79,16 @@ class ImageFilesTest extends ExifEyeTestCaseBase
             $this->assertNull($element->getElement('*'));
             $this->assertEquals($expected['format'], Format::getName($element->getFormat()), $element->getContextPath());
             $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
-            $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
+            $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
         }
 
         // Recursively check sub-blocks.
         if (isset($expected['elements'])) {
             foreach ($expected['elements'] as $i => $expected_element) {
-                $this->assertElement($expected_element, $element->getMultipleElements('*')[$i]);
+                $test = $element->getMultipleElements('*');
+                $this->assertArrayHasKey($i, $test, $expected_element['path']);
+                $this->assertElement($expected_element, $test[$i]);
             }
         }
     }

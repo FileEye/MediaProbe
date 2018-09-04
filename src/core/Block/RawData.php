@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Spec;
@@ -44,10 +45,10 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
         $this->components = $size;
-        $entry = new Undefined($this, [$data_window->getBytes($offset, $this->components)]);
+        $entry = new Undefined($this, [$data_element->getBytes($offset, $this->components)]);
         $entry->debug("{text}", ['text' => $entry->toString()]);
         return $this;
     }

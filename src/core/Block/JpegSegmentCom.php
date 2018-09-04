@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Utility\ConvertBytes;
@@ -14,14 +15,14 @@ class JpegSegmentCom extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        parent::loadFromData($data_window, $offset, $size, $options);
+        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder(), $this);
 
         $this->components = $size;
 
         // Set the Comments's entry.
-        $entry = new Ascii($this, [$data_window->getBytes($offset + 2, $this->components - 2)]);
+        $entry = new Ascii($this, [$data_window->getBytes(2, $this->components - 2)]);
         $entry->debug("Text: {text}", [
             'text' => $entry->toString(),
         ]);

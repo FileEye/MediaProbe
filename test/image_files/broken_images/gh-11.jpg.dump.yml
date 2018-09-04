@@ -734,12 +734,6 @@ elements:
                                                                     components: 1
                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                     text: Normal
-                                        -
-                                            type: ifd
-                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1'
-                                            class: ExifEye\core\Block\Ifd
-                                            valid: true
-                                            name: IFD1
                 -
                     type: jpegSegment
                     path: '/image/jpeg/jpegSegment:219:DQT'
@@ -888,6 +882,9 @@ log:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif'
             message: 'Bogus offset to next IFD: 8, same as offset being loaded from.'
+        -
+            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
+            message: 'Bogus offset to next IFD: 2716 > 2710!'
     WARNING:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:282:XResolution'
@@ -919,6 +916,3 @@ log:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37386:FocalLength'
             message: 'Found SignedRational data format, expected Rational'
-        -
-            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1'
-            message: 'Adjusted to: -130.'

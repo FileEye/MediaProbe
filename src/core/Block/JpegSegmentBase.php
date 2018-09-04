@@ -2,7 +2,6 @@
 
 namespace ExifEye\core\Block;
 
-use ExifEye\core\DataWindow;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -63,24 +62,6 @@ abstract class JpegSegmentBase extends BlockBase
     public function getComponents()
     {
         return $this->components;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
-    {
-        if ($size) {
-            $this->debug('Loading data in [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes ...', [
-                'start' => $offset,
-                'end' => $offset + $size - 1,
-                'hstart' => strtoupper(dechex($offset)),
-                'hend' => strtoupper(dechex($offset + $size - 1)),
-                'size' => $size,
-            ]);
-        }
-
-        return $this;
     }
 
     /**

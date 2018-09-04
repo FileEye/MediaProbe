@@ -36,8 +36,8 @@ class WindowsString extends Byte
     {
         // Cap bytes to get to remaining data window size.
         $size = $data_window->getSize();
-        if ($data_offset + $components > $size - 1) {
-            $bytes_to_get = $size - $data_offset - 1;
+        if ($data_offset + $components > $size) {
+            $bytes_to_get = $size - $data_offset;
             $parent_block->warning('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
                 'expected' => $components,
@@ -57,9 +57,10 @@ class WindowsString extends Byte
     {
         parent::setValue($data);
 
-        $windows_string = mb_convert_encoding($data[0], 'UCS-2LE', 'auto');
+        $php_string = rtrim($data[0], "\0");
+        $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
         $this->components = strlen($windows_string) + 2;
-        $this->value = [rtrim($data[0], "\0"), $windows_string];
+        $this->value = [$php_string, $windows_string];
         return $this;
     }
 

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ElementBase;
 use ExifEye\core\Entry\Core\EntryInterface;
@@ -32,11 +33,11 @@ abstract class BlockBase extends ElementBase
     /**
      * Loads data into a block.
      *
-     * @param DataWindow $data_window
-     *            the data window that will provide the data.
+     * @param DataElement $data_element
+     *            the data element that will provide the data.
      * @param int $offset
-     *            (Optional) the offset within the window where the block will
-     *            be found.
+     *            (Optional) the offset within the data element where the
+     *            block will be found.
      * @param int|null $size
      *            (Optional) the size of the data from the offset.
      * @param array $options
@@ -44,7 +45,7 @@ abstract class BlockBase extends ElementBase
      *
      * @returns BlockBase
      */
-    abstract public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = []);
+    abstract public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = []);
 
     /**
      * {@inheritdoc}

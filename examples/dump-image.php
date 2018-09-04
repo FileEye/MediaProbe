@@ -102,6 +102,6 @@ if (!isset($err)) {
 }
 
 // Dump via exif_read_data(). 
-dump(@exif_read_data($file));
+//dump(@exif_read_data($file));
 
 exit(0);  // xx decide exit code

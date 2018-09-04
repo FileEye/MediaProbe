@@ -2,7 +2,9 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
+use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -34,25 +36,19 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        $this->debug('Loading EXIF data in [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes ...', [
-            'start' => $offset,
-            'end' => $offset + $size - 1,
-            'hstart' => strtoupper(dechex($offset)),
-            'hend' => strtoupper(dechex($offset + $size - 1)),
-            'size' => $size,
-        ]);
+        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder(), $this);
 
-        $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, $offset + strlen(self::EXIF_HEADER));
+        $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, strlen(self::EXIF_HEADER));
         if ($tiff_order !== null) {
             $tiff = new Tiff($this);
-            $tiff->loadFromData($data_window, $offset + strlen(self::EXIF_HEADER), $size - strlen(self::EXIF_HEADER));
+            $tiff->loadFromData($data_window, strlen(self::EXIF_HEADER), $size - strlen(self::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.
-            $entry = new Undefined($this, [$data_window->getBytes($offset, $size)]);
-            $entry->debug("TIFF header not found. Loaded {text}", ['text' => $entry->toString()]);
+            $entry = new Undefined($this, [$data_window->getBytes()]);
+            $this->debug("TIFF header not found. Loaded {text}", ['text' => $entry->toString()]);
         }
 
         return $this;
@@ -69,15 +65,15 @@ class Exif extends BlockBase
     /**
      * Determines if the data is an EXIF segment.
      */
-    public static function isExifSegment(DataWindow $data_window, $offset = 0)
+    public static function isExifSegment(DataElement $data_element, $offset = 0)
     {
         // There must be at least 6 bytes for the Exif header.
-        if ($data_window->getSize() - $offset < strlen(self::EXIF_HEADER)) {
+        if ($data_element->getSize() - $offset < strlen(self::EXIF_HEADER)) {
             return false;
         }
 
         // Verify the Exif header.
-        if ($data_window->strcmp($offset, self::EXIF_HEADER)) {
+        if ($data_element->getBytes($offset, strlen(self::EXIF_HEADER)) === self::EXIF_HEADER) {
             return true;
         }
 

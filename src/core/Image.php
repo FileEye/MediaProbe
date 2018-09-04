@@ -75,13 +75,12 @@ class Image extends BlockBase
      */
     public static function createFromFile($path, LoggerInterface $external_logger = null, $fail_level = false)
     {
-        $magic_file_info = new DataWindow(file_get_contents($path, false, null, 0, 10));
-        $handling_class = static::determineImageHandlingClass($magic_file_info);
+        $handling_class = static::determineImageHandlingClass(new DataString(file_get_contents($path, false, null, 0, 10)));
 
         if ($handling_class !== false) {
             $image = new static($handling_class, $external_logger, $fail_level);
-            $data_window = new DataWindow(file_get_contents($path));
-            $image->loadFromData($data_window, 0, $data_window->getSize());
+            $data_element = new DataString(file_get_contents($path));
+            $image->loadFromData($data_element, 0, $data_element->getSize());
             return $image;
         }
 
@@ -91,8 +90,8 @@ class Image extends BlockBase
     /**
      * Creates an Image object from data.
      *
-     * @param DataWindow $data_window
-     *            the data window that will provide the data.
+     * @param DataElement $data_element
+     *            the data string object providing the data.
      * @param \Psr\Log\LoggerInterface $external_logger
      *            (Optional) a PSR-3 compliant logger callback.
      * @param string $fail_level
@@ -103,13 +102,13 @@ class Image extends BlockBase
      *            the Image object if successful, or false if the data cannot
      *            be parsed.
      */
-    public static function createFromData(DataWindow $data_window, LoggerInterface $external_logger = null, $fail_level = false)
+    public static function createFromData(DataElement $data_element, LoggerInterface $external_logger = null, $fail_level = false)
     {
-        $handling_class = static::determineImageHandlingClass($data_window);
+        $handling_class = static::determineImageHandlingClass($data_element);
 
         if ($handling_class !== false) {
             $image = new static($handling_class, $external_logger, $fail_level);
-            $image->loadFromData($data_window, 0, $data_window->getSize());
+            $image->loadFromData($data_element, 0, $data_element->getSize());
             return $image;
         }
 
@@ -119,22 +118,22 @@ class Image extends BlockBase
     /**
      * Determines the PHP class to use for parsing the image data.
      *
-     * @param DataWindow $data_window
-     *            the data window that will provide the data.
+     * @param DataElement $data_element
+     *            the data element that will provide the data.
      *
      * @returns string|false
      *            the PHP fully qualified class name if successful, or false if
      *            the data cannot be parsed.
      */
-    protected static function determineImageHandlingClass(DataWindow $data_window)
+    protected static function determineImageHandlingClass(DataElement $data_element)
     {
         // JPEG image?
-        if ($data_window->getBytes(0, 3) === Jpeg::JPEG_HEADER) {
+        if ($data_element->getBytes(0, 3) === Jpeg::JPEG_HEADER) {
             return '\ExifEye\core\Block\Jpeg';
         }
 
         // TIFF image?
-        $byte_order = Tiff::getTiffSegmentByteOrder($data_window);
+        $byte_order = Tiff::getTiffSegmentByteOrder($data_element);
         if ($byte_order !== null) {
             return '\ExifEye\core\Block\Tiff';
         }
@@ -167,10 +166,10 @@ class Image extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
         $image_handler = new $this->imageClass($this);
-        $image_handler->loadFromData($data_window, $offset, $size, $options);
+        $image_handler->loadFromData($data_element, $offset, $size, $options);
         return $this;
     }
 

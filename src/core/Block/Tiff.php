@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\DataElement;
 use ExifEye\core\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Image;
@@ -36,33 +37,22 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataWindow $data_window, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        $this->debug('Loading TIFF data in [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes ...', [
-            'start' => $offset,
-            'end' => $offset + $size - 1,
-            'hstart' => strtoupper(dechex($offset)),
-            'hend' => strtoupper(dechex($offset + $size - 1)),
-            'size' => $size,
-        ]);
-
         // Determine the byte order of the TIFF data.
-        $byte_order = self::getTiffSegmentByteOrder($data_window, $offset);
+        $byte_order = self::getTiffSegmentByteOrder($data_element, $offset);
 
-        // xx Continue from here...
-
-
-        $data_window = $data_window->getClone($offset);
-        $data_window->setByteOrder($byte_order);
+        // Open a data window on the TIFF data.
+        $data_window = new DataWindow($data_element, $offset, $size, $byte_order, $this);
 
         // IFD0.
-        $offset = $data_window->getLong(4);
-        $this->debug('First IFD at offset {offset}.', ['offset' => $offset]);
+        $ifd_offset = $data_window->getLong(4);
+        $this->debug('First IFD at offset {offset}.', ['offset' => $ifd_offset]);
 
-        if ($offset > 0) {
+        if ($ifd_offset > 0) {
             // Parse IFD0, this will automatically parse any sub IFDs.
             $ifd0 = new Ifd($this, 'IFD0');
-            $next_offset = $ifd0->loadFromData($data_window, $offset);
+            $next_offset = $ifd0->loadFromData($data_window, $ifd_offset, $size);
         }
 
         // Next IFD. xx @todo iterate on next_offset
@@ -79,7 +69,7 @@ class Tiff extends BlockBase
                     $this->error('IFD1 links to another IFD!');
                 }*/
                 $ifd1 = new Ifd($this, 'IFD1');
-                $next_offset = $ifd1->loadFromData($data_window, $next_offset);
+                $next_offset = $ifd1->loadFromData($data_window, $next_offset, $size);
             }
         }
     }
@@ -143,17 +133,17 @@ class Tiff extends BlockBase
     /**
      * Determines if the data is a TIFF segment.
      */
-    public static function getTiffSegmentByteOrder(DataWindow $data_window, $offset = 0)
+    public static function getTiffSegmentByteOrder(DataElement $data_element, $offset = 0)
     {
         // There must be at least 8 bytes available: 2 bytes for the byte
         // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
         // the first IFD.
-        if ($data_window->getSize() - $offset < 8) {
+        if ($data_element->getSize() - $offset < 8) {
             return null;
         }
 
         // Byte order.
-        $order_string = $data_window->getBytes($offset, 2);
+        $order_string = $data_element->getBytes($offset, 2);
         if ($order_string === 'II') {
             $order = ConvertBytes::LITTLE_ENDIAN;
         } elseif ($order_string === 'MM') {
@@ -163,7 +153,7 @@ class Tiff extends BlockBase
         }
 
         // Verify the TIFF header.
-        $magic_string = $data_window->getBytes($offset + 2, 2);
+        $magic_string = $data_element->getBytes($offset + 2, 2);
         if (ConvertBytes::toShort($magic_string, 0, $order) !== self::TIFF_HEADER) {
             return null;
         }
