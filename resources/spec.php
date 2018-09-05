@@ -5450,10 +5450,29 @@ return array (
   'types' =>
   array (
     'jpegSegment' => 'ExifEye\\core\\Block\\JpegSegment',
+    'tiff' => 'ExifEye\\core\\Block\\Tiff',
     'jpeg' => 'ExifEye\\core\\Block\\Jpeg',
+    'exif' => 'ExifEye\\core\\Block\\Exif',
   ),
   'elements' =>
   array (
+    'tiff' =>
+    array (
+      0 =>
+      array (
+        'type' => 'ifd',
+        'class' => 'ExifEye\\core\\Block\\Ifd',
+        'name' => 'IFD0',
+        'title' => 'IFD0',
+      ),
+      1 =>
+      array (
+        'type' => 'ifd',
+        'class' => 'ExifEye\\core\\Block\\Ifd',
+        'name' => 'IFD1',
+        'title' => 'IFD1',
+      ),
+    ),
     'jpeg' =>
     array (
       192 =>
@@ -5902,9 +5921,23 @@ return array (
         'payload' => 'variable',
       ),
     ),
+    'exif' =>
+    array (
+      0 =>
+      array (
+        'type' => 'tiff',
+        'name' => 'TIFF',
+        'title' => 'TIFF data',
+      ),
+    ),
   ),
   'elementsByName' =>
   array (
+    'tiff' =>
+    array (
+      'IFD0' => 0,
+      'IFD1' => 1,
+    ),
     'jpeg' =>
     array (
       'SOF0' => 192,
@@ -5970,6 +6003,10 @@ return array (
       'JPG12' => 252,
       'JPG13' => 253,
       'COM' => 254,
+    ),
+    'exif' =>
+    array (
+      'TIFF' => 0,
     ),
   ),
 );

@@ -847,7 +847,7 @@ log:
     ERROR:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
-            message: 'Offset -292 not within [0, -290]'
+            message: 'Offset 1002 overflows total size (712) for JPEG thumbnail.'
     WARNING:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:306:DateTime'
@@ -858,6 +858,3 @@ log:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36868:DateTimeDigitized'
             message: 'Found 21 data components, expected 20'
-        -
-            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
-            message: 'Thumbnail length 14812 bytes adjusted to -290 bytes.'

@@ -51,7 +51,7 @@ class Thumbnail extends BlockBase
      *            the data from which the thumbnail will be
      *            extracted.
      */
-    public static function toBlock(DataWindow $data_element, Ifd $ifd)
+    public static function toBlock(DataElement $data_element, Ifd $ifd)
     {
         if (!$ifd->getElement("tag[@name='ThumbnailOffset']") || !$ifd->getElement("tag[@name='ThumbnailLength']")) {
             return;
@@ -63,9 +63,17 @@ class Thumbnail extends BlockBase
         // Load the thumbnail only if both the offset and the length are
         // available and positive.
         if ($offset <= 0 || $length <= 0) {
-            $ifd->warning('Invalid JPEG thumbnail for offset {offset} and length {length}', [
+            $ifd->error('Invalid offset ({offset}) or length ({length}) for JPEG thumbnail.', [
                 'offset' => $offset,
                 'length' => $length,
+            ]);
+            return;
+        }
+
+        if ($offset > $data_element->getSize()) {
+            $ifd->error('Offset {offset} overflows total size ({size}) for JPEG thumbnail.', [
+                'offset' => $offset,
+                'size' => $data_element->getSize(),
             ]);
             return;
         }
@@ -73,7 +81,7 @@ class Thumbnail extends BlockBase
         // Some images have a broken length, so we try to carefully check
         // the length before we store the thumbnail.
         if ($offset + $length > $data_element->getSize()) {
-            $ifd->warning('Thumbnail length {length} bytes adjusted to {adjusted_length} bytes.', [
+            $ifd->warning('Thumbnail length ({length} bytes) adjusted to {adjusted_length} bytes.', [
                 'length' => $length,
                 'adjusted_length' => $data_element->getSize() - $offset,
             ]);

@@ -884,7 +884,7 @@ log:
             message: 'Bogus offset to next IFD: 8, same as offset being loaded from.'
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
-            message: 'Bogus offset to next IFD: 2716 > 2710!'
+            message: 'Error processing IFD1: Offset 2718 not within [0, 2716].'
     WARNING:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:282:XResolution'

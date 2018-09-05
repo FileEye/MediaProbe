@@ -3,6 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\Data\DataElement;
+use ExifEye\core\Data\DataException;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Image;
@@ -45,33 +46,48 @@ class Tiff extends BlockBase
         // Open a data window on the TIFF data.
         $data_window = new DataWindow($data_element, $offset, $size, $byte_order, $this);
 
-        // IFD0.
+        // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
+        // header)
         $ifd_offset = $data_window->getLong(4);
-        $this->debug('First IFD at offset {offset}.', ['offset' => $ifd_offset]);
 
-        if ($ifd_offset > 0) {
-            // Parse IFD0, this will automatically parse any sub IFDs.
-            $ifd0 = new Ifd($this, 'IFD0');
-            $next_offset = $ifd0->loadFromData($data_window, $ifd_offset, $size);
-        }
+        // Loops through IFDs. In fact we should only have IFD0 and IFD1.
+        for ($i = 0; $i <= 2; $i++) {
+            // IFD1 shouldn't link further.
+            if ($ifd_offset === 2) {
+                $this->error('IFD1 links to another IFD.');
+                break;
+            }
 
-        // Next IFD. xx @todo iterate on next_offset
-        if ($next_offset > 0) {
-            // Sanity check: we need 6 bytes.
-            if ($next_offset > $data_window->getSize() - 6) {
-                $this->error('Bogus offset to next IFD: {offset} > {size}!', [
-                    'offset' => $next_offset,
-                    'size' => $data_window->getSize() - 6,
+            try {
+                // Create and load the IFDs.
+                $ifd_name = Spec::getElementName($this->getType(), $i);
+                $ifd_class = Spec::getElementHandlingClass($this->getType(), $i);
+                $ifd_tags_count = $data_window->getShort($ifd_offset);
+                $ifd = new $ifd_class($this, $ifd_name);
+                $this->debug('{ifd_name} at offset {ifd_offset} with {ifd_tags_count} tags.', [
+                    'ifd_name' => $ifd_name,
+                    'ifd_offset' => $ifd_offset,
+                    'ifd_tags_count' => $ifd_tags_count,
                 ]);
-            } else {
-/*                if (Spec::getIfdType($this->getAttribute('id')) === 'IFD1') {
-                    // IFD1 shouldn't link further...
-                    $this->error('IFD1 links to another IFD!');
-                }*/
-                $ifd1 = new Ifd($this, 'IFD1');
-                $next_offset = $ifd1->loadFromData($data_window, $next_offset, $size);
+                $ifd->loadFromData($data_window, $ifd_offset, $size);
+
+                // Offset to next IFD.
+                $ifd_offset = $data_window->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
+            } catch (DataException $e) {
+                $this->error('Error processing {ifd_name}: {msg}.', [
+                    'ifd_name' => $ifd_name,
+                    'msg' => $e->getMessage(),
+                ]);
+                break;
+            }
+
+            // If next IFD offset is 0 we are finished.
+            if ($ifd_offset === 0) {
+                break;
             }
         }
+
+        return $this;
     }
 
     /**
