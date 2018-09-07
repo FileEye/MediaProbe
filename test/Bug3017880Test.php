@@ -33,21 +33,21 @@ class Bug3017880Test extends ExifEyeTestCaseBase
                     ->disableOriginalConstructor()
                     ->getMock();
 
-                $exif = new Exif($app1_segment_mock);
+                $exif = new Exif('exif', $app1_segment_mock);
                 $tiff = new Tiff($exif);
             }
 
             $tiff = $exif->getElement("tiff");
             $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd($tiff, 'IFD0');
+                $ifd0 = new Ifd('ifd', 'IFD0', $tiff);
             }
 
             $software_name = 'Example V2';
             $software_tag = $ifd0->getElement("tag[@name='Software']");
 
             if ($software_tag === null) {
-                new Tag($ifd0, 0x0131, 'ExifEye\core\Entry\Core\Ascii', [$software_name]);
+                new Tag('tag', $ifd0, 0x0131, 'ExifEye\core\Entry\Core\Ascii', [$software_name]);
                 $resave_file = 1;
             } else {
                 $software_tag->getElement("entry")->setValue([$software_name]);

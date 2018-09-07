@@ -28,6 +28,13 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     protected $DOMNode;
 
     /**
+     * The name of the DOM node associated to this element.
+     *
+     * @var string
+     */
+    protected $DOMNodeName;
+
+    /**
      * The Xpath object associated to the root element.
      *
      * @var \DOMXPath|null
@@ -51,14 +58,18 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * Constructs an Element object.
      *
+     * @param string $type
+     *            The type of this element.
      * @param \ExifEye\core\ElementInterface|null $parent
      *            (Optional) the parent element of this element.
      * @param \ExifEye\core\ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
-    public function __construct(ElementInterface $parent = null, ElementInterface $reference = null)
+    public function __construct($type, ElementInterface $parent = null, ElementInterface $reference = null)
     {
+        $this->type = $type;
+        
         // If $parent is null, this Element is the root of the DOM document that
         // stores the image structure.
         if (!$parent || !is_object($parent->DOMNode)) {
@@ -73,7 +84,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             $parent_node = $parent->DOMNode;
         }
 
-        $this->DOMNode = $doc->createElement($this->getType());
+        $this->DOMNode = $doc->createElement($this->DOMNodeName);
 
         if ($reference) {
             $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
@@ -232,7 +243,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function toDumpArray()
     {
         return [
-            'type' => $this->getType(),
+            'type' => $this->DOMNodeName,
             'path' => $this->getContextPath(),
             'class' => get_class($this),
             'valid' => $this->isValid(),

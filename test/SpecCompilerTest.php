@@ -96,8 +96,8 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd($tiff_mock, 'IFD0');
-        $ifd_exif = new Ifd($ifd_0, 'Exif');
+        $ifd_0 = new Ifd('ifd', 'IFD0', $tiff_mock);
+        $ifd_exif = new Ifd('ifd', 'Exif', $ifd_0);
 
         $this->assertEquals(0x0100, Spec::getTagIdByName($ifd_0, 'ImageWidth'));
         $this->assertEquals(0x8769, Spec::getTagIdByName($ifd_0, 'ExifIFDPointer'));

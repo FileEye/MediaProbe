@@ -14,11 +14,6 @@ use ExifEye\core\Spec;
 class IfdIndexShort extends Ifd
 {
     /**
-     * {@inheritdoc}
-     */
-    protected $type = 'ifdIndexShort';
-
-    /**
      * Load data into a Image File Directory (IFD).
      *
      * @param DataWindow $data_element
@@ -83,7 +78,7 @@ class IfdIndexShort extends Ifd
                     break;
             }
             if ($entry_class = Spec::getEntryClass($this, $i + 1, $item_format)) {
-                new Tag($this, $i + 1, $entry_class, [$item_value], $item_format, 1);
+                new Tag('tag', $this, $i + 1, $entry_class, [$item_value], $item_format, 1);
             }
         }
         $this->debug(".....END Loading");

@@ -21,7 +21,7 @@ class Image extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'image';
+    protected $DOMNodeName = 'image';
 
     /**
      * The Block handling class for the image.
@@ -156,7 +156,8 @@ class Image extends BlockBase
      */
     public function __construct($image_class, LoggerInterface $external_logger = null, $fail_level = false)
     {
-        parent::__construct();
+        // Set the element type to 'image' in the constructor.
+        parent::__construct('image');
         $this->imageClass = $image_class;
         $this->logger = (new Logger('exifeye'))
           ->pushHandler(new TestHandler(Logger::INFO))

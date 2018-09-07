@@ -41,7 +41,7 @@ class GH16Test extends ExifEyeTestCaseBase
         // Change the value of the Tag's entry and save the file to disk.
         $ifd0->removeElement("tag[@name='WindowsXPSubject']");
         $new_entry_value = "Превед, медвед!";
-        new Tag($ifd0, 0x9C9F, 'ExifEye\core\Entry\WindowsString', [$new_entry_value]);
+        new Tag('tag', $ifd0, 0x9C9F, 'ExifEye\core\Entry\WindowsString', [$new_entry_value]);
         $this->assertCount(1, $ifd0->getMultipleElements('tag'));
         $this->assertEquals($new_entry_value, $ifd0->getElement("tag[@name='WindowsXPSubject']")->toString());
         $image->saveToFile($this->file);

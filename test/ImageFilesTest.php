@@ -77,6 +77,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         if ($element instanceof EntryInterface) {
             // No sub elements in the element being tested.
             $this->assertNull($element->getElement('*'));
+            $this->assertEquals($expected['path'], $element->getContextPath());
             $this->assertEquals($expected['format'], Format::getName($element->getFormat()), $element->getContextPath());
             $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());

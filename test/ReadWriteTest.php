@@ -46,9 +46,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $com_segment = $jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $app1_segment = new JpegSegmentApp1(0xE1, $jpeg, $com_segment);
+        $app1_segment = new JpegSegmentApp1('jpegSegmentApp1', 0xE1, $jpeg, $com_segment);
 
-        $exif = new Exif($app1_segment);
+        $exif = new Exif('exif', $app1_segment);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
@@ -56,9 +56,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd($tiff, 'IFD0');
+        $ifd = new Ifd('ifd', 'IFD0', $tiff);
         foreach ($entries as $entry) {
-            new Tag($ifd, $entry[0], $entry[1], $entry[2]);
+            new Tag('tag', $ifd, $entry[0], $entry[1], $entry[2]);
         }
         $this->assertNotNull($tiff->getElement("ifd[@name='IFD0']"));
 

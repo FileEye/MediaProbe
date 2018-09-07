@@ -23,9 +23,9 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd($tiff_mock, 'IFD0');
-        $ifd_exif = new Ifd($tiff_mock, 'Exif');
-        $ifd_canon_camera_settings = new IfdIndexShort($tiff_mock, 'CanonCameraSettings');
+        $ifd_0 = new Ifd('ifd', 'IFD0', $tiff_mock);
+        $ifd_exif = new Ifd('exif', 'Exif', $tiff_mock);
+        $ifd_canon_camera_settings = new IfdIndexShort('ifdIndexShort', 'CanonCameraSettings', $tiff_mock);
 
         // Test retrieving IFD id by type.
         $this->assertEquals(Spec::getIfdIdByType('IFD0'), Spec::getIfdIdByType('0'));
@@ -81,8 +81,8 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_exif = new Ifd($tiff_mock, 'Exif');
-        $ifd_canon_picture_information = new IfdIndexShort($tiff_mock, 'CanonPictureInformation');
+        $ifd_exif = new Ifd('ifd', 'Exif', $tiff_mock);
+        $ifd_canon_picture_information = new IfdIndexShort('ifdIndexShort', 'CanonPictureInformation', $tiff_mock);
 
         $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Spec::getEntryClass($ifd_exif, 0x9286));
         $this->assertEquals('ExifEye\core\Entry\Time', Spec::getEntryClass($ifd_exif, 0x9003));
@@ -102,11 +102,11 @@ class PelSpecTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd($tiff_mock, $ifd_name);
+        $ifd = new Ifd('ifd', $ifd_name, $tiff_mock);
 
         $tag_id = Spec::getTagIdByName($ifd, $tag);
         $entry_class_name = Spec::getEntryClass($ifd, $tag_id);
-        $tag = new Tag($ifd, $tag_id, $entry_class_name, $args);
+        $tag = new Tag('tag', $ifd, $tag_id, $entry_class_name, $args);
 
         $this->assertInstanceOf($expected_class, $tag->getElement("entry"));
         $options['short'] = $brief;  // xx

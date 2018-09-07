@@ -23,22 +23,15 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'exif';
-
-    /**
-     * Construct a new Exif object.
-     */
-    public function __construct(JpegSegmentApp1 $parent_block)
-    {
-        parent::__construct($parent_block);
-    }
+    protected $DOMNodeName = 'exif';
 
     /**
      * {@inheritdoc}
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder(), $this);
+        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
+        $data_window->debug($this);
 
         $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, strlen(self::EXIF_HEADER));
         if ($tiff_order !== null) {

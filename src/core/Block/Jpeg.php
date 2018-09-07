@@ -21,14 +21,14 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'jpeg';
+    protected $DOMNodeName = 'jpeg';
 
     /**
      * Constructs a Block for holding a JPEG image.
      */
     public function __construct(BlockBase $parent = null)
     {
-        parent::__construct($parent);
+        parent::__construct('jpeg', $parent);
     }
 
     /**
@@ -61,8 +61,9 @@ class Jpeg extends BlockBase
             $segment_offset++;
 
             // Create the ExifEye JPEG segment object.
+            $segment_type = Spec::getElementType($this->getType(), $segment_id);
             $segment_class = Spec::getElementHandlingClass($this->getType(), $segment_id);
-            $segment = new $segment_class($segment_id, $this);
+            $segment = new $segment_class($segment_type, $segment_id, $this);
 
             // Get the JPEG segment size.
             $payload = Spec::getElementPropertyValue($this->getType(), $segment_id, 'payload');

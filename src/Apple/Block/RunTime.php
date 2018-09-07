@@ -21,13 +21,13 @@ class RunTime extends Ifd
 
         $plist = new CFPropertyList();
         $plist->parse($data_element->getBytes($options['data_offset'], $options['components']));
-        
+
         // Build a TAG object for each PList item.
         foreach ($plist->toArray() as $tag_name => $value) {
             $tag_id = Spec::getTagIdByName($this, $tag_name);
             $tag_format = Spec::getTagFormat($this, $tag_id)[0];
             $tag_entry_class = Spec::getEntryClass($this, $tag_id, $tag_format);
-            $tag = new Tag($this, $tag_id, $tag_entry_class, [$value], $tag_format, 1);
+            $tag = new Tag('tag', $this, $tag_id, $tag_entry_class, [$value], $tag_format, 1);
         }
 
         $this->debug(".....END Loading");

@@ -17,12 +17,13 @@ class JpegSegmentApp1 extends JpegSegmentBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder(), $this);
+        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
+        $data_window->debug($this);
 
         $this->components = $size;
 
         if (Exif::isExifSegment($data_window, 2)) {
-            $exif = new Exif($this);
+            $exif = new Exif('exif', $this);
             $ret = $exif->loadFromData($data_window, 2, $this->components - 2);
         } else {
             // We store the data as normal JPEG content if it could not be

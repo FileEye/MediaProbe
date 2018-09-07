@@ -20,7 +20,7 @@ class Ifd extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'ifd';
+    protected $DOMNodeName = 'ifd';
 
     /**
      * The IFD header bytes to skip.
@@ -44,11 +44,11 @@ class Ifd extends BlockBase
     protected $tagsSkipOffset = 0;
 
     /**
-     * Construct a new Image File Directory (IFD).
+     * Construct a Block for an Image File Directory (IFD).
      */
-    public function __construct(BlockBase $parent_block, $name)
+    public function __construct($type, $name, BlockBase $parent_block)
     {
-        parent::__construct($parent_block);
+        parent::__construct($type, $parent_block);
 
         $this->setAttribute('name', $name);
         $this->hasSpecification = Spec::getIfdIdByType($name) ? true : false;
@@ -107,16 +107,17 @@ class Ifd extends BlockBase
             // Build the TAG object.
             $tag_entry_class = Spec::getEntryClass($this, $tag_id, $tag_format);
             $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $tag_format, $tag_components, $data_element, $tag_data_offset);
-            $tag = new Tag($this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
+            $tag = new Tag('tag', $this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
 
             // Load a subIfd.
             if (Spec::isTagAnIfdPointer($this, $tag->getAttribute('id'))) {
                 // If the tag is an IFD pointer, loads the IFD.
+                $ifd_type = Spec::getElementType($this->getType(), $tag->getAttribute('id'));
                 $ifd_name = Spec::getIfdNameFromTag($this, $tag->getAttribute('id'));
                 $o = $data_element->getLong($i_offset + 8);
                 if ($starting_offset != $o) {
                     $ifd_class = Spec::getIfdClass($ifd_name);
-                    $ifd = new $ifd_class($this, $ifd_name);
+                    $ifd = new $ifd_class($ifd_type, $ifd_name, $this);
                     try {
                         $ifd->loadFromData($data_element, $o, $size, [
                             'data_offset' => $tag_data_offset,

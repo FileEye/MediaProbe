@@ -16,7 +16,7 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'rawData';
+    protected $DOMNodeName = 'rawData';
 
     /**
      * The data length.
@@ -26,9 +26,9 @@ class RawData extends BlockBase
     /**
      * Construct a new RawData object.
      */
-    public function __construct(BlockBase $parent, BlockBase $reference = null)
+    public function __construct($type, BlockBase $parent, BlockBase $reference = null)
     {
-        parent::__construct($parent, $reference);
+        parent::__construct($type, $parent, $reference);
         $this->debug('Raw data');
     }
 

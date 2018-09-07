@@ -24,8 +24,8 @@ class MisplacedExifTest extends ExifEyeTestCaseBase
         $this->assertInstanceOf('ExifEye\core\Block\Exif', $app1[1]->getElement("exif"));
 
         // Add a new APP1 segment.
-        $app1_segment = new JpegSegmentApp1(0xE1, $jpeg);
-        $newExif = new Exif($app1_segment);
+        $app1_segment = new JpegSegmentApp1('jpegSegmentApp1', 0xE1, $jpeg);
+        $newExif = new Exif('exif', $app1_segment);
 
         // Ensure new APP1 segment is set to correct position among segments.
         $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");

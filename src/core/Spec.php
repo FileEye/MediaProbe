@@ -72,7 +72,7 @@ class Spec
     }
 
     /**
-     * Returns the handling class of a type.
+     * Returns the property value of a type.
      *
      * @param string $type
      *            the type.
@@ -80,9 +80,9 @@ class Spec
      * @return string|null
      *            the element handling class.
      */
-    public static function getTypeHandlingClass($type)
+    public static function getTypeProperty($type, $property)
     {
-        return isset(self::getMap()['types'][$type]) ? self::getMap()['types'][$type] : null;
+        return isset(self::getMap()['types'][$type][$property]) ? self::getMap()['types'][$type][$property] : null;
     }
 
     /**
@@ -115,7 +115,14 @@ class Spec
      */
     public static function getElementPropertyValue($type, $element_id, $property)
     {
-        return isset(self::getMap()['elements'][$type][$element_id][$property]) ? self::getMap()['elements'][$type][$element_id][$property] : null;
+        if (isset(self::getMap()['elements'][$type][$element_id][$property])) {
+            return self::getMap()['elements'][$type][$element_id][$property];
+        }
+        $element_type = self::getElementType($type, $element_id);
+        if ($element_type !== null) {
+            return isset(self::getMap()['types'][$element_type][$property]) ? self::getMap()['types'][$element_type][$property] : null;
+        }
+        return null;
     }
 
     /**
@@ -131,7 +138,10 @@ class Spec
      */
     public static function getElementType($type, $element_id)
     {
-        return self::getElementPropertyValue($type, $element_id, 'type');
+        if (isset(self::getMap()['elements'][$type][$element_id]['type'])) {
+            return self::getMap()['elements'][$type][$element_id]['type'];
+        }
+        return null;
     }
 
     /**
@@ -195,15 +205,7 @@ class Spec
      */
     public static function getElementHandlingClass($type, $element_id)
     {
-        $class = self::getElementPropertyValue($type, $element_id, 'class');
-        if ($class !== null) {
-            return $class;
-        }
-        $element_type = self::getElementType($type, $element_id);
-        if ($element_type !== null) {
-            return self::getTypeHandlingClass($element_type);
-        }
-        return null;
+        return self::getElementPropertyValue($type, $element_id, 'class');
     }
 
     /**
@@ -231,7 +233,6 @@ class Spec
     public static function getIfdSupportedTagIds(BlockBase $block)
     {
         $xx_block_id = self::getIfdIdByType($block->getAttribute('name'));
-
         return array_keys(self::getMap()['tags'][$xx_block_id]);
     }
 

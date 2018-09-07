@@ -17,7 +17,8 @@ class JpegSegmentCom extends JpegSegmentBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder(), $this);
+        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
+        $data_window->debug($this);
 
         $this->components = $size;
 

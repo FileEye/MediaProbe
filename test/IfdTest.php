@@ -17,15 +17,15 @@ class IfdTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd($tiff_mock, 'IFD0');
+        $ifd = new Ifd('ifd', 'IFD0', $tiff_mock);
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 
         $desc = new Ascii($ifd, ['Hello?']);
-        new Tag($ifd, 0x010E, 'ExifEye\core\Entry\Core\Ascii', ['Hello?']);
+        new Tag('tag', $ifd, 0x010E, 'ExifEye\core\Entry\Core\Ascii', ['Hello?']);
 
         $date = new Time($ifd, [12345678]);
-        new Tag($ifd, 0x0132, 'ExifEye\core\Entry\Time', [12345678]);
+        new Tag('tag', $ifd, 0x0132, 'ExifEye\core\Entry\Time', [12345678]);
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));
 

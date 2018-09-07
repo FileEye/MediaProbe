@@ -26,21 +26,23 @@ class DataWindow extends DataElement
      *            read from the data, and it can be changed later with {@link
      *            setByteOrder()}.
      */
-    public function __construct(DataElement $data_element, $start, $size, $byte_order = ConvertBytes::BIG_ENDIAN, $caller = null)
+    public function __construct(DataElement $data_element, $start, $size, $byte_order = ConvertBytes::BIG_ENDIAN)
     {
         $this->dataElement = $data_element;
         $this->start = $start;
         $this->size = $size;
         $this->order = $byte_order;
-        if ($caller) {
-            $caller->debug('Data Window @ [{start}-{end}] [0x{hstart}-0x{hend}], {size} bytes, order: {order} ...', [
-                'start' => $this->getStart(),
-                'end' => $this->getStart() + $size - 1,
-                'hstart' => strtoupper(dechex($this->getStart())),
-                'hend' => strtoupper(dechex($this->getStart() + $size - 1)),
-                'size' => $size,
-                'order' => $byte_order,
-            ]);
-        }
+    }
+
+    public function debug($caller)
+    {
+        $caller->debug('Data Window @ [{start}-{end}] [{hstart}-{hend}], {size} bytes, order: {order} ...', [
+            'start' => $this->getStart(),
+            'end' => $this->getStart() + $this->getSize() - 1,
+            'hstart' => '0x' . strtoupper(dechex($this->getStart())),
+            'hend' => '0x' . strtoupper(dechex($this->getStart() + $this->getSize() - 1)),
+            'size' => $this->getSize(),
+            'order' => $this->getByteOrder() ? 'M' : 'I',
+        ]);
     }
 }

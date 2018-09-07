@@ -35,12 +35,13 @@ class JpegSegmentSos extends JpegSegmentBase
         $end_offset = $offset + $this->components + 2;
 
         // Load data in an Undefined entry.
-        $data_window = new DataWindow($data_element, $offset, $this->components, $data_element->getByteOrder(), $this);
+        $data_window = new DataWindow($data_element, $offset, $this->components, $data_element->getByteOrder());
+        $data_window->debug($this);
         $entry = new Undefined($this, [$data_window->getBytes()]);
         $entry->debug("Scan: {text}", ['text' => $entry->toString()]);
 
         // Append the EOI.
-        new JpegSegment(self::JPEG_EOI, $this->getParentElement());
+        new JpegSegment('jpegSegment', self::JPEG_EOI, $this->getParentElement());
 
         // Now check to see if there are any trailing data.
         if ($end_offset < $size) {
@@ -48,8 +49,9 @@ class JpegSegmentSos extends JpegSegmentBase
             $this->warning('Found trailing content after EOI: {size} bytes', ['size' => $raw_size]);
             // There is no JPEG marker for trailing garbage, so we just load
             // the data in a RawData object.
-            $trail = new RawData($this->getParentElement());
-            $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size, $data_element->getByteOrder(), $trail);
+            $trail = new RawData('rawData', $this->getParentElement());
+            $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size, $data_element->getByteOrder());
+            $trail_data_window->debug($trail);
             $trail->loadFromData($trail_data_window, 0, $raw_size);
         }
 

@@ -97,7 +97,7 @@ class ExifMakerNote extends Undefined
 
         // Load maker note into IFD.
         $ifd_class = Spec::getIfdClass($maker_note_ifd_name);
-        $ifd = new $ifd_class($exif_ifd, $maker_note_ifd_name);
+        $ifd = new $ifd_class('ifd', $maker_note_ifd_name, $exif_ifd);
         $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1]);
     }
 }

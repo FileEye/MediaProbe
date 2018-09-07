@@ -15,6 +15,11 @@ use Symfony\Component\Yaml\Yaml;
 class SpecCompiler
 {
     /**
+     * Map of expected element level array keys.
+     */
+    private $elementKeys = ['type', 'name', 'title', 'class', 'elements'];
+
+    /**
      * Map of expected IFD level array keys.
      */
     private $ifdKeys = ['type', 'class', 'alias', 'tags', 'makerNotes', 'postLoad'];
@@ -122,13 +127,23 @@ DATA;
      */
     protected function mapElementType(array $input, SplFileInfo $file)
     {
+        // Check validity of element keys.
+        $diff = array_diff($this->elementKeys, array_intersect(array_keys($input), $this->elementKeys));
+        if (!empty($diff)) {
+            throw new SpecCompilerException($file->getFileName() . ": missing element key(s) - " . implode(", ", $diff));
+        }
+
         // 'types' entry.
-        $this->map['types'][$input['type']] = $input['class'];
+        $tmp = $input;
+        unset($tmp['type'], $tmp['elements']);
+        $this->map['types'][$input['type']] = $tmp;
 
         // 'elements' entry.
         foreach ($input['elements'] as $id => $element) {
             $this->map['elements'][$input['type']][$id] = $element;
-            $this->map['elementsByName'][$input['type']][$element['name']] = $id;
+            if (isset($element['name'])) { // xx
+                $this->map['elementsByName'][$input['type']][$element['name']] = $id;
+            }
         }
     }
 

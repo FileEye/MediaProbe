@@ -20,16 +20,7 @@ class Thumbnail extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $type = 'thumbnail';
-
-    /**
-     * Constructs a Thumbnail block object.
-     */
-    public function __construct(Ifd $ifd)
-    {
-        parent::__construct($ifd);
-        $this->hasSpecification = false;
-    }
+    protected $DOMNodeName = 'thumbnail';
 
     /**
      * {@inheritdoc}
@@ -91,7 +82,8 @@ class Thumbnail extends BlockBase
         // Now set the thumbnail normally.
         try {
             //$dataxx = $data_element->getClone($offset, $length);
-            $dataxx = new DataWindow($data_element, $offset, $length, $data_element->getByteOrder(), $ifd);
+            $dataxx = new DataWindow($data_element, $offset, $length, $data_element->getByteOrder());
+            $dataxx->debug($ifd);
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
@@ -106,7 +98,7 @@ class Thumbnail extends BlockBase
             //$thumbnail_data = $dataxx->getClone(0, $size)->getBytes(0, $size);
             $thumbnail_data = $dataxx->getBytes(0, $size);
 
-            $thumbnail_block = new static($ifd);
+            $thumbnail_block = new static('thumbnail', $ifd);
             $thumbnail_entry = new Undefined($thumbnail_block, [$thumbnail_data]);
             $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
                 'offset' => $offset,

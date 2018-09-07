@@ -26,7 +26,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
-    protected $type = 'entry';
+    protected $DOMNodeName = 'entry';
 
     /**
      * The format of this entry.
@@ -60,7 +60,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function __construct(ElementInterface $parent, array $data)
     {
-        parent::__construct($parent);
+        parent::__construct('entry', $parent);
         $this->setValue($data);
     }
 
