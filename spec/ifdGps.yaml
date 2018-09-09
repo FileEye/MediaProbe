@@ -1,161 +1,195 @@
-type: GPS
+type: ifdGps
+name: GPS
+title: IFD GPS
 class: ExifEye\core\Block\Ifd
-tags:
+elements:
     0x0000:
+        type: tag
         name: GPSVersionID
         title: 'GPS Version'
         components: 4
         format: Byte
         class: ExifEye\core\Entry\GPSVersionId
     0x0001:
+        type: tag
         name: GPSLatitudeRef
         title: LatitudeRef
         components: 2
         format: Ascii
     0x0002:
+        type: tag
         name: GPSLatitude
         title: Latitude
         components: 3
         format: Rational
         class: ExifEye\core\Entry\GPSDegrees
     0x0003:
+        type: tag
         name: GPSLongitudeRef
         title: LongitudeRef
         components: 2
         format: Ascii
     0x0004:
+        type: tag
         name: GPSLongitude
         title: Longitude
         components: 3
         format: Rational
         class: ExifEye\core\Entry\GPSDegrees
     0x0005:
+        type: tag
         name: GPSAltitudeRef
         title: AltitudeRef
         components: 1
         format: Byte
     0x0006:
+        type: tag
         name: GPSAltitude
         title: Altitude
         components: 1
         format: Rational
     0x0007:
+        type: tag
         name: GPSTimeStamp
         title: TimeStamp
         components: 3
         format: Rational
     0x0008:
+        type: tag
         name: GPSSatellites
         title: Satellites
         format: Ascii
     0x0009:
+        type: tag
         name: GPSStatus
         title: Status
         components: 2
         format: Ascii
     0x000A:
+        type: tag
         name: GPSMeasureMode
         title: 'Measure Mode'
         components: 2
         format: Ascii
     0x000B:
+        type: tag
         name: GPSDOP
         title: DOP
         components: 1
         format: Rational
     0x000C:
+        type: tag
         name: GPSSpeedRef
         title: SpeedRef
         components: 2
         format: Ascii
     0x000D:
+        type: tag
         name: GPSSpeed
         title: Speed
         components: 1
         format: Rational
     0x000E:
+        type: tag
         name: GPSTrackRef
         title: TrackRef
         components: 2
         format: Ascii
     0x000F:
+        type: tag
         name: GPSTrack
         title: Track
         components: 1
         format: Rational
     0x0010:
+        type: tag
         name: GPSImgDirectionRef
         title: ImgDirectionRef
         components: 2
         format: Ascii
     0x0011:
+        type: tag
         name: GPSImgDirection
         title: 'Image Direction'
         components: 1
         format: Rational
     0x0012:
+        type: tag
         name: GPSMapDatum
         title: 'Map Datum'
         format: Ascii
     0x0013:
+        type: tag
         name: GPSDestLatitudeRef
         title: DestLatitudeRef
         components: 2
         format: Ascii
     0x0014:
+        type: tag
         name: GPSDestLatitude
         title: DestLatitude
         components: 3
         format: Rational
     0x0015:
+        type: tag
         name: GPSDestLongitudeRef
         title: DestLongitudeRef
         components: 2
         format: Ascii
     0x0016:
+        type: tag
         name: GPSDestLongitude
         title: DestLongitude
         components: 3
         format: Rational
     0x0017:
+        type: tag
         name: GPSDestBearingRef
         title: DestBearingRef
         components: 2
         format: Ascii
     0x0018:
+        type: tag
         name: GPSDestBearing
         title: DestBearing
         components: 1
         format: Rational
     0x0019:
+        type: tag
         name: GPSDestDistanceRef
         title: DestDistanceRef
         components: 2
         format: Ascii
     0x001A:
+        type: tag
         name: GPSDestDistance
         title: DestDistance
         components: 1
         format: Rational
     0x001B:
+        type: tag
         name: GPSProcessingMethod
         title: 'Processing Method'
         format: Undefined
     0x001C:
+        type: tag
         name: GPSAreaInformation
         title: 'Area Information'
         format: Undefined
     0x001D:
+        type: tag
         name: GPSDateStamp
         title: 'Date Stamp'
         components: 11
         format: Ascii
     0x001E:
+        type: tag
         name: GPSDifferential
         title: Differential
         components: 1
         format: Short
     0x001F:
+        type: tag
         name: GPSHPositioningError
         title: 'Horizontal Positioning Error'
         format: Rational

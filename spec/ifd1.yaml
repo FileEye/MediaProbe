@@ -193,8 +193,8 @@ elements:
         format: Short
         text:
             mapping:
-                2: 'Inches'
-                3: 'Centimeters'
+                2: 'Inch'
+                3: 'Centimeter'
     0x012D:
         type: tag
         name: TransferFunction
@@ -359,12 +359,12 @@ elements:
         type: ifdExif
         class: ExifEye\core\Block\Ifd
         name: Exif
-        title: 'Exif IFD Pointer'
+        title: 'Exif IFD'
     0x8825:
         type: ifdGps
         class: ExifEye\core\Block\Ifd
         name: GPS
-        title: 'GPS Info IFD Pointer'
+        title: 'GPS Info IFD'
     0x9C9B:
         type: tag
         name: WindowsXPTitle

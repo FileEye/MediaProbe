@@ -79,16 +79,12 @@ class SpecCompiler
         // Process the files. Each file corresponds to an IFD specification.
         foreach ($files as $file) {
             $ifd = Yaml::parse($file->getContents());
-            if (strpos($file->getBasename(), 'ifd_') === 0) {
-                $this->mapIfd($ifd, $file);
-            } else {
-                $this->mapElementType($ifd, $file);
-            }
+            $this->mapType($ifd, $file);
         }
 
         // Re-process the IFDs and TAGs for any task needing the entire
         // specification set to be available.
-        foreach ($this->map['ifds'] as $ifd_id => $ifd_type) {
+/*        foreach ($this->map['ifds'] as $ifd_id => $ifd_type) {
             foreach ($this->map['tags'][$ifd_id] as $tag_id => &$tag) {
                 // For sub-ifds, check the corresponding IFD exists and map it
                 // to the IFD id instead of the literal.
@@ -100,7 +96,7 @@ class SpecCompiler
                     }
                 }
             }
-        }
+        }*/
 
         // Dump the data to the spec.php file.
         $data = <<<DATA
@@ -118,19 +114,19 @@ DATA;
     }
 
     /**
-     * Processes an element type into the compiled map.
+     * Processes a 'type' into the compiled map.
      *
      * @param array $input
      *            the array from the specification file.
      * @param SplFileInfo $file
      *            the YAML specification file being processed.
      */
-    protected function mapElementType(array $input, SplFileInfo $file)
+    protected function mapType(array $input, SplFileInfo $file)
     {
         // Check validity of element keys.
         $diff = array_diff($this->elementKeys, array_intersect(array_keys($input), $this->elementKeys));
         if (!empty($diff)) {
-            throw new SpecCompilerException($file->getFileName() . ": missing element key(s) - " . implode(", ", $diff));
+            throw new SpecCompilerException($file->getFileName() . ": missing type key(s) - " . implode(", ", $diff));
         }
 
         // 'types' entry.
@@ -138,9 +134,44 @@ DATA;
         unset($tmp['type'], $tmp['elements']);
         $this->map['types'][$input['type']] = $tmp;
 
+        // 'typesByName' entry.
+        $this->map['typesByName'][$input['name']] = $input['type'];
+        if (!empty($input['alias'])) {
+            foreach ($input['alias'] as $alias) {
+                $this->map['typesByName'][$alias] = $input['type'];
+            }
+        }
+
+        // 'makerNotes' entry.
+        if (!empty($input['makerNotes'])) {
+            foreach ($input['makerNotes'] as $maker) {
+                $this->map['makerNotes'][$maker] = $input['type'];
+            }
+        }
+
         // 'elements' entry.
         foreach ($input['elements'] as $id => $element) {
+            // Convert format string to its ID.
+            if (isset($element['format'])) {
+                $temp = [];
+                if (is_scalar($element['format'])) {
+                    $temp[] = $element['format'];
+                } else {
+                    $temp = $element['format'];
+                }
+                $formats = [];
+                foreach ($temp as $name) {
+                    if (($formats[] = Format::getIdFromName($name)) === null) {
+                        throw new SpecCompilerException($file->getFileName() . ": invalid '" . $name . "' format found for element '" . $element['name'] . "'");
+                    }
+                }
+                $element['format'] = $formats;
+            }
+
+            // Add element to map by type/id.
             $this->map['elements'][$input['type']][$id] = $element;
+
+            // Add element to map by type/name.
             if (isset($element['name'])) { // xx
                 $this->map['elementsByName'][$input['type']][$element['name']] = $id;
             }

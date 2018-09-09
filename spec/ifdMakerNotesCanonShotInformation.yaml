@@ -1,31 +1,40 @@
-type: 'CanonShotInformation'
+type: ifdMakerNotesCanonShotInformation
+name: 'CanonShotInformation'
+title: Canon Shot Information
 class: ExifEye\core\Block\IfdIndexShort
-tags:
+elements:
     0x0001:
+        type: tag
         name: AutoISO
         title: 'Auto ISO Speed Used'
         format: SignedShort
     0x0002:
+        type: tag
         name: BaseISO
         title: 'Base ISO Speed Used'
         format: SignedShort
     0x0003:
+        type: tag
         name: MeasuredEV
         title: 'Measured EV'
         format: SignedShort
     0x0004:
+        type: tag
         name: TargetAperture
         title: 'Target Aperture'
         format: SignedShort
     0x0005:
+        type: tag
         name: TargetShutterSpeed
         title: 'Target Shutter Speed'
         format: SignedShort
     0x0006:
+        type: tag
         name: ExposureCompensation
         title: 'Exposure Compensation'
         format: SignedShort
     0x0007:
+        type: tag
         name: WhiteBalanceSetting
         title: 'White Balance Setting'
         format: SignedShort
@@ -54,6 +63,7 @@ tags:
                 21: 'PC Set5'
                 23: 'Auto (ambience priority)'
     0x0008:
+        type: tag
         name: SlowShutter
         title: 'Slow Shutter'
         format: SignedShort
@@ -65,22 +75,27 @@ tags:
                 2: 'On'
                 3: 'None'
     0x0009:
+        type: tag
         name: SequenceNumber
         title: 'Sequence Number'
         format: SignedShort
     0x000A:
+        type: tag
         name: OpticalZoomCode
         title: 'Optical Zoom Code'
         format: SignedShort
     0x000C:
+        type: tag
         name: CameraTemperature
         title: 'Camera Temperature'
         format: SignedShort
     0x000D:
+        type: tag
         name: FlashGuideNumber
         title: 'Flash Guide Number'
         format: SignedShort
     0x000E:
+        type: tag
         name: AFPointsInFocus
         title: 'Auto Focus Points In Focus'
         format: SignedShort
@@ -95,10 +110,12 @@ tags:
                 0x3006: 'Left+Center'
                 0x3007: 'All'
     0x000F:
+        type: tag
         name: FlashExposureComp
         title: 'Flash Exposure Compensation'
         format: SignedShort
     0x0010:
+        type: tag
         name: AutoExposureBracketing
         title: 'Auto Exposure Bracketing'
         format: SignedShort
@@ -110,10 +127,12 @@ tags:
                 2: 'On (shot 2)'
                 3: 'On (shot 3)'
     0x0011:
+        type: tag
         name: AEBBracketValue
         title: 'AEB Bracket Value'
         format: SignedShort
     0x0012:
+        type: tag
         name: ControlMode
         title: 'Control Mode'
         format: SignedShort
@@ -123,30 +142,37 @@ tags:
                 1: 'Camera Local Control'
                 3: 'Computer Remote Control'
     0x0013:
+        type: tag
         name: FocusDistanceUpper
         title: 'Focus Distance Upper'
         format: Short
     0x0014:
+        type: tag
         name: FocusDistanceLower
         title: 'Focus Distance Lower'
         format: Short
     0x0015:
+        type: tag
         name: FNumber
         title: FNumber
         format: SignedShort
     0x0016:
+        type: tag
         name: ExposureTime
         title: 'Exposure Time'
         format: SignedShort
     0x0017:
+        type: tag
         name: MeasuredEV2
         title: 'Measured Exposure Value'
         format: SignedShort
     0x0018:
+        type: tag
         name: BulbDuration
         title: 'Bulb Duration'
         format: SignedShort
     0x001A:
+        type: tag
         name: CameraType
         title: 'Camera Type'
         format: SignedShort
@@ -158,6 +184,7 @@ tags:
                 252: 'EOS Mid-range'
                 255: 'DV Camera'
     0x001B:
+        type: tag
         name: AutoRotate
         title: 'Auto Rotate'
         format: SignedShort
@@ -169,6 +196,7 @@ tags:
                 2: 'Rotate 180'
                 3: 'Rotate 270 CW'
     0x001C:
+        type: tag
         name: NDFilter
         title: 'ND Filter'
         format: SignedShort
@@ -178,10 +206,12 @@ tags:
                 0: 'Off'
                 1: 'On'
     0x001D:
+        type: tag
         name: SelfTimer2
         title: 'Self Timer'
         format: SignedShort
     0x0021:
+        type: tag
         name: FlashOutput
         title: 'Flash Output'
         format: SignedShort

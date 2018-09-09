@@ -29,11 +29,11 @@ class Tag extends BlockBase
         parent::__construct($type, $parent_block);
 
         $this->setAttribute('id', $id);
-        $tag_name = Spec::getTagName($parent_block, $id);
+        $tag_name = Spec::getElementName($parent_block->getType(), $id);
         if ($tag_name !== null) {
             $this->setAttribute('name', $tag_name);
         }
-        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getIfdSupportedTagIds($parent_block));
+        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getTypeSupportedElementIds($parent_block->getType()));
 
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasSpecification()) {
@@ -49,7 +49,7 @@ class Tag extends BlockBase
         }
 
         // Warn if format is not as expected.
-        $expected_format = Spec::getTagFormat($parent_block, $id);
+        $expected_format = Spec::getElementPropertyValue($parent_block->getType(), $id, 'format');
         if ($expected_format !== null && $format !== null && !in_array($format, $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
@@ -62,7 +62,7 @@ class Tag extends BlockBase
         }
 
         // Warn if components are not as expected.
-        $expected_components = Spec::getTagComponents($parent_block, $id);
+        $expected_components = Spec::getElementPropertyValue($parent_block->getType(), $id, 'components');
         if ($expected_components !== null && $components !== null && $components !== $expected_components) {
             $this->warning("Found {components} data components, expected {expected_components}", [
                 'components' => $components,

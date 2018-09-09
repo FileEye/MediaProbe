@@ -43,10 +43,10 @@ class IfdIndexShort extends Ifd
         $offset += 2;
         for ($i = 0; $i < $components; $i++) {
             // Check if this tag ($i + 1) should be skipped.
-            if (Spec::getTagSkip($this, $i + 1)) {
+            if (Spec::getElementPropertyValue($this->getType(), $i + 1, 'skip')) {
                 continue;
             };
-            $item_format = Spec::getTagFormat($this, $i + 1)[0];
+            $item_format = Spec::getElementPropertyValue($this->getType(), $i + 1, 'format')[0];
             switch ($item_format) {
                 case Format::BYTE:
                     $item_value = $data_element->getByte($offset + $i * 2);
@@ -77,7 +77,7 @@ class IfdIndexShort extends Ifd
                     $item_format = Format::SSHORT;
                     break;
             }
-            if ($entry_class = Spec::getEntryClass($this, $i + 1, $item_format)) {
+            if ($entry_class = Spec::getElementHandlingClass($this->getType(), $i + 1, $item_format)) {
                 new Tag('tag', $this, $i + 1, $entry_class, [$item_value], $item_format, 1);
             }
         }

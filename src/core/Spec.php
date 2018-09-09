@@ -72,6 +72,31 @@ class Spec
     }
 
     /**
+     * Returns the types in the specification.
+     *
+     * @return array
+     *            an simple array, with the specification types.
+     */
+    public static function getTypes()
+    {
+        return array_keys(self::getMap()['types']);
+    }
+
+    /**
+     * Returns the id of a type given its name.
+     *
+     * @param string $type_name
+     *            the type.
+     *
+     * @return int|string|null
+     *            the type id.
+     */
+    public static function getTypeIdByName($type_name)
+    {
+        return isset(self::getMap()['typesByName'][$type_name]) ? self::getMap()['typesByName'][$type_name] : null;
+    }
+
+    /**
      * Returns the property value of a type.
      *
      * @param string $type
@@ -80,7 +105,7 @@ class Spec
      * @return string|null
      *            the element handling class.
      */
-    public static function getTypeProperty($type, $property)
+    public static function getTypePropertyValue($type, $property)
     {
         return isset(self::getMap()['types'][$type][$property]) ? self::getMap()['types'][$type][$property] : null;
     }
@@ -98,6 +123,20 @@ class Spec
     public static function getTypeSupportedElementIds($type)
     {
         return array_keys(self::getMap()['elements'][$type]);
+    }
+
+    /**
+     * Returns the type's PHP handling class.
+     *
+     * @param string $type
+     *            the type.
+     *
+     * @return string
+     *            a fully qualified class name.
+     */
+    public static function getTypeHandlingClass($type)
+    {
+        return self::getTypePropertyValue($type, 'class');
     }
 
     /**
@@ -203,263 +242,23 @@ class Spec
      * @return string|null
      *            the element handling class.
      */
-    public static function getElementHandlingClass($type, $element_id)
+    public static function getElementHandlingClass($type, $element_id, $format = null)
     {
-        return self::getElementPropertyValue($type, $element_id, 'class');
-    }
-
-    /**
-     * Returns the IFD types in the specification.
-     *
-     * @return array
-     *            an associative array, with keys the IFD identifiers, and
-     *            values the IFD types.
-     */
-    public static function getIfdTypes()
-    {
-        return self::getMap()['ifds'];
-    }
-
-    /**
-     * Returns the TAG ids supported in an IFD.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     *
-     * @return array
-     *            an simple array, with values the TAG identifiers supported by
-     *            the IFD.
-     */
-    public static function getIfdSupportedTagIds(BlockBase $block)
-    {
-        $xx_block_id = self::getIfdIdByType($block->getAttribute('name'));
-        return array_keys(self::getMap()['tags'][$xx_block_id]);
-    }
-
-    /**
-     * Returns the IFD id given its type.
-     *
-     * @param string $ifd_type
-     *            the IFD type.
-     *
-     * @return int|null
-     *            the IFD id.
-     */
-    public static function getIfdIdByType($ifd_type)
-    {
-        return isset(self::getMap()['ifdsByType'][$ifd_type]) ? self::getMap()['ifdsByType'][$ifd_type] : null;
-    }
-
-    /**
-     * Returns the IFD class.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     *
-     * @return string|null
-     *            the IFD class.
-     */
-    public static function getIfdClass($block_name)
-    {
-        $xx_block_id = self::getIfdIdByType($block_name);
-
-        return isset(self::getMap()['ifdClasses'][$xx_block_id]) ? self::getMap()['ifdClasses'][$xx_block_id] : null;
-    }
-
-    /**
-     * Returns a Pel IFD to use for loading maker notes.
-     *
-     * @param string $ifd_id
-     *            the IFD id.
-     *
-     * @return int|null
-     *            an IFD id.
-     */
-    public static function getMakerNoteIfdName($make, $model)
-    {
-        $ifd_id = isset(self::getMap()['makerNotes'][$make]) ? self::getMap()['makerNotes'][$make] : null;
-        if ($ifd_id !== null) {
-            return self::getMap()['ifds'][$ifd_id];
-        }
-        return null;
-    }
-
-    /**
-     * Determines if the TAG is an IFD pointer.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return bool
-     *            TRUE or FALSE.
-     */
-    public static function isTagAnIfdPointer(BlockBase $parent_block, $tag_id)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        return isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['ifd']);
-    }
-
-    /**
-     * Returns the IFD id the TAG points to.
-     *
-     * @param int $xx_parent_block_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return int|null
-     *            the IFD id, or null if the TAG is not an IFD pointer.
-     */
-    public static function getIfdNameFromTag(BlockBase $parent_block, $tag_id)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        $ifd_id = isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['ifd']) ? self::getMap()['tags'][$xx_parent_block_id][$tag_id]['ifd'] : null;
-
-        if ($ifd_id !== null) {
-            return self::getMap()['ifds'][$ifd_id];
-        }
-        return null;
-    }
-
-    /**
-     * Returns the IFD post-load callbacks.
-     *
-     * @param int $xx_parent_block_id
-     *            the IFD id.
-     *
-     * @return array
-     *            the post-load callbacks.
-     */
-    public static function getIfdPostLoadCallbacks(BlockBase $block)
-    {
-        $xx_block_id = self::getIfdIdByType($block->getAttribute('name'));
-
-        return self::getMap()['ifdPostLoadCallbacks'][$xx_block_id];
-    }
-
-    /**
-     * Returns the TAG name.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return string|null
-     *            the TAG name.
-     */
-    public static function getTagName(BlockBase $parent_block, $tag_id)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        return isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['name']) ? self::getMap()['tags'][$xx_parent_block_id][$tag_id]['name'] : null;
-    }
-
-    /**
-     * Returns the TAG id given its name.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param string $tag_name
-     *            the TAG name.
-     *
-     * @return int|null
-     *            the TAG id.
-     */
-    public static function getTagIdByName(BlockBase $parent_block, $tag_name)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        return isset(self::getMap()['tagsByName'][$xx_parent_block_id][$tag_name]) ? self::getMap()['tagsByName'][$xx_parent_block_id][$tag_name] : null;
-    }
-
-    /**
-     * Returns the TAG format.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return array
-     *            the array of formats supported by the TAG.
-     */
-    public static function getTagFormat(BlockBase $parent_block, $tag_id)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        $format = isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['format']) ? self::getMap()['tags'][$xx_parent_block_id][$tag_id]['format'] : [];
-        return empty($format) ? null : $format;
-    }
-
-    /**
-     * Returns the TAG components.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return int|null
-     *            the TAG count of data components.
-     */
-    public static function getTagComponents(BlockBase $parent_block, $tag_id)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        return isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['components']) ? self::getMap()['tags'][$xx_parent_block_id][$tag_id]['components'] : null;
-    }
-
-    /**
-     * Returns whether the TAG should be skipped.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return bool
-     */
-    public static function getTagSkip(BlockBase $parent_block, $tag_id)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        return isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['skip']) ? self::getMap()['tags'][$xx_parent_block_id][$tag_id]['skip'] : false;
-    }
-
-    /**
-     * Returns the TAG class.
-     *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return string
-     *            the TAG class.
-     */
-    public static function getEntryClass(BlockBase $parent_block, $tag_id, $format = null)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        // Return the specific tag class, if defined.
-        if (isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['class'])) {
-            return self::getMap()['tags'][$xx_parent_block_id][$tag_id]['class'];
+        // Return the element class, if defined.
+        $class = self::getElementPropertyValue($type, $element_id, 'class');
+        if ($class !== null) {
+            return $class;
         }
 
         // If format is not passed in, try getting it from the spec.
         if ($format === null) {
-            $formats = self::getTagFormat($parent_block, $tag_id);
+            $formats = self::getElementPropertyValue($type, $element_id, 'format');
             if (empty($formats)) {
                 throw new ExifEyeException(
                     'No format can be derived for tag: 0x%04X (%s) in ifd: \'%s\'',
-                    $tag_id,
-                    self::getTagName($parent_block, $tag_id),
-                    $parent_block->getAttribute('name')
+                    $element_id,
+                    self::getElementName($type, $element_id),
+                    $type
                 );
             }
             $format = $formats[0];
@@ -472,52 +271,39 @@ class Spec
     }
 
     /**
-     * Returns the TAG title.
+     * Returns the text of an element.
      *
-     * @param int $ifd_id
-     *            the IFD id.
-     * @param int $tag_id
-     *            the TAG id.
-     *
-     * @return string|null
-     *            the TAG title.
-     */
-    public static function getTagTitle(BlockBase $parent_block, $tag_id)
-    {
-        $xx_parent_block_id = self::getIfdIdByType($parent_block->getAttribute('name'));
-
-        return isset(self::getMap()['tags'][$xx_parent_block_id][$tag_id]['title']) ? self::getMap()['tags'][$xx_parent_block_id][$tag_id]['title'] : null;
-    }
-
-    /**
-     * Returns the TAG text.
-     *
-     * @param \ExifEye\core\Block\Tag $tag
-     *            the TAG.
-     * @param EntryInterface $entry
-     *            the TAG entry.
+     * @param string $type
+     *            the element type.
+     * @param string $id
+     *            the element id.
+     * @param mixed $value
+     *            the element value.
      * @param array $options
      *            (Optional) an array of options to format the value.
      *
      * @return string|null
-     *            the TAG text, or NULL if not applicable.
+     *            the element text, or NULL if not applicable.
      */
-    public static function getTagText(BlockBase $tag, EntryInterface $entry, $options = []) // xx move to generic element
+    public static function getElementText($type, $id, $value, $options = [])
     {
-        // Return a text from a mapping list if defined.
-        $ifd_name = $tag->getParentElement()->getAttribute('name');
-        $ifd_id = self::getIfdIdByType($ifd_name);
-        $tag_id = $tag->getAttribute('id');
-        if (isset(self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'])) {
-            $value = $entry->getValue();
-            if (is_scalar($value)) {
-                $map = self::getMap()['tags'][$ifd_id][$tag_id]['text']['mapping'];
-                // If the code to be mapped is a non-int, change to string.
-                $id = is_int($value) ? $value : (string) $value;
-                return isset($map[$id]) ? ExifEye::tra($map[$id]) : null;
-            }
+        if (isset(self::getMap()['elements'][$type][$id]['text']['mapping']) && is_scalar($value)) {
+            $map = self::getMap()['elements'][$type][$id]['text']['mapping'];
+            // If the code to be mapped is a non-int, change to string.
+            $id = is_int($value) ? $value : (string) $value;
+            return isset($map[$id]) ? ExifEye::tra($map[$id]) : null;
         }
-
         return null;
+    }
+
+    /**
+     * xx
+     *
+     * @return int|null
+     *            an IFD element id.
+     */
+    public static function getMakerNoteIfdType($make, $model)
+    {
+        return isset(self::getMap()['makerNotes'][$make]) ? self::getMap()['makerNotes'][$make] : null;
     }
 }

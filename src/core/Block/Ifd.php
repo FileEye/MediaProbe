@@ -51,7 +51,7 @@ class Ifd extends BlockBase
         parent::__construct($type, $parent_block);
 
         $this->setAttribute('name', $name);
-        $this->hasSpecification = Spec::getIfdIdByType($name) ? true : false;
+        $this->hasSpecification = Spec::getElementIdByName($parent_block->getType(), $name) ? true : false;
     }
 
     /**
@@ -105,25 +105,25 @@ class Ifd extends BlockBase
             }
 
             // Build the TAG object.
-            $tag_entry_class = Spec::getEntryClass($this, $tag_id, $tag_format);
-            $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $tag_format, $tag_components, $data_element, $tag_data_offset);
-            $tag = new Tag('tag', $this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
+            $tag_entry_class = Spec::getElementHandlingClass($this->getType(), $tag_id, $tag_format);
 
-            // Load a subIfd.
-            if (Spec::isTagAnIfdPointer($this, $tag->getAttribute('id'))) {
+            $element_type = Spec::getElementType($this->getType(), $tag_id);
+            if ($element_type === 'tag' || $element_type === null) {
+                $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $tag_format, $tag_components, $data_element, $tag_data_offset);
+                $tag = new Tag('tag', $this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
+            } else {
                 // If the tag is an IFD pointer, loads the IFD.
-                $ifd_type = Spec::getElementType($this->getType(), $tag->getAttribute('id'));
-                $ifd_name = Spec::getIfdNameFromTag($this, $tag->getAttribute('id'));
+                $ifd_type = Spec::getElementType($this->getType(), $tag_id);
+                $ifd_name = Spec::getElementName($this->getType(), $tag_id);
                 $o = $data_element->getLong($i_offset + 8);
                 if ($starting_offset != $o) {
-                    $ifd_class = Spec::getIfdClass($ifd_name);
+                    $ifd_class = Spec::getTypeHandlingClass($ifd_type);
                     $ifd = new $ifd_class($ifd_type, $ifd_name, $this);
                     try {
                         $ifd->loadFromData($data_element, $o, $size, [
                             'data_offset' => $tag_data_offset,
                             'components' => $tag_components,
                         ]);
-                        $this->removeElement("tag[@name='" . $tag->getAttribute('name') . "']");
                     } catch (DataException $e) {
                         $this->error($e->getMessage());
                     }
@@ -139,17 +139,20 @@ class Ifd extends BlockBase
         $this->debug(".....END Loading");
 
         // Invoke post-load callbacks.
-        foreach (Spec::getIfdPostLoadCallbacks($this) as $callback) {
-            $this->debug("START... {callback}", [
-                'callback' => $callback,
-            ]);
-            call_user_func($callback, $data_element, $this);
-            $this->debug(".....END {callback}", [
-                'callback' => $callback,
-            ]);
+        $post_load_callbacks = Spec::getTypePropertyValue($this->getType(), 'postLoad');
+        if (!empty($post_load_callbacks)) {
+            foreach ($post_load_callbacks as $callback) {
+                $this->debug("START... {callback}", [
+                    'callback' => $callback,
+                ]);
+                call_user_func($callback, $data_element, $this);
+                $this->debug(".....END {callback}", [
+                    'callback' => $callback,
+                ]);
+            }
         }
 
-        return $data_element->getLong($offset + 2 + 12 * $n);
+        return $this;
     }
 
     /**

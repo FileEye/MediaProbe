@@ -1,11 +1,15 @@
-type: 'CanonPanoramaInformation'
+type: ifdMakerNotesCanonPanoramaInformation
+name: 'CanonPanoramaInformation'
+title: Canon Panorama Information
 class: ExifEye\core\Block\IfdIndexShort
-tags:
+elements:
     0x0002:
+        type: tag
         name: PanoramaFrame
         title: 'Panorama Frame'
         format: SignedShort
     0x0005:
+        type: tag
         name: PanoramaDirection
         title: 'Panorama Direction'
         format: SignedShort

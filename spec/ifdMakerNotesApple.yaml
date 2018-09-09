@@ -1,17 +1,21 @@
-type: 'AppleMakerNotes'
+type: ifdMakerNotesApple
+name: 'AppleMakerNotes'
+title: Apple Maker Notes
 class: ExifEye\Apple\Block\MakerNote
 makerNotes:
   - 'Apple'
-tags:
+elements:
     0x0003:
-        name: RunTime
+        type: ifdMakerNotesAppleRuntime
+        name: AppleRunTime
         title: 'Apple Run Time'
-        ifd: 'AppleRunTime'
     0x0008:
+        type: tag
         name: AccelerationVector
         title: 'Acceleration Vector'
         format: SignedRational
     0x000a:
+        type: tag
         name: HDRImageType
         title: 'HDRImageType'
         format: SignedShort
@@ -20,14 +24,17 @@ tags:
                 3: 'HDR Image'
                 4: 'Original Image'
     0x000b:
+        type: tag
         name: BurstUUID
         title: 'Burst UUID'
         format: Ascii
     0x0011:
+        type: tag
         name: ContentIdentifier
         title: 'Content Identifier'
         format: Ascii
     0x0015:
+        type: tag
         name: ImageUniqueID
         title: 'ImageUniqueID'
         format: Ascii

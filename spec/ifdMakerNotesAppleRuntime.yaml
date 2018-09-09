@@ -1,19 +1,25 @@
-type: 'AppleRunTime'
+type: ifdMakerNotesAppleRuntime
+name: 'AppleMakerNotesRuntime'
+title: Apple Runtime
 class: ExifEye\Apple\Block\RunTime
-tags:
+elements:
     0x0001:
+        type: tag
         name: flags
         title: 'Flags'
         format: Ascii
     0x0002:
+        type: tag
         name: value
         title: 'Value'
         format: Ascii
     0x0003:
+        type: tag
         name: timescale
         title: 'Timescale'
         format: Ascii
     0x0004:
+        type: tag
         name: epoch
         title: 'Epoch'
         format: Ascii

@@ -1,9 +1,12 @@
-type: 'IFD0'
+type: ifd0
+name: IFD0
+title: IFD0
+class: ExifEye\core\Block\Ifd
 alias:
   - '0'
   - 'Main'
 bork: '*** EXPECTED FAILURE ***'
-tags:
+elements:
     0x0100:
         name: ImageWidth
         title: 'Image Width'

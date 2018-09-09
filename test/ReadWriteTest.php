@@ -56,7 +56,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd('ifd', 'IFD0', $tiff);
+        $ifd = new Ifd('ifd0', 'IFD0', $tiff);
         foreach ($entries as $entry) {
             new Tag('tag', $ifd, $entry[0], $entry[1], $entry[2]);
         }

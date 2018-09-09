@@ -29,7 +29,7 @@ function dump_element(ElementInterface $element)
 {
     if ($element instanceof EntryInterface) {
         $ifd_name = $element->getParentElement()->getParentElement()->getAttribute('name');
-        $tag_title = Spec::getTagTitle($element->getParentElement()->getParentElement(), $element->getParentElement()->getAttribute('id')) ?: '*** UNKNOWN ***';
+        $tag_title = Spec::getElementTitle($element->getParentElement()->getParentElement()->getType(), $element->getParentElement()->getAttribute('id')) ?: '*** UNKNOWN ***';
         print substr(str_pad($ifd_name . '/' . $tag_title, 30, ' '), 0, 30) . ' = ' . $element->toString() . "\n";
     }
 
@@ -101,7 +101,7 @@ if (!isset($err)) {
     print("dump-image: Error while reading image: " . $err . "\n");
 }
 
-// Dump via exif_read_data(). 
+// Dump via exif_read_data().
 //dump(@exif_read_data($file));
 
 exit(0);  // xx decide exit code
