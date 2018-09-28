@@ -187,7 +187,8 @@ class Ifd extends BlockBase
         $data_area_bytes = '';
 
         // Fill in the TAG entries in the IFD.
-        foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
+// xax        foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
+        foreach ($this->getMultipleElements('tag') as $tag => $sub_block) {
             $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
             $bytes .= ConvertBytes::fromShort($sub_block->getElement('entry')->getFormat(), $byte_order);
             $bytes .= ConvertBytes::fromLong($sub_block->getElement('entry')->getComponents(), $byte_order);

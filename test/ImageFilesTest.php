@@ -62,7 +62,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
     /**
      * @dataProvider imageFileProvider
      */
-/*  xax  public function testRewriteThroughGd($imageDumpFile)
+    public function testRewriteThroughGd($imageDumpFile)
     {
         $test = Yaml::parse($imageDumpFile->getContents());
         $original_image = Image::createFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
@@ -88,7 +88,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         $this->assertEquals($test['gdInfo'][0], imagesx($gd_resource));
         $this->assertEquals($test['gdInfo'][1], imagesy($gd_resource));
         imagedestroy($gd_resource);
-    }*/
+    }
 
     /**
      * @dataProvider imageFileProvider
