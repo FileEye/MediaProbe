@@ -67,7 +67,7 @@ abstract class JpegSegmentBase extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
         $bytes = $this->getMarkerBytes();
 

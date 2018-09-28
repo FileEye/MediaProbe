@@ -1,6 +1,14 @@
 fileName: misplaced-exif.jpg
 mimeType: image/jpeg
 fileContentHash: b14a62158bfab96530f8c257cb619371a39ca5d28c9e23a65e95e7b4ac4ba3b2
+gdInfo:
+    0: 320
+    1: 200
+    2: 2
+    3: 'width="320" height="200"'
+    bits: 8
+    channels: 3
+    mime: image/jpeg
 elements:
     type: image
     path: /image
@@ -141,7 +149,7 @@ elements:
                                                     elements:
                                                         -
                                                             type: tag
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:GPS/tag:0:GPSVersionID'
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34853:GPS/tag:0:GPSVersionID'
                                                             class: ExifEye\core\Block\Tag
                                                             valid: true
                                                             id: '0'
@@ -149,7 +157,7 @@ elements:
                                                             elements:
                                                                 -
                                                                     type: entry
-                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:GPS/tag:0:GPSVersionID/entry'
+                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34853:GPS/tag:0:GPSVersionID/entry'
                                                                     class: ExifEye\core\Entry\GPSVersionId
                                                                     valid: true
                                                                     format: Byte
@@ -165,7 +173,7 @@ elements:
                                                     elements:
                                                         -
                                                             type: tag
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36864:ExifVersion'
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36864:ExifVersion'
                                                             class: ExifEye\core\Block\Tag
                                                             valid: true
                                                             id: '36864'
@@ -173,7 +181,7 @@ elements:
                                                             elements:
                                                                 -
                                                                     type: entry
-                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36864:ExifVersion/entry'
+                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36864:ExifVersion/entry'
                                                                     class: ExifEye\core\Entry\ExifVersion
                                                                     valid: false
                                                                     format: Undefined
@@ -182,7 +190,7 @@ elements:
                                                                     text: 'Exif Version 0.0'
                                                         -
                                                             type: tag
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37520:SubSecTime'
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:37520:SubSecTime'
                                                             class: ExifEye\core\Block\Tag
                                                             valid: true
                                                             id: '37520'
@@ -190,7 +198,7 @@ elements:
                                                             elements:
                                                                 -
                                                                     type: entry
-                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:37520:SubSecTime/entry'
+                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:37520:SubSecTime/entry'
                                                                     class: ExifEye\core\Entry\Core\Ascii
                                                                     valid: true
                                                                     format: Ascii
@@ -199,7 +207,7 @@ elements:
                                                                     text: '0'
                                                         -
                                                             type: tag
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36880:OffsetTime'
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36880:OffsetTime'
                                                             class: ExifEye\core\Block\Tag
                                                             valid: true
                                                             id: '36880'
@@ -207,7 +215,7 @@ elements:
                                                             elements:
                                                                 -
                                                                     type: entry
-                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36880:OffsetTime/entry'
+                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36880:OffsetTime/entry'
                                                                     class: ExifEye\core\Entry\Core\Ascii
                                                                     valid: true
                                                                     format: Ascii
@@ -399,12 +407,12 @@ elements:
 log:
     ERROR:
         -
-            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36864:ExifVersion/entry'
+            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36864:ExifVersion/entry'
             message: 'Incorrect version data for (Exif)'
     WARNING:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:306:DateTime'
             message: 'Found 11 data components, expected 20'
         -
-            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif/tag:36864:ExifVersion'
+            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36864:ExifVersion'
             message: 'Found Byte data format, expected Undefined'

@@ -28,6 +28,13 @@ class Tiff extends BlockBase
     protected $DOMNodeName = 'tiff';
 
     /**
+     * The byte order of this TIFF segment.
+     *
+     * @var int
+     */
+    protected $byteOrder;
+
+    /**
      * Constructs a Block for holding a TIFF image.
      */
     public function __construct(BlockBase $parent = null)
@@ -36,20 +43,39 @@ class Tiff extends BlockBase
     }
 
     /**
+     * Returns the MIME type of the image.
+     *
+     * @returns string
+     */
+    public function getMimeType()
+    {
+        return 'image/tiff';
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
         // Determine the byte order of the TIFF data.
-        $byte_order = self::getTiffSegmentByteOrder($data_element, $offset);
+        $this->byteOrder = self::getTiffSegmentByteOrder($data_element, $offset);
 
         // Open a data window on the TIFF data.
-        $data_window = new DataWindow($data_element, $offset, $size, $byte_order);
+        $data_window = new DataWindow($data_element, $offset, $size, $this->byteOrder);
         $data_window->debug($this);
 
         // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
         // header)
         $ifd_offset = $data_window->getLong(4);
+
+        // If the offset to first IFD is higher than 8, then there may be an
+        // image scan (TIFF) in between. Store that in a RawData block.
+        if ($ifd_offset > 8) {
+            $scan = new RawData('rawData', $this);
+            $scan_data_window = new DataWindow($data_window, 8, $ifd_offset - 8);
+            $scan_data_window->debug($scan);
+            $scan->loadFromData($scan_data_window, 0, $scan_data_window->getSize());
+        }
 
         // Loops through IFDs. In fact we should only have IFD0 and IFD1.
         for ($i = 0; $i <= 2; $i++) {
@@ -95,57 +121,51 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN)
+    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-        if ($order == ConvertBytes::LITTLE_ENDIAN) {
+        // TIFF byte order. 2 bytes running.
+        if ($this->byteOrder == ConvertBytes::LITTLE_ENDIAN) {
             $bytes = 'II';
         } else {
             $bytes = 'MM';
         }
 
-        // TIFF magic number --- fixed value.
-        $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $order);
+        // TIFF magic number --- fixed value. 4 bytes running.
+        $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $this->byteOrder);
 
+        // Check if we have a image scan before first IFD.
+        $scan = $this->getElement("rawData");
         $ifd0 = $this->getElement("ifd[@name='IFD0']");
-        if ($ifd0) {
-            // IFD0 offset. We will always start IFD0 at an offset of 8
-            // bytes (2 bytes for byte order, another 2 bytes for the TIFF
-            // header, and 4 bytes for the IFD0 offset make 8 bytes together).
-            $bytes .= ConvertBytes::fromLong(8, $order);
+        $ifd1 = $this->getElement("ifd[@name='IFD1']");
 
-            // The argument specifies the offset of this IFD. The IFD will
-            // use this to calculate offsets from the entries to their data,
-            // all those offsets are absolute offsets counted from the
-            // beginning of the data.
-            $ifd0_bytes = $ifd0->toBytes($order, 8);
-
-            // Deal with IFD1.
-            $ifd1 = $this->getElement("ifd[@name='IFD1']");
-            if (!$ifd1) {
-                // No IFD1, link to next IFD is 0.
-                $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong(0, $order) . $ifd0_bytes['data_area'];
-            } else {
-                $ifd0_length = strlen($ifd0_bytes['ifd_area']) + 4 + strlen($ifd0_bytes['data_area']);
-                $ifd1_offset = 8 + $ifd0_length;
-                $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong($ifd1_offset, $order) . $ifd0_bytes['data_area'];
-                $ifd1_bytes = $ifd1->toBytes($order, $ifd1_offset);
-                $bytes .= $ifd1_bytes['ifd_area'] . ConvertBytes::fromLong(0, $order) . $ifd1_bytes['data_area'];
-            }
+        // IFD0 offset. Normally we start IFD0 at an offset of 8 bytes (2
+        // bytes for byte order, another 2 bytes for the TIFF header, and 4
+        // bytes for the IFD0 offset itself). If raw data is present, this
+        // will come before IFD0. 8 bytes running.
+        if (!$ifd0) {
+            $bytes .= ConvertBytes::fromLong(0, $this->byteOrder);
         } else {
-            $bytes .= ConvertBytes::fromLong(0, $order);
+            if ($scan) {
+                $bytes .= ConvertBytes::fromLong(8 + strlen($scan->toBytes()), $this->byteOrder);
+            } else {
+                $bytes .= ConvertBytes::fromLong(8, $this->byteOrder);
+            }
+        }
+
+        // Add image scan if needed. 8+scan bytes running.
+        if ($scan) {
+            $bytes .= $scan->toBytes();
+        }
+
+        // Dumps IFD0 and IFD1.
+        if ($ifd0) {
+            $bytes .= $ifd0->toBytes($this->byteOrder, strlen($bytes), (bool) $ifd1);
+        }
+        if ($ifd1) {
+            $bytes .= $ifd1->toBytes($this->byteOrder, strlen($bytes), false);
         }
 
         return $bytes;
-    }
-
-    /**
-     * Returns the MIME type of the image.
-     *
-     * @returns string
-     */
-    public function getMimeType()
-    {
-        return 'image/tiff';
     }
 
     /**

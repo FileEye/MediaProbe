@@ -155,16 +155,19 @@ interface ElementInterface
     /**
      * Returns the bytes representing this element.
      *
-     * The returned value may be a PHP string in case of a single sequence of bytes, or an
-     * array in case multiple sequences are needed.
+     * The returned value may be a PHP string in case of a single sequence of
+     * bytes, or an array in case multiple sequences are needed.
      *
      * @param bool $byte_order
-     *            the byte order to use for numeric values, which must be either
-     *            ConvertBytes::LITTLE_ENDIAN or ConvertBytes::BIG_ENDIAN.
+     *            (Optional) the byte order to use for numeric values, which
+     *            must be either ConvertBytes::LITTLE_ENDIAN or
+     *            ConvertBytes::BIG_ENDIAN.
+     * @param int $offset
+     *            (Optional) the offset at which the bytes will be appended.
      *
      * @return string|string[]
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN);
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0);
 
     /**
      * Returns a dump of the element in an array.

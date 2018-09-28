@@ -69,6 +69,7 @@ class DumpCommand extends Command
         $yaml['fileName'] = $file->getBaseName();
         $yaml['mimeType'] = $image->getMimeType();
         $yaml['fileContentHash'] = hash('sha256', $file->getContents());
+        $yaml['gdInfo'] = @getimagesize((string) $file);
         $yaml['elements'] = $image->toDumpArray();
         $yaml['log'] = [];
         foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {

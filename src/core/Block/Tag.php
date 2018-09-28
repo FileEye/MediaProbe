@@ -103,7 +103,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN)
+    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
     }
 }

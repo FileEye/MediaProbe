@@ -1,6 +1,12 @@
 fileName: sample-1.tiff
 mimeType: image/tiff
 fileContentHash: 26f4b11c45ad3e56a530d03967ff4627892b3264183b85fefba194ff1fe3e08e
+gdInfo:
+    0: 174
+    1: 38
+    2: 8
+    3: 'width="174" height="38"'
+    mime: image/tiff
 elements:
     type: image
     path: /image
@@ -13,6 +19,21 @@ elements:
             class: ExifEye\core\Block\Tiff
             valid: true
             elements:
+                -
+                    type: rawData
+                    path: /image/tiff/rawData
+                    class: ExifEye\core\Block\RawData
+                    valid: true
+                    elements:
+                        -
+                            type: entry
+                            path: /image/tiff/rawData/entry
+                            class: ExifEye\core\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 6392
+                            bytesHash: f83a63ebc8fcedad19dfa8937b0c0f622b8b49b51179ab8bef11b8492f2b2786
+                            text: '6392 bytes of data [ 80 03 47 C7 F7 F8 ... 26 65 13 22 02 00 ]'
                 -
                     type: ifd
                     path: '/image/tiff/ifd:IFD0'

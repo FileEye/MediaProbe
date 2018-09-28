@@ -43,13 +43,10 @@ class ImageFilesTest extends ExifEyeTestCaseBase
     public function testParse($imageDumpFile)
     {
         $test_file_content = $imageDumpFile->getContents();
-
         $test = Yaml::parse($test_file_content);
-
         $image = Image::createFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
 
         $this->assertEquals($test['mimeType'], $image->getMimeType());
-//$this->assertEquals($test['fileContentHash'], hash('sha256', $test_file_content));
 
         if (isset($test['elements'])) {
             $this->assertElement($test['elements'], $image);
@@ -60,11 +57,62 @@ class ImageFilesTest extends ExifEyeTestCaseBase
                 $this->assertEquals(count($test['log'][$level]), count($image->dumpLog($level)));
             }
         }
+    }
+
+    /**
+     * @dataProvider imageFileProvider
+     */
+/*  xax  public function testRewriteThroughGd($imageDumpFile)
+    {
+        $test = Yaml::parse($imageDumpFile->getContents());
+        $original_image = Image::createFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
+        $original_image->saveToFile($imageDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite-gd.img');
+
+        // Test via getimagesize.
+        $gd_info = getimagesize($imageDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite-gd.img');
+        $this->assertEquals($test['gdInfo'], $gd_info);
+
+        if ($test['mimeType'] === 'image/tiff') {
+            $this->markTestIncomplete($test['fileName'] . ' of MIME type ' . $test['mimeType'] . ' can not be tested via GD.');
+        }
 
         // Test loading the image to GD; it fails hard in case of errors.
-/*        $gd_resource = imagecreatefromstring($image->toBytes());
-        imagedestroy($gd_resource);*/
-    }
+        $gd_resource = imagecreatefromstring($original_image->toBytes());
+        $this->assertNotFalse($gd_resource);
+        $this->assertEquals($test['gdInfo'][0], imagesx($gd_resource));
+        $this->assertEquals($test['gdInfo'][1], imagesy($gd_resource));
+        imagedestroy($gd_resource);
+
+        $gd_resource = imagecreatefromjpeg($imageDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite-gd.img');
+        $this->assertNotFalse($gd_resource);
+        $this->assertEquals($test['gdInfo'][0], imagesx($gd_resource));
+        $this->assertEquals($test['gdInfo'][1], imagesy($gd_resource));
+        imagedestroy($gd_resource);
+    }*/
+
+    /**
+     * @dataProvider imageFileProvider
+     */
+/*  xax    public function testRewrite($imageDumpFile)
+    {
+        $test_file_content = $imageDumpFile->getContents();
+        $test = Yaml::parse($test_file_content);
+        $original_image = Image::createFromFile($imageDumpFile->getPath() . '/' . $test['fileName']);
+        $original_image->saveToFile($imageDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite.img');
+        $image = Image::createFromFile($imageDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite.img');
+
+        $this->assertEquals($test['mimeType'], $image->getMimeType());
+
+        if (isset($test['elements'])) {
+            $this->assertElement($test['elements'], $image);
+        }
+
+        foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
+            if (isset($test['log'][$level])) {
+                $this->assertEquals(count($test['log'][$level]), count($image->dumpLog($level)));
+            }
+        }
+    }*/
 
     protected function assertElement($expected, $element)
     {
