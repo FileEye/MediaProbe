@@ -6,6 +6,7 @@ use ExifEye\core\Block\Tag;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Data\DataException;
+use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
@@ -44,11 +45,25 @@ class Ifd extends BlockBase
     protected $tagsSkipOffset = 0;
 
     /**
+     * The format of the tag representing this IFD.
+     *
+     * @var int
+     */
+    protected $format = Format::LONG;
+
+    /**
+     * The number of components of the tag representing this IFD.
+     *
+     * @var int
+     */
+    protected $components = 1;
+
+    /**
      * Constructs a Block for an Image File Directory (IFD).
      */
-    public function __construct($type, $name, BlockBase $parent_block, $tag_id = null)
+    public function __construct($type, $name, BlockBase $parent_block, $tag_id = null, ElementInterface $reference = null)
     {
-        parent::__construct($type, $parent_block);
+        parent::__construct($type, $parent_block, $reference);
 
         if ($tag_id !== null) {
             $this->setAttribute('id', $tag_id);
@@ -62,6 +77,13 @@ class Ifd extends BlockBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
+        if (isset($options['format'])) {
+            $this->format = $options['format'];
+        }
+        if (isset($options['components'])) {
+            $this->components = $options['components'];
+        }
+
         $starting_offset = $offset;
 
         // Get the number of tags.
@@ -136,6 +158,7 @@ class Ifd extends BlockBase
                     try {
                         $ifd->loadFromData($data_element, $o, $size, [
                             'data_offset' => $tag_data_offset,
+                            'format' => $tag_format,
                             'components' => $tag_components,
                         ]);
                     } catch (DataException $e) {
@@ -177,7 +200,10 @@ class Ifd extends BlockBase
         $bytes = '';
 
         // Number of sub-elements. 2 bytes running.
-        $n = count($this->getMultipleElements('*'));
+        $n = count($this->getMultipleElements('ifd|tag'));
+        if ($thumbnail = $this->getElement('thumbnail')) {
+            $n += 2;
+        }
         $bytes .= ConvertBytes::fromShort($n, $byte_order);
 
         // Data area. We need to reserve 12 bytes for each IFD tag + 4 bytes
@@ -187,13 +213,17 @@ class Ifd extends BlockBase
         $data_area_bytes = '';
 
         // Fill in the TAG entries in the IFD.
-// xax        foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-        foreach ($this->getMultipleElements('tag') as $tag => $sub_block) {
+        foreach ($this->getMultipleElements('ifd|tag') as $tag => $sub_block) {
             $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
-            $bytes .= ConvertBytes::fromShort($sub_block->getElement('entry')->getFormat(), $byte_order);
-            $bytes .= ConvertBytes::fromLong($sub_block->getElement('entry')->getComponents(), $byte_order);
+            $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
+            $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
 
-            $data = $sub_block->getElement('entry')->toBytes($byte_order);
+            // xax
+            if ($sub_block instanceof Ifd && $sub_block->getAttribute('id') == 37500) {
+                $data = str_repeat(chr(0x0D), $sub_block->getComponents());
+            } else {
+                $data = $sub_block->toBytes($byte_order, $data_area_offset);
+            }
             $s = strlen($data);
             if ($s > 4) {
                 $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
@@ -204,6 +234,24 @@ class Ifd extends BlockBase
                 // fill out the four bytes available.
                 $bytes .= $data . str_repeat(chr(0), 4 - $s);
             }
+        }
+
+        // Thumbnail.
+        if ($thumbnail) {
+            $thumbnail_entry = $thumbnail->getElement('entry');
+            // Add offset.
+            $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailOffset'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Format::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromLong(1, $byte_order);
+            $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
+            // Add length.
+            $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailLength'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Format::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromLong(1, $byte_order);
+            $bytes .= ConvertBytes::fromLong($thumbnail_entry->getComponents(), $byte_order);
+            // Add thumbnail.
+            $data_area_bytes .= $thumbnail_entry->toBytes();
+            $data_area_offset += $thumbnail_entry->getComponents();
         }
 
         // Append link to next IFD.
@@ -217,131 +265,21 @@ class Ifd extends BlockBase
         $bytes .= $data_area_bytes;
 
         return $bytes;
+    }
 
-/*            // The argument specifies the offset of this IFD. The IFD will
-            // use this to calculate offsets from the entries to their data,
-            // all those offsets are absolute offsets counted from the
-            // beginning of the data.
-            $ifd0_bytes = $ifd0->toBytes($this->byteOrder, 8);
+    /**
+     * {@inheritdoc}
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
 
-            // Deal with IFD1.
-            $ifd1 = $this->getElement("ifd[@name='IFD1']");
-            if (!$ifd1) {
-                // No IFD1, link to next IFD is 0.
-                $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong(0, $this->byteOrder) . $ifd0_bytes['data_area'];
-            } else {
-                $ifd0_length = strlen($ifd0_bytes['ifd_area']) + 4 + strlen($ifd0_bytes['data_area']);
-                $ifd1_offset = 8 + $ifd0_length;
-                $bytes .= $ifd0_bytes['ifd_area'] . ConvertBytes::fromLong($ifd1_offset, $this->byteOrder) . $ifd0_bytes['data_area'];
-                $ifd1_bytes = $ifd1->toBytes($this->byteOrder, $ifd1_offset);
-                $bytes .= $ifd1_bytes['ifd_area'] . ConvertBytes::fromLong(0, $this->byteOrder) . $ifd1_bytes['data_area'];
-            }
-        } else {
-            $bytes .= ConvertBytes::fromLong(0, $this->byteOrder);
-        }
-
-        return $bytes;*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*        $ifd_area = '';
-        $data_area = '';
-
-        // Determine number of IFD entries.
-        $n = count($this->getMultipleElements('tag')) + count($this->getMultipleElements('ifd'));
-        if ($this->getElement("thumbnail") !== null) {
-            // We need two extra entries for the thumbnail offset and length.
-            $n += 2;
-        }
-        $ifd_area .= ConvertBytes::fromShort($n, $byte_order);
-
-        // Initialize offset of data area. This included the bytes preceding
-        // this IFD, the bytes needed for the count of entries, the entries
-        // themselves (and sub entries), the extra data in the entries, and the
-        // IFD link.
-        $end = $offset + 2 + 12 * $n + 4;
-
-        // Process the Tags.
-        foreach ($this->getMultipleElements('tag') as $tag => $sub_block) {
-            // Each entry is 12 bytes long.
-            $ifd_area .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
-            $ifd_area .= ConvertBytes::fromShort($sub_block->getElement("entry")->getFormat(), $byte_order);
-            $ifd_area .= ConvertBytes::fromLong($sub_block->getElement("entry")->getComponents(), $byte_order);
-
-            // Size? If bigger than 4 bytes, the actual data is not in
-            // the entry but somewhere else.
-            $data = $sub_block->getElement("entry")->toBytes($byte_order);
-            $s = strlen($data);
-            if ($s > 4) {
-                $ifd_area .= ConvertBytes::fromLong($end, $byte_order);
-                $data_area .= $data;
-                $end += $s;
-            } else {
-                // Copy data directly, pad with NULL bytes as necessary to
-                // fill out the four bytes available.
-                $ifd_area .= $data . str_repeat(chr(0), 4 - $s);
-            }
-        }
-
-        // Process the Thumbnail. @todo avoid double writing of tags
-/*        if ($this->getElement("thumbnail")) {
-            // TODO: make EntryInterface a class that can be constructed with
-            // arguments corresponding to the next four lines.
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailLength'), $byte_order);
-            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $byte_order);
-            $ifd_area .= ConvertBytes::fromLong(1, $byte_order);
-            $ifd_area .= ConvertBytes::fromLong($this->getElement("thumbnail/entry")->getComponents(), $byte_order);
-
-            $ifd_area .= ConvertBytes::fromShort(Spec::getTagIdByName($this, 'ThumbnailOffset'), $byte_order);
-            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $byte_order);
-            $ifd_area .= ConvertBytes::fromLong(1, $byte_order);
-            $ifd_area .= ConvertBytes::fromLong($end, $byte_order);
-
-            $data_area .= $this->getElement("thumbnail/entry")->toBytes();
-            $end += $this->getElement("thumbnail/entry")->getComponents();
-        }*/
-
-        // Process sub IFDs.
-/*        $sub_bytes = '';
-        foreach ($this->getMultipleElements('ifd') as $sub) {
-            if ($sub->getType() === 'Exif') {
-                $tag = Spec::getTagIdByName($this, 'ExifIFDPointer');
-            } elseif ($sub->getType() === 'GPS') {
-                $tag = Spec::getTagIdByName($this, 'GPSInfoIFDPointer');
-            } elseif ($sub->getType() === 'Interoperability') {
-                $tag = Spec::getTagIdByName($this, 'InteroperabilityIFDPointer');
-            } else {
-                // ConvertBytes::BIG_ENDIAN is the default used by Convert.
-                $tag = ConvertBytes::BIG_ENDIAN;
-            }
-            // Make an additional entry with the pointer.
-            $ifd_area .= ConvertBytes::fromShort($tag, $byte_order);
-            // Next the format, which is always unsigned long.
-            $ifd_area .= ConvertBytes::fromShort(Format::LONG, $byte_order);
-            // There is only one component.
-            $ifd_area .= ConvertBytes::fromLong(1, $byte_order);
-
-            $data = $sub->toBytes($end, $byte_order);
-//if (is_array($data)) dump(get_class($sub));
-            $s = strlen($data);
-            $sub_bytes .= $data;
-
-            $ifd_area .= ConvertBytes::fromLong($end, $byte_order);
-            $end += $s;
-        }*/
-
-//        return ['ifd_area' => $ifd_area, 'data_area' => $data_area];
-   //     return $ifd_area . $data_area;
+    /**
+     * {@inheritdoc}
+     */
+    public function getComponents()
+    {
+        return $this->components;
     }
 }

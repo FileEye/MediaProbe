@@ -48,17 +48,9 @@ class ExifMakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
-    {
-        return $this->components . ' bytes MakerNote data';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-        return 'xx @todo';
+        return $this->value[0];
     }
 
     /**
@@ -81,6 +73,12 @@ class ExifMakerNote extends Undefined
             return;
         }
 
+        // xax
+        //dump(ExifEye::dumpHex($maker_note_tag->getElement('entry')->toBytes(), 20));
+        if (strpos($maker_note_tag->getElement('entry')->toBytes(), "\x0d\x0d\x0d") === 0) {
+            return;
+        }
+
         // Get Make tag from IFD0.
         if (!$make_tag = $ifd->getElement("tag[@name='Make']")) {
             return;
@@ -98,7 +96,13 @@ class ExifMakerNote extends Undefined
         // Load maker note into IFD.
         $ifd_class = Spec::getTypePropertyValue($maker_note_ifd_type, 'class');
         $maker_note_ifd_name = Spec::getTypePropertyValue($maker_note_ifd_type, 'name');
-        $ifd = new $ifd_class($maker_note_ifd_type, $maker_note_ifd_name, $exif_ifd, $maker_note_tag->getAttribute('id'));
-        $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1]);
+        $ifd = new $ifd_class($maker_note_ifd_type, $maker_note_ifd_name, $exif_ifd, $maker_note_tag->getAttribute('id'), $maker_note_tag);
+        $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1], null, [
+            'format' => $maker_note_tag->getFormat(),
+            'components' => $maker_note_tag->getComponents(),
+        ]);
+
+        // Remove the MakerNote tag that has been converted to IFD.
+        $exif_ifd->removeElement("tag[@name='MakerNote']");
     }
 }

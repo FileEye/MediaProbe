@@ -34,6 +34,7 @@ class Thumbnail extends BlockBase
      */
     public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
+        return $this->getElement('entry')->toBytes();
     }
 
     /**
@@ -104,6 +105,10 @@ class Thumbnail extends BlockBase
                 'offset' => $offset,
                 'length' => $length,
             ]);
+
+            // Remove the tags that have been converted to Thumbnail.
+            $ifd->removeElement("tag[@name='ThumbnailOffset']");
+            $ifd->removeElement("tag[@name='ThumbnailLength']");
         } catch (DataException $e) {
             $ifd->error($e->getMessage());
         }

@@ -210,9 +210,10 @@ elements:
                                                             text: co-sited
                                                 -
                                                     type: ifd
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif'
+                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif'
                                                     class: ExifEye\core\Block\Ifd
                                                     valid: true
+                                                    id: '34665'
                                                     name: Exif
                                                     elements:
                                                         -
@@ -519,8 +520,8 @@ elements:
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 256
-                                                                    bytesHash: d527e0288c543ee26ef6076919b394f9d81b834f295205184951e91d7512dcc8
-                                                                    text: '256 bytes MakerNote data'
+                                                                    bytesHash: bcfd7d9ca3b82d0107d2ae457c8d20320157adb774200b6236a4d7c15e33210d
+                                                                    text: '256 bytes of data [ 4C 45 49 43 41 00 ... 45 50 01 0A 00 00 ]'
                                                         -
                                                             type: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:40960:FlashPixVersion'
@@ -591,9 +592,10 @@ elements:
                                                                     text: 480
                                                         -
                                                             type: ifd
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:Interoperability'
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:40965:Interoperability'
                                                             class: ExifEye\core\Block\Ifd
                                                             valid: true
+                                                            id: '40965'
                                                             name: Interoperability
                                                             elements:
                                                                 -
@@ -977,40 +979,6 @@ elements:
                                                             components: 1
                                                             bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                             text: Inch
-                                                -
-                                                    type: tag
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:513:ThumbnailOffset'
-                                                    class: ExifEye\core\Block\Tag
-                                                    valid: true
-                                                    id: '513'
-                                                    name: ThumbnailOffset
-                                                    elements:
-                                                        -
-                                                            type: entry
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:513:ThumbnailOffset/entry'
-                                                            class: ExifEye\core\Entry\Core\Long
-                                                            valid: true
-                                                            format: Long
-                                                            components: 1
-                                                            bytesHash: babf1168298f0499a39815702c9c2809fa78cfd810d1e6e94d75c558a606e50d
-                                                            text: 1384
-                                                -
-                                                    type: tag
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:514:ThumbnailLength'
-                                                    class: ExifEye\core\Block\Tag
-                                                    valid: true
-                                                    id: '514'
-                                                    name: ThumbnailLength
-                                                    elements:
-                                                        -
-                                                            type: entry
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:514:ThumbnailLength/entry'
-                                                            class: ExifEye\core\Entry\Core\Long
-                                                            valid: true
-                                                            format: Long
-                                                            components: 1
-                                                            bytesHash: 3a802111b55454c1895596afb500644b3cdad0e18e1dc0c858a77e2a1ca2ad04
-                                                            text: 6369
                                                 -
                                                     type: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:531:YCbCrPositioning'

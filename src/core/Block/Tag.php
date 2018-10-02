@@ -105,5 +105,22 @@ class Tag extends BlockBase
      */
     public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
+        return $this->getElement("entry")->toBytes($order, $offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFormat()
+    {
+        return $this->getElement("entry")->getFormat();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getComponents()
+    {
+        return $this->getElement("entry")->getComponents();
     }
 }

@@ -93,7 +93,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
     /**
      * @dataProvider imageFileProvider
      */
-/*  xax    public function testRewrite($imageDumpFile)
+    public function testRewrite($imageDumpFile)
     {
         $test_file_content = $imageDumpFile->getContents();
         $test = Yaml::parse($test_file_content);
@@ -104,22 +104,18 @@ class ImageFilesTest extends ExifEyeTestCaseBase
         $this->assertEquals($test['mimeType'], $image->getMimeType());
 
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $image);
+            $this->assertElement($test['elements'], $image, true);
         }
+    }
 
-        foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
-            if (isset($test['log'][$level])) {
-                $this->assertEquals(count($test['log'][$level]), count($image->dumpLog($level)));
-            }
-        }
-    }*/
-
-    protected function assertElement($expected, $element)
+    protected function assertElement($expected, $element, $rewritten = false)
     {
-        $this->assertInstanceOf($expected['class'], $element, $expected['path']);
+        // xax
+        if ($rewritten && $expected['type'] == 'ifd' && isset($expected['name']) && in_array($expected['name'], ['CanonMakerNotes', 'AppleMakerNotes'])) {
+            return;
+        }
 
-        // xx
-//        $this->assertNotNull($element->toBytes(), $element->getContextPath());
+        $this->assertInstanceOf($expected['class'], $element, $expected['path']);
 
         // Check entry.
         if ($element instanceof EntryInterface) {
@@ -137,7 +133,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
             foreach ($expected['elements'] as $i => $expected_element) {
                 $test = $element->getMultipleElements('*');
                 $this->assertArrayHasKey($i, $test, $expected_element['path']);
-                $this->assertElement($expected_element, $test[$i]);
+                $this->assertElement($expected_element, $test[$i], $rewritten);
             }
         }
     }

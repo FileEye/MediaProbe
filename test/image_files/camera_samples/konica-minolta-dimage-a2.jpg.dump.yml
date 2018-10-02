@@ -278,9 +278,10 @@ elements:
                                                             text: '  (Photographer)'
                                                 -
                                                     type: ifd
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:Exif'
+                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif'
                                                     class: ExifEye\core\Block\Ifd
                                                     valid: true
+                                                    id: '34665'
                                                     name: Exif
                                                     elements:
                                                         -
@@ -642,9 +643,10 @@ elements:
                                                                     text: 768
                                                         -
                                                             type: ifd
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:Interoperability'
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:40965:Interoperability'
                                                             class: ExifEye\core\Block\Ifd
                                                             valid: true
+                                                            id: '40965'
                                                             name: Interoperability
                                                             elements:
                                                                 -
@@ -870,9 +872,10 @@ elements:
                                                                     text: 'Distant view'
                                                 -
                                                     type: ifd
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:GPS'
+                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34853:GPS'
                                                     class: ExifEye\core\Block\Ifd
                                                     valid: true
+                                                    id: '34853'
                                                     name: GPS
                                                     elements:
                                                         -
@@ -1103,40 +1106,6 @@ elements:
                                                             components: 1
                                                             bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                             text: Inch
-                                                -
-                                                    type: tag
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:513:ThumbnailOffset'
-                                                    class: ExifEye\core\Block\Tag
-                                                    valid: true
-                                                    id: '513'
-                                                    name: ThumbnailOffset
-                                                    elements:
-                                                        -
-                                                            type: entry
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:513:ThumbnailOffset/entry'
-                                                            class: ExifEye\core\Entry\Core\Long
-                                                            valid: true
-                                                            format: Long
-                                                            components: 1
-                                                            bytesHash: fac7f4caa129e54e3ed5c87f21738df43f9de29e639fe416676c438b798727ae
-                                                            text: 1328
-                                                -
-                                                    type: tag
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:514:ThumbnailLength'
-                                                    class: ExifEye\core\Block\Tag
-                                                    valid: true
-                                                    id: '514'
-                                                    name: ThumbnailLength
-                                                    elements:
-                                                        -
-                                                            type: entry
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:514:ThumbnailLength/entry'
-                                                            class: ExifEye\core\Entry\Core\Long
-                                                            valid: true
-                                                            format: Long
-                                                            components: 1
-                                                            bytesHash: cdac942352363bbf6f4cfe39e35e0e0cd7f13f803f47baea7da126b379b6cf9b
-                                                            text: 5037
                                                 -
                                                     type: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD1/tag:531:YCbCrPositioning'
