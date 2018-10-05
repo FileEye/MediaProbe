@@ -110,11 +110,6 @@ class ImageFilesTest extends ExifEyeTestCaseBase
 
     protected function assertElement($expected, $element, $rewritten = false)
     {
-        // xax
-        if ($rewritten && $expected['type'] == 'ifd' && isset($expected['name']) && in_array($expected['name'], ['CanonMakerNotes', 'AppleMakerNotes'])) {
-            return;
-        }
-
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
 
         // Check entry.

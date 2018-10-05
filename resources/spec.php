@@ -11,7 +11,7 @@ return array (
     array (
       'name' => 'CanonPanoramaInformation',
       'title' => 'Canon Panorama Information',
-      'class' => 'ExifEye\\core\\Block\\IfdIndexShort',
+      'class' => 'ExifEye\\core\\Block\\Index',
     ),
     'jpegSegment' =>
     array (
@@ -76,7 +76,7 @@ return array (
     array (
       'name' => 'CanonCameraSettings',
       'title' => 'Canon Camera Settings',
-      'class' => 'ExifEye\\core\\Block\\IfdIndexShort',
+      'class' => 'ExifEye\\core\\Block\\Index',
     ),
     'ifdMakerNotesCanonPictureInformation' =>
     array (
@@ -114,7 +114,7 @@ return array (
     array (
       'name' => 'CanonFileInformation',
       'title' => 'Canon File Information',
-      'class' => 'ExifEye\\core\\Block\\IfdIndexShort',
+      'class' => 'ExifEye\\core\\Block\\Index',
     ),
     'tiff' =>
     array (
@@ -138,7 +138,7 @@ return array (
     array (
       'name' => 'CanonShotInformation',
       'title' => 'Canon Shot Information',
-      'class' => 'ExifEye\\core\\Block\\IfdIndexShort',
+      'class' => 'ExifEye\\core\\Block\\Index',
     ),
   ),
   'typesByName' =>

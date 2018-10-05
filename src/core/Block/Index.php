@@ -7,41 +7,39 @@ use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Spec;
+use ExifEye\core\Utility\ConvertBytes;
 
 /**
- * Class representing an index of Short values as an IFD.
+ * Class representing an index of values.
  */
-class IfdIndexShort extends Ifd
+class Index extends Ifd
 {
     /**
-     * Load data into a Image File Directory (IFD).
-     *
-     * @param DataWindow $data_element
-     *            the data window that will provide the data.
-     * @param int $offset
-     *            the offset within the window where the directory will
-     *            be found.
-     * @param int $components
-     *            (Optional) the number of components held by this IFD.
+     * {@inheritdoc}
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        $components = $options['components'];
+        if (isset($options['format'])) {
+            $this->format = $options['format'];
+        }
+        if (isset($options['components'])) {
+            $this->components = $options['components'];
+        }
 
         $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
-            'tags' => $components,
+            'tags' => $this->components,
             'offset' => $offset,
             'total' => $data_element->getSize(),
         ]);
 
         $index_size = $data_element->getShort($offset);
-        if ($index_size / $components !== Format::getSize(Format::SHORT)) {
+        if ($index_size / $this->components !== Format::getSize(Format::SHORT)) {
             $this->warning('Size of {ifd_name} does not match the number of entries.', [
                 'ifd_name' => $this->getAttribute('name'),
             ]);
         }
         $offset += 2;
-        for ($i = 0; $i < $components; $i++) {
+        for ($i = 0; $i < $this->components; $i++) {
             // Check if this tag ($i + 1) should be skipped.
             if (Spec::getElementPropertyValue($this->getType(), $i + 1, 'skip')) {
                 continue;
@@ -82,5 +80,19 @@ class IfdIndexShort extends Ifd
             }
         }
         $this->debug(".....END Loading");
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false)
+    {
+        $data_bytes = '';
+
+        foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
+            $data_bytes .= $sub_block->toBytes($byte_order);
+        }
+
+        return ConvertBytes::fromShort(strlen($data_bytes), $byte_order) . $data_bytes;
     }
 }

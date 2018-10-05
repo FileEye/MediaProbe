@@ -41,16 +41,12 @@ class Ascii extends EntryBase
         }
         $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
 
-        // Cut off string before the first NUL byte.
-        $str = strstr($bytes, "\0", true);
-        if ($str !== false) {
-            return [$str];
-        } else {
-            $parent_block->notice('Ascii entry \'{bytes}\' missing final NUL character.', [
-                'bytes' => $bytes,
-            ]);
-            return [$bytes];
+        // Check the last byte is NULL.
+        if (substr($bytes, -1) !== "\x0") {
+            $parent_block->notice('Ascii entry missing final NUL character.');
         }
+
+        return [$bytes];
     }
 
     /**
@@ -62,8 +58,12 @@ class Ascii extends EntryBase
 
         $str = isset($data[0]) ? $data[0] : '';
 
-        $this->components = strlen($str) + 1;
         $this->value = $str;
+        if ($this->value === null || $this->value === '') {
+            $this->components = 1;
+        } else {
+            $this->components = substr($this->value, -1) === "\x0" ? strlen($str) : strlen($str) + 1;
+        }
 
         return $this;
     }
@@ -71,9 +71,20 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
+    public function getValue(array $options = [])
+    {
+        return $this->toString();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-        return $this->value . chr(0x00);
+        if ($this->value === null || $this->value === '') {
+            return "\x0";
+        }
+        return substr($this->value, -1) === "\x0" ? $this->value : $this->value . "\x0";
     }
 
     /**
@@ -81,6 +92,8 @@ class Ascii extends EntryBase
      */
     public function toString(array $options = [])
     {
-        return parent::toString($options) ?: $this->getValue();
+        // xx @todo readd decoding
+        $first_zero_pos = strpos($this->value, "\x0");
+        return substr($this->value, 0, $first_zero_pos === false ? strlen($this->value) : $first_zero_pos);
     }
 }

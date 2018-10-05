@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
-use ExifEye\core\Block\IfdIndexShort;
+use ExifEye\core\Block\Index;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\ExifEye;
@@ -25,7 +25,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
             ->getMock();
         $ifd_0 = new Ifd('ifd0', 'IFD0', $tiff_mock);
         $ifd_exif = new Ifd('ifdExif', 'Exif', $tiff_mock);
-        $ifd_canon_camera_settings = new IfdIndexShort('ifdIndexShort', 'CanonCameraSettings', $tiff_mock);
+        $ifd_canon_camera_settings = new Index('index', 'CanonCameraSettings', $tiff_mock);
 
         // Test retrieving IFD id by name.
         $this->assertEquals(Spec::getTypeIdByName('IFD0'), Spec::getTypeIdByName('0'));
@@ -34,7 +34,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
 
         // Test retrieving IFD class.
         $this->assertEquals('ExifEye\core\Block\Ifd', Spec::getTypeHandlingClass('ifd0'));
-        $this->assertEquals('ExifEye\core\Block\IfdIndexShort', Spec::getTypeHandlingClass('ifdMakerNotesCanonCameraSettings'));
+        $this->assertEquals('ExifEye\core\Block\Index', Spec::getTypeHandlingClass('ifdMakerNotesCanonCameraSettings'));
 
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals([
@@ -80,7 +80,7 @@ class PelSpecTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
         $ifd_exif = new Ifd('ifdExif', 'Exif', $tiff_mock);
-        $ifd_canon_picture_information = new IfdIndexShort('ifdMakerNotesCanonPictureInformation', 'CanonPictureInformation', $tiff_mock);
+        $ifd_canon_picture_information = new Index('ifdMakerNotesCanonPictureInformation', 'CanonPictureInformation', $tiff_mock);
 
         $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Spec::getElementHandlingClass($ifd_exif->getType(), 0x9286));
         $this->assertEquals('ExifEye\core\Entry\Time', Spec::getElementHandlingClass($ifd_exif->getType(), 0x9003));

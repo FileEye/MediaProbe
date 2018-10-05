@@ -47,6 +47,7 @@ $prog = array_shift($argv);
 $file = '';
 $logger = null;
 $fail_on_error = false;
+$write_back = false;
 
 while (! empty($argv)) {
     switch ($argv[0]) {
@@ -62,6 +63,9 @@ while (! empty($argv)) {
         case '-s':
             $fail_on_error = 'error';
             break;
+        case '-w':
+            $write_back = true;
+            break;
         default:
             $file = $argv[0];
             break;
@@ -74,6 +78,7 @@ if (empty($file)) {
     print("Optional arguments:\n");
     print("  -d        turn debug output on.\n");
     print("  -s        turn strict parsing on (halt on errors).\n");
+    print("  -w        write back after parsing.\n");
     print("Mandatory arguments:\n");
     print("  filename  a JPEG or TIFF image.\n");
     exit(1);
@@ -90,6 +95,9 @@ try {
     if ($image === null) {
         print("dump-image: Unrecognized image format!\n");
         exit(1);
+    }
+    if ($write_back) {
+        $image->saveToFile($file . '-rewrite.img');
     }
 } catch (ExifEyeException $e) {
     $err = $e->getMessage();

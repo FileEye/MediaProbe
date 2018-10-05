@@ -6,6 +6,7 @@ use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
+use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Utility\ConvertTime;
 
 /**
@@ -149,6 +150,24 @@ class Time extends Ascii
             $value = sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds);
         }
 
-        return parent::setValue([$value]);
+        $this->components = 20;
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString(array $options = [])
+    {
+        return $this->getValue($options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    {
+        return substr($this->getValue(), 0, 19) . "\x0";
     }
 }

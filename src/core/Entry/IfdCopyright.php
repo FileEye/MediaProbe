@@ -41,7 +41,7 @@ class IfdCopyright extends Ascii
      */
     public function setValue(array $data)
     {
-        parent::setValue($data);
+        $this->valid = true;
 
         $this->value = array_replace(['', ''], $data);
 
@@ -52,6 +52,14 @@ class IfdCopyright extends Ascii
         }
 
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        return $this->value;
     }
 
     /**

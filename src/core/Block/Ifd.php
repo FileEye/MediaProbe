@@ -129,7 +129,7 @@ class Ifd extends BlockBase
             }
 
             // xax
-            $this->debug(">> i {ifdoffset}, t {offset} of {total}, c {components}, f {format}, s {size}, d {data}", [
+/*            $this->debug(">> i {ifdoffset}, t {offset} of {total}, c {components}, f {format}, s {size}, d {data}", [
                 'ifdoffset' => $i_offset,
                 'offset' => $tag_data_offset,
                 'total' => $tag_size,
@@ -137,7 +137,7 @@ class Ifd extends BlockBase
                 'format' => Format::getName($tag_format),
                 'size' => $tag_size,
                 'data' => $tag_size > 4 ? 'off' : ExifEye::dumpHex($data_element->getBytes($i_offset + 8, 4), 4),
-            ]);
+            ]);*/
             //$this->debug(ExifEye::dumpHex($data_element->getBytes($tag_data_offset), 20));
 
             // Build the TAG object.
@@ -200,9 +200,9 @@ class Ifd extends BlockBase
         $bytes = '';
 
         // Number of sub-elements. 2 bytes running.
-        $n = count($this->getMultipleElements('ifd|tag'));
+        $n = count($this->getMultipleElements('*'));
         if ($thumbnail = $this->getElement('thumbnail')) {
-            $n += 2;
+            $n += 1;
         }
         $bytes .= ConvertBytes::fromShort($n, $byte_order);
 
@@ -213,17 +213,16 @@ class Ifd extends BlockBase
         $data_area_bytes = '';
 
         // Fill in the TAG entries in the IFD.
-        foreach ($this->getMultipleElements('ifd|tag') as $tag => $sub_block) {
+        foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
+            if ($sub_block->getType() === 'thumbnail') {
+                continue;
+            }
+
             $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
             $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
             $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
 
-            // xax
-            if ($sub_block instanceof Ifd && $sub_block->getAttribute('id') == 37500) {
-                $data = str_repeat(chr(0x0D), $sub_block->getComponents());
-            } else {
-                $data = $sub_block->toBytes($byte_order, $data_area_offset);
-            }
+            $data = $sub_block->toBytes($byte_order, $data_area_offset);
             $s = strlen($data);
             if ($s > 4) {
                 $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);

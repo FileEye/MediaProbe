@@ -497,6 +497,21 @@ elements:
                                                             name: AppleMakerNotes
                                                             elements:
                                                                 -
+                                                                    type: rawData
+                                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:37500:AppleMakerNotes/rawData'
+                                                                    class: ExifEye\core\Block\RawData
+                                                                    valid: true
+                                                                    elements:
+                                                                        -
+                                                                            type: entry
+                                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:37500:AppleMakerNotes/rawData/entry'
+                                                                            class: ExifEye\core\Entry\Core\Undefined
+                                                                            valid: true
+                                                                            format: Undefined
+                                                                            components: 14
+                                                                            bytesHash: e4afa36e2de99a9dc082827b27a7dbdb4a4ea52a3ec0ee57c53cbe1a047939bb
+                                                                            text: '14 bytes of data [ 41 70 70 6C 65 20 ... 53 00 00 01 4D 4D ]'
+                                                                -
                                                                     type: tag
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:37500:AppleMakerNotes/tag:1'
                                                                     class: ExifEye\core\Block\Tag
@@ -552,7 +567,7 @@ elements:
                                                                                     format: Ascii
                                                                                     components: 2
                                                                                     bytesHash: e79e418e48623569d75e2a7b09ae88ed9b77b126a445b9ff9dc6989a08efa079
-                                                                                    text: 1
+                                                                                    text: '1'
                                                                         -
                                                                             type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:37500:AppleMakerNotes/ifd:3:AppleRunTime/tag:2:value'
@@ -586,7 +601,7 @@ elements:
                                                                                     format: Ascii
                                                                                     components: 11
                                                                                     bytesHash: 5e46bbecccef0ddcb3cae03ba8feb33056115d4459b84a12b2dae2fa0f3bd69f
-                                                                                    text: 1000000000
+                                                                                    text: '1000000000'
                                                                         -
                                                                             type: tag
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:37500:AppleMakerNotes/ifd:3:AppleRunTime/tag:4:epoch'
@@ -603,7 +618,7 @@ elements:
                                                                                     format: Ascii
                                                                                     components: 2
                                                                                     bytesHash: e4f60d0aa6d7f3d3b6a6494b1c861b99f649c6f9ec51abaf201b20f297327c95
-                                                                                    text: 0
+                                                                                    text: '0'
                                                                 -
                                                                     type: tag
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/ifd:37500:AppleMakerNotes/tag:4'
