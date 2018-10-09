@@ -6,7 +6,7 @@ alias:
   - '1'
   - 'Thumbnail'
 postLoad:
-  - ExifEye\core\Block\Thumbnail::toBlock
+  - ExifEye\core\Block\Ifd::thumbnailToBlock
 elements:
     0x0100:
         type: tag

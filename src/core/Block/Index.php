@@ -12,39 +12,34 @@ use ExifEye\core\Utility\ConvertBytes;
 /**
  * Class representing an index of values.
  */
-class Index extends Ifd
+class Index extends IfdBase
 {
     /**
      * {@inheritdoc}
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        if (isset($options['format'])) {
-            $this->format = $options['format'];
-        }
-        if (isset($options['components'])) {
-            $this->components = $options['components'];
-        }
-
-        $this->debug("START... Loading with {tags} TAGs at offset {offset} from {total} bytes", [
-            'tags' => $this->components,
-            'offset' => $offset,
-            'total' => $data_element->getSize(),
+        $this->debug("IFD {ifdname} @{offset} with {tags} entries", [
+            'ifdname' => $this->getAttribute('name'),
+            'tags' => $options['components'],
+            'offset' => $data_element->getStart() + $offset,
         ]);
 
         $index_size = $data_element->getShort($offset);
-        if ($index_size / $this->components !== Format::getSize(Format::SHORT)) {
+        if ($index_size / $options['components'] !== Format::getSize(Format::SHORT)) {
             $this->warning('Size of {ifd_name} does not match the number of entries.', [
                 'ifd_name' => $this->getAttribute('name'),
             ]);
         }
         $offset += 2;
-        for ($i = 0; $i < $this->components; $i++) {
+        for ($i = 0; $i < $options['components']; $i++) {
             // Check if this tag ($i + 1) should be skipped.
             if (Spec::getElementPropertyValue($this->getType(), $i + 1, 'skip')) {
                 continue;
             };
+
             $item_format = Spec::getElementPropertyValue($this->getType(), $i + 1, 'format')[0];
+
             switch ($item_format) {
                 case Format::BYTE:
                     $item_value = $data_element->getByte($offset + $i * 2);
@@ -75,11 +70,23 @@ class Index extends Ifd
                     $item_format = Format::SSHORT;
                     break;
             }
+
+            $this->debug("#{i} id {id}, f {format}, data @{offset}", [
+                'i' => $i + 1,
+                'id' => '0x' . strtoupper(dechex($i)),
+                'format' => Format::getName($item_format),
+                'offset' => $data_element->getStart() + $offset + $i * 2,
+            ]);
+
             if ($entry_class = Spec::getElementHandlingClass($this->getType(), $i + 1, $item_format)) {
                 new Tag('tag', $this, $i + 1, $entry_class, [$item_value], $item_format, 1);
             }
         }
-        $this->debug(".....END Loading");
+
+        // Invoke post-load callbacks.
+        $this->executePostLoadCallbacks($data_element);
+
+        return $this;
     }
 
     /**
@@ -89,10 +96,22 @@ class Index extends Ifd
     {
         $data_bytes = '';
 
-        foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
+        foreach ($this->getMultipleElements('tag') as $tag => $sub_block) {
             $data_bytes .= $sub_block->toBytes($byte_order);
         }
 
         return ConvertBytes::fromShort(strlen($data_bytes), $byte_order) . $data_bytes;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getComponents()
+    {
+        $size = 0;
+        foreach ($this->getMultipleElements('tag') as $tag) {
+            $size += Format::getSize($tag->getFormat());
+        }
+        return $size / 2;
     }
 }

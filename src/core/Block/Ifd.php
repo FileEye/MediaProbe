@@ -8,6 +8,7 @@ use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Data\DataException;
 use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
+use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
@@ -16,150 +17,40 @@ use ExifEye\core\Spec;
 /**
  * Class representing an Image File Directory (IFD).
  */
-class Ifd extends BlockBase
+class Ifd extends IfdBase
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'ifd';
-
-    /**
-     * The IFD header bytes to skip.
-     *
-     * @var array
-     */
-    protected $headerSkipBytes = 0;
-
-    /**
-     * Defines if tags in the IFD point to absolute offset.
-     *
-     * @var array
-     */
-    protected $tagsAbsoluteOffset = true;
-
-    /**
-     * The offset skip for tags.
-     *
-     * @var array
-     */
-    protected $tagsSkipOffset = 0;
-
-    /**
-     * The format of the tag representing this IFD.
-     *
-     * @var int
-     */
-    protected $format = Format::LONG;
-
-    /**
-     * The number of components of the tag representing this IFD.
-     *
-     * @var int
-     */
-    protected $components = 1;
-
-    /**
-     * Constructs a Block for an Image File Directory (IFD).
-     */
-    public function __construct($type, $name, BlockBase $parent_block, $tag_id = null, ElementInterface $reference = null)
-    {
-        parent::__construct($type, $parent_block, $reference);
-
-        if ($tag_id !== null) {
-            $this->setAttribute('id', $tag_id);
-        }
-        $this->setAttribute('name', $name);
-        $this->hasSpecification = Spec::getElementIdByName($parent_block->getType(), $name) ? true : false;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        if (isset($options['format'])) {
-            $this->format = $options['format'];
-        }
-        if (isset($options['components'])) {
-            $this->components = $options['components'];
-        }
-
-        $starting_offset = $offset;
-
         // Get the number of tags.
-        $n = $data_element->getShort($this->headerSkipBytes + $offset);
-        $this->debug("START... Loading with {tags} TAGs at w-offset {offset} from {total} bytes", [
-            'tags' => $n,
-            'offset' => $offset,
-            'total' => $data_element->getSize(),
-        ]);
-
-        $offset += $this->headerSkipBytes;
-
-        // Check if we have enough data.
-        if (2 + 12 * $n > $data_element->getSize()) {
-            $n = floor(($offset - $data_element->getSize()) / 12);
-            $this->warning('Adjusted to: {tags}.', [
-                'tags' => $n,
-            ]);
-        }
+        $n = $this->getEntriesCountFromData($data_element, $offset);
 
         // Load Tags.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-
-            // Gets the TAG's elements from the data window.
-            $tag_id = $data_element->getShort($i_offset);
-            $tag_format = $data_element->getShort($i_offset + 2);
-            $tag_components = $data_element->getLong($i_offset + 4);
-            $tag_data_element = $data_element->getLong($i_offset + 8);
-
-            // If the data size is bigger than 4 bytes, then actual data is not in
-            // the TAG's data element, but at the the offset stored in the data
-            // element.
-            $tag_size = Format::getSize($tag_format) * $tag_components;
-            if ($tag_size > 4) {
-                $tag_data_offset = $tag_data_element;
-                if (!$this->tagsAbsoluteOffset) {
-                    $tag_data_offset += $offset + 2;
-                }
-                $tag_data_offset += $this->tagsSkipOffset;
-            } else {
-                $tag_data_offset = $i_offset + 8;
-            }
-
-            // xax
-/*            $this->debug(">> i {ifdoffset}, t {offset} of {total}, c {components}, f {format}, s {size}, d {data}", [
-                'ifdoffset' => $i_offset,
-                'offset' => $tag_data_offset,
-                'total' => $tag_size,
-                'components' => $tag_components,
-                'format' => Format::getName($tag_format),
-                'size' => $tag_size,
-                'data' => $tag_size > 4 ? 'off' : ExifEye::dumpHex($data_element->getBytes($i_offset + 8, 4), 4),
-            ]);*/
-            //$this->debug(ExifEye::dumpHex($data_element->getBytes($tag_data_offset), 20));
+            $entry = $this->getEntryFromData($i, $data_element, $i_offset);
 
             // Build the TAG object.
-            $tag_entry_class = Spec::getElementHandlingClass($this->getType(), $tag_id, $tag_format);
+            $tag_entry_class = Spec::getElementHandlingClass($this->getType(), $entry['id'], $entry['format']);
 
-            $element_type = Spec::getElementType($this->getType(), $tag_id);
+            $element_type = Spec::getElementType($this->getType(), $entry['id']);
             if ($element_type === 'tag' || $element_type === null) {
-                $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $tag_format, $tag_components, $data_element, $tag_data_offset);
-                $tag = new Tag('tag', $this, $tag_id, $tag_entry_class, $tag_entry_arguments, $tag_format, $tag_components);
+                $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
+                $tag = new Tag('tag', $this, $entry['id'], $tag_entry_class, $tag_entry_arguments, $entry['format'], $entry['components']);
             } else {
                 // If the tag is an IFD pointer, loads the IFD.
-                $ifd_type = Spec::getElementType($this->getType(), $tag_id);
-                $ifd_name = Spec::getElementName($this->getType(), $tag_id);
+                $ifd_type = Spec::getElementType($this->getType(), $entry['id']);
+                $ifd_name = Spec::getElementName($this->getType(), $entry['id']);
                 $o = $data_element->getLong($i_offset + 8);
-                if ($starting_offset != $o) {
+                if ($offset != $o) {
                     $ifd_class = Spec::getTypeHandlingClass($ifd_type);
-                    $ifd = new $ifd_class($ifd_type, $ifd_name, $this, $tag_id);
+                    $ifd = new $ifd_class($ifd_type, $ifd_name, $this, $entry['id'], $entry['format']);
                     try {
                         $ifd->loadFromData($data_element, $o, $size, [
-                            'data_offset' => $tag_data_offset,
-                            'format' => $tag_format,
-                            'components' => $tag_components,
+                            'data_offset' => $entry['data_offset'],
+                            'components' => $entry['components'],
                         ]);
                     } catch (DataException $e) {
                         $this->error($e->getMessage());
@@ -173,21 +64,8 @@ class Ifd extends BlockBase
             }
         }
 
-        $this->debug(".....END Loading");
-
         // Invoke post-load callbacks.
-        $post_load_callbacks = Spec::getTypePropertyValue($this->getType(), 'postLoad');
-        if (!empty($post_load_callbacks)) {
-            foreach ($post_load_callbacks as $callback) {
-                $this->debug("START... {callback}", [
-                    'callback' => $callback,
-                ]);
-                call_user_func($callback, $data_element, $this);
-                $this->debug(".....END {callback}", [
-                    'callback' => $callback,
-                ]);
-            }
-        }
+        $this->executePostLoadCallbacks($data_element);
 
         return $this;
     }
@@ -267,18 +145,131 @@ class Ifd extends BlockBase
     }
 
     /**
-     * {@inheritdoc}
+     * xx
+     * @param DataWindow $data_element
+     *            the data from which the thumbnail will be
+     *            extracted.
      */
-    public function getFormat()
+    public static function thumbnailToBlock(DataElement $data_element, Ifd $ifd)
     {
-        return $this->format;
+        if (!$ifd->getElement("tag[@name='ThumbnailOffset']") || !$ifd->getElement("tag[@name='ThumbnailLength']")) {
+            return;
+        }
+
+        $offset = $ifd->getElement("tag[@name='ThumbnailOffset']/entry")->getValue();
+        $length = $ifd->getElement("tag[@name='ThumbnailLength']/entry")->getValue();
+
+        // Load the thumbnail only if both the offset and the length are
+        // available and positive.
+        if ($offset <= 0 || $length <= 0) {
+            $ifd->error('Invalid offset ({offset}) or length ({length}) for JPEG thumbnail.', [
+                'offset' => $offset,
+                'length' => $length,
+            ]);
+            return;
+        }
+
+        if ($offset > $data_element->getSize()) {
+            $ifd->error('Offset {offset} overflows total size ({size}) for JPEG thumbnail.', [
+                'offset' => $offset,
+                'size' => $data_element->getSize(),
+            ]);
+            return;
+        }
+
+        $ifd->debug("Processing Thumbnail");
+
+        // Some images have a broken length, so we try to carefully check
+        // the length before we store the thumbnail.
+        if ($offset + $length > $data_element->getSize()) {
+            $ifd->warning('Thumbnail length ({length} bytes) adjusted to {adjusted_length} bytes.', [
+                'length' => $length,
+                'adjusted_length' => $data_element->getSize() - $offset,
+            ]);
+            $length = $data_element->getSize() - $offset;
+        }
+
+        // Now set the thumbnail normally.
+        try {
+            //$dataxx = $data_element->getClone($offset, $length);
+            $dataxx = new DataWindow($data_element, $offset, $length, $data_element->getByteOrder());
+            $dataxx->debug($ifd);
+            $size = $dataxx->getSize();
+
+            // Now move backwards until we find the EOI JPEG marker.
+            while ($dataxx->getByte($size - 2) !== JpegSegment::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Spec::getElementIdByName('jpeg', 'EOI')) {
+                $size --;
+            }
+            if ($size != $dataxx->getSize()) {
+                $ifd->warning('Decrementing thumbnail size to {size} bytes', [
+                    'size' => $size,
+                ]);
+            }
+            //$thumbnail_data = $dataxx->getClone(0, $size)->getBytes(0, $size);
+            $thumbnail_data = $dataxx->getBytes(0, $size);
+
+            $thumbnail_block = new Thumbnail('thumbnail', $ifd);
+            $thumbnail_entry = new Undefined($thumbnail_block, [$thumbnail_data]);
+            $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
+                'offset' => $offset,
+                'length' => $length,
+            ]);
+
+            // Remove the tags that have been converted to Thumbnail.
+            $ifd->removeElement("tag[@name='ThumbnailOffset']");
+            $ifd->removeElement("tag[@name='ThumbnailLength']");
+
+            $ifd->debug(".....END Loading Thumbnail");
+        } catch (DataException $e) {
+            $ifd->error($e->getMessage());
+        }
     }
 
     /**
-     * {@inheritdoc}
+     * Converts a maker note tag to an IFD structure for dumping.
+     *
+     * @param DataWindow $d
+     *            the data window that will provide the data.
+     * @param Ifd $ifd
+     *            the root Ifd object.
      */
-    public function getComponents()
+    public static function makerNoteToBlock(DataElement $d, Ifd $ifd)
     {
-        return $this->components;
+        // Get the Exif subIfd if existing.
+        if (!$exif_ifd = $ifd->getElement("ifd[@name='Exif']")) {
+            return;
+        }
+
+        // Get MakerNote tag from Exif IFD.
+        if (!$maker_note_tag = $exif_ifd->getElement("tag[@name='MakerNote']")) {
+            return;
+        }
+
+        // Get Make tag from IFD0.
+        if (!$make_tag = $ifd->getElement("tag[@name='Make']")) {
+            return;
+        }
+
+        // Get Model tag from IFD0.
+        $model_tag = $ifd->getElement("tag[@name='Model']");
+        $model = $model_tag && $model_tag->getElement("entry") ? $model_tag->getElement("entry")->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
+
+        // Get maker note IFD id.
+        if (!$maker_note_ifd_type = Spec::getMakerNoteIfdType($make_tag->getElement("entry")->getValue(), $model)) {
+            return;
+        }
+
+        // Load maker note into IFD.
+        $ifd_class = Spec::getTypePropertyValue($maker_note_ifd_type, 'class');
+        $maker_note_ifd_name = Spec::getTypePropertyValue($maker_note_ifd_type, 'name');
+        $exif_ifd->debug("Converting {makernote} to IFD", [
+            'makernote' => $maker_note_ifd_name,
+        ]);
+        $ifd = new $ifd_class($maker_note_ifd_type, $maker_note_ifd_name, $exif_ifd, $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag);
+        $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1], null, [
+            'components' => $maker_note_tag->getComponents(),
+        ]);
+        // Remove the MakerNote tag that has been converted to IFD.
+        $exif_ifd->removeElement("tag[@name='MakerNote']");
     }
 }

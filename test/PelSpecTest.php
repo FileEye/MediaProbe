@@ -38,8 +38,8 @@ class PelSpecTest extends ExifEyeTestCaseBase
 
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals([
-            'ExifEye\core\Block\Thumbnail::toBlock',
-            'ExifEye\core\Entry\ExifMakerNote::tagToIfd',
+            'ExifEye\core\Block\Ifd::thumbnailToBlock',
+            'ExifEye\core\Block\Ifd::makerNoteToBlock',
         ], Spec::getTypePropertyValue($ifd_0->getType(), 'postLoad'));
         $this->assertNull(Spec::getTypePropertyValue($ifd_canon_camera_settings->getType(), 'postLoad'));
 

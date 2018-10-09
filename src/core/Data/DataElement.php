@@ -323,11 +323,13 @@ abstract class DataElement
         );
     }
 
+    // xx
     public function getDataString()
     {
         return isset($this->dataElement) ? $this->dataElement->getDataString() : null;
     }
 
+    // xx
     public function getStart()
     {
         return isset($this->dataElement) ? $this->dataElement->getStart() + $this->start : $this->start;

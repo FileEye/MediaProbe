@@ -6,8 +6,8 @@ alias:
   - '0'
   - 'Main'
 postLoad:
-  - ExifEye\core\Block\Thumbnail::toBlock
-  - ExifEye\core\Entry\ExifMakerNote::tagToIfd
+  - ExifEye\core\Block\Ifd::thumbnailToBlock
+  - ExifEye\core\Block\Ifd::makerNoteToBlock
 elements:
     0x0100:
         type: tag

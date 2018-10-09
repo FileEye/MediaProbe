@@ -2,7 +2,7 @@
 
 namespace ExifEye\Apple\Block;
 
-use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdBase;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
@@ -14,31 +14,16 @@ use CFPropertyList\CFPropertyList;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\ConvertBytes;
 
-class RunTime extends Ifd
+class RunTime extends IfdBase
 {
     /**
      * {@inheritdoc}
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
-        if (isset($options['format'])) {
-            $this->format = $options['format'];
-        }
-        if (isset($options['components'])) {
-            $this->components = $options['components'];
-        }
-
-        $this->debug("START... Loading");
-        // xax
-/*        $this->debug(">> o {ifdoffset}, c {components}, f {format}, s {size}, d {data}", [
-            'ifdoffset' => $offset,
-            'components' => $this->components,
-            'format' => Format::getName($this->format),
-            'size' => $size,
-            'data' => $options['data_offset'],
-        ]);*/
-        //$this->debug(ExifEye::dumpHex($data_element->getBytes($tag_data_offset), 20));
-
+        $this->debug("IFD {ifdname}", [
+            'ifdname' => $this->getAttribute('name'),
+        ]);
 
         $plist = new CFPropertyList();
         $plist->parse($data_element->getBytes($options['data_offset'], $options['components']));
@@ -51,7 +36,10 @@ class RunTime extends Ifd
             $tag = new Tag('tag', $this, $tag_id, $tag_entry_class, [$value], $item_format, 1);
         }
 
-        $this->debug(".....END Loading");
+        // Invoke post-load callbacks.
+        $this->executePostLoadCallbacks($data_element);
+
+        return $this;
     }
 
     /**

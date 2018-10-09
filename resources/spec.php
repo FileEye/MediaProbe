@@ -31,7 +31,7 @@ return array (
       ),
       'postLoad' =>
       array (
-        0 => 'ExifEye\\core\\Block\\Thumbnail::toBlock',
+        0 => 'ExifEye\\core\\Block\\Ifd::thumbnailToBlock',
       ),
     ),
     'ifdGps' =>
@@ -106,8 +106,8 @@ return array (
       ),
       'postLoad' =>
       array (
-        0 => 'ExifEye\\core\\Block\\Thumbnail::toBlock',
-        1 => 'ExifEye\\core\\Entry\\ExifMakerNote::tagToIfd',
+        0 => 'ExifEye\\core\\Block\\Ifd::thumbnailToBlock',
+        1 => 'ExifEye\\core\\Block\\Ifd::makerNoteToBlock',
       ),
     ),
     'ifdMakerNotesCanonFileInformation' =>
