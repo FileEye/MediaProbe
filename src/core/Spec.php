@@ -7,7 +7,6 @@ use ExifEye\core\Block\Tag;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\Format;
 
 /**
  * Class to retrieve IFD and TAG information from YAML specs.
@@ -288,5 +287,43 @@ class Spec
     public static function getMakerNoteIfdType($make, $model)
     {
         return isset(self::getMap()['makerNotes'][$make]) ? self::getMap()['makerNotes'][$make] : null;
+    }
+
+    /**
+     * Returns the name of a format like 'Ascii' for the ASCII format.
+     *
+     * @param integer $type
+     *
+     * @return string|null
+     */
+    public static function getFormatName($type)
+    {
+        return static::getElementName('format', $type);
+    }
+
+    /**
+     * Returns the id of a format from its name.
+     *
+     * @param string $name
+     *
+     * @return integer|null
+     */
+    public static function getFormatIdFromName($name)
+    {
+        return static::getElementIdByName('format', $name);
+    }
+
+    /**
+     * @todo fix one line
+     * Return the size of components in a given format in bytes needed to store
+     * one component with the given format.
+     *
+     * @param integer $type
+     *
+     * @return integer|null
+     */
+    public static function getFormatSize($type)
+    {
+        return static::getElementPropertyValue('format', $type, 'length');
     }
 }

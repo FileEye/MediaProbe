@@ -7,7 +7,6 @@ use ExifEye\core\Block\Index;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\ExifEye;
-use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
 /**
@@ -62,8 +61,8 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $this->assertSame('Exif', Spec::getElementName($ifd_0->getType(), 0x8769));
 
         // Check getTagFormat.
-        $this->assertEquals([Format::getIdFromName('Undefined')], Spec::getElementPropertyValue($ifd_exif->getType(), 0x9286, 'format'));
-        $this->assertEquals([Format::getIdFromName('Short'), Format::getIdFromName('Long')], Spec::getElementPropertyValue($ifd_exif->getType(), 0xA002, 'format'));
+        $this->assertEquals([Spec::getFormatIdFromName('Undefined')], Spec::getElementPropertyValue($ifd_exif->getType(), 0x9286, 'format'));
+        $this->assertEquals([Spec::getFormatIdFromName('Short'), Spec::getFormatIdFromName('Long')], Spec::getElementPropertyValue($ifd_exif->getType(), 0xA002, 'format'));
 
         // Check getTagTitle.
         $this->assertEquals('Exif IFD', Spec::getElementTitle($ifd_0->getType(), 0x8769));

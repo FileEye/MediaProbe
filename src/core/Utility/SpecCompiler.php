@@ -2,7 +2,6 @@
 
 namespace ExifEye\core\Utility;
 
-use ExifEye\core\Format;
 use ExifEye\core\Block\Ifd;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;

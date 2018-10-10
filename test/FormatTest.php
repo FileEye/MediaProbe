@@ -3,31 +3,31 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\ExifEye;
-use ExifEye\core\Format;
+use ExifEye\core\Spec;
 
 class FormatTest extends ExifEyeTestCaseBase
 {
     public function testGetName()
     {
-        $this->assertEquals('Ascii', Format::getName(2));
-        $this->assertEquals('Float', Format::getName(11));
-        $this->assertEquals('Undefined', Format::getName(7));
-        $this->assertNull(Format::getName(100));
+        $this->assertEquals('Ascii', Spec::getFormatName(2));
+        $this->assertEquals('Float', Spec::getFormatName(11));
+        $this->assertEquals('Undefined', Spec::getFormatName(7));
+        $this->assertNull(Spec::getFormatName(100));
     }
 
     public function testGetIdFromName()
     {
-        $this->assertEquals(2, Format::getIdFromName('Ascii'));
-        $this->assertEquals(11, Format::getIdFromName('Float'));
-        $this->assertEquals(7, Format::getIdFromName('Undefined'));
-        $this->assertNull(Format::getIdFromName('UnexistingFormat'));
+        $this->assertEquals(2, Spec::getFormatIdFromName('Ascii'));
+        $this->assertEquals(11, Spec::getFormatIdFromName('Float'));
+        $this->assertEquals(7, Spec::getFormatIdFromName('Undefined'));
+        $this->assertNull(Spec::getFormatIdFromName('UnexistingFormat'));
     }
 
     public function testGetSize()
     {
-        $this->assertEquals(1, Format::getSize(Format::getIdFromName('Ascii')));
-        $this->assertEquals(4, Format::getSize(Format::getIdFromName('Float')));
-        $this->assertEquals(1, Format::getSize(Format::getIdFromName('Undefined')));
-        $this->assertNull(Format::getSize(100));
+        $this->assertEquals(1, Spec::getFormatSize(Spec::getFormatIdFromName('Ascii')));
+        $this->assertEquals(4, Spec::getFormatSize(Spec::getFormatIdFromName('Float')));
+        $this->assertEquals(1, Spec::getFormatSize(Spec::getFormatIdFromName('Undefined')));
+        $this->assertNull(Spec::getFormatSize(100));
     }
 }

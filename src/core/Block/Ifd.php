@@ -10,7 +10,6 @@ use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
-use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -118,12 +117,12 @@ class Ifd extends IfdBase
             $thumbnail_entry = $thumbnail->getElement('entry');
             // Add offset.
             $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailOffset'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Format::getIdFromName('Long'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Spec::getFormatIdFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
             // Add length.
             $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailLength'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Format::getIdFromName('Long'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Spec::getFormatIdFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($thumbnail_entry->getComponents(), $byte_order);
             // Add thumbnail.

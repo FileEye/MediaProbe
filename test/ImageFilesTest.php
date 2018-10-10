@@ -4,7 +4,6 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
-use ExifEye\core\Format;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 use ExifEye\core\Image;
@@ -117,7 +116,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
             // No sub elements in the element being tested.
             $this->assertNull($element->getElement('*'));
             $this->assertEquals($expected['path'], $element->getContextPath());
-            $this->assertEquals($expected['format'], Format::getName($element->getFormat()), $element->getContextPath());
+            $this->assertEquals($expected['format'], Spec::getFormatName($element->getFormat()), $element->getContextPath());
             $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
             $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());

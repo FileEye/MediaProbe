@@ -11,6 +11,10 @@ php:
   - 7.3
   - nightly
 
+branches:
+  only:
+    - exifeye-1
+
 env:
   global:
     - EXIFEYE_STAGING_DIR="$HOME/exifeye_staging"

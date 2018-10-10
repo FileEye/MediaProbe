@@ -6,7 +6,6 @@ use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\ExifEye;
-use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**

@@ -10,7 +10,6 @@ use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\Format;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Spec;
 
@@ -41,7 +40,7 @@ class IfdBase extends BlockBase
         if ($tag_id !== null) {
             $this->setAttribute('id', $tag_id);
         }
-        $this->format = isset($tag_format) ? $tag_format : Format::getIdFromName('Long');
+        $this->format = isset($tag_format) ? $tag_format : Spec::getFormatIdFromName('Long');
         $this->setAttribute('name', $name);
         $this->hasSpecification = Spec::getElementIdByName($parent_block->getType(), $name) ? true : false;
     }
@@ -84,7 +83,7 @@ class IfdBase extends BlockBase
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
         // element.
-        $entry['size'] = Format::getSize($entry['format']) * $entry['components'];
+        $entry['size'] = Spec::getFormatSize($entry['format']) * $entry['components'];
         if ($entry['size'] > 4) {
             $entry['data_offset'] = $data_element->getLong($offset + 8) + $data_offset_shift;
         } else {
@@ -95,7 +94,7 @@ class IfdBase extends BlockBase
             'i' => $i + 1,
             'ifdoffset' => $data_element->getStart() + $offset,
             'id' => '0x' . strtoupper(dechex($entry['id'])),
-            'format' => Format::getName($entry['format']),
+            'format' => Spec::getFormatName($entry['format']),
             'components' => $entry['components'],
             'offset' => $data_element->getStart() + $entry['data_offset'],
             'size' => $entry['size'],

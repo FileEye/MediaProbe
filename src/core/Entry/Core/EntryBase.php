@@ -7,7 +7,6 @@ use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ElementBase;
 use ExifEye\core\ElementInterface;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\Format;
 use ExifEye\core\Spec;
 
 /**
@@ -62,7 +61,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     {
         parent::__construct('entry', $parent);
         $this->setValue($data);
-        $this->format = Format::getIdFromName($this->formatName);
+        $this->format = Spec::getFormatIdFromName($this->formatName);
     }
 
     /**
@@ -124,7 +123,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     public function toDumpArray()
     {
         $dump = array_merge(parent::toDumpArray(), [
-            'format' => Format::getName($this->getFormat()),
+            'format' => Spec::getFormatName($this->getFormat()),
             'components' => $this->getComponents(),
             'bytesHash' => hash('sha256', $this->toBytes()),
             'text' => $this->toString(),
