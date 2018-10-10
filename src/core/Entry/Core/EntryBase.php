@@ -62,6 +62,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     {
         parent::__construct('entry', $parent);
         $this->setValue($data);
+        $this->format = Format::getIdFromName($this->formatName);
     }
 
     /**

@@ -62,8 +62,8 @@ class PelSpecTest extends ExifEyeTestCaseBase
         $this->assertSame('Exif', Spec::getElementName($ifd_0->getType(), 0x8769));
 
         // Check getTagFormat.
-        $this->assertEquals([Format::UNDEFINED], Spec::getElementPropertyValue($ifd_exif->getType(), 0x9286, 'format'));
-        $this->assertEquals([Format::SHORT, Format::LONG], Spec::getElementPropertyValue($ifd_exif->getType(), 0xA002, 'format'));
+        $this->assertEquals([Format::getIdFromName('Undefined')], Spec::getElementPropertyValue($ifd_exif->getType(), 0x9286, 'format'));
+        $this->assertEquals([Format::getIdFromName('Short'), Format::getIdFromName('Long')], Spec::getElementPropertyValue($ifd_exif->getType(), 0xA002, 'format'));
 
         // Check getTagTitle.
         $this->assertEquals('Exif IFD', Spec::getElementTitle($ifd_0->getType(), 0x8769));

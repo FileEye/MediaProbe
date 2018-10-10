@@ -34,14 +34,14 @@ class IfdBase extends BlockBase
     /**
      * Constructs a Block for an Image File Directory (IFD).
      */
-    public function __construct($type, $name, BlockBase $parent_block, $tag_id = null, $tag_format = Format::LONG, ElementInterface $reference = null)
+    public function __construct($type, $name, BlockBase $parent_block, $tag_id = null, $tag_format = null, ElementInterface $reference = null)
     {
         parent::__construct($type, $parent_block, $reference);
 
         if ($tag_id !== null) {
             $this->setAttribute('id', $tag_id);
         }
-        $this->format = $tag_format;
+        $this->format = isset($tag_format) ? $tag_format : Format::getIdFromName('Long');
         $this->setAttribute('name', $name);
         $this->hasSpecification = Spec::getElementIdByName($parent_block->getType(), $name) ? true : false;
     }

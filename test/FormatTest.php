@@ -9,25 +9,25 @@ class FormatTest extends ExifEyeTestCaseBase
 {
     public function testGetName()
     {
-        $this->assertEquals('Ascii', Format::getName(Format::ASCII));
-        $this->assertEquals('Float', Format::getName(Format::FLOAT));
-        $this->assertEquals('Undefined', Format::getName(Format::UNDEFINED));
+        $this->assertEquals('Ascii', Format::getName(2));
+        $this->assertEquals('Float', Format::getName(11));
+        $this->assertEquals('Undefined', Format::getName(7));
         $this->assertNull(Format::getName(100));
     }
 
     public function testGetIdFromName()
     {
-        $this->assertEquals(Format::ASCII, Format::getIdFromName('Ascii'));
-        $this->assertEquals(Format::FLOAT, Format::getIdFromName('Float'));
-        $this->assertEquals(Format::UNDEFINED, Format::getIdFromName('Undefined'));
+        $this->assertEquals(2, Format::getIdFromName('Ascii'));
+        $this->assertEquals(11, Format::getIdFromName('Float'));
+        $this->assertEquals(7, Format::getIdFromName('Undefined'));
         $this->assertNull(Format::getIdFromName('UnexistingFormat'));
     }
 
     public function testGetSize()
     {
-        $this->assertEquals(1, Format::getSize(Format::ASCII));
-        $this->assertEquals(4, Format::getSize(Format::FLOAT));
-        $this->assertEquals(1, Format::getSize(Format::UNDEFINED));
+        $this->assertEquals(1, Format::getSize(Format::getIdFromName('Ascii')));
+        $this->assertEquals(4, Format::getSize(Format::getIdFromName('Float')));
+        $this->assertEquals(1, Format::getSize(Format::getIdFromName('Undefined')));
         $this->assertNull(Format::getSize(100));
     }
 }

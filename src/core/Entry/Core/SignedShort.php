@@ -23,7 +23,12 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $format = Format::SSHORT;
+    protected $formatName = 'SignedShort';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $format;
 
     /**
      * {@inheritdoc}

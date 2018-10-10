@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is generated automatically by executing the 'pel compile' command.
+ * This file is generated automatically by executing the 'exifeye compile' command.
  *
  * DO NOT CHANGE MANUALLY.
  */
@@ -140,6 +140,12 @@ return array (
       'title' => 'Canon Shot Information',
       'class' => 'ExifEye\\core\\Block\\Index',
     ),
+    'format' =>
+    array (
+      'name' => 'Format',
+      'title' => 'Format',
+      'class' => 'ExifEye\\Format',
+    ),
   ),
   'typesByName' =>
   array (
@@ -164,6 +170,7 @@ return array (
     'Tiff' => 'tiff',
     'Jpeg' => 'jpeg',
     'CanonShotInformation' => 'ifdMakerNotesCanonShotInformation',
+    'Format' => 'format',
   ),
   'elements' =>
   array (
@@ -5928,6 +5935,91 @@ return array (
         ),
       ),
     ),
+    'format' =>
+    array (
+      1 =>
+      array (
+        'name' => 'Byte',
+        'title' => 'Byte',
+        'length' => 1,
+        'class' => 'ExifEye\\core\\Entry\\Core\\Byte',
+      ),
+      2 =>
+      array (
+        'name' => 'Ascii',
+        'title' => 'Ascii',
+        'length' => 1,
+        'class' => 'ExifEye\\core\\Entry\\Core\\Ascii',
+      ),
+      3 =>
+      array (
+        'name' => 'Short',
+        'title' => 'Short',
+        'length' => 2,
+        'class' => 'ExifEye\\core\\Entry\\Core\\Short',
+      ),
+      4 =>
+      array (
+        'name' => 'Long',
+        'title' => 'Long',
+        'length' => 4,
+        'class' => 'ExifEye\\core\\Entry\\Core\\Long',
+      ),
+      5 =>
+      array (
+        'name' => 'Rational',
+        'title' => 'Rational',
+        'length' => 8,
+        'class' => 'ExifEye\\core\\Entry\\Core\\Rational',
+      ),
+      6 =>
+      array (
+        'name' => 'SignedByte',
+        'title' => 'SignedByte',
+        'length' => 1,
+        'class' => 'ExifEye\\core\\Entry\\Core\\SignedByte',
+      ),
+      7 =>
+      array (
+        'name' => 'Undefined',
+        'title' => 'Undefined',
+        'length' => 1,
+        'class' => 'ExifEye\\core\\Entry\\Core\\Undefined',
+      ),
+      8 =>
+      array (
+        'name' => 'SignedShort',
+        'title' => 'SignedShort',
+        'length' => 2,
+        'class' => 'ExifEye\\core\\Entry\\Core\\SignedShort',
+      ),
+      9 =>
+      array (
+        'name' => 'SignedLong',
+        'title' => 'SignedLong',
+        'length' => 4,
+        'class' => 'ExifEye\\core\\Entry\\Core\\SignedLong',
+      ),
+      10 =>
+      array (
+        'name' => 'SignedRational',
+        'title' => 'SignedRational',
+        'length' => 8,
+        'class' => 'ExifEye\\core\\Entry\\Core\\SignedRational',
+      ),
+      11 =>
+      array (
+        'name' => 'Float',
+        'title' => 'Float',
+        'length' => 4,
+      ),
+      12 =>
+      array (
+        'name' => 'Double',
+        'title' => 'Double',
+        'length' => 8,
+      ),
+    ),
   ),
   'elementsByName' =>
   array (
@@ -6377,6 +6469,21 @@ return array (
       'NDFilter' => 28,
       'SelfTimer2' => 29,
       'FlashOutput' => 33,
+    ),
+    'format' =>
+    array (
+      'Byte' => 1,
+      'Ascii' => 2,
+      'Short' => 3,
+      'Long' => 4,
+      'Rational' => 5,
+      'SignedByte' => 6,
+      'Undefined' => 7,
+      'SignedShort' => 8,
+      'SignedLong' => 9,
+      'SignedRational' => 10,
+      'Float' => 11,
+      'Double' => 12,
     ),
   ),
   'makerNotes' =>

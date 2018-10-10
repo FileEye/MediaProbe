@@ -1,0 +1,85 @@
+type: format
+name: 'Format'
+title: Format
+class: ExifEye\Format
+elements:
+    1:
+        # Unsigned byte.
+        # Each component will be an unsigned 8-bit integer with a value
+        # between 0 and 255.
+        name: Byte
+        title: 'Byte'
+        length: 1
+    2:
+        # ASCII string.
+        # Each component will be an ASCII character.
+        name: Ascii
+        title: 'Ascii'
+        length: 1
+    3:
+        # Unsigned short.
+        # Each component will be an unsigned 16-bit integer with a value
+        # between 0 and 65535.
+        name: Short
+        title: 'Short'
+        length: 2
+    4:
+        # Unsigned long.
+        # Each component will be an unsigned 32-bit integer with a value
+        # between 0 and 4294967295.
+        name: Long
+        title: 'Long'
+        length: 4
+    5:
+        # Unsigned rational number.
+        # Each component will consist of two unsigned 32-bit integers denoting
+        # the numerator and denominator. Each integer will have a value
+        # between 0 and 4294967295.
+        name: Rational
+        title: 'Rational'
+        length: 8
+    6:
+        # Signed byte.
+        # Each component will be a signed 8-bit integer with a value between
+        # -128 and 127.
+        name: SignedByte
+        title: 'SignedByte'
+        length: 1
+    7:
+        # Undefined byte.
+        # Each component will be a byte with no associated interpretation.
+        name: Undefined
+        title: 'Undefined'
+        length: 1
+    8:
+        # Signed short.
+        # Each component will be a signed 16-bit integer with a value between
+        # -32768 and 32767.
+        name: SignedShort
+        title: 'SignedShort'
+        length: 2
+    9:
+        # Signed long.
+        # Each component will be a signed 32-bit integer with a value between
+        # -2147483648 and 2147483647.
+        name: SignedLong
+        title: 'SignedLong'
+        length: 4
+    10:
+        # Signed rational number.
+        # Each component will consist of two signed 32-bit integers denoting
+        # the numerator and denominator. Each integer will have a value between
+        # -2147483648 and 2147483647.
+        name: SignedRational
+        title: 'SignedRational'
+        length: 8
+    11:
+        # Floating point number.
+        name: Float
+        title: 'Float'
+        length: 4
+    12:
+        # Double precision floating point number.
+        name: Double
+        title: 'Double'
+        length: 8

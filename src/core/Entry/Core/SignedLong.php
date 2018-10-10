@@ -23,7 +23,12 @@ class SignedLong extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $format = Format::SLONG;
+    protected $formatName = 'SignedLong';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $format;
 
     /**
      * {@inheritdoc}

@@ -22,7 +22,12 @@ class SignedByte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $format = Format::SBYTE;
+    protected $formatName = 'SignedByte';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $format;
 
     /**
      * {@inheritdoc}

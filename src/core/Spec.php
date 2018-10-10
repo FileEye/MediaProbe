@@ -22,24 +22,6 @@ class Spec
     private static $map;
 
     /**
-     * The default tag classes.
-     *
-     * @var array
-     */
-    private static $defaultTagClasses = [
-        Format::ASCII => 'ExifEye\\core\\Entry\\Core\\Ascii',
-        Format::BYTE => 'ExifEye\\core\\Entry\\Core\\Byte',
-        Format::SHORT => 'ExifEye\\core\\Entry\\Core\\Short',
-        Format::LONG => 'ExifEye\\core\\Entry\\Core\\Long',
-        Format::RATIONAL => 'ExifEye\\core\\Entry\\Core\\Rational',
-        Format::SBYTE => 'ExifEye\\core\\Entry\\Core\\SignedByte',
-        Format::SSHORT => 'ExifEye\\core\\Entry\\Core\\SignedShort',
-        Format::SLONG => 'ExifEye\\core\\Entry\\Core\\SignedLong',
-        Format::SRATIONAL => 'ExifEye\\core\\Entry\\Core\\SignedRational',
-        Format::UNDEFINED => 'ExifEye\\core\\Entry\\Core\\Undefined',
-    ];
-
-    /**
      * Returns the compiled PEL specification map.
      *
      * In case the map is not yet initialized, defaults to the pre-compiled
@@ -264,10 +246,11 @@ class Spec
             $format = $formats[0];
         }
 
-        if (!isset(self::$defaultTagClasses[$format])) {
-            throw new ExifEyeException('Unsupported format: %s', Format::getName($format));
+        $default_entry_class = Spec::getElementPropertyValue('format', $format, 'class');
+        if (!$default_entry_class) {
+            throw new ExifEyeException('Unsupported format: %d', $format);
         }
-        return self::$defaultTagClasses[$format];
+        return $default_entry_class;
     }
 
     /**

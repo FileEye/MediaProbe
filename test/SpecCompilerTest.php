@@ -91,7 +91,7 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
         Spec::setMap($this->testResourceDirectory . '/spec.php');
-        $this->assertCount(2, Spec::getTypes());
+        $this->assertCount(3, Spec::getTypes());
 
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()

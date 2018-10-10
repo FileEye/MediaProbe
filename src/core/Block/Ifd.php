@@ -118,12 +118,12 @@ class Ifd extends IfdBase
             $thumbnail_entry = $thumbnail->getElement('entry');
             // Add offset.
             $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailOffset'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Format::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromShort(Format::getIdFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
             // Add length.
             $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailLength'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Format::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromShort(Format::getIdFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($thumbnail_entry->getComponents(), $byte_order);
             // Add thumbnail.
