@@ -10,9 +10,9 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Spec;
 
 /**
- * Test the PelSpec class.
+ * Test the Spec class.
  */
-class PelSpecTest extends ExifEyeTestCaseBase
+class SpecTest extends ExifEyeTestCaseBase
 {
     /**
      * Tests the pre-compiled default specifications set.

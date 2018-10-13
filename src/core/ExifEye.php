@@ -15,15 +15,6 @@ namespace ExifEye\core;
  */
 class ExifEye
 {
-
-    /**
-     * Flag that controls if dgettext can be used.
-     * Is set to true or fals at the first access
-     *
-     * @var boolean|NULL
-     */
-    private static $hasdgetext = null;
-
     /**
      * Returns the current version of ExifEye.
      *
@@ -38,10 +29,7 @@ class ExifEye
     /**
      * Translate a string.
      *
-     * This static function will use Gettext to translate a string. By
-     * always using this function for static string one is assured that
-     * the translation will be taken from the correct text domain.
-     * Dynamic strings should be passed to {@link fmt} instead.
+     * @todo
      *
      * @param string $str
      *            the string that should be translated.
@@ -51,7 +39,7 @@ class ExifEye
      */
     public static function tra($str)
     {
-        return self::dgettextWrapper('pel', $str);
+        return $str;
     }
 
     /**
@@ -80,30 +68,7 @@ class ExifEye
     {
         $args = func_get_args();
         $str = array_shift($args);
-        return vsprintf(self::dgettextWrapper('pel', $str), $args);
-    }
-
-    /**
-     * Warapper for dgettext.
-     * The untranslated stub will be return in the case that dgettext is not available.
-     *
-     * @param string $domain
-     * @param string $str
-     * @return string
-     */
-    private static function dgettextWrapper($domain, $str)
-    {
-        if (self::$hasdgetext === null) {
-            self::$hasdgetext = function_exists('dgettext');
-            if (self::$hasdgetext === true) {
-                bindtextdomain('pel', __DIR__ . '/locale');
-            }
-        }
-        if (self::$hasdgetext) {
-            return dgettext($domain, $str);
-        } else {
-            return $str;
-        }
+        return vsprintf($str, $args);
     }
 
     /**

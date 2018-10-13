@@ -1,4 +1,4 @@
-# README file for PEL Test Suite
+# README file for ExifEye Test Suite
 
 The tests run automatically on each commit on TravisCI. Status for the
 master branch is:
@@ -6,18 +6,18 @@ master branch is:
 [![Build Status](https://secure.travis-ci.org/pel/pel.png?branch=master)](http://travis-ci.org/pel/pel)
 
 
-## PEL Test Suite
+## ExifEye Test Suite
 
-This directory holds the PHPUnit test suite for PEL. The test
+This directory holds the PHPUnit test suite for ExifEye. The test
 suite consists of a number of core tests which exercise the basic
-functionality of PEL.
+functionality of ExifEye.
 
 In addition to the core tests, one can download a set of image tests.
 These consist of example images taken from as many different camera
-models as possible together with a test case that will ensure that PEL
+models as possible together with a test case that will ensure that ExifEye
 can read the data in the image, and that it keeps interpreting the
 data in the same way.  This ensures stability in the development
-process by making sure that PEL keeps reading images in the same way.
+process by making sure that ExifEye keeps reading images in the same way.
 
 
 ## Running the Test Suite
@@ -39,9 +39,9 @@ phpunit
 
 Should one or more of the tests fail, then first ensure that
 SimpleTest is placed correctly so that run-tests.php can find it. If
-everything seems correct, then please report the error to the PEL
+everything seems correct, then please report the error to the ExifEye
 developers:
 
-  https://github.com/lsolesen/pel/issues
+  https://github.com/exifeye/exifeye/issues
 
 Remember to include all the output in your bug report.

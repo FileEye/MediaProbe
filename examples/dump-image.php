@@ -38,7 +38,7 @@ function dump_element(ElementInterface $element)
     }
 }
 
-/* Make PEL speak the users language, if it is available. */
+/* Make ExifEye speak the users language, if it is available. */
 setlocale(LC_ALL, '');
 
 require_once dirname(__FILE__) . '/../vendor/autoload.php';

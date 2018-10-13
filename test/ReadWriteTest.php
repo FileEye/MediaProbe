@@ -106,7 +106,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
     public function writeEntryProvider()
     {
         return [
-            'PEL Byte Read/Write Tests' => [
+            'Byte Read/Write Tests' => [
                 [
                     [0xF001, 'ExifEye\core\Entry\Core\Byte', [0], 0],
                     [0xF002, 'ExifEye\core\Entry\Core\Byte', [1], 1],
@@ -118,7 +118,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF008, 'ExifEye\core\Entry\Core\Byte', [], []],
                 ],
             ],
-            'PEL SignedByte Read/Write Tests' => [
+            'SignedByte Read/Write Tests' => [
                 [
                     [0xF101, 'ExifEye\core\Entry\Core\SignedByte', [-128], -128],
                     [0xF102, 'ExifEye\core\Entry\Core\SignedByte', [-127], -127],
@@ -131,7 +131,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF109, 'ExifEye\core\Entry\Core\SignedByte', [], []],
                 ],
             ],
-            'PEL Short Read/Write Tests' => [
+            'Short Read/Write Tests' => [
                 [
                     [0xF201, 'ExifEye\core\Entry\Core\Short', [0], 0],
                     [0xF202, 'ExifEye\core\Entry\Core\Short', [1], 1],
@@ -143,7 +143,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF208, 'ExifEye\core\Entry\Core\Short', [], []],
                 ],
             ],
-            'PEL SignedShort Read/Write Tests' => [
+            'SignedShort Read/Write Tests' => [
                 [
                     [0xF301, 'ExifEye\core\Entry\Core\SignedShort', [-32768], -32768],
                     [0xF302, 'ExifEye\core\Entry\Core\SignedShort', [-32767], -32767],
@@ -156,7 +156,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF309, 'ExifEye\core\Entry\Core\SignedShort', [], []],
                 ],
             ],
-            'PEL Long Read/Write Tests' => [
+            'Long Read/Write Tests' => [
                 [
                     [0xF401, 'ExifEye\core\Entry\Core\Long', [0], 0],
                     [0xF402, 'ExifEye\core\Entry\Core\Long', [1], 1],
@@ -168,7 +168,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF408, 'ExifEye\core\Entry\Core\Long', [], []],
                 ],
             ],
-            'PEL SLong Read/Write Tests' => [
+            'SignedLong Read/Write Tests' => [
                 [
                     [0xF501, 'ExifEye\core\Entry\Core\SignedLong', [-2147483648], -2147483648],
                     [0xF502, 'ExifEye\core\Entry\Core\SignedLong', [-2147483647], -2147483647],
@@ -181,7 +181,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
                     [0xF509, 'ExifEye\core\Entry\Core\SignedLong', [], []],
                 ],
             ],
-            'PEL Ascii Read/Write Tests' => [
+            'Ascii Read/Write Tests' => [
                 [
                     [0xF601, 'ExifEye\core\Entry\Core\Ascii', [], ''],
                     [0xF602, 'ExifEye\core\Entry\Core\Ascii', [''], ''],

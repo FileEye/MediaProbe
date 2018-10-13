@@ -14,20 +14,20 @@ use ExifEye\core\ExifEyeException;
 class Spec
 {
     /**
-     * The compiled PEL specification map.
+     * The compiled ExifEye specification map.
      *
      * @var array
      */
     private static $map;
 
     /**
-     * Returns the compiled PEL specification map.
+     * Returns the compiled ExifEye specification map.
      *
      * In case the map is not yet initialized, defaults to the pre-compiled
      * one.
      *
      * @return array
-     *            the PEL specification map.
+     *            the ExifEye specification map.
      */
     private static function getMap()
     {
@@ -38,10 +38,10 @@ class Spec
     }
 
     /**
-     * Sets the compiled PEL specification map.
+     * Sets the compiled ExifEye specification map.
      *
      * @param string $file
-     *            the file containing the PEL specification map.
+     *            the file containing the ExifEye specification map.
      */
     public static function setMap($file)
     {

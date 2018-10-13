@@ -8,7 +8,7 @@ use ExifEye\core\Spec;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * Test compilation of a set of PEL specification YAML files.
+ * Test compilation of a set of ExifEye specification YAML files.
  */
 class SpecCompilerTest extends ExifEyeTestCaseBase
 {
