@@ -55,7 +55,7 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         // Determine the byte order of the TIFF data.
         $this->byteOrder = self::getTiffSegmentByteOrder($data_element, $offset);

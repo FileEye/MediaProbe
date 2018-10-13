@@ -16,7 +16,7 @@ class JpegSegment extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         $this->components = $size;
 

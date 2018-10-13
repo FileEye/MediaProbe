@@ -21,45 +21,34 @@ class Ifd extends IfdBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
-        // Get the number of tags.
+        // Get the number of entries.
         $n = $this->getEntriesCountFromData($data_element, $offset);
 
-        // Load Tags.
+        // Load the blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $entry = $this->getEntryFromData($i, $data_element, $i_offset);
+            $entry = $this->getEntryFromData($i, $data_element, $i_offset, $this->getType());
 
-            // Build the TAG object.
-            $tag_entry_class = Spec::getElementHandlingClass($this->getType(), $entry['id'], $entry['format']);
-
-            $element_type = Spec::getElementType($this->getType(), $entry['id']);
-            if ($element_type === 'tag' || $element_type === null) {
-                $tag_entry_arguments = call_user_func($tag_entry_class . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
-                $tag = new Tag('tag', $this, $entry['id'], $tag_entry_class, $tag_entry_arguments, $entry['format'], $entry['components']);
-            } else {
-                // If the tag is an IFD pointer, loads the IFD.
-                $ifd_type = Spec::getElementType($this->getType(), $entry['id']);
-                $ifd_name = Spec::getElementName($this->getType(), $entry['id']);
-                $o = $data_element->getLong($i_offset + 8);
-                if ($offset != $o) {
-                    $ifd_class = Spec::getTypeHandlingClass($ifd_type);
-                    $ifd = new $ifd_class($ifd_type, $ifd_name, $this, $entry['id'], $entry['format']);
-                    try {
-                        $ifd->loadFromData($data_element, $o, $size, [
-                            'data_offset' => $entry['data_offset'],
-                            'components' => $entry['components'],
-                        ]);
-                    } catch (DataException $e) {
-                        $this->error($e->getMessage());
-                    }
-                } else {
-                    $this->error('Bogus offset to next IFD: {offset}, same as offset being loaded from.', [
-                        'offset' => $o,
-                    ]);
-                }
+            // If the entry is an IFD, checks the offset.
+            if (is_subclass_of($entry['class'], 'ExifEye\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
+                $this->error('Invalid offset pointer to IFD: {offset}.', [
+                    'offset' => $entry['data_offset'],
+                ]);
                 continue;
+            }
+
+            if ($entry['type'] === 'tag' || $entry['type'] === null) {
+                $tag_entry_arguments = call_user_func($entry['class'] . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
+                $tag = new Tag('tag', $this, $entry['id'], $entry['class'], $tag_entry_arguments, $entry['format'], $entry['components']);
+            } else {
+                $ifd = new $entry['class']($entry['type'], $entry['name'], $this, $entry['id'], $entry['format']);
+                try {
+                    $ifd->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
+                } catch (DataException $e) {
+                    $this->error($e->getMessage());
+                }
             }
         }
 

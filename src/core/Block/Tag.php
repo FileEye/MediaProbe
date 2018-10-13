@@ -74,7 +74,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
     }
 

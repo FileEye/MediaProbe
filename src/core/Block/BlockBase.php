@@ -45,11 +45,7 @@ abstract class BlockBase extends ElementBase
      *
      * @returns BlockBase
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
-    {
-        throw new ExifEyeException(get_class() . 'is not implementing ' . __FUNCTION__);
-    }
-
+    abstract public function loadFromData(DataElement $data_element, $offset, $size, array $options = []);
 
     /**
      * {@inheritdoc}

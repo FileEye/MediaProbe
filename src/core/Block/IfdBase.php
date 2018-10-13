@@ -46,6 +46,14 @@ class IfdBase extends BlockBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    {
+        throw new ExifEyeException(get_called_class() . 'is not implementing ' . __FUNCTION__);
+    }
+
+    /**
      *   @todo
      */
     protected function getEntriesCountFromData(DataElement $data_element, $offset)
@@ -72,13 +80,16 @@ class IfdBase extends BlockBase
     /**
      *   @todo
      */
-    protected function getEntryFromData($i, DataElement $data_element, $offset, $data_offset_shift = 0)
+    protected function getEntryFromData($i, DataElement $data_element, $offset, $parent_type, $data_offset_shift = 0)
     {
         $entry = [];
 
         $entry['id'] = $data_element->getShort($offset);
         $entry['format'] = $data_element->getShort($offset + 2);
         $entry['components'] = $data_element->getLong($offset + 4);
+        $entry['type'] = Spec::getElementType($parent_type, $entry['id']);
+        $entry['name'] = Spec::getElementName($parent_type, $entry['id']);
+        $entry['class'] = Spec::getElementHandlingClass($parent_type, $entry['id'], $entry['format']);
 
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
@@ -118,14 +129,6 @@ class IfdBase extends BlockBase
             }
         }
         return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false)
-    {
-        throw new ExifEyeException(get_class() . 'is not implementing ' . __FUNCTION__);
     }
 
     /**

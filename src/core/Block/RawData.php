@@ -45,7 +45,7 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         $this->components = $size;
         $entry = new Undefined($this, [$data_element->getBytes($offset, $this->components)]);

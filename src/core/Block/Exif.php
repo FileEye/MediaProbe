@@ -28,7 +28,7 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
         $data_window->debug($this);

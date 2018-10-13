@@ -18,7 +18,7 @@ class RunTime extends IfdBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         $this->debug("IFD {ifdname}", [
             'ifdname' => $this->getAttribute('name'),
@@ -31,8 +31,8 @@ class RunTime extends IfdBase
         foreach ($plist->toArray() as $tag_name => $value) {
             $tag_id = Spec::getElementIdByName($this->getType(), $tag_name);
             $item_format = Spec::getElementPropertyValue($this->getType(), $tag_id, 'format')[0];
-            $tag_entry_class = Spec::getElementHandlingClass($this->getType(), $tag_id, $item_format);
-            $tag = new Tag('tag', $this, $tag_id, $tag_entry_class, [$value], $item_format, 1);
+            $entry_class = Spec::getElementHandlingClass($this->getType(), $tag_id, $item_format);
+            $tag = new Tag('tag', $this, $tag_id, $entry_class, [$value], $item_format, 1);
         }
 
         // Invoke post-load callbacks.
