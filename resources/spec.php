@@ -1996,7 +1996,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\ExifVersion',
+        'class' => 'ExifEye\\core\\Entry\\Version',
       ),
       36867 =>
       array (
@@ -2336,7 +2336,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\ExifFlashPixVersion',
+        'class' => 'ExifEye\\core\\Entry\\Version',
       ),
       40961 =>
       array (
@@ -4079,7 +4079,7 @@ return array (
         array (
           0 => 7,
         ),
-        'class' => 'ExifEye\\core\\Entry\\InteroperabilityVersion',
+        'class' => 'ExifEye\\core\\Entry\\Version',
       ),
       4096 =>
       array (
