@@ -12,19 +12,12 @@ use ExifEye\core\Utility\ConvertBytes;
 /**
  * Class to hold version information.
  */
-class VersionBase extends Undefined
+class Version extends Undefined
 {
     /**
      * {@inheritdoc}
      */
     protected $name = 'Version';
-
-    /**
-     * The string element part of the long text description.
-     *
-     * @var string
-     */
-    protected static $stringElement = '';
 
     /**
      * {@inheritdoc}
@@ -44,9 +37,7 @@ class VersionBase extends Undefined
 
         $version = isset($data[0]) ? $data[0] : 0.0;
         if (!is_numeric($version)) {
-            $this->error('Incorrect version data for ({element})', [
-                'element' => static::$stringElement,
-            ]);
+            $this->error('Incorrect version data.');
             $version = 0;
             $this->valid = false;
         }
@@ -75,11 +66,6 @@ class VersionBase extends Undefined
      */
     public function toString(array $options = [])
     {
-        $short = isset($options['short']) ? $options['short'] : false;
-        if ($short) {
-            return $this->getValue();
-        } else {
-            return trim(ExifEye::fmt('%s Version %s', static::$stringElement, $this->getValue()));
-        }
+        return $this->getValue();
     }
 }

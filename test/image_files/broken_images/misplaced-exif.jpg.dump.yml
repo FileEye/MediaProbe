@@ -184,12 +184,12 @@ elements:
                                                                 -
                                                                     type: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36864:ExifVersion/entry'
-                                                                    class: ExifEye\core\Entry\ExifVersion
+                                                                    class: ExifEye\core\Entry\Version
                                                                     valid: false
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0
-                                                                    text: 'Exif Version 0.0'
+                                                                    text: '0.0'
                                                         -
                                                             type: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:37520:SubSecTime'
@@ -376,7 +376,7 @@ log:
     ERROR:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/ifd:34665:Exif/tag:36864:ExifVersion/entry'
-            message: 'Incorrect version data for (Exif)'
+            message: 'Incorrect version data.'
     WARNING:
         -
             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:306:DateTime'

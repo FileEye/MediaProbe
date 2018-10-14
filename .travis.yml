@@ -11,10 +11,6 @@ php:
   - 7.3
   - nightly
 
-branches:
-  only:
-    - master
-
 env:
   global:
     - EXIFEYE_STAGING_DIR="$HOME/exifeye_staging"
@@ -37,14 +33,14 @@ before_install:
   - |
       if [[ ! -f $EXIFEYE_STAGING_DIR/vendor/autoload.php ]]; then
         mkdir -p $EXIFEYE_STAGING_DIR
-        cp -r $HOME/build/ExifEye/ExifEye $EXIFEYE_STAGING_DIR
+        cp -r $TRAVIS_BUILD_DIR $EXIFEYE_STAGING_DIR
         cd $EXIFEYE_STAGING_DIR/ExifEye
         composer install --no-interaction --no-progress --no-suggest
       fi
   # Copy staged /vendor to running path.
-  - mkdir -p $HOME/build/ExifEye/ExifEye/vendor
-  - cp -r $EXIFEYE_STAGING_DIR/ExifEye/vendor $HOME/build/ExifEye/ExifEye
-  - cd $HOME/build/ExifEye/ExifEye
+  - mkdir -p $TRAVIS_BUILD_DIR/vendor
+  - cp -r $EXIFEYE_STAGING_DIR/ExifEye/vendor $TRAVIS_BUILD_DIR
+  - cd $TRAVIS_BUILD_DIR
 
 install:
   - php bin/exifeye --version

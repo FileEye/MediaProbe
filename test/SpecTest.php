@@ -203,20 +203,11 @@ class SpecTest extends ExifEyeTestCaseBase
           'Exif/ExifVersion - short' => [
               '2.2', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'Exif', 'ExifVersion', [2.2], true,
           ],
-          'Exif/ExifVersion - long' => [
-              'Exif Version 2.2', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'Exif', 'ExifVersion', [2.2],
-          ],
           'Exif/FlashPixVersion - short' => [
               '2.5', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'Exif', 'FlashPixVersion', [2.5], true,
           ],
-          'Exif/FlashPixVersion - long' => [
-              'FlashPix Version 2.5', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'Exif', 'FlashPixVersion', [2.5],
-          ],
           'Interoperability/InteroperabilityVersion - short' => [
               '1.0', 'ExifEye\core\Entry\Core\Undefined', 'ifdInteroperability', 'Interoperability', 'InteroperabilityVersion', [1], true,
-          ],
-          'Interoperability/InteroperabilityVersion - long' => [
-              'Interoperability Version 1.0', 'ExifEye\core\Entry\Core\Undefined', 'ifdInteroperability', 'Interoperability', 'InteroperabilityVersion', [1],
           ],
           'Exif/ComponentsConfiguration' => [
               'Y Cb Cr -', 'ExifEye\core\Entry\ExifComponentsConfiguration', 'ifdExif', 'Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
