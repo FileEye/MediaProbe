@@ -1,6 +1,6 @@
 # ExifEye
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ExifEye/ExifEye/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ExifEye/ExifEye/?branch=master)
+[![Build Status](https://secure.travis-ci.org/ExifEye/ExifEye.png?branch=master)](https://travis-ci.org/ExifEye/ExifEye)[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ExifEye/ExifEye/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ExifEye/ExifEye/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/ExifEye/ExifEye/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ExifEye/ExifEye/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/exifeye/exifeye/version)](https://packagist.org/packages/exifeye/exifeye)
 [![Total Downloads](https://poser.pugx.org/exifeye/exifeye/downloads)](https://packagist.org/packages/exifeye/exifeye)
@@ -8,8 +8,8 @@
 
 A PHP library for reading and writing Exif headers in JPEG and TIFF images.
 
-ExifEye is a fork of the [PHP Exif library](https://github.com/pel/pel). See the
-[AUTHORS.md](AUTHORS.md) file for credits.
+ExifEye is a fork of the [PHP Exif library](https://github.com/pel/pel). See all
+the [contributors](https://github.com/mondrake/ExifEye/graphs/contributors).
 
 
 ## Description
