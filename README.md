@@ -6,8 +6,8 @@
 
 A PHP library for reading and writing Exif headers in JPEG and TIFF images.
 
-Copyright (C) 2004, 2005, 2006  Martin Geisler.
-Licensed under the GNU GPL, see COPYING for details.
+ExifEye is a fork of the [PHP Exif library](https://github.com/pel/pel). See the
+[AUTHORS.md](AUTHORS.md) file for credits.
 
 
 ## Description
