@@ -18,7 +18,6 @@ env:
 matrix:
   fast_finish: true
   allow_failures:
-    - php: 7.3
     - php: nightly
 
 cache:
@@ -27,7 +26,7 @@ cache:
 
 before_install:
   # Remove XDebug.
-  - if [ ! "$TRAVIS_PHP_VERSION" == "nightly" ]; then phpenv config-rm xdebug.ini; fi
+  - phpenv config-rm xdebug.ini || true
 
   # Stage ExifEye to get dependencies.
   - |
