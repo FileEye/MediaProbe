@@ -1,5 +1,7 @@
 # ExifEye
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ExifEye/ExifEye/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ExifEye/ExifEye/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/ExifEye/ExifEye/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ExifEye/ExifEye/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/exifeye/exifeye/version)](https://packagist.org/packages/exifeye/exifeye)
 [![Total Downloads](https://poser.pugx.org/exifeye/exifeye/downloads)](https://packagist.org/packages/exifeye/exifeye)
 [![Latest Unstable Version](https://poser.pugx.org/exifeye/exifeye/v/unstable)](//packagist.org/packages/exifeye/exifeye)
