@@ -2,18 +2,14 @@ language: php
 sudo: false
 
 php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
+  #- 5.4
+  #- 5.5
+  #- 5.6
+  #- 7.0
   - 7.1
-  - 7.2
-  - 7.3
-  - nightly
-
-branches:
-  only:
-    - master
+  #- 7.2
+  #- 7.3
+  #- nightly
 
 env:
   global:
@@ -56,8 +52,8 @@ script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
   # image file dumps.
-  #- php bin/exifeye compile
-  #- php bin/exifeye dump test/image_files
+  - php bin/exifeye compile
+  - php bin/exifeye dump test/image_files
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test
 
