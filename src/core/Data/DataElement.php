@@ -271,7 +271,7 @@ abstract class DataElement
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-8.
      *
-     * @return integer
+     * @return array
      *            the unsigned rational found at offset. A rational number is
      *            represented as an array of two numbers: the enumerator and
      *            denominator. Both of these numbers will be unsigned longs.
@@ -292,7 +292,7 @@ abstract class DataElement
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-8.
      *
-     * @return integer
+     * @return array
      *            the signed rational found at offset. A rational number is
      *            represented as an array of two numbers: the enumerator and
      *            denominator. Both of these numbers will be signed longs.

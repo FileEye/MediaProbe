@@ -18,7 +18,6 @@ class Bug3017880Test extends ExifEyeTestCaseBase
         $filename = dirname(__FILE__) . '/image_files/bug3017880.jpg';
         try {
             $exif = null;
-            $success = 1; // return true by default, as this function may not resave the file, but it's still success
             $resave_file = 0;
             $image = Image::createFromFile($filename);
             $jpeg = $image->getElement("jpeg");
@@ -34,7 +33,7 @@ class Bug3017880Test extends ExifEyeTestCaseBase
                     ->getMock();
 
                 $exif = new Exif('exif', $app1_segment_mock);
-                $tiff = new Tiff($exif);
+                new Tiff($exif);
             }
 
             $tiff = $exif->getElement("tiff");

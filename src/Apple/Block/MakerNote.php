@@ -27,7 +27,6 @@ class MakerNote extends IfdBase
         $header_data_window->debug($header);
         $header->loadFromData($header_data_window, 0, $header_data_window->getSize());
 
-        $starting_offset = $offset;
         $offset += 14;
 
         // Get the number of entries.
@@ -40,7 +39,7 @@ class MakerNote extends IfdBase
 
             if ($entry['type'] === 'tag' || $entry['type'] === null) {
                 $tag_entry_arguments = call_user_func($entry['class'] . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
-                $tag = new Tag('tag', $this, $entry['id'], $entry['class'], $tag_entry_arguments, $entry['format'], $entry['components']);
+                new Tag('tag', $this, $entry['id'], $entry['class'], $tag_entry_arguments, $entry['format'], $entry['components']);
             } else {
                 $ifd = new $entry['class']($entry['type'], $entry['name'], $this, $entry['id'], $entry['format']);
                 try {
@@ -97,12 +96,8 @@ class MakerNote extends IfdBase
             }
         }
 
-        // Append link to next IFD.
-        if ($has_next_ifd) {
-            $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
-        } else {
-            $bytes .= ConvertBytes::fromLong(0, $byte_order);
-        }
+        // There is no next IFD.
+        $bytes .= ConvertBytes::fromLong(0, $byte_order);
 
         // Append data area.
         $bytes .= $data_area_bytes;

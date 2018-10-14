@@ -24,7 +24,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
 
         if (Exif::isExifSegment($data_window, 2)) {
             $exif = new Exif('exif', $this);
-            $ret = $exif->loadFromData($data_window, 2, $this->components - 2);
+            $exif->loadFromData($data_window, 2, $this->components - 2);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.

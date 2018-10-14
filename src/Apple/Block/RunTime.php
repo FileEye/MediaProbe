@@ -32,7 +32,7 @@ class RunTime extends IfdBase
             $tag_id = Spec::getElementIdByName($this->getType(), $tag_name);
             $item_format = Spec::getElementPropertyValue($this->getType(), $tag_id, 'format')[0];
             $entry_class = Spec::getElementHandlingClass($this->getType(), $tag_id, $item_format);
-            $tag = new Tag('tag', $this, $tag_id, $entry_class, [$value], $item_format, 1);
+            new Tag('tag', $this, $tag_id, $entry_class, [$value], $item_format, 1);
         }
 
         // Invoke post-load callbacks.

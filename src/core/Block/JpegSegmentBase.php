@@ -22,11 +22,15 @@ abstract class JpegSegmentBase extends BlockBase
 
     /**
      * The segment payload type.
+     *
+     * @var string
      */
     protected $payload;
 
     /**
      * The expected segment data length, for fixed size payloads.
+     *
+     * @var int
      */
     protected $components;
 
@@ -47,7 +51,7 @@ abstract class JpegSegmentBase extends BlockBase
     /**
      * Returns the segment payload type.
      *
-     * @return int
+     * @return string
      */
     public function getPayload()
     {

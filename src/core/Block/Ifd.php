@@ -41,7 +41,7 @@ class Ifd extends IfdBase
 
             if ($entry['type'] === 'tag' || $entry['type'] === null) {
                 $tag_entry_arguments = call_user_func($entry['class'] . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
-                $tag = new Tag('tag', $this, $entry['id'], $entry['class'], $tag_entry_arguments, $entry['format'], $entry['components']);
+                new Tag('tag', $this, $entry['id'], $entry['class'], $tag_entry_arguments, $entry['format'], $entry['components']);
             } else {
                 $ifd = new $entry['class']($entry['type'], $entry['name'], $this, $entry['id'], $entry['format']);
                 try {
@@ -197,7 +197,7 @@ class Ifd extends IfdBase
             $thumbnail_data = $dataxx->getBytes(0, $size);
 
             $thumbnail_block = new Thumbnail('thumbnail', $ifd);
-            $thumbnail_entry = new Undefined($thumbnail_block, [$thumbnail_data]);
+            new Undefined($thumbnail_block, [$thumbnail_data]);
             $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
                 'offset' => $offset,
                 'length' => $length,

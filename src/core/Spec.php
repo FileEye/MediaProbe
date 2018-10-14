@@ -306,24 +306,24 @@ class Spec
      *
      * @param string $name
      *
-     * @return integer|null
+     * @return int|null
      */
     public static function getFormatIdFromName($name)
     {
-        return static::getElementIdByName('format', $name);
+        $id = static::getElementIdByName('format', $name);
+        return $id !== null ? (int) $id : null;
     }
 
     /**
-     * @todo fix one line
-     * Return the size of components in a given format in bytes needed to store
-     * one component with the given format.
+     * Returns the size, in bytes, of a component in a given format.
      *
      * @param integer $type
      *
-     * @return integer|null
+     * @return int|null
      */
     public static function getFormatSize($type)
     {
-        return static::getElementPropertyValue('format', $type, 'length');
+        $size = static::getElementPropertyValue('format', $type, 'length');
+        return $size !== null ? (int) $size : null;
     }
 }
