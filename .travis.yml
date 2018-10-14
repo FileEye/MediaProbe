@@ -13,7 +13,7 @@ php:
 
 branches:
   only:
-    - exifeye-1
+    - master
 
 env:
   global:
@@ -37,14 +37,14 @@ before_install:
   - |
       if [[ ! -f $EXIFEYE_STAGING_DIR/vendor/autoload.php ]]; then
         mkdir -p $EXIFEYE_STAGING_DIR
-        cp -r $HOME/build/mondrake/pel $EXIFEYE_STAGING_DIR
-        cd $EXIFEYE_STAGING_DIR/pel
+        cp -r $HOME/build/ExifEye/ExifEye $EXIFEYE_STAGING_DIR
+        cd $EXIFEYE_STAGING_DIR/ExifEye
         composer install --no-interaction --no-progress --no-suggest
       fi
   # Copy staged /vendor to running path.
-  - mkdir -p $HOME/build/mondrake/pel/vendor
-  - cp -r $EXIFEYE_STAGING_DIR/pel/vendor $HOME/build/mondrake/pel
-  - cd $HOME/build/mondrake/pel
+  - mkdir -p $HOME/build/ExifEye/ExifEye/vendor
+  - cp -r $EXIFEYE_STAGING_DIR/ExifEye/vendor $HOME/build/ExifEye/ExifEye
+  - cd $HOME/build/ExifEye/ExifEye
 
 install:
   - php bin/exifeye --version
