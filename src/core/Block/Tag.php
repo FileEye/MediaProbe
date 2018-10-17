@@ -4,6 +4,7 @@ namespace ExifEye\core\Block;
 
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
+use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;

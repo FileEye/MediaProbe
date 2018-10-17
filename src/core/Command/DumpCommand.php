@@ -24,9 +24,6 @@ use Symfony\Component\Yaml\Yaml;
  */
 class DumpCommand extends Command
 {
-    /** @var string */
-    private $filePath;
-
     /**
      * {@inheritdoc}
      */

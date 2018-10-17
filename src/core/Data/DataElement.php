@@ -44,7 +44,8 @@ abstract class DataElement
      * example the {@link getShort} function. It must be one of {@link
      * ConvertBytes::LITTLE_ENDIAN} and {@link ConvertBytes::BIG_ENDIAN}.
      *
-     * @var boolean
+     * @var int
+     *
      * @see setByteOrder, getByteOrder
      */
     protected $order;
@@ -65,7 +66,7 @@ abstract class DataElement
     /**
      * Change the byte order of the data.
      *
-     * @param boolean $order
+     * @param int $order
      *            the new byte order. This must be either
      *            {@link ConvertBytes::LITTLE_ENDIAN} or {@link
      *            ConvertBytes::BIG_ENDIAN}.
@@ -78,7 +79,7 @@ abstract class DataElement
     /**
      * Get the currently used byte order.
      *
-     * @return boolean this will be either {@link
+     * @return int this will be either {@link
      *         ConvertBytes::LITTLE_ENDIAN} or {@link ConvertBytes::BIG_ENDIAN}.
      */
     public function getByteOrder()
@@ -112,18 +113,19 @@ abstract class DataElement
      * function in PHP with the exception that it works within the
      * window of accessible bytes and does strict range checking.
      *
-     * @param integer|NULL $start
+     * @param int|null $start
      *            the offset to the first byte returned. If a negative
      *            number is given, then the counting will be from the end of the
      *            window. Invalid offsets will result in a {@link
      *            DataException} being thrown.
      *
-     * @param integer|NUL $size
+     * @param int|null $size
      *            the size of the sub-window. If a negative number is
      *            given, then that many bytes will be omitted from the result.
      *
      * @return string a subset of the bytes in the window. This will
      *         always return no more than {@link getSize()} bytes.
+     *
      * @throws DataException
      */
     public function getBytes($start = null, $size = null)
@@ -323,13 +325,21 @@ abstract class DataElement
         );
     }
 
-    // xx
+    /**
+     * xx
+     *
+     * @return string
+     */
     public function getDataString()
     {
         return isset($this->dataElement) ? $this->dataElement->getDataString() : null;
     }
 
-    // xx
+    /**
+     * xx
+     *
+     * @return int
+     */
     public function getStart()
     {
         return isset($this->dataElement) ? $this->dataElement->getStart() + $this->start : $this->start;

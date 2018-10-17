@@ -83,7 +83,7 @@ class Spec
      * @param string $type
      *            the type.
      *
-     * @return string|null
+     * @return mixed|null
      *            the element handling class.
      */
     public static function getTypePropertyValue($type, $property)
@@ -130,7 +130,7 @@ class Spec
      * @param string $property
      *            the property.
      *
-     * @return string|null
+     * @return mixed|null
      *            the element property value or null if not found.
      */
     public static function getElementPropertyValue($type, $element_id, $property)

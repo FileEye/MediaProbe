@@ -165,6 +165,10 @@ class Tiff extends BlockBase
 
     /**
      * Determines if the data is a TIFF segment.
+     *
+     * @return int|null
+     *   The byte order of the TIFF segment in case data is a TIFF block, null
+     *   otherwise.
      */
     public static function getTiffSegmentByteOrder(DataElement $data_element, $offset = 0)
     {

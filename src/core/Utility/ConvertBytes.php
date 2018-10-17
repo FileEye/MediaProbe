@@ -18,7 +18,7 @@ class ConvertBytes
      * first, so the number 0x12345678 becomes 0x78 0x56 0x34 0x12 when stored
      * with little-endian byte order.
      */
-    const LITTLE_ENDIAN = true;
+    const LITTLE_ENDIAN = 1;
 
     /**
      * Big-endian (Motorola) byte order.
@@ -27,15 +27,15 @@ class ConvertBytes
      * first, so the number 0x12345678 becomes 0x12 0x34 0x56 0x78 when stored
      * with big-endian byte order.
      */
-    const BIG_ENDIAN = false;
+    const BIG_ENDIAN = 0;
 
     /**
      * Convert an unsigned short into two bytes.
      *
-     * @param integer $value
+     * @param int $value
      *            the unsigned short that will be converted. The lower two bytes
      *            will be extracted regardless of the actual size passed.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the unsigned short.
@@ -52,10 +52,10 @@ class ConvertBytes
     /**
      * Convert a signed short into two bytes.
      *
-     * @param integer $value
+     * @param int $value
      *            the signed short that will be converted. The lower two bytes
      *            will be extracted regardless of the actual size passed.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the signed short.
@@ -75,13 +75,13 @@ class ConvertBytes
      * will be promoted to 64 bit signed floating point numbers, and so such
      * large numbers can be handled too.
      *
-     * @param integer $value
+     * @param int $value
      *            the unsigned long that will be converted. The argument will be
      *            treated as an unsigned 32 bit integer and the lower four bytes
      *            will be extracted. Treating the argument as an unsigned
      *            integer means that the absolute value will be used. Use
      *            {@link fromSignedLong} to convert signed integers.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the unsigned long.
@@ -106,11 +106,11 @@ class ConvertBytes
     /**
      * Convert a signed long into four bytes.
      *
-     * @param integer $value
+     * @param int $value
      *            the signed long that will be converted. The argument will be
      *            treated as a signed 32 bit integer, from which the lower four
      *            bytes will be extracted.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of {@link LITTLE_ENDIAN} and {@link BIG_ENDIAN}.
      *
      * @return string the bytes representing the signed long.
@@ -133,7 +133,7 @@ class ConvertBytes
      * @param string $bytes
      *            the bytes.
      *
-     * @return integer
+     * @return int
      *            the unsigned byte found at the first position of the string.
      */
     public static function toByte($bytes)
@@ -150,7 +150,7 @@ class ConvertBytes
      * @param string $bytes
      *            the bytes.
      *
-     * @return integer
+     * @return int
      *            the signed byte found at the first position of the string, in
      *            the range -128 to 127.
      */
@@ -168,10 +168,10 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer
+     * @return int
      *            the unsigned short found at the first position of the string,
      *            in the range 0 to 65535.
      */
@@ -192,10 +192,10 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer
+     * @return int
      *            the signed short found at the first position of the string, in
      *            the range -32768 to 32767.
      */
@@ -213,10 +213,10 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer
+     * @return int
      *            the unsigned long found at the first position of the string,
      *            in the range 0 to 4294967295.
      */
@@ -237,10 +237,10 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
-     * @return integer
+     * @return int
      *            the signed long found at the first position of the string,
      *            in the range -2147483648 to 2147483647.
      */
@@ -258,7 +258,7 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
      * @return array
@@ -281,7 +281,7 @@ class ConvertBytes
      *
      * @param string $bytes
      *            the bytes.
-     * @param boolean $byte_order
+     * @param int $byte_order
      *            one of ::LITTLE_ENDIAN or ::BIG_ENDIAN.
      *
      * @return array
