@@ -67,14 +67,15 @@ elements:
                                     elements:
                                         -
                                             type: ifd
-                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0'
+                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0'
                                             class: ExifEye\core\Block\Ifd
                                             valid: true
+                                            id: '0'
                                             name: IFD0
                                             elements:
                                                 -
                                                     type: tag
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject'
+                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:40095:WindowsXPSubject'
                                                     class: ExifEye\core\Block\Tag
                                                     valid: true
                                                     id: '40095'
@@ -82,7 +83,7 @@ elements:
                                                     elements:
                                                         -
                                                             type: entry
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:IFD0/tag:40095:WindowsXPSubject/entry'
+                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:40095:WindowsXPSubject/entry'
                                                             class: ExifEye\core\Entry\WindowsString
                                                             valid: true
                                                             format: Byte

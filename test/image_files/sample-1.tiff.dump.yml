@@ -36,14 +36,15 @@ elements:
                             text: '6392 bytes of data [ 80 03 47 C7 F7 F8 ... 26 65 13 22 02 00 ]'
                 -
                     type: ifd
-                    path: '/image/tiff/ifd:IFD0'
+                    path: '/image/tiff/ifd:0:IFD0'
                     class: ExifEye\core\Block\Ifd
                     valid: true
+                    id: '0'
                     name: IFD0
                     elements:
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:256:ImageWidth'
+                            path: '/image/tiff/ifd:0:IFD0/tag:256:ImageWidth'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '256'
@@ -51,7 +52,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:256:ImageWidth/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:256:ImageWidth/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -60,7 +61,7 @@ elements:
                                     text: 174
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:257:ImageLength'
+                            path: '/image/tiff/ifd:0:IFD0/tag:257:ImageLength'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '257'
@@ -68,7 +69,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:257:ImageLength/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:257:ImageLength/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -77,7 +78,7 @@ elements:
                                     text: 38
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:258:BitsPerSample'
+                            path: '/image/tiff/ifd:0:IFD0/tag:258:BitsPerSample'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '258'
@@ -85,7 +86,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:258:BitsPerSample/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:258:BitsPerSample/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -94,7 +95,7 @@ elements:
                                     text: '8, 8, 8, 8'
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:259:Compression'
+                            path: '/image/tiff/ifd:0:IFD0/tag:259:Compression'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '259'
@@ -102,7 +103,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:259:Compression/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:259:Compression/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -111,7 +112,7 @@ elements:
                                     text: LZW
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:262:PhotometricInterpretation'
+                            path: '/image/tiff/ifd:0:IFD0/tag:262:PhotometricInterpretation'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '262'
@@ -119,7 +120,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:262:PhotometricInterpretation/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:262:PhotometricInterpretation/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -128,7 +129,7 @@ elements:
                                     text: RGB
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:273:StripOffsets'
+                            path: '/image/tiff/ifd:0:IFD0/tag:273:StripOffsets'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '273'
@@ -136,7 +137,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:273:StripOffsets/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:273:StripOffsets/entry'
                                     class: ExifEye\core\Entry\Core\Long
                                     valid: true
                                     format: Long
@@ -145,7 +146,7 @@ elements:
                                     text: 8
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:274:Orientation'
+                            path: '/image/tiff/ifd:0:IFD0/tag:274:Orientation'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '274'
@@ -153,7 +154,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:274:Orientation/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:274:Orientation/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -162,7 +163,7 @@ elements:
                                     text: 'top - left'
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:277:SamplesPerPixel'
+                            path: '/image/tiff/ifd:0:IFD0/tag:277:SamplesPerPixel'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '277'
@@ -170,7 +171,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:277:SamplesPerPixel/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:277:SamplesPerPixel/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -179,7 +180,7 @@ elements:
                                     text: 4
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:278:RowsPerStrip'
+                            path: '/image/tiff/ifd:0:IFD0/tag:278:RowsPerStrip'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '278'
@@ -187,7 +188,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:278:RowsPerStrip/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:278:RowsPerStrip/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -196,7 +197,7 @@ elements:
                                     text: 38
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:279:StripByteCounts'
+                            path: '/image/tiff/ifd:0:IFD0/tag:279:StripByteCounts'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '279'
@@ -204,7 +205,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:279:StripByteCounts/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:279:StripByteCounts/entry'
                                     class: ExifEye\core\Entry\Core\Long
                                     valid: true
                                     format: Long
@@ -213,7 +214,7 @@ elements:
                                     text: 6391
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:284:PlanarConfiguration'
+                            path: '/image/tiff/ifd:0:IFD0/tag:284:PlanarConfiguration'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '284'
@@ -221,7 +222,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:284:PlanarConfiguration/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:284:PlanarConfiguration/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -230,7 +231,7 @@ elements:
                                     text: 'Chunky format'
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:317:Predictor'
+                            path: '/image/tiff/ifd:0:IFD0/tag:317:Predictor'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '317'
@@ -238,7 +239,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:317:Predictor/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:317:Predictor/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -247,7 +248,7 @@ elements:
                                     text: 'Horizontal differencing'
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:338:ExtraSamples'
+                            path: '/image/tiff/ifd:0:IFD0/tag:338:ExtraSamples'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '338'
@@ -255,7 +256,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:338:ExtraSamples/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:338:ExtraSamples/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -264,7 +265,7 @@ elements:
                                     text: 'Associated Alpha'
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:339:SampleFormat'
+                            path: '/image/tiff/ifd:0:IFD0/tag:339:SampleFormat'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '339'
@@ -272,7 +273,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:339:SampleFormat/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:339:SampleFormat/entry'
                                     class: ExifEye\core\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -281,7 +282,7 @@ elements:
                                     text: '1, 1, 1, 1'
                         -
                             type: tag
-                            path: '/image/tiff/ifd:IFD0/tag:700:ApplicationNotes'
+                            path: '/image/tiff/ifd:0:IFD0/tag:700:ApplicationNotes'
                             class: ExifEye\core\Block\Tag
                             valid: true
                             id: '700'
@@ -289,7 +290,7 @@ elements:
                             elements:
                                 -
                                     type: entry
-                                    path: '/image/tiff/ifd:IFD0/tag:700:ApplicationNotes/entry'
+                                    path: '/image/tiff/ifd:0:IFD0/tag:700:ApplicationNotes/entry'
                                     class: ExifEye\core\Entry\IfdApplicationNotes
                                     valid: true
                                     format: Byte

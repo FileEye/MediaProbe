@@ -33,14 +33,14 @@ class IfdBase extends BlockBase
     /**
      * Constructs a Block for an Image File Directory (IFD).
      */
-    public function __construct($type, $name, BlockBase $parent_block, $tag_id = null, $tag_format = null, ElementInterface $reference = null)
+    public function __construct(BlockBase $parent_block, $type, $id, $name, $format, $components = null, ElementInterface $reference = null)
     {
         parent::__construct($type, $parent_block, $reference);
 
-        if ($tag_id !== null) {
-            $this->setAttribute('id', $tag_id);
+        if ($id !== null) {
+            $this->setAttribute('id', $id);
         }
-        $this->format = isset($tag_format) ? $tag_format : Spec::getFormatIdFromName('Long');
+        $this->format = $format;
         $this->setAttribute('name', $name);
         $this->hasSpecification = Spec::getElementIdByName($parent_block->getType(), $name) ? true : false;
     }
@@ -87,7 +87,8 @@ class IfdBase extends BlockBase
         $entry['id'] = $data_element->getShort($offset);
         $entry['format'] = $data_element->getShort($offset + 2);
         $entry['components'] = $data_element->getLong($offset + 4);
-        $entry['type'] = Spec::getElementType($parent_type, $entry['id']);
+        $type = Spec::getElementType($parent_type, $entry['id']);
+        $entry['type'] = $type === null ? 'tag' : $type;
         $entry['name'] = Spec::getElementName($parent_type, $entry['id']);
         $entry['class'] = Spec::getElementHandlingClass($parent_type, $entry['id'], $entry['format']);
 

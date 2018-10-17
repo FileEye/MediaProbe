@@ -44,9 +44,6 @@ before_install:
 install:
   - php bin/exifeye --version
 
-before_script:
-  - mkdir -p build/logs
-
 script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
@@ -68,4 +65,4 @@ script:
 notifications:
   email:
     on_success: never
-    on_failure: always
+    on_failure: never

@@ -37,32 +37,18 @@ class Index extends IfdBase
                 continue;
             };
 
+            $item_name = Spec::getElementName($this->getType(), $i + 1);
             $item_format = Spec::getElementPropertyValue($this->getType(), $i + 1, 'format')[0];
 
             switch (Spec::getFormatName($item_format)) {
-                case 'Byte':
-                    $item_value = $data_element->getByte($offset + $i * 2);
-                    break;
                 case 'Short':
                     $item_value = $data_element->getShort($offset + $i * 2);
                     break;
                 case 'Long':
                     $item_value = $data_element->getLong($offset + $i * 2);
                     break;
-                case 'Rational':
-                    $item_value = $data_element->getRational($offset + $i * 2);
-                    break;
-                case 'SignedByte':
-                    $item_value = $data_element->getSignedByte($offset + $i * 2);
-                    break;
                 case 'SignedShort':
                     $item_value = $data_element->getSignedShort($offset + $i * 2);
-                    break;
-                case 'SignedLong':
-                    $item_value = $data_element->getSignedLong($offset + $i * 2);
-                    break;
-                case 'SignedRational':
-                    $item_value = $data_element->getSRattional($offset + $i * 2);
                     break;
                 default:
                     $item_value = $data_element->getSignedShort($offset + $i * 2);
@@ -78,7 +64,11 @@ class Index extends IfdBase
             ]);
 
             if ($entry_class = Spec::getElementHandlingClass($this->getType(), $i + 1, $item_format)) {
-                new Tag('tag', $this, $i + 1, $entry_class, [$item_value], $item_format, 1);
+                $tag = new Tag($this, 'tag', $i + 1, $item_name, $item_format, 1);
+                $entryxx = new $entry_class($tag, [$item_value]);
+                $this->debug("Text: {text}", [
+                    'text' => $entryxx->toString(),
+                ]);
             }
         }
 

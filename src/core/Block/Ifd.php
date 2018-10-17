@@ -39,13 +39,18 @@ class Ifd extends IfdBase
                 continue;
             }
 
-            if ($entry['type'] === 'tag' || $entry['type'] === null) {
+            $handling_class = $entry['type'] === 'tag' ? 'ExifEye\core\Block\Tag' : $entry['class'];
+            $ifd_entry = new $handling_class($this, $entry['type'], $entry['id'], $entry['name'], $entry['format'], $entry['components']);
+
+            if ($entry['type'] === 'tag') {
                 $tag_entry_arguments = call_user_func($entry['class'] . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
-                new Tag('tag', $this, $entry['id'], $entry['class'], $tag_entry_arguments, $entry['format'], $entry['components']);
+                $entryxx = new $entry['class']($ifd_entry, $tag_entry_arguments);
+                $this->debug("Text: {text}", [
+                    'text' => $entryxx->toString(),
+                ]);
             } else {
-                $ifd = new $entry['class']($entry['type'], $entry['name'], $this, $entry['id'], $entry['format']);
                 try {
-                    $ifd->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
+                    $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
                 } catch (DataException $e) {
                     $this->error($e->getMessage());
                 }
@@ -253,7 +258,7 @@ class Ifd extends IfdBase
         $exif_ifd->debug("Converting {makernote} to IFD", [
             'makernote' => $maker_note_ifd_name,
         ]);
-        $ifd = new $ifd_class($maker_note_ifd_type, $maker_note_ifd_name, $exif_ifd, $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag);
+        $ifd = new $ifd_class($exif_ifd, $maker_note_ifd_type, $maker_note_tag->getAttribute('id'), $maker_note_ifd_name, $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), $maker_note_tag);
         $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1], null, [
             'components' => $maker_note_tag->getComponents(),
         ]);

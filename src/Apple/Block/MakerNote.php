@@ -37,13 +37,18 @@ class MakerNote extends IfdBase
             $i_offset = $offset + 2 + 12 * $i;
             $entry = $this->getEntryFromData($i, $data_element, $i_offset, $this->getType(), $offset - 14);
 
-            if ($entry['type'] === 'tag' || $entry['type'] === null) {
+            $handling_class = $entry['type'] === 'tag' ? 'ExifEye\core\Block\Tag' : $entry['class'];
+            $ifd_entry = new $handling_class($this, $entry['type'], $entry['id'], $entry['name'], $entry['format'], $entry['components']);
+
+            if ($entry['type'] === 'tag') {
                 $tag_entry_arguments = call_user_func($entry['class'] . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
-                new Tag('tag', $this, $entry['id'], $entry['class'], $tag_entry_arguments, $entry['format'], $entry['components']);
+                $entryxx = new $entry['class']($ifd_entry, $tag_entry_arguments);
+                $this->debug("Text: {text}", [
+                    'text' => $entryxx->toString(),
+                ]);
             } else {
-                $ifd = new $entry['class']($entry['type'], $entry['name'], $this, $entry['id'], $entry['format']);
                 try {
-                    $ifd->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
+                    $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
                 } catch (DataException $e) {
                     $this->error($e->getMessage());
                 }

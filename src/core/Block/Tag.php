@@ -23,15 +23,16 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct($type, BlockBase $parent_block, $id, $entry_class, $entry_data, $format = null, $components = null)
+    public function __construct(BlockBase $parent_block, $type, $id, $name, $format, $components, ElementInterface $reference = null)
     {
         parent::__construct($type, $parent_block);
 
         $this->setAttribute('id', $id);
-        $tag_name = Spec::getElementName($parent_block->getType(), $id);
-        if ($tag_name !== null) {
-            $this->setAttribute('name', $tag_name);
+
+        if ($name !== null) {
+            $this->setAttribute('name', $name);
         }
+
         $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getTypeSupportedElementIds($parent_block->getType()));
 
         // Check if ExifEye has a definition for this TAG.
@@ -63,12 +64,6 @@ class Tag extends BlockBase
                 'expected_components' => $expected_components,
             ]);
         }
-
-        // Set the Tag's entry.
-        $entry = new $entry_class($this, $entry_data);
-        $this->debug("Text: {text}", [
-            'text' => $entry->toString(),
-        ]);
     }
 
     /**
