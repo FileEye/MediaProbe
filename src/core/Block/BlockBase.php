@@ -31,23 +31,6 @@ abstract class BlockBase extends ElementBase
     }
 
     /**
-     * Loads data into a block.
-     *
-     * @param DataElement $data_element
-     *            the data element that will provide the data.
-     * @param int $offset
-     *            (Optional) the offset within the data element where the
-     *            block will be found.
-     * @param int|null $size
-     *            (Optional) the size of the data from the offset.
-     * @param array $options
-     *            (Optional) an array with additional options for the load.
-     *
-     * @returns BlockBase
-     */
-    abstract public function loadFromData(DataElement $data_element, $offset, $size, array $options = []);
-
-    /**
      * {@inheritdoc}
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
@@ -65,12 +48,9 @@ abstract class BlockBase extends ElementBase
     public function toDumpArray()
     {
         $dump = array_merge(parent::toDumpArray(), $this->getAttributes());
-
-        // Dump sub-Blocks.
         foreach ($this->getMultipleElements("*") as $sub_element) {
             $dump['elements'][] = $sub_element->toDumpArray();
         }
-
         return $dump;
     }
 }

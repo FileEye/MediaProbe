@@ -2,8 +2,7 @@
 
 namespace ExifEye\core\Entry\Core;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Data\DataWindow;
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -30,9 +29,14 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
-        return [$data_window->getBytes($data_offset, $components)];
+        $data_offset = $options['data_offset'];
+        $components = $options['components'];
+
+        $this->setValue([$data_element->getBytes($data_offset, $components)]);
+
+        return $this;
     }
 
     /**
@@ -45,6 +49,8 @@ class Undefined extends EntryBase
         $this->value = $data[0];
         $this->components = strlen($data[0]);
 
+        $this->debug("Text: {text}", ['text' => $this->toString()]);
+        $this->debug("Data: {data}", ['data' => ExifEye::dumpHex($this->toBytes(), 12)]);
         return $this;
     }
 
@@ -61,10 +67,6 @@ class Undefined extends EntryBase
      */
     public function toString(array $options = [])
     {
-        $str = parent::toString($options) ?: $this->components . ' bytes of data';
-        if ($dump = ExifEye::dumpHex($this->toBytes(), 12)) {
-            $str .= ' ' . $dump;
-        }
-        return $str;
+        return parent::toString($options) ?: $this->components . ' bytes of data';
     }
 }

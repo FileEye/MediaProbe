@@ -8,7 +8,9 @@ class EntryVersionTest extends EntryTestBase
 {
     public function testVersion()
     {
-        $entry = new Version($this->mockParentElement, []);
+        $entry = new Version($this->mockParentElement);
+
+        $entry->setValue([]);
         $this->assertEquals(0.0, $entry->getValue());
         $this->assertEquals('0.0', $entry->toString());
         $this->assertEquals('0000', $entry->toBytes());

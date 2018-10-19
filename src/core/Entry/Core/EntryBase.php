@@ -14,11 +14,6 @@ use ExifEye\core\Spec;
  *
  * As this class is abstract you cannot instantiate objects from it. It only
  * serves as a common ancestor to define the methods common to all entries.
- *
- * If you have data coming from an image (some raw bytes), then the static
- * method ::getInstanceArgumentsFromTagData is helpful --- it looks at the data
- * and gives back an array of arguments that can be used in the descendent
- * constructor.
  */
 abstract class EntryBase extends ElementBase implements EntryInterface
 {
@@ -54,22 +49,18 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * Constructs an EntryInterface object.
      *
+     * @param ElementInterface $parent
+     *            xx
      * @param array $data
      *            the data that this entry will be holding.
      */
-    public function __construct(ElementInterface $parent, array $data)
+    public function __construct(ElementInterface $parent, array $data = [])
     {
         parent::__construct('entry', $parent);
-        $this->setValue($data);
+        if (!empty($data)) {
+            $this->setValue($data);
+        }
         $this->format = Spec::getFormatIdFromName($this->formatName);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
-    {
-        throw new ExifEyeException('getInstanceArgumentsFromTagData() must be implemented.');
     }
 
     /**

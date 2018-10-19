@@ -9,7 +9,8 @@ class EntryUserCommentTest extends EntryTestBase
 
     public function testUsercomment()
     {
-        $entry = new ExifUserComment($this->mockParentElement, []);
+        $entry = new ExifUserComment($this->mockParentElement);
+        $entry->setValue([]);
         $this->assertEquals(8, $entry->getComponents());
         $this->assertEquals(['', 'ASCII'], $entry->getValue());
         $this->assertEquals('', $entry->toString());

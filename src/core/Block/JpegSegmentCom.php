@@ -24,9 +24,6 @@ class JpegSegmentCom extends JpegSegmentBase
 
         // Set the Comments's entry.
         $entry = new Ascii($this, [$data_window->getBytes(2, $this->components - 2)]);
-        $entry->debug("Text: {text}", [
-            'text' => $entry->toString(),
-        ]);
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core;
 
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\DOM\ExifEyeDOMElement;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
@@ -69,7 +70,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function __construct($type, ElementInterface $parent = null, ElementInterface $reference = null)
     {
         $this->type = $type;
-        
+
         // If $parent is null, this Element is the root of the DOM document that
         // stores the image structure.
         if (!$parent || !is_object($parent->DOMNode)) {
@@ -226,7 +227,15 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function getValue(array $options = [])
     {
-        throw new ExifEyeException("'%s' does not support the getValue method.", $this->getType());
+        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    {
+        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
     /**
@@ -234,7 +243,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function toString(array $options = [])
     {
-        throw new ExifEyeException("'%s' does not support the toString method.", $this->getType());
+        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
     /**

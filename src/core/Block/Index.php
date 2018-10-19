@@ -66,9 +66,6 @@ class Index extends IfdBase
             if ($entry_class = Spec::getElementHandlingClass($this->getType(), $i + 1, $item_format)) {
                 $tag = new Tag($this, 'tag', $i + 1, $item_name, $item_format, 1);
                 $entryxx = new $entry_class($tag, [$item_value]);
-                $this->debug("Text: {text}", [
-                    'text' => $entryxx->toString(),
-                ]);
             }
         }
 

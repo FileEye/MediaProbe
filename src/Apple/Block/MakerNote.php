@@ -40,18 +40,10 @@ class MakerNote extends IfdBase
             $handling_class = $entry['type'] === 'tag' ? 'ExifEye\core\Block\Tag' : $entry['class'];
             $ifd_entry = new $handling_class($this, $entry['type'], $entry['id'], $entry['name'], $entry['format'], $entry['components']);
 
-            if ($entry['type'] === 'tag') {
-                $tag_entry_arguments = call_user_func($entry['class'] . '::getInstanceArgumentsFromTagData', $this, $entry['format'], $entry['components'], $data_element, $entry['data_offset']);
-                $entryxx = new $entry['class']($ifd_entry, $tag_entry_arguments);
-                $this->debug("Text: {text}", [
-                    'text' => $entryxx->toString(),
-                ]);
-            } else {
-                try {
-                    $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
-                } catch (DataException $e) {
-                    $this->error($e->getMessage());
-                }
+            try {
+                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
+            } catch (DataException $e) {
+                $this->error($e->getMessage());
             }
         }
 

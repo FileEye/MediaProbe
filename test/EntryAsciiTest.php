@@ -63,7 +63,9 @@ class EntryAsciiTest extends EntryTestBase
 
     public function testCopyright()
     {
-        $entry = new IfdCopyright($this->mockParentElement, []);
+        $entry = new IfdCopyright($this->mockParentElement);
+        $entry->setValue([]);
+
         $value = $entry->getValue();
         $this->assertEquals('', $value[0]);
         $this->assertEquals('', $value[1]);

@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Data\DataWindow;
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -30,27 +30,31 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
+        $data_offset = $options['data_offset'];
+        $components = $options['components'];
         // Cap bytes to get to remaining data window size.
-        $size = $data_window->getSize();
+        $size = $data_element->getSize();
         if ($data_offset + $components > $size) {
             $bytes_to_get = $size - $data_offset;
-            $parent_block->warning('Ascii entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
+            $this->warning('Ascii entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
                 'expected' => $components,
             ]);
         } else {
             $bytes_to_get = $components;
         }
-        $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
+        $bytes = $data_element->getBytes($data_offset, $bytes_to_get);
 
         // Check the last byte is NULL.
         if (substr($bytes, -1) !== "\x0") {
-            $parent_block->notice('Ascii entry missing final NUL character.');
+            $this->notice('Ascii entry missing final NUL character.');
         }
 
-        return [$bytes];
+        $this->setValue([$bytes]);
+
+        return $this;
     }
 
     /**
@@ -69,6 +73,7 @@ class Ascii extends EntryBase
             $this->components = substr($this->value, -1) === "\x0" ? strlen($str) : strlen($str) + 1;
         }
 
+        $this->debug("Text: {text}", ['text' => $this->toString()]);
         return $this;
     }
 

@@ -32,7 +32,9 @@ class NumberRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new Rational($this->mockParentElement, []);
+        $entry = new Rational($this->mockParentElement);
+
+        $entry->setValue([]);
         $this->assertEquals($entry->getValue(), []);
         $this->assertEquals($entry->toString(), '');
 

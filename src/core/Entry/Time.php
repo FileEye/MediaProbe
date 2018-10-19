@@ -151,6 +151,8 @@ class Time extends Ascii
 
         $this->components = 20;
         $this->value = $value;
+
+        $this->debug("Text: {text}", ['text' => $this->toString()]);
         return $this;
     }
 

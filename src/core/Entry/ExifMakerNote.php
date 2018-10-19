@@ -2,11 +2,8 @@
 
 namespace ExifEye\core\Entry;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\Ifd;
-use ExifEye\core\Data\DataWindow;
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Spec;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -22,9 +19,14 @@ class ExifMakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
-        return [$data_window->getBytes($data_offset, $components), $data_offset];
+        $data_offset = $options['data_offset'];
+        $components = $options['components'];
+
+        $this->setValue([$data_element->getBytes($data_offset, $components), $data_offset]);
+
+        return $this;
     }
 
     /**

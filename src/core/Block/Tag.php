@@ -72,6 +72,14 @@ class Tag extends BlockBase
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
+        $tag = new $options['class']($this);
+        try {
+            $tag->loadFromData($data_element, $offset, $size, $options);
+        } catch (DataException $e) {
+            $this->error($e->getMessage());
+        }
+
+        return $this;
     }
 
     /**

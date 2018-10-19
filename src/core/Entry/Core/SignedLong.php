@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Data\DataWindow;
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -42,13 +42,18 @@ class SignedLong extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
+        $data_offset = $options['data_offset'];
+        $components = $options['components'];
         $args = [];
         for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_window->getSignedLong($data_offset + ($i * 4));
+            $args[] = $data_element->getSignedLong($data_offset + ($i * 4));
         }
-        return $args;
+
+        $this->setValue($args);
+
+        return $this;
     }
 
     /**

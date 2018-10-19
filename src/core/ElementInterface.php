@@ -2,6 +2,7 @@
 
 namespace ExifEye\core;
 
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -134,6 +135,23 @@ interface ElementInterface
      *            when the element does not support returning a value.
      */
     public function getValue(array $options = []);
+
+    /**
+     * Loads data into an element.
+     *
+     * @param DataElement $data_element
+     *            the data element that will provide the data.
+     * @param int $offset
+     *            (Optional) the offset within the data element where the
+     *            block will be found.
+     * @param int|null $size
+     *            (Optional) the size of the data from the offset.
+     * @param array $options
+     *            (Optional) an array with additional options for the load.
+     *
+     * @returns ElementInterface
+     */
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = []);
 
     /**
      * Gets the value of this element as text.

@@ -11,23 +11,6 @@ use ExifEye\core\Data\DataWindow;
 interface EntryInterface
 {
     /**
-     * Get arguments for the instance constructor from raw TAG data.
-     *
-     * @param int $format
-     *            the format of the entry.
-     * @param int $components
-     *            the components in the entry.
-     * @param DataWindow $data
-     *            the data which will be used to construct the entry.
-     * @param int $data_offset
-     *            the offset of the main DataWindow where data is stored.
-     *
-     * @return array a list or arguments to be passed to the EntryInterface
-     *            subclass constructor.
-     */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset);
-
-    /**
      * Returns the format of this entry.
      *
      * @return int

@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Data\DataWindow;
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
@@ -31,22 +31,26 @@ class WindowsString extends Byte
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
+        $data_offset = $options['data_offset'];
+        $components = $options['components'];
         // Cap bytes to get to remaining data window size.
-        $size = $data_window->getSize();
+        $size = $data_element->getSize();
         if ($data_offset + $components > $size) {
             $bytes_to_get = $size - $data_offset;
             $parent_block->warning('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
                 'expected' => $components,
             ]);
-            $bytes = $data_window->getBytes($data_offset, $bytes_to_get);
+            $bytes = $data_element->getBytes($data_offset, $bytes_to_get);
         } else {
-            $bytes = $data_window->getBytes($data_offset, $components);
+            $bytes = $data_element->getBytes($data_offset, $components);
         }
 
-        return [mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')];
+        $this->setValue([mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')]);
+
+        return $this;
     }
 
     /**
@@ -60,6 +64,8 @@ class WindowsString extends Byte
         $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
         $this->components = strlen($windows_string) + 2;
         $this->value = [$php_string, $windows_string];
+
+        $this->debug("Text: {text}", ['text' => $this->toString()]);
         return $this;
     }
 

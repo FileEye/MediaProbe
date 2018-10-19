@@ -2,11 +2,9 @@
 
 namespace ExifEye\core\Entry;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Data\DataWindow;
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
 use ExifEye\core\Spec;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -22,11 +20,16 @@ class IfdCopyright extends Ascii
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
-        $v = explode("\0", $data_window->getBytes($data_offset, $components));
+        $data_offset = $options['data_offset'];
+        $components = $options['components'];
+        $v = explode("\0", $data_element->getBytes($data_offset, $components));
         $v[1] = isset($v[1]) ? $v[1] : '';
-        return $v;
+
+        $this->setValue($v);
+
+        return $this;
     }
 
     /**
@@ -50,6 +53,7 @@ class IfdCopyright extends Ascii
             $this->components = strlen($this->value[0]) + 1 + strlen($this->value[1]) + 1;
         }
 
+        $this->debug("Text: {text}", ['text' => $this->toString()]);
         return $this;
     }
 

@@ -32,7 +32,9 @@ class NumberSignedRationalTest extends NumberTestCase
 
     public function testReturnValues()
     {
-        $entry = new SignedRational($this->mockParentElement, []);
+        $entry = new SignedRational($this->mockParentElement);
+
+        $entry->setValue([]);
         $this->assertEquals($entry->getValue(), []);
         $this->assertEquals($entry->toString(), '');
 

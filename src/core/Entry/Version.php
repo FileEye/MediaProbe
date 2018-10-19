@@ -3,7 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Data\DataWindow;
+use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
@@ -22,10 +22,17 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    public static function getInstanceArgumentsFromTagData(BlockBase $parent_block, $format, $components, DataWindow $data_window, $data_offset)
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
-        $version = $data_window->getBytes($data_offset, $components);
-        return is_numeric($version) ? [$version / 100] : [$version];
+        $data_offset = $options['data_offset'];
+        $components = $options['components'];
+
+        $version = $data_element->getBytes($data_offset, $components);
+        $value = is_numeric($version) ? [$version / 100] : [$version];
+
+        $this->setValue($value);
+
+        return $this;
     }
 
     /**
@@ -48,6 +55,7 @@ class Version extends Undefined
         $this->value = (string) ($version . ($minor === 0.0 ? '.0' : ''));
         $this->components = strlen($bytes);
 
+        $this->debug("Text: {text}", ['text' => $this->toString()]);
         return $this;
     }
 
