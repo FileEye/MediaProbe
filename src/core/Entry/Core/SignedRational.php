@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\ExifEye;
 
@@ -52,17 +53,13 @@ class SignedRational extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
         $args = [];
-        for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_element->getSignedRational($data_offset + ($i * 8));
+        for ($i = 0; $i < $ifd_item->getComponents(); $i ++) {
+            $args[] = $data_element->getSignedRational($ifd_item->getDataOffset() + ($i * 8));
         }
-
         $this->setValue($args);
-
         return $this;
     }
 

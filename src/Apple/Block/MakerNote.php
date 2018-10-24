@@ -19,6 +19,11 @@ class MakerNote extends IfdBase
     /**
      * {@inheritdoc}
      */
+    protected $DOMNodeName = 'makerNote';
+
+    /**
+     * {@inheritdoc}
+     */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         // Load Apple's header as a raw data block.
@@ -30,18 +35,18 @@ class MakerNote extends IfdBase
         $offset += 14;
 
         // Get the number of entries.
-        $n = $this->getEntriesCountFromData($data_element, $offset);
+        $n = $this->getIfdItemsCountFromData($data_element, $offset);
 
         // Load the Blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $entry = $this->getEntryFromData($i, $data_element, $i_offset, $this->getType(), $offset - 14);
+            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getType(), $offset - 14);
 
-            $handling_class = $entry['type'] === 'tag' ? 'ExifEye\core\Block\Tag' : $entry['class'];
-            $ifd_entry = new $handling_class($this, $entry['type'], $entry['id'], $entry['name'], $entry['format'], $entry['components']);
+            $class = $ifd_item->getClass();
+            $ifd_entry = new $class($this, $ifd_item);
 
             try {
-                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
+                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, ['components' => $ifd_item->getComponents(), 'data_offset' => $ifd_item->getDataOffset()], $ifd_item);
             } catch (DataException $e) {
                 $this->error($e->getMessage());
             }

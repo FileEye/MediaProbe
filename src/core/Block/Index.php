@@ -16,6 +16,11 @@ class Index extends IfdBase
     /**
      * {@inheritdoc}
      */
+    protected $DOMNodeName = 'index';
+
+    /**
+     * {@inheritdoc}
+     */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         $this->debug("IFD {ifdname} @{offset} with {tags} entries", [
@@ -37,7 +42,6 @@ class Index extends IfdBase
                 continue;
             };
 
-            $item_name = Spec::getElementName($this->getType(), $i + 1);
             $item_format = Spec::getElementPropertyValue($this->getType(), $i + 1, 'format')[0];
 
             switch (Spec::getFormatName($item_format)) {
@@ -64,8 +68,8 @@ class Index extends IfdBase
             ]);
 
             if ($entry_class = Spec::getElementHandlingClass($this->getType(), $i + 1, $item_format)) {
-                $tag = new Tag($this, 'tag', $i + 1, $item_name, $item_format, 1);
-                $entryxx = new $entry_class($tag, [$item_value]);
+                $tag = new Tag($this, new IfdItem($i + 1, $item_format, 1, 0, $this->getType(), $this));
+                new $entry_class($tag, [$item_value]);
             }
         }
 

@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\JpegSegmentApp1;
 use ExifEye\core\Block\Tag;
@@ -55,9 +56,9 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd($tiff, 'ifd0', 0, 'IFD0', Spec::getFormatIdFromName('Long'));
+        $ifd = new Ifd($tiff, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff'));
         foreach ($entries as $entry) {
-            $tag = new Tag($ifd, 'tag', $entry[0], 'test', $entry[2], 1);
+            $tag = new Tag($ifd, new IfdItem($entry[0], $entry[2], 1, 0, 'ifd0'));
             new $entry[1]($tag, $entry[3]);
         }
         $this->assertNotNull($tiff->getElement("ifd[@name='IFD0']"));

@@ -37,8 +37,7 @@ class JpegSegmentSos extends JpegSegmentBase
         // Load data in an Undefined entry.
         $data_window = new DataWindow($data_element, $offset, $this->components, $data_element->getByteOrder());
         $data_window->debug($this);
-        $entry = new Undefined($this, [$data_window->getBytes()]);
-        $entry->debug("Scan: {text}", ['text' => $entry->toString()]);
+        new Undefined($this, [$data_window->getBytes()]);
 
         // Append the EOI.
         new JpegSegment('jpegSegment', self::JPEG_EOI, $this->getParentElement());

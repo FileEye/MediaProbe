@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Index;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
@@ -22,14 +23,14 @@ class SpecTest extends ExifEyeTestCaseBase
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd($tiff_mock, 'ifd0', 0, 'IFD0', Spec::getFormatIdFromName('Long'));
-        $ifd_exif = new Ifd($ifd_0, 'ifdExif', 0x8769, 'Exif', Spec::getFormatIdFromName('Long'));
-        $ifd_canon_camera_settings = new Index($tiff_mock, 'ifdMakerNotesCanonCameraSettings', 0, 'CanonCameraSettings', Spec::getFormatIdFromName('Long'));
+        $ifd_0 = new Ifd($tiff_mock, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff', $tiff_mock));
+        $ifd_exif = new Ifd($ifd_0, new IfdItem(0x8769, Spec::getFormatIdFromName('Long'), 1, 0, 'ifd0', $ifd_0));
+        $ifd_canon_camera_settings = new Index($tiff_mock, new IfdItem(1, Spec::getFormatIdFromName('Long'), 1, 0, 'ifdMakerNotesCanon', $tiff_mock));
 
         // Test retrieving IFD id by name.
         $this->assertEquals(Spec::getTypeIdByName('IFD0'), Spec::getTypeIdByName('0'));
         $this->assertEquals(Spec::getTypeIdByName('IFD0'), Spec::getTypeIdByName('Main'));
-        $this->assertNotNull(Spec::getTypeIdByName('CanonMakerNotes'));
+        $this->assertNotNull(Spec::getTypeIdByName('Canon'));
 
         // Test retrieving IFD class.
         $this->assertEquals('ExifEye\core\Block\Ifd', Spec::getTypeHandlingClass('ifd0'));
@@ -75,11 +76,21 @@ class SpecTest extends ExifEyeTestCaseBase
      */
     public function testGetEntryClass()
     {
-        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $ifd_exif = new Ifd($tiff_mock, 'ifdExif', 0x8769, 'Exif', Spec::getFormatIdFromName('Long'));
-        $ifd_canon_picture_information = new Index($tiff_mock, 'ifdMakerNotesCanonPictureInformation', 0, 'CanonPictureInformation', Spec::getFormatIdFromName('Long'));
+        $ifd_exif = $this->getMockBuilder('ExifEye\core\Block\Ifd')
+                    ->disableOriginalConstructor()
+                    ->setMethods(['getType'])
+                    ->getMock();
+        $ifd_exif->expects($this->any())
+          ->method('getType')
+          ->will($this->returnValue('ifdExif'));
+
+        $ifd_canon_picture_information = $this->getMockBuilder('ExifEye\core\Block\Index')
+                    ->disableOriginalConstructor()
+                    ->setMethods(['getType'])
+                    ->getMock();
+        $ifd_canon_picture_information->expects($this->any())
+          ->method('getType')
+          ->will($this->returnValue('ifdMakerNotesCanonPictureInformation'));
 
         $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Spec::getElementHandlingClass($ifd_exif->getType(), 0x9286));
         $this->assertEquals('ExifEye\core\Entry\Time', Spec::getElementHandlingClass($ifd_exif->getType(), 0x9003));
@@ -93,18 +104,20 @@ class SpecTest extends ExifEyeTestCaseBase
      *
      * @dataProvider getTagTextProvider
      */
-    public function testGetTagText($expected_text, $expected_class, $ifd_type, $ifd_name, $tag, array $args, $brief = false)
+    public function testGetTagText($expected_text, $expected_class, $collection, $tag, array $args, $brief = false)
     {
-        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
-            ->disableOriginalConstructor()
-            ->getMock();
+        $ifd = $this->getMockBuilder('ExifEye\core\Block\Ifd')
+                    ->disableOriginalConstructor()
+                    ->setMethods(['getType'])
+                    ->getMock();
+        $ifd->expects($this->any())
+          ->method('getType')
+          ->will($this->returnValue($collection));
 
-        $ifd = new Ifd($tiff_mock, $ifd_type, 0, $ifd_name, Spec::getFormatIdFromName('Long'));
-
-        $tag_id = Spec::getElementIdByName($ifd->getType(), $tag);
-        $tag_format = Spec::getElementPropertyValue($ifd->getType(), $tag, 'format')[0];
-        $entry_class_name = Spec::getElementHandlingClass($ifd->getType(), $tag_id);
-        $tag = new Tag($ifd, 'tag', $tag_id, $tag, $tag_format, 1);
+        $tag_id = Spec::getElementIdByName($collection, $tag);
+        $tag_format = Spec::getElementPropertyValue($collection, $tag_id, 'format')[0];
+        $entry_class_name = Spec::getElementHandlingClass($collection, $tag_id);
+        $tag = new Tag($ifd, new IfdItem($tag_id, $tag_format, 1, 0, $collection));
         new $entry_class_name($tag, $args);
 
         $this->assertInstanceOf($expected_class, $tag->getElement("entry"));
@@ -119,106 +132,106 @@ class SpecTest extends ExifEyeTestCaseBase
     {
         return [
             'IFD0/PlanarConfiguration - value 1' => [
-                'Chunky format', 'ExifEye\core\Entry\Core\Short', 'ifd0', 'IFD0', 'PlanarConfiguration', [1],
+                'Chunky format', 'ExifEye\core\Entry\Core\Short', 'ifd0', 'PlanarConfiguration', [1],
             ],
             'IFD0/PlanarConfiguration - missing mapping' => [
-                6.1, 'ExifEye\core\Entry\Core\Short', 'ifd0', 'IFD0', 'PlanarConfiguration', [6.1],
+                6.1, 'ExifEye\core\Entry\Core\Short', 'ifd0', 'PlanarConfiguration', [6.1],
             ],
             'CanonPanoramaInformation/PanoramaDirection - value 4' => [
-                '2x2 Matrix (Clockwise)', 'ExifEye\core\Entry\Core\SignedShort', 'ifdMakerNotesCanonPanoramaInformation', 'CanonPanoramaInformation', 'PanoramaDirection', [4],
+                '2x2 Matrix (Clockwise)', 'ExifEye\core\Entry\Core\SignedShort', 'ifdMakerNotesCanonPanoramaInformation', 'PanoramaDirection', [4],
             ],
             'CanonCameraSettings/LensType - value 493' => [
-                'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'ExifEye\core\Entry\Core\Short', 'ifdMakerNotesCanonCameraSettings', 'CanonCameraSettings', 'LensType', [493],
+                'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'ExifEye\core\Entry\Core\Short', 'ifdMakerNotesCanonCameraSettings', 'LensType', [493],
             ],
             'CanonCameraSettings/LensType - value 493.1' => [
-                'Canon EF 24-105mm f/4L IS USM', 'ExifEye\core\Entry\Core\Short', 'ifdMakerNotesCanonCameraSettings', 'CanonCameraSettings', 'LensType', [493.1],
+                'Canon EF 24-105mm f/4L IS USM', 'ExifEye\core\Entry\Core\Short', 'ifdMakerNotesCanonCameraSettings', 'LensType', [493.1],
             ],
             'IFD0/YCbCrSubSampling - value 2, 1' => [
-                'YCbCr4:2:2', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'ifd0', 'IFD0', 'YCbCrSubSampling', [2, 1],
+                'YCbCr4:2:2', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'ifd0', 'YCbCrSubSampling', [2, 1],
             ],
             'IFD0/YCbCrSubSampling - value 2, 2' => [
-                'YCbCr4:2:0', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'ifd0', 'IFD0', 'YCbCrSubSampling', [2, 2],
+                'YCbCr4:2:0', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'ifd0', 'YCbCrSubSampling', [2, 2],
             ],
             'IFD0/YCbCrSubSampling - value 6, 7' => [
-                '6, 7', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'ifd0', 'IFD0', 'YCbCrSubSampling', [6, 7],
+                '6, 7', 'ExifEye\core\Entry\IfdYCbCrSubSampling', 'ifd0', 'YCbCrSubSampling', [6, 7],
             ],
             'Exif/SubjectArea - value 6, 7' => [
-                '(x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'Exif', 'SubjectArea', [6, 7],
+                '(x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'SubjectArea', [6, 7],
             ],
             'Exif/SubjectArea - value 5, 6, 7' => [
-                'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'Exif', 'SubjectArea', [5, 6, 7],
+                'Within distance 5 of (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'SubjectArea', [5, 6, 7],
             ],
             'Exif/SubjectArea - value 4, 5, 6, 7' => [
-                'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'Exif', 'SubjectArea', [4, 5, 6, 7],
+                'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'SubjectArea', [4, 5, 6, 7],
             ],
             'Exif/SubjectArea - wrong components' => [
-                'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'Exif', 'SubjectArea', [6],
+                'Unexpected number of components (1, expected 2, 3, or 4).', 'ExifEye\core\Entry\ExifSubjectArea', 'ifdExif', 'SubjectArea', [6],
             ],
             'Exif/FNumber - value 60, 10' => [
-                'f/6.0', 'ExifEye\core\Entry\ExifFNumber', 'ifdExif', 'Exif', 'FNumber', [[60, 10]],
+                'f/6.0', 'ExifEye\core\Entry\ExifFNumber', 'ifdExif', 'FNumber', [[60, 10]],
             ],
             'Exif/FNumber - value 26, 10' => [
-                'f/2.6', 'ExifEye\core\Entry\ExifFNumber', 'ifdExif', 'Exif', 'FNumber', [[26, 10]],
+                'f/2.6', 'ExifEye\core\Entry\ExifFNumber', 'ifdExif', 'FNumber', [[26, 10]],
             ],
             'Exif/ApertureValue - value 60, 10' => [
-                '8.0', 'ExifEye\core\Entry\ExifApertureValue', 'ifdExif', 'Exif', 'ApertureValue', [[60, 10]],
+                '8.0', 'ExifEye\core\Entry\ExifApertureValue', 'ifdExif', 'ApertureValue', [[60, 10]],
             ],
             'Exif/ApertureValue - value 26, 10' => [
-                '2.5', 'ExifEye\core\Entry\ExifApertureValue', 'ifdExif', 'Exif', 'ApertureValue', [[26, 10]],
+                '2.5', 'ExifEye\core\Entry\ExifApertureValue', 'ifdExif', 'ApertureValue', [[26, 10]],
             ],
             'Exif/FocalLength - value 60, 10' => [
-                '6.0 mm', 'ExifEye\core\Entry\ExifFocalLength', 'ifdExif', 'Exif', 'FocalLength', [[60, 10]],
+                '6.0 mm', 'ExifEye\core\Entry\ExifFocalLength', 'ifdExif', 'FocalLength', [[60, 10]],
             ],
             'Exif/FocalLength - value 26, 10' => [
-                '2.6 mm', 'ExifEye\core\Entry\ExifFocalLength', 'ifdExif', 'Exif', 'FocalLength', [[26, 10]],
+                '2.6 mm', 'ExifEye\core\Entry\ExifFocalLength', 'ifdExif', 'FocalLength', [[26, 10]],
             ],
             'Exif/SubjectDistance - value 60, 10' => [
-                '6.0 m', 'ExifEye\core\Entry\ExifSubjectDistance', 'ifdExif', 'Exif', 'SubjectDistance', [[60, 10]],
+                '6.0 m', 'ExifEye\core\Entry\ExifSubjectDistance', 'ifdExif', 'SubjectDistance', [[60, 10]],
             ],
             'Exif/SubjectDistance - value 26, 10' => [
-                '2.6 m', 'ExifEye\core\Entry\ExifSubjectDistance', 'ifdExif', 'Exif', 'SubjectDistance', [[26, 10]],
+                '2.6 m', 'ExifEye\core\Entry\ExifSubjectDistance', 'ifdExif', 'SubjectDistance', [[26, 10]],
             ],
             'Exif/ExposureTime - value 60, 10' => [
-                '6 sec.', 'ExifEye\core\Entry\ExifExposureTime', 'ifdExif', 'Exif', 'ExposureTime', [[60, 10]],
+                '6 sec.', 'ExifEye\core\Entry\ExifExposureTime', 'ifdExif', 'ExposureTime', [[60, 10]],
             ],
             'Exif/ExposureTime - value 5, 10' => [
-                '1/2 sec.', 'ExifEye\core\Entry\ExifExposureTime', 'ifdExif', 'Exif', 'ExposureTime', [[5, 10]],
+                '1/2 sec.', 'ExifEye\core\Entry\ExifExposureTime', 'ifdExif', 'ExposureTime', [[5, 10]],
             ],
             'GPS/GPSLongitude' => [
-                '30° 45\' 28" (30.76°)', 'ExifEye\core\Entry\GPSDegrees', 'ifdGps', 'GPS', 'GPSLongitude', [[30, 1], [45, 1], [28, 1]],
+                '30° 45\' 28" (30.76°)', 'ExifEye\core\Entry\GPSDegrees', 'ifdGps', 'GPSLongitude', [[30, 1], [45, 1], [28, 1]],
             ],
             'GPS/GPSLatitude' => [
-                '50° 33\' 12" (50.55°)', 'ExifEye\core\Entry\GPSDegrees', 'ifdGps', 'GPS', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
+                '50° 33\' 12" (50.55°)', 'ExifEye\core\Entry\GPSDegrees', 'ifdGps', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
             ],
             'Exif/ShutterSpeedValue - value 5, 10' => [
-                '5/10 sec. (APEX: 1)', 'ExifEye\core\Entry\ExifShutterSpeedValue', 'ifdExif', 'Exif', 'ShutterSpeedValue', [[5, 10]],
+                '5/10 sec. (APEX: 1)', 'ExifEye\core\Entry\ExifShutterSpeedValue', 'ifdExif', 'ShutterSpeedValue', [[5, 10]],
             ],
             'Exif/BrightnessValue - value 5, 10' => [
-                '0.5', 'ExifEye\core\Entry\ExifBrightnessValue', 'ifdExif', 'Exif', 'BrightnessValue', [[5, 10]],
+                '0.5', 'ExifEye\core\Entry\ExifBrightnessValue', 'ifdExif', 'BrightnessValue', [[5, 10]],
             ],
             'Exif/ExposureBiasValue - value 5, 10' => [
-                '+0.5', 'ExifEye\core\Entry\ExifExposureBiasValue', 'ifdExif', 'Exif', 'ExposureBiasValue', [[5, 10]],
+                '+0.5', 'ExifEye\core\Entry\ExifExposureBiasValue', 'ifdExif', 'ExposureBiasValue', [[5, 10]],
             ],
             'Exif/ExposureBiasValue - value -5, 10' => [
-                '-0.5', 'ExifEye\core\Entry\ExifExposureBiasValue', 'ifdExif', 'Exif', 'ExposureBiasValue', [[-5, 10]],
+                '-0.5', 'ExifEye\core\Entry\ExifExposureBiasValue', 'ifdExif', 'ExposureBiasValue', [[-5, 10]],
             ],
             'Exif/ExifVersion - short' => [
-                '2.2', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'Exif', 'ExifVersion', [2.2], true,
+                '2.2', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'ExifVersion', [2.2], true,
             ],
             'Exif/FlashPixVersion - short' => [
-                '2.5', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'Exif', 'FlashPixVersion', [2.5], true,
+                '2.5', 'ExifEye\core\Entry\Core\Undefined', 'ifdExif', 'FlashPixVersion', [2.5], true,
             ],
             'Interoperability/InteroperabilityVersion - short' => [
-                '1.0', 'ExifEye\core\Entry\Core\Undefined', 'ifdInteroperability', 'Interoperability', 'InteroperabilityVersion', [1], true,
+                '1.0', 'ExifEye\core\Entry\Core\Undefined', 'ifdInteroperability', 'InteroperabilityVersion', [1], true,
             ],
             'Exif/ComponentsConfiguration' => [
-                'Y Cb Cr -', 'ExifEye\core\Entry\ExifComponentsConfiguration', 'ifdExif', 'Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
+                'Y Cb Cr -', 'ExifEye\core\Entry\ExifComponentsConfiguration', 'ifdExif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
             ],
             'Exif/FileSource' => [
-                'DSC', 'ExifEye\core\Entry\ExifFileSource', 'ifdExif', 'Exif', 'FileSource', ["\x03"],
+                'DSC', 'ExifEye\core\Entry\ExifFileSource', 'ifdExif', 'FileSource', ["\x03"],
             ],
             'Exif/SceneType' => [
-                'Directly photographed', 'ExifEye\core\Entry\ExifSceneType', 'ifdExif', 'Exif', 'SceneType', ["\x01"],
+                'Directly photographed', 'ExifEye\core\Entry\ExifSceneType', 'ifdExif', 'SceneType', ["\x01"],
             ],
         ];
     }

@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
@@ -30,22 +31,20 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
         // Cap bytes to get to remaining data window size.
         $size = $data_element->getSize();
-        if ($data_offset + $components > $size) {
-            $bytes_to_get = $size - $data_offset;
+        if ($ifd_item->getDataOffset() + $ifd_item->getComponents() > $size) {
+            $bytes_to_get = $size - $ifd_item->getDataOffset();
             $this->warning('Ascii entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
-                'expected' => $components,
+                'expected' => $ifd_item->getComponents(),
             ]);
         } else {
-            $bytes_to_get = $components;
+            $bytes_to_get = $ifd_item->getComponents();
         }
-        $bytes = $data_element->getBytes($data_offset, $bytes_to_get);
+        $bytes = $data_element->getBytes($ifd_item->getDataOffset(), $bytes_to_get);
 
         // Check the last byte is NULL.
         if (substr($bytes, -1) !== "\x0") {
@@ -53,7 +52,6 @@ class Ascii extends EntryBase
         }
 
         $this->setValue([$bytes]);
-
         return $this;
     }
 

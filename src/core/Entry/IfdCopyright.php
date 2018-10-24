@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry;
 
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\ExifEye;
@@ -20,15 +21,11 @@ class IfdCopyright extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
-        $v = explode("\0", $data_element->getBytes($data_offset, $components));
+        $v = explode("\0", $data_element->getBytes($ifd_item->getDataOffset(), $ifd_item->getComponents()));
         $v[1] = isset($v[1]) ? $v[1] : '';
-
         $this->setValue($v);
-
         return $this;
     }
 

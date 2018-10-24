@@ -24,26 +24,26 @@ class Ifd extends IfdBase
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         // Get the number of entries.
-        $n = $this->getEntriesCountFromData($data_element, $offset);
+        $n = $this->getIfdItemsCountFromData($data_element, $offset);
 
         // Load the blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $entry = $this->getEntryFromData($i, $data_element, $i_offset, $this->getType());
+            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getType());
 
             // If the entry is an IFD, checks the offset.
-            if (is_subclass_of($entry['class'], 'ExifEye\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
+            if (is_subclass_of($ifd_item->getClass(), 'ExifEye\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
                 $this->error('Invalid offset pointer to IFD: {offset}.', [
-                    'offset' => $entry['data_offset'],
+                    'offset' => $ifd_item->getDataOffset(),
                 ]);
                 continue;
             }
 
-            $handling_class = $entry['type'] === 'tag' ? 'ExifEye\core\Block\Tag' : $entry['class'];
-            $ifd_entry = new $handling_class($this, $entry['type'], $entry['id'], $entry['name'], $entry['format'], $entry['components']);
+            $class = $ifd_item->getClass();
+            $ifd_entry = new $class($this, $ifd_item);
 
             try {
-                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, $entry);
+                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, ['components' => $ifd_item->getComponents()], $ifd_item);
             } catch (DataException $e) {
                 $this->error($e->getMessage());
             }
@@ -194,17 +194,15 @@ class Ifd extends IfdBase
             $thumbnail_data = $dataxx->getBytes(0, $size);
 
             $thumbnail_block = new Thumbnail('thumbnail', $ifd);
-            new Undefined($thumbnail_block, [$thumbnail_data]);
             $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
                 'offset' => $offset,
                 'length' => $length,
             ]);
+            new Undefined($thumbnail_block, [$thumbnail_data]);
 
             // Remove the tags that have been converted to Thumbnail.
             $ifd->removeElement("tag[@name='ThumbnailOffset']");
             $ifd->removeElement("tag[@name='ThumbnailLength']");
-
-            $ifd->debug(".....END Loading Thumbnail");
         } catch (DataException $e) {
             $ifd->error($e->getMessage());
         }
@@ -239,20 +237,24 @@ class Ifd extends IfdBase
         $model_tag = $ifd->getElement("tag[@name='Model']");
         $model = $model_tag && $model_tag->getElement("entry") ? $model_tag->getElement("entry")->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
 
-        // Get maker note IFD id.
-        if (!$maker_note_ifd_type = Spec::getMakerNoteIfdType($make_tag->getElement("entry")->getValue(), $model)) {
+        // Get maker note collection.
+        if (!$maker_note_collection = Spec::getMakerNoteIfdType($make_tag->getElement("entry")->getValue(), $model)) {
             return;
         }
 
         // Load maker note into IFD.
-        $ifd_class = Spec::getTypePropertyValue($maker_note_ifd_type, 'class');
-        $maker_note_ifd_name = Spec::getTypePropertyValue($maker_note_ifd_type, 'name');
-        $exif_ifd->debug("Converting {makernote} to IFD", [
+        $ifd_class = Spec::getTypePropertyValue($maker_note_collection, 'class');
+        $maker_note_ifd_name = Spec::getTypePropertyValue($maker_note_collection, 'name');
+        $exif_ifd->debug("Converting {makernote} maker notes to IFD", [
             'makernote' => $maker_note_ifd_name,
         ]);
-        $ifd = new $ifd_class($exif_ifd, $maker_note_ifd_type, $maker_note_tag->getAttribute('id'), $maker_note_ifd_name, $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), $maker_note_tag);
+        $ifd_item = new IfdItem($maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), null, $exif_ifd->getType(), $exif_ifd);
+        $ifd = new $ifd_class($exif_ifd, $ifd_item, $maker_note_tag);
+        // xxx
+        $ifd->setAttribute('name', $maker_note_ifd_name);
         $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1], null, [
             'components' => $maker_note_tag->getComponents(),
+            'collection' => $maker_note_collection,
         ]);
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");

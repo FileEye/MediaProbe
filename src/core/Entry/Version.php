@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
@@ -22,16 +23,11 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
-
-        $version = $data_element->getBytes($data_offset, $components);
+        $version = $data_element->getBytes($ifd_item->getDataOffset(), $ifd_item->getComponents());
         $value = is_numeric($version) ? [$version / 100] : [$version];
-
         $this->setValue($value);
-
         return $this;
     }
 

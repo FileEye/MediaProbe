@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
@@ -43,17 +44,13 @@ class Short extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
         $args = [];
-        for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_element->getShort($data_offset + ($i * 2));
+        for ($i = 0; $i < $ifd_item->getComponents(); $i ++) {
+            $args[] = $data_element->getShort($ifd_item->getDataOffset() + ($i * 2));
         }
-
         $this->setValue($args);
-
         return $this;
     }
 

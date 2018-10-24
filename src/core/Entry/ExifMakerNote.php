@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Entry;
 
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Utility\ConvertBytes;
@@ -19,13 +20,9 @@ class ExifMakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
-
-        $this->setValue([$data_element->getBytes($data_offset, $components), $data_offset]);
-
+        $this->setValue([$data_element->getBytes($ifd_item->getDataOffset(), $ifd_item->getComponents()), $ifd_item->getDataOffset()]);
         return $this;
     }
 

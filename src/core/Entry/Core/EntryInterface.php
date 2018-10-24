@@ -4,11 +4,12 @@ namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Data\DataWindow;
+use ExifEye\core\ElementInterface;
 
 /**
  * Interface for Entry objects.
  */
-interface EntryInterface
+interface EntryInterface extends ElementInterface
 {
     /**
      * Returns the format of this entry.

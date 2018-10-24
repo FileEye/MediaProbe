@@ -10,7 +10,7 @@ return array (
     'ifdMakerNotesCanonPanoramaInformation' =>
     array (
       'name' => 'CanonPanoramaInformation',
-      'title' => 'Canon Panorama Information',
+      'title' => 'Panorama Information',
       'class' => 'ExifEye\\core\\Block\\Index',
     ),
     'jpegSegment' =>
@@ -42,9 +42,9 @@ return array (
     ),
     'ifdMakerNotesCanon' =>
     array (
-      'name' => 'CanonMakerNotes',
+      'name' => 'Canon',
       'title' => 'Canon Maker Notes',
-      'class' => 'ExifEye\\core\\Block\\Ifd',
+      'class' => 'ExifEye\\core\\Block\\IfdMakerNote',
       'makerNotes' =>
       array (
         0 => 'Canon',
@@ -58,7 +58,7 @@ return array (
     ),
     'ifdMakerNotesApple' =>
     array (
-      'name' => 'AppleMakerNotes',
+      'name' => 'Apple',
       'title' => 'Apple Maker Notes',
       'class' => 'ExifEye\\Apple\\Block\\MakerNote',
       'makerNotes' =>
@@ -68,20 +68,20 @@ return array (
     ),
     'ifdMakerNotesAppleRuntime' =>
     array (
-      'name' => 'AppleMakerNotesRuntime',
-      'title' => 'Apple Runtime',
+      'name' => 'AppleRuntime',
+      'title' => 'Runtime',
       'class' => 'ExifEye\\Apple\\Block\\RunTime',
     ),
     'ifdMakerNotesCanonCameraSettings' =>
     array (
       'name' => 'CanonCameraSettings',
-      'title' => 'Canon Camera Settings',
+      'title' => 'Camera Settings',
       'class' => 'ExifEye\\core\\Block\\Index',
     ),
     'ifdMakerNotesCanonPictureInformation' =>
     array (
       'name' => 'CanonPictureInformation',
-      'title' => 'Canon Picture Information',
+      'title' => 'Picture Information',
       'class' => '???',
     ),
     'ifdInteroperability' =>
@@ -113,7 +113,7 @@ return array (
     'ifdMakerNotesCanonFileInformation' =>
     array (
       'name' => 'CanonFileInformation',
-      'title' => 'Canon File Information',
+      'title' => 'File Information',
       'class' => 'ExifEye\\core\\Block\\Index',
     ),
     'tiff' =>
@@ -137,7 +137,7 @@ return array (
     'ifdMakerNotesCanonShotInformation' =>
     array (
       'name' => 'CanonShotInformation',
-      'title' => 'Canon Shot Information',
+      'title' => 'Shot Information',
       'class' => 'ExifEye\\core\\Block\\Index',
     ),
     'format' =>
@@ -155,10 +155,10 @@ return array (
     1 => 'ifd1',
     'Thumbnail' => 'ifd1',
     'GPS' => 'ifdGps',
-    'CanonMakerNotes' => 'ifdMakerNotesCanon',
+    'Canon' => 'ifdMakerNotesCanon',
     'Exif' => 'exif',
-    'AppleMakerNotes' => 'ifdMakerNotesApple',
-    'AppleMakerNotesRuntime' => 'ifdMakerNotesAppleRuntime',
+    'Apple' => 'ifdMakerNotesApple',
+    'AppleRuntime' => 'ifdMakerNotesAppleRuntime',
     'CanonCameraSettings' => 'ifdMakerNotesCanonCameraSettings',
     'CanonPictureInformation' => 'ifdMakerNotesCanonPictureInformation',
     'Interoperability' => 'ifdInteroperability',

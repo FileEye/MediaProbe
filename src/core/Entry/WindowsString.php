@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\ExifEye;
@@ -31,21 +32,19 @@ class WindowsString extends Byte
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
         // Cap bytes to get to remaining data window size.
         $size = $data_element->getSize();
-        if ($data_offset + $components > $size) {
-            $bytes_to_get = $size - $data_offset;
+        if ($ifd_item->getDataOffset() + $ifd_item->getComponents() > $size) {
+            $bytes_to_get = $size - $ifd_item->getDataOffset();
             $parent_block->warning('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
-                'expected' => $components,
+                'expected' => $ifd_item->getComponents(),
             ]);
-            $bytes = $data_element->getBytes($data_offset, $bytes_to_get);
+            $bytes = $data_element->getBytes($ifd_item->getDataOffset(), $bytes_to_get);
         } else {
-            $bytes = $data_element->getBytes($data_offset, $components);
+            $bytes = $data_element->getBytes($ifd_item->getDataOffset(), $ifd_item->getComponents());
         }
 
         $this->setValue([mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')]);

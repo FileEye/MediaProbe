@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Data\DataElement;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
 
@@ -29,13 +30,9 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
-
-        $this->setValue([$data_element->getBytes($data_offset, $components)]);
-
+        $this->setValue([$data_element->getBytes($ifd_item->getDataOffset(), $ifd_item->getComponents())]);
         return $this;
     }
 

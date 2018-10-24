@@ -33,16 +33,15 @@ class IfdBase extends BlockBase
     /**
      * Constructs a Block for an Image File Directory (IFD).
      */
-    public function __construct(BlockBase $parent_block, $type, $id, $name, $format, $components = null, ElementInterface $reference = null)
+    public function __construct(BlockBase $parent_block, IfdItem $ifd_item, ElementInterface $reference = null)
     {
-        parent::__construct($type, $parent_block, $reference);
+        parent::__construct($ifd_item->getType(), $parent_block, $reference);
 
-        if ($id !== null) {
-            $this->setAttribute('id', $id);
+        if ($ifd_item->getId() !== null) {
+            $this->setAttribute('id', $ifd_item->getId());
         }
-        $this->format = $format;
-        $this->setAttribute('name', $name);
-        $this->hasSpecification = Spec::getElementIdByName($parent_block->getType(), $name) ? true : false;
+        $this->format = $ifd_item->getFormat();
+        $this->setAttribute('name', $ifd_item->getName());
     }
 
     /**
@@ -56,7 +55,7 @@ class IfdBase extends BlockBase
     /**
      *   @todo
      */
-    protected function getEntriesCountFromData(DataElement $data_element, $offset)
+    protected function getIfdItemsCountFromData(DataElement $data_element, $offset)
     {
         // Get the number of tags.
         $entries_count = $data_element->getShort($offset);
@@ -80,39 +79,32 @@ class IfdBase extends BlockBase
     /**
      *   @todo
      */
-    protected function getEntryFromData($i, DataElement $data_element, $offset, $parent_type, $data_offset_shift = 0)
+    protected function getIfdItemFromData($i, DataElement $data_element, $offset, $parent_type, $data_offset_shift = 0)
     {
-        $entry = [];
-
-        $entry['id'] = $data_element->getShort($offset);
-        $entry['format'] = $data_element->getShort($offset + 2);
-        $entry['components'] = $data_element->getLong($offset + 4);
-        $type = Spec::getElementType($parent_type, $entry['id']);
-        $entry['type'] = $type === null ? 'tag' : $type;
-        $entry['name'] = Spec::getElementName($parent_type, $entry['id']);
-        $entry['class'] = Spec::getElementHandlingClass($parent_type, $entry['id'], $entry['format']);
+        $id = $data_element->getShort($offset);
+        $format = $data_element->getShort($offset + 2);
+        $components = $data_element->getLong($offset + 4);
 
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
         // element.
-        $entry['size'] = Spec::getFormatSize($entry['format']) * $entry['components'];
-        if ($entry['size'] > 4) {
-            $entry['data_offset'] = $data_element->getLong($offset + 8) + $data_offset_shift;
+        if (($size = Spec::getFormatSize($format) * $components) > 4) {
+            $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
         } else {
-            $entry['data_offset'] = $offset + 8;
+            $data_offset = $offset + 8;
         }
 
         $this->debug("#{i} @{ifdoffset}, id {id}, f {format}, c {components}, data @{offset}, size {size}", [
             'i' => $i + 1,
             'ifdoffset' => $data_element->getStart() + $offset,
-            'id' => '0x' . strtoupper(dechex($entry['id'])),
-            'format' => Spec::getFormatName($entry['format']),
-            'components' => $entry['components'],
-            'offset' => $data_element->getStart() + $entry['data_offset'],
-            'size' => $entry['size'],
+            'id' => '0x' . strtoupper(dechex($id)),
+            'format' => Spec::getFormatName($format),
+            'components' => $components,
+            'offset' => $data_element->getStart() + $data_offset,
+            'size' => $size,
         ]);
 
-        return $entry;
+        return new IfdItem($id, $format, $components, $data_offset, $parent_type, $this);
     }
 
     /**

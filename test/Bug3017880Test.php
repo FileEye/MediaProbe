@@ -6,6 +6,7 @@ use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Image;
@@ -39,14 +40,14 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $tiff = $exif->getElement("tiff");
             $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd($tiff, 'ifd0', 0, 'IFD0', Spec::getFormatIdFromName('Long'));
+                $ifd0 = new Ifd($tiff, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff'));
             }
 
             $software_name = 'Example V2';
             $software_tag = $ifd0->getElement("tag[@name='Software']");
 
             if ($software_tag === null) {
-                $tag = new Tag($ifd0, 'tag', 0x0131, 'Software', Spec::getFormatIdFromName('Ascii'), 1);
+                $tag = new Tag($ifd0, new IfdItem(0x0131, Spec::getFormatIdFromName('Ascii'), 1, 0, 'ifd0'));
                 new Ascii($tag, [$software_name]);
                 $resave_file = 1;
             } else {

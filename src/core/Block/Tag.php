@@ -24,57 +24,34 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct(BlockBase $parent_block, $type, $id, $name, $format, $components, ElementInterface $reference = null)
+    public function __construct(BlockBase $parent_block, IfdItem $ifd_item, ElementInterface $reference = null)
     {
-        parent::__construct($type, $parent_block);
+        parent::__construct($ifd_item->getType(), $parent_block);
 
-        $this->setAttribute('id', $id);
+        $this->collection = $parent_block->getType();
 
-        if ($name !== null) {
-            $this->setAttribute('name', $name);
-        }
+        $this->setAttribute('id', $ifd_item->getId());
 
-        $this->hasSpecification = $id > 0xF000 || in_array($id, Spec::getTypeSupportedElementIds($parent_block->getType()));
-
-        // Check if ExifEye has a definition for this TAG.
-        if (!$this->hasSpecification()) {
-            $this->notice("No tag specification for tag {tagId} in ifd {ifdName}", [
-                'tagId' => '0x' . strtoupper(dechex($id)),
-                'ifdName' => $parent_block->getAttribute('name'),
-            ]);
-        }
-
-        // Warn if format is not as expected.
-        $expected_format = Spec::getElementPropertyValue($parent_block->getType(), $id, 'format');
-        if ($expected_format !== null && $format !== null && !in_array($format, $expected_format)) {
-            $expected_format_names = [];
-            foreach ($expected_format as $expected_format_id) {
-                $expected_format_names[] = Spec::getFormatName($expected_format_id);
-            }
-            $this->warning("Found {format_name} data format, expected {expected_format_names}", [
-                'format_name' => Spec::getFormatName($format),
-                'expected_format_names' => implode(', ', $expected_format_names),
-            ]);
-        }
-
-        // Warn if components are not as expected.
-        $expected_components = Spec::getElementPropertyValue($parent_block->getType(), $id, 'components');
-        if ($expected_components !== null && $components !== null && $components !== $expected_components) {
-            $this->warning("Found {components} data components, expected {expected_components}", [
-                'components' => $components,
-                'expected_components' => $expected_components,
-            ]);
+        if ($ifd_item->getName() !== null) {
+            $this->setAttribute('name', $ifd_item->getName());
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $tag = new $options['class']($this);
+        if (isset($ifd_item)) {
+            $this->debug("Tag: {tag}", [
+                'tag' => $ifd_item->getTitle(),
+            ]);
+        }
+
+        $class = $ifd_item->getEntryClass();
+        $tag = new $class($this);
         try {
-            $tag->loadFromData($data_element, $offset, $size, $options);
+            $tag->loadFromData($data_element, $offset, $size, $options, $ifd_item);
         } catch (DataException $e) {
             $this->error($e->getMessage());
         }

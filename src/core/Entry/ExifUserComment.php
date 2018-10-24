@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\Spec;
@@ -26,14 +27,12 @@ class ExifUserComment extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
-        if ($components < 8) {
+        if ($ifd_item->getComponents() < 8) {
             $this->setValue([]);
         } else {
-            $this->setValue([$data_element->getBytes($data_offset + 8, $components - 8), rtrim($data_element->getBytes($data_offset, 8))]);
+            $this->setValue([$data_element->getBytes($ifd_item->getDataOffset() + 8, $ifd_item->getComponents() - 8), rtrim($data_element->getBytes($ifd_item->getDataOffset(), 8))]);
         }
 
         return $this;

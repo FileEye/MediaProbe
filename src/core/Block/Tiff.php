@@ -87,11 +87,11 @@ class Tiff extends BlockBase
 
             try {
                 // Create and load the IFDs.
-                $ifd_type = Spec::getElementType($this->getType(), $i);
                 $ifd_name = Spec::getElementName($this->getType(), $i);
                 $ifd_class = Spec::getElementHandlingClass($this->getType(), $i);
                 $ifd_tags_count = $data_window->getShort($ifd_offset);
-                $ifd = new $ifd_class($this, $ifd_type, $i, $ifd_name, Spec::getFormatIdFromName('Long'));
+                $ifd_item = new IfdItem($i, Spec::getFormatIdFromName('Long'), $ifd_tags_count, $ifd_offset, 'tiff', $this);
+                $ifd = new $ifd_class($this, $ifd_item);
                 $ifd->loadFromData($data_window, $ifd_offset, $size);
 
                 // Offset to next IFD.

@@ -3,6 +3,7 @@
 namespace ExifEye\Apple\Block;
 
 use ExifEye\core\Block\IfdBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
@@ -15,6 +16,11 @@ use ExifEye\core\Utility\ConvertBytes;
 
 class RunTime extends IfdBase
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected $DOMNodeName = 'plist';
+
     /**
      * {@inheritdoc}
      */
@@ -32,8 +38,8 @@ class RunTime extends IfdBase
             $tag_id = Spec::getElementIdByName($this->getType(), $tag_name);
             $item_format = Spec::getElementPropertyValue($this->getType(), $tag_id, 'format')[0];
             $entry_class = Spec::getElementHandlingClass($this->getType(), $tag_id, $item_format);
-            $tag = new Tag($this, 'tag', $tag_id, $tag_name, $item_format, 1);
-            $entryxx = new $entry_class($tag, [$value]);
+            $tag = new Tag($this, new IfdItem($tag_id, $item_format, 1, 0, $this->getType(), $this));
+            new $entry_class($tag, [$value]);
         }
 
         // Invoke post-load callbacks.

@@ -103,7 +103,7 @@ class Spec
      */
     public static function getTypeSupportedElementIds($type)
     {
-        return array_keys(self::getMap()['elements'][$type]);
+        return isset(self::getMap()['elements'][$type]) ? array_keys(self::getMap()['elements'][$type]) : [];
     }
 
     /**

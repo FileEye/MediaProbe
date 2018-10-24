@@ -14,20 +14,16 @@ use ExifEye\core\Utility\ConvertBytes;
 abstract class BlockBase extends ElementBase
 {
     /**
-     * The block has an ExifEye specification description.
-     *
-     * @var bool
+     * xx
      */
-    protected $hasSpecification = false;
+    protected $collection;
 
     /**
-     * Determines if the Block has an ExifEye specification.
-     *
-     * @returns bool
+     * xx
      */
-    public function hasSpecification()
+    public function getCollection()
     {
-        return $this->hasSpecification;
+        return $this->collection;
     }
 
     /**

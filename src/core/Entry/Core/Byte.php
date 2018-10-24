@@ -3,6 +3,7 @@
 namespace ExifEye\core\Entry\Core;
 
 use ExifEye\core\Block\BlockBase;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 
 /**
@@ -40,17 +41,13 @@ class Byte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        $data_offset = $options['data_offset'];
-        $components = $options['components'];
         $args = [];
-        for ($i = 0; $i < $components; $i ++) {
-            $args[] = $data_element->getByte($data_offset + $i);
+        for ($i = 0; $i < $ifd_item->getComponents(); $i ++) {
+            $args[] = $data_element->getByte($ifd_item->getDataOffset() + $i);
         }
-
         $this->setValue($args);
-
         return $this;
     }
 

@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Utility\SpecCompiler;
 use ExifEye\core\Spec;
 use Symfony\Component\Filesystem\Filesystem;
@@ -53,7 +54,7 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     /**
      * Tests that compiling a YAML file with invalid IFD keys raises exception.
      */
-/*    public function testInvalidIfdKeys()
+/*  xx todo  public function testInvalidIfdKeys()
     {
         //@todo change below to SpecCompilerException::class once PHP 5.4 support is removed.
         $this->fcExpectException('ExifEye\core\Utility\SpecCompilerException', 'ifd_ifd0.yaml: invalid IFD key(s) found - bork');
@@ -91,13 +92,14 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
         Spec::setMap($this->testResourceDirectory . '/spec.php');
-        $this->assertCount(3, Spec::getTypes());
+        $this->assertCount(4, Spec::getTypes());
 
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd($tiff_mock, 'ifd0', 0, 'IFD0', Spec::getFormatIdFromName('Long'));
-        $ifd_exif = new Ifd($ifd_0, 'ifdExif', 0x8769, 'Exif', Spec::getFormatIdFromName('Long'));
+
+        $ifd_0 = new Ifd($tiff_mock, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff', $tiff_mock));
+        $ifd_exif = new Ifd($ifd_0, new IfdItem(0x8769, Spec::getFormatIdFromName('Long'), 1, 0, 'ifd0', $ifd_0));
 
         $this->assertEquals(0x0100, Spec::getElementIdByName($ifd_0->getType(), 'ImageWidth'));
         $this->assertEquals(0x8769, Spec::getElementIdByName($ifd_0->getType(), 'ExifIfd'));
