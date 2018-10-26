@@ -8,7 +8,7 @@ use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -35,6 +35,48 @@ class Tag extends BlockBase
         if ($ifd_item->getName() !== null) {
             $this->setAttribute('name', $ifd_item->getName());
         }
+
+        $this->validate($ifd_item);
+    }
+
+    /**
+     * @todo
+     */
+    public function validate(IfdItem $ifd_item)
+    {
+        // Check if ExifEye has a definition for this TAG.
+        if (!$ifd_item->hasDefinition()) {
+            $this->notice("No specification for item {item} in {collection}", [
+                'item' => $ifd_item->getId(),
+                'collection' => $ifd_item->getCollection(),
+            ]);
+        } else {
+            $this->debug("Tag: {tag}", [
+                'tag' => $ifd_item->getTitle(),
+            ]);
+
+            // Warn if format is not as expected.
+            $expected_format = Collection::getItemPropertyValue($ifd_item->getCollection(), $ifd_item->getId(), 'format');
+            if ($expected_format !== null && $ifd_item->getFormat() !== null && !in_array($ifd_item->getFormat(), $expected_format)) {
+                $expected_format_names = [];
+                foreach ($expected_format as $expected_format_id) {
+                    $expected_format_names[] = Collection::getFormatName($expected_format_id);
+                }
+                $this->warning("Found {format_name} data format, expected {expected_format_names}", [
+                    'format_name' => Collection::getFormatName($ifd_item->getFormat()),
+                    'expected_format_names' => implode(', ', $expected_format_names),
+                ]);
+            }
+
+            // Warn if components are not as expected.
+            $expected_components = Collection::getItemPropertyValue($ifd_item->getCollection(), $ifd_item->getId(), 'components');
+            if ($expected_components !== null && $ifd_item->getComponents() !== null && $ifd_item->getComponents() !== $expected_components) {
+                $this->warning("Found {components} data components, expected {expected_components}", [
+                    'components' => $ifd_item->getComponents(),
+                    'expected_components' => $expected_components,
+                ]);
+            }
+        }
     }
 
     /**
@@ -42,12 +84,6 @@ class Tag extends BlockBase
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
     {
-        if (isset($ifd_item)) {
-            $this->debug("Tag: {tag}", [
-                'tag' => $ifd_item->getTitle(),
-            ]);
-        }
-
         $class = $ifd_item->getEntryClass();
         $tag = new $class($this);
         try {

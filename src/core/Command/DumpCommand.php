@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Image;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Block\Exif;
 use ExifEye\core\Block\Jpeg;

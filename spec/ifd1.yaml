@@ -1,4 +1,4 @@
-type: ifd1
+collection: ifd1
 name: IFD1
 title: IFD1
 class: ExifEye\core\Block\Ifd
@@ -7,26 +7,22 @@ alias:
   - 'Thumbnail'
 postLoad:
   - ExifEye\core\Block\Ifd::thumbnailToBlock
-elements:
+items:
     0x0100:
-        type: tag
         name: ImageWidth
         title: 'Image Width'
         components: 1
         format: [Short, Long]
     0x0101:
-        type: tag
         name: ImageLength
         title: 'Image Length'
         components: 1
         format: [Short, Long]
     0x0102:
-        type: tag
         name: BitsPerSample
         title: 'Bits per Sample'
         format: Short
     0x0103:
-        type: tag
         name: Compression
         title: Compression
         components: 1
@@ -75,7 +71,6 @@ elements:
                 65000: 'Kodak DCR Compressed'
                 65535: 'Pentax PEF Compressed'
     0x0106:
-        type: tag
         name: PhotometricInterpretation
         title: 'Photometric Interpretation'
         components: 1
@@ -97,7 +92,6 @@ elements:
                 32845: 'Pixar LogLuv'
                 34892: 'Linear Raw'
     0x010A:
-        type: tag
         name: FillOrder
         title: 'Fill Order'
         format: Short
@@ -106,32 +100,26 @@ elements:
                 1: 'Normal'
                 2: 'Reversed'
     0x010D:
-        type: tag
         name: DocumentName
         title: 'Document Name'
         format: Ascii
     0x010E:
-        type: tag
         name: ImageDescription
         title: 'Image Description'
         format: Ascii
     0x010F:
-        type: tag
         name: Make
         title: Manufacturer
         format: Ascii
     0x0110:
-        type: tag
         name: Model
         title: Model
         format: Ascii
     0x0111:
-        type: tag
         name: StripOffsets
         title: 'Strip Offsets'
         format: [Short, Long]
     0x0112:
-        type: tag
         name: Orientation
         title: Orientation
         components: 1
@@ -147,36 +135,30 @@ elements:
                 7: 'right - bottom'
                 8: 'left - bottom'
     0x0115:
-        type: tag
         name: SamplesPerPixel
         title: 'Samples per Pixel'
         components: 1
         format: Short
     0x0116:
-        type: tag
         name: RowsPerStrip
         title: 'Rows per Strip'
         components: 1
         format: [Short, Long]
     0x0117:
-        type: tag
         name: StripByteCounts
         title: 'Strip Byte Count'
         format: [Short, Long]
     0x011A:
-        type: tag
         name: XResolution
         title: x-Resolution
         components: 1
         format: Rational
     0x011B:
-        type: tag
         name: YResolution
         title: y-Resolution
         components: 1
         format: Rational
     0x011C:
-        type: tag
         name: PlanarConfiguration
         title: 'Planar Configuration'
         components: 1
@@ -186,7 +168,6 @@ elements:
                 1: 'Chunky format'
                 2: 'Planar format'
     0x0128:
-        type: tag
         name: ResolutionUnit
         title: 'Resolution Unit'
         components: 1
@@ -196,30 +177,25 @@ elements:
                 2: 'Inch'
                 3: 'Centimeter'
     0x012D:
-        type: tag
         name: TransferFunction
         title: 'Transfer Function'
         components: 3
         format: Short
     0x0131:
-        type: tag
         name: Software
         title: Software
         format: Ascii
     0x0132:
-        type: tag
         name: DateTime
         title: 'Date and Time'
         components: 20
         format: Ascii
         class: ExifEye\core\Entry\Time
     0x013B:
-        type: tag
         name: Artist
         title: Artist
         format: Ascii
     0x013D:
-        type: tag
         name: Predictor
         title: 'Predictor'
         components: 1
@@ -229,19 +205,16 @@ elements:
                 1: 'None'
                 2: 'Horizontal differencing'
     0x013E:
-        type: tag
         name: WhitePoint
         title: 'White Point'
         components: 2
         format: Rational
     0x013F:
-        type: tag
         name: PrimaryChromaticities
         title: 'Primary Chromaticities'
         components: 6
         format: Rational
     0x0152:
-        type: tag
         name: ExtraSamples
         title: 'Extra Samples'
         components: 1
@@ -252,20 +225,17 @@ elements:
                 1: 'Associated Alpha'
                 2: 'Unassociated Alpha'
     0x0153:
-        type: tag
         name: SampleFormat
         title: 'Sample Format'
         components: 4
         format: Short
         # xx add decode class
     0x0156:
-        type: tag
         name: TransferRange
         title: 'Transfer Range'
         # unknown format
         format: Short
     0x0200:
-        type: tag
         name: JPEGProc
         title: 'JPEG Proc'
         # unknown format
@@ -275,7 +245,6 @@ elements:
                 1: 'Baseline'
                 14: 'Lossless'
     0x0201:
-        type: tag
         name: ThumbnailOffset
         #alias:
         #  - 'JPEGInterchangeFormat'
@@ -283,7 +252,6 @@ elements:
         components: 1
         format: Long
     0x0202:
-        type: tag
         name: ThumbnailLength
         #alias:
         #  - 'JPEGInterchangeFormatLength'
@@ -291,20 +259,17 @@ elements:
         components: 1
         format: Long
     0x0211:
-        type: tag
         name: YCbCrCoefficients
         title: 'YCbCr Coefficients'
         components: 3
         format: Rational
     0x0212:
-        type: tag
         name: YCbCrSubSampling
         title: 'YCbCr Sub-Sampling'
         components: 2
         format: Short
         class: ExifEye\core\Entry\IfdYCbCrSubSampling
     0x0213:
-        type: tag
         name: YCbCrPositioning
         title: 'YCbCr Positioning'
         components: 1
@@ -314,89 +279,72 @@ elements:
                 1: 'centered'
                 2: 'co-sited'
     0x0214:
-        type: tag
         name: ReferenceBlackWhite
         title: 'Reference Black/White'
         components: 6
         format: Rational
     0x02bc:
-        type: tag
         name: ApplicationNotes
         title: 'Application Notes'
         format: Byte
         class: ExifEye\core\Entry\IfdApplicationNotes
         # xx add ifd for XMP tags
     0x4746:
-        type: tag
         name: Rating
         title: 'Star Rating'
         components: 1
         format: Short
     0x4749:
-        type: tag
         name: RatingPercent
         title: 'Percent Rating'
         components: 1
         format: Short
     0x828f:
-        type: tag
         name: BatteryLevel
         title: 'Battery Level'
         # unknown format
         format: Short
     0x8298:
-        type: tag
         name: Copyright
         title: Copyright
         format: Ascii
         class: ExifEye\core\Entry\IfdCopyright
     0x83BB:
-        type: tag
         name: IPTC-NAA
         title: IPTC-NAA
         format: Long
     0x8769:
-        type: ifdExif
-        class: ExifEye\core\Block\Ifd
         name: Exif
-        title: 'Exif IFD'
+        collection: ifdExif
     0x8825:
-        type: ifdGps
-        class: ExifEye\core\Block\Ifd
         name: GPS
-        title: 'GPS Info IFD'
+        collection: ifdGps
     0x9C9B:
-        type: tag
         name: WindowsXPTitle
         title: 'Windows XP Title'
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9C:
-        type: tag
         name: WindowsXPComment
         title: 'Windows XP Comment'
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9D:
-        type: tag
         name: WindowsXPAuthor
         title: 'Windows XP Author'
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9E:
-        type: tag
         name: WindowsXPKeywords
         title: 'Windows XP Keywords'
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0x9C9F:
-        type: tag
         name: WindowsXPSubject
         title: 'Windows XP Subject'
         format: Byte
         class: ExifEye\core\Entry\WindowsString
     0xC4A5:
-        type: tag
         name: PrintIM
         title: 'Print IM'
         format: Undefined

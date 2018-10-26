@@ -5,7 +5,7 @@ namespace ExifEye\core\Block;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**

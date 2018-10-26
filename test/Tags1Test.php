@@ -6,7 +6,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Image;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 class Tags1Test extends ExifEyeTestCaseBase
 {

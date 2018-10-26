@@ -5,19 +5,13 @@
  * DO NOT CHANGE MANUALLY.
  */
 return array (
-  'types' =>
+  'collections' =>
   array (
     'ifdMakerNotesCanonPanoramaInformation' =>
     array (
       'name' => 'CanonPanoramaInformation',
       'title' => 'Panorama Information',
       'class' => 'ExifEye\\core\\Block\\Index',
-    ),
-    'jpegSegment' =>
-    array (
-      'name' => 'JpegSegment',
-      'title' => 'Generic JPEG data segment',
-      'class' => 'ExifEye\\core\\Block\\JpegSegment',
     ),
     'ifd1' =>
     array (
@@ -144,13 +138,17 @@ return array (
     array (
       'name' => 'Format',
       'title' => 'Format',
-      'class' => 'ExifEye\\Format',
+    ),
+    'image' =>
+    array (
+      'name' => 'Image',
+      'title' => 'Image',
+      'class' => 'ExifEye\\core\\Image',
     ),
   ),
-  'typesByName' =>
+  'collectionsByName' =>
   array (
     'CanonPanoramaInformation' => 'ifdMakerNotesCanonPanoramaInformation',
-    'JpegSegment' => 'jpegSegment',
     'IFD1' => 'ifd1',
     1 => 'ifd1',
     'Thumbnail' => 'ifd1',
@@ -171,14 +169,14 @@ return array (
     'Jpeg' => 'jpeg',
     'CanonShotInformation' => 'ifdMakerNotesCanonShotInformation',
     'Format' => 'format',
+    'Image' => 'image',
   ),
-  'elements' =>
+  'items' =>
   array (
     'ifdMakerNotesCanonPanoramaInformation' =>
     array (
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'PanoramaFrame',
         'title' => 'Panorama Frame',
         'format' =>
@@ -188,7 +186,6 @@ return array (
       ),
       5 =>
       array (
-        'type' => 'tag',
         'name' => 'PanoramaDirection',
         'title' => 'Panorama Direction',
         'format' =>
@@ -212,7 +209,6 @@ return array (
     array (
       256 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageWidth',
         'title' => 'Image Width',
         'components' => 1,
@@ -224,7 +220,6 @@ return array (
       ),
       257 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageLength',
         'title' => 'Image Length',
         'components' => 1,
@@ -236,7 +231,6 @@ return array (
       ),
       258 =>
       array (
-        'type' => 'tag',
         'name' => 'BitsPerSample',
         'title' => 'Bits per Sample',
         'format' =>
@@ -246,7 +240,6 @@ return array (
       ),
       259 =>
       array (
-        'type' => 'tag',
         'name' => 'Compression',
         'title' => 'Compression',
         'components' => 1,
@@ -304,7 +297,6 @@ return array (
       ),
       262 =>
       array (
-        'type' => 'tag',
         'name' => 'PhotometricInterpretation',
         'title' => 'Photometric Interpretation',
         'components' => 1,
@@ -335,7 +327,6 @@ return array (
       ),
       266 =>
       array (
-        'type' => 'tag',
         'name' => 'FillOrder',
         'title' => 'Fill Order',
         'format' =>
@@ -353,7 +344,6 @@ return array (
       ),
       269 =>
       array (
-        'type' => 'tag',
         'name' => 'DocumentName',
         'title' => 'Document Name',
         'format' =>
@@ -363,7 +353,6 @@ return array (
       ),
       270 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageDescription',
         'title' => 'Image Description',
         'format' =>
@@ -373,7 +362,6 @@ return array (
       ),
       271 =>
       array (
-        'type' => 'tag',
         'name' => 'Make',
         'title' => 'Manufacturer',
         'format' =>
@@ -383,7 +371,6 @@ return array (
       ),
       272 =>
       array (
-        'type' => 'tag',
         'name' => 'Model',
         'title' => 'Model',
         'format' =>
@@ -393,7 +380,6 @@ return array (
       ),
       273 =>
       array (
-        'type' => 'tag',
         'name' => 'StripOffsets',
         'title' => 'Strip Offsets',
         'format' =>
@@ -404,7 +390,6 @@ return array (
       ),
       274 =>
       array (
-        'type' => 'tag',
         'name' => 'Orientation',
         'title' => 'Orientation',
         'components' => 1,
@@ -429,7 +414,6 @@ return array (
       ),
       277 =>
       array (
-        'type' => 'tag',
         'name' => 'SamplesPerPixel',
         'title' => 'Samples per Pixel',
         'components' => 1,
@@ -440,7 +424,6 @@ return array (
       ),
       278 =>
       array (
-        'type' => 'tag',
         'name' => 'RowsPerStrip',
         'title' => 'Rows per Strip',
         'components' => 1,
@@ -452,7 +435,6 @@ return array (
       ),
       279 =>
       array (
-        'type' => 'tag',
         'name' => 'StripByteCounts',
         'title' => 'Strip Byte Count',
         'format' =>
@@ -463,7 +445,6 @@ return array (
       ),
       282 =>
       array (
-        'type' => 'tag',
         'name' => 'XResolution',
         'title' => 'x-Resolution',
         'components' => 1,
@@ -474,7 +455,6 @@ return array (
       ),
       283 =>
       array (
-        'type' => 'tag',
         'name' => 'YResolution',
         'title' => 'y-Resolution',
         'components' => 1,
@@ -485,7 +465,6 @@ return array (
       ),
       284 =>
       array (
-        'type' => 'tag',
         'name' => 'PlanarConfiguration',
         'title' => 'Planar Configuration',
         'components' => 1,
@@ -504,7 +483,6 @@ return array (
       ),
       296 =>
       array (
-        'type' => 'tag',
         'name' => 'ResolutionUnit',
         'title' => 'Resolution Unit',
         'components' => 1,
@@ -523,7 +501,6 @@ return array (
       ),
       301 =>
       array (
-        'type' => 'tag',
         'name' => 'TransferFunction',
         'title' => 'Transfer Function',
         'components' => 3,
@@ -534,7 +511,6 @@ return array (
       ),
       305 =>
       array (
-        'type' => 'tag',
         'name' => 'Software',
         'title' => 'Software',
         'format' =>
@@ -544,7 +520,6 @@ return array (
       ),
       306 =>
       array (
-        'type' => 'tag',
         'name' => 'DateTime',
         'title' => 'Date and Time',
         'components' => 20,
@@ -556,7 +531,6 @@ return array (
       ),
       315 =>
       array (
-        'type' => 'tag',
         'name' => 'Artist',
         'title' => 'Artist',
         'format' =>
@@ -566,7 +540,6 @@ return array (
       ),
       317 =>
       array (
-        'type' => 'tag',
         'name' => 'Predictor',
         'title' => 'Predictor',
         'components' => 1,
@@ -585,7 +558,6 @@ return array (
       ),
       318 =>
       array (
-        'type' => 'tag',
         'name' => 'WhitePoint',
         'title' => 'White Point',
         'components' => 2,
@@ -596,7 +568,6 @@ return array (
       ),
       319 =>
       array (
-        'type' => 'tag',
         'name' => 'PrimaryChromaticities',
         'title' => 'Primary Chromaticities',
         'components' => 6,
@@ -607,7 +578,6 @@ return array (
       ),
       338 =>
       array (
-        'type' => 'tag',
         'name' => 'ExtraSamples',
         'title' => 'Extra Samples',
         'components' => 1,
@@ -627,7 +597,6 @@ return array (
       ),
       339 =>
       array (
-        'type' => 'tag',
         'name' => 'SampleFormat',
         'title' => 'Sample Format',
         'components' => 4,
@@ -638,7 +607,6 @@ return array (
       ),
       342 =>
       array (
-        'type' => 'tag',
         'name' => 'TransferRange',
         'title' => 'Transfer Range',
         'format' =>
@@ -648,7 +616,6 @@ return array (
       ),
       512 =>
       array (
-        'type' => 'tag',
         'name' => 'JPEGProc',
         'title' => 'JPEG Proc',
         'format' =>
@@ -666,7 +633,6 @@ return array (
       ),
       513 =>
       array (
-        'type' => 'tag',
         'name' => 'ThumbnailOffset',
         'title' => 'Thumbnail Offset',
         'components' => 1,
@@ -677,7 +643,6 @@ return array (
       ),
       514 =>
       array (
-        'type' => 'tag',
         'name' => 'ThumbnailLength',
         'title' => 'Thumbnail Length',
         'components' => 1,
@@ -688,7 +653,6 @@ return array (
       ),
       529 =>
       array (
-        'type' => 'tag',
         'name' => 'YCbCrCoefficients',
         'title' => 'YCbCr Coefficients',
         'components' => 3,
@@ -699,7 +663,6 @@ return array (
       ),
       530 =>
       array (
-        'type' => 'tag',
         'name' => 'YCbCrSubSampling',
         'title' => 'YCbCr Sub-Sampling',
         'components' => 2,
@@ -711,7 +674,6 @@ return array (
       ),
       531 =>
       array (
-        'type' => 'tag',
         'name' => 'YCbCrPositioning',
         'title' => 'YCbCr Positioning',
         'components' => 1,
@@ -730,7 +692,6 @@ return array (
       ),
       532 =>
       array (
-        'type' => 'tag',
         'name' => 'ReferenceBlackWhite',
         'title' => 'Reference Black/White',
         'components' => 6,
@@ -741,7 +702,6 @@ return array (
       ),
       700 =>
       array (
-        'type' => 'tag',
         'name' => 'ApplicationNotes',
         'title' => 'Application Notes',
         'format' =>
@@ -752,7 +712,6 @@ return array (
       ),
       18246 =>
       array (
-        'type' => 'tag',
         'name' => 'Rating',
         'title' => 'Star Rating',
         'components' => 1,
@@ -763,7 +722,6 @@ return array (
       ),
       18249 =>
       array (
-        'type' => 'tag',
         'name' => 'RatingPercent',
         'title' => 'Percent Rating',
         'components' => 1,
@@ -774,7 +732,6 @@ return array (
       ),
       33423 =>
       array (
-        'type' => 'tag',
         'name' => 'BatteryLevel',
         'title' => 'Battery Level',
         'format' =>
@@ -784,7 +741,6 @@ return array (
       ),
       33432 =>
       array (
-        'type' => 'tag',
         'name' => 'Copyright',
         'title' => 'Copyright',
         'format' =>
@@ -795,7 +751,6 @@ return array (
       ),
       33723 =>
       array (
-        'type' => 'tag',
         'name' => 'IPTC-NAA',
         'title' => 'IPTC-NAA',
         'format' =>
@@ -805,21 +760,16 @@ return array (
       ),
       34665 =>
       array (
-        'type' => 'ifdExif',
-        'class' => 'ExifEye\\core\\Block\\Ifd',
         'name' => 'Exif',
-        'title' => 'Exif IFD',
+        'collection' => 'ifdExif',
       ),
       34853 =>
       array (
-        'type' => 'ifdGps',
-        'class' => 'ExifEye\\core\\Block\\Ifd',
         'name' => 'GPS',
-        'title' => 'GPS Info IFD',
+        'collection' => 'ifdGps',
       ),
       40091 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPTitle',
         'title' => 'Windows XP Title',
         'format' =>
@@ -830,7 +780,6 @@ return array (
       ),
       40092 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPComment',
         'title' => 'Windows XP Comment',
         'format' =>
@@ -841,7 +790,6 @@ return array (
       ),
       40093 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPAuthor',
         'title' => 'Windows XP Author',
         'format' =>
@@ -852,7 +800,6 @@ return array (
       ),
       40094 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPKeywords',
         'title' => 'Windows XP Keywords',
         'format' =>
@@ -863,7 +810,6 @@ return array (
       ),
       40095 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPSubject',
         'title' => 'Windows XP Subject',
         'format' =>
@@ -874,7 +820,6 @@ return array (
       ),
       50341 =>
       array (
-        'type' => 'tag',
         'name' => 'PrintIM',
         'title' => 'Print IM',
         'format' =>
@@ -887,7 +832,6 @@ return array (
     array (
       0 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSVersionID',
         'title' => 'GPS Version',
         'components' => 4,
@@ -899,7 +843,6 @@ return array (
       ),
       1 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSLatitudeRef',
         'title' => 'LatitudeRef',
         'components' => 2,
@@ -910,7 +853,6 @@ return array (
       ),
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSLatitude',
         'title' => 'Latitude',
         'components' => 3,
@@ -922,7 +864,6 @@ return array (
       ),
       3 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSLongitudeRef',
         'title' => 'LongitudeRef',
         'components' => 2,
@@ -933,7 +874,6 @@ return array (
       ),
       4 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSLongitude',
         'title' => 'Longitude',
         'components' => 3,
@@ -945,7 +885,6 @@ return array (
       ),
       5 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSAltitudeRef',
         'title' => 'AltitudeRef',
         'components' => 1,
@@ -956,7 +895,6 @@ return array (
       ),
       6 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSAltitude',
         'title' => 'Altitude',
         'components' => 1,
@@ -967,7 +905,6 @@ return array (
       ),
       7 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSTimeStamp',
         'title' => 'TimeStamp',
         'components' => 3,
@@ -978,7 +915,6 @@ return array (
       ),
       8 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSSatellites',
         'title' => 'Satellites',
         'format' =>
@@ -988,7 +924,6 @@ return array (
       ),
       9 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSStatus',
         'title' => 'Status',
         'components' => 2,
@@ -999,7 +934,6 @@ return array (
       ),
       10 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSMeasureMode',
         'title' => 'Measure Mode',
         'components' => 2,
@@ -1010,7 +944,6 @@ return array (
       ),
       11 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDOP',
         'title' => 'DOP',
         'components' => 1,
@@ -1021,7 +954,6 @@ return array (
       ),
       12 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSSpeedRef',
         'title' => 'SpeedRef',
         'components' => 2,
@@ -1032,7 +964,6 @@ return array (
       ),
       13 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSSpeed',
         'title' => 'Speed',
         'components' => 1,
@@ -1043,7 +974,6 @@ return array (
       ),
       14 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSTrackRef',
         'title' => 'TrackRef',
         'components' => 2,
@@ -1054,7 +984,6 @@ return array (
       ),
       15 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSTrack',
         'title' => 'Track',
         'components' => 1,
@@ -1065,7 +994,6 @@ return array (
       ),
       16 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSImgDirectionRef',
         'title' => 'ImgDirectionRef',
         'components' => 2,
@@ -1076,7 +1004,6 @@ return array (
       ),
       17 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSImgDirection',
         'title' => 'Image Direction',
         'components' => 1,
@@ -1087,7 +1014,6 @@ return array (
       ),
       18 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSMapDatum',
         'title' => 'Map Datum',
         'format' =>
@@ -1097,7 +1023,6 @@ return array (
       ),
       19 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestLatitudeRef',
         'title' => 'DestLatitudeRef',
         'components' => 2,
@@ -1108,7 +1033,6 @@ return array (
       ),
       20 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestLatitude',
         'title' => 'DestLatitude',
         'components' => 3,
@@ -1119,7 +1043,6 @@ return array (
       ),
       21 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestLongitudeRef',
         'title' => 'DestLongitudeRef',
         'components' => 2,
@@ -1130,7 +1053,6 @@ return array (
       ),
       22 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestLongitude',
         'title' => 'DestLongitude',
         'components' => 3,
@@ -1141,7 +1063,6 @@ return array (
       ),
       23 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestBearingRef',
         'title' => 'DestBearingRef',
         'components' => 2,
@@ -1152,7 +1073,6 @@ return array (
       ),
       24 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestBearing',
         'title' => 'DestBearing',
         'components' => 1,
@@ -1163,7 +1083,6 @@ return array (
       ),
       25 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestDistanceRef',
         'title' => 'DestDistanceRef',
         'components' => 2,
@@ -1174,7 +1093,6 @@ return array (
       ),
       26 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDestDistance',
         'title' => 'DestDistance',
         'components' => 1,
@@ -1185,7 +1103,6 @@ return array (
       ),
       27 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSProcessingMethod',
         'title' => 'Processing Method',
         'format' =>
@@ -1195,7 +1112,6 @@ return array (
       ),
       28 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSAreaInformation',
         'title' => 'Area Information',
         'format' =>
@@ -1205,7 +1121,6 @@ return array (
       ),
       29 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDateStamp',
         'title' => 'Date Stamp',
         'components' => 11,
@@ -1216,7 +1131,6 @@ return array (
       ),
       30 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSDifferential',
         'title' => 'Differential',
         'components' => 1,
@@ -1227,7 +1141,6 @@ return array (
       ),
       31 =>
       array (
-        'type' => 'tag',
         'name' => 'GPSHPositioningError',
         'title' => 'Horizontal Positioning Error',
         'format' =>
@@ -1240,13 +1153,11 @@ return array (
     array (
       1 =>
       array (
-        'type' => 'ifdMakerNotesCanonCameraSettings',
         'name' => 'CanonCameraSettings',
-        'title' => 'Camera Settings',
+        'collection' => 'ifdMakerNotesCanonCameraSettings',
       ),
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>
@@ -1256,19 +1167,16 @@ return array (
       ),
       4 =>
       array (
-        'type' => 'ifdMakerNotesCanonShotInformation',
         'name' => 'CanonShotInformation',
-        'title' => 'Shot Info',
+        'collection' => 'ifdMakerNotesCanonShotInformation',
       ),
       5 =>
       array (
-        'type' => 'ifdMakerNotesCanonPanoramaInformation',
-        'name' => 'CanonPanorama',
-        'title' => 'Panorama',
+        'name' => 'CanonPanoramaInformation',
+        'collection' => 'ifdMakerNotesCanonPanoramaInformation',
       ),
       6 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageType',
         'title' => 'Image Type',
         'format' =>
@@ -1278,7 +1186,6 @@ return array (
       ),
       7 =>
       array (
-        'type' => 'tag',
         'name' => 'FirmwareVersion',
         'title' => 'Firmware Version',
         'format' =>
@@ -1288,7 +1195,6 @@ return array (
       ),
       8 =>
       array (
-        'type' => 'tag',
         'name' => 'FileNumber',
         'title' => 'File Number',
         'format' =>
@@ -1298,7 +1204,6 @@ return array (
       ),
       9 =>
       array (
-        'type' => 'tag',
         'name' => 'OwnerName',
         'title' => 'Owner Name',
         'format' =>
@@ -1308,7 +1213,6 @@ return array (
       ),
       12 =>
       array (
-        'type' => 'tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -1318,19 +1222,16 @@ return array (
       ),
       13 =>
       array (
-        'type' => 'tag',
         'name' => 'CameraInfo',
         'title' => 'Camera Info',
       ),
       15 =>
       array (
-        'type' => 'tag',
         'name' => 'CustomFunctions',
         'title' => 'Custom Functions',
       ),
       16 =>
       array (
-        'type' => 'tag',
         'name' => 'ModelID',
         'title' => 'Model ID',
         'format' =>
@@ -1669,7 +1570,6 @@ return array (
       ),
       18 =>
       array (
-        'type' => 'tag',
         'name' => 'PictureInfo',
         'title' => 'Picture Info',
         'format' =>
@@ -1679,7 +1579,6 @@ return array (
       ),
       19 =>
       array (
-        'type' => 'tag',
         'name' => 'ThumbnailImageValidArea',
         'title' => 'Thumbnail Image Valid Area',
         'format' =>
@@ -1690,7 +1589,6 @@ return array (
       ),
       21 =>
       array (
-        'type' => 'tag',
         'name' => 'Serial Number Format',
         'title' => 'Serial number format',
         'format' =>
@@ -1700,7 +1598,6 @@ return array (
       ),
       26 =>
       array (
-        'type' => 'tag',
         'name' => 'SuperMacro',
         'title' => 'Super macro',
         'format' =>
@@ -1710,7 +1607,6 @@ return array (
       ),
       30 =>
       array (
-        'type' => 'tag',
         'name' => 'FirmwareRevision',
         'title' => 'Firmware Revision',
         'format' =>
@@ -1720,7 +1616,6 @@ return array (
       ),
       38 =>
       array (
-        'type' => 'tag',
         'name' => 'AFinfo',
         'title' => 'AF info',
         'format' =>
@@ -1730,7 +1625,6 @@ return array (
       ),
       131 =>
       array (
-        'type' => 'tag',
         'name' => 'OriginalDecision Data Offset',
         'title' => 'Original decision data offset',
         'format' =>
@@ -1740,13 +1634,11 @@ return array (
       ),
       147 =>
       array (
-        'type' => 'ifdMakerNotesCanonFileInformation',
         'name' => 'CanonFileInformation',
-        'title' => 'File Info',
+        'collection' => 'ifdMakerNotesCanonFileInformation',
       ),
       149 =>
       array (
-        'type' => 'tag',
         'name' => 'LensModel',
         'title' => 'Lens model',
         'format' =>
@@ -1756,7 +1648,6 @@ return array (
       ),
       150 =>
       array (
-        'type' => 'tag',
         'name' => 'InternalSerialNumber',
         'title' => 'Internal serial number',
         'format' =>
@@ -1766,7 +1657,6 @@ return array (
       ),
       151 =>
       array (
-        'type' => 'tag',
         'name' => 'DustRemovalData',
         'title' => 'Dust removal data',
         'format' =>
@@ -1776,13 +1666,11 @@ return array (
       ),
       153 =>
       array (
-        'type' => 'tag',
         'name' => 'CustomFunctions',
         'title' => 'Custom functions',
       ),
       160 =>
       array (
-        'type' => 'tag',
         'name' => 'ProcessingInfo',
         'title' => 'Processing info',
         'format' =>
@@ -1792,7 +1680,6 @@ return array (
       ),
       164 =>
       array (
-        'type' => 'tag',
         'name' => 'WhiteBalanceTable',
         'title' => 'White balance table',
         'format' =>
@@ -1802,7 +1689,6 @@ return array (
       ),
       170 =>
       array (
-        'type' => 'tag',
         'name' => 'MeasuredColor',
         'title' => 'Measured color',
         'format' =>
@@ -1812,7 +1698,6 @@ return array (
       ),
       180 =>
       array (
-        'type' => 'tag',
         'name' => 'ColorSpace',
         'title' => 'Color Space',
         'format' =>
@@ -1831,7 +1716,6 @@ return array (
       ),
       208 =>
       array (
-        'type' => 'tag',
         'name' => 'VRDOffset',
         'title' => 'VRD offset',
         'format' =>
@@ -1841,7 +1725,6 @@ return array (
       ),
       224 =>
       array (
-        'type' => 'tag',
         'name' => 'SensorInfo',
         'title' => 'Sensor info',
         'format' =>
@@ -1851,7 +1734,6 @@ return array (
       ),
       16385 =>
       array (
-        'type' => 'tag',
         'name' => 'ColorData',
         'title' => 'Color data',
         'format' =>
@@ -1864,7 +1746,6 @@ return array (
     array (
       41730 =>
       array (
-        'type' => 'tag',
         'name' => 'CFAPattern',
         'title' => 'CFA Pattern',
         'format' =>
@@ -1874,7 +1755,6 @@ return array (
       ),
       33434 =>
       array (
-        'type' => 'tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'components' => 1,
@@ -1886,7 +1766,6 @@ return array (
       ),
       33437 =>
       array (
-        'type' => 'tag',
         'name' => 'FNumber',
         'title' => 'FNumber',
         'components' => 1,
@@ -1898,7 +1777,6 @@ return array (
       ),
       34850 =>
       array (
-        'type' => 'tag',
         'name' => 'ExposureProgram',
         'title' => 'Exposure Program',
         'components' => 1,
@@ -1924,7 +1802,6 @@ return array (
       ),
       34852 =>
       array (
-        'type' => 'tag',
         'name' => 'SpectralSensitivity',
         'title' => 'Spectral Sensitivity',
         'format' =>
@@ -1934,7 +1811,6 @@ return array (
       ),
       34855 =>
       array (
-        'type' => 'tag',
         'name' => 'ISOSpeedRatings',
         'title' => 'ISO Speed Ratings',
         'format' =>
@@ -1944,7 +1820,6 @@ return array (
       ),
       34856 =>
       array (
-        'type' => 'tag',
         'name' => 'OECF',
         'title' => 'OECF',
         'format' =>
@@ -1954,7 +1829,6 @@ return array (
       ),
       34864 =>
       array (
-        'type' => 'tag',
         'name' => 'SensitivityType',
         'title' => 'Sensitivity Type',
         'format' =>
@@ -1978,7 +1852,6 @@ return array (
       ),
       34866 =>
       array (
-        'type' => 'tag',
         'name' => 'RecommendedExposureIndex',
         'title' => 'Recommended Exposure Index',
         'format' =>
@@ -1988,7 +1861,6 @@ return array (
       ),
       36864 =>
       array (
-        'type' => 'tag',
         'name' => 'ExifVersion',
         'title' => 'Exif Version',
         'components' => 4,
@@ -2000,7 +1872,6 @@ return array (
       ),
       36867 =>
       array (
-        'type' => 'tag',
         'name' => 'DateTimeOriginal',
         'title' => 'Date and Time (original)',
         'components' => 20,
@@ -2012,7 +1883,6 @@ return array (
       ),
       36868 =>
       array (
-        'type' => 'tag',
         'name' => 'DateTimeDigitized',
         'title' => 'Date and Time (digitized)',
         'components' => 20,
@@ -2024,7 +1894,6 @@ return array (
       ),
       36880 =>
       array (
-        'type' => 'tag',
         'name' => 'OffsetTime',
         'title' => 'Timezone',
         'components' => 7,
@@ -2035,7 +1904,6 @@ return array (
       ),
       36881 =>
       array (
-        'type' => 'tag',
         'name' => 'OffsetTimeOriginal',
         'title' => 'Timezone (original)',
         'components' => 7,
@@ -2046,7 +1914,6 @@ return array (
       ),
       36882 =>
       array (
-        'type' => 'tag',
         'name' => 'OffsetTimeDigitized',
         'title' => 'Timezone (digitized)',
         'components' => 7,
@@ -2057,7 +1924,6 @@ return array (
       ),
       37121 =>
       array (
-        'type' => 'tag',
         'name' => 'ComponentsConfiguration',
         'title' => 'Components Configuration',
         'components' => 4,
@@ -2069,7 +1935,6 @@ return array (
       ),
       37122 =>
       array (
-        'type' => 'tag',
         'name' => 'CompressedBitsPerPixel',
         'title' => 'Compressed Bits per Pixel',
         'components' => 1,
@@ -2080,7 +1945,6 @@ return array (
       ),
       37377 =>
       array (
-        'type' => 'tag',
         'name' => 'ShutterSpeedValue',
         'title' => 'Shutter Speed Value',
         'components' => 1,
@@ -2092,7 +1956,6 @@ return array (
       ),
       37378 =>
       array (
-        'type' => 'tag',
         'name' => 'ApertureValue',
         'title' => 'Aperture Value',
         'components' => 1,
@@ -2104,7 +1967,6 @@ return array (
       ),
       37379 =>
       array (
-        'type' => 'tag',
         'name' => 'BrightnessValue',
         'title' => 'Brightness Value',
         'components' => 1,
@@ -2116,7 +1978,6 @@ return array (
       ),
       37380 =>
       array (
-        'type' => 'tag',
         'name' => 'ExposureBiasValue',
         'title' => 'Exposure Bias',
         'components' => 1,
@@ -2128,7 +1989,6 @@ return array (
       ),
       37381 =>
       array (
-        'type' => 'tag',
         'name' => 'MaxApertureValue',
         'title' => 'Max Aperture Value',
         'components' => 1,
@@ -2139,7 +1999,6 @@ return array (
       ),
       37382 =>
       array (
-        'type' => 'tag',
         'name' => 'SubjectDistance',
         'title' => 'Subject Distance',
         'components' => 1,
@@ -2151,7 +2010,6 @@ return array (
       ),
       37383 =>
       array (
-        'type' => 'tag',
         'name' => 'MeteringMode',
         'title' => 'Metering Mode',
         'components' => 1,
@@ -2176,7 +2034,6 @@ return array (
       ),
       37384 =>
       array (
-        'type' => 'tag',
         'name' => 'LightSource',
         'title' => 'Light Source',
         'components' => 1,
@@ -2213,7 +2070,6 @@ return array (
       ),
       37385 =>
       array (
-        'type' => 'tag',
         'name' => 'Flash',
         'title' => 'Flash',
         'components' => 1,
@@ -2253,7 +2109,6 @@ return array (
       ),
       37386 =>
       array (
-        'type' => 'tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'components' => 1,
@@ -2265,7 +2120,6 @@ return array (
       ),
       37396 =>
       array (
-        'type' => 'tag',
         'name' => 'SubjectArea',
         'title' => 'Subject Area',
         'format' =>
@@ -2276,7 +2130,6 @@ return array (
       ),
       37500 =>
       array (
-        'type' => 'tag',
         'name' => 'MakerNote',
         'title' => 'Maker Note',
         'format' =>
@@ -2287,7 +2140,6 @@ return array (
       ),
       37510 =>
       array (
-        'type' => 'tag',
         'name' => 'UserComment',
         'title' => 'User Comment',
         'format' =>
@@ -2298,7 +2150,6 @@ return array (
       ),
       37520 =>
       array (
-        'type' => 'tag',
         'name' => 'SubSecTime',
         'title' => 'SubSec Time',
         'format' =>
@@ -2308,7 +2159,6 @@ return array (
       ),
       37521 =>
       array (
-        'type' => 'tag',
         'name' => 'SubSecTimeOriginal',
         'title' => 'SubSec Time Original',
         'format' =>
@@ -2318,7 +2168,6 @@ return array (
       ),
       37522 =>
       array (
-        'type' => 'tag',
         'name' => 'SubSecTimeDigitized',
         'title' => 'SubSec Time Digitized',
         'format' =>
@@ -2328,7 +2177,6 @@ return array (
       ),
       40960 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashPixVersion',
         'title' => 'FlashPix Version',
         'components' => 4,
@@ -2340,7 +2188,6 @@ return array (
       ),
       40961 =>
       array (
-        'type' => 'tag',
         'name' => 'ColorSpace',
         'title' => 'Color Space',
         'components' => 1,
@@ -2360,7 +2207,6 @@ return array (
       ),
       40962 =>
       array (
-        'type' => 'tag',
         'name' => 'PixelXDimension',
         'title' => 'Pixel x-Dimension',
         'components' => 1,
@@ -2372,7 +2218,6 @@ return array (
       ),
       40963 =>
       array (
-        'type' => 'tag',
         'name' => 'PixelYDimension',
         'title' => 'Pixel y-Dimension',
         'components' => 1,
@@ -2384,7 +2229,6 @@ return array (
       ),
       40964 =>
       array (
-        'type' => 'tag',
         'name' => 'RelatedSoundFile',
         'title' => 'Related Sound File',
         'format' =>
@@ -2394,13 +2238,11 @@ return array (
       ),
       40965 =>
       array (
-        'type' => 'ifdInteroperability',
         'name' => 'Interoperability',
-        'title' => 'Interoperability IFD',
+        'collection' => 'ifdInteroperability',
       ),
       41483 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashEnergy',
         'title' => 'Flash Energy',
         'components' => 1,
@@ -2411,7 +2253,6 @@ return array (
       ),
       41484 =>
       array (
-        'type' => 'tag',
         'name' => 'SpatialFrequencyResponse',
         'title' => 'Spatial Frequency Response',
         'format' =>
@@ -2421,7 +2262,6 @@ return array (
       ),
       41486 =>
       array (
-        'type' => 'tag',
         'name' => 'FocalPlaneXResolution',
         'title' => 'Focal Plane x-Resolution',
         'components' => 1,
@@ -2432,7 +2272,6 @@ return array (
       ),
       41487 =>
       array (
-        'type' => 'tag',
         'name' => 'FocalPlaneYResolution',
         'title' => 'Focal Plane y-Resolution',
         'components' => 1,
@@ -2443,7 +2282,6 @@ return array (
       ),
       41488 =>
       array (
-        'type' => 'tag',
         'name' => 'FocalPlaneResolutionUnit',
         'title' => 'Focal Plane Resolution Unit',
         'components' => 1,
@@ -2462,7 +2300,6 @@ return array (
       ),
       41492 =>
       array (
-        'type' => 'tag',
         'name' => 'SubjectLocation',
         'title' => 'Subject Location',
         'components' => 1,
@@ -2473,7 +2310,6 @@ return array (
       ),
       41493 =>
       array (
-        'type' => 'tag',
         'name' => 'ExposureIndex',
         'title' => 'Exposure index',
         'components' => 1,
@@ -2484,7 +2320,6 @@ return array (
       ),
       41495 =>
       array (
-        'type' => 'tag',
         'name' => 'SensingMethod',
         'title' => 'Sensing Method',
         'components' => 1,
@@ -2508,7 +2343,6 @@ return array (
       ),
       41728 =>
       array (
-        'type' => 'tag',
         'name' => 'FileSource',
         'title' => 'File Source',
         'components' => 1,
@@ -2520,7 +2354,6 @@ return array (
       ),
       41729 =>
       array (
-        'type' => 'tag',
         'name' => 'SceneType',
         'title' => 'Scene Type',
         'components' => 1,
@@ -2532,7 +2365,6 @@ return array (
       ),
       41985 =>
       array (
-        'type' => 'tag',
         'name' => 'CustomRendered',
         'title' => 'Custom Rendered',
         'components' => 1,
@@ -2551,7 +2383,6 @@ return array (
       ),
       41986 =>
       array (
-        'type' => 'tag',
         'name' => 'ExposureMode',
         'title' => 'Exposure Mode',
         'components' => 1,
@@ -2571,7 +2402,6 @@ return array (
       ),
       41987 =>
       array (
-        'type' => 'tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'components' => 1,
@@ -2590,7 +2420,6 @@ return array (
       ),
       41988 =>
       array (
-        'type' => 'tag',
         'name' => 'DigitalZoomRatio',
         'title' => 'Digital Zoom Ratio',
         'components' => 1,
@@ -2601,7 +2430,6 @@ return array (
       ),
       41989 =>
       array (
-        'type' => 'tag',
         'name' => 'FocalLengthIn35mmFilm',
         'title' => 'Focal Length In 35mm Film',
         'components' => 1,
@@ -2612,7 +2440,6 @@ return array (
       ),
       41990 =>
       array (
-        'type' => 'tag',
         'name' => 'SceneCaptureType',
         'title' => 'Scene Capture Type',
         'components' => 1,
@@ -2633,7 +2460,6 @@ return array (
       ),
       41991 =>
       array (
-        'type' => 'tag',
         'name' => 'GainControl',
         'title' => 'Gain Control',
         'components' => 1,
@@ -2655,7 +2481,6 @@ return array (
       ),
       41992 =>
       array (
-        'type' => 'tag',
         'name' => 'Contrast',
         'title' => 'Contrast',
         'components' => 1,
@@ -2675,7 +2500,6 @@ return array (
       ),
       41993 =>
       array (
-        'type' => 'tag',
         'name' => 'Saturation',
         'title' => 'Saturation',
         'components' => 1,
@@ -2695,7 +2519,6 @@ return array (
       ),
       41994 =>
       array (
-        'type' => 'tag',
         'name' => 'Sharpness',
         'title' => 'Sharpness',
         'components' => 1,
@@ -2715,13 +2538,11 @@ return array (
       ),
       41995 =>
       array (
-        'type' => 'tag',
         'name' => 'DeviceSettingDescription',
         'title' => 'Device Setting Description',
       ),
       41996 =>
       array (
-        'type' => 'tag',
         'name' => 'SubjectDistanceRange',
         'title' => 'Subject Distance Range',
         'components' => 1,
@@ -2742,7 +2563,6 @@ return array (
       ),
       42016 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageUniqueID',
         'title' => 'Image Unique ID',
         'components' => 32,
@@ -2753,7 +2573,6 @@ return array (
       ),
       42032 =>
       array (
-        'type' => 'tag',
         'name' => 'OwnerName',
         'title' => 'Owner Name',
         'format' =>
@@ -2763,7 +2582,6 @@ return array (
       ),
       42033 =>
       array (
-        'type' => 'tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -2773,7 +2591,6 @@ return array (
       ),
       42034 =>
       array (
-        'type' => 'tag',
         'name' => 'LensInfo',
         'title' => 'Lens Information',
         'format' =>
@@ -2783,7 +2600,6 @@ return array (
       ),
       42035 =>
       array (
-        'type' => 'tag',
         'name' => 'LensMake',
         'title' => 'Lens Make',
         'format' =>
@@ -2793,7 +2609,6 @@ return array (
       ),
       42036 =>
       array (
-        'type' => 'tag',
         'name' => 'LensModel',
         'title' => 'Lens Model',
         'format' =>
@@ -2803,7 +2618,6 @@ return array (
       ),
       42037 =>
       array (
-        'type' => 'tag',
         'name' => 'LensSerialNumber',
         'title' => 'Lens Serial Number',
         'format' =>
@@ -2813,7 +2627,6 @@ return array (
       ),
       42240 =>
       array (
-        'type' => 'tag',
         'name' => 'Gamma',
         'title' => 'Gamma',
         'components' => 1,
@@ -2827,13 +2640,11 @@ return array (
     array (
       3 =>
       array (
-        'type' => 'ifdMakerNotesAppleRuntime',
-        'name' => 'AppleRunTime',
-        'title' => 'Apple Run Time',
+        'name' => 'AppleRuntime',
+        'collection' => 'ifdMakerNotesAppleRuntime',
       ),
       8 =>
       array (
-        'type' => 'tag',
         'name' => 'AccelerationVector',
         'title' => 'Acceleration Vector',
         'format' =>
@@ -2843,7 +2654,6 @@ return array (
       ),
       10 =>
       array (
-        'type' => 'tag',
         'name' => 'HDRImageType',
         'title' => 'HDRImageType',
         'format' =>
@@ -2861,7 +2671,6 @@ return array (
       ),
       11 =>
       array (
-        'type' => 'tag',
         'name' => 'BurstUUID',
         'title' => 'Burst UUID',
         'format' =>
@@ -2871,7 +2680,6 @@ return array (
       ),
       17 =>
       array (
-        'type' => 'tag',
         'name' => 'ContentIdentifier',
         'title' => 'Content Identifier',
         'format' =>
@@ -2881,7 +2689,6 @@ return array (
       ),
       21 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageUniqueID',
         'title' => 'ImageUniqueID',
         'format' =>
@@ -2894,7 +2701,6 @@ return array (
     array (
       1 =>
       array (
-        'type' => 'tag',
         'name' => 'flags',
         'title' => 'Flags',
         'format' =>
@@ -2904,7 +2710,6 @@ return array (
       ),
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'value',
         'title' => 'Value',
         'format' =>
@@ -2914,7 +2719,6 @@ return array (
       ),
       3 =>
       array (
-        'type' => 'tag',
         'name' => 'timescale',
         'title' => 'Timescale',
         'format' =>
@@ -2924,7 +2728,6 @@ return array (
       ),
       4 =>
       array (
-        'type' => 'tag',
         'name' => 'epoch',
         'title' => 'Epoch',
         'format' =>
@@ -2937,7 +2740,6 @@ return array (
     array (
       1 =>
       array (
-        'type' => 'tag',
         'name' => 'MacroMode',
         'title' => 'Macro Mode',
         'format' =>
@@ -2955,7 +2757,6 @@ return array (
       ),
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'SelfTimer',
         'title' => 'Self Timer',
         'format' =>
@@ -2965,7 +2766,6 @@ return array (
       ),
       3 =>
       array (
-        'type' => 'tag',
         'name' => 'Quality',
         'title' => 'Quality',
         'format' =>
@@ -2989,7 +2789,6 @@ return array (
       ),
       4 =>
       array (
-        'type' => 'tag',
         'name' => 'CanonFlashMode',
         'title' => 'Flash Mode',
         'format' =>
@@ -3014,7 +2813,6 @@ return array (
       ),
       5 =>
       array (
-        'type' => 'tag',
         'name' => 'ContinuousDrive',
         'title' => 'Continuous Drive Mode',
         'format' =>
@@ -3039,7 +2837,6 @@ return array (
       ),
       7 =>
       array (
-        'type' => 'tag',
         'name' => 'FocusMode',
         'title' => 'Focus Mode',
         'format' =>
@@ -3066,7 +2863,6 @@ return array (
       ),
       9 =>
       array (
-        'type' => 'tag',
         'name' => 'RecordMode',
         'title' => 'Record Mode',
         'format' =>
@@ -3093,7 +2889,6 @@ return array (
       ),
       10 =>
       array (
-        'type' => 'tag',
         'name' => 'CanonImageSize',
         'title' => 'Image Size',
         'format' =>
@@ -3128,7 +2923,6 @@ return array (
       ),
       11 =>
       array (
-        'type' => 'tag',
         'name' => 'EasyMode',
         'title' => 'Easy Shooting Mode',
         'format' =>
@@ -3215,7 +3009,6 @@ return array (
       ),
       12 =>
       array (
-        'type' => 'tag',
         'name' => 'DigitalZoom',
         'title' => 'Digital Zoom',
         'format' =>
@@ -3235,7 +3028,6 @@ return array (
       ),
       13 =>
       array (
-        'type' => 'tag',
         'name' => 'Contrast',
         'title' => 'Contrast',
         'format' =>
@@ -3252,7 +3044,6 @@ return array (
       ),
       14 =>
       array (
-        'type' => 'tag',
         'name' => 'Saturation',
         'title' => 'Saturation',
         'format' =>
@@ -3269,7 +3060,6 @@ return array (
       ),
       15 =>
       array (
-        'type' => 'tag',
         'name' => 'Sharpness',
         'title' => 'Sharpness',
         'format' =>
@@ -3279,7 +3069,6 @@ return array (
       ),
       16 =>
       array (
-        'type' => 'tag',
         'name' => 'CameraISO',
         'title' => 'ISO Speed',
         'format' =>
@@ -3289,7 +3078,6 @@ return array (
       ),
       17 =>
       array (
-        'type' => 'tag',
         'name' => 'MeteringMode',
         'title' => 'Metering Mode',
         'format' =>
@@ -3311,7 +3099,6 @@ return array (
       ),
       18 =>
       array (
-        'type' => 'tag',
         'name' => 'FocusRange',
         'title' => 'Focus Range',
         'format' =>
@@ -3338,7 +3125,6 @@ return array (
       ),
       19 =>
       array (
-        'type' => 'tag',
         'name' => 'AFPoint',
         'title' => 'Auto Focus Point Selected',
         'format' =>
@@ -3362,7 +3148,6 @@ return array (
       ),
       20 =>
       array (
-        'type' => 'tag',
         'name' => 'CanonExposureMode',
         'title' => 'Exposure Mode',
         'format' =>
@@ -3386,7 +3171,6 @@ return array (
       ),
       22 =>
       array (
-        'type' => 'tag',
         'name' => 'LensType',
         'title' => 'Lens Type',
         'format' =>
@@ -3753,7 +3537,6 @@ return array (
       ),
       23 =>
       array (
-        'type' => 'tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',
         'format' =>
@@ -3763,7 +3546,6 @@ return array (
       ),
       24 =>
       array (
-        'type' => 'tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',
         'format' =>
@@ -3773,7 +3555,6 @@ return array (
       ),
       25 =>
       array (
-        'type' => 'tag',
         'name' => 'FocalUnits',
         'title' => 'Focal Units',
         'format' =>
@@ -3783,7 +3564,6 @@ return array (
       ),
       26 =>
       array (
-        'type' => 'tag',
         'name' => 'MaxAperture',
         'title' => 'Max Aperture',
         'format' =>
@@ -3793,7 +3573,6 @@ return array (
       ),
       27 =>
       array (
-        'type' => 'tag',
         'name' => 'MinAperture',
         'title' => 'Min Aperture',
         'format' =>
@@ -3803,7 +3582,6 @@ return array (
       ),
       28 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashActivity',
         'title' => 'Flash Activity',
         'format' =>
@@ -3813,7 +3591,6 @@ return array (
       ),
       29 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashDetails',
         'title' => 'Flash Details',
         'format' =>
@@ -3823,7 +3600,6 @@ return array (
       ),
       32 =>
       array (
-        'type' => 'tag',
         'name' => 'FocusContinuous',
         'title' => 'Focus Continuous',
         'format' =>
@@ -3842,7 +3618,6 @@ return array (
       ),
       33 =>
       array (
-        'type' => 'tag',
         'name' => 'AESetting',
         'title' => 'Auto Exposure Setting',
         'format' =>
@@ -3863,7 +3638,6 @@ return array (
       ),
       34 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageStabilization',
         'title' => 'Image Stabilization',
         'format' =>
@@ -3889,7 +3663,6 @@ return array (
       ),
       35 =>
       array (
-        'type' => 'tag',
         'name' => 'DisplayAperture',
         'title' => 'Display Aperture',
         'format' =>
@@ -3899,7 +3672,6 @@ return array (
       ),
       36 =>
       array (
-        'type' => 'tag',
         'name' => 'ZoomSourceWidth',
         'title' => 'Zoom Source Width',
         'format' =>
@@ -3909,7 +3681,6 @@ return array (
       ),
       37 =>
       array (
-        'type' => 'tag',
         'name' => 'ZoomTargetWidth',
         'title' => 'Zoom Target Width',
         'format' =>
@@ -3919,7 +3690,6 @@ return array (
       ),
       39 =>
       array (
-        'type' => 'tag',
         'name' => 'SpotMeteringMode',
         'title' => 'Spot Metering Mode',
         'format' =>
@@ -3937,7 +3707,6 @@ return array (
       ),
       40 =>
       array (
-        'type' => 'tag',
         'name' => 'PhotoEffect',
         'title' => 'Photo Effect',
         'format' =>
@@ -3961,7 +3730,6 @@ return array (
       ),
       41 =>
       array (
-        'type' => 'tag',
         'name' => 'ManualFlashOutput',
         'title' => 'Manual Flash Output',
         'format' =>
@@ -3982,7 +3750,6 @@ return array (
       ),
       42 =>
       array (
-        'type' => 'tag',
         'name' => 'ColorTone',
         'title' => 'Color Tone',
         'format' =>
@@ -3999,7 +3766,6 @@ return array (
       ),
       46 =>
       array (
-        'type' => 'tag',
         'name' => 'SRAWQuality',
         'title' => 'SRAW Quality',
         'format' =>
@@ -4021,37 +3787,31 @@ return array (
     array (
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageWidth',
         'title' => 'Image Width',
       ),
       3 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageHeight',
         'title' => 'Image Height',
       ),
       4 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageWidthAsShot',
         'title' => 'Image Width As Shot',
       ),
       5 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageHeightAsShot',
         'title' => 'Image Height As Shot',
       ),
       22 =>
       array (
-        'type' => 'tag',
         'name' => 'AFPointsUsed',
         'title' => 'AF Points Used',
       ),
       26 =>
       array (
-        'type' => 'tag',
         'name' => 'AFPointsUsed20D',
         'title' => 'AF Points Used (20D)',
       ),
@@ -4060,7 +3820,6 @@ return array (
     array (
       1 =>
       array (
-        'type' => 'tag',
         'name' => 'InteroperabilityIndex',
         'title' => 'Interoperability Index',
         'components' => 4,
@@ -4071,7 +3830,6 @@ return array (
       ),
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'InteroperabilityVersion',
         'title' => 'Interoperability Version',
         'components' => 4,
@@ -4083,7 +3841,6 @@ return array (
       ),
       4096 =>
       array (
-        'type' => 'tag',
         'name' => 'RelatedImageFileFormat',
         'title' => 'Related Image File Format',
         'format' =>
@@ -4093,7 +3850,6 @@ return array (
       ),
       4097 =>
       array (
-        'type' => 'tag',
         'name' => 'RelatedImageWidth',
         'title' => 'Related Image Width',
         'components' => 1,
@@ -4104,7 +3860,6 @@ return array (
       ),
       4098 =>
       array (
-        'type' => 'tag',
         'name' => 'RelatedImageLength',
         'title' => 'Related Image Length',
         'components' => 1,
@@ -4118,7 +3873,6 @@ return array (
     array (
       256 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageWidth',
         'title' => 'Image Width',
         'components' => 1,
@@ -4130,7 +3884,6 @@ return array (
       ),
       257 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageLength',
         'title' => 'Image Length',
         'components' => 1,
@@ -4142,7 +3895,6 @@ return array (
       ),
       258 =>
       array (
-        'type' => 'tag',
         'name' => 'BitsPerSample',
         'title' => 'Bits per Sample',
         'format' =>
@@ -4152,7 +3904,6 @@ return array (
       ),
       259 =>
       array (
-        'type' => 'tag',
         'name' => 'Compression',
         'title' => 'Compression',
         'components' => 1,
@@ -4210,7 +3961,6 @@ return array (
       ),
       262 =>
       array (
-        'type' => 'tag',
         'name' => 'PhotometricInterpretation',
         'title' => 'Photometric Interpretation',
         'components' => 1,
@@ -4241,7 +3991,6 @@ return array (
       ),
       266 =>
       array (
-        'type' => 'tag',
         'name' => 'FillOrder',
         'title' => 'Fill Order',
         'format' =>
@@ -4259,7 +4008,6 @@ return array (
       ),
       269 =>
       array (
-        'type' => 'tag',
         'name' => 'DocumentName',
         'title' => 'Document Name',
         'format' =>
@@ -4269,7 +4017,6 @@ return array (
       ),
       270 =>
       array (
-        'type' => 'tag',
         'name' => 'ImageDescription',
         'title' => 'Image Description',
         'format' =>
@@ -4279,7 +4026,6 @@ return array (
       ),
       271 =>
       array (
-        'type' => 'tag',
         'name' => 'Make',
         'title' => 'Manufacturer',
         'format' =>
@@ -4289,7 +4035,6 @@ return array (
       ),
       272 =>
       array (
-        'type' => 'tag',
         'name' => 'Model',
         'title' => 'Model',
         'format' =>
@@ -4299,7 +4044,6 @@ return array (
       ),
       273 =>
       array (
-        'type' => 'tag',
         'name' => 'StripOffsets',
         'title' => 'Strip Offsets',
         'format' =>
@@ -4310,7 +4054,6 @@ return array (
       ),
       274 =>
       array (
-        'type' => 'tag',
         'name' => 'Orientation',
         'title' => 'Orientation',
         'components' => 1,
@@ -4335,7 +4078,6 @@ return array (
       ),
       277 =>
       array (
-        'type' => 'tag',
         'name' => 'SamplesPerPixel',
         'title' => 'Samples per Pixel',
         'components' => 1,
@@ -4346,7 +4088,6 @@ return array (
       ),
       278 =>
       array (
-        'type' => 'tag',
         'name' => 'RowsPerStrip',
         'title' => 'Rows per Strip',
         'components' => 1,
@@ -4358,7 +4099,6 @@ return array (
       ),
       279 =>
       array (
-        'type' => 'tag',
         'name' => 'StripByteCounts',
         'title' => 'Strip Byte Count',
         'format' =>
@@ -4369,7 +4109,6 @@ return array (
       ),
       282 =>
       array (
-        'type' => 'tag',
         'name' => 'XResolution',
         'title' => 'x-Resolution',
         'components' => 1,
@@ -4380,7 +4119,6 @@ return array (
       ),
       283 =>
       array (
-        'type' => 'tag',
         'name' => 'YResolution',
         'title' => 'y-Resolution',
         'components' => 1,
@@ -4391,7 +4129,6 @@ return array (
       ),
       284 =>
       array (
-        'type' => 'tag',
         'name' => 'PlanarConfiguration',
         'title' => 'Planar Configuration',
         'components' => 1,
@@ -4410,7 +4147,6 @@ return array (
       ),
       296 =>
       array (
-        'type' => 'tag',
         'name' => 'ResolutionUnit',
         'title' => 'Resolution Unit',
         'components' => 1,
@@ -4429,7 +4165,6 @@ return array (
       ),
       301 =>
       array (
-        'type' => 'tag',
         'name' => 'TransferFunction',
         'title' => 'Transfer Function',
         'components' => 3,
@@ -4440,7 +4175,6 @@ return array (
       ),
       305 =>
       array (
-        'type' => 'tag',
         'name' => 'Software',
         'title' => 'Software',
         'format' =>
@@ -4450,7 +4184,6 @@ return array (
       ),
       306 =>
       array (
-        'type' => 'tag',
         'name' => 'DateTime',
         'title' => 'Date and Time',
         'components' => 20,
@@ -4462,7 +4195,6 @@ return array (
       ),
       315 =>
       array (
-        'type' => 'tag',
         'name' => 'Artist',
         'title' => 'Artist',
         'format' =>
@@ -4472,7 +4204,6 @@ return array (
       ),
       317 =>
       array (
-        'type' => 'tag',
         'name' => 'Predictor',
         'title' => 'Predictor',
         'components' => 1,
@@ -4491,7 +4222,6 @@ return array (
       ),
       318 =>
       array (
-        'type' => 'tag',
         'name' => 'WhitePoint',
         'title' => 'White Point',
         'components' => 2,
@@ -4502,7 +4232,6 @@ return array (
       ),
       319 =>
       array (
-        'type' => 'tag',
         'name' => 'PrimaryChromaticities',
         'title' => 'Primary Chromaticities',
         'components' => 6,
@@ -4513,7 +4242,6 @@ return array (
       ),
       338 =>
       array (
-        'type' => 'tag',
         'name' => 'ExtraSamples',
         'title' => 'Extra Samples',
         'components' => 1,
@@ -4533,7 +4261,6 @@ return array (
       ),
       339 =>
       array (
-        'type' => 'tag',
         'name' => 'SampleFormat',
         'title' => 'Sample Format',
         'components' => 4,
@@ -4544,7 +4271,6 @@ return array (
       ),
       342 =>
       array (
-        'type' => 'tag',
         'name' => 'TransferRange',
         'title' => 'Transfer Range',
         'format' =>
@@ -4554,7 +4280,6 @@ return array (
       ),
       512 =>
       array (
-        'type' => 'tag',
         'name' => 'JPEGProc',
         'title' => 'JPEG Proc',
         'format' =>
@@ -4572,7 +4297,6 @@ return array (
       ),
       513 =>
       array (
-        'type' => 'tag',
         'name' => 'ThumbnailOffset',
         'title' => 'Thumbnail Offset',
         'components' => 1,
@@ -4583,7 +4307,6 @@ return array (
       ),
       514 =>
       array (
-        'type' => 'tag',
         'name' => 'ThumbnailLength',
         'title' => 'Thumbnail Length',
         'components' => 1,
@@ -4594,7 +4317,6 @@ return array (
       ),
       529 =>
       array (
-        'type' => 'tag',
         'name' => 'YCbCrCoefficients',
         'title' => 'YCbCr Coefficients',
         'components' => 3,
@@ -4605,7 +4327,6 @@ return array (
       ),
       530 =>
       array (
-        'type' => 'tag',
         'name' => 'YCbCrSubSampling',
         'title' => 'YCbCr Sub-Sampling',
         'components' => 2,
@@ -4617,7 +4338,6 @@ return array (
       ),
       531 =>
       array (
-        'type' => 'tag',
         'name' => 'YCbCrPositioning',
         'title' => 'YCbCr Positioning',
         'components' => 1,
@@ -4636,7 +4356,6 @@ return array (
       ),
       532 =>
       array (
-        'type' => 'tag',
         'name' => 'ReferenceBlackWhite',
         'title' => 'Reference Black/White',
         'components' => 6,
@@ -4647,7 +4366,6 @@ return array (
       ),
       700 =>
       array (
-        'type' => 'tag',
         'name' => 'ApplicationNotes',
         'title' => 'Application Notes',
         'format' =>
@@ -4658,7 +4376,6 @@ return array (
       ),
       18246 =>
       array (
-        'type' => 'tag',
         'name' => 'Rating',
         'title' => 'Star Rating',
         'components' => 1,
@@ -4669,7 +4386,6 @@ return array (
       ),
       18249 =>
       array (
-        'type' => 'tag',
         'name' => 'RatingPercent',
         'title' => 'Percent Rating',
         'components' => 1,
@@ -4680,7 +4396,6 @@ return array (
       ),
       33423 =>
       array (
-        'type' => 'tag',
         'name' => 'BatteryLevel',
         'title' => 'Battery Level',
         'format' =>
@@ -4690,7 +4405,6 @@ return array (
       ),
       33432 =>
       array (
-        'type' => 'tag',
         'name' => 'Copyright',
         'title' => 'Copyright',
         'format' =>
@@ -4701,7 +4415,6 @@ return array (
       ),
       33723 =>
       array (
-        'type' => 'tag',
         'name' => 'IPTC-NAA',
         'title' => 'IPTC-NAA',
         'format' =>
@@ -4711,21 +4424,16 @@ return array (
       ),
       34665 =>
       array (
-        'type' => 'ifdExif',
-        'class' => 'ExifEye\\core\\Block\\Ifd',
         'name' => 'Exif',
-        'title' => 'Exif IFD',
+        'collection' => 'ifdExif',
       ),
       34853 =>
       array (
-        'type' => 'ifdGps',
-        'class' => 'ExifEye\\core\\Block\\Ifd',
         'name' => 'GPS',
-        'title' => 'GPS Info IFD',
+        'collection' => 'ifdGps',
       ),
       40091 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPTitle',
         'title' => 'Windows XP Title',
         'format' =>
@@ -4736,7 +4444,6 @@ return array (
       ),
       40092 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPComment',
         'title' => 'Windows XP Comment',
         'format' =>
@@ -4747,7 +4454,6 @@ return array (
       ),
       40093 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPAuthor',
         'title' => 'Windows XP Author',
         'format' =>
@@ -4758,7 +4464,6 @@ return array (
       ),
       40094 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPKeywords',
         'title' => 'Windows XP Keywords',
         'format' =>
@@ -4769,7 +4474,6 @@ return array (
       ),
       40095 =>
       array (
-        'type' => 'tag',
         'name' => 'WindowsXPSubject',
         'title' => 'Windows XP Subject',
         'format' =>
@@ -4780,7 +4484,6 @@ return array (
       ),
       50341 =>
       array (
-        'type' => 'tag',
         'name' => 'PrintIM',
         'title' => 'Print IM',
         'format' =>
@@ -4793,7 +4496,6 @@ return array (
     array (
       1 =>
       array (
-        'type' => 'tag',
         'name' => 'FileNumber',
         'title' => 'File Number',
         'format' =>
@@ -4803,7 +4505,6 @@ return array (
       ),
       2 =>
       array (
-        'type' => 'tag',
         'name' => 2,
         'title' => '0x0002',
         'format' =>
@@ -4814,7 +4515,6 @@ return array (
       ),
       3 =>
       array (
-        'type' => 'tag',
         'name' => 'BracketMode',
         'title' => 'Bracket Mode',
         'format' =>
@@ -4835,7 +4535,6 @@ return array (
       ),
       4 =>
       array (
-        'type' => 'tag',
         'name' => 'BracketValue',
         'title' => 'Bracket Value',
         'format' =>
@@ -4845,7 +4544,6 @@ return array (
       ),
       5 =>
       array (
-        'type' => 'tag',
         'name' => 'BracketShotNumber',
         'title' => 'Bracket Shot Number',
         'format' =>
@@ -4855,7 +4553,6 @@ return array (
       ),
       6 =>
       array (
-        'type' => 'tag',
         'name' => 'RawJpgQuality',
         'title' => 'Raw Jpg Quality',
         'format' =>
@@ -4879,7 +4576,6 @@ return array (
       ),
       7 =>
       array (
-        'type' => 'tag',
         'name' => 'RawJpgSize',
         'title' => 'Raw Jpg Size',
         'format' =>
@@ -4914,7 +4610,6 @@ return array (
       ),
       8 =>
       array (
-        'type' => 'tag',
         'name' => 'LongExposureNoiseReduction2',
         'title' => 'Long Exposure Noise Reduction',
         'format' =>
@@ -4934,7 +4629,6 @@ return array (
       ),
       9 =>
       array (
-        'type' => 'tag',
         'name' => 'WBBracketMode',
         'title' => 'WB Bracket Mode',
         'format' =>
@@ -4953,7 +4647,6 @@ return array (
       ),
       12 =>
       array (
-        'type' => 'tag',
         'name' => 'WBBracketValueAB',
         'title' => 'WB Bracket Value AB',
         'format' =>
@@ -4963,7 +4656,6 @@ return array (
       ),
       13 =>
       array (
-        'type' => 'tag',
         'name' => 'WBBracketValueGM',
         'title' => 'WB Bracket Value GM',
         'format' =>
@@ -4973,7 +4665,6 @@ return array (
       ),
       14 =>
       array (
-        'type' => 'tag',
         'name' => 'FilterEffect',
         'title' => 'Filter Effect',
         'format' =>
@@ -4994,7 +4685,6 @@ return array (
       ),
       15 =>
       array (
-        'type' => 'tag',
         'name' => 'ToningEffect',
         'title' => 'Toning Effect',
         'format' =>
@@ -5015,7 +4705,6 @@ return array (
       ),
       16 =>
       array (
-        'type' => 'tag',
         'name' => 'MacroMagnification',
         'title' => 'Macro Magnification',
         'format' =>
@@ -5025,7 +4714,6 @@ return array (
       ),
       19 =>
       array (
-        'type' => 'tag',
         'name' => 'LiveViewShooting',
         'title' => 'Live View Shooting',
         'format' =>
@@ -5043,7 +4731,6 @@ return array (
       ),
       20 =>
       array (
-        'type' => 'tag',
         'name' => 'FocusDistanceUpper',
         'title' => 'Focus Distance Upper',
         'format' =>
@@ -5053,7 +4740,6 @@ return array (
       ),
       21 =>
       array (
-        'type' => 'tag',
         'name' => 'FocusDistanceLower',
         'title' => 'Focus Distance Lower',
         'format' =>
@@ -5063,7 +4749,6 @@ return array (
       ),
       25 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashExposureLock',
         'title' => 'Flash Exposure Lock',
         'format' =>
@@ -5084,475 +4769,472 @@ return array (
     array (
       0 =>
       array (
-        'type' => 'ifd0',
         'name' => 'IFD0',
+        'collection' => 'ifd0',
       ),
       1 =>
       array (
-        'type' => 'ifd1',
         'name' => 'IFD1',
+        'collection' => 'ifd1',
       ),
     ),
     'jpeg' =>
     array (
       192 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF0',
         'title' => 'Start of frame (baseline DCT)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       193 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF1',
         'title' => 'Start of frame (extended sequential)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       194 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF2',
         'title' => 'Start of frame (progressive DCT)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       195 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF3',
         'title' => 'Encoding (lossless)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       196 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'DHT',
         'title' => 'Define Huffman table',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       197 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF5',
         'title' => 'Start of frame (differential sequential)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       198 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF6',
         'title' => 'Start of frame (differential progressive)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       199 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF7',
         'title' => 'Start of frame (differential lossless)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       200 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG',
         'title' => 'Extension',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       201 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF9',
         'title' => 'Start of frame (extended sequential, arithmetic)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       202 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF10',
         'title' => 'Encoding (progressive, arithmetic)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       203 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF11',
         'title' => 'Encoding (lossless, arithmetic)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       204 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'DAC',
         'title' => 'Define arithmetic coding conditioning',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       205 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF13',
         'title' => 'Encoding (differential sequential, arithmetic)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       206 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF14',
         'title' => 'Encoding (differential progressive, arithmetic)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       207 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOF15',
         'title' => 'Encoding (differential lossless, arithmetic)',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       208 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST0',
         'title' => 'Restart 0',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       209 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST1',
         'title' => 'Restart 1',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       210 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST2',
         'title' => 'Restart 2',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       211 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST3',
         'title' => 'Restart 3',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       212 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST4',
         'title' => 'Restart 4',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       213 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST5',
         'title' => 'Restart 5',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       214 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST6',
         'title' => 'Restart 6',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       215 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'RST7',
         'title' => 'Restart 7',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       216 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'SOI',
         'title' => 'Start of image',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       217 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'EOI',
         'title' => 'End of image',
         'payload' => 'none',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       218 =>
       array (
-        'type' => 'jpegSegment',
-        'class' => 'ExifEye\\core\\Block\\JpegSegmentSos',
         'name' => 'SOS',
         'title' => 'Start of scan',
         'payload' => 'scan',
+        'class' => 'ExifEye\\core\\Block\\JpegSegmentSos',
       ),
       219 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'DQT',
         'title' => 'Define quantization table',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       220 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'DNL',
         'title' => 'Define number of lines',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       221 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'DRI',
         'title' => 'Define restart interval',
         'payload' => 'fixed',
         'components' => 4,
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       222 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'DHP',
         'title' => 'Define hierarchical progression',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       223 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'EXP',
         'title' => 'Expand reference component',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       224 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP0',
         'title' => 'Application segment 0',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       225 =>
       array (
-        'type' => 'jpegSegment',
-        'class' => 'ExifEye\\core\\Block\\JpegSegmentApp1',
         'name' => 'APP1',
         'title' => 'Application segment 1',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegmentApp1',
       ),
       226 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP2',
         'title' => 'Application segment 2',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       227 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP3',
         'title' => 'Application segment 3',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       228 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP4',
         'title' => 'Application segment 4',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       229 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP5',
         'title' => 'Application segment 5',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       230 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP6',
         'title' => 'Application segment 6',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       231 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP7',
         'title' => 'Application segment 7',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       232 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP8',
         'title' => 'Application segment 8',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       233 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP9',
         'title' => 'Application segment 9',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       234 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP10',
         'title' => 'Application segment 10',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       235 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP11',
         'title' => 'Application segment 11',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       236 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP12',
         'title' => 'Application segment 12',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       237 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP13',
         'title' => 'Application segment 13',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       238 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP14',
         'title' => 'Application segment 14',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       239 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'APP15',
         'title' => 'Application segment 5',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       240 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG0',
         'title' => 'Extension 0',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       241 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG1',
         'title' => 'Extension 1',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       242 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG2',
         'title' => 'Extension 2',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       243 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG3',
         'title' => 'Extension 3',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       244 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG4',
         'title' => 'Extension 4',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       245 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG5',
         'title' => 'Extension 5',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       246 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG6',
         'title' => 'Extension 6',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       247 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG7',
         'title' => 'Extension 7',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       248 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG8',
         'title' => 'Extension 8',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       249 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG9',
         'title' => 'Extension 9',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       250 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG10',
         'title' => 'Extension 10',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       251 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG11',
         'title' => 'Extension 11',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       252 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG12',
         'title' => 'Extension 12',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       253 =>
       array (
-        'type' => 'jpegSegment',
         'name' => 'JPG13',
         'title' => 'Extension 13',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegment',
       ),
       254 =>
       array (
-        'type' => 'jpegSegment',
-        'class' => 'ExifEye\\core\\Block\\JpegSegmentCom',
         'name' => 'COM',
         'title' => 'Comment',
         'payload' => 'variable',
+        'class' => 'ExifEye\\core\\Block\\JpegSegmentCom',
       ),
     ),
     'exif' =>
     array (
       0 =>
       array (
-        'type' => 'tiff',
+        'name' => 'Tiff',
+        'collection' => 'tiff',
       ),
     ),
     'ifdMakerNotesCanonShotInformation' =>
     array (
       1 =>
       array (
-        'type' => 'tag',
         'name' => 'AutoISO',
         'title' => 'Auto ISO Speed Used',
         'format' =>
@@ -5562,7 +5244,6 @@ return array (
       ),
       2 =>
       array (
-        'type' => 'tag',
         'name' => 'BaseISO',
         'title' => 'Base ISO Speed Used',
         'format' =>
@@ -5572,7 +5253,6 @@ return array (
       ),
       3 =>
       array (
-        'type' => 'tag',
         'name' => 'MeasuredEV',
         'title' => 'Measured EV',
         'format' =>
@@ -5582,7 +5262,6 @@ return array (
       ),
       4 =>
       array (
-        'type' => 'tag',
         'name' => 'TargetAperture',
         'title' => 'Target Aperture',
         'format' =>
@@ -5592,7 +5271,6 @@ return array (
       ),
       5 =>
       array (
-        'type' => 'tag',
         'name' => 'TargetShutterSpeed',
         'title' => 'Target Shutter Speed',
         'format' =>
@@ -5602,7 +5280,6 @@ return array (
       ),
       6 =>
       array (
-        'type' => 'tag',
         'name' => 'ExposureCompensation',
         'title' => 'Exposure Compensation',
         'format' =>
@@ -5612,7 +5289,6 @@ return array (
       ),
       7 =>
       array (
-        'type' => 'tag',
         'name' => 'WhiteBalanceSetting',
         'title' => 'White Balance Setting',
         'format' =>
@@ -5650,7 +5326,6 @@ return array (
       ),
       8 =>
       array (
-        'type' => 'tag',
         'name' => 'SlowShutter',
         'title' => 'Slow Shutter',
         'format' =>
@@ -5671,7 +5346,6 @@ return array (
       ),
       9 =>
       array (
-        'type' => 'tag',
         'name' => 'SequenceNumber',
         'title' => 'Sequence Number',
         'format' =>
@@ -5681,7 +5355,6 @@ return array (
       ),
       10 =>
       array (
-        'type' => 'tag',
         'name' => 'OpticalZoomCode',
         'title' => 'Optical Zoom Code',
         'format' =>
@@ -5691,7 +5364,6 @@ return array (
       ),
       12 =>
       array (
-        'type' => 'tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -5701,7 +5373,6 @@ return array (
       ),
       13 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashGuideNumber',
         'title' => 'Flash Guide Number',
         'format' =>
@@ -5711,7 +5382,6 @@ return array (
       ),
       14 =>
       array (
-        'type' => 'tag',
         'name' => 'AFPointsInFocus',
         'title' => 'Auto Focus Points In Focus',
         'format' =>
@@ -5735,7 +5405,6 @@ return array (
       ),
       15 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashExposureComp',
         'title' => 'Flash Exposure Compensation',
         'format' =>
@@ -5745,7 +5414,6 @@ return array (
       ),
       16 =>
       array (
-        'type' => 'tag',
         'name' => 'AutoExposureBracketing',
         'title' => 'Auto Exposure Bracketing',
         'format' =>
@@ -5766,7 +5434,6 @@ return array (
       ),
       17 =>
       array (
-        'type' => 'tag',
         'name' => 'AEBBracketValue',
         'title' => 'AEB Bracket Value',
         'format' =>
@@ -5776,7 +5443,6 @@ return array (
       ),
       18 =>
       array (
-        'type' => 'tag',
         'name' => 'ControlMode',
         'title' => 'Control Mode',
         'format' =>
@@ -5795,7 +5461,6 @@ return array (
       ),
       19 =>
       array (
-        'type' => 'tag',
         'name' => 'FocusDistanceUpper',
         'title' => 'Focus Distance Upper',
         'format' =>
@@ -5805,7 +5470,6 @@ return array (
       ),
       20 =>
       array (
-        'type' => 'tag',
         'name' => 'FocusDistanceLower',
         'title' => 'Focus Distance Lower',
         'format' =>
@@ -5815,7 +5479,6 @@ return array (
       ),
       21 =>
       array (
-        'type' => 'tag',
         'name' => 'FNumber',
         'title' => 'FNumber',
         'format' =>
@@ -5825,7 +5488,6 @@ return array (
       ),
       22 =>
       array (
-        'type' => 'tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -5835,7 +5497,6 @@ return array (
       ),
       23 =>
       array (
-        'type' => 'tag',
         'name' => 'MeasuredEV2',
         'title' => 'Measured Exposure Value',
         'format' =>
@@ -5845,7 +5506,6 @@ return array (
       ),
       24 =>
       array (
-        'type' => 'tag',
         'name' => 'BulbDuration',
         'title' => 'Bulb Duration',
         'format' =>
@@ -5855,7 +5515,6 @@ return array (
       ),
       26 =>
       array (
-        'type' => 'tag',
         'name' => 'CameraType',
         'title' => 'Camera Type',
         'format' =>
@@ -5876,7 +5535,6 @@ return array (
       ),
       27 =>
       array (
-        'type' => 'tag',
         'name' => 'AutoRotate',
         'title' => 'Auto Rotate',
         'format' =>
@@ -5897,7 +5555,6 @@ return array (
       ),
       28 =>
       array (
-        'type' => 'tag',
         'name' => 'NDFilter',
         'title' => 'ND Filter',
         'format' =>
@@ -5916,7 +5573,6 @@ return array (
       ),
       29 =>
       array (
-        'type' => 'tag',
         'name' => 'SelfTimer2',
         'title' => 'Self Timer',
         'format' =>
@@ -5926,7 +5582,6 @@ return array (
       ),
       33 =>
       array (
-        'type' => 'tag',
         'name' => 'FlashOutput',
         'title' => 'Flash Output',
         'format' =>
@@ -6020,8 +5675,21 @@ return array (
         'length' => 8,
       ),
     ),
+    'image' =>
+    array (
+      'jpeg' =>
+      array (
+        'name' => 'Jpeg',
+        'collection' => 'jpeg',
+      ),
+      'tiff' =>
+      array (
+        'name' => 'Tiff',
+        'collection' => 'tiff',
+      ),
+    ),
   ),
-  'elementsByName' =>
+  'itemsByName' =>
   array (
     'ifdMakerNotesCanonPanoramaInformation' =>
     array (
@@ -6121,7 +5789,7 @@ return array (
       'CanonCameraSettings' => 1,
       'FocalLength' => 2,
       'CanonShotInformation' => 4,
-      'CanonPanorama' => 5,
+      'CanonPanoramaInformation' => 5,
       'ImageType' => 6,
       'FirmwareVersion' => 7,
       'FileNumber' => 8,
@@ -6223,7 +5891,7 @@ return array (
     ),
     'ifdMakerNotesApple' =>
     array (
-      'AppleRunTime' => 3,
+      'AppleRuntime' => 3,
       'AccelerationVector' => 8,
       'HDRImageType' => 10,
       'BurstUUID' => 11,
@@ -6439,6 +6107,10 @@ return array (
       'JPG13' => 253,
       'COM' => 254,
     ),
+    'exif' =>
+    array (
+      'Tiff' => 0,
+    ),
     'ifdMakerNotesCanonShotInformation' =>
     array (
       'AutoISO' => 1,
@@ -6484,6 +6156,11 @@ return array (
       'SignedRational' => 10,
       'Float' => 11,
       'Double' => 12,
+    ),
+    'image' =>
+    array (
+      'Jpeg' => 'jpeg',
+      'Tiff' => 'tiff',
     ),
   ),
   'makerNotes' =>

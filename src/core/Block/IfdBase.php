@@ -11,7 +11,7 @@ use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 /**
  * Abstract class representing an Image File Directory (IFD).
@@ -88,7 +88,7 @@ class IfdBase extends BlockBase
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
         // element.
-        if (($size = Spec::getFormatSize($format) * $components) > 4) {
+        if (($size = Collection::getFormatSize($format) * $components) > 4) {
             $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
         } else {
             $data_offset = $offset + 8;
@@ -98,13 +98,13 @@ class IfdBase extends BlockBase
             'i' => $i + 1,
             'ifdoffset' => $data_element->getStart() + $offset,
             'id' => '0x' . strtoupper(dechex($id)),
-            'format' => Spec::getFormatName($format),
+            'format' => Collection::getFormatName($format),
             'components' => $components,
             'offset' => $data_element->getStart() + $data_offset,
             'size' => $size,
         ]);
 
-        return new IfdItem($id, $format, $components, $data_offset, $parent_type, $this);
+        return new IfdItem($parent_type, $id, $format, $components, $data_offset);
     }
 
     /**
@@ -115,7 +115,7 @@ class IfdBase extends BlockBase
      */
     protected function executePostLoadCallbacks(DataElement $data_element)
     {
-        $post_load_callbacks = Spec::getTypePropertyValue($this->getType(), 'postLoad');
+        $post_load_callbacks = Collection::getPropertyValue($this->getType(), 'postLoad');
         if (!empty($post_load_callbacks)) {
             foreach ($post_load_callbacks as $callback) {
                 call_user_func($callback, $data_element, $this);

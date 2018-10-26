@@ -11,7 +11,7 @@ use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 /**
  * A value object representing an Image File Directory (IFD) item.
@@ -63,7 +63,7 @@ class IfdItem
     /**
      *   @todo
      */
-    public function __construct($id, $format, $components, $data_offset, $collection = null, BlockBase $caller = null)
+    public function __construct($collection, $id, $format, $components = 1, $data_offset = null)
     {
         $this->collection = $collection;
         $this->id = $id;
@@ -71,41 +71,15 @@ class IfdItem
         $this->components = $components;
         $this->dataOffset = $data_offset;
 
-        $this->hasDefinition = $id > 0xF000 || in_array($id, Spec::getTypeSupportedElementIds($collection));
+        $this->hasDefinition = $id > 0xF000 || in_array($id, Collection::getItemsIds($collection));
+    }
 
-        if (!$caller) {
-            return;
-        }
-
-        // Check if ExifEye has a definition for this TAG.
-        if (!$this->hasDefinition()) {
-            $caller->notice("No tag specification for tag {tagId} in ifd {ifdName}", [
-                'tagId' => '0x' . strtoupper(dechex($id)),
-                'ifdName' => $caller->getAttribute('name'),
-            ]);
-        } else {
-            // Warn if format is not as expected.
-            $expected_format = Spec::getElementPropertyValue($collection, $id, 'format');
-            if ($expected_format !== null && $format !== null && !in_array($format, $expected_format)) {
-                $expected_format_names = [];
-                foreach ($expected_format as $expected_format_id) {
-                    $expected_format_names[] = Spec::getFormatName($expected_format_id);
-                }
-                $caller->warning("Found {format_name} data format, expected {expected_format_names}", [
-                    'format_name' => Spec::getFormatName($format),
-                    'expected_format_names' => implode(', ', $expected_format_names),
-                ]);
-            }
-
-            // Warn if components are not as expected.
-            $expected_components = Spec::getElementPropertyValue($collection, $id, 'components');
-            if ($expected_components !== null && $components !== null && $components !== $expected_components) {
-                $caller->warning("Found {components} data components, expected {expected_components}", [
-                    'components' => $components,
-                    'expected_components' => $expected_components,
-                ]);
-            }
-        }
+    /**
+     * @todo
+     */
+    public function getCollection()
+    {
+        return $this->collection;
     }
 
     /**
@@ -144,7 +118,7 @@ class IfdItem
      */
     public function getSize()
     {
-        return Spec::getFormatSize($this->getFormat()) * $this->getComponents();
+        return Collection::getFormatSize($this->getFormat()) * $this->getComponents();
     }
 
     /**
@@ -152,7 +126,7 @@ class IfdItem
      */
     public function getType()
     {
-        $type = Spec::getElementType($this->collection, $this->getId());
+        $type = Collection::getItemCollection($this->collection, $this->getId());
         return $type === null ? 'tag' : $type;
     }
 
@@ -161,7 +135,7 @@ class IfdItem
      */
     public function getName()
     {
-        return Spec::getElementName($this->collection, $this->getId());
+        return Collection::getItemName($this->collection, $this->getId());
     }
 
     /**
@@ -169,7 +143,7 @@ class IfdItem
      */
     public function getClass()
     {
-        $class = $this->getType() === 'tag' ? 'ExifEye\core\Block\Tag' : Spec::getElementHandlingClass($this->collection, $this->getId(), $this->getFormat());
+        $class = $this->getType() === 'tag' ? 'ExifEye\core\Block\Tag' : Collection::getItemClass($this->collection, $this->getId(), $this->getFormat());
         return $class;
     }
 
@@ -178,7 +152,7 @@ class IfdItem
      */
     public function getEntryClass()
     {
-        return Spec::getElementHandlingClass($this->collection, $this->getId(), $this->getFormat());
+        return Collection::getItemClass($this->collection, $this->getId(), $this->getFormat());
     }
 
     /**
@@ -186,7 +160,7 @@ class IfdItem
      */
     public function getTitle()
     {
-        return Spec::getElementPropertyValue($this->collection, $this->getId(), 'title');
+        return Collection::getItemPropertyValue($this->collection, $this->getId(), 'title');
     }
 
     /**

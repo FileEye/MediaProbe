@@ -1,29 +1,25 @@
-type: ifdExif
+collection: ifdExif
 name: Exif
 title: IFD Exif
 class: ExifEye\core\Block\Ifd
-elements:
+items:
     0xA302:
-        type: tag
         name: CFAPattern
         title: 'CFA Pattern'
         format: Undefined
     0x829A:
-        type: tag
         name: ExposureTime
         title: 'Exposure Time'
         components: 1
         format: Rational
         class: ExifEye\core\Entry\ExifExposureTime
     0x829D:
-        type: tag
         name: FNumber
         title: FNumber
         components: 1
         format: Rational
         class: ExifEye\core\Entry\ExifFNumber
     0x8822:
-        type: tag
         name: ExposureProgram
         title: 'Exposure Program'
         components: 1
@@ -40,22 +36,18 @@ elements:
                 7: 'Portrait mode (for closeup photos with the background out of focus'
                 8: 'Landscape mode (for landscape photos with the background in focus'
     0x8824:
-        type: tag
         name: SpectralSensitivity
         title: 'Spectral Sensitivity'
         format: Ascii
     0x8827:
-        type: tag
         name: ISOSpeedRatings
         title: 'ISO Speed Ratings'
         format: Short
     0x8828:
-        type: tag
         name: OECF
         title: OECF
         format: Undefined
     0x8830:
-        type: tag
         name: SensitivityType
         title: 'Sensitivity Type'
         format: Short
@@ -70,105 +62,89 @@ elements:
                 6: 'Recommended Exposure Index and ISO Speed'
                 7: 'Standard Output Sensitivity, Recommended Exposure Index and ISO Speed'
     0x8832:
-        type: tag
         name: RecommendedExposureIndex
         title: 'Recommended Exposure Index'
         format: Short
     0x9000:
-        type: tag
         name: ExifVersion
         title: 'Exif Version'
         components: 4
         format: Undefined
         class: ExifEye\core\Entry\Version
     0x9003:
-        type: tag
         name: DateTimeOriginal
         title: 'Date and Time (original)'
         components: 20
         format: Ascii
         class: ExifEye\core\Entry\Time
     0x9004:
-        type: tag
         name: DateTimeDigitized
         title: 'Date and Time (digitized)'
         components: 20
         format: Ascii
         class: ExifEye\core\Entry\Time
     0x9010:
-        type: tag
         name: OffsetTime
         title: Timezone
         components: 7
         format: Ascii
     0x9011:
-        type: tag
         name: OffsetTimeOriginal
         title: 'Timezone (original)'
         components: 7
         format: Ascii
     0x9012:
-        type: tag
         name: OffsetTimeDigitized
         title: 'Timezone (digitized)'
         components: 7
         format: Ascii
     0x9101:
-        type: tag
         name: ComponentsConfiguration
         title: 'Components Configuration'
         components: 4
         format: Undefined
         class: ExifEye\core\Entry\ExifComponentsConfiguration
     0x9102:
-        type: tag
         name: CompressedBitsPerPixel
         title: 'Compressed Bits per Pixel'
         components: 1
         format: Rational
     0x9201:
-        type: tag
         name: ShutterSpeedValue
         title: 'Shutter Speed Value'
         components: 1
         format: SignedRational
         class: ExifEye\core\Entry\ExifShutterSpeedValue
     0x9202:
-        type: tag
         name: ApertureValue
         title: 'Aperture Value'
         components: 1
         format: Rational
         class: ExifEye\core\Entry\ExifApertureValue
     0x9203:
-        type: tag
         name: BrightnessValue
         title: 'Brightness Value'
         components: 1
         format: SignedRational
         class: ExifEye\core\Entry\ExifBrightnessValue
     0x9204:
-        type: tag
         name: ExposureBiasValue
         title: 'Exposure Bias'
         components: 1
         format: SignedRational
         class: ExifEye\core\Entry\ExifExposureBiasValue
     0x9205:
-        type: tag
         name: MaxApertureValue
         title: 'Max Aperture Value'
         components: 1
         format: Rational
     0x9206:
-        type: tag
         name: SubjectDistance
         title: 'Subject Distance'
         components: 1
         format: SignedRational
         class: ExifEye\core\Entry\ExifSubjectDistance
     0x9207:
-        type: tag
         name: MeteringMode
         title: 'Metering Mode'
         components: 1
@@ -184,7 +160,6 @@ elements:
                 6: 'Partial'
                 255: 'Other'
     0x9208:
-        type: tag
         name: LightSource
         title: 'Light Source'
         components: 1
@@ -212,7 +187,6 @@ elements:
                 24: 'ISO studio tungsten'
                 255: 'Other'
     0x9209:
-        type: tag
         name: Flash
         title: Flash
         components: 1
@@ -243,54 +217,45 @@ elements:
                 0x005d: 'Flash fired, auto mode, return light not detected, red-eye reduction mode.'
                 0x005f: 'Flash fired, auto mode, return light detected, red-eye reduction mode.'
     0x920A:
-        type: tag
         name: FocalLength
         title: 'Focal Length'
         components: 1
         format: Rational
         class: ExifEye\core\Entry\ExifFocalLength
     0x9214:
-        type: tag
         name: SubjectArea
         title: 'Subject Area'
         format: Short
         class: ExifEye\core\Entry\ExifSubjectArea
     0x927C:
-        type: tag
         name: MakerNote
         title: 'Maker Note'
         format: Undefined
         class: ExifEye\core\Entry\ExifMakerNote
     0x9286:
-        type: tag
         name: UserComment
         title: 'User Comment'
         format: Undefined
         class: ExifEye\core\Entry\ExifUserComment
     0x9290:
-        type: tag
         name: SubSecTime
         title: 'SubSec Time'
         format: Ascii
     0x9291:
-        type: tag
         name: SubSecTimeOriginal
         title: 'SubSec Time Original'
         format: Ascii
     0x9292:
-        type: tag
         name: SubSecTimeDigitized
         title: 'SubSec Time Digitized'
         format: Ascii
     0xA000:
-        type: tag
         name: FlashPixVersion
         title: 'FlashPix Version'
         components: 4
         format: Undefined
         class: ExifEye\core\Entry\Version
     0xA001:
-        type: tag
         name: ColorSpace
         title: 'Color Space'
         components: 1
@@ -301,51 +266,42 @@ elements:
                 2: 'Adobe RGB'
                 0xffff: 'Uncalibrated'
     0xA002:
-        type: tag
         name: PixelXDimension
         title: 'Pixel x-Dimension'
         components: 1
         format: [Short, Long]
     0xA003:
-        type: tag
         name: PixelYDimension
         title: 'Pixel y-Dimension'
         components: 1
         format: [Short, Long]
     0xA004:
-        type: tag
         name: RelatedSoundFile
         title: 'Related Sound File'
         format: Ascii
     0xA005:
-        type: ifdInteroperability
         name: Interoperability
-        title: 'Interoperability IFD'
+        collection: ifdInteroperability
     0xA20B:
-        type: tag
         name: FlashEnergy
         title: 'Flash Energy'
         components: 1
         format: Rational
     0xA20C:
-        type: tag
         name: SpatialFrequencyResponse
         title: 'Spatial Frequency Response'
         format: Undefined
     0xA20E:
-        type: tag
         name: FocalPlaneXResolution
         title: 'Focal Plane x-Resolution'
         components: 1
         format: Rational
     0xA20F:
-        type: tag
         name: FocalPlaneYResolution
         title: 'Focal Plane y-Resolution'
         components: 1
         format: Rational
     0xA210:
-        type: tag
         name: FocalPlaneResolutionUnit
         title: 'Focal Plane Resolution Unit'
         components: 1
@@ -355,19 +311,16 @@ elements:
                 2: 'Inch'
                 3: 'Centimeter'
     0xA214:
-        type: tag
         name: SubjectLocation
         title: 'Subject Location'
         components: 1
         format: Short
     0xA215:
-        type: tag
         name: ExposureIndex
         title: 'Exposure index'
         components: 1
         format: Rational
     0xA217:
-        type: tag
         name: SensingMethod
         title: 'Sensing Method'
         components: 1
@@ -382,21 +335,18 @@ elements:
                 7: 'Trilinear sensor'
                 8: 'Color sequential linear sensor'
     0xA300:
-        type: tag
         name: FileSource
         title: 'File Source'
         components: 1
         format: Undefined
         class: ExifEye\core\Entry\ExifFileSource
     0xA301:
-        type: tag
         name: SceneType
         title: 'Scene Type'
         components: 1
         format: Undefined
         class: ExifEye\core\Entry\ExifSceneType
     0xA401:
-        type: tag
         name: CustomRendered
         title: 'Custom Rendered'
         components: 1
@@ -406,7 +356,6 @@ elements:
                 0: 'Normal process'
                 1: 'Custom process'
     0xA402:
-        type: tag
         name: ExposureMode
         title: 'Exposure Mode'
         components: 1
@@ -417,7 +366,6 @@ elements:
                 1: 'Manual exposure'
                 2: 'Auto bracket'
     0xA403:
-        type: tag
         name: WhiteBalance
         title: 'White Balance'
         components: 1
@@ -427,19 +375,16 @@ elements:
                 0: 'Auto white balance'
                 1: 'Manual white balance'
     0xA404:
-        type: tag
         name: DigitalZoomRatio
         title: 'Digital Zoom Ratio'
         components: 1
         format: Rational
     0xA405:
-        type: tag
         name: FocalLengthIn35mmFilm
         title: 'Focal Length In 35mm Film'
         components: 1
         format: Short
     0xA406:
-        type: tag
         name: SceneCaptureType
         title: 'Scene Capture Type'
         components: 1
@@ -451,7 +396,6 @@ elements:
                 2: 'Portrait'
                 3: 'Night scene'
     0xA407:
-        type: tag
         name: GainControl
         title: 'Gain Control'
         components: 1
@@ -464,7 +408,6 @@ elements:
                 3: 'Low gain down'
                 4: 'High gain down'
     0xA408:
-        type: tag
         name: Contrast
         title: Contrast
         components: 1
@@ -475,7 +418,6 @@ elements:
                 1: 'Soft'
                 2: 'Hard'
     0xA409:
-        type: tag
         name: Saturation
         title: Saturation
         components: 1
@@ -486,7 +428,6 @@ elements:
                 1: 'Low saturation'
                 2: 'High saturation'
     0xA40A:
-        type: tag
         name: Sharpness
         title: Sharpness
         components: 1
@@ -497,11 +438,9 @@ elements:
                 1: 'Soft'
                 2: 'Hard'
     0xA40B:
-        type: tag
         name: DeviceSettingDescription
         title: 'Device Setting Description'
     0xA40C:
-        type: tag
         name: SubjectDistanceRange
         title: 'Subject Distance Range'
         components: 1
@@ -513,43 +452,35 @@ elements:
                 2: 'Close view'
                 3: 'Distant view'
     0xA420:
-        type: tag
         name: ImageUniqueID
         title: 'Image Unique ID'
         components: 32
         format: Ascii
     0xA430:
-        type: tag
         name: OwnerName
         title: 'Owner Name'
         format: Ascii
     0xA431:
-        type: tag
         name: SerialNumber
         title: 'Serial Number'
         format: Ascii
     0xA432:
-        type: tag
         name: LensInfo
         title: 'Lens Information'
         format: Rational
     0xA433:
-        type: tag
         name: LensMake
         title: 'Lens Make'
         format: Ascii
     0xA434:
-        type: tag
         name: LensModel
         title: 'Lens Model'
         format: Ascii
     0xA435:
-        type: tag
         name: LensSerialNumber
         title: 'Lens Serial Number'
         format: Ascii
     0xA500:
-        type: tag
         name: Gamma
         title: Gamma
         components: 1

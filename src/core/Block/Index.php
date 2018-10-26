@@ -5,7 +5,7 @@ namespace ExifEye\core\Block;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ExifEye;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -30,7 +30,7 @@ class Index extends IfdBase
         ]);
 
         $index_size = $data_element->getShort($offset);
-        if ($index_size / $options['components'] !== Spec::getFormatSize(Spec::getFormatIdFromName('Short'))) {
+        if ($index_size / $options['components'] !== Collection::getFormatSize(Collection::getFormatIdFromName('Short'))) {
             $this->warning('Size of {ifd_name} does not match the number of entries.', [
                 'ifd_name' => $this->getAttribute('name'),
             ]);
@@ -38,13 +38,13 @@ class Index extends IfdBase
         $offset += 2;
         for ($i = 0; $i < $options['components']; $i++) {
             // Check if this tag ($i + 1) should be skipped.
-            if (Spec::getElementPropertyValue($this->getType(), $i + 1, 'skip')) {
+            if (Collection::getItemPropertyValue($this->getType(), $i + 1, 'skip')) {
                 continue;
             };
 
-            $item_format = Spec::getElementPropertyValue($this->getType(), $i + 1, 'format')[0];
+            $item_format = Collection::getItemPropertyValue($this->getType(), $i + 1, 'format')[0];
 
-            switch (Spec::getFormatName($item_format)) {
+            switch (Collection::getFormatName($item_format)) {
                 case 'Short':
                     $item_value = $data_element->getShort($offset + $i * 2);
                     break;
@@ -56,19 +56,19 @@ class Index extends IfdBase
                     break;
                 default:
                     $item_value = $data_element->getSignedShort($offset + $i * 2);
-                    $item_format = Spec::getFormatIdFromName('SignedShort');
+                    $item_format = Collection::getFormatIdFromName('SignedShort');
                     break;
             }
 
             $this->debug("#{i} id {id}, f {format}, data @{offset}", [
                 'i' => $i + 1,
                 'id' => '0x' . strtoupper(dechex($i)),
-                'format' => Spec::getFormatName($item_format),
+                'format' => Collection::getFormatName($item_format),
                 'offset' => $data_element->getStart() + $offset + $i * 2,
             ]);
 
-            if ($entry_class = Spec::getElementHandlingClass($this->getType(), $i + 1, $item_format)) {
-                $tag = new Tag($this, new IfdItem($i + 1, $item_format, 1, 0, $this->getType(), $this));
+            if ($entry_class = Collection::getItemClass($this->getType(), $i + 1, $item_format)) {
+                $tag = new Tag($this, new IfdItem($this->getType(), $i + 1, $item_format));
                 new $entry_class($tag, [$item_value]);
             }
         }
@@ -100,7 +100,7 @@ class Index extends IfdBase
     {
         $size = 0;
         foreach ($this->getMultipleElements('tag') as $tag) {
-            $size += Spec::getFormatSize($tag->getFormat());
+            $size += Collection::getFormatSize($tag->getFormat());
         }
         return $size / 2;
     }

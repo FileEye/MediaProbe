@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\WindowsString;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Utility\ConvertBytes;
 
 class EntryWindowsStringTest extends EntryTestBase

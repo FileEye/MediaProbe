@@ -40,7 +40,7 @@ class JpegSegmentSos extends JpegSegmentBase
         new Undefined($this, [$data_window->getBytes()]);
 
         // Append the EOI.
-        new JpegSegment('jpegSegment', self::JPEG_EOI, $this->getParentElement());
+        new JpegSegment('jpeg', self::JPEG_EOI, $this->getParentElement());
 
         // Now check to see if there are any trailing data.
         if ($end_offset < $size) {

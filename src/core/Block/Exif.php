@@ -35,7 +35,7 @@ class Exif extends BlockBase
 
         $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, strlen(self::EXIF_HEADER));
         if ($tiff_order !== null) {
-            $tiff = new Tiff($this);
+            $tiff = new Tiff('tiff', $this);
             $tiff->loadFromData($data_window, strlen(self::EXIF_HEADER), $size - strlen(self::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be

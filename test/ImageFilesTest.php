@@ -7,7 +7,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\Test\core\ExifEyeTestCaseBase;
 use ExifEye\core\Image;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
@@ -116,7 +116,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
             // No sub elements in the element being tested.
             $this->assertNull($element->getElement('*'));
             $this->assertEquals($expected['path'], $element->getContextPath());
-            $this->assertEquals($expected['format'], Spec::getFormatName($element->getFormat()), $element->getContextPath());
+            $this->assertEquals($expected['format'], Collection::getFormatName($element->getFormat()), $element->getContextPath());
             $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
             $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());

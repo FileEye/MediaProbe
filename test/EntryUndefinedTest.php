@@ -3,7 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 class EntryUndefinedTest extends EntryTestBase
 {

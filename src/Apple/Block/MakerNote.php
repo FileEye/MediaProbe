@@ -12,7 +12,7 @@ use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 class MakerNote extends IfdBase
 {

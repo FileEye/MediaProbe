@@ -10,7 +10,7 @@ use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Image;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 class Bug3017880Test extends ExifEyeTestCaseBase
 {
@@ -34,20 +34,20 @@ class Bug3017880Test extends ExifEyeTestCaseBase
                     ->getMock();
 
                 $exif = new Exif('exif', $app1_segment_mock);
-                new Tiff($exif);
+                new Tiff('tiff', $exif);
             }
 
             $tiff = $exif->getElement("tiff");
             $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd($tiff, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff'));
+                $ifd0 = new Ifd($tiff, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
             }
 
             $software_name = 'Example V2';
             $software_tag = $ifd0->getElement("tag[@name='Software']");
 
             if ($software_tag === null) {
-                $tag = new Tag($ifd0, new IfdItem(0x0131, Spec::getFormatIdFromName('Ascii'), 1, 0, 'ifd0'));
+                $tag = new Tag($ifd0, new IfdItem('ifd0', 0x0131, Collection::getFormatIdFromName('Ascii')));
                 new Ascii($tag, [$software_name]);
                 $resave_file = 1;
             } else {

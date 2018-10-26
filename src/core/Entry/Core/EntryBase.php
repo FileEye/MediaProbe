@@ -7,7 +7,7 @@ use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ElementBase;
 use ExifEye\core\ElementInterface;
 use ExifEye\core\ExifEyeException;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 /**
  * Base class for EntryInterface objects.
@@ -60,7 +60,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         if (!empty($data)) {
             $this->setValue($data);
         }
-        $this->format = Spec::getFormatIdFromName($this->formatName);
+        $this->format = Collection::getFormatIdFromName($this->formatName);
     }
 
     /**
@@ -104,7 +104,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         // xx this is assuming an entry is within a tag within an ifd...
         $parent = $this->getParentElement();
         if ($parent !== null && $parent->getCollection() !== null) {
-            return Spec::getElementText($parent->getCollection(), $parent->getAttribute('id'), $this->getValue(), $options);
+            return Collection::getItemText($parent->getCollection(), $parent->getAttribute('id'), $this->getValue(), $options);
         }
         return null;
     }
@@ -115,7 +115,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     public function toDumpArray()
     {
         $dump = array_merge(parent::toDumpArray(), [
-            'format' => Spec::getFormatName($this->getFormat()),
+            'format' => Collection::getFormatName($this->getFormat()),
             'components' => $this->getComponents(),
             'bytesHash' => hash('sha256', $this->toBytes()),
             'text' => $this->toString(),

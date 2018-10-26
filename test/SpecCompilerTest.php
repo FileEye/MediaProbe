@@ -5,7 +5,7 @@ namespace ExifEye\Test\core;
 use ExifEye\core\Block\Ifd;
 use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Utility\SpecCompiler;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
@@ -36,7 +36,7 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     public function tearDown()
     {
         $this->fs->remove($this->testResourceDirectory);
-        Spec::setMap(null);
+        Collection::setMap(null);
         parent::tearDown();
     }
 
@@ -52,60 +52,27 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     }
 
     /**
-     * Tests that compiling a YAML file with invalid IFD keys raises exception.
-     */
-/*  xx todo  public function testInvalidIfdKeys()
-    {
-        //@todo change below to SpecCompilerException::class once PHP 5.4 support is removed.
-        $this->fcExpectException('ExifEye\core\Utility\SpecCompilerException', 'ifd_ifd0.yaml: invalid IFD key(s) found - bork');
-        $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_ifd_keys', $this->testResourceDirectory);
-    }*/
-
-    /**
-     * Tests that compiling a YAML file with invalid TAG keys raises exception.
-     */
-/*    public function testInvalidTagKeys()
-    {
-        //@todo change below to SpecCompilerException::class once PHP 5.4 support is removed.
-        $this->fcExpectException('ExifEye\core\Utility\SpecCompilerException', "ifd_ifd0.yaml: invalid key(s) found for TAG 'ImageWidth' - bork");
-        $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_tag_keys', $this->testResourceDirectory);
-    }*/
-
-    /**
-     * Tests that compiling a YAML file with invalid sub IFD raises exception.
-     */
-/*    public function testInvalidSubIfd()
-    {
-        //@todo change below to SpecCompilerException::class once PHP 5.4 support is removed.
-        $this->fcExpectException('ExifEye\core\Utility\SpecCompilerException', "Invalid sub IFD(s) found for TAG 'ExifIFDPointer': *** EXPECTED FAILURE ***");
-        $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_subifd', $this->testResourceDirectory);
-    }*/
-
-    /**
      * Tests compiling a valid specifications stub set.
      */
     public function testValidStubSpec()
     {
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
-        Spec::setMap($this->testResourceDirectory . '/spec.php');
-        $this->assertCount(4, Spec::getTypes());
+        Collection::setMap($this->testResourceDirectory . '/spec.php');
+        $this->assertCount(4, Collection::getCollections());
 
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd_0 = new Ifd($tiff_mock, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff', $tiff_mock));
-        $ifd_exif = new Ifd($ifd_0, new IfdItem(0x8769, Spec::getFormatIdFromName('Long'), 1, 0, 'ifd0', $ifd_0));
+        $ifd_0 = new Ifd($tiff_mock, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
+        $ifd_exif = new Ifd($ifd_0, new IfdItem('ifd0', 0x8769, Collection::getFormatIdFromName('Long')));
 
-        $this->assertEquals(0x0100, Spec::getElementIdByName($ifd_0->getType(), 'ImageWidth'));
-        $this->assertEquals(0x8769, Spec::getElementIdByName($ifd_0->getType(), 'ExifIfd'));
-        $this->assertEquals(0x829A, Spec::getElementIdByName($ifd_exif->getType(), 'ExposureTime'));
+        $this->assertEquals(0x0100, Collection::getItemIdByName($ifd_0->getType(), 'ImageWidth'));
+        $this->assertEquals(0x8769, Collection::getItemIdByName($ifd_0->getType(), 'Exif'));
+        $this->assertEquals(0x829A, Collection::getItemIdByName($ifd_exif->getType(), 'ExposureTime'));
 
         // Compression is missing from the stub specs.
-        $this->assertNull(Spec::getElementIdByName($ifd_0->getType(), 'Compression'));
+        $this->assertNull(Collection::getItemIdByName($ifd_0->getType(), 'Compression'));
     }
 }

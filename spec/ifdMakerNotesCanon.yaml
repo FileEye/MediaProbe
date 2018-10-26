@@ -1,63 +1,51 @@
-type: ifdMakerNotesCanon
+collection: ifdMakerNotesCanon
 name: 'Canon'
 title: Canon Maker Notes
 class: ExifEye\core\Block\IfdMakerNote
 makerNotes:
   - 'Canon'
-elements:
+items:
     0x0001:
-        type: ifdMakerNotesCanonCameraSettings
-        name: CanonCameraSettings
-        title: 'Camera Settings'
+        name: 'CanonCameraSettings'
+        collection: ifdMakerNotesCanonCameraSettings
     0x0002:
-        type: tag
         name: FocalLength
         title: 'Focal Length'
         format: Short
     0x0004:
-        type: ifdMakerNotesCanonShotInformation
-        name: CanonShotInformation
-        title: 'Shot Info'
+        name: 'CanonShotInformation'
+        collection: ifdMakerNotesCanonShotInformation
     0x0005:
-        type: ifdMakerNotesCanonPanoramaInformation
-        name: CanonPanorama
-        title: Panorama
+        name: 'CanonPanoramaInformation'
+        collection: ifdMakerNotesCanonPanoramaInformation
     0x0006:
-        type: tag
         name: ImageType
         title: 'Image Type'
         format: Ascii
     0x0007:
-        type: tag
         name: FirmwareVersion
         title: 'Firmware Version'
         format: Ascii
     0x0008:
-        type: tag
         name: FileNumber
         title: 'File Number'
         format: Long
     0x0009:
-        type: tag
         name: OwnerName
         title: 'Owner Name'
         format: Ascii
     0x000C:
-        type: tag
         name: SerialNumber
         title: 'Serial Number'
         format: Long
     0x000D:
-        type: tag
         name: CameraInfo
         title: 'Camera Info'
     0x000F:
-        type: tag
         name: CustomFunctions
         title: 'Custom Functions'
         #ifd: ????
     0x0010:
-        type: tag
         name: ModelID
         title: 'Model ID'
         format: Long
@@ -387,83 +375,67 @@ elements:
                 2147484706: EOS Rebel T100 / 4000D / 3000D
                 2147484722: EOS Rebel T7 / 2000D / 1500D / Kiss X90
     0x0012:
-        type: tag
         name: PictureInfo
         title: 'Picture Info'
         #ifd: 'CanonPictureInformation'
         format: Short
     0x0013:
-        type: tag
         name: ThumbnailImageValidArea
         title: 'Thumbnail Image Valid Area'
         format: Short
         components: 4
     0x0015:
-        type: tag
         name: 'Serial Number Format'
         title: 'Serial number format'
         format: Long
     0x001A:
-        type: tag
         name: SuperMacro
         title: 'Super macro'
         format: SignedShort
     0x001E:
-        type: tag
         name: FirmwareRevision
         title: 'Firmware Revision'
         format: Long
     0x0026:
-        type: tag
         name: AFinfo
         title: 'AF info'
         format: Short
     0x0083:
-        type: tag
         name: 'OriginalDecision Data Offset'
         title: 'Original decision data offset'
         format: SignedLong
     0x0093:
-        type: ifdMakerNotesCanonFileInformation
-        name: CanonFileInformation
-        title: 'File Info'
+        name: 'CanonFileInformation'
+        collection: ifdMakerNotesCanonFileInformation
     0x0095:
-        type: tag
         name: LensModel
         title: 'Lens model'
         format: Ascii
     0x0096:
-        type: tag
         name: InternalSerialNumber
         title: 'Internal serial number'
         format: Ascii
     0x0097:
-        type: tag
         name: DustRemovalData
         title: 'Dust removal data'
         format: Undefined
     0x0099:
-        type: tag
         name: CustomFunctions
         title: 'Custom functions'
         #ifd: ????
     0x00A0:
-        type: tag
         name: ProcessingInfo
         title: 'Processing info'
         format: Short
     0x00A4:
-        type: tag
         name: WhiteBalanceTable
         title: 'White balance table'
         format: Short
     0x00AA:
-        type: tag
         name: MeasuredColor
         title: 'Measured color'
         format: Short
     0x00B4:
-        type: tag
         name: ColorSpace
         title: 'Color Space'
         format: Short
@@ -473,17 +445,14 @@ elements:
                 1: 'sRGB'
                 2: 'Adobe RGB'
     0x00D0:
-        type: tag
         name: VRDOffset
         title: 'VRD offset'
         format: Long
     0x00E0:
-        type: tag
         name: SensorInfo
         title: 'Sensor info'
         format: Short
     0x4001:
-        type: tag
         name: ColorData
         title: 'Color data'
         format: Short

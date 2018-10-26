@@ -14,7 +14,7 @@ use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Image;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Block\Jpeg;
@@ -29,7 +29,7 @@ function dump_element(ElementInterface $element)
 {
     if ($element instanceof EntryInterface) {
         $ifd_name = $element->getParentElement()->getParentElement()->getAttribute('name');
-        $tag_title = Spec::getElementTitle($element->getParentElement()->getParentElement()->getType(), $element->getParentElement()->getAttribute('id')) ?: '*** UNKNOWN ***';
+        $tag_title = Collection::getItemTitle($element->getParentElement()->getParentElement()->getType(), $element->getParentElement()->getAttribute('id')) ?: '*** UNKNOWN ***';
         print substr(str_pad($ifd_name . '/' . $tag_title, 30, ' '), 0, 30) . ' = ' . $element->toString() . "\n";
     }
 

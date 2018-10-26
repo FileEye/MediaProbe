@@ -8,7 +8,7 @@ use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Entry\Time;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 class IfdTest extends ExifEyeTestCaseBase
 {
@@ -18,14 +18,14 @@ class IfdTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd($tiff_mock, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff'));
+        $ifd = new Ifd($tiff_mock, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 
-        $tag1 = new Tag($ifd, new IfdItem(0x010E, Spec::getFormatIdFromName('Ascii'), 1, 0, 'ifd0', $ifd));
+        $tag1 = new Tag($ifd, new IfdItem('ifd0', 0x010E, Collection::getFormatIdFromName('Ascii')));
         $desc = new Ascii($tag1, ['Hello?']);
 
-        $tag2 = new Tag($ifd, new IfdItem(0x0132, Spec::getFormatIdFromName('Ascii'), 20, 0, 'ifd0', $ifd));
+        $tag2 = new Tag($ifd, new IfdItem('ifd0', 0x0132, Collection::getFormatIdFromName('Ascii'), 20));
         $date = new Time($tag2, [12345678]);
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));

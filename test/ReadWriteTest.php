@@ -17,7 +17,7 @@ use ExifEye\core\Entry\Core\SignedLong;
 use ExifEye\core\Entry\Core\SignedShort;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Ifd;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Image;
 
 class ReadWriteTest extends ExifEyeTestCaseBase
@@ -46,19 +46,19 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $com_segment = $jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $app1_segment = new JpegSegmentApp1('jpegSegmentApp1', 0xE1, $jpeg, $com_segment);
+        $app1_segment = new JpegSegmentApp1('jpeg', 0xE1, $jpeg, $com_segment);
 
         $exif = new Exif('exif', $app1_segment);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
-        $tiff = new Tiff($exif);
+        $tiff = new Tiff('tiff', $exif);
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd($tiff, new IfdItem(0, Spec::getFormatIdFromName('Long'), 1, 0, 'tiff'));
+        $ifd = new Ifd($tiff, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
         foreach ($entries as $entry) {
-            $tag = new Tag($ifd, new IfdItem($entry[0], $entry[2], 1, 0, 'ifd0'));
+            $tag = new Tag($ifd, new IfdItem('ifd0', $entry[0], $entry[2]));
             new $entry[1]($tag, $entry[3]);
         }
         $this->assertNotNull($tiff->getElement("ifd[@name='IFD0']"));
@@ -87,7 +87,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
 
         foreach ($entries as $entry_name => $entry) {
             $tagEntry = $ifd->getElement('tag[@id="' . (int) $entry[0] . '"]/entry');
-            if ($tagEntry->getFormat() == Spec::getFormatIdFromName('Ascii')) {
+            if ($tagEntry->getFormat() == Collection::getFormatIdFromName('Ascii')) {
                 $ifdValue = $tagEntry->getValue();
                 $entryValue = $entry[4];
                 // cut off after the first nul byte

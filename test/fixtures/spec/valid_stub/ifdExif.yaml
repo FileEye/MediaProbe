@@ -1,16 +1,14 @@
-type: ifdExif
+collection: ifdExif
 name: Exif
 title: IFD Exif
 class: ExifEye\core\Block\Ifd
-elements:
+items:
     0x829A:
-        type: tag
         name: ExposureTime
         title: 'Exposure Time'
         components: 1
         format: Rational
     0x829D:
-        type: tag
         name: FNumber
         title: FNumber
         components: 1

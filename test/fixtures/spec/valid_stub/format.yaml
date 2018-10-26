@@ -1,8 +1,7 @@
-type: format
+collection: format
 name: 'Format'
 title: Format
-class: ExifEye\Format
-elements:
+items:
     1:
         # Unsigned byte.
         # Each component will be an unsigned 8-bit integer with a value
@@ -10,12 +9,14 @@ elements:
         name: Byte
         title: 'Byte'
         length: 1
+        class: ExifEye\core\Entry\Core\Byte
     2:
         # ASCII string.
         # Each component will be an ASCII character.
         name: Ascii
         title: 'Ascii'
         length: 1
+        class: ExifEye\core\Entry\Core\Ascii
     3:
         # Unsigned short.
         # Each component will be an unsigned 16-bit integer with a value
@@ -23,6 +24,7 @@ elements:
         name: Short
         title: 'Short'
         length: 2
+        class: ExifEye\core\Entry\Core\Short
     4:
         # Unsigned long.
         # Each component will be an unsigned 32-bit integer with a value
@@ -30,6 +32,7 @@ elements:
         name: Long
         title: 'Long'
         length: 4
+        class: ExifEye\core\Entry\Core\Long
     5:
         # Unsigned rational number.
         # Each component will consist of two unsigned 32-bit integers denoting
@@ -38,6 +41,7 @@ elements:
         name: Rational
         title: 'Rational'
         length: 8
+        class: ExifEye\core\Entry\Core\Rational
     6:
         # Signed byte.
         # Each component will be a signed 8-bit integer with a value between
@@ -45,12 +49,14 @@ elements:
         name: SignedByte
         title: 'SignedByte'
         length: 1
+        class: ExifEye\core\Entry\Core\SignedByte
     7:
         # Undefined byte.
         # Each component will be a byte with no associated interpretation.
         name: Undefined
         title: 'Undefined'
         length: 1
+        class: ExifEye\core\Entry\Core\Undefined
     8:
         # Signed short.
         # Each component will be a signed 16-bit integer with a value between
@@ -58,6 +64,7 @@ elements:
         name: SignedShort
         title: 'SignedShort'
         length: 2
+        class: ExifEye\core\Entry\Core\SignedShort
     9:
         # Signed long.
         # Each component will be a signed 32-bit integer with a value between
@@ -65,6 +72,7 @@ elements:
         name: SignedLong
         title: 'SignedLong'
         length: 4
+        class: ExifEye\core\Entry\Core\SignedLong
     10:
         # Signed rational number.
         # Each component will consist of two signed 32-bit integers denoting
@@ -73,6 +81,7 @@ elements:
         name: SignedRational
         title: 'SignedRational'
         length: 8
+        class: ExifEye\core\Entry\Core\SignedRational
     11:
         # Floating point number.
         name: Float

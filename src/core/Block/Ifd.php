@@ -11,7 +11,7 @@ use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 /**
  * Class representing an Image File Directory (IFD).
@@ -102,13 +102,13 @@ class Ifd extends IfdBase
         if ($thumbnail) {
             $thumbnail_entry = $thumbnail->getElement('entry');
             // Add offset.
-            $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailOffset'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Spec::getFormatIdFromName('Long'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Collection::getItemIdByName($this->getType(), 'ThumbnailOffset'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Collection::getFormatIdFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
             // Add length.
-            $bytes .= ConvertBytes::fromShort(Spec::getElementIdByName($this->getType(), 'ThumbnailLength'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Spec::getFormatIdFromName('Long'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Collection::getItemIdByName($this->getType(), 'ThumbnailLength'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(Collection::getFormatIdFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($thumbnail_entry->getComponents(), $byte_order);
             // Add thumbnail.
@@ -182,7 +182,7 @@ class Ifd extends IfdBase
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
-            while ($dataxx->getByte($size - 2) !== JpegSegment::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Spec::getElementIdByName('jpeg', 'EOI')) {
+            while ($dataxx->getByte($size - 2) !== JpegSegment::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Collection::getItemIdByName('jpeg', 'EOI')) {
                 $size --;
             }
             if ($size != $dataxx->getSize()) {
@@ -238,17 +238,17 @@ class Ifd extends IfdBase
         $model = $model_tag && $model_tag->getElement("entry") ? $model_tag->getElement("entry")->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
 
         // Get maker note collection.
-        if (!$maker_note_collection = Spec::getMakerNoteIfdType($make_tag->getElement("entry")->getValue(), $model)) {
+        if (!$maker_note_collection = Collection::getMakerNoteCollection($make_tag->getElement("entry")->getValue(), $model)) {
             return;
         }
 
         // Load maker note into IFD.
-        $ifd_class = Spec::getTypePropertyValue($maker_note_collection, 'class');
-        $maker_note_ifd_name = Spec::getTypePropertyValue($maker_note_collection, 'name');
+        $ifd_class = Collection::getPropertyValue($maker_note_collection, 'class');
+        $maker_note_ifd_name = Collection::getPropertyValue($maker_note_collection, 'name');
         $exif_ifd->debug("Converting {makernote} maker notes to IFD", [
             'makernote' => $maker_note_ifd_name,
         ]);
-        $ifd_item = new IfdItem($maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), null, $exif_ifd->getType(), $exif_ifd);
+        $ifd_item = new IfdItem($exif_ifd->getType(), $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents());
         $ifd = new $ifd_class($exif_ifd, $ifd_item, $maker_note_tag);
         // xxx
         $ifd->setAttribute('name', $maker_note_ifd_name);

@@ -2,7 +2,6 @@
 
 namespace ExifEye\core\Utility;
 
-use ExifEye\core\Block\Ifd;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -14,9 +13,9 @@ use Symfony\Component\Yaml\Yaml;
 class SpecCompiler
 {
     /**
-     * Map of expected element level array keys.
+     * Map of expected collection level array keys.
      */
-    private $elementKeys = ['type', 'name', 'title', 'class', 'elements'];
+    private $collectionKeys = ['collection', 'name', 'title', 'items'];
 
     /** @var Filesystem */
     private $fs;
@@ -63,15 +62,15 @@ class SpecCompiler
     {
         // Get formats.
         $formats_yaml = Yaml::parse(file_get_contents($yamlDirectory . DIRECTORY_SEPARATOR . 'format.yaml'));
-        foreach ($formats_yaml['elements'] as $id => $element) {
-            $this->formats[$element['name']] = $id;
+        foreach ($formats_yaml['items'] as $id => $item) {
+            $this->formats[$item['name']] = $id;
         }
 
-        // Process the files. Each file corresponds to an IFD specification.
+        // Process the files. Each file corresponds to a collection.
         $files = $this->finder->files()->in($yamlDirectory)->name('*.yaml');
         foreach ($files as $file) {
-            $ifd = Yaml::parse($file->getContents());
-            $this->mapType($ifd, $file);
+            $collection = Yaml::parse($file->getContents());
+            $this->mapCollection($collection, $file);
         }
 
         // Dump the data to the spec.php file.
@@ -90,67 +89,67 @@ DATA;
     }
 
     /**
-     * Processes a 'type' into the compiled map.
+     * Processes a 'collection' into the compiled map.
      *
      * @param array $input
      *            the array from the specification file.
      * @param SplFileInfo $file
      *            the YAML specification file being processed.
      */
-    protected function mapType(array $input, SplFileInfo $file)
+    protected function mapCollection(array $input, SplFileInfo $file)
     {
-        // Check validity of element keys.
-        $diff = array_diff($this->elementKeys, array_intersect(array_keys($input), $this->elementKeys));
+        // Check validity of collection keys.
+        $diff = array_diff($this->collectionKeys, array_intersect(array_keys($input), $this->collectionKeys));
         if (!empty($diff)) {
-            throw new SpecCompilerException($file->getFileName() . ": missing type key(s) - " . implode(", ", $diff));
+            throw new SpecCompilerException($file->getFileName() . ": missing collection key(s) - " . implode(", ", $diff));
         }
 
-        // 'types' entry.
+        // 'collections' entry.
         $tmp = $input;
-        unset($tmp['type'], $tmp['elements']);
-        $this->map['types'][$input['type']] = $tmp;
+        unset($tmp['collection'], $tmp['items']);
+        $this->map['collections'][$input['collection']] = $tmp;
 
-        // 'typesByName' entry.
-        $this->map['typesByName'][$input['name']] = $input['type'];
+        // 'collectionsByName' entry.
+        $this->map['collectionsByName'][$input['name']] = $input['collection'];
         if (!empty($input['alias'])) {
             foreach ($input['alias'] as $alias) {
-                $this->map['typesByName'][$alias] = $input['type'];
+                $this->map['collectionsByName'][$alias] = $input['collection'];
             }
         }
 
         // 'makerNotes' entry.
         if (!empty($input['makerNotes'])) {
             foreach ($input['makerNotes'] as $maker) {
-                $this->map['makerNotes'][$maker] = $input['type'];
+                $this->map['makerNotes'][$maker] = $input['collection'];
             }
         }
 
-        // 'elements' entry.
-        foreach ($input['elements'] as $id => $element) {
+        // 'items' entry.
+        foreach ($input['items'] as $id => $item) {
             // Convert format string to its ID.
-            if (isset($element['format'])) {
+            if (isset($item['format'])) {
                 $temp = [];
-                if (is_scalar($element['format'])) {
-                    $temp[] = $element['format'];
+                if (is_scalar($item['format'])) {
+                    $temp[] = $item['format'];
                 } else {
-                    $temp = $element['format'];
+                    $temp = $item['format'];
                 }
                 $formats = [];
                 foreach ($temp as $name) {
                     if (!isset($this->formats[$name])) {
-                        throw new SpecCompilerException($file->getFileName() . ": invalid '" . $name . "' format found for element '" . $element['name'] . "'");
+                        throw new SpecCompilerException($file->getFileName() . ": invalid '" . $name . "' format found for item '" . $item['name'] . "'");
                     }
                     $formats[] = $this->formats[$name];
                 }
-                $element['format'] = $formats;
+                $item['format'] = $formats;
             }
 
-            // Add element to map by type/id.
-            $this->map['elements'][$input['type']][$id] = $element;
+            // Add item to map by collection/id.
+            $this->map['items'][$input['collection']][$id] = $item;
 
-            // Add element to map by type/name.
-            if (isset($element['name'])) { // xx
-                $this->map['elementsByName'][$input['type']][$element['name']] = $id;
+            // Add item to map by collection/name.
+            if (isset($item['name'])) { // xx
+                $this->map['itemsByName'][$input['collection']][$item['name']] = $id;
             }
         }
     }

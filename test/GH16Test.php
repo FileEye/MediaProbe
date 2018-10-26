@@ -11,7 +11,7 @@ use ExifEye\core\ExifEye;
 use ExifEye\core\Image;
 use ExifEye\core\Entry\WindowsString;
 use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 class GH16Test extends ExifEyeTestCaseBase
 {
@@ -43,7 +43,7 @@ class GH16Test extends ExifEyeTestCaseBase
         // Change the value of the Tag's entry and save the file to disk.
         $ifd0->removeElement("tag[@name='WindowsXPSubject']");
         $new_entry_value = "Превед, медвед!";
-        $tag = new Tag($ifd0, new IfdItem(0x9C9F, Spec::getFormatIdFromName('Byte'), 1, 0, 'ifd0'));
+        $tag = new Tag($ifd0, new IfdItem('ifd0', 0x9C9F, Collection::getFormatIdFromName('Byte')));
         new WindowsString($tag, [$new_entry_value]);
         $this->assertCount(1, $ifd0->getMultipleElements('tag'));
         $this->assertEquals($new_entry_value, $ifd0->getElement("tag[@name='WindowsXPSubject']")->toString());

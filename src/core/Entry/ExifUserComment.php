@@ -6,7 +6,7 @@ use ExifEye\core\Block\BlockBase;
 use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**

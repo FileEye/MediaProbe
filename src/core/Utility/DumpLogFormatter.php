@@ -9,7 +9,8 @@ use Bramus\Monolog\Formatter\ColoredLineFormatter;
  */
 class DumpLogFormatter extends ColoredLineFormatter
 {
-    const MAX_PATH = 40;
+    const MAX_PATH = 50;
+    const MAX_MSGL = 80;
 
     /**
      * {@inheritdoc}
@@ -17,7 +18,7 @@ class DumpLogFormatter extends ColoredLineFormatter
     public function format(array $record)
     {
         // Level.
-        $output = str_pad($record['level_name'], 7, ' ') . ' > ';
+        $output = substr($record['level_name'], 0, 1) . '> ';
 
         // Path.
         if (isset($record['context']['path'])) {
@@ -36,7 +37,7 @@ class DumpLogFormatter extends ColoredLineFormatter
         }
 
         // Message.
-        $output .= substr(str_repeat(' ', $nesting) . $record['message'], 0, static::MAX_PATH * 2);
+        $output .= substr(str_repeat(' ', $nesting) . $record['message'], 0, static::MAX_MSGL);
 
         return $this->getColorScheme()->getColorizeString($record['level']). $output . $this->getColorScheme()->getResetString() . "\n";
     }

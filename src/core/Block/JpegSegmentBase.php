@@ -2,7 +2,7 @@
 
 namespace ExifEye\core\Block;
 
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -41,11 +41,11 @@ abstract class JpegSegmentBase extends BlockBase
     {
         parent::__construct($type, $jpeg, $reference);
         $this->setAttribute('id', $id);
-        $name = Spec::getElementName($jpeg->getType(), $id);
+        $name = Collection::getItemName($type, $id);
         $this->setAttribute('name', $name);
-        $this->payload = Spec::getElementPropertyValue($jpeg->getType(), $id, 'payload');
-        $this->components = Spec::getElementPropertyValue($jpeg->getType(), $id, 'components');
-        $this->debug('{name} segment - {desc}', ['name' => $name, 'desc' => Spec::getElementTitle($jpeg->getType(), $id)]);
+        $this->payload = Collection::getItemPropertyValue($type, $id, 'payload');
+        $this->components = Collection::getItemPropertyValue($type, $id, 'components');
+        $this->debug('{name} segment - {desc}', ['name' => $name, 'desc' => Collection::getItemTitle($type, $id)]);
     }
 
     /**

@@ -110,7 +110,7 @@ to be used with the following code:
 
 ```php
 ...
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 ...
 
 class MyClass

@@ -8,7 +8,7 @@ use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Image;
 use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Spec;
+use ExifEye\core\Collection;
 
 /**
  * Class for handling TIFF data.
@@ -37,9 +37,10 @@ class Tiff extends BlockBase
     /**
      * Constructs a Block for holding a TIFF image.
      */
-    public function __construct(BlockBase $parent = null)
+    public function __construct($collection, BlockBase $parent = null)
     {
-        parent::__construct('tiff', $parent);
+        parent::__construct($collection, $parent);
+        $this->collection = $collection;
     }
 
     /**
@@ -87,10 +88,9 @@ class Tiff extends BlockBase
 
             try {
                 // Create and load the IFDs.
-                $ifd_name = Spec::getElementName($this->getType(), $i);
-                $ifd_class = Spec::getElementHandlingClass($this->getType(), $i);
+                $ifd_class = Collection::getItemClass($this->getCollection(), $i);
                 $ifd_tags_count = $data_window->getShort($ifd_offset);
-                $ifd_item = new IfdItem($i, Spec::getFormatIdFromName('Long'), $ifd_tags_count, $ifd_offset, 'tiff', $this);
+                $ifd_item = new IfdItem($this->getCollection(), $i, Collection::getFormatIdFromName('Long'), $ifd_tags_count, $ifd_offset);
                 $ifd = new $ifd_class($this, $ifd_item);
                 $ifd->loadFromData($data_window, $ifd_offset, $size);
 
@@ -98,7 +98,7 @@ class Tiff extends BlockBase
                 $ifd_offset = $data_window->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
-                    'ifd_name' => $ifd_name,
+                    'ifd_name' => Collection::getItemName($this->getCollection(), $i),
                     'msg' => $e->getMessage(),
                 ]);
                 break;
