@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdFormat;
 use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Utility\SpecCompiler;
 use ExifEye\core\Collection;
@@ -59,20 +60,20 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
         Collection::setMap($this->testResourceDirectory . '/spec.php');
-        $this->assertCount(4, Collection::getCollections());
+        $this->assertCount(4, Collection::listIds());
 
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd_0 = new Ifd($tiff_mock, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
-        $ifd_exif = new Ifd($ifd_0, new IfdItem('ifd0', 0x8769, Collection::getFormatIdFromName('Long')));
+        $ifd_0 = new Ifd(Collection::get('ifd0'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd_exif = new Ifd(Collection::get('ifdExif'), new IfdItem(Collection::get('ifd0'), 0x8769, IfdFormat::getFromName('Long')), $ifd_0);
 
-        $this->assertEquals(0x0100, Collection::getItemIdByName($ifd_0->getType(), 'ImageWidth'));
-        $this->assertEquals(0x8769, Collection::getItemIdByName($ifd_0->getType(), 'Exif'));
-        $this->assertEquals(0x829A, Collection::getItemIdByName($ifd_exif->getType(), 'ExposureTime'));
+        $this->assertEquals(0x0100, $ifd_0->getCollection()->getItemCollectionByName('ImageWidth')->getPropertyValue('item'));
+        $this->assertEquals(0x8769, $ifd_0->getCollection()->getItemCollectionByName('Exif')->getPropertyValue('item'));
+        $this->assertEquals(0x829A, $ifd_exif->getCollection()->getItemCollectionByName('ExposureTime')->getPropertyValue('item'));
 
         // Compression is missing from the stub specs.
-        $this->assertNull(Collection::getItemIdByName($ifd_0->getType(), 'Compression'));
+        $this->assertNull($ifd_0->getCollection()->getItemCollectionByName('Compression'));
     }
 }

@@ -50,6 +50,7 @@ script:
   # image file dumps.
   #- php bin/exifeye compile
   #- php bin/exifeye dump test/image_files
+
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test
 
@@ -59,6 +60,7 @@ script:
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg-rewrite.img
   #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg-rewrite.img
+  #- php examples/dump-image.php -d test/image_files/broken_images/gh-10-a.jpg
   #- php examples/dump-image.php -d test/image_files/broken_images/gh-11.jpg
   #- php examples/dump-image.php -d test/image_files/broken_images/gh-11.jpg-rewrite.img
 

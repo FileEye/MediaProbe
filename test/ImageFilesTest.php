@@ -4,12 +4,12 @@ namespace ExifEye\Test\core;
 
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
+use ExifEye\core\Block\IfdFormat;
 use ExifEye\core\Block\Jpeg;
-use ExifEye\Test\core\ExifEyeTestCaseBase;
 use ExifEye\core\Image;
-use ExifEye\core\Collection;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
+use ExifEye\Test\core\ExifEyeTestCaseBase;
 
 /**
  * Test camera images stored in the imagetest directory.
@@ -116,7 +116,7 @@ class ImageFilesTest extends ExifEyeTestCaseBase
             // No sub elements in the element being tested.
             $this->assertNull($element->getElement('*'));
             $this->assertEquals($expected['path'], $element->getContextPath());
-            $this->assertEquals($expected['format'], Collection::getFormatName($element->getFormat()), $element->getContextPath());
+            $this->assertEquals($expected['format'], IfdFormat::getName($element->getFormat()), $element->getContextPath());
             $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
             $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
             $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\Collection;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\ElementBase;
@@ -9,17 +10,42 @@ use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
- * Class representing an Exif TAG.
+ * Base class for ExifEye blocks.
+ *
+ * As this class is abstract you cannot instantiate objects from it. It only
+ * serves as a common ancestor to define the methods common to all ExifEye
+ * Block objects.
  */
 abstract class BlockBase extends ElementBase
 {
     /**
-     * xx
+     * The Collection of this Block.
+     *
+     * @var \ExifEye\core\Collection
      */
     protected $collection;
 
     /**
-     * xx
+     * Constructs a Block object.
+     *
+     * @param \ExifEye\core\Collection $collection
+     *            The Collection of this Block.
+     * @param \ExifEye\core\Block\BlockBase|null $parent
+     *            (Optional) the parent Block of this Block.
+     * @param \ExifEye\core\Block\BlockBase|null $reference
+     *            (Optional) if specified, the new Block will be inserted
+     *            before the reference Block.
+     */
+    public function __construct(Collection $collection, BlockBase $parent = null, BlockBase $reference = null)
+    {
+        parent::__construct($collection, $parent, $reference);
+        $this->collection = $collection;
+    }
+
+    /**
+     * Gets the Collection of this Block.
+     *
+     * @return \ExifEye\core\Collection
      */
     public function getCollection()
     {

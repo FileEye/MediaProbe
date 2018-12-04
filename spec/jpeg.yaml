@@ -4,320 +4,318 @@ title: JPEG image
 class: ExifEye\core\Block\Jpeg
 items:
     0xC0:
+        collection: jpegSegment
         name: SOF0
         title: 'Start of frame (baseline DCT)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC1:
+        collection: jpegSegment
         name: SOF1
         title: 'Start of frame (extended sequential)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC2:
+        collection: jpegSegment
         name: SOF2
         title: 'Start of frame (progressive DCT)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC3:
+        collection: jpegSegment
         name: SOF3
         title: 'Encoding (lossless)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC4:
+        collection: jpegSegment
         name: DHT
         title: 'Define Huffman table'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC5:
+        collection: jpegSegment
         name: SOF5
         title: 'Start of frame (differential sequential)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC6:
+        collection: jpegSegment
         name: SOF6
         title: 'Start of frame (differential progressive)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC7:
+        collection: jpegSegment
         name: SOF7
         title: 'Start of frame (differential lossless)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC8:
+        collection: jpegSegment
         name: JPG
         title: 'Extension'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xC9:
+        collection: jpegSegment
         name: SOF9
         title: 'Start of frame (extended sequential, arithmetic)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xCA:
+        collection: jpegSegment
         name: SOF10
         title: 'Encoding (progressive, arithmetic)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xCB:
+        collection: jpegSegment
         name: SOF11
         title: 'Encoding (lossless, arithmetic)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xCC:
+        collection: jpegSegment
         name: DAC
         title: 'Define arithmetic coding conditioning'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xCD:
+        collection: jpegSegment
         name: SOF13
         title: 'Encoding (differential sequential, arithmetic)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xCE:
+        collection: jpegSegment
         name: SOF14
         title: 'Encoding (differential progressive, arithmetic)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xCF:
+        collection: jpegSegment
         name: SOF15
         title: 'Encoding (differential lossless, arithmetic)'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xD0:
+        collection: jpegSegment
         name: RST0
         title: 'Restart 0'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD1:
+        collection: jpegSegment
         name: RST1
         title: 'Restart 1'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD2:
+        collection: jpegSegment
         name: RST2
         title: 'Restart 2'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD3:
+        collection: jpegSegment
         name: RST3
         title: 'Restart 3'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD4:
+        collection: jpegSegment
         name: RST4
         title: 'Restart 4'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD5:
+        collection: jpegSegment
         name: RST5
         title: 'Restart 5'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD6:
+        collection: jpegSegment
         name: RST6
         title: 'Restart 6'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD7:
+        collection: jpegSegment
         name: RST7
         title: 'Restart 7'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD8:
+        collection: jpegSegment
         name: SOI
         title: 'Start of image'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xD9:
+        collection: jpegSegment
         name: EOI
         title: 'End of image'
         payload: none
-        class: ExifEye\core\Block\JpegSegment
     0xDA:
+        collection: jpegSegmentSos
         name: SOS
         title: 'Start of scan'
         payload: scan
-        class: ExifEye\core\Block\JpegSegmentSos
     0xDB:
+        collection: jpegSegment
         name: DQT
         title: 'Define quantization table'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xDC:
+        collection: jpegSegment
         name: DNL
         title: 'Define number of lines'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xDD:
+        collection: jpegSegment
         name: DRI
         title: 'Define restart interval'
         payload: fixed
         components: 4
-        class: ExifEye\core\Block\JpegSegment
     0xDE:
+        collection: jpegSegment
         name: DHP
         title: 'Define hierarchical progression'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xDF:
+        collection: jpegSegment
         name: EXP
         title: 'Expand reference component'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE0:
+        collection: jpegSegment
         name: APP0
         title: 'Application segment 0'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE1:
         # When a JPEG image contains Exif data, the data will normally be
         # stored in this segment.
+        collection: jpegSegmentApp1
         name: APP1
-        title: 'Application segment 1'
-        payload: variable
-        class: ExifEye\core\Block\JpegSegmentApp1
     0xE2:
+        collection: jpegSegment
         name: APP2
         title: 'Application segment 2'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE3:
+        collection: jpegSegment
         name: APP3
         title: 'Application segment 3'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE4:
+        collection: jpegSegment
         name: APP4
         title: 'Application segment 4'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE5:
+        collection: jpegSegment
         name: APP5
         title: 'Application segment 5'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE6:
+        collection: jpegSegment
         name: APP6
         title: 'Application segment 6'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE7:
+        collection: jpegSegment
         name: APP7
         title: 'Application segment 7'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE8:
+        collection: jpegSegment
         name: APP8
         title: 'Application segment 8'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xE9:
+        collection: jpegSegment
         name: APP9
         title: 'Application segment 9'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xEA:
+        collection: jpegSegment
         name: APP10
         title: 'Application segment 10'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xEB:
+        collection: jpegSegment
         name: APP11
         title: 'Application segment 11'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xEC:
+        collection: jpegSegment
         name: APP12
         title: 'Application segment 12'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xED:
+        collection: jpegSegment
         name: APP13
         title: 'Application segment 13'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xEE:
+        collection: jpegSegment
         name: APP14
         title: 'Application segment 14'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xEF:
+        collection: jpegSegment
         name: APP15
         title: 'Application segment 5'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF0:
+        collection: jpegSegment
         name: JPG0
         title: 'Extension 0'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF1:
+        collection: jpegSegment
         name: JPG1
         title: 'Extension 1'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF2:
+        collection: jpegSegment
         name: JPG2
         title: 'Extension 2'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF3:
+        collection: jpegSegment
         name: JPG3
         title: 'Extension 3'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF4:
+        collection: jpegSegment
         name: JPG4
         title: 'Extension 4'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF5:
+        collection: jpegSegment
         name: JPG5
         title: 'Extension 5'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF6:
+        collection: jpegSegment
         name: JPG6
         title: 'Extension 6'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF7:
+        collection: jpegSegment
         name: JPG7
         title: 'Extension 7'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF8:
+        collection: jpegSegment
         name: JPG8
         title: 'Extension 8'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xF9:
+        collection: jpegSegment
         name: JPG9
         title: 'Extension 9'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xFA:
+        collection: jpegSegment
         name: JPG10
         title: 'Extension 10'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xFB:
+        collection: jpegSegment
         name: JPG11
         title: 'Extension 11'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xFC:
+        collection: jpegSegment
         name: JPG12
         title: 'Extension 12'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xFD:
+        collection: jpegSegment
         name: JPG13
         title: 'Extension 13'
         payload: variable
-        class: ExifEye\core\Block\JpegSegment
     0xFE:
+        collection: jpegSegmentCom
         name: COM
         title: 'Comment'
         payload: variable
-        class: ExifEye\core\Block\JpegSegmentCom

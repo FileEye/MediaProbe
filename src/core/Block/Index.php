@@ -23,28 +23,30 @@ class Index extends IfdBase
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
-        $this->debug("IFD {ifdname} @{offset} with {tags} entries", [
+        $this->debug("Index {ifdname} @{offset} with {tags} entries", [
             'ifdname' => $this->getAttribute('name'),
             'tags' => $options['components'],
             'offset' => $data_element->getStart() + $offset,
         ]);
 
         $index_size = $data_element->getShort($offset);
-        if ($index_size / $options['components'] !== Collection::getFormatSize(Collection::getFormatIdFromName('Short'))) {
+        if ($index_size / $options['components'] !== IfdFormat::getSize(IfdFormat::getFromName('Short'))) {
             $this->warning('Size of {ifd_name} does not match the number of entries.', [
                 'ifd_name' => $this->getAttribute('name'),
             ]);
         }
         $offset += 2;
         for ($i = 0; $i < $options['components']; $i++) {
+            $ifd_item = new IfdItem($this->getCollection(), $i + 1);
+
             // Check if this tag ($i + 1) should be skipped.
-            if (Collection::getItemPropertyValue($this->getType(), $i + 1, 'skip')) {
+            if ($ifd_item->getCollection()->getPropertyValue('skip')) {
                 continue;
             };
 
-            $item_format = Collection::getItemPropertyValue($this->getType(), $i + 1, 'format')[0];
+            $item_format = $ifd_item->getFormat();
 
-            switch (Collection::getFormatName($item_format)) {
+            switch (IfdFormat::getName($item_format)) {
                 case 'Short':
                     $item_value = $data_element->getShort($offset + $i * 2);
                     break;
@@ -56,21 +58,21 @@ class Index extends IfdBase
                     break;
                 default:
                     $item_value = $data_element->getSignedShort($offset + $i * 2);
-                    $item_format = Collection::getFormatIdFromName('SignedShort');
+                    $item_format = IfdFormat::getFromName('SignedShort');
                     break;
             }
 
             $this->debug("#{i} id {id}, f {format}, data @{offset}", [
                 'i' => $i + 1,
                 'id' => '0x' . strtoupper(dechex($i)),
-                'format' => Collection::getFormatName($item_format),
+                'format' => IfdFormat::getName($item_format),
                 'offset' => $data_element->getStart() + $offset + $i * 2,
             ]);
 
-            if ($entry_class = Collection::getItemClass($this->getType(), $i + 1, $item_format)) {
-                $tag = new Tag($this, new IfdItem($this->getType(), $i + 1, $item_format));
-                new $entry_class($tag, [$item_value]);
-            }
+            $tag_collection = $ifd_item->getCollection();
+            $tag = new Tag($tag_collection, $ifd_item, $this);
+            $entry_class = $ifd_item->getEntryClass();
+            new $entry_class($tag, [$item_value]);
         }
 
         // Invoke post-load callbacks.
@@ -100,7 +102,7 @@ class Index extends IfdBase
     {
         $size = 0;
         foreach ($this->getMultipleElements('tag') as $tag) {
-            $size += Collection::getFormatSize($tag->getFormat());
+            $size += IfdFormat::getSize($tag->getFormat());
         }
         return $size / 2;
     }

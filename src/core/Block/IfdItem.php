@@ -10,6 +10,7 @@ use ExifEye\core\ElementInterface;
 use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\Entry\Core\Undefined;
 use ExifEye\core\ExifEye;
+use ExifEye\core\ExifEyeException;
 use ExifEye\core\Utility\ConvertBytes;
 use ExifEye\core\Collection;
 
@@ -19,11 +20,18 @@ use ExifEye\core\Collection;
 class IfdItem
 {
     /**
-     * The ExifEye collection this item is part of.
+     * The ExifEye collection of this item.
      *
-     * @var int
+     * @var Collection
      */
     protected $collection;
+
+    /**
+     * The ExifEye collection this item is part of.
+     *
+     * @var Collection
+     */
+    protected $parentCollection;
 
     /**
      * The id of the item.
@@ -61,17 +69,75 @@ class IfdItem
     protected $hasDefinition = false;
 
     /**
-     *   @todo
+     * Constructs an IfdItem object.
      */
-    public function __construct($collection, $id, $format, $components = 1, $data_offset = null)
+    public function __construct(Collection $parent_collection, $id, $format = null, $components = 1, $data_offset = null, Collection $collection = null)
     {
-        $this->collection = $collection;
+        $this->parentCollection = $parent_collection;
+        if ($collection) {
+            $this->collection = $collection;
+        } else {
+            $this->collection = $parent_collection->getItemCollection($id);
+        }
+        if ($this->collection === null) {
+            $overrides = [
+                'item' => $id,
+                'components' => $components,
+                'name' => null,
+            ];
+            if (isset($format)) {
+                $overrides['format'][] = $format;
+            } else {
+                $overrides['format'][] = IfdFormat::getFromName('SignedShort');
+            }
+            $this->collection = new Collection('tag', $overrides);
+        }
         $this->id = $id;
         $this->format = $format;
         $this->components = $components;
         $this->dataOffset = $data_offset;
 
-        $this->hasDefinition = $id > 0xF000 || in_array($id, Collection::getItemsIds($collection));
+        $this->hasDefinition = $id > 0xF000 || in_array($id, $parent_collection->listItemIds());
+    }
+
+    /**
+     * Validates the IfdItem against the specification if defined.
+     */
+    public function validate(ElementInterface $caller)
+    {
+        // Check if ExifEye has a definition for this TAG.
+        if (!$this->hasDefinition()) {
+            $caller->notice("No specification for item {item} in {collection}", [
+                'item' => $this->getId(),
+                'collection' => $this->getParentCollection()->getId(),
+            ]);
+        } else {
+            $caller->debug("Tag: {tag}", [
+                'tag' => $this->getTitle(),
+            ]);
+
+            // Warn if format is not as expected.
+            $expected_format = $this->getCollection()->getPropertyValue('format');
+            if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
+                $expected_format_names = [];
+                foreach ($expected_format as $expected_format_id) {
+                    $expected_format_names[] = IfdFormat::getName($expected_format_id);
+                }
+                $caller->warning("Found {format_name} data format, expected {expected_format_names}", [
+                    'format_name' => IfdFormat::getName($this->getFormat()),
+                    'expected_format_names' => implode(', ', $expected_format_names),
+                ]);
+            }
+
+            // Warn if components are not as expected.
+            $expected_components = $this->getCollection()->getPropertyValue('components');
+            if ($expected_components !== null && $this->getComponents() !== null && $this->getComponents() !== $expected_components) {
+                $caller->warning("Found {components} data components, expected {expected_components}", [
+                    'components' => $this->getComponents(),
+                    'expected_components' => $expected_components,
+                ]);
+            }
+        }
     }
 
     /**
@@ -80,6 +146,14 @@ class IfdItem
     public function getCollection()
     {
         return $this->collection;
+    }
+
+    /**
+     * @todo
+     */
+    public function getParentCollection()
+    {
+        return $this->parentCollection;
     }
 
     /**
@@ -95,8 +169,9 @@ class IfdItem
      */
     public function getFormat()
     {
-        return $this->format;
+        return isset($this->format) ? $this->format : $this->collection->getPropertyValue('format')[0];
     }
+
     /**
      * @todo
      */
@@ -118,7 +193,7 @@ class IfdItem
      */
     public function getSize()
     {
-        return Collection::getFormatSize($this->getFormat()) * $this->getComponents();
+        return IfdFormat::getSize($this->getFormat()) * $this->getComponents();
     }
 
     /**
@@ -126,7 +201,7 @@ class IfdItem
      */
     public function getType()
     {
-        $type = Collection::getItemCollection($this->collection, $this->getId());
+        $type = $this->collection->getItemCollection($this->getId());
         return $type === null ? 'tag' : $type;
     }
 
@@ -135,7 +210,10 @@ class IfdItem
      */
     public function getName()
     {
-        return Collection::getItemName($this->collection, $this->getId());
+        if ($this->collection === null) {
+            return null;
+        }
+        return $this->collection->getPropertyValue('name');
     }
 
     /**
@@ -143,8 +221,15 @@ class IfdItem
      */
     public function getClass()
     {
-        $class = $this->getType() === 'tag' ? 'ExifEye\core\Block\Tag' : Collection::getItemClass($this->collection, $this->getId(), $this->getFormat());
-        return $class;
+        if ($this->collection === null) {
+            $class = null;
+        } else {
+            $class = $this->collection->getPropertyValue('class');
+        }
+        if ($class !== null) {
+            return $class;
+        }
+        return 'ExifEye\core\Block\Tag';
     }
 
     /**
@@ -152,7 +237,31 @@ class IfdItem
      */
     public function getEntryClass()
     {
-        return Collection::getItemClass($this->collection, $this->getId(), $this->getFormat());
+        if ($this->collection === null) {
+            $entry_class = null;
+        } else {
+            $entry_class = $this->collection->getPropertyValue('entryClass');
+        }
+        if ($entry_class !== null) {
+            return $entry_class;
+        }
+
+        // If format is not passed in, try getting it from the spec.
+        $format = $this->getFormat();
+        if (empty($format)) {
+            throw new ExifEyeException(
+                'No format can be derived for tag: 0x%04X (%s) in ifd: \'%s\'',
+                $this->collection->getPropertyValue('item'),
+                $this->collection->getPropertyValue('name'),
+                $this->parentCollection->getId()
+            );
+        }
+
+        $default_entry_class = IfdFormat::getClass($format);
+        if (!$default_entry_class) {
+            throw new ExifEyeException('Unsupported format: %d', $format);
+        }
+        return $default_entry_class;
     }
 
     /**
@@ -160,7 +269,10 @@ class IfdItem
      */
     public function getTitle()
     {
-        return Collection::getItemPropertyValue($this->collection, $this->getId(), 'title');
+        if ($this->collection === null) {
+            return null;
+        }
+        return $this->collection->getPropertyValue('title');
     }
 
     /**

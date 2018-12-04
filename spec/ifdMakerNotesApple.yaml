@@ -2,17 +2,17 @@ collection: ifdMakerNotesApple
 name: 'Apple'
 title: Apple Maker Notes
 class: ExifEye\Apple\Block\MakerNote
-makerNotes:
-  - 'Apple'
 items:
     0x0003:
-        name: 'AppleRuntime'
         collection: ifdMakerNotesAppleRuntime
+        name: 'AppleRuntime'
     0x0008:
+        collection: tag
         name: AccelerationVector
         title: 'Acceleration Vector'
         format: SignedRational
     0x000a:
+        collection: tag
         name: HDRImageType
         title: 'HDRImageType'
         format: SignedShort
@@ -21,14 +21,17 @@ items:
                 3: 'HDR Image'
                 4: 'Original Image'
     0x000b:
+        collection: tag
         name: BurstUUID
         title: 'Burst UUID'
         format: Ascii
     0x0011:
+        collection: tag
         name: ContentIdentifier
         title: 'Content Identifier'
         format: Ascii
     0x0015:
+        collection: tag
         name: ImageUniqueID
         title: 'ImageUniqueID'
         format: Ascii

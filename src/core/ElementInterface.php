@@ -151,7 +151,8 @@ interface ElementInterface
      *
      * @returns ElementInterface
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = []);
+// @todo xx standardize the signature of the method
+//    public function loadFromData(DataElement $data_element, $offset, $size, array $options = []);
 
     /**
      * Gets the value of this element as text.

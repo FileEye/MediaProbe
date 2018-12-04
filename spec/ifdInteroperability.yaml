@@ -6,27 +6,32 @@ alias:
   - 'Interop'
 items:
     0x0001:
+        collection: tag
         name: InteroperabilityIndex
         title: 'Interoperability Index'
         components: 4
         format: Ascii
     0x0002:
+        collection: tag
         name: InteroperabilityVersion
         title: 'Interoperability Version'
         components: 4
         format: Undefined
-        class: ExifEye\core\Entry\Version
+        entryClass: ExifEye\core\Entry\Version
     0x1000:
+        collection: tag
         name: RelatedImageFileFormat
         title: 'Related Image File Format'
         format: Ascii
     0x1001:
+        collection: tag
         name: RelatedImageWidth
         title: 'Related Image Width'
         # Probably 1
         components: 1
         format: Short
     0x1002:
+        collection: tag
         name: RelatedImageLength
         title: 'Related Image Length'
         # Probably 1

@@ -28,8 +28,8 @@ use Monolog\Processor\PsrLogMessageProcessor;
 function dump_element(ElementInterface $element)
 {
     if ($element instanceof EntryInterface) {
-        $ifd_name = $element->getParentElement()->getParentElement()->getAttribute('name');
-        $tag_title = Collection::getItemTitle($element->getParentElement()->getParentElement()->getType(), $element->getParentElement()->getAttribute('id')) ?: '*** UNKNOWN ***';
+        $ifd_name = $element->getParentElement()->getParentElement()->getAttribute('name') ?: $element->getParentElement()->getAttribute('name');
+        $tag_title = $element->getParentElement()->getAttribute('name') ?: '*na*';
         print substr(str_pad($ifd_name . '/' . $tag_title, 30, ' '), 0, 30) . ' = ' . $element->toString() . "\n";
     }
 

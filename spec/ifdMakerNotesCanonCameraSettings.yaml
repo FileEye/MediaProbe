@@ -4,6 +4,7 @@ title: 'Camera Settings'
 class: ExifEye\core\Block\Index
 items:
     0x0001:
+        collection: tag
         name: MacroMode
         title: 'Macro Mode'
         format: SignedShort
@@ -12,10 +13,12 @@ items:
                 1: 'Macro'
                 2: 'Normal'
     0x0002:
+        collection: tag
         name: SelfTimer
         title: 'Self Timer'
         format: SignedShort
     0x0003:
+        collection: tag
         name: Quality
         title: Quality
         format: SignedShort
@@ -30,6 +33,7 @@ items:
                 130: 'Normal Movie'
                 131: 'Movie (2)'
     0x0004:
+        collection: tag
         name: CanonFlashMode
         title: 'Flash Mode'
         format: SignedShort
@@ -45,6 +49,7 @@ items:
                 6: 'Red-eye reduction (On)'
                 16: 'External flash'
     0x0005:
+        collection: tag
         name: ContinuousDrive
         title: 'Continuous Drive Mode'
         format: SignedShort
@@ -60,6 +65,7 @@ items:
                 9: 'Single, Silent'
                 10: 'Continuous, Silent'
     0x0007:
+        collection: tag
         name: FocusMode
         title: 'Focus Mode'
         format: SignedShort
@@ -77,6 +83,7 @@ items:
                 512: 'Movie Snap Focus'
                 519: 'Movie Servo AF'
     0x0009:
+        collection: tag
         name: RecordMode
         title: 'Record Mode'
         format: SignedShort
@@ -94,6 +101,7 @@ items:
                 11: 'CRM'
                 13: 'CR3'
     0x000A:
+        collection: tag
         name: CanonImageSize
         title: 'Image Size'
         format: SignedShort
@@ -119,6 +127,7 @@ items:
                 142: '1920x1080 Movie'
                 143: '4096x2160 Movie'
     0x000B:
+        collection: tag
         name: EasyMode
         title: 'Easy Shooting Mode'
         format: SignedShort
@@ -196,6 +205,7 @@ items:
                 264: 'Surface'
                 265: 'Low Light 2'
     0x000C:
+        collection: tag
         name: DigitalZoom
         title: 'Digital Zoom'
         format: SignedShort
@@ -206,6 +216,7 @@ items:
                 2: '4x'
                 3: 'Other'
     0x000D:
+        collection: tag
         name: Contrast
         title: Contrast
         format: SignedShort
@@ -213,6 +224,7 @@ items:
             mapping:
                 0: 'Normal'
     0x000E:
+        collection: tag
         name: Saturation
         title: Saturation
         format: SignedShort
@@ -220,14 +232,17 @@ items:
             mapping:
                 0: 'Normal'
     0x000F:
+        collection: tag
         name: Sharpness
         title: Sharpness
         format: SignedShort
     0x0010:
+        collection: tag
         name: CameraISO
         title: 'ISO Speed'
         format: SignedShort
     0x0011:
+        collection: tag
         name: MeteringMode
         title: 'Metering Mode'
         format: SignedShort
@@ -240,6 +255,7 @@ items:
                 4: 'Partial'
                 5: 'Center-weighted average'
     0x0012:
+        collection: tag
         name: FocusRange
         title: 'Focus Range'
         format: SignedShort
@@ -257,6 +273,7 @@ items:
                 9: 'Super Macro'
                 10: 'Infinity'
     0x0013:
+        collection: tag
         name: AFPoint
         title: 'Auto Focus Point Selected'
         format: SignedShort
@@ -271,6 +288,7 @@ items:
                 0x4001: 'Auto AF point selection'
                 0x4006: 'Face Detect'
     0x0014:
+        collection: tag
         name: CanonExposureMode
         title: 'Exposure Mode'
         format: SignedShort
@@ -285,6 +303,7 @@ items:
                 6: 'M-Dep'
                 7: 'Bulb'
     0x0016:
+        collection: tag
         name: LensType
         title: 'Lens Type'
         format: Short
@@ -642,35 +661,43 @@ items:
                 61494: 'Canon CN-E 85mm T1.3 L F'
                 65535: 'n/a'
     0x0017:
+        collection: tag
         name: MaxFocalLength
         title: 'Max Focal Length'
         format: Short
     0x0018:
+        collection: tag
         name: MinFocalLength
         title: 'Min Focal Length'
         format: Short
     0x0019:
+        collection: tag
         name: FocalUnits
         title: 'Focal Units'
         format: SignedShort
     0x001A:
+        collection: tag
         name: MaxAperture
         title: 'Max Aperture'
         format: SignedShort
     0x001B:
+        collection: tag
         name: MinAperture
         title: 'Min Aperture'
         format: SignedShort
     0x001C:
+        collection: tag
         name: FlashActivity
         title: 'Flash Activity'
         format: SignedShort
     0x001D:
         # decode appropriately per bit
+        collection: tag
         name: FlashDetails
         title: 'Flash Details'
         format: SignedShort
     0x0020:
+        collection: tag
         name: FocusContinuous
         title: 'Focus Continuous'
         format: SignedShort
@@ -680,6 +707,7 @@ items:
                 1: 'Continuous'
                 8: 'Manual'
     0x0021:
+        collection: tag
         name: AESetting
         title: 'Auto Exposure Setting'
         format: SignedShort
@@ -691,6 +719,7 @@ items:
                 3: 'AE Lock + Exposure Comp.'
                 4: 'No AE'
     0x0022:
+        collection: tag
         name: ImageStabilization
         title: 'Image Stabilization'
         format: SignedShort
@@ -707,18 +736,22 @@ items:
                 259: 'Panning (2)'
                 260: 'Dynamic (2)'
     0x0023:
+        collection: tag
         name: DisplayAperture
         title: 'Display Aperture'
         format: SignedShort
     0x0024:
+        collection: tag
         name: ZoomSourceWidth
         title: 'Zoom Source Width'
         format: SignedShort
     0x0025:
+        collection: tag
         name: ZoomTargetWidth
         title: 'Zoom Target Width'
         format: SignedShort
     0x0027:
+        collection: tag
         name: SpotMeteringMode
         title: 'Spot Metering Mode'
         format: SignedShort
@@ -727,6 +760,7 @@ items:
                 0: 'Center'
                 1: 'AF Point'
     0x0028:
+        collection: tag
         name: PhotoEffect
         title: 'Photo Effect'
         format: SignedShort
@@ -741,6 +775,7 @@ items:
                 6: 'Custom'
                 100: 'My Color Data'
     0x0029:
+        collection: tag
         name: ManualFlashOutput
         title: 'Manual Flash Output'
         format: SignedShort
@@ -752,6 +787,7 @@ items:
                 0x504: 'Low'
                 0x7fff: 'n/a'
     0x002A:
+        collection: tag
         name: ColorTone
         title: 'Color Tone'
         format: SignedShort
@@ -759,6 +795,7 @@ items:
             mapping:
                 0: 'Normal'
     0x002E:
+        collection: tag
         name: SRAWQuality
         title: 'SRAW Quality'
         format: SignedShort

@@ -3,6 +3,7 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\Block\Tag;
+use ExifEye\core\Collection;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Data\DataException;
@@ -11,12 +12,15 @@ use ExifEye\core\Entry\Core\EntryInterface;
 use ExifEye\core\ExifEye;
 use ExifEye\core\ExifEyeException;
 use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Collection;
 
 /**
  * Abstract class representing an Image File Directory (IFD).
+ *
+ * As this class is abstract you cannot instantiate objects from it. It only
+ * serves as a common ancestor to define the methods common to all IFD
+ * Block objects.
  */
-class IfdBase extends BlockBase
+abstract class IfdBase extends BlockBase
 {
     /**
      * {@inheritdoc}
@@ -33,9 +37,9 @@ class IfdBase extends BlockBase
     /**
      * Constructs a Block for an Image File Directory (IFD).
      */
-    public function __construct(BlockBase $parent_block, IfdItem $ifd_item, ElementInterface $reference = null)
+    public function __construct(Collection $collection, IfdItem $ifd_item, BlockBase $parent = null, BlockBase $reference = null)
     {
-        parent::__construct($ifd_item->getType(), $parent_block, $reference);
+        parent::__construct($collection, $parent, $reference);
 
         if ($ifd_item->getId() !== null) {
             $this->setAttribute('id', $ifd_item->getId());
@@ -45,15 +49,18 @@ class IfdBase extends BlockBase
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
-    {
-        throw new ExifEyeException(get_called_class() . 'is not implementing ' . __FUNCTION__);
-    }
-
-    /**
-     *   @todo
+     * Gets the number of items in the IFD.
+     *
+     * Items can be TAGs, other IFDs, etc.
+     *
+     * @param DataElement $data_element
+     *            the data element that will provide the data.
+     * @param int $offset
+     *            the offset within the data element where the count can be
+     *            found.
+     *
+     * @return int
+     *            the number of items in the IFD.
      */
     protected function getIfdItemsCountFromData(DataElement $data_element, $offset)
     {
@@ -77,9 +84,25 @@ class IfdBase extends BlockBase
     }
 
     /**
-     *   @todo
+     * Gets an IfdItem object from the data.
+     *
+     * @param int $i
+     *            the sequence of the item in the IFD.
+     * @param DataElement $data_element
+     *            the data element that will provide the data.
+     * @param int $offset
+     *            the offset within the data element where the count can be
+     *            found.
+     * @param \ExifEye\core\Collection $parent_collection
+     *            the collection of the parent of this IFD.
+     * @param int $data_offset_shift
+     *            (Optional) if specified, an additional shift to the offset
+     *            where data can be found.
+     *
+     * @return \ExifEye\core\Block\IfdItem
+     *            the IfdItem object of the IFD item.
      */
-    protected function getIfdItemFromData($i, DataElement $data_element, $offset, $parent_type, $data_offset_shift = 0)
+    protected function getIfdItemFromData($i, DataElement $data_element, $offset, Collection $parent_collection, $data_offset_shift = 0)
     {
         $id = $data_element->getShort($offset);
         $format = $data_element->getShort($offset + 2);
@@ -88,7 +111,7 @@ class IfdBase extends BlockBase
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
         // element.
-        if (($size = Collection::getFormatSize($format) * $components) > 4) {
+        if (($size = IfdFormat::getSize($format) * $components) > 4) {
             $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
         } else {
             $data_offset = $offset + 8;
@@ -98,13 +121,13 @@ class IfdBase extends BlockBase
             'i' => $i + 1,
             'ifdoffset' => $data_element->getStart() + $offset,
             'id' => '0x' . strtoupper(dechex($id)),
-            'format' => Collection::getFormatName($format),
+            'format' => IfdFormat::getName($format),
             'components' => $components,
             'offset' => $data_element->getStart() + $data_offset,
             'size' => $size,
         ]);
 
-        return new IfdItem($parent_type, $id, $format, $components, $data_offset);
+        return new IfdItem($parent_collection, $id, $format, $components, $data_offset);
     }
 
     /**
@@ -115,7 +138,7 @@ class IfdBase extends BlockBase
      */
     protected function executePostLoadCallbacks(DataElement $data_element)
     {
-        $post_load_callbacks = Collection::getPropertyValue($this->getType(), 'postLoad');
+        $post_load_callbacks = $this->getCollection()->getPropertyValue('postLoad');
         if (!empty($post_load_callbacks)) {
             foreach ($post_load_callbacks as $callback) {
                 call_user_func($callback, $data_element, $this);

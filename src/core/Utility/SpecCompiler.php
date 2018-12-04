@@ -117,15 +117,13 @@ DATA;
             }
         }
 
-        // 'makerNotes' entry.
-        if (!empty($input['makerNotes'])) {
-            foreach ($input['makerNotes'] as $maker) {
-                $this->map['makerNotes'][$maker] = $input['collection'];
-            }
-        }
-
         // 'items' entry.
         foreach ($input['items'] as $id => $item) {
+            // Item must have a collection.
+            if (!isset($item['collection'])) {
+                throw new SpecCompilerException($file->getFileName() . ": missing collection for item '" . $id . "'.");
+            }
+
             // Convert format string to its ID.
             if (isset($item['format'])) {
                 $temp = [];

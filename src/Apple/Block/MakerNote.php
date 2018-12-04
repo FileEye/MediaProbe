@@ -27,7 +27,7 @@ class MakerNote extends IfdBase
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         // Load Apple's header as a raw data block.
-        $header = new RawData('rawData', $this);
+        $header = new RawData($this);
         $header_data_window = new DataWindow($data_element, $offset, 14);
         $header_data_window->debug($header);
         $header->loadFromData($header_data_window, 0, $header_data_window->getSize());
@@ -40,10 +40,10 @@ class MakerNote extends IfdBase
         // Load the Blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getType(), $offset - 14);
+            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getCollection(), $offset - 14);
 
             $class = $ifd_item->getClass();
-            $ifd_entry = new $class($this, $ifd_item);
+            $ifd_entry = new $class($ifd_item->getCollection(), $ifd_item, $this);
 
             try {
                 $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, ['components' => $ifd_item->getComponents(), 'data_offset' => $ifd_item->getDataOffset()], $ifd_item);
@@ -77,7 +77,7 @@ class MakerNote extends IfdBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getType() === 'rawData') {
+            if ($sub_block->getType()->getId() === 'na') {
                 continue;
             }
 

@@ -29,7 +29,7 @@ class Ifd extends IfdBase
         // Load the blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getType());
+            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getCollection());
 
             // If the entry is an IFD, checks the offset.
             if (is_subclass_of($ifd_item->getClass(), 'ExifEye\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
@@ -40,7 +40,7 @@ class Ifd extends IfdBase
             }
 
             $class = $ifd_item->getClass();
-            $ifd_entry = new $class($this, $ifd_item);
+            $ifd_entry = new $class($ifd_item->getCollection(), $ifd_item, $this);
 
             try {
                 $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, ['components' => $ifd_item->getComponents()], $ifd_item);
@@ -77,7 +77,7 @@ class Ifd extends IfdBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getType() === 'thumbnail') {
+            if ($sub_block->getType()->getId() === 'thumbnail') {
                 continue;
             }
 
@@ -102,13 +102,13 @@ class Ifd extends IfdBase
         if ($thumbnail) {
             $thumbnail_entry = $thumbnail->getElement('entry');
             // Add offset.
-            $bytes .= ConvertBytes::fromShort(Collection::getItemIdByName($this->getType(), 'ThumbnailOffset'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Collection::getFormatIdFromName('Long'), $byte_order);
+            $bytes .= ConvertBytes::fromShort($this->getCollection()->getItemCollectionByName('ThumbnailOffset')->getPropertyValue('item'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(IfdFormat::getFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
             // Add length.
-            $bytes .= ConvertBytes::fromShort(Collection::getItemIdByName($this->getType(), 'ThumbnailLength'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(Collection::getFormatIdFromName('Long'), $byte_order);
+            $bytes .= ConvertBytes::fromShort($this->getCollection()->getItemCollectionByName('ThumbnailLength')->getPropertyValue('item'), $byte_order);
+            $bytes .= ConvertBytes::fromShort(IfdFormat::getFromName('Long'), $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($thumbnail_entry->getComponents(), $byte_order);
             // Add thumbnail.
@@ -182,7 +182,7 @@ class Ifd extends IfdBase
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
-            while ($dataxx->getByte($size - 2) !== JpegSegment::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Collection::getItemIdByName('jpeg', 'EOI')) {
+            while ($dataxx->getByte($size - 2) !== JpegSegment::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Collection::get('jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
                 $size --;
             }
             if ($size != $dataxx->getSize()) {
@@ -193,7 +193,7 @@ class Ifd extends IfdBase
             //$thumbnail_data = $dataxx->getClone(0, $size)->getBytes(0, $size);
             $thumbnail_data = $dataxx->getBytes(0, $size);
 
-            $thumbnail_block = new Thumbnail('thumbnail', $ifd);
+            $thumbnail_block = new Thumbnail(Collection::get('thumbnail'), $ifd);
             $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
                 'offset' => $offset,
                 'length' => $length,
@@ -238,18 +238,19 @@ class Ifd extends IfdBase
         $model = $model_tag && $model_tag->getElement("entry") ? $model_tag->getElement("entry")->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
 
         // Get maker note collection.
-        if (!$maker_note_collection = Collection::getMakerNoteCollection($make_tag->getElement("entry")->getValue(), $model)) {
+        if (!$maker_note_collection = static::getMakerNoteCollection($make_tag->getElement("entry")->getValue(), $model)) {
             return;
         }
 
         // Load maker note into IFD.
-        $ifd_class = Collection::getPropertyValue($maker_note_collection, 'class');
-        $maker_note_ifd_name = Collection::getPropertyValue($maker_note_collection, 'name');
-        $exif_ifd->debug("Converting {makernote} maker notes to IFD", [
+        $ifd_class = $maker_note_collection->getPropertyValue('class');
+        $maker_note_ifd_name = $maker_note_collection->getPropertyValue('name');
+        $exif_ifd->debug("Parsing {makernote} maker notes", [
             'makernote' => $maker_note_ifd_name,
         ]);
-        $ifd_item = new IfdItem($exif_ifd->getType(), $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents());
-        $ifd = new $ifd_class($exif_ifd, $ifd_item, $maker_note_tag);
+        $ifd_item = new IfdItem($exif_ifd->getCollection(), $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), $maker_note_collection);
+        $ifd = new $ifd_class($maker_note_collection, $ifd_item, $exif_ifd, $maker_note_tag);
+
         // xxx
         $ifd->setAttribute('name', $maker_note_ifd_name);
         $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1], null, [
@@ -258,5 +259,29 @@ class Ifd extends IfdBase
         ]);
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");
+    }
+
+    /**
+     * Determines the Collection of the maker notes.
+     *
+     * @param string $make
+     *            the value of IFD0/Make.
+     * @param string $model
+     *            the value of IFD0/Model.
+     *
+     * @return Collection|null
+     *            the Collection object describing the maker notes, or null if
+     *            no specification exists.
+     */
+    protected static function getMakerNoteCollection($make, $model)
+    {
+        $maker_notes_collection = Collection::get('makerNotes');
+        foreach ($maker_notes_collection->listItemIds() as $maker_note_collection_id) {
+            $maker_note_collection = $maker_notes_collection->getItemCollection($maker_note_collection_id);
+            if ($maker_note_collection->getPropertyValue('make') === $make) {
+                return $maker_note_collection;
+            }
+        }
+        return null;
     }
 }

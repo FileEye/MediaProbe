@@ -24,11 +24,6 @@ class Image extends BlockBase
     protected $DOMNodeName = 'image';
 
     /**
-     * {@inheritdoc}
-     */
-    protected $collection = 'image';
-
-    /**
      * The internal logger instance for this Image object.
      *
      * @var \Monolog\Logger
@@ -75,15 +70,14 @@ class Image extends BlockBase
      */
     public static function createFromFile($path, LoggerInterface $external_logger = null, $fail_level = false)
     {
-        $image_collection = static::determineImageCollection(new DataString(file_get_contents($path, false, null, 0, 10)));
-        if ($image_collection !== false) {
-            $image = new static($external_logger, $fail_level);
-            $data_element = new DataString(file_get_contents($path));
-            $image->loadFromData($data_element, 0, $data_element->getSize(), [], $image_collection);
-            return $image;
+        if (!$image_collection = static::getImageCollection(new DataString(file_get_contents($path, false, null, 0, 10)))) {
+            return false;
         }
 
-        return false;
+        $image = new static($external_logger, $fail_level);
+        $data_element = new DataString(file_get_contents($path));
+        $image->loadFromData($data_element, 0, $data_element->getSize(), $image_collection);
+        return $image;
     }
 
     /**
@@ -103,15 +97,13 @@ class Image extends BlockBase
      */
     public static function createFromData(DataElement $data_element, LoggerInterface $external_logger = null, $fail_level = false)
     {
-        $image_collection = static::determineImageCollection($data_element);
-
-        if ($image_collection !== false) {
-            $image = new static($external_logger, $fail_level);
-            $image->loadFromData($data_element, 0, $data_element->getSize(), [], $image_collection);
-            return $image;
+        if (!$image_collection = static::getImageCollection($data_element)) {
+            return false;
         }
 
-        return false;
+        $image = new static($external_logger, $fail_level);
+        $image->loadFromData($data_element, 0, $data_element->getSize(), $image_collection);
+        return $image;
     }
 
     /**
@@ -120,23 +112,23 @@ class Image extends BlockBase
      * @param DataElement $data_element
      *            the data element that will provide the data.
      *
-     * @returns string|false
+     * @returns Collection|false
      *            the image collection if successful, or false if the data
      *            cannot be parsed.
      */
-    protected static function determineImageCollection(DataElement $data_element)
+    protected static function getImageCollection(DataElement $data_element)
     {
         // JPEG image?
         if ($data_element->getBytes(0, 3) === Jpeg::JPEG_HEADER) {
-            return 'jpeg';
+            return Collection::get('jpeg');
         }
 
         // TIFF image?
         if (Tiff::getTiffSegmentByteOrder($data_element) !== null) {
-            return 'tiff';
+            return Collection::get('tiff');
         }
 
-        return false;
+        return null;
     }
 
     /**
@@ -150,7 +142,7 @@ class Image extends BlockBase
      */
     public function __construct(LoggerInterface $external_logger = null, $fail_level = false)
     {
-        parent::__construct($this->collection);
+        parent::__construct(Collection::get('image'));
         $this->logger = (new Logger('exifeye'))
           ->pushHandler(new TestHandler(Logger::INFO))
           ->pushProcessor(new PsrLogMessageProcessor());
@@ -160,15 +152,12 @@ class Image extends BlockBase
 
     /**
      * {@inheritdoc}
-     *
-     * @param string $image_collection
-     *            The image collection of the image.
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], $image_collection = null)
+    public function loadFromData(DataElement $data_element, $offset, $size, Collection $collection)
     {
-        $image_class = Collection::getClass($image_collection);
-        $image_handler = new $image_class($image_collection, $this);
-        $image_handler->loadFromData($data_element, $offset, $size, $options);
+        $class = $collection->getPropertyValue('class');
+        $handler = new $class($collection, $this);
+        $handler->loadFromData($data_element, $offset, $size);
         return $this;
     }
 
@@ -204,6 +193,8 @@ class Image extends BlockBase
      */
     public function toXML()
     {
+        //$formatter = new \PrettyXml\Formatter();
+        //dump($formatter->format($original_image->toXML()));
         return $this->DOMNode->ownerDocument->saveXML();
     }
 
@@ -211,8 +202,8 @@ class Image extends BlockBase
      * Returns the log entries of the Image.
      *
      * @param string $level_name
-     *            (Optional) If specified, filters only the entries
-     *            of the specified severity level.
+     *            (Optional) If specified, filters only the entries of the
+     *            specified severity level.
      *
      * @returns array
      *            An array of Monolog entries.

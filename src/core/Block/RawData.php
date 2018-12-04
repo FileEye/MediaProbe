@@ -26,9 +26,9 @@ class RawData extends BlockBase
     /**
      * Construct a new RawData object.
      */
-    public function __construct($type, BlockBase $parent, BlockBase $reference = null)
+    public function __construct(BlockBase $parent, BlockBase $reference = null)
     {
-        parent::__construct($type, $parent, $reference);
+        parent::__construct(Collection::get('na'), $parent, $reference);
         $this->debug('Raw data');
     }
 

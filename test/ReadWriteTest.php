@@ -3,11 +3,13 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Exif;
+use ExifEye\core\Block\IfdFormat;
 use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Jpeg;
 use ExifEye\core\Block\JpegSegmentApp1;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
+use ExifEye\core\Collection;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Entry\Core\Byte;
 use ExifEye\core\Entry\Core\Long;
@@ -17,7 +19,6 @@ use ExifEye\core\Entry\Core\SignedLong;
 use ExifEye\core\Entry\Core\SignedShort;
 use ExifEye\core\ExifEye;
 use ExifEye\core\Block\Ifd;
-use ExifEye\core\Collection;
 use ExifEye\core\Image;
 
 class ReadWriteTest extends ExifEyeTestCaseBase
@@ -46,19 +47,19 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $com_segment = $jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $app1_segment = new JpegSegmentApp1('jpeg', 0xE1, $jpeg, $com_segment);
+        $app1_segment = new JpegSegmentApp1($jpeg->getCollection()->getItemCollectionByName('APP1'), $jpeg, $com_segment);
 
-        $exif = new Exif('exif', $app1_segment);
+        $exif = new Exif(Collection::get('exif'), $app1_segment);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
-        $tiff = new Tiff('tiff', $exif);
+        $tiff = new Tiff(Collection::get('tiff'), $exif);
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd($tiff, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
+        $ifd = new Ifd(Collection::get('tiff'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff);
         foreach ($entries as $entry) {
-            $tag = new Tag($ifd, new IfdItem('ifd0', $entry[0], $entry[2]));
+            $tag = new Tag(Collection::get('tag'), new IfdItem(Collection::get('ifd0'), $entry[0], $entry[2]), $ifd);
             new $entry[1]($tag, $entry[3]);
         }
         $this->assertNotNull($tiff->getElement("ifd[@name='IFD0']"));
@@ -87,7 +88,7 @@ class ReadWriteTest extends ExifEyeTestCaseBase
 
         foreach ($entries as $entry_name => $entry) {
             $tagEntry = $ifd->getElement('tag[@id="' . (int) $entry[0] . '"]/entry');
-            if ($tagEntry->getFormat() == Collection::getFormatIdFromName('Ascii')) {
+            if ($tagEntry->getFormat() == IfdFormat::getFromName('Ascii')) {
                 $ifdValue = $tagEntry->getValue();
                 $entryValue = $entry[4];
                 // cut off after the first nul byte

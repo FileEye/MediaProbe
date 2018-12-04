@@ -37,15 +37,18 @@ abstract class JpegSegmentBase extends BlockBase
     /**
      * Construct a new JPEG segment object.
      */
-    public function __construct($type, $id, Jpeg $jpeg, JpegSegmentBase $reference = null)
+    public function __construct(Collection $collection, Jpeg $jpeg, JpegSegmentBase $reference = null)
     {
-        parent::__construct($type, $jpeg, $reference);
-        $this->setAttribute('id', $id);
-        $name = Collection::getItemName($type, $id);
+        parent::__construct($collection, $jpeg, $reference);
+        $this->setAttribute('id', $collection->getPropertyValue('item'));
+        $name = $collection->getPropertyValue('name');
         $this->setAttribute('name', $name);
-        $this->payload = Collection::getItemPropertyValue($type, $id, 'payload');
-        $this->components = Collection::getItemPropertyValue($type, $id, 'components');
-        $this->debug('{name} segment - {desc}', ['name' => $name, 'desc' => Collection::getItemTitle($type, $id)]);
+        $this->payload = $collection->getPropertyValue('payload');
+        $this->components = $collection->getPropertyValue('components');
+        $this->debug('{name} segment - {desc}', [
+            'name' => $name,
+            'desc' => $collection->getPropertyValue('title')
+        ]);
     }
 
     /**

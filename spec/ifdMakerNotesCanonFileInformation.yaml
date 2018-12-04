@@ -4,15 +4,18 @@ title: 'File Information'
 class: ExifEye\core\Block\Index
 items:
     0x0001:
+        collection: tag
         name: FileNumber
         title: 'File Number'
         format: Long
     0x0002:
+        collection: na
         name: 0x0002
         title: '0x0002'
         format: SignedShort
         skip: true
     0x0003:
+        collection: tag
         name: BracketMode
         title: 'Bracket Mode'
         format: SignedShort
@@ -24,14 +27,17 @@ items:
                 3: 'ISO'
                 4: 'WB'
     0x0004:
+        collection: tag
         name: BracketValue
         title: 'Bracket Value'
         format: SignedShort
     0x0005:
+        collection: tag
         name: BracketShotNumber
         title: 'Bracket Shot Number'
         format: SignedShort
     0x0006:
+        collection: tag
         name: RawJpgQuality
         title: 'Raw Jpg Quality'
         format: SignedShort
@@ -46,6 +52,7 @@ items:
                 130: 'Normal Movie'
                 131: 'Movie (2)'
     0x0007:
+        collection: tag
         name: RawJpgSize
         title: 'Raw Jpg Size'
         format: SignedShort
@@ -71,6 +78,7 @@ items:
                 142: '1920x1080 Movie'
                 143: '4096x2160 Movie'
     0x0008:
+        collection: tag
         name: LongExposureNoiseReduction2
         title: 'Long Exposure Noise Reduction'
         format: SignedShort
@@ -81,6 +89,7 @@ items:
                 3: 'On'
                 4: 'Auto'
     0x0009:
+        collection: tag
         name: WBBracketMode
         title: 'WB Bracket Mode'
         format: SignedShort
@@ -90,14 +99,17 @@ items:
                 1: 'On (shift AB)'
                 2: 'On (shift GM)'
     0x000C:
+        collection: tag
         name: WBBracketValueAB
         title: 'WB Bracket Value AB'
         format: SignedShort
     0x000D:
+        collection: tag
         name: WBBracketValueGM
         title: 'WB Bracket Value GM'
         format: SignedShort
     0x000E:
+        collection: tag
         name: FilterEffect
         title: 'Filter Effect'
         format: SignedShort
@@ -109,6 +121,7 @@ items:
                 3: 'Red'
                 4: 'Green'
     0x000F:
+        collection: tag
         name: ToningEffect
         title: 'Toning Effect'
         format: SignedShort
@@ -120,10 +133,12 @@ items:
                 3: 'Purple'
                 4: 'Green'
     0x0010:
+        collection: tag
         name: MacroMagnification
         title: 'Macro Magnification'
         format: SignedShort
     0x0013:
+        collection: tag
         name: LiveViewShooting
         title: 'Live View Shooting'
         format: SignedShort
@@ -132,14 +147,17 @@ items:
                 0: 'Off'
                 1: 'On'
     0x0014:
+        collection: tag
         name: FocusDistanceUpper
         title: 'Focus Distance Upper'
         format: Short
     0x0015:
+        collection: tag
         name: FocusDistanceLower
         title: 'Focus Distance Lower'
         format: Short
     0x0019:
+        collection: tag
         name: FlashExposureLock
         title: 'Flash Exposure Lock'
         format: Short

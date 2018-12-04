@@ -3,12 +3,13 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdFormat;
 use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Tag;
 use ExifEye\core\Block\Tiff;
+use ExifEye\core\Collection;
 use ExifEye\core\Entry\Core\Ascii;
 use ExifEye\core\Entry\Time;
-use ExifEye\core\Collection;
 
 class IfdTest extends ExifEyeTestCaseBase
 {
@@ -18,14 +19,14 @@ class IfdTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd($tiff_mock, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
+        $ifd = new Ifd(Collection::get('tiff'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 
-        $tag1 = new Tag($ifd, new IfdItem('ifd0', 0x010E, Collection::getFormatIdFromName('Ascii')));
+        $tag1 = new Tag(Collection::get('tag'), new IfdItem(Collection::get('ifd0'), 0x010E, IfdFormat::getFromName('Ascii')), $ifd);
         $desc = new Ascii($tag1, ['Hello?']);
 
-        $tag2 = new Tag($ifd, new IfdItem('ifd0', 0x0132, Collection::getFormatIdFromName('Ascii'), 20));
+        $tag2 = new Tag(Collection::get('tag'), new IfdItem(Collection::get('ifd0'), 0x0132, IfdFormat::getFromName('Ascii'), 20), $ifd);
         $date = new Time($tag2, [12345678]);
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));

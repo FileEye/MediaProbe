@@ -37,7 +37,7 @@ class Tiff extends BlockBase
     /**
      * Constructs a Block for holding a TIFF image.
      */
-    public function __construct($collection, BlockBase $parent = null)
+    public function __construct(Collection $collection, BlockBase $parent = null)
     {
         parent::__construct($collection, $parent);
         $this->collection = $collection;
@@ -72,7 +72,7 @@ class Tiff extends BlockBase
         // If the offset to first IFD is higher than 8, then there may be an
         // image scan (TIFF) in between. Store that in a RawData block.
         if ($ifd_offset > 8) {
-            $scan = new RawData('rawData', $this);
+            $scan = new RawData($this);
             $scan_data_window = new DataWindow($data_window, 8, $ifd_offset - 8);
             $scan_data_window->debug($scan);
             $scan->loadFromData($scan_data_window, 0, $scan_data_window->getSize());
@@ -88,17 +88,18 @@ class Tiff extends BlockBase
 
             try {
                 // Create and load the IFDs.
-                $ifd_class = Collection::getItemClass($this->getCollection(), $i);
+                $ifd_collection = $this->getCollection()->getItemCollection($i);
+                $ifd_class = $ifd_collection->getPropertyValue('class');
                 $ifd_tags_count = $data_window->getShort($ifd_offset);
-                $ifd_item = new IfdItem($this->getCollection(), $i, Collection::getFormatIdFromName('Long'), $ifd_tags_count, $ifd_offset);
-                $ifd = new $ifd_class($this, $ifd_item);
+                $ifd_item = new IfdItem($this->getCollection(), $i, IfdFormat::getFromName('Long'), $ifd_tags_count, $ifd_offset);
+                $ifd = new $ifd_class($ifd_collection, $ifd_item, $this);
                 $ifd->loadFromData($data_window, $ifd_offset, $size);
 
                 // Offset to next IFD.
                 $ifd_offset = $data_window->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
-                    'ifd_name' => Collection::getItemName($this->getCollection(), $i),
+                    'ifd_name' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name'),
                     'msg' => $e->getMessage(),
                 ]);
                 break;

@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\Collection;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
@@ -20,7 +21,7 @@ class JpegSegmentSos extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size)
     {
         // This segment is last before End Of Image, and its length needs to be
         // determined by finding the EOI marker backwards from the end of data.
@@ -40,7 +41,8 @@ class JpegSegmentSos extends JpegSegmentBase
         new Undefined($this, [$data_window->getBytes()]);
 
         // Append the EOI.
-        new JpegSegment('jpeg', self::JPEG_EOI, $this->getParentElement());
+        $eoi_collection = $this->getParentElement()->getCollection()->getItemCollection(self::JPEG_EOI);
+        new JpegSegment($eoi_collection, $this->getParentElement());
 
         // Now check to see if there are any trailing data.
         if ($end_offset < $size) {
@@ -48,7 +50,7 @@ class JpegSegmentSos extends JpegSegmentBase
             $this->warning('Found trailing content after EOI: {size} bytes', ['size' => $raw_size]);
             // There is no JPEG marker for trailing garbage, so we just load
             // the data in a RawData object.
-            $trail = new RawData('rawData', $this->getParentElement());
+            $trail = new RawData($this->getParentElement());
             $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size, $data_element->getByteOrder());
             $trail_data_window->debug($trail);
             $trail->loadFromData($trail_data_window, 0, $raw_size);

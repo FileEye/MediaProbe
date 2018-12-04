@@ -3,6 +3,7 @@
 namespace ExifEye\Test\core;
 
 use ExifEye\core\Block\Ifd;
+use ExifEye\core\Block\IfdFormat;
 use ExifEye\core\Block\IfdItem;
 use ExifEye\core\Block\Index;
 use ExifEye\core\Block\Tag;
@@ -23,52 +24,48 @@ class SpecTest extends ExifEyeTestCaseBase
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd($tiff_mock, new IfdItem('tiff', 0, Collection::getFormatIdFromName('Long')));
-        $ifd_exif = new Ifd($ifd_0, new IfdItem('ifd0', 0x8769, Collection::getFormatIdFromName('Long')));
-        $ifd_canon_camera_settings = new Index($tiff_mock, new IfdItem('ifdMakerNotesCanon', 1, Collection::getFormatIdFromName('Long')));
+        $ifd_0 = new Ifd(Collection::get('ifd0'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd_exif = new Ifd(Collection::get('ifdExif'), new IfdItem(Collection::get('ifd0'), 0x8769, IfdFormat::getFromName('Long')), $ifd_0);
+        $ifd_canon_camera_settings = new Index(Collection::get('ifdMakerNotesCanonCameraSettings'), new IfdItem(Collection::get('ifdMakerNotesCanon'), 1, IfdFormat::getFromName('Long')), $tiff_mock);
 
         // Test retrieving IFD id by name.
-        $this->assertEquals(Collection::getIdByName('IFD0'), Collection::getIdByName('0'));
-        $this->assertEquals(Collection::getIdByName('IFD0'), Collection::getIdByName('Main'));
-        $this->assertNotNull(Collection::getIdByName('Canon'));
+        $this->assertEquals(Collection::getByName('IFD0'), Collection::getByName('0'));
+        $this->assertEquals(Collection::getByName('IFD0'), Collection::getByName('Main'));
+        $this->assertNotNull(Collection::getByName('Canon'));
 
         // Test retrieving IFD class.
-        $this->assertEquals('ExifEye\core\Block\Ifd', Collection::getClass('ifd0'));
-        $this->assertEquals('ExifEye\core\Block\Index', Collection::getClass('ifdMakerNotesCanonCameraSettings'));
+        $this->assertEquals('ExifEye\core\Block\Ifd', $ifd_0->getCollection()->getPropertyValue('class'));
+        $this->assertEquals('ExifEye\core\Block\Index', $ifd_canon_camera_settings->getCollection()->getPropertyValue('class'));
 
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals([
             'ExifEye\core\Block\Ifd::thumbnailToBlock',
             'ExifEye\core\Block\Ifd::makerNoteToBlock',
-        ], Collection::getPropertyValue($ifd_0->getType(), 'postLoad'));
-        $this->assertNull(Collection::getPropertyValue($ifd_canon_camera_settings->getType(), 'postLoad'));
-
-        // Test retrieving maker note IFD.
-        $this->assertEquals('ifdMakerNotesCanon', Collection::getMakerNoteCollection('Canon', 'any'));
-        $this->assertNull(Collection::getMakerNoteCollection('Minolta', 'any'));
+        ], $ifd_0->getCollection()->getPropertyValue('postLoad'));
+        $this->assertNull($ifd_canon_camera_settings->getCollection()->getPropertyValue('postLoad'));
 
         // Test retrieving TAG name.
-        $this->assertEquals('Exif', Collection::getItemName($ifd_0->getType(), 0x8769));
-        $this->assertEquals('ExposureTime', Collection::getItemName($ifd_exif->getType(), 0x829A));
-        $this->assertEquals('Compression', Collection::getItemName($ifd_0->getType(), 0x0103));
+        $this->assertEquals('Exif', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('name'));
+        $this->assertEquals('ExposureTime', $ifd_exif->getCollection()->getItemCollection(0x829A)->getPropertyValue('name'));
+        $this->assertEquals('Compression', $ifd_0->getCollection()->getItemCollection(0x0103)->getPropertyValue('name'));
 
         // Test retrieving TAG id by name.
-        $this->assertEquals(0x8769, Collection::getItemIdByName($ifd_0->getType(), 'Exif'));
-        $this->assertEquals(0x829A, Collection::getItemIdByName($ifd_exif->getType(), 'ExposureTime'));
-        $this->assertEquals(0x0103, Collection::getItemIdByName($ifd_0->getType(), 'Compression'));
+        $this->assertEquals(0x8769, $ifd_0->getCollection()->getItemCollectionByName('Exif')->getPropertyValue('item'));
+        $this->assertEquals(0x829A, $ifd_exif->getCollection()->getItemCollectionByName('ExposureTime')->getPropertyValue('item'));
+        $this->assertEquals(0x0103, $ifd_0->getCollection()->getItemCollectionByName('Compression')->getPropertyValue('item'));
 
         // Check methods identifying an IFD pointer TAG.
-        $this->assertSame('ifdExif', Collection::getItemCollection($ifd_0->getType(), 0x8769));
-        $this->assertSame('Exif', Collection::getItemName($ifd_0->getType(), 0x8769));
+        $this->assertSame('ifdExif', $ifd_0->getCollection()->getItemCollection(0x8769)->getId());
+        $this->assertSame('Exif', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('name'));
 
         // Check getTagFormat.
-        $this->assertEquals([Collection::getFormatIdFromName('Undefined')], Collection::getItemPropertyValue($ifd_exif->getType(), 0x9286, 'format'));
-        $this->assertEquals([Collection::getFormatIdFromName('Short'), Collection::getFormatIdFromName('Long')], Collection::getItemPropertyValue($ifd_exif->getType(), 0xA002, 'format'));
+        $this->assertEquals([IfdFormat::getFromName('Undefined')], $ifd_exif->getCollection()->getItemCollection(0x9286)->getPropertyValue('format'));
+        $this->assertEquals([IfdFormat::getFromName('Short'), IfdFormat::getFromName('Long')], $ifd_exif->getCollection()->getItemCollection(0xA002)->getPropertyValue('format'));
 
         // Check getTagTitle.
-        $this->assertEquals('IFD Exif', Collection::getItemTitle($ifd_0->getType(), 0x8769));
-        $this->assertEquals('Exposure Time', Collection::getItemTitle($ifd_exif->getType(), 0x829A));
-        $this->assertEquals('Compression', Collection::getItemTitle($ifd_0->getType(), 0x0103));
+        $this->assertEquals('IFD Exif', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('title'));
+        $this->assertEquals('Exposure Time', $ifd_exif->getCollection()->getItemCollection(0x829A)->getPropertyValue('title'));
+        $this->assertEquals('Compression', $ifd_0->getCollection()->getItemCollection(0x0103)->getPropertyValue('title'));
     }
 
     /**
@@ -76,27 +73,10 @@ class SpecTest extends ExifEyeTestCaseBase
      */
     public function testGetEntryClass()
     {
-        $ifd_exif = $this->getMockBuilder('ExifEye\core\Block\Ifd')
-                    ->disableOriginalConstructor()
-                    ->setMethods(['getType'])
-                    ->getMock();
-        $ifd_exif->expects($this->any())
-          ->method('getType')
-          ->will($this->returnValue('ifdExif'));
-
-        $ifd_canon_picture_information = $this->getMockBuilder('ExifEye\core\Block\Index')
-                    ->disableOriginalConstructor()
-                    ->setMethods(['getType'])
-                    ->getMock();
-        $ifd_canon_picture_information->expects($this->any())
-          ->method('getType')
-          ->will($this->returnValue('ifdMakerNotesCanonPictureInformation'));
-
         //@todo change below to xxxx::class once PHP 5.4 support is removed.
-        $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Collection::getItemClass($ifd_exif->getType(), 0x9286));
-        $this->assertEquals('ExifEye\core\Entry\Time', Collection::getItemClass($ifd_exif->getType(), 0x9003));
-        $this->fcExpectException('ExifEye\core\ExifEyeException', "No format can be derived for tag: 0x0003 (ImageHeight) in ifd: 'ifdMakerNotesCanonPictureInformation'");
-        $this->assertNull(Collection::getItemClass($ifd_canon_picture_information->getType(), 0x0003));
+        $this->assertEquals('ExifEye\core\Entry\ExifUserComment', Collection::get('ifdExif')->getItemCollection(0x9286)->getPropertyValue('entryClass'));
+        $this->assertEquals('ExifEye\core\Entry\Time', Collection::get('ifdExif')->getItemCollection(0x9003)->getPropertyValue('entryClass'));
+        $this->assertNull(Collection::get('ifdMakerNotesCanonPictureInformation')->getItemCollection(0x0003)->getPropertyValue('entryClass'));
     }
 
     /**
@@ -104,20 +84,22 @@ class SpecTest extends ExifEyeTestCaseBase
      *
      * @dataProvider getTagTextProvider
      */
-    public function testGetTagText($expected_text, $expected_class, $collection, $tag, array $args, $brief = false)
+    public function testGetTagText($expected_text, $expected_class, $collection_id, $tag_name, array $args, $brief = false)
     {
         $ifd = $this->getMockBuilder('ExifEye\core\Block\Ifd')
                     ->disableOriginalConstructor()
-                    ->setMethods(['getType'])
+                    ->setMethods(['getCollection'])
                     ->getMock();
+
+        $collection = Collection::get($collection_id);
         $ifd->expects($this->any())
-          ->method('getType')
+          ->method('getCollection')
           ->will($this->returnValue($collection));
 
-        $tag_id = Collection::getItemIdByName($collection, $tag);
-        $tag_format = Collection::getItemPropertyValue($collection, $tag_id, 'format')[0];
-        $entry_class_name = Collection::getItemClass($collection, $tag_id);
-        $tag = new Tag($ifd, new IfdItem($collection, $tag_id, $tag_format));
+        $tag_collection = $collection->getItemCollectionByName($tag_name);
+        $ifd_item = new IfdItem($collection, $tag_collection->getPropertyValue('item'));
+        $entry_class_name = $ifd_item->getEntryClass();
+        $tag = new Tag($tag_collection, $ifd_item, $ifd);
         new $entry_class_name($tag, $args);
 
         $this->assertInstanceOf($expected_class, $tag->getElement("entry"));
@@ -238,31 +220,33 @@ class SpecTest extends ExifEyeTestCaseBase
 
     public function testJpegSegmentIds()
     {
-        $this->assertEquals(0xC0, Collection::getItemIdByName('jpeg', 'SOF0'));
-        $this->assertEquals(0xD3, Collection::getItemIdByName('jpeg', 'RST3'));
-        $this->assertEquals(0xE3, Collection::getItemIdByName('jpeg', 'APP3'));
-        $this->assertEquals(0xFB, Collection::getItemIdByName('jpeg', 'JPG11'));
-        $this->assertEquals(0xD8, Collection::getItemIdByName('jpeg', 'SOI'));
-        $this->assertEquals(0xD9, Collection::getItemIdByName('jpeg', 'EOI'));
-        $this->assertEquals(0xDA, Collection::getItemIdByName('jpeg', 'SOS'));
-        $this->assertEquals(null, Collection::getItemIdByName('jpeg', 'missing'));
+        $collection = Collection::get('jpeg');
+        $this->assertEquals(0xC0, $collection->getItemCollectionByName('SOF0')->getPropertyValue('item'));
+        $this->assertEquals(0xD3, $collection->getItemCollectionByName('RST3')->getPropertyValue('item'));
+        $this->assertEquals(0xE3, $collection->getItemCollectionByName('APP3')->getPropertyValue('item'));
+        $this->assertEquals(0xFB, $collection->getItemCollectionByName('JPG11')->getPropertyValue('item'));
+        $this->assertEquals(0xD8, $collection->getItemCollectionByName('SOI')->getPropertyValue('item'));
+        $this->assertEquals(0xD9, $collection->getItemCollectionByName('EOI')->getPropertyValue('item'));
+        $this->assertEquals(0xDA, $collection->getItemCollectionByName('SOS')->getPropertyValue('item'));
+        $this->assertNull($collection->getItemCollectionByName('missing'));
     }
 
     public function testJpegSegmentNames()
     {
-        $this->assertEquals('SOF0', Collection::getItemName('jpeg', 0xC0));
-        $this->assertEquals('RST3', Collection::getItemName('jpeg', 0xD3));
-        $this->assertEquals('APP3', Collection::getItemName('jpeg', 0xE3));
-        $this->assertEquals('JPG11', Collection::getItemName('jpeg', 0xFB));
-        $this->assertEquals(null, Collection::getItemName('jpeg', 100));
+        $collection = Collection::get('jpeg');
+        $this->assertEquals('SOF0', $collection->getItemCollection(0xC0)->getPropertyValue('name'));
+        $this->assertEquals('RST3', $collection->getItemCollection(0xD3)->getPropertyValue('name'));
+        $this->assertEquals('APP3', $collection->getItemCollection(0xE3)->getPropertyValue('name'));
+        $this->assertEquals('JPG11', $collection->getItemCollection(0xFB)->getPropertyValue('name'));
+        $this->assertNull($collection->getItemCollection(100));
     }
 
     public function testJpegSegmentTitles()
     {
-        $this->assertEquals('Start of frame (baseline DCT)', Collection::getItemTitle('jpeg', 0xC0));
-        $this->assertEquals(ExifEye::fmt('Restart %d', 3), Collection::getItemTitle('jpeg', 0xD3));
-        $this->assertEquals(ExifEye::fmt('Application segment %d', 3), Collection::getItemTitle('jpeg', 0xE3));
-        $this->assertEquals(ExifEye::fmt('Extension %d', 11), Collection::getItemTitle('jpeg', 0xFB));
-        $this->assertEquals(null, Collection::getItemTitle('jpeg', 100));
+        $collection = Collection::get('jpeg');
+        $this->assertEquals('Start of frame (baseline DCT)', $collection->getItemCollection(0xC0)->getPropertyValue('title'));
+        $this->assertEquals(ExifEye::fmt('Restart %d', 3), $collection->getItemCollection(0xD3)->getPropertyValue('title'));
+        $this->assertEquals(ExifEye::fmt('Application segment %d', 3), $collection->getItemCollection(0xE3)->getPropertyValue('title'));
+        $this->assertEquals(ExifEye::fmt('Extension %d', 11), $collection->getItemCollection(0xFB)->getPropertyValue('title'));
     }
 }

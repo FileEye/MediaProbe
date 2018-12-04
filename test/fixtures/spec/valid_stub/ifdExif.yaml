@@ -4,11 +4,13 @@ title: IFD Exif
 class: ExifEye\core\Block\Ifd
 items:
     0x829A:
+        collection: tag
         name: ExposureTime
         title: 'Exposure Time'
         components: 1
         format: Rational
     0x829D:
+        collection: tag
         name: FNumber
         title: FNumber
         components: 1

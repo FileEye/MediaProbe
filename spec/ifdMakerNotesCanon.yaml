@@ -2,13 +2,12 @@ collection: ifdMakerNotesCanon
 name: 'Canon'
 title: Canon Maker Notes
 class: ExifEye\core\Block\IfdMakerNote
-makerNotes:
-  - 'Canon'
 items:
     0x0001:
         name: 'CanonCameraSettings'
         collection: ifdMakerNotesCanonCameraSettings
     0x0002:
+        collection: tag
         name: FocalLength
         title: 'Focal Length'
         format: Short
@@ -19,33 +18,41 @@ items:
         name: 'CanonPanoramaInformation'
         collection: ifdMakerNotesCanonPanoramaInformation
     0x0006:
+        collection: tag
         name: ImageType
         title: 'Image Type'
         format: Ascii
     0x0007:
+        collection: tag
         name: FirmwareVersion
         title: 'Firmware Version'
         format: Ascii
     0x0008:
+        collection: tag
         name: FileNumber
         title: 'File Number'
         format: Long
     0x0009:
+        collection: tag
         name: OwnerName
         title: 'Owner Name'
         format: Ascii
     0x000C:
+        collection: tag
         name: SerialNumber
         title: 'Serial Number'
         format: Long
     0x000D:
+        collection: tag
         name: CameraInfo
         title: 'Camera Info'
     0x000F:
+        collection: tag
         name: CustomFunctions
         title: 'Custom Functions'
         #ifd: ????
     0x0010:
+        collection: tag
         name: ModelID
         title: 'Model ID'
         format: Long
@@ -375,32 +382,39 @@ items:
                 2147484706: EOS Rebel T100 / 4000D / 3000D
                 2147484722: EOS Rebel T7 / 2000D / 1500D / Kiss X90
     0x0012:
+        collection: tag
         name: PictureInfo
         title: 'Picture Info'
         #ifd: 'CanonPictureInformation'
         format: Short
     0x0013:
+        collection: tag
         name: ThumbnailImageValidArea
         title: 'Thumbnail Image Valid Area'
         format: Short
         components: 4
     0x0015:
+        collection: tag
         name: 'Serial Number Format'
         title: 'Serial number format'
         format: Long
     0x001A:
+        collection: tag
         name: SuperMacro
         title: 'Super macro'
         format: SignedShort
     0x001E:
+        collection: tag
         name: FirmwareRevision
         title: 'Firmware Revision'
         format: Long
     0x0026:
+        collection: tag
         name: AFinfo
         title: 'AF info'
         format: Short
     0x0083:
+        collection: tag
         name: 'OriginalDecision Data Offset'
         title: 'Original decision data offset'
         format: SignedLong
@@ -408,34 +422,42 @@ items:
         name: 'CanonFileInformation'
         collection: ifdMakerNotesCanonFileInformation
     0x0095:
+        collection: tag
         name: LensModel
         title: 'Lens model'
         format: Ascii
     0x0096:
+        collection: tag
         name: InternalSerialNumber
         title: 'Internal serial number'
         format: Ascii
     0x0097:
+        collection: tag
         name: DustRemovalData
         title: 'Dust removal data'
         format: Undefined
     0x0099:
+        collection: tag
         name: CustomFunctions
         title: 'Custom functions'
         #ifd: ????
     0x00A0:
+        collection: tag
         name: ProcessingInfo
         title: 'Processing info'
         format: Short
     0x00A4:
+        collection: tag
         name: WhiteBalanceTable
         title: 'White balance table'
         format: Short
     0x00AA:
+        collection: tag
         name: MeasuredColor
         title: 'Measured color'
         format: Short
     0x00B4:
+        collection: tag
         name: ColorSpace
         title: 'Color Space'
         format: Short
@@ -445,14 +467,17 @@ items:
                 1: 'sRGB'
                 2: 'Adobe RGB'
     0x00D0:
+        collection: tag
         name: VRDOffset
         title: 'VRD offset'
         format: Long
     0x00E0:
+        collection: tag
         name: SensorInfo
         title: 'Sensor info'
         format: Short
     0x4001:
+        collection: tag
         name: ColorData
         title: 'Color data'
         format: Short

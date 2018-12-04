@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\Collection;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
@@ -28,14 +29,16 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size)
     {
         $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
         $data_window->debug($this);
 
         $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, strlen(self::EXIF_HEADER));
         if ($tiff_order !== null) {
-            $tiff = new Tiff('tiff', $this);
+            $tiff_collection = $this->getCollection()->getItemCollection('tiff');
+            $tiff_class = $tiff_collection->getPropertyValue('class');
+            $tiff = new $tiff_class($tiff_collection, $this);
             $tiff->loadFromData($data_window, strlen(self::EXIF_HEADER), $size - strlen(self::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be

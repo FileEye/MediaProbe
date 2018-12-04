@@ -24,18 +24,9 @@ class Jpeg extends BlockBase
     protected $DOMNodeName = 'jpeg';
 
     /**
-     * Constructs a Block for holding a JPEG image.
-     */
-    public function __construct($collection, BlockBase $parent = null)
-    {
-        parent::__construct($collection, $parent);
-        $this->collection = $collection;
-    }
-
-    /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size)
     {
         $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $size]);
 
@@ -52,7 +43,7 @@ class Jpeg extends BlockBase
             $segment_id = $data_element->getByte($segment_offset);
 
             // Warn if an unidentified segment is detected.
-            if (!in_array($segment_id, Collection::getItemsIds($this->getCollection()))) {
+            if (!in_array($segment_id, $this->getCollection()->listItemIds())) {
                 $this->warning('Invalid JPEG marker 0x{marker} found @ offset {offset}', [
                     'offset' => $segment_offset,
                     'marker' => strtoupper(dechex($segment_id)),
@@ -61,13 +52,15 @@ class Jpeg extends BlockBase
 
             $segment_offset++;
 
+            // Get the collection for the segment, override the values.
+            $segment_collection = $this->getCollection()->getItemCollection($segment_id);
+
             // Create the ExifEye JPEG segment object.
-            $segment_class = Collection::getItemClass($this->getCollection(), $segment_id);
-            $segment = new $segment_class($this->getCollection(), $segment_id, $this);
+            $segment_class = $segment_collection->getPropertyValue('class');
+            $segment = new $segment_class($segment_collection, $this);
 
             // Get the JPEG segment size.
-            $payload = Collection::getItemPropertyValue($this->getCollection(), $segment_id, 'payload');
-            switch ($payload) {
+            switch ($segment_collection->getPropertyValue('payload')) {
                 case 'none':
                     $segment_size = 0;
                     break;
@@ -77,7 +70,7 @@ class Jpeg extends BlockBase
                     $segment_size = $data_element->getShort($segment_offset);
                     break;
                 case 'fixed':
-                    $segment_size = Collection::getItemPropertyValue($this->getCollection(), $segment_id, 'components');
+                    $segment_size = $segment_collection->getPropertyValue('components');
                     break;
             }
 

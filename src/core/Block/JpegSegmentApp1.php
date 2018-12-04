@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Block;
 
+use ExifEye\core\Collection;
 use ExifEye\core\Data\DataElement;
 use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Entry\Core\Undefined;
@@ -15,7 +16,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset, $size)
     {
         $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
         $data_window->debug($this);
@@ -23,7 +24,9 @@ class JpegSegmentApp1 extends JpegSegmentBase
         $this->components = $size;
 
         if (Exif::isExifSegment($data_window, 2)) {
-            $exif = new Exif('exif', $this);
+            $exif_collection = $this->getCollection()->getItemCollection('exif');
+            $exif_class = $exif_collection->getPropertyValue('class');
+            $exif = new $exif_class($exif_collection, $this);
             $exif->loadFromData($data_window, 2, $this->components - 2);
         } else {
             // We store the data as normal JPEG content if it could not be
@@ -31,8 +34,6 @@ class JpegSegmentApp1 extends JpegSegmentBase
             $entry = new Undefined($this, [$data_window->getBytes()]);
             $entry->debug("Exif header not found. Loaded {text}", ['text' => $entry->toString()]);
         }
-
-        $this->debug(".....END Loading");
 
         return $this;
     }
