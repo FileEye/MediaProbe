@@ -49,15 +49,15 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         // Insert the APP1 segment before the COM one.
         $app1_segment = new JpegSegmentApp1($jpeg->getCollection()->getItemCollectionByName('APP1'), $jpeg, $com_segment);
 
-        $exif = new Exif(Collection::get('exif'), $app1_segment);
+        $exif = new Exif($app1_segment->getCollection()->getItemCollectionByName('Exif'), $app1_segment);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
-        $tiff = new Tiff(Collection::get('tiff'), $exif);
+        $tiff = new Tiff($exif->getCollection()->getItemCollectionByName('Tiff'), $exif);
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd(Collection::get('tiff'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff);
+        $ifd = new Ifd($tiff->getCollection()->getItemCollectionByName('IFD0'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff);
         foreach ($entries as $entry) {
             $tag = new Tag(Collection::get('tag'), new IfdItem(Collection::get('ifd0'), $entry[0], $entry[2]), $ifd);
             new $entry[1]($tag, $entry[3]);

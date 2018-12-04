@@ -21,11 +21,6 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $DOMNodeName = 'jpeg';
-
-    /**
-     * {@inheritdoc}
-     */
     public function loadFromData(DataElement $data_element, $offset, $size)
     {
         $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $size]);

@@ -17,11 +17,6 @@ use ExifEye\core\Utility\ConvertBytes;
 class Tag extends BlockBase
 {
     /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'tag';
-
-    /**
      * Constructs a Tag block object.
      */
     public function __construct(Collection $collection, IfdItem $ifd_item, BlockBase $parent, ElementInterface $reference = null)

@@ -24,11 +24,6 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected $DOMNodeName = 'exif';
-
-    /**
-     * {@inheritdoc}
-     */
     public function loadFromData(DataElement $data_element, $offset, $size)
     {
         $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());

@@ -29,25 +29,13 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     protected $DOMNode;
 
     /**
-     * The name of the DOM node associated to this element.
-     *
-     * @var string
-     */
-    protected $DOMNodeName;
-
-    /**
      * The Xpath object associated to the root element.
+     *
+     * @todo xx only the root should have it
      *
      * @var \DOMXPath|null
      */
     protected $XPath;
-
-    /**
-     * The type of this element.
-     *
-     * @var string
-     */
-    protected $type;
 
     /**
      * Whether this element is valid.
@@ -59,18 +47,16 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * Constructs an Element object.
      *
-     * @param string $type
-     *            The type of this element.
+     * @param string $dom_node_name
+     *            The name of the DOM node associated to this element.
      * @param \ExifEye\core\ElementInterface|null $parent
      *            (Optional) the parent element of this element.
      * @param \ExifEye\core\ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
-    public function __construct($type, ElementInterface $parent = null, ElementInterface $reference = null)
+    public function __construct($dom_node_name, ElementInterface $parent = null, ElementInterface $reference = null)
     {
-        $this->type = $type;
-
         // If $parent is null, this Element is the root of the DOM document that
         // stores the image structure.
         if (!$parent || !is_object($parent->DOMNode)) {
@@ -85,7 +71,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             $parent_node = $parent->DOMNode;
         }
 
-        $this->DOMNode = $doc->createElement($this->DOMNodeName);
+        $this->DOMNode = $doc->createElement($dom_node_name);
 
         if ($reference) {
             $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
@@ -95,14 +81,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
         // Assign this Element as the payload of the DOM node.
         $this->DOMNode->setExifEyeElement($this);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getType()
-    {
-        return $this->type;
     }
 
     /**
@@ -252,7 +230,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function toDumpArray()
     {
         return [
-            'type' => $this->DOMNodeName,
+            'node' => $this->DOMNode->nodeName,
             'path' => $this->getContextPath(),
             'class' => get_class($this),
             'valid' => $this->isValid(),

@@ -20,9 +20,9 @@ use ExifEye\core\Collection;
 abstract class EntryBase extends ElementBase implements EntryInterface
 {
     /**
-     * {@inheritdoc}
+     * The DOM name for EntryInterface nodes.
      */
-    protected $DOMNodeName = 'entry';
+    const DOM_NODE_NAME = 'entry';
 
     /**
      * The format of this entry.
@@ -51,14 +51,17 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * Constructs an EntryInterface object.
      *
-     * @param ElementInterface $parent
+     * @param \ExifEye\core\ElementInterface $parent
      *            xx
      * @param array $data
      *            the data that this entry will be holding.
+     * @param \ExifEye\core\ElementInterface|null $reference
+     *            (Optional) if specified, the new element will be inserted
+     *            before the reference element.
      */
-    public function __construct(ElementInterface $parent, array $data = [])
+    public function __construct(ElementInterface $parent, array $data = [], ElementInterface $reference = null)
     {
-        parent::__construct('entry', $parent);
+        parent::__construct(static::DOM_NODE_NAME, $parent, $reference);
         if (!empty($data)) {
             $this->setValue($data);
         }

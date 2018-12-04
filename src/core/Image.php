@@ -19,11 +19,6 @@ use Monolog\Processor\PsrLogMessageProcessor;
 class Image extends BlockBase
 {
     /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'image';
-
-    /**
      * The internal logger instance for this Image object.
      *
      * @var \Monolog\Logger

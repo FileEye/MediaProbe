@@ -12,24 +12,28 @@ return array (
       'name' => 'CanonPanoramaInformation',
       'title' => 'Panorama Information',
       'class' => 'ExifEye\\core\\Block\\Index',
+      'DOMNode' => 'index',
     ),
     'na' =>
     array (
       'name' => 'na',
       'title' => 'Not Applicable',
       'class' => NULL,
+      'DOMNode' => 'na',
     ),
     'jpegSegment' =>
     array (
       'name' => 'JpegSegment',
       'title' => 'Generic JPEG data segment',
       'class' => 'ExifEye\\core\\Block\\JpegSegment',
+      'DOMNode' => 'jpegSegment',
     ),
     'ifd1' =>
     array (
       'name' => 'IFD1',
       'title' => 'IFD1',
       'class' => 'ExifEye\\core\\Block\\Ifd',
+      'DOMNode' => 'ifd',
       'alias' =>
       array (
         0 => '1',
@@ -45,48 +49,56 @@ return array (
       'name' => 'GPS',
       'title' => 'IFD GPS',
       'class' => 'ExifEye\\core\\Block\\Ifd',
+      'DOMNode' => 'ifd',
     ),
     'ifdMakerNotesCanon' =>
     array (
       'name' => 'Canon',
       'title' => 'Canon Maker Notes',
       'class' => 'ExifEye\\core\\Block\\IfdMakerNote',
+      'DOMNode' => 'makerNote',
     ),
     'ifdExif' =>
     array (
       'name' => 'Exif',
       'title' => 'IFD Exif',
       'class' => 'ExifEye\\core\\Block\\Ifd',
+      'DOMNode' => 'ifd',
     ),
     'ifdMakerNotesApple' =>
     array (
       'name' => 'Apple',
       'title' => 'Apple Maker Notes',
       'class' => 'ExifEye\\Apple\\Block\\MakerNote',
+      'DOMNode' => 'makerNote',
     ),
     'tag' =>
     array (
       'name' => 'tag',
       'title' => 'Tag',
       'class' => 'ExifEye\\core\\Block\\Tag',
+      'DOMNode' => 'tag',
     ),
     'ifdMakerNotesAppleRuntime' =>
     array (
       'name' => 'AppleRuntime',
       'title' => 'Runtime',
       'class' => 'ExifEye\\Apple\\Block\\RunTime',
+      'DOMNode' => 'plist',
     ),
     'ifdMakerNotesCanonCameraSettings' =>
     array (
       'name' => 'CanonCameraSettings',
       'title' => 'Camera Settings',
       'class' => 'ExifEye\\core\\Block\\Index',
+      'DOMNode' => 'index',
     ),
     'ifdMakerNotesCanonPictureInformation' =>
     array (
       'name' => 'CanonPictureInformation',
       'title' => 'Picture Information',
       'class' => '???',
+      'DOMNode' => 'index',
     ),
     'makerNotes' =>
     array (
@@ -100,6 +112,7 @@ return array (
       'title' => 'Start of scan',
       'payload' => 'scan',
       'class' => 'ExifEye\\core\\Block\\JpegSegmentSos',
+      'DOMNode' => 'jpegSegment',
     ),
     'jpegSegmentApp1' =>
     array (
@@ -107,12 +120,21 @@ return array (
       'title' => 'Application segment 1',
       'payload' => 'variable',
       'class' => 'ExifEye\\core\\Block\\JpegSegmentApp1',
+      'DOMNode' => 'jpegSegment',
+    ),
+    'thumbnail' =>
+    array (
+      'name' => 'Thumbnail',
+      'title' => 'Thumbnail',
+      'class' => 'ExifEye\\core\\Block\\Thumbnail',
+      'DOMNode' => 'thumbnail',
     ),
     'ifdInteroperability' =>
     array (
       'name' => 'Interoperability',
       'title' => 'IFD Interoperability',
       'class' => 'ExifEye\\core\\Block\\Ifd',
+      'DOMNode' => 'ifd',
       'alias' =>
       array (
         0 => 'Interop',
@@ -123,6 +145,7 @@ return array (
       'name' => 'IFD0',
       'title' => 'IFD0',
       'class' => 'ExifEye\\core\\Block\\Ifd',
+      'DOMNode' => 'ifd',
       'alias' =>
       array (
         0 => '0',
@@ -140,36 +163,42 @@ return array (
       'title' => 'Comment',
       'payload' => 'variable',
       'class' => 'ExifEye\\core\\Block\\JpegSegmentCom',
+      'DOMNode' => 'jpegSegment',
     ),
     'ifdMakerNotesCanonFileInformation' =>
     array (
       'name' => 'CanonFileInformation',
       'title' => 'File Information',
       'class' => 'ExifEye\\core\\Block\\Index',
+      'DOMNode' => 'index',
     ),
     'tiff' =>
     array (
       'name' => 'Tiff',
       'title' => 'TIFF image',
       'class' => 'ExifEye\\core\\Block\\Tiff',
+      'DOMNode' => 'tiff',
     ),
     'jpeg' =>
     array (
       'name' => 'Jpeg',
       'title' => 'JPEG image',
       'class' => 'ExifEye\\core\\Block\\Jpeg',
+      'DOMNode' => 'jpeg',
     ),
     'exif' =>
     array (
       'name' => 'Exif',
       'title' => 'Exif data embedded in JPEG APP1 segment',
       'class' => 'ExifEye\\core\\Block\\Exif',
+      'DOMNode' => 'exif',
     ),
     'ifdMakerNotesCanonShotInformation' =>
     array (
       'name' => 'CanonShotInformation',
       'title' => 'Shot Information',
       'class' => 'ExifEye\\core\\Block\\Index',
+      'DOMNode' => 'index',
     ),
     'format' =>
     array (
@@ -181,6 +210,14 @@ return array (
       'name' => 'Image',
       'title' => 'Image',
       'class' => 'ExifEye\\core\\Image',
+      'DOMNode' => 'image',
+    ),
+    'rawData' =>
+    array (
+      'name' => 'Raw data',
+      'title' => 'Raw Data',
+      'class' => 'ExifEye\\core\\Block\\RawData',
+      'DOMNode' => 'rawData',
     ),
   ),
   'collectionsByName' =>
@@ -190,7 +227,7 @@ return array (
     'JpegSegment' => 'jpegSegment',
     'IFD1' => 'ifd1',
     1 => 'ifd1',
-    'Thumbnail' => 'ifd1',
+    'Thumbnail' => 'thumbnail',
     'GPS' => 'ifdGps',
     'Canon' => 'ifdMakerNotesCanon',
     'Exif' => 'exif',
@@ -214,6 +251,7 @@ return array (
     'CanonShotInformation' => 'ifdMakerNotesCanonShotInformation',
     'Format' => 'format',
     'Image' => 'image',
+    'Raw data' => 'rawData',
   ),
   'items' =>
   array (

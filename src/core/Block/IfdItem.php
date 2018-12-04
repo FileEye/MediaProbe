@@ -199,15 +199,6 @@ class IfdItem
     /**
      * @todo
      */
-    public function getType()
-    {
-        $type = $this->collection->getItemCollection($this->getId());
-        return $type === null ? 'tag' : $type;
-    }
-
-    /**
-     * @todo
-     */
     public function getName()
     {
         if ($this->collection === null) {

@@ -19,11 +19,6 @@ class RunTime extends IfdBase
     /**
      * {@inheritdoc}
      */
-    protected $DOMNodeName = 'plist';
-
-    /**
-     * {@inheritdoc}
-     */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         $this->debug("IFD {ifdname}", [

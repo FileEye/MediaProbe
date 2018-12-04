@@ -23,11 +23,6 @@ class Tiff extends BlockBase
     const TIFF_HEADER = 0x002A;
 
     /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'tiff';
-
-    /**
      * The byte order of this TIFF segment.
      *
      * @var int

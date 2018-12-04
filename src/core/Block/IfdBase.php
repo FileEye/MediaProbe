@@ -23,11 +23,6 @@ use ExifEye\core\Utility\ConvertBytes;
 abstract class IfdBase extends BlockBase
 {
     /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'ifd';
-
-    /**
      * The format of the tag representing this IFD.
      *
      * @var int

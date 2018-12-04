@@ -18,8 +18,4 @@ use ExifEye\core\Collection;
  */
 class IfdMakerNote extends Ifd
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'makerNote';
 }

@@ -16,11 +16,6 @@ abstract class JpegSegmentBase extends BlockBase
     const JPEG_DELIMITER = 0xFF;
 
     /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'jpegSegment';
-
-    /**
      * The segment payload type.
      *
      * @var string

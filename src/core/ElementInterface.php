@@ -13,13 +13,6 @@ use ExifEye\core\Utility\ConvertBytes;
 interface ElementInterface
 {
     /**
-     * Returns the type of this element.
-     *
-     * @return string
-     */
-    public function getType();
-
-    /**
      * Gets the root ancestor element of this element.
      *
      * @return \ExifEye\core\ElementInterface

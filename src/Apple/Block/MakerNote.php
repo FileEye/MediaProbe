@@ -19,11 +19,6 @@ class MakerNote extends IfdBase
     /**
      * {@inheritdoc}
      */
-    protected $DOMNodeName = 'makerNote';
-
-    /**
-     * {@inheritdoc}
-     */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         // Load Apple's header as a raw data block.
@@ -77,7 +72,7 @@ class MakerNote extends IfdBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getType()->getId() === 'na') {
+            if ($sub_block->getCollection()->getId() === 'rawData') {
                 continue;
             }
 

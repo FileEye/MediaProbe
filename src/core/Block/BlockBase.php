@@ -38,8 +38,8 @@ abstract class BlockBase extends ElementBase
      */
     public function __construct(Collection $collection, BlockBase $parent = null, BlockBase $reference = null)
     {
-        parent::__construct($collection, $parent, $reference);
         $this->collection = $collection;
+        parent::__construct($collection->getPropertyValue('DOMNode'), $parent, $reference);
     }
 
     /**
@@ -69,7 +69,7 @@ abstract class BlockBase extends ElementBase
      */
     public function toDumpArray()
     {
-        $dump = array_merge(parent::toDumpArray(), $this->getAttributes());
+        $dump = array_merge(parent::toDumpArray(), $this->getAttributes(), ['collection' => $this->getCollection()->getId()]);
         foreach ($this->getMultipleElements("*") as $sub_element) {
             $dump['elements'][] = $sub_element->toDumpArray();
         }

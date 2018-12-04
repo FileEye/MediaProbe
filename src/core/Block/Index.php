@@ -16,11 +16,6 @@ class Index extends IfdBase
     /**
      * {@inheritdoc}
      */
-    protected $DOMNodeName = 'index';
-
-    /**
-     * {@inheritdoc}
-     */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
     {
         $this->debug("Index {ifdname} @{offset} with {tags} entries", [

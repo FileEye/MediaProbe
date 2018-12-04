@@ -77,7 +77,7 @@ class Ifd extends IfdBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getType()->getId() === 'thumbnail') {
+            if ($sub_block->getCollection()->getId() === 'thumbnail') {
                 continue;
             }
 

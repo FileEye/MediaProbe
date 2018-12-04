@@ -14,11 +14,6 @@ use ExifEye\core\Utility\ConvertBytes;
 class RawData extends BlockBase
 {
     /**
-     * {@inheritdoc}
-     */
-    protected $DOMNodeName = 'rawData';
-
-    /**
      * The data length.
      */
     protected $components;
@@ -28,7 +23,7 @@ class RawData extends BlockBase
      */
     public function __construct(BlockBase $parent, BlockBase $reference = null)
     {
-        parent::__construct(Collection::get('na'), $parent, $reference);
+        parent::__construct(Collection::get('rawData'), $parent, $reference);
         $this->debug('Raw data');
     }
 
