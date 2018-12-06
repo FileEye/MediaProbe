@@ -6,7 +6,6 @@ items:
         # Unsigned byte.
         # Each component will be an unsigned 8-bit integer with a value
         # between 0 and 255.
-        collection: na
         name: Byte
         title: 'Byte'
         length: 1
@@ -14,7 +13,6 @@ items:
     2:
         # ASCII string.
         # Each component will be an ASCII character.
-        collection: na
         name: Ascii
         title: 'Ascii'
         length: 1
@@ -23,7 +21,6 @@ items:
         # Unsigned short.
         # Each component will be an unsigned 16-bit integer with a value
         # between 0 and 65535.
-        collection: na
         name: Short
         title: 'Short'
         length: 2
@@ -32,7 +29,6 @@ items:
         # Unsigned long.
         # Each component will be an unsigned 32-bit integer with a value
         # between 0 and 4294967295.
-        collection: na
         name: Long
         title: 'Long'
         length: 4
@@ -42,7 +38,6 @@ items:
         # Each component will consist of two unsigned 32-bit integers denoting
         # the numerator and denominator. Each integer will have a value
         # between 0 and 4294967295.
-        collection: na
         name: Rational
         title: 'Rational'
         length: 8
@@ -51,7 +46,6 @@ items:
         # Signed byte.
         # Each component will be a signed 8-bit integer with a value between
         # -128 and 127.
-        collection: na
         name: SignedByte
         title: 'SignedByte'
         length: 1
@@ -59,7 +53,6 @@ items:
     7:
         # Undefined byte.
         # Each component will be a byte with no associated interpretation.
-        collection: na
         name: Undefined
         title: 'Undefined'
         length: 1
@@ -68,7 +61,6 @@ items:
         # Signed short.
         # Each component will be a signed 16-bit integer with a value between
         # -32768 and 32767.
-        collection: na
         name: SignedShort
         title: 'SignedShort'
         length: 2
@@ -77,7 +69,6 @@ items:
         # Signed long.
         # Each component will be a signed 32-bit integer with a value between
         # -2147483648 and 2147483647.
-        collection: na
         name: SignedLong
         title: 'SignedLong'
         length: 4
@@ -87,20 +78,17 @@ items:
         # Each component will consist of two signed 32-bit integers denoting
         # the numerator and denominator. Each integer will have a value between
         # -2147483648 and 2147483647.
-        collection: na
         name: SignedRational
         title: 'SignedRational'
         length: 8
         class: ExifEye\core\Entry\Core\SignedRational
     11:
         # Floating point number.
-        collection: na
         name: Float
         title: 'Float'
         length: 4
     12:
         # Double precision floating point number.
-        collection: na
         name: Double
         title: 'Double'
         length: 8

@@ -1,10 +1,14 @@
 <?php
+namespace ExifEye\CollectionMap;
+
 /**
  * This file is generated automatically by executing the 'exifeye compile' command.
  *
  * DO NOT CHANGE MANUALLY.
  */
-return array (
+// phpcs:disable
+abstract class Core {
+public static $map = array (
   'collections' =>
   array (
     'ifdMakerNotesCanonPanoramaInformation' =>
@@ -13,13 +17,6 @@ return array (
       'title' => 'Panorama Information',
       'class' => 'ExifEye\\core\\Block\\Index',
       'DOMNode' => 'index',
-    ),
-    'na' =>
-    array (
-      'name' => 'na',
-      'title' => 'Not Applicable',
-      'class' => NULL,
-      'DOMNode' => 'na',
     ),
     'jpegSegment' =>
     array (
@@ -223,7 +220,6 @@ return array (
   'collectionsByName' =>
   array (
     'CanonPanoramaInformation' => 'ifdMakerNotesCanonPanoramaInformation',
-    'na' => 'na',
     'JpegSegment' => 'jpegSegment',
     'IFD1' => 'ifd1',
     1 => 'ifd1',
@@ -4893,7 +4889,7 @@ return array (
       ),
       2 =>
       array (
-        'collection' => 'na',
+        'collection' => '__NIL__',
         'name' => 2,
         'title' => '0x0002',
         'format' =>
@@ -6025,97 +6021,97 @@ return array (
     array (
       1 =>
       array (
-        'collection' => 'na',
         'name' => 'Byte',
         'title' => 'Byte',
         'length' => 1,
         'class' => 'ExifEye\\core\\Entry\\Core\\Byte',
+        'collection' => '__NIL__',
       ),
       2 =>
       array (
-        'collection' => 'na',
         'name' => 'Ascii',
         'title' => 'Ascii',
         'length' => 1,
         'class' => 'ExifEye\\core\\Entry\\Core\\Ascii',
+        'collection' => '__NIL__',
       ),
       3 =>
       array (
-        'collection' => 'na',
         'name' => 'Short',
         'title' => 'Short',
         'length' => 2,
         'class' => 'ExifEye\\core\\Entry\\Core\\Short',
+        'collection' => '__NIL__',
       ),
       4 =>
       array (
-        'collection' => 'na',
         'name' => 'Long',
         'title' => 'Long',
         'length' => 4,
         'class' => 'ExifEye\\core\\Entry\\Core\\Long',
+        'collection' => '__NIL__',
       ),
       5 =>
       array (
-        'collection' => 'na',
         'name' => 'Rational',
         'title' => 'Rational',
         'length' => 8,
         'class' => 'ExifEye\\core\\Entry\\Core\\Rational',
+        'collection' => '__NIL__',
       ),
       6 =>
       array (
-        'collection' => 'na',
         'name' => 'SignedByte',
         'title' => 'SignedByte',
         'length' => 1,
         'class' => 'ExifEye\\core\\Entry\\Core\\SignedByte',
+        'collection' => '__NIL__',
       ),
       7 =>
       array (
-        'collection' => 'na',
         'name' => 'Undefined',
         'title' => 'Undefined',
         'length' => 1,
         'class' => 'ExifEye\\core\\Entry\\Core\\Undefined',
+        'collection' => '__NIL__',
       ),
       8 =>
       array (
-        'collection' => 'na',
         'name' => 'SignedShort',
         'title' => 'SignedShort',
         'length' => 2,
         'class' => 'ExifEye\\core\\Entry\\Core\\SignedShort',
+        'collection' => '__NIL__',
       ),
       9 =>
       array (
-        'collection' => 'na',
         'name' => 'SignedLong',
         'title' => 'SignedLong',
         'length' => 4,
         'class' => 'ExifEye\\core\\Entry\\Core\\SignedLong',
+        'collection' => '__NIL__',
       ),
       10 =>
       array (
-        'collection' => 'na',
         'name' => 'SignedRational',
         'title' => 'SignedRational',
         'length' => 8,
         'class' => 'ExifEye\\core\\Entry\\Core\\SignedRational',
+        'collection' => '__NIL__',
       ),
       11 =>
       array (
-        'collection' => 'na',
         'name' => 'Float',
         'title' => 'Float',
         'length' => 4,
+        'collection' => '__NIL__',
       ),
       12 =>
       array (
-        'collection' => 'na',
         'name' => 'Double',
         'title' => 'Double',
         'length' => 8,
+        'collection' => '__NIL__',
       ),
     ),
     'image' =>
@@ -6611,3 +6607,4 @@ return array (
     ),
   ),
 );
+}

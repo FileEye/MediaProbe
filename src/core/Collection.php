@@ -14,11 +14,16 @@ use ExifEye\core\ExifEyeException;
 class Collection
 {
     /**
-     * The compiled ExifEye specification map.
-     *
-     * @var array
+     * Default mapper namespace.
      */
-    protected static $map;
+    const DEFAULT_MAP_NAMESPACE = 'ExifEye\CollectionMap';
+
+    /**
+     * The collection mapper class.
+     *
+     * @var string
+     */
+    protected static $mapperClass;
 
     /**
      * The collection id.
@@ -45,24 +50,25 @@ class Collection
      */
     protected static function getMap()
     {
-        if (!isset(static::$map)) {
-            static::setMap(__DIR__ . '/../../resources/spec.php');
+        if (!isset(static::$mapperClass)) {
+            static::setMapperClass(null);
         }
-        return static::$map;
+        $class = static::$mapperClass;
+        return $class::$map;
     }
 
     /**
-     * Sets the compiled ExifEye specification map.
+     * Sets the compiled ExifEye collection mapper class.
      *
-     * @param string $file
+     * @param string $class
      *            the file containing the ExifEye specification map.
      */
-    public static function setMap($file)
+    public static function setMapperClass($class)
     {
-        if ($file === null) {
-            static::$map = null;
+        if ($class === null) {
+            static::$mapperClass = static::DEFAULT_MAP_NAMESPACE . '\\Core';
         } else {
-            static::$map = include $file;
+            static::$mapperClass = $class;
         }
     }
 
@@ -83,9 +89,9 @@ class Collection
      * @return Collection
      *            an simple array, with the specification collections.
      */
-    public static function get($id, $overrides = [])
+    public static function get($id)
     {
-        return new static($id, $overrides);
+        return new static($id);
     }
 
     /**
@@ -97,12 +103,12 @@ class Collection
      * @return Collection|null
      *            the collection object or null if non existent.
      */
-    public static function getByName($collection_name, $overrides = [])
+    public static function getByName($collection_name)
     {
         if (!isset(static::getMap()['collectionsByName'][$collection_name])) {
             return null;
         }
-        return static::get(static::getMap()['collectionsByName'][$collection_name], $overrides);
+        return static::get(static::getMap()['collectionsByName'][$collection_name]);
     }
 
     /**
@@ -110,6 +116,9 @@ class Collection
      *
      * @param string $id
      *            The id of the collection.
+     * @param array $overrides
+     *            (Optional) If defined, overrides properties defined in the
+     *            collection.
      */
     public function __construct($id, array $overrides = [])
     {
@@ -164,35 +173,17 @@ class Collection
      *            the item id.
      *
      * @return Collection|null
-     *            the item collection object.
+     *            the item collection object, or null if missing.
      */
     public function getItemCollection($item)
     {
-        $item_collection_id = $this->getItemCollectionId($item);
-        if ($item_collection_id === null) {
+        if (!isset(static::getMap()['items'][$this->id][$item]['collection'])) {
             return null;
         }
-        $overrides = static::getMap()['items'][$this->id][$item];
-        unset($overrides['collection']);
-        $overrides['item'] = $item;
-        return new static($item_collection_id, $overrides);
-    }
-
-    /**
-     * Returns the collection id of an item.
-     *
-     * @param string $item
-     *            the item id.
-     *
-     * @return string|null
-     *            the item collection id.
-     */
-    protected function getItemCollectionId($item)
-    {
-        if (isset(static::getMap()['items'][$this->id][$item]['collection'])) {
-            return static::getMap()['items'][$this->id][$item]['collection'];
-        }
-        return null;
+        $item_properties = static::getMap()['items'][$this->id][$item];
+        unset($item_properties['collection']);
+        $item_properties['item'] = $item;
+        return new static(static::getMap()['items'][$this->id][$item]['collection'], $item_properties);
     }
 
     /**
@@ -202,14 +193,13 @@ class Collection
      *            the item name.
      *
      * @return Collection|null
-     *            the item collection object.
+     *            the item collection object, or null if missing.
      */
     public function getItemCollectionByName($item_name)
     {
-        $item = isset(static::getMap()['itemsByName'][$this->id][$item_name]) ? static::getMap()['itemsByName'][$this->id][$item_name] : null;
-        if ($item === null) {
+        if (!isset(static::getMap()['itemsByName'][$this->id][$item_name])) {
             return null;
         }
-        return $this->getItemCollection($item);
+        return $this->getItemCollection(static::getMap()['itemsByName'][$this->id][$item_name]);
     }
 }

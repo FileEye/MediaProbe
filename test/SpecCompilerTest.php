@@ -26,7 +26,7 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     public function setUp()
     {
         parent::setUp();
-        $this->testResourceDirectory = __DIR__ . '/../test_resources';
+        $this->testResourceDirectory = __DIR__ . '/TestClasses';
         $this->fs = new Filesystem();
         $this->fs->mkdir($this->testResourceDirectory);
     }
@@ -37,7 +37,7 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     public function tearDown()
     {
         $this->fs->remove($this->testResourceDirectory);
-        Collection::setMap(null);
+        Collection::setMapperClass(null);
         parent::tearDown();
     }
 
@@ -49,7 +49,7 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
         //@todo change below to ParseException::class once PHP 5.4 support is removed.
         $this->fcExpectException('Symfony\Component\Yaml\Exception\ParseException');
         $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory);
+        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory, 'ExifEye\Test\core\TestClasses');
     }
 
     /**
@@ -58,10 +58,12 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     public function testValidStubSpec()
     {
         $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory);
-        Collection::setMap($this->testResourceDirectory . '/spec.php');
+        $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory, 'ExifEye\Test\core\TestClasses');
+        //@todo change below to xxxx::class once PHP 5.4 support is removed.
+        Collection::setMapperClass('ExifEye\Test\core\TestClasses\Core');
         $this->assertCount(4, Collection::listIds());
 
+        //@todo change below to xxxx::class once PHP 5.4 support is removed.
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();

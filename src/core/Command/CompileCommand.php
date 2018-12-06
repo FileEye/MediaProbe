@@ -13,19 +13,11 @@ use ExifEye\core\Utility\SpecCompiler;
  */
 class CompileCommand extends Command
 {
-    /** @var string */
-    private $resourceDirectory;
-
-    /** @var string */
-    private $specDirectory;
-
     /**
      * {@inheritdoc}
      */
     public function __construct()
     {
-        $this->specDirectory = (string) realpath(__DIR__ . '/../../../spec');
-        $this->resourceDirectory = (string) realpath(__DIR__ . '/../../../resources');
         parent::__construct();
     }
 
@@ -40,14 +32,12 @@ class CompileCommand extends Command
             ->addArgument(
                 'spec-dir',
                 InputArgument::OPTIONAL,
-                'Path to the directory of the .yaml specification files',
-                $this->specDirectory
+                'Path to the directory of the .yaml specification files'
             )
             ->addArgument(
                 'resource-dir',
                 InputArgument::OPTIONAL,
-                'Path to the directory of the spec.php file',
-                $this->resourceDirectory
+                'Path to the directory of the mapper class file'
             )
         ;
     }

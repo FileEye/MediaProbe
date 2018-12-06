@@ -2,6 +2,7 @@
 
 namespace ExifEye\core\Utility;
 
+use ExifEye\core\Collection;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -13,9 +14,24 @@ use Symfony\Component\Yaml\Yaml;
 class SpecCompiler
 {
     /**
+     * Default directory where to read the specification files from.
+     */
+    const DEFAULT_SPEC_PATH = '/../../../spec';
+
+    /**
+     * Default directory where to write compiled classes.
+     */
+    const DEFAULT_MAPCLASS_PATH = '/../../CollectionMap';
+
+    /**
+     * Identifier for void collection.
+     */
+    const VOID_COLLECTION = '__NIL__';
+
+    /**
      * Map of expected collection level array keys.
      */
-    private $collectionKeys = ['collection', 'name', 'title', 'items'];
+    private $collectionKeys = ['name', 'title', 'items'];
 
     /** @var Filesystem */
     private $fs;
@@ -58,8 +74,12 @@ class SpecCompiler
      *            the directory where the compiled PHP specification file will
      *            be stored.
      */
-    public function compile($yamlDirectory, $resourcesDirectory)
+    public function compile($yamlDirectory = null, $resourcesDirectory = null, $namespace = null)
     {
+        $yamlDirectory = $yamlDirectory ?: __DIR__ . static::DEFAULT_SPEC_PATH;
+        $resourcesDirectory = $resourcesDirectory ?: __DIR__ . static::DEFAULT_MAPCLASS_PATH;
+        $namespace = $namespace ?: Collection::DEFAULT_MAP_NAMESPACE;
+
         // Get formats.
         $formats_yaml = Yaml::parse(file_get_contents($yamlDirectory . DIRECTORY_SEPARATOR . 'format.yaml'));
         foreach ($formats_yaml['items'] as $id => $item) {
@@ -73,19 +93,26 @@ class SpecCompiler
             $this->mapCollection($collection, $file);
         }
 
-        // Dump the data to the spec.php file.
+        // Dump the data to the mapper class file.
         $data = <<<DATA
 <?php
+namespace $namespace;
+
 /**
  * This file is generated automatically by executing the 'exifeye compile' command.
  *
  * DO NOT CHANGE MANUALLY.
  */
-return
+// phpcs:disable
+abstract class Core {
+  public static \$map =
 DATA;
         $data .= ' ';
         $data .= preg_replace('/\s+$/m', '', var_export($this->map, true)) . ';';
-        $this->fs->dumpFile($resourcesDirectory . '/spec.php', $data);
+        $data .= <<<DATA
+}
+DATA;
+        $this->fs->dumpFile($resourcesDirectory . '/Core.php', $data);
     }
 
     /**
@@ -121,7 +148,7 @@ DATA;
         foreach ($input['items'] as $id => $item) {
             // Item must have a collection.
             if (!isset($item['collection'])) {
-                throw new SpecCompilerException($file->getFileName() . ": missing collection for item '" . $id . "'.");
+                $item['collection'] = static::VOID_COLLECTION;
             }
 
             // Convert format string to its ID.
