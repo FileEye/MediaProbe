@@ -6,16 +6,21 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          stopOnFailure="false"
-         bootstrap="autoload.php"
+         bootstrap="vendor/autoload.php"
         >
     <testsuites>
         <testsuite name="ExifEye Testing Suite">
-            <directory suffix=".php">./test/</directory>
+            <directory suffix="Test.php">./test/</directory>
         </testsuite>
     </testsuites>
+    <!-- Filter for coverage reports. -->
     <filter>
         <whitelist>
             <directory suffix=".php">./src/</directory>
+            <exclude>
+              <directory suffix=".php">./src/core/Command/</directory>
+              <directory suffix=".php">./src/CollectionMap/</directory>
+            </exclude>
         </whitelist>
     </filter>
 </phpunit>

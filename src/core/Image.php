@@ -55,7 +55,7 @@ class Image extends BlockBase
      *            the path to an image file on the file system.
      * @param \Psr\Log\LoggerInterface $external_logger
      *            (Optional) a PSR-3 compliant logger callback.
-     * @param string $fail_level
+     * @param string|false $fail_level
      *            (Optional) a PSR-3 compliant log level. Any log entry at this
      *            level or above will force image parsing to stop.
      *
@@ -65,14 +65,12 @@ class Image extends BlockBase
      */
     public static function createFromFile($path, LoggerInterface $external_logger = null, $fail_level = false)
     {
-        if (!$image_collection = static::getImageCollection(new DataString(file_get_contents($path, false, null, 0, 10)))) {
+        $magic_data_element = new DataString(file_get_contents($path, false, null, 0, 10));
+        if (!$image_format_collection = static::getImageFormatCollection($magic_data_element)) {
             return false;
         }
-
-        $image = new static($external_logger, $fail_level);
         $data_element = new DataString(file_get_contents($path));
-        $image->loadFromData($data_element, 0, $data_element->getSize(), $image_collection);
-        return $image;
+        return static::doCreate($image_format_collection, $data_element, $external_logger, $fail_level);
     }
 
     /**
@@ -82,7 +80,7 @@ class Image extends BlockBase
      *            the data string object providing the data.
      * @param \Psr\Log\LoggerInterface $external_logger
      *            (Optional) a PSR-3 compliant logger callback.
-     * @param string $fail_level
+     * @param string|false $fail_level
      *            (Optional) a PSR-3 compliant log level. Any log entry at this
      *            level or above will force image parsing to stop.
      *
@@ -92,37 +90,64 @@ class Image extends BlockBase
      */
     public static function createFromData(DataElement $data_element, LoggerInterface $external_logger = null, $fail_level = false)
     {
-        if (!$image_collection = static::getImageCollection($data_element)) {
+        if (!$image_format_collection = static::getImageFormatCollection($data_element)) {
             return false;
         }
+        return static::doCreate($image_format_collection, $data_element, $external_logger, $fail_level);
+    }
 
+    /**
+     * Creates an Image object from data.
+     *
+     * @param Collection $image_format_collection
+     *            The image format collection.
+     * @param DataElement $data_element
+     *            The data string object providing the data.
+     * @param \Psr\Log\LoggerInterface $external_logger
+     *            (Optional) a PSR-3 compliant logger callback.
+     * @param string|false $fail_level
+     *            (Optional) a PSR-3 compliant log level. Any log entry at this
+     *            level or above will force image parsing to stop.
+     *
+     * @returns Image|false
+     *            the Image object if successful, or false if the data cannot
+     *            be parsed.
+     */
+    protected static function doCreate(Collection $image_format_collection, DataElement $data_element, LoggerInterface $external_logger = null, $fail_level = false)
+    {
+        // Build the Image object and its immediate child, that represents the
+        // image format. Then load the image according to the image format.
         $image = new static($external_logger, $fail_level);
-        $image->loadFromData($data_element, 0, $data_element->getSize(), $image_collection);
+        $image_format_class = $image_format_collection->getPropertyValue('class');
+        $image_format = new $image_format_class($image_format_collection, $image);
+        $image_format->loadFromData($data_element);
         return $image;
     }
 
     /**
-     * Determines the image collection to use for parsing the image data.
+     * Determines the image format collection of the image data.
      *
      * @param DataElement $data_element
      *            the data element that will provide the data.
      *
      * @returns Collection|false
-     *            the image collection if successful, or false if the data
-     *            cannot be parsed.
+     *   The image format collection if successful, or false if the data cannot
+     *   match any format defined.
      */
-    protected static function getImageCollection(DataElement $data_element)
+    protected static function getImageFormatCollection(DataElement $data_element)
     {
-        // JPEG image?
-        if ($data_element->getBytes(0, 3) === Jpeg::JPEG_HEADER) {
-            return Collection::get('jpeg');
-        }
+        $image_collection = Collection::get('image');
 
-        // TIFF image?
-        if (Tiff::getTiffSegmentByteOrder($data_element) !== null) {
-            return Collection::get('tiff');
+        // Loop through the 'image' collection items, each of which defines an
+        // image format collection, and checks if the image matches the format.
+        // When a match is found, return the image format collection.
+        foreach ($image_collection->listItemIds() as $image_format_collection_id) {
+            $format_collection = $image_collection->getItemCollection($image_format_collection_id);
+            $format_class = $format_collection->getPropertyValue('class');
+            if ($format_class::isDataMatchingFormat($data_element)) {
+                return $format_collection;
+            }
         }
-
         return null;
     }
 
@@ -131,7 +156,7 @@ class Image extends BlockBase
      *
      * @param \Psr\Log\LoggerInterface $external_logger
      *            (Optional) a PSR-3 compliant logger callback.
-     * @param string $fail_level
+     * @param string|false $fail_level
      *            (Optional) a PSR-3 compliant log level. Any log entry at this
      *            level or above will force image parsing to stop.
      */
@@ -143,17 +168,6 @@ class Image extends BlockBase
           ->pushProcessor(new PsrLogMessageProcessor());
         $this->externalLogger = $external_logger;
         $this->failLevel = $fail_level !== false ? Logger::toMonologLevel($fail_level) : false;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, Collection $collection)
-    {
-        $class = $collection->getPropertyValue('class');
-        $handler = new $class($collection, $this);
-        $handler->loadFromData($data_element, $offset, $size);
-        return $this;
     }
 
     /**

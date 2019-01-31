@@ -51,8 +51,13 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
     {
+        // xx
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
         // Determine the byte order of the TIFF data.
         $this->byteOrder = self::getTiffSegmentByteOrder($data_element, $offset);
 
@@ -157,6 +162,19 @@ class Tiff extends BlockBase
         }
 
         return $bytes;
+    }
+
+    /**
+     * Determines if the data is a TIFF image.
+     *
+     * @param DataElement $data_element
+     *   The data element to be checked.
+     *
+     * @return bool
+     */
+    public static function isDataMatchingFormat(DataElement $data_element)
+    {
+        return static::getTiffSegmentByteOrder($data_element) !== null;
     }
 
     /**

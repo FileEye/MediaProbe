@@ -21,8 +21,13 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size)
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        // xx
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
         $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $size]);
 
         // JPEG data is stored in big-endian format.
@@ -111,5 +116,18 @@ class Jpeg extends BlockBase
     public function getMimeType()
     {
         return 'image/jpeg';
+    }
+
+    /**
+     * Determines if the data is a JPEG image.
+     *
+     * @param DataElement $data_element
+     *   The data element to be checked.
+     *
+     * @return bool
+     */
+    public static function isDataMatchingFormat(DataElement $data_element)
+    {
+        return $data_element->getBytes(0, 3) === static::JPEG_HEADER;
     }
 }
