@@ -203,7 +203,7 @@ class Image extends BlockBase
     public function toXML()
     {
         //$formatter = new \PrettyXml\Formatter();
-        //dump($formatter->format($original_image->toXML()));
+        //dump($formatter->format($this->DOMNode->ownerDocument->saveXML()));
         return $this->DOMNode->ownerDocument->saveXML();
     }
 

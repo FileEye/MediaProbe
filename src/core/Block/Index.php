@@ -16,22 +16,26 @@ class Index extends IfdBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
         $this->debug("Index {ifdname} @{offset} with {tags} entries", [
             'ifdname' => $this->getAttribute('name'),
-            'tags' => $options['components'],
+            'tags' => $this->ifdItem->getComponents(),
             'offset' => $data_element->getStart() + $offset,
         ]);
 
         $index_size = $data_element->getShort($offset);
-        if ($index_size / $options['components'] !== IfdFormat::getSize(IfdFormat::getFromName('Short'))) {
+        if ($index_size / $this->ifdItem->getComponents() !== IfdFormat::getSize(IfdFormat::getFromName('Short'))) {
             $this->warning('Size of {ifd_name} does not match the number of entries.', [
                 'ifd_name' => $this->getAttribute('name'),
             ]);
         }
         $offset += 2;
-        for ($i = 0; $i < $options['components']; $i++) {
+        for ($i = 0; $i < $this->ifdItem->getComponents(); $i++) {
             $ifd_item = new IfdItem($this->getCollection(), $i + 1);
 
             // Check if this tag ($i + 1) should be skipped.

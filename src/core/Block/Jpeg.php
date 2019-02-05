@@ -23,7 +23,6 @@ class Jpeg extends BlockBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
-        // xx
         if ($size === null) {
             $size = $data_element->getSize();
         }

@@ -23,11 +23,14 @@ use ExifEye\core\Utility\ConvertBytes;
 abstract class IfdBase extends BlockBase
 {
     /**
-     * The format of the tag representing this IFD.
+     * xx remove
      *
      * @var int
      */
     protected $format;
+
+    // xx
+    protected $ifdItem;
 
     /**
      * Constructs a Block for an Image File Directory (IFD).
@@ -41,6 +44,7 @@ abstract class IfdBase extends BlockBase
         }
         $this->format = $ifd_item->getFormat();
         $this->setAttribute('name', $ifd_item->getName());
+        $this->ifdItem = $ifd_item;
     }
 
     /**

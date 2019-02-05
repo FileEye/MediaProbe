@@ -70,7 +70,7 @@ class GH21Test extends ExifEyeTestCaseBase
         // Add the EXIF block to the APP1 segment.
         $exif_block = new Exif(Collection::get('exif'), $out_app1_segment);
         $data_string = new DataString($exif->toBytes());
-        $exif_block->loadFromData($data_string, 0, $data_string->getSize());
+        $exif_block->loadFromData($data_string);
 
         $out_image->saveToFile($this->file);
 

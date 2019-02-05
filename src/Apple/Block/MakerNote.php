@@ -19,8 +19,12 @@ class MakerNote extends IfdBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
         // Load Apple's header as a raw data block.
         $header = new RawData($this);
         $header_data_window = new DataWindow($data_element, $offset, 14);
@@ -35,13 +39,13 @@ class MakerNote extends IfdBase
         // Load the Blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getCollection(), $offset - 14);
+            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, $this->getCollection(), $offset - 14);
 
             $class = $ifd_item->getClass();
             $ifd_entry = new $class($ifd_item->getCollection(), $ifd_item, $this);
 
             try {
-                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, ['components' => $ifd_item->getComponents(), 'data_offset' => $ifd_item->getDataOffset()], $ifd_item);
+                $ifd_entry->loadFromData($data_element, $ifd_item->getDataOffset(), $size);
             } catch (DataException $e) {
                 $this->error($e->getMessage());
             }

@@ -51,9 +51,8 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
-        // xx
         if ($size === null) {
             $size = $data_element->getSize();
         }
@@ -75,7 +74,7 @@ class Tiff extends BlockBase
             $scan = new RawData($this);
             $scan_data_window = new DataWindow($data_window, 8, $ifd_offset - 8);
             $scan_data_window->debug($scan);
-            $scan->loadFromData($scan_data_window, 0, $scan_data_window->getSize());
+            $scan->loadFromData($scan_data_window);
         }
 
         // Loops through IFDs. In fact we should only have IFD0 and IFD1.

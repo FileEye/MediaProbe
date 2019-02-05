@@ -211,14 +211,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-//    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
-//    {
-//        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
-//    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = [])
     {
         throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);

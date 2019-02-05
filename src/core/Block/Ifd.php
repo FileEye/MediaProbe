@@ -21,15 +21,19 @@ class Ifd extends IfdBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [])
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
         // Get the number of entries.
         $n = $this->getIfdItemsCountFromData($data_element, $offset);
 
         // Load the blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, isset($options['collection']) ? $options['collection'] : $this->getCollection());
+            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, $this->getCollection());
 
             // If the entry is an IFD, checks the offset.
             if (is_subclass_of($ifd_item->getClass(), 'ExifEye\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
@@ -43,7 +47,7 @@ class Ifd extends IfdBase
             $ifd_entry = new $class($ifd_item->getCollection(), $ifd_item, $this);
 
             try {
-                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size, ['components' => $ifd_item->getComponents()], $ifd_item);
+                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size);
             } catch (DataException $e) {
                 $this->error($e->getMessage());
             }

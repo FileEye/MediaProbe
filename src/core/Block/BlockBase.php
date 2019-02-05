@@ -43,6 +43,24 @@ abstract class BlockBase extends ElementBase
     }
 
     /**
+     * Loads data into an element.
+     *
+     * @param DataElement $data_element
+     *            the data element that will provide the data.
+     * @param int $offset
+     *            (Optional) the offset within the data element where the
+     *            block will be found.
+     * @param int|null $size
+     *            (Optional) the size of the data from the offset.
+     *
+     * @returns $this
+     */
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    {
+        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+    }
+
+    /**
      * Gets the Collection of this Block.
      *
      * @return \ExifEye\core\Collection

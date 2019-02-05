@@ -16,6 +16,9 @@ use ExifEye\core\Utility\ConvertBytes;
  */
 class Tag extends BlockBase
 {
+    // xx
+    protected $ifdItem;
+
     /**
      * Constructs a Tag block object.
      */
@@ -30,17 +33,23 @@ class Tag extends BlockBase
         }
 
         $ifd_item->validate($this);
+
+        $this->ifdItem = $ifd_item;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], IfdItem $ifd_item = null)
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
-        $class = $ifd_item->getEntryClass();
-        $tag = new $class($this);
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
+        $class = $this->ifdItem->getEntryClass();
+        $entry = new $class($this);
         try {
-            $tag->loadFromData($data_element, $offset, $size, $options, $ifd_item);
+            $entry->loadFromData($data_element, $offset, $size, [], $this->ifdItem);
         } catch (DataException $e) {
             $this->error($e->getMessage());
         }

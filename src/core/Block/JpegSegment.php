@@ -16,8 +16,12 @@ class JpegSegment extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size)
+    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
         $this->components = $size;
 
         if ($size) {
