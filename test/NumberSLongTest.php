@@ -9,9 +9,9 @@ class NumberSignedLongTest extends NumberTestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    public function fcSetUp()
     {
-        parent::setUp();
+        parent::fcSetUp();
         $this->num = new SignedLong($this->mockParentElement, []);
         $this->min = -2147483648;
         $this->max = 2147483647;

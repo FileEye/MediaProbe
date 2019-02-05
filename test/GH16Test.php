@@ -18,15 +18,14 @@ class GH16Test extends ExifEyeTestCaseBase
 {
     protected $file;
 
-    public function setUp()
+    public function fcSetUp()
     {
-        parent::setUp();
         $this->file = dirname(__FILE__) . '/image_files/gh-16-tmp.jpg';
         $file = dirname(__FILE__) . '/image_files/gh-16.jpg';
         copy($file, $this->file);
     }
 
-    public function tearDown()
+    public function fcTearDown()
     {
         unlink($this->file);
     }

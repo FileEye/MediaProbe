@@ -9,9 +9,9 @@ class NumberShortTest extends NumberTestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    public function fcSetUp()
     {
-        parent::setUp();
+        parent::fcSetUp();
         $this->num = new Short($this->mockParentElement, []);
         $this->min = 0;
         $this->max = 65535;

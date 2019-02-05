@@ -9,9 +9,9 @@ class NumberLongTest extends NumberTestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    public function fcSetUp()
     {
-        parent::setUp();
+        parent::fcSetUp();
         $this->num = new Long($this->mockParentElement, []);
         $this->min = 0;
         $this->max = 4294967295;

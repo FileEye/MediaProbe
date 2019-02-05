@@ -8,9 +8,8 @@ class EntryTestBase extends ExifEyeTestCaseBase
 {
     protected $mockParentElement;
 
-    public function setUp()
+    public function fcSetUp()
     {
-        parent::setUp();
         $this->mockParentElement = $this->getMockBuilder('ExifEye\core\ElementBase')->disableOriginalConstructor()->getMock();
     }
 }

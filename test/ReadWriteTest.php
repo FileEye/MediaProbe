@@ -26,9 +26,8 @@ class ReadWriteTest extends ExifEyeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function tearDown()
+    public function fcTearDown()
     {
-        parent::tearDown();
         unlink(dirname(__FILE__) . '/test-output.jpg');
         gc_collect_cycles();
     }

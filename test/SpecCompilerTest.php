@@ -23,9 +23,8 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    public function fcSetUp()
     {
-        parent::setUp();
         $this->testResourceDirectory = __DIR__ . '/TestClasses';
         $this->fs = new Filesystem();
         $this->fs->mkdir($this->testResourceDirectory);
@@ -34,11 +33,10 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function tearDown()
+    public function fcTearDown()
     {
         $this->fs->remove($this->testResourceDirectory);
         Collection::setMapperClass(null);
-        parent::tearDown();
     }
 
     /**

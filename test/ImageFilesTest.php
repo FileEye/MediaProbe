@@ -19,9 +19,8 @@ class ImageFilesTest extends ExifEyeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function tearDown()
+    public function fcTearDown()
     {
-        parent::tearDown();
         gc_collect_cycles();
     }
 
