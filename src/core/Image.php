@@ -118,9 +118,15 @@ class Image extends BlockBase
         // Build the Image object and its immediate child, that represents the
         // image format. Then load the image according to the image format.
         $image = new static($external_logger, $fail_level);
-        $image_format_class = $image_format_collection->getPropertyValue('class');
-        $image_format = new $image_format_class($image_format_collection, $image);
-        $image_format->loadFromData($data_element);
+        try {
+            $image_format_class = $image_format_collection->getPropertyValue('class');
+            $image_format = new $image_format_class($image_format_collection, $image);
+            $image_format->loadFromData($data_element);
+            $image->valid = $image_format->isValid();
+        } catch (\Exception $e) {
+            $image->error($e->getMessage());
+            $image->valid = false;
+        }
         return $image;
     }
 
@@ -205,6 +211,14 @@ class Image extends BlockBase
         //$formatter = new \PrettyXml\Formatter();
         //dump($formatter->format($this->DOMNode->ownerDocument->saveXML()));
         return $this->DOMNode->ownerDocument->saveXML();
+    }
+
+    /**
+     * xx todo
+     */
+    protected function getLogger()
+    {
+        return $this->logger;
     }
 
     /**

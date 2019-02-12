@@ -37,12 +37,13 @@ class JpegSegmentSos extends JpegSegmentBase
 
         // Load data in an Undefined entry.
         $data_window = new DataWindow($data_element, $offset, $this->components, $data_element->getByteOrder());
-        $data_window->debug($this);
+        $data_window->logInfo($this->getLogger());
         new Undefined($this, [$data_window->getBytes()]);
 
         // Append the EOI.
         $eoi_collection = $this->getParentElement()->getCollection()->getItemCollection(self::JPEG_EOI);
-        new JpegSegment($eoi_collection, $this->getParentElement());
+        $eoi = new JpegSegment($eoi_collection, $this->getParentElement());
+        $eoi->valid = true;
 
         // Now check to see if there are any trailing data.
         if ($end_offset < $size) {
@@ -52,10 +53,11 @@ class JpegSegmentSos extends JpegSegmentBase
             // the data in a RawData object.
             $trail = new RawData($this->getParentElement());
             $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size, $data_element->getByteOrder());
-            $trail_data_window->debug($trail);
+            $trail_data_window->logInfo($trail->getLogger());
             $trail->loadFromData($trail_data_window, 0, $raw_size);
         }
 
+        $this->valid = true;
         return $this;
     }
 }

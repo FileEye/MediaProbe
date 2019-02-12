@@ -17,18 +17,12 @@ class JpegSegmentCom extends JpegSegmentBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
-
-        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
-        $data_window->debug($this);
-
-        $this->components = $size;
+        $data_window = $this->getDataWindow($data_element, $offset, $size);
 
         // Set the Comments's entry.
         $entry = new Ascii($this, [$data_window->getBytes(2, $this->components - 2)]);
 
+        $this->valid = true;
         return $this;
     }
 

@@ -37,7 +37,7 @@ class Jpeg extends BlockBase
         // segment we will terminate.
         $segment_offset = $offset;
         while ($segment_offset < $size) {
-            // Get next JPEG marker.
+            // Get the JPEG segment id.
             $segment_offset = $this->getJpegMarkerOffset($data_element, $segment_offset);
             $segment_id = $data_element->getByte($segment_offset);
 
@@ -51,7 +51,7 @@ class Jpeg extends BlockBase
 
             $segment_offset++;
 
-            // Get the collection for the segment, override the values.
+            // Get the collection for the segment.
             $segment_collection = $this->getCollection()->getItemCollection($segment_id);
 
             // Create the ExifEye JPEG segment object.
@@ -64,8 +64,8 @@ class Jpeg extends BlockBase
                     $segment_size = 0;
                     break;
                 case 'variable':
-                    // Read the length of the segment. The length includes the two
-                    // bytes used to store the length.
+                    // Read the length of the segment. The length includes the
+                    // two bytes used to store the length.
                     $segment_size = $data_element->getShort($segment_offset);
                     break;
                 case 'fixed':
@@ -73,7 +73,7 @@ class Jpeg extends BlockBase
                     break;
             }
 
-            // Load the ExifEye JPEG segment object.
+            // Load the ExifEye JPEG segment data.
             $segment->loadFromData($data_element, $segment_offset, $segment_size);
 
             // In case of image scan segment, the load is now complete.
@@ -86,12 +86,13 @@ class Jpeg extends BlockBase
             $segment_offset += $segment->getComponents();
         }
 
+        $this->valid = true;
         return $this;
     }
 
     /**
-     * JPEG sections start with 0xFF. The first byte that is not 0xFF is a marker
-     * (hopefully).
+     * JPEG sections start with 0xFF. The first byte that is not 0xFF is a
+     * marker (hopefully).
      *
      * @param DataElement $data_element
      * @param int $offset

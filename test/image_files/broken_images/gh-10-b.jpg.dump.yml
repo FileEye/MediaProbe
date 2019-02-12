@@ -331,7 +331,7 @@ elements:
                                                     node: ifd
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif'
                                                     class: ExifEye\core\Block\Ifd
-                                                    valid: true
+                                                    valid: false
                                                     id: '34665'
                                                     name: Exif
                                                     collection: ifdExif
@@ -2347,7 +2347,7 @@ elements:
                                                             node: ifd
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/ifd:40965:Interoperability'
                                                             class: ExifEye\core\Block\Ifd
-                                                            valid: true
+                                                            valid: false
                                                             id: '40965'
                                                             name: Interoperability
                                                             collection: ifdInteroperability
@@ -2578,7 +2578,7 @@ elements:
 log:
     ERROR:
         -
-            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif'
+            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/ifd:40965:Interoperability'
             message: 'Offset 1572 not within [0, 1555]'
     WARNING:
         -

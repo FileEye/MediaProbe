@@ -3,6 +3,8 @@
 namespace ExifEye\core\Block;
 
 use ExifEye\core\Collection;
+use ExifEye\core\Data\DataElement;
+use ExifEye\core\Data\DataWindow;
 use ExifEye\core\Utility\ConvertBytes;
 
 /**
@@ -79,6 +81,26 @@ abstract class JpegSegmentBase extends BlockBase
         }
 
         return $bytes;
+    }
+
+    /**
+     * xxx todo
+     */
+    protected function getDataWindow(DataElement $data_element, $offset = 0, $size = null)
+    {
+        if ($size === null) {
+            $size = $data_element->getSize();
+        }
+
+        $this->components = $size;
+
+        if ($size) {
+            $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
+            $data_window->logInfo($this->getLogger());
+            return $data_window;
+        }
+
+        return null;
     }
 
     /**

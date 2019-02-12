@@ -48,6 +48,8 @@ class RawData extends BlockBase
 
         $this->components = $size;
         new Undefined($this, [$data_element->getBytes($offset, $this->components)]);
+
+        $this->valid = true;
         return $this;
     }
 

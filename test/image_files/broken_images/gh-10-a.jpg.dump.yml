@@ -58,7 +58,7 @@ elements:
                                             node: ifd
                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0'
                                             class: ExifEye\core\Block\Ifd
-                                            valid: true
+                                            valid: false
                                             id: '0'
                                             name: IFD0
                                             collection: ifd0
@@ -243,42 +243,6 @@ elements:
                                                             components: 20
                                                             bytesHash: 44cc446f50dd34dcfe4f47e7add6d2a50f9bc5f7c1b96c0fa6ca3deb995b1c2d
                                                             text: '2006:03:22 18:11:10'
-                                                -
-                                                    node: tag
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:513:ThumbnailOffset'
-                                                    class: ExifEye\core\Block\Tag
-                                                    valid: true
-                                                    id: '513'
-                                                    name: ThumbnailOffset
-                                                    collection: tag
-                                                    elements:
-                                                        -
-                                                            node: entry
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:513:ThumbnailOffset/entry'
-                                                            class: ExifEye\core\Entry\Core\Long
-                                                            valid: true
-                                                            format: Long
-                                                            components: 1
-                                                            bytesHash: bbf3950c60f3f38f5bd05bef5c81c85b1ee3b32896506adcfa29eb712b81a16c
-                                                            text: 1002
-                                                -
-                                                    node: tag
-                                                    path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:514:ThumbnailLength'
-                                                    class: ExifEye\core\Block\Tag
-                                                    valid: true
-                                                    id: '514'
-                                                    name: ThumbnailLength
-                                                    collection: tag
-                                                    elements:
-                                                        -
-                                                            node: entry
-                                                            path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:514:ThumbnailLength/entry'
-                                                            class: ExifEye\core\Entry\Core\Long
-                                                            valid: true
-                                                            format: Long
-                                                            components: 1
-                                                            bytesHash: 8bdffeca20aefdb517aaef686a5efe2b5ad34890c833b21ead64f452d8317ec5
-                                                            text: 14812
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:531:YCbCrPositioning'

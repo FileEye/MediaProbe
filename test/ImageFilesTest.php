@@ -109,16 +109,21 @@ class ImageFilesTest extends ExifEyeTestCaseBase
     protected function assertElement($expected, $element, $rewritten = false)
     {
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
+        $this->assertSame($expected['path'], $element->getContextPath());
+        if ($rewritten) {
+            $this->assertTrue($element->isValid(), $element->getContextPath());
+        } else {
+            $this->assertSame($expected['valid'], $element->isValid(), $element->getContextPath());
+        }
 
         // Check entry.
         if ($element instanceof EntryInterface) {
             // No sub elements in the element being tested.
             $this->assertNull($element->getElement('*'));
-            $this->assertEquals($expected['path'], $element->getContextPath());
-            $this->assertEquals($expected['format'], IfdFormat::getName($element->getFormat()), $element->getContextPath());
-            $this->assertEquals($expected['components'], $element->getComponents(), $element->getContextPath());
-            $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
-            $this->assertEquals($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
+            $this->assertSame($expected['format'], IfdFormat::getName($element->getFormat()), $element->getContextPath());
+            $this->assertSame($expected['components'], $element->getComponents(), $element->getContextPath());
+            $this->assertSame($expected['text'], $element->toString(), $element->getContextPath());
+            $this->assertSame($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
         }
 
         // Recursively check sub-blocks.

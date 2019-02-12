@@ -28,7 +28,7 @@ class MakerNote extends IfdBase
         // Load Apple's header as a raw data block.
         $header = new RawData($this);
         $header_data_window = new DataWindow($data_element, $offset, 14);
-        $header_data_window->debug($header);
+        $header_data_window->logInfo($header->getLogger());
         $header->loadFromData($header_data_window, 0, $header_data_window->getSize());
 
         $offset += 14;
@@ -50,6 +50,8 @@ class MakerNote extends IfdBase
                 $this->error($e->getMessage());
             }
         }
+
+        $this->valid = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);

@@ -53,6 +53,8 @@ class Tiff extends BlockBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        $valid = true;
+
         if ($size === null) {
             $size = $data_element->getSize();
         }
@@ -62,10 +64,10 @@ class Tiff extends BlockBase
 
         // Open a data window on the TIFF data.
         $data_window = new DataWindow($data_element, $offset, $size, $this->byteOrder);
-        $data_window->debug($this);
+        $data_window->logInfo($this->getLogger());
 
         // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
-        // header)
+        // header).
         $ifd_offset = $data_window->getLong(4);
 
         // If the offset to first IFD is higher than 8, then there may be an
@@ -73,7 +75,7 @@ class Tiff extends BlockBase
         if ($ifd_offset > 8) {
             $scan = new RawData($this);
             $scan_data_window = new DataWindow($data_window, 8, $ifd_offset - 8);
-            $scan_data_window->debug($scan);
+            $scan_data_window->logInfo($scan->getLogger());
             $scan->loadFromData($scan_data_window);
         }
 
@@ -81,7 +83,8 @@ class Tiff extends BlockBase
         for ($i = 0; $i <= 2; $i++) {
             // IFD1 shouldn't link further.
             if ($ifd_offset === 2) {
-                $this->error('IFD1 links to another IFD.');
+                $this->error('IFD1 should not link to another IFD.');
+                $valid = false;
                 break;
             }
 
@@ -101,6 +104,7 @@ class Tiff extends BlockBase
                     'ifd_name' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name'),
                     'msg' => $e->getMessage(),
                 ]);
+                $valid = false;
                 break;
             }
 
@@ -110,6 +114,7 @@ class Tiff extends BlockBase
             }
         }
 
+        $this->valid = $valid;
         return $this;
     }
 
@@ -177,7 +182,7 @@ class Tiff extends BlockBase
     }
 
     /**
-     * Determines if the data is a TIFF segment.
+     * Returns the byte order of a TIFF segment.
      *
      * @return int|null
      *   The byte order of the TIFF segment in case data is a TIFF block, null

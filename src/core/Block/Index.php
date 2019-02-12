@@ -72,7 +72,10 @@ class Index extends IfdBase
             $tag = new Tag($tag_collection, $ifd_item, $this);
             $entry_class = $ifd_item->getEntryClass();
             new $entry_class($tag, [$item_value]);
+            $tag->valid = true;
         }
+
+        $this->valid = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);

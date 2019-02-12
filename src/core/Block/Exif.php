@@ -11,6 +11,9 @@ use ExifEye\core\Utility\ConvertBytes;
 
 /**
  * Class representing Exif data.
+ *
+ * This is found in a JPEG APP1 segment, and it is just an header for an entire
+ * TIFF structure.
  */
 class Exif extends BlockBase
 {
@@ -31,7 +34,7 @@ class Exif extends BlockBase
         }
 
         $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
-        $data_window->debug($this);
+        $data_window->logInfo($this->getLogger());
 
         $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, strlen(self::EXIF_HEADER));
         if ($tiff_order !== null) {
@@ -46,6 +49,7 @@ class Exif extends BlockBase
             $this->debug("TIFF header not found. Loaded {text}", ['text' => $entry->toString()]);
         }
 
+        $this->valid = true;
         return $this;
     }
 

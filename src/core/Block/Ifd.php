@@ -23,6 +23,8 @@ class Ifd extends IfdBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        $valid = true;
+
         if ($size === null) {
             $size = $data_element->getSize();
         }
@@ -40,6 +42,7 @@ class Ifd extends IfdBase
                 $this->error('Invalid offset pointer to IFD: {offset}.', [
                     'offset' => $ifd_item->getDataOffset(),
                 ]);
+                $valid = false;
                 continue;
             }
 
@@ -49,9 +52,12 @@ class Ifd extends IfdBase
             try {
                 $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size);
             } catch (DataException $e) {
-                $this->error($e->getMessage());
+                $ifd_entry->error($e->getMessage());
+                $valid = false;
             }
         }
+
+        $this->valid = $valid;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
@@ -145,8 +151,15 @@ class Ifd extends IfdBase
             return;
         }
 
+        $ifd->debug("Processing Thumbnail");
+
+        // Get Thumbnail's offset and size.
         $offset = $ifd->getElement("tag[@name='ThumbnailOffset']/entry")->getValue();
         $length = $ifd->getElement("tag[@name='ThumbnailLength']/entry")->getValue();
+
+        // Remove the tags that describe the Thumbnail.
+        $ifd->removeElement("tag[@name='ThumbnailOffset']");
+        $ifd->removeElement("tag[@name='ThumbnailLength']");
 
         // Load the thumbnail only if both the offset and the length are
         // available and positive.
@@ -155,6 +168,7 @@ class Ifd extends IfdBase
                 'offset' => $offset,
                 'length' => $length,
             ]);
+            $ifd->valid = false;
             return;
         }
 
@@ -163,10 +177,9 @@ class Ifd extends IfdBase
                 'offset' => $offset,
                 'size' => $data_element->getSize(),
             ]);
+            $ifd->valid = false;
             return;
         }
-
-        $ifd->debug("Processing Thumbnail");
 
         // Some images have a broken length, so we try to carefully check
         // the length before we store the thumbnail.
@@ -180,9 +193,8 @@ class Ifd extends IfdBase
 
         // Now set the thumbnail normally.
         try {
-            //$dataxx = $data_element->getClone($offset, $length);
             $dataxx = new DataWindow($data_element, $offset, $length, $data_element->getByteOrder());
-            $dataxx->debug($ifd);
+            $dataxx->logInfo($ifd->getLogger());
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
@@ -194,7 +206,6 @@ class Ifd extends IfdBase
                     'size' => $size,
                 ]);
             }
-            //$thumbnail_data = $dataxx->getClone(0, $size)->getBytes(0, $size);
             $thumbnail_data = $dataxx->getBytes(0, $size);
 
             $thumbnail_block = new Thumbnail(Collection::get('thumbnail'), $ifd);
@@ -203,10 +214,7 @@ class Ifd extends IfdBase
                 'length' => $length,
             ]);
             new Undefined($thumbnail_block, [$thumbnail_data]);
-
-            // Remove the tags that have been converted to Thumbnail.
-            $ifd->removeElement("tag[@name='ThumbnailOffset']");
-            $ifd->removeElement("tag[@name='ThumbnailLength']");
+            $thumbnail_block->valid = true;
         } catch (DataException $e) {
             $ifd->error($e->getMessage());
         }

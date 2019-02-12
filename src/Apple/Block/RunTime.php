@@ -41,7 +41,10 @@ class RunTime extends IfdBase
             $tag = new Tag($tag_collection, $ifd_item, $this);
             $entry_class = $ifd_item->getEntryClass();
             new $entry_class($tag, [$value]);
+            $tag->valid = true;
         }
+
+        $this->valid = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);

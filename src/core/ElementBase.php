@@ -42,7 +42,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      *
      * @var bool
      */
-    protected $valid = true;
+    protected $valid = false;
 
     /**
      * Constructs an Element object.
@@ -190,6 +190,14 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         }
 
         return $parent_path . $current_fragment;
+    }
+
+    /**
+     * xx todo
+     */
+    protected function getLogger()
+    {
+        return $this->getRootElement()->getLogger();
     }
 
     /**

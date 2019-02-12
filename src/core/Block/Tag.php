@@ -42,6 +42,8 @@ class Tag extends BlockBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
+        $valid = true;
+
         if ($size === null) {
             $size = $data_element->getSize();
         }
@@ -52,8 +54,10 @@ class Tag extends BlockBase
             $entry->loadFromData($data_element, $offset, $size, [], $this->ifdItem);
         } catch (DataException $e) {
             $this->error($e->getMessage());
+            $valid = false;
         }
 
+        $this->valid = $valid;
         return $this;
     }
 

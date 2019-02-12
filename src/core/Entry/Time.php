@@ -124,6 +124,7 @@ class Time extends Ascii
                 'type' => $type,
             ]);
             $this->valid = false;
+            return $this;
         }
 
         switch ($type) {
@@ -153,6 +154,7 @@ class Time extends Ascii
         $this->value = $value;
 
         $this->debug("Text: {text}", ['text' => $this->toString()]);
+        $this->valid = true;
         return $this;
     }
 

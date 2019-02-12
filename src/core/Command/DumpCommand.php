@@ -51,6 +51,7 @@ class DumpCommand extends Command
         $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG')->name('*.tiff');
 
         foreach ($finder as $file) {
+            $output->writeln($file);
             $yaml = $this->fileToDump($file);
             // $output->write($yaml);
             $fs->dumpFile((string) $file . '.dump.yml', $yaml);
@@ -76,6 +77,12 @@ class DumpCommand extends Command
                 ];
             }
         }
+
+        // Cleanup garbage explicitly, otherwise we may incur in memory
+        // issues.
+        $image = null;
+        gc_collect_cycles();
+
         return Yaml::dump($yaml, 40);
     }
 }

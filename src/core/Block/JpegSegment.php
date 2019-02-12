@@ -18,18 +18,13 @@ class JpegSegment extends JpegSegmentBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
+        $data_window = $this->getDataWindow($data_element, $offset, $size);
 
-        $this->components = $size;
-
-        if ($size) {
-            $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
-            $data_window->debug($this);
+        if ($data_window) {
             new Undefined($this, [$data_window->getBytes()]);
         }
 
+        $this->valid = true;
         return $this;
     }
 }

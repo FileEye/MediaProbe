@@ -4,6 +4,7 @@ namespace ExifEye\core\Data;
 
 use ExifEye\core\ExifEye;
 use ExifEye\core\Utility\ConvertBytes;
+use Monolog\Logger;
 
 /**
  * A data window object.
@@ -35,9 +36,9 @@ class DataWindow extends DataElement
     }
 
     // xx
-    public function debug($caller)
+    public function logInfo(Logger $logger)
     {
-        $caller->debug('Data Window from {start} to {end}, {size} bytes, order: {order}', [
+        $logger->debug('Data Window from {start} to {end}, {size} bytes, order: {order}', [
             'start' => $this->getStart(),
             'end' => $this->getStart() + $this->getSize() - 1,
             'size' => $this->getSize(),
