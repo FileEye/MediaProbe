@@ -68,8 +68,7 @@ class Index extends IfdBase
                 'offset' => $data_element->getStart() + $offset + $i * 2,
             ]);
 
-            $tag_collection = $ifd_item->getCollection();
-            $tag = new Tag($tag_collection, $ifd_item, $this);
+            $tag = new Tag($ifd_item, $this);
             $entry_class = $ifd_item->getEntryClass();
             new $entry_class($tag, [$item_value]);
             $tag->valid = true;

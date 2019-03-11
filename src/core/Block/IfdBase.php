@@ -22,27 +22,19 @@ use ExifEye\core\Utility\ConvertBytes;
  */
 abstract class IfdBase extends BlockBase
 {
-    /**
-     * xx remove
-     *
-     * @var int
-     */
-    protected $format;
-
     // xx
     protected $ifdItem;
 
     /**
      * Constructs a Block for an Image File Directory (IFD).
      */
-    public function __construct(Collection $collection, IfdItem $ifd_item, BlockBase $parent = null, BlockBase $reference = null)
+    public function __construct(IfdItem $ifd_item, BlockBase $parent = null, BlockBase $reference = null)
     {
-        parent::__construct($collection, $parent, $reference);
+        parent::__construct($ifd_item->getCollection(), $parent, $reference);
 
         if ($ifd_item->getId() !== null) {
             $this->setAttribute('id', $ifd_item->getId());
         }
-        $this->format = $ifd_item->getFormat();
         $this->setAttribute('name', $ifd_item->getName());
         $this->ifdItem = $ifd_item;
     }
@@ -146,19 +138,15 @@ abstract class IfdBase extends BlockBase
         return $this;
     }
 
-    /**
-     * {@inheritdoc}
-     */
+    // xx
     public function getFormat()
     {
-        return $this->format;
+        return $this->ifdItem->getFormat();
     }
 
-    /**
-     * {@inheritdoc}
-     */
+    // xx
     public function getComponents()
     {
-        return count($this->getMultipleElements('ifd|tag'));
+        return count($this->getMultipleElements('ifd|tag')); // xx make general
     }
 }

@@ -37,8 +37,7 @@ class RunTime extends IfdBase
             $ifd_item = new IfdItem($this->getCollection(), $tag_name);
             $item_format = $ifd_item->getFormat();
             $entry_class = $ifd_item->getEntryClass();
-            $tag_collection = $ifd_item->getCollection();
-            $tag = new Tag($tag_collection, $ifd_item, $this);
+            $tag = new Tag($ifd_item, $this);
             $entry_class = $ifd_item->getEntryClass();
             new $entry_class($tag, [$value]);
             $tag->valid = true;

@@ -47,7 +47,7 @@ class Ifd extends IfdBase
             }
 
             $class = $ifd_item->getClass();
-            $ifd_entry = new $class($ifd_item->getCollection(), $ifd_item, $this);
+            $ifd_entry = new $class($ifd_item, $this);
 
             try {
                 $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $size);
@@ -260,8 +260,8 @@ class Ifd extends IfdBase
         $exif_ifd->debug("Parsing {makernote} maker notes", [
             'makernote' => $maker_note_ifd_name,
         ]);
-        $ifd_item = new IfdItem($exif_ifd->getCollection(), $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), $maker_note_collection);
-        $ifd = new $ifd_class($maker_note_collection, $ifd_item, $exif_ifd, $maker_note_tag);
+        $ifd_item = new IfdItem($exif_ifd->getCollection(), $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), null, $maker_note_collection);
+        $ifd = new $ifd_class($ifd_item, $exif_ifd, $maker_note_tag);
 
         // xxx
         $ifd->setAttribute('name', $maker_note_ifd_name);
@@ -269,6 +269,7 @@ class Ifd extends IfdBase
             'components' => $maker_note_tag->getComponents(),
             'collection' => $maker_note_collection,
         ]);
+
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");
     }

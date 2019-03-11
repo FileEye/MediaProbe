@@ -24,9 +24,9 @@ class SpecTest extends ExifEyeTestCaseBase
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd(Collection::get('ifd0'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
-        $ifd_exif = new Ifd(Collection::get('ifdExif'), new IfdItem(Collection::get('ifd0'), 0x8769, IfdFormat::getFromName('Long')), $ifd_0);
-        $ifd_canon_camera_settings = new Index(Collection::get('ifdMakerNotesCanonCameraSettings'), new IfdItem(Collection::get('ifdMakerNotesCanon'), 1, IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd_0 = new Ifd(new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd_exif = new Ifd(new IfdItem(Collection::get('ifd0'), 0x8769, IfdFormat::getFromName('Long')), $ifd_0);
+        $ifd_canon_camera_settings = new Index(new IfdItem(Collection::get('ifdMakerNotesCanon'), 1, IfdFormat::getFromName('Long')), $tiff_mock);
 
         // Test retrieving IFD id by name.
         $this->assertEquals(Collection::getByName('IFD0'), Collection::getByName('0'));
@@ -99,7 +99,7 @@ class SpecTest extends ExifEyeTestCaseBase
         $tag_collection = $collection->getItemCollectionByName($tag_name);
         $ifd_item = new IfdItem($collection, $tag_collection->getPropertyValue('item'));
         $entry_class_name = $ifd_item->getEntryClass();
-        $tag = new Tag($tag_collection, $ifd_item, $ifd);
+        $tag = new Tag($ifd_item, $ifd);
         new $entry_class_name($tag, $args);
 
         $this->assertInstanceOf($expected_class, $tag->getElement("entry"));

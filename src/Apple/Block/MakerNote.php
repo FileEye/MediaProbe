@@ -42,7 +42,7 @@ class MakerNote extends IfdBase
             $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, $this->getCollection(), $offset - 14);
 
             $class = $ifd_item->getClass();
-            $ifd_entry = new $class($ifd_item->getCollection(), $ifd_item, $this);
+            $ifd_entry = new $class($ifd_item, $this);
 
             try {
                 $ifd_entry->loadFromData($data_element, $ifd_item->getDataOffset(), $size);

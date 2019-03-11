@@ -19,14 +19,14 @@ class IfdTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd(Collection::get('tiff'), new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd = new Ifd(new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 
-        $tag1 = new Tag(Collection::get('tag'), new IfdItem(Collection::get('ifd0'), 0x010E, IfdFormat::getFromName('Ascii')), $ifd);
+        $tag1 = new Tag(new IfdItem(Collection::get('ifd0'), 0x010E, IfdFormat::getFromName('Ascii')), $ifd);
         $desc = new Ascii($tag1, ['Hello?']);
 
-        $tag2 = new Tag(Collection::get('tag'), new IfdItem(Collection::get('ifd0'), 0x0132, IfdFormat::getFromName('Ascii'), 20), $ifd);
+        $tag2 = new Tag(new IfdItem(Collection::get('ifd0'), 0x0132, IfdFormat::getFromName('Ascii'), 20), $ifd);
         $date = new Time($tag2, [12345678]);
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));

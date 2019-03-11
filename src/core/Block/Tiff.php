@@ -90,11 +90,10 @@ class Tiff extends BlockBase
 
             try {
                 // Create and load the IFDs.
-                $ifd_collection = $this->getCollection()->getItemCollection($i);
-                $ifd_class = $ifd_collection->getPropertyValue('class');
+                $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
                 $ifd_tags_count = $data_window->getShort($ifd_offset);
                 $ifd_item = new IfdItem($this->getCollection(), $i, IfdFormat::getFromName('Long'), $ifd_tags_count, $ifd_offset);
-                $ifd = new $ifd_class($ifd_collection, $ifd_item, $this);
+                $ifd = new $ifd_class($ifd_item, $this);
                 $ifd->loadFromData($data_window, $ifd_offset, $size);
 
                 // Offset to next IFD.

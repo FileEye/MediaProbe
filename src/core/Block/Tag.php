@@ -22,9 +22,9 @@ class Tag extends BlockBase
     /**
      * Constructs a Tag block object.
      */
-    public function __construct(Collection $collection, IfdItem $ifd_item, BlockBase $parent, ElementInterface $reference = null)
+    public function __construct(IfdItem $ifd_item, BlockBase $parent, ElementInterface $reference = null)
     {
-        parent::__construct($collection, $parent, $reference);
+        parent::__construct($ifd_item->getCollection(), $parent, $reference);
 
         $this->setAttribute('id', $ifd_item->getId());
 
