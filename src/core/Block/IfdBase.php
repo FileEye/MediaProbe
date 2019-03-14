@@ -35,7 +35,7 @@ abstract class IfdBase extends BlockBase
         if ($ifd_item->getId() !== null) {
             $this->setAttribute('id', $ifd_item->getId());
         }
-        $this->setAttribute('name', $ifd_item->getName());
+        $this->setAttribute('name', $ifd_item->getCollection()->getPropertyValue('name'));
         $this->ifdItem = $ifd_item;
     }
 
@@ -84,8 +84,8 @@ abstract class IfdBase extends BlockBase
      * @param int $offset
      *            the offset within the data element where the count can be
      *            found.
-     * @param \ExifEye\core\Collection $parent_collection
-     *            the collection of the parent of this IFD.
+     * @param \ExifEye\core\ElementInterface $parent_element
+     *            The parent element of this IFD.
      * @param int $data_offset_shift
      *            (Optional) if specified, an additional shift to the offset
      *            where data can be found.
@@ -93,7 +93,7 @@ abstract class IfdBase extends BlockBase
      * @return \ExifEye\core\Block\IfdItem
      *            the IfdItem object of the IFD item.
      */
-    protected function getIfdItemFromData($i, DataElement $data_element, $offset, Collection $parent_collection, $data_offset_shift = 0)
+    protected function getIfdItemFromData($i, DataElement $data_element, $offset, ElementInterface $parent_element, $data_offset_shift = 0)
     {
         $id = $data_element->getShort($offset);
         $format = $data_element->getShort($offset + 2);
@@ -118,7 +118,11 @@ abstract class IfdBase extends BlockBase
             'size' => $size,
         ]);
 
-        return new IfdItem($parent_collection, $id, $format, $components, $data_offset);
+        $item_collection = $parent_element->getCollection()->getItemCollection($id, '__NIL__', [
+            'item' => $id,
+            'DOMNode' => 'tag',
+        ]);
+        return new IfdItem($item_collection, $format, $components, $data_offset);
     }
 
     /**

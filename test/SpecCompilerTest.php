@@ -66,8 +66,8 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd_0 = new Ifd(new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
-        $ifd_exif = new Ifd(new IfdItem(Collection::get('ifd0'), 0x8769, IfdFormat::getFromName('Long')), $ifd_0);
+        $ifd_0 = new Ifd(new IfdItem(Collection::get('ifd0'), IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd_exif = new Ifd(new IfdItem($ifd_0->getCollection()->getItemCollection(0x8769), IfdFormat::getFromName('Long')), $ifd_0);
 
         $this->assertEquals(0x0100, $ifd_0->getCollection()->getItemCollectionByName('ImageWidth')->getPropertyValue('item'));
         $this->assertEquals(0x8769, $ifd_0->getCollection()->getItemCollectionByName('Exif')->getPropertyValue('item'));

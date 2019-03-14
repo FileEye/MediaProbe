@@ -36,14 +36,17 @@ class Index extends IfdBase
         }
         $offset += 2;
         for ($i = 0; $i < $this->ifdItem->getComponents(); $i++) {
-            $ifd_item = new IfdItem($this->getCollection(), $i + 1);
+            $item_collection = $this->getCollection()->getItemCollection($i + 1, '__NIL__', [
+                'item' => $i + 1,
+                'DOMNode' => 'tag',
+            ]);
+            $item_format = $item_collection->getPropertyValue('format') ? $item_collection->getPropertyValue('format')[0] : IfdFormat::getFromName('SignedShort');
+            $ifd_item = new IfdItem($item_collection, $item_format);
 
             // Check if this tag ($i + 1) should be skipped.
             if ($ifd_item->getCollection()->getPropertyValue('skip')) {
                 continue;
             };
-
-            $item_format = $ifd_item->getFormat();
 
             switch (IfdFormat::getName($item_format)) {
                 case 'Short':
@@ -54,10 +57,6 @@ class Index extends IfdBase
                     break;
                 case 'SignedShort':
                     $item_value = $data_element->getSignedShort($offset + $i * 2);
-                    break;
-                default:
-                    $item_value = $data_element->getSignedShort($offset + $i * 2);
-                    $item_format = IfdFormat::getFromName('SignedShort');
                     break;
             }
 

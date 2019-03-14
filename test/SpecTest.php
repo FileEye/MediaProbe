@@ -24,9 +24,9 @@ class SpecTest extends ExifEyeTestCaseBase
         $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd(new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff_mock);
-        $ifd_exif = new Ifd(new IfdItem(Collection::get('ifd0'), 0x8769, IfdFormat::getFromName('Long')), $ifd_0);
-        $ifd_canon_camera_settings = new Index(new IfdItem(Collection::get('ifdMakerNotesCanon'), 1, IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd_0 = new Ifd(new IfdItem(Collection::get('ifd0'), IfdFormat::getFromName('Long')), $tiff_mock);
+        $ifd_exif = new Ifd(new IfdItem($ifd_0->getCollection()->getItemCollection(0x8769), IfdFormat::getFromName('Long')), $ifd_0);
+        $ifd_canon_camera_settings = new Index(new IfdItem(Collection::get('ifdMakerNotesCanon')->getItemCollection(1), IfdFormat::getFromName('Long')), $tiff_mock);
 
         // Test retrieving IFD id by name.
         $this->assertEquals(Collection::getByName('IFD0'), Collection::getByName('0'));
@@ -84,20 +84,19 @@ class SpecTest extends ExifEyeTestCaseBase
      *
      * @dataProvider getTagTextProvider
      */
-    public function testGetTagText($expected_text, $expected_class, $collection_id, $tag_name, array $args, $brief = false)
+    public function testGetTagText($expected_text, $expected_class, $parent_collection_id, $tag_name, array $args, $brief = false)
     {
         $ifd = $this->getMockBuilder('ExifEye\core\Block\Ifd')
                     ->disableOriginalConstructor()
                     ->setMethods(['getCollection'])
                     ->getMock();
 
-        $collection = Collection::get($collection_id);
+        $parent_collection = Collection::get($parent_collection_id);
         $ifd->expects($this->any())
           ->method('getCollection')
-          ->will($this->returnValue($collection));
+          ->will($this->returnValue($parent_collection));
 
-        $tag_collection = $collection->getItemCollectionByName($tag_name);
-        $ifd_item = new IfdItem($collection, $tag_collection->getPropertyValue('item'));
+        $ifd_item = new IfdItem($parent_collection->getItemCollectionByName($tag_name));
         $entry_class_name = $ifd_item->getEntryClass();
         $tag = new Tag($ifd_item, $ifd);
         new $entry_class_name($tag, $args);

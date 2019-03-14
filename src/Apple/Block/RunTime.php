@@ -34,7 +34,7 @@ class RunTime extends IfdBase
 
         // Build a TAG object for each PList item.
         foreach ($plist->toArray() as $tag_name => $value) {
-            $ifd_item = new IfdItem($this->getCollection(), $tag_name);
+            $ifd_item = new IfdItem($this->getCollection()->getItemCollection($tag_name));
             $item_format = $ifd_item->getFormat();
             $entry_class = $ifd_item->getEntryClass();
             $tag = new Tag($ifd_item, $this);
