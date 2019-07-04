@@ -49,7 +49,7 @@ script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
   # image file dumps.
-  - php bin/fileeye-imageinfo compile
+  #- php bin/fileeye-imageinfo compile
   #- php bin/fileeye-imageinfo dump test/image_files
 
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
@@ -59,7 +59,7 @@ script:
   #- php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg-rewrite.img
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg-rewrite.img
-  - php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg
+  #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg-rewrite.img
   #- php examples/dump-image.php -d test/image_files/broken_images/gh-10-a.jpg
   #- php examples/dump-image.php -d test/image_files/broken_images/gh-10-a.jpg-rewrite.img
