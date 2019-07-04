@@ -35,7 +35,7 @@ class Ifd extends IfdBase
         // Load the blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, $this->getCollection());
+            $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, $this);
 
             // If the entry is an IFD, checks the offset.
             if (is_subclass_of($ifd_item->getClass(), 'ExifEye\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
@@ -260,10 +260,11 @@ class Ifd extends IfdBase
         $exif_ifd->debug("Parsing {makernote} maker notes", [
             'makernote' => $maker_note_ifd_name,
         ]);
-        $ifd_item = new IfdItem($exif_ifd->getCollection(), $maker_note_tag->getAttribute('id'), $maker_note_tag->getFormat(), $maker_note_tag->getComponents(), null, $maker_note_collection);
+        $ifd_item = new IfdItem($maker_note_collection, $maker_note_tag->getFormat(), $maker_note_tag->getComponents());
         $ifd = new $ifd_class($ifd_item, $exif_ifd, $maker_note_tag);
 
         // xxx
+        $ifd->setAttribute('id', 37500);
         $ifd->setAttribute('name', $maker_note_ifd_name);
         $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1], null, [
             'components' => $maker_note_tag->getComponents(),

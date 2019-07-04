@@ -56,9 +56,13 @@ class ReadWriteTest extends ExifEyeTestCaseBase
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd(new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')), $tiff);
+        $ifd = new Ifd(new IfdItem($tiff->getCollection()->getItemCollection('0'), IfdFormat::getFromName('Long')), $tiff);
         foreach ($entries as $entry) {
-            $tag = new Tag(new IfdItem(Collection::get('ifd0'), $entry[0], $entry[2]), $ifd);
+            $item_collection = $ifd->getCollection()->getItemCollection($entry[0], '__NIL__', [
+                'item' => $entry[0],
+                'DOMNode' => 'tag',
+            ]);
+            $tag = new Tag(new IfdItem($item_collection, $entry[2]), $ifd);
             new $entry[1]($tag, $entry[3]);
         }
         $this->assertNotNull($tiff->getElement("ifd[@name='IFD0']"));

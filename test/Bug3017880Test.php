@@ -41,14 +41,14 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $tiff = $exif->getElement("tiff");
             $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd(new IfdItem(Collection::get('tiff'), 0, IfdFormat::getFromName('Long')));
+                $ifd0 = new Ifd(new IfdItem(Collection::get('ifd0'), IfdFormat::getFromName('Long')));
             }
 
             $software_name = 'Example V2';
             $software_tag = $ifd0->getElement("tag[@name='Software']");
 
             if ($software_tag === null) {
-                $tag = new Tag(new IfdItem(Collection::get('ifd0'), 0x0131, IfdFormat::getFromName('Ascii')), $ifd0);
+                $tag = new Tag(new IfdItem($ifd0->getCollection()->getItemCollection(0x0131), IfdFormat::getFromName('Ascii')), $ifd0);
                 new Ascii($tag, [$software_name]);
                 $resave_file = 1;
             } else {

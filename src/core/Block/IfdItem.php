@@ -24,21 +24,7 @@ class IfdItem
      *
      * @var Collection
      */
-    protected $collection;
-
-    /**
-     * The ExifEye collection this item is part of.
-     *
-     * @var Collection
-     */
-    protected $parentCollection;
-
-    /**
-     * The id of the item.
-     *
-     * @var int
-     */
-    protected $id;
+    protected $itemCollection;
 
     /**
      * The format of the item.
@@ -62,42 +48,14 @@ class IfdItem
     protected $dataOffset;
 
     /**
-     * The block has an ExifEye specification description.
-     *
-     * @var bool
-     */
-    protected $hasDefinition = false;
-
-    /**
      * Constructs an IfdItem object.
      */
-    public function __construct(Collection $parent_collection, $id, $format = null, $components = 1, $data_offset = null, Collection $collection = null)
+    public function __construct(Collection $item_collection, $format = null, $components = 1, $data_offset = null)
     {
-        $this->parentCollection = $parent_collection;
-        if ($collection) {
-            $this->collection = $collection;
-        } else {
-            $this->collection = $parent_collection->getItemCollection($id);
-        }
-        if ($this->collection === null) {
-            $overrides = [
-                'item' => $id,
-                'components' => $components,
-                'name' => null,
-            ];
-            if (isset($format)) {
-                $overrides['format'][] = $format;
-            } else {
-                $overrides['format'][] = IfdFormat::getFromName('SignedShort');
-            }
-            $this->collection = new Collection('tag', $overrides);
-        }
-        $this->id = $id;
+        $this->itemCollection = $item_collection;
         $this->format = $format;
         $this->components = $components;
         $this->dataOffset = $data_offset;
-
-        $this->hasDefinition = $id > 0xF000 || in_array($id, $parent_collection->listItemIds());
     }
 
     /**
@@ -107,17 +65,17 @@ class IfdItem
     {
         // Check if ExifEye has a definition for this TAG.
         if (!$this->hasDefinition()) {
-            $caller->notice("No specification for item {item} in {collection}", [
+            $caller->notice("No specification for item {item} in '{ifd}'", [
                 'item' => $this->getId(),
-                'collection' => $this->getParentCollection()->getId(),
+                'ifd' => $caller->getParentElement()->getCollection()->getPropertyValue('name'),
             ]);
         } else {
-            $caller->debug("Tag: {tag}", [
-                'tag' => $this->getTitle(),
+            $caller->debug("Item: {item}", [
+                'item' => $this->getCollection()->getPropertyValue('title'),
             ]);
 
             // Warn if format is not as expected.
-            $expected_format = $this->getCollection()->getPropertyValue('format');
+            $expected_format = $this->itemCollection->getPropertyValue('format');
             if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
                 $expected_format_names = [];
                 foreach ($expected_format as $expected_format_id) {
@@ -130,7 +88,7 @@ class IfdItem
             }
 
             // Warn if components are not as expected.
-            $expected_components = $this->getCollection()->getPropertyValue('components');
+            $expected_components = $this->itemCollection->getPropertyValue('components');
             if ($expected_components !== null && $this->getComponents() !== null && $this->getComponents() !== $expected_components) {
                 $caller->warning("Found {components} data components, expected {expected_components}", [
                     'components' => $this->getComponents(),
@@ -145,15 +103,7 @@ class IfdItem
      */
     public function getCollection()
     {
-        return $this->collection;
-    }
-
-    /**
-     * @todo
-     */
-    public function getParentCollection()
-    {
-        return $this->parentCollection;
+        return $this->itemCollection;
     }
 
     /**
@@ -161,7 +111,7 @@ class IfdItem
      */
     public function getId()
     {
-        return $this->id;
+        return $this->itemCollection->getPropertyValue('item');
     }
 
     /**
@@ -169,7 +119,7 @@ class IfdItem
      */
     public function getFormat()
     {
-        return isset($this->format) ? $this->format : $this->collection->getPropertyValue('format')[0];
+        return isset($this->format) ? $this->format : $this->itemCollection->getPropertyValue('format')[0];
     }
 
     /**
@@ -199,24 +149,9 @@ class IfdItem
     /**
      * @todo
      */
-    public function getName()
-    {
-        if ($this->collection === null) {
-            return null;
-        }
-        return $this->collection->getPropertyValue('name');
-    }
-
-    /**
-     * @todo
-     */
     public function getClass()
     {
-        if ($this->collection === null) {
-            $class = null;
-        } else {
-            $class = $this->collection->getPropertyValue('class');
-        }
+        $class = $this->itemCollection->getPropertyValue('class');
         if ($class !== null) {
             return $class;
         }
@@ -228,11 +163,7 @@ class IfdItem
      */
     public function getEntryClass()
     {
-        if ($this->collection === null) {
-            $entry_class = null;
-        } else {
-            $entry_class = $this->collection->getPropertyValue('entryClass');
-        }
+        $entry_class = $this->itemCollection->getPropertyValue('entryClass');
         if ($entry_class !== null) {
             return $entry_class;
         }
@@ -241,10 +172,9 @@ class IfdItem
         $format = $this->getFormat();
         if (empty($format)) {
             throw new ExifEyeException(
-                'No format can be derived for tag: 0x%04X (%s) in ifd: \'%s\'',
-                $this->collection->getPropertyValue('item'),
-                $this->collection->getPropertyValue('name'),
-                $this->parentCollection->getId()
+                'No format can be derived for tag: 0x%04X (%s)',
+                $this->itemCollection->getPropertyValue('item'),
+                $this->itemCollection->getPropertyValue('name')
             );
         }
 
@@ -256,23 +186,12 @@ class IfdItem
     }
 
     /**
-     * @todo
-     */
-    public function getTitle()
-    {
-        if ($this->collection === null) {
-            return null;
-        }
-        return $this->collection->getPropertyValue('title');
-    }
-
-    /**
      * Determines if the Block has an ExifEye specification.
      *
      * @returns bool
      */
     public function hasDefinition()
     {
-        return $this->hasDefinition;
+        return $this->itemCollection->getId() !== '__NIL__';
     }
 }

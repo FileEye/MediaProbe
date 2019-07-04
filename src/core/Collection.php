@@ -46,7 +46,7 @@ class Collection
      * one.
      *
      * @return array
-     *            the ExifEye specification map.
+     *   The ExifEye specification map.
      */
     protected static function getMap()
     {
@@ -61,7 +61,7 @@ class Collection
      * Sets the compiled ExifEye collection mapper class.
      *
      * @param string $class
-     *            the file containing the ExifEye specification map.
+     *   The file containing the ExifEye specification map.
      */
     public static function setMapperClass($class)
     {
@@ -76,7 +76,7 @@ class Collection
      * Returns the ids of the defined collections.
      *
      * @return array
-     *            an simple array, with the list of the collection ids.
+     *   A simple array, with the list of the collection ids.
      */
     public static function listIds()
     {
@@ -87,7 +87,7 @@ class Collection
      * Returns the requested collection.
      *
      * @return Collection
-     *            an simple array, with the specification collections.
+     *   A simple array, with the specification collections.
      */
     public static function get($id)
     {
@@ -98,10 +98,10 @@ class Collection
      * Returns a collection given its name.
      *
      * @param string $collection_name
-     *            the collection name.
+     *   The collection name.
      *
      * @return Collection|null
-     *            the collection object or null if non existent.
+     *   The collection object or null if non existent.
      */
     public static function getByName($collection_name)
     {
@@ -115,10 +115,9 @@ class Collection
      * Constructs a Collection object.
      *
      * @param string $id
-     *            The id of the collection.
+     *   The id of the collection.
      * @param array $overrides
-     *            (Optional) If defined, overrides properties defined in the
-     *            collection.
+     *   (Optional) If defined, overrides properties defined in the collection.
      */
     public function __construct($id, array $overrides = [])
     {
@@ -130,7 +129,7 @@ class Collection
      * Returns the id of the collection.
      *
      * @return mixed
-     *            the id of the collection.
+     *   The id of the collection.
      */
     public function getId()
     {
@@ -141,10 +140,10 @@ class Collection
      * Returns the value a property.
      *
      * @param string $property
-     *            the property.
+     *   The property.
      *
      * @return mixed|null
-     *            the value of the property.
+     *   The value of the property.
      */
     public function getPropertyValue($property)
     {
@@ -158,8 +157,7 @@ class Collection
      * Returns the collection items' ids.
      *
      * @return array
-     *            an simple array, with values the items ids included in
-     *            the collection.
+     *   A simple array, with values the items ids included in the collection.
      */
     public function listItemIds()
     {
@@ -170,14 +168,17 @@ class Collection
      * Returns the Collection object of an item.
      *
      * @param string $item
-     *            the item id.
+     *   The item id.
      *
      * @return Collection|null
-     *            the item collection object, or null if missing.
+     *   The item collection object, or null if missing.
      */
-    public function getItemCollection($item)
+    public function getItemCollection($item, $default_id = null, array $default_properties = [])
     {
         if (!isset(static::getMap()['items'][$this->id][$item]['collection'])) {
+            if (isset($default_id)) {
+                return new static($default_id, $default_properties);
+            }
             return null;
         }
         $item_properties = static::getMap()['items'][$this->id][$item];
@@ -190,10 +191,10 @@ class Collection
      * Returns the Collection object of an item given its name.
      *
      * @param string $item_name
-     *            the item name.
+     *   The item name.
      *
      * @return Collection|null
-     *            the item collection object, or null if missing.
+     *   The item collection object, or null if missing.
      */
     public function getItemCollectionByName($item_name)
     {

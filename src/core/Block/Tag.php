@@ -28,8 +28,9 @@ class Tag extends BlockBase
 
         $this->setAttribute('id', $ifd_item->getId());
 
-        if ($ifd_item->getName() !== null) {
-            $this->setAttribute('name', $ifd_item->getName());
+        $name = $ifd_item->getCollection()->getPropertyValue('name');
+        if ($name !== null) {
+            $this->setAttribute('name', $name);
         }
 
         $ifd_item->validate($this);
