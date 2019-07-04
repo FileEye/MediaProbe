@@ -1,6 +1,3 @@
-# THIS IS JUST WORK IN PROGRESS, DO NOT RELY ON INFORMATION BELOW
-
-
 # ImageInfo
 
 [![Build Status](https://secure.travis-ci.org/FileEye/ImageInfo.png?branch=master)](https://travis-ci.org/FileEye/ImageInfo)
@@ -10,7 +7,7 @@
 A PHP library for reading and writing Exif headers in JPEG and TIFF images.
 
 ImageInfo is a fork of the [PHP Exif library](https://github.com/pel/pel). See all
-the [contributors](https://github.com/mondrake/ImageInfo/graphs/contributors).
+the [contributors](https://github.com/FileEye/ImageInfo/graphs/contributors).
 
 
 ## Description
