@@ -1,12 +1,12 @@
-# ExifEye
+# ImageInfo
 
 A PHP library for reading and writing Exif headers in JPEG and TIFF images.
 
-ExifEye is licensed under the GNU GPL, see LICENSE for details.
+ImageInfo is licensed under the GNU GPL, see LICENSE for details.
 
 ## Credits
 
-ExifEye is a fork of the PHP Exif library originally written by the AUTHORS
+ImageInfo is a fork of the PHP Exif library originally written by the AUTHORS
 below:
 
 * Copyright (C) 2004, 2005, 2006, 2007  Martin Geisler.
