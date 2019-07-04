@@ -1,19 +1,19 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Block\Exif;
-use ExifEye\core\Block\IfdFormat;
-use ExifEye\core\Block\Tiff;
-use ExifEye\core\Entry\Core\Ascii;
-use ExifEye\core\Block\Ifd;
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Collection;
-use ExifEye\core\Image;
+use FileEye\ImageInfo\core\Block\Exif;
+use FileEye\ImageInfo\core\Block\IfdFormat;
+use FileEye\ImageInfo\core\Block\Tiff;
+use FileEye\ImageInfo\core\Entry\Core\Ascii;
+use FileEye\ImageInfo\core\Block\Ifd;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Image;
 
-class Bug3017880Test extends ExifEyeTestCaseBase
+class Bug3017880Test extends ImageInfoTestCaseBase
 {
     public function testThisDoesNotWorkAsExpected()
     {
@@ -23,14 +23,14 @@ class Bug3017880Test extends ExifEyeTestCaseBase
             $resave_file = 0;
             $image = Image::createFromFile($filename);
             $jpeg = $image->getElement("jpeg");
-            $this->assertInstanceOf('\ExifEye\core\Block\Jpeg', $jpeg);
+            $this->assertInstanceOf('\FileEye\ImageInfo\core\Block\Jpeg', $jpeg);
 
             // should all exif data on photo be cleared (gd and iu will always strip it anyway, so only
             // force strip if you know the image you're branding is an original)
             // $jpeg->clearExif();
 
             if ($exif === null) {
-                $app1_segment_mock = $this->getMockBuilder('ExifEye\core\Block\JpegSegmentApp1')
+                $app1_segment_mock = $this->getMockBuilder('FileEye\ImageInfo\core\Block\JpegSegmentApp1')
                     ->disableOriginalConstructor()
                     ->getMock();
 

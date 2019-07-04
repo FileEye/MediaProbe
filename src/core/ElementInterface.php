@@ -1,21 +1,21 @@
 <?php
 
-namespace ExifEye\core;
+namespace FileEye\ImageInfo\core;
 
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Interface for Element objects.
  *
- * ExifEye Block and Entry objects all implement this interface.
+ * ImageInfo Block and Entry objects all implement this interface.
  */
 interface ElementInterface
 {
     /**
      * Gets the root ancestor element of this element.
      *
-     * @return \ExifEye\core\ElementInterface
+     * @return \FileEye\ImageInfo\core\ElementInterface
      *            the root ancestor element of this element.
      */
     public function getRootElement();
@@ -23,7 +23,7 @@ interface ElementInterface
     /**
      * Gets the parent element of this element.
      *
-     * @return \ExifEye\core\ElementInterface
+     * @return \FileEye\ImageInfo\core\ElementInterface
      *            the parent element of this element.
      */
     public function getParentElement();
@@ -34,7 +34,7 @@ interface ElementInterface
      * @param string $expression
      *            an XPath expression identifying the sub-elements to be selected.
      *
-     * @return \ExifEye\core\ElementInterface[]
+     * @return \FileEye\ImageInfo\core\ElementInterface[]
      *            the selected children elements of this element.
      */
     public function getMultipleElements($expression);
@@ -45,10 +45,10 @@ interface ElementInterface
      * @param string $expression
      *            an XPath expression identifying the sub-element to be selected.
      *
-     * @return \ExifEye\core\ElementInterface
+     * @return \FileEye\ImageInfo\core\ElementInterface
      *            the selected child elements of this element.
      *
-     * @throws \ExifEye\core\ExifEyeException
+     * @throws \FileEye\ImageInfo\core\ImageInfoException
      *            when multiple elements fulfil the XPath expression.
      */
     public function getElement($expression);
@@ -62,7 +62,7 @@ interface ElementInterface
      * @return bool
      *            true if the element was removed, false if the element is not existing.
      *
-     * @throws \ExifEye\core\ExifEyeException
+     * @throws \FileEye\ImageInfo\core\ImageInfoException
      *            when multiple elements fulfil the XPath expression.
      */
     public function removeElement($expression);
@@ -124,7 +124,7 @@ interface ElementInterface
      *
      * @return mixed
      *
-     * @throws \ExifEye\core\ExifEyeException
+     * @throws \FileEye\ImageInfo\core\ImageInfoException
      *            when the element does not support returning a value.
      */
     public function getValue(array $options = []);
@@ -141,7 +141,7 @@ interface ElementInterface
      *
      * @return string
      *
-     * @throws \ExifEye\core\ExifEyeException
+     * @throws \FileEye\ImageInfo\core\ImageInfoException
      *            when the element does not support returning a value.
      */
     public function toString(array $options = []);

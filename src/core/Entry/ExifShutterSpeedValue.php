@@ -1,9 +1,9 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Entry\Core\SignedRational;
-use ExifEye\core\ExifEye;
+use FileEye\ImageInfo\core\Entry\Core\SignedRational;
+use FileEye\ImageInfo\core\ImageInfo;
 
 /**
  * Decode text for an Exif/ShutterSpeedValue tag.
@@ -15,6 +15,6 @@ class ExifShutterSpeedValue extends SignedRational
      */
     public function toString(array $options = [])
     {
-        return ExifEye::fmt('%.0f/%.0f sec. (APEX: %d)', $this->getValue()[0], $this->getValue()[1], pow(sqrt(2), $this->getValue()[0] / $this->getValue()[1]));
+        return ImageInfo::fmt('%.0f/%.0f sec. (APEX: %d)', $this->getValue()[0], $this->getValue()[1], pow(sqrt(2), $this->getValue()[0] / $this->getValue()[1]));
     }
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\ElementBase;
+use FileEye\ImageInfo\core\ElementBase;
 
-class EntryTestBase extends ExifEyeTestCaseBase
+class EntryTestBase extends ImageInfoTestCaseBase
 {
     protected $mockParentElement;
 
     public function fcSetUp()
     {
-        $this->mockParentElement = $this->getMockBuilder('ExifEye\core\ElementBase')->disableOriginalConstructor()->getMock();
+        $this->mockParentElement = $this->getMockBuilder('FileEye\ImageInfo\core\ElementBase')->disableOriginalConstructor()->getMock();
     }
 }

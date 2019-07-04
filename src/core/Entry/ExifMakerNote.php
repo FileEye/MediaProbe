@@ -1,11 +1,11 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Class used to hold data for MakerNote tags.

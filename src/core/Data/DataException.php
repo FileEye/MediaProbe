@@ -1,12 +1,12 @@
 <?php
 
-namespace ExifEye\core\Data;
+namespace FileEye\ImageInfo\core\Data;
 
-use ExifEye\core\ExifEyeException;
+use FileEye\ImageInfo\core\ImageInfoException;
 
 /**
  * An exception thrown when a data management operation fails.
  */
-class DataException extends ExifEyeException
+class DataException extends ImageInfoException
 {
 }

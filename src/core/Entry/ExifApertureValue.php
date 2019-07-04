@@ -1,9 +1,9 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Entry\Core\Rational;
-use ExifEye\core\ExifEye;
+use FileEye\ImageInfo\core\Entry\Core\Rational;
+use FileEye\ImageInfo\core\ImageInfo;
 
 /**
  * Decode text for an Exif/ApertureValue tag.
@@ -15,6 +15,6 @@ class ExifApertureValue extends Rational
      */
     public function toString(array $options = [])
     {
-        return ExifEye::fmt('%.01f', pow(2, $this->getValue()[0] / $this->getValue()[1] / 2));
+        return ImageInfo::fmt('%.01f', pow(2, $this->getValue()[0] / $this->getValue()[1] / 2));
     }
 }

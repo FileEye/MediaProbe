@@ -1,11 +1,11 @@
 <?php
 
-namespace ExifEye\core;
+namespace FileEye\ImageInfo\core;
 
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\DOM\ExifEyeDOMElement;
-use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\DOM\ImageInfoDOMElement;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\ImageInfoException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
 use Monolog\Logger;
@@ -14,7 +14,7 @@ use Monolog\Logger;
  * Base class for ElementInterface objects.
  *
  * As this class is abstract you cannot instantiate objects from it. It only
- * serves as a common ancestor to define the methods common to all ExifEye
+ * serves as a common ancestor to define the methods common to all ImageInfo
  * elements (Block and Entry objects).
  */
 abstract class ElementBase implements ElementInterface, LoggerInterface
@@ -49,9 +49,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      *
      * @param string $dom_node_name
      *            The name of the DOM node associated to this element.
-     * @param \ExifEye\core\ElementInterface|null $parent
+     * @param \FileEye\ImageInfo\core\ElementInterface|null $parent
      *            (Optional) the parent element of this element.
-     * @param \ExifEye\core\ElementInterface|null $reference
+     * @param \FileEye\ImageInfo\core\ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
@@ -61,9 +61,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         // stores the image structure.
         if (!$parent || !is_object($parent->DOMNode)) {
             $doc = new \DOMDocument();
-            // @todo change syntax to ExifEyeDOMElement::class when dropping
+            // @todo change syntax to ImageInfoDOMElement::class when dropping
             // PHP 5.4 support.
-            $doc->registerNodeClass('DOMElement', 'ExifEye\core\DOM\ExifEyeDOMElement');
+            $doc->registerNodeClass('DOMElement', 'FileEye\ImageInfo\core\DOM\ImageInfoDOMElement');
             $this->XPath = new \DOMXPath($doc);
             $parent_node = $doc;
         } else {
@@ -80,7 +80,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         }
 
         // Assign this Element as the payload of the DOM node.
-        $this->DOMNode->setExifEyeElement($this);
+        $this->DOMNode->setImageInfoElement($this);
     }
 
     /**
@@ -88,7 +88,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function getRootElement()
     {
-        return $this->DOMNode->ownerDocument->documentElement->getExifEyeElement();
+        return $this->DOMNode->ownerDocument->documentElement->getImageInfoElement();
     }
 
     /**
@@ -96,7 +96,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function getParentElement()
     {
-        return $this->DOMNode->getExifEyeElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getExifEyeElement() : null;
+        return $this->DOMNode->getImageInfoElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getImageInfoElement() : null;
     }
 
     /**
@@ -107,7 +107,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         $node_list = $this->getRootElement()->XPath->query($expression, $this->DOMNode);
         $ret = [];
         for ($i = 0; $i < $node_list->length; $i++) {
-            $ret[] = $node_list->item($i)->getExifEyeElement();
+            $ret[] = $node_list->item($i)->getImageInfoElement();
         }
         return $ret;
     }
@@ -124,7 +124,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             case 1:
                 return $ret[0];
             default:
-                throw new ExifEyeException("Multiple elements returned for '%s'", $expression);
+                throw new ImageInfoException("Multiple elements returned for '%s'", $expression);
         }
     }
 
@@ -141,7 +141,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
                 $ret[0]->DOMNode->parentNode->removeChild($ret[0]->DOMNode);
                 return true;
             default:
-                throw new ExifEyeException("Multiple elements exist for '%s', cannot remove from structure", $expression);
+                throw new ImageInfoException("Multiple elements exist for '%s', cannot remove from structure", $expression);
         }
     }
 
@@ -213,7 +213,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function getValue(array $options = [])
     {
-        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new ImageInfoException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
     /**
@@ -221,7 +221,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function toString(array $options = [])
     {
-        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new ImageInfoException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
     /**
@@ -250,7 +250,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
                 $root_element->externalLogger->log($level, $message, $context);
             }
             if ($root_element->failLevel !== false && Logger::toMonologLevel($level) >= $root_element->failLevel) {  // xx should be logging anyway
-                throw new ExifEyeException($message);
+                throw new ImageInfoException($message);
             }
         }
     }

@@ -12,21 +12,21 @@ gdInfo:
 elements:
     node: image
     path: /image
-    class: ExifEye\core\Image
+    class: FileEye\ImageInfo\core\Image
     valid: true
     collection: image
     elements:
         -
             node: jpeg
             path: /image/jpeg
-            class: ExifEye\core\Block\Jpeg
+            class: FileEye\ImageInfo\core\Block\Jpeg
             valid: true
             collection: jpeg
             elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:216:SOI'
-                    class: ExifEye\core\Block\JpegSegment
+                    class: FileEye\ImageInfo\core\Block\JpegSegment
                     valid: true
                     id: '216'
                     name: SOI
@@ -34,7 +34,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:224:APP0'
-                    class: ExifEye\core\Block\JpegSegment
+                    class: FileEye\ImageInfo\core\Block\JpegSegment
                     valid: true
                     id: '224'
                     name: APP0
@@ -43,7 +43,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:224:APP0/entry'
-                            class: ExifEye\core\Entry\Core\Undefined
+                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 16
@@ -52,7 +52,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:225:APP1'
-                    class: ExifEye\core\Block\JpegSegmentApp1
+                    class: FileEye\ImageInfo\core\Block\JpegSegmentApp1
                     valid: true
                     id: '225'
                     name: APP1
@@ -61,21 +61,21 @@ elements:
                         -
                             node: exif
                             path: '/image/jpeg/jpegSegment:225:APP1/exif'
-                            class: ExifEye\core\Block\Exif
+                            class: FileEye\ImageInfo\core\Block\Exif
                             valid: true
                             collection: exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
-                                    class: ExifEye\core\Block\Tiff
+                                    class: FileEye\ImageInfo\core\Block\Tiff
                                     valid: true
                                     collection: tiff
                                     elements:
                                         -
                                             node: ifd
                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0'
-                                            class: ExifEye\core\Block\Ifd
+                                            class: FileEye\ImageInfo\core\Block\Ifd
                                             valid: true
                                             id: '0'
                                             name: IFD0
@@ -84,7 +84,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:271:Make'
-                                                    class: ExifEye\core\Block\Tag
+                                                    class: FileEye\ImageInfo\core\Block\Tag
                                                     valid: true
                                                     id: '271'
                                                     name: Make
@@ -93,7 +93,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:271:Make/entry'
-                                                            class: ExifEye\core\Entry\Core\Ascii
+                                                            class: FileEye\ImageInfo\core\Entry\Core\Ascii
                                                             valid: true
                                                             format: Ascii
                                                             components: 6
@@ -102,7 +102,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:282:XResolution'
-                                                    class: ExifEye\core\Block\Tag
+                                                    class: FileEye\ImageInfo\core\Block\Tag
                                                     valid: true
                                                     id: '282'
                                                     name: XResolution
@@ -111,7 +111,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:282:XResolution/entry'
-                                                            class: ExifEye\core\Entry\Core\Rational
+                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 1
@@ -120,7 +120,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:283:YResolution'
-                                                    class: ExifEye\core\Block\Tag
+                                                    class: FileEye\ImageInfo\core\Block\Tag
                                                     valid: true
                                                     id: '283'
                                                     name: YResolution
@@ -129,7 +129,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:283:YResolution/entry'
-                                                            class: ExifEye\core\Entry\Core\Rational
+                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 1
@@ -138,7 +138,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:296:ResolutionUnit'
-                                                    class: ExifEye\core\Block\Tag
+                                                    class: FileEye\ImageInfo\core\Block\Tag
                                                     valid: true
                                                     id: '296'
                                                     name: ResolutionUnit
@@ -147,7 +147,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:296:ResolutionUnit/entry'
-                                                            class: ExifEye\core\Entry\Core\Short
+                                                            class: FileEye\ImageInfo\core\Entry\Core\Short
                                                             valid: true
                                                             format: Short
                                                             components: 1
@@ -156,7 +156,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:306:DateTime'
-                                                    class: ExifEye\core\Block\Tag
+                                                    class: FileEye\ImageInfo\core\Block\Tag
                                                     valid: true
                                                     id: '306'
                                                     name: DateTime
@@ -165,7 +165,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:306:DateTime/entry'
-                                                            class: ExifEye\core\Entry\Time
+                                                            class: FileEye\ImageInfo\core\Entry\Time
                                                             valid: true
                                                             format: Ascii
                                                             components: 20
@@ -174,7 +174,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:531:YCbCrPositioning'
-                                                    class: ExifEye\core\Block\Tag
+                                                    class: FileEye\ImageInfo\core\Block\Tag
                                                     valid: true
                                                     id: '531'
                                                     name: YCbCrPositioning
@@ -183,7 +183,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:531:YCbCrPositioning/entry'
-                                                            class: ExifEye\core\Entry\Core\Short
+                                                            class: FileEye\ImageInfo\core\Entry\Core\Short
                                                             valid: true
                                                             format: Short
                                                             components: 1
@@ -192,7 +192,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif'
-                                                    class: ExifEye\core\Block\Ifd
+                                                    class: FileEye\ImageInfo\core\Block\Ifd
                                                     valid: true
                                                     id: '34665'
                                                     name: Exif
@@ -201,7 +201,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36864:ExifVersion'
-                                                            class: ExifEye\core\Block\Tag
+                                                            class: FileEye\ImageInfo\core\Block\Tag
                                                             valid: true
                                                             id: '36864'
                                                             name: ExifVersion
@@ -210,7 +210,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36864:ExifVersion/entry'
-                                                                    class: ExifEye\core\Entry\Version
+                                                                    class: FileEye\ImageInfo\core\Entry\Version
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 4
@@ -219,7 +219,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37121:ComponentsConfiguration'
-                                                            class: ExifEye\core\Block\Tag
+                                                            class: FileEye\ImageInfo\core\Block\Tag
                                                             valid: true
                                                             id: '37121'
                                                             name: ComponentsConfiguration
@@ -228,7 +228,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37121:ComponentsConfiguration/entry'
-                                                                    class: ExifEye\core\Entry\ExifComponentsConfiguration
+                                                                    class: FileEye\ImageInfo\core\Entry\ExifComponentsConfiguration
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 4
@@ -237,7 +237,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37500:MakerNote'
-                                                            class: ExifEye\core\Block\Tag
+                                                            class: FileEye\ImageInfo\core\Block\Tag
                                                             valid: true
                                                             id: '37500'
                                                             name: MakerNote
@@ -246,7 +246,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37500:MakerNote/entry'
-                                                                    class: ExifEye\core\Entry\ExifMakerNote
+                                                                    class: FileEye\ImageInfo\core\Entry\ExifMakerNote
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 32
@@ -255,7 +255,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40960:FlashPixVersion'
-                                                            class: ExifEye\core\Block\Tag
+                                                            class: FileEye\ImageInfo\core\Block\Tag
                                                             valid: true
                                                             id: '40960'
                                                             name: FlashPixVersion
@@ -264,7 +264,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40960:FlashPixVersion/entry'
-                                                                    class: ExifEye\core\Entry\Version
+                                                                    class: FileEye\ImageInfo\core\Entry\Version
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 4
@@ -273,7 +273,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40961:ColorSpace'
-                                                            class: ExifEye\core\Block\Tag
+                                                            class: FileEye\ImageInfo\core\Block\Tag
                                                             valid: true
                                                             id: '40961'
                                                             name: ColorSpace
@@ -282,7 +282,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40961:ColorSpace/entry'
-                                                                    class: ExifEye\core\Entry\Core\Short
+                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -291,7 +291,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40962:PixelXDimension'
-                                                            class: ExifEye\core\Block\Tag
+                                                            class: FileEye\ImageInfo\core\Block\Tag
                                                             valid: true
                                                             id: '40962'
                                                             name: PixelXDimension
@@ -300,7 +300,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40962:PixelXDimension/entry'
-                                                                    class: ExifEye\core\Entry\Core\Long
+                                                                    class: FileEye\ImageInfo\core\Entry\Core\Long
                                                                     valid: true
                                                                     format: Long
                                                                     components: 1
@@ -309,7 +309,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40963:PixelYDimension'
-                                                            class: ExifEye\core\Block\Tag
+                                                            class: FileEye\ImageInfo\core\Block\Tag
                                                             valid: true
                                                             id: '40963'
                                                             name: PixelYDimension
@@ -318,7 +318,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40963:PixelYDimension/entry'
-                                                                    class: ExifEye\core\Entry\Core\Long
+                                                                    class: FileEye\ImageInfo\core\Entry\Core\Long
                                                                     valid: true
                                                                     format: Long
                                                                     components: 1
@@ -327,7 +327,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34853:GPS'
-                                                    class: ExifEye\core\Block\Ifd
+                                                    class: FileEye\ImageInfo\core\Block\Ifd
                                                     valid: true
                                                     id: '34853'
                                                     name: GPS
@@ -335,7 +335,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:226:APP2'
-                    class: ExifEye\core\Block\JpegSegment
+                    class: FileEye\ImageInfo\core\Block\JpegSegment
                     valid: true
                     id: '226'
                     name: APP2
@@ -344,7 +344,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:226:APP2/entry'
-                            class: ExifEye\core\Entry\Core\Undefined
+                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 496
@@ -353,7 +353,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:219:DQT'
-                    class: ExifEye\core\Block\JpegSegment
+                    class: FileEye\ImageInfo\core\Block\JpegSegment
                     valid: true
                     id: '219'
                     name: DQT
@@ -362,7 +362,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:219:DQT/entry'
-                            class: ExifEye\core\Entry\Core\Undefined
+                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 132
@@ -371,7 +371,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:196:DHT'
-                    class: ExifEye\core\Block\JpegSegment
+                    class: FileEye\ImageInfo\core\Block\JpegSegment
                     valid: true
                     id: '196'
                     name: DHT
@@ -380,7 +380,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:196:DHT/entry'
-                            class: ExifEye\core\Entry\Core\Undefined
+                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 418
@@ -389,7 +389,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:192:SOF0'
-                    class: ExifEye\core\Block\JpegSegment
+                    class: FileEye\ImageInfo\core\Block\JpegSegment
                     valid: true
                     id: '192'
                     name: SOF0
@@ -398,7 +398,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:192:SOF0/entry'
-                            class: ExifEye\core\Entry\Core\Undefined
+                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 17
@@ -407,7 +407,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:218:SOS'
-                    class: ExifEye\core\Block\JpegSegmentSos
+                    class: FileEye\ImageInfo\core\Block\JpegSegmentSos
                     valid: true
                     id: '218'
                     name: SOS
@@ -416,7 +416,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:218:SOS/entry'
-                            class: ExifEye\core\Entry\Core\Undefined
+                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 68027
@@ -425,7 +425,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:217:EOI'
-                    class: ExifEye\core\Block\JpegSegment
+                    class: FileEye\ImageInfo\core\Block\JpegSegment
                     valid: true
                     id: '217'
                     name: EOI

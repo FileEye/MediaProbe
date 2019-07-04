@@ -1,12 +1,12 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Collection;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Class for handling a JPEG image data.
@@ -54,7 +54,7 @@ class Jpeg extends BlockBase
             // Get the collection for the segment.
             $segment_collection = $this->getCollection()->getItemCollection($segment_id);
 
-            // Create the ExifEye JPEG segment object.
+            // Create the ImageInfo JPEG segment object.
             $segment_class = $segment_collection->getPropertyValue('class');
             $segment = new $segment_class($segment_collection, $this);
 
@@ -73,7 +73,7 @@ class Jpeg extends BlockBase
                     break;
             }
 
-            // Load the ExifEye JPEG segment data.
+            // Load the ImageInfo JPEG segment data.
             $segment->loadFromData($data_element, $segment_offset, $segment_size);
 
             // In case of image scan segment, the load is now complete.

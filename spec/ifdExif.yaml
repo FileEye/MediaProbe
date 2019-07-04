@@ -1,7 +1,7 @@
 collection: ifdExif
 name: Exif
 title: IFD Exif
-class: ExifEye\core\Block\Ifd
+class: FileEye\ImageInfo\core\Block\Ifd
 DOMNode: ifd
 items:
     0xA302:
@@ -15,14 +15,14 @@ items:
         title: 'Exposure Time'
         components: 1
         format: Rational
-        entryClass: ExifEye\core\Entry\ExifExposureTime
+        entryClass: FileEye\ImageInfo\core\Entry\ExifExposureTime
     0x829D:
         collection: tag
         name: FNumber
         title: FNumber
         components: 1
         format: Rational
-        entryClass: ExifEye\core\Entry\ExifFNumber
+        entryClass: FileEye\ImageInfo\core\Entry\ExifFNumber
     0x8822:
         collection: tag
         name: ExposureProgram
@@ -81,21 +81,21 @@ items:
         title: 'Exif Version'
         components: 4
         format: Undefined
-        entryClass: ExifEye\core\Entry\Version
+        entryClass: FileEye\ImageInfo\core\Entry\Version
     0x9003:
         collection: tag
         name: DateTimeOriginal
         title: 'Date and Time (original)'
         components: 20
         format: Ascii
-        entryClass: ExifEye\core\Entry\Time
+        entryClass: FileEye\ImageInfo\core\Entry\Time
     0x9004:
         collection: tag
         name: DateTimeDigitized
         title: 'Date and Time (digitized)'
         components: 20
         format: Ascii
-        entryClass: ExifEye\core\Entry\Time
+        entryClass: FileEye\ImageInfo\core\Entry\Time
     0x9010:
         collection: tag
         name: OffsetTime
@@ -120,7 +120,7 @@ items:
         title: 'Components Configuration'
         components: 4
         format: Undefined
-        entryClass: ExifEye\core\Entry\ExifComponentsConfiguration
+        entryClass: FileEye\ImageInfo\core\Entry\ExifComponentsConfiguration
     0x9102:
         collection: tag
         name: CompressedBitsPerPixel
@@ -133,28 +133,28 @@ items:
         title: 'Shutter Speed Value'
         components: 1
         format: SignedRational
-        entryClass: ExifEye\core\Entry\ExifShutterSpeedValue
+        entryClass: FileEye\ImageInfo\core\Entry\ExifShutterSpeedValue
     0x9202:
         collection: tag
         name: ApertureValue
         title: 'Aperture Value'
         components: 1
         format: Rational
-        entryClass: ExifEye\core\Entry\ExifApertureValue
+        entryClass: FileEye\ImageInfo\core\Entry\ExifApertureValue
     0x9203:
         collection: tag
         name: BrightnessValue
         title: 'Brightness Value'
         components: 1
         format: SignedRational
-        entryClass: ExifEye\core\Entry\ExifBrightnessValue
+        entryClass: FileEye\ImageInfo\core\Entry\ExifBrightnessValue
     0x9204:
         collection: tag
         name: ExposureBiasValue
         title: 'Exposure Bias'
         components: 1
         format: SignedRational
-        entryClass: ExifEye\core\Entry\ExifExposureBiasValue
+        entryClass: FileEye\ImageInfo\core\Entry\ExifExposureBiasValue
     0x9205:
         collection: tag
         name: MaxApertureValue
@@ -167,7 +167,7 @@ items:
         title: 'Subject Distance'
         components: 1
         format: SignedRational
-        entryClass: ExifEye\core\Entry\ExifSubjectDistance
+        entryClass: FileEye\ImageInfo\core\Entry\ExifSubjectDistance
     0x9207:
         collection: tag
         name: MeteringMode
@@ -249,25 +249,25 @@ items:
         title: 'Focal Length'
         components: 1
         format: Rational
-        entryClass: ExifEye\core\Entry\ExifFocalLength
+        entryClass: FileEye\ImageInfo\core\Entry\ExifFocalLength
     0x9214:
         collection: tag
         name: SubjectArea
         title: 'Subject Area'
         format: Short
-        entryClass: ExifEye\core\Entry\ExifSubjectArea
+        entryClass: FileEye\ImageInfo\core\Entry\ExifSubjectArea
     0x927C:
         collection: tag
         name: MakerNote
         title: 'Maker Note'
         format: Undefined
-        entryClass: ExifEye\core\Entry\ExifMakerNote
+        entryClass: FileEye\ImageInfo\core\Entry\ExifMakerNote
     0x9286:
         collection: tag
         name: UserComment
         title: 'User Comment'
         format: Undefined
-        entryClass: ExifEye\core\Entry\ExifUserComment
+        entryClass: FileEye\ImageInfo\core\Entry\ExifUserComment
     0x9290:
         collection: tag
         name: SubSecTime
@@ -289,7 +289,7 @@ items:
         title: 'FlashPix Version'
         components: 4
         format: Undefined
-        entryClass: ExifEye\core\Entry\Version
+        entryClass: FileEye\ImageInfo\core\Entry\Version
     0xA001:
         collection: tag
         name: ColorSpace
@@ -387,14 +387,14 @@ items:
         title: 'File Source'
         components: 1
         format: Undefined
-        entryClass: ExifEye\core\Entry\ExifFileSource
+        entryClass: FileEye\ImageInfo\core\Entry\ExifFileSource
     0xA301:
         collection: tag
         name: SceneType
         title: 'Scene Type'
         components: 1
         format: Undefined
-        entryClass: ExifEye\core\Entry\ExifSceneType
+        entryClass: FileEye\ImageInfo\core\Entry\ExifSceneType
     0xA401:
         collection: tag
         name: CustomRendered

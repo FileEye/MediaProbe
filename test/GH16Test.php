@@ -1,20 +1,20 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Block\Exif;
-use ExifEye\core\Block\Ifd;
-use ExifEye\core\Block\IfdFormat;
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Block\Tiff;
-use ExifEye\core\Collection;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Image;
-use ExifEye\core\Entry\WindowsString;
-use ExifEye\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Block\Exif;
+use FileEye\ImageInfo\core\Block\Ifd;
+use FileEye\ImageInfo\core\Block\IfdFormat;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Block\Tiff;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Image;
+use FileEye\ImageInfo\core\Entry\WindowsString;
+use FileEye\ImageInfo\core\Block\Jpeg;
 
-class GH16Test extends ExifEyeTestCaseBase
+class GH16Test extends ImageInfoTestCaseBase
 {
     protected $file;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\ExifEye;
+use FileEye\ImageInfo\core\ImageInfo;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\Version;
 
@@ -11,13 +11,13 @@ use PHPUnit\Runner\Version;
 // version.
 // phpcs:disable
 if (class_exists('PHPUnit\Runner\Version') && version_compare(Version::id(), '8.0.0') >= 0) {
-    require_once __DIR__ . '/ExifEyePhpUnit8Trait.php';
+    require_once __DIR__ . '/ImageInfoPhpUnit8Trait.php';
 } else {
-    require_once __DIR__ . '/ExifEyePhpUnitTrait.php';
+    require_once __DIR__ . '/ImageInfoPhpUnitTrait.php';
 }
 // phpcs:enable
 
-class ExifEyeTestCaseBase extends TestCase
+class ImageInfoTestCaseBase extends TestCase
 {
     use PhpUnitTrait;
 

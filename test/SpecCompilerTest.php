@@ -1,18 +1,18 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Block\Ifd;
-use ExifEye\core\Block\IfdFormat;
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Utility\SpecCompiler;
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Block\Ifd;
+use FileEye\ImageInfo\core\Block\IfdFormat;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Utility\SpecCompiler;
+use FileEye\ImageInfo\core\Collection;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * Test compilation of a set of ExifEye specification YAML files.
+ * Test compilation of a set of ImageInfo specification YAML files.
  */
-class SpecCompilerTest extends ExifEyeTestCaseBase
+class SpecCompilerTest extends ImageInfoTestCaseBase
 {
     /** @var Filesystem */
     private $fs;
@@ -47,7 +47,7 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
         //@todo change below to ParseException::class once PHP 5.4 support is removed.
         $this->fcExpectException('Symfony\Component\Yaml\Exception\ParseException');
         $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory, 'ExifEye\Test\core\TestClasses');
+        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory, 'FileEye\ImageInfo\Test\core\TestClasses');
     }
 
     /**
@@ -56,13 +56,13 @@ class SpecCompilerTest extends ExifEyeTestCaseBase
     public function testValidStubSpec()
     {
         $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory, 'ExifEye\Test\core\TestClasses');
+        $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory, 'FileEye\ImageInfo\Test\core\TestClasses');
         //@todo change below to xxxx::class once PHP 5.4 support is removed.
-        Collection::setMapperClass('ExifEye\Test\core\TestClasses\Core');
+        Collection::setMapperClass('FileEye\ImageInfo\Test\core\TestClasses\Core');
         $this->assertCount(4, Collection::listIds());
 
         //@todo change below to xxxx::class once PHP 5.4 support is removed.
-        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
+        $tiff_mock = $this->getMockBuilder('FileEye\ImageInfo\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
 

@@ -1,19 +1,19 @@
 <?php
 
-namespace ExifEye\core;
+namespace FileEye\ImageInfo\core;
 
 /**
- * Standard ExifEye printf() capable exception.
+ * Standard ImageInfo printf() capable exception.
  * This class is a simple extension of the standard Exception class in
  * PHP, and all the methods defined there retain their original
  * meaning.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class ExifEyeException extends \Exception
+class ImageInfoException extends \Exception
 {
     /**
-     * Construct a new ExifEye exception.
+     * Construct a new ImageInfo exception.
      *
      * @param string $fmt
      *            an optional format string can be given. It

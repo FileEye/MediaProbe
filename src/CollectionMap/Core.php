@@ -1,8 +1,8 @@
 <?php
-namespace ExifEye\CollectionMap;
+namespace ImageInfo\CollectionMap;
 
 /**
- * This file is generated automatically by executing the 'exifeye compile' command.
+ * This file is generated automatically by executing the 'fileeye-imageinfo compile' command.
  *
  * DO NOT CHANGE MANUALLY.
  */
@@ -15,21 +15,21 @@ public static $map = array (
     array (
       'name' => 'CanonPanoramaInformation',
       'title' => 'Panorama Information',
-      'class' => 'ExifEye\\core\\Block\\Index',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Index',
       'DOMNode' => 'index',
     ),
     'jpegSegment' =>
     array (
       'name' => 'JpegSegment',
       'title' => 'Generic JPEG data segment',
-      'class' => 'ExifEye\\core\\Block\\JpegSegment',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\JpegSegment',
       'DOMNode' => 'jpegSegment',
     ),
     'ifd1' =>
     array (
       'name' => 'IFD1',
       'title' => 'IFD1',
-      'class' => 'ExifEye\\core\\Block\\Ifd',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Ifd',
       'DOMNode' => 'ifd',
       'alias' =>
       array (
@@ -38,56 +38,56 @@ public static $map = array (
       ),
       'postLoad' =>
       array (
-        0 => 'ExifEye\\core\\Block\\Ifd::thumbnailToBlock',
+        0 => 'FileEye\\ImageInfo\\core\\Block\\Ifd::thumbnailToBlock',
       ),
     ),
     'ifdGps' =>
     array (
       'name' => 'GPS',
       'title' => 'IFD GPS',
-      'class' => 'ExifEye\\core\\Block\\Ifd',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Ifd',
       'DOMNode' => 'ifd',
     ),
     'ifdMakerNotesCanon' =>
     array (
       'name' => 'Canon',
       'title' => 'Canon Maker Notes',
-      'class' => 'ExifEye\\core\\Block\\IfdMakerNote',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\IfdMakerNote',
       'DOMNode' => 'makerNote',
     ),
     'ifdExif' =>
     array (
       'name' => 'Exif',
       'title' => 'IFD Exif',
-      'class' => 'ExifEye\\core\\Block\\Ifd',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Ifd',
       'DOMNode' => 'ifd',
     ),
     'ifdMakerNotesApple' =>
     array (
       'name' => 'Apple',
       'title' => 'Apple Maker Notes',
-      'class' => 'ExifEye\\Apple\\Block\\MakerNote',
+      'class' => 'FileEye\\ImageInfo\\Apple\\Block\\MakerNote',
       'DOMNode' => 'makerNote',
     ),
     'tag' =>
     array (
       'name' => 'tag',
       'title' => 'Tag',
-      'class' => 'ExifEye\\core\\Block\\Tag',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Tag',
       'DOMNode' => 'tag',
     ),
     'ifdMakerNotesAppleRuntime' =>
     array (
       'name' => 'AppleRuntime',
       'title' => 'Runtime',
-      'class' => 'ExifEye\\Apple\\Block\\RunTime',
+      'class' => 'FileEye\\ImageInfo\\Apple\\Block\\RunTime',
       'DOMNode' => 'plist',
     ),
     'ifdMakerNotesCanonCameraSettings' =>
     array (
       'name' => 'CanonCameraSettings',
       'title' => 'Camera Settings',
-      'class' => 'ExifEye\\core\\Block\\Index',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Index',
       'DOMNode' => 'index',
     ),
     'ifdMakerNotesCanonPictureInformation' =>
@@ -108,7 +108,7 @@ public static $map = array (
       'name' => 'SOS',
       'title' => 'Start of scan',
       'payload' => 'scan',
-      'class' => 'ExifEye\\core\\Block\\JpegSegmentSos',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\JpegSegmentSos',
       'DOMNode' => 'jpegSegment',
     ),
     'jpegSegmentApp1' =>
@@ -116,21 +116,21 @@ public static $map = array (
       'name' => 'APP1',
       'title' => 'Application segment 1',
       'payload' => 'variable',
-      'class' => 'ExifEye\\core\\Block\\JpegSegmentApp1',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\JpegSegmentApp1',
       'DOMNode' => 'jpegSegment',
     ),
     'thumbnail' =>
     array (
       'name' => 'Thumbnail',
       'title' => 'Thumbnail',
-      'class' => 'ExifEye\\core\\Block\\Thumbnail',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Thumbnail',
       'DOMNode' => 'thumbnail',
     ),
     'ifdInteroperability' =>
     array (
       'name' => 'Interoperability',
       'title' => 'IFD Interoperability',
-      'class' => 'ExifEye\\core\\Block\\Ifd',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Ifd',
       'DOMNode' => 'ifd',
       'alias' =>
       array (
@@ -141,7 +141,7 @@ public static $map = array (
     array (
       'name' => 'IFD0',
       'title' => 'IFD0',
-      'class' => 'ExifEye\\core\\Block\\Ifd',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Ifd',
       'DOMNode' => 'ifd',
       'alias' =>
       array (
@@ -150,8 +150,8 @@ public static $map = array (
       ),
       'postLoad' =>
       array (
-        0 => 'ExifEye\\core\\Block\\Ifd::thumbnailToBlock',
-        1 => 'ExifEye\\core\\Block\\Ifd::makerNoteToBlock',
+        0 => 'FileEye\\ImageInfo\\core\\Block\\Ifd::thumbnailToBlock',
+        1 => 'FileEye\\ImageInfo\\core\\Block\\Ifd::makerNoteToBlock',
       ),
     ),
     'jpegSegmentCom' =>
@@ -159,42 +159,42 @@ public static $map = array (
       'name' => 'COM',
       'title' => 'Comment',
       'payload' => 'variable',
-      'class' => 'ExifEye\\core\\Block\\JpegSegmentCom',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\JpegSegmentCom',
       'DOMNode' => 'jpegSegment',
     ),
     'ifdMakerNotesCanonFileInformation' =>
     array (
       'name' => 'CanonFileInformation',
       'title' => 'File Information',
-      'class' => 'ExifEye\\core\\Block\\Index',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Index',
       'DOMNode' => 'index',
     ),
     'tiff' =>
     array (
       'name' => 'Tiff',
       'title' => 'TIFF image',
-      'class' => 'ExifEye\\core\\Block\\Tiff',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Tiff',
       'DOMNode' => 'tiff',
     ),
     'jpeg' =>
     array (
       'name' => 'Jpeg',
       'title' => 'JPEG image',
-      'class' => 'ExifEye\\core\\Block\\Jpeg',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Jpeg',
       'DOMNode' => 'jpeg',
     ),
     'exif' =>
     array (
       'name' => 'Exif',
       'title' => 'Exif data embedded in JPEG APP1 segment',
-      'class' => 'ExifEye\\core\\Block\\Exif',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Exif',
       'DOMNode' => 'exif',
     ),
     'ifdMakerNotesCanonShotInformation' =>
     array (
       'name' => 'CanonShotInformation',
       'title' => 'Shot Information',
-      'class' => 'ExifEye\\core\\Block\\Index',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\Index',
       'DOMNode' => 'index',
     ),
     'format' =>
@@ -206,14 +206,14 @@ public static $map = array (
     array (
       'name' => 'Image',
       'title' => 'Image',
-      'class' => 'ExifEye\\core\\Image',
+      'class' => 'FileEye\\ImageInfo\\core\\Image',
       'DOMNode' => 'image',
     ),
     'rawData' =>
     array (
       'name' => 'Raw data',
       'title' => 'Raw Data',
-      'class' => 'ExifEye\\core\\Block\\RawData',
+      'class' => 'FileEye\\ImageInfo\\core\\Block\\RawData',
       'DOMNode' => 'rawData',
     ),
   ),
@@ -629,7 +629,7 @@ public static $map = array (
         array (
           0 => 2,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\Time',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\Time',
       ),
       315 =>
       array (
@@ -784,7 +784,7 @@ public static $map = array (
         array (
           0 => 3,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\IfdYCbCrSubSampling',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\IfdYCbCrSubSampling',
       ),
       531 =>
       array (
@@ -825,7 +825,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\IfdApplicationNotes',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\IfdApplicationNotes',
       ),
       18246 =>
       array (
@@ -868,7 +868,7 @@ public static $map = array (
         array (
           0 => 2,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\IfdCopyright',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\IfdCopyright',
       ),
       33723 =>
       array (
@@ -899,7 +899,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40092 =>
       array (
@@ -910,7 +910,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40093 =>
       array (
@@ -921,7 +921,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40094 =>
       array (
@@ -932,7 +932,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40095 =>
       array (
@@ -943,7 +943,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       50341 =>
       array (
@@ -968,7 +968,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\GPSVersionId',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\GPSVersionId',
       ),
       1 =>
       array (
@@ -991,7 +991,7 @@ public static $map = array (
         array (
           0 => 5,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\GPSDegrees',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\GPSDegrees',
       ),
       3 =>
       array (
@@ -1014,7 +1014,7 @@ public static $map = array (
         array (
           0 => 5,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\GPSDegrees',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\GPSDegrees',
       ),
       5 =>
       array (
@@ -1951,7 +1951,7 @@ public static $map = array (
         array (
           0 => 5,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifExposureTime',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifExposureTime',
       ),
       33437 =>
       array (
@@ -1963,7 +1963,7 @@ public static $map = array (
         array (
           0 => 5,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifFNumber',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifFNumber',
       ),
       34850 =>
       array (
@@ -2065,7 +2065,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\Version',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\Version',
       ),
       36867 =>
       array (
@@ -2077,7 +2077,7 @@ public static $map = array (
         array (
           0 => 2,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\Time',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\Time',
       ),
       36868 =>
       array (
@@ -2089,7 +2089,7 @@ public static $map = array (
         array (
           0 => 2,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\Time',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\Time',
       ),
       36880 =>
       array (
@@ -2134,7 +2134,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifComponentsConfiguration',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifComponentsConfiguration',
       ),
       37122 =>
       array (
@@ -2157,7 +2157,7 @@ public static $map = array (
         array (
           0 => 10,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifShutterSpeedValue',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifShutterSpeedValue',
       ),
       37378 =>
       array (
@@ -2169,7 +2169,7 @@ public static $map = array (
         array (
           0 => 5,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifApertureValue',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifApertureValue',
       ),
       37379 =>
       array (
@@ -2181,7 +2181,7 @@ public static $map = array (
         array (
           0 => 10,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifBrightnessValue',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifBrightnessValue',
       ),
       37380 =>
       array (
@@ -2193,7 +2193,7 @@ public static $map = array (
         array (
           0 => 10,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifExposureBiasValue',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifExposureBiasValue',
       ),
       37381 =>
       array (
@@ -2216,7 +2216,7 @@ public static $map = array (
         array (
           0 => 10,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifSubjectDistance',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifSubjectDistance',
       ),
       37383 =>
       array (
@@ -2330,7 +2330,7 @@ public static $map = array (
         array (
           0 => 5,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifFocalLength',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifFocalLength',
       ),
       37396 =>
       array (
@@ -2341,7 +2341,7 @@ public static $map = array (
         array (
           0 => 3,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifSubjectArea',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifSubjectArea',
       ),
       37500 =>
       array (
@@ -2352,7 +2352,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifMakerNote',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifMakerNote',
       ),
       37510 =>
       array (
@@ -2363,7 +2363,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifUserComment',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifUserComment',
       ),
       37520 =>
       array (
@@ -2405,7 +2405,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\Version',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\Version',
       ),
       40961 =>
       array (
@@ -2584,7 +2584,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifFileSource',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifFileSource',
       ),
       41729 =>
       array (
@@ -2596,7 +2596,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\ExifSceneType',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\ExifSceneType',
       ),
       41985 =>
       array (
@@ -4169,7 +4169,7 @@ public static $map = array (
         array (
           0 => 7,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\Version',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\Version',
       ),
       4096 =>
       array (
@@ -4548,7 +4548,7 @@ public static $map = array (
         array (
           0 => 2,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\Time',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\Time',
       ),
       315 =>
       array (
@@ -4703,7 +4703,7 @@ public static $map = array (
         array (
           0 => 3,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\IfdYCbCrSubSampling',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\IfdYCbCrSubSampling',
       ),
       531 =>
       array (
@@ -4744,7 +4744,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\IfdApplicationNotes',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\IfdApplicationNotes',
       ),
       18246 =>
       array (
@@ -4787,7 +4787,7 @@ public static $map = array (
         array (
           0 => 2,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\IfdCopyright',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\IfdCopyright',
       ),
       33723 =>
       array (
@@ -4818,7 +4818,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40092 =>
       array (
@@ -4829,7 +4829,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40093 =>
       array (
@@ -4840,7 +4840,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40094 =>
       array (
@@ -4851,7 +4851,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       40095 =>
       array (
@@ -4862,7 +4862,7 @@ public static $map = array (
         array (
           0 => 1,
         ),
-        'entryClass' => 'ExifEye\\core\\Entry\\WindowsString',
+        'entryClass' => 'FileEye\\ImageInfo\\core\\Entry\\WindowsString',
       ),
       50341 =>
       array (
@@ -6024,7 +6024,7 @@ public static $map = array (
         'name' => 'Byte',
         'title' => 'Byte',
         'length' => 1,
-        'class' => 'ExifEye\\core\\Entry\\Core\\Byte',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\Byte',
         'collection' => '__NIL__',
       ),
       2 =>
@@ -6032,7 +6032,7 @@ public static $map = array (
         'name' => 'Ascii',
         'title' => 'Ascii',
         'length' => 1,
-        'class' => 'ExifEye\\core\\Entry\\Core\\Ascii',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\Ascii',
         'collection' => '__NIL__',
       ),
       3 =>
@@ -6040,7 +6040,7 @@ public static $map = array (
         'name' => 'Short',
         'title' => 'Short',
         'length' => 2,
-        'class' => 'ExifEye\\core\\Entry\\Core\\Short',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\Short',
         'collection' => '__NIL__',
       ),
       4 =>
@@ -6048,7 +6048,7 @@ public static $map = array (
         'name' => 'Long',
         'title' => 'Long',
         'length' => 4,
-        'class' => 'ExifEye\\core\\Entry\\Core\\Long',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\Long',
         'collection' => '__NIL__',
       ),
       5 =>
@@ -6056,7 +6056,7 @@ public static $map = array (
         'name' => 'Rational',
         'title' => 'Rational',
         'length' => 8,
-        'class' => 'ExifEye\\core\\Entry\\Core\\Rational',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\Rational',
         'collection' => '__NIL__',
       ),
       6 =>
@@ -6064,7 +6064,7 @@ public static $map = array (
         'name' => 'SignedByte',
         'title' => 'SignedByte',
         'length' => 1,
-        'class' => 'ExifEye\\core\\Entry\\Core\\SignedByte',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\SignedByte',
         'collection' => '__NIL__',
       ),
       7 =>
@@ -6072,7 +6072,7 @@ public static $map = array (
         'name' => 'Undefined',
         'title' => 'Undefined',
         'length' => 1,
-        'class' => 'ExifEye\\core\\Entry\\Core\\Undefined',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\Undefined',
         'collection' => '__NIL__',
       ),
       8 =>
@@ -6080,7 +6080,7 @@ public static $map = array (
         'name' => 'SignedShort',
         'title' => 'SignedShort',
         'length' => 2,
-        'class' => 'ExifEye\\core\\Entry\\Core\\SignedShort',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\SignedShort',
         'collection' => '__NIL__',
       ),
       9 =>
@@ -6088,7 +6088,7 @@ public static $map = array (
         'name' => 'SignedLong',
         'title' => 'SignedLong',
         'length' => 4,
-        'class' => 'ExifEye\\core\\Entry\\Core\\SignedLong',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\SignedLong',
         'collection' => '__NIL__',
       ),
       10 =>
@@ -6096,7 +6096,7 @@ public static $map = array (
         'name' => 'SignedRational',
         'title' => 'SignedRational',
         'length' => 8,
-        'class' => 'ExifEye\\core\\Entry\\Core\\SignedRational',
+        'class' => 'FileEye\\ImageInfo\\core\\Entry\\Core\\SignedRational',
         'collection' => '__NIL__',
       ),
       11 =>

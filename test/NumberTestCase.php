@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\ExifEye;
+use FileEye\ImageInfo\core\ImageInfo;
 
 abstract class NumberTestCase extends EntryTestBase
 {

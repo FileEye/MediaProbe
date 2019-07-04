@@ -1,17 +1,17 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Collection;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Data\DataException;
-use ExifEye\core\ElementInterface;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Data\DataException;
+use FileEye\ImageInfo\core\ElementInterface;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\ImageInfoException;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Abstract class representing an Image File Directory (IFD).
@@ -84,13 +84,13 @@ abstract class IfdBase extends BlockBase
      * @param int $offset
      *            the offset within the data element where the count can be
      *            found.
-     * @param \ExifEye\core\ElementInterface $parent_element
+     * @param \FileEye\ImageInfo\core\ElementInterface $parent_element
      *            The parent element of this IFD.
      * @param int $data_offset_shift
      *            (Optional) if specified, an additional shift to the offset
      *            where data can be found.
      *
-     * @return \ExifEye\core\Block\IfdItem
+     * @return \FileEye\ImageInfo\core\Block\IfdItem
      *            the IfdItem object of the IFD item.
      */
     protected function getIfdItemFromData($i, DataElement $data_element, $offset, ElementInterface $parent_element, $data_offset_shift = 0)
@@ -128,7 +128,7 @@ abstract class IfdBase extends BlockBase
     /**
      * Invoke post-load callbacks.
      *
-     * @param \ExifEye\core\Data\DataElement $data_element
+     * @param \FileEye\ImageInfo\core\Data\DataElement $data_element
      *   @todo
      */
     protected function executePostLoadCallbacks(DataElement $data_element)

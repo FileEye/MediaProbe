@@ -1,13 +1,13 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Data\DataString;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Data\DataException;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Data\DataString;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Data\DataException;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
-class DataWindowTest extends ExifEyeTestCaseBase
+class DataWindowTest extends ImageInfoTestCaseBase
 {
     public function testDataWindow()
     {

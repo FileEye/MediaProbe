@@ -1,13 +1,13 @@
 collection: ifd1
 name: IFD1
 title: IFD1
-class: ExifEye\core\Block\Ifd
+class: FileEye\ImageInfo\core\Block\Ifd
 DOMNode: ifd
 alias:
   - '1'
   - 'Thumbnail'
 postLoad:
-  - ExifEye\core\Block\Ifd::thumbnailToBlock
+  - FileEye\ImageInfo\core\Block\Ifd::thumbnailToBlock
 items:
     0x0100:
         collection: tag
@@ -213,7 +213,7 @@ items:
         title: 'Date and Time'
         components: 20
         format: Ascii
-        entryClass: ExifEye\core\Entry\Time
+        entryClass: FileEye\ImageInfo\core\Entry\Time
     0x013B:
         collection: tag
         name: Artist
@@ -303,7 +303,7 @@ items:
         title: 'YCbCr Sub-Sampling'
         components: 2
         format: Short
-        entryClass: ExifEye\core\Entry\IfdYCbCrSubSampling
+        entryClass: FileEye\ImageInfo\core\Entry\IfdYCbCrSubSampling
     0x0213:
         collection: tag
         name: YCbCrPositioning
@@ -325,7 +325,7 @@ items:
         name: ApplicationNotes
         title: 'Application Notes'
         format: Byte
-        entryClass: ExifEye\core\Entry\IfdApplicationNotes
+        entryClass: FileEye\ImageInfo\core\Entry\IfdApplicationNotes
         # xx add ifd for XMP tags
     0x4746:
         collection: tag
@@ -350,7 +350,7 @@ items:
         name: Copyright
         title: Copyright
         format: Ascii
-        entryClass: ExifEye\core\Entry\IfdCopyright
+        entryClass: FileEye\ImageInfo\core\Entry\IfdCopyright
     0x83BB:
         collection: tag
         name: IPTC-NAA
@@ -367,31 +367,31 @@ items:
         name: WindowsXPTitle
         title: 'Windows XP Title'
         format: Byte
-        entryClass: ExifEye\core\Entry\WindowsString
+        entryClass: FileEye\ImageInfo\core\Entry\WindowsString
     0x9C9C:
         collection: tag
         name: WindowsXPComment
         title: 'Windows XP Comment'
         format: Byte
-        entryClass: ExifEye\core\Entry\WindowsString
+        entryClass: FileEye\ImageInfo\core\Entry\WindowsString
     0x9C9D:
         collection: tag
         name: WindowsXPAuthor
         title: 'Windows XP Author'
         format: Byte
-        entryClass: ExifEye\core\Entry\WindowsString
+        entryClass: FileEye\ImageInfo\core\Entry\WindowsString
     0x9C9E:
         collection: tag
         name: WindowsXPKeywords
         title: 'Windows XP Keywords'
         format: Byte
-        entryClass: ExifEye\core\Entry\WindowsString
+        entryClass: FileEye\ImageInfo\core\Entry\WindowsString
     0x9C9F:
         collection: tag
         name: WindowsXPSubject
         title: 'Windows XP Subject'
         format: Byte
-        entryClass: ExifEye\core\Entry\WindowsString
+        entryClass: FileEye\ImageInfo\core\Entry\WindowsString
     0xC4A5:
         collection: tag
         name: PrintIM

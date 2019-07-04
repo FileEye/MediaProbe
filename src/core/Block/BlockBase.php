@@ -1,19 +1,19 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Collection;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\ElementBase;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\ElementBase;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
- * Base class for ExifEye blocks.
+ * Base class for ImageInfo blocks.
  *
  * As this class is abstract you cannot instantiate objects from it. It only
- * serves as a common ancestor to define the methods common to all ExifEye
+ * serves as a common ancestor to define the methods common to all ImageInfo
  * Block objects.
  */
 abstract class BlockBase extends ElementBase
@@ -21,18 +21,18 @@ abstract class BlockBase extends ElementBase
     /**
      * The Collection of this Block.
      *
-     * @var \ExifEye\core\Collection
+     * @var \FileEye\ImageInfo\core\Collection
      */
     protected $collection;
 
     /**
      * Constructs a Block object.
      *
-     * @param \ExifEye\core\Collection $collection
+     * @param \FileEye\ImageInfo\core\Collection $collection
      *            The Collection of this Block.
-     * @param \ExifEye\core\Block\BlockBase|null $parent
+     * @param \FileEye\ImageInfo\core\Block\BlockBase|null $parent
      *            (Optional) the parent Block of this Block.
-     * @param \ExifEye\core\Block\BlockBase|null $reference
+     * @param \FileEye\ImageInfo\core\Block\BlockBase|null $reference
      *            (Optional) if specified, the new Block will be inserted
      *            before the reference Block.
      */
@@ -57,13 +57,13 @@ abstract class BlockBase extends ElementBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
-        throw new ExifEyeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new ImageInfoException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
     /**
      * Gets the Collection of this Block.
      *
-     * @return \ExifEye\core\Collection
+     * @return \FileEye\ImageInfo\core\Collection
      */
     public function getCollection()
     {

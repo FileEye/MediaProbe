@@ -1,20 +1,19 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Block\IfdFormat;
-use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Image;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Block\IfdFormat;
+use FileEye\ImageInfo\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Image;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
-use ExifEye\Test\core\ExifEyeTestCaseBase;
 
 /**
  * Test camera images stored in the imagetest directory.
  */
-class ImageFilesTest extends ExifEyeTestCaseBase
+class ImageFilesTest extends ImageInfoTestCaseBase
 {
     /**
      * {@inheritdoc}

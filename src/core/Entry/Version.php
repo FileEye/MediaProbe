@@ -1,14 +1,14 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Class to hold version information.

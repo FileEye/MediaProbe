@@ -1,6 +1,6 @@
 <?php
 
-namespace ExifEye\core\Data;
+namespace FileEye\ImageInfo\core\Data;
 
 /**
  * A value object holding the data of an image, as bytes.

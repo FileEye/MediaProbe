@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\ExifUserComment;
+use FileEye\ImageInfo\core\Entry\ExifUserComment;
 
 class EntryUserCommentTest extends EntryTestBase
 {

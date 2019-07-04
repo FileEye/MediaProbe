@@ -1,15 +1,15 @@
 <?php
 
-namespace ExifEye\core\Entry\Core;
+namespace FileEye\ImageInfo\core\Entry\Core;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\IfdFormat;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\ElementBase;
-use ExifEye\core\ElementInterface;
-use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Block\IfdFormat;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\ElementBase;
+use FileEye\ImageInfo\core\ElementInterface;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\ImageInfoException;
+use FileEye\ImageInfo\core\Collection;
 
 /**
  * Base class for EntryInterface objects.
@@ -51,11 +51,11 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * Constructs an EntryInterface object.
      *
-     * @param \ExifEye\core\ElementInterface $parent
+     * @param \FileEye\ImageInfo\core\ElementInterface $parent
      *            xx
      * @param array $data
      *            the data that this entry will be holding.
-     * @param \ExifEye\core\ElementInterface|null $reference
+     * @param \FileEye\ImageInfo\core\ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
@@ -114,7 +114,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         if ($text_config && isset($text_config['mapping']) && is_scalar($value)) {
             // If the code to be mapped is a non-int, change to string.
             $id = is_int($value) ? $value : (string) $value;
-            return isset($text_config['mapping'][$id]) ? ExifEye::tra($text_config['mapping'][$id]) : null;
+            return isset($text_config['mapping'][$id]) ? ImageInfo::tra($text_config['mapping'][$id]) : null;
         }
         return null;
     }

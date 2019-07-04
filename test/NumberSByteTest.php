@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\Core\SignedByte;
+use FileEye\ImageInfo\core\Entry\Core\SignedByte;
 
 class NumberSignedByteTest extends NumberTestCase
 {

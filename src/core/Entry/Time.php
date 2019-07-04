@@ -1,12 +1,12 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Entry\Core\Ascii;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Utility\ConvertTime;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Entry\Core\Ascii;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Utility\ConvertTime;
 
 /**
  * Class for holding a date and time.

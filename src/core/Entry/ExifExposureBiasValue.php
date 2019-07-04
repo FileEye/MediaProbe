@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Entry\Core\SignedRational;
+use FileEye\ImageInfo\core\Entry\Core\SignedRational;
 
 /**
  * Decode text for an Exif/ExposureBiasValue tag.

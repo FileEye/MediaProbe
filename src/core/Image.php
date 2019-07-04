@@ -1,13 +1,13 @@
 <?php
 
-namespace ExifEye\core;
+namespace FileEye\ImageInfo\core;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Block\Tiff;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataString;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Block\Tiff;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataString;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 use Psr\Log\LoggerInterface;
 use Monolog\Logger;
 use Monolog\Handler\TestHandler;
@@ -39,10 +39,10 @@ class Image extends BlockBase
     /**
      * The minimum log level for failure.
      *
-     * ExifEye normally intercepts and logs image parsing issues without
+     * ImageInfo normally intercepts and logs image parsing issues without
      * breaking the flow. However it is possible to enable hard failures by
      * defining the minimum log level at which the parsing process will breaking
-     * and throw an ExifEyeException.
+     * and throw an ImageInfoException.
      *
      * @var int
      */
@@ -169,7 +169,7 @@ class Image extends BlockBase
     public function __construct(LoggerInterface $external_logger = null, $fail_level = false)
     {
         parent::__construct(Collection::get('image'));
-        $this->logger = (new Logger('exifeye'))
+        $this->logger = (new Logger('imageinfo'))
           ->pushHandler(new TestHandler(Logger::INFO))
           ->pushProcessor(new PsrLogMessageProcessor());
         $this->externalLogger = $external_logger;

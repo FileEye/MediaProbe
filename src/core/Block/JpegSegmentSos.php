@@ -1,12 +1,12 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Collection;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Class representing a JPEG SOS segment.

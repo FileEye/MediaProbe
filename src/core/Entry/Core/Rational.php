@@ -1,11 +1,11 @@
 <?php
 
-namespace ExifEye\core\Entry\Core;
+namespace FileEye\ImageInfo\core\Entry\Core;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\ExifEye;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\ImageInfo;
 
 /**
  * Class for holding unsigned rational numbers.

@@ -1,8 +1,8 @@
-# README file for ExifEye Examples
+# README file for ImageInfo Examples
 
-## ExifEye Examples
+## ImageInfo Examples
 
-This directory contains various examples of how ExifEye can be used in
+This directory contains various examples of how ImageInfo can be used in
 small scripts.  The scripts are meant to be executed from the command
 line and they assume that you have PHP installed as /usr/bin/php.  If
 that is not the case, then please adjust the first line before
@@ -25,11 +25,11 @@ The examples are:
 
 ## Contributing New Examples
 
-More examples are needed!  If you have a neat example of how ExifEye can
-be used, then please contribute it to ExifEye.  Please submit it as a new
+More examples are needed!  If you have a neat example of how ImageInfo can
+be used, then please contribute it to ImageInfo.  Please submit it as a new
 item in the Github issue tracker:
 
-  http://github.com/exifeye/exifeye/issues
+  http://github.com/fileeye/imageinfo/issues
 
 Or issue a pull request. It will then be included in the next release
-of ExifEye, of course with full credit in the AUTHORS file.
+of ImageInfo, of course with full credit in the AUTHORS file.

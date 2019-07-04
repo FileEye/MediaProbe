@@ -1,10 +1,10 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
 
 /**
  * Class representing a generic JPEG data segment.

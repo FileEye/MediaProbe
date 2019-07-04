@@ -1,9 +1,9 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\Collection;
 
 class EntryUndefinedTest extends EntryTestBase
 {

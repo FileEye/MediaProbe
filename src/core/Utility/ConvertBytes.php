@@ -1,6 +1,6 @@
 <?php
 
-namespace ExifEye\core\Utility;
+namespace FileEye\ImageInfo\core\Utility;
 
 /**
  * Conversion functions to and from bytes and numerals.

@@ -1,12 +1,12 @@
 <?php
 
-namespace ExifEye\core;
+namespace FileEye\ImageInfo\core;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\ImageInfoException;
 
 /**
  * Class to retrieve IFD and TAG information from YAML specs.
@@ -16,7 +16,7 @@ class Collection
     /**
      * Default mapper namespace.
      */
-    const DEFAULT_MAP_NAMESPACE = 'ExifEye\CollectionMap';
+    const DEFAULT_MAP_NAMESPACE = 'FileEye\ImageInfo\CollectionMap';
 
     /**
      * The collection mapper class.
@@ -40,13 +40,13 @@ class Collection
     protected $overrides;
 
     /**
-     * Returns the compiled ExifEye specification map.
+     * Returns the compiled ImageInfo specification map.
      *
      * In case the map is not yet initialized, defaults to the pre-compiled
      * one.
      *
      * @return array
-     *   The ExifEye specification map.
+     *   The ImageInfo specification map.
      */
     protected static function getMap()
     {
@@ -58,10 +58,10 @@ class Collection
     }
 
     /**
-     * Sets the compiled ExifEye collection mapper class.
+     * Sets the compiled ImageInfo collection mapper class.
      *
      * @param string $class
-     *   The file containing the ExifEye specification map.
+     *   The file containing the ImageInfo specification map.
      */
     public static function setMapperClass($class)
     {

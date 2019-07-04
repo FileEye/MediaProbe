@@ -1,10 +1,10 @@
 <?php
 
-namespace ExifEye\core\Entry\Core;
+namespace FileEye\ImageInfo\core\Entry\Core;
 
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Abstract class for numbers.

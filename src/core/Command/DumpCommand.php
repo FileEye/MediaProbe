@@ -1,20 +1,20 @@
 <?php
 
-namespace ExifEye\core\Command;
+namespace FileEye\ImageInfo\core\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Image;
-use ExifEye\core\Collection;
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\Exif;
-use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Block\Ifd;
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Block\Tiff;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Image;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Block\Exif;
+use FileEye\ImageInfo\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Block\Ifd;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Block\Tiff;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;

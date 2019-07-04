@@ -1,18 +1,18 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Data\DataException;
-use ExifEye\core\ElementInterface;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
-use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Data\DataException;
+use FileEye\ImageInfo\core\ElementInterface;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\ImageInfoException;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Collection;
 
 /**
  * A value object representing an Image File Directory (IFD) item.
@@ -20,7 +20,7 @@ use ExifEye\core\Collection;
 class IfdItem
 {
     /**
-     * The ExifEye collection of this item.
+     * The ImageInfo collection of this item.
      *
      * @var Collection
      */
@@ -63,7 +63,7 @@ class IfdItem
      */
     public function validate(ElementInterface $caller)
     {
-        // Check if ExifEye has a definition for this TAG.
+        // Check if ImageInfo has a definition for this TAG.
         if (!$this->hasDefinition()) {
             $caller->notice("No specification for item {item} in '{ifd}'", [
                 'item' => $this->getId(),
@@ -155,7 +155,7 @@ class IfdItem
         if ($class !== null) {
             return $class;
         }
-        return 'ExifEye\core\Block\Tag';
+        return 'FileEye\ImageInfo\core\Block\Tag';
     }
 
     /**
@@ -171,7 +171,7 @@ class IfdItem
         // If format is not passed in, try getting it from the spec.
         $format = $this->getFormat();
         if (empty($format)) {
-            throw new ExifEyeException(
+            throw new ImageInfoException(
                 'No format can be derived for tag: 0x%04X (%s)',
                 $this->itemCollection->getPropertyValue('item'),
                 $this->itemCollection->getPropertyValue('name')
@@ -180,13 +180,13 @@ class IfdItem
 
         $default_entry_class = IfdFormat::getClass($format);
         if (!$default_entry_class) {
-            throw new ExifEyeException('Unsupported format: %d', $format);
+            throw new ImageInfoException('Unsupported format: %d', $format);
         }
         return $default_entry_class;
     }
 
     /**
-     * Determines if the Block has an ExifEye specification.
+     * Determines if the Block has an ImageInfo specification.
      *
      * @returns bool
      */

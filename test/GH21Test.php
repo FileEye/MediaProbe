@@ -1,15 +1,15 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Data\DataString;
-use ExifEye\core\Block\Exif;
-use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Block\JpegSegmentApp1;
-use ExifEye\core\Collection;
-use ExifEye\core\Image;
+use FileEye\ImageInfo\core\Data\DataString;
+use FileEye\ImageInfo\core\Block\Exif;
+use FileEye\ImageInfo\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Block\JpegSegmentApp1;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Image;
 
-class GH21Test extends ExifEyeTestCaseBase
+class GH21Test extends ImageInfoTestCaseBase
 {
     protected $file;
 

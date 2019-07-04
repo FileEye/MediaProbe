@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Collection;
 
 /**
  * Class to retrieve IFD format information.

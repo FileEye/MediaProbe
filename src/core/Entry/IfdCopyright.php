@@ -1,13 +1,13 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Entry\Core\Ascii;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Collection;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Entry\Core\Ascii;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Class for holding copyright information.
@@ -96,8 +96,8 @@ class IfdCopyright extends Ascii
             $p = '';
             $e = '';
         } else {
-            $p = ' ' . ExifEye::tra('(Photographer)');
-            $e = ' ' . ExifEye::tra('(Editor)');
+            $p = ' ' . ImageInfo::tra('(Photographer)');
+            $e = ' ' . ImageInfo::tra('(Editor)');
         }
 
         if ($this->value[0] !== '' && $this->value[1] !== '') {

@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataElement;
 
 /**
  * Class used to hold data for a JPEG Thumbnail.

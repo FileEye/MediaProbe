@@ -1,10 +1,10 @@
 <?php
 
-namespace ExifEye\core\Entry\Core;
+namespace FileEye\ImageInfo\core\Entry\Core;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\ElementInterface;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\ElementInterface;
 
 /**
  * Interface for Entry objects.

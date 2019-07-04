@@ -1,11 +1,11 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\Core\Ascii;
-use ExifEye\core\Entry\IfdCopyright;
-use ExifEye\core\Entry\Time;
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Entry\Core\Ascii;
+use FileEye\ImageInfo\core\Entry\IfdCopyright;
+use FileEye\ImageInfo\core\Entry\Time;
+use FileEye\ImageInfo\core\Collection;
 
 class EntryAsciiTest extends EntryTestBase
 {

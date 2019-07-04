@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Entry\Core\Byte;
+use FileEye\ImageInfo\core\Entry\Core\Byte;
 
 /**
  * Decode text for an GPS/GPSVersionID tag.

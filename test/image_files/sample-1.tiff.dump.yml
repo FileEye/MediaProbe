@@ -10,28 +10,28 @@ gdInfo:
 elements:
     node: image
     path: /image
-    class: ExifEye\core\Image
+    class: FileEye\ImageInfo\core\Image
     valid: true
     collection: image
     elements:
         -
             node: tiff
             path: /image/tiff
-            class: ExifEye\core\Block\Tiff
+            class: FileEye\ImageInfo\core\Block\Tiff
             valid: true
             collection: tiff
             elements:
                 -
                     node: rawData
                     path: /image/tiff/rawData
-                    class: ExifEye\core\Block\RawData
+                    class: FileEye\ImageInfo\core\Block\RawData
                     valid: true
                     collection: rawData
                     elements:
                         -
                             node: entry
                             path: /image/tiff/rawData/entry
-                            class: ExifEye\core\Entry\Core\Undefined
+                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 6392
@@ -40,7 +40,7 @@ elements:
                 -
                     node: ifd
                     path: '/image/tiff/ifd:0:IFD0'
-                    class: ExifEye\core\Block\Ifd
+                    class: FileEye\ImageInfo\core\Block\Ifd
                     valid: true
                     id: '0'
                     name: IFD0
@@ -49,7 +49,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:256:ImageWidth'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '256'
                             name: ImageWidth
@@ -58,7 +58,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:256:ImageWidth/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -67,7 +67,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:257:ImageLength'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '257'
                             name: ImageLength
@@ -76,7 +76,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:257:ImageLength/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -85,7 +85,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:258:BitsPerSample'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '258'
                             name: BitsPerSample
@@ -94,7 +94,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:258:BitsPerSample/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 4
@@ -103,7 +103,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:259:Compression'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '259'
                             name: Compression
@@ -112,7 +112,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:259:Compression/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -121,7 +121,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:262:PhotometricInterpretation'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '262'
                             name: PhotometricInterpretation
@@ -130,7 +130,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:262:PhotometricInterpretation/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -139,7 +139,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:273:StripOffsets'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '273'
                             name: StripOffsets
@@ -148,7 +148,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:273:StripOffsets/entry'
-                                    class: ExifEye\core\Entry\Core\Long
+                                    class: FileEye\ImageInfo\core\Entry\Core\Long
                                     valid: true
                                     format: Long
                                     components: 1
@@ -157,7 +157,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:274:Orientation'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '274'
                             name: Orientation
@@ -166,7 +166,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:274:Orientation/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -175,7 +175,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:277:SamplesPerPixel'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '277'
                             name: SamplesPerPixel
@@ -184,7 +184,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:277:SamplesPerPixel/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -193,7 +193,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:278:RowsPerStrip'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '278'
                             name: RowsPerStrip
@@ -202,7 +202,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:278:RowsPerStrip/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -211,7 +211,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:279:StripByteCounts'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '279'
                             name: StripByteCounts
@@ -220,7 +220,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:279:StripByteCounts/entry'
-                                    class: ExifEye\core\Entry\Core\Long
+                                    class: FileEye\ImageInfo\core\Entry\Core\Long
                                     valid: true
                                     format: Long
                                     components: 1
@@ -229,7 +229,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:284:PlanarConfiguration'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '284'
                             name: PlanarConfiguration
@@ -238,7 +238,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:284:PlanarConfiguration/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -247,7 +247,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:317:Predictor'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '317'
                             name: Predictor
@@ -256,7 +256,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:317:Predictor/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -265,7 +265,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:338:ExtraSamples'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '338'
                             name: ExtraSamples
@@ -274,7 +274,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:338:ExtraSamples/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
@@ -283,7 +283,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:339:SampleFormat'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '339'
                             name: SampleFormat
@@ -292,7 +292,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:339:SampleFormat/entry'
-                                    class: ExifEye\core\Entry\Core\Short
+                                    class: FileEye\ImageInfo\core\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 4
@@ -301,7 +301,7 @@ elements:
                         -
                             node: tag
                             path: '/image/tiff/ifd:0:IFD0/tag:700:ApplicationNotes'
-                            class: ExifEye\core\Block\Tag
+                            class: FileEye\ImageInfo\core\Block\Tag
                             valid: true
                             id: '700'
                             name: ApplicationNotes
@@ -310,7 +310,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/image/tiff/ifd:0:IFD0/tag:700:ApplicationNotes/entry'
-                                    class: ExifEye\core\Entry\IfdApplicationNotes
+                                    class: FileEye\ImageInfo\core\Entry\IfdApplicationNotes
                                     valid: true
                                     format: Byte
                                     components: 323

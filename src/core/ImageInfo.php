@@ -1,25 +1,25 @@
 <?php
 
-namespace ExifEye\core;
+namespace FileEye\ImageInfo\core;
 
 /**
  * Class with miscellaneous static methods.
  *
  * This class contains various methods that govern the overall behavior of
- * ExifEye.
+ * ImageInfo.
  *
- * Debugging output from ExifEye can be turned on and off by assigning true or
- * false to {@link ExifEye::$debug}.
+ * Debugging output from ImageInfo can be turned on and off by assigning true or
+ * false to {@link ImageInfo::$debug}.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class ExifEye
+class ImageInfo
 {
     /**
-     * Returns the current version of ExifEye.
+     * Returns the current version of ImageInfo.
      *
      * @return string
-     *            the current version of ExifEye.
+     *            the current version of ImageInfo.
      */
     public static function version()
     {

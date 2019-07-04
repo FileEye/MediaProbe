@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
 
 /**
  * Decode text for an Exif/FileSource tag.

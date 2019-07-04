@@ -1,9 +1,9 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\Core\SignedRational;
-use ExifEye\core\Entry\Exception\OverflowException;
+use FileEye\ImageInfo\core\Entry\Core\SignedRational;
+use FileEye\ImageInfo\core\Entry\Exception\OverflowException;
 
 class NumberSignedRationalTest extends NumberTestCase
 {

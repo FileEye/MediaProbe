@@ -1,6 +1,6 @@
 <?php
 
-namespace ExifEye\core\Utility;
+namespace FileEye\ImageInfo\core\Utility;
 
 /**
  * Conversion functions for time values.

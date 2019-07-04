@@ -1,11 +1,11 @@
 <?php
 // @codingStandardsIgnoreFile
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
-class ConvertTest extends ExifEyeTestCaseBase
+class ConvertTest extends ImageInfoTestCaseBase
 {
     public function testLongLittle()
     {

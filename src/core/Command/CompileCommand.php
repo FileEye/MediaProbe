@@ -1,15 +1,15 @@
 <?php
 
-namespace ExifEye\core\Command;
+namespace FileEye\ImageInfo\core\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use ExifEye\core\Utility\SpecCompiler;
+use FileEye\ImageInfo\core\Utility\SpecCompiler;
 
 /**
- * A Symfony application command to compile the ExifEye specification YAML files.
+ * A Symfony application command to compile the ImageInfo specification YAML files.
  */
 class CompileCommand extends Command
 {
@@ -28,7 +28,7 @@ class CompileCommand extends Command
     {
         $this
             ->setName('compile')
-            ->setDescription('Converts the ExifEye specification YAML files into a spec.php file.')
+            ->setDescription('Converts the ImageInfo specification YAML files into a spec.php file.')
             ->addArgument(
                 'spec-dir',
                 InputArgument::OPTIONAL,

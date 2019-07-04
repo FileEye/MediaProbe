@@ -9,17 +9,17 @@
  * Copyright (C) 2004, 2005, 2006 Martin Geisler.
  */
 
-use ExifEye\core\ElementInterface;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
-use ExifEye\core\Image;
-use ExifEye\core\Collection;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Block\Tiff;
-use ExifEye\core\Utility\DumpLogFormatter;
+use FileEye\ImageInfo\core\ElementInterface;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\ImageInfoException;
+use FileEye\ImageInfo\core\Image;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Block\Tiff;
+use FileEye\ImageInfo\core\Utility\DumpLogFormatter;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\TestHandler;
@@ -38,7 +38,7 @@ function dump_element(ElementInterface $element)
     }
 }
 
-/* Make ExifEye speak the users language, if it is available. */
+/* Make ImageInfo speak the users language, if it is available. */
 setlocale(LC_ALL, '');
 
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
@@ -99,7 +99,7 @@ try {
     if ($write_back) {
         $image->saveToFile($file . '-rewrite.img');
     }
-} catch (ExifEyeException $e) {
+} catch (ImageInfoException $e) {
     $err = $e->getMessage();
 }
 

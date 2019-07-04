@@ -1,11 +1,11 @@
 {
-    "name": "exifeye/exifeye",
+    "name": "fileeye/imageinfo",
     "type": "library",
     "description": "A PHP library for reading and writing Exif headers in JPEG and TIFF images.",
     "keywords": [
         "image", "exif"
     ],
-    "homepage": "https://github.com/ExifEye/ExifEye",
+    "homepage": "https://github.com/FileEye/ImageInfo",
     "license": "GPL-3.0",
     "require": {
         "php": ">=5.4.0",
@@ -29,13 +29,13 @@
     },
     "autoload": {
         "psr-4": {
-            "ExifEye\\": "src/"
+            "FileEye\\ImageInfo\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ExifEye\\Test\\core\\": "test/"
+            "FileEye\\ImageInfo\\Test\\core\\": "test/"
         }
     },
-    "bin": ["bin/exifeye"]
+    "bin": ["bin/fileeye-imageinfo"]
 }

@@ -1,17 +1,17 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\Data\DataException;
-use ExifEye\core\ElementInterface;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\Entry\Core\Undefined;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\Data\DataException;
+use FileEye\ImageInfo\core\ElementInterface;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Collection;
 
 /**
  * @todo

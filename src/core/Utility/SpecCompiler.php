@@ -1,15 +1,15 @@
 <?php
 
-namespace ExifEye\core\Utility;
+namespace FileEye\ImageInfo\core\Utility;
 
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Collection;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * Compiles a set of ExifEye specification YAML files.
+ * Compiles a set of ImageInfo specification YAML files.
  */
 class SpecCompiler
 {
@@ -40,14 +40,14 @@ class SpecCompiler
     private $finder;
 
     /**
-     * The compiled ExifEye specification map.
+     * The compiled ImageInfo specification map.
      *
      * @var array
      */
     private $map = [];
 
     /**
-     * ExifEye supported primitive data formats.
+     * ImageInfo supported primitive data formats.
      *
      * @var array
      */
@@ -66,7 +66,7 @@ class SpecCompiler
     }
 
     /**
-     * Compiles a set of ExifEye specification YAML files.
+     * Compiles a set of ImageInfo specification YAML files.
      *
      * @param string $yamlDirectory
      *            the directory containing a set of .yaml specification files.
@@ -99,7 +99,7 @@ class SpecCompiler
 namespace $namespace;
 
 /**
- * This file is generated automatically by executing the 'exifeye compile' command.
+ * This file is generated automatically by executing the 'fileeye-imageinfo compile' command.
  *
  * DO NOT CHANGE MANUALLY.
  */

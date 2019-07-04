@@ -1,9 +1,9 @@
 <?php
 
-namespace ExifEye\core\Data;
+namespace FileEye\ImageInfo\core\Data;
 
-use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 use Monolog\Logger;
 
 /**

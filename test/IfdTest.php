@@ -1,21 +1,21 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Block\Ifd;
-use ExifEye\core\Block\IfdFormat;
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Block\Tag;
-use ExifEye\core\Block\Tiff;
-use ExifEye\core\Collection;
-use ExifEye\core\Entry\Core\Ascii;
-use ExifEye\core\Entry\Time;
+use FileEye\ImageInfo\core\Block\Ifd;
+use FileEye\ImageInfo\core\Block\IfdFormat;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Block\Tag;
+use FileEye\ImageInfo\core\Block\Tiff;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Entry\Core\Ascii;
+use FileEye\ImageInfo\core\Entry\Time;
 
-class IfdTest extends ExifEyeTestCaseBase
+class IfdTest extends ImageInfoTestCaseBase
 {
     public function testIfd()
     {
-        $tiff_mock = $this->getMockBuilder('ExifEye\core\Block\Tiff')
+        $tiff_mock = $this->getMockBuilder('FileEye\ImageInfo\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
 

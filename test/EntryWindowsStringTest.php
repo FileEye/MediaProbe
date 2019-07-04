@@ -1,10 +1,10 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\WindowsString;
-use ExifEye\core\Collection;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Entry\WindowsString;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 class EntryWindowsStringTest extends EntryTestBase
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace ExifEye\core\Entry;
+namespace FileEye\ImageInfo\core\Entry;
 
-use ExifEye\core\Block\BlockBase;
-use ExifEye\core\Block\IfdItem;
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Entry\Core\Byte;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Block\BlockBase;
+use FileEye\ImageInfo\core\Block\IfdItem;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Entry\Core\Byte;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * Class used to manipulate strings in the format Windows XP uses.

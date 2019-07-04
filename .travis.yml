@@ -14,7 +14,7 @@ php:
 
 env:
   global:
-    - EXIFEYE_STAGING_DIR="$HOME/exifeye_staging"
+    - FILEEYE_STAGING_DIR="$HOME/fileeye_staging"
 
 matrix:
   fast_finish: true
@@ -23,34 +23,34 @@ matrix:
 
 cache:
   directories:
-    - $EXIFEYE_STAGING_DIR
+    - $FILEEYE_STAGING_DIR
 
 before_install:
   # Remove XDebug.
   - phpenv config-rm xdebug.ini || true
 
-  # Stage ExifEye to get dependencies.
+  # Stage ImageInfo to get dependencies.
   - |
-      if [[ ! -f $EXIFEYE_STAGING_DIR/vendor/autoload.php ]]; then
-        mkdir -p $EXIFEYE_STAGING_DIR
-        cp -r $TRAVIS_BUILD_DIR $EXIFEYE_STAGING_DIR
-        cd $EXIFEYE_STAGING_DIR/ExifEye
+      if [[ ! -f $FILEEYE_STAGING_DIR/vendor/autoload.php ]]; then
+        mkdir -p $FILEEYE_STAGING_DIR
+        cp -r $TRAVIS_BUILD_DIR $FILEEYE_STAGING_DIR
+        cd $FILEEYE_STAGING_DIR/ImageInfo
         composer install --no-interaction --no-progress --no-suggest
       fi
   # Copy staged /vendor to running path.
   - mkdir -p $TRAVIS_BUILD_DIR/vendor
-  - cp -r $EXIFEYE_STAGING_DIR/ExifEye/vendor $TRAVIS_BUILD_DIR
+  - cp -r $FILEEYE_STAGING_DIR/ImageInfo/vendor $TRAVIS_BUILD_DIR
   - cd $TRAVIS_BUILD_DIR
 
 install:
-  - php bin/exifeye --version
+  - php bin/fileeye-imageinfo --version
 
 script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
   # image file dumps.
-  #- php bin/exifeye compile
-  #- php bin/exifeye dump test/image_files
+  #- php bin/fileeye-imageinfo compile
+  #- php bin/fileeye-imageinfo dump test/image_files
 
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test

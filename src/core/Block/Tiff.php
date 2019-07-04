@@ -1,14 +1,14 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataException;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Image;
-use ExifEye\core\Utility\ConvertBytes;
-use ExifEye\core\Collection;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataException;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Image;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Collection;
 
 /**
  * Class for handling TIFF data.

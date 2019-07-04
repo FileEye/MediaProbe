@@ -1,13 +1,13 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Block\Jpeg;
-use ExifEye\core\Block\Tiff;
-use ExifEye\core\ExifEye;
-use ExifEye\core\Image;
+use FileEye\ImageInfo\core\Block\Jpeg;
+use FileEye\ImageInfo\core\Block\Tiff;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Image;
 
-class GH77Test extends ExifEyeTestCaseBase
+class GH77Test extends ImageInfoTestCaseBase
 {
     public function testReturnModel()
     {
@@ -24,7 +24,7 @@ class GH77Test extends ExifEyeTestCaseBase
         $this->assertEquals($model, "Canon EOS 5D Mark III");
 
         $copyright_entry = $ifd0->getElement("tag[@name='Copyright']/entry");
-        $this->assertInstanceOf('ExifEye\core\Entry\IfdCopyright', $copyright_entry);
+        $this->assertInstanceOf('FileEye\ImageInfo\core\Entry\IfdCopyright', $copyright_entry);
         $this->assertEquals(['Copyright 2016', ''], $copyright_entry->getValue());
         $this->assertEquals('Copyright 2016 (Photographer)', $copyright_entry->toString());
     }

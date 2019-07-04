@@ -1,9 +1,9 @@
 <?php
 
-namespace ExifEye\core\Data;
+namespace FileEye\ImageInfo\core\Data;
 
-use ExifEye\core\ExifEye;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
  * A primitive data object.
@@ -316,7 +316,7 @@ abstract class DataElement
      */
     public function toString()
     {
-        return ExifEye::fmt(
+        return ImageInfo::fmt(
             'DataWindow: %d bytes in [%d, %d] of %d bytes',
             $this->size,
             $this->start,

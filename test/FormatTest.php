@@ -1,11 +1,11 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Block\IfdFormat;
-use ExifEye\core\ExifEye;
+use FileEye\ImageInfo\core\Block\IfdFormat;
+use FileEye\ImageInfo\core\ImageInfo;
 
-class FormatTest extends ExifEyeTestCaseBase
+class FormatTest extends ImageInfoTestCaseBase
 {
     public function testGetName()
     {

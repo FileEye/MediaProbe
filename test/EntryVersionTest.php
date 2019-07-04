@@ -1,8 +1,8 @@
 <?php
 
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-use ExifEye\core\Entry\Version;
+use FileEye\ImageInfo\core\Entry\Version;
 
 class EntryVersionTest extends EntryTestBase
 {

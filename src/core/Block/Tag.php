@@ -1,18 +1,18 @@
 <?php
 
-namespace ExifEye\core\Block;
+namespace FileEye\ImageInfo\core\Block;
 
-use ExifEye\core\Data\DataElement;
-use ExifEye\core\Data\DataWindow;
-use ExifEye\core\ElementInterface;
-use ExifEye\core\Entry\Core\EntryInterface;
-use ExifEye\core\ExifEye;
-use ExifEye\core\ExifEyeException;
-use ExifEye\core\Collection;
-use ExifEye\core\Utility\ConvertBytes;
+use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageInfo\core\Data\DataWindow;
+use FileEye\ImageInfo\core\ElementInterface;
+use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
+use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageInfo\core\ImageInfoException;
+use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageInfo\core\Utility\ConvertBytes;
 
 /**
- * Class representing an Exif TAG as an ExifEye block.
+ * Class representing an Exif TAG as an ImageInfo block.
  */
 class Tag extends BlockBase
 {

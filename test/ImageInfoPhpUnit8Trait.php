@@ -1,10 +1,10 @@
 <?php
-namespace ExifEye\Test\core;
+namespace FileEye\ImageInfo\Test\core;
 
-// PHPUnit compatibility trait for PHPUnit versions before 8.
+// PHPUnit compatibility trait for PHPUnit 8.
 trait PhpUnitTrait
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         if (method_exists($this, 'fcSetUp')) {
@@ -12,7 +12,7 @@ trait PhpUnitTrait
         }
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if (method_exists($this, 'fcTearDown')) {
             $this->fcTearDown();
