@@ -1,5 +1,5 @@
 <?php
-namespace ImageInfo\CollectionMap;
+namespace FileEye\ImageInfo\CollectionMap;
 
 /**
  * This file is generated automatically by executing the 'fileeye-imageinfo compile' command.
