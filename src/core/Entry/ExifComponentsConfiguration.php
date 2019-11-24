@@ -17,7 +17,7 @@ class ExifComponentsConfiguration extends Undefined
         $value = $this->getValue();
         $v = '';
         for ($i = 0; $i < 4; $i ++) {
-            switch (ord($value{$i})) {
+            switch (ord($value[$i])) {
                 case 0:
                     $v .= '-';
                     break;
