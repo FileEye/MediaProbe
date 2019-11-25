@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Entry\Core\SignedRational;
+use FileEye\ImageProbe\core\Entry\Core\SignedRational;
 
 /**
  * Decode text for an Exif/BrightnessValue tag.

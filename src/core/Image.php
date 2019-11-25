@@ -1,13 +1,13 @@
 <?php
 
-namespace FileEye\ImageInfo\core;
+namespace FileEye\ImageProbe\core;
 
-use FileEye\ImageInfo\core\Block\BlockBase;
-use FileEye\ImageInfo\core\Block\Jpeg;
-use FileEye\ImageInfo\core\Block\Tiff;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Data\DataString;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Block\BlockBase;
+use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\ImageProbe\core\Block\Tiff;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataString;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 use Psr\Log\LoggerInterface;
 use Monolog\Logger;
 use Monolog\Handler\TestHandler;
@@ -39,10 +39,10 @@ class Image extends BlockBase
     /**
      * The minimum log level for failure.
      *
-     * ImageInfo normally intercepts and logs image parsing issues without
+     * ImageProbe normally intercepts and logs image parsing issues without
      * breaking the flow. However it is possible to enable hard failures by
      * defining the minimum log level at which the parsing process will breaking
-     * and throw an ImageInfoException.
+     * and throw an ImageProbeException.
      *
      * @var int
      */
@@ -169,7 +169,7 @@ class Image extends BlockBase
     public function __construct(LoggerInterface $external_logger = null, $fail_level = false)
     {
         parent::__construct(Collection::get('image'));
-        $this->logger = (new Logger('imageinfo'))
+        $this->logger = (new Logger('imageprobe'))
           ->pushHandler(new TestHandler(Logger::INFO))
           ->pushProcessor(new PsrLogMessageProcessor());
         $this->externalLogger = $external_logger;

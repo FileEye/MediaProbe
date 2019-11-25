@@ -1,14 +1,14 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Block\BlockBase;
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\Entry\Core\Undefined;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Block\BlockBase;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\Entry\Core\Undefined;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * Class to hold version information.

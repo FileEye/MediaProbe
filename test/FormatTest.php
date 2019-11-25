@@ -1,11 +1,11 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Block\IfdFormat;
-use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageProbe\core\Block\IfdFormat;
+use FileEye\ImageProbe\core\ImageProbe;
 
-class FormatTest extends ImageInfoTestCaseBase
+class FormatTest extends ImageProbeTestCaseBase
 {
     public function testGetName()
     {

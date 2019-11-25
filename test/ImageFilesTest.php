@@ -1,19 +1,19 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Block\IfdFormat;
-use FileEye\ImageInfo\core\Block\Jpeg;
-use FileEye\ImageInfo\core\Image;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Block\IfdFormat;
+use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\ImageProbe\core\Image;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
 /**
  * Test camera images stored in the imagetest directory.
  */
-class ImageFilesTest extends ImageInfoTestCaseBase
+class ImageFilesTest extends ImageProbeTestCaseBase
 {
     /**
      * {@inheritdoc}

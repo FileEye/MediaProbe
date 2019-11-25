@@ -1,11 +1,11 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Entry\Core\Undefined;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Entry\Core\Undefined;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * Class used to hold data for MakerNote tags.

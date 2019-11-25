@@ -1,19 +1,19 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Block\Exif;
-use FileEye\ImageInfo\core\Block\IfdFormat;
-use FileEye\ImageInfo\core\Block\Tiff;
-use FileEye\ImageInfo\core\Entry\Core\Ascii;
-use FileEye\ImageInfo\core\Block\Ifd;
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Block\Jpeg;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Image;
+use FileEye\ImageProbe\core\Block\Exif;
+use FileEye\ImageProbe\core\Block\IfdFormat;
+use FileEye\ImageProbe\core\Block\Tiff;
+use FileEye\ImageProbe\core\Entry\Core\Ascii;
+use FileEye\ImageProbe\core\Block\Ifd;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Image;
 
-class Bug3017880Test extends ImageInfoTestCaseBase
+class Bug3017880Test extends ImageProbeTestCaseBase
 {
     public function testThisDoesNotWorkAsExpected()
     {
@@ -23,14 +23,14 @@ class Bug3017880Test extends ImageInfoTestCaseBase
             $resave_file = 0;
             $image = Image::createFromFile($filename);
             $jpeg = $image->getElement("jpeg");
-            $this->assertInstanceOf('\FileEye\ImageInfo\core\Block\Jpeg', $jpeg);
+            $this->assertInstanceOf('\FileEye\ImageProbe\core\Block\Jpeg', $jpeg);
 
             // should all exif data on photo be cleared (gd and iu will always strip it anyway, so only
             // force strip if you know the image you're branding is an original)
             // $jpeg->clearExif();
 
             if ($exif === null) {
-                $app1_segment_mock = $this->getMockBuilder('FileEye\ImageInfo\core\Block\JpegSegmentApp1')
+                $app1_segment_mock = $this->getMockBuilder('FileEye\ImageProbe\core\Block\JpegSegmentApp1')
                     ->disableOriginalConstructor()
                     ->getMock();
 

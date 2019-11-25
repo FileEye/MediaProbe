@@ -9,17 +9,17 @@
  * Copyright (C) 2004, 2005, 2006 Martin Geisler.
  */
 
-use FileEye\ImageInfo\core\ElementInterface;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\ImageInfoException;
-use FileEye\ImageInfo\core\Image;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
-use FileEye\ImageInfo\core\Block\Jpeg;
-use FileEye\ImageInfo\core\Block\Tiff;
-use FileEye\ImageInfo\core\Utility\DumpLogFormatter;
+use FileEye\ImageProbe\core\ElementInterface;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\ImageProbeException;
+use FileEye\ImageProbe\core\Image;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\ImageProbe\core\Block\Tiff;
+use FileEye\ImageProbe\core\Utility\DumpLogFormatter;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\TestHandler;
@@ -38,7 +38,7 @@ function dump_element(ElementInterface $element)
     }
 }
 
-/* Make ImageInfo speak the users language, if it is available. */
+/* Make ImageProbe speak the users language, if it is available. */
 setlocale(LC_ALL, '');
 
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
@@ -99,7 +99,7 @@ try {
     if ($write_back) {
         $image->saveToFile($file . '-rewrite.img');
     }
-} catch (ImageInfoException $e) {
+} catch (ImageProbeException $e) {
     $err = $e->getMessage();
 }
 

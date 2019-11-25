@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Entry\Core\Undefined;
+use FileEye\ImageProbe\core\Entry\Core\Undefined;
 
 /**
  * Decode text for an Exif/ComponentsConfiguration tag.

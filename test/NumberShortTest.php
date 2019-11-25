@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Entry\Core\Short;
+use FileEye\ImageProbe\core\Entry\Core\Short;
 
 class NumberShortTest extends NumberTestCase
 {

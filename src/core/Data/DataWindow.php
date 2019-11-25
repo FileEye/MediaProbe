@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Data;
+namespace FileEye\ImageProbe\core\Data;
 
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 use Monolog\Logger;
 
 /**

@@ -1,21 +1,21 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Block\Ifd;
-use FileEye\ImageInfo\core\Block\IfdFormat;
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Block\Tiff;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Entry\Core\Ascii;
-use FileEye\ImageInfo\core\Entry\Time;
+use FileEye\ImageProbe\core\Block\Ifd;
+use FileEye\ImageProbe\core\Block\IfdFormat;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Block\Tiff;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Entry\Core\Ascii;
+use FileEye\ImageProbe\core\Entry\Time;
 
-class IfdTest extends ImageInfoTestCaseBase
+class IfdTest extends ImageProbeTestCaseBase
 {
     public function testIfd()
     {
-        $tiff_mock = $this->getMockBuilder('FileEye\ImageInfo\core\Block\Tiff')
+        $tiff_mock = $this->getMockBuilder('FileEye\ImageProbe\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
 

@@ -12,21 +12,21 @@ gdInfo:
 elements:
     node: image
     path: /image
-    class: FileEye\ImageInfo\core\Image
+    class: FileEye\ImageProbe\core\Image
     valid: true
     collection: image
     elements:
         -
             node: jpeg
             path: /image/jpeg
-            class: FileEye\ImageInfo\core\Block\Jpeg
+            class: FileEye\ImageProbe\core\Block\Jpeg
             valid: true
             collection: jpeg
             elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:216:SOI'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '216'
                     name: SOI
@@ -34,7 +34,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:225:APP1'
-                    class: FileEye\ImageInfo\core\Block\JpegSegmentApp1
+                    class: FileEye\ImageProbe\core\Block\JpegSegmentApp1
                     valid: true
                     id: '225'
                     name: APP1
@@ -43,28 +43,28 @@ elements:
                         -
                             node: exif
                             path: '/image/jpeg/jpegSegment:225:APP1/exif'
-                            class: FileEye\ImageInfo\core\Block\Exif
+                            class: FileEye\ImageProbe\core\Block\Exif
                             valid: true
                             collection: exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
-                                    class: FileEye\ImageInfo\core\Block\Tiff
+                                    class: FileEye\ImageProbe\core\Block\Tiff
                                     valid: true
                                     collection: tiff
                                     elements:
                                         -
                                             node: rawData
                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/rawData'
-                                            class: FileEye\ImageInfo\core\Block\RawData
+                                            class: FileEye\ImageProbe\core\Block\RawData
                                             valid: true
                                             collection: rawData
                                             elements:
                                                 -
                                                     node: entry
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/rawData/entry'
-                                                    class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                                                    class: FileEye\ImageProbe\core\Entry\Core\Undefined
                                                     valid: true
                                                     format: Undefined
                                                     components: 2
@@ -73,7 +73,7 @@ elements:
                                         -
                                             node: ifd
                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0'
-                                            class: FileEye\ImageInfo\core\Block\Ifd
+                                            class: FileEye\ImageProbe\core\Block\Ifd
                                             valid: true
                                             id: '0'
                                             name: IFD0
@@ -82,7 +82,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:271:Make'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '271'
                                                     name: Make
@@ -91,7 +91,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:271:Make/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Ascii
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Ascii
                                                             valid: true
                                                             format: Ascii
                                                             components: 20
@@ -100,7 +100,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:272:Model'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '272'
                                                     name: Model
@@ -109,7 +109,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:272:Model/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Ascii
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Ascii
                                                             valid: true
                                                             format: Ascii
                                                             components: 20
@@ -118,7 +118,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:274:Orientation'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '274'
                                                     name: Orientation
@@ -127,7 +127,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:274:Orientation/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Short
                                                             valid: true
                                                             format: Short
                                                             components: 1
@@ -136,7 +136,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:282:XResolution'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '282'
                                                     name: XResolution
@@ -145,7 +145,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:282:XResolution/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 1
@@ -154,7 +154,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:283:YResolution'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '283'
                                                     name: YResolution
@@ -163,7 +163,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:283:YResolution/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 1
@@ -172,7 +172,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:296:ResolutionUnit'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '296'
                                                     name: ResolutionUnit
@@ -181,7 +181,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:296:ResolutionUnit/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Short
                                                             valid: true
                                                             format: Short
                                                             components: 1
@@ -190,7 +190,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:305:Software'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '305'
                                                     name: Software
@@ -199,7 +199,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:305:Software/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Ascii
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Ascii
                                                             valid: true
                                                             format: Ascii
                                                             components: 24
@@ -208,7 +208,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:306:DateTime'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '306'
                                                     name: DateTime
@@ -217,7 +217,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:306:DateTime/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Time
+                                                            class: FileEye\ImageProbe\core\Entry\Time
                                                             valid: true
                                                             format: Ascii
                                                             components: 20
@@ -226,7 +226,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:318:WhitePoint'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '318'
                                                     name: WhitePoint
@@ -235,7 +235,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:318:WhitePoint/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 2
@@ -244,7 +244,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:319:PrimaryChromaticities'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '319'
                                                     name: PrimaryChromaticities
@@ -253,7 +253,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:319:PrimaryChromaticities/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 6
@@ -262,7 +262,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:529:YCbCrCoefficients'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '529'
                                                     name: YCbCrCoefficients
@@ -271,7 +271,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:529:YCbCrCoefficients/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 3
@@ -280,7 +280,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:531:YCbCrPositioning'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '531'
                                                     name: YCbCrPositioning
@@ -289,7 +289,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:531:YCbCrPositioning/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Short
                                                             valid: true
                                                             format: Short
                                                             components: 1
@@ -298,7 +298,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif'
-                                                    class: FileEye\ImageInfo\core\Block\Ifd
+                                                    class: FileEye\ImageProbe\core\Block\Ifd
                                                     valid: true
                                                     id: '34665'
                                                     name: Exif
@@ -307,7 +307,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:33434:ExposureTime'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '33434'
                                                             name: ExposureTime
@@ -316,7 +316,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:33434:ExposureTime/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifExposureTime
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifExposureTime
                                                                     valid: true
                                                                     format: Rational
                                                                     components: 1
@@ -325,7 +325,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:33437:FNumber'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '33437'
                                                             name: FNumber
@@ -334,7 +334,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:33437:FNumber/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifFNumber
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifFNumber
                                                                     valid: true
                                                                     format: Rational
                                                                     components: 1
@@ -343,7 +343,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:34850:ExposureProgram'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '34850'
                                                             name: ExposureProgram
@@ -352,7 +352,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:34850:ExposureProgram/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -361,7 +361,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:34855:ISOSpeedRatings'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '34855'
                                                             name: ISOSpeedRatings
@@ -370,7 +370,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:34855:ISOSpeedRatings/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -379,7 +379,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36864:ExifVersion'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '36864'
                                                             name: ExifVersion
@@ -388,7 +388,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36864:ExifVersion/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Version
+                                                                    class: FileEye\ImageProbe\core\Entry\Version
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 4
@@ -397,7 +397,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36867:DateTimeOriginal'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '36867'
                                                             name: DateTimeOriginal
@@ -406,7 +406,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36867:DateTimeOriginal/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Time
+                                                                    class: FileEye\ImageProbe\core\Entry\Time
                                                                     valid: true
                                                                     format: Ascii
                                                                     components: 20
@@ -415,7 +415,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36868:DateTimeDigitized'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '36868'
                                                             name: DateTimeDigitized
@@ -424,7 +424,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:36868:DateTimeDigitized/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Time
+                                                                    class: FileEye\ImageProbe\core\Entry\Time
                                                                     valid: true
                                                                     format: Ascii
                                                                     components: 20
@@ -433,7 +433,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37121:ComponentsConfiguration'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '37121'
                                                             name: ComponentsConfiguration
@@ -442,7 +442,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37121:ComponentsConfiguration/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifComponentsConfiguration
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifComponentsConfiguration
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 4
@@ -451,7 +451,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37380:ExposureBiasValue'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '37380'
                                                             name: ExposureBiasValue
@@ -460,7 +460,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37380:ExposureBiasValue/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifExposureBiasValue
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifExposureBiasValue
                                                                     valid: true
                                                                     format: SignedRational
                                                                     components: 1
@@ -469,7 +469,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37383:MeteringMode'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '37383'
                                                             name: MeteringMode
@@ -478,7 +478,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37383:MeteringMode/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -487,7 +487,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37385:Flash'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '37385'
                                                             name: Flash
@@ -496,7 +496,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37385:Flash/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -505,7 +505,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37386:FocalLength'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '37386'
                                                             name: FocalLength
@@ -514,7 +514,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37386:FocalLength/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifFocalLength
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifFocalLength
                                                                     valid: true
                                                                     format: Rational
                                                                     components: 1
@@ -523,7 +523,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37500:MakerNote'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '37500'
                                                             name: MakerNote
@@ -532,7 +532,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:37500:MakerNote/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifMakerNote
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifMakerNote
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 55296
@@ -541,7 +541,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40960:FlashPixVersion'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '40960'
                                                             name: FlashPixVersion
@@ -550,7 +550,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40960:FlashPixVersion/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Version
+                                                                    class: FileEye\ImageProbe\core\Entry\Version
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 4
@@ -559,7 +559,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40961:ColorSpace'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '40961'
                                                             name: ColorSpace
@@ -568,7 +568,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40961:ColorSpace/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -577,7 +577,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40962:PixelXDimension'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '40962'
                                                             name: PixelXDimension
@@ -586,7 +586,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40962:PixelXDimension/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Long
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Long
                                                                     valid: true
                                                                     format: Long
                                                                     components: 1
@@ -595,7 +595,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40963:PixelYDimension'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '40963'
                                                             name: PixelYDimension
@@ -604,7 +604,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:40963:PixelYDimension/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Long
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Long
                                                                     valid: true
                                                                     format: Long
                                                                     components: 1
@@ -613,7 +613,7 @@ elements:
                                                         -
                                                             node: ifd
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/ifd:40965:Interoperability'
-                                                            class: FileEye\ImageInfo\core\Block\Ifd
+                                                            class: FileEye\ImageProbe\core\Block\Ifd
                                                             valid: true
                                                             id: '40965'
                                                             name: Interoperability
@@ -622,7 +622,7 @@ elements:
                                                                 -
                                                                     node: tag
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/ifd:40965:Interoperability/tag:1:InteroperabilityIndex'
-                                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                                     valid: true
                                                                     id: '1'
                                                                     name: InteroperabilityIndex
@@ -631,7 +631,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/ifd:40965:Interoperability/tag:1:InteroperabilityIndex/entry'
-                                                                            class: FileEye\ImageInfo\core\Entry\Core\Ascii
+                                                                            class: FileEye\ImageProbe\core\Entry\Core\Ascii
                                                                             valid: true
                                                                             format: Ascii
                                                                             components: 4
@@ -640,7 +640,7 @@ elements:
                                                                 -
                                                                     node: tag
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/ifd:40965:Interoperability/tag:2:InteroperabilityVersion'
-                                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                                     valid: true
                                                                     id: '2'
                                                                     name: InteroperabilityVersion
@@ -649,7 +649,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/ifd:40965:Interoperability/tag:2:InteroperabilityVersion/entry'
-                                                                            class: FileEye\ImageInfo\core\Entry\Version
+                                                                            class: FileEye\ImageProbe\core\Entry\Version
                                                                             valid: true
                                                                             format: Undefined
                                                                             components: 4
@@ -658,7 +658,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41495:SensingMethod'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41495'
                                                             name: SensingMethod
@@ -667,7 +667,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41495:SensingMethod/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -676,7 +676,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41728:FileSource'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41728'
                                                             name: FileSource
@@ -685,7 +685,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41728:FileSource/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifFileSource
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifFileSource
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 1
@@ -694,7 +694,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41729:SceneType'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41729'
                                                             name: SceneType
@@ -703,7 +703,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41729:SceneType/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\ExifSceneType
+                                                                    class: FileEye\ImageProbe\core\Entry\ExifSceneType
                                                                     valid: true
                                                                     format: Undefined
                                                                     components: 1
@@ -712,7 +712,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41985:CustomRendered'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41985'
                                                             name: CustomRendered
@@ -721,7 +721,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41985:CustomRendered/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -730,7 +730,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41986:ExposureMode'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41986'
                                                             name: ExposureMode
@@ -739,7 +739,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41986:ExposureMode/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -748,7 +748,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41987:WhiteBalance'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41987'
                                                             name: WhiteBalance
@@ -757,7 +757,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41987:WhiteBalance/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -766,7 +766,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41989:FocalLengthIn35mmFilm'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41989'
                                                             name: FocalLengthIn35mmFilm
@@ -775,7 +775,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41989:FocalLengthIn35mmFilm/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -784,7 +784,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41990:SceneCaptureType'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41990'
                                                             name: SceneCaptureType
@@ -793,7 +793,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41990:SceneCaptureType/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -802,7 +802,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41992:Contrast'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41992'
                                                             name: Contrast
@@ -811,7 +811,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41992:Contrast/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -820,7 +820,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41993:Saturation'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41993'
                                                             name: Saturation
@@ -829,7 +829,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41993:Saturation/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -838,7 +838,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41994:Sharpness'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41994'
                                                             name: Sharpness
@@ -847,7 +847,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41994:Sharpness/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -856,7 +856,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41996:SubjectDistanceRange'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '41996'
                                                             name: SubjectDistanceRange
@@ -865,7 +865,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:41996:SubjectDistanceRange/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Short
                                                                     valid: true
                                                                     format: Short
                                                                     components: 1
@@ -874,7 +874,7 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:42240:Gamma'
-                                                            class: FileEye\ImageInfo\core\Block\Tag
+                                                            class: FileEye\ImageProbe\core\Block\Tag
                                                             valid: true
                                                             id: '42240'
                                                             name: Gamma
@@ -883,7 +883,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/ifd:34665:Exif/tag:42240:Gamma/entry'
-                                                                    class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                                    class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                                     valid: true
                                                                     format: Rational
                                                                     components: 1
@@ -892,7 +892,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:50341:PrintIM'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '50341'
                                                     name: PrintIM
@@ -901,7 +901,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:50341:PrintIM/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                                                             valid: true
                                                             format: Undefined
                                                             components: 352
@@ -910,7 +910,7 @@ elements:
                                         -
                                             node: ifd
                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1'
-                                            class: FileEye\ImageInfo\core\Block\Ifd
+                                            class: FileEye\ImageProbe\core\Block\Ifd
                                             valid: true
                                             id: '1'
                                             name: IFD1
@@ -919,7 +919,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:259:Compression'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '259'
                                                     name: Compression
@@ -928,7 +928,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:259:Compression/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Short
                                                             valid: true
                                                             format: Short
                                                             components: 1
@@ -937,7 +937,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:282:XResolution'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '282'
                                                     name: XResolution
@@ -946,7 +946,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:282:XResolution/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 1
@@ -955,7 +955,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:283:YResolution'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '283'
                                                     name: YResolution
@@ -964,7 +964,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:283:YResolution/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Rational
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Rational
                                                             valid: true
                                                             format: Rational
                                                             components: 1
@@ -973,7 +973,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:296:ResolutionUnit'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '296'
                                                     name: ResolutionUnit
@@ -982,7 +982,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/tag:296:ResolutionUnit/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Short
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Short
                                                             valid: true
                                                             format: Short
                                                             components: 1
@@ -991,14 +991,14 @@ elements:
                                                 -
                                                     node: thumbnail
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/thumbnail'
-                                                    class: FileEye\ImageInfo\core\Block\Thumbnail
+                                                    class: FileEye\ImageProbe\core\Block\Thumbnail
                                                     valid: true
                                                     collection: thumbnail
                                                     elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:1:IFD1/thumbnail/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                                                             valid: true
                                                             format: Undefined
                                                             components: 3239
@@ -1007,7 +1007,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:219:DQT'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '219'
                     name: DQT
@@ -1016,7 +1016,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:219:DQT/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 132
@@ -1025,7 +1025,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:221:DRI'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '221'
                     name: DRI
@@ -1034,7 +1034,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:221:DRI/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 4
@@ -1043,7 +1043,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:192:SOF0'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '192'
                     name: SOF0
@@ -1052,7 +1052,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:192:SOF0/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 17
@@ -1061,7 +1061,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:196:DHT'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '196'
                     name: DHT
@@ -1070,7 +1070,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:196:DHT/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 418
@@ -1079,7 +1079,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:218:SOS'
-                    class: FileEye\ImageInfo\core\Block\JpegSegmentSos
+                    class: FileEye\ImageProbe\core\Block\JpegSegmentSos
                     valid: true
                     id: '218'
                     name: SOS
@@ -1088,7 +1088,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:218:SOS/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 112569
@@ -1097,7 +1097,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:217:EOI'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '217'
                     name: EOI

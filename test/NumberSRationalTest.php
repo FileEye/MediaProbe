@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Entry\Core\SignedRational;
-use FileEye\ImageInfo\core\Entry\Exception\OverflowException;
+use FileEye\ImageProbe\core\Entry\Core\SignedRational;
+use FileEye\ImageProbe\core\Entry\Exception\OverflowException;
 
 class NumberSignedRationalTest extends NumberTestCase
 {

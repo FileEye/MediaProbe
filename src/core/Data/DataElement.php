@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Data;
+namespace FileEye\ImageProbe\core\Data;
 
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * A primitive data object.
@@ -316,7 +316,7 @@ abstract class DataElement
      */
     public function toString()
     {
-        return ImageInfo::fmt(
+        return ImageProbe::fmt(
             'DataWindow: %d bytes in [%d, %d] of %d bytes',
             $this->size,
             $this->start,

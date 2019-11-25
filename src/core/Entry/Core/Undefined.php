@@ -1,11 +1,11 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry\Core;
+namespace FileEye\ImageProbe\core\Entry\Core;
 
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * Class for holding data of undefined format.
@@ -47,7 +47,7 @@ class Undefined extends EntryBase
         $this->components = strlen($data[0]);
 
         $this->debug("Text: {text}", ['text' => $this->toString()]);
-        $this->debug("Data: {data}", ['data' => ImageInfo::dumpHex($this->toBytes(), 12)]);
+        $this->debug("Data: {data}", ['data' => ImageProbe::dumpHex($this->toBytes(), 12)]);
         return $this;
     }
 

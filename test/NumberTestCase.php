@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageProbe\core\ImageProbe;
 
 abstract class NumberTestCase extends EntryTestBase
 {

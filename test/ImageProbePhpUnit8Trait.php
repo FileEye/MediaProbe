@@ -1,5 +1,5 @@
 <?php
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
 // PHPUnit compatibility trait for PHPUnit 8.
 trait PhpUnitTrait

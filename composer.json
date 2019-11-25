@@ -1,18 +1,18 @@
 {
-    "name": "fileeye/imageinfo",
+    "name": "fileeye/imageprobe",
     "type": "library",
     "description": "A PHP library for reading and writing Exif headers in JPEG and TIFF images.",
     "keywords": [
         "image", "exif"
     ],
-    "homepage": "https://github.com/FileEye/ImageInfo",
+    "homepage": "https://github.com/FileEye/ImageProbe",
     "license": "GPL-3.0",
     "require": {
         "php": ">=5.4.0",
         "ext-gd": "*",
         "ext-gmp": "*",
         "psr/log": "*",
-        "monolog/monolog": "*",
+        "monolog/monolog": "^1",
         "rodneyrehm/plist": "*"
     },
     "require-dev" : {
@@ -29,13 +29,13 @@
     },
     "autoload": {
         "psr-4": {
-            "FileEye\\ImageInfo\\": "src/"
+            "FileEye\\ImageProbe\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FileEye\\ImageInfo\\Test\\core\\": "test/"
+            "FileEye\\ImageProbe\\Test\\core\\": "test/"
         }
     },
-    "bin": ["bin/fileeye-imageinfo"]
+    "bin": ["bin/fileeye-imageprobe"]
 }

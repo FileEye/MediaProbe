@@ -1,22 +1,22 @@
-# README file for ImageInfo Test Suite
+# README file for ImageProbe Test Suite
 
 The tests run automatically on each commit on TravisCI. Status for the
 master branch is:
 
 @todo
 
-## ImageInfo Test Suite
+## ImageProbe Test Suite
 
-This directory holds the PHPUnit test suite for ImageInfo. The test
+This directory holds the PHPUnit test suite for ImageProbe. The test
 suite consists of a number of core tests which exercise the basic
-functionality of ImageInfo.
+functionality of ImageProbe.
 
 In addition to the core tests, one can download a set of image tests.
 These consist of example images taken from as many different camera
-models as possible together with a test case that will ensure that ImageInfo
+models as possible together with a test case that will ensure that ImageProbe
 can read the data in the image, and that it keeps interpreting the
 data in the same way.  This ensures stability in the development
-process by making sure that ImageInfo keeps reading images in the same way.
+process by making sure that ImageProbe keeps reading images in the same way.
 
 
 ## Running the Test Suite
@@ -38,9 +38,9 @@ phpunit
 
 Should one or more of the tests fail, then first ensure that
 SimpleTest is placed correctly so that run-tests.php can find it. If
-everything seems correct, then please report the error to the ImageInfo
+everything seems correct, then please report the error to the ImageProbe
 developers:
 
-  https://github.com/fileeye/imageinfo/issues
+  https://github.com/fileeye/imageprobe/issues
 
 Remember to include all the output in your bug report.

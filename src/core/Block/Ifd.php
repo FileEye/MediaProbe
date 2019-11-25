@@ -1,17 +1,17 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Block;
+namespace FileEye\ImageProbe\core\Block;
 
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\Data\DataException;
-use FileEye\ImageInfo\core\ElementInterface;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\Entry\Core\Undefined;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\Data\DataException;
+use FileEye\ImageProbe\core\ElementInterface;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\Entry\Core\Undefined;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Collection;
 
 /**
  * Class representing an Image File Directory (IFD).
@@ -38,7 +38,7 @@ class Ifd extends IfdBase
             $ifd_item = $this->getIfdItemFromData($i, $data_element, $i_offset, $this);
 
             // If the entry is an IFD, checks the offset.
-            if (is_subclass_of($ifd_item->getClass(), 'FileEye\ImageInfo\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
+            if (is_subclass_of($ifd_item->getClass(), 'FileEye\ImageProbe\core\Block\IfdBase') && $data_element->getLong($i_offset + 8) <= $offset) {
                 $this->error('Invalid offset pointer to IFD: {offset}.', [
                     'offset' => $ifd_item->getDataOffset(),
                 ]);

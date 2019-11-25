@@ -1,18 +1,18 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Block\Ifd;
-use FileEye\ImageInfo\core\Block\IfdFormat;
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Utility\SpecCompiler;
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Block\Ifd;
+use FileEye\ImageProbe\core\Block\IfdFormat;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Utility\SpecCompiler;
+use FileEye\ImageProbe\core\Collection;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * Test compilation of a set of ImageInfo specification YAML files.
+ * Test compilation of a set of ImageProbe specification YAML files.
  */
-class SpecCompilerTest extends ImageInfoTestCaseBase
+class SpecCompilerTest extends ImageProbeTestCaseBase
 {
     /** @var Filesystem */
     private $fs;
@@ -47,7 +47,7 @@ class SpecCompilerTest extends ImageInfoTestCaseBase
         //@todo change below to ParseException::class once PHP 5.4 support is removed.
         $this->fcExpectException('Symfony\Component\Yaml\Exception\ParseException');
         $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory, 'FileEye\ImageInfo\Test\core\TestClasses');
+        $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory, 'FileEye\ImageProbe\Test\core\TestClasses');
     }
 
     /**
@@ -56,13 +56,13 @@ class SpecCompilerTest extends ImageInfoTestCaseBase
     public function testValidStubSpec()
     {
         $compiler = new SpecCompiler();
-        $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory, 'FileEye\ImageInfo\Test\core\TestClasses');
+        $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory, 'FileEye\ImageProbe\Test\core\TestClasses');
         //@todo change below to xxxx::class once PHP 5.4 support is removed.
-        Collection::setMapperClass('FileEye\ImageInfo\Test\core\TestClasses\Core');
+        Collection::setMapperClass('FileEye\ImageProbe\Test\core\TestClasses\Core');
         $this->assertCount(4, Collection::listIds());
 
         //@todo change below to xxxx::class once PHP 5.4 support is removed.
-        $tiff_mock = $this->getMockBuilder('FileEye\ImageInfo\core\Block\Tiff')
+        $tiff_mock = $this->getMockBuilder('FileEye\ImageProbe\core\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
 

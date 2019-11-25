@@ -1,10 +1,10 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry\Core;
+namespace FileEye\ImageProbe\core\Entry\Core;
 
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * Abstract class for numbers.

@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Entry\Core\Rational;
-use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageProbe\core\Entry\Core\Rational;
+use FileEye\ImageProbe\core\ImageProbe;
 
 /**
  * Decode text for an Exif/ExposureTime tag.
@@ -16,9 +16,9 @@ class ExifExposureTime extends Rational
     public function toString(array $options = [])
     {
         if ($this->getValue()[0] / $this->getValue()[1] < 1) {
-            return ImageInfo::fmt('1/%d sec.', $this->getValue()[1] / $this->getValue()[0]);
+            return ImageProbe::fmt('1/%d sec.', $this->getValue()[1] / $this->getValue()[0]);
         } else {
-            return ImageInfo::fmt('%d sec.', $this->getValue()[0] / $this->getValue()[1]);
+            return ImageProbe::fmt('%d sec.', $this->getValue()[0] / $this->getValue()[1]);
         }
     }
 }

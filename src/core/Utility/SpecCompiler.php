@@ -1,15 +1,15 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Utility;
+namespace FileEye\ImageProbe\core\Utility;
 
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Collection;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * Compiles a set of ImageInfo specification YAML files.
+ * Compiles a set of ImageProbe specification YAML files.
  */
 class SpecCompiler
 {
@@ -40,14 +40,14 @@ class SpecCompiler
     private $finder;
 
     /**
-     * The compiled ImageInfo specification map.
+     * The compiled ImageProbe specification map.
      *
      * @var array
      */
     private $map = [];
 
     /**
-     * ImageInfo supported primitive data formats.
+     * ImageProbe supported primitive data formats.
      *
      * @var array
      */
@@ -66,7 +66,7 @@ class SpecCompiler
     }
 
     /**
-     * Compiles a set of ImageInfo specification YAML files.
+     * Compiles a set of ImageProbe specification YAML files.
      *
      * @param string $yamlDirectory
      *            the directory containing a set of .yaml specification files.
@@ -99,7 +99,7 @@ class SpecCompiler
 namespace $namespace;
 
 /**
- * This file is generated automatically by executing the 'fileeye-imageinfo compile' command.
+ * This file is generated automatically by executing the 'fileeye-imageprobe compile' command.
  *
  * DO NOT CHANGE MANUALLY.
  */

@@ -1,10 +1,10 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry\Core;
+namespace FileEye\ImageProbe\core\Entry\Core;
 
-use FileEye\ImageInfo\core\Block\BlockBase;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\ElementInterface;
+use FileEye\ImageProbe\core\Block\BlockBase;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\ElementInterface;
 
 /**
  * Interface for Entry objects.

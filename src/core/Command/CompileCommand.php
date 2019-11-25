@@ -1,15 +1,15 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Command;
+namespace FileEye\ImageProbe\core\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use FileEye\ImageInfo\core\Utility\SpecCompiler;
+use FileEye\ImageProbe\core\Utility\SpecCompiler;
 
 /**
- * A Symfony application command to compile the ImageInfo specification YAML files.
+ * A Symfony application command to compile the ImageProbe specification YAML files.
  */
 class CompileCommand extends Command
 {
@@ -28,7 +28,7 @@ class CompileCommand extends Command
     {
         $this
             ->setName('compile')
-            ->setDescription('Converts the ImageInfo specification YAML files into a spec.php file.')
+            ->setDescription('Converts the ImageProbe specification YAML files into a spec.php file.')
             ->addArgument(
                 'spec-dir',
                 InputArgument::OPTIONAL,
@@ -49,5 +49,6 @@ class CompileCommand extends Command
     {
         $compiler = new SpecCompiler();
         $compiler->compile($input->getArgument('spec-dir'), $input->getArgument('resource-dir'));
+        return(0);
     }
 }

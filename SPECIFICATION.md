@@ -1,13 +1,13 @@
-# ImageInfo Specification
+# ImageProbe Specification
 
 Version 1.0.0
 
 
 @todo update
 
-This document describes ImageInfo implementation of the catalog of the EXIF components (IFDs and TAGs) it supports.
+This document describes ImageProbe implementation of the catalog of the EXIF components (IFDs and TAGs) it supports.
 
-This specification intends to help maintainers and contributors to correctly use the provided information for obtaining appropriate information from the ImageInfo library.
+This specification intends to help maintainers and contributors to correctly use the provided information for obtaining appropriate information from the ImageProbe library.
 Furthermore, it is the basis for discussions on evolving the project.
 
 ## EXIF information structure
@@ -16,11 +16,11 @@ This document assumes you are familiar with the inner structure of the files tha
 the [EXIF](https://en.wikipedia.org/wiki/Exif) entry on Wikipedia.org. The one-stop shop for detailed information about Exif tags data
 is at [ExifTool by Phil Harvey](http://owl.phy.queensu.ca/~phil/exiftool/TagNames/index.html).
 
-## ImageInfo specification
+## ImageProbe specification
 
-The ImageInfo specification is built as a collection of YAML files. Each YAML file describes a single IFD, with its basic information (IFD type, etc.) and the information
+The ImageProbe specification is built as a collection of YAML files. Each YAML file describes a single IFD, with its basic information (IFD type, etc.) and the information
 for all the TAGs contained within.
-In order to minimize processing at runtime, the set of YAML files is pre-compiled into a single `spec.php` PHP file that ImageInfo then includes at runtime.
+In order to minimize processing at runtime, the set of YAML files is pre-compiled into a single `spec.php` PHP file that ImageProbe then includes at runtime.
 The default specification YAML files can be found in the `\spec` subdirectory. The compiled version is at `\resources\spec.php`.
 Developers can add IFDs and their corresponding TAGs to the default specification and submit GitHub pull requests to have them merged,
 but can also opt-out from the default specification and write their own for their projects.
@@ -32,7 +32,7 @@ An IFD is fully described by a single YAML file. The file name should convention
 
 ```
 type: 'IFD0'
-class: FileEye\ImageInfo\core\Block\Ifd
+class: FileEye\ImageProbe\core\Block\Ifd
 alias:
   - '0'
   - 'Main'
@@ -82,19 +82,19 @@ The TAG entry is identified by the HEX value of the EXIF tag, like `0x0106` in t
 | format     | A string/array of strings identifying the expected data format of the tag. |
 | class      | (Optional) A string identifying the TAG's PHP class. If not specified, the default class for the TAG format will be used. |
 | ifd        | (Optional) If specified, identifies the TAG as a pointer to a sub-IFD, as the string of the relative IFD type.  |
-| text       | (Optional) If specified, instructs ImageInfo to decode the value of the TAG to a text string. This can be done with a mapping between the value and the text (defined by the `mapping:` array). |
-| skip       | (Optional) If specified and true, instructs ImageInfo to skip loading the relevant data. |
+| text       | (Optional) If specified, instructs ImageProbe to decode the value of the TAG to a text string. This can be done with a mapping between the value and the text (defined by the `mapping:` array). |
+| skip       | (Optional) If specified and true, instructs ImageProbe to skip loading the relevant data. |
 
-## `fileeye-imageinfo compile` command
+## `fileeye-imageprobe compile` command
 
-The `fileeye-imageinfo compile` command, found in the `\bin` subdirectory, is used to compile the YAML specification files in a PHP file used by ImageInfo at runtime.
+The `fileeye-imageprobe compile` command, found in the `\bin` subdirectory, is used to compile the YAML specification files in a PHP file used by ImageProbe at runtime.
 
-By default, `fileeye-imageinfo compile` will compile the specification contained in `\spec` to `\resources\spec.php`.
+By default, `fileeye-imageprobe compile` will compile the specification contained in `\spec` to `\resources\spec.php`.
 
 The full usage is as follows:
 ```
 Usage:
-  fileeye-imageinfo compile [<spec-dir>] [<resource-dir>]
+  fileeye-imageprobe compile [<spec-dir>] [<resource-dir>]
 Arguments:
   spec-dir              Path to the directory of the .yaml specification files
   resource-dir          Path to the directory of the spec.php file
@@ -105,12 +105,12 @@ It is possible to specify `<spec-dir>` only, in which case the compiled specific
 
 ## Overriding the default specification at runtime
 
-By default, the ImageInfo library will use the specification found in `\resources\spec.php`. It is possible to indicate a different specification
+By default, the ImageProbe library will use the specification found in `\resources\spec.php`. It is possible to indicate a different specification
 to be used with the following code:
 
 ```php
 ...
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Collection;
 ...
 
 class MyClass

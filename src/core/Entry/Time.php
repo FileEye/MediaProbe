@@ -1,12 +1,12 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\Entry\Core\Ascii;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
-use FileEye\ImageInfo\core\Utility\ConvertTime;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\Entry\Core\Ascii;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Utility\ConvertTime;
 
 /**
  * Class for holding a date and time.

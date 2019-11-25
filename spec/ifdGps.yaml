@@ -1,7 +1,7 @@
 collection: ifdGps
 name: GPS
 title: IFD GPS
-class: FileEye\ImageInfo\core\Block\Ifd
+class: FileEye\ImageProbe\core\Block\Ifd
 DOMNode: ifd
 items:
     0x0000:
@@ -10,7 +10,7 @@ items:
         title: 'GPS Version'
         components: 4
         format: Byte
-        entryClass: FileEye\ImageInfo\core\Entry\GPSVersionId
+        entryClass: FileEye\ImageProbe\core\Entry\GPSVersionId
     0x0001:
         collection: tag
         name: GPSLatitudeRef
@@ -23,7 +23,7 @@ items:
         title: Latitude
         components: 3
         format: Rational
-        entryClass: FileEye\ImageInfo\core\Entry\GPSDegrees
+        entryClass: FileEye\ImageProbe\core\Entry\GPSDegrees
     0x0003:
         collection: tag
         name: GPSLongitudeRef
@@ -36,7 +36,7 @@ items:
         title: Longitude
         components: 3
         format: Rational
-        entryClass: FileEye\ImageInfo\core\Entry\GPSDegrees
+        entryClass: FileEye\ImageProbe\core\Entry\GPSDegrees
     0x0005:
         collection: tag
         name: GPSAltitudeRef

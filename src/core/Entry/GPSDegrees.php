@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Entry\Core\Rational;
+use FileEye\ImageProbe\core\Entry\Core\Rational;
 
 /**
  * Decode text for an Exif/ExposureTime tag.

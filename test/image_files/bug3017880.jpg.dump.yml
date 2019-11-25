@@ -12,21 +12,21 @@ gdInfo:
 elements:
     node: image
     path: /image
-    class: FileEye\ImageInfo\core\Image
+    class: FileEye\ImageProbe\core\Image
     valid: true
     collection: image
     elements:
         -
             node: jpeg
             path: /image/jpeg
-            class: FileEye\ImageInfo\core\Block\Jpeg
+            class: FileEye\ImageProbe\core\Block\Jpeg
             valid: true
             collection: jpeg
             elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:216:SOI'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '216'
                     name: SOI
@@ -34,7 +34,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:219:DQT'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '219'
                     name: DQT
@@ -43,7 +43,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:219:DQT/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 132
@@ -52,7 +52,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:225:APP1'
-                    class: FileEye\ImageInfo\core\Block\JpegSegmentApp1
+                    class: FileEye\ImageProbe\core\Block\JpegSegmentApp1
                     valid: true
                     id: '225'
                     name: APP1
@@ -61,21 +61,21 @@ elements:
                         -
                             node: exif
                             path: '/image/jpeg/jpegSegment:225:APP1/exif'
-                            class: FileEye\ImageInfo\core\Block\Exif
+                            class: FileEye\ImageProbe\core\Block\Exif
                             valid: true
                             collection: exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff'
-                                    class: FileEye\ImageInfo\core\Block\Tiff
+                                    class: FileEye\ImageProbe\core\Block\Tiff
                                     valid: true
                                     collection: tiff
                                     elements:
                                         -
                                             node: ifd
                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0'
-                                            class: FileEye\ImageInfo\core\Block\Ifd
+                                            class: FileEye\ImageProbe\core\Block\Ifd
                                             valid: true
                                             id: '0'
                                             name: IFD0
@@ -84,7 +84,7 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:305:Software'
-                                                    class: FileEye\ImageInfo\core\Block\Tag
+                                                    class: FileEye\ImageProbe\core\Block\Tag
                                                     valid: true
                                                     id: '305'
                                                     name: Software
@@ -93,7 +93,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/image/jpeg/jpegSegment:225:APP1/exif/tiff/ifd:0:IFD0/tag:305:Software/entry'
-                                                            class: FileEye\ImageInfo\core\Entry\Core\Ascii
+                                                            class: FileEye\ImageProbe\core\Entry\Core\Ascii
                                                             valid: true
                                                             format: Ascii
                                                             components: 11
@@ -102,7 +102,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:192:SOF0'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '192'
                     name: SOF0
@@ -111,7 +111,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:192:SOF0/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 17
@@ -120,7 +120,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:196:DHT'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '196'
                     name: DHT
@@ -129,7 +129,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:196:DHT/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 418
@@ -138,7 +138,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:218:SOS'
-                    class: FileEye\ImageInfo\core\Block\JpegSegmentSos
+                    class: FileEye\ImageProbe\core\Block\JpegSegmentSos
                     valid: true
                     id: '218'
                     name: SOS
@@ -147,7 +147,7 @@ elements:
                         -
                             node: entry
                             path: '/image/jpeg/jpegSegment:218:SOS/entry'
-                            class: FileEye\ImageInfo\core\Entry\Core\Undefined
+                            class: FileEye\ImageProbe\core\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 4274
@@ -156,7 +156,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/image/jpeg/jpegSegment:217:EOI'
-                    class: FileEye\ImageInfo\core\Block\JpegSegment
+                    class: FileEye\ImageProbe\core\Block\JpegSegment
                     valid: true
                     id: '217'
                     name: EOI

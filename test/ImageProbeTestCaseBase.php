@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageProbe\core\ImageProbe;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\Version;
 
@@ -11,13 +11,13 @@ use PHPUnit\Runner\Version;
 // version.
 // phpcs:disable
 if (class_exists('PHPUnit\Runner\Version') && version_compare(Version::id(), '8.0.0') >= 0) {
-    require_once __DIR__ . '/ImageInfoPhpUnit8Trait.php';
+    require_once __DIR__ . '/ImageProbePhpUnit8Trait.php';
 } else {
-    require_once __DIR__ . '/ImageInfoPhpUnitTrait.php';
+    require_once __DIR__ . '/ImageProbePhpUnitTrait.php';
 }
 // phpcs:enable
 
-class ImageInfoTestCaseBase extends TestCase
+class ImageProbeTestCaseBase extends TestCase
 {
     use PhpUnitTrait;
 

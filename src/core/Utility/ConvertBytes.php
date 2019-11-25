@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Utility;
+namespace FileEye\ImageProbe\core\Utility;
 
 /**
  * Conversion functions to and from bytes and numerals.

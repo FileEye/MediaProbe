@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Entry\Core\Short;
+use FileEye\ImageProbe\core\Entry\Core\Short;
 
 /**
  * Decode text for a IFD0/YCbCrSubSampling tag.

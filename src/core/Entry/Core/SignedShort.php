@@ -1,11 +1,11 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry\Core;
+namespace FileEye\ImageProbe\core\Entry\Core;
 
-use FileEye\ImageInfo\core\Block\BlockBase;
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Block\BlockBase;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * Class for holding signed shorts.

@@ -1,20 +1,20 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Command;
+namespace FileEye\ImageProbe\core\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Image;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Block\BlockBase;
-use FileEye\ImageInfo\core\Block\Exif;
-use FileEye\ImageInfo\core\Block\Jpeg;
-use FileEye\ImageInfo\core\Block\Ifd;
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Block\Tiff;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Image;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Block\BlockBase;
+use FileEye\ImageProbe\core\Block\Exif;
+use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\ImageProbe\core\Block\Ifd;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Block\Tiff;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
@@ -56,6 +56,8 @@ class DumpCommand extends Command
             // $output->write($yaml);
             $fs->dumpFile((string) $file . '.dump.yml', $yaml);
         }
+
+        return(0);
     }
 
     protected function fileToDump($file)

@@ -1,18 +1,18 @@
 <?php
 
-namespace FileEye\ImageInfo\Apple\Block;
+namespace FileEye\ImageProbe\Apple\Block;
 
-use FileEye\ImageInfo\core\Block\IfdBase;
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageProbe\core\Block\IfdBase;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\ImageProbe;
 use CFPropertyList\CFDictionary;
 use CFPropertyList\CFNumber;
 use CFPropertyList\CFPropertyList;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 class RunTime extends IfdBase
 {

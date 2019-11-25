@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Utility;
+namespace FileEye\ImageProbe\core\Utility;
 
 use Bramus\Monolog\Formatter\ColoredLineFormatter;
 

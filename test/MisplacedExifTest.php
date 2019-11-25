@@ -1,14 +1,14 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Image;
-use FileEye\ImageInfo\core\Block\Exif;
-use FileEye\ImageInfo\core\Block\JpegSegmentApp1;
-use FileEye\ImageInfo\core\Block\Jpeg;
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Image;
+use FileEye\ImageProbe\core\Block\Exif;
+use FileEye\ImageProbe\core\Block\JpegSegmentApp1;
+use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\ImageProbe\core\Collection;
 
-class MisplacedExifTest extends ImageInfoTestCaseBase
+class MisplacedExifTest extends ImageProbeTestCaseBase
 {
     // NOTE: this test relies on the assumption that internal Jpeg::sections order is kept between segment
     // manipulations. It may fail it this changes.
@@ -22,7 +22,7 @@ class MisplacedExifTest extends ImageInfoTestCaseBase
         $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(2, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\ImageInfo\core\Block\Exif', $app1[1]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\ImageProbe\core\Block\Exif', $app1[1]->getElement("exif"));
 
         // Add a new APP1 segment.
         $app1_segment = new JpegSegmentApp1(Collection::get('jpegSegmentApp1'), $jpeg);
@@ -32,8 +32,8 @@ class MisplacedExifTest extends ImageInfoTestCaseBase
         $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(3, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\ImageInfo\core\Block\Exif', $app1[1]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\ImageInfo\core\Block\Exif', $app1[2]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\ImageProbe\core\Block\Exif', $app1[1]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\ImageProbe\core\Block\Exif', $app1[2]->getElement("exif"));
         $this->assertSame($newExif, $app1[2]->getElement("exif"));
 
         // Remove the first APP1 segment containing a valid EXIF block.
@@ -43,7 +43,7 @@ class MisplacedExifTest extends ImageInfoTestCaseBase
         $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(2, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\ImageInfo\core\Block\Exif', $app1[1]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\ImageProbe\core\Block\Exif', $app1[1]->getElement("exif"));
         $this->assertSame($newExif, $app1[1]->getElement("exif"));
     }
 }

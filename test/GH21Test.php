@@ -1,15 +1,15 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\Data\DataString;
-use FileEye\ImageInfo\core\Block\Exif;
-use FileEye\ImageInfo\core\Block\Jpeg;
-use FileEye\ImageInfo\core\Block\JpegSegmentApp1;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Image;
+use FileEye\ImageProbe\core\Data\DataString;
+use FileEye\ImageProbe\core\Block\Exif;
+use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\ImageProbe\core\Block\JpegSegmentApp1;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Image;
 
-class GH21Test extends ImageInfoTestCaseBase
+class GH21Test extends ImageProbeTestCaseBase
 {
     protected $file;
 

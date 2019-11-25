@@ -1,19 +1,19 @@
 <?php
 
-namespace FileEye\ImageInfo\core;
+namespace FileEye\ImageProbe\core;
 
 /**
- * Standard ImageInfo printf() capable exception.
+ * Standard ImageProbe printf() capable exception.
  * This class is a simple extension of the standard Exception class in
  * PHP, and all the methods defined there retain their original
  * meaning.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class ImageInfoException extends \Exception
+class ImageProbeException extends \Exception
 {
     /**
-     * Construct a new ImageInfo exception.
+     * Construct a new ImageProbe exception.
      *
      * @param string $fmt
      *            an optional format string can be given. It

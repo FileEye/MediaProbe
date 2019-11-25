@@ -1,15 +1,15 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry\Core;
+namespace FileEye\ImageProbe\core\Entry\Core;
 
-use FileEye\ImageInfo\core\Block\BlockBase;
-use FileEye\ImageInfo\core\Block\IfdFormat;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\ElementBase;
-use FileEye\ImageInfo\core\ElementInterface;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\ImageInfoException;
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Block\BlockBase;
+use FileEye\ImageProbe\core\Block\IfdFormat;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\ElementBase;
+use FileEye\ImageProbe\core\ElementInterface;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\ImageProbeException;
+use FileEye\ImageProbe\core\Collection;
 
 /**
  * Base class for EntryInterface objects.
@@ -51,11 +51,11 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * Constructs an EntryInterface object.
      *
-     * @param \FileEye\ImageInfo\core\ElementInterface $parent
+     * @param \FileEye\ImageProbe\core\ElementInterface $parent
      *            xx
      * @param array $data
      *            the data that this entry will be holding.
-     * @param \FileEye\ImageInfo\core\ElementInterface|null $reference
+     * @param \FileEye\ImageProbe\core\ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
@@ -114,7 +114,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         if ($text_config && isset($text_config['mapping']) && is_scalar($value)) {
             // If the code to be mapped is a non-int, change to string.
             $id = is_int($value) ? $value : (string) $value;
-            return isset($text_config['mapping'][$id]) ? ImageInfo::tra($text_config['mapping'][$id]) : null;
+            return isset($text_config['mapping'][$id]) ? ImageProbe::tra($text_config['mapping'][$id]) : null;
         }
         return null;
     }

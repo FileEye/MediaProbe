@@ -1,17 +1,17 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Block;
+namespace FileEye\ImageProbe\core\Block;
 
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\Data\DataException;
-use FileEye\ImageInfo\core\ElementInterface;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\Entry\Core\Undefined;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\Data\DataException;
+use FileEye\ImageProbe\core\ElementInterface;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\Entry\Core\Undefined;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Collection;
 
 /**
  * @todo

@@ -1,25 +1,25 @@
 <?php
 
-namespace FileEye\ImageInfo\core;
+namespace FileEye\ImageProbe\core;
 
 /**
  * Class with miscellaneous static methods.
  *
  * This class contains various methods that govern the overall behavior of
- * ImageInfo.
+ * ImageProbe.
  *
- * Debugging output from ImageInfo can be turned on and off by assigning true or
- * false to {@link ImageInfo::$debug}.
+ * Debugging output from ImageProbe can be turned on and off by assigning true or
+ * false to {@link ImageProbe::$debug}.
  *
  * @author Martin Geisler <mgeisler@users.sourceforge.net>
  */
-class ImageInfo
+class ImageProbe
 {
     /**
-     * Returns the current version of ImageInfo.
+     * Returns the current version of ImageProbe.
      *
      * @return string
-     *            the current version of ImageInfo.
+     *            the current version of ImageProbe.
      */
     public static function version()
     {

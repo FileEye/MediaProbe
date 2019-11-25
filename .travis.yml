@@ -33,7 +33,7 @@ before_install:
   # Remove XDebug.
   - phpenv config-rm xdebug.ini || true
 
-  # Stage ImageInfo to get dependencies.
+  # Stage ImageProbe to get dependencies.
   - |
       if [[ ! -f $FILEEYE_STAGING_DIR/vendor/autoload.php ]]; then
         mkdir -p $FILEEYE_STAGING_DIR
@@ -47,21 +47,21 @@ before_install:
   - cd $TRAVIS_BUILD_DIR
 
 install:
-  - php bin/fileeye-imageinfo --version
+  - php bin/fileeye-imageprobe --version
 
 script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
   # image file dumps.
-  #- php bin/fileeye-imageinfo compile
-  #- php bin/fileeye-imageinfo dump test/image_files
+  - php bin/fileeye-imageprobe compile
+  #- php bin/fileeye-imageprobe dump test/image_files
 
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test
 
-  #- php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg
+  - php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg-rewrite.img
-  #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg
+  - php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg-rewrite.img
   #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg
   #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg-rewrite.img

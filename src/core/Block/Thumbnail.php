@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Block;
+namespace FileEye\ImageProbe\core\Block;
 
-use FileEye\ImageInfo\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataElement;
 
 /**
  * Class used to hold data for a JPEG Thumbnail.

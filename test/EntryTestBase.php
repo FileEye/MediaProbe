@@ -1,15 +1,15 @@
 <?php
 
-namespace FileEye\ImageInfo\Test\core;
+namespace FileEye\ImageProbe\Test\core;
 
-use FileEye\ImageInfo\core\ElementBase;
+use FileEye\ImageProbe\core\ElementBase;
 
-class EntryTestBase extends ImageInfoTestCaseBase
+class EntryTestBase extends ImageProbeTestCaseBase
 {
     protected $mockParentElement;
 
     public function fcSetUp()
     {
-        $this->mockParentElement = $this->getMockBuilder('FileEye\ImageInfo\core\ElementBase')->disableOriginalConstructor()->getMock();
+        $this->mockParentElement = $this->getMockBuilder('FileEye\ImageProbe\core\ElementBase')->disableOriginalConstructor()->getMock();
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Entry\Core\Short;
-use FileEye\ImageInfo\core\ImageInfo;
+use FileEye\ImageProbe\core\Entry\Core\Short;
+use FileEye\ImageProbe\core\ImageProbe;
 
 /**
  * Decode text for an Exif/SubjectArea tag.
@@ -17,13 +17,13 @@ class ExifSubjectArea extends Short
     {
         switch ($this->getComponents()) {
             case 2:
-                return ImageInfo::fmt('(x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1]);
+                return ImageProbe::fmt('(x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1]);
             case 3:
-                return ImageInfo::fmt('Within distance %d of (x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1], $this->getValue()[2]);
+                return ImageProbe::fmt('Within distance %d of (x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1], $this->getValue()[2]);
             case 4:
-                return ImageInfo::fmt('Within rectangle (width %d, height %d) around (x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1], $this->getValue()[2], $this->getValue()[3]);
+                return ImageProbe::fmt('Within rectangle (width %d, height %d) around (x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1], $this->getValue()[2], $this->getValue()[3]);
             default:
-                return ImageInfo::fmt('Unexpected number of components (%d, expected 2, 3, or 4).', $this->getComponents());
+                return ImageProbe::fmt('Unexpected number of components (%d, expected 2, 3, or 4).', $this->getComponents());
         }
     }
 }

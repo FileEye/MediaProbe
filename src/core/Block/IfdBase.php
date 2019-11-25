@@ -1,17 +1,17 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Block;
+namespace FileEye\ImageProbe\core\Block;
 
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\Data\DataException;
-use FileEye\ImageInfo\core\ElementInterface;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\ImageInfoException;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\Data\DataException;
+use FileEye\ImageProbe\core\ElementInterface;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\ImageProbeException;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * Abstract class representing an Image File Directory (IFD).
@@ -84,13 +84,13 @@ abstract class IfdBase extends BlockBase
      * @param int $offset
      *            the offset within the data element where the count can be
      *            found.
-     * @param \FileEye\ImageInfo\core\ElementInterface $parent_element
+     * @param \FileEye\ImageProbe\core\ElementInterface $parent_element
      *            The parent element of this IFD.
      * @param int $data_offset_shift
      *            (Optional) if specified, an additional shift to the offset
      *            where data can be found.
      *
-     * @return \FileEye\ImageInfo\core\Block\IfdItem
+     * @return \FileEye\ImageProbe\core\Block\IfdItem
      *            the IfdItem object of the IFD item.
      */
     protected function getIfdItemFromData($i, DataElement $data_element, $offset, ElementInterface $parent_element, $data_offset_shift = 0)
@@ -128,7 +128,7 @@ abstract class IfdBase extends BlockBase
     /**
      * Invoke post-load callbacks.
      *
-     * @param \FileEye\ImageInfo\core\Data\DataElement $data_element
+     * @param \FileEye\ImageProbe\core\Data\DataElement $data_element
      *   @todo
      */
     protected function executePostLoadCallbacks(DataElement $data_element)

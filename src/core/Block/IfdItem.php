@@ -1,18 +1,18 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Block;
+namespace FileEye\ImageProbe\core\Block;
 
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\Data\DataException;
-use FileEye\ImageInfo\core\ElementInterface;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\Entry\Core\Undefined;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\ImageInfoException;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
-use FileEye\ImageInfo\core\Collection;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\Data\DataException;
+use FileEye\ImageProbe\core\ElementInterface;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\Entry\Core\Undefined;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\ImageProbeException;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Collection;
 
 /**
  * A value object representing an Image File Directory (IFD) item.
@@ -20,7 +20,7 @@ use FileEye\ImageInfo\core\Collection;
 class IfdItem
 {
     /**
-     * The ImageInfo collection of this item.
+     * The ImageProbe collection of this item.
      *
      * @var Collection
      */
@@ -63,7 +63,7 @@ class IfdItem
      */
     public function validate(ElementInterface $caller)
     {
-        // Check if ImageInfo has a definition for this TAG.
+        // Check if ImageProbe has a definition for this TAG.
         if (!$this->hasDefinition()) {
             $caller->notice("No specification for item {item} in '{ifd}'", [
                 'item' => $this->getId(),
@@ -155,7 +155,7 @@ class IfdItem
         if ($class !== null) {
             return $class;
         }
-        return 'FileEye\ImageInfo\core\Block\Tag';
+        return 'FileEye\ImageProbe\core\Block\Tag';
     }
 
     /**
@@ -171,7 +171,7 @@ class IfdItem
         // If format is not passed in, try getting it from the spec.
         $format = $this->getFormat();
         if (empty($format)) {
-            throw new ImageInfoException(
+            throw new ImageProbeException(
                 'No format can be derived for tag: 0x%04X (%s)',
                 $this->itemCollection->getPropertyValue('item'),
                 $this->itemCollection->getPropertyValue('name')
@@ -180,13 +180,13 @@ class IfdItem
 
         $default_entry_class = IfdFormat::getClass($format);
         if (!$default_entry_class) {
-            throw new ImageInfoException('Unsupported format: %d', $format);
+            throw new ImageProbeException('Unsupported format: %d', $format);
         }
         return $default_entry_class;
     }
 
     /**
-     * Determines if the Block has an ImageInfo specification.
+     * Determines if the Block has an ImageProbe specification.
      *
      * @returns bool
      */

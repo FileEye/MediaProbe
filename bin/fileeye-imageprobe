@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+/**
+ * A Symfony CLI utility application for ImageProbe.
+ */
+
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Command\CompileCommand;
+use FileEye\ImageProbe\core\Command\DumpCommand;
+use Symfony\Component\Console\Application;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$application = new Application('fileeye-imageinfo', ImageProbe::version());
+$application->add(new CompileCommand());
+$application->add(new DumpCommand());
+$application->run();

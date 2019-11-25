@@ -1,7 +1,7 @@
 collection: ifdInteroperability
 name: Interoperability
 title: IFD Interoperability
-class: FileEye\ImageInfo\core\Block\Ifd
+class: FileEye\ImageProbe\core\Block\Ifd
 DOMNode: ifd
 alias:
   - 'Interop'
@@ -18,7 +18,7 @@ items:
         title: 'Interoperability Version'
         components: 4
         format: Undefined
-        entryClass: FileEye\ImageInfo\core\Entry\Version
+        entryClass: FileEye\ImageProbe\core\Entry\Version
     0x1000:
         collection: tag
         name: RelatedImageFileFormat

@@ -1,19 +1,19 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Block;
+namespace FileEye\ImageProbe\core\Block;
 
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Data\DataWindow;
-use FileEye\ImageInfo\core\ElementBase;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Data\DataWindow;
+use FileEye\ImageProbe\core\ElementBase;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
- * Base class for ImageInfo blocks.
+ * Base class for ImageProbe blocks.
  *
  * As this class is abstract you cannot instantiate objects from it. It only
- * serves as a common ancestor to define the methods common to all ImageInfo
+ * serves as a common ancestor to define the methods common to all ImageProbe
  * Block objects.
  */
 abstract class BlockBase extends ElementBase
@@ -21,18 +21,18 @@ abstract class BlockBase extends ElementBase
     /**
      * The Collection of this Block.
      *
-     * @var \FileEye\ImageInfo\core\Collection
+     * @var \FileEye\ImageProbe\core\Collection
      */
     protected $collection;
 
     /**
      * Constructs a Block object.
      *
-     * @param \FileEye\ImageInfo\core\Collection $collection
+     * @param \FileEye\ImageProbe\core\Collection $collection
      *            The Collection of this Block.
-     * @param \FileEye\ImageInfo\core\Block\BlockBase|null $parent
+     * @param \FileEye\ImageProbe\core\Block\BlockBase|null $parent
      *            (Optional) the parent Block of this Block.
-     * @param \FileEye\ImageInfo\core\Block\BlockBase|null $reference
+     * @param \FileEye\ImageProbe\core\Block\BlockBase|null $reference
      *            (Optional) if specified, the new Block will be inserted
      *            before the reference Block.
      */
@@ -57,13 +57,13 @@ abstract class BlockBase extends ElementBase
      */
     public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
     {
-        throw new ImageInfoException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new ImageProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
     /**
      * Gets the Collection of this Block.
      *
-     * @return \FileEye\ImageInfo\core\Collection
+     * @return \FileEye\ImageProbe\core\Collection
      */
     public function getCollection()
     {

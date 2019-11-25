@@ -1,12 +1,12 @@
 <?php
 
-namespace FileEye\ImageInfo\core;
+namespace FileEye\ImageProbe\core;
 
-use FileEye\ImageInfo\core\Block\BlockBase;
-use FileEye\ImageInfo\core\Block\Tag;
-use FileEye\ImageInfo\core\Entry\Core\EntryInterface;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\ImageInfoException;
+use FileEye\ImageProbe\core\Block\BlockBase;
+use FileEye\ImageProbe\core\Block\Tag;
+use FileEye\ImageProbe\core\Entry\Core\EntryInterface;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\ImageProbeException;
 
 /**
  * Class to retrieve IFD and TAG information from YAML specs.
@@ -16,7 +16,7 @@ class Collection
     /**
      * Default mapper namespace.
      */
-    const DEFAULT_MAP_NAMESPACE = 'FileEye\ImageInfo\CollectionMap';
+    const DEFAULT_MAP_NAMESPACE = 'FileEye\ImageProbe\CollectionMap';
 
     /**
      * The collection mapper class.
@@ -40,13 +40,13 @@ class Collection
     protected $overrides;
 
     /**
-     * Returns the compiled ImageInfo specification map.
+     * Returns the compiled ImageProbe specification map.
      *
      * In case the map is not yet initialized, defaults to the pre-compiled
      * one.
      *
      * @return array
-     *   The ImageInfo specification map.
+     *   The ImageProbe specification map.
      */
     protected static function getMap()
     {
@@ -58,10 +58,10 @@ class Collection
     }
 
     /**
-     * Sets the compiled ImageInfo collection mapper class.
+     * Sets the compiled ImageProbe collection mapper class.
      *
      * @param string $class
-     *   The file containing the ImageInfo specification map.
+     *   The file containing the ImageProbe specification map.
      */
     public static function setMapperClass($class)
     {

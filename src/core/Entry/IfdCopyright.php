@@ -1,13 +1,13 @@
 <?php
 
-namespace FileEye\ImageInfo\core\Entry;
+namespace FileEye\ImageProbe\core\Entry;
 
-use FileEye\ImageInfo\core\Block\IfdItem;
-use FileEye\ImageInfo\core\Data\DataElement;
-use FileEye\ImageInfo\core\Entry\Core\Ascii;
-use FileEye\ImageInfo\core\ImageInfo;
-use FileEye\ImageInfo\core\Collection;
-use FileEye\ImageInfo\core\Utility\ConvertBytes;
+use FileEye\ImageProbe\core\Block\IfdItem;
+use FileEye\ImageProbe\core\Data\DataElement;
+use FileEye\ImageProbe\core\Entry\Core\Ascii;
+use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\ImageProbe\core\Collection;
+use FileEye\ImageProbe\core\Utility\ConvertBytes;
 
 /**
  * Class for holding copyright information.
@@ -96,8 +96,8 @@ class IfdCopyright extends Ascii
             $p = '';
             $e = '';
         } else {
-            $p = ' ' . ImageInfo::tra('(Photographer)');
-            $e = ' ' . ImageInfo::tra('(Editor)');
+            $p = ' ' . ImageProbe::tra('(Photographer)');
+            $e = ' ' . ImageProbe::tra('(Editor)');
         }
 
         if ($this->value[0] !== '' && $this->value[1] !== '') {
