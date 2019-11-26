@@ -1,10 +1,10 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Entry\WindowsString;
-use FileEye\ImageProbe\core\Collection;
-use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\MediaProbe\Entry\WindowsString;
+use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class EntryWindowsStringTest extends EntryTestBase
 {

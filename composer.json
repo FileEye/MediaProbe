@@ -1,41 +1,43 @@
 {
-    "name": "fileeye/imageprobe",
+    "name": "fileeye/mediaprobe",
     "type": "library",
-    "description": "A PHP library for reading and writing Exif headers in JPEG and TIFF images.",
+    "description": "A PHP library for reading and writing media files metadata.",
     "keywords": [
-        "image", "exif"
+        "image", "exif", "media"
     ],
-    "homepage": "https://github.com/FileEye/ImageProbe",
+    "homepage": "https://github.com/FileEye/MediaProbe",
     "license": "GPL-3.0",
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.2",
         "ext-gd": "*",
         "ext-gmp": "*",
         "psr/log": "*",
-        "monolog/monolog": "^1",
+        "monolog/monolog": "*",
+        "shanethehat/pretty-xml": "*",
         "rodneyrehm/plist": "*"
     },
     "require-dev" : {
         "ext-exif": "*",
-        "phpunit/phpunit": "<9",
+        "phpunit/phpunit": "<10",
         "squizlabs/php_codesniffer": "*",
         "symfony/console": "*",
         "symfony/finder": "*",
         "symfony/filesystem": "*",
+        "symfony/process": "*",
         "symfony/var-dumper": "*",
         "symfony/yaml": "*",
-        "bramus/monolog-colored-line-formatter": "^2.0",
-        "shanethehat/pretty-xml": "*"
+        "bramus/monolog-colored-line-formatter": "*",
+        "ocramius/package-versions": "*"
     },
     "autoload": {
         "psr-4": {
-            "FileEye\\ImageProbe\\": "src/"
+            "FileEye\\MediaProbe\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FileEye\\ImageProbe\\Test\\core\\": "test/"
+            "FileEye\\MediaProbe\\Test\\": "test/"
         }
     },
-    "bin": ["bin/fileeye-imageprobe"]
+    "bin": ["bin/fileeye-mediaprobe"]
 }

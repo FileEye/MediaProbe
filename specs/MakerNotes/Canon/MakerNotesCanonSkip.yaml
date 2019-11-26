@@ -1,0 +1,15 @@
+__todo: true
+collection: MakerNotes\Canon\Skip
+name: CanonSkip
+title: 'Canon Skip'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+defaultItemCollection: Tag
+items:
+    CNDB:
+        exiftool:
+            -
+                name: Unknown_CNDB
+                type: '?'
+                writable: false
+                desc: 'Unknown CNDB'

@@ -1,0 +1,67 @@
+collection: MakerNotes\Canon\LightingOpt
+name: CanonLightingOpt
+title: 'Canon LightingOpt'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+hasIndexSize: true
+format: Long
+defaultItemCollection: Tag
+items:
+    -
+        collection: RawData
+        name: indexSize
+    -
+        exiftool:
+            -
+                name: PeripheralIlluminationCorr
+                type: int32s
+                writable: true
+                desc: 'Peripheral Illumination Corr'
+                values:
+                    - 'Off'
+                    - 'On'
+    -
+        exiftool:
+            -
+                name: AutoLightingOptimizer
+                type: int32s
+                writable: true
+                desc: 'Auto Lighting Optimizer'
+                values:
+                    - Standard
+                    - Low
+                    - Strong
+                    - 'Off'
+    -
+        exiftool:
+            -
+                name: HighlightTonePriority
+                type: int32s
+                writable: true
+                desc: 'Highlight Tone Priority'
+                values:
+                    - 'Off'
+                    - 'On'
+    -
+        exiftool:
+            -
+                name: LongExposureNoiseReduction
+                type: int32s
+                writable: true
+                desc: 'Long Exposure Noise Reduction'
+                values:
+                    - 'Off'
+                    - Auto
+                    - 'On'
+    -
+        exiftool:
+            -
+                name: HighISONoiseReduction
+                type: int32s
+                writable: true
+                desc: 'High ISO Noise Reduction'
+                values:
+                    - Standard
+                    - Low
+                    - Strong
+                    - 'Off'

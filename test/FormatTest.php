@@ -1,33 +1,33 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Block\IfdFormat;
-use FileEye\ImageProbe\core\ImageProbe;
+use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\MediaProbe;
 
-class FormatTest extends ImageProbeTestCaseBase
+class FormatTest extends MediaProbeTestCaseBase
 {
     public function testGetName()
     {
-        $this->assertEquals('Ascii', IfdFormat::getName(2));
-        $this->assertEquals('Float', IfdFormat::getName(11));
-        $this->assertEquals('Undefined', IfdFormat::getName(7));
-        $this->assertNull(IfdFormat::getName(100));
+        $this->assertSame('Ascii', ItemFormat::getName(ItemFormat::ASCII));
+        $this->assertSame('Float', ItemFormat::getName(ItemFormat::FLOAT));
+        $this->assertSame('Undefined', ItemFormat::getName(ItemFormat::UNDEFINED));
+        $this->assertNull(ItemFormat::getName(100));
     }
 
     public function testGetIdFromName()
     {
-        $this->assertEquals(2, IfdFormat::getFromName('Ascii'));
-        $this->assertEquals(11, IfdFormat::getFromName('Float'));
-        $this->assertEquals(7, IfdFormat::getFromName('Undefined'));
-        $this->assertNull(IfdFormat::getFromName('UnexistingFormat'));
+        $this->assertSame(ItemFormat::ASCII, ItemFormat::getFromName('Ascii'));
+        $this->assertSame(ItemFormat::FLOAT, ItemFormat::getFromName('Float'));
+        $this->assertSame(ItemFormat::UNDEFINED, ItemFormat::getFromName('Undefined'));
+        $this->assertNull(ItemFormat::getFromName('UnexistingFormat'));
     }
 
     public function testGetSize()
     {
-        $this->assertEquals(1, IfdFormat::getSize(IfdFormat::getFromName('Ascii')));
-        $this->assertEquals(4, IfdFormat::getSize(IfdFormat::getFromName('Float')));
-        $this->assertEquals(1, IfdFormat::getSize(IfdFormat::getFromName('Undefined')));
-        $this->assertNull(IfdFormat::getSize(100));
+        $this->assertSame(1, ItemFormat::getSize(ItemFormat::ASCII));
+        $this->assertSame(4, ItemFormat::getSize(ItemFormat::FLOAT));
+        $this->assertSame(1, ItemFormat::getSize(ItemFormat::UNDEFINED));
+        $this->assertNull(ItemFormat::getSize(100));
     }
 }

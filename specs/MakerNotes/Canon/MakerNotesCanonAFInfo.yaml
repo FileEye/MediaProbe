@@ -1,0 +1,108 @@
+collection: MakerNotes\Canon\AFInfo
+name: CanonAFInfo
+title: 'Canon AF Info'
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\AFInfoIndex
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+items:
+    -
+        exiftool:
+            -
+                name: NumAFPoints
+                type: int16u
+                writable: false
+                desc: 'Num AF Points'
+    -
+        exiftool:
+            -
+                name: ValidAFPoints
+                type: int16u
+                writable: false
+                desc: 'Valid AF Points'
+    -
+        exiftool:
+            -
+                name: CanonImageWidth
+                type: int16u
+                writable: false
+                g2: Image
+                desc: 'Canon Image Width'
+    -
+        exiftool:
+            -
+                name: CanonImageHeight
+                type: int16u
+                writable: false
+                g2: Image
+                desc: 'Canon Image Height'
+    -
+        exiftool:
+            -
+                name: AFImageWidth
+                type: int16u
+                writable: false
+                desc: 'AF Image Width'
+    -
+        exiftool:
+            -
+                name: AFImageHeight
+                type: int16u
+                writable: false
+                desc: 'AF Image Height'
+    -
+        exiftool:
+            -
+                name: AFAreaWidth
+                type: int16u
+                writable: false
+                desc: 'AF Area Width'
+    -
+        exiftool:
+            -
+                name: AFAreaHeight
+                type: int16u
+                writable: false
+                desc: 'AF Area Height'
+    -
+        exiftool:
+            -
+                name: AFAreaXPositions
+                type: int16s
+                writable: false
+                desc: 'AF Area X Positions'
+    -
+        exiftool:
+            -
+                name: AFAreaYPositions
+                type: int16s
+                writable: false
+                desc: 'AF Area Y Positions'
+    -
+        __todo: 'add decoding'
+        exiftool:
+            -
+                name: AFPointsInFocus
+                type: int16s
+                writable: false
+                desc: 'AF Points In Focus'
+    -
+        exiftool:
+            -
+                name: PrimaryAFPoint
+                type: int16u
+                writable: false
+                desc: 'Primary AF Point'
+            -
+                name: Canon_AFInfo_0x000b
+                type: int16u
+                count: 8
+                writable: false
+                desc: 'Canon AF Info 0x000b'
+    -
+        exiftool:
+            -
+                name: PrimaryAFPoint
+                type: int16u
+                writable: false
+                desc: 'Primary AF Point'

@@ -1,0 +1,80 @@
+collection: MakerNotes\Canon\MovieInfo
+name: CanonMovieInfo
+title: 'Canon Movie Info'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+hasIndexSize: true
+format: Short
+defaultItemCollection: Tag
+items:
+    0:
+        collection: RawData
+        name: indexSize
+        format: SignedShort
+    1:
+        exiftool:
+            -
+                name: FrameRate
+                type: int16u
+                writable: true
+                desc: 'Frame Rate'
+    2:
+        exiftool:
+            -
+                name: FrameCount
+                type: int16u
+                writable: true
+                desc: 'Frame Count'
+    4:
+        exiftool:
+            -
+                name: FrameCount
+                type: int32u
+                writable: true
+                desc: 'Frame Count'
+    6:
+        exiftool:
+            -
+                name: FrameRate
+                type: rational32u
+                writable: true
+                desc: 'Frame Rate'
+    106:
+        exiftool:
+            -
+                name: Duration
+                type: int32u
+                writable: true
+                desc: Duration
+    108:
+        exiftool:
+            -
+                name: AudioBitrate
+                type: int32u
+                writable: true
+                g2: Audio
+                desc: 'Audio Bitrate'
+    110:
+        exiftool:
+            -
+                name: AudioSampleRate
+                type: int32u
+                writable: true
+                g2: Audio
+                desc: 'Audio Sample Rate'
+    112:
+        exiftool:
+            -
+                name: AudioChannels
+                type: int32u
+                writable: true
+                g2: Audio
+                desc: 'Audio Channels'
+    116:
+        exiftool:
+            -
+                name: VideoCodec
+                type: undef
+                count: 4
+                writable: true
+                desc: 'Video Codec'

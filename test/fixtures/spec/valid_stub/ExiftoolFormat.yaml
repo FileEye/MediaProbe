@@ -1,0 +1,39 @@
+collection: ExiftoolFormat
+title: 'A mapping of Exiftool formats to MediaProbe supported data formats.'
+compiler:
+    skip: true
+items:
+    int8u:
+        format: Byte
+    string:
+        format: Ascii
+    int16u:
+        format: Short
+    int16uRev:
+        format: ShortRev
+    int32u:
+        format: Long
+    rational32u:
+        format: ShortRational
+    rational64u:
+        format: Rational
+    int8s:
+        format: SignedByte
+    undef:
+        format: Undefined
+    '?':
+        format: Undefined
+    binary:
+        format: Undefined
+    int16s:
+        format: SignedShort
+    int32s:
+        format: SignedLong
+    rational32s:
+        format: SignedShortRational
+    rational64s:
+        format: SignedRational
+    float:
+        format: Float
+    double:
+        format: Double

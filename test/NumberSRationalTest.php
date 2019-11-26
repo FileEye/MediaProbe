@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Entry\Core\SignedRational;
-use FileEye\ImageProbe\core\Entry\Exception\OverflowException;
+use FileEye\MediaProbe\Entry\Core\SignedRational;
+use FileEye\MediaProbe\Entry\Exception\OverflowException;
 
 class NumberSignedRationalTest extends NumberTestCase
 {
@@ -40,14 +40,14 @@ class NumberSignedRationalTest extends NumberTestCase
 
         $entry->setValue([[-1, 2], [3, 4], [5, -6]]);
         $this->assertEquals($entry->getValue(), [[-1, 2], [3, 4], [5, -6]]);
-        $this->assertEquals($entry->toString(), '-1/2, 3/4, -5/6');
+        $this->assertEquals($entry->toString(), '-0.5, 0.75, -0.83333333333333');
 
         $entry->setValue([[-7, -8]]);
         $this->assertEquals($entry->getValue(), [-7, -8]);
-        $this->assertEquals($entry->toString(), '7/8');
+        $this->assertEquals($entry->toString(), 7 / 8);
 
         $entry->setValue([[0, 2147483647]]);
         $this->assertEquals($entry->getValue(), [0, 2147483647]);
-        $this->assertEquals($entry->toString(), '0/2147483647');
+        $this->assertEquals($entry->toString(), 0);
     }
 }

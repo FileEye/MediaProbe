@@ -1,0 +1,16 @@
+collection: MakerNotes\Canon\LensInfo
+name: CanonLensInfo
+title: 'Canon LensInfo'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Undefined
+defaultItemCollection: Tag
+items:
+    -
+        exiftool:
+            -
+                name: LensSerialNumber
+                type: undef
+                count: 5
+                writable: true
+                desc: 'Lens Serial Number'

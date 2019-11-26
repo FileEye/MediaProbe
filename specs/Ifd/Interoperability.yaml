@@ -1,0 +1,64 @@
+collection: Ifd\Interoperability
+name: Interoperability
+title: 'IFD Interoperability'
+class: FileEye\MediaProbe\Block\Ifd
+DOMNode: ifd
+alias:
+    - Interop
+defaultItemCollection: Tag
+items:
+    1:
+        alias:
+            - InteroperabilityIndex
+        components: 4
+        exiftool:
+            -
+                name: InteropIndex
+                type: string
+                writable: true
+                g1: InteropIFD
+                desc: 'Interoperability Index'
+                values:
+                    R03: 'R03 - DCF option file (Adobe RGB)'
+                    R98: 'R98 - DCF basic file (sRGB)'
+                    THM: 'THM - DCF thumbnail file'
+    2:
+        alias:
+            - InteroperabilityVersion
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\Version
+        exiftool:
+            -
+                name: InteropVersion
+                type: undef
+                writable: true
+                g1: InteropIFD
+                desc: 'Interoperability Version'
+    4096:
+        exiftool:
+            -
+                name: RelatedImageFileFormat
+                type: string
+                writable: true
+                g1: InteropIFD
+                desc: 'Related Image File Format'
+    4097:
+        components: 1
+        exiftool:
+            -
+                name: RelatedImageWidth
+                type: int16u
+                writable: true
+                g1: InteropIFD
+                desc: 'Related Image Width'
+    4098:
+        alias:
+            - RelatedImageLength
+        components: 1
+        exiftool:
+            -
+                name: RelatedImageHeight
+                type: int16u
+                writable: true
+                g1: InteropIFD
+                desc: 'Related Image Height'

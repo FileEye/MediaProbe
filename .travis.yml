@@ -1,28 +1,20 @@
+os: linux
+
 language: php
-sudo: false
 
 php:
-  - 5.6
-  - 7.0
-  - 7.1
-  - 7.2
+#  - 7.2
   - 7.3
-  - 7.4snapshot
-  - nightly
+#  - 7.4
+  #- nightly
 
 env:
   global:
     - FILEEYE_STAGING_DIR="$HOME/fileeye_staging"
 
-matrix:
-  include:
-    - php: 5.4
-      dist: trusty
-    - php: 5.5
-      dist: trusty
+jobs:
   fast_finish: true
   allow_failures:
-    - php: 7.4snapshot
     - php: nightly
 
 cache:
@@ -33,46 +25,54 @@ before_install:
   # Remove XDebug.
   - phpenv config-rm xdebug.ini || true
 
-  # Stage ImageProbe to get dependencies.
+  # Stage MediaProbe to get dependencies.
   - |
       if [[ ! -f $FILEEYE_STAGING_DIR/vendor/autoload.php ]]; then
         mkdir -p $FILEEYE_STAGING_DIR
         cp -r $TRAVIS_BUILD_DIR $FILEEYE_STAGING_DIR
-        cd $FILEEYE_STAGING_DIR/ImageInfo
+        cd $FILEEYE_STAGING_DIR/MediaProbe
         composer install --no-interaction --no-progress --no-suggest
       fi
   # Copy staged /vendor to running path.
   - mkdir -p $TRAVIS_BUILD_DIR/vendor
-  - cp -r $FILEEYE_STAGING_DIR/ImageInfo/vendor $TRAVIS_BUILD_DIR
+  - cp -r $FILEEYE_STAGING_DIR/MediaProbe/vendor $TRAVIS_BUILD_DIR
   - cd $TRAVIS_BUILD_DIR
 
 install:
-  - php bin/fileeye-imageprobe --version
+  - php bin/fileeye-mediaprobe --version
 
 script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
-  # image file dumps.
-  - php bin/fileeye-imageprobe compile
-  #- php bin/fileeye-imageprobe dump test/image_files
+  # media file dumps.
+  - php bin/fileeye-mediaprobe compile
+  #- php bin/fileeye-mediaprobe dump test/image_files
 
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test
 
-  - php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg
-  #- php examples/dump-image.php -d test/image_files/camera_samples/apple-iphone6s.jpg-rewrite.img
-  - php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg
-  #- php examples/dump-image.php -d test/image_files/camera_samples/canon-eos-650d.jpg-rewrite.img
-  #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg
-  #- php examples/dump-image.php -d test/image_files/camera_samples/pentax-istDS.jpg-rewrite.img
-  #- php examples/dump-image.php -d test/image_files/broken_images/gh-10-a.jpg
-  #- php examples/dump-image.php -d test/image_files/broken_images/gh-10-a.jpg-rewrite.img
-  #- php examples/dump-image.php -d test/image_files/broken_images/gh-10-b.jpg
-  #- php examples/dump-image.php -d test/image_files/broken_images/gh-11.jpg
-  #- php examples/dump-image.php -d test/image_files/broken_images/misplaced-exif.jpg
-  #- php examples/dump-image.php -d test/image_files/gh-21.jpg
-  #- php examples/dump-image.php -d test/image_files/broken_images/gh-11.jpg-rewrite.img
-  #- php examples/dump-image.php -d test/image_files/camera_samples/olympus-c765uz.jpg
+  - php examples/dump-media.php -d  test/image_files/exiftool/Canon1DmkIII.jpg
+  #- php examples/dump-media.php -d  test/image_files/broken_images/canon-eos-650d.jpg
+  #- php examples/dump-media.php -d  test/image_files/exiftool/Canon.jpg
+  #- php examples/dump-media.php -d test/image_files/broken_images/canon-eos-650d.jpg-rewrite.img
+  #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-powershot-s60.jpg
+  #- php examples/dump-media.php -d test/image_files/camera_samples/canon-powershot-s60.jpg-rewrite.img
+  #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-ixus-ii.jpg
+  #- php examples/dump-media.php -d test/image_files/camera_samples/canon-ixus-ii.jpg-rewrite.img
+  #- php examples/dump-media.php -d -w test/image_files/camera_samples/apple-iphone6s.jpg
+  #- php examples/dump-media.php -d test/image_files/camera_samples/apple-iphone6s.jpg-rewrite.img
+  #- php examples/dump-media.php -d test/image_files/camera_samples/apple-iphone7.JPG
+  #- php examples/dump-media.php -d test/image_files/camera_samples/pentax-istDS.jpg
+  #- php examples/dump-media.php -d test/image_files/camera_samples/pentax-istDS.jpg-rewrite.img
+  #- php examples/dump-media.php -d test/image_files/broken_images/gh-10-a.jpg
+  #- php examples/dump-media.php -d test/image_files/broken_images/gh-10-a.jpg-rewrite.img
+  #- php examples/dump-media.php test/image_files/broken_images/gh-10-b.jpg
+  #- php examples/dump-media.php -d test/image_files/broken_images/gh-10-b.jpg-rewrite.img
+  #- php examples/dump-media.php test/image_files/broken_images/gh-11.jpg
+  #- php examples/dump-media.php -d test/image_files/broken_images/misplaced-exif.jpg
+  #- php examples/dump-media.php -d test/image_files/gh-21.jpg
+  #- php examples/dump-media.php -d test/image_files/broken_images/gh-11.jpg-rewrite.img
+  #- php examples/dump-media.php -d test/image_files/camera_samples/olympus-c765uz.jpg
 
 notifications:
   email:

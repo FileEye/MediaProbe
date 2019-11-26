@@ -1,0 +1,18 @@
+collection: IfdExif
+name: ExifIFD
+title: IFD Exif
+class: FileEye\MediaProbe\Block\Ifd
+DOMNode: ifd
+items:
+    0x829A:
+        collection: tag
+        name: ExposureTime
+        title: 'Exposure Time'
+        components: 1
+        format: Rational
+    0x829D:
+        collection: tag
+        name: FNumber
+        title: FNumber
+        components: 1
+        format: Rational

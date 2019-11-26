@@ -1,0 +1,303 @@
+collection: Ifd\Gps
+name: GPS
+title: 'IFD GPS'
+class: FileEye\MediaProbe\Block\Ifd
+DOMNode: ifd
+defaultItemCollection: Tag
+items:
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSVersionId
+        exiftool:
+            -
+                name: GPSVersionID
+                type: int8u
+                count: 4
+                writable: true
+                desc: 'GPS Version ID'
+    -
+        exiftool:
+            -
+                name: GPSLatitudeRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Latitude Ref'
+                values:
+                    'N': North
+                    S: South
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSDegrees
+        exiftool:
+            -
+                name: GPSLatitude
+                type: rational64u
+                count: 3
+                writable: true
+                desc: 'GPS Latitude'
+    -
+        exiftool:
+            -
+                name: GPSLongitudeRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Longitude Ref'
+                values:
+                    E: East
+                    W: West
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSDegrees
+        exiftool:
+            -
+                name: GPSLongitude
+                type: rational64u
+                count: 3
+                writable: true
+                desc: 'GPS Longitude'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSAltitudeRef
+                type: int8u
+                writable: true
+                desc: 'GPS Altitude Ref'
+                values:
+                    - 'Above Sea Level'
+                    - 'Below Sea Level'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSAltitude
+                type: rational64u
+                writable: true
+                desc: 'GPS Altitude'
+    -
+        exiftool:
+            -
+                name: GPSTimeStamp
+                type: rational64u
+                count: 3
+                writable: true
+                g2: Time
+                desc: 'GPS Time Stamp'
+    -
+        exiftool:
+            -
+                name: GPSSatellites
+                type: string
+                writable: true
+                desc: 'GPS Satellites'
+    -
+        exiftool:
+            -
+                name: GPSStatus
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Status'
+                values:
+                    A: 'Measurement Active'
+                    V: 'Measurement Void'
+    -
+        exiftool:
+            -
+                name: GPSMeasureMode
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Measure Mode'
+                values:
+                    2: '2-Dimensional Measurement'
+                    3: '3-Dimensional Measurement'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSDOP
+                type: rational64u
+                writable: true
+                desc: 'GPS Dilution Of Precision'
+    -
+        exiftool:
+            -
+                name: GPSSpeedRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Speed Ref'
+                values:
+                    K: km/h
+                    M: mph
+                    'N': knots
+    -
+        exiftool:
+            -
+                name: GPSSpeed
+                type: rational64u
+                writable: true
+                desc: 'GPS Speed'
+    -
+        exiftool:
+            -
+                name: GPSTrackRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Track Ref'
+                values:
+                    M: 'Magnetic North'
+                    T: 'True North'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSTrack
+                type: rational64u
+                writable: true
+                desc: 'GPS Track'
+    -
+        exiftool:
+            -
+                name: GPSImgDirectionRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Img Direction Ref'
+                values:
+                    M: 'Magnetic North'
+                    T: 'True North'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSImgDirection
+                type: rational64u
+                writable: true
+                desc: 'GPS Img Direction'
+    -
+        exiftool:
+            -
+                name: GPSMapDatum
+                type: string
+                writable: true
+                desc: 'GPS Map Datum'
+    -
+        exiftool:
+            -
+                name: GPSDestLatitudeRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Dest Latitude Ref'
+                values:
+                    'N': North
+                    S: South
+    -
+        exiftool:
+            -
+                name: GPSDestLatitude
+                type: rational64u
+                count: 3
+                writable: true
+                desc: 'GPS Dest Latitude'
+    -
+        exiftool:
+            -
+                name: GPSDestLongitudeRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Dest Longitude Ref'
+                values:
+                    E: East
+                    W: West
+    -
+        exiftool:
+            -
+                name: GPSDestLongitude
+                type: rational64u
+                count: 3
+                writable: true
+                desc: 'GPS Dest Longitude'
+    -
+        exiftool:
+            -
+                name: GPSDestBearingRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Dest Bearing Ref'
+                values:
+                    M: 'Magnetic North'
+                    T: 'True North'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSDestBearing
+                type: rational64u
+                writable: true
+                desc: 'GPS Dest Bearing'
+    -
+        exiftool:
+            -
+                name: GPSDestDistanceRef
+                type: string
+                count: 2
+                writable: true
+                desc: 'GPS Dest Distance Ref'
+                values:
+                    K: Kilometers
+                    M: Miles
+                    'N': 'Nautical Miles'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSDestDistance
+                type: rational64u
+                writable: true
+                desc: 'GPS Dest Distance'
+    -
+        exiftool:
+            -
+                name: GPSProcessingMethod
+                type: undef
+                writable: true
+                desc: 'GPS Processing Method'
+    -
+        exiftool:
+            -
+                name: GPSAreaInformation
+                type: undef
+                writable: true
+                desc: 'GPS Area Information'
+    -
+        exiftool:
+            -
+                name: GPSDateStamp
+                type: string
+                count: 11
+                writable: true
+                g2: Time
+                desc: 'GPS Date Stamp'
+    -
+        components: 1
+        exiftool:
+            -
+                name: GPSDifferential
+                type: int16u
+                writable: true
+                desc: 'GPS Differential'
+                values:
+                    - 'No Correction'
+                    - 'Differential Corrected'
+    -
+        exiftool:
+            -
+                name: GPSHPositioningError
+                type: rational64u
+                writable: true
+                desc: 'GPS Horizontal Positioning Error'

@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+/**
+ * A Symfony CLI utility application for MediaProbe.
+ */
+
+use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Command\CompileCommand;
+use FileEye\MediaProbe\Command\DumpCommand;
+use FileEye\MediaProbe\Command\ExifToolResourceUpdateCommand;
+use Symfony\Component\Console\Application;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$application = new Application('fileeye-mediaprobe', MediaProbe::version());
+$application->add(new CompileCommand());
+$application->add(new DumpCommand());
+$application->add(new ExifToolResourceUpdateCommand());
+$application->run();

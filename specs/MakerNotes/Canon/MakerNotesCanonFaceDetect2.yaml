@@ -1,0 +1,22 @@
+collection: MakerNotes\Canon\FaceDetect2
+name: CanonFaceDetect2
+title: 'Canon FaceDetect2'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Byte
+defaultItemCollection: Tag
+items:
+    1:
+        exiftool:
+            -
+                name: FaceWidth
+                type: int8u
+                writable: true
+                desc: 'Face Width'
+    2:
+        exiftool:
+            -
+                name: FacesDetected
+                type: int8u
+                writable: true
+                desc: 'Faces Detected'

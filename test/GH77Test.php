@@ -1,20 +1,20 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Block\Jpeg;
-use FileEye\ImageProbe\core\Block\Tiff;
-use FileEye\ImageProbe\core\ImageProbe;
-use FileEye\ImageProbe\core\Image;
+use FileEye\MediaProbe\Block\Jpeg;
+use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Media;
 
-class GH77Test extends ImageProbeTestCaseBase
+class GH77Test extends MediaProbeTestCaseBase
 {
     public function testReturnModel()
     {
         $file = dirname(__FILE__) . '/image_files/gh-77.jpg';
 
-        $image = Image::createFromFile($file);
-        $input_jpeg = $image->getElement("jpeg");
+        $media = Media::createFromFile($file);
+        $input_jpeg = $media->getElement("jpeg");
 
         $app1 = $input_jpeg->getElement("jpegSegment/exif");
 
@@ -24,7 +24,7 @@ class GH77Test extends ImageProbeTestCaseBase
         $this->assertEquals($model, "Canon EOS 5D Mark III");
 
         $copyright_entry = $ifd0->getElement("tag[@name='Copyright']/entry");
-        $this->assertInstanceOf('FileEye\ImageProbe\core\Entry\IfdCopyright', $copyright_entry);
+        $this->assertInstanceOf('FileEye\MediaProbe\Entry\IfdCopyright', $copyright_entry);
         $this->assertEquals(['Copyright 2016', ''], $copyright_entry->getValue());
         $this->assertEquals('Copyright 2016 (Photographer)', $copyright_entry->toString());
     }

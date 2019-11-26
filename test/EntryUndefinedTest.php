@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Entry\Core\Undefined;
-use FileEye\ImageProbe\core\Collection;
+use FileEye\MediaProbe\Entry\Core\Undefined;
+use FileEye\MediaProbe\Collection;
 
 class EntryUndefinedTest extends EntryTestBase
 {

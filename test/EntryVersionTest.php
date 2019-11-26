@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Entry\Version;
+use FileEye\MediaProbe\Entry\Version;
 
 class EntryVersionTest extends EntryTestBase
 {

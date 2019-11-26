@@ -1,13 +1,13 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Data\DataString;
-use FileEye\ImageProbe\core\Data\DataWindow;
-use FileEye\ImageProbe\core\Data\DataException;
-use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\MediaProbe\Data\DataString;
+use FileEye\MediaProbe\Data\DataWindow;
+use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
-class DataWindowTest extends ImageProbeTestCaseBase
+class DataWindowTest extends MediaProbeTestCaseBase
 {
     public function testDataWindow()
     {

@@ -1,0 +1,140 @@
+collection: MakerNotes\Canon\AFInfo2
+name: CanonAFInfo2
+title: 'Canon AF Info2'
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\AFInfoIndex
+DOMNode: index
+format: Short
+hasIndexSize: true
+defaultItemCollection: Tag
+items:
+    -
+        collection: RawData
+        name: indexSize
+        format: SignedShort
+        exiftool:
+            -
+                name: AFInfoSize
+                type: int16u
+                writable: false
+                desc: 'AF Info Size'
+    -
+        exiftool:
+            -
+                name: AFAreaMode
+                type: int16u
+                writable: false
+                desc: 'AF Area Mode'
+                values:
+                    0: 'Off (Manual Focus)'
+                    1: 'AF Point Expansion (surround)'
+                    2: 'Single-point AF'
+                    4: Auto
+                    5: 'Face Detect AF'
+                    6: 'Face + Tracking'
+                    7: 'Zone AF'
+                    8: 'AF Point Expansion (4 point)'
+                    9: 'Spot AF'
+                    10: 'AF Point Expansion (8 point)'
+                    11: 'Flexizone Multi'
+                    13: 'Flexizone Single'
+                    14: 'Large Zone AF'
+    -
+        exiftool:
+            -
+                name: NumAFPoints
+                type: int16u
+                writable: false
+                desc: 'Num AF Points'
+    -
+        exiftool:
+            -
+                name: ValidAFPoints
+                type: int16u
+                writable: false
+                desc: 'Valid AF Points'
+    -
+        exiftool:
+            -
+                name: CanonImageWidth
+                type: int16u
+                writable: false
+                g2: Image
+                desc: 'Canon Image Width'
+    -
+        exiftool:
+            -
+                name: CanonImageHeight
+                type: int16u
+                writable: false
+                g2: Image
+                desc: 'Canon Image Height'
+    -
+        exiftool:
+            -
+                name: AFImageWidth
+                type: int16u
+                writable: false
+                desc: 'AF Image Width'
+    -
+        exiftool:
+            -
+                name: AFImageHeight
+                type: int16u
+                writable: false
+                desc: 'AF Image Height'
+    -
+        exiftool:
+            -
+                name: AFAreaWidths
+                type: int16s
+                writable: false
+                desc: 'AF Area Widths'
+    -
+        exiftool:
+            -
+                name: AFAreaHeights
+                type: int16s
+                writable: false
+                desc: 'AF Area Heights'
+    -
+        exiftool:
+            -
+                name: AFAreaXPositions
+                type: int16s
+                writable: false
+                desc: 'AF Area X Positions'
+    -
+        exiftool:
+            -
+                name: AFAreaYPositions
+                type: int16s
+                writable: false
+                desc: 'AF Area Y Positions'
+    -
+        __todo: 'add decoding'
+        exiftool:
+            -
+                name: AFPointsInFocus
+                type: int16s
+                writable: false
+                desc: 'AF Points In Focus'
+    -
+        __todo: 'add decoding'
+        exiftool:
+            -
+                name: AFPointsSelected
+                type: int16s
+                writable: false
+                desc: 'AF Points Selected'
+            -
+                name: Canon_AFInfo2_0x000d
+                type: int16s
+                writable: false
+                desc: 'Canon AF Info 2 0x000d'
+    -
+        exiftool:
+            -
+                name: PrimaryAFPoint
+                type: int16u
+                writable: false
+                desc: 'Primary AF Point'

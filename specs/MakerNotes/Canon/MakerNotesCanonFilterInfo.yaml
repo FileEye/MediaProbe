@@ -1,0 +1,94 @@
+collection: MakerNotes\Canon\FilterInfo
+name: CanonFilterInfo
+title: 'Canon FilterInfo'
+class: FileEye\MediaProbe\Block\Ifd
+DOMNode: ifd
+defaultItemCollection: Tag
+items:
+    257:
+        exiftool:
+            -
+                name: GrainyBWFilter
+                type: '?'
+                writable: false
+                desc: 'Grainy B/W Filter'
+                values:
+                    -1: 'Off'
+    513:
+        exiftool:
+            -
+                name: SoftFocusFilter
+                type: '?'
+                writable: false
+                desc: 'Soft Focus Filter'
+                values:
+                    -1: 'Off'
+    769:
+        exiftool:
+            -
+                name: ToyCameraFilter
+                type: '?'
+                writable: false
+                desc: 'Toy Camera Filter'
+                values:
+                    -1: 'Off'
+    1025:
+        exiftool:
+            -
+                name: MiniatureFilter
+                type: '?'
+                writable: false
+                desc: 'Miniature Filter'
+                values:
+                    -1: 'Off'
+    1026:
+        exiftool:
+            -
+                name: MiniatureFilterOrientation
+                type: '?'
+                writable: false
+                desc: 'Miniature Filter Orientation'
+                values:
+                    - Horizontal
+                    - Vertical
+    1027:
+        exiftool:
+            -
+                name: MiniatureFilterPosition
+                type: '?'
+                writable: false
+                desc: 'Miniature Filter Position'
+    1028:
+        exiftool:
+            -
+                name: MiniatureFilterParameter
+                type: '?'
+                writable: false
+                desc: 'Miniature Filter Parameter'
+    1281:
+        exiftool:
+            -
+                name: FisheyeFilter
+                type: '?'
+                writable: false
+                desc: 'Fisheye Filter'
+                values:
+                    -1: 'Off'
+    1537:
+        exiftool:
+            -
+                name: PaintingFilter
+                type: '?'
+                writable: false
+                desc: 'Painting Filter'
+                values:
+                    -1: 'Off'
+    1793:
+        exiftool:
+            -
+                name: WatercolorFilter
+                type: '?'
+                writable: false
+                desc: 'Watercolor Filter'
+                values:
+                    -1: 'Off'

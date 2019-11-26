@@ -1,0 +1,36 @@
+collection: MakerNotes\Canon\ColorInfo
+name: CanonColorInfo
+title: 'Canon ColorInfo'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+items:
+    1:
+        exiftool:
+            -
+                name: Saturation
+                type: int16s
+                writable: true
+                desc: Saturation
+                values:
+                    - Normal
+    2:
+        exiftool:
+            -
+                name: ColorTone
+                type: int16s
+                writable: true
+                desc: 'Color Tone'
+                values:
+                    - Normal
+    3:
+        exiftool:
+            -
+                name: ColorSpace
+                type: int16s
+                writable: true
+                desc: 'Color Space'
+                values:
+                    1: sRGB
+                    2: 'Adobe RGB'

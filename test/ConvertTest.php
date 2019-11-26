@@ -1,11 +1,11 @@
 <?php
 // @codingStandardsIgnoreFile
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Utility\ConvertBytes;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
-class ConvertTest extends ImageProbeTestCaseBase
+class ConvertTest extends MediaProbeTestCaseBase
 {
     public function testLongLittle()
     {

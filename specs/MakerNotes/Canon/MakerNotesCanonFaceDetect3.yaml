@@ -1,0 +1,15 @@
+collection: MakerNotes\Canon\FaceDetect3
+name: CanonFaceDetect3
+title: 'Canon FaceDetect3'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+items:
+    3:
+        exiftool:
+            -
+                name: FacesDetected
+                type: int16u
+                writable: true
+                desc: 'Faces Detected'

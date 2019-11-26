@@ -1,0 +1,15 @@
+collection: MakerNotes\Canon\FocalInfo
+name: CanonFocalInfo
+title: 'Canon FocalInfo'
+class: FileEye\MediaProbe\Block\Ifd
+DOMNode: index
+format: Long
+defaultItemCollection: Tag
+items:
+    -
+        exiftool:
+            -
+                name: FocalLength
+                type: rational32u
+                writable: false
+                desc: 'Focal Length'

@@ -1,0 +1,49 @@
+collection: MakerNotes\Canon\FocalLength
+name: CanonFocalLength
+title: 'Canon Focal Length'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+items:
+    -
+        exiftool:
+            -
+                name: FocalType
+                type: int16u
+                writable: true
+                desc: 'Focal Type'
+                values:
+                    1: Fixed
+                    2: Zoom
+    -
+        exiftool:
+            -
+                name: FocalLength
+                type: int16u
+                writable: true
+                desc: 'Focal Length'
+    -
+        exiftool:
+            -
+                name: FocalPlaneXSize
+                type: int16u
+                writable: true
+                desc: 'Focal Plane X Size'
+            -
+                name: FocalPlaneXUnknown
+                type: int16u
+                writable: true
+                desc: 'Focal Plane X Unknown'
+    -
+        exiftool:
+            -
+                name: FocalPlaneYSize
+                type: int16u
+                writable: true
+                desc: 'Focal Plane Y Size'
+            -
+                name: FocalPlaneYUnknown
+                type: int16u
+                writable: true
+                desc: 'Focal Plane Y Unknown'

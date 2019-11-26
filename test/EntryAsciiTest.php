@@ -1,11 +1,11 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Entry\Core\Ascii;
-use FileEye\ImageProbe\core\Entry\IfdCopyright;
-use FileEye\ImageProbe\core\Entry\Time;
-use FileEye\ImageProbe\core\Collection;
+use FileEye\MediaProbe\Entry\Core\Ascii;
+use FileEye\MediaProbe\Entry\IfdCopyright;
+use FileEye\MediaProbe\Entry\Time;
+use FileEye\MediaProbe\Collection;
 
 class EntryAsciiTest extends EntryTestBase
 {

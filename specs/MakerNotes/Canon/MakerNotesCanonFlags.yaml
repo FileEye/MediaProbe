@@ -1,0 +1,15 @@
+collection: MakerNotes\Canon\Flags
+name: CanonFlags
+title: 'Canon Flags'
+class: FileEye\MediaProbe\Block\Ifd
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+items:
+    1:
+        exiftool:
+            -
+                name: ModifiedParamFlag
+                type: int16s
+                writable: true
+                desc: 'Modified Param Flag'

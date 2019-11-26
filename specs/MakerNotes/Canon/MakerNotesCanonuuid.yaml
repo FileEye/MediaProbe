@@ -1,0 +1,23 @@
+__todo: true
+collection: MakerNotes\Canon\uuid
+name: Canonuuid
+title: 'Canon uuid'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+defaultItemCollection: Tag
+items:
+    CNCV:
+        exiftool:
+            -
+                name: CompressorVersion
+                type: '?'
+                writable: false
+                desc: 'Compressor Version'
+    THMB:
+        exiftool:
+            -
+                name: ThumbnailImage
+                type: '?'
+                writable: false
+                g2: Preview
+                desc: 'Thumbnail Image'

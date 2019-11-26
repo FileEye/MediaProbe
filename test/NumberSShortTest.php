@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Entry\Core\SignedShort;
+use FileEye\MediaProbe\Entry\Core\SignedShort;
 
 class NumberSignedShortTest extends NumberTestCase
 {

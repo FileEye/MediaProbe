@@ -1,15 +1,15 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Data\DataString;
-use FileEye\ImageProbe\core\Block\Exif;
-use FileEye\ImageProbe\core\Block\Jpeg;
-use FileEye\ImageProbe\core\Block\JpegSegmentApp1;
-use FileEye\ImageProbe\core\Collection;
-use FileEye\ImageProbe\core\Image;
+use FileEye\MediaProbe\Data\DataString;
+use FileEye\MediaProbe\Block\Exif;
+use FileEye\MediaProbe\Block\Jpeg;
+use FileEye\MediaProbe\Block\JpegSegmentApp1;
+use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Media;
 
-class GH21Test extends ImageProbeTestCaseBase
+class GH21Test extends MediaProbeTestCaseBase
 {
     protected $file;
 
@@ -28,8 +28,8 @@ class GH21Test extends ImageProbeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         $scale = 0.75;
-        $input_image = Image::createFromFile($this->file);
-        $input_jpeg = $input_image->getElement("jpeg");
+        $input_media = Media::createFromFile($this->file);
+        $input_jpeg = $input_media->getElement("jpeg");
 
         $original = ImageCreateFromString($input_jpeg->toBytes());
         $original_w = ImagesX($original);
@@ -55,8 +55,8 @@ class GH21Test extends ImageProbeTestCaseBase
         imagejpeg($scaled, null);
         $scaled_bytes = ob_get_clean();
 
-        $out_image = Image::createFromData(new DataString($scaled_bytes));
-        $out_jpeg = $out_image->getElement("jpeg");
+        $out_media = Media::createFromData(new DataString($scaled_bytes));
+        $out_jpeg = $out_media->getElement("jpeg");
 
         $exif = $input_jpeg->getElement("jpegSegment/exif");
 
@@ -67,14 +67,14 @@ class GH21Test extends ImageProbeTestCaseBase
         $out_app1_segment = new JpegSegmentApp1($out_jpeg->getCollection()->getItemCollectionByName('APP1'), $out_jpeg, $out_com_segment);
 
         // Add the EXIF block to the APP1 segment.
-        $exif_block = new Exif(Collection::get('exif'), $out_app1_segment);
+        $exif_block = new Exif(Collection::get('Exif'), $out_app1_segment);
         $data_string = new DataString($exif->toBytes());
         $exif_block->loadFromData($data_string);
 
-        $out_image->saveToFile($this->file);
+        $out_media->saveToFile($this->file);
 
-        $image = Image::createFromFile($this->file);
-        $jpeg = $image->getElement("jpeg");
+        $media = Media::createFromFile($this->file);
+        $jpeg = $media->getElement("jpeg");
         $exifin = $jpeg->getElement("jpegSegment/exif");
         $this->assertEquals($exif, $exifin);
     }

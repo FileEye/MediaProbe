@@ -9,7 +9,7 @@
          bootstrap="vendor/autoload.php"
         >
     <testsuites>
-        <testsuite name="ImageProbe Testing Suite">
+        <testsuite name="MediaProbe Testing Suite">
             <directory suffix="Test.php">./test/</directory>
         </testsuite>
     </testsuites>
@@ -18,8 +18,8 @@
         <whitelist>
             <directory suffix=".php">./src/</directory>
             <exclude>
-              <directory suffix=".php">./src/core/Command/</directory>
-              <directory suffix=".php">./src/CollectionMap/</directory>
+              <directory suffix=".php">./src/Command/</directory>
+              <directory suffix=".php">./src/Collection/</directory>
             </exclude>
         </whitelist>
     </filter>

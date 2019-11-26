@@ -1,8 +1,8 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Entry\ExifUserComment;
+use FileEye\MediaProbe\Entry\ExifUserComment;
 
 class EntryUserCommentTest extends EntryTestBase
 {

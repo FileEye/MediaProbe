@@ -1,0 +1,3270 @@
+collection: Ifd\Exif
+name: ExifIFD
+title: 'IFD Exif'
+class: FileEye\MediaProbe\Block\Ifd
+DOMNode: ifd
+defaultItemCollection: Tag
+items:
+    273:
+        exiftool:
+            -
+                name: StripOffsets
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Strip Offsets'
+            -
+                name: StripOffsets
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Strip Offsets'
+    279:
+        exiftool:
+            -
+                name: StripByteCounts
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Strip Byte Counts'
+            -
+                name: StripByteCounts
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Strip Byte Counts'
+    288:
+        exiftool:
+            -
+                name: FreeOffsets
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Free Offsets'
+    289:
+        exiftool:
+            -
+                name: FreeByteCounts
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Free Byte Counts'
+    291:
+        exiftool:
+            -
+                name: GrayResponseCurve
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Gray Response Curve'
+    292:
+        exiftool:
+            -
+                name: T4Options
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'T4 Options'
+                values:
+                    1: '2-Dimensional encoding'
+                    2: Uncompressed
+                    4: 'Fill bits added'
+    293:
+        exiftool:
+            -
+                name: T6Options
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'T6 Options'
+                values:
+                    2: Uncompressed
+    300:
+        exiftool:
+            -
+                name: ColorResponseUnit
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Color Response Unit'
+    320:
+        exiftool:
+            -
+                name: ColorMap
+                type: binary
+                writable: false
+                g1: ExifIFD
+                desc: 'Color Map'
+    324:
+        exiftool:
+            -
+                name: TileOffsets
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Tile Offsets'
+    325:
+        exiftool:
+            -
+                name: TileByteCounts
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Tile Byte Counts'
+    326:
+        exiftool:
+            -
+                name: BadFaxLines
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Bad Fax Lines'
+    327:
+        exiftool:
+            -
+                name: CleanFaxData
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Clean Fax Data'
+                values:
+                    - Clean
+                    - Regenerated
+                    - Unclean
+    328:
+        exiftool:
+            -
+                name: ConsecutiveBadFaxLines
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Consecutive Bad Fax Lines'
+    333:
+        exiftool:
+            -
+                name: InkNames
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Ink Names'
+    334:
+        exiftool:
+            -
+                name: NumberofInks
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Numberof Inks'
+    336:
+        exiftool:
+            -
+                name: DotRange
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Dot Range'
+    338:
+        exiftool:
+            -
+                name: ExtraSamples
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Extra Samples'
+                values:
+                    - Unspecified
+                    - 'Associated Alpha'
+                    - 'Unassociated Alpha'
+    340:
+        exiftool:
+            -
+                name: SMinSampleValue
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'S Min Sample Value'
+    341:
+        exiftool:
+            -
+                name: SMaxSampleValue
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'S Max Sample Value'
+    342:
+        exiftool:
+            -
+                name: TransferRange
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Transfer Range'
+    343:
+        exiftool:
+            -
+                name: ClipPath
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Clip Path'
+    344:
+        exiftool:
+            -
+                name: XClipPathUnits
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'X Clip Path Units'
+    345:
+        exiftool:
+            -
+                name: YClipPathUnits
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Y Clip Path Units'
+    346:
+        exiftool:
+            -
+                name: Indexed
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Indexed
+                values:
+                    - 'Not indexed'
+                    - Indexed
+    347:
+        exiftool:
+            -
+                name: JPEGTables
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEG Tables'
+    351:
+        exiftool:
+            -
+                name: OPIProxy
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'OPI Proxy'
+                values:
+                    - 'Higher resolution image does not exist'
+                    - 'Higher resolution image exists'
+    401:
+        exiftool:
+            -
+                name: ProfileType
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Profile Type'
+                values:
+                    - Unspecified
+                    - 'Group 3 FAX'
+    402:
+        exiftool:
+            -
+                name: FaxProfile
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Fax Profile'
+                values:
+                    0: Unknown
+                    1: 'Minimal B&W lossless, S'
+                    2: 'Extended B&W lossless, F'
+                    3: 'Lossless JBIG B&W, J'
+                    4: 'Lossy color and grayscale, C'
+                    5: 'Lossless color and grayscale, L'
+                    6: 'Mixed raster content, M'
+                    7: 'Profile T'
+                    255: 'Multi Profiles'
+    403:
+        exiftool:
+            -
+                name: CodingMethods
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Coding Methods'
+                values:
+                    1: 'Unspecified compression'
+                    2: 'Modified Huffman'
+                    4: 'Modified Read'
+                    8: 'Modified MR'
+                    16: JBIG
+                    32: 'Baseline JPEG'
+                    64: 'JBIG color'
+    404:
+        exiftool:
+            -
+                name: VersionYear
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Version Year'
+    405:
+        exiftool:
+            -
+                name: ModeNumber
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Mode Number'
+    433:
+        exiftool:
+            -
+                name: Decode
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Decode
+    434:
+        exiftool:
+            -
+                name: DefaultImageColor
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Default Image Color'
+    435:
+        exiftool:
+            -
+                name: T82Options
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'T82 Options'
+    437:
+        exiftool:
+            -
+                name: JPEGTables
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEG Tables'
+    512:
+        exiftool:
+            -
+                name: JPEGProc
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEG Proc'
+                values:
+                    1: Baseline
+                    14: Lossless
+    513:
+        exiftool:
+            9:
+                name: OtherImageStart
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Other Image Start'
+    514:
+        exiftool:
+            9:
+                name: OtherImageLength
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Other Image Length'
+    515:
+        exiftool:
+            -
+                name: JPEGRestartInterval
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEG Restart Interval'
+    517:
+        exiftool:
+            -
+                name: JPEGLosslessPredictors
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEG Lossless Predictors'
+    518:
+        exiftool:
+            -
+                name: JPEGPointTransforms
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEG Point Transforms'
+    519:
+        exiftool:
+            -
+                name: JPEGQTables
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEGQ Tables'
+    520:
+        exiftool:
+            -
+                name: JPEGDCTables
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEGDC Tables'
+    521:
+        exiftool:
+            -
+                name: JPEGACTables
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPEGAC Tables'
+    559:
+        exiftool:
+            -
+                name: StripRowCounts
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Strip Row Counts'
+    999:
+        exiftool:
+            -
+                name: USPTOMiscellaneous
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'USPTO Miscellaneous'
+    18247:
+        exiftool:
+            -
+                name: XP_DIP_XML
+                type: undef
+                writable: false
+                g1: ExifIFD
+                desc: 'XP DIP XML'
+    28672:
+        exiftool:
+            -
+                name: SonyRawFileType
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Sony Raw File Type'
+                values:
+                    - 'Sony Uncompressed 14-bit RAW'
+                    - 'Sony Uncompressed 12-bit RAW'
+                    - 'Sony Compressed RAW'
+                    - 'Sony Lossless Compressed RAW'
+    28688:
+        exiftool:
+            -
+                name: SonyToneCurve
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Sony Tone Curve'
+    32781:
+        exiftool:
+            -
+                name: ImageID
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image ID'
+    32931:
+        exiftool:
+            -
+                name: WangTag1
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Wang Tag 1'
+    32932:
+        exiftool:
+            -
+                name: WangAnnotation
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Wang Annotation'
+    32933:
+        exiftool:
+            -
+                name: WangTag3
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Wang Tag 3'
+    32934:
+        exiftool:
+            -
+                name: WangTag4
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Wang Tag 4'
+    32953:
+        exiftool:
+            -
+                name: ImageReferencePoints
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Reference Points'
+    32954:
+        exiftool:
+            -
+                name: RegionXformTackPoint
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Region Xform Tack Point'
+    32955:
+        exiftool:
+            -
+                name: WarpQuadrilateral
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Warp Quadrilateral'
+    32956:
+        exiftool:
+            -
+                name: AffineTransformMat
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Affine Transform Mat'
+    32995:
+        exiftool:
+            -
+                name: Matteing
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Matteing
+    32996:
+        exiftool:
+            -
+                name: DataType
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Data Type'
+    32997:
+        exiftool:
+            -
+                name: ImageDepth
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Depth'
+    32998:
+        exiftool:
+            -
+                name: TileDepth
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Tile Depth'
+    33300:
+        exiftool:
+            -
+                name: ImageFullWidth
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Full Width'
+    33301:
+        exiftool:
+            -
+                name: ImageFullHeight
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Full Height'
+    33302:
+        exiftool:
+            -
+                name: TextureFormat
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Texture Format'
+    33303:
+        exiftool:
+            -
+                name: WrapModes
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Wrap Modes'
+    33304:
+        exiftool:
+            -
+                name: FovCot
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Fov Cot'
+    33305:
+        exiftool:
+            -
+                name: MatrixWorldToScreen
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Matrix World To Screen'
+    33306:
+        exiftool:
+            -
+                name: MatrixWorldToCamera
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Matrix World To Camera'
+    33405:
+        exiftool:
+            -
+                name: Model2
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Model 2'
+    33423:
+        exiftool:
+            -
+                name: BatteryLevel
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Battery Level'
+    33434:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifExposureTime
+        exiftool:
+            -
+                name: ExposureTime
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: 'Exposure Time'
+    33437:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifFNumber
+        exiftool:
+            -
+                name: FNumber
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: 'F Number'
+    33445:
+        exiftool:
+            -
+                name: MDFileTag
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD File Tag'
+    33446:
+        exiftool:
+            -
+                name: MDScalePixel
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD Scale Pixel'
+    33447:
+        exiftool:
+            -
+                name: MDColorTable
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD Color Table'
+    33448:
+        exiftool:
+            -
+                name: MDLabName
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD Lab Name'
+    33449:
+        exiftool:
+            -
+                name: MDSampleInfo
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD Sample Info'
+    33450:
+        exiftool:
+            -
+                name: MDPrepDate
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD Prep Date'
+    33451:
+        exiftool:
+            -
+                name: MDPrepTime
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD Prep Time'
+    33452:
+        exiftool:
+            -
+                name: MDFileUnits
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MD File Units'
+    33550:
+        exiftool:
+            -
+                name: PixelScale
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Pixel Scale'
+    33589:
+        exiftool:
+            -
+                name: AdventScale
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Advent Scale'
+    33590:
+        exiftool:
+            -
+                name: AdventRevision
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Advent Revision'
+    33628:
+        exiftool:
+            -
+                name: UIC1Tag
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'UIC1 Tag'
+    33629:
+        exiftool:
+            -
+                name: UIC2Tag
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'UIC2 Tag'
+    33630:
+        exiftool:
+            -
+                name: UIC3Tag
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'UIC3 Tag'
+    33631:
+        exiftool:
+            -
+                name: UIC4Tag
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'UIC4 Tag'
+    33918:
+        exiftool:
+            -
+                name: IntergraphPacketData
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Intergraph Packet Data'
+    33919:
+        exiftool:
+            -
+                name: IntergraphFlagRegisters
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Intergraph Flag Registers'
+    33920:
+        exiftool:
+            -
+                name: IntergraphMatrix
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Intergraph Matrix'
+    33921:
+        exiftool:
+            -
+                name: INGRReserved
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'INGR Reserved'
+    33922:
+        exiftool:
+            -
+                name: ModelTiePoint
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                g2: Location
+                desc: 'Model Tie Point'
+    34016:
+        exiftool:
+            -
+                name: Site
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Site
+    34017:
+        exiftool:
+            -
+                name: ColorSequence
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Color Sequence'
+    34018:
+        exiftool:
+            -
+                name: IT8Header
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'IT8 Header'
+    34019:
+        exiftool:
+            -
+                name: RasterPadding
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Raster Padding'
+                values:
+                    0: Byte
+                    1: Word
+                    2: 'Long Word'
+                    9: Sector
+                    10: 'Long Sector'
+    34020:
+        exiftool:
+            -
+                name: BitsPerRunLength
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Bits Per Run Length'
+    34021:
+        exiftool:
+            -
+                name: BitsPerExtendedRunLength
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Bits Per Extended Run Length'
+    34022:
+        exiftool:
+            -
+                name: ColorTable
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Color Table'
+    34023:
+        exiftool:
+            -
+                name: ImageColorIndicator
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Color Indicator'
+                values:
+                    - 'Unspecified Image Color'
+                    - 'Specified Image Color'
+    34024:
+        exiftool:
+            -
+                name: BackgroundColorIndicator
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Background Color Indicator'
+                values:
+                    - 'Unspecified Background Color'
+                    - 'Specified Background Color'
+    34025:
+        exiftool:
+            -
+                name: ImageColorValue
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Color Value'
+    34026:
+        exiftool:
+            -
+                name: BackgroundColorValue
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Background Color Value'
+    34027:
+        exiftool:
+            -
+                name: PixelIntensityRange
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Pixel Intensity Range'
+    34028:
+        exiftool:
+            -
+                name: TransparencyIndicator
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Transparency Indicator'
+    34029:
+        exiftool:
+            -
+                name: ColorCharacterization
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Color Characterization'
+    34030:
+        exiftool:
+            -
+                name: HCUsage
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'HC Usage'
+                values:
+                    - CT
+                    - 'Line Art'
+                    - Trap
+    34031:
+        exiftool:
+            -
+                name: TrapIndicator
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Trap Indicator'
+    34032:
+        exiftool:
+            -
+                name: CMYKEquivalent
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'CMYK Equivalent'
+    34232:
+        exiftool:
+            -
+                name: PixelMagicJBIGOptions
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Pixel Magic JBIG Options'
+    34263:
+        exiftool:
+            -
+                name: JPLCartoIFD
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JPL Carto IFD'
+    34264:
+        exiftool:
+            -
+                name: ModelTransform
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                g2: Location
+                desc: 'Model Transform'
+    34306:
+        exiftool:
+            -
+                name: WB_GRGBLevels
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'WB GRGB Levels'
+    34687:
+        exiftool:
+            -
+                name: TIFF_FXExtensions
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'TIFF FX Extensions'
+                values:
+                    1: 'Resolution/Image Width'
+                    2: 'N Layer Profile M'
+                    4: 'Shared Data'
+                    8: 'B&W JBIG2'
+                    16: 'JBIG2 Profile M'
+    34688:
+        exiftool:
+            -
+                name: MultiProfiles
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Multi Profiles'
+                values:
+                    1: 'Profile S'
+                    2: 'Profile F'
+                    4: 'Profile J'
+                    8: 'Profile C'
+                    16: 'Profile L'
+                    32: 'Profile M'
+                    64: 'Profile T'
+                    128: 'Resolution/Image Width'
+                    256: 'N Layer Profile M'
+                    512: 'Shared Data'
+                    1024: 'JBIG2 Profile M'
+    34689:
+        exiftool:
+            -
+                name: SharedData
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Shared Data'
+    34690:
+        exiftool:
+            -
+                name: T88Options
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'T88 Options'
+    34732:
+        exiftool:
+            -
+                name: ImageLayer
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Layer'
+    34750:
+        exiftool:
+            -
+                name: JBIGOptions
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'JBIG Options'
+    34850:
+        components: 1
+        exiftool:
+            -
+                name: ExposureProgram
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Exposure Program'
+                values:
+                    - 'Not Defined'
+                    - Manual
+                    - 'Program AE'
+                    - 'Aperture-priority AE'
+                    - 'Shutter speed priority AE'
+                    - 'Creative (Slow speed)'
+                    - 'Action (High speed)'
+                    - Portrait
+                    - Landscape
+                    - Bulb
+    34852:
+        exiftool:
+            -
+                name: SpectralSensitivity
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Spectral Sensitivity'
+    34855:
+        alias:
+            - ISOSpeedRatings
+        exiftool:
+            -
+                name: ISO
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                desc: ISO
+    34856:
+        exiftool:
+            -
+                name: Opto-ElectricConvFactor
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Opto-Electric Conv Factor'
+    34857:
+        exiftool:
+            -
+                name: Interlace
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Interlace
+    34858:
+        exiftool:
+            -
+                name: TimeZoneOffset
+                type: int16s
+                writable: true
+                g1: ExifIFD
+                desc: 'Time Zone Offset'
+    34859:
+        exiftool:
+            -
+                name: SelfTimerMode
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                desc: 'Self Timer Mode'
+    34864:
+        exiftool:
+            -
+                name: SensitivityType
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                desc: 'Sensitivity Type'
+                values:
+                    - Unknown
+                    - 'Standard Output Sensitivity'
+                    - 'Recommended Exposure Index'
+                    - 'ISO Speed'
+                    - 'Standard Output Sensitivity and Recommended Exposure Index'
+                    - 'Standard Output Sensitivity and ISO Speed'
+                    - 'Recommended Exposure Index and ISO Speed'
+                    - 'Standard Output Sensitivity, Recommended Exposure Index and ISO Speed'
+    34865:
+        exiftool:
+            -
+                name: StandardOutputSensitivity
+                type: int32u
+                writable: true
+                g1: ExifIFD
+                desc: 'Standard Output Sensitivity'
+    34866:
+        exiftool:
+            -
+                name: RecommendedExposureIndex
+                type: int32u
+                writable: true
+                g1: ExifIFD
+                desc: 'Recommended Exposure Index'
+    34867:
+        exiftool:
+            -
+                name: ISOSpeed
+                type: int32u
+                writable: true
+                g1: ExifIFD
+                desc: 'ISO Speed'
+    34868:
+        exiftool:
+            -
+                name: ISOSpeedLatitudeyyy
+                type: int32u
+                writable: true
+                g1: ExifIFD
+                desc: 'ISO Speed Latitude yyy'
+    34869:
+        exiftool:
+            -
+                name: ISOSpeedLatitudezzz
+                type: int32u
+                writable: true
+                g1: ExifIFD
+                desc: 'ISO Speed Latitude zzz'
+    34908:
+        exiftool:
+            -
+                name: FaxRecvParams
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Fax Recv Params'
+    34909:
+        exiftool:
+            -
+                name: FaxSubAddress
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Fax Sub Address'
+    34910:
+        exiftool:
+            -
+                name: FaxRecvTime
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Fax Recv Time'
+    34929:
+        exiftool:
+            -
+                name: FedexEDR
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Fedex EDR'
+    36864:
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\Version
+        exiftool:
+            -
+                name: ExifVersion
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Exif Version'
+    36867:
+        components: 20
+        entryClass: FileEye\MediaProbe\Entry\Time
+        exiftool:
+            -
+                name: DateTimeOriginal
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Date/Time Original'
+    36868:
+        components: 20
+        entryClass: FileEye\MediaProbe\Entry\Time
+        exiftool:
+            -
+                name: CreateDate
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Create Date'
+    36873:
+        exiftool:
+            -
+                name: GooglePlusUploadCode
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Google Plus Upload Code'
+    36880:
+        components: 7
+        exiftool:
+            -
+                name: OffsetTime
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Offset Time'
+    36881:
+        components: 7
+        exiftool:
+            -
+                name: OffsetTimeOriginal
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Offset Time Original'
+    36882:
+        components: 7
+        exiftool:
+            -
+                name: OffsetTimeDigitized
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Offset Time Digitized'
+    37121:
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\ExifComponentsConfiguration
+        exiftool:
+            -
+                name: ComponentsConfiguration
+                type: undef
+                count: 4
+                writable: true
+                g1: ExifIFD
+                desc: 'Components Configuration'
+                values:
+                    - '-'
+                    - 'Y'
+                    - Cb
+                    - Cr
+                    - R
+                    - G
+                    - B
+    37122:
+        components: 1
+        exiftool:
+            -
+                name: CompressedBitsPerPixel
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: 'Compressed Bits Per Pixel'
+    37377:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifShutterSpeedValue
+        exiftool:
+            -
+                name: ShutterSpeedValue
+                type: rational64s
+                writable: true
+                g1: ExifIFD
+                desc: 'Shutter Speed Value'
+    37378:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifApertureValue
+        exiftool:
+            -
+                name: ApertureValue
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: 'Aperture Value'
+    37379:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifBrightnessValue
+        exiftool:
+            -
+                name: BrightnessValue
+                type: rational64s
+                writable: true
+                g1: ExifIFD
+                desc: 'Brightness Value'
+    37380:
+        alias:
+            - ExposureBiasValue
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifExposureBiasValue
+        exiftool:
+            -
+                name: ExposureCompensation
+                type: rational64s
+                writable: true
+                g1: ExifIFD
+                desc: 'Exposure Compensation'
+    37381:
+        components: 1
+        exiftool:
+            -
+                name: MaxApertureValue
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Max Aperture Value'
+    37382:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifSubjectDistance
+        exiftool:
+            -
+                name: SubjectDistance
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Subject Distance'
+    37383:
+        components: 1
+        exiftool:
+            -
+                name: MeteringMode
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Metering Mode'
+                values:
+                    0: Unknown
+                    1: Average
+                    2: 'Center-weighted average'
+                    3: Spot
+                    4: Multi-spot
+                    5: Multi-segment
+                    6: Partial
+                    255: Other
+    37384:
+        components: 1
+        exiftool:
+            -
+                name: LightSource
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Light Source'
+                values:
+                    0: Unknown
+                    1: Daylight
+                    2: Fluorescent
+                    3: 'Tungsten (Incandescent)'
+                    4: Flash
+                    9: 'Fine Weather'
+                    10: Cloudy
+                    11: Shade
+                    12: 'Daylight Fluorescent'
+                    13: 'Day White Fluorescent'
+                    14: 'Cool White Fluorescent'
+                    15: 'White Fluorescent'
+                    16: 'Warm White Fluorescent'
+                    17: 'Standard Light A'
+                    18: 'Standard Light B'
+                    19: 'Standard Light C'
+                    20: D55
+                    21: D65
+                    22: D75
+                    23: D50
+                    24: 'ISO Studio Tungsten'
+                    255: Other
+    37385:
+        components: 1
+        exiftool:
+            -
+                name: Flash
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: Flash
+                values:
+                    0: 'No Flash'
+                    1: Fired
+                    5: 'Fired, Return not detected'
+                    7: 'Fired, Return detected'
+                    8: 'On, Did not fire'
+                    9: 'On, Fired'
+                    13: 'On, Return not detected'
+                    15: 'On, Return detected'
+                    16: 'Off, Did not fire'
+                    20: 'Off, Did not fire, Return not detected'
+                    24: 'Auto, Did not fire'
+                    25: 'Auto, Fired'
+                    29: 'Auto, Fired, Return not detected'
+                    31: 'Auto, Fired, Return detected'
+                    32: 'No flash function'
+                    48: 'Off, No flash function'
+                    65: 'Fired, Red-eye reduction'
+                    69: 'Fired, Red-eye reduction, Return not detected'
+                    71: 'Fired, Red-eye reduction, Return detected'
+                    73: 'On, Red-eye reduction'
+                    77: 'On, Red-eye reduction, Return not detected'
+                    79: 'On, Red-eye reduction, Return detected'
+                    80: 'Off, Red-eye reduction'
+                    88: 'Auto, Did not fire, Red-eye reduction'
+                    89: 'Auto, Fired, Red-eye reduction'
+                    93: 'Auto, Fired, Red-eye reduction, Return not detected'
+                    95: 'Auto, Fired, Red-eye reduction, Return detected'
+    37386:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifFocalLength
+        exiftool:
+            -
+                name: FocalLength
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Focal Length'
+    37387:
+        exiftool:
+            -
+                name: FlashEnergy
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Flash Energy'
+    37388:
+        exiftool:
+            -
+                name: SpatialFrequencyResponse
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Spatial Frequency Response'
+    37389:
+        exiftool:
+            -
+                name: Noise
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Noise
+    37390:
+        exiftool:
+            -
+                name: FocalPlaneXResolution
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Focal Plane X Resolution'
+    37391:
+        exiftool:
+            -
+                name: FocalPlaneYResolution
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Focal Plane Y Resolution'
+    37392:
+        exiftool:
+            -
+                name: FocalPlaneResolutionUnit
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Focal Plane Resolution Unit'
+                values:
+                    1: None
+                    2: inches
+                    3: cm
+                    4: mm
+                    5: um
+    37393:
+        exiftool:
+            -
+                name: ImageNumber
+                type: int32u
+                writable: true
+                g1: ExifIFD
+                desc: 'Image Number'
+    37394:
+        exiftool:
+            -
+                name: SecurityClassification
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Security Classification'
+                values:
+                    C: Confidential
+                    R: Restricted
+                    S: Secret
+                    T: 'Top Secret'
+                    U: Unclassified
+    37395:
+        exiftool:
+            -
+                name: ImageHistory
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Image History'
+    37396:
+        entryClass: FileEye\MediaProbe\Entry\ExifSubjectArea
+        exiftool:
+            -
+                name: SubjectArea
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Subject Area'
+    37397:
+        exiftool:
+            -
+                name: ExposureIndex
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Exposure Index'
+    37398:
+        exiftool:
+            -
+                name: TIFF-EPStandardID
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'TIFF-EP Standard ID'
+    37399:
+        exiftool:
+            -
+                name: SensingMethod
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Sensing Method'
+                values:
+                    1: 'Monochrome area'
+                    2: 'One-chip color area'
+                    3: 'Two-chip color area'
+                    4: 'Three-chip color area'
+                    5: 'Color sequential area'
+                    6: 'Monochrome linear'
+                    7: Trilinear
+                    8: 'Color sequential linear'
+    37434:
+        exiftool:
+            -
+                name: CIP3DataFile
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'CIP3 Data File'
+    37435:
+        exiftool:
+            -
+                name: CIP3Sheet
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'CIP3 Sheet'
+    37436:
+        exiftool:
+            -
+                name: CIP3Side
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'CIP3 Side'
+    37439:
+        exiftool:
+            -
+                name: StoNits
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Sto Nits'
+    37500:
+        name: MakerNote
+        title: 'Maker Note'
+        format: Undefined
+        entryClass: FileEye\MediaProbe\Entry\ExifMakerNote
+        exiftool:
+            -
+                name: MakerNoteApple
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Apple'
+            -
+                name: MakerNoteNikon
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Nikon'
+            -
+                name: MakerNoteCanon
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Canon'
+            -
+                name: MakerNoteCasio
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Casio'
+            -
+                name: MakerNoteCasio2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Casio 2'
+            -
+                name: MakerNoteDJI
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note DJI'
+            -
+                name: MakerNoteFLIR
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note FLIR'
+            -
+                name: MakerNoteFujiFilm
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Fuji Film'
+            -
+                name: MakerNoteGE
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note GE'
+            -
+                name: MakerNoteGE2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note GE2'
+            -
+                name: MakerNoteHasselblad
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Hasselblad'
+            -
+                name: MakerNoteHP
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note HP'
+            -
+                name: MakerNoteHP2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note HP2'
+            -
+                name: MakerNoteHP4
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note HP4'
+            -
+                name: MakerNoteHP6
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note HP6'
+            -
+                name: MakerNoteISL
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note ISL'
+            -
+                name: MakerNoteJVC
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note JVC'
+            -
+                name: MakerNoteJVCText
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note JVC Text'
+            -
+                name: MakerNoteKodak1a
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 1a'
+            -
+                name: MakerNoteKodak1b
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 1b'
+            -
+                name: MakerNoteKodak2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 2'
+            -
+                name: MakerNoteKodak3
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 3'
+            -
+                name: MakerNoteKodak4
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 4'
+            -
+                name: MakerNoteKodak5
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 5'
+            -
+                name: MakerNoteKodak6a
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 6a'
+            -
+                name: MakerNoteKodak6b
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 6b'
+            -
+                name: MakerNoteKodak7
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 7'
+            -
+                name: MakerNoteKodak8a
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 8a'
+            -
+                name: MakerNoteKodak8b
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 8b'
+            -
+                name: MakerNoteKodak8c
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 8c'
+            -
+                name: MakerNoteKodak9
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 9'
+            -
+                name: MakerNoteKodak10
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 10'
+            -
+                name: MakerNoteKodak11
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 11'
+            -
+                name: MakerNoteKodak12
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak 12'
+            -
+                name: MakerNoteKodakUnknown
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kodak Unknown'
+            -
+                name: MakerNoteKyocera
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Kyocera'
+            -
+                name: MakerNoteMinolta
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Minolta'
+            -
+                name: MakerNoteMinolta2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Minolta 2'
+            -
+                name: MakerNoteMinolta3
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Minolta 3'
+            -
+                name: MakerNoteMotorola
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Motorola'
+            -
+                name: MakerNoteNikon2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Nikon 2'
+            -
+                name: MakerNoteNikon3
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Nikon 3'
+            -
+                name: MakerNoteNintendo
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Nintendo'
+            -
+                name: MakerNoteOlympus
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Olympus'
+            -
+                name: MakerNoteOlympus2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Olympus 2'
+            -
+                name: MakerNoteLeica
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica'
+            -
+                name: MakerNoteLeica2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 2'
+            -
+                name: MakerNoteLeica3
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 3'
+            -
+                name: MakerNoteLeica4
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 4'
+            -
+                name: MakerNoteLeica5
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 5'
+            -
+                name: MakerNoteLeica6
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 6'
+            -
+                name: MakerNoteLeica7
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 7'
+            -
+                name: MakerNoteLeica8
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 8'
+            -
+                name: MakerNoteLeica9
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Leica 9'
+            -
+                name: MakerNotePanasonic
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Panasonic'
+            -
+                name: MakerNotePanasonic2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Panasonic 2'
+            -
+                name: MakerNotePanasonic3
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Panasonic 3'
+            -
+                name: MakerNotePentax
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Pentax'
+            -
+                name: MakerNotePentax2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Pentax 2'
+            -
+                name: MakerNotePentax3
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Pentax 3'
+            -
+                name: MakerNotePentax4
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Pentax 4'
+            -
+                name: MakerNotePentax5
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Pentax 5'
+            -
+                name: MakerNotePentax6
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Pentax 6'
+            -
+                name: MakerNotePhaseOne
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Phase One'
+            -
+                name: MakerNoteReconyx
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Reconyx'
+            -
+                name: MakerNoteReconyx2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Reconyx 2'
+            -
+                name: MakerNoteRicoh
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Ricoh'
+            -
+                name: MakerNoteRicoh2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Ricoh 2'
+            -
+                name: MakerNoteRicohText
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Ricoh Text'
+            -
+                name: MakerNoteSamsung1a
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Samsung 1a'
+            -
+                name: MakerNoteSamsung1b
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Samsung 1b'
+            -
+                name: MakerNoteSamsung2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Samsung 2'
+            -
+                name: MakerNoteSanyo
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sanyo'
+            -
+                name: MakerNoteSanyoC4
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sanyo C4'
+            -
+                name: MakerNoteSanyoPatch
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sanyo Patch'
+            -
+                name: MakerNoteSigma
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sigma'
+            -
+                name: MakerNoteSony
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sony'
+            -
+                name: MakerNoteSony2
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sony 2'
+            -
+                name: MakerNoteSony3
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sony 3'
+            -
+                name: MakerNoteSony4
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sony 4'
+            -
+                name: MakerNoteSony5
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sony 5'
+            -
+                name: MakerNoteSonyEricsson
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sony Ericsson'
+            -
+                name: MakerNoteSonySRF
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Sony SRF'
+            -
+                name: MakerNoteUnknownText
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Unknown Text'
+            -
+                name: MakerNoteUnknownBinary
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Unknown Binary'
+            -
+                name: MakerNoteUnknown
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Maker Note Unknown'
+    37510:
+        entryClass: FileEye\MediaProbe\Entry\ExifUserComment
+        exiftool:
+            -
+                name: UserComment
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'User Comment'
+    37520:
+        exiftool:
+            -
+                name: SubSecTime
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Sub Sec Time'
+    37521:
+        exiftool:
+            -
+                name: SubSecTimeOriginal
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Sub Sec Time Original'
+    37522:
+        exiftool:
+            -
+                name: SubSecTimeDigitized
+                type: string
+                writable: true
+                g1: ExifIFD
+                g2: Time
+                desc: 'Sub Sec Time Digitized'
+    37679:
+        exiftool:
+            -
+                name: MSDocumentText
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MS Document Text'
+    37680:
+        exiftool:
+            -
+                name: MSPropertySetStorage
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MS Property Set Storage'
+    37681:
+        exiftool:
+            -
+                name: MSDocumentTextPosition
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'MS Document Text Position'
+    37888:
+        exiftool:
+            -
+                name: AmbientTemperature
+                type: rational64s
+                writable: true
+                g1: ExifIFD
+                desc: 'Ambient Temperature'
+    37889:
+        exiftool:
+            -
+                name: Humidity
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: Humidity
+    37890:
+        exiftool:
+            -
+                name: Pressure
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: Pressure
+    37891:
+        exiftool:
+            -
+                name: WaterDepth
+                type: rational64s
+                writable: true
+                g1: ExifIFD
+                desc: 'Water Depth'
+    37892:
+        exiftool:
+            -
+                name: Acceleration
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: Acceleration
+    37893:
+        exiftool:
+            -
+                name: CameraElevationAngle
+                type: rational64s
+                writable: true
+                g1: ExifIFD
+                desc: 'Camera Elevation Angle'
+    40960:
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\Version
+        exiftool:
+            -
+                name: FlashpixVersion
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Flashpix Version'
+    40961:
+        components: 1
+        exiftool:
+            -
+                name: ColorSpace
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                desc: 'Color Space'
+                values:
+                    1: sRGB
+                    2: 'Adobe RGB'
+                    65533: 'Wide Gamut RGB'
+                    65534: 'ICC Profile'
+                    65535: Uncalibrated
+    40962:
+        alias:
+            - PixelXDimension
+        components: 1
+        format:
+            - Short
+            - Long
+        exiftool:
+            -
+                name: ExifImageWidth
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                desc: 'Exif Image Width'
+    40963:
+        alias:
+            - PixelYDimension
+        components: 1
+        format:
+            - Short
+            - Long
+        exiftool:
+            -
+                name: ExifImageHeight
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                desc: 'Exif Image Height'
+    40964:
+        exiftool:
+            -
+                name: RelatedSoundFile
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Related Sound File'
+    40965:
+        collection: Ifd\Interoperability
+    40976:
+        exiftool:
+            -
+                name: SamsungRawPointersOffset
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Samsung Raw Pointers Offset'
+    40977:
+        exiftool:
+            -
+                name: SamsungRawPointersLength
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Samsung Raw Pointers Length'
+    41217:
+        exiftool:
+            -
+                name: SamsungRawByteOrder
+                type: undef
+                writable: false
+                g1: ExifIFD
+                desc: 'Samsung Raw Byte Order'
+    41218:
+        exiftool:
+            -
+                name: SamsungRawUnknown
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Samsung Raw Unknown'
+    41483:
+        components: 1
+        exiftool:
+            -
+                name: FlashEnergy
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Flash Energy'
+    41484:
+        exiftool:
+            -
+                name: SpatialFrequencyResponse
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Spatial Frequency Response'
+    41485:
+        exiftool:
+            -
+                name: Noise
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Noise
+    41486:
+        components: 1
+        exiftool:
+            -
+                name: FocalPlaneXResolution
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Focal Plane X Resolution'
+    41487:
+        components: 1
+        exiftool:
+            -
+                name: FocalPlaneYResolution
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Focal Plane Y Resolution'
+    41488:
+        components: 1
+        exiftool:
+            -
+                name: FocalPlaneResolutionUnit
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Focal Plane Resolution Unit'
+                values:
+                    1: None
+                    2: inches
+                    3: cm
+                    4: mm
+                    5: um
+    41489:
+        exiftool:
+            -
+                name: ImageNumber
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Number'
+    41490:
+        exiftool:
+            -
+                name: SecurityClassification
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Security Classification'
+    41491:
+        exiftool:
+            -
+                name: ImageHistory
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image History'
+    41492:
+        components: 1
+        exiftool:
+            -
+                name: SubjectLocation
+                type: int16u
+                count: 2
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Subject Location'
+    41493:
+        components: 1
+        exiftool:
+            -
+                name: ExposureIndex
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: 'Exposure Index'
+    41494:
+        exiftool:
+            -
+                name: TIFF-EPStandardID
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'TIFF-EP Standard ID'
+    41495:
+        components: 1
+        exiftool:
+            -
+                name: SensingMethod
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Sensing Method'
+                values:
+                    1: 'Not defined'
+                    2: 'One-chip color area'
+                    3: 'Two-chip color area'
+                    4: 'Three-chip color area'
+                    5: 'Color sequential area'
+                    7: Trilinear
+                    8: 'Color sequential linear'
+    41728:
+        components: 1
+        exiftool:
+            -
+                name: FileSource
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'File Source'
+                values:
+                    1: 'Film Scanner'
+                    2: 'Reflection Print Scanner'
+                    3: 'Digital Camera'
+                    \x03\x00\x00\x00: 'Sigma Digital Camera'
+    41729:
+        components: 1
+        exiftool:
+            -
+                name: SceneType
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'Scene Type'
+                values:
+                    1: 'Directly photographed'
+    41730:
+        exiftool:
+            -
+                name: CFAPattern
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: 'CFA Pattern'
+    41985:
+        components: 1
+        exiftool:
+            -
+                name: CustomRendered
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                desc: 'Custom Rendered'
+                values:
+                    0: Normal
+                    1: Custom
+                    3: HDR
+                    6: Panorama
+                    8: Portrait
+    41986:
+        components: 1
+        exiftool:
+            -
+                name: ExposureMode
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Exposure Mode'
+                values:
+                    - Auto
+                    - Manual
+                    - 'Auto bracket'
+    41987:
+        components: 1
+        exiftool:
+            -
+                name: WhiteBalance
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'White Balance'
+                values:
+                    - Auto
+                    - Manual
+    41988:
+        components: 1
+        exiftool:
+            -
+                name: DigitalZoomRatio
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Digital Zoom Ratio'
+    41989:
+        alias:
+            - FocalLengthIn35mmFilm
+        components: 1
+        exiftool:
+            -
+                name: FocalLengthIn35mmFormat
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Focal Length In 35mm Format'
+    41990:
+        components: 1
+        exiftool:
+            -
+                name: SceneCaptureType
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Scene Capture Type'
+                values:
+                    - Standard
+                    - Landscape
+                    - Portrait
+                    - Night
+    41991:
+        components: 1
+        exiftool:
+            -
+                name: GainControl
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Gain Control'
+                values:
+                    - None
+                    - 'Low gain up'
+                    - 'High gain up'
+                    - 'Low gain down'
+                    - 'High gain down'
+    41992:
+        components: 1
+        exiftool:
+            -
+                name: Contrast
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: Contrast
+                values:
+                    - Normal
+                    - Low
+                    - High
+    41993:
+        components: 1
+        exiftool:
+            -
+                name: Saturation
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: Saturation
+                values:
+                    - Normal
+                    - Low
+                    - High
+    41994:
+        components: 1
+        exiftool:
+            -
+                name: Sharpness
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: Sharpness
+                values:
+                    - Normal
+                    - Soft
+                    - Hard
+    41995:
+        exiftool:
+            -
+                name: DeviceSettingDescription
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Device Setting Description'
+    41996:
+        components: 1
+        exiftool:
+            -
+                name: SubjectDistanceRange
+                type: int16u
+                writable: true
+                g1: ExifIFD
+                g2: Camera
+                desc: 'Subject Distance Range'
+                values:
+                    - Unknown
+                    - Macro
+                    - Close
+                    - Distant
+    42016:
+        components: 32
+        exiftool:
+            -
+                name: ImageUniqueID
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Image Unique ID'
+    42032:
+        exiftool:
+            -
+                name: OwnerName
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Owner Name'
+    42033:
+        exiftool:
+            -
+                name: SerialNumber
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Serial Number'
+    42034:
+        exiftool:
+            -
+                name: LensInfo
+                type: rational64u
+                count: 4
+                writable: true
+                g1: ExifIFD
+                desc: 'Lens Info'
+    42035:
+        exiftool:
+            -
+                name: LensMake
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Lens Make'
+    42036:
+        exiftool:
+            -
+                name: LensModel
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Lens Model'
+    42037:
+        exiftool:
+            -
+                name: LensSerialNumber
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Lens Serial Number'
+    42112:
+        exiftool:
+            -
+                name: GDALMetadata
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'GDAL Metadata'
+    42113:
+        exiftool:
+            -
+                name: GDALNoData
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'GDAL No Data'
+    42240:
+        components: 1
+        exiftool:
+            -
+                name: Gamma
+                type: rational64u
+                writable: true
+                g1: ExifIFD
+                desc: Gamma
+    44992:
+        exiftool:
+            -
+                name: ExpandSoftware
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Expand Software'
+    44993:
+        exiftool:
+            -
+                name: ExpandLens
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Expand Lens'
+    44994:
+        exiftool:
+            -
+                name: ExpandFilm
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Expand Film'
+    44995:
+        exiftool:
+            -
+                name: ExpandFilterLens
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Expand Filter Lens'
+    44996:
+        exiftool:
+            -
+                name: ExpandScanner
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Expand Scanner'
+    44997:
+        exiftool:
+            -
+                name: ExpandFlashLamp
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Expand Flash Lamp'
+    48129:
+        exiftool:
+            -
+                name: PixelFormat
+                type: undef
+                writable: false
+                g1: ExifIFD
+                desc: 'Pixel Format'
+                values:
+                    5: 'Black & White'
+                    8: '8-bit Gray'
+                    9: '16-bit BGR555'
+                    10: '16-bit BGR565'
+                    11: '16-bit Gray'
+                    12: '24-bit BGR'
+                    13: '24-bit RGB'
+                    14: '32-bit BGR'
+                    15: '32-bit BGRA'
+                    16: '32-bit PBGRA'
+                    17: '32-bit Gray Float'
+                    18: '48-bit RGB Fixed Point'
+                    19: '32-bit BGR101010'
+                    21: '48-bit RGB'
+                    22: '64-bit RGBA'
+                    23: '64-bit PRGBA'
+                    24: '96-bit RGB Fixed Point'
+                    25: '128-bit RGBA Float'
+                    26: '128-bit PRGBA Float'
+                    27: '128-bit RGB Float'
+                    28: '32-bit CMYK'
+                    29: '64-bit RGBA Fixed Point'
+                    30: '128-bit RGBA Fixed Point'
+                    31: '64-bit CMYK'
+                    32: '24-bit 3 Channels'
+                    33: '32-bit 4 Channels'
+                    34: '40-bit 5 Channels'
+                    35: '48-bit 6 Channels'
+                    36: '56-bit 7 Channels'
+                    37: '64-bit 8 Channels'
+                    38: '48-bit 3 Channels'
+                    39: '64-bit 4 Channels'
+                    40: '80-bit 5 Channels'
+                    41: '96-bit 6 Channels'
+                    42: '112-bit 7 Channels'
+                    43: '128-bit 8 Channels'
+                    44: '40-bit CMYK Alpha'
+                    45: '80-bit CMYK Alpha'
+                    46: '32-bit 3 Channels Alpha'
+                    47: '40-bit 4 Channels Alpha'
+                    48: '48-bit 5 Channels Alpha'
+                    49: '56-bit 6 Channels Alpha'
+                    50: '64-bit 7 Channels Alpha'
+                    51: '72-bit 8 Channels Alpha'
+                    52: '64-bit 3 Channels Alpha'
+                    53: '80-bit 4 Channels Alpha'
+                    54: '96-bit 5 Channels Alpha'
+                    55: '112-bit 6 Channels Alpha'
+                    56: '128-bit 7 Channels Alpha'
+                    57: '144-bit 8 Channels Alpha'
+                    58: '64-bit RGBA Half'
+                    59: '48-bit RGB Half'
+                    61: '32-bit RGBE'
+                    62: '16-bit Gray Half'
+                    63: '32-bit Gray Fixed Point'
+    48130:
+        exiftool:
+            -
+                name: Transformation
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Transformation
+                values:
+                    - 'Horizontal (normal)'
+                    - 'Mirror vertical'
+                    - 'Mirror horizontal'
+                    - 'Rotate 180'
+                    - 'Rotate 90 CW'
+                    - 'Mirror horizontal and rotate 90 CW'
+                    - 'Mirror horizontal and rotate 270 CW'
+                    - 'Rotate 270 CW'
+    48131:
+        exiftool:
+            -
+                name: Uncompressed
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Uncompressed
+                values:
+                    - 'No'
+                    - 'Yes'
+    48132:
+        exiftool:
+            -
+                name: ImageType
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Type'
+                values:
+                    1: Preview
+                    2: Page
+    48256:
+        exiftool:
+            -
+                name: ImageWidth
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Width'
+    48257:
+        exiftool:
+            -
+                name: ImageHeight
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Height'
+    48258:
+        exiftool:
+            -
+                name: WidthResolution
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Width Resolution'
+    48259:
+        exiftool:
+            -
+                name: HeightResolution
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Height Resolution'
+    48320:
+        exiftool:
+            -
+                name: ImageOffset
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Offset'
+    48321:
+        exiftool:
+            -
+                name: ImageByteCount
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Byte Count'
+    48322:
+        exiftool:
+            -
+                name: AlphaOffset
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Alpha Offset'
+    48323:
+        exiftool:
+            -
+                name: AlphaByteCount
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Alpha Byte Count'
+    48324:
+        exiftool:
+            -
+                name: ImageDataDiscard
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Image Data Discard'
+                values:
+                    - 'Full Resolution'
+                    - 'Flexbits Discarded'
+                    - 'HighPass Frequency Data Discarded'
+                    - 'Highpass and LowPass Frequency Data Discarded'
+    48325:
+        exiftool:
+            -
+                name: AlphaDataDiscard
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Alpha Data Discard'
+                values:
+                    - 'Full Resolution'
+                    - 'Flexbits Discarded'
+                    - 'HighPass Frequency Data Discarded'
+                    - 'Highpass and LowPass Frequency Data Discarded'
+    50215:
+        exiftool:
+            -
+                name: OceScanjobDesc
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Oce Scanjob Desc'
+    50216:
+        exiftool:
+            -
+                name: OceApplicationSelector
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Oce Application Selector'
+    50217:
+        exiftool:
+            -
+                name: OceIDNumber
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Oce ID Number'
+    50218:
+        exiftool:
+            -
+                name: OceImageLogic
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Oce Image Logic'
+    50255:
+        exiftool:
+            -
+                name: Annotations
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: Annotations
+    50547:
+        exiftool:
+            -
+                name: OriginalFileName
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Original File Name'
+    50560:
+        exiftool:
+            -
+                name: USPTOOriginalContentType
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'USPTO Original Content Type'
+                values:
+                    - 'Text or Drawing'
+                    - Grayscale
+                    - Color
+    50656:
+        exiftool:
+            -
+                name: CR2CFAPattern
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'CR2 CFA Pattern'
+                values:
+                    '0 1 1 2': '[Red,Green][Green,Blue]'
+                    '1 0 2 1': '[Green,Red][Blue,Green]'
+                    '1 2 0 1': '[Green,Blue][Red,Green]'
+                    '2 1 1 0': '[Blue,Green][Green,Red]'
+    50752:
+        exiftool:
+            -
+                name: RawImageSegmentation
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Raw Image Segmentation'
+    50784:
+        exiftool:
+            -
+                name: AliasLayerMetadata
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Alias Layer Metadata'
+    50974:
+        exiftool:
+            -
+                name: SubTileBlockSize
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Sub Tile Block Size'
+    50975:
+        exiftool:
+            -
+                name: RowInterleaveFactor
+                type: '?'
+                writable: false
+                g1: ExifIFD
+                desc: 'Row Interleave Factor'
+    59932:
+        exiftool:
+            -
+                name: Padding
+                type: undef
+                writable: true
+                g1: ExifIFD
+                desc: Padding
+    59933:
+        exiftool:
+            -
+                name: OffsetSchema
+                type: int32s
+                writable: true
+                g1: ExifIFD
+                desc: 'Offset Schema'
+    65000:
+        exiftool:
+            -
+                name: OwnerName
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Owner Name'
+    65001:
+        exiftool:
+            -
+                name: SerialNumber
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Serial Number'
+    65002:
+        exiftool:
+            -
+                name: Lens
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Lens
+    65100:
+        exiftool:
+            -
+                name: RawFile
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Raw File'
+    65101:
+        exiftool:
+            -
+                name: Converter
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Converter
+    65102:
+        exiftool:
+            -
+                name: WhiteBalance
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'White Balance'
+    65105:
+        exiftool:
+            -
+                name: Exposure
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Exposure
+    65106:
+        exiftool:
+            -
+                name: Shadows
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Shadows
+    65107:
+        exiftool:
+            -
+                name: Brightness
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Brightness
+    65108:
+        exiftool:
+            -
+                name: Contrast
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Contrast
+    65109:
+        exiftool:
+            -
+                name: Saturation
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Saturation
+    65110:
+        exiftool:
+            -
+                name: Sharpness
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Sharpness
+    65111:
+        exiftool:
+            -
+                name: Smoothness
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: Smoothness
+    65112:
+        exiftool:
+            -
+                name: MoireFilter
+                type: string
+                writable: true
+                g1: ExifIFD
+                desc: 'Moire Filter'

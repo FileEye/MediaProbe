@@ -1,20 +1,20 @@
 <?php
 
-namespace FileEye\ImageProbe\Test\core;
+namespace FileEye\MediaProbe\Test;
 
-use FileEye\ImageProbe\core\Block\Exif;
-use FileEye\ImageProbe\core\Block\Ifd;
-use FileEye\ImageProbe\core\Block\IfdFormat;
-use FileEye\ImageProbe\core\Block\IfdItem;
-use FileEye\ImageProbe\core\Block\Tag;
-use FileEye\ImageProbe\core\Block\Tiff;
-use FileEye\ImageProbe\core\Collection;
-use FileEye\ImageProbe\core\ImageProbe;
-use FileEye\ImageProbe\core\Image;
-use FileEye\ImageProbe\core\Entry\WindowsString;
-use FileEye\ImageProbe\core\Block\Jpeg;
+use FileEye\MediaProbe\Block\Exif;
+use FileEye\MediaProbe\Block\Ifd;
+use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Media;
+use FileEye\MediaProbe\Entry\WindowsString;
+use FileEye\MediaProbe\Block\Jpeg;
 
-class GH16Test extends ImageProbeTestCaseBase
+class GH16Test extends MediaProbeTestCaseBase
 {
     protected $file;
 
@@ -33,28 +33,28 @@ class GH16Test extends ImageProbeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         // Parse test file.
-        $image = Image::createFromFile($this->file);
-        $jpeg = $image->getElement("jpeg");
+        $media = Media::createFromFile($this->file);
+        $jpeg = $media->getElement("jpeg");
         $exif = $jpeg->getElement("jpegSegment/exif");
         $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
         $this->assertCount(1, $ifd0->getMultipleElements("tag"));
-        $this->assertEquals('Ïðåâåä, ìåäâåä!', $ifd0->getElement("tag[@name='WindowsXPSubject']")->toString());
+        $this->assertEquals('Ïðåâåä, ìåäâåä!', $ifd0->getElement("tag[@name='XPSubject']")->toString());
 
         // Change the value of the Tag's entry and save the file to disk.
-        $ifd0->removeElement("tag[@name='WindowsXPSubject']");
+        $ifd0->removeElement("tag[@name='XPSubject']");
         $new_entry_value = "Превед, медвед!";
-        $tag = new Tag(new IfdItem($ifd0->getCollection()->getItemCollection(0x9C9F), IfdFormat::getFromName('Byte')), $ifd0);
+        $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x9C9F), ItemFormat::BYTE), $ifd0);
         new WindowsString($tag, [$new_entry_value]);
         $this->assertCount(1, $ifd0->getMultipleElements('tag'));
-        $this->assertEquals($new_entry_value, $ifd0->getElement("tag[@name='WindowsXPSubject']")->toString());
-        $image->saveToFile($this->file);
+        $this->assertEquals($new_entry_value, $ifd0->getElement("tag[@name='XPSubject']")->toString());
+        $media->saveToFile($this->file);
 
         // Parse the test file again and check the Tag's new value was saved.
-        $r_image = Image::createFromFile($this->file);
-        $r_jpeg = $r_image->getElement("jpeg");
+        $r_media = Media::createFromFile($this->file);
+        $r_jpeg = $r_media->getElement("jpeg");
         $r_exif = $r_jpeg->getElement("jpegSegment/exif");
         $r_ifd0 = $r_exif->getElement("tiff/ifd[@name='IFD0']");
         $this->assertCount(1, $r_exif->getMultipleElements("tiff/ifd[@name='IFD0']/tag"));
-        $this->assertEquals($new_entry_value, $r_ifd0->getElement("tag[@name='WindowsXPSubject']")->toString());
+        $this->assertEquals($new_entry_value, $r_ifd0->getElement("tag[@name='XPSubject']")->toString());
     }
 }

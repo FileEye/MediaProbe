@@ -1,0 +1,111 @@
+collection: Format
+title: 'The list of MediaProbe supported data formats.'
+items:
+    1:
+        # Unsigned byte.
+        # Each component will be an unsigned 8-bit integer with a value
+        # between 0 and 255.
+        name: Byte
+        title: 'Byte'
+        length: 1
+        class: FileEye\MediaProbe\Entry\Core\Byte
+    2:
+        # ASCII string.
+        # Each component will be an ASCII character.
+        name: Ascii
+        title: 'Ascii'
+        length: 1
+        class: FileEye\MediaProbe\Entry\Core\Ascii
+    3:
+        # Unsigned short.
+        # Each component will be an unsigned 16-bit integer with a value
+        # between 0 and 65535.
+        name: Short
+        title: 'Short'
+        length: 2
+        class: FileEye\MediaProbe\Entry\Core\Short
+    4:
+        # Unsigned long.
+        # Each component will be an unsigned 32-bit integer with a value
+        # between 0 and 4294967295.
+        name: Long
+        title: 'Long'
+        length: 4
+        class: FileEye\MediaProbe\Entry\Core\Long
+    5:
+        # Unsigned rational number.
+        # Each component will consist of two unsigned 32-bit integers denoting
+        # the numerator and denominator. Each integer will have a value
+        # between 0 and 4294967295.
+        name: Rational
+        title: 'Rational'
+        length: 8
+        class: FileEye\MediaProbe\Entry\Core\Rational
+    6:
+        # Signed byte.
+        # Each component will be a signed 8-bit integer with a value between
+        # -128 and 127.
+        name: SignedByte
+        title: 'SignedByte'
+        length: 1
+        class: FileEye\MediaProbe\Entry\Core\SignedByte
+    7:
+        # Undefined byte.
+        # Each component will be a byte with no associated interpretation.
+        name: Undefined
+        title: 'Undefined'
+        length: 1
+        class: FileEye\MediaProbe\Entry\Core\Undefined
+    8:
+        # Signed short.
+        # Each component will be a signed 16-bit integer with a value between
+        # -32768 and 32767.
+        name: SignedShort
+        title: 'SignedShort'
+        length: 2
+        class: FileEye\MediaProbe\Entry\Core\SignedShort
+    9:
+        # Signed long.
+        # Each component will be a signed 32-bit integer with a value between
+        # -2147483648 and 2147483647.
+        name: SignedLong
+        title: 'SignedLong'
+        length: 4
+        class: FileEye\MediaProbe\Entry\Core\SignedLong
+    10:
+        # Signed rational number.
+        # Each component will consist of two signed 32-bit integers denoting
+        # the numerator and denominator. Each integer will have a value between
+        # -2147483648 and 2147483647.
+        name: SignedRational
+        title: 'SignedRational'
+        length: 8
+        class: FileEye\MediaProbe\Entry\Core\SignedRational
+    11:
+        # Floating point number.
+        name: Float
+        title: 'Float'
+        length: 4
+    12:
+        # Double precision floating point number.
+        name: Double
+        title: 'Double'
+        length: 8
+    1000:
+        # Unsigned 16-bit integer (Short), reversed byte order.
+        name: ShortRev
+        title: 'ShortRev'
+        length: 2
+        class: FileEye\MediaProbe\Entry\Core\ShortRev
+    1001:
+        # Rational consisting of 2 int16u (Short) values.
+        name: ShortRational
+        title: 'ShortRational'
+        length: 4
+        class: FileEye\MediaProbe\Entry\Core\ShortRational
+    1002:
+        # Rational consisting of 2 int16s (SignedShort) values.
+        name: SignedShortRational
+        title: 'SignedShortRational'
+        length: 4
+        class: FileEye\MediaProbe\Entry\Core\SignedShortRational

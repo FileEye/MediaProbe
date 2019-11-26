@@ -1,0 +1,134 @@
+collection: MakerNotes\Canon\CameraInfoResolver
+name: CanonCameraInfoResolver
+title: Canon Camera Info Resolver
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\CameraInfoMap
+DOMNode: map
+items:
+    CanonCameraInfo1D:
+        collection: MakerNotes\Canon\CameraInfo1D
+        name: CanonCameraInfo1D
+        condition: ['/\b1DS?$/']
+    CanonCameraInfo1DmkII:
+        collection: MakerNotes\Canon\CameraInfo1DmkII
+        name: CanonCameraInfo1DmkII
+        condition: ['/\b1Ds? Mark II$/']
+    CanonCameraInfo1DmkIIN:
+        collection: MakerNotes\Canon\CameraInfo1DmkIIN
+        name: CanonCameraInfo1DmkIIN
+        condition: ['/\b1Ds? Mark II N$/']
+    CanonCameraInfo1DmkIII:
+        collection: MakerNotes\Canon\CameraInfo1DmkIII
+        name: CanonCameraInfo1DmkIII
+        condition: ['/\b1Ds? Mark III$/']
+    CanonCameraInfo1DmkIV:
+        collection: MakerNotes\Canon\CameraInfo1DmkIV
+        name: CanonCameraInfo1DmkIV
+        condition: ['/\b1D Mark IV$/']
+    CanonCameraInfo1DX:
+        collection: MakerNotes\Canon\CameraInfo1DX
+        name: CanonCameraInfo1DX
+        condition: ['/EOS-1D X$/']
+    CanonCameraInfo5D:
+        collection: MakerNotes\Canon\CameraInfo5D
+        name: CanonCameraInfo5D
+        condition: ['/EOS 5D$/']
+    CanonCameraInfo5DmkII:
+        collection: MakerNotes\Canon\CameraInfo5DmkII
+        name: CanonCameraInfo5DmkII
+        condition: ['/EOS 5D Mark II$/']
+    CanonCameraInfo5DmkIII:
+        collection: MakerNotes\Canon\CameraInfo5DmkIII
+        name: CanonCameraInfo5DmkIII
+        condition: ['/EOS 5D Mark III$/']
+    CanonCameraInfo6D:
+        collection: MakerNotes\Canon\CameraInfo6D
+        name: CanonCameraInfo6D
+        condition: ['/EOS 6D$/']
+    CanonCameraInfo7D:
+        collection: MakerNotes\Canon\CameraInfo7D
+        name: CanonCameraInfo7D
+        condition: ['/EOS 7D$/']
+    CanonCameraInfo40D:
+        collection: MakerNotes\Canon\CameraInfo40D
+        name: CanonCameraInfo40D
+        condition: ['/EOS 40D$/']
+    CanonCameraInfo50D:
+        collection: MakerNotes\Canon\CameraInfo50D
+        name: CanonCameraInfo50D
+        condition: ['/EOS 50D$/']
+    CanonCameraInfo60D:
+        collection: MakerNotes\Canon\CameraInfo60D
+        name: CanonCameraInfo60D
+        condition: ['/EOS 60D$/']
+    CanonCameraInfo70D:
+        collection: MakerNotes\Canon\CameraInfo70D
+        name: CanonCameraInfo70D
+        condition: ['/EOS 70D$/']
+    CanonCameraInfo80D:
+        collection: MakerNotes\Canon\CameraInfo80D
+        name: CanonCameraInfo80D
+        condition: ['/EOS 80D$/']
+    CanonCameraInfo450D:
+        collection: MakerNotes\Canon\CameraInfo450D
+        name: CanonCameraInfo450D
+        condition: ['/\b(450D|REBEL XSi|Kiss X2)\b/']
+    CanonCameraInfo500D:
+        collection: MakerNotes\Canon\CameraInfo500D
+        name: CanonCameraInfo500D
+        condition: ['/\b(500D|REBEL T1i|Kiss X3)\b/']
+    CanonCameraInfo550D:
+        collection: MakerNotes\Canon\CameraInfo550D
+        name: CanonCameraInfo550D
+        condition: ['/\b(550D|REBEL T2i|Kiss X4)\b/']
+    CanonCameraInfo600D:
+        collection: MakerNotes\Canon\CameraInfo600D
+        name: CanonCameraInfo600D
+        condition: ['/\b(600D|REBEL T3i|Kiss X5)\b/']
+    CanonCameraInfo650D:
+        collection: MakerNotes\Canon\CameraInfo650D
+        name: CanonCameraInfo650D
+        condition: ['/\b(650D|REBEL T4i|Kiss X6i)\b/']
+#    CanonCameraInfo700D:
+#        collection: MakerNotes\Canon\CameraInfo700D
+#        name: CanonCameraInfo700D
+#        condition: ['/\b(700D|REBEL T5i|Kiss X7i)\b/']
+    CanonCameraInfo750D:
+        collection: MakerNotes\Canon\CameraInfo750D
+        name: CanonCameraInfo750D
+        condition: ['/\b(750D|Rebel T6i|Kiss X8i)\b/']
+#    CanonCameraInfo760D:
+#        collection: MakerNotes\Canon\CameraInfo760D
+#        name: CanonCameraInfo760D
+#        condition: ['/\b(760D|Rebel T6s|8000D)\b/']
+    CanonCameraInfo1000D:
+        collection: MakerNotes\Canon\CameraInfo1000D
+        name: CanonCameraInfo1000D
+        condition: ['/\b(1000D|REBEL XS|Kiss F)\b/']
+#    CanonCameraInfo1100D:
+#        collection: MakerNotes\Canon\CameraInfo1100D
+#        name: CanonCameraInfo1100D
+#        condition: ['/\b(1100D|REBEL T3|Kiss X50)\b/']
+#    CanonCameraInfo1200D:
+#        collection: MakerNotes\Canon\CameraInfo1200D
+#        name: CanonCameraInfo1200D
+#        condition: ['/\b(1200D|REBEL T5|Kiss X70)\b/']
+    CanonCameraInfoPowerShot:
+        collection: MakerNotes\Canon\CameraInfoPowerShot
+        name: CanonCameraInfoPowerShot
+        condition: ['/complex/']
+    CanonCameraInfoPowerShot2:
+        collection: MakerNotes\Canon\CameraInfoPowerShot2
+        name: CanonCameraInfoPowerShot2
+        condition: ['/complex/']
+    CanonCameraInfoUnknown32:
+        collection: MakerNotes\Canon\CameraInfoUnknown32
+        name: CanonCameraInfoUnknown32
+        condition: ['/complex/']
+#    CanonCameraInfoUnknown16:
+#        collection: MakerNotes\Canon\CameraInfoUnknown16
+#        name: CanonCameraInfoUnknown16
+#        condition: ['/complex/']
+    CanonCameraInfoUnknown:
+        collection: MakerNotes\Canon\CameraInfoUnknown
+        name: CanonCameraInfoUnknown
+        condition: ['/complex/']
