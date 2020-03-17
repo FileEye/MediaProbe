@@ -11,7 +11,7 @@ use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Collection;
-use FileEye\MediaProbe\Image;
+use FileEye\MediaProbe\Media;
 
 class Bug3017880Test extends MediaProbeTestCaseBase
 {
@@ -21,9 +21,9 @@ class Bug3017880Test extends MediaProbeTestCaseBase
         try {
             $exif = null;
             $resave_file = 0;
-            $image = Image::createFromFile($filename);
-            $jpeg = $image->getElement("jpeg");
-            $this->assertInstanceOf('\FileEye\MediaProbe\Block\Jpeg', $jpeg);
+            $media = Media::createFromFile($filename);
+            $jpeg = $media->getElement("jpeg");
+            $this->assertInstanceOf(Jpeg::class, $jpeg);
 
             // should all exif data on photo be cleared (gd and iu will always strip it anyway, so only
             // force strip if you know the image you're branding is an original)
@@ -56,7 +56,7 @@ class Bug3017880Test extends MediaProbeTestCaseBase
                 $resave_file = 1;
             }
 
-            if ($resave_file == 1 && !$image->saveToFile($filename)) {
+            if ($resave_file == 1 && !$media->saveToFile($filename)) {
                 // if it was okay to resave the file, but it did not save correctly
             }
         } catch (Exception $e) {
