@@ -3,10 +3,13 @@ os: linux
 language: php
 
 php:
-#  - 7.2
+  - 7.2
   - 7.3
-#  - 7.4
-  #- nightly
+  - 7.4
+
+branches:
+  except:
+    - /^dev-.*/
 
 env:
   global:
@@ -15,7 +18,7 @@ env:
 jobs:
   fast_finish: true
   allow_failures:
-    - php: nightly
+    - php: 7.4
 
 cache:
   directories:
@@ -33,6 +36,7 @@ before_install:
         cd $FILEEYE_STAGING_DIR/MediaProbe
         composer install --no-interaction --no-progress --no-suggest
       fi
+
   # Copy staged /vendor to running path.
   - mkdir -p $TRAVIS_BUILD_DIR/vendor
   - cp -r $FILEEYE_STAGING_DIR/MediaProbe/vendor $TRAVIS_BUILD_DIR
