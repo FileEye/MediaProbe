@@ -101,13 +101,22 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         return $this->value;
     }
 
-    public function getTextMap()
+    public function hasMappedText(): bool
+    {
+        if (!$this->getParentElement()) {
+            return false;
+        }
+        if (!$text_config = $this->getParentElement()->getCollection()->getPropertyValue('text')) {
+            return false;
+        }
+        return isset($text_config['mapping']);
+    }
+
+    public function getMappedText($value, $default = null, $variant = 0, $key = 0)
     {
         $text_config = $this->getParentElement()->getCollection()->getPropertyValue('text');
-        if ($text_config && isset($text_config['mapping'])) {
-            return $text_config['mapping'];
-        }
-        return null;
+        $id = is_int($value) ? $value : (string) $value;
+        return $text_config['mapping'][$id] ?? $default;
     }
 
     /**
@@ -119,13 +128,10 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             return null;
         }
         $value = $options['value'] ?? $this->getValue();
-        $text_map = $this->getTextMap();
-        if ($text_map && is_scalar($value)) {
-            // If the code to be mapped is a non-int, change to string.
-            $id = is_int($value) ? $value : (string) $value;
-            return isset($text_map[$id]) ? MediaProbe::tra($text_map[$id]) : null;
+        if (!is_scalar($value)) {
+            return null;
         }
-        return null;
+        return $this->hasMappedText() ? $this->getMappedText($value, $value) : null;
     }
 
     /**

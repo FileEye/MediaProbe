@@ -9,6 +9,7 @@ use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Collection;
 
 /**
@@ -245,6 +246,7 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals('RST3', $collection->getItemCollection(0xD3)->getPropertyValue('name'));
         $this->assertEquals('APP3', $collection->getItemCollection(0xE3)->getPropertyValue('name'));
         $this->assertEquals('JPG11', $collection->getItemCollection(0xFB)->getPropertyValue('name'));
+        $this->fcExpectException(MediaProbeException::class);
         $this->assertNull($collection->getItemCollection(100));
     }
 

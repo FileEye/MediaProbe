@@ -1,0 +1,21 @@
+collection: MakerNotes\CanonVRD\DustInfo
+name: CanonVRDDustInfo
+title: 'CanonVRD DustInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonVRD::DustInfo'']/tag'
+items:
+    2:
+        exiftool:
+            -
+                name: DustDeleteApplied
+                type: int32u
+                writable: false
+                desc: 'Dust Delete Applied'
+                values:
+                    - 'No'
+                    - 'Yes'

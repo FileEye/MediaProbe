@@ -10,9 +10,10 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -149,7 +150,10 @@ class Ifd extends ListBase
 
         // Fall back to the generic IFD collection if the item is missing from
         // the appropriate one.
-        if (!$item_collection = $this->getCollection()->getItemCollection($id)) {
+        try {
+            $item_collection = $this->getCollection()->getItemCollection($id);
+        }
+        catch (MediaProbeException $e) {
             if ($fallback_collection_id !== null) {
                 $item_collection = Collection::get($fallback_collection_id)->getItemCollection($id, 'UnknownTag', [
                     'item' => $id,

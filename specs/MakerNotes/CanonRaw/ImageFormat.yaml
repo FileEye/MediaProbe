@@ -1,0 +1,30 @@
+collection: MakerNotes\CanonRaw\ImageFormat
+name: CanonRawImageFormat
+title: 'CanonRaw ImageFormat'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::ImageFormat'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: FileFormat
+                type: int32u
+                writable: true
+                desc: 'File Format'
+                values:
+                    65536: 'JPEG (lossy)'
+                    65538: 'JPEG (non-quantization)'
+                    65539: 'JPEG (lossy/non-quantization toggled)'
+                    131073: CRW
+    -
+        exiftool:
+            -
+                name: TargetCompressionRatio
+                type: float
+                writable: true
+                desc: 'Target Compression Ratio'

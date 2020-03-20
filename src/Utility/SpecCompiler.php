@@ -91,7 +91,7 @@ class SpecCompiler
     {
         $yamlDirectory = $yamlDirectory ?: __DIR__ . static::DEFAULT_SPEC_PATH;
         $resourcesDirectory = $resourcesDirectory ?: __DIR__ . static::DEFAULT_COLLECTION_PATH;
-        $namespace = $namespace ?: Collection::DEFAULT_MAP_NAMESPACE;
+        $namespace = $namespace ?: static::DEFAULT_COLLECTION_NAMESPACE;
 
         $collection_path = $collection_path ?: __DIR__ . static::DEFAULT_COLLECTION_PATH;
         $collection_namespace = $collection_namespace ?: static::DEFAULT_COLLECTION_NAMESPACE;
@@ -111,8 +111,7 @@ class SpecCompiler
             if ($collection['compiler']['skip'] ?? false) {
                 continue;
             }
-            //$this->mapCollection($collection, $file);
-            $this->xxxmapCollection($collection, $file, $collection_path, $collection_namespace);
+            $this->mapCollection($collection, $file, $collection_path, $collection_namespace);
         }
 
         if (isset($this->map['collections'])) {
@@ -154,7 +153,7 @@ DATA;
      * @param SplFileInfo $file
      *            the YAML specification file being processed.
      */
-    protected function xxxmapCollection(array $input, SplFileInfo $file, $collection_path, $collection_namespace)
+    protected function mapCollection(array $input, SplFileInfo $file, $collection_path, $collection_namespace)
     {
         // Check validity of collection keys.
         $diff = array_diff($this->collectionKeys, array_intersect(array_keys($input), $this->collectionKeys));
@@ -182,7 +181,7 @@ DATA;
 
         // Collection-level entries.
         $tmp = $input;
-        unset($tmp['collection'], $tmp['items']);
+        unset($tmp['collection'], $tmp['items'], $tmp['compiler']);
         $map = $tmp;
 
         // Collection items entries.
@@ -277,90 +276,6 @@ DATA;
 
         $this->fs->dumpFile($collection_path . "/" . implode("/", $parts) . "/$class_name.php", $data);
     }
-
-    /**
-     * Processes a 'collection' into the compiled map.
-     *
-     * @param array $input
-     *            the array from the specification file.
-     * @param SplFileInfo $file
-     *            the YAML specification file being processed.
-     */
-/*    protected function mapCollection(array $input, SplFileInfo $file)
-    {
-        // Check validity of collection keys.
-        $diff = array_diff($this->collectionKeys, array_intersect(array_keys($input), $this->collectionKeys));
-        if (!empty($diff)) {
-            throw new SpecCompilerException($file->getFileName() . ": missing collection key(s) - " . implode(", ", $diff));
-        }
-
-        $name = $input['name'] ?? $input['collection'];
-
-        // Process 'format'
-        if (!empty($input['format'])) {
-            $input['format'] = $this->format2Id($input['format'], 'base', $name, $file);
-        }
-
-        // 'collections' entry.
-        $tmp = $input;
-        unset($tmp['collection'], $tmp['items']);
-        $this->map['collections'][$input['collection']] = $tmp;
-
-        // 'collectionsByName' entry.
-        $this->map['collectionsByName'][$name] = $input['collection'];
-        if (!empty($input['alias'])) {
-            foreach ($input['alias'] as $alias) {
-                $this->map['collectionsByName'][$alias] = $input['collection'];
-            }
-        }
-
-        // 'items' entry.
-        foreach ($input['items'] as $id => $item) {
-            // Item must have a collection.
-            $item['collection'] = $item['collection'] ?? $input['defaultItemCollection'] ?? static::VOID_COLLECTION;
-
-            // Fetch the first available Exiftool definition if available.
-            $exiftool = isset($item['exiftool']) ? reset($item['exiftool']) : null;
-
-            // Add the name.
-            if (!isset($item['name']) && isset($exiftool['name'])) {
-                $item['name'] = $exiftool['name'];
-            }
-
-            // Add a title if available.
-            if (!isset($item['title']) && isset($exiftool['desc'])) {
-                $item['title'] = $exiftool['desc'];
-            }
-
-            // Add components if available.
-            if (!isset($item['components']) && isset($exiftool['count'])) {
-                $item['components'] = $exiftool['count'];
-            }
-
-            // Convert format string to its ID.
-            if (isset($item['format'])) {
-                $item['format'] = $this->format2Id($item['format'], 'base',  $item['name'] ?? $item['collection'], $file);
-            }
-            elseif ($exiftool['type'] ?? false) {
-                $item['format'] = $this->format2Id($exiftool['type'], 'exiftool',  $item['name'] ?? $item['collection'], $file);
-            }
-
-            // Add text mapping if available.
-            if (!isset($item['text']['mapping']) && isset($exiftool['values'])) {
-                $item['text']['mapping'] = $exiftool['values'];
-            }
-
-            unset($item['exiftool']);
-
-            // Add item to map by collection/id.
-            $this->map['items'][$input['collection']][$id] = $item;
-
-            // Add item to map by collection/name.
-            if (isset( $item['name'])) { // xx
-                $this->map['itemsByName'][$input['collection']][ $item['name']] = $id;
-            }
-        }
-    }*/
 
     protected function format2Id($input, string $type, string $item_name, SplFileInfo $file): array
     {

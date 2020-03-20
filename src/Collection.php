@@ -14,11 +14,6 @@ use FileEye\MediaProbe\MediaProbeException;
 abstract class Collection
 {
     /**
-     * Default mapper namespace.
-     */
-    const DEFAULT_MAP_NAMESPACE = 'FileEye\\MediaProbe\\Collection';
-
-    /**
      * Default namespace for concrete Collection classes.
      */
     const DEFAULT_COLLECTION_NAMESPACE = 'FileEye\\MediaProbe\\Collection';
@@ -71,7 +66,7 @@ abstract class Collection
     public static function setMapperClass($class)
     {
         if ($class === null) {
-            static::$mapperClass = static::DEFAULT_MAP_NAMESPACE . '\\Core';
+            static::$mapperClass = static::DEFAULT_COLLECTION_NAMESPACE . '\\Core';
         } else {
             static::$mapperClass = $class;
         }
@@ -181,16 +176,19 @@ abstract class Collection
      * @param string $item
      *   The item id.
      *
-     * @return Collection|null
-     *   The item collection object, or null if missing.
+     * @return Collection
+     *   The item collection object.
+     *
+     * @throws MediaProbeException
+     *   When item is not in collection and no default given.
      */
-    public function getItemCollection(string $item, string $default_id = null, array $default_properties = []): ?Collection
+    public function getItemCollection(string $item, string $default_id = null, array $default_properties = []): Collection
     {
         if (!isset(static::$map['items'][$item]['collection'])) {
             if (isset($default_id)) {
                 return static::get($default_id, $default_properties);
             }
-            return null;
+            throw new MediaProbeException('Missing collection for item \'%s\' in \'%s\'', $item, $this->getId());
         }
         $item_properties = static::$map['items'][$item];
         unset($item_properties['collection']);

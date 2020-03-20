@@ -1,0 +1,32 @@
+collection: MakerNotes\CanonRaw\DecoderTable
+name: CanonRawDecoderTable
+title: 'CanonRaw DecoderTable'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::DecoderTable'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: DecoderTableNumber
+                type: int32u
+                writable: false
+                desc: 'Decoder Table Number'
+    2:
+        exiftool:
+            -
+                name: CompressedDataOffset
+                type: int32u
+                writable: false
+                desc: 'Compressed Data Offset'
+    3:
+        exiftool:
+            -
+                name: CompressedDataLength
+                type: int32u
+                writable: false
+                desc: 'Compressed Data Length'

@@ -1,0 +1,32 @@
+collection: MakerNotes\CanonRaw\ExposureInfo
+name: CanonRawExposureInfo
+title: 'CanonRaw ExposureInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::ExposureInfo'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: ExposureCompensation
+                type: float
+                writable: true
+                desc: 'Exposure Compensation'
+    -
+        exiftool:
+            -
+                name: ShutterSpeedValue
+                type: float
+                writable: true
+                desc: 'Shutter Speed Value'
+    -
+        exiftool:
+            -
+                name: ApertureValue
+                type: float
+                writable: true
+                desc: 'Aperture Value'

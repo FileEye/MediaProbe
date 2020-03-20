@@ -1,0 +1,33 @@
+collection: MakerNotes\CanonVRD\DLOInfo
+name: CanonVRDDLOInfo
+title: 'CanonVRD DLOInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonVRD::DLOInfo'']/tag'
+items:
+    4:
+        exiftool:
+            -
+                name: DLOSettingApplied
+                type: int16s
+                writable: true
+                desc: 'DLO Setting Applied'
+    5:
+        exiftool:
+            -
+                name: DLOVersion
+                type: string
+                count: 10
+                writable: true
+                desc: 'DLO Version'
+    10:
+        exiftool:
+            -
+                name: DLOData
+                type: undef
+                writable: true
+                desc: 'DLO Data'

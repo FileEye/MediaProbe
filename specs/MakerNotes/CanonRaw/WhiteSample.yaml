@@ -1,0 +1,46 @@
+collection: MakerNotes\CanonRaw\WhiteSample
+name: CanonRawWhiteSample
+title: 'CanonRaw WhiteSample'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::WhiteSample'']/tag'
+items:
+    1:
+        exiftool:
+            -
+                name: WhiteSampleWidth
+                type: int16u
+                writable: false
+                desc: 'White Sample Width'
+    2:
+        exiftool:
+            -
+                name: WhiteSampleHeight
+                type: int16u
+                writable: false
+                desc: 'White Sample Height'
+    3:
+        exiftool:
+            -
+                name: WhiteSampleLeftBorder
+                type: int16u
+                writable: false
+                desc: 'White Sample Left Border'
+    4:
+        exiftool:
+            -
+                name: WhiteSampleTopBorder
+                type: int16u
+                writable: false
+                desc: 'White Sample Top Border'
+    5:
+        exiftool:
+            -
+                name: WhiteSampleBits
+                type: int16u
+                writable: false
+                desc: 'White Sample Bits'

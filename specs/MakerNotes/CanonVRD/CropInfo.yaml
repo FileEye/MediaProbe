@@ -1,0 +1,84 @@
+collection: MakerNotes\CanonVRD\CropInfo
+name: CanonVRDCropInfo
+title: 'CanonVRD CropInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonVRD::CropInfo'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: CropActive
+                type: int32s
+                writable: true
+                desc: 'Crop Active'
+                values:
+                    - 'No'
+                    - 'Yes'
+    1:
+        exiftool:
+            -
+                name: CropRotatedOriginalWidth
+                type: int32s
+                writable: true
+                desc: 'Crop Rotated Original Width'
+    2:
+        exiftool:
+            -
+                name: CropRotatedOriginalHeight
+                type: int32s
+                writable: true
+                desc: 'Crop Rotated Original Height'
+    3:
+        exiftool:
+            -
+                name: CropX
+                type: int32s
+                writable: true
+                desc: 'Crop X'
+    4:
+        exiftool:
+            -
+                name: CropY
+                type: int32s
+                writable: true
+                desc: 'Crop Y'
+    5:
+        exiftool:
+            -
+                name: CropWidth
+                type: int32s
+                writable: true
+                desc: 'Crop Width'
+    6:
+        exiftool:
+            -
+                name: CropHeight
+                type: int32s
+                writable: true
+                desc: 'Crop Height'
+    8:
+        exiftool:
+            -
+                name: CropRotation
+                type: double
+                writable: true
+                desc: 'Crop Rotation'
+    10:
+        exiftool:
+            -
+                name: CropOriginalWidth
+                type: int32s
+                writable: true
+                desc: 'Crop Original Width'
+    11:
+        exiftool:
+            -
+                name: CropOriginalHeight
+                type: int32s
+                writable: true
+                desc: 'Crop Original Height'

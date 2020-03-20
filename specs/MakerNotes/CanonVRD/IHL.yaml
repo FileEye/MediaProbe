@@ -1,0 +1,48 @@
+collection: MakerNotes\CanonVRD\IHL
+name: CanonVRDIHL
+title: 'CanonVRD IHL'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonVRD::IHL'']/tag'
+items:
+    1:
+        exiftool:
+            1:
+                name: IHL_EXIF
+                type: '?'
+                writable: false
+                desc: 'IHL EXIF'
+    3:
+        exiftool:
+            -
+                name: ThumbnailImage
+                type: '?'
+                writable: false
+                g2: Preview
+                desc: 'Thumbnail Image'
+    4:
+        exiftool:
+            -
+                name: PreviewImage
+                type: '?'
+                writable: false
+                g2: Preview
+                desc: 'Preview Image'
+    5:
+        exiftool:
+            -
+                name: RawCodecVersion
+                type: '?'
+                writable: false
+                desc: 'Raw Codec Version'
+    6:
+        exiftool:
+            -
+                name: CRCDevelParams
+                type: '?'
+                writable: false
+                desc: 'CRC Devel Params'

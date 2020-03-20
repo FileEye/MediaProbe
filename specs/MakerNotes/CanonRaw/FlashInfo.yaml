@@ -1,0 +1,25 @@
+collection: MakerNotes\CanonRaw\FlashInfo
+name: CanonRawFlashInfo
+title: 'CanonRaw FlashInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::FlashInfo'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: FlashGuideNumber
+                type: float
+                writable: true
+                desc: 'Flash Guide Number'
+    -
+        exiftool:
+            -
+                name: FlashThreshold
+                type: float
+                writable: true
+                desc: 'Flash Threshold'

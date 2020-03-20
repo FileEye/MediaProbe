@@ -1,0 +1,26 @@
+collection: MakerNotes\CanonRaw\MakeModel
+name: CanonRawMakeModel
+title: 'CanonRaw MakeModel'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::MakeModel'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: Make
+                type: string
+                count: 6
+                writable: true
+                desc: Make
+    6:
+        exiftool:
+            -
+                name: Model
+                type: string
+                writable: true
+                desc: 'Camera Model Name'

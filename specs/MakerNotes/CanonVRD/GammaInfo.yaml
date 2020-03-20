@@ -1,0 +1,103 @@
+collection: MakerNotes\CanonVRD\GammaInfo
+name: CanonVRDGammaInfo
+title: 'CanonVRD GammaInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonVRD::GammaInfo'']/tag'
+items:
+    2:
+        exiftool:
+            -
+                name: GammaContrast
+                type: double
+                writable: true
+                desc: 'Gamma Contrast'
+    3:
+        exiftool:
+            -
+                name: GammaColorTone
+                type: double
+                writable: true
+                desc: 'Gamma Color Tone'
+    4:
+        exiftool:
+            -
+                name: GammaSaturation
+                type: double
+                writable: true
+                desc: 'Gamma Saturation'
+    5:
+        exiftool:
+            -
+                name: GammaUnsharpMaskStrength
+                type: double
+                writable: true
+                desc: 'Gamma Unsharp Mask Strength'
+    6:
+        exiftool:
+            -
+                name: GammaUnsharpMaskFineness
+                type: double
+                writable: true
+                desc: 'Gamma Unsharp Mask Fineness'
+    7:
+        exiftool:
+            -
+                name: GammaUnsharpMaskThreshold
+                type: double
+                writable: true
+                desc: 'Gamma Unsharp Mask Threshold'
+    8:
+        exiftool:
+            -
+                name: GammaSharpnessStrength
+                type: double
+                writable: true
+                desc: 'Gamma Sharpness Strength'
+    9:
+        exiftool:
+            -
+                name: GammaShadow
+                type: double
+                writable: true
+                desc: 'Gamma Shadow'
+    10:
+        exiftool:
+            -
+                name: GammaHighlight
+                type: double
+                writable: true
+                desc: 'Gamma Highlight'
+    12:
+        exiftool:
+            -
+                name: GammaBlackPoint
+                type: double
+                writable: true
+                desc: 'Gamma Black Point'
+    13:
+        exiftool:
+            -
+                name: GammaWhitePoint
+                type: double
+                writable: true
+                desc: 'Gamma White Point'
+    14:
+        exiftool:
+            -
+                name: GammaMidPoint
+                type: double
+                writable: true
+                desc: 'Gamma Mid Point'
+    15:
+        exiftool:
+            -
+                name: GammaCurveOutputRange
+                type: double
+                count: 2
+                writable: true
+                desc: 'Gamma Curve Output Range'

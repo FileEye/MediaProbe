@@ -87,8 +87,9 @@ items:
                 g2: Image
                 desc: 'Canon File Length'
     15:
+        __todo: fix
         name: CanonCustomFunctions
-        collection: MakerNotes\Canon\CustomFunctionsResolver
+        collection: MakerNotes\CanonCustom\FunctionsResolver
     16:
         exiftool:
             -
@@ -534,7 +535,7 @@ items:
                 writable: true
                 desc: 'Battery Type'
     60:
-        name: AFInfo3
+        name: CanonAFInfo3
         collection: MakerNotes\Canon\AFInfo2
     129:
         exiftool:
@@ -551,14 +552,17 @@ items:
                 writable: true
                 desc: 'Original Decision Data Offset'
     144:
-        name: CustomFunctions1D
-        collection: MakerNotes\Canon\CustomFunctions1D
+        __todo: fix
+        name: CanonCustomFunctions1D
+        collection: MakerNotes\CanonCustom\Functions1D
     145:
-        name: PersonalFunctions
-        collection: MakerNotes\Canon\PersonalFunctions
+        __todo: fix
+        name: CanonCustomPersonalFuncs
+        collection: MakerNotes\CanonCustom\PersonalFuncs
     146:
-        name: PersonalFunctionValues
-        collection: MakerNotes\Canon\PersonalFunctionValues
+        __todo: fix
+        name: CanonCustomPersonalFuncValues
+        collection: MakerNotes\CanonCustom\PersonalFuncValues
     147:
         name: CanonFileInfo
         collection: MakerNotes\Canon\FileInfo
@@ -591,14 +595,13 @@ items:
                 writable: true
                 desc: 'Dust Removal Data'
     152:
-        name: CropInfo
+        name: CanonCropInfo
         collection: MakerNotes\Canon\CropInfo
     153:
-        name: CustomFunctions2
-        __collection: MakerNotes\Canon\CustomFunctions2
-        __todo: 'get cust funct'
+        name: CanonCustomFunctions2Header
+        collection: MakerNotes\CanonCustom\Functions2Header
     154:
-        name: AspectInfo
+        name: CanonAspectInfo
         collection: MakerNotes\Canon\AspectInfo
     160:
         name: CanonProcessing
@@ -648,7 +651,7 @@ items:
         name: CanonFlags
         collection: MakerNotes\Canon\Flags
     177:
-        name: ModifiedInfo
+        name: CanonModifiedInfo
         collection: MakerNotes\Canon\ModifiedInfo
     178:
         exiftool:
@@ -676,7 +679,7 @@ items:
                     1: sRGB
                     2: 'Adobe RGB'
     182:
-        name: PreviewImageInfo
+        name: CanonPreviewImageInfo
         collection: MakerNotes\Canon\PreviewImageInfo
     208:
         exiftool:
@@ -699,7 +702,7 @@ items:
                 writable: false
                 desc: 'CRW Param'
     16387:
-        name: ColorInfo
+        name: CanonColorInfo
         collection: MakerNotes\Canon\ColorInfo
     16389:
         exiftool:
@@ -784,33 +787,33 @@ items:
                 writable: true
                 desc: 'Custom Picture Style File Name'
     16403:
-        name: AFMicroAdj
+        name: CanonAFMicroAdj
         collection: MakerNotes\Canon\AFMicroAdj
     16405:
-        name: VignettingCorr
+        name: CanonVignettingCorr
         __todo: true
         __collection: MakerNotes\Canon\VignettingCorrResolver
     16406:
-        name: VignettingCorr2
+        name: CanonVignettingCorr2
         collection: MakerNotes\Canon\VignettingCorr2
     16408:
-        name: LightingOpt
+        name: CanonLightingOpt
         collection: MakerNotes\Canon\LightingOpt
     16409:
-        name: LensInfo
+        name: CanonLensInfo
         title: 'Canon LensInfo'
         entryClass: FileEye\MediaProbe\Entry\CanonLensInfo
         __collection: MakerNotes\Canon\LensInfo
     16416:
-        name: Ambience
+        name: CanonAmbience
         collection: MakerNotes\Canon\Ambience
     16417:
-        name: MultiExp
+        name: CanonMultiExp
         collection: MakerNotes\Canon\MultiExp
     16420:
-        name: FilterInfo
+        name: CanonFilterInfo
         collection: MakerNotes\Canon\FilterInfo
     16421:
-        name: RawBurstModeRoll
+        name: CanonRawBurstModeRoll
         __todo: true
         __collection: MakerNotes\Canon\RawBurstModeRoll

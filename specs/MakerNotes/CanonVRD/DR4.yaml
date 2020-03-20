@@ -1,0 +1,557 @@
+collection: MakerNotes\CanonVRD\DR4
+name: CanonVRDDR4
+title: 'CanonVRD DR4'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonVRD::DR4'']/tag'
+items:
+    0x20310.0:
+        exiftool:
+            -
+                name: SharpnessAdjOn
+                type: '?'
+                writable: true
+                desc: 'Sharpness Adj On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    0x20400.1:
+        exiftool:
+            -
+                name: ToneCurveOriginal
+                type: '?'
+                writable: true
+                desc: 'Tone Curve Original'
+                values:
+                    - 'No'
+                    - 'Yes'
+    0x20500.0:
+        exiftool:
+            -
+                name: AutoLightingOptimizerOn
+                type: '?'
+                writable: true
+                desc: 'Auto Lighting Optimizer On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    0x20670.0:
+        exiftool:
+            -
+                name: ColorMoireReductionOn
+                type: '?'
+                writable: true
+                desc: 'Color Moire Reduction On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    0x20702.0:
+        exiftool:
+            -
+                name: PeripheralIlluminationOn
+                type: '?'
+                writable: true
+                desc: 'Peripheral Illumination On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    0x20703.0:
+        exiftool:
+            -
+                name: ChromaticAberrationOn
+                type: '?'
+                writable: true
+                desc: 'Chromatic Aberration On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    0x20705.0:
+        exiftool:
+            -
+                name: DistortionCorrectionOn
+                type: '?'
+                writable: true
+                desc: 'Distortion Correction On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    0x20706.0:
+        exiftool:
+            -
+                name: DLOOn
+                type: '?'
+                writable: true
+                desc: 'DLO On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    65538:
+        exiftool:
+            -
+                name: Rotation
+                type: '?'
+                writable: true
+                desc: Rotation
+    65539:
+        exiftool:
+            -
+                name: AngleAdj
+                type: '?'
+                writable: true
+                desc: 'Angle Adj'
+    65569:
+        exiftool:
+            -
+                name: CustomPictureStyle
+                type: '?'
+                writable: true
+                desc: 'Custom Picture Style'
+    65793:
+        exiftool:
+            -
+                name: CheckMark
+                type: '?'
+                writable: true
+                desc: 'Check Mark'
+                values:
+                    - Clear
+                    - '1'
+                    - '2'
+                    - '3'
+                    - '4'
+                    - '5'
+    66048:
+        exiftool:
+            -
+                name: WorkColorSpace
+                type: '?'
+                writable: true
+                desc: 'Work Color Space'
+                values:
+                    1: sRGB
+                    2: 'Adobe RGB'
+                    3: 'Wide Gamut RGB'
+                    4: 'Apple RGB'
+                    5: 'ColorMatch RGB'
+    131073:
+        exiftool:
+            -
+                name: RawBrightnessAdj
+                type: '?'
+                writable: true
+                desc: 'Raw Brightness Adj'
+    131329:
+        exiftool:
+            -
+                name: WhiteBalanceAdj
+                type: '?'
+                writable: true
+                desc: 'White Balance Adj'
+                values:
+                    -1: 'Manual (Click)'
+                    0: Auto
+                    1: Daylight
+                    2: Cloudy
+                    3: Tungsten
+                    4: Fluorescent
+                    5: Flash
+                    8: Shade
+                    9: Kelvin
+                    255: 'Shot Settings'
+    131330:
+        exiftool:
+            -
+                name: WBAdjColorTemp
+                type: '?'
+                writable: true
+                desc: 'WB Adj Color Temp'
+    131333:
+        exiftool:
+            -
+                name: WBAdjMagentaGreen
+                type: '?'
+                writable: true
+                desc: 'WB Adj Magenta Green'
+    131334:
+        exiftool:
+            -
+                name: WBAdjBlueAmber
+                type: '?'
+                writable: true
+                desc: 'WB Adj Blue Amber'
+    131365:
+        exiftool:
+            -
+                name: WBAdjRGGBLevels
+                type: '?'
+                writable: true
+                desc: 'WB Adj RGGB Levels'
+    131584:
+        exiftool:
+            -
+                name: GammaLinear
+                type: '?'
+                writable: true
+                desc: 'Gamma Linear'
+                values:
+                    - 'No'
+                    - 'Yes'
+    131841:
+        exiftool:
+            -
+                name: PictureStyle
+                type: '?'
+                writable: true
+                desc: 'Picture Style'
+                values:
+                    129: Standard
+                    130: Portrait
+                    131: Landscape
+                    132: Neutral
+                    133: Faithful
+                    134: Monochrome
+                    135: Auto
+                    136: 'Fine Detail'
+                    240: 'Shot Settings'
+                    255: Custom
+    131843:
+        exiftool:
+            -
+                name: ContrastAdj
+                type: '?'
+                writable: true
+                desc: 'Contrast Adj'
+    131844:
+        exiftool:
+            -
+                name: ColorToneAdj
+                type: '?'
+                writable: true
+                desc: 'Color Tone Adj'
+    131845:
+        exiftool:
+            -
+                name: ColorSaturationAdj
+                type: '?'
+                writable: true
+                desc: 'Color Saturation Adj'
+    131846:
+        exiftool:
+            -
+                name: MonochromeToningEffect
+                type: '?'
+                writable: true
+                desc: 'Monochrome Toning Effect'
+                values:
+                    - None
+                    - Sepia
+                    - Blue
+                    - Purple
+                    - Green
+    131847:
+        exiftool:
+            -
+                name: MonochromeFilterEffect
+                type: '?'
+                writable: true
+                desc: 'Monochrome Filter Effect'
+                values:
+                    - None
+                    - Yellow
+                    - Orange
+                    - Red
+                    - Green
+    131848:
+        exiftool:
+            -
+                name: UnsharpMaskStrength
+                type: '?'
+                writable: true
+                desc: 'Unsharp Mask Strength'
+    131849:
+        exiftool:
+            -
+                name: UnsharpMaskFineness
+                type: '?'
+                writable: true
+                desc: 'Unsharp Mask Fineness'
+    131850:
+        exiftool:
+            -
+                name: UnsharpMaskThreshold
+                type: '?'
+                writable: true
+                desc: 'Unsharp Mask Threshold'
+    131851:
+        exiftool:
+            -
+                name: ShadowAdj
+                type: '?'
+                writable: true
+                desc: 'Shadow Adj'
+    131852:
+        exiftool:
+            -
+                name: HighlightAdj
+                type: '?'
+                writable: true
+                desc: 'Highlight Adj'
+    131856:
+        exiftool:
+            -
+                name: SharpnessAdj
+                type: '?'
+                writable: true
+                desc: 'Sharpness Adj'
+                values:
+                    - Sharpness
+                    - 'Unsharp Mask'
+    131857:
+        exiftool:
+            -
+                name: SharpnessStrength
+                type: '?'
+                writable: true
+                desc: 'Sharpness Strength'
+    132112:
+        exiftool:
+            -
+                name: ToneCurveBrightness
+                type: '?'
+                writable: true
+                desc: 'Tone Curve Brightness'
+    132113:
+        exiftool:
+            -
+                name: ToneCurveContrast
+                type: '?'
+                writable: true
+                desc: 'Tone Curve Contrast'
+    132352:
+        exiftool:
+            -
+                name: AutoLightingOptimizer
+                type: '?'
+                writable: true
+                desc: 'Auto Lighting Optimizer'
+                values:
+                    - Low
+                    - Standard
+                    - Strong
+    132608:
+        exiftool:
+            -
+                name: LuminanceNoiseReduction
+                type: '?'
+                writable: true
+                desc: 'Luminance Noise Reduction'
+    132609:
+        exiftool:
+            -
+                name: ChrominanceNoiseReduction
+                type: '?'
+                writable: true
+                desc: 'Chrominance Noise Reduction'
+    132720:
+        exiftool:
+            -
+                name: ColorMoireReduction
+                type: '?'
+                writable: true
+                desc: 'Color Moire Reduction'
+    132865:
+        exiftool:
+            -
+                name: ShootingDistance
+                type: '?'
+                writable: true
+                desc: 'Shooting Distance'
+    132866:
+        exiftool:
+            -
+                name: PeripheralIllumination
+                type: '?'
+                writable: true
+                desc: 'Peripheral Illumination'
+    132867:
+        exiftool:
+            -
+                name: ChromaticAberration
+                type: '?'
+                writable: true
+                desc: 'Chromatic Aberration'
+    132868:
+        exiftool:
+            -
+                name: ColorBlurOn
+                type: '?'
+                writable: true
+                desc: 'Color Blur On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    132869:
+        exiftool:
+            -
+                name: DistortionCorrection
+                type: '?'
+                writable: true
+                desc: 'Distortion Correction'
+    132870:
+        exiftool:
+            -
+                name: DLOSetting
+                type: '?'
+                writable: true
+                desc: 'DLO Setting'
+    132871:
+        exiftool:
+            -
+                name: ChromaticAberrationRed
+                type: '?'
+                writable: true
+                desc: 'Chromatic Aberration Red'
+    132872:
+        exiftool:
+            -
+                name: ChromaticAberrationBlue
+                type: '?'
+                writable: true
+                desc: 'Chromatic Aberration Blue'
+    132873:
+        exiftool:
+            -
+                name: DistortionEffect
+                type: '?'
+                writable: true
+                desc: 'Distortion Effect'
+                values:
+                    - 'Shot Settings'
+                    - 'Emphasize Linearity'
+                    - 'Emphasize Distance'
+                    - 'Emphasize Periphery'
+                    - 'Emphasize Center'
+    132875:
+        exiftool:
+            -
+                name: DiffractionCorrectionOn
+                type: '?'
+                writable: true
+                desc: 'Diffraction Correction On'
+                values:
+                    - 'No'
+                    - 'Yes'
+    133376:
+        exiftool:
+            -
+                name: ColorHue
+                type: '?'
+                writable: true
+                desc: 'Color Hue'
+    133377:
+        exiftool:
+            -
+                name: SaturationAdj
+                type: '?'
+                writable: true
+                desc: 'Saturation Adj'
+    133392:
+        exiftool:
+            -
+                name: RedHSL
+                type: '?'
+                writable: true
+                desc: 'Red HSL'
+    133393:
+        exiftool:
+            -
+                name: OrangeHSL
+                type: '?'
+                writable: true
+                desc: 'Orange HSL'
+    133394:
+        exiftool:
+            -
+                name: YellowHSL
+                type: '?'
+                writable: true
+                desc: 'Yellow HSL'
+    133395:
+        exiftool:
+            -
+                name: GreenHSL
+                type: '?'
+                writable: true
+                desc: 'Green HSL'
+    133396:
+        exiftool:
+            -
+                name: AquaHSL
+                type: '?'
+                writable: true
+                desc: 'Aqua HSL'
+    133397:
+        exiftool:
+            -
+                name: BlueHSL
+                type: '?'
+                writable: true
+                desc: 'Blue HSL'
+    133398:
+        exiftool:
+            -
+                name: PurpleHSL
+                type: '?'
+                writable: true
+                desc: 'Purple HSL'
+    133399:
+        exiftool:
+            -
+                name: MagentaHSL
+                type: '?'
+                writable: true
+                desc: 'Magenta HSL'
+    196865:
+        exiftool:
+            -
+                name: CropAspectRatio
+                type: '?'
+                writable: true
+                desc: 'Crop Aspect Ratio'
+                values:
+                    - Free
+                    - Custom
+                    - '1:1'
+                    - '3:2'
+                    - '2:3'
+                    - '4:3'
+                    - '3:4'
+                    - '5:4'
+                    - '4:5'
+                    - '16:9'
+                    - '9:16'
+    196866:
+        exiftool:
+            -
+                name: CropAspectRatioCustom
+                type: '?'
+                writable: true
+                desc: 'Crop Aspect Ratio Custom'
+    984320:
+        exiftool:
+            -
+                name: CustomPictureStyleData
+                type: '?'
+                writable: true
+                desc: 'Custom Picture Style Data'
+    984338:
+        exiftool:
+            -
+                name: LensFocalLength
+                type: '?'
+                writable: true
+                desc: 'Lens Focal Length'

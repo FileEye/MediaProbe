@@ -1,0 +1,107 @@
+collection: MakerNotes\CanonCustom\Functions350D
+name: CanonCustomFunctions350D
+title: 'CanonCustom Functions350D'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonCustom::Functions350D'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: SetButtonCrossKeysFunc
+                type: int8u
+                writable: true
+                desc: 'Set Button Cross Keys Func'
+                values:
+                    - Normal
+                    - 'Set: Quality'
+                    - 'Set: Parameter'
+                    - 'Set: Playback'
+                    - 'Cross keys: AF point select'
+    -
+        exiftool:
+            -
+                name: LongExposureNoiseReduction
+                type: int8u
+                writable: true
+                desc: 'Long Exposure Noise Reduction'
+                values:
+                    - 'Off'
+                    - 'On'
+    -
+        exiftool:
+            -
+                name: FlashSyncSpeedAv
+                type: int8u
+                writable: true
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/200 Fixed'
+    -
+        exiftool:
+            -
+                name: Shutter-AELock
+                type: int8u
+                writable: true
+                desc: 'Shutter-AE Lock'
+                values:
+                    - 'AF/AE lock'
+                    - 'AE lock/AF'
+                    - 'AF/AF lock, No AE lock'
+                    - 'AE/AF, No AE lock'
+    -
+        exiftool:
+            -
+                name: AFAssistBeam
+                type: int8u
+                writable: true
+                desc: 'AF Assist Beam'
+                values:
+                    - Emits
+                    - 'Does not emit'
+                    - 'Only ext. flash emits'
+    -
+        exiftool:
+            -
+                name: ExposureLevelIncrements
+                type: int8u
+                writable: true
+                desc: 'Exposure Level Increments'
+                values:
+                    - '1/3 Stop'
+                    - '1/2 Stop'
+    -
+        exiftool:
+            -
+                name: MirrorLockup
+                type: int8u
+                writable: true
+                desc: 'Mirror Lockup'
+                values:
+                    - Disable
+                    - Enable
+    -
+        exiftool:
+            -
+                name: ETTLII
+                type: int8u
+                writable: true
+                desc: 'E-TTL II'
+                values:
+                    - Evaluative
+                    - Average
+    -
+        exiftool:
+            -
+                name: ShutterCurtainSync
+                type: int8u
+                writable: true
+                desc: 'Shutter Curtain Sync'
+                values:
+                    - '1st-curtain sync'
+                    - '2nd-curtain sync'

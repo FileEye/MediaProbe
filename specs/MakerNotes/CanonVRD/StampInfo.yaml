@@ -1,0 +1,18 @@
+collection: MakerNotes\CanonVRD\StampInfo
+name: CanonVRDStampInfo
+title: 'CanonVRD StampInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonVRD::StampInfo'']/tag'
+items:
+    2:
+        exiftool:
+            -
+                name: StampToolCount
+                type: int32u
+                writable: false
+                desc: 'Stamp Tool Count'

@@ -55,7 +55,8 @@ script:
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test
 
-  - php examples/dump-media.php -d  test/image_files/exiftool/Canon1DmkIII.jpg
+  - php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
+  #- php examples/dump-media.php -d test/image_files/exiftool/Canon1DmkIII.jpg-rewrite.img
   #- php examples/dump-media.php -d  test/image_files/broken_images/canon-eos-650d.jpg
   #- php examples/dump-media.php -d  test/image_files/exiftool/Canon.jpg
   #- php examples/dump-media.php -d test/image_files/broken_images/canon-eos-650d.jpg-rewrite.img

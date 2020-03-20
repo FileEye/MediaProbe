@@ -1,0 +1,32 @@
+collection: MakerNotes\CanonRaw\TimeStamp
+name: CanonRawTimeStamp
+title: 'CanonRaw TimeStamp'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::TimeStamp'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: DateTimeOriginal
+                type: int32u
+                writable: true
+                desc: 'Date/Time Original'
+    -
+        exiftool:
+            -
+                name: TimeZoneCode
+                type: int32s
+                writable: true
+                desc: 'Time Zone Code'
+    -
+        exiftool:
+            -
+                name: TimeZoneInfo
+                type: int32u
+                writable: true
+                desc: 'Time Zone Info'

@@ -1,0 +1,1416 @@
+collection: MakerNotes\CanonCustom\Functions2
+name: CanonCustomFunctions2
+title: 'CanonCustom Functions2 - a set of custom function tags which are (reasonably) consistent across models'
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+DOMNode: index
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonCustom::Functions2'']/tag'
+items:
+    257:
+        exiftool:
+            -
+                name: ExposureLevelIncrements
+                type: int32s
+                writable: true
+                desc: 'Exposure Level Increments'
+                values:
+                    - '1/3-stop set, 1/3-stop comp.'
+                    - '1-stop set, 1/3-stop comp.'
+                    - '1/2-stop set, 1/2-stop comp.'
+            -
+                name: ExposureLevelIncrements
+                type: int32s
+                writable: true
+                desc: 'Exposure Level Increments'
+                values:
+                    - '1/3 Stop'
+                    - '1/2 Stop'
+    258:
+        exiftool:
+            -
+                name: ISOSpeedIncrements
+                type: int32s
+                writable: true
+                desc: 'ISO Speed Increments'
+                values:
+                    - '1/3 Stop'
+                    - '1 Stop'
+    259:
+        exiftool:
+            -
+                name: ISOSpeedRange
+                type: int32s
+                count: 3
+                writable: true
+                desc: 'ISO Speed Range'
+                values:
+                    - Disable
+                    - Enable
+            -
+                name: ISOExpansion
+                type: int32s
+                writable: true
+                desc: 'ISO Expansion'
+                values:
+                    - 'Off'
+                    - 'On'
+    260:
+        exiftool:
+            -
+                name: AEBAutoCancel
+                type: int32s
+                writable: true
+                desc: 'AEB Auto Cancel'
+                values:
+                    - 'On'
+                    - 'Off'
+    261:
+        exiftool:
+            -
+                name: AEBSequence
+                type: int32s
+                writable: true
+                desc: 'AEB Sequence'
+                values:
+                    - '0,-,+'
+                    - '-,0,+'
+                    - '+,0,-'
+    262:
+        exiftool:
+            -
+                name: AEBShotCount
+                type: int32s
+                writable: true
+                desc: 'AEB Shot Count'
+                values:
+                    - '3 shots'
+                    - '2 shots'
+                    - '5 shots'
+                    - '7 shots'
+            -
+                name: AEBShotCount
+                type: int32s
+                count: 2
+                writable: true
+                desc: 'AEB Shot Count'
+                values:
+                    '2 1': '2 shots'
+                    '3 0': '3 shots'
+                    '5 2': '5 shots'
+                    '7 3': '7 shots'
+    263:
+        exiftool:
+            -
+                name: SpotMeterLinkToAFPoint
+                type: int32s
+                writable: true
+                desc: 'Spot Meter Link To AF Point'
+                values:
+                    - 'Disable (use center AF point)'
+                    - 'Enable (use active AF point)'
+    264:
+        exiftool:
+            -
+                name: SafetyShift
+                type: int32s
+                writable: true
+                desc: 'Safety Shift'
+                values:
+                    - Disable
+                    - 'Enable (Tv/Av)'
+                    - 'Enable (ISO speed)'
+    265:
+        exiftool:
+            -
+                name: UsableShootingModes
+                type: int32s
+                count: 2
+                writable: true
+                desc: 'Usable Shooting Modes'
+                values:
+                    - Disable
+                    - Enable
+    266:
+        exiftool:
+            -
+                name: UsableMeteringModes
+                type: int32s
+                count: 2
+                writable: true
+                desc: 'Usable Metering Modes'
+                values:
+                    - Disable
+                    - Enable
+    267:
+        exiftool:
+            -
+                name: ExposureModeInManual
+                type: int32s
+                writable: true
+                desc: 'Exposure Mode In Manual'
+                values:
+                    - 'Specified metering mode'
+                    - 'Evaluative metering'
+                    - 'Partial metering'
+                    - 'Spot metering'
+                    - 'Center-weighted average'
+    268:
+        exiftool:
+            -
+                name: ShutterSpeedRange
+                type: int32s
+                count: 3
+                writable: true
+                desc: 'Shutter Speed Range'
+                values:
+                    - Disable
+                    - Enable
+            -
+                name: ShutterSpeedRange
+                type: int32s
+                count: 4
+                writable: true
+                desc: 'Shutter Speed Range'
+    269:
+        exiftool:
+            -
+                name: ApertureRange
+                type: int32s
+                count: 3
+                writable: true
+                desc: 'Aperture Range'
+                values:
+                    - Disable
+                    - Enable
+            -
+                name: ApertureRange
+                type: int32s
+                count: 4
+                writable: true
+                desc: 'Aperture Range'
+    270:
+        exiftool:
+            -
+                name: ApplyShootingMeteringMode
+                type: int32s
+                count: 8
+                writable: true
+                desc: 'Apply Shooting Metering Mode'
+                values:
+                    - Disable
+                    - Enable
+    271:
+        exiftool:
+            -
+                name: FlashSyncSpeedAv
+                type: int32s
+                writable: true
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/250 Fixed'
+            -
+                name: FlashSyncSpeedAv
+                type: int32s
+                writable: true
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/250-1/60 Auto'
+                    - '1/250 Fixed'
+            -
+                name: FlashSyncSpeedAv
+                type: int32s
+                writable: true
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/200 Fixed'
+            -
+                name: FlashSyncSpeedAv
+                type: int32s
+                writable: true
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/300 Fixed'
+            -
+                name: FlashSyncSpeedAv
+                type: int32s
+                writable: true
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/300-1/60 Auto'
+                    - '1/300 Fixed'
+            -
+                name: FlashSyncSpeedAv
+                type: int32s
+                writable: true
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/200-1/60 Auto'
+                    - '1/200 Fixed'
+    272:
+        exiftool:
+            -
+                name: AEMicroadjustment
+                type: int32s
+                count: 3
+                writable: true
+                desc: 'AE Microadjustment'
+                values:
+                    - Disable
+                    - Enable
+    273:
+        exiftool:
+            -
+                name: FEMicroadjustment
+                type: int32s
+                count: 3
+                writable: true
+                desc: 'FE Microadjustment'
+                values:
+                    - Disable
+                    - Enable
+    274:
+        exiftool:
+            -
+                name: SameExposureForNewAperture
+                type: int32s
+                writable: true
+                desc: 'Same Exposure For New Aperture'
+                values:
+                    - Disable
+                    - 'ISO Speed'
+                    - 'Shutter Speed'
+            -
+                name: SameExposureForNewAperture
+                type: int32s
+                writable: true
+                desc: 'Same Exposure For New Aperture'
+                values:
+                    - Disable
+                    - 'ISO Speed'
+                    - 'ISO Speed/Shutter Speed'
+                    - 'Shutter Speed'
+    275:
+        exiftool:
+            -
+                name: ExposureCompAutoCancel
+                type: int32s
+                writable: true
+                desc: 'Exposure Comp Auto Cancel'
+                values:
+                    - Enable
+                    - Disable
+    276:
+        exiftool:
+            -
+                name: AELockMeterModeAfterFocus
+                type: int32s
+                writable: true
+                desc: 'AE Lock Meter Mode After Focus'
+                values:
+                    1: Evaluative
+                    2: Partial
+                    4: Spot
+                    8: Center-weighted
+    513:
+        exiftool:
+            -
+                name: LongExposureNoiseReduction
+                type: int32s
+                writable: true
+                desc: 'Long Exposure Noise Reduction'
+                values:
+                    - 'Off'
+                    - Auto
+                    - 'On'
+    514:
+        exiftool:
+            -
+                name: HighISONoiseReduction
+                type: int32s
+                writable: true
+                desc: 'High ISO Noise Reduction'
+                values:
+                    - Standard
+                    - Low
+                    - Strong
+                    - 'Off'
+            -
+                name: HighISONoiseReduction
+                type: int32s
+                writable: true
+                desc: 'High ISO Noise Reduction'
+                values:
+                    - 'Off'
+                    - 'On'
+    515:
+        exiftool:
+            -
+                name: HighlightTonePriority
+                type: int32s
+                writable: true
+                desc: 'Highlight Tone Priority'
+                values:
+                    - Disable
+                    - Enable
+    516:
+        exiftool:
+            -
+                name: AutoLightingOptimizer
+                type: int32s
+                writable: true
+                desc: 'Auto Lighting Optimizer'
+                values:
+                    - Standard
+                    - Low
+                    - Strong
+                    - Disable
+            -
+                name: AutoLightingOptimizer
+                type: int32s
+                writable: true
+                desc: 'Auto Lighting Optimizer'
+                values:
+                    - Enable
+                    - Disable
+    772:
+        exiftool:
+            -
+                name: ETTLII
+                type: int32s
+                writable: true
+                desc: 'E-TTL II'
+                values:
+                    - Evaluative
+                    - Average
+    773:
+        exiftool:
+            -
+                name: ShutterCurtainSync
+                type: int32s
+                writable: true
+                desc: 'Shutter Curtain Sync'
+                values:
+                    - '1st-curtain sync'
+                    - '2nd-curtain sync'
+    774:
+        exiftool:
+            -
+                name: FlashFiring
+                type: int32s
+                writable: true
+                desc: 'Flash Firing'
+                values:
+                    - Fires
+                    - 'Does not fire'
+    1031:
+        exiftool:
+            -
+                name: ViewInfoDuringExposure
+                type: int32s
+                writable: true
+                desc: 'View Info During Exposure'
+                values:
+                    - Disable
+                    - Enable
+    1032:
+        exiftool:
+            -
+                name: LCDIlluminationDuringBulb
+                type: int32s
+                writable: true
+                desc: 'LCD Illumination During Bulb'
+                values:
+                    - 'Off'
+                    - 'On'
+    1033:
+        exiftool:
+            -
+                name: InfoButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Info Button When Shooting'
+                values:
+                    - 'Displays camera settings'
+                    - 'Displays shooting functions'
+            -
+                name: InfoButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Info Button When Shooting'
+                values:
+                    - 'Displays shooting functions'
+                    - 'Displays camera settings'
+    1034:
+        exiftool:
+            -
+                name: ViewfinderWarnings
+                type: int32s
+                writable: true
+                desc: 'Viewfinder Warnings'
+                values:
+                    1: Monochrome
+                    2: 'WB corrected'
+                    4: 'One-touch image quality'
+                    8: 'ISO expansion'
+                    16: 'Spot metering'
+    1035:
+        exiftool:
+            -
+                name: LVShootingAreaDisplay
+                type: int32s
+                writable: true
+                desc: 'LV Shooting Area Display'
+                values:
+                    - Masked
+                    - Outlined
+    1036:
+        exiftool:
+            -
+                name: LVShootingAreaDisplay
+                type: int32s
+                writable: true
+                desc: 'LV Shooting Area Display'
+                values:
+                    - Masked
+                    - Outlined
+    1281:
+        exiftool:
+            -
+                name: USMLensElectronicMF
+                type: int32s
+                writable: true
+                desc: 'USM Lens Electronic MF'
+                values:
+                    - 'Enable after one-shot AF'
+                    - 'Disable after one-shot AF'
+                    - 'Disable in AF mode'
+    1282:
+        exiftool:
+            -
+                name: AIServoTrackingSensitivity
+                type: int32s
+                writable: true
+                desc: 'AI Servo Tracking Sensitivity'
+                values:
+                    -2: Slow
+                    -1: 'Medium Slow'
+                    0: Standard
+                    1: 'Medium Fast'
+                    2: Fast
+    1283:
+        exiftool:
+            -
+                name: AIServoImagePriority
+                type: int32s
+                writable: true
+                desc: 'AI Servo Image Priority'
+                values:
+                    - '1: AF, 2: Tracking'
+                    - '1: AF, 2: Drive speed'
+                    - '1: Release, 2: Drive speed'
+                    - '1: Release, 2: Tracking'
+    1284:
+        exiftool:
+            -
+                name: AIServoTrackingMethod
+                type: int32s
+                writable: true
+                desc: 'AI Servo Tracking Method'
+                values:
+                    - 'Main focus point priority'
+                    - 'Continuous AF track priority'
+    1285:
+        exiftool:
+            -
+                name: LensDriveNoAF
+                type: int32s
+                writable: true
+                desc: 'Lens Drive No AF'
+                values:
+                    - 'Focus search on'
+                    - 'Focus search off'
+    1286:
+        exiftool:
+            -
+                name: LensAFStopButton
+                type: int32s
+                writable: true
+                desc: 'Lens AF Stop Button'
+                values:
+                    - 'AF stop'
+                    - 'AF start'
+                    - 'AE lock'
+                    - 'AF point: M->Auto/Auto->ctr'
+                    - 'One Shot <-> AI servo'
+                    - 'IS start'
+                    - 'Switch to registered AF point'
+                    - 'Spot AF'
+    1287:
+        exiftool:
+            -
+                name: AFMicroadjustment
+                type: int32s
+                count: 5
+                writable: true
+                desc: 'AF Microadjustment'
+                values:
+                    - Disable
+                    - 'Adjust all by same amount'
+                    - 'Adjust by lens'
+    1288:
+        exiftool:
+            -
+                name: AFPointAreaExpansion
+                type: int32s
+                writable: true
+                desc: 'AF Point Area Expansion'
+                values:
+                    - Disable
+                    - Enable
+            -
+                name: AFPointAreaExpansion
+                type: int32s
+                writable: true
+                desc: 'AF Point Area Expansion'
+                values:
+                    - Disable
+                    - 'Enable (left/right Assist AF points)'
+                    - 'Enable (surrounding Assist AF points)'
+            -
+                name: AFPointAreaExpansion
+                type: int32s
+                writable: true
+                desc: 'AF Point Area Expansion'
+                values:
+                    - Disable
+                    - 'Left/right AF points'
+                    - 'Surrounding AF points'
+                    - 'All 45 points area'
+    1289:
+        exiftool:
+            -
+                name: SelectableAFPoint
+                type: int32s
+                writable: true
+                desc: 'Selectable AF Point'
+                values:
+                    - '45 points'
+                    - '19 points'
+                    - '11 points'
+                    - 'Inner 9 points'
+                    - 'Outer 9 points'
+            -
+                name: SelectableAFPoint
+                type: int32s
+                writable: true
+                desc: 'Selectable AF Point'
+                values:
+                    - '19 points'
+                    - 'Inner 9 points'
+                    - 'Outer 9 points'
+                    - '19 Points, Multi-controller selectable'
+                    - 'Inner 9 Points, Multi-controller selectable'
+                    - 'Outer 9 Points, Multi-controller selectable'
+    1290:
+        exiftool:
+            -
+                name: SwitchToRegisteredAFPoint
+                type: int32s
+                writable: true
+                desc: 'Switch To Registered AF Point'
+                values:
+                    - Disable
+                    - 'Switch with multi-controller'
+                    - 'Only while AEL is pressed'
+            -
+                name: SwitchToRegisteredAFPoint
+                type: int32s
+                writable: true
+                desc: 'Switch To Registered AF Point'
+                values:
+                    - Disable
+                    - Enable
+    1291:
+        exiftool:
+            -
+                name: AFPointAutoSelection
+                type: int32s
+                writable: true
+                desc: 'AF Point Auto Selection'
+                values:
+                    - 'Control-direct:disable/Main:enable'
+                    - 'Control-direct:disable/Main:disable'
+                    - 'Control-direct:enable/Main:enable'
+    1292:
+        exiftool:
+            -
+                name: AFPointDisplayDuringFocus
+                type: int32s
+                writable: true
+                desc: 'AF Point Display During Focus'
+                values:
+                    - 'On'
+                    - 'Off'
+                    - 'On (when focus achieved)'
+            -
+                name: AFPointDisplayDuringFocus
+                type: int32s
+                writable: true
+                desc: 'AF Point Display During Focus'
+                values:
+                    - 'Selected (constant)'
+                    - 'All (constant)'
+                    - 'Selected (pre-AF, focused)'
+                    - 'Selected (focused)'
+                    - 'Disable display'
+    1293:
+        exiftool:
+            -
+                name: AFPointBrightness
+                type: int32s
+                writable: true
+                desc: 'AF Point Brightness'
+                values:
+                    - Normal
+                    - Brighter
+    1294:
+        exiftool:
+            -
+                name: AFAssistBeam
+                type: int32s
+                writable: true
+                desc: 'AF Assist Beam'
+                values:
+                    - Emits
+                    - 'Does not emit'
+                    - 'IR AF assist beam only'
+            -
+                name: AFAssistBeam
+                type: int32s
+                writable: true
+                desc: 'AF Assist Beam'
+                values:
+                    - Emits
+                    - 'Does not emit'
+                    - 'Only ext. flash emits'
+                    - 'IR AF assist beam only'
+    1295:
+        exiftool:
+            -
+                name: AFPointSelectionMethod
+                type: int32s
+                writable: true
+                desc: 'AF Point Selection Method'
+                values:
+                    - Normal
+                    - 'Multi-controller direct'
+                    - 'Quick Control Dial direct'
+            -
+                name: AFPointSelectionMethod
+                type: int32s
+                writable: true
+                desc: 'AF Point Selection Method'
+                values:
+                    - 'AF point button: Activate AF Sel; Rear dial: Select AF points'
+                    - 'AF point button: Auto selection; Rear dial: Manual selection'
+    1296:
+        exiftool:
+            -
+                name: VFDisplayIllumination
+                type: int32s
+                writable: true
+                desc: 'VF Display Illumination'
+                values:
+                    - Auto
+                    - Enable
+                    - Disable
+            -
+                name: SuperimposedDisplay
+                type: int32s
+                writable: true
+                desc: 'Superimposed Display'
+                values:
+                    - 'On'
+                    - 'Off'
+    1297:
+        exiftool:
+            -
+                name: AFDuringLiveView
+                type: int32s
+                writable: true
+                desc: 'AF During Live View'
+                values:
+                    - Disable
+                    - Enable
+            -
+                name: AFDuringLiveView
+                type: int32s
+                writable: true
+                desc: 'AF During Live View'
+                values:
+                    - Disable
+                    - 'Quick mode'
+                    - 'Live mode'
+    1298:
+        exiftool:
+            -
+                name: SelectAFAreaSelectMode
+                type: int32s
+                writable: true
+                desc: 'Select AF Area Select Mode'
+                values:
+                    - Disable
+                    - Enable
+                    - Register
+                    - 'Select AF-modes'
+    1299:
+        exiftool:
+            -
+                name: ManualAFPointSelectPattern
+                type: int32s
+                writable: true
+                desc: 'Manual AF Point Select Pattern'
+                values:
+                    - 'Stops at AF area edges'
+                    - Continuous
+    1300:
+        exiftool:
+            -
+                name: DisplayAllAFPoints
+                type: int32s
+                writable: true
+                desc: 'Display All AF Points'
+                values:
+                    - Enable
+                    - Disable
+    1301:
+        exiftool:
+            -
+                name: FocusDisplayAIServoAndMF
+                type: int32s
+                writable: true
+                desc: 'Focus Display AI Servo And MF'
+                values:
+                    - Enable
+                    - Disable
+    1302:
+        exiftool:
+            -
+                name: OrientationLinkedAFPoint
+                type: int32s
+                writable: true
+                desc: 'Orientation Linked AF Point'
+                values:
+                    - 'Same for vertical and horizontal'
+                    - 'Select different AF points'
+    1303:
+        exiftool:
+            -
+                name: MultiControllerWhileMetering
+                type: int32s
+                writable: true
+                desc: 'Multi Controller While Metering'
+                values:
+                    - 'Off'
+                    - 'AF point selection'
+    1304:
+        exiftool:
+            -
+                name: AccelerationTracking
+                type: int32s
+                writable: true
+                desc: 'Acceleration Tracking'
+    1305:
+        exiftool:
+            -
+                name: AIServoFirstImagePriority
+                type: int32s
+                writable: true
+                desc: 'AI Servo First Image Priority'
+                values:
+                    -1: 'Release priority'
+                    0: 'Equal priority'
+                    1: 'Focus priority'
+    1306:
+        exiftool:
+            -
+                name: AIServoSecondImagePriority
+                type: int32s
+                writable: true
+                desc: 'AI Servo Second Image Priority'
+                values:
+                    -1: 'Shooting speed priority'
+                    0: 'Equal priority'
+                    1: 'Focus priority'
+    1307:
+        exiftool:
+            -
+                name: AFAreaSelectMethod
+                type: int32s
+                writable: true
+                desc: 'AF Area Select Method'
+                values:
+                    - 'AF area selection button'
+                    - 'Main dial'
+    1308:
+        exiftool:
+            -
+                name: AutoAFPointColorTracking
+                type: int32s
+                writable: true
+                desc: 'Auto AF Point Color Tracking'
+                values:
+                    - 'On-Shot AF only'
+                    - Disable
+    1309:
+        exiftool:
+            -
+                name: VFDisplayIllumination
+                type: int32s
+                writable: true
+                desc: 'VF Display Illumination'
+                values:
+                    - Auto
+                    - Enable
+                    - Disable
+    1310:
+        exiftool:
+            -
+                name: InitialAFPointAIServoAF
+                type: int32s
+                writable: true
+                desc: 'Initial AF Point AI Servo AF'
+                values:
+                    - Auto
+                    - 'Initial AF point selected'
+                    - 'Manual AF point'
+    1551:
+        exiftool:
+            -
+                name: MirrorLockup
+                type: int32s
+                writable: true
+                desc: 'Mirror Lockup'
+                values:
+                    - Disable
+                    - Enable
+                    - 'Enable: Down with Set'
+    1552:
+        exiftool:
+            -
+                name: ContinuousShootingSpeed
+                type: int32s
+                count: 3
+                writable: true
+                desc: 'Continuous Shooting Speed'
+                values:
+                    - Disable
+                    - Enable
+    1553:
+        exiftool:
+            -
+                name: ContinuousShotLimit
+                type: int32s
+                count: 2
+                writable: true
+                desc: 'Continuous Shot Limit'
+                values:
+                    - Disable
+                    - Enable
+    1554:
+        exiftool:
+            -
+                name: RestrictDriveModes
+                type: int32s
+                count: 2
+                writable: true
+                desc: 'Restrict Drive Modes'
+                values:
+                    - Disable
+                    - Enable
+    1793:
+        exiftool:
+            -
+                name: Shutter-AELock
+                type: int32s
+                writable: true
+                desc: 'Shutter-AE Lock'
+                values:
+                    - 'AF/AE lock'
+                    - 'AE lock/AF'
+                    - 'AF/AF lock, No AE lock'
+                    - 'AE/AF, No AE lock'
+            -
+                name: AFAndMeteringButtons
+                type: int32s
+                writable: true
+                desc: 'AF And Metering Buttons'
+                values:
+                    - 'Metering start'
+                    - 'Metering + AF start'
+                    - 'AE lock'
+                    - 'AF stop'
+                    - 'No function'
+            -
+                name: ShutterButtonAFOnButton
+                type: int32s
+                writable: true
+                desc: 'Shutter Button AF On Button'
+                values:
+                    - 'Metering + AF start'
+                    - 'Metering + AF start/AF stop'
+                    - 'Metering start/Meter + AF start'
+                    - 'AE lock/Metering + AF start'
+                    - 'Metering + AF start/disable'
+    1794:
+        exiftool:
+            -
+                name: AFOnAELockButtonSwitch
+                type: int32s
+                writable: true
+                desc: 'AF On AE Lock Button Switch'
+                values:
+                    - Disable
+                    - Enable
+    1795:
+        exiftool:
+            -
+                name: QuickControlDialInMeter
+                type: int32s
+                writable: true
+                desc: 'Quick Control Dial In Meter'
+                values:
+                    - 'Exposure comp/Aperture'
+                    - 'AF point selection'
+                    - 'ISO speed'
+                    - 'AF point selection swapped with Exposure comp'
+                    - 'ISO speed swapped with Exposure comp'
+    1796:
+        exiftool:
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Set Button When Shooting'
+                values:
+                    - 'Normal (disabled)'
+                    - 'Image quality'
+                    - 'Picture style'
+                    - 'Menu display'
+                    - 'Image playback'
+                    - 'Quick control screen'
+                    - 'Record movie (Live View)'
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Set Button When Shooting'
+                values:
+                    - 'Normal (disabled)'
+                    - 'Image quality'
+                    - 'Picture style'
+                    - 'White balance'
+                    - 'Flash exposure compensation'
+                    - 'Viewfinder leveling gauge'
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Set Button When Shooting'
+                values:
+                    - 'Normal (disabled)'
+                    - 'Image quality'
+                    - 'Flash exposure compensation'
+                    - 'LCD monitor On/Off'
+                    - 'Menu display'
+                    - 'ISO speed'
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Set Button When Shooting'
+                values:
+                    - 'Normal (disabled)'
+                    - 'Image quality'
+                    - 'Flash exposure compensation'
+                    - 'LCD monitor On/Off'
+                    - 'Menu display'
+                    - 'Depth-of-field preview'
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Set Button When Shooting'
+                values:
+                    - 'LCD monitor On/Off'
+                    - 'Image quality'
+                    - 'Flash exposure compensation'
+                    - 'Menu display'
+                    - Disabled
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Set Button When Shooting'
+                values:
+                    - 'Quick control screen'
+                    - 'Image quality'
+                    - 'Flash exposure compensation'
+                    - 'LCD monitor On/Off'
+                    - 'Menu display'
+                    - Disabled
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                desc: 'Set Button When Shooting'
+                values:
+                    - 'Normal (disabled)'
+                    - 'White balance'
+                    - 'Image size'
+                    - 'ISO speed'
+                    - 'Picture style'
+                    - 'Record func. + media/folder'
+                    - 'Menu display'
+                    - 'Image playback'
+    1797:
+        exiftool:
+            -
+                name: ManualTv
+                type: int32s
+                writable: true
+                desc: 'Manual Tv/Av For M'
+                values:
+                    - Tv=Main/Av=Control
+                    - Tv=Control/Av=Main
+    1798:
+        exiftool:
+            -
+                name: DialDirectionTvAv
+                type: int32s
+                writable: true
+                desc: 'Dial Direction Tv Av'
+                values:
+                    - Normal
+                    - Reversed
+    1799:
+        exiftool:
+            -
+                name: AvSettingWithoutLens
+                type: int32s
+                writable: true
+                desc: 'Av Setting Without Lens'
+                values:
+                    - Disable
+                    - Enable
+    1800:
+        exiftool:
+            -
+                name: WBMediaImageSizeSetting
+                type: int32s
+                writable: true
+                desc: 'WB Media Image Size Setting'
+                values:
+                    - 'Rear LCD panel'
+                    - 'LCD monitor'
+                    - 'Off (disable button)'
+    1801:
+        exiftool:
+            -
+                name: LockMicrophoneButton
+                type: int32s
+                writable: true
+                desc: 'Lock Microphone Button'
+                values:
+                    - 'Protect (hold:record memo)'
+                    - 'Record memo (protect:disable)'
+                    - 'Play memo (hold:record memo)'
+                    - 'Rating (protect/memo:disable)'
+    1802:
+        exiftool:
+            -
+                name: ButtonFunctionControlOff
+                type: int32s
+                writable: true
+                desc: 'Button Function Control Off'
+                values:
+                    - 'Normal (enable)'
+                    - 'Disable main, Control, Multi-control'
+    1803:
+        exiftool:
+            -
+                name: AssignFuncButton
+                type: int32s
+                writable: true
+                desc: 'Assign Func Button'
+                values:
+                    - 'LCD brightness'
+                    - 'Image quality'
+                    - 'Exposure comp./AEB setting'
+                    - 'Image jump with main dial'
+                    - 'Live view function settings'
+    1804:
+        exiftool:
+            -
+                name: CustomControls
+                type: int32s
+                writable: true
+                desc: 'Custom Controls'
+    1805:
+        exiftool:
+            -
+                name: StartMovieShooting
+                type: int32s
+                writable: true
+                desc: 'Start Movie Shooting'
+                values:
+                    - 'Default (from LV)'
+                    - 'Quick start (FEL button)'
+    1806:
+        exiftool:
+            -
+                name: FlashButtonFunction
+                type: int32s
+                writable: true
+                desc: 'Flash Button Function'
+                values:
+                    - 'Raise built-in flash'
+                    - 'ISO speed'
+    1807:
+        exiftool:
+            -
+                name: MultiFunctionLock
+                type: int32s
+                writable: true
+                desc: 'Multi Function Lock'
+                values:
+                    - 'Off'
+                    - 'On'
+                    - 'On (quick control dial)'
+                    - 'On (main dial and quick control dial)'
+    1808:
+        exiftool:
+            -
+                name: TrashButtonFunction
+                type: int32s
+                writable: true
+                desc: 'Trash Button Function'
+                values:
+                    - 'Normal (set center AF point)'
+                    - 'Depth-of-field preview'
+    1809:
+        exiftool:
+            -
+                name: ShutterReleaseWithoutLens
+                type: int32s
+                writable: true
+                desc: 'Shutter Release Without Lens'
+                values:
+                    - Disable
+                    - Enable
+    1810:
+        exiftool:
+            -
+                name: ControlRingRotation
+                type: int32s
+                writable: true
+                desc: 'Control Ring Rotation'
+                values:
+                    - Normal
+                    - Reversed
+    1811:
+        exiftool:
+            -
+                name: FocusRingRotation
+                type: int32s
+                writable: true
+                desc: 'Focus Ring Rotation'
+                values:
+                    - Normal
+                    - Reversed
+    1812:
+        exiftool:
+            -
+                name: RFLensMFFocusRingSensitivity
+                type: int32s
+                writable: true
+                desc: 'RF Lens MF Focus Ring Sensitivity'
+                values:
+                    - 'Varies With Rotation Speed'
+                    - 'Linked To Rotation Angle'
+    1813:
+        exiftool:
+            -
+                name: CustomizeDials
+                type: int32s
+                writable: true
+                desc: 'Customize Dials'
+    2059:
+        exiftool:
+            -
+                name: FocusingScreen
+                type: int32s
+                writable: true
+                desc: 'Focusing Screen'
+                values:
+                    - Ef-A
+                    - Ef-D
+                    - Ef-S
+            -
+                name: FocusingScreen
+                type: int32s
+                writable: true
+                desc: 'Focusing Screen'
+                values:
+                    - Eg-A
+                    - Eg-D
+                    - Eg-S
+            -
+                name: FocusingScreen
+                type: int32s
+                writable: true
+                desc: 'Focusing Screen'
+                values:
+                    - 'Eg-A II'
+                    - Eg-D
+                    - Eg-S
+            -
+                name: FocusingScreen
+                type: int32s
+                writable: true
+                desc: 'Focusing Screen'
+                values:
+                    - Eh-A
+                    - Eh-S
+            -
+                name: FocusingScreen
+                type: int32s
+                writable: true
+                desc: 'Focusing Screen'
+                values:
+                    - Ec-CV
+                    - 'Ec-A,B,D,H,I,L'
+            -
+                name: FocusingScreen
+                type: int32s
+                writable: true
+                desc: 'Focusing Screen'
+                values:
+                    - Ec-CIV
+                    - 'Ec-A,B,C,CII,CIII,D,H,I,L'
+                    - Ec-S
+                    - 'Ec-N,R'
+    2060:
+        exiftool:
+            -
+                name: TimerLength
+                type: int32s
+                count: 4
+                writable: true
+                desc: 'Timer Length'
+                values:
+                    - Disable
+                    - Enable
+    2061:
+        exiftool:
+            -
+                name: ShortReleaseTimeLag
+                type: int32s
+                writable: true
+                desc: 'Short Release Time Lag'
+                values:
+                    - Disable
+                    - Enable
+    2062:
+        exiftool:
+            -
+                name: AddAspectRatioInfo
+                type: int32s
+                writable: true
+                desc: 'Add Aspect Ratio Info'
+                values:
+                    - 'Off'
+                    - '6:6'
+                    - '3:4'
+                    - '4:5'
+                    - '6:7'
+                    - '10:12'
+                    - '5:7'
+    2063:
+        exiftool:
+            -
+                name: AddOriginalDecisionData
+                type: int32s
+                writable: true
+                desc: 'Add Original Decision Data'
+                values:
+                    - 'Off'
+                    - 'On'
+    2064:
+        exiftool:
+            -
+                name: LiveViewExposureSimulation
+                type: int32s
+                writable: true
+                desc: 'Live View Exposure Simulation'
+                values:
+                    - 'Disable (LCD auto adjust)'
+                    - 'Enable (simulates exposure)'
+    2065:
+        exiftool:
+            -
+                name: LCDDisplayAtPowerOn
+                type: int32s
+                writable: true
+                desc: 'LCD Display At Power On'
+                values:
+                    - Display
+                    - 'Retain power off status'
+    2066:
+        exiftool:
+            -
+                name: MemoAudioQuality
+                type: int32s
+                writable: true
+                desc: 'Memo Audio Quality'
+                values:
+                    - 'High (48 kHz)'
+                    - 'Low (8 kHz)'
+    2067:
+        exiftool:
+            -
+                name: DefaultEraseOption
+                type: int32s
+                writable: true
+                desc: 'Default Erase Option'
+                values:
+                    - 'Cancel selected'
+                    - 'Erase selected'
+    2068:
+        exiftool:
+            -
+                name: RetractLensOnPowerOff
+                type: int32s
+                writable: true
+                desc: 'Retract Lens On Power Off'
+                values:
+                    - Enable
+                    - Disable
+    2069:
+        exiftool:
+            -
+                name: AddIPTCInformation
+                type: int32s
+                writable: true
+                desc: 'Add IPTC Information'
+                values:
+                    - Disable
+                    - Enable

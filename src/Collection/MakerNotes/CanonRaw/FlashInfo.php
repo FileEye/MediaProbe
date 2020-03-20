@@ -6,46 +6,49 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\MakerNotes\Canon;
+namespace FileEye\MediaProbe\Collection\MakerNotes\CanonRaw;
 
 use FileEye\MediaProbe\Collection;
 
-class uuid extends Collection {
+class FlashInfo extends Collection {
 
   protected static $map = array (
-  '__todo' => true,
-  'name' => 'Canonuuid',
-  'title' => 'Canon uuid',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
-  'DOMNode' => 'index',
+  'name' => 'CanonRawFlashInfo',
+  'title' => 'CanonRaw FlashInfo',
+  'class' => 'tbd',
+  'DOMNode' => 'tbd',
+  'format' =>
+  array (
+    0 => 3,
+  ),
   'defaultItemCollection' => 'Tag',
   'items' =>
   array (
-    'CNCV' =>
+    0 =>
     array (
       'collection' => 'Tag',
-      'name' => 'CompressorVersion',
-      'title' => 'Compressor Version',
+      'name' => 'FlashGuideNumber',
+      'title' => 'Flash Guide Number',
       'format' =>
       array (
-        0 => 7,
+        0 => 11,
       ),
     ),
-    'THMB' =>
+    1 =>
     array (
       'collection' => 'Tag',
-      'name' => 'ThumbnailImage',
-      'title' => 'Thumbnail Image',
+      'name' => 'FlashThreshold',
+      'title' => 'Flash Threshold',
       'format' =>
       array (
-        0 => 7,
+        0 => 11,
       ),
     ),
   ),
   'itemsByName' =>
   array (
-    'CompressorVersion' => 'CNCV',
-    'ThumbnailImage' => 'THMB',
+    'FlashGuideNumber' => 0,
+    'FlashThreshold' => 1,
   ),
 );
 }

@@ -2,13 +2,13 @@
 
 namespace FileEye\MediaProbe;
 
+use FileEye\MediaProbe\DOMElement;
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\DOM\MediaProbeDOMElement;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
+use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
-use Monolog\Logger;
 
 /**
  * Base class for ElementInterface objects.
@@ -61,7 +61,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         // stores the image structure.
         if (!$parent || !is_object($parent->DOMNode)) {
             $doc = new \DOMDocument();
-            $doc->registerNodeClass('DOMElement', MediaProbeDOMElement::class);
+            $doc->registerNodeClass('DOMElement', DOMElement::class);
             $this->XPath = new \DOMXPath($doc);
             $parent_node = $doc;
         } else {

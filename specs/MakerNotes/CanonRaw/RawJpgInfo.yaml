@@ -1,0 +1,48 @@
+collection: MakerNotes\CanonRaw\RawJpgInfo
+name: CanonRawRawJpgInfo
+title: 'CanonRaw RawJpgInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''CanonRaw::RawJpgInfo'']/tag'
+items:
+    1:
+        exiftool:
+            -
+                name: RawJpgQuality
+                type: int16u
+                writable: true
+                desc: 'Raw Jpg Quality'
+                values:
+                    1: Economy
+                    2: Normal
+                    3: Fine
+                    5: Superfine
+    2:
+        exiftool:
+            -
+                name: RawJpgSize
+                type: int16u
+                writable: true
+                desc: 'Raw Jpg Size'
+                values:
+                    - Large
+                    - Medium
+                    - Small
+    3:
+        exiftool:
+            -
+                name: RawJpgWidth
+                type: int16u
+                writable: true
+                desc: 'Raw Jpg Width'
+    4:
+        exiftool:
+            -
+                name: RawJpgHeight
+                type: int16u
+                writable: true
+                desc: 'Raw Jpg Height'

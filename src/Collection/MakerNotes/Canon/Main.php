@@ -123,8 +123,9 @@ class Main extends Collection {
     ),
     15 =>
     array (
+      '__todo' => 'fix',
       'name' => 'CanonCustomFunctions',
-      'collection' => 'MakerNotes\\Canon\\CustomFunctionsResolver',
+      'collection' => 'MakerNotes\\CanonCustom\\FunctionsResolver',
     ),
     16 =>
     array (
@@ -644,7 +645,7 @@ class Main extends Collection {
     ),
     60 =>
     array (
-      'name' => 'AFInfo3',
+      'name' => 'CanonAFInfo3',
       'collection' => 'MakerNotes\\Canon\\AFInfo2',
     ),
     129 =>
@@ -669,18 +670,21 @@ class Main extends Collection {
     ),
     144 =>
     array (
-      'name' => 'CustomFunctions1D',
-      'collection' => 'MakerNotes\\Canon\\CustomFunctions1D',
+      '__todo' => 'fix',
+      'name' => 'CanonCustomFunctions1D',
+      'collection' => 'MakerNotes\\CanonCustom\\Functions1D',
     ),
     145 =>
     array (
-      'name' => 'PersonalFunctions',
-      'collection' => 'MakerNotes\\Canon\\PersonalFunctions',
+      '__todo' => 'fix',
+      'name' => 'CanonCustomPersonalFuncs',
+      'collection' => 'MakerNotes\\CanonCustom\\PersonalFuncs',
     ),
     146 =>
     array (
-      'name' => 'PersonalFunctionValues',
-      'collection' => 'MakerNotes\\Canon\\PersonalFunctionValues',
+      '__todo' => 'fix',
+      'name' => 'CanonCustomPersonalFuncValues',
+      'collection' => 'MakerNotes\\CanonCustom\\PersonalFuncValues',
     ),
     147 =>
     array (
@@ -729,19 +733,17 @@ class Main extends Collection {
     ),
     152 =>
     array (
-      'name' => 'CropInfo',
+      'name' => 'CanonCropInfo',
       'collection' => 'MakerNotes\\Canon\\CropInfo',
     ),
     153 =>
     array (
-      'name' => 'CustomFunctions2',
-      '__collection' => 'MakerNotes\\Canon\\CustomFunctions2',
-      '__todo' => 'get cust funct',
-      'collection' => 'Tag',
+      'name' => 'CanonCustomFunctions2Header',
+      'collection' => 'MakerNotes\\CanonCustom\\Functions2Header',
     ),
     154 =>
     array (
-      'name' => 'AspectInfo',
+      'name' => 'CanonAspectInfo',
       'collection' => 'MakerNotes\\Canon\\AspectInfo',
     ),
     160 =>
@@ -816,7 +818,7 @@ class Main extends Collection {
     ),
     177 =>
     array (
-      'name' => 'ModifiedInfo',
+      'name' => 'CanonModifiedInfo',
       'collection' => 'MakerNotes\\Canon\\ModifiedInfo',
     ),
     178 =>
@@ -860,7 +862,7 @@ class Main extends Collection {
     ),
     182 =>
     array (
-      'name' => 'PreviewImageInfo',
+      'name' => 'CanonPreviewImageInfo',
       'collection' => 'MakerNotes\\Canon\\PreviewImageInfo',
     ),
     208 =>
@@ -895,7 +897,7 @@ class Main extends Collection {
     ),
     16387 =>
     array (
-      'name' => 'ColorInfo',
+      'name' => 'CanonColorInfo',
       'collection' => 'MakerNotes\\Canon\\ColorInfo',
     ),
     16389 =>
@@ -1004,29 +1006,29 @@ class Main extends Collection {
     ),
     16403 =>
     array (
-      'name' => 'AFMicroAdj',
+      'name' => 'CanonAFMicroAdj',
       'collection' => 'MakerNotes\\Canon\\AFMicroAdj',
     ),
     16405 =>
     array (
-      'name' => 'VignettingCorr',
+      'name' => 'CanonVignettingCorr',
       '__todo' => true,
       '__collection' => 'MakerNotes\\Canon\\VignettingCorrResolver',
       'collection' => 'Tag',
     ),
     16406 =>
     array (
-      'name' => 'VignettingCorr2',
+      'name' => 'CanonVignettingCorr2',
       'collection' => 'MakerNotes\\Canon\\VignettingCorr2',
     ),
     16408 =>
     array (
-      'name' => 'LightingOpt',
+      'name' => 'CanonLightingOpt',
       'collection' => 'MakerNotes\\Canon\\LightingOpt',
     ),
     16409 =>
     array (
-      'name' => 'LensInfo',
+      'name' => 'CanonLensInfo',
       'title' => 'Canon LensInfo',
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonLensInfo',
       '__collection' => 'MakerNotes\\Canon\\LensInfo',
@@ -1034,22 +1036,22 @@ class Main extends Collection {
     ),
     16416 =>
     array (
-      'name' => 'Ambience',
+      'name' => 'CanonAmbience',
       'collection' => 'MakerNotes\\Canon\\Ambience',
     ),
     16417 =>
     array (
-      'name' => 'MultiExp',
+      'name' => 'CanonMultiExp',
       'collection' => 'MakerNotes\\Canon\\MultiExp',
     ),
     16420 =>
     array (
-      'name' => 'FilterInfo',
+      'name' => 'CanonFilterInfo',
       'collection' => 'MakerNotes\\Canon\\FilterInfo',
     ),
     16421 =>
     array (
-      'name' => 'RawBurstModeRoll',
+      'name' => 'CanonRawBurstModeRoll',
       '__todo' => true,
       '__collection' => 'MakerNotes\\Canon\\RawBurstModeRoll',
       'collection' => 'Tag',
@@ -1057,70 +1059,72 @@ class Main extends Collection {
   ),
   'itemsByName' =>
   array (
-    'AFInfo3' => 60,
-    'AFMicroAdj' => 16403,
     'AFPointsInFocus1D' => 148,
-    'Ambience' => 16416,
-    'AspectInfo' => 154,
     'BatteryType' => 56,
     'CRWParam' => 16386,
     'CanonAFInfo' => 18,
     'CanonAFInfo2' => 38,
+    'CanonAFInfo3' => 60,
+    'CanonAFMicroAdj' => 16403,
+    'CanonAmbience' => 16416,
+    'CanonAspectInfo' => 154,
     'CanonCameraInfo' => 13,
     'CanonCameraSettings' => 1,
     'CanonColorBalance' => 169,
     'CanonColorData' => 16385,
+    'CanonColorInfo' => 16387,
     'CanonContrastInfo' => 39,
+    'CanonCropInfo' => 152,
     'CanonCustomFunctions' => 15,
+    'CanonCustomFunctions1D' => 144,
+    'CanonCustomFunctions2Header' => 153,
+    'CanonCustomPersonalFuncValues' => 146,
+    'CanonCustomPersonalFuncs' => 145,
     'CanonFaceDetect1' => 36,
     'CanonFaceDetect2' => 37,
     'CanonFaceDetect3' => 47,
     'CanonFileInfo' => 147,
     'CanonFileLength' => 14,
+    'CanonFilterInfo' => 16420,
     'CanonFirmwareVersion' => 7,
     'CanonFlags' => 176,
     'CanonFlashInfo' => 3,
     'CanonFocalLength' => 2,
     'CanonImageType' => 6,
+    'CanonLensInfo' => 16409,
+    'CanonLightingOpt' => 16408,
     'CanonMeasuredColor' => 170,
     'CanonModelID' => 16,
+    'CanonModifiedInfo' => 177,
     'CanonMovieInfo' => 17,
+    'CanonMultiExp' => 16417,
     'CanonMyColors' => 29,
     'CanonPanorama' => 5,
+    'CanonPreviewImageInfo' => 182,
     'CanonProcessing' => 160,
+    'CanonRawBurstModeRoll' => 16421,
     'CanonSensorInfo' => 224,
     'CanonShotInfo' => 4,
     'CanonTimeInfo' => 53,
+    'CanonVignettingCorr' => 16405,
+    'CanonVignettingCorr2' => 16406,
     'CanonWBInfo' => 41,
     'Categories' => 35,
-    'ColorInfo' => 16387,
     'ColorSpace' => 180,
     'ColorTemperature' => 174,
-    'CropInfo' => 152,
-    'CustomFunctions1D' => 144,
-    'CustomFunctions2' => 153,
     'CustomPictureStyleFileName' => 16400,
     'DateStampMode' => 28,
     'DustRemovalData' => 151,
     'FileNumber' => 8,
-    'FilterInfo' => 16420,
     'FirmwareRevision' => 30,
     'Flavor' => 16389,
     'ImageUniqueID' => 40,
     'InternalSerialNumber' => 150,
-    'LensInfo' => 16409,
     'LensModel' => 149,
-    'LightingOpt' => 16408,
-    'ModifiedInfo' => 177,
-    'MultiExp' => 16417,
     'OriginalDecisionDataOffset' => 131,
     'OwnerName' => 9,
-    'PersonalFunctionValues' => 146,
-    'PersonalFunctions' => 145,
     'PictureStylePC' => 16393,
     'PictureStyleUserDef' => 16392,
-    'PreviewImageInfo' => 182,
-    'RawBurstModeRoll' => 16421,
     'RawDataOffset' => 129,
     'SerialNumber' => 12,
     'SerialNumberFormat' => 21,
@@ -1132,8 +1136,6 @@ class Main extends Collection {
     'ToneCurveTable' => 161,
     'UnknownD30' => 10,
     'VRDOffset' => 208,
-    'VignettingCorr' => 16405,
-    'VignettingCorr2' => 16406,
     'WhiteBalanceMatching' => 179,
     'WhiteBalanceTable' => 164,
   ),
