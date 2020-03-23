@@ -4,6 +4,7 @@ namespace FileEye\MediaProbe\Data;
 
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use Psr\Log\LoggerInterface;
 
 /**
  * Abstract class representing a data element in MediaProbe.
@@ -40,6 +41,13 @@ abstract class DataElement
      * @var int
      */
     protected $order;
+
+    /**
+     * The internal logger instance.
+     *
+     * @var \Psr\Log\LoggerInterface
+     */
+    protected $logger;
 
     /**
      * Gets the offset start of this element.

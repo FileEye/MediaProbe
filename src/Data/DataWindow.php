@@ -5,7 +5,7 @@ namespace FileEye\MediaProbe\Data;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
-use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 
 /**
  * A data window object.
@@ -85,7 +85,7 @@ class DataWindow extends DataElement
     }
 
     // xx
-    public function logInfo(Logger $logger)
+    public function logInfo(LoggerInterface $logger)
     {
         $logger->debug('DataWindow - [{start}, {size}]', [
             'start' => $this->getStart(),
