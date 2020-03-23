@@ -297,7 +297,7 @@ class Ifd extends ListBase
 
         // Now set the thumbnail normally.
         try {
-            $dataxx = new DataWindow($data_element, $offset, $length, $data_element->getByteOrder());
+            $dataxx = new DataWindow($data_element, $offset, $length);
             $dataxx->logInfo($ifd->getLogger());
             $size = $dataxx->getSize();
 

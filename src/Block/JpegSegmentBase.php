@@ -91,7 +91,7 @@ abstract class JpegSegmentBase extends BlockBase
         $this->components = $size;
 
         if ($size) {
-            $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
+            $data_window = new DataWindow($data_element, $offset, $size);
             $data_window->logInfo($this->getLogger());
             return $data_window;
         }
