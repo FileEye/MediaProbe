@@ -131,7 +131,7 @@ class Media extends BlockBase
         try {
             $media_format_class = $media_format_collection->getPropertyValue('class');
             $media_format = new $media_format_class($media_format_collection, $media);
-            $this->debug('Media type: {mime}', [
+            $media->debug('Media type: {mime}', [
                 'mime' => $media_format->getMimeType(),
             ]);
             $media_format->loadFromData($data_element);
