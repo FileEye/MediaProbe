@@ -31,7 +31,6 @@ class GH21Test extends MediaProbeTestCaseBase
         $input_media = Media::createFromFile($this->file);
         $input_jpeg = $input_media->getElement("jpeg");
         $input_exif = $input_jpeg->getElement("jpegSegment/exif");
-$this->dumpElement($input_media);
         
         $original = ImageCreateFromString($input_jpeg->toBytes());
         $original_w = ImagesX($original);
@@ -69,15 +68,14 @@ $this->dumpElement($input_media);
 
         // Add the EXIF block to the APP1 segment.
         $exif_block = new Exif(Collection::get('Exif'), $out_app1_segment);
-        $data_string = new DataString($input_exif->toBytes());
+        $exif_data = 'xx' . $input_exif->toBytes(); // xx todo the first two fake bytes are evil, remove
+        $data_string = new DataString($exif_data);
         $data_string->setByteOrder(ConvertBytes::BIG_ENDIAN);
-        $exif_block->loadFromData($data_string);
-$this->dumpElement($exif_block);
+        $exif_block->loadFromData($data_string, 0, strlen($exif_data) - 2); // xx todo two fake bytes are evil, remove
 
         $out_media->saveToFile($this->file);
 
         $media = Media::createFromFile($this->file);
-$this->dumpElement($media); 
         $jpeg = $media->getElement("jpeg");
         $exifin = $jpeg->getElement("jpegSegment/exif");
         $this->assertEquals($input_exif, $exifin);

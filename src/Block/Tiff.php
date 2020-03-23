@@ -190,14 +190,12 @@ class Tiff extends BlockBase
         // There must be at least 8 bytes available: 2 bytes for the byte
         // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
         // the first IFD.
-//dump(['aaa', $data_element->getSize(), $offset, $data_element->getBytes(0,10)]);
         if ($data_element->getSize() - $offset < 8) {
             return null;
         }
 
         // Byte order.
         $order_string = $data_element->getBytes($offset, 2);
-//dump(['bbb', $order_string]);
         if ($order_string === 'II') {
             $order = ConvertBytes::LITTLE_ENDIAN;
         } elseif ($order_string === 'MM') {
@@ -208,7 +206,6 @@ class Tiff extends BlockBase
 
         // Verify the TIFF header.
         $magic_string = $data_element->getBytes($offset + 2, 2);
-//dump(['ccc', $magic_string]);
         if (ConvertBytes::toShort($magic_string, $order) !== self::TIFF_HEADER) {
             return null;
         }
