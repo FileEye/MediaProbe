@@ -79,7 +79,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         $valid = true;
 
@@ -97,7 +97,6 @@ class Tag extends BlockBase
         }
 
         $this->valid = $valid;
-        return $this;
     }
 
     /**

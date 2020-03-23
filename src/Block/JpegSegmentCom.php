@@ -15,7 +15,7 @@ class JpegSegmentCom extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         $data_window = $this->getDataWindow($data_element, $offset, $size);
 
@@ -23,7 +23,6 @@ class JpegSegmentCom extends JpegSegmentBase
         $entry = new Ascii($this, [$data_window->getBytes(2, $this->components - 2)]);
 
         $this->valid = true;
-        return $this;
     }
 
     /**

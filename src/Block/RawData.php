@@ -40,7 +40,7 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         if ($size === null) {
             $size = $data_element->getSize();
@@ -50,7 +50,6 @@ class RawData extends BlockBase
         new Undefined($this, [$data_element->getBytes($offset, $this->components)]);
 
         $this->valid = true;
-        return $this;
     }
 
     /**

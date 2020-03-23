@@ -7440,7 +7440,7 @@ log:
     ERROR:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
-            message: 'Offset -1 not within [0, 28]'
+            message: 'Offset out of bounds - rel -1 [0, 27], abs 8059 [8060, 8087]'
     NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:6'

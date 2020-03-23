@@ -6,149 +6,142 @@ use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
- * A primitive data object.
+ * Abstract class representing a data element in MediaProbe.
+ *
+ * Real implementation can be strings of data, windows of data on underlying
+ * data elements, etc.
  */
 abstract class DataElement
 {
     /**
-     * The data held by this window.
+     * The offset start of this element against the real underlying element.
      *
-     * The string can contain any kind of data, including binary data.
-     *
-     * @var DataElement
-     */
-    protected $dataElement;
-
-    /**
-     * The start of the current window.
-     *
-     * All offsets used for access into the data will count from this
-     * offset, effectively limiting access to a window starting at this
-     * byte.
+     * All offsets used for access into the data element will count from this
+     * offset, effectively limiting access to a window starting at this byte.
      *
      * @var int
      */
-    protected $start = 0;
+    protected $start;
 
     /**
-     * The size of the data.
+     * The size of the data element.
      *
      * @var int
      */
-    protected $size = 0;
+    protected $size;
 
     /**
-     * The byte order currently in use.
+     * The byte order.
      *
-     * This will be the byte order used when data is read using the for
-     * example the {@link getShort} function. It must be one of {@link
-     * ConvertBytes::LITTLE_ENDIAN} and {@link ConvertBytes::BIG_ENDIAN}.
+     * This will be the byte order used when data is read using the getter
+     * functions. It must be one of ConvertBytes::LITTLE_ENDIAN or
+     * ConvertBytes::BIG_ENDIAN.
      *
      * @var int
-     *
-     * @see setByteOrder, getByteOrder
      */
     protected $order;
 
     /**
-     * Get the size of the data window.
+     * Gets the offset start of this element.
      *
-     * @return integer the number of bytes covered by the window. The
-     *         allowed offsets go from 0 up to this number minus one.
-     *
-     * @see getBytes()
+     * @return integer
+     *   The offset start of this element against the real underlying element.
      */
-    public function getSize()
+    public function getStart(): int
+    {
+        return $this->start;
+    }
+
+    /**
+     * Gets the size of the data element.
+     *
+     * @return integer
+     *   The number of bytes covered by this data element. The allowed offsets
+     *   go from 0 up to this number minus one.
+     */
+    public function getSize(): int
     {
         return $this->size;
     }
 
     /**
-     * Change the byte order of the data.
+     * Gets the absolute offset against the real underlying element.
+     *
+     * @param int $offset
+     *   The relative offset within this data element.
+     *
+     * @return integer
+     *   The absolute offset.
+     */
+    public function getAbsoluteOffset(int $offset): int
+    {
+        return $this->getStart() + $offset;
+    }
+
+    /**
+     * Validates an offset.
+     *
+     * @param integer $offset
+     *   The offset to be validated.
+     *
+     * @throws DataException
+     *   When the requested offset is out of bounds.
+     */
+    protected function validateOffset(int $offset): void
+    {
+        if ($offset < 0 || $offset > ($this->size - 1)) {
+            throw new DataException('Offset out of bounds - rel %d [%d, %d], abs %d [%d, %d]',
+                $offset,
+                0,
+                $this->size - 1,
+                $this->getAbsoluteOffset($offset),
+                $this->getAbsoluteOffset(0),
+                $this->getAbsoluteOffset($this->size - 1),
+            );
+        }
+    }
+
+    /**
+     * Sets the byte order of the data element.
      *
      * @param int $order
-     *            the new byte order. This must be either
-     *            {@link ConvertBytes::LITTLE_ENDIAN} or {@link
-     *            ConvertBytes::BIG_ENDIAN}.
+     *   The byte order.
      */
-    public function setByteOrder($order)
+    public function setByteOrder(int $order): void
     {
         $this->order = $order;
     }
 
     /**
-     * Get the currently used byte order.
+     * Gets the byte order of the data element.
      *
-     * @return int this will be either {@link
-     *         ConvertBytes::LITTLE_ENDIAN} or {@link ConvertBytes::BIG_ENDIAN}.
+     * @return int
+     *   The byte order.
      */
-    public function getByteOrder()
+    public function getByteOrder(): int
     {
         return $this->order;
     }
 
     /**
-     * Validate an offset against the current window.
-     *
-     * @param integer $offset
-     *            the offset to be validated. If the offset is negative
-     *            or if it is greater than or equal to the current window size,
-     *            then a {@link DataException} is thrown.
-     *
-     * @return void if the offset is valid nothing is returned, if it is
-     *         invalid a new {@link DataException} is thrown.
-     * @throws DataException
-     */
-    protected function validateOffset($offset)
-    {
-        if ($offset < 0 || $offset > $this->size) {
-            throw new DataException('Offset %d not within [%d, %d]', $offset, 0, $this->size);
-        }
-    }
-
-    /**
-     * Return some or all bytes visible in the window.
-     *
-     * This method works just like the standard {@link substr()}
-     * function in PHP with the exception that it works within the
-     * window of accessible bytes and does strict range checking.
+     * Gets a specific portion of bytes from the data element.
      *
      * @param int|null $start
-     *            the offset to the first byte returned. If a negative
-     *            number is given, then the counting will be from the end of the
-     *            window. Invalid offsets will result in a {@link
-     *            DataException} being thrown.
+     *   (Optional) The offset, relative to the data element, to the first byte
+     *   returned. If omitted, the bytes will be returned from the first byte
+     *   in the data element.
      *
      * @param int|null $size
-     *            the size of the sub-window. If a negative number is
-     *            given, then that many bytes will be omitted from the result.
+     *   (Optional) The number of bytes to be returned. If omitted, all the
+     *   bytes to the end of the data element will be returned.
      *
-     * @return string a subset of the bytes in the window. This will
-     *         always return no more than {@link getSize()} bytes.
+     * @return string
+     *   The bytes from the data element.
      *
      * @throws DataException
+     *   When the requested bytes are out of bounds of the data element.
      */
-    public function getBytes($start = null, $size = null)
-    {
-        if (is_int($start)) {
-            if ($start < 0) {
-                $start += $this->size;
-            }
-            $this->validateOffset($start);
-        } else {
-            $start = 0;
-        }
-
-        if (is_int($size)) {
-            if ($size <= 0) {
-                $size += $this->size - $start;
-            }
-            $this->validateOffset($start + $size);
-        } else {
-            $size = $this->size - $start;
-        }
-        return substr($this->getDataString(), $this->getStart() + $start, $size);
-    }
+    abstract public function getBytes(int $start = 0, ?int $size = null): string;
 
     /**
      * Return an unsigned byte from the data.
@@ -204,7 +197,7 @@ abstract class DataElement
      */
     public function getShort($offset = 0)
     {
-        return ConvertBytes::toShort($this->getBytes($offset, 2), $this->order);
+        return ConvertBytes::toShort($this->getBytes($offset, 2), $this->getByteOrder());
     }
 
     /**
@@ -223,7 +216,7 @@ abstract class DataElement
      */
     public function getShortRev($offset = 0)
     {
-        return ConvertBytes::toShortRev($this->getBytes($offset, 2), $this->order);
+        return ConvertBytes::toShortRev($this->getBytes($offset, 2), $this->getByteOrder());
     }
 
     /**
@@ -242,7 +235,7 @@ abstract class DataElement
      */
     public function getSignedShort($offset = 0)
     {
-        return ConvertBytes::toSignedShort($this->getBytes($offset, 2), $this->order);
+        return ConvertBytes::toSignedShort($this->getBytes($offset, 2), $this->getByteOrder());
     }
 
     /**
@@ -261,7 +254,7 @@ abstract class DataElement
      */
     public function getLong($offset = 0)
     {
-        return ConvertBytes::toLong($this->getBytes($offset, 4), $this->order);
+        return ConvertBytes::toLong($this->getBytes($offset, 4), $this->getByteOrder());
     }
 
     /**
@@ -280,7 +273,7 @@ abstract class DataElement
      */
     public function getSignedLong($offset = 0)
     {
-        return ConvertBytes::toSignedLong($this->getBytes($offset, 4), $this->order);
+        return ConvertBytes::toSignedLong($this->getBytes($offset, 4), $this->getByteOrder());
     }
 
     /**
@@ -302,7 +295,7 @@ abstract class DataElement
      */
     public function getRational($offset = 0)
     {
-        return ConvertBytes::toRational($this->getBytes($offset, 8), $this->order);
+        return ConvertBytes::toRational($this->getBytes($offset, 8), $this->getByteOrder());
     }
 
     /**
@@ -323,44 +316,6 @@ abstract class DataElement
      */
     public function getSignedRational($offset = 0)
     {
-        return ConvertBytes::toSignedRational($this->getBytes($offset, 8), $this->order);
-    }
-
-    /**
-     * Return a string representation of the data window.
-     *
-     * @return string a description of the window with information about
-     *         the number of bytes accessible, the total number of bytes, and
-     *         the window start and stop.
-     */
-    public function toString()
-    {
-        return MediaProbe::fmt(
-            'DataWindow: %d bytes in [%d, %d] of %d bytes',
-            $this->size,
-            $this->start,
-            $this->start + $this->size,
-            strlen($this->getDataString())
-        );
-    }
-
-    /**
-     * xx
-     *
-     * @return string
-     */
-    public function getDataString()
-    {
-        return isset($this->dataElement) ? $this->dataElement->getDataString() : null;
-    }
-
-    /**
-     * xx
-     *
-     * @return int
-     */
-    public function getStart()
-    {
-        return isset($this->dataElement) ? $this->dataElement->getStart() + $this->start : $this->start;
+        return ConvertBytes::toSignedRational($this->getBytes($offset, 8), $this->getByteOrder());
     }
 }

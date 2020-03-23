@@ -22,7 +22,7 @@ class MakerNote extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         if ($size === null) {
             $size = $data_element->getSize();
@@ -58,8 +58,6 @@ class MakerNote extends Ifd
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
-
-        return $this;
     }
 
     /**

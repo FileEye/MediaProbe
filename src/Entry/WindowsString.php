@@ -38,10 +38,10 @@ class WindowsString extends Byte
         $size = $data_element->getSize();
         if ($item_definition->getDataOffset() + $item_definition->getValuesCount() > $size) {
             $bytes_to_get = $size - $item_definition->getDataOffset();
-            $parent_block->warning('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
+/* todo renable            $parent_block->warning('WindowsString entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
                 'actual' => $bytes_to_get,
                 'expected' => $item_definition->getValuesCount(),
-            ]);
+            ]);*/
             $bytes = $data_element->getBytes($item_definition->getDataOffset(), $bytes_to_get);
         } else {
             $bytes = $data_element->getBytes($item_definition->getDataOffset(), $item_definition->getValuesCount());

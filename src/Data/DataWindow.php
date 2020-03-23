@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Data;
 
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use Monolog\Logger;
 
@@ -11,6 +12,13 @@ use Monolog\Logger;
  */
 class DataWindow extends DataElement
 {
+    /**
+     * The underlying data element for this window.
+     *
+     * @var DataElement
+     */
+    protected $dataElement;
+
     /**
      * Construct a new data window with the data supplied.
      *
@@ -27,22 +35,62 @@ class DataWindow extends DataElement
      *            read from the data, and it can be changed later with {@link
      *            setByteOrder()}.
      */
-    public function __construct(DataElement $data_element, $start, $size, $byte_order = ConvertBytes::BIG_ENDIAN)
+    public function __construct(DataElement $data_element, int $start = 0, ?int $size = null)
     {
-        $this->dataElement = $data_element;
-        $this->start = $start;
-        $this->size = $size;
-        $this->order = $byte_order;
+        if ($start < 0) {
+            throw new DataException('Invalid negative offset for DataWindow');
+        }
+
+        if ($data_element instanceof DataWindow) {
+            $this->dataElement = $data_element->getDataElement();
+            $this->start = $data_element->getStart() + $start;
+        } else {
+            $this->dataElement = $data_element;
+            $this->start = $start;
+        }
+
+        $this->size = $size ?? ($data_element->getSize() - $start);
+        if ($this->size > ($data_element->getSize() - $start)) {
+            throw new DataException('Excessive size for DataWindow');
+        }
+
+        $this->order = $data_element->getByteOrder();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDataElement(): DataElement
+    {
+        return $this->dataElement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBytes(int $start = 0, ?int $size = null): string
+    {
+        if ($start < 0) {
+            $start += $this->size;
+        }
+        $this->validateOffset($start);
+
+        $size = $size ?? ($this->size - $start);
+        if ($size <= 0) {
+            $size += $this->size - $start;
+        }
+        $this->validateOffset($start + $size - 1);
+
+        return $this->dataElement->getBytes($this->getStart() + $start, $size);
     }
 
     // xx
     public function logInfo(Logger $logger)
     {
-        $logger->debug('Data Window from {start} to {end}, {size} bytes, order: {order}', [
+        $logger->debug('DataWindow - [{start}, {size}]', [
             'start' => $this->getStart(),
-            'end' => $this->getStart() + $this->getSize() - 1,
             'size' => $this->getSize(),
-            'order' => $this->getByteOrder() ? 'M' : 'I',
         ]);
     }
+
 }

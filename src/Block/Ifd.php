@@ -24,7 +24,7 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         $valid = true;
 
@@ -53,7 +53,7 @@ class Ifd extends ListBase
             $ifd_entry = new $class($item_definition, $this);
 
             try {
-                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $item_definition->getSize());
+                $ifd_entry->loadFromData($data_element, (int) $data_element->getLong($i_offset + 8), $item_definition->getSize());
             } catch (DataException $e) {
                 $ifd_entry->error($e->getMessage());
                 $valid = false;
@@ -64,8 +64,6 @@ class Ifd extends ListBase
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
-
-        return $this;
     }
 
     /**

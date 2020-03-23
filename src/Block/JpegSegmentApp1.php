@@ -16,7 +16,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         $data_window = $this->getDataWindow($data_element, $offset, $size);
 
@@ -33,7 +33,6 @@ class JpegSegmentApp1 extends JpegSegmentBase
         }
 
         $this->valid = true;
-        return $this;
     }
 
     /**

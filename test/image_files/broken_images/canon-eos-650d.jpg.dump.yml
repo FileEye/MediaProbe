@@ -3726,10 +3726,191 @@ elements:
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153'
                                                                     class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2Header
-                                                                    valid: false
+                                                                    valid: true
                                                                     name: CanonCustomFunctions2Header
                                                                     id: '153'
                                                                     collection: MakerNotes\CanonCustom\Functions2Header
+                                                                    elements:
+                                                                        -
+                                                                            node: index
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1'
+                                                                            class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+                                                                            valid: true
+                                                                            name: Exposure
+                                                                            id: '1'
+                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ExposureLevelIncrements:257'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: ExposureLevelIncrements
+                                                                                    id: '257'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ExposureLevelIncrements:257/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: '1/3-stop set, 1/3-stop comp.'
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ISOSpeedRange:259'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: ISOSpeedRange
+                                                                                    id: '259'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ISOSpeedRange:259/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: Disable
+                                                                        -
+                                                                            node: index
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:ImageFlashExposureDisplay:2'
+                                                                            class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+                                                                            valid: true
+                                                                            name: ImageFlashExposureDisplay
+                                                                            id: '2'
+                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:ImageFlashExposureDisplay:2/tag:HighlightTonePriority:515'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: HighlightTonePriority
+                                                                                    id: '515'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:ImageFlashExposureDisplay:2/tag:HighlightTonePriority:515/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: Disable
+                                                                        -
+                                                                            node: index
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3'
+                                                                            class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+                                                                            valid: true
+                                                                            name: AutoFocusDrive
+                                                                            id: '3'
+                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:AFAssistBeam:1294'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: AFAssistBeam
+                                                                                    id: '1294'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:AFAssistBeam:1294/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: Emits
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:MirrorLockup:1551'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: MirrorLockup
+                                                                                    id: '1551'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:MirrorLockup:1551/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: Disable
+                                                                        -
+                                                                            node: index
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4'
+                                                                            class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+                                                                            valid: true
+                                                                            name: OperationOthers
+                                                                            id: '4'
+                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:Shutter-AELock:1793'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: Shutter-AELock
+                                                                                    id: '1793'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:Shutter-AELock:1793/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: 'AF/AE lock'
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:SetButtonWhenShooting:1796'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: SetButtonWhenShooting
+                                                                                    id: '1796'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:SetButtonWhenShooting:1796/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: 'Normal (disabled)'
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:LCDDisplayAtPowerOn:2065'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: LCDDisplayAtPowerOn
+                                                                                    id: '2065'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:LCDDisplayAtPowerOn:2065/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: Display
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAspectInfo:154'
@@ -6908,10 +7089,10 @@ elements:
                     id: '217'
                     collection: Jpeg\Segment
 log:
-    ERROR:
+    WARNING:
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153'
-            message: 'index:CanonCustomFunctions2Header - no data'
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ISOSpeedRange:259'
+            message: 'Found 1 data components, expected 3'
     NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:6'

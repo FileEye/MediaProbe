@@ -2,20 +2,13 @@
 
 namespace FileEye\MediaProbe\Test;
 
+use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\Version;
 
-// In order to manage different method signatures between PHPUnit versions, we
-// dynamically load a compatibility trait dependent on the PHPUnit runner
-// version.
-// phpcs:disable
-if (class_exists('PHPUnit\Runner\Version') && version_compare(Version::id(), '8.0.0') >= 0) {
-    require_once __DIR__ . '/MediaProbePhpUnit8Trait.php';
-} else {
-    require_once __DIR__ . '/MediaProbePhpUnitTrait.php';
-}
-// phpcs:enable
+require_once __DIR__ . '/MediaProbePhpUnit8Trait.php';
 
 class MediaProbeTestCaseBase extends TestCase
 {
@@ -32,4 +25,18 @@ class MediaProbeTestCaseBase extends TestCase
             $this->setExpectedException($exception, $message);
         }
     }
+
+    public function dumpElement(ElementInterface $element)
+    {
+        dump($element->toDumpArray());
+/*        if ($element instanceof EntryInterface) {
+            $ifd_name = $element->getParentElement()->getParentElement()->getAttribute('name') ?: $element->getParentElement()->getAttribute('name');
+            $tag_title = $element->getParentElement()->getCollection()->getPropertyValue('title') ?? '*na*';
+            dump([$ifd_name, $tag_title, $element->toString()]);
+            return;
+        }
+        foreach ($element->getMultipleElements('*') as $sub_element) {
+            $this->dumpElement($sub_element);
+        }
+    }*/
 }

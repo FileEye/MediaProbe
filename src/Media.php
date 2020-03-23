@@ -79,7 +79,7 @@ class Media extends BlockBase
     public static function createFromFile(string $path, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
         $magic_data_element = new DataString(file_get_contents($path, false, null, 0, 10));
-        $media_format_collection = static::getMatchingMediaFormat($magic_data_element);
+        $media_format_collection = static::getMatchingMediaCollection($magic_data_element);
         $data_element = new DataString(file_get_contents($path));
         return static::doCreate($media_format_collection, $data_element, $external_logger, $fail_level);
     }
@@ -103,7 +103,7 @@ class Media extends BlockBase
      */
     public static function createFromData(DataElement $data_element, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
-        $media_format_collection = static::getMatchingMediaFormat($data_element);
+        $media_format_collection = static::getMatchingMediaCollection($data_element);
         return static::doCreate($media_format_collection, $data_element, $external_logger, $fail_level);
     }
 
@@ -134,7 +134,6 @@ class Media extends BlockBase
             $media_format->loadFromData($data_element);
             $media->valid = $media_format->isValid();
         } catch (\Throwable $e) {
-throw $e;
             $media->error(get_class($e) . ': ' . $e->getMessage());
             $media->valid = false;
         }
@@ -153,7 +152,7 @@ throw $e;
      * @throws InvalidFileException
      *            On failure.
      */
-    protected static function getMatchingMediaFormat(DataElement $data_element): Collection
+    protected static function getMatchingMediaCollection(DataElement $data_element): Collection
     {
         $media_collection = Collection::get('Media');
         // Loop through the 'Media' collection items, each of which defines a
@@ -167,7 +166,7 @@ throw $e;
             }
         }
 
-        throw new InvalidFileException('File format not managed by MediaProbe');
+        throw new InvalidFileException('Media format not managed by MediaProbe');
     }
 
     /**

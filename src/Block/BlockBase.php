@@ -49,16 +49,9 @@ abstract class BlockBase extends ElementBase
      * Loads data into an element.
      *
      * @param DataElement $data_element
-     *            the data element that will provide the data.
-     * @param int $offset
-     *            (Optional) the offset within the data element where the
-     *            block will be found.
-     * @param int|null $size
-     *            (Optional) the size of the data from the offset.
-     *
-     * @returns $this
+     *   The data element that will provide the data.
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element): void
     {
         throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
