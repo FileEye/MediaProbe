@@ -197,6 +197,10 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     {
         return $this->getRootElement()->getLogger();
     }
+    protected function getExternalLogger(): ?LoggerInterface
+    {
+        return $this->getRootElement()->getExternalLogger();
+    }
 
     /**
      * {@inheritdoc}

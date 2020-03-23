@@ -58,7 +58,6 @@ class DataWindow extends DataElement
 
         $this->logger = $logger;
         if ($this->logger) {
-dump('xx');
             $this->logger->debug('DataWindow, start @{start}, size {size}', [
                 'start' => $this->getStart(),
                 'size' => $this->getSize(),
