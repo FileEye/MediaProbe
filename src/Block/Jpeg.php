@@ -26,10 +26,6 @@ class Jpeg extends BlockBase
     {
         $valid = true;
 
-        $this->debug('Parsing JPEG image, size {size} bytes', [
-          'size' => $data_element->getSize()
-        ]);
-
         // JPEG data is stored in big-endian format.
         $data_element->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
@@ -65,6 +61,10 @@ class Jpeg extends BlockBase
             $segment_collection = $this->getCollection()->getItemCollection($segment_id);
             $segment_class = $segment_collection->getPropertyValue('class');
             $segment = new $segment_class($segment_collection, $this);
+            $this->debug('{name} segment - {desc}', [
+                'name' => $segment_collection->getPropertyValue('name'),
+                'desc' => $segment_collection->getPropertyValue('title'),
+            ]);
 
             // Get the JPEG segment size.
             switch ($segment_collection->getPropertyValue('payload')) {

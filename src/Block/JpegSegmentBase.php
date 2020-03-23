@@ -42,10 +42,6 @@ abstract class JpegSegmentBase extends BlockBase
         $this->setAttribute('name', $name);
         $this->payload = $collection->getPropertyValue('payload');
         $this->components = $collection->getPropertyValue('components');
-        $this->debug('{name} segment - {desc}', [
-            'name' => $name,
-            'desc' => $collection->getPropertyValue('title')
-        ]);
     }
 
     /**
