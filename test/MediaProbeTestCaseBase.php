@@ -37,6 +37,6 @@ class MediaProbeTestCaseBase extends TestCase
         }
         foreach ($element->getMultipleElements('*') as $sub_element) {
             $this->dumpElement($sub_element);
-        }
-    }*/
+        }*(
+    }
 }
