@@ -249,6 +249,10 @@ class Media extends BlockBase
     {
         return $this->logger;
     }
+    protected function getExternalLogger(): ?LoggerInterface
+    {
+        return $this->externalLogger;
+    }
 
     /**
      * Returns the log entries of the Media object.
