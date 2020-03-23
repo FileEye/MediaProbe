@@ -56,8 +56,9 @@ class DataWindow extends DataElement
 
         $this->order = $data_element->getByteOrder();
 
+        $this->logger = $logger;
         if ($this->logger) {
-            $this->logger->debug('DataWindow - [{start}, {size}]', [
+            $this->logger->debug('DataWindow, start @{start}, size {size}', [
                 'start' => $this->getStart(),
                 'size' => $this->getSize(),
             ]);
