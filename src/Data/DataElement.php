@@ -76,12 +76,12 @@ abstract class DataElement
      * Gets the absolute offset against the real underlying element.
      *
      * @param int $offset
-     *   The relative offset within this data element.
+     *   (Optional) The relative offset within this data element. Defaults to 0.
      *
      * @return integer
      *   The absolute offset.
      */
-    public function getAbsoluteOffset(int $offset): int
+    public function getAbsoluteOffset(int $offset = 0): int
     {
         return $this->getStart() + $offset;
     }
