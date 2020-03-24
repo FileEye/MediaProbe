@@ -298,7 +298,7 @@ class Ifd extends ListBase
         // Now set the thumbnail normally.
         try {
             $dataxx = new DataWindow($data_element, $offset, $length);
-            $dataxx->logInfo($ifd->getLogger());
+            // xx todo $dataxx->logInfo($ifd->getLogger());
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.

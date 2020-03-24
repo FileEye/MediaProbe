@@ -131,9 +131,7 @@ class Media extends BlockBase
         try {
             $media_format_class = $media_format_collection->getPropertyValue('class');
             $media_format = new $media_format_class($media_format_collection, $media);
-            $media->debug('Media type: {mime}', [
-                'mime' => $media_format->getMimeType(),
-            ]);
+            $media->debugInfo($data_element);
             $media_format->loadFromData($data_element);
             $media->valid = $media_format->isValid();
         } catch (\Throwable $e) {
@@ -240,18 +238,6 @@ class Media extends BlockBase
         }
         $xml = $this->DOMNode->ownerDocument->saveXML();
         return $pretty ? $this->$xmlFormatter->format($xml) : $xml;
-    }
-
-    /**
-     * xx todo
-     */
-    protected function getLogger(): Logger
-    {
-        return $this->logger;
-    }
-    protected function getExternalLogger(): ?LoggerInterface
-    {
-        return $this->externalLogger;
     }
 
     /**

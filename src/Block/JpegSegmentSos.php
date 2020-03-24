@@ -37,7 +37,7 @@ class JpegSegmentSos extends JpegSegmentBase
 
         // Load data in an Undefined entry.
         $data_window = new DataWindow($data_element, $offset, $this->components);
-        $data_window->logInfo($this->getLogger());
+        // xx todo $data_window->logInfo($this->getLogger());
         new Undefined($this, [$data_window->getBytes()]);
 
         // Append the EOI.
@@ -53,7 +53,7 @@ class JpegSegmentSos extends JpegSegmentBase
             // the data in a RawData object.
             $trail = new RawData(Collection::get('RawData'), $this->getParentElement());
             $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size);
-            $trail_data_window->logInfo($trail->getLogger());
+            // xx todo $trail_data_window->logInfo($trail->getLogger());
             $trail->loadFromData($trail_data_window, 0, $raw_size);
         }
 

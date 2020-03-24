@@ -36,7 +36,7 @@ class Exif extends BlockBase
         $tiff_order = Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER) + 2); //xx remove the 2 from the JPEG marker
         if ($tiff_order !== null) {
             $data_window = new DataWindow($data_element, strlen(self::EXIF_HEADER) + 2, $size - strlen(self::EXIF_HEADER)); //xx remove the 2 from the JPEG marker
-            $data_window->logInfo($this->getLogger());
+            // xx todo $data_window->logInfo($this->getLogger());
             $tiff_collection = $this->getCollection()->getItemCollection('Tiff');
             $tiff_class = $tiff_collection->getPropertyValue('class');
             $tiff = new $tiff_class($tiff_collection, $this);

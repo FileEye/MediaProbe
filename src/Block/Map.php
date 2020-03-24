@@ -30,7 +30,7 @@ class Map extends Index
         // Load the map as a raw data block.
         $map = new RawData(Collection::get('RawData', ['name' => 'mapdata']), $this);
         $map_data_window = new DataWindow($data_element, $offset, $size);
-        $map_data_window->logInfo($map->getLogger());
+        // xx todo $map_data_window->logInfo($map->getLogger());
         $map->loadFromData($map_data_window, 0, $map_data_window->getSize());
     }
 

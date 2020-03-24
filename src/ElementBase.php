@@ -191,18 +191,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     }
 
     /**
-     * xx todo
-     */
-    protected function getLogger()
-    {
-        return $this->getRootElement()->getLogger();
-    }
-    protected function getExternalLogger(): ?LoggerInterface
-    {
-        return $this->getRootElement()->getExternalLogger();
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function isValid()
@@ -255,5 +243,16 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
                 throw new MediaProbeException($message);
             }
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function debugInfo(?DataElement $data_element = null)
+    {
+        $media->debug('{node}:{name}', [
+            'node' => $this->geAttribute('name'),
+            'name' => $this->getAttribute('name'),
+        ]);
     }
 }

@@ -92,14 +92,4 @@ class DataWindow extends DataElement
 
         return $this->dataElement->getBytes($this->getStart() + $start, $size);
     }
-
-    // xx
-    public function logInfo(LoggerInterface $logger)
-    {
-        $logger->debug('DataWindow - [{start}, {size}]', [
-            'start' => $this->getStart(),
-            'size' => $this->getSize(),
-        ]);
-    }
-
 }
