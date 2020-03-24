@@ -4,6 +4,7 @@ namespace FileEye\MediaProbe;
 
 use FileEye\MediaProbe\DOMElement;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use Monolog\Logger;
@@ -191,14 +192,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     }
 
     /**
-     * xx todo
-     */
-    protected function getLogger()
-    {
-        return $this->getRootElement()->getLogger();
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function isValid()
@@ -251,5 +244,22 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
                 throw new MediaProbeException($message);
             }
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function debugInfo(?DataElement $data_element = null)
+    {
+        $msg = '{node}:{name}';
+        if ($data_element instanceof DataWindow) {
+            $msg .= ' @{offset} size {size}';
+        }
+        $this->debug($msg, [
+            'node' => $this->DOMNode->nodeName,
+            'name' => $this->getAttribute('name'),
+            'offset' => $data_element ? $data_element->getAbsoluteOffset() : null;
+            'size' => $data_element ? $data_element->getSize() : null;
+        ]);
     }
 }

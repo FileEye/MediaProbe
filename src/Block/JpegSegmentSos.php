@@ -36,8 +36,8 @@ class JpegSegmentSos extends JpegSegmentBase
         $end_offset = $offset + $this->components + 2;
 
         // Load data in an Undefined entry.
-        $data_window = new DataWindow($data_element, $offset, $this->components, $data_element->getByteOrder());
-        $data_window->logInfo($this->getLogger());
+        $data_window = new DataWindow($data_element, $offset, $this->components);
+        // xx todo $data_window->logInfo($this->getLogger());
         new Undefined($this, [$data_window->getBytes()]);
 
         // Append the EOI.
@@ -52,8 +52,8 @@ class JpegSegmentSos extends JpegSegmentBase
             // There is no JPEG marker for trailing garbage, so we just load
             // the data in a RawData object.
             $trail = new RawData(Collection::get('RawData'), $this->getParentElement());
-            $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size, $data_element->getByteOrder());
-            $trail_data_window->logInfo($trail->getLogger());
+            $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size);
+            // xx todo $trail_data_window->logInfo($trail->getLogger());
             $trail->loadFromData($trail_data_window, 0, $raw_size);
         }
 

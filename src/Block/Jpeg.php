@@ -5,6 +5,7 @@ namespace FileEye\MediaProbe\Block;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -25,10 +26,6 @@ class Jpeg extends BlockBase
     public function loadFromData(DataElement $data_element): void
     {
         $valid = true;
-
-        $this->debug('Parsing JPEG image, size {size} bytes', [
-          'size' => $data_element->getSize()
-        ]);
 
         // JPEG data is stored in big-endian format.
         $data_element->setByteOrder(ConvertBytes::BIG_ENDIAN);
@@ -65,6 +62,10 @@ class Jpeg extends BlockBase
             $segment_collection = $this->getCollection()->getItemCollection($segment_id);
             $segment_class = $segment_collection->getPropertyValue('class');
             $segment = new $segment_class($segment_collection, $this);
+            $this->debug('{name} segment - {desc}', [
+                'name' => $segment_collection->getPropertyValue('name'),
+                'desc' => $segment_collection->getPropertyValue('title'),
+            ]);
 
             // Get the JPEG segment size.
             switch ($segment_collection->getPropertyValue('payload')) {
@@ -81,6 +82,8 @@ class Jpeg extends BlockBase
                     break;
             }
 
+            $x = new DataWindow($data_element, $offset, $segment_size, $this);
+            $media->debugInfo($data_element);
             // Load the MediaProbe JPEG segment data.
             $segment->loadFromData($data_element, $offset, $segment_size);
 

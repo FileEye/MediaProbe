@@ -78,9 +78,9 @@ class Media extends BlockBase
      */
     public static function createFromFile(string $path, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
-        $magic_data_element = new DataString(file_get_contents($path, false, null, 0, 10));
-        $media_format_collection = static::getMatchingMediaCollection($magic_data_element);
-        $data_element = new DataString(file_get_contents($path));
+        $magic_data_element = new DataString(file_get_contents($path, false, null, 0, 10), $external_logger);
+        $media_format_collection = static::getMatchingMediaCollection($magic_data_element, $external_logger);
+        $data_element = new DataString(file_get_contents($path), $external_logger);
         return static::doCreate($media_format_collection, $data_element, $external_logger, $fail_level);
     }
 
@@ -103,7 +103,7 @@ class Media extends BlockBase
      */
     public static function createFromData(DataElement $data_element, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
-        $media_format_collection = static::getMatchingMediaCollection($data_element);
+        $media_format_collection = static::getMatchingMediaCollection($data_element, $external_logger);
         return static::doCreate($media_format_collection, $data_element, $external_logger, $fail_level);
     }
 
@@ -131,6 +131,7 @@ class Media extends BlockBase
         try {
             $media_format_class = $media_format_collection->getPropertyValue('class');
             $media_format = new $media_format_class($media_format_collection, $media);
+            $media->debugInfo($data_element);
             $media_format->loadFromData($data_element);
             $media->valid = $media_format->isValid();
         } catch (\Throwable $e) {
@@ -152,8 +153,11 @@ class Media extends BlockBase
      * @throws InvalidFileException
      *            On failure.
      */
-    protected static function getMatchingMediaCollection(DataElement $data_element): Collection
+    protected static function getMatchingMediaCollection(DataElement $data_element, ?LoggerInterface $external_logger): Collection
     {
+        if ($external_logger) {
+            $external_logger->debug('Check data to identify media type');
+        }
         $media_collection = Collection::get('Media');
         // Loop through the 'Media' collection items, each of which defines a
         // media format collection, and checks if the media matches the format.
@@ -234,14 +238,6 @@ class Media extends BlockBase
         }
         $xml = $this->DOMNode->ownerDocument->saveXML();
         return $pretty ? $this->$xmlFormatter->format($xml) : $xml;
-    }
-
-    /**
-     * xx todo
-     */
-    protected function getLogger(): Logger
-    {
-        return $this->logger;
     }
 
     /**

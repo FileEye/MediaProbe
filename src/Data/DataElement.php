@@ -4,6 +4,7 @@ namespace FileEye\MediaProbe\Data;
 
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use Psr\Log\LoggerInterface;
 
 /**
  * Abstract class representing a data element in MediaProbe.
@@ -42,6 +43,13 @@ abstract class DataElement
     protected $order;
 
     /**
+     * The internal logger instance.
+     *
+     * @var \Psr\Log\LoggerInterface
+     */
+    protected $logger;
+
+    /**
      * Gets the offset start of this element.
      *
      * @return integer
@@ -68,12 +76,12 @@ abstract class DataElement
      * Gets the absolute offset against the real underlying element.
      *
      * @param int $offset
-     *   The relative offset within this data element.
+     *   (Optional) The relative offset within this data element. Defaults to 0.
      *
      * @return integer
      *   The absolute offset.
      */
-    public function getAbsoluteOffset(int $offset): int
+    public function getAbsoluteOffset(int $offset = 0): int
     {
         return $this->getStart() + $offset;
     }
