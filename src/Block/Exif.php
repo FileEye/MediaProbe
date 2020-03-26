@@ -27,16 +27,13 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
+    public function loadFromData(DataElement $data_element): void
     {
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
+        $this->debugBlockInfo($data_element);
 
-        $tiff_order = Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER) + 2); //xx remove the 2 from the JPEG marker
+        $tiff_order = Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER));
         if ($tiff_order !== null) {
-            $data_window = new DataWindow($data_element, strlen(self::EXIF_HEADER) + 2, $size - strlen(self::EXIF_HEADER)); //xx remove the 2 from the JPEG marker
-            // xx todo $data_window->logInfo($this->getLogger());
+            $data_window = new DataWindow($data_element, strlen(self::EXIF_HEADER), $data_element->getSize() - strlen(self::EXIF_HEADER));
             $tiff_collection = $this->getCollection()->getItemCollection('Tiff');
             $tiff_class = $tiff_collection->getPropertyValue('class');
             $tiff = new $tiff_class($tiff_collection, $this);

@@ -68,10 +68,10 @@ class GH21Test extends MediaProbeTestCaseBase
 
         // Add the EXIF block to the APP1 segment.
         $exif_block = new Exif(Collection::get('Exif'), $out_app1_segment);
-        $exif_data = 'xx' . $input_exif->toBytes(); // xx todo the first two fake bytes are evil, remove
+        $exif_data = $input_exif->toBytes();
         $data_string = new DataString($exif_data);
         $data_string->setByteOrder(ConvertBytes::BIG_ENDIAN);
-        $exif_block->loadFromData($data_string, 0, strlen($exif_data) - 2); // xx todo two fake bytes are evil, remove
+        $exif_block->loadFromData($data_string, 0, strlen($exif_data));
 
         $out_media->saveToFile($this->file);
 

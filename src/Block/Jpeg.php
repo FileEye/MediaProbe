@@ -16,6 +16,11 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 class Jpeg extends BlockBase
 {
     /**
+     * JPEG delimiter.
+     */
+    const JPEG_DELIMITER = 0xFF;
+
+    /**
      * JPEG header.
      */
     const JPEG_HEADER = "\xFF\xD8\xFF";
@@ -25,6 +30,8 @@ class Jpeg extends BlockBase
      */
     public function loadFromData(DataElement $data_element): void
     {
+        $this->debugBlockInfo($data_element);
+
         $valid = true;
 
         // JPEG data is stored in big-endian format.
@@ -38,63 +45,71 @@ class Jpeg extends BlockBase
             // Get the next JPEG segment id offset.
             try {
                 $offset = $this->getJpegSegmentIdOffset($data_element, $offset);
+                // xx todo --> fail if there's a gap in the offset
             }
             catch (DataException $e) {
+                $this->error($e->getMessage());
                 $this->valid = false;
                 return;
             }
 
             // Get the JPEG segment id.
-            $segment_id = $data_element->getByte($offset);
+            $segment_id = $data_element->getByte($offset + 1);
 
             // Warn if an unidentified segment is detected.
             if (!in_array($segment_id, $this->getCollection()->listItemIds())) {
                 $this->warning('Invalid JPEG marker {id}/{hexid} found @ offset {offset}', [
-                    'id' => $id,
-                    'hexid' => '0x' . strtoupper(dechex($id)),
+                    'id' => $segment_id,
+                    'hexid' => '0x' . strtoupper(dechex($segment_id)),
                     'offset' => $data_element->getAbsoluteOffset($offset),
                 ]);
             }
-
-            $offset++;
 
             // Create the MediaProbe JPEG segment object.
             $segment_collection = $this->getCollection()->getItemCollection($segment_id);
             $segment_class = $segment_collection->getPropertyValue('class');
             $segment = new $segment_class($segment_collection, $this);
-            $this->debug('{name} segment - {desc}', [
-                'name' => $segment_collection->getPropertyValue('name'),
-                'desc' => $segment_collection->getPropertyValue('title'),
-            ]);
 
-            // Get the JPEG segment size.
+            // Get the JPEG segment DataWindow.
             switch ($segment_collection->getPropertyValue('payload')) {
                 case 'none':
-                    $segment_size = 0;
+                    // The data window size is the JPEG delimiter byte and the
+                    // segment identifier byte.
+                    $segment_size = 2;
                     break;
                 case 'variable':
-                    // Read the length of the segment. The length includes the
-                    // two bytes used to store the length.
-                    $segment_size = $data_element->getShort($offset);
+                    // Read the length of the segment. The data window size
+                    // includes the JPEG delimiter byte, the segment identifier
+                    // byte and two bytes used to store the segment length.
+                    $segment_size = $data_element->getShort($offset + 2) + 2;
                     break;
                 case 'fixed':
-                    $segment_size = $segment_collection->getPropertyValue('components');
+                    // The data window size includes the JPEG delimiter byte
+                    // and the segment identifier byte.
+                    $segment_size = $segment_collection->getPropertyValue('components') + 2;
+                    break;
+                case 'scan':
+                    // In case of image scan segment, the window is to the end
+                    // of the data.
+                    $segment_size = null;
                     break;
             }
 
-            $x = new DataWindow($data_element, $offset, $segment_size, $this);
-            $media->debugInfo($data_element);
             // Load the MediaProbe JPEG segment data.
-            $segment->loadFromData($data_element, $offset, $segment_size);
-
-            // In case of image scan segment, the load is now complete.
-            if ($segment->getPayload() === 'scan') {
-                break;
+            $data_window = new DataWindow($data_element, $offset, $segment_size);
+            $segment->loadFromData($data_window);
+            if (!$segment->isValid()) {
+                $valid = false;
             }
 
-            // Position to end of the segment. It is defined by the current
-            // offset + the bytes of the payload.
-            $offset += $segment->getComponents();
+            // Position to end of the segment.
+            $offset += $data_window->getSize();
+        }
+
+        // Fail if EOI is missing.
+        if (!$this->getElement("jpegSegment[@name='EOI']")) {
+            $this->error('Missing EOI (End Of Image) JPEG marker');
+            $valid = false;
         }
 
         $this->valid = $valid;
@@ -119,12 +134,12 @@ class Jpeg extends BlockBase
      */
     protected function getJpegSegmentIdOffset(DataElement $data_element, int $offset): int
     {
-        for ($i = $offset; $i < $offset + 7; $i ++) {
-            if ($data_element->getByte($i) !== JpegSegment::JPEG_DELIMITER) {
+        for ($i = $offset; $i < $offset + 7; $i++) {
+            if ($data_element->getByte($i) === Jpeg::JPEG_DELIMITER && $data_element->getByte($i + 1) !== Jpeg::JPEG_DELIMITER) {
                 return $i;
             }
         }
-        throw new DataException('JPEG marker not found @%d', $data_element->getAbsoluteOffset($offset)); // @todo ingest in logging
+        throw new DataException('JPEG marker not found @%d', $data_element->getAbsoluteOffset($offset));
     }
 
     /**

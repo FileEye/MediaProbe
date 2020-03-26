@@ -2,8 +2,6 @@
 
 namespace FileEye\MediaProbe\Data;
 
-use Psr\Log\LoggerInterface;
-
 /**
  * A value object holding generic data, as bytes.
  */
@@ -24,17 +22,11 @@ class DataString extends DataElement
      * @param string $data
      *   The data string.
      */
-    public function __construct(string $data, ?LoggerInterface $logger = null)
+    public function __construct(string $data)
     {
         $this->data = $data;
         $this->start = 0;
         $this->size = strlen($this->data);
-        $this->logger = $logger;
-        if ($this->logger) {
-            $this->logger->debug('DataString, size {size} byte(s)', [
-                'size' => $this->size,
-            ]);
-        }
     }
 
     /**

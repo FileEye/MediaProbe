@@ -146,4 +146,15 @@ class Tag extends BlockBase
     {
         return $this->getElement("entry") ? $this->getElement("entry")->getComponents() : $this->getDefinition()->getValuesCount();
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getContextPathSegmentPattern()
+    {
+        if ($this->getAttribute('name') !== '') {
+            return '/{DOMNode}:{name}:{id}';
+        }
+        return '/{DOMNode}:{id}';
+    }
 }

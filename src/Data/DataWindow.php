@@ -36,7 +36,7 @@ class DataWindow extends DataElement
      *            read from the data, and it can be changed later with {@link
      *            setByteOrder()}.
      */
-    public function __construct(DataElement $data_element, int $start = 0, ?int $size = null, ?ElementBase $element = null)
+    public function __construct(DataElement $data_element, int $start = 0, ?int $size = null)
     {
         if ($start < 0) {
             throw new DataException('Invalid negative offset for DataWindow');
@@ -56,14 +56,6 @@ class DataWindow extends DataElement
         }
 
         $this->order = $data_element->getByteOrder();
-
-        //$this->logger = $logger;
-        if ($element) {
-            $element->debug('DataWindow, start @{start}, size {size}', [
-                'start' => $this->getStart(),
-                'size' => $this->getSize(),
-            ]);
-        }
     }
 
     /**

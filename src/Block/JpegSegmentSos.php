@@ -21,39 +21,41 @@ class JpegSegmentSos extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
+    public function loadFromData(DataElement $data_element): void
     {
+        $this->debugBlockInfo($data_element);
+
         // This segment is last before End Of Image, and its length needs to be
         // determined by finding the EOI marker backwards from the end of data.
         // Some images have some trailing (garbage?) following the EOI marker,
         // which we store in a RawData object.
-        $size = $data_element->getSize();
-        $length = $size;
-        while ($data_element->getByte($length - 2) !== JpegSegment::JPEG_DELIMITER || $data_element->getByte($length - 1) != self::JPEG_EOI) {
-            $length --;
+        $scan_size = $data_element->getSize();
+        while ($data_element->getByte($scan_size - 2) !== Jpeg::JPEG_DELIMITER || $data_element->getByte($scan_size - 1) != self::JPEG_EOI) {
+            $scan_size --;
         }
-        $this->components = $length - $offset - 2;
-        $end_offset = $offset + $this->components + 2;
+        $scan_size -= 2;
 
         // Load data in an Undefined entry.
-        $data_window = new DataWindow($data_element, $offset, $this->components);
-        // xx todo $data_window->logInfo($this->getLogger());
+        $data_window = new DataWindow($data_element, 0, $scan_size);
         new Undefined($this, [$data_window->getBytes()]);
 
         // Append the EOI.
+        $end_offset = $scan_size;
         $eoi_collection = $this->getParentElement()->getCollection()->getItemCollection(self::JPEG_EOI);
-        $eoi = new JpegSegment($eoi_collection, $this->getParentElement());
-        $eoi->valid = true;
+        $eoi_class = $eoi_collection->getPropertyValue('class');
+        $eoi = new $eoi_class($eoi_collection, $this->getParentElement());
+        $eoi_data_window = new DataWindow($data_element, $end_offset, 2);
+        $eoi->loadFromData($eoi_data_window);
+        $end_offset += $eoi_data_window->getSize();
 
         // Now check to see if there are any trailing data.
-        if ($end_offset < $size) {
-            $raw_size = $size - $end_offset;
+        if ($end_offset < $data_element->getSize()) {
+            $raw_size = $data_element->getSize() - $end_offset;
             $this->warning('Found trailing content after EOI: {size} bytes', ['size' => $raw_size]);
-            // There is no JPEG marker for trailing garbage, so we just load
+            // There is no JPEG marker for trailing garbage, so we just collect
             // the data in a RawData object.
             $trail = new RawData(Collection::get('RawData'), $this->getParentElement());
             $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size);
-            // xx todo $trail_data_window->logInfo($trail->getLogger());
             $trail->loadFromData($trail_data_window, 0, $raw_size);
         }
 

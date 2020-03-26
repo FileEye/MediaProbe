@@ -79,4 +79,12 @@ abstract class ListBase extends BlockBase
     {
         return count($this->getMultipleElements('*[not(self::rawData)]'));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getContextPathSegmentPattern()
+    {
+        return '/{DOMNode}:{name}:{id}';
+    }
 }

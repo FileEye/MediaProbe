@@ -13,7 +13,7 @@ use FileEye\MediaProbe\Collection;
 class Exif extends Collection {
 
   protected static $map = array (
-  'title' => 'Exif data embedded in JPEG APP1 segment.',
+  'title' => 'JPEG Exif data',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif',
   'DOMNode' => 'exif',
   'items' =>

@@ -3,8 +3,6 @@
 namespace FileEye\MediaProbe;
 
 use FileEye\MediaProbe\DOMElement;
-use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use Monolog\Logger;
@@ -173,6 +171,17 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     }
 
     /**
+     * Returns the format of the context path segment.
+     *
+     * @returns string
+     *   The format of the context path segment.
+     */
+    protected function getContextPathSegmentPattern()
+    {
+        return '/{DOMNode}';
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getContextPath()
@@ -181,14 +190,14 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         $parent_path = $this->getParentElement() ? $this->getParentElement()->getContextPath() : '';
 
         // Build the path fragment related to this node.
-        $current_fragment = '/' . $this->DOMNode->nodeName;
+        $attributes = ['{DOMNode}' => $this->DOMNode->nodeName];
         if ($this->DOMNode->attributes->length) {
             foreach ($this->DOMNode->attributes as $attribute) {
-                $current_fragment .= ':' . $attribute->value;
+                $attributes['{' . $attribute->name . '}'] = $attribute->value;
             }
         }
 
-        return $parent_path . $current_fragment;
+        return $parent_path . str_replace(array_keys($attributes), array_values($attributes), $this->getContextPathSegmentPattern());
     }
 
     /**
@@ -244,22 +253,5 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
                 throw new MediaProbeException($message);
             }
         }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function debugInfo(?DataElement $data_element = null)
-    {
-        $msg = '{node}:{name}';
-        if ($data_element instanceof DataWindow) {
-            $msg .= ' @{offset} size {size}';
-        }
-        $this->debug($msg, [
-            'node' => $this->DOMNode->nodeName,
-            'name' => $this->getAttribute('name'),
-            'offset' => $data_element ? $data_element->getAbsoluteOffset() : null;
-            'size' => $data_element ? $data_element->getSize() : null;
-        ]);
     }
 }

@@ -13,7 +13,7 @@ use FileEye\MediaProbe\Collection;
 class Tiff extends Collection {
 
   protected static $map = array (
-  'title' => 'TIFF image',
+  'title' => 'TIFF image data',
   'class' => 'FileEye\\MediaProbe\\Block\\Tiff',
   'DOMNode' => 'tiff',
   'items' =>
