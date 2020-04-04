@@ -45,7 +45,7 @@ class Tiff extends BlockBase
      *
      * @returns string
      */
-    public function getMimeType()
+    public function getMimeType(): string
     {
         return 'image/tiff';
     }
@@ -53,31 +53,25 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element): void
     {
+        $this->debugBlockInfo($data_element);
+
         $valid = true;
 
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
-
         // Determine the byte order of the TIFF data.
-        $this->byteOrder = self::getTiffSegmentByteOrder($data_element, $offset);
-
-        // Open a data window on the TIFF data.
-        $data_window = new DataWindow($data_element, $offset, $size, $this->byteOrder);
-        $data_window->logInfo($this->getLogger());
+        $this->byteOrder = self::getTiffSegmentByteOrder($data_element);
+        $data_element->setByteOrder($this->byteOrder);
 
         // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
         // header).
-        $ifd_offset = $data_window->getLong(4);
+        $ifd_offset = $data_element->getLong(4);
 
         // If the offset to first IFD is higher than 8, then there may be an
         // image scan (TIFF) in between. Store that in a RawData block.
         if ($ifd_offset > 8) {
+            $scan_data_window = new DataWindow($data_element, 8, $ifd_offset - 8);
             $scan = new RawData(Collection::get('RawData'), $this);
-            $scan_data_window = new DataWindow($data_window, 8, $ifd_offset - 8);
-            $scan_data_window->logInfo($scan->getLogger());
             $scan->loadFromData($scan_data_window);
         }
 
@@ -93,13 +87,13 @@ class Tiff extends BlockBase
             try {
                 // Create and load the IFDs.
                 $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
-                $ifd_tags_count = $data_window->getShort($ifd_offset);
+                $ifd_tags_count = $data_element->getShort($ifd_offset);
                 $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset);
                 $ifd = new $ifd_class($ifd_item, $this);
-                $ifd->loadFromData($data_window, $ifd_offset, $size);
+                $ifd->loadFromData($data_element, $ifd_offset);
 
                 // Offset to next IFD.
-                $ifd_offset = $data_window->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
+                $ifd_offset = $data_element->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
                     'ifd_name' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name'),
@@ -116,7 +110,6 @@ class Tiff extends BlockBase
         }
 
         $this->valid = $valid;
-        return $this;
     }
 
     /**
@@ -189,7 +182,7 @@ class Tiff extends BlockBase
      *   The byte order of the TIFF segment in case data is a TIFF block, null
      *   otherwise.
      */
-    public static function getTiffSegmentByteOrder(DataElement $data_element, $offset = 0)
+    public static function getTiffSegmentByteOrder(DataElement $data_element, int $offset = 0)
     {
         // There must be at least 8 bytes available: 2 bytes for the byte
         // order, 2 bytes for the TIFF header, and 4 bytes for the offset to

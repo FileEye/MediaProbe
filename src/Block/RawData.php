@@ -19,15 +19,6 @@ class RawData extends BlockBase
     protected $components;
 
     /**
-     * Construct a new RawData object.
-     */
-    public function __construct(Collection $collection, BlockBase $parent, BlockBase $reference = null)
-    {
-        parent::__construct($collection, $parent, $reference);
-        $this->debug('Raw data');
-    }
-
-    /**
      * Returns the data length.
      *
      * @return int
@@ -40,8 +31,10 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
+        $this->debugBlockInfo($data_element);
+
         if ($size === null) {
             $size = $data_element->getSize();
         }
@@ -50,7 +43,6 @@ class RawData extends BlockBase
         new Undefined($this, [$data_element->getBytes($offset, $this->components)]);
 
         $this->valid = true;
-        return $this;
     }
 
     /**
@@ -59,5 +51,16 @@ class RawData extends BlockBase
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
         return $this->getElement("entry")->toBytes();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getContextPathSegmentPattern()
+    {
+        if ($this->getAttribute('name') !== '') {
+            return '/{DOMNode}:{name}';
+        }
+        return '/{DOMNode}';
     }
 }

@@ -37,6 +37,7 @@ elements:
             path: /media/jpeg
             class: FileEye\MediaProbe\Block\Jpeg
             valid: true
+            id: Jpeg
             collection: Jpeg
             elements:
                 -
@@ -47,6 +48,16 @@ elements:
                     name: SOI
                     id: '216'
                     collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:SOI:216/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 2
+                            bytesHash: 71563ad80061407ede9c6f316836284bd3710a520c5a792b5eda1cb703690815
+                            text: '2 byte(s) of data'
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP0:224'
@@ -62,9 +73,9 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
-                            components: 16
-                            bytesHash: 561b0b9f969d16c5d3a62db01df610f0fbacd33315eee2e2f3b7acf61817f277
-                            text: '16 byte(s) of data'
+                            components: 18
+                            bytesHash: 04085feff5a66932455f3842f562bb65160eb7bf2b6a733115873d7acf472eb4
+                            text: '18 byte(s) of data'
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
@@ -79,6 +90,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             class: FileEye\MediaProbe\Block\Exif
                             valid: true
+                            id: Exif
                             collection: Exif
                             elements:
                                 -
@@ -86,6 +98,7 @@ elements:
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     class: FileEye\MediaProbe\Block\Tiff
                                     valid: true
+                                    id: Tiff
                                     collection: Tiff
                                     elements:
                                         -
@@ -148,9 +161,9 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
-                            components: 67
-                            bytesHash: 22cfd38c30070d9a445a1a97fc720700b1af4033e84411c276ea0a74829cadd7
-                            text: '67 byte(s) of data'
+                            components: 69
+                            bytesHash: 1bdbf1793d27844fd92aac9a6324f08179ed7385751734255e4d27b9982220a7
+                            text: '69 byte(s) of data'
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
@@ -166,9 +179,9 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
-                            components: 67
-                            bytesHash: 53bc94543f9e554e5b1347f86f5fc2f850e4c1ef9d0b8030e42874440f97b29e
-                            text: '67 byte(s) of data'
+                            components: 69
+                            bytesHash: 22c4b348b9e9b3ea76afe1ba6607d5165fc3861564766ec3434645f40174ba25
+                            text: '69 byte(s) of data'
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOF0:192'
@@ -184,9 +197,45 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
-                            components: 17
-                            bytesHash: efef0053b02efd1aa7a04e255e9bc82efccb57417e7eea943975198d838c0fe4
-                            text: '17 byte(s) of data'
+                            components: 19
+                            bytesHash: 716fd6275127b47bf0951ff290c1c7fc93642148a4788abf47db7247b4e3c3ab
+                            text: '19 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 33
+                            bytesHash: 1ecb9ccf1c34153272e17e5e6d506394e392f179804c61d0ef6d13f5638746e8
+                            text: '33 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 87
+                            bytesHash: ad847b031cf3251e92626e9a19bcf1973a14c3a6fbd43c1672a95c88003e808b
+                            text: '87 byte(s) of data'
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DHT:196'
@@ -203,7 +252,7 @@ elements:
                             valid: true
                             format: Undefined
                             components: 31
-                            bytesHash: 8f4c896f59b6283a5100412e3f0b69297291b0c68a87f22d096d8fd99905ec29
+                            bytesHash: ab5beb752bfc8677ffe983dad4ffabb5d75f5f6d200ae68a5916351383718b99
                             text: '31 byte(s) of data'
                 -
                     node: jpegSegment
@@ -220,45 +269,9 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
-                            components: 85
-                            bytesHash: 6bdd78c0bf98a1639a690b485e63465d673fb8dbe0feaea5a911f16b6208b9ca
-                            text: '85 byte(s) of data'
-                -
-                    node: jpegSegment
-                    path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\JpegSegment
-                    valid: true
-                    name: DHT
-                    id: '196'
-                    collection: Jpeg\Segment
-                    elements:
-                        -
-                            node: entry
-                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
-                            format: Undefined
-                            components: 29
-                            bytesHash: acd9a92fc2c4b69de1cade1a8c4f5b5815c6bd3be7de0450fbd5636f8f030964
-                            text: '29 byte(s) of data'
-                -
-                    node: jpegSegment
-                    path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\JpegSegment
-                    valid: true
-                    name: DHT
-                    id: '196'
-                    collection: Jpeg\Segment
-                    elements:
-                        -
-                            node: entry
-                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
-                            format: Undefined
-                            components: 68
-                            bytesHash: 281a4eeb0c540d765cb1647f7611631d34e8a2c82146410c06a46ce03922ee77
-                            text: '68 byte(s) of data'
+                            components: 70
+                            bytesHash: eb5882c182cf768092cfb29902c79ca9ecc3547feb758bf6624465f5ef599005
+                            text: '70 byte(s) of data'
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOS:218'
@@ -274,9 +287,9 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
-                            components: 119243
-                            bytesHash: 3f49bb2ec77efba7b0f7ee85dc6579a0f7145bf66f1c04d0eedfb8161cca15db
-                            text: '119243 byte(s) of data'
+                            components: 119245
+                            bytesHash: 0b8e51e2ebb9fbe8c724bc331c937b3f6bcf3936c01657ea3a52a727323b8741
+                            text: '119245 byte(s) of data'
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:EOI:217'
@@ -285,4 +298,14 @@ elements:
                     name: EOI
                     id: '217'
                     collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:EOI:217/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 2
+                            bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
+                            text: '2 byte(s) of data'
 log: {  }

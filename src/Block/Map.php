@@ -30,14 +30,14 @@ class Map extends Index
         // Load the map as a raw data block.
         $map = new RawData(Collection::get('RawData', ['name' => 'mapdata']), $this);
         $map_data_window = new DataWindow($data_element, $offset, $size);
-        $map_data_window->logInfo($map->getLogger());
+        // xx todo $map_data_window->logInfo($map->getLogger());
         $map->loadFromData($map_data_window, 0, $map_data_window->getSize());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         $this->validate($data_element, $offset, $size);
 
@@ -72,8 +72,6 @@ class Map extends Index
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
-
-        return $this;
     }
 
     /**

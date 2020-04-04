@@ -24,8 +24,10 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
+        $this->debugBlockInfo($data_element);
+
         $valid = true;
 
         if ($size === null) {
@@ -53,7 +55,7 @@ class Ifd extends ListBase
             $ifd_entry = new $class($item_definition, $this);
 
             try {
-                $ifd_entry->loadFromData($data_element, $data_element->getLong($i_offset + 8), $item_definition->getSize());
+                $ifd_entry->loadFromData($data_element, (int) $data_element->getLong($i_offset + 8), $item_definition->getSize());
             } catch (DataException $e) {
                 $ifd_entry->error($e->getMessage());
                 $valid = false;
@@ -64,8 +66,6 @@ class Ifd extends ListBase
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
-
-        return $this;
     }
 
     /**
@@ -299,12 +299,12 @@ class Ifd extends ListBase
 
         // Now set the thumbnail normally.
         try {
-            $dataxx = new DataWindow($data_element, $offset, $length, $data_element->getByteOrder());
-            $dataxx->logInfo($ifd->getLogger());
+            $dataxx = new DataWindow($data_element, $offset, $length);
+            // xx todo $dataxx->logInfo($ifd->getLogger());
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
-            while ($dataxx->getByte($size - 2) !== JpegSegment::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Collection::get('Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
+            while ($dataxx->getByte($size - 2) !== Jpeg::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Collection::get('Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
                 $size --;
             }
             if ($size != $dataxx->getSize()) {

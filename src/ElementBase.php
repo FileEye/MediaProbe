@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe;
 
 use FileEye\MediaProbe\DOMElement;
-use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use Monolog\Logger;
@@ -172,6 +171,17 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     }
 
     /**
+     * Returns the format of the context path segment.
+     *
+     * @returns string
+     *   The format of the context path segment.
+     */
+    protected function getContextPathSegmentPattern()
+    {
+        return '/{DOMNode}';
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getContextPath()
@@ -180,22 +190,14 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         $parent_path = $this->getParentElement() ? $this->getParentElement()->getContextPath() : '';
 
         // Build the path fragment related to this node.
-        $current_fragment = '/' . $this->DOMNode->nodeName;
+        $attributes = ['{DOMNode}' => $this->DOMNode->nodeName];
         if ($this->DOMNode->attributes->length) {
             foreach ($this->DOMNode->attributes as $attribute) {
-                $current_fragment .= ':' . $attribute->value;
+                $attributes['{' . $attribute->name . '}'] = $attribute->value;
             }
         }
 
-        return $parent_path . $current_fragment;
-    }
-
-    /**
-     * xx todo
-     */
-    protected function getLogger()
-    {
-        return $this->getRootElement()->getLogger();
+        return $parent_path . str_replace(array_keys($attributes), array_values($attributes), $this->getContextPathSegmentPattern());
     }
 
     /**

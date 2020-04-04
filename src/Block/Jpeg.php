@@ -2,10 +2,12 @@
 
 namespace FileEye\MediaProbe\Block;
 
+use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -14,6 +16,11 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 class Jpeg extends BlockBase
 {
     /**
+     * JPEG delimiter.
+     */
+    const JPEG_DELIMITER = 0xFF;
+
+    /**
      * JPEG header.
      */
     const JPEG_HEADER = "\xFF\xD8\xFF";
@@ -21,13 +28,11 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element): void
     {
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
+        $this->debugBlockInfo($data_element);
 
-        $this->debug('Parsing {size} bytes of JPEG data...', ['size' => $size]);
+        $valid = true;
 
         // JPEG data is stored in big-endian format.
         $data_element->setByteOrder(ConvertBytes::BIG_ENDIAN);
@@ -35,77 +40,106 @@ class Jpeg extends BlockBase
         // Run through the data to read the segments in the image. After each
         // segment is read, the offset will be moved forward, and after the last
         // segment we will terminate.
-        $segment_offset = $offset;
-        while ($segment_offset < $size) {
+        $offset = 0;
+        while ($offset < $data_element->getSize()) {
+            // Get the next JPEG segment id offset.
+            try {
+                $offset = $this->getJpegSegmentIdOffset($data_element, $offset);
+                // xx todo --> fail if there's a gap in the offset
+            }
+            catch (DataException $e) {
+                $this->error($e->getMessage());
+                $this->valid = false;
+                return;
+            }
+
             // Get the JPEG segment id.
-            $segment_offset = $this->getJpegMarkerOffset($data_element, $segment_offset);
-            $segment_id = $data_element->getByte($segment_offset);
+            $segment_id = $data_element->getByte($offset + 1);
 
             // Warn if an unidentified segment is detected.
             if (!in_array($segment_id, $this->getCollection()->listItemIds())) {
-                $this->warning('Invalid JPEG marker 0x{marker} found @ offset {offset}', [
-                    'offset' => $segment_offset,
-                    'marker' => strtoupper(dechex($segment_id)),
+                $this->warning('Invalid JPEG marker {id}/{hexid} found @ offset {offset}', [
+                    'id' => $segment_id,
+                    'hexid' => '0x' . strtoupper(dechex($segment_id)),
+                    'offset' => $data_element->getAbsoluteOffset($offset),
                 ]);
             }
 
-            $segment_offset++;
-
-            // Get the collection for the segment.
-            $segment_collection = $this->getCollection()->getItemCollection($segment_id);
-
             // Create the MediaProbe JPEG segment object.
+            $segment_collection = $this->getCollection()->getItemCollection($segment_id);
             $segment_class = $segment_collection->getPropertyValue('class');
             $segment = new $segment_class($segment_collection, $this);
 
-            // Get the JPEG segment size.
+            // Get the JPEG segment DataWindow.
             switch ($segment_collection->getPropertyValue('payload')) {
                 case 'none':
-                    $segment_size = 0;
+                    // The data window size is the JPEG delimiter byte and the
+                    // segment identifier byte.
+                    $segment_size = 2;
                     break;
                 case 'variable':
-                    // Read the length of the segment. The length includes the
-                    // two bytes used to store the length.
-                    $segment_size = $data_element->getShort($segment_offset);
+                    // Read the length of the segment. The data window size
+                    // includes the JPEG delimiter byte, the segment identifier
+                    // byte and two bytes used to store the segment length.
+                    $segment_size = $data_element->getShort($offset + 2) + 2;
                     break;
                 case 'fixed':
-                    $segment_size = $segment_collection->getPropertyValue('components');
+                    // The data window size includes the JPEG delimiter byte
+                    // and the segment identifier byte.
+                    $segment_size = $segment_collection->getPropertyValue('components') + 2;
+                    break;
+                case 'scan':
+                    // In case of image scan segment, the window is to the end
+                    // of the data.
+                    $segment_size = null;
                     break;
             }
 
             // Load the MediaProbe JPEG segment data.
-            $segment->loadFromData($data_element, $segment_offset, $segment_size);
-
-            // In case of image scan segment, the load is now complete.
-            if ($segment->getPayload() === 'scan') {
-                break;
+            $data_window = new DataWindow($data_element, $offset, $segment_size);
+            $segment->loadFromData($data_window);
+            if (!$segment->isValid()) {
+                $valid = false;
             }
 
-            // Position to end of the segment. It is defined by the current
-            // offset + the bytes of the payload.
-            $segment_offset += $segment->getComponents();
+            // Position to end of the segment.
+            $offset += $data_window->getSize();
         }
 
-        $this->valid = true;
-        return $this;
+        // Fail if EOI is missing.
+        if (!$this->getElement("jpegSegment[@name='EOI']")) {
+            $this->error('Missing EOI (End Of Image) JPEG marker');
+            $valid = false;
+        }
+
+        $this->valid = $valid;
     }
 
     /**
+     * Determines the offset where the next JPEG segment id is found.
+     *
      * JPEG sections start with 0xFF. The first byte that is not 0xFF is a
      * marker (hopefully).
      *
      * @param DataElement $data_element
+     *   The data element to be checked.
      * @param int $offset
+     *   The starting offset in the data element.
      *
      * @return int
+     *   The found offset.
+     *
+     * @throws DataException
+     *   In case of marker not found.
      */
-    protected function getJpegMarkerOffset(DataElement $data_element, $offset)
+    protected function getJpegSegmentIdOffset(DataElement $data_element, int $offset): int
     {
-        for ($i = $offset; $i < $offset + 7; $i ++) {
-            if ($data_element->getByte($i) !== JpegSegment::JPEG_DELIMITER) {
+        for ($i = $offset; $i < $offset + 7; $i++) {
+            if ($data_element->getByte($i) === Jpeg::JPEG_DELIMITER && $data_element->getByte($i + 1) !== Jpeg::JPEG_DELIMITER) {
                 return $i;
             }
         }
+        throw new DataException('JPEG marker not found @%d', $data_element->getAbsoluteOffset($offset));
     }
 
     /**
@@ -113,7 +147,7 @@ class Jpeg extends BlockBase
      *
      * @returns string
      */
-    public function getMimeType()
+    public function getMimeType(): string
     {
         return 'image/jpeg';
     }
@@ -125,8 +159,9 @@ class Jpeg extends BlockBase
      *   The data element to be checked.
      *
      * @return bool
+     *   TRUE if the data element is a JPEG image.
      */
-    public static function isDataMatchingFormat(DataElement $data_element)
+    public static function isDataMatchingFormat(DataElement $data_element): bool
     {
         return $data_element->getBytes(0, 3) === static::JPEG_HEADER;
     }

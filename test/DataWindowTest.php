@@ -12,13 +12,14 @@ class DataWindowTest extends MediaProbeTestCaseBase
     public function testDataWindow()
     {
         $data = new DataString('0123456789ABCDEFGHIJ');
+        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
         $this->assertSame(20, $data->getSize());
         $this->assertSame('0123456789ABCDEFGHIJ', $data->getBytes());
         $this->assertSame('0123456789', $data->getBytes(0, 10));
         $this->assertSame('ABCDEFGHIJ', $data->getBytes(10, 10));
         $this->assertSame('123456789A', $data->getBytes(1, 10));
 
-        $window_0 = new DataWindow($data, 0, $data->getSize());
+        $window_0 = new DataWindow($data);
         $this->assertSame(20, $window_0->getSize());
         $this->assertSame('0123456789ABCDEFGHIJ', $window_0->getBytes());
         $this->assertSame('0123456789', $window_0->getBytes(0, 10));
@@ -32,122 +33,198 @@ class DataWindowTest extends MediaProbeTestCaseBase
         $this->assertSame('AB', $window_1->getBytes(5, 2));
         $this->assertSame('67', $window_1->getBytes(1, 2));
 
-        $window_1_sub = new DataWindow($window_1, 5, 5);
-        $this->assertSame(5, $window_1_sub->getSize());
-        $this->assertSame('ABCDE', $window_1_sub->getBytes());
-        $this->assertSame('BCD', $window_1_sub->getBytes(1, 3));
-        $this->assertSame('DE', $window_1_sub->getBytes(3, 2));
-        $this->assertSame('AB', $window_1_sub->getBytes(0, 2));
+        $window_1_sub1 = new DataWindow($window_1, 5, 5);
+        $this->assertSame(5, $window_1_sub1->getSize());
+        $this->assertSame('ABCDE', $window_1_sub1->getBytes());
+        $this->assertSame('BCD', $window_1_sub1->getBytes(1, 3));
+        $this->assertSame('DE', $window_1_sub1->getBytes(3, 2));
+        $this->assertSame('AB', $window_1_sub1->getBytes(0, 2));
+
+        // No size specified.
+        $window_1_sub2 = new DataWindow($window_1, 5);
+        $this->assertSame(5, $window_1_sub2->getSize());
+        $this->assertSame('ABCDE', $window_1_sub2->getBytes());
+        $this->assertSame('BCD', $window_1_sub2->getBytes(1, 3));
+        $this->assertSame('DE', $window_1_sub2->getBytes(3, 2));
+        $this->assertSame('AB', $window_1_sub2->getBytes(0, 2));
+    }
+
+    public function testDataWindowWithNegativeStart()
+    {
+        $data = new DataString('0123456789ABCDEFGHIJ');
+        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $window_1 = new DataWindow($data, 5, 10);
+
+        // Negative offset.
+        $this->expectException(DataException::class);
+        $this->expectExceptionMessage('Invalid negative offset for DataWindow');
+        $window_1_sub3 = new DataWindow($window_1, -5);
+    }
+
+    public function testDataWindowWithExcessiveSize()
+    {
+        $data = new DataString('0123456789ABCDEFGHIJ');
+        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $window_1 = new DataWindow($data, 5, 10);
+
+        $this->expectException(DataException::class);
+        $this->expectExceptionMessage('Excessive size for DataWindow');
+        $window_1_sub3 = new DataWindow($window_1, 0, 40);
     }
 
     public function testReadBytes()
     {
         $data = new DataString('abcdefgh');
-        $window = new DataWindow($data, 0, $data->getSize());
+        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
-        $this->assertEquals($window->getSize(), 8);
-        $this->assertEquals($window->getBytes(), 'abcdefgh');
-
-        $this->assertEquals($window->getBytes(0), 'abcdefgh');
-        $this->assertEquals($window->getBytes(1), 'bcdefgh');
-        $this->assertEquals($window->getBytes(7), 'h');
-        // $this->assertEquals($window->getBytes(8), '');
-
-        $this->assertEquals($window->getBytes(- 1), 'h');
-        $this->assertEquals($window->getBytes(- 2), 'gh');
-        $this->assertEquals($window->getBytes(- 7), 'bcdefgh');
-        $this->assertEquals($window->getBytes(- 8), 'abcdefgh');
-
-        $clone = new DataWindow($window, 2, 4);
-        $this->assertEquals($clone->getSize(), 4);
-        $this->assertEquals($clone->getBytes(), 'cdef');
-
-        $this->assertEquals($clone->getBytes(0), 'cdef');
-        $this->assertEquals($clone->getBytes(1), 'def');
-        $this->assertEquals($clone->getBytes(3), 'f');
-        // $this->assertEquals($clone->getBytes(4), '');
-
-        $this->assertEquals($clone->getBytes(- 1), 'f');
-        $this->assertEquals($clone->getBytes(- 2), 'ef');
-        $this->assertEquals($clone->getBytes(- 3), 'def');
-        $this->assertEquals($clone->getBytes(- 4), 'cdef');
-
-        $caught = false;
+        // DataWindow on original data.
+        $window = new DataWindow($data);
+        $this->assertEquals(8, $window->getSize());
+        $this->assertEquals('abcdefgh', $window->getBytes());
+        $this->assertEquals('abcdefgh', $window->getBytes(0));
+        $this->assertEquals('bcdefgh', $window->getBytes(1));
+        $this->assertEquals('h', $window->getBytes(7));
         try {
-            $clone->getBytes(0, 6);
-        } catch (DataException $e) {
-            $caught = true;
+            $this->assertNull($window->getBytes(8));
+            $this->fail('No DataException thrown when offset out of bonds');
         }
-        $this->assertTrue($caught);
+        catch (DataException $e) {
+            $this->assertEquals('Offset out of bounds - rel 8 [0, 7], abs 8 [0, 7]', $e->getMessage());
+        }
+        $this->assertEquals('h', $window->getBytes(-1));
+        $this->assertEquals('gh', $window->getBytes(-2));
+        $this->assertEquals('bcdefgh', $window->getBytes(-7));
+        $this->assertEquals('abcdefgh', $window->getBytes(-8));
+        try {
+            $this->assertNull($window->getBytes(0, 10));
+            $this->fail('No DataException thrown when offset out of bonds');
+        }
+        catch (DataException $e) {
+            $this->assertEquals('Offset out of bounds - rel 9 [0, 7], abs 9 [0, 7]', $e->getMessage());
+        }
+        try {
+            $this->assertNull($window->getBytes(-10));
+            $this->fail('No DataException thrown when offset out of bonds');
+        }
+        catch (DataException $e) {
+            $this->assertEquals('Offset out of bounds - rel -2 [0, 7], abs -2 [0, 7]', $e->getMessage());
+        }
+
+        // DataWindow on another DataWindow.
+        $sub_window = new DataWindow($window, 2, 4);
+        $this->assertEquals(4, $sub_window->getSize());
+        $this->assertEquals('cdef', $sub_window->getBytes());
+        $this->assertEquals('cdef', $sub_window->getBytes(0));
+        $this->assertEquals('def', $sub_window->getBytes(1));
+        $this->assertEquals('f', $sub_window->getBytes(3));
+        try {
+            $this->assertNull($sub_window->getBytes(4));
+            $this->fail('No DataException thrown when offset out of bonds');
+        }
+        catch (DataException $e) {
+            $this->assertEquals('Offset out of bounds - rel 4 [0, 3], abs 6 [2, 5]', $e->getMessage());
+        }
+        $this->assertEquals('f', $sub_window->getBytes(-1));
+        $this->assertEquals('ef', $sub_window->getBytes(-2));
+        $this->assertEquals('def', $sub_window->getBytes(-3));
+        $this->assertEquals('cdef', $sub_window->getBytes(-4));
+        try {
+            $this->assertNull($sub_window->getBytes(0, 6));
+            $this->fail('No DataException thrown when offset out of bonds');
+        }
+        catch (DataException $e) {
+            $this->assertEquals('Offset out of bounds - rel 5 [0, 3], abs 7 [2, 5]', $e->getMessage());
+        }
+        $this->assertEquals('cdef', $sub_window->getBytes(-4));
+        try {
+            $this->assertNull($sub_window->getBytes(-7));
+            $this->fail('No DataException thrown when offset out of bonds');
+        }
+        catch (DataException $e) {
+            $this->assertEquals('Offset out of bounds - rel -3 [0, 3], abs -1 [2, 5]', $e->getMessage());
+        }
+        try {
+            $this->assertNull($sub_window->getBytes(-20));
+            $this->fail('No DataException thrown when offset out of bonds');
+        }
+        catch (DataException $e) {
+            $this->assertEquals('Offset out of bounds - rel -16 [0, 3], abs -14 [2, 5]', $e->getMessage());
+        }
     }
 
-    public function testReadIntegers()
+    public function testReadNumbers1()
     {
         $data = new DataString("\x01\x02\x03\x04");
-        $window = new DataWindow($data, 0, $data->getSize(), null, ConvertBytes::BIG_ENDIAN);
+        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $window = new DataWindow($data, 0, $data->getSize());
 
+        // Big endianness.
         $this->assertEquals($window->getSize(), 4);
         $this->assertEquals($window->getBytes(), "\x01\x02\x03\x04");
-
         $this->assertEquals($window->getByte(0), 0x01);
         $this->assertEquals($window->getByte(1), 0x02);
         $this->assertEquals($window->getByte(2), 0x03);
         $this->assertEquals($window->getByte(3), 0x04);
-
         $this->assertEquals($window->getShort(0), 0x0102);
         $this->assertEquals($window->getShort(1), 0x0203);
         $this->assertEquals($window->getShort(2), 0x0304);
-
         $this->assertEquals($window->getLong(0), 0x01020304);
 
+        // Little endianness.
         $window->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
         $this->assertEquals($window->getSize(), 4);
         $this->assertEquals($window->getBytes(), "\x01\x02\x03\x04");
-
         $this->assertEquals($window->getByte(0), 0x01);
         $this->assertEquals($window->getByte(1), 0x02);
         $this->assertEquals($window->getByte(2), 0x03);
         $this->assertEquals($window->getByte(3), 0x04);
-
         $this->assertEquals($window->getShort(0), 0x0201);
         $this->assertEquals($window->getShort(1), 0x0302);
         $this->assertEquals($window->getShort(2), 0x0403);
-
         $this->assertEquals($window->getLong(0), 0x04030201);
     }
 
-    public function testReadBigIntegers()
+    public function testReadNumbers2()
     {
-        $data = new DataString("\x89\xAB\xCD\xEF");
-        $window = new DataWindow($data, 0, $data->getSize(), null, ConvertBytes::BIG_ENDIAN);
+        $data = new DataString("\x89\xAB\xCD\xEF\x10\x11\x12\x13");
+        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $window = new DataWindow($data, 0, $data->getSize());
 
-        $this->assertEquals($window->getSize(), 4);
-        $this->assertEquals($window->getBytes(), "\x89\xAB\xCD\xEF");
-
+        // Big endianness.
+        $this->assertEquals($window->getSize(), 8);
+        $this->assertEquals($window->getBytes(), "\x89\xAB\xCD\xEF\x10\x11\x12\x13");
         $this->assertEquals($window->getByte(0), 0x89);
         $this->assertEquals($window->getByte(1), 0xAB);
         $this->assertEquals($window->getByte(2), 0xCD);
         $this->assertEquals($window->getByte(3), 0xEF);
-
+        $this->assertEquals($window->getByte(4), 0x10);
+        $this->assertEquals($window->getByte(5), 0x11);
+        $this->assertEquals($window->getByte(6), 0x12);
+        $this->assertEquals($window->getByte(7), 0x13);
         $this->assertEquals($window->getShort(0), 0x89AB);
         $this->assertEquals($window->getShort(1), 0xABCD);
         $this->assertEquals($window->getShort(2), 0xCDEF);
-
+        $this->assertEquals($window->getShort(3), 0xEF10);
         $this->assertEquals($window->getLong(0), 0x89ABCDEF);
+        $this->assertEquals($window->getLong(1), 0xABCDEF10);
 
+        // Little endianness.
         $window->setByteOrder(ConvertBytes::LITTLE_ENDIAN);
-        $this->assertEquals($window->getSize(), 4);
-        $this->assertEquals($window->getBytes(), "\x89\xAB\xCD\xEF");
-
+        $this->assertEquals($window->getSize(), 8);
+        $this->assertEquals($window->getBytes(), "\x89\xAB\xCD\xEF\x10\x11\x12\x13");
         $this->assertEquals($window->getByte(0), 0x89);
         $this->assertEquals($window->getByte(1), 0xAB);
         $this->assertEquals($window->getByte(2), 0xCD);
         $this->assertEquals($window->getByte(3), 0xEF);
-
+        $this->assertEquals($window->getByte(4), 0x10);
+        $this->assertEquals($window->getByte(5), 0x11);
+        $this->assertEquals($window->getByte(6), 0x12);
+        $this->assertEquals($window->getByte(7), 0x13);
         $this->assertEquals($window->getShort(0), 0xAB89);
         $this->assertEquals($window->getShort(1), 0xCDAB);
         $this->assertEquals($window->getShort(2), 0xEFCD);
-
+        $this->assertEquals($window->getShort(3), 0x10EF);
         $this->assertEquals($window->getLong(0), 0xEFCDAB89);
+        $this->assertEquals($window->getLong(1), 0x10EFCDAB);
     }
 }

@@ -19,7 +19,7 @@ class RunTime extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         if ($size === null) {
             $size = $data_element->getSize();
@@ -34,7 +34,7 @@ class RunTime extends ListBase
 
         // Build a TAG object for each PList item.
         foreach ($plist->toArray() as $tag_name => $value) {
-            $item_collection = $this->getCollection()->getItemCollection($tag_name); 
+            $item_collection = $this->getCollection()->getItemCollection($tag_name);
             $item_format = $item_collection->getPropertyValue('format')[0];
             $item_definition = new ItemDefinition($item_collection, $item_format);
             $tag = new Tag($item_definition, $this);
@@ -47,8 +47,6 @@ class RunTime extends ListBase
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
-
-        return $this;
     }
 
     /**

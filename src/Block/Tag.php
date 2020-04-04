@@ -79,7 +79,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         $valid = true;
 
@@ -97,7 +97,6 @@ class Tag extends BlockBase
         }
 
         $this->valid = $valid;
-        return $this;
     }
 
     /**
@@ -146,5 +145,16 @@ class Tag extends BlockBase
     public function getComponents()
     {
         return $this->getElement("entry") ? $this->getElement("entry")->getComponents() : $this->getDefinition()->getValuesCount();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getContextPathSegmentPattern()
+    {
+        if ($this->getAttribute('name') !== '') {
+            return '/{DOMNode}:{name}:{id}';
+        }
+        return '/{DOMNode}:{id}';
     }
 }

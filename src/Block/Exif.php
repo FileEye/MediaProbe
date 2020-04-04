@@ -27,30 +27,25 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element): void
     {
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
+        $this->debugBlockInfo($data_element);
 
-        $data_window = new DataWindow($data_element, $offset, $size, $data_element->getByteOrder());
-        $data_window->logInfo($this->getLogger());
-
-        $tiff_order = Tiff::getTiffSegmentByteOrder($data_window, strlen(self::EXIF_HEADER));
+        $tiff_order = Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER));
         if ($tiff_order !== null) {
+            $data_window = new DataWindow($data_element, strlen(self::EXIF_HEADER), $data_element->getSize() - strlen(self::EXIF_HEADER));
             $tiff_collection = $this->getCollection()->getItemCollection('Tiff');
             $tiff_class = $tiff_collection->getPropertyValue('class');
             $tiff = new $tiff_class($tiff_collection, $this);
-            $tiff->loadFromData($data_window, strlen(self::EXIF_HEADER), $size - strlen(self::EXIF_HEADER));
+            $tiff->loadFromData($data_window);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.
-            $entry = new Undefined($this, [$data_window->getBytes()]);
+            $entry = new Undefined($this, [$data_element->getBytes()]);
             $this->debug("TIFF header not found. Loaded {text}", ['text' => $entry->toString()]);
         }
 
         $this->valid = true;
-        return $this;
     }
 
     /**

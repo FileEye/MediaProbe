@@ -22,7 +22,7 @@ class MakerNote extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
     {
         if ($size === null) {
             $size = $data_element->getSize();
@@ -31,7 +31,7 @@ class MakerNote extends Ifd
         // Load Apple's header as a raw data block.
         $header = new RawData(Collection::get('RawData'), $this);
         $header_data_window = new DataWindow($data_element, $offset, 14);
-        $header_data_window->logInfo($header->getLogger());
+        // xx todo $header_data_window->logInfo($header->getLogger());
         $header->loadFromData($header_data_window, 0, $header_data_window->getSize());
 
         $offset += 14;
@@ -58,8 +58,6 @@ class MakerNote extends Ifd
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
-
-        return $this;
     }
 
     /**

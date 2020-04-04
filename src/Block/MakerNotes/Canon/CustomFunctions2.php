@@ -24,7 +24,7 @@ class CustomFunctions2 extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element, int $offset = 0): void
     {
         $valid = true;
 
@@ -62,8 +62,6 @@ class CustomFunctions2 extends ListBase
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
-
-        return $this;
     }
 
     /**

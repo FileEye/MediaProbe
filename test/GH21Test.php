@@ -2,12 +2,13 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Block\Exif;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\JpegSegmentApp1;
 use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Media;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class GH21Test extends MediaProbeTestCaseBase
 {
@@ -27,14 +28,15 @@ class GH21Test extends MediaProbeTestCaseBase
 
     public function testThisDoesNotWorkAsExpected()
     {
-        $scale = 0.75;
         $input_media = Media::createFromFile($this->file);
         $input_jpeg = $input_media->getElement("jpeg");
-
+        $input_exif = $input_jpeg->getElement("jpegSegment/exif");
+        
         $original = ImageCreateFromString($input_jpeg->toBytes());
         $original_w = ImagesX($original);
         $original_h = ImagesY($original);
 
+        $scale = 0.75;
         $scaled_w = $original_w * $scale;
         $scaled_h = $original_h * $scale;
 
@@ -58,8 +60,6 @@ class GH21Test extends MediaProbeTestCaseBase
         $out_media = Media::createFromData(new DataString($scaled_bytes));
         $out_jpeg = $out_media->getElement("jpeg");
 
-        $exif = $input_jpeg->getElement("jpegSegment/exif");
-
         // Find the COM segment in the output file.
         $out_com_segment = $out_jpeg->getElement("jpegSegment[@name='COM']");
 
@@ -68,14 +68,16 @@ class GH21Test extends MediaProbeTestCaseBase
 
         // Add the EXIF block to the APP1 segment.
         $exif_block = new Exif(Collection::get('Exif'), $out_app1_segment);
-        $data_string = new DataString($exif->toBytes());
-        $exif_block->loadFromData($data_string);
+        $exif_data = $input_exif->toBytes();
+        $data_string = new DataString($exif_data);
+        $data_string->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $exif_block->loadFromData($data_string, 0, strlen($exif_data));
 
         $out_media->saveToFile($this->file);
 
         $media = Media::createFromFile($this->file);
         $jpeg = $media->getElement("jpeg");
         $exifin = $jpeg->getElement("jpegSegment/exif");
-        $this->assertEquals($exif, $exifin);
+        $this->assertEquals($input_exif, $exifin);
     }
 }

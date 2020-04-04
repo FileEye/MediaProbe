@@ -16,15 +16,13 @@ class JpegSegment extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset = 0, $size = null)
+    public function loadFromData(DataElement $data_element): void
     {
-        $data_window = $this->getDataWindow($data_element, $offset, $size);
+        $this->debugBlockInfo($data_element);
 
-        if ($data_window) {
-            new Undefined($this, [$data_window->getBytes()]);
-        }
+        // Adds the segment data as an Undefined entry.
+        new Undefined($this, [$data_element->getBytes()]);
 
         $this->valid = true;
-        return $this;
     }
 }
