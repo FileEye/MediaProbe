@@ -96,7 +96,7 @@ abstract class DataElement
                 $this->size - 1,
                 $this->getAbsoluteOffset($offset),
                 $this->getAbsoluteOffset(0),
-                $this->getAbsoluteOffset($this->size - 1),
+                $this->getAbsoluteOffset($this->size - 1)
             );
         }
     }
