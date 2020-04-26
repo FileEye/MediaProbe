@@ -71,7 +71,7 @@ class GH21Test extends MediaProbeTestCaseBase
         $exif_data = $input_exif->toBytes();
         $data_string = new DataString($exif_data);
         $data_string->setByteOrder(ConvertBytes::BIG_ENDIAN);
-        $exif_block->parseData($data_string, 0, strlen($exif_data));
+        $exif_block->parseData($data_string);
 
         $out_media->saveToFile($this->file);
 

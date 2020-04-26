@@ -25,7 +25,7 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, $xxx=0): void
     {
         $valid = true;
 
@@ -39,7 +39,7 @@ class Ifd extends ListBase
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
             try {
-                $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, 0, 'Ifd\\Any');
+                $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Ifd\\Any');
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, TRUE)) {
