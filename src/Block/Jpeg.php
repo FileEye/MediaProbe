@@ -93,7 +93,8 @@ class Jpeg extends BlockBase
 
             // Load the MediaProbe JPEG segment data.
             $segment = $this->addItem($segment_id);
-            $segment->parseData(new DataWindow($data_element, $offset, $segment_size));
+            $segment_data_window = new DataWindow($data_element, $offset, $segment_size);
+            $segment->parseData($segment_data_window);
 
             // Fail JPEG validity if the segment is invalid.
             if (!$segment->isValid()) {
@@ -101,7 +102,7 @@ class Jpeg extends BlockBase
             }
 
             // Position to end of the segment.
-            $offset += $segment_size;
+            $offset += $segment_data_window->getSize();
         }
 
         // Fail if EOI is missing.
