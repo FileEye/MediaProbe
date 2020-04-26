@@ -71,10 +71,9 @@ class Index extends ListBase
             $index_components -= ($item_definition->getValuesCount() - 1);
 
             // Adds the 'tag'.
-            $item_class = $item_definition->getCollection()->getPropertyValue('class');
-            $item = new $item_class($item_definition, $this);
-            $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
-            $item->parseData($item_data_window);
+            $this
+                ->addItemWithDefinition($item_definition)
+                ->parseData(new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize()));
 
             $offset += $item_definition->getSize();
         }

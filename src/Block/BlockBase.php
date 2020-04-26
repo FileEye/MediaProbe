@@ -7,6 +7,7 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementBase;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -68,6 +69,12 @@ abstract class BlockBase extends ElementBase
         $collection = $this->getCollection()->getItemCollection($collection_id);
         $class = $collection->getPropertyValue('class');
         return new $class($collection, $this);
+    }
+
+    public function addItemWithDefinition(ItemDefinition $item_definition): BlockBase
+    {
+        $class = $item_definition->getCollection()->getPropertyValue('class');
+        return new $class($item_definition, $this);
     }
 
     /**
