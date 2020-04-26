@@ -23,7 +23,9 @@ class JpegSegmentApp1 extends JpegSegmentBase
 
         // If we have an Exif table, parse it.
         if (Exif::isExifSegment($data_element, 4)) {
-            $this->addItem('Exif')->parseData(new DataWindow($data_element, 4, $data_element->getSize() - 4));
+            $this
+                ->addItem('Exif')
+                ->parseData(new DataWindow($data_element, 4, $data_element->getSize() - 4));
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.
