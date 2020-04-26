@@ -48,7 +48,7 @@ class ShortRev extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getShortRev($item_definition->getDataOffset() + ($i * 2));
+            $args[] = $data_element->getShortRev($i * 2);
         }
         $this->setValue($args);
         return $this;

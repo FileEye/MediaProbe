@@ -51,7 +51,7 @@ abstract class NumberBase extends EntryBase
         $this->components = count($data);
         $this->value = $data;
 
-        $this->debug("Text: {text}", ['text' => $this->toString()]);
+        $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
     }
 

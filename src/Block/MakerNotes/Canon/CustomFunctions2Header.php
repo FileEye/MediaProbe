@@ -25,9 +25,14 @@ class CustomFunctions2Header extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0, int $size = 0): void
+    public function loadFromData(DataElement $data_element): void
     {
+        $this->debugBlockInfo($data_element);
+
         $valid = true;
+
+        $offset = 0;
+        $size = $this->getDefinition()->getSize();
 
         // Validate incoming size.
         if ($size !== $data_element->getLong($offset)) {

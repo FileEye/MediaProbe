@@ -46,7 +46,7 @@ class SignedByte extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getSignedByte($item_definition->getDataOffset() + $i);
+            $args[] = $data_element->getSignedByte($i);
         }
         $this->setValue($args);
         return $this;

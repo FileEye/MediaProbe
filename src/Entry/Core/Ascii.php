@@ -33,18 +33,7 @@ class Ascii extends EntryBase
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-        // Cap bytes to get to remaining data window size.
-        $size = $data_element->getSize();
-        if ($item_definition->getDataOffset() + $item_definition->getValuesCount() > $size) {
-            $bytes_to_get = $size - $item_definition->getDataOffset();
-            $this->warning('Ascii entry reading {actual} bytes instead of {expected} to avoid data window overflow', [
-                'actual' => $bytes_to_get,
-                'expected' => $item_definition->getValuesCount(),
-            ]);
-        } else {
-            $bytes_to_get = $item_definition->getValuesCount();
-        }
-        $bytes = $data_element->getBytes($item_definition->getDataOffset(), $bytes_to_get);
+        $bytes = $data_element->getBytes();
 
         // Check the last byte is NULL.
         if (substr($bytes, -1) !== "\x0") {
@@ -71,7 +60,7 @@ class Ascii extends EntryBase
             $this->components = substr($this->value, -1) === "\x0" ? strlen($str) : strlen($str) + 1;
         }
 
-        $this->debug("Text: {text}", ['text' => $this->toString()]);
+        $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
     }
 

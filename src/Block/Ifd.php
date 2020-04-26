@@ -6,6 +6,7 @@ use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
@@ -24,40 +25,36 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
+    public function loadFromData(DataElement $data_element, $xxx=0): void
     {
-        $this->debugBlockInfo($data_element);
-
         $valid = true;
 
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
+        $offset = $this->getDefinition()->getDataOffset();
 
         // Get the number of entries.
         $n = $this->getItemsCountFromData($data_element, $offset);
+        $this->debugBlockInfo($data_element, $n);
 
-        // Load the blocks.
+        // Parse the items.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, 0, 'Ifd\\Any');
-
-            // If the entry is an IFD, checks the offset.
-            if (is_subclass_of($item_definition->getCollection()->getPropertyValue('class'), 'FileEye\MediaProbe\Block\ListBase') && $data_element->getLong($i_offset + 8) <= $offset) {
-                $this->error('Invalid offset pointer to IFD: {offset}.', [
-                    'offset' => $item_definition->getDataOffset(),
-                ]);
-                $valid = false;
-                continue;
-            }
-
-            $class = $item_definition->getCollection()->getPropertyValue('class');
-            $ifd_entry = new $class($item_definition, $this);
-
             try {
-                $ifd_entry->loadFromData($data_element, (int) $data_element->getLong($i_offset + 8), $item_definition->getSize());
+                $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Ifd\\Any');
+                $item_class = $item_definition->getCollection()->getPropertyValue('class');
+                $item = new $item_class($item_definition, $this);
+                if (is_a($item_class, Ifd::class, TRUE)) {
+                    $item->loadFromData($data_element);
+                }
+                else {
+                    // In case of an IFD terminator item entry, i.e. zero
+                    // components, the data window size is still 4 bytes, from
+                    // the IFD index area.
+                    $item_data_window_size = $item_definition->getValuesCount() > 0 ? $item_definition->getSize() : 4;
+                    $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_data_window_size);
+                    $item->loadFromData($item_data_window);
+                }
             } catch (DataException $e) {
-                $ifd_entry->error($e->getMessage());
+                $item->error($e->getMessage());
                 $valid = false;
             }
         }
@@ -86,16 +83,12 @@ class Ifd extends ListBase
     {
         // Get the number of tags.
         $entries_count = $data_element->getShort($offset);
-        $this->debug("IFD {ifdname} @{offset} with {tags} entries", [
-            'ifdname' => $this->getAttribute('name'),
-            'tags' => $entries_count,
-            'offset' => $data_element->getStart() + $offset,
-        ]);
 
         // Check if we have enough data.
         if (2 + 12 * $entries_count > $data_element->getSize()) {
             $entries_count = floor(($offset - $data_element->getSize()) / 12);
             $this->warning('Wrong number of IFD entries in ifd {ifdname}, adjusted to {tags}', [
+                'ifdname' => $this->getAttribute('name'),
                 'tags' => $entries_count,
             ]);
         }
@@ -137,17 +130,6 @@ class Ifd extends ListBase
             $data_offset = $offset + 8;
         }
 
-        $this->debug("#{seq} @{ifdoffset}, id {id}/{hexid}, f {format}, c {components}, data @{offset}, size {size}", [
-            'seq' => $seq + 1,
-            'ifdoffset' => $data_element->getStart() + $offset,
-            'id' => $id,
-            'hexid' => '0x' . strtoupper(dechex($id)),
-            'format' => ItemFormat::getName($format),
-            'components' => $components,
-            'offset' => $data_element->getStart() + $data_offset,
-            'size' => $size,
-        ]);
-
         // Fall back to the generic IFD collection if the item is missing from
         // the appropriate one.
         try {
@@ -168,7 +150,23 @@ class Ifd extends ListBase
             }
         }
 
-        return new ItemDefinition($item_collection, $format, $components, $data_offset);
+        // If the item is an Ifd, recurse in loading the item at offset.
+        if (is_a($item_collection->getPropertyValue('class'), Ifd::class, TRUE)) {
+          // Check the offset.
+          $item_offset = $data_element->getLong($offset + 8);
+/*          if ($item_offset <= $offset) {
+            $this->error('Invalid offset pointer to IFD: {offset}.', [
+                'offset' => $item_definition->getDataOffset(),
+            ]);
+            $valid = false;
+            continue;
+          }*/
+          $components = $data_element->getShort($item_offset - 8);
+          $format = ItemFormat::LONG;
+          $data_offset = $item_offset;
+        }
+
+        return new ItemDefinition($item_collection, $format, $components, $data_offset, $data_element->getStart() + $offset, $seq);
     }
 
     /**
@@ -363,7 +361,7 @@ class Ifd extends ListBase
         // Load maker note into IFD.
         $ifd_class = $maker_note_collection->getPropertyValue('class');
         $maker_note_ifd_name = $maker_note_collection->getPropertyValue('item');  // xx why not name?? it used to work
-        $exif_ifd->debug("Parsing {makernote} maker notes", [
+        $exif_ifd->debug("**** Parsing {makernote} maker notes", [
             'makernote' => $maker_note_ifd_name,
         ]);
         $item_definition = new ItemDefinition($maker_note_collection, $maker_note_tag->getFormat(), $maker_note_tag->getComponents());
@@ -372,10 +370,8 @@ class Ifd extends ListBase
         // xxx
         $ifd->setAttribute('id', 37500);
         $ifd->setAttribute('name', $maker_note_ifd_name);
-        $ifd->loadFromData($d, $maker_note_tag->getElement("entry")->getValue()[1], null, [
-            'components' => $maker_note_tag->getComponents(),
-            'collection' => $maker_note_collection,
-        ]);
+        $data = new DataWindow($d, $maker_note_tag->getElement("entry")->getValue()[1]);
+        $ifd->loadFromData($data, -$maker_note_tag->getElement("entry")->getValue()[1]);
 
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");
@@ -403,5 +399,40 @@ class Ifd extends ListBase
             }
         }
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0)
+    {
+        $msg = '#{seq} {node}:{name}';
+        $seq = $this->getDefinition()->getSequence() + 1;
+        if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
+            $seq = $parent_name . '.' . $seq;
+        }
+        $node = $this->DOMNode->nodeName;
+        $name = $this->getAttribute('name');
+        $item = $this->getAttribute('id');
+        if ($item ==! null) {
+            $msg .= ' ({item})';
+        }
+        if (is_numeric($item)) {
+            $item = $item . '/0x' . strtoupper(dechex($item));
+        }
+        if ($data_element instanceof DataWindow) {
+            $msg .= ' @{offset}, {tags} entries';
+            $offset = $data_element->getAbsoluteOffset($this->getDefinition()->getDataOffset()) . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset($this->getDefinition()->getDataOffset())));
+        } else {
+            $msg .= ' {tags} entries';
+        }
+        $this->debug($msg, [
+            'seq' => $seq,
+            'node' => $node,
+            'name' => $name,
+            'item' => $item,
+            'offset' => $offset ?? null,
+            'tags' => $items_count,
+        ]);
     }
 }

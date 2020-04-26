@@ -42,15 +42,16 @@ class CustomFunctions2 extends ListBase
               'size' => $num * 4,
           ]);
           $rec_pos += 8;
-          $item_collection = $this->getCollection()->getItemCollection($id, 'UnknownTag', [
-              'item' => $id,
-              'DOMNode' => 'tag',
-          ]);
-          $item_definition = new ItemDefinition($item_collection, ItemFormat::SIGNED_LONG, $num, $rec_pos);
-          $class = $item_definition->getCollection()->getPropertyValue('class');
-          $tag = new $class($item_definition, $this);
           try {
-              $tag->loadFromData($data_element);
+              $item_collection = $this->getCollection()->getItemCollection($id, 'UnknownTag', [
+                  'item' => $id,
+                  'DOMNode' => 'tag',
+              ]);
+              $item_definition = new ItemDefinition($item_collection, ItemFormat::SIGNED_LONG, $num, $rec_pos);
+              $class = $item_definition->getCollection()->getPropertyValue('class');
+              $tag = new $class($item_definition, $this);
+              $tag_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
+              $tag->loadFromData($tag_data_window);
           } catch (DataException $e) {
               $tag->error($e->getMessage());
               $valid = false;

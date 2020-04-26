@@ -45,7 +45,7 @@ class Byte extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getByte($item_definition->getDataOffset() + $i);
+            $args[] = $data_element->getByte($i);
         }
         $this->setValue($args);
         return $this;

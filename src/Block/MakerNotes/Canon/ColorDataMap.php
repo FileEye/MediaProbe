@@ -19,9 +19,9 @@ class ColorDataMap extends Map
     /**
      * {@inheritdoc}
      */
-    protected function validate(DataElement $data_element, int $offset, int $size): void
+    protected function validate(DataElement $data_element): void
     {
-        parent::validate($data_element, $offset, $size);
+        parent::validate($data_element);
 
         // Find the appropriate map collection.
         foreach ($this->getCollection()->listItemIds() as $color_data_map) {

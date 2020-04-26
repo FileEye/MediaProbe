@@ -32,7 +32,7 @@ class Undefined extends EntryBase
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-        $this->setValue([$data_element->getBytes($item_definition->getDataOffset(), $item_definition->getValuesCount())]);
+        $this->setValue([$data_element->getBytes()]);
         return $this;
     }
 
@@ -47,9 +47,9 @@ class Undefined extends EntryBase
         $this->components = strlen($data[0]);
 
         if ($this->hasMappedText()) {
-          $this->debug("Text: {text}", ['text' => $this->toString()]);
+          $this->debug("text: {text}", ['text' => $this->toString()]);
         }
-        $this->debug("Data: {data}", ['data' => MediaProbe::dumpHex($this->toBytes(), 12)]);
+        $this->debug("data: {data}", ['data' => MediaProbe::dumpHex($this->toBytes(), 12)]);
         return $this;
     }
 
@@ -69,7 +69,7 @@ class Undefined extends EntryBase
         if ($this->components === 1) {
             $value = unpack('C', $this->value)[1]; // xx note that we may want to have alternative check for string... if the collection has a string index. see ifdExif/FileSource
         }
-        $text = $this->hasMappedText() ? $this->getMappedText($value, null) : null;
+        $text = $this->hasMappedText() ? $this->getMappedText($value ?? null, null) : null;
         return $text ?? $this->components . ' byte(s) of data';
     }
 }

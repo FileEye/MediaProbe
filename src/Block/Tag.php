@@ -48,10 +48,6 @@ class Tag extends BlockBase
                 'ifd' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',
             ]);
         } else {
-            $this->debug("Item: {item}", [
-                'item' => $this->getCollection()->getPropertyValue('title'),
-            ]);
-
             // Warn if format is not as expected.
             $expected_format = $this->getCollection()->getPropertyValue('format');
             if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
@@ -79,18 +75,16 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
+    public function loadFromData(DataElement $data_element): void
     {
-        $valid = true;
+        $this->debugBlockInfo($data_element);
 
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
+        $valid = true;
 
         $class = $this->getDefinition()->getEntryClass();
         $entry = new $class($this);
         try {
-            $entry->loadFromData($data_element, $offset, $size, [], $this->getDefinition());
+            $entry->loadFromData($data_element, 0, $data_element->getSize(), [], $this->getDefinition());
         } catch (DataException $e) {
             $this->error($e->getMessage());
             $valid = false;
@@ -156,5 +150,53 @@ class Tag extends BlockBase
             return '/{DOMNode}:{name}:{id}';
         }
         return '/{DOMNode}:{id}';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function debugBlockInfo(?DataElement $data_element = null)
+    {
+        $msg = '#{seq} @{ifdoffset} {node}';
+        $seq = $this->getDefinition()->getSequence() + 1;
+        if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
+            $seq = $parent_name . '.' . $seq;
+        }
+        $item_definition_offset = $this->getDefinition()->getItemDefinitionOffset();
+        $node = $this->DOMNode->nodeName;
+        $name = $this->getAttribute('name');
+        if ($name ==! null) {
+            $msg .= ':{name}';
+        }
+//$title = $this->getCollection()->getPropertyValue('title');
+//if ($title ==! null) {
+//    $msg .= ' ({title})';
+//}
+        $item = $this->getAttribute('id');
+        if ($item ==! null) {
+            $msg .= ' ({item})';
+        }
+        if (is_numeric($item)) {
+            $item = $item . '/0x' . strtoupper(dechex($item));
+        }
+        if ($data_element instanceof DataWindow) {
+            $msg .= ' @{offset} s {size}';
+            $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
+        } else {
+            $msg .= ' size {size} byte(s)';
+        }
+        $msg .= ', f {format}, c {components}';
+        $this->debug($msg, [
+            'seq' => $seq,
+            'ifdoffset' => $item_definition_offset . '/0x' . strtoupper(dechex($item_definition_offset)),
+            'format' => ItemFormat::getName($this->getDefinition()->getFormat()),
+            'components' => $this->getDefinition()->getValuesCount(),
+            'node' => $node,
+            'name' => $name,
+            'item' => $item,
+//            'title' => $title,
+            'offset' => $offset ?? null,
+            'size' => $data_element ? $data_element->getSize() : null,
+        ]);
     }
 }

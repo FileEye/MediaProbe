@@ -2,16 +2,16 @@
 
 namespace FileEye\MediaProbe\Block\MakerNotes\Apple;
 
-use FileEye\MediaProbe\Block\ListBase;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\MediaProbe;
 use CFPropertyList\CFDictionary;
 use CFPropertyList\CFNumber;
 use CFPropertyList\CFPropertyList;
+use FileEye\MediaProbe\Block\ListBase;
+use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataWindow;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class RunTime extends ListBase

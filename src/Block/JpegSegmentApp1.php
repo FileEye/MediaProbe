@@ -21,7 +21,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
     {
         $this->debugBlockInfo($data_element);
 
-        // If we have an Exif table, load it.
+        // If we have an Exif table, parse it.
         if (Exif::isExifSegment($data_element, 4)) {
             $exif_collection = $this->getCollection()->getItemCollection('Exif');
             $exif_class = $exif_collection->getPropertyValue('class');
@@ -32,7 +32,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.
             $entry = new Undefined($this, [$data_element->getBytes()]);
-            $entry->debug("Not an Exif segment. Loaded {text}", ['text' => $entry->toString()]);
+            $entry->debug("Not an Exif segment. Parsed {text}", ['text' => $entry->toString()]);
         }
 
         $this->valid = true;
