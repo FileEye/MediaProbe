@@ -31,9 +31,8 @@ class Exif extends BlockBase
     {
         $this->debugBlockInfo($data_element);
 
-        if (Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER) !== null)) {
-            $tiff = $this->addItem('Tiff');
-            $tiff->parseData(new DataWindow($data_element, strlen(self::EXIF_HEADER), $data_element->getSize() - strlen(self::EXIF_HEADER)));
+        if (Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER)) !== null) {
+            $this->addItem('Tiff')->parseData(new DataWindow($data_element, strlen(self::EXIF_HEADER), $data_element->getSize() - strlen(self::EXIF_HEADER)));
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.
