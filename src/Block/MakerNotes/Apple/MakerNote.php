@@ -23,7 +23,7 @@ class MakerNote extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, $xxx=0): void
     {
         $size = $data_element->getSize();
         $offset = $this->getDefinition()->getDataOffset();
