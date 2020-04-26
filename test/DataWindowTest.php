@@ -7,6 +7,9 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
+// @todo xxx add a test for negative/zero window size 
+// @todo xxx add a test for excessive window size
+
 class DataWindowTest extends MediaProbeTestCaseBase
 {
     public function testDataWindow()

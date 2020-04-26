@@ -15,6 +15,13 @@ class ItemDefinition
     protected $collection;
 
     /**
+     * The sequence of the item on its parent list.
+     *
+     * @var int
+     */
+    protected $sequence;
+
+    /**
      * The format of the item.
      *
      * @var int
@@ -29,23 +36,32 @@ class ItemDefinition
     protected $valuesCount;
 
     /**
-     * The offset of the item on the data window.
+     * The offset of the item data in the data window.
      *
      * @var int
      */
-    protected $offset;
+    protected $dataOffset;
+
+    /**
+     * The offset of the item definition in the data window.
+     *
+     * @var int
+     */
+    protected $itemDefinitionOffset;
 
     /**
      * Constructor.
      *
      * @todo xxx
      */
-    public function __construct(Collection $collection, int $format, int $values_count = 1, int $offset = 0)
+    public function __construct(Collection $collection, int $format, int $values_count = 1, int $data_offset = 0, int $item_definition_offset = 0, int $sequence = 0)
     {
         $this->collection = $collection;
         $this->format = $format;
         $this->valuesCount = $values_count;
-        $this->offset = $offset;
+        $this->dataOffset = $data_offset;
+        $this->itemDefinitionOffset = $item_definition_offset;
+        $this->sequence = $sequence;
     }
 
     /**
@@ -77,7 +93,23 @@ class ItemDefinition
      */
     public function getDataOffset(): int
     {
-        return $this->offset;
+        return $this->dataOffset;
+    }
+
+    /**
+     * @todo
+     */
+    public function getItemDefinitionOffset(): int
+    {
+        return $this->itemDefinitionOffset;
+    }
+
+    /**
+     * @todo
+     */
+    public function getSequence(): int
+    {
+        return $this->sequence;
     }
 
     /**

@@ -22,7 +22,6 @@ class JpegSegment extends JpegSegmentBase
 
         // Adds the segment data as an Undefined entry.
         new Undefined($this, [$data_element->getBytes()]);
-
         $this->valid = true;
     }
 }

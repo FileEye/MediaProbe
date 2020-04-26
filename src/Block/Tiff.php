@@ -32,15 +32,6 @@ class Tiff extends BlockBase
     protected $byteOrder;
 
     /**
-     * Constructs a Block for holding a TIFF image.
-     */
-    public function __construct(Collection $collection, BlockBase $parent = null)
-    {
-        parent::__construct($collection, $parent);
-        $this->collection = $collection;
-    }
-
-    /**
      * Returns the MIME type of the image.
      *
      * @returns string
@@ -70,8 +61,9 @@ class Tiff extends BlockBase
         // If the offset to first IFD is higher than 8, then there may be an
         // image scan (TIFF) in between. Store that in a RawData block.
         if ($ifd_offset > 8) {
+            $scan_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'scan']), ItemFormat::BYTE, $ifd_offset - 8);
             $scan_data_window = new DataWindow($data_element, 8, $ifd_offset - 8);
-            $scan = new RawData(Collection::get('RawData'), $this);
+            $scan = new RawData($scan_definition, $this);
             $scan->loadFromData($scan_data_window);
         }
 
@@ -79,18 +71,20 @@ class Tiff extends BlockBase
         for ($i = 0; $i <= 2; $i++) {
             // IFD1 shouldn't link further.
             if ($ifd_offset === 2) {
-                $this->error('IFD1 should not link to another IFD.');
+                $this->error('IFD1 should not link to another IFD');
                 $valid = false;
                 break;
             }
 
             try {
-                // Create and load the IFDs.
+                // Create and load the IFDs. Note that the data element cannot
+                // be split in windows since any pointer will refer to the
+                // entire segment space.
                 $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
                 $ifd_tags_count = $data_element->getShort($ifd_offset);
-                $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset);
+                $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
                 $ifd = new $ifd_class($ifd_item, $this);
-                $ifd->loadFromData($data_element, $ifd_offset);
+                $ifd->loadFromData($data_element);
 
                 // Offset to next IFD.
                 $ifd_offset = $data_element->getLong($ifd_offset + $ifd_tags_count * 12 + 2);

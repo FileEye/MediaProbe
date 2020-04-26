@@ -51,6 +51,9 @@ class DataWindow extends DataElement
         }
 
         $this->size = $size ?? ($data_element->getSize() - $start);
+        if ($this->size < 1) {
+            throw new DataException('Zero or negative size for DataWindow');
+        }
         if ($this->size > ($data_element->getSize() - $start)) {
             throw new DataException('Excessive size for DataWindow');
         }

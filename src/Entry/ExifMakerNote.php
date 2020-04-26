@@ -22,7 +22,7 @@ class ExifMakerNote extends Undefined
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-        $this->setValue([$data_element->getBytes($item_definition->getDataOffset(), $item_definition->getValuesCount()), $item_definition->getDataOffset()]);
+        $this->setValue([$data_element->getBytes(0, $item_definition->getValuesCount()), $item_definition->getDataOffset()]);
         return $this;
     }
 

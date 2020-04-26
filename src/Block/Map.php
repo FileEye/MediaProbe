@@ -23,25 +23,20 @@ class Map extends Index
     /**
      * {@inheritdoc}
      */
-    protected function validate(DataElement $data_element, int $offset, int $size): void
+    public function loadFromData(DataElement $data_element): void
     {
-        parent::validate($data_element, $offset, $size);
+        $this->debugBlockInfo($data_element);
+
+        $this->validate($data_element);
 
         // Load the map as a raw data block.
-        $map = new RawData(Collection::get('RawData', ['name' => 'mapdata']), $this);
-        $map_data_window = new DataWindow($data_element, $offset, $size);
-        // xx todo $map_data_window->logInfo($map->getLogger());
-        $map->loadFromData($map_data_window, 0, $map_data_window->getSize());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
-    {
-        $this->validate($data_element, $offset, $size);
+        $map_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']), ItemFormat::BYTE);
+        $map = new RawData($map_data_definition, $this);
+        $map->loadFromData($data_element);
 
         $i = 0;
+        $offset = 0;
+        $size = $this->getDefinition()->getSize();
         foreach ($this->getCollection()->listItemIds() as $item) {
 
             // Adds the 'tag'.
@@ -54,12 +49,10 @@ class Map extends Index
                 }
 
                 $item_definition = $this->getItemDefinitionFromData($i, $item, $data_element, $n);
-
-                $value = $this->getValueFromData($data_element, $n, $item_definition->getFormat(), $item_definition->getValuesCount());
-                $tag = new Tag($item_definition, $this);
-                $entry_class = $item_definition->getEntryClass();
-                new $entry_class($tag, $value);
-                $tag->valid = true;
+                $item_class = $item_definition->getCollection()->getPropertyValue('class');
+                $item = new $item_class($item_definition, $this);
+                $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
+                $item->loadFromData($item_data_window);
             }
             catch (DataException $e) {
                 $this->notice($e->getMessage());

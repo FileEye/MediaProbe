@@ -18,17 +18,8 @@ class Index extends ListBase
     /**
      * Validates the list against the specification.
      */
-    protected function validate(DataElement $data_element, int $offset, int $size): void
+    protected function validate(DataElement $data_element): void
     {
-        $o = $offset;
-
-        $this->debug("{domnode}:{name} with {tags} entries, size {size}", [
-            'domnode' => $this->getCollection()->getPropertyValue('DOMNode'),
-            'name' => $this->getAttribute('name'),
-            'tags' => $this->getDefinition()->getValuesCount(),
-            'size' => $this->getDefinition()->getSize(),
-        ]);
-
         // Warn if format is not as expected.
         $expected_format = $this->getCollection()->getPropertyValue('format');
         if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
@@ -46,18 +37,10 @@ class Index extends ListBase
         // entry representing the entire size of the index (included the entry
         // itself). This should match the size determined in the parent IFD.
         if ($this->getCollection()->getPropertyValue('hasIndexSize')) {
-            $index_size = $this->getValueFromData($data_element, $o, $this->getCollection()->getPropertyValue('format')[0])[0];
-            if ($index_size !== $size) {
-                $this->warning("{domnode}:{name} size mismatch between IFD and index header", [
-                    'domnode' => $this->getCollection()->getPropertyValue('DOMNode'),
-                    'name' => $this->getAttribute('name'),
-                ]);
-            }
-            else {
-                $this->debug("{domnode}:{name} size OK", [
-                    'domnode' => $this->getCollection()->getPropertyValue('DOMNode'),
-                    'name' => $this->getAttribute('name'),
-                ]);
+            $offset = 0;
+            $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0])[0];
+            if ($index_size !== $this->getDefinition()->getSize()) {
+                $this->warning("Size mismatch between IFD and index header");
             }
         }
     }
@@ -65,17 +48,19 @@ class Index extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
+    public function loadFromData(DataElement $data_element): void
     {
-        $this->validate($data_element, $offset, $size);
+        $this->debugBlockInfo($data_element);
+
+        $this->validate($data_element);
 
         // Loops through the index and loads the tags. If the 'hasIndexSize'
         // property is true, the first entry is a special case that is handled
         // by opening a 'rawData' node instead of a 'tag'.
-        $o = $offset;
+        $offset = 0;
         $index_components = $this->getDefinition()->getValuesCount();
         for ($i = 0; $i < $index_components; $i++) {
-            $item_definition = $this->getItemDefinitionFromData($i, $i, $data_element, $o);
+            $item_definition = $this->getItemDefinitionFromData($i, $i, $data_element, $offset);
 
             // Check if this tag should be skipped.
             if ($item_definition->getCollection()->getPropertyValue('skip')) {
@@ -83,14 +68,15 @@ class Index extends ListBase
                 continue;
             };
 
-            $value_components = $item_definition->getValuesCount();
-            $index_components -= ($value_components - 1);
+            $index_components -= ($item_definition->getValuesCount() - 1);
 
             // Adds the 'tag'.
-            $tag = new Tag($item_definition, $this); // xx todo open a rawData object in case
-            $entry_class = $item_definition->getEntryClass();
-            new $entry_class($tag, $this->getValueFromData($data_element, $o, $item_definition->getFormat(), $value_components));
-            $tag->valid = true;
+            $item_class = $item_definition->getCollection()->getPropertyValue('class');
+            $item = new $item_class($item_definition, $this);
+            $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
+            $item->loadFromData($item_data_window);
+
+            $offset += $item_definition->getSize();
         }
 
         $this->valid = true;
@@ -111,14 +97,11 @@ class Index extends ListBase
      * @param int $offset
      *            the offset within the data element where the count can be
      *            found.
-     * @param int $data_offset_shift
-     *            (Optional) if specified, an additional shift to the offset
-     *            where data can be found.
      *
      * @return \FileEye\MediaProbe\ItemDefinition
      *            the ItemDefinition object of the IFD item.
      */
-    protected function getItemDefinitionFromData(int $seq, $id, DataElement $data_element, int $offset, int $data_offset_shift = 0): ItemDefinition
+    protected function getItemDefinitionFromData(int $seq, $id, DataElement $data_element, int $offset): ItemDefinition
     {
         // In case the item is not found in the collection for the index,
         // we still load it as a 'tag'.
@@ -128,17 +111,7 @@ class Index extends ListBase
         ]);
         $item_format = $item_collection->getPropertyValue('format')[0] ?? $this->getFormat();
         $item_components = $item_collection->getPropertyValue('components') ?? 1;
-        $item_definition = new ItemDefinition($item_collection, $item_format, $item_components);
-
-        $this->debug("#{seq} id {id}/{hexid}, f {format}, data @{offset}", [
-            'seq' => $seq + 1,
-            'id' => $id,
-            'hexid' => '0x' . strtoupper(dechex($id)),
-            'format' => ItemFormat::getName($item_format),
-            'offset' => $data_element->getStart() + $offset,
-        ]);
-
-        return $item_definition;
+        return new ItemDefinition($item_collection, $item_format, $item_components, $offset, 0, $seq);
     }
 
     protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): array
@@ -198,8 +171,8 @@ class Index extends ListBase
     {
         $data_bytes = '';
 
-        // Only get the tags to be written. The index size, if present, is
-        // stored in a rawData node.
+        // Get the tags to be written. The index size, if present, is stored in
+        // a rawData node.
         foreach ($this->getMultipleElements('tag') as $tag => $sub_block) {
             $data_bytes .= $sub_block->toBytes($byte_order);
         }
@@ -222,11 +195,52 @@ class Index extends ListBase
     public function getComponents()
     {
         $components = 0;
-        foreach ($this->getMultipleElements('*') as $sub) {
+        foreach ($this->getMultipleElements('tag') as $sub) {
             $sub_size = ItemFormat::getSize($sub->getFormat()) * $sub->getComponents();
             // Components are in Shorts, $sub_size is in Bytes, so normalize.
             $components += $sub_size / 2;
         }
+        if ($this->getCollection()->getPropertyValue('hasIndexSize')) {
+            $components++;
+        }
         return $components;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0)
+    {
+        $msg = '#{seq} {node}:{name}';
+        $seq = $this->getDefinition()->getSequence() + 1;
+        if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
+            $seq = $parent_name . '.' . $seq;
+        }
+        $node = $this->DOMNode->nodeName;
+        $name = $this->getAttribute('name');
+        $item = $this->getAttribute('id');
+        if ($item ==! null) {
+            $msg .= ' ({item})';
+        }
+        if (is_numeric($item)) {
+            $item = $item . '/0x' . strtoupper(dechex($item));
+        }
+        if ($data_element instanceof DataWindow) {
+            $msg .= ' @{offset}, {tags} entries, f {format}, s {size}';
+            $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
+        } else {
+            $msg .= ' {tags} entries, format ?xxx, size {size}';
+        }
+        $this->debug($msg, [
+            'seq' => $seq,
+            'node' => $node,
+            'name' => $name,
+            'item' => $item,
+            'offset' => $offset ?? null,
+            'tags' => $this->getDefinition()->getValuesCount(),
+            'format' => ItemFormat::getName($this->getDefinition()->getFormat()),
+            'size' => $this->getDefinition()->getSize(),
+        ]);
+    }
+
 }

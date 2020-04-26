@@ -46,7 +46,7 @@ class Long extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getLong($item_definition->getDataOffset() + ($i * 4));
+            $args[] = $data_element->getLong($i * 4);
         }
         $this->setValue($args);
         return $this;

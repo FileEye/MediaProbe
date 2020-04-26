@@ -48,7 +48,7 @@ class Short extends NumberBase
     {
         $args = [];
         for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getShort($item_definition->getDataOffset() + ($i * 2));
+            $args[] = $data_element->getShort($i * 2);
         }
         $this->setValue($args);
         return $this;
