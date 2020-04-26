@@ -23,7 +23,7 @@ class MakerNote extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $xxx=0): void
+    public function parseData(DataElement $data_element): void
     {
         $size = $data_element->getSize();
         $offset = $this->getDefinition()->getDataOffset();
@@ -32,7 +32,7 @@ class MakerNote extends Ifd
         $header_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'appleHeader']), ItemFormat::BYTE, 14);
         $header_data_window = new DataWindow($data_element, $offset, 14);
         $header = new RawData($header_data_definition, $this);
-        $header->loadFromData($header_data_window);
+        $header->parseData($header_data_window);
 
         $offset += 14;
 
@@ -48,11 +48,11 @@ class MakerNote extends Ifd
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, TRUE)) {
-                    $item->loadFromData($data_element);
+                    $item->parseData($data_element);
                 }
                 else {
                     $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
-                    $item->loadFromData($item_data_window);
+                    $item->parseData($item_data_window);
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());

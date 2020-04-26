@@ -28,7 +28,7 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
@@ -97,7 +97,7 @@ class Jpeg extends BlockBase
 
             // Load the MediaProbe JPEG segment data.
             $data_window = new DataWindow($data_element, $offset, $segment_size);
-            $segment->loadFromData($data_window);
+            $segment->parseData($data_window);
             if (!$segment->isValid()) {
                 $valid = false;
             }

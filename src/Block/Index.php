@@ -48,7 +48,7 @@ class Index extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
@@ -74,7 +74,7 @@ class Index extends ListBase
             $item_class = $item_definition->getCollection()->getPropertyValue('class');
             $item = new $item_class($item_definition, $this);
             $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
-            $item->loadFromData($item_data_window);
+            $item->parseData($item_data_window);
 
             $offset += $item_definition->getSize();
         }

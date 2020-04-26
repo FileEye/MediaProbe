@@ -44,7 +44,7 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
@@ -64,7 +64,7 @@ class Tiff extends BlockBase
             $scan_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'scan']), ItemFormat::BYTE, $ifd_offset - 8);
             $scan_data_window = new DataWindow($data_element, 8, $ifd_offset - 8);
             $scan = new RawData($scan_definition, $this);
-            $scan->loadFromData($scan_data_window);
+            $scan->parseData($scan_data_window);
         }
 
         // Loops through IFDs. In fact we should only have IFD0 and IFD1.
@@ -84,7 +84,7 @@ class Tiff extends BlockBase
                 $ifd_tags_count = $data_element->getShort($ifd_offset);
                 $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
                 $ifd = new $ifd_class($ifd_item, $this);
-                $ifd->loadFromData($data_element);
+                $ifd->parseData($data_element);
 
                 // Offset to next IFD.
                 $ifd_offset = $data_element->getLong($ifd_offset + $ifd_tags_count * 12 + 2);

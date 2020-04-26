@@ -27,17 +27,13 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
-        $tiff_order = Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER));
-        if ($tiff_order !== null) {
-            $data_window = new DataWindow($data_element, strlen(self::EXIF_HEADER), $data_element->getSize() - strlen(self::EXIF_HEADER));
-            $tiff_collection = $this->getCollection()->getItemCollection('Tiff');
-            $tiff_class = $tiff_collection->getPropertyValue('class');
-            $tiff = new $tiff_class($tiff_collection, $this);
-            $tiff->loadFromData($data_window);
+        if (Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER) !== null) {
+            $tiff = $this->addItem('Tiff');
+            $tiff->parseData(new DataWindow($data_element, strlen(self::EXIF_HEADER), $data_element->getSize() - strlen(self::EXIF_HEADER)));
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.

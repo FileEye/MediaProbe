@@ -18,7 +18,7 @@ class AFInfoIndex extends Index
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 

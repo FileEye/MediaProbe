@@ -75,7 +75,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
@@ -84,7 +84,7 @@ class Tag extends BlockBase
         $class = $this->getDefinition()->getEntryClass();
         $entry = new $class($this);
         try {
-            $entry->loadFromData($data_element, 0, $data_element->getSize(), [], $this->getDefinition());
+            $entry->parseData($data_element, 0, $data_element->getSize(), [], $this->getDefinition());
         } catch (DataException $e) {
             $this->error($e->getMessage());
             $valid = false;

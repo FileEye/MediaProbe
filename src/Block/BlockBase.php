@@ -50,14 +50,24 @@ abstract class BlockBase extends ElementBase
     }
 
     /**
-     * Loads data into an element.
+     * Parse data into a MediaProbe block.
      *
      * @param DataElement $data_element
      *   The data element that will provide the data.
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+    }
+
+    /**
+     * @todo
+     */
+    public function addItem(string $collection_id): BlockBase
+    {
+        $collection = $this->getCollection()->getItemCollection($collection_id);
+        $class = $collection->getPropertyValue('class');
+        return new $class($collection, $this);
     }
 
     /**
