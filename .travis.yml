@@ -3,9 +3,9 @@ os: linux
 language: php
 
 php:
-  #- 7.2
+  - 7.2
   - 7.3
-  #- 7.4
+  - 7.4
 
 branches:
   except:
@@ -20,7 +20,7 @@ jobs:
 
 cache:
   directories:
-    - $FILEEYE_STAGING_DIR
+    # - $FILEEYE_STAGING_DIR
 
 before_install:
   # Remove XDebug.
@@ -53,7 +53,7 @@ script:
   - if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test
 
-  - php examples/dump-media.php -d test/image_files/broken_images/canon-eos-650d.jpg
+  #- php examples/dump-media.php -d -w test/image_files/broken_images/canon-eos-650d.jpg
   #- php examples/dump-media.php -d    test/image_files/broken_images/canon-eos-650d.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
   #- php examples/dump-media.php -d test/image_files/exiftool/Canon1DmkIII.jpg-rewrite.img
@@ -88,7 +88,7 @@ script:
   #- php examples/dump-media.php -d    test/image_files/test-tags-1.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/no-exif.jpg
   #- php examples/dump-media.php -d    test/image_files/no-exif.jpg-rewrite.img
-  - php examples/dump-media.php -d    test/image_files/sample-1.tiff
+  #- php examples/dump-media.php -d    test/image_files/sample-1.tiff
   #- php examples/dump-media.php -d test/image_files/broken_images/gh-11.jpg-rewrite.img
   #- php examples/dump-media.php -d test/image_files/camera_samples/olympus-c765uz.jpg
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/fujifilm_x_a5.jpg
