@@ -23,7 +23,7 @@ class JpegSegmentSos extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
@@ -47,7 +47,7 @@ class JpegSegmentSos extends JpegSegmentBase
         $eoi_class = $eoi_collection->getPropertyValue('class');
         $eoi = new $eoi_class($eoi_collection, $this->getParentElement());
         $eoi_data_window = new DataWindow($data_element, $end_offset, 2);
-        $eoi->loadFromData($eoi_data_window);
+        $eoi->parseData($eoi_data_window);
         $end_offset += $eoi_data_window->getSize();
 
         // Now check to see if there are any trailing data.
@@ -59,7 +59,7 @@ class JpegSegmentSos extends JpegSegmentBase
             $trail_definition = new ItemDefinition(Collection::get('RawData'), ItemFormat::BYTE, $raw_size);
             $trail_data_window = new DataWindow($data_element, $end_offset, $raw_size);
             $trail = new RawData($trail_definition, $this->getParentElement());
-            $trail->loadFromData($trail_data_window);
+            $trail->parseData($trail_data_window);
         }
 
         $this->valid = true;

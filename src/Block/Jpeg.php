@@ -28,11 +28,11 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
-        $valid = true;
+        $this->valid = true;
 
         // JPEG data is stored in big-endian format.
         $data_element->setByteOrder(ConvertBytes::BIG_ENDIAN);
@@ -65,12 +65,8 @@ class Jpeg extends BlockBase
                 ]);
             }
 
-            // Create the MediaProbe JPEG segment object.
+            // Get the JPEG segment size.
             $segment_collection = $this->getCollection()->getItemCollection($segment_id);
-            $segment_class = $segment_collection->getPropertyValue('class');
-            $segment = new $segment_class($segment_collection, $this);
-
-            // Get the JPEG segment DataWindow.
             switch ($segment_collection->getPropertyValue('payload')) {
                 case 'none':
                     // The data window size is the JPEG delimiter byte and the
@@ -96,23 +92,24 @@ class Jpeg extends BlockBase
             }
 
             // Load the MediaProbe JPEG segment data.
-            $data_window = new DataWindow($data_element, $offset, $segment_size);
-            $segment->loadFromData($data_window);
+            $segment = $this->addItem($segment_id);
+            $segment_data_window = new DataWindow($data_element, $offset, $segment_size);
+            $segment->parseData($segment_data_window);
+
+            // Fail JPEG validity if the segment is invalid.
             if (!$segment->isValid()) {
-                $valid = false;
+                $this->valid = false;
             }
 
             // Position to end of the segment.
-            $offset += $data_window->getSize();
+            $offset += $segment_data_window->getSize();
         }
 
         // Fail if EOI is missing.
         if (!$this->getElement("jpegSegment[@name='EOI']")) {
             $this->error('Missing EOI (End Of Image) JPEG marker');
-            $valid = false;
+            $this->valid = false;
         }
-
-        $this->valid = $valid;
     }
 
     /**

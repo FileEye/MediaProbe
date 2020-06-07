@@ -23,7 +23,7 @@ class Map extends Index
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
@@ -32,7 +32,7 @@ class Map extends Index
         // Load the map as a raw data block.
         $map_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']), ItemFormat::BYTE);
         $map = new RawData($map_data_definition, $this);
-        $map->loadFromData($data_element);
+        $map->parseData($data_element);
 
         $i = 0;
         $offset = 0;
@@ -52,7 +52,7 @@ class Map extends Index
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
                 $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
-                $item->loadFromData($item_data_window);
+                $item->parseData($item_data_window);
             }
             catch (DataException $e) {
                 $this->notice($e->getMessage());

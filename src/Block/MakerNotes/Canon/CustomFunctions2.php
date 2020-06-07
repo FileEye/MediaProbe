@@ -24,7 +24,7 @@ class CustomFunctions2 extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0): void
+    public function parseData(DataElement $data_element, int $offset = 0): void
     {
         $valid = true;
 
@@ -51,7 +51,7 @@ class CustomFunctions2 extends ListBase
               $class = $item_definition->getCollection()->getPropertyValue('class');
               $tag = new $class($item_definition, $this);
               $tag_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
-              $tag->loadFromData($tag_data_window);
+              $tag->parseData($tag_data_window);
           } catch (DataException $e) {
               $tag->error($e->getMessage());
               $valid = false;

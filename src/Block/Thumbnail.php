@@ -12,10 +12,7 @@ class Thumbnail extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, int $offset = 0, $size = null): void
+    public function parseData(DataElement $data_element): void
     {
-        if ($size === null) {
-            $size = $data_element->getSize();
-        }
     }
 }

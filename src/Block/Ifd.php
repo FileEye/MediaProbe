@@ -25,7 +25,7 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $xxx=0): void
+    public function parseData(DataElement $data_element, $xxx=0): void
     {
         $valid = true;
 
@@ -43,7 +43,7 @@ class Ifd extends ListBase
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, TRUE)) {
-                    $item->loadFromData($data_element);
+                    $item->parseData($data_element);
                 }
                 else {
                     // In case of an IFD terminator item entry, i.e. zero
@@ -51,7 +51,7 @@ class Ifd extends ListBase
                     // the IFD index area.
                     $item_data_window_size = $item_definition->getValuesCount() > 0 ? $item_definition->getSize() : 4;
                     $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_data_window_size);
-                    $item->loadFromData($item_data_window);
+                    $item->parseData($item_data_window);
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
@@ -371,7 +371,7 @@ class Ifd extends ListBase
         $ifd->setAttribute('id', 37500);
         $ifd->setAttribute('name', $maker_note_ifd_name);
         $data = new DataWindow($d, $maker_note_tag->getElement("entry")->getValue()[1]);
-        $ifd->loadFromData($data, -$maker_note_tag->getElement("entry")->getValue()[1]);
+        $ifd->parseData($data, -$maker_note_tag->getElement("entry")->getValue()[1]);
 
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");

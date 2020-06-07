@@ -14,6 +14,7 @@ use FileEye\MediaProbe\MediaProbe;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -38,6 +39,12 @@ class DumpCommand extends Command
                 InputArgument::REQUIRED,
                 'Path to the media file'
             )
+            ->addOption(
+                'exiftool',
+                null,
+                InputOption::VALUE_NONE,
+                'Dump via exiftool.'
+            )
         ;
     }
 
@@ -59,26 +66,28 @@ class DumpCommand extends Command
             $yaml = $this->fileToDump($file);
             $fs->dumpFile((string) $file . '.dump.yml', $yaml);
 
-            // Dump via Exiftool.
-/*            $output->write('2');
-            $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D']);
-            try {
-              $process->run();
-              $fs->dumpFile((string) $file . '.dump.exiftool.xml', $process->getOutput());
-            }
-            catch (\Exception $e) {
-              $output->write(' error: ' . $e->getMessage());
-            }
+            if ($input->getOption('exiftool')) {
+                // Dump via Exiftool.
+                $output->write('2');
+                $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D']);
+                try {
+                  $process->run();
+                  $fs->dumpFile((string) $file . '.dump.exiftool.xml', $process->getOutput());
+                }
+                catch (\Exception $e) {
+                  $output->write(' error: ' . $e->getMessage());
+                }
 
-            $output->write('3');
-            $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D', '-n']);
-            try {
-              $process->run();
-              $fs->dumpFile((string) $file . '.dump.exiftool_raw.xml', $process->getOutput());
+                $output->write('3');
+                $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D', '-n']);
+                try {
+                  $process->run();
+                  $fs->dumpFile((string) $file . '.dump.exiftool_raw.xml', $process->getOutput());
+                }
+                catch (\Exception $e) {
+                  $output->write(' error: ' . $e->getMessage());
+                }
             }
-            catch (\Exception $e) {
-              $output->write(' error: ' . $e->getMessage());
-            }*/
 
             $output->writeln(' done.');
         }

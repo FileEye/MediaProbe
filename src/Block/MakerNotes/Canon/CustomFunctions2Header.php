@@ -25,7 +25,7 @@ class CustomFunctions2Header extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element): void
+    public function parseData(DataElement $data_element): void
     {
         $this->debugBlockInfo($data_element);
 
@@ -71,7 +71,7 @@ class CustomFunctions2Header extends ListBase
                 $item_definition = new ItemDefinition($this->getCollection()->getItemCollection($rec_num), ItemFormat::SIGNED_LONG, $rec_count);
                 $class = $item_definition->getCollection()->getPropertyValue('class');
                 $group = new $class($item_definition, $this);
-                $group->loadFromData($data_element, $pos, $rec_len);
+                $group->parseData($data_element, $pos, $rec_len);
             } catch (\Exception $e) {
                 $this->valid = false;
                 $this->error($e->getMessage());

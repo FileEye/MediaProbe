@@ -31,7 +31,7 @@ class GH21Test extends MediaProbeTestCaseBase
         $input_media = Media::createFromFile($this->file);
         $input_jpeg = $input_media->getElement("jpeg");
         $input_exif = $input_jpeg->getElement("jpegSegment/exif");
-        
+
         $original = ImageCreateFromString($input_jpeg->toBytes());
         $original_w = ImagesX($original);
         $original_h = ImagesY($original);
@@ -71,7 +71,7 @@ class GH21Test extends MediaProbeTestCaseBase
         $exif_data = $input_exif->toBytes();
         $data_string = new DataString($exif_data);
         $data_string->setByteOrder(ConvertBytes::BIG_ENDIAN);
-        $exif_block->loadFromData($data_string, 0, strlen($exif_data));
+        $exif_block->parseData($data_string);
 
         $out_media->saveToFile($this->file);
 
