@@ -63,8 +63,7 @@ class DumpCommand extends Command
 
             // Dump via MediaProbe.
             $output->write('1');
-            $yaml = $this->fileToDump($file);
-            $fs->dumpFile((string) $file . '.dump.yml', $yaml);
+            $yaml = $this->fileToTestDumpArray($file);
 
             if ($input->getOption('exiftool')) {
                 // Dump via Exiftool.
@@ -72,7 +71,7 @@ class DumpCommand extends Command
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D']);
                 try {
                   $process->run();
-                  $fs->dumpFile((string) $file . '.dump.exiftool.xml', $process->getOutput());
+                  $yaml['exiftool'] = $process->getOutput();
                 }
                 catch (\Exception $e) {
                   $output->write(' error: ' . $e->getMessage());
@@ -82,20 +81,21 @@ class DumpCommand extends Command
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D', '-n']);
                 try {
                   $process->run();
-                  $fs->dumpFile((string) $file . '.dump.exiftool_raw.xml', $process->getOutput());
+                  $yaml['exiftool_raw'] = $process->getOutput();
                 }
                 catch (\Exception $e) {
                   $output->write(' error: ' . $e->getMessage());
                 }
             }
 
+            $fs->dumpFile((string) $file . '.test-dump.yml', Yaml::dump($yaml, 40));
             $output->writeln(' done.');
         }
 
         return(0);
     }
 
-    protected function fileToDump($file)
+    protected function fileToTestDumpArray($file): array
     {
         $yaml = [];
 
@@ -103,8 +103,6 @@ class DumpCommand extends Command
         $yaml['fileName'] = $file->getBaseName();
         $yaml['mimeType'] = $media->getMimeType();
         $yaml['fileContentHash'] = hash('sha256', $file->getContents());
-        $yaml['gdInfo'] = @getimagesize((string) $file);
-        $yaml['exifReadData'] = @exif_read_data((string) $file);
         $yaml['elements'] = $media->toDumpArray();
         $yaml['log'] = [];
         foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
@@ -115,12 +113,13 @@ class DumpCommand extends Command
                 ];
             }
         }
+        $yaml['gdInfo'] = @getimagesize((string) $file);
+        $yaml['exifReadData'] = @exif_read_data((string) $file);
 
-        // Cleanup garbage explicitly, otherwise we may incur in memory
-        // issues.
+        // Cleanup garbage explicitly, otherwise we may incur in memory issues.
         $media = null;
         gc_collect_cycles();
 
-        return Yaml::dump($yaml, 40);
+        return $yaml;
     }
 }
