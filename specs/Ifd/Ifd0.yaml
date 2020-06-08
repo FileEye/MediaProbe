@@ -210,6 +210,8 @@ items:
                 writable: true
                 desc: 'Image Description'
     271:
+        exifReadData:
+            key: Make
         exiftool:
             -
                 name: Make
@@ -218,6 +220,8 @@ items:
                 g2: Camera
                 desc: Make
     272:
+        exifReadData:
+            key: Model
         exiftool:
             -
                 name: Model
@@ -297,6 +301,8 @@ items:
                 desc: 'Max Sample Value'
     282:
         components: 1
+        exifReadData:
+            key: XResolution
         exiftool:
             -
                 name: XResolution
@@ -305,6 +311,8 @@ items:
                 desc: 'X Resolution'
     283:
         components: 1
+        exifReadData:
+            key: YResolution
         exiftool:
             -
                 name: YResolution
