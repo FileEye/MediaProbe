@@ -19,6 +19,7 @@ items:
                 type: int8u
                 count: 4
                 writable: true
+                DOMNode: 'GPS:GPSVersionID'
                 desc: 'GPS Version ID'
     -
         exifReadData:
@@ -29,6 +30,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSLatitudeRef'
                 desc: 'GPS Latitude Ref'
                 values:
                     'N': North
@@ -43,6 +45,7 @@ items:
                 type: rational64u
                 count: 3
                 writable: true
+                DOMNode: 'GPS:GPSLatitude'
                 desc: 'GPS Latitude'
     -
         exifReadData:
@@ -53,6 +56,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSLongitudeRef'
                 desc: 'GPS Longitude Ref'
                 values:
                     E: East
@@ -67,6 +71,7 @@ items:
                 type: rational64u
                 count: 3
                 writable: true
+                DOMNode: 'GPS:GPSLongitude'
                 desc: 'GPS Longitude'
     -
         components: 1
@@ -77,6 +82,7 @@ items:
                 name: GPSAltitudeRef
                 type: int8u
                 writable: true
+                DOMNode: 'GPS:GPSAltitudeRef'
                 desc: 'GPS Altitude Ref'
                 values:
                     - 'Above Sea Level'
@@ -90,6 +96,7 @@ items:
                 name: GPSAltitude
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSAltitude'
                 desc: 'GPS Altitude'
     -
         exifReadData:
@@ -101,6 +108,7 @@ items:
                 count: 3
                 writable: true
                 g2: Time
+                DOMNode: 'GPS:GPSTimeStamp'
                 desc: 'GPS Time Stamp'
     -
         exifReadData:
@@ -110,6 +118,7 @@ items:
                 name: GPSSatellites
                 type: string
                 writable: true
+                DOMNode: 'GPS:GPSSatellites'
                 desc: 'GPS Satellites'
     -
         exifReadData:
@@ -120,6 +129,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSStatus'
                 desc: 'GPS Status'
                 values:
                     A: 'Measurement Active'
@@ -133,6 +143,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSMeasureMode'
                 desc: 'GPS Measure Mode'
                 values:
                     2: '2-Dimensional Measurement'
@@ -146,6 +157,7 @@ items:
                 name: GPSDOP
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSDOP'
                 desc: 'GPS Dilution Of Precision'
     -
         exifReadData:
@@ -156,6 +168,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSSpeedRef'
                 desc: 'GPS Speed Ref'
                 values:
                     K: km/h
@@ -169,6 +182,7 @@ items:
                 name: GPSSpeed
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSSpeed'
                 desc: 'GPS Speed'
     -
         exifReadData:
@@ -179,6 +193,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSTrackRef'
                 desc: 'GPS Track Ref'
                 values:
                     M: 'Magnetic North'
@@ -192,6 +207,7 @@ items:
                 name: GPSTrack
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSTrack'
                 desc: 'GPS Track'
     -
         exifReadData:
@@ -202,6 +218,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSImgDirectionRef'
                 desc: 'GPS Img Direction Ref'
                 values:
                     M: 'Magnetic North'
@@ -215,6 +232,7 @@ items:
                 name: GPSImgDirection
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSImgDirection'
                 desc: 'GPS Img Direction'
     -
         exifReadData:
@@ -224,6 +242,7 @@ items:
                 name: GPSMapDatum
                 type: string
                 writable: true
+                DOMNode: 'GPS:GPSMapDatum'
                 desc: 'GPS Map Datum'
     -
         exifReadData:
@@ -234,6 +253,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSDestLatitudeRef'
                 desc: 'GPS Dest Latitude Ref'
                 values:
                     'N': North
@@ -247,6 +267,7 @@ items:
                 type: rational64u
                 count: 3
                 writable: true
+                DOMNode: 'GPS:GPSDestLatitude'
                 desc: 'GPS Dest Latitude'
     -
         exifReadData:
@@ -257,6 +278,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSDestLongitudeRef'
                 desc: 'GPS Dest Longitude Ref'
                 values:
                     E: East
@@ -270,6 +292,7 @@ items:
                 type: rational64u
                 count: 3
                 writable: true
+                DOMNode: 'GPS:GPSDestLongitude'
                 desc: 'GPS Dest Longitude'
     -
         exifReadData:
@@ -280,6 +303,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSDestBearingRef'
                 desc: 'GPS Dest Bearing Ref'
                 values:
                     M: 'Magnetic North'
@@ -293,6 +317,7 @@ items:
                 name: GPSDestBearing
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSDestBearing'
                 desc: 'GPS Dest Bearing'
     -
         exifReadData:
@@ -303,6 +328,7 @@ items:
                 type: string
                 count: 2
                 writable: true
+                DOMNode: 'GPS:GPSDestDistanceRef'
                 desc: 'GPS Dest Distance Ref'
                 values:
                     K: Kilometers
@@ -317,6 +343,7 @@ items:
                 name: GPSDestDistance
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSDestDistance'
                 desc: 'GPS Dest Distance'
     -
         exifReadData:
@@ -326,6 +353,7 @@ items:
                 name: GPSProcessingMethod
                 type: undef
                 writable: true
+                DOMNode: 'GPS:GPSProcessingMethod'
                 desc: 'GPS Processing Method'
     -
         exifReadData:
@@ -335,6 +363,7 @@ items:
                 name: GPSAreaInformation
                 type: undef
                 writable: true
+                DOMNode: 'GPS:GPSAreaInformation'
                 desc: 'GPS Area Information'
     -
         exifReadData:
@@ -346,6 +375,7 @@ items:
                 count: 11
                 writable: true
                 g2: Time
+                DOMNode: 'GPS:GPSDateStamp'
                 desc: 'GPS Date Stamp'
     -
         components: 1
@@ -356,6 +386,7 @@ items:
                 name: GPSDifferential
                 type: int16u
                 writable: true
+                DOMNode: 'GPS:GPSDifferential'
                 desc: 'GPS Differential'
                 values:
                     - 'No Correction'
@@ -366,4 +397,5 @@ items:
                 name: GPSHPositioningError
                 type: rational64u
                 writable: true
+                DOMNode: 'GPS:GPSHPositioningError'
                 desc: 'GPS Horizontal Positioning Error'

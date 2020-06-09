@@ -21,6 +21,7 @@ items:
                 type: string
                 writable: true
                 g1: InteropIFD
+                DOMNode: 'InteropIFD:InteropIndex'
                 desc: 'Interoperability Index'
                 values:
                     R03: 'R03 - DCF option file (Adobe RGB)'
@@ -37,6 +38,7 @@ items:
                 type: undef
                 writable: true
                 g1: InteropIFD
+                DOMNode: 'InteropIFD:InteropVersion'
                 desc: 'Interoperability Version'
     4096:
         exifReadData:
@@ -47,6 +49,7 @@ items:
                 type: string
                 writable: true
                 g1: InteropIFD
+                DOMNode: 'InteropIFD:RelatedImageFileFormat'
                 desc: 'Related Image File Format'
     4097:
         components: 1
@@ -58,6 +61,7 @@ items:
                 type: int16u
                 writable: true
                 g1: InteropIFD
+                DOMNode: 'InteropIFD:RelatedImageWidth'
                 desc: 'Related Image Width'
     4098:
         alias:
@@ -71,4 +75,5 @@ items:
                 type: int16u
                 writable: true
                 g1: InteropIFD
+                DOMNode: 'InteropIFD:RelatedImageHeight'
                 desc: 'Related Image Height'
