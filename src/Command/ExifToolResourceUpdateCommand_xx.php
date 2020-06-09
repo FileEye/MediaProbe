@@ -72,7 +72,7 @@ class ExifToolResourceUpdateCommand extends Command
         }
 */
         // Build Canon maker notes specs.
-/*        foreach ($this->exiftoolXml->xpath("//table[@g0='MakerNotes' and @g1='CanonCustom']") as $table) {
+        foreach ($this->exiftoolXml->xpath("//table[@g0='MakerNotes' and @g1='CanonCustom']") as $table) {
             $name = (string) $table->attributes()->name;
             [$a, $b] = explode('::', $name);
             $directory = 'MakerNotes' . DIRECTORY_SEPARATOR . $a;

@@ -1,9 +1,12 @@
 collection: Ifd\Exif
 name: ExifIFD
-title: 'IFD Exif'
+title: 'Exif IFD'
 class: FileEye\MediaProbe\Block\Ifd
 DOMNode: ifd
 defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''Exif::Main'']/tag[@g1=''ExifIFD'']'
 items:
     273:
         exiftool:

@@ -1,16 +1,19 @@
 collection: Ifd\Interoperability
-name: Interoperability
-title: 'IFD Interoperability'
+name: InteropIFD
+title: 'Interoperability IFD'
 class: FileEye\MediaProbe\Block\Ifd
 DOMNode: ifd
 alias:
     - Interop
 defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''Exif::Main'']/tag[@g1=''InteropIFD'']'
 items:
     1:
-        alias:
-            - InteroperabilityIndex
         components: 4
+        exifReadData:
+            key: InterOperabilityIndex
         exiftool:
             -
                 name: InteropIndex
@@ -23,10 +26,10 @@ items:
                     R98: 'R98 - DCF basic file (sRGB)'
                     THM: 'THM - DCF thumbnail file'
     2:
-        alias:
-            - InteroperabilityVersion
         components: 4
         entryClass: FileEye\MediaProbe\Entry\Version
+        exifReadData:
+            key: InterOperabilityVersion
         exiftool:
             -
                 name: InteropVersion
@@ -35,6 +38,8 @@ items:
                 g1: InteropIFD
                 desc: 'Interoperability Version'
     4096:
+        exifReadData:
+            key: RelatedFileFormat
         exiftool:
             -
                 name: RelatedImageFileFormat
@@ -44,6 +49,8 @@ items:
                 desc: 'Related Image File Format'
     4097:
         components: 1
+        exifReadData:
+            key: RelatedImageWidth
         exiftool:
             -
                 name: RelatedImageWidth
@@ -55,6 +62,8 @@ items:
         alias:
             - RelatedImageLength
         components: 1
+        exifReadData:
+            key: RelatedImageHeight
         exiftool:
             -
                 name: RelatedImageHeight

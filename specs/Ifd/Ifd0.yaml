@@ -10,6 +10,9 @@ alias:
 postLoad:
     - 'FileEye\MediaProbe\Block\Ifd::thumbnailToBlock'
     - 'FileEye\MediaProbe\Block\Ifd::makerNoteToBlock'
+compiler:
+    exiftool:
+        xpath: '//table[@name=''Exif::Main'']/tag[not(@g1)]'
 items:
     11:
         exiftool:

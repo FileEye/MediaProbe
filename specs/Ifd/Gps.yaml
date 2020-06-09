@@ -1,12 +1,17 @@
 collection: Ifd\Gps
 name: GPS
-title: 'IFD GPS'
+title: 'GPS IFD'
 class: FileEye\MediaProbe\Block\Ifd
 DOMNode: ifd
 defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''GPS::Main'']/tag'
 items:
     -
         entryClass: FileEye\MediaProbe\Entry\GPSVersionId
+        exifReadData:
+            key: GPSVersion
         exiftool:
             -
                 name: GPSVersionID
@@ -15,6 +20,8 @@ items:
                 writable: true
                 desc: 'GPS Version ID'
     -
+        exifReadData:
+            key: GPSLatitudeRef
         exiftool:
             -
                 name: GPSLatitudeRef
@@ -27,6 +34,8 @@ items:
                     S: South
     -
         entryClass: FileEye\MediaProbe\Entry\GPSDegrees
+        exifReadData:
+            key: GPSLatitude
         exiftool:
             -
                 name: GPSLatitude
@@ -35,6 +44,8 @@ items:
                 writable: true
                 desc: 'GPS Latitude'
     -
+        exifReadData:
+            key: GPSLongitudeRef
         exiftool:
             -
                 name: GPSLongitudeRef
@@ -47,6 +58,8 @@ items:
                     W: West
     -
         entryClass: FileEye\MediaProbe\Entry\GPSDegrees
+        exifReadData:
+            key: GPSLongitude
         exiftool:
             -
                 name: GPSLongitude
@@ -56,6 +69,8 @@ items:
                 desc: 'GPS Longitude'
     -
         components: 1
+        exifReadData:
+            key: GPSAltitudeRef
         exiftool:
             -
                 name: GPSAltitudeRef
@@ -67,6 +82,8 @@ items:
                     - 'Below Sea Level'
     -
         components: 1
+        exifReadData:
+            key: GPSAltitude
         exiftool:
             -
                 name: GPSAltitude
@@ -74,6 +91,8 @@ items:
                 writable: true
                 desc: 'GPS Altitude'
     -
+        exifReadData:
+            key: GPSTimeStamp
         exiftool:
             -
                 name: GPSTimeStamp
@@ -83,6 +102,8 @@ items:
                 g2: Time
                 desc: 'GPS Time Stamp'
     -
+        exifReadData:
+            key: GPSSatellites
         exiftool:
             -
                 name: GPSSatellites
@@ -90,6 +111,8 @@ items:
                 writable: true
                 desc: 'GPS Satellites'
     -
+        exifReadData:
+            key: GPSStatus
         exiftool:
             -
                 name: GPSStatus
@@ -101,6 +124,8 @@ items:
                     A: 'Measurement Active'
                     V: 'Measurement Void'
     -
+        exifReadData:
+            key: GPSMeasureMode
         exiftool:
             -
                 name: GPSMeasureMode
@@ -113,6 +138,8 @@ items:
                     3: '3-Dimensional Measurement'
     -
         components: 1
+        exifReadData:
+            key: GPSDOP
         exiftool:
             -
                 name: GPSDOP
@@ -120,6 +147,8 @@ items:
                 writable: true
                 desc: 'GPS Dilution Of Precision'
     -
+        exifReadData:
+            key: GPSSpeedRef
         exiftool:
             -
                 name: GPSSpeedRef
@@ -132,6 +161,8 @@ items:
                     M: mph
                     'N': knots
     -
+        exifReadData:
+            key: GPSSpeed
         exiftool:
             -
                 name: GPSSpeed
@@ -139,6 +170,8 @@ items:
                 writable: true
                 desc: 'GPS Speed'
     -
+        exifReadData:
+            key: GPSTrackRef
         exiftool:
             -
                 name: GPSTrackRef
@@ -151,6 +184,8 @@ items:
                     T: 'True North'
     -
         components: 1
+        exifReadData:
+            key: GPSTrack
         exiftool:
             -
                 name: GPSTrack
@@ -158,6 +193,8 @@ items:
                 writable: true
                 desc: 'GPS Track'
     -
+        exifReadData:
+            key: GPSImgDirectionRef
         exiftool:
             -
                 name: GPSImgDirectionRef
@@ -170,6 +207,8 @@ items:
                     T: 'True North'
     -
         components: 1
+        exifReadData:
+            key: GPSImgDirection
         exiftool:
             -
                 name: GPSImgDirection
@@ -177,6 +216,8 @@ items:
                 writable: true
                 desc: 'GPS Img Direction'
     -
+        exifReadData:
+            key: GPSMapDatum
         exiftool:
             -
                 name: GPSMapDatum
@@ -184,6 +225,8 @@ items:
                 writable: true
                 desc: 'GPS Map Datum'
     -
+        exifReadData:
+            key: GPSDestLatitudeRef
         exiftool:
             -
                 name: GPSDestLatitudeRef
@@ -195,6 +238,8 @@ items:
                     'N': North
                     S: South
     -
+        exifReadData:
+            key: GPSDestLatitude
         exiftool:
             -
                 name: GPSDestLatitude
@@ -203,6 +248,8 @@ items:
                 writable: true
                 desc: 'GPS Dest Latitude'
     -
+        exifReadData:
+            key: GPSDestLongitudeRef
         exiftool:
             -
                 name: GPSDestLongitudeRef
@@ -214,6 +261,8 @@ items:
                     E: East
                     W: West
     -
+        exifReadData:
+            key: GPSDestLongitude
         exiftool:
             -
                 name: GPSDestLongitude
@@ -222,6 +271,8 @@ items:
                 writable: true
                 desc: 'GPS Dest Longitude'
     -
+        exifReadData:
+            key: GPSDestBearingRef
         exiftool:
             -
                 name: GPSDestBearingRef
@@ -234,6 +285,8 @@ items:
                     T: 'True North'
     -
         components: 1
+        exifReadData:
+            key: GPSDestBearing
         exiftool:
             -
                 name: GPSDestBearing
@@ -241,6 +294,8 @@ items:
                 writable: true
                 desc: 'GPS Dest Bearing'
     -
+        exifReadData:
+            key: GPSDestDistanceRef
         exiftool:
             -
                 name: GPSDestDistanceRef
@@ -254,6 +309,8 @@ items:
                     'N': 'Nautical Miles'
     -
         components: 1
+        exifReadData:
+            key: GPSDestDistance
         exiftool:
             -
                 name: GPSDestDistance
@@ -261,6 +318,8 @@ items:
                 writable: true
                 desc: 'GPS Dest Distance'
     -
+        exifReadData:
+            key: GPSProcessingMode
         exiftool:
             -
                 name: GPSProcessingMethod
@@ -268,6 +327,8 @@ items:
                 writable: true
                 desc: 'GPS Processing Method'
     -
+        exifReadData:
+            key: GPSAreaInformation
         exiftool:
             -
                 name: GPSAreaInformation
@@ -275,6 +336,8 @@ items:
                 writable: true
                 desc: 'GPS Area Information'
     -
+        exifReadData:
+            key: GPSDateStamp
         exiftool:
             -
                 name: GPSDateStamp
@@ -285,6 +348,8 @@ items:
                 desc: 'GPS Date Stamp'
     -
         components: 1
+        exifReadData:
+            key: GPSDifferential
         exiftool:
             -
                 name: GPSDifferential
