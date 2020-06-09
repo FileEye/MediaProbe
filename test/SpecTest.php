@@ -3,14 +3,16 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Ifd;
-use FileEye\MediaProbe\ItemFormat;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Entry\ExifUserComment;
+use FileEye\MediaProbe\Entry\Time;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
-use FileEye\MediaProbe\Collection;
 
 /**
  * Test the Spec class.
@@ -64,7 +66,7 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals([ItemFormat::SHORT, ItemFormat::LONG], $ifd_exif->getCollection()->getItemCollection(0xA002)->getPropertyValue('format'));
 
         // Check getTagTitle.
-        $this->assertEquals('IFD Exif', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('title'));
+        $this->assertEquals('Exif IFD', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('title'));
         $this->assertEquals('Exposure Time', $ifd_exif->getCollection()->getItemCollection(0x829A)->getPropertyValue('title'));
         $this->assertEquals('Compression', $ifd_0->getCollection()->getItemCollection(0x0103)->getPropertyValue('title'));
     }
@@ -74,9 +76,8 @@ class SpecTest extends MediaProbeTestCaseBase
      */
     public function testGetEntryClass()
     {
-        //@todo change below to xxxx::class once PHP 5.4 support is removed.
-        $this->assertEquals('FileEye\MediaProbe\Entry\ExifUserComment', Collection::get('Ifd\Exif')->getItemCollection(0x9286)->getPropertyValue('entryClass'));
-        $this->assertEquals('FileEye\MediaProbe\Entry\Time', Collection::get('Ifd\Exif')->getItemCollection(0x9003)->getPropertyValue('entryClass'));
+        $this->assertEquals(ExifUserComment::class, Collection::get('Ifd\Exif')->getItemCollection(0x9286)->getPropertyValue('entryClass'));
+        $this->assertEquals(Time::class, Collection::get('Ifd\Exif')->getItemCollection(0x9003)->getPropertyValue('entryClass'));
         $this->assertNull(Collection::get('MakerNotes\\Canon\\CameraSettings')->getItemCollection(0)->getPropertyValue('entryClass'));
     }
 
