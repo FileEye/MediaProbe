@@ -67,11 +67,14 @@ class Rational extends Long
      */
     protected function formatNumber($number, array $options = [])
     {
-        return $number[0] . '/' . $number[1];
-/*        if ($number[1] === 0) {
+        if (($options['format'] ?? null) === 'phpExif') {
             return $number[0] . '/' . $number[1];
         } else {
-            return $number[0] / $number[1];
-        }*/
+            if ($number[1] === 0) {
+                return $number[0] . '/' . $number[1];
+            } else {
+                return $number[0] / $number[1];
+            }
+        }
     }
 }

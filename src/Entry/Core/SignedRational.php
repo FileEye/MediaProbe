@@ -68,16 +68,19 @@ class SignedRational extends SignedLong
      */
     protected function formatNumber($number, array $options = [])
     {
-        if ($number[1] < 0) {
-            // Turn output like 1/-2 into -1/2.
-            return (- $number[0]) . '/' . (- $number[1]);
+        if (($options['format'] ?? null) === 'phpExif') {
+            if ($number[1] < 0) {
+                // Turn output like 1/-2 into -1/2.
+                return (- $number[0]) . '/' . (- $number[1]);
+            } else {
+                return $number[0] . '/' . $number[1];
+            }
         } else {
-            return $number[0] . '/' . $number[1];
+            if ($number[1] === 0) {
+                return $number[0] . '/' . $number[1];
+            } else {
+                return $number[0] / $number[1];
+            }
         }
-/*        if ($number[1] === 0) {
-            return $number[0] . '/' . $number[1];
-        } else {
-            return $number[0] / $number[1];
-        }*/
     }
 }
