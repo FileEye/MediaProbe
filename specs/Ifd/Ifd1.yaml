@@ -11,7 +11,7 @@ postLoad:
     - 'FileEye\MediaProbe\Block\Ifd::thumbnailToBlock'
 compiler:
     exiftool:
-        itemPrefix: IFD1
+        g1Default: IFD1
         xpath: '//table[@name=''Exif::Main'']/tag[not(@g1) or @g1=''IFD1'']'
 items:
     11:

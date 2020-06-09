@@ -166,7 +166,7 @@ class ExifToolResourceUpdateCommand extends Command
               }
 
               // Set exiftool item DOM node name.
-              if ($spec['compiler']['exiftool']['itemPrefix'] === '') {
+              if ($spec['compiler']['exiftool']['g1Default'] === '') {
                   if ($exiftool_tag->attributes()->g1) {
                       $prefix = (string) $exiftool_tag->attributes()->g1;
                   }
@@ -175,7 +175,7 @@ class ExifToolResourceUpdateCommand extends Command
                   }
               }
               else {
-                  $prefix = $spec['compiler']['exiftool']['itemPrefix'];
+                  $prefix = $spec['compiler']['exiftool']['g1Default'];
               }
               $spec['items'][$id]['exiftool'][$index]['DOMNode'] = $prefix . ':' . (string) $exiftool_tag->attributes()->name;
 
