@@ -165,6 +165,20 @@ class ExifToolResourceUpdateCommand extends Command
                   $spec['items'][$id]['exiftool'][$index][$key] = $val;
               }
 
+              // Set exiftool item DOM node name.
+              if ($spec['compiler']['exiftool']['itemPrefix'] === '') {
+                  if ($exiftool_tag->attributes()->g1) {
+                      $prefix = (string) $exiftool_tag->attributes()->g1;
+                  }
+                  else {
+                      $prefix = 'IFD0';
+                  }
+              }
+              else {
+                  $prefix = $spec['compiler']['exiftool']['itemPrefix'];
+              }
+              $spec['items'][$id]['exiftool'][$index]['DOMNode'] = $prefix . ':' . (string) $exiftool_tag->attributes()->name;
+
               // Add the English description of the item.
               $desc = $exiftool_tag->xpath("desc[@lang='en']");
               $spec['items'][$id]['exiftool'][$index]['desc'] = (string) $desc[0];
@@ -177,9 +191,6 @@ class ExifToolResourceUpdateCommand extends Command
                       $spec['items'][$id]['exiftool'][$index]['values'][$key_id] = (string) $key_val[0];
                   }
               }
-
-              // Set exiftool item XML name.
-              $spec['items'][$id]['exiftool'][$index]['xmlId'] = $spec['compiler']['exiftool']['itemPrefix'] . ':' . (string) $exiftool_tag->attributes()->name;
         }
         ksort($spec['items']);
 
