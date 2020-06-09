@@ -39,8 +39,8 @@ class NumberSignedRationalTest extends NumberTestCase
         $this->assertEquals($entry->toString(), '');
 
         $entry->setValue([[-1, 2], [3, 4], [5, -6]]);
-        $this->assertEquals($entry->getValue(), [[-1, 2], [3, 4], [5, -6]]);
-        $this->assertEquals($entry->toString(), '-0.5, 0.75, -0.83333333333333');
+        $this->assertEquals([[-1, 2], [3, 4], [5, -6]], $entry->getValue());
+        $this->assertEquals('-0.5, 0.75, -0.83333333333333', $entry->toString());
 
         $entry->setValue([[-7, -8]]);
         $this->assertEquals($entry->getValue(), [-7, -8]);

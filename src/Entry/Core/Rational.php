@@ -70,11 +70,12 @@ class Rational extends Long
         if (($options['format'] ?? null) === 'phpExif') {
             return $number[0] . '/' . $number[1];
         } else {
-            if ($number[1] === 0) {
+/*            if ($number[1] === 0) {
                 return $number[0] . '/' . $number[1];
             } else {
                 return $number[0] / $number[1];
-            }
+            }*/
+            return $number;
         }
     }
 }
