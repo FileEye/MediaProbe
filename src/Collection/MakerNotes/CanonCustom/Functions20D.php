@@ -22,6 +22,27 @@ class Functions20D extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AEBSequenceAutoCancel' => 8,
+    'AFAssistBeam' => 4,
+    'AFPointSelectionMethod' => 12,
+    'AddOriginalDecisionData' => 17,
+    'ETTLII' => 13,
+    'ExposureLevelIncrements' => 5,
+    'FlashFiring' => 6,
+    'FlashSyncSpeedAv' => 2,
+    'ISOExpansion' => 7,
+    'LensAFStopButton' => 16,
+    'LongExposureNoiseReduction' => 1,
+    'MenuButtonDisplayPosition' => 10,
+    'MirrorLockup' => 11,
+    'SafetyShiftInAvOrTv' => 15,
+    'SetFunctionWhenShooting' => 0,
+    'Shutter-AELock' => 3,
+    'ShutterCurtainSync' => 14,
+    'SuperimposedDisplay' => 9,
+  ),
   'items' =>
   array (
     0 =>
@@ -362,27 +383,6 @@ class Functions20D extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AEBSequenceAutoCancel' => 8,
-    'AFAssistBeam' => 4,
-    'AFPointSelectionMethod' => 12,
-    'AddOriginalDecisionData' => 17,
-    'ETTLII' => 13,
-    'ExposureLevelIncrements' => 5,
-    'FlashFiring' => 6,
-    'FlashSyncSpeedAv' => 2,
-    'ISOExpansion' => 7,
-    'LensAFStopButton' => 16,
-    'LongExposureNoiseReduction' => 1,
-    'MenuButtonDisplayPosition' => 10,
-    'MirrorLockup' => 11,
-    'SafetyShiftInAvOrTv' => 15,
-    'SetFunctionWhenShooting' => 0,
-    'Shutter-AELock' => 3,
-    'ShutterCurtainSync' => 14,
-    'SuperimposedDisplay' => 9,
   ),
 );
 }

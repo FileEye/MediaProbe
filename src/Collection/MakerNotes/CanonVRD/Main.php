@@ -22,6 +22,10 @@ class Main extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'XMP' => '4294902006',
+  ),
   'items' =>
   array (
     '4294902006' =>
@@ -34,10 +38,6 @@ class Main extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'XMP' => '4294902006',
   ),
 );
 }

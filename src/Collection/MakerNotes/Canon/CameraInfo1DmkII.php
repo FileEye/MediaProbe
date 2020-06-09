@@ -22,6 +22,25 @@ class CameraInfo1DmkII extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CanonImageSize' => 57,
+    'ColorTemperature' => 55,
+    'ColorTone' => 111,
+    'Contrast' => 115,
+    'ExposureTime' => 4,
+    'FocalLength' => 9,
+    'FocalType' => 45,
+    'ISO' => 117,
+    'JPEGQuality' => 102,
+    'LensType' => 12,
+    'MaxFocalLength' => 19,
+    'MinFocalLength' => 17,
+    'PictureStyle' => 108,
+    'Saturation' => 110,
+    'Sharpness' => 114,
+    'WhiteBalance' => 54,
+  ),
   'items' =>
   array (
     4 =>
@@ -700,25 +719,6 @@ class CameraInfo1DmkII extends Collection {
         0 => 2,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CanonImageSize' => 57,
-    'ColorTemperature' => 55,
-    'ColorTone' => 111,
-    'Contrast' => 115,
-    'ExposureTime' => 4,
-    'FocalLength' => 9,
-    'FocalType' => 45,
-    'ISO' => 117,
-    'JPEGQuality' => 102,
-    'LensType' => 12,
-    'MaxFocalLength' => 19,
-    'MinFocalLength' => 17,
-    'PictureStyle' => 108,
-    'Saturation' => 110,
-    'Sharpness' => 114,
-    'WhiteBalance' => 54,
   ),
 );
 }

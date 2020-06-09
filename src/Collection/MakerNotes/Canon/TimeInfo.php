@@ -23,6 +23,13 @@ class TimeInfo extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'DaylightSavings' => 3,
+    'TimeZone' => 1,
+    'TimeZoneCity' => 2,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -109,13 +116,6 @@ class TimeInfo extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'DaylightSavings' => 3,
-    'TimeZone' => 1,
-    'TimeZoneCity' => 2,
-    'indexSize' => 0,
   ),
 );
 }

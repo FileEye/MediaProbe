@@ -22,6 +22,10 @@ class DustInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'DustDeleteApplied' => 2,
+  ),
   'items' =>
   array (
     2 =>
@@ -42,10 +46,6 @@ class DustInfo extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'DustDeleteApplied' => 2,
   ),
 );
 }

@@ -22,6 +22,13 @@ class CropInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CropBottomMargin' => 3,
+    'CropLeftMargin' => 0,
+    'CropRightMargin' => 1,
+    'CropTopMargin' => 2,
+  ),
   'items' =>
   array (
     0 =>
@@ -64,13 +71,6 @@ class CropInfo extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CropBottomMargin' => 3,
-    'CropLeftMargin' => 0,
-    'CropRightMargin' => 1,
-    'CropTopMargin' => 2,
   ),
 );
 }

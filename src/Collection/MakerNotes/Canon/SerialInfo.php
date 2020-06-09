@@ -22,6 +22,10 @@ class SerialInfo extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'InternalSerialNumber' => 9,
+  ),
   'items' =>
   array (
     9 =>
@@ -34,10 +38,6 @@ class SerialInfo extends Collection {
         0 => 2,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'InternalSerialNumber' => 9,
   ),
 );
 }

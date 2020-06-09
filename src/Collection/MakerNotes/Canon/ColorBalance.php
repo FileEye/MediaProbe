@@ -23,6 +23,20 @@ class ColorBalance extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'WB_RGGBBlackLevels' => 37,
+    'WB_RGGBLevelsAuto' => 1,
+    'WB_RGGBLevelsCloudy' => 13,
+    'WB_RGGBLevelsCustom' => 29,
+    'WB_RGGBLevelsDaylight' => 5,
+    'WB_RGGBLevelsFlash' => 25,
+    'WB_RGGBLevelsFluorescent' => 21,
+    'WB_RGGBLevelsKelvin' => 33,
+    'WB_RGGBLevelsShade' => 9,
+    'WB_RGGBLevelsTungsten' => 17,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -144,20 +158,6 @@ class ColorBalance extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'WB_RGGBBlackLevels' => 37,
-    'WB_RGGBLevelsAuto' => 1,
-    'WB_RGGBLevelsCloudy' => 13,
-    'WB_RGGBLevelsCustom' => 29,
-    'WB_RGGBLevelsDaylight' => 5,
-    'WB_RGGBLevelsFlash' => 25,
-    'WB_RGGBLevelsFluorescent' => 21,
-    'WB_RGGBLevelsKelvin' => 33,
-    'WB_RGGBLevelsShade' => 9,
-    'WB_RGGBLevelsTungsten' => 17,
-    'indexSize' => 0,
   ),
 );
 }

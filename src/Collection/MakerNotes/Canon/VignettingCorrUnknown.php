@@ -22,6 +22,10 @@ class VignettingCorrUnknown extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'VignettingCorrVersion' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -34,10 +38,6 @@ class VignettingCorrUnknown extends Collection {
         0 => 1,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'VignettingCorrVersion' => 0,
   ),
 );
 }

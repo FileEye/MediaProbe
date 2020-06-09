@@ -23,6 +23,12 @@ class VignettingCorr2 extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ChromaticAberrationSetting' => 6,
+    'PeripheralLightingSetting' => 5,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -66,12 +72,6 @@ class VignettingCorr2 extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ChromaticAberrationSetting' => 6,
-    'PeripheralLightingSetting' => 5,
-    'indexSize' => 0,
   ),
 );
 }

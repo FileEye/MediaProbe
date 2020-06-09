@@ -22,6 +22,15 @@ class VignettingCorr extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ChromaticAberrationCorr' => 5,
+    'OriginalImageHeight' => 12,
+    'OriginalImageWidth' => 11,
+    'PeripheralLighting' => 2,
+    'PeripheralLightingValue' => 6,
+    'VignettingCorrVersion' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -118,15 +127,6 @@ class VignettingCorr extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ChromaticAberrationCorr' => 5,
-    'OriginalImageHeight' => 12,
-    'OriginalImageWidth' => 11,
-    'PeripheralLighting' => 2,
-    'PeripheralLightingValue' => 6,
-    'VignettingCorrVersion' => 0,
   ),
 );
 }

@@ -22,6 +22,19 @@ class ToneCurve extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'BlueCurvePoints' => 121,
+    'GreenCurvePoints' => 83,
+    'RGBCurvePoints' => 7,
+    'RedCurvePoints' => 45,
+    'ToneCurveColorSpace' => 0,
+    'ToneCurveInputRange' => 3,
+    'ToneCurveOutputRange' => 5,
+    'ToneCurveShape' => 1,
+    'ToneCurveX' => 10,
+    'ToneCurveY' => 11,
+  ),
   'items' =>
   array (
     0 =>
@@ -146,19 +159,6 @@ class ToneCurve extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'BlueCurvePoints' => 121,
-    'GreenCurvePoints' => 83,
-    'RGBCurvePoints' => 7,
-    'RedCurvePoints' => 45,
-    'ToneCurveColorSpace' => 0,
-    'ToneCurveInputRange' => 3,
-    'ToneCurveOutputRange' => 5,
-    'ToneCurveShape' => 1,
-    'ToneCurveX' => 10,
-    'ToneCurveY' => 11,
   ),
 );
 }

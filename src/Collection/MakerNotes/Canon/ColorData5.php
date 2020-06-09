@@ -22,6 +22,11 @@ class ColorData5 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ColorDataVersion' => 0,
+    'PerChannelBlackLevel' => 333,
+  ),
   'items' =>
   array (
     0 =>
@@ -64,11 +69,6 @@ class ColorData5 extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ColorDataVersion' => 0,
-    'PerChannelBlackLevel' => 333,
   ),
 );
 }

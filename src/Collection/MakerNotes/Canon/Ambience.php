@@ -23,6 +23,11 @@ class Ambience extends Collection {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AmbienceSelection' => 1,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -59,11 +64,6 @@ class Ambience extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AmbienceSelection' => 1,
-    'indexSize' => 0,
   ),
 );
 }

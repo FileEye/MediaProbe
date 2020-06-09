@@ -22,6 +22,13 @@ class FocalLength extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'FocalLength' => 1,
+    'FocalPlaneXSize' => 2,
+    'FocalPlaneYSize' => 3,
+    'FocalType' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -72,13 +79,6 @@ class FocalLength extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'FocalLength' => 1,
-    'FocalPlaneXSize' => 2,
-    'FocalPlaneYSize' => 3,
-    'FocalType' => 0,
   ),
 );
 }

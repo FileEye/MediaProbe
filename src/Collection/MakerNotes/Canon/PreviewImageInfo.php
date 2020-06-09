@@ -22,6 +22,14 @@ class PreviewImageInfo extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'PreviewImageHeight' => 4,
+    'PreviewImageLength' => 2,
+    'PreviewImageStart' => 5,
+    'PreviewImageWidth' => 3,
+    'PreviewQuality' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -89,14 +97,6 @@ class PreviewImageInfo extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'PreviewImageHeight' => 4,
-    'PreviewImageLength' => 2,
-    'PreviewImageStart' => 5,
-    'PreviewImageWidth' => 3,
-    'PreviewQuality' => 1,
   ),
 );
 }

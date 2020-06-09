@@ -19,6 +19,10 @@ class CNTH extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ThumbnailImage' => 'CNDA',
+  ),
   'items' =>
   array (
     'CNDA' =>
@@ -31,10 +35,6 @@ class CNTH extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ThumbnailImage' => 'CNDA',
   ),
 );
 }

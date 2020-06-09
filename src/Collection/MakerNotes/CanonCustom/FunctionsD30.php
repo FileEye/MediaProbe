@@ -22,6 +22,24 @@ class FunctionsD30 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AEBSequenceAutoCancel' => 7,
+    'AFAssist' => 5,
+    'ExposureLevelIncrements' => 4,
+    'FillFlashAutoReduction' => 10,
+    'FlashSyncSpeedAv' => 6,
+    'LensAFStopButton' => 9,
+    'LongExposureNoiseReduction' => 1,
+    'MenuButtonReturn' => 11,
+    'MirrorLockup' => 3,
+    'SensorCleaning' => 13,
+    'SetButtonWhenShooting' => 12,
+    'Shutter-AELock' => 2,
+    'ShutterCurtainSync' => 8,
+    'ShutterReleaseNoCFCard' => 15,
+    'SuperimposedDisplay' => 14,
+  ),
   'items' =>
   array (
     1 =>
@@ -304,24 +322,6 @@ class FunctionsD30 extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AEBSequenceAutoCancel' => 7,
-    'AFAssist' => 5,
-    'ExposureLevelIncrements' => 4,
-    'FillFlashAutoReduction' => 10,
-    'FlashSyncSpeedAv' => 6,
-    'LensAFStopButton' => 9,
-    'LongExposureNoiseReduction' => 1,
-    'MenuButtonReturn' => 11,
-    'MirrorLockup' => 3,
-    'SensorCleaning' => 13,
-    'SetButtonWhenShooting' => 12,
-    'Shutter-AELock' => 2,
-    'ShutterCurtainSync' => 8,
-    'ShutterReleaseNoCFCard' => 15,
-    'SuperimposedDisplay' => 14,
   ),
 );
 }

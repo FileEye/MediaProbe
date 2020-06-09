@@ -22,6 +22,10 @@ class MyColors extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'MyColorMode' => 2,
+  ),
   'items' =>
   array (
     2 =>
@@ -54,10 +58,6 @@ class MyColors extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'MyColorMode' => 2,
   ),
 );
 }

@@ -22,6 +22,16 @@ class ImageInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ColorBW' => 6,
+    'ColorBitDepth' => 5,
+    'ComponentBitDepth' => 4,
+    'ImageHeight' => 1,
+    'ImageWidth' => 0,
+    'PixelAspectRatio' => 2,
+    'Rotation' => 3,
+  ),
   'items' =>
   array (
     0 =>
@@ -94,16 +104,6 @@ class ImageInfo extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ColorBW' => 6,
-    'ColorBitDepth' => 5,
-    'ComponentBitDepth' => 4,
-    'ImageHeight' => 1,
-    'ImageWidth' => 0,
-    'PixelAspectRatio' => 2,
-    'Rotation' => 3,
   ),
 );
 }

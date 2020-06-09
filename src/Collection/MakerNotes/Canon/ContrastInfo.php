@@ -22,6 +22,10 @@ class ContrastInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'IntelligentContrast' => 4,
+  ),
   'items' =>
   array (
     4 =>
@@ -43,10 +47,6 @@ class ContrastInfo extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'IntelligentContrast' => 4,
   ),
 );
 }

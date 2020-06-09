@@ -18,6 +18,15 @@ class Main extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Apple\\MakerNote',
   'DOMNode' => 'makerNote',
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AccelerationVector' => 8,
+    'AppleRuntime' => 3,
+    'BurstUUID' => 11,
+    'ContentIdentifier' => 17,
+    'HDRImageType' => 10,
+    'ImageUniqueID' => 21,
+  ),
   'items' =>
   array (
     3 =>
@@ -84,15 +93,6 @@ class Main extends Collection {
         0 => 2,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AccelerationVector' => 8,
-    'AppleRuntime' => 3,
-    'BurstUUID' => 11,
-    'ContentIdentifier' => 17,
-    'HDRImageType' => 10,
-    'ImageUniqueID' => 21,
   ),
 );
 }

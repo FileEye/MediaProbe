@@ -22,6 +22,18 @@ class Functions350D extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AFAssistBeam' => 4,
+    'ETTLII' => 7,
+    'ExposureLevelIncrements' => 5,
+    'FlashSyncSpeedAv' => 2,
+    'LongExposureNoiseReduction' => 1,
+    'MirrorLockup' => 6,
+    'SetButtonCrossKeysFunc' => 0,
+    'Shutter-AELock' => 3,
+    'ShutterCurtainSync' => 8,
+  ),
   'items' =>
   array (
     0 =>
@@ -192,18 +204,6 @@ class Functions350D extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AFAssistBeam' => 4,
-    'ETTLII' => 7,
-    'ExposureLevelIncrements' => 5,
-    'FlashSyncSpeedAv' => 2,
-    'LongExposureNoiseReduction' => 1,
-    'MirrorLockup' => 6,
-    'SetButtonCrossKeysFunc' => 0,
-    'Shutter-AELock' => 3,
-    'ShutterCurtainSync' => 8,
   ),
 );
 }

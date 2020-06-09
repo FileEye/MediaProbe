@@ -18,6 +18,13 @@ class Functions2Header extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CustomFunctions2Header',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'MakerNotes\\CanonCustom\\Functions2',
+  'itemsByName' =>
+  array (
+    'AutoFocusDrive' => 3,
+    'Exposure' => 1,
+    'ImageFlashExposureDisplay' => 2,
+    'OperationOthers' => 4,
+  ),
   'items' =>
   array (
     1 =>
@@ -44,13 +51,6 @@ class Functions2Header extends Collection {
       'title' => 'Operation (0x0701-0x070a) and Others (0x080b-0x0810)',
       'collection' => 'MakerNotes\\CanonCustom\\Functions2',
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AutoFocusDrive' => 3,
-    'Exposure' => 1,
-    'ImageFlashExposureDisplay' => 2,
-    'OperationOthers' => 4,
   ),
 );
 }

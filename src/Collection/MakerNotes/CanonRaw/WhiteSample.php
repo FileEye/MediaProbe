@@ -22,6 +22,14 @@ class WhiteSample extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'WhiteSampleBits' => 5,
+    'WhiteSampleHeight' => 2,
+    'WhiteSampleLeftBorder' => 3,
+    'WhiteSampleTopBorder' => 4,
+    'WhiteSampleWidth' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -74,14 +82,6 @@ class WhiteSample extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'WhiteSampleBits' => 5,
-    'WhiteSampleHeight' => 2,
-    'WhiteSampleLeftBorder' => 3,
-    'WhiteSampleTopBorder' => 4,
-    'WhiteSampleWidth' => 1,
   ),
 );
 }

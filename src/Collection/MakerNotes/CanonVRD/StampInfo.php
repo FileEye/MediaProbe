@@ -22,6 +22,10 @@ class StampInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'StampToolCount' => 2,
+  ),
   'items' =>
   array (
     2 =>
@@ -34,10 +38,6 @@ class StampInfo extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'StampToolCount' => 2,
   ),
 );
 }

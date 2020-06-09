@@ -22,6 +22,10 @@ class CameraInfoUnknown32 extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraTemperature' => 100,
+  ),
   'items' =>
   array (
     -3 =>
@@ -84,10 +88,6 @@ class CameraInfoUnknown32 extends Collection {
         0 => 9,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraTemperature' => 100,
   ),
 );
 }

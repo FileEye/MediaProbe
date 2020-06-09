@@ -22,6 +22,26 @@ class Functions10D extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AEBSequenceAutoCancel' => 9,
+    'AFAssist' => 5,
+    'AFPointRegistration' => 7,
+    'AssistButtonFunction' => 13,
+    'ExposureLevelIncrements' => 6,
+    'FillFlashAutoReduction' => 14,
+    'FlashSyncSpeedAv' => 3,
+    'LensAFStopButton' => 17,
+    'MenuButtonDisplayPosition' => 11,
+    'MirrorLockup' => 12,
+    'RawAndJpgRecording' => 8,
+    'SafetyShiftInAvOrTv' => 16,
+    'SetButtonWhenShooting' => 1,
+    'Shutter-AELock' => 4,
+    'ShutterCurtainSync' => 15,
+    'ShutterReleaseNoCFCard' => 2,
+    'SuperimposedDisplay' => 10,
+  ),
   'items' =>
   array (
     1 =>
@@ -357,26 +377,6 @@ class Functions10D extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AEBSequenceAutoCancel' => 9,
-    'AFAssist' => 5,
-    'AFPointRegistration' => 7,
-    'AssistButtonFunction' => 13,
-    'ExposureLevelIncrements' => 6,
-    'FillFlashAutoReduction' => 14,
-    'FlashSyncSpeedAv' => 3,
-    'LensAFStopButton' => 17,
-    'MenuButtonDisplayPosition' => 11,
-    'MirrorLockup' => 12,
-    'RawAndJpgRecording' => 8,
-    'SafetyShiftInAvOrTv' => 16,
-    'SetButtonWhenShooting' => 1,
-    'Shutter-AELock' => 4,
-    'ShutterCurtainSync' => 15,
-    'ShutterReleaseNoCFCard' => 2,
-    'SuperimposedDisplay' => 10,
   ),
 );
 }

@@ -23,6 +23,15 @@ class LightingOpt extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AutoLightingOptimizer' => 2,
+    'HighISONoiseReduction' => 5,
+    'HighlightTonePriority' => 3,
+    'LongExposureNoiseReduction' => 4,
+    'PeripheralIlluminationCorr' => 1,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -125,15 +134,6 @@ class LightingOpt extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AutoLightingOptimizer' => 2,
-    'HighISONoiseReduction' => 5,
-    'HighlightTonePriority' => 3,
-    'LongExposureNoiseReduction' => 4,
-    'PeripheralIlluminationCorr' => 1,
-    'indexSize' => 0,
   ),
 );
 }

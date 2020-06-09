@@ -22,6 +22,12 @@ class DecoderTable extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CompressedDataLength' => 3,
+    'CompressedDataOffset' => 2,
+    'DecoderTableNumber' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,12 +60,6 @@ class DecoderTable extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CompressedDataLength' => 3,
-    'CompressedDataOffset' => 2,
-    'DecoderTableNumber' => 0,
   ),
 );
 }

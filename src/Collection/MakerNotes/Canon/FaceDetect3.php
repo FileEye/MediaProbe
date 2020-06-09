@@ -22,6 +22,10 @@ class FaceDetect3 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'FacesDetected' => 3,
+  ),
   'items' =>
   array (
     3 =>
@@ -34,10 +38,6 @@ class FaceDetect3 extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'FacesDetected' => 3,
   ),
 );
 }

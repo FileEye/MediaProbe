@@ -22,6 +22,24 @@ class ColorCalib2 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraColorCalibration01' => 0,
+    'CameraColorCalibration02' => 5,
+    'CameraColorCalibration03' => 10,
+    'CameraColorCalibration04' => 15,
+    'CameraColorCalibration05' => 20,
+    'CameraColorCalibration06' => 25,
+    'CameraColorCalibration07' => 30,
+    'CameraColorCalibration08' => 35,
+    'CameraColorCalibration09' => 40,
+    'CameraColorCalibration10' => 45,
+    'CameraColorCalibration11' => 50,
+    'CameraColorCalibration12' => 55,
+    'CameraColorCalibration13' => 60,
+    'CameraColorCalibration14' => 65,
+    'CameraColorCalibration15' => 70,
+  ),
   'items' =>
   array (
     0 =>
@@ -189,24 +207,6 @@ class ColorCalib2 extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraColorCalibration01' => 0,
-    'CameraColorCalibration02' => 5,
-    'CameraColorCalibration03' => 10,
-    'CameraColorCalibration04' => 15,
-    'CameraColorCalibration05' => 20,
-    'CameraColorCalibration06' => 25,
-    'CameraColorCalibration07' => 30,
-    'CameraColorCalibration08' => 35,
-    'CameraColorCalibration09' => 40,
-    'CameraColorCalibration10' => 45,
-    'CameraColorCalibration11' => 50,
-    'CameraColorCalibration12' => 55,
-    'CameraColorCalibration13' => 60,
-    'CameraColorCalibration14' => 65,
-    'CameraColorCalibration15' => 70,
   ),
 );
 }

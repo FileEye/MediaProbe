@@ -22,6 +22,12 @@ class DLOInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'DLOData' => 10,
+    'DLOSettingApplied' => 4,
+    'DLOVersion' => 5,
+  ),
   'items' =>
   array (
     4 =>
@@ -55,12 +61,6 @@ class DLOInfo extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'DLOData' => 10,
-    'DLOSettingApplied' => 4,
-    'DLOVersion' => 5,
   ),
 );
 }

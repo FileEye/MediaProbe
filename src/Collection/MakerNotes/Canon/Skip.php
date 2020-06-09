@@ -19,6 +19,10 @@ class Skip extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'Unknown_CNDB' => 'CNDB',
+  ),
   'items' =>
   array (
     'CNDB' =>
@@ -31,10 +35,6 @@ class Skip extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'Unknown_CNDB' => 'CNDB',
   ),
 );
 }

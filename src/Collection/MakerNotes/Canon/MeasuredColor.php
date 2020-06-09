@@ -23,6 +23,11 @@ class MeasuredColor extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'MeasuredRGGB' => 1,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -45,11 +50,6 @@ class MeasuredColor extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'MeasuredRGGB' => 1,
-    'indexSize' => 0,
   ),
 );
 }

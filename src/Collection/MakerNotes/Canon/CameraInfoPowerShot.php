@@ -22,6 +22,14 @@ class CameraInfoPowerShot extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraTemperature' => 145,
+    'ExposureTime' => 6,
+    'FNumber' => 5,
+    'ISO' => 0,
+    'Rotation' => 23,
+  ),
   'items' =>
   array (
     0 =>
@@ -84,14 +92,6 @@ class CameraInfoPowerShot extends Collection {
         0 => 9,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraTemperature' => 145,
-    'ExposureTime' => 6,
-    'FNumber' => 5,
-    'ISO' => 0,
-    'Rotation' => 23,
   ),
 );
 }

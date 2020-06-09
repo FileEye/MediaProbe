@@ -22,6 +22,23 @@ class CameraInfo750D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraTemperature' => 27,
+    'ColorTemperature' => 309,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FirmwareVersion' => 1097,
+    'FocalLength' => 35,
+    'FocusDistanceLower' => 167,
+    'FocusDistanceUpper' => 165,
+    'ISO' => 6,
+    'LensType' => 388,
+    'MaxFocalLength' => 392,
+    'MinFocalLength' => 390,
+    'PictureStyle' => 361,
+    'WhiteBalance' => 305,
+  ),
   'items' =>
   array (
     3 =>
@@ -637,23 +654,6 @@ class CameraInfo750D extends Collection {
         0 => 2,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraTemperature' => 27,
-    'ColorTemperature' => 309,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FirmwareVersion' => 1097,
-    'FocalLength' => 35,
-    'FocusDistanceLower' => 167,
-    'FocusDistanceUpper' => 165,
-    'ISO' => 6,
-    'LensType' => 388,
-    'MaxFocalLength' => 392,
-    'MinFocalLength' => 390,
-    'PictureStyle' => 361,
-    'WhiteBalance' => 305,
   ),
 );
 }

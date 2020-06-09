@@ -22,6 +22,20 @@ class ModifiedInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ModifiedColorTemp' => 9,
+    'ModifiedDigitalGain' => 11,
+    'ModifiedPictureStyle' => 10,
+    'ModifiedSensorBlueLevel' => 5,
+    'ModifiedSensorRedLevel' => 4,
+    'ModifiedSharpness' => 2,
+    'ModifiedSharpnessFreq' => 3,
+    'ModifiedToneCurve' => 1,
+    'ModifiedWhiteBalance' => 8,
+    'ModifiedWhiteBalanceBlue' => 7,
+    'ModifiedWhiteBalanceRed' => 6,
+  ),
   'items' =>
   array (
     1 =>
@@ -213,20 +227,6 @@ class ModifiedInfo extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ModifiedColorTemp' => 9,
-    'ModifiedDigitalGain' => 11,
-    'ModifiedPictureStyle' => 10,
-    'ModifiedSensorBlueLevel' => 5,
-    'ModifiedSensorRedLevel' => 4,
-    'ModifiedSharpness' => 2,
-    'ModifiedSharpnessFreq' => 3,
-    'ModifiedToneCurve' => 1,
-    'ModifiedWhiteBalance' => 8,
-    'ModifiedWhiteBalanceBlue' => 7,
-    'ModifiedWhiteBalanceRed' => 6,
   ),
 );
 }

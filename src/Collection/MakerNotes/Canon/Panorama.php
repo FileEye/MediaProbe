@@ -23,6 +23,12 @@ class Panorama extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'PanoramaDirection' => 5,
+    'PanoramaFrameNumber' => 2,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -65,12 +71,6 @@ class Panorama extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'PanoramaDirection' => 5,
-    'PanoramaFrameNumber' => 2,
-    'indexSize' => 0,
   ),
 );
 }

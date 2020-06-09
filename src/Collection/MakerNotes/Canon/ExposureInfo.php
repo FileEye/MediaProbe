@@ -22,6 +22,12 @@ class ExposureInfo extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ExposureTime' => 1,
+    'FNumber' => 0,
+    'ISO' => 2,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,12 +60,6 @@ class ExposureInfo extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ExposureTime' => 1,
-    'FNumber' => 0,
-    'ISO' => 2,
   ),
 );
 }

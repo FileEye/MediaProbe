@@ -19,6 +19,10 @@ class CTMD extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'TimeStamp' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -31,10 +35,6 @@ class CTMD extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'TimeStamp' => 1,
   ),
 );
 }

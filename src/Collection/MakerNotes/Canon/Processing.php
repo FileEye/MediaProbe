@@ -23,6 +23,23 @@ class Processing extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ColorTemperature' => 9,
+    'DigitalGain' => 11,
+    'PictureStyle' => 10,
+    'SensorBlueLevel' => 5,
+    'SensorRedLevel' => 4,
+    'Sharpness' => 2,
+    'SharpnessFrequency' => 3,
+    'ToneCurve' => 1,
+    'WBShiftAB' => 12,
+    'WBShiftGM' => 13,
+    'WhiteBalance' => 8,
+    'WhiteBalanceBlue' => 7,
+    'WhiteBalanceRed' => 6,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -243,23 +260,6 @@ class Processing extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ColorTemperature' => 9,
-    'DigitalGain' => 11,
-    'PictureStyle' => 10,
-    'SensorBlueLevel' => 5,
-    'SensorRedLevel' => 4,
-    'Sharpness' => 2,
-    'SharpnessFrequency' => 3,
-    'ToneCurve' => 1,
-    'WBShiftAB' => 12,
-    'WBShiftGM' => 13,
-    'WhiteBalance' => 8,
-    'WhiteBalanceBlue' => 7,
-    'WhiteBalanceRed' => 6,
-    'indexSize' => 0,
   ),
 );
 }
