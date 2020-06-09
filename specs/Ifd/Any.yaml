@@ -4,6 +4,7 @@ class: FileEye\MediaProbe\Block\Ifd
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        itemPrefix: ''
         xpath: '//table[@name=''Exif::Main'']/tag'
 items:
     1:

@@ -12,6 +12,7 @@ postLoad:
     - 'FileEye\MediaProbe\Block\Ifd::makerNoteToBlock'
 compiler:
     exiftool:
+        itemPrefix: IFD0
         xpath: '//table[@name=''Exif::Main'']/tag[not(@g1)]'
 items:
     11:
