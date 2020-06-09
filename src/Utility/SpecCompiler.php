@@ -225,9 +225,6 @@ DATA;
             unset($item['exifReadData']);
             unset($item['exiftool']);
 
-            // Add item to map by collection/id.
-            $map['items'][$id] = $item;
-
             // Add item to map by collection/name.
             if (isset($item['name'])) { // xx
                 $map['itemsByName'][$item['name']] = $id;
@@ -244,6 +241,9 @@ DATA;
                 $item['exiftoolDOMNode'] = $exiftool['DOMNode'];
                 $map['itemsByExiftoolDOMNode'][$exiftool['DOMNode']] = $id;
             }
+
+            // Add item to map by collection/id.
+            $map['items'][$id] = $item;
         }
 
         if (isset($map['items'])) {
