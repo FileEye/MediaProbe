@@ -197,10 +197,10 @@ abstract class NumberBase extends EntryBase
             return '';
         }
 
-        $str = $this->formatNumber($this->value[0]);
+        $str = $this->formatNumber($this->value[0], ['format' => 'core']);
         for ($i = 1; $i < $this->components; $i ++) {
             $str .= ($short ? ' ' : ', ');
-            $str .= $this->formatNumber($this->value[$i]);
+            $str .= $this->formatNumber($this->value[$i], ['format' => 'core']);
         }
 
         return $str;
