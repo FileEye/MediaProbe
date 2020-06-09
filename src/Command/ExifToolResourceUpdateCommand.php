@@ -18,6 +18,7 @@ class ExifToolResourceUpdateCommand extends Command
 
     protected $specDir;
     protected $exiftoolXml;
+    protected $phpExifTags;
 
     /**
      * {@inheritdoc}
@@ -46,6 +47,8 @@ class ExifToolResourceUpdateCommand extends Command
 //        $this->exiftoolXml = simplexml_load_file($this->specDir . DIRECTORY_SEPARATOR . 'exiftool.xml');
         $this->exiftoolXml = simplexml_load_file('specs/exiftool.xml');
         $output->writeln('Loaded ExifTool XML...');
+
+        $this->phpExifTags = Yaml::parse(file_get_contents('specs/exiftags.yaml'));
 
         $finder = new Finder();
         $finder->files()->in($this->specDir)->name('*.yaml');
@@ -139,6 +142,12 @@ class ExifToolResourceUpdateCommand extends Command
         foreach ($exiftool_ifd as $exiftool_tag) {
               $id = (string) $exiftool_tag->attributes()->id;
               $index = (string) ($exiftool_tag->attributes()->index ?? 0);
+
+// Reset exiftool metadata.
+unset($spec['items'][$id]['exifReadData']);
+if (isset($this->phpExifTags['items'][$id])) {
+  $spec['items'][$id]['exifReadData']['key'] = $this->phpExifTags['items'][$id];
+}
 
               // Reset exiftool metadata.
               unset($spec['items'][$id]['exiftool'][$index]);
