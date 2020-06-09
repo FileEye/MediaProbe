@@ -42,7 +42,8 @@ class ExifToolResourceUpdateCommand extends Command
         $filesystem = new Filesystem();
 
         $this->specDir = $input->getArgument('spec-dir');
-        $this->exiftoolXml = simplexml_load_file($this->specDir . DIRECTORY_SEPARATOR . 'exiftool.xml');
+//        $this->exiftoolXml = simplexml_load_file($this->specDir . DIRECTORY_SEPARATOR . 'exiftool.xml');
+        $this->exiftoolXml = simplexml_load_file('specs/exiftool.xml');
         $output->writeln('Loaded ExifTool XML...');
 
         $finder = new Finder();
