@@ -295,7 +295,7 @@ abstract class Core {
     'IFD1' => 'Ifd\\Ifd1',
     'Ifd\\Any' => 'Ifd\\Any',
     'Interop' => 'Ifd\\Interoperability',
-    'Interoperability' => 'Ifd\\Interoperability',
+    'InteropIFD' => 'Ifd\\Interoperability',
     'Jpeg' => 'Jpeg',
     'Jpeg\\Segment' => 'Jpeg\\Segment',
     'Main' => 'Ifd\\Ifd0',

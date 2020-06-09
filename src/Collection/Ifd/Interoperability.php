@@ -13,8 +13,8 @@ use FileEye\MediaProbe\Collection;
 class Interoperability extends Collection {
 
   protected static $map = array (
-  'name' => 'Interoperability',
-  'title' => 'IFD Interoperability',
+  'name' => 'InteropIFD',
+  'title' => 'Interoperability IFD',
   'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
   'DOMNode' => 'ifd',
   'alias' =>
@@ -26,10 +26,6 @@ class Interoperability extends Collection {
   array (
     1 =>
     array (
-      'alias' =>
-      array (
-        0 => 'InteroperabilityIndex',
-      ),
       'components' => 4,
       'collection' => 'Tag',
       'name' => 'InteropIndex',
@@ -50,10 +46,6 @@ class Interoperability extends Collection {
     ),
     2 =>
     array (
-      'alias' =>
-      array (
-        0 => 'InteroperabilityVersion',
-      ),
       'components' => 4,
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
       'collection' => 'Tag',
@@ -108,6 +100,22 @@ class Interoperability extends Collection {
     'RelatedImageFileFormat' => 4096,
     'RelatedImageHeight' => 4098,
     'RelatedImageWidth' => 4097,
+  ),
+  'itemsByPhpExifTag' =>
+  array (
+    'InterOperabilityIndex' => 1,
+    'InterOperabilityVersion' => 2,
+    'RelatedFileFormat' => 4096,
+    'RelatedImageHeight' => 4098,
+    'RelatedImageWidth' => 4097,
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'InteropIFD:InteropIndex' => 1,
+    'InteropIFD:InteropVersion' => 2,
+    'InteropIFD:RelatedImageFileFormat' => 4096,
+    'InteropIFD:RelatedImageHeight' => 4098,
+    'InteropIFD:RelatedImageWidth' => 4097,
   ),
 );
 }
