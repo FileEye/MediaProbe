@@ -235,11 +235,13 @@ DATA;
 
             // Add item to map by exif_read_data key.
             if (isset($item_exif_tag)) { // xx
+                $item['phpExifTag'] = $item_exif_tag;
                 $map['itemsByPhpExifTag'][$item_exif_tag] = $id;
             }
 
             // Add item to map by exiftool DOMNode.
             if (isset($exiftool['DOMNode'])) { // xx
+                $item['exiftoolDOMNode'] = $exiftool['DOMNode'];
                 $map['itemsByExiftoolDOMNode'][$exiftool['DOMNode']] = $id;
             }
         }
