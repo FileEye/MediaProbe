@@ -139,9 +139,9 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         // Recursively check sub-blocks.
         if (isset($expected['elements'])) {
             foreach ($expected['elements'] as $i => $expected_element) {
-                $test = $element->getMultipleElements('*');
-                $this->assertArrayHasKey($i, $test, $expected_element['path']);
-                $this->assertElement($expected_element, $test[$i], $test, $rewritten);
+                $sub = $element->getMultipleElements('*');
+                $this->assertArrayHasKey($i, $sub, $expected_element['path']);
+                $this->assertElement($expected_element, $sub[$i], $test, $rewritten);
             }
         }
     }
