@@ -229,6 +229,16 @@ DATA;
             if (isset($item['name'])) { // xx
                 $map['itemsByName'][$item['name']] = $id;
             }
+
+            // Add item to map by exif_read_data key.
+            if (isset($item['exifReadData']['key'])) { // xx
+                $map['itemsByExifTag'][$item['exifReadData']['key']] = $id;
+            }
+
+            // Add item to map by exiftool DOMNode.
+            if (isset($exiftool['DOMNode'])) { // xx
+                $map['itemsByExiftoolTag'][$exiftool['DOMNode']] = $id;
+            }
         }
 
         if (isset($map['items'])) {
