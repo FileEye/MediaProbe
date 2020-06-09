@@ -47,7 +47,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 //        $this->assertEquals($test['exifReadData'], @exif_read_data($mediaDumpFile->getPath() . '/' . $test['fileName']));
 
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $media);
+            $this->assertElement($test['elements'], $media, $test);
         }
 
         foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
@@ -103,11 +103,11 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 //        $this->assertEquals($test['exifReadData'], @exif_read_data($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite.img'));
 
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $media, true);
+            $this->assertElement($test['elements'], $media, $test, true);
         }
     }
 
-    protected function assertElement($expected, $element, $rewritten = false)
+    protected function assertElement($expected, $element, $test, $rewritten = false)
     {
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
         $this->assertSame($expected['path'], $element->getContextPath());
@@ -121,6 +121,12 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             $this->assertNull($element->getElement('*'));
             $this->assertSame($expected['format'], ItemFormat::getName($element->getFormat()), $element->getContextPath());
             $this->assertSame($expected['components'], $element->getComponents(), $element->getContextPath());
+            
+            // Check PHP Exif tag equivalence.
+            if ($php_exif_tag = $element->getParent()->getCollection()->getPropertyValue('phpExifTag')) {
+                $this->assertSame($test['exifReadData'][$php_exif_tag], $element->toString(), $element->getContextPath());
+            }
+            
             if (!$rewritten) {
                 $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
                 if (isset($expected['exiftool_text'])) {
@@ -135,7 +141,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             foreach ($expected['elements'] as $i => $expected_element) {
                 $test = $element->getMultipleElements('*');
                 $this->assertArrayHasKey($i, $test, $expected_element['path']);
-                $this->assertElement($expected_element, $test[$i], $rewritten);
+                $this->assertElement($expected_element, $test[$i], $test, $rewritten);
             }
         }
     }
