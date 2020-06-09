@@ -247,9 +247,19 @@ DATA;
         if (isset($map['items'])) {
             ksort($map['items']);
         }
+
         if (isset($map['itemsByName'])) {
             ksort($map['itemsByName']);
         }
+
+        if (isset($map['itemsByPhpExifTag'])) {
+            ksort($map['itemsByPhpExifTag']);
+        }
+
+        if (isset($map['itemsByExiftoolDOMNode'])) {
+            ksort($map['itemsByExiftoolDOMNode']);
+        }
+
         $parts = explode('\\', $input['collection']);
         $class_name = array_pop($parts);
         if ($parts) {
