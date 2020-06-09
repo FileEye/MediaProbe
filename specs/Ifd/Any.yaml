@@ -37,6 +37,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:ProcessingSoftware'
                 desc: 'Processing Software'
+        exifReadData:
+            key: ACDComment
     254:
         exiftool:
             -
@@ -58,6 +60,8 @@ items:
                     16: 'TIFF-FX mixed raster content'
                     65537: 'Alternate reduced-resolution image'
                     '4294967295': invalid
+        exifReadData:
+            key: NewSubFile
     255:
         exiftool:
             -
@@ -70,6 +74,8 @@ items:
                     1: 'Full-resolution image'
                     2: 'Reduced-resolution image'
                     3: 'Single page of multi-page image'
+        exifReadData:
+            key: SubFile
     256:
         exiftool:
             -
@@ -78,6 +84,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:ImageWidth'
                 desc: 'Image Width'
+        exifReadData:
+            key: ImageWidth
     257:
         exiftool:
             -
@@ -86,6 +94,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:ImageHeight'
                 desc: 'Image Height'
+        exifReadData:
+            key: ImageLength
     258:
         exiftool:
             -
@@ -94,6 +104,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:BitsPerSample'
                 desc: 'Bits Per Sample'
+        exifReadData:
+            key: BitsPerSample
     259:
         exiftool:
             -
@@ -152,6 +164,8 @@ items:
                     34934: 'JPEG XR'
                     65000: 'Kodak DCR Compressed'
                     65535: 'Pentax PEF Compressed'
+        exifReadData:
+            key: Compression
     262:
         exiftool:
             -
@@ -176,6 +190,8 @@ items:
                     32845: 'Pixar LogLuv'
                     32892: 'Sequential Color Filter'
                     34892: 'Linear Raw'
+        exifReadData:
+            key: PhotometricInterpretation
     263:
         exiftool:
             -
@@ -215,6 +231,8 @@ items:
                 values:
                     1: Normal
                     2: Reversed
+        exifReadData:
+            key: FillOrder
     269:
         exiftool:
             -
@@ -223,6 +241,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:DocumentName'
                 desc: 'Document Name'
+        exifReadData:
+            key: DocumentName
     270:
         exiftool:
             -
@@ -231,9 +251,9 @@ items:
                 writable: true
                 DOMNode: 'IFD0:ImageDescription'
                 desc: 'Image Description'
-    271:
         exifReadData:
-            key: Make
+            key: ImageDescription
+    271:
         exiftool:
             -
                 name: Make
@@ -242,9 +262,9 @@ items:
                 g2: Camera
                 DOMNode: 'IFD0:Make'
                 desc: Make
-    272:
         exifReadData:
-            key: Model
+            key: Make
+    272:
         exiftool:
             -
                 name: Model
@@ -253,6 +273,8 @@ items:
                 g2: Camera
                 DOMNode: 'IFD0:Model'
                 desc: 'Camera Model Name'
+        exifReadData:
+            key: Model
     273:
         exiftool:
             -
@@ -289,6 +311,8 @@ items:
                 g1: SubIFD2
                 DOMNode: 'SubIFD2:JpgFromRawStart'
                 desc: 'Jpg From Raw Start'
+        exifReadData:
+            key: StripOffsets
     274:
         exiftool:
             -
@@ -306,6 +330,8 @@ items:
                     6: 'Rotate 90 CW'
                     7: 'Mirror horizontal and rotate 90 CW'
                     8: 'Rotate 270 CW'
+        exifReadData:
+            key: Orientation
     277:
         exiftool:
             -
@@ -314,6 +340,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:SamplesPerPixel'
                 desc: 'Samples Per Pixel'
+        exifReadData:
+            key: SamplesPerPixel
     278:
         exiftool:
             -
@@ -322,6 +350,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:RowsPerStrip'
                 desc: 'Rows Per Strip'
+        exifReadData:
+            key: RowsPerStrip
     279:
         exiftool:
             -
@@ -358,6 +388,8 @@ items:
                 g1: SubIFD2
                 DOMNode: 'SubIFD2:JpgFromRawLength'
                 desc: 'Jpg From Raw Length'
+        exifReadData:
+            key: StripByteCounts
     280:
         exiftool:
             -
@@ -366,6 +398,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:MinSampleValue'
                 desc: 'Min Sample Value'
+        exifReadData:
+            key: MinSampleValue
     281:
         exiftool:
             -
@@ -374,9 +408,9 @@ items:
                 writable: true
                 DOMNode: 'IFD0:MaxSampleValue'
                 desc: 'Max Sample Value'
-    282:
         exifReadData:
-            key: XResolution
+            key: MaxSampleValue
+    282:
         exiftool:
             -
                 name: XResolution
@@ -384,9 +418,9 @@ items:
                 writable: true
                 DOMNode: 'IFD0:XResolution'
                 desc: 'X Resolution'
-    283:
         exifReadData:
-            key: YResolution
+            key: XResolution
+    283:
         exiftool:
             -
                 name: YResolution
@@ -394,6 +428,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:YResolution'
                 desc: 'Y Resolution'
+        exifReadData:
+            key: YResolution
     284:
         exiftool:
             -
@@ -405,6 +441,8 @@ items:
                 values:
                     1: Chunky
                     2: Planar
+        exifReadData:
+            key: PlanarConfiguration
     285:
         exiftool:
             -
@@ -413,6 +451,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:PageName'
                 desc: 'Page Name'
+        exifReadData:
+            key: PageName
     286:
         exiftool:
             -
@@ -421,6 +461,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:XPosition'
                 desc: 'X Position'
+        exifReadData:
+            key: XPosition
     287:
         exiftool:
             -
@@ -429,6 +471,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:YPosition'
                 desc: 'Y Position'
+        exifReadData:
+            key: YPosition
     288:
         exiftool:
             -
@@ -438,6 +482,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:FreeOffsets'
                 desc: 'Free Offsets'
+        exifReadData:
+            key: FreeOffsets
     289:
         exiftool:
             -
@@ -447,6 +493,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:FreeByteCounts'
                 desc: 'Free Byte Counts'
+        exifReadData:
+            key: FreeByteCounts
     290:
         exiftool:
             -
@@ -461,6 +509,8 @@ items:
                     3: '0.0001'
                     4: '1e-05'
                     5: '1e-06'
+        exifReadData:
+            key: GrayResponseUnit
     291:
         exiftool:
             -
@@ -470,6 +520,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:GrayResponseCurve'
                 desc: 'Gray Response Curve'
+        exifReadData:
+            key: GrayResponseCurve
     292:
         exiftool:
             -
@@ -483,6 +535,8 @@ items:
                     1: '2-Dimensional encoding'
                     2: Uncompressed
                     4: 'Fill bits added'
+        exifReadData:
+            key: T4Options
     293:
         exiftool:
             -
@@ -494,6 +548,8 @@ items:
                 desc: 'T6 Options'
                 values:
                     2: Uncompressed
+        exifReadData:
+            key: T6Options
     296:
         exiftool:
             -
@@ -506,6 +562,8 @@ items:
                     1: None
                     2: inches
                     3: cm
+        exifReadData:
+            key: ResolutionUnit
     297:
         exiftool:
             -
@@ -515,6 +573,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:PageNumber'
                 desc: 'Page Number'
+        exifReadData:
+            key: PageNumber
     300:
         exiftool:
             -
@@ -533,6 +593,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:TransferFunction'
                 desc: 'Transfer Function'
+        exifReadData:
+            key: TransferFunction
     305:
         exiftool:
             -
@@ -541,6 +603,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:Software'
                 desc: Software
+        exifReadData:
+            key: Software
     306:
         exiftool:
             -
@@ -550,6 +614,8 @@ items:
                 g2: Time
                 DOMNode: 'IFD0:ModifyDate'
                 desc: 'Modify Date'
+        exifReadData:
+            key: DateTime
     315:
         exiftool:
             -
@@ -559,6 +625,8 @@ items:
                 g2: Author
                 DOMNode: 'IFD0:Artist'
                 desc: Artist
+        exifReadData:
+            key: Artist
     316:
         exiftool:
             -
@@ -567,6 +635,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:HostComputer'
                 desc: 'Host Computer'
+        exifReadData:
+            key: HostComputer
     317:
         exiftool:
             -
@@ -578,6 +648,8 @@ items:
                 values:
                     1: None
                     2: 'Horizontal differencing'
+        exifReadData:
+            key: Predictor
     318:
         exiftool:
             -
@@ -588,6 +660,8 @@ items:
                 g2: Camera
                 DOMNode: 'IFD0:WhitePoint'
                 desc: 'White Point'
+        exifReadData:
+            key: WhitePoint
     319:
         exiftool:
             -
@@ -597,6 +671,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:PrimaryChromaticities'
                 desc: 'Primary Chromaticities'
+        exifReadData:
+            key: PrimaryChromaticities
     320:
         exiftool:
             -
@@ -606,6 +682,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ColorMap'
                 desc: 'Color Map'
+        exifReadData:
+            key: ColorMap
     321:
         exiftool:
             -
@@ -615,6 +693,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:HalftoneHints'
                 desc: 'Halftone Hints'
+        exifReadData:
+            key: HalfToneHints
     322:
         exiftool:
             -
@@ -623,6 +703,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:TileWidth'
                 desc: 'Tile Width'
+        exifReadData:
+            key: TileWidth
     323:
         exiftool:
             -
@@ -631,6 +713,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:TileLength'
                 desc: 'Tile Length'
+        exifReadData:
+            key: TileLength
     324:
         exiftool:
             -
@@ -640,6 +724,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:TileOffsets'
                 desc: 'Tile Offsets'
+        exifReadData:
+            key: TileOffsets
     325:
         exiftool:
             -
@@ -649,6 +735,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:TileByteCounts'
                 desc: 'Tile Byte Counts'
+        exifReadData:
+            key: TileByteCounts
     326:
         exiftool:
             -
@@ -688,6 +776,8 @@ items:
                 writable: false
                 DOMNode: 'IFD0:A100DataOffset'
                 desc: 'A100 Data Offset'
+        exifReadData:
+            key: SubIFD
     332:
         exiftool:
             -
@@ -699,6 +789,8 @@ items:
                 values:
                     1: CMYK
                     2: 'Not CMYK'
+        exifReadData:
+            key: InkSet
     333:
         exiftool:
             -
@@ -708,6 +800,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:InkNames'
                 desc: 'Ink Names'
+        exifReadData:
+            key: InkNames
     334:
         exiftool:
             -
@@ -717,6 +811,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:NumberofInks'
                 desc: 'Numberof Inks'
+        exifReadData:
+            key: NumberOfInks
     336:
         exiftool:
             -
@@ -726,6 +822,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:DotRange'
                 desc: 'Dot Range'
+        exifReadData:
+            key: DotRange
     337:
         exiftool:
             -
@@ -734,6 +832,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:TargetPrinter'
                 desc: 'Target Printer'
+        exifReadData:
+            key: TargetPrinter
     338:
         exiftool:
             -
@@ -747,6 +847,8 @@ items:
                     - Unspecified
                     - 'Associated Alpha'
                     - 'Unassociated Alpha'
+        exifReadData:
+            key: ExtraSample
     339:
         exiftool:
             -
@@ -763,6 +865,8 @@ items:
                     4: Undefined
                     5: 'Complex int'
                     6: 'Complex float'
+        exifReadData:
+            key: SampleFormat
     340:
         exiftool:
             -
@@ -772,6 +876,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:SMinSampleValue'
                 desc: 'S Min Sample Value'
+        exifReadData:
+            key: SMinSampleValue
     341:
         exiftool:
             -
@@ -781,6 +887,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:SMaxSampleValue'
                 desc: 'S Max Sample Value'
+        exifReadData:
+            key: SMaxSampleValue
     342:
         exiftool:
             -
@@ -790,6 +898,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:TransferRange'
                 desc: 'Transfer Range'
+        exifReadData:
+            key: TransferRange
     343:
         exiftool:
             -
@@ -799,6 +909,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ClipPath'
                 desc: 'Clip Path'
+        exifReadData:
+            key: ClipPath
     344:
         exiftool:
             -
@@ -808,6 +920,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:XClipPathUnits'
                 desc: 'X Clip Path Units'
+        exifReadData:
+            key: XClipPathUnits
     345:
         exiftool:
             -
@@ -817,6 +931,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:YClipPathUnits'
                 desc: 'Y Clip Path Units'
+        exifReadData:
+            key: YClipPathUnits
     346:
         exiftool:
             -
@@ -829,6 +945,8 @@ items:
                 values:
                     - 'Not indexed'
                     - Indexed
+        exifReadData:
+            key: Indexed
     347:
         exiftool:
             -
@@ -838,6 +956,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:JPEGTables'
                 desc: 'JPEG Tables'
+        exifReadData:
+            key: JPEGTables
     351:
         exiftool:
             -
@@ -850,6 +970,8 @@ items:
                 values:
                     - 'Higher resolution image does not exist'
                     - 'Higher resolution image exists'
+        exifReadData:
+            key: OPIProxy
     401:
         exiftool:
             -
@@ -964,6 +1086,8 @@ items:
                 values:
                     1: Baseline
                     14: Lossless
+        exifReadData:
+            key: JPEGProc
     513:
         exiftool:
             -
@@ -1034,6 +1158,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:OtherImageStart'
                 desc: 'Other Image Start'
+        exifReadData:
+            key: JPEGInterchangeFormat
     514:
         exiftool:
             -
@@ -1104,6 +1230,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:OtherImageLength'
                 desc: 'Other Image Length'
+        exifReadData:
+            key: JPEGInterchangeFormatLength
     515:
         exiftool:
             -
@@ -1113,6 +1241,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:JPEGRestartInterval'
                 desc: 'JPEG Restart Interval'
+        exifReadData:
+            key: JPEGRestartInterval
     517:
         exiftool:
             -
@@ -1122,6 +1252,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:JPEGLosslessPredictors'
                 desc: 'JPEG Lossless Predictors'
+        exifReadData:
+            key: JPEGLosslessPredictors
     518:
         exiftool:
             -
@@ -1131,6 +1263,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:JPEGPointTransforms'
                 desc: 'JPEG Point Transforms'
+        exifReadData:
+            key: JPEGPointTransforms
     519:
         exiftool:
             -
@@ -1140,6 +1274,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:JPEGQTables'
                 desc: 'JPEGQ Tables'
+        exifReadData:
+            key: JPEGQTables
     520:
         exiftool:
             -
@@ -1149,6 +1285,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:JPEGDCTables'
                 desc: 'JPEGDC Tables'
+        exifReadData:
+            key: JPEGDCTables
     521:
         exiftool:
             -
@@ -1158,6 +1296,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:JPEGACTables'
                 desc: 'JPEGAC Tables'
+        exifReadData:
+            key: JPEGACTables
     529:
         exiftool:
             -
@@ -1167,6 +1307,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:YCbCrCoefficients'
                 desc: 'Y Cb Cr Coefficients'
+        exifReadData:
+            key: YCbCrCoefficients
     530:
         exiftool:
             -
@@ -1185,6 +1327,8 @@ items:
                     '2 4': 'YCbCr4:2:1 (2 4)'
                     '4 1': 'YCbCr4:1:1 (4 1)'
                     '4 2': 'YCbCr4:1:0 (4 2)'
+        exifReadData:
+            key: YCbCrSubSampling
     531:
         exiftool:
             -
@@ -1196,6 +1340,8 @@ items:
                 values:
                     1: Centered
                     2: Co-sited
+        exifReadData:
+            key: YCbCrPositioning
     532:
         exiftool:
             -
@@ -1205,6 +1351,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:ReferenceBlackWhite'
                 desc: 'Reference Black White'
+        exifReadData:
+            key: ReferenceBlackWhite
     559:
         exiftool:
             -
@@ -1222,6 +1370,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:ApplicationNotes'
                 desc: 'Application Notes'
+        exifReadData:
+            key: ExtensibleMetadataPlatform
     999:
         exiftool:
             -
@@ -1240,6 +1390,8 @@ items:
                 g1: InteropIFD
                 DOMNode: 'InteropIFD:RelatedImageFileFormat'
                 desc: 'Related Image File Format'
+        exifReadData:
+            key: RelatedImageFileFormat
     4097:
         exiftool:
             -
@@ -1385,6 +1537,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ImageID'
                 desc: 'Image ID'
+        exifReadData:
+            key: ImageID
     32931:
         exiftool:
             -
@@ -1466,6 +1620,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:Matteing'
                 desc: Matteing
+        exifReadData:
+            key: Matteing
     32996:
         exiftool:
             -
@@ -1475,6 +1631,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:DataType'
                 desc: 'Data Type'
+        exifReadData:
+            key: DataType
     32997:
         exiftool:
             -
@@ -1484,6 +1642,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ImageDepth'
                 desc: 'Image Depth'
+        exifReadData:
+            key: ImageDepth
     32998:
         exiftool:
             -
@@ -1493,6 +1653,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:TileDepth'
                 desc: 'Tile Depth'
+        exifReadData:
+            key: TileDepth
     33300:
         exiftool:
             -
@@ -1575,6 +1737,8 @@ items:
                 g1: SubIFD
                 DOMNode: 'SubIFD:CFARepeatPatternDim'
                 desc: 'CFA Repeat Pattern Dim'
+        exifReadData:
+            key: CFARepeatPatternDim
     33422:
         exiftool:
             -
@@ -1584,6 +1748,8 @@ items:
                 g1: SubIFD
                 DOMNode: 'SubIFD:CFAPattern2'
                 desc: 'CFA Pattern 2'
+        exifReadData:
+            key: CFAPattern
     33423:
         exiftool:
             -
@@ -1594,6 +1760,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:BatteryLevel'
                 desc: 'Battery Level'
+        exifReadData:
+            key: BatteryLevel
     33432:
         exiftool:
             -
@@ -1603,6 +1771,8 @@ items:
                 g2: Author
                 DOMNode: 'IFD0:Copyright'
                 desc: Copyright
+        exifReadData:
+            key: Copyright
     33434:
         exiftool:
             -
@@ -1612,6 +1782,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ExposureTime'
                 desc: 'Exposure Time'
+        exifReadData:
+            key: ExposureTime
     33437:
         exiftool:
             -
@@ -1621,6 +1793,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:FNumber'
                 desc: 'F Number'
+        exifReadData:
+            key: FNumber
     33445:
         exiftool:
             -
@@ -1764,6 +1938,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:IPTC-NAA'
                 desc: IPTC-NAA
+        exifReadData:
+            key: IPTC/NAA
     33918:
         exiftool:
             -
@@ -1852,6 +2028,8 @@ items:
                     2: 'Long Word'
                     9: Sector
                     10: 'Long Sector'
+        exifReadData:
+            key: IT8RasterPadding
     34020:
         exiftool:
             -
@@ -1870,6 +2048,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:BitsPerExtendedRunLength'
                 desc: 'Bits Per Extended Run Length'
+        exifReadData:
+            key: IT8ColorTable
     34022:
         exiftool:
             -
@@ -2141,6 +2321,8 @@ items:
                     - Portrait
                     - Landscape
                     - Bulb
+        exifReadData:
+            key: ExposureProgram
     34852:
         exiftool:
             -
@@ -2151,6 +2333,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:SpectralSensitivity'
                 desc: 'Spectral Sensitivity'
+        exifReadData:
+            key: SpectralSensity
     34855:
         exiftool:
             -
@@ -2160,6 +2344,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ISO'
                 desc: ISO
+        exifReadData:
+            key: ISOSpeedRatings
     34856:
         exiftool:
             -
@@ -2169,6 +2355,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:Opto-ElectricConvFactor'
                 desc: 'Opto-Electric Conv Factor'
+        exifReadData:
+            key: OECF
     34857:
         exiftool:
             -
@@ -2304,6 +2492,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ExifVersion'
                 desc: 'Exif Version'
+        exifReadData:
+            key: ExifVersion
     36867:
         exiftool:
             -
@@ -2314,6 +2504,8 @@ items:
                 g2: Time
                 DOMNode: 'ExifIFD:DateTimeOriginal'
                 desc: 'Date/Time Original'
+        exifReadData:
+            key: DateTimeOriginal
     36868:
         exiftool:
             -
@@ -2324,6 +2516,8 @@ items:
                 g2: Time
                 DOMNode: 'ExifIFD:CreateDate'
                 desc: 'Create Date'
+        exifReadData:
+            key: DateTimeDigitized
     36873:
         exiftool:
             -
@@ -2381,6 +2575,8 @@ items:
                     - R
                     - G
                     - B
+        exifReadData:
+            key: ComponentsConfiguration
     37122:
         exiftool:
             -
@@ -2390,6 +2586,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:CompressedBitsPerPixel'
                 desc: 'Compressed Bits Per Pixel'
+        exifReadData:
+            key: CompressedBitsPerPixel
     37377:
         exiftool:
             -
@@ -2399,6 +2597,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ShutterSpeedValue'
                 desc: 'Shutter Speed Value'
+        exifReadData:
+            key: ShutterSpeedValue
     37378:
         exiftool:
             -
@@ -2408,6 +2608,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ApertureValue'
                 desc: 'Aperture Value'
+        exifReadData:
+            key: ApertureValue
     37379:
         exiftool:
             -
@@ -2417,6 +2619,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:BrightnessValue'
                 desc: 'Brightness Value'
+        exifReadData:
+            key: BrightnessValue
     37380:
         exiftool:
             -
@@ -2426,6 +2630,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ExposureCompensation'
                 desc: 'Exposure Compensation'
+        exifReadData:
+            key: ExposureBiasValue
     37381:
         exiftool:
             -
@@ -2436,6 +2642,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:MaxApertureValue'
                 desc: 'Max Aperture Value'
+        exifReadData:
+            key: MaxApertureValue
     37382:
         exiftool:
             -
@@ -2446,6 +2654,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:SubjectDistance'
                 desc: 'Subject Distance'
+        exifReadData:
+            key: SubjectDistance
     37383:
         exiftool:
             -
@@ -2465,6 +2675,8 @@ items:
                     5: Multi-segment
                     6: Partial
                     255: Other
+        exifReadData:
+            key: MeteringMode
     37384:
         exiftool:
             -
@@ -2498,6 +2710,8 @@ items:
                     23: D50
                     24: 'ISO Studio Tungsten'
                     255: Other
+        exifReadData:
+            key: LightSource
     37385:
         exiftool:
             -
@@ -2536,6 +2750,8 @@ items:
                     89: 'Auto, Fired, Red-eye reduction'
                     93: 'Auto, Fired, Red-eye reduction, Return not detected'
                     95: 'Auto, Fired, Red-eye reduction, Return detected'
+        exifReadData:
+            key: Flash
     37386:
         exiftool:
             -
@@ -2546,6 +2762,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:FocalLength'
                 desc: 'Focal Length'
+        exifReadData:
+            key: FocalLength
     37387:
         exiftool:
             -
@@ -2556,6 +2774,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:FlashEnergy'
                 desc: 'Flash Energy'
+        exifReadData:
+            key: FlashEnergy
     37388:
         exiftool:
             -
@@ -2565,6 +2785,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:SpatialFrequencyResponse'
                 desc: 'Spatial Frequency Response'
+        exifReadData:
+            key: SpatialFrequencyResponse
     37389:
         exiftool:
             -
@@ -2574,6 +2796,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:Noise'
                 desc: Noise
+        exifReadData:
+            key: Noise
     37390:
         exiftool:
             -
@@ -2583,6 +2807,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:FocalPlaneXResolution'
                 desc: 'Focal Plane X Resolution'
+        exifReadData:
+            key: FocalPlaneXResolution
     37391:
         exiftool:
             -
@@ -2592,6 +2818,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:FocalPlaneYResolution'
                 desc: 'Focal Plane Y Resolution'
+        exifReadData:
+            key: FocalPlaneYResolution
     37392:
         exiftool:
             -
@@ -2608,6 +2836,8 @@ items:
                     3: cm
                     4: mm
                     5: um
+        exifReadData:
+            key: FocalPlaneResolutionUnit
     37393:
         exiftool:
             -
@@ -2617,6 +2847,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ImageNumber'
                 desc: 'Image Number'
+        exifReadData:
+            key: ImageNumber
     37394:
         exiftool:
             -
@@ -2632,6 +2864,8 @@ items:
                     S: Secret
                     T: 'Top Secret'
                     U: Unclassified
+        exifReadData:
+            key: SecurityClassification
     37395:
         exiftool:
             -
@@ -2641,6 +2875,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ImageHistory'
                 desc: 'Image History'
+        exifReadData:
+            key: ImageHistory
     37396:
         exiftool:
             -
@@ -2651,6 +2887,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:SubjectArea'
                 desc: 'Subject Area'
+        exifReadData:
+            key: SubjectLocation
     37397:
         exiftool:
             -
@@ -2660,6 +2898,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ExposureIndex'
                 desc: 'Exposure Index'
+        exifReadData:
+            key: ExposureIndex
     37398:
         exiftool:
             -
@@ -2669,6 +2909,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:TIFF-EPStandardID'
                 desc: 'TIFF-EP Standard ID'
+        exifReadData:
+            key: TIFF/EPStandardID
     37399:
         exiftool:
             -
@@ -2688,6 +2930,8 @@ items:
                     6: 'Monochrome linear'
                     7: Trilinear
                     8: 'Color sequential linear'
+        exifReadData:
+            key: SensingMethod
     37434:
         exiftool:
             -
@@ -2724,6 +2968,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:StoNits'
                 desc: 'Sto Nits'
+        exifReadData:
+            key: StoNits
     37500:
         exiftool:
             -
@@ -3328,6 +3574,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:MakerNoteUnknown'
                 desc: 'Maker Note Unknown'
+        exifReadData:
+            key: MakerNote
     37510:
         exiftool:
             -
@@ -3337,6 +3585,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:UserComment'
                 desc: 'User Comment'
+        exifReadData:
+            key: UserComment
     37520:
         exiftool:
             -
@@ -3347,6 +3597,8 @@ items:
                 g2: Time
                 DOMNode: 'ExifIFD:SubSecTime'
                 desc: 'Sub Sec Time'
+        exifReadData:
+            key: SubSecTime
     37521:
         exiftool:
             -
@@ -3357,6 +3609,8 @@ items:
                 g2: Time
                 DOMNode: 'ExifIFD:SubSecTimeOriginal'
                 desc: 'Sub Sec Time Original'
+        exifReadData:
+            key: SubSecTimeOriginal
     37522:
         exiftool:
             -
@@ -3367,6 +3621,8 @@ items:
                 g2: Time
                 DOMNode: 'ExifIFD:SubSecTimeDigitized'
                 desc: 'Sub Sec Time Digitized'
+        exifReadData:
+            key: SubSecTimeDigitized
     37679:
         exiftool:
             -
@@ -3402,6 +3658,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:ImageSourceData'
                 desc: 'Image Source Data'
+        exifReadData:
+            key: ImageSourceData
     37888:
         exiftool:
             -
@@ -3464,6 +3722,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:XPTitle'
                 desc: 'XP Title'
+        exifReadData:
+            key: Title
     40092:
         exiftool:
             -
@@ -3472,6 +3732,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:XPComment'
                 desc: 'XP Comment'
+        exifReadData:
+            key: Comments
     40093:
         exiftool:
             -
@@ -3481,6 +3743,8 @@ items:
                 g2: Author
                 DOMNode: 'IFD0:XPAuthor'
                 desc: 'XP Author'
+        exifReadData:
+            key: Author
     40094:
         exiftool:
             -
@@ -3489,6 +3753,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:XPKeywords'
                 desc: 'XP Keywords'
+        exifReadData:
+            key: Keywords
     40095:
         exiftool:
             -
@@ -3497,6 +3763,8 @@ items:
                 writable: true
                 DOMNode: 'IFD0:XPSubject'
                 desc: 'XP Subject'
+        exifReadData:
+            key: Subject
     40960:
         exiftool:
             -
@@ -3506,6 +3774,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:FlashpixVersion'
                 desc: 'Flashpix Version'
+        exifReadData:
+            key: FlashPixVersion
     40961:
         exiftool:
             -
@@ -3521,6 +3791,8 @@ items:
                     65533: 'Wide Gamut RGB'
                     65534: 'ICC Profile'
                     65535: Uncalibrated
+        exifReadData:
+            key: ColorSpace
     40962:
         exiftool:
             -
@@ -3530,6 +3802,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ExifImageWidth'
                 desc: 'Exif Image Width'
+        exifReadData:
+            key: ExifImageWidth
     40963:
         exiftool:
             -
@@ -3539,6 +3813,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ExifImageHeight'
                 desc: 'Exif Image Height'
+        exifReadData:
+            key: ExifImageLength
     40964:
         exiftool:
             -
@@ -3548,6 +3824,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:RelatedSoundFile'
                 desc: 'Related Sound File'
+        exifReadData:
+            key: RelatedSoundFile
     40976:
         exiftool:
             -
@@ -3594,6 +3872,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:FlashEnergy'
                 desc: 'Flash Energy'
+        exifReadData:
+            key: FlashEnergy
     41484:
         exiftool:
             -
@@ -3603,6 +3883,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:SpatialFrequencyResponse'
                 desc: 'Spatial Frequency Response'
+        exifReadData:
+            key: SpatialFrequencyResponse
     41485:
         exiftool:
             -
@@ -3612,6 +3894,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:Noise'
                 desc: Noise
+        exifReadData:
+            key: Noise
     41486:
         exiftool:
             -
@@ -3622,6 +3906,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:FocalPlaneXResolution'
                 desc: 'Focal Plane X Resolution'
+        exifReadData:
+            key: FocalPlaneXResolution
     41487:
         exiftool:
             -
@@ -3632,6 +3918,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:FocalPlaneYResolution'
                 desc: 'Focal Plane Y Resolution'
+        exifReadData:
+            key: FocalPlaneYResolution
     41488:
         exiftool:
             -
@@ -3648,6 +3936,8 @@ items:
                     3: cm
                     4: mm
                     5: um
+        exifReadData:
+            key: FocalPlaneResolutionUnit
     41489:
         exiftool:
             -
@@ -3657,6 +3947,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ImageNumber'
                 desc: 'Image Number'
+        exifReadData:
+            key: ImageNumber
     41490:
         exiftool:
             -
@@ -3666,6 +3958,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:SecurityClassification'
                 desc: 'Security Classification'
+        exifReadData:
+            key: SecurityClassification
     41491:
         exiftool:
             -
@@ -3675,6 +3969,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ImageHistory'
                 desc: 'Image History'
+        exifReadData:
+            key: ImageHistory
     41492:
         exiftool:
             -
@@ -3686,6 +3982,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:SubjectLocation'
                 desc: 'Subject Location'
+        exifReadData:
+            key: SubjectLocation
     41493:
         exiftool:
             -
@@ -3695,6 +3993,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ExposureIndex'
                 desc: 'Exposure Index'
+        exifReadData:
+            key: ExposureIndex
     41494:
         exiftool:
             -
@@ -3704,6 +4004,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:TIFF-EPStandardID'
                 desc: 'TIFF-EP Standard ID'
+        exifReadData:
+            key: TIFF/EPStandardID
     41495:
         exiftool:
             -
@@ -3722,6 +4024,8 @@ items:
                     5: 'Color sequential area'
                     7: Trilinear
                     8: 'Color sequential linear'
+        exifReadData:
+            key: SensingMethod
     41728:
         exiftool:
             -
@@ -3736,6 +4040,8 @@ items:
                     2: 'Reflection Print Scanner'
                     3: 'Digital Camera'
                     \x03\x00\x00\x00: 'Sigma Digital Camera'
+        exifReadData:
+            key: FileSource
     41729:
         exiftool:
             -
@@ -3747,6 +4053,8 @@ items:
                 desc: 'Scene Type'
                 values:
                     1: 'Directly photographed'
+        exifReadData:
+            key: SceneType
     41730:
         exiftool:
             -
@@ -3756,6 +4064,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:CFAPattern'
                 desc: 'CFA Pattern'
+        exifReadData:
+            key: CFAPattern
     41985:
         exiftool:
             -
@@ -3771,6 +4081,8 @@ items:
                     3: HDR
                     6: Panorama
                     8: Portrait
+        exifReadData:
+            key: CustomRendered
     41986:
         exiftool:
             -
@@ -3785,6 +4097,8 @@ items:
                     - Auto
                     - Manual
                     - 'Auto bracket'
+        exifReadData:
+            key: ExposureMode
     41987:
         exiftool:
             -
@@ -3798,6 +4112,8 @@ items:
                 values:
                     - Auto
                     - Manual
+        exifReadData:
+            key: WhiteBalance
     41988:
         exiftool:
             -
@@ -3808,6 +4124,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:DigitalZoomRatio'
                 desc: 'Digital Zoom Ratio'
+        exifReadData:
+            key: DigitalZoomRatio
     41989:
         exiftool:
             -
@@ -3818,6 +4136,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:FocalLengthIn35mmFormat'
                 desc: 'Focal Length In 35mm Format'
+        exifReadData:
+            key: FocalLengthIn35mmFilm
     41990:
         exiftool:
             -
@@ -3833,6 +4153,8 @@ items:
                     - Landscape
                     - Portrait
                     - Night
+        exifReadData:
+            key: SceneCaptureType
     41991:
         exiftool:
             -
@@ -3849,6 +4171,8 @@ items:
                     - 'High gain up'
                     - 'Low gain down'
                     - 'High gain down'
+        exifReadData:
+            key: GainControl
     41992:
         exiftool:
             -
@@ -3863,6 +4187,8 @@ items:
                     - Normal
                     - Low
                     - High
+        exifReadData:
+            key: Contrast
     41993:
         exiftool:
             -
@@ -3877,6 +4203,8 @@ items:
                     - Normal
                     - Low
                     - High
+        exifReadData:
+            key: Saturation
     41994:
         exiftool:
             -
@@ -3891,6 +4219,8 @@ items:
                     - Normal
                     - Soft
                     - Hard
+        exifReadData:
+            key: Sharpness
     41995:
         exiftool:
             -
@@ -3901,6 +4231,8 @@ items:
                 g2: Camera
                 DOMNode: 'ExifIFD:DeviceSettingDescription'
                 desc: 'Device Setting Description'
+        exifReadData:
+            key: DeviceSettingDescription
     41996:
         exiftool:
             -
@@ -3916,6 +4248,8 @@ items:
                     - Macro
                     - Close
                     - Distant
+        exifReadData:
+            key: SubjectDistanceRange
     42016:
         exiftool:
             -
@@ -3925,6 +4259,8 @@ items:
                 g1: ExifIFD
                 DOMNode: 'ExifIFD:ImageUniqueID'
                 desc: 'Image Unique ID'
+        exifReadData:
+            key: ImageUniqueID
     42032:
         exiftool:
             -
