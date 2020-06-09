@@ -220,6 +220,8 @@ DATA;
                 $item['text']['mapping'] = $exiftool['values'];
             }
 
+            $item_exif_tag = $item['exifReadData']['key'] ?? null;
+
             unset($item['exifReadData']);
             unset($item['exiftool']);
 
@@ -232,8 +234,8 @@ DATA;
             }
 
             // Add item to map by exif_read_data key.
-            if (isset($item['exifReadData']['key'])) { // xx
-                $map['itemsByPhpExifTag'][$item['exifReadData']['key']] = $id;
+            if (isset($item_exif_tag)) { // xx
+                $map['itemsByPhpExifTag'][$item_exif_tag] = $id;
             }
 
             // Add item to map by exiftool DOMNode.
