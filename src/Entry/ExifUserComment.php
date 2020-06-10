@@ -51,8 +51,8 @@ class ExifUserComment extends Undefined
     {
         $this->valid = true;
 
-        $this->value = $data;
-        $this->components = 8 + strlen($this->value[0] ?? '');
+        $this->value = [$data[0] ?? '', $data[1] ?? ''];
+        $this->components = 8 + strlen($this->value[0]);
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
@@ -83,6 +83,6 @@ class ExifUserComment extends Undefined
      */
     public function toString(array $options = [])
     {
-        return $this->value[0] ?? '';
+        return $this->value[0];
     }
 }

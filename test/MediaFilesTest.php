@@ -7,6 +7,7 @@ use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Media;
+use FileEye\MediaProbe\MediaProbe;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
@@ -126,10 +127,12 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             if ($php_exif_tag = $element->getParentElement()->getCollection()->getPropertyValue('phpExifTag')) {
                 $tag = explode('::', $php_exif_tag);
                 if (count($tag) === 1) {
-                    $this->assertSame($test['exifReadData'][$tag[0]], $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                    $expected_tag_value = $test['exifReadData'][$tag[0]];
                 } else {
-                    $this->assertSame($test['exifReadData'][$tag[0]][$tag[1]], $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                    $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
                 }
+if ($expected['name'] === 'XPSubject') {dump(MediaProbe::dumpHexFormatted($expected_tag_value));dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'phpExif']))); )}
+                $this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
             }
             
             if (!$rewritten) {
