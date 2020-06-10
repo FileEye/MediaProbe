@@ -58,7 +58,8 @@ class Time extends Ascii
      */
     public function getValue(array $options = [])
     {
-        $type = isset($options['type']) ? $options['type'] : self::EXIF_STRING;
+        $format = $options['format'] ?? null;
+        $type = $options['type'] ?? self::EXIF_STRING;
 
         if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
             $this->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
@@ -95,7 +96,10 @@ class Time extends Ascii
                 $hours = (int) ($seconds_count / 3600);
                 $minutes = (int) ($seconds_count % 3600 / 60);
                 $day_count_to_seconds = $seconds_count % 60;
-                return sprintf('%04d.%02d.%02d %02d.%02d.%02d', $year, $month, $day, $hours, $minutes, $day_count_to_seconds);
+                if ($format === 'phpExif') {
+                  return sprintf('%04d.%02d.%02d %02d.%02d.%02d', $year, $month, $day, $hours, $minutes, $day_count_to_seconds);
+                }
+                return sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $day_count_to_seconds);
             case self::JULIAN_DAY_COUNT:
                 return $day_count + $seconds_count / 86400;
         }
