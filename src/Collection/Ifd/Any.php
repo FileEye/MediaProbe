@@ -4311,7 +4311,6 @@ class Any extends Collection {
       array (
         0 => 7,
       ),
-      'phpExifTag' => 'MakerNote',
       'exiftoolDOMNode' => 'ExifIFD:MakerNoteApple',
     ),
     37510 =>
@@ -7169,7 +7168,6 @@ class Any extends Collection {
     'Keywords' => 40094,
     'LightSource' => 37384,
     'Make' => 271,
-    'MakerNote' => 37500,
     'Matteing' => 32995,
     'MaxApertureValue' => 37381,
     'MaxSampleValue' => 281,

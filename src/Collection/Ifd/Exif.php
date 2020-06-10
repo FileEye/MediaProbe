@@ -348,7 +348,6 @@ class Exif extends Collection {
     'JPEGRestartInterval' => 515,
     'JPEGTables' => 347,
     'LightSource' => 37384,
-    'MakerNote' => 37500,
     'Matteing' => 32995,
     'MaxApertureValue' => 37381,
     'MeteringMode' => 37383,
@@ -3021,7 +3020,6 @@ class Exif extends Collection {
       ),
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
       'collection' => 'Tag',
-      'phpExifTag' => 'MakerNote',
       'exiftoolDOMNode' => 'ExifIFD:MakerNoteApple',
     ),
     37510 =>
