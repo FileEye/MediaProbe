@@ -38,6 +38,40 @@ class Time extends Ascii
     const JULIAN_DAY_COUNT = 3;
 
     /**
+     * Update the timestamp held by this entry.
+     *
+     * @param array $data
+     *            key 0 - holds the timestamp held by this entry in the correct
+     *            form as indicated by the second array element.
+     *            key 1 - the type of timestamp. For UNIX_TIMESTAMP this is an
+     *            integer counting the number of seconds since January 1st
+     *            1970, for EXIF_STRING this is a string of the form
+     *            'YYYY:MM:DD hh:mm:ss', and for JULIAN_DAY_COUNT this is a
+     *            floating point number where the integer part denotes the day
+     *            count and the fractional part denotes the time of day (0.25
+     *            means 6:00, 0.75 means 18:00).
+     */
+    public function setValue(array $data)
+    {
+        $type = $data[1] ?? self::EXIF_STRING;
+
+        if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
+            $this->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
+                'type' => $type,
+            ]);
+            $this->valid = false;
+            return $this;
+        }
+
+        $this->components = strlen($data[0]) + 1;
+        $this->value = [$data[0], $type];
+
+        $this->debug("text: {text}", ['text' => $this->toString()]);
+        $this->valid = true;
+        return $this;
+    }
+
+    /**
      * Return the timestamp of the entry.
      *
      * The timestamp held by this entry is returned in one of three formats:
@@ -72,7 +106,7 @@ class Time extends Ascii
           return rtrim($this->value[0], "\x00");
         }
 
-        switch ($this->value[1]) {
+/*        switch ($this->value[1]) {
             case self::UNIX_TIMESTAMP:
                 $day_count = ConvertTime::unixToJulianDay($this->value[0]);
                 $seconds = $this->value[0] % 86400;
@@ -94,10 +128,10 @@ class Time extends Ascii
             $seconds = $seconds % 60;
             $value = sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds);
         }
-
+*/
         // Clean the timestamp: some timestamps are broken other
         // separators than ':' and ' '.
-/*        $d = preg_split('/[^0-9]+/', $this->value);
+        $d = preg_split('/[^0-9]+/', $this->value[0]);
         for ($i = 0; $i < 6; $i ++) {
             if (empty($d[$i])) {
                 $d[$i] = 0;
@@ -126,42 +160,7 @@ class Time extends Ascii
                 return sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $day_count_to_seconds);
             case self::JULIAN_DAY_COUNT:
                 return $day_count + $seconds_count / 86400;
-        }*/
-        return $value;
-    }
-
-    /**
-     * Update the timestamp held by this entry.
-     *
-     * @param array $data
-     *            key 0 - holds the timestamp held by this entry in the correct
-     *            form as indicated by the second array element.
-     *            key 1 - the type of timestamp. For UNIX_TIMESTAMP this is an
-     *            integer counting the number of seconds since January 1st
-     *            1970, for EXIF_STRING this is a string of the form
-     *            'YYYY:MM:DD hh:mm:ss', and for JULIAN_DAY_COUNT this is a
-     *            floating point number where the integer part denotes the day
-     *            count and the fractional part denotes the time of day (0.25
-     *            means 6:00, 0.75 means 18:00).
-     */
-    public function setValue(array $data)
-    {
-        $type = $data[1] ?? self::EXIF_STRING;
-
-        if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
-            $this->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
-                'type' => $type,
-            ]);
-            $this->valid = false;
-            return $this;
         }
-
-        $this->components = strlen($data[0]);
-        $this->value = [$data[0], $type];
-
-        $this->debug("text: {text}", ['text' => $this->toString()]);
-        $this->valid = true;
-        return $this;
     }
 
     /**
