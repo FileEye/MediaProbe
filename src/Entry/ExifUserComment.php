@@ -68,7 +68,11 @@ dump(MediaProbe::dumpHexFormatted($data_element->getBytes(0, $item_definition->g
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return $this->toBytes();
+            $val = rtrim($this->value[0], " \x00");
+            if (strlen($val) === 0 && substr($this->value[0], 0, 1) === ' ') {
+                $val = ' ';
+            }
+            return str_pad($this->value[1], 8, chr(0)) . str_pad($val, strlen($this->value[0]), chr(0));
         }
         return parent::getValue();
     }
