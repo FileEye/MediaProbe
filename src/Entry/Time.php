@@ -169,8 +169,7 @@ class Time extends Ascii
      */
     public function toString(array $options = [])
     {
-        $value = $this->getValue($options);
-        return $value !== null ? (string) $value : '';
+        return rtrim($this->getValue($options), "\x00");
     }
 
     /**
