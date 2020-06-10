@@ -59,7 +59,11 @@ class IfdCopyright extends Ascii
      */
     public function getValue(array $options = [])
     {
-        return $this->value;
+        $format = $options['format'] ?? null;
+        if ($format === 'phpExif') {
+            return $this->toBytes();
+        }
+        return parent::getValue();
     }
 
     /**
