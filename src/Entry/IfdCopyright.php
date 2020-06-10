@@ -61,7 +61,7 @@ class IfdCopyright extends Ascii
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return $this->toBytes();
+            return rtrim($this->toBytes(), "\x00");
         }
         return parent::getValue();
     }

@@ -64,6 +64,10 @@ class WindowsString extends Byte
      */
     public function getValue(array $options = [])
     {
+        $format = $options['format'] ?? null;
+        if ($format === 'phpExif') {
+            return $this->value[0];
+        }
         return $this->value;
     }
 
