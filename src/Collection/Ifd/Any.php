@@ -2366,6 +2366,7 @@ class Any extends Collection {
     ),
     700 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\IfdApplicationNotes',
       'collection' => 'Tag',
       'name' => 'ApplicationNotes',
       'title' => 'Application Notes',
