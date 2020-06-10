@@ -71,7 +71,7 @@ class Rational extends Long
         switch ($format) {
           case 'core':
               if ($number[1] === 0) {
-                  return '*div/0'; // xxx throw exception
+                  return 0; // xxx throw exception
               } else {
                   return $number[0] / $number[1];
               }
