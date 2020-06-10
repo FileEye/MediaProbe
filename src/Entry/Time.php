@@ -63,8 +63,31 @@ class Time extends Ascii
             return $this;
         }
 
-        $this->components = strlen($data[0]);
-        $this->value = [$data[0], $type];
+        switch ($type) {
+            case self::UNIX_TIMESTAMP:
+                $day_count = ConvertTime::unixToJulianDay($data[0]);
+                $seconds = $data[0] % 86400;
+                break;
+            case self::JULIAN_DAY_COUNT:
+                $day_count = (int) floor($data[0]);
+                $seconds = (int) (86400 * ($data[0] - floor($data[0])));
+                break;
+            case self::EXIF_STRING:
+            default:
+                $value = $data[0];
+                break;
+        }
+
+        if (isset($day_count)) {
+            list ($year, $month, $day) = ConvertTime::julianDayToGregorian($day_count);
+            $hours = (int) ($seconds / 3600);
+            $minutes = (int) ($seconds % 3600 / 60);
+            $seconds = $seconds % 60;
+            $value = sprintf("%04d:%02d:%02d %02d:%02d:%02d\x00", $year, $month, $day, $hours, $minutes, $seconds);
+        }
+
+        $this->components = strlen($value);
+        $this->value = [$value];
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         $this->valid = true;
@@ -106,29 +129,6 @@ class Time extends Ascii
           return rtrim($this->value[0], "\x00");
         }
 
-/*        switch ($this->value[1]) {
-            case self::UNIX_TIMESTAMP:
-                $day_count = ConvertTime::unixToJulianDay($this->value[0]);
-                $seconds = $this->value[0] % 86400;
-                break;
-            case self::JULIAN_DAY_COUNT:
-                $day_count = (int) floor($this->value[0]);
-                $seconds = (int) (86400 * ($this->value[0] - floor($this->value[0])));
-                break;
-            case self::EXIF_STRING:
-            default:
-                $value = $this->value[0];
-                break;
-        }
-
-        if (isset($day_count)) {
-            list ($year, $month, $day) = ConvertTime::julianDayToGregorian($day_count);
-            $hours = (int) ($seconds / 3600);
-            $minutes = (int) ($seconds % 3600 / 60);
-            $seconds = $seconds % 60;
-            $value = sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds);
-        }
-*/
         // Clean the timestamp: some timestamps are broken other
         // separators than ':' and ' '.
         $d = preg_split('/[^0-9]+/', $this->value[0]);
