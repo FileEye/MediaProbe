@@ -34,8 +34,7 @@ class WindowsString extends Byte
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-        $bytes = $data_element->getBytes(0, min($data_element->getSize(), $item_definition->getValuesCount()));
-        $this->setValue([mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')]);
+        $this->setValue($data_element->getBytes(0, min($data_element->getSize(), $item_definition->getValuesCount())));
         return $this;
     }
 
@@ -44,12 +43,12 @@ class WindowsString extends Byte
      */
     public function setValue(array $data)
     {
-        parent::setValue($data);
-
+        $raw = $data;
+        $data = [mb_convert_encoding($data, 'UTF-8', 'UCS-2LE')];
         $php_string = rtrim($data[0], "\0");
         $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
         $this->components = strlen($windows_string) + 2;
-        $this->value = [$php_string, $windows_string];
+        $this->value = [$php_string, $windows_string, $raw];
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
@@ -61,12 +60,13 @@ class WindowsString extends Byte
      * @return array
      *            key 0 - the string in PHP format.
      *            key 1 - the string in Windows format (UCS-2LE).
+     *            key 2 - the raw bytes.
      */
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return rtrim($this->value[0], "\x00");
+            return $this->value[2];
         }
         return $this->value;
     }
