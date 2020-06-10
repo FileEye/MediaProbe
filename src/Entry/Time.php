@@ -69,7 +69,7 @@ class Time extends Ascii
         }
 
         if ($format === 'phpExif') {
-          return $this->value[0];
+          return rtrim($this->value[0], "\x00");
         }
 
         switch ($this->value[1]) {
