@@ -71,7 +71,8 @@ class Ascii extends EntryBase
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return rtrim($this->value, "\x0") ?? null;
+            $val = rtrim($this->value, "\x0");
+            return $val === '' ? null ! $val;
         }
         return parent::getValue();
     }
