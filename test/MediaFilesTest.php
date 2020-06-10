@@ -130,10 +130,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                 } else {
                     $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
                 }
-if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\WindowsString') {
+/*if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\WindowsString') {
   dump(MediaProbe::dumpHexFormatted($expected_tag_value));
   dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'phpExif'])));
-}
+}*/
                 $this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
             }
             
