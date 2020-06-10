@@ -121,6 +121,7 @@ class Time extends Ascii
      */
     public function setValue(array $data)
     {
+dump($data);
         $type = isset($data[1]) ? $data[1] : self::EXIF_STRING;
 
         if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
