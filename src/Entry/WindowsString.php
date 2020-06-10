@@ -44,18 +44,18 @@ class WindowsString extends Byte
     public function setValue(array $data)
     {
         $raw = $data[0];
-dump($raw);
+//dump($raw);
         $datax = mb_convert_encoding($data[0], 'UTF-8', 'UCS-2LE');
 /*dump(MediaProbe::dumpHexFormatted(mb_convert_encoding($data[0], 'ASCII', 'UCS-2LE')));
 dump(MediaProbe::dumpHexFormatted(mb_convert_encoding($data[0], 'UTF-8', 'UCS-2LE')));
 dump(MediaProbe::dumpHexFormatted(mb_convert_encoding($data[0], 'UCS-4', 'UCS-2LE')));
 dump(MediaProbe::dumpHexFormatted(mb_convert_encoding($data[0], 'UTF-16', 'UCS-2LE')));
 dump(MediaProbe::dumpHexFormatted(mb_convert_encoding($data[0], 'UTF-32', 'UCS-2LE')));*/
-dump(MediaProbe::dumpHexFormatted(mb_convert_encoding($data[0], '8bit', 'UCS-2LE')));
+//dump(MediaProbe::dumpHexFormatted(mb_convert_encoding($data[0], '8bit', 'UCS-2LE')));
         $php_string = rtrim($datax, "\0");
-dump($php_string);
+//dump($php_string);
         $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
-dump($windows_string);
+//dump($windows_string);
         $this->components = strlen($windows_string) + 2;
         $this->value = [$php_string, $windows_string, $raw];
 
@@ -75,7 +75,7 @@ dump($windows_string);
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return $this->value[2];
+            return mb_convert_encoding($this->value[2], '8bit', 'UCS-2LE');
         }
         return $this->value;
     }
