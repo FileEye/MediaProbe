@@ -45,9 +45,12 @@ class WindowsString extends Byte
     {
         $raw = $data;
 dump($data);
-        $data = mb_convert_encoding($data, 'UTF-8', 'UCS-2LE');
+        $data = mb_convert_encoding($data[0], 'UTF-8', 'UCS-2LE');
+dump($data);
         $php_string = rtrim($data, "\0");
+dump($php_string);
         $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
+dump($windows_string);
         $this->components = strlen($windows_string) + 2;
         $this->value = [$php_string, $windows_string, $raw];
 
