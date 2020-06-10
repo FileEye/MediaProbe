@@ -3,10 +3,11 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Block\BlockBase;
-use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -29,6 +30,8 @@ class ExifUserComment extends Undefined
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
+dump('------------------------------------');
+dump(MediaProbe::dumpHexFormatted($data_element->getBytes(0, $item_definition->getValuesCount())));
         if ($item_definition->getValuesCount() < 8) {
             $this->setValue(['', rtrim($data_element->getBytes(0, $item_definition->getValuesCount()))]);
         } else {
