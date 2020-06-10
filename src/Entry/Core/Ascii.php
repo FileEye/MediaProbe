@@ -67,6 +67,18 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
+    public function getValue(array $options = [])
+    {
+        $format = $options['format'] ?? null;
+        if ($format === 'phpExif') {
+            return rtrim($this->value, "\x0");
+        }
+        return parent::getValue();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
         if ($this->value === null || $this->value === '') {
