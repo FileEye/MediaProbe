@@ -7,7 +7,6 @@ use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Media;
-use FileEye\MediaProbe\MediaProbe;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
