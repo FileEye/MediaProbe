@@ -43,12 +43,12 @@ class WindowsString extends Byte
      */
     public function setValue(array $data)
     {
-dump($data);
         $raw = $data[0];
 dump($raw);
-        $data = mb_convert_encoding($data[0], 'UTF-8', 'UCS-2LE');
-dump($data);
-        $php_string = rtrim($data, "\0");
+        $datax = mb_convert_encoding($data[0], 'UTF-8', 'UCS-2LE');
+dump($datax);
+dump(mb_convert_encoding($data[0], 'ASCII', 'UCS-2LE'));
+        $php_string = rtrim($datax, "\0");
 dump($php_string);
         $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
 dump($windows_string);
