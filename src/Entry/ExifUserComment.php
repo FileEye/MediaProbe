@@ -30,8 +30,6 @@ class ExifUserComment extends Undefined
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-dump('------------------------------------');
-dump(MediaProbe::dumpHexFormatted($data_element->getBytes(0, $item_definition->getValuesCount())));
         if ($item_definition->getValuesCount() < 8) {
             $this->setValue(['', rtrim($data_element->getBytes(0, $item_definition->getValuesCount()))]);
         } else {
