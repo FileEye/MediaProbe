@@ -66,7 +66,7 @@ class WindowsString extends Byte
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return $this->value[0];
+            return $this->value[1];
         }
         return $this->value;
     }

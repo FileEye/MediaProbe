@@ -51,9 +51,8 @@ class ExifUserComment extends Undefined
     {
         $this->valid = true;
 
-        //$this->value = array_replace(['', 'ASCII'], $data);
         $this->value = $data;
-        $this->components = 8 + strlen($this->value[0]);
+        $this->components = 8 + strlen($this->value[0] ?? '');
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
