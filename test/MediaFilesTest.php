@@ -121,7 +121,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             $this->assertNull($element->getElement('*'));
             $this->assertSame($expected['format'], ItemFormat::getName($element->getFormat()), $element->getContextPath());
             $this->assertSame($expected['components'], $element->getComponents(), $element->getContextPath());
-            
+
             // Check PHP Exif tag equivalence.
             if ($php_exif_tag = $element->getParentElement()->getCollection()->getPropertyValue('phpExifTag')) {
                 $tag = explode('::', $php_exif_tag);
@@ -130,14 +130,14 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                 } else {
                     $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
                 }
-// if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\WindowsString') {
-/*if ($element->getParentElement() && $element->getParentElement()->getAttribute('name') === 'UserComment') {
+if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
+// if ($element->getParentElement() && $element->getParentElement()->getAttribute('name') === 'UserComment') {
   dump(MediaProbe::dumpHexFormatted($expected_tag_value));
   dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'phpExif'])));
-}*/
+}
                 $this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
             }
-            
+
             if (!$rewritten) {
                 $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
                 if (isset($expected['exiftool_text'])) {
