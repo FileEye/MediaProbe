@@ -146,7 +146,7 @@ class Time extends Ascii
      */
     public function setValue(array $data)
     {
-        $type = isset($data[1]) ? $data[1] : self::EXIF_STRING;
+        $type = $data[1] ?? self::EXIF_STRING;
 
         if (!in_array($type, [self::UNIX_TIMESTAMP, self::EXIF_STRING, self::JULIAN_DAY_COUNT])) {
             $this->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
@@ -157,7 +157,7 @@ class Time extends Ascii
         }
 
         $this->components = strlen($data[0]);
-        $this->value = $data;
+        $this->value = [$data[0], $type];
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         $this->valid = true;
