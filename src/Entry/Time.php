@@ -63,7 +63,7 @@ class Time extends Ascii
             return $this;
         }
 
-        $this->components = strlen($data[0]) + 1;
+        $this->components = strlen($data[0]);
         $this->value = [$data[0], $type];
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
