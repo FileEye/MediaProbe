@@ -124,7 +124,12 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             
             // Check PHP Exif tag equivalence.
             if ($php_exif_tag = $element->getParentElement()->getCollection()->getPropertyValue('phpExifTag')) {
-                $this->assertSame($test['exifReadData'][$php_exif_tag], $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                $tag = explode('::', $php_exif_tag);
+                if (count($tag) === 1) {
+                    $this->assertSame($test['exifReadData'][$tag[0]], $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                } else {
+                    $this->assertSame($test['exifReadData'][$tag[0]][$tag[1]], $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                }
             }
             
             if (!$rewritten) {
