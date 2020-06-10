@@ -69,12 +69,8 @@ class Ascii extends EntryBase
      */
     public function getValue(array $options = [])
     {
-        $format = $options['format'] ?? null;
-        if ($format === 'phpExif') {
-            $val = rtrim($this->value, "\x0");
-            return $val === '' ? null : $val;
-        }
-        return parent::getValue();
+        $val = rtrim($this->value, "\x0");
+        return $val === '' ? null : $val;
     }
 
     /**
