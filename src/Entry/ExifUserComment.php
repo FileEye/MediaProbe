@@ -83,6 +83,6 @@ class ExifUserComment extends Undefined
      */
     public function toString(array $options = [])
     {
-        return $this->value[0];
+        return $this->value[0] ?? '';
     }
 }
