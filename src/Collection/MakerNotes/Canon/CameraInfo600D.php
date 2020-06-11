@@ -22,6 +22,28 @@ class CameraInfo600D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 56,
+    'CameraTemperature' => 25,
+    'ColorTemperature' => 127,
+    'DirectoryIndex' => 487,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 475,
+    'FirmwareVersion' => 411,
+    'FlashMeteringMode' => 21,
+    'FocalLength' => 30,
+    'FocusDistanceLower' => 89,
+    'FocusDistanceUpper' => 87,
+    'HighlightTonePriority' => 7,
+    'ISO' => 6,
+    'LensType' => 234,
+    'MaxFocalLength' => 238,
+    'MinFocalLength' => 236,
+    'PictureStyle' => 179,
+    'WhiteBalance' => 123,
+  ),
   'items' =>
   array (
     3 =>
@@ -704,28 +726,6 @@ class CameraInfo600D extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 56,
-    'CameraTemperature' => 25,
-    'ColorTemperature' => 127,
-    'DirectoryIndex' => 487,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 475,
-    'FirmwareVersion' => 411,
-    'FlashMeteringMode' => 21,
-    'FocalLength' => 30,
-    'FocusDistanceLower' => 89,
-    'FocusDistanceUpper' => 87,
-    'HighlightTonePriority' => 7,
-    'ISO' => 6,
-    'LensType' => 234,
-    'MaxFocalLength' => 238,
-    'MinFocalLength' => 236,
-    'PictureStyle' => 179,
-    'WhiteBalance' => 123,
   ),
 );
 }

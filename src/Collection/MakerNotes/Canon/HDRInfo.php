@@ -22,6 +22,11 @@ class HDRInfo extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'HDR' => 1,
+    'HDREffect' => 2,
+  ),
   'items' =>
   array (
     1 =>
@@ -64,11 +69,6 @@ class HDRInfo extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'HDR' => 1,
-    'HDREffect' => 2,
   ),
 );
 }

@@ -23,6 +23,24 @@ class AFInfo2 extends Collection {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AFAreaHeights' => 9,
+    'AFAreaMode' => 1,
+    'AFAreaWidths' => 8,
+    'AFAreaXPositions' => 10,
+    'AFAreaYPositions' => 11,
+    'AFImageHeight' => 7,
+    'AFImageWidth' => 6,
+    'AFPointsInFocus' => 12,
+    'AFPointsSelected' => 13,
+    'CanonImageHeight' => 5,
+    'CanonImageWidth' => 4,
+    'NumAFPoints' => 2,
+    'PrimaryAFPoint' => 14,
+    'ValidAFPoints' => 3,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -196,24 +214,6 @@ class AFInfo2 extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AFAreaHeights' => 9,
-    'AFAreaMode' => 1,
-    'AFAreaWidths' => 8,
-    'AFAreaXPositions' => 10,
-    'AFAreaYPositions' => 11,
-    'AFImageHeight' => 7,
-    'AFImageWidth' => 6,
-    'AFPointsInFocus' => 12,
-    'AFPointsSelected' => 13,
-    'CanonImageHeight' => 5,
-    'CanonImageWidth' => 4,
-    'NumAFPoints' => 2,
-    'PrimaryAFPoint' => 14,
-    'ValidAFPoints' => 3,
-    'indexSize' => 0,
   ),
 );
 }

@@ -10,20 +10,30 @@ alias:
 postLoad:
     - 'FileEye\MediaProbe\Block\Ifd::thumbnailToBlock'
     - 'FileEye\MediaProbe\Block\Ifd::makerNoteToBlock'
+compiler:
+    exiftool:
+        g1Default: IFD0
+        xpath: '//table[@name=''Exif::Main'']/tag[not(@g1)]'
 items:
     11:
+        exifReadData:
+            key: ACDComment
         exiftool:
             -
                 name: ProcessingSoftware
                 type: string
                 writable: true
+                DOMNode: 'IFD0:ProcessingSoftware'
                 desc: 'Processing Software'
     254:
+        exifReadData:
+            key: NewSubFile
         exiftool:
             -
                 name: SubfileType
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:SubfileType'
                 desc: 'Subfile Type'
                 values:
                     0: 'Full-resolution Image'
@@ -39,11 +49,14 @@ items:
                     65537: 'Alternate reduced-resolution image'
                     '4294967295': invalid
     255:
+        exifReadData:
+            key: SubFile
         exiftool:
             -
                 name: OldSubfileType
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:OldSubfileType'
                 desc: 'Old Subfile Type'
                 values:
                     1: 'Full-resolution image'
@@ -54,37 +67,49 @@ items:
         format:
             - Short
             - Long
+        exifReadData:
+            key: ImageWidth
         exiftool:
             -
                 name: ImageWidth
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:ImageWidth'
                 desc: 'Image Width'
     257:
         components: 1
         format:
             - Short
             - Long
+        exifReadData:
+            key: ImageLength
         exiftool:
             -
                 name: ImageHeight
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:ImageHeight'
                 desc: 'Image Height'
     258:
+        exifReadData:
+            key: BitsPerSample
         exiftool:
             -
                 name: BitsPerSample
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:BitsPerSample'
                 desc: 'Bits Per Sample'
     259:
         components: 1
+        exifReadData:
+            key: Compression
         exiftool:
             -
                 name: Compression
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:Compression'
                 desc: Compression
                 values:
                     1: Uncompressed
@@ -138,11 +163,14 @@ items:
                     65535: 'Pentax PEF Compressed'
     262:
         components: 1
+        exifReadData:
+            key: PhotometricInterpretation
         exiftool:
             -
                 name: PhotometricInterpretation
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:PhotometricInterpretation'
                 desc: 'Photometric Interpretation'
                 values:
                     0: WhiteIsZero
@@ -166,6 +194,7 @@ items:
                 name: Thresholding
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:Thresholding'
                 desc: Thresholding
                 values:
                     1: 'No dithering or halftoning'
@@ -177,6 +206,7 @@ items:
                 name: CellWidth
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:CellWidth'
                 desc: 'Cell Width'
     265:
         exiftool:
@@ -184,64 +214,86 @@ items:
                 name: CellLength
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:CellLength'
                 desc: 'Cell Length'
     266:
+        exifReadData:
+            key: FillOrder
         exiftool:
             -
                 name: FillOrder
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:FillOrder'
                 desc: 'Fill Order'
                 values:
                     1: Normal
                     2: Reversed
     269:
+        exifReadData:
+            key: DocumentName
         exiftool:
             -
                 name: DocumentName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:DocumentName'
                 desc: 'Document Name'
     270:
+        exifReadData:
+            key: ImageDescription
         exiftool:
             -
                 name: ImageDescription
                 type: string
                 writable: true
+                DOMNode: 'IFD0:ImageDescription'
                 desc: 'Image Description'
     271:
+        exifReadData:
+            key: Make
         exiftool:
             -
                 name: Make
                 type: string
                 writable: true
                 g2: Camera
+                DOMNode: 'IFD0:Make'
                 desc: Make
     272:
+        exifReadData:
+            key: Model
         exiftool:
             -
                 name: Model
                 type: string
                 writable: true
                 g2: Camera
+                DOMNode: 'IFD0:Model'
                 desc: 'Camera Model Name'
     273:
         format:
             - Short
             - Long
+        exifReadData:
+            key: StripOffsets
         exiftool:
             2:
                 name: PreviewImageStart
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:PreviewImageStart'
                 desc: 'Preview Image Start'
     274:
         components: 1
+        exifReadData:
+            key: Orientation
         exiftool:
             -
                 name: Orientation
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:Orientation'
                 desc: Orientation
                 values:
                     1: 'Horizontal (normal)'
@@ -254,101 +306,137 @@ items:
                     8: 'Rotate 270 CW'
     277:
         components: 1
+        exifReadData:
+            key: SamplesPerPixel
         exiftool:
             -
                 name: SamplesPerPixel
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:SamplesPerPixel'
                 desc: 'Samples Per Pixel'
     278:
         components: 1
         format:
             - Short
             - Long
+        exifReadData:
+            key: RowsPerStrip
         exiftool:
             -
                 name: RowsPerStrip
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:RowsPerStrip'
                 desc: 'Rows Per Strip'
     279:
         format:
             - Short
             - Long
+        exifReadData:
+            key: StripByteCounts
         exiftool:
             2:
                 name: PreviewImageLength
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:PreviewImageLength'
                 desc: 'Preview Image Length'
     280:
+        exifReadData:
+            key: MinSampleValue
         exiftool:
             -
                 name: MinSampleValue
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:MinSampleValue'
                 desc: 'Min Sample Value'
     281:
+        exifReadData:
+            key: MaxSampleValue
         exiftool:
             -
                 name: MaxSampleValue
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:MaxSampleValue'
                 desc: 'Max Sample Value'
     282:
         components: 1
+        exifReadData:
+            key: XResolution
         exiftool:
             -
                 name: XResolution
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:XResolution'
                 desc: 'X Resolution'
     283:
         components: 1
+        exifReadData:
+            key: YResolution
         exiftool:
             -
                 name: YResolution
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:YResolution'
                 desc: 'Y Resolution'
     284:
         components: 1
+        exifReadData:
+            key: PlanarConfiguration
         exiftool:
             -
                 name: PlanarConfiguration
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:PlanarConfiguration'
                 desc: 'Planar Configuration'
                 values:
                     1: Chunky
                     2: Planar
     285:
+        exifReadData:
+            key: PageName
         exiftool:
             -
                 name: PageName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:PageName'
                 desc: 'Page Name'
     286:
+        exifReadData:
+            key: XPosition
         exiftool:
             -
                 name: XPosition
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:XPosition'
                 desc: 'X Position'
     287:
+        exifReadData:
+            key: YPosition
         exiftool:
             -
                 name: YPosition
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:YPosition'
                 desc: 'Y Position'
     290:
+        exifReadData:
+            key: GrayResponseUnit
         exiftool:
             -
                 name: GrayResponseUnit
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:GrayResponseUnit'
                 desc: 'Gray Response Unit'
                 values:
                     1: '0.1'
@@ -358,76 +446,102 @@ items:
                     5: '1e-06'
     296:
         components: 1
+        exifReadData:
+            key: ResolutionUnit
         exiftool:
             -
                 name: ResolutionUnit
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:ResolutionUnit'
                 desc: 'Resolution Unit'
                 values:
                     1: None
                     2: inches
                     3: cm
     297:
+        exifReadData:
+            key: PageNumber
         exiftool:
             -
                 name: PageNumber
                 type: int16u
                 count: 2
                 writable: true
+                DOMNode: 'IFD0:PageNumber'
                 desc: 'Page Number'
     301:
+        exifReadData:
+            key: TransferFunction
         exiftool:
             -
                 name: TransferFunction
                 type: int16u
                 count: 768
                 writable: true
+                DOMNode: 'IFD0:TransferFunction'
                 desc: 'Transfer Function'
     305:
+        exifReadData:
+            key: Software
         exiftool:
             -
                 name: Software
                 type: string
                 writable: true
+                DOMNode: 'IFD0:Software'
                 desc: Software
     306:
         components: 20
         entryClass: FileEye\MediaProbe\Entry\Time
+        exifReadData:
+            key: DateTime
         exiftool:
             -
                 name: ModifyDate
                 type: string
                 writable: true
                 g2: Time
+                DOMNode: 'IFD0:ModifyDate'
                 desc: 'Modify Date'
     315:
+        exifReadData:
+            key: Artist
         exiftool:
             -
                 name: Artist
                 type: string
                 writable: true
                 g2: Author
+                DOMNode: 'IFD0:Artist'
                 desc: Artist
     316:
+        exifReadData:
+            key: HostComputer
         exiftool:
             -
                 name: HostComputer
                 type: string
                 writable: true
+                DOMNode: 'IFD0:HostComputer'
                 desc: 'Host Computer'
     317:
         components: 1
+        exifReadData:
+            key: Predictor
         exiftool:
             -
                 name: Predictor
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:Predictor'
                 desc: Predictor
                 values:
                     1: None
                     2: 'Horizontal differencing'
     318:
+        exifReadData:
+            key: WhitePoint
         exiftool:
             -
                 name: WhitePoint
@@ -435,104 +549,140 @@ items:
                 count: 2
                 writable: true
                 g2: Camera
+                DOMNode: 'IFD0:WhitePoint'
                 desc: 'White Point'
     319:
+        exifReadData:
+            key: PrimaryChromaticities
         exiftool:
             -
                 name: PrimaryChromaticities
                 type: rational64u
                 count: 6
                 writable: true
+                DOMNode: 'IFD0:PrimaryChromaticities'
                 desc: 'Primary Chromaticities'
     321:
+        exifReadData:
+            key: HalfToneHints
         exiftool:
             -
                 name: HalftoneHints
                 type: int16u
                 count: 2
                 writable: true
+                DOMNode: 'IFD0:HalftoneHints'
                 desc: 'Halftone Hints'
     322:
+        exifReadData:
+            key: TileWidth
         exiftool:
             -
                 name: TileWidth
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:TileWidth'
                 desc: 'Tile Width'
     323:
+        exifReadData:
+            key: TileLength
         exiftool:
             -
                 name: TileLength
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:TileLength'
                 desc: 'Tile Length'
     330:
+        exifReadData:
+            key: SubIFD
         exiftool:
             1:
                 name: A100DataOffset
                 type: '?'
                 writable: false
+                DOMNode: 'IFD0:A100DataOffset'
                 desc: 'A100 Data Offset'
     332:
+        exifReadData:
+            key: InkSet
         exiftool:
             -
                 name: InkSet
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:InkSet'
                 desc: 'Ink Set'
                 values:
                     1: CMYK
                     2: 'Not CMYK'
     337:
+        exifReadData:
+            key: TargetPrinter
         exiftool:
             -
                 name: TargetPrinter
                 type: string
                 writable: true
+                DOMNode: 'IFD0:TargetPrinter'
                 desc: 'Target Printer'
     513:
         components: 1
+        exifReadData:
+            key: JPEGInterchangeFormat
         exiftool:
             1:
                 name: ThumbnailOffset
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:ThumbnailOffset'
                 desc: 'Thumbnail Offset'
             4:
                 name: PreviewImageStart
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:PreviewImageStart'
                 desc: 'Preview Image Start'
     514:
         components: 1
+        exifReadData:
+            key: JPEGInterchangeFormatLength
         exiftool:
             1:
                 name: ThumbnailLength
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:ThumbnailLength'
                 desc: 'Thumbnail Length'
             4:
                 name: PreviewImageLength
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:PreviewImageLength'
                 desc: 'Preview Image Length'
     529:
+        exifReadData:
+            key: YCbCrCoefficients
         exiftool:
             -
                 name: YCbCrCoefficients
                 type: rational64u
                 count: 3
                 writable: true
+                DOMNode: 'IFD0:YCbCrCoefficients'
                 desc: 'Y Cb Cr Coefficients'
     530:
         __todo: 'adjust decoding'
         entryClass: FileEye\MediaProbe\Entry\IfdYCbCrSubSampling
+        exifReadData:
+            key: YCbCrSubSampling
         exiftool:
             -
                 name: YCbCrSubSampling
                 type: int16u
                 count: 2
                 writable: true
+                DOMNode: 'IFD0:YCbCrSubSampling'
                 desc: 'Y Cb Cr Sub Sampling'
                 values:
                     '1 1': 'YCbCr4:4:4 (1 1)'
@@ -545,32 +695,41 @@ items:
                     '4 2': 'YCbCr4:1:0 (4 2)'
     531:
         components: 1
+        exifReadData:
+            key: YCbCrPositioning
         exiftool:
             -
                 name: YCbCrPositioning
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:YCbCrPositioning'
                 desc: 'Y Cb Cr Positioning'
                 values:
                     1: Centered
                     2: Co-sited
     532:
         components: 6
+        exifReadData:
+            key: ReferenceBlackWhite
         exiftool:
             -
                 name: ReferenceBlackWhite
                 type: rational64u
                 count: 6
                 writable: true
+                DOMNode: 'IFD0:ReferenceBlackWhite'
                 desc: 'Reference Black White'
     700:
         __todo: 'add ifd for XMP tags'
         entryClass: FileEye\MediaProbe\Entry\IfdApplicationNotes
+        exifReadData:
+            key: ExtensibleMetadataPlatform
         exiftool:
             -
                 name: ApplicationNotes
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:ApplicationNotes'
                 desc: 'Application Notes'
     18246:
         components: 1
@@ -579,6 +738,7 @@ items:
                 name: Rating
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:Rating'
                 desc: Rating
     18249:
         components: 1
@@ -587,22 +747,29 @@ items:
                 name: RatingPercent
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:RatingPercent'
                 desc: 'Rating Percent'
     33432:
         entryClass: FileEye\MediaProbe\Entry\IfdCopyright
+        exifReadData:
+            key: Copyright
         exiftool:
             -
                 name: Copyright
                 type: string
                 writable: true
                 g2: Author
+                DOMNode: 'IFD0:Copyright'
                 desc: Copyright
     33723:
+        exifReadData:
+            key: IPTC/NAA
         exiftool:
             -
                 name: IPTC-NAA
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:IPTC-NAA'
                 desc: IPTC-NAA
     34118:
         exiftool:
@@ -610,6 +777,7 @@ items:
                 name: SEMInfo
                 type: string
                 writable: true
+                DOMNode: 'IFD0:SEMInfo'
                 desc: 'SEM Info'
     34665:
         collection: Ifd\Exif
@@ -620,6 +788,7 @@ items:
                 name: GeoTiffDirectory
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:GeoTiffDirectory'
                 desc: 'Geo Tiff Directory'
     34736:
         exiftool:
@@ -627,6 +796,7 @@ items:
                 name: GeoTiffDoubleParams
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:GeoTiffDoubleParams'
                 desc: 'Geo Tiff Double Params'
     34737:
         exiftool:
@@ -634,57 +804,76 @@ items:
                 name: GeoTiffAsciiParams
                 type: string
                 writable: true
+                DOMNode: 'IFD0:GeoTiffAsciiParams'
                 desc: 'Geo Tiff Ascii Params'
     34853:
         collection: Ifd\Gps
         name: GPS
     37724:
+        exifReadData:
+            key: ImageSourceData
         exiftool:
             -
                 name: ImageSourceData
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:ImageSourceData'
                 desc: 'Image Source Data'
     40091:
         entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: Title
         exiftool:
             -
                 name: XPTitle
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:XPTitle'
                 desc: 'XP Title'
     40092:
         entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: Comments
         exiftool:
             -
                 name: XPComment
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:XPComment'
                 desc: 'XP Comment'
     40093:
         entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: Author
         exiftool:
             -
                 name: XPAuthor
                 type: int8u
                 writable: true
                 g2: Author
+                DOMNode: 'IFD0:XPAuthor'
                 desc: 'XP Author'
     40094:
         entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: Keywords
         exiftool:
             -
                 name: XPKeywords
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:XPKeywords'
                 desc: 'XP Keywords'
     40095:
         entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: Subject
         exiftool:
             -
                 name: XPSubject
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:XPSubject'
                 desc: 'XP Subject'
     50341:
         exiftool:
@@ -692,6 +881,7 @@ items:
                 name: PrintIM
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:PrintIM'
                 desc: 'Print Image Matching'
     50706:
         exiftool:
@@ -700,6 +890,7 @@ items:
                 type: int8u
                 count: 4
                 writable: true
+                DOMNode: 'IFD0:DNGVersion'
                 desc: 'DNG Version'
     50707:
         exiftool:
@@ -708,6 +899,7 @@ items:
                 type: int8u
                 count: 4
                 writable: true
+                DOMNode: 'IFD0:DNGBackwardVersion'
                 desc: 'DNG Backward Version'
     50708:
         exiftool:
@@ -715,6 +907,7 @@ items:
                 name: UniqueCameraModel
                 type: string
                 writable: true
+                DOMNode: 'IFD0:UniqueCameraModel'
                 desc: 'Unique Camera Model'
     50709:
         exiftool:
@@ -722,6 +915,7 @@ items:
                 name: LocalizedCameraModel
                 type: string
                 writable: true
+                DOMNode: 'IFD0:LocalizedCameraModel'
                 desc: 'Localized Camera Model'
     50721:
         exiftool:
@@ -729,6 +923,7 @@ items:
                 name: ColorMatrix1
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:ColorMatrix1'
                 desc: 'Color Matrix 1'
     50722:
         exiftool:
@@ -736,6 +931,7 @@ items:
                 name: ColorMatrix2
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:ColorMatrix2'
                 desc: 'Color Matrix 2'
     50723:
         exiftool:
@@ -743,6 +939,7 @@ items:
                 name: CameraCalibration1
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:CameraCalibration1'
                 desc: 'Camera Calibration 1'
     50724:
         exiftool:
@@ -750,6 +947,7 @@ items:
                 name: CameraCalibration2
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:CameraCalibration2'
                 desc: 'Camera Calibration 2'
     50725:
         exiftool:
@@ -757,6 +955,7 @@ items:
                 name: ReductionMatrix1
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:ReductionMatrix1'
                 desc: 'Reduction Matrix 1'
     50726:
         exiftool:
@@ -764,6 +963,7 @@ items:
                 name: ReductionMatrix2
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:ReductionMatrix2'
                 desc: 'Reduction Matrix 2'
     50727:
         exiftool:
@@ -771,6 +971,7 @@ items:
                 name: AnalogBalance
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:AnalogBalance'
                 desc: 'Analog Balance'
     50728:
         exiftool:
@@ -778,6 +979,7 @@ items:
                 name: AsShotNeutral
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:AsShotNeutral'
                 desc: 'As Shot Neutral'
     50729:
         exiftool:
@@ -786,6 +988,7 @@ items:
                 type: rational64u
                 count: 2
                 writable: true
+                DOMNode: 'IFD0:AsShotWhiteXY'
                 desc: 'As Shot White XY'
     50730:
         exiftool:
@@ -793,6 +996,7 @@ items:
                 name: BaselineExposure
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:BaselineExposure'
                 desc: 'Baseline Exposure'
     50731:
         exiftool:
@@ -800,6 +1004,7 @@ items:
                 name: BaselineNoise
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:BaselineNoise'
                 desc: 'Baseline Noise'
     50732:
         exiftool:
@@ -807,6 +1012,7 @@ items:
                 name: BaselineSharpness
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:BaselineSharpness'
                 desc: 'Baseline Sharpness'
     50734:
         exiftool:
@@ -814,6 +1020,7 @@ items:
                 name: LinearResponseLimit
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:LinearResponseLimit'
                 desc: 'Linear Response Limit'
     50735:
         exiftool:
@@ -822,6 +1029,7 @@ items:
                 type: string
                 writable: true
                 g2: Camera
+                DOMNode: 'IFD0:CameraSerialNumber'
                 desc: 'Camera Serial Number'
     50736:
         exiftool:
@@ -831,6 +1039,7 @@ items:
                 count: 4
                 writable: true
                 g2: Camera
+                DOMNode: 'IFD0:DNGLensInfo'
                 desc: 'DNG Lens Info'
     50739:
         exiftool:
@@ -838,6 +1047,7 @@ items:
                 name: ShadowScale
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:ShadowScale'
                 desc: 'Shadow Scale'
     50740:
         exiftool:
@@ -845,11 +1055,13 @@ items:
                 name: DNGAdobeData
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:DNGAdobeData'
                 desc: 'DNG Adobe Data'
             4:
                 name: DNGPrivateData
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:DNGPrivateData'
                 desc: 'DNG Private Data'
     50741:
         exiftool:
@@ -857,6 +1069,7 @@ items:
                 name: MakerNoteSafety
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:MakerNoteSafety'
                 desc: 'Maker Note Safety'
                 values:
                     - Unsafe
@@ -867,6 +1080,7 @@ items:
                 name: CalibrationIlluminant1
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:CalibrationIlluminant1'
                 desc: 'Calibration Illuminant 1'
                 values:
                     0: Unknown
@@ -897,6 +1111,7 @@ items:
                 name: CalibrationIlluminant2
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:CalibrationIlluminant2'
                 desc: 'Calibration Illuminant 2'
                 values:
                     0: Unknown
@@ -928,6 +1143,7 @@ items:
                 type: int8u
                 count: 16
                 writable: true
+                DOMNode: 'IFD0:RawDataUniqueID'
                 desc: 'Raw Data Unique ID'
     50827:
         exiftool:
@@ -935,6 +1151,7 @@ items:
                 name: OriginalRawFileName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:OriginalRawFileName'
                 desc: 'Original Raw File Name'
     50828:
         exiftool:
@@ -942,6 +1159,7 @@ items:
                 name: OriginalRawFileData
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:OriginalRawFileData'
                 desc: 'Original Raw File Data'
     50831:
         exiftool:
@@ -949,6 +1167,7 @@ items:
                 name: AsShotICCProfile
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:AsShotICCProfile'
                 desc: 'As Shot ICC Profile'
     50832:
         exiftool:
@@ -956,6 +1175,7 @@ items:
                 name: AsShotPreProfileMatrix
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:AsShotPreProfileMatrix'
                 desc: 'As Shot Pre Profile Matrix'
     50833:
         exiftool:
@@ -963,6 +1183,7 @@ items:
                 name: CurrentICCProfile
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:CurrentICCProfile'
                 desc: 'Current ICC Profile'
     50834:
         exiftool:
@@ -970,6 +1191,7 @@ items:
                 name: CurrentPreProfileMatrix
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:CurrentPreProfileMatrix'
                 desc: 'Current Pre Profile Matrix'
     50879:
         exiftool:
@@ -977,6 +1199,7 @@ items:
                 name: ColorimetricReference
                 type: int16u
                 writable: true
+                DOMNode: 'IFD0:ColorimetricReference'
                 desc: 'Colorimetric Reference'
     50885:
         exiftool:
@@ -984,6 +1207,7 @@ items:
                 name: SRawType
                 type: '?'
                 writable: false
+                DOMNode: 'IFD0:SRawType'
                 desc: 'SRaw Type'
     50898:
         exiftool:
@@ -991,6 +1215,7 @@ items:
                 name: PanasonicTitle
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:PanasonicTitle'
                 desc: 'Panasonic Title'
     50899:
         exiftool:
@@ -998,6 +1223,7 @@ items:
                 name: PanasonicTitle2
                 type: undef
                 writable: true
+                DOMNode: 'IFD0:PanasonicTitle2'
                 desc: 'Panasonic Title 2'
     50931:
         exiftool:
@@ -1005,6 +1231,7 @@ items:
                 name: CameraCalibrationSig
                 type: string
                 writable: true
+                DOMNode: 'IFD0:CameraCalibrationSig'
                 desc: 'Camera Calibration Sig'
     50932:
         exiftool:
@@ -1012,6 +1239,7 @@ items:
                 name: ProfileCalibrationSig
                 type: string
                 writable: true
+                DOMNode: 'IFD0:ProfileCalibrationSig'
                 desc: 'Profile Calibration Sig'
     50934:
         exiftool:
@@ -1019,6 +1247,7 @@ items:
                 name: AsShotProfileName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:AsShotProfileName'
                 desc: 'As Shot Profile Name'
     50936:
         exiftool:
@@ -1026,6 +1255,7 @@ items:
                 name: ProfileName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:ProfileName'
                 desc: 'Profile Name'
     50937:
         exiftool:
@@ -1034,6 +1264,7 @@ items:
                 type: int32u
                 count: 3
                 writable: true
+                DOMNode: 'IFD0:ProfileHueSatMapDims'
                 desc: 'Profile Hue Sat Map Dims'
     50938:
         exiftool:
@@ -1041,6 +1272,7 @@ items:
                 name: ProfileHueSatMapData1
                 type: float
                 writable: true
+                DOMNode: 'IFD0:ProfileHueSatMapData1'
                 desc: 'Profile Hue Sat Map Data 1'
     50939:
         exiftool:
@@ -1048,6 +1280,7 @@ items:
                 name: ProfileHueSatMapData2
                 type: float
                 writable: true
+                DOMNode: 'IFD0:ProfileHueSatMapData2'
                 desc: 'Profile Hue Sat Map Data 2'
     50940:
         exiftool:
@@ -1055,6 +1288,7 @@ items:
                 name: ProfileToneCurve
                 type: float
                 writable: true
+                DOMNode: 'IFD0:ProfileToneCurve'
                 desc: 'Profile Tone Curve'
     50941:
         exiftool:
@@ -1062,6 +1296,7 @@ items:
                 name: ProfileEmbedPolicy
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:ProfileEmbedPolicy'
                 desc: 'Profile Embed Policy'
                 values:
                     - 'Allow Copying'
@@ -1074,6 +1309,7 @@ items:
                 name: ProfileCopyright
                 type: string
                 writable: true
+                DOMNode: 'IFD0:ProfileCopyright'
                 desc: 'Profile Copyright'
     50964:
         exiftool:
@@ -1081,6 +1317,7 @@ items:
                 name: ForwardMatrix1
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:ForwardMatrix1'
                 desc: 'Forward Matrix 1'
     50965:
         exiftool:
@@ -1088,6 +1325,7 @@ items:
                 name: ForwardMatrix2
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:ForwardMatrix2'
                 desc: 'Forward Matrix 2'
     50966:
         exiftool:
@@ -1095,6 +1333,7 @@ items:
                 name: PreviewApplicationName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:PreviewApplicationName'
                 desc: 'Preview Application Name'
     50967:
         exiftool:
@@ -1102,6 +1341,7 @@ items:
                 name: PreviewApplicationVersion
                 type: string
                 writable: true
+                DOMNode: 'IFD0:PreviewApplicationVersion'
                 desc: 'Preview Application Version'
     50968:
         exiftool:
@@ -1109,6 +1349,7 @@ items:
                 name: PreviewSettingsName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:PreviewSettingsName'
                 desc: 'Preview Settings Name'
     50969:
         exiftool:
@@ -1116,6 +1357,7 @@ items:
                 name: PreviewSettingsDigest
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:PreviewSettingsDigest'
                 desc: 'Preview Settings Digest'
     50970:
         exiftool:
@@ -1123,6 +1365,7 @@ items:
                 name: PreviewColorSpace
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:PreviewColorSpace'
                 desc: 'Preview Color Space'
                 values:
                     - Unknown
@@ -1137,6 +1380,7 @@ items:
                 type: string
                 writable: true
                 g2: Time
+                DOMNode: 'IFD0:PreviewDateTime'
                 desc: 'Preview Date Time'
     50972:
         exiftool:
@@ -1145,6 +1389,7 @@ items:
                 type: int8u
                 count: 16
                 writable: true
+                DOMNode: 'IFD0:RawImageDigest'
                 desc: 'Raw Image Digest'
     50973:
         exiftool:
@@ -1153,6 +1398,7 @@ items:
                 type: int8u
                 count: 16
                 writable: true
+                DOMNode: 'IFD0:OriginalRawFileDigest'
                 desc: 'Original Raw File Digest'
     50981:
         exiftool:
@@ -1161,6 +1407,7 @@ items:
                 type: int32u
                 count: 3
                 writable: true
+                DOMNode: 'IFD0:ProfileLookTableDims'
                 desc: 'Profile Look Table Dims'
     50982:
         exiftool:
@@ -1168,6 +1415,7 @@ items:
                 name: ProfileLookTableData
                 type: float
                 writable: true
+                DOMNode: 'IFD0:ProfileLookTableData'
                 desc: 'Profile Look Table Data'
     51043:
         exiftool:
@@ -1175,6 +1423,7 @@ items:
                 name: TimeCodes
                 type: int8u
                 writable: true
+                DOMNode: 'IFD0:TimeCodes'
                 desc: 'Time Codes'
     51044:
         exiftool:
@@ -1182,6 +1431,7 @@ items:
                 name: FrameRate
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:FrameRate'
                 desc: 'Frame Rate'
     51058:
         exiftool:
@@ -1189,6 +1439,7 @@ items:
                 name: TStop
                 type: rational64u
                 writable: true
+                DOMNode: 'IFD0:TStop'
                 desc: 'T Stop'
     51081:
         exiftool:
@@ -1196,6 +1447,7 @@ items:
                 name: ReelName
                 type: string
                 writable: true
+                DOMNode: 'IFD0:ReelName'
                 desc: 'Reel Name'
     51089:
         exiftool:
@@ -1204,6 +1456,7 @@ items:
                 type: int32u
                 count: 2
                 writable: true
+                DOMNode: 'IFD0:OriginalDefaultFinalSize'
                 desc: 'Original Default Final Size'
     51090:
         exiftool:
@@ -1212,6 +1465,7 @@ items:
                 type: int32u
                 count: 2
                 writable: true
+                DOMNode: 'IFD0:OriginalBestQualitySize'
                 desc: 'Original Best Quality Size'
     51091:
         exiftool:
@@ -1220,6 +1474,7 @@ items:
                 type: rational64u
                 count: 2
                 writable: true
+                DOMNode: 'IFD0:OriginalDefaultCropSize'
                 desc: 'Original Default Crop Size'
     51105:
         exiftool:
@@ -1227,6 +1482,7 @@ items:
                 name: CameraLabel
                 type: string
                 writable: true
+                DOMNode: 'IFD0:CameraLabel'
                 desc: 'Camera Label'
     51107:
         exiftool:
@@ -1234,6 +1490,7 @@ items:
                 name: ProfileHueSatMapEncoding
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:ProfileHueSatMapEncoding'
                 desc: 'Profile Hue Sat Map Encoding'
                 values:
                     - Linear
@@ -1244,6 +1501,7 @@ items:
                 name: ProfileLookTableEncoding
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:ProfileLookTableEncoding'
                 desc: 'Profile Look Table Encoding'
                 values:
                     - Linear
@@ -1254,6 +1512,7 @@ items:
                 name: BaselineExposureOffset
                 type: rational64s
                 writable: true
+                DOMNode: 'IFD0:BaselineExposureOffset'
                 desc: 'Baseline Exposure Offset'
     51110:
         exiftool:
@@ -1261,6 +1520,7 @@ items:
                 name: DefaultBlackRender
                 type: int32u
                 writable: true
+                DOMNode: 'IFD0:DefaultBlackRender'
                 desc: 'Default Black Render'
                 values:
                     - Auto
@@ -1272,6 +1532,7 @@ items:
                 type: int8u
                 count: 16
                 writable: true
+                DOMNode: 'IFD0:NewRawImageDigest'
                 desc: 'New Raw Image Digest'
     51112:
         exiftool:
@@ -1279,4 +1540,5 @@ items:
                 name: RawToPreviewGain
                 type: double
                 writable: true
+                DOMNode: 'IFD0:RawToPreviewGain'
                 desc: 'Raw To Preview Gain'

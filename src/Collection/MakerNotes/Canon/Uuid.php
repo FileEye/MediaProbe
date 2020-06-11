@@ -19,6 +19,11 @@ class Uuid extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CompressorVersion' => 'CNCV',
+    'ThumbnailImage' => 'THMB',
+  ),
   'items' =>
   array (
     'CNCV' =>
@@ -41,11 +46,6 @@ class Uuid extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CompressorVersion' => 'CNCV',
-    'ThumbnailImage' => 'THMB',
   ),
 );
 }

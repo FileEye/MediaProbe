@@ -22,6 +22,24 @@ class CameraInfo80D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 150,
+    'CameraTemperature' => 27,
+    'ColorTemperature' => 314,
+    'DirectoryIndex' => 1210,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 1198,
+    'FirmwareVersion' => 1114,
+    'FocalLength' => 35,
+    'FocusDistanceLower' => 167,
+    'FocusDistanceUpper' => 165,
+    'ISO' => 6,
+    'LensType' => 393,
+    'MaxFocalLength' => 397,
+    'MinFocalLength' => 395,
+  ),
   'items' =>
   array (
     3 =>
@@ -587,24 +605,6 @@ class CameraInfo80D extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 150,
-    'CameraTemperature' => 27,
-    'ColorTemperature' => 314,
-    'DirectoryIndex' => 1210,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 1198,
-    'FirmwareVersion' => 1114,
-    'FocalLength' => 35,
-    'FocusDistanceLower' => 167,
-    'FocusDistanceUpper' => 165,
-    'ISO' => 6,
-    'LensType' => 393,
-    'MaxFocalLength' => 397,
-    'MinFocalLength' => 395,
   ),
 );
 }

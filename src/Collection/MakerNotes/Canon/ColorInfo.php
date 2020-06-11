@@ -22,6 +22,12 @@ class ColorInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ColorSpace' => 3,
+    'ColorTone' => 2,
+    'Saturation' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -76,12 +82,6 @@ class ColorInfo extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ColorSpace' => 3,
-    'ColorTone' => 2,
-    'Saturation' => 1,
   ),
 );
 }

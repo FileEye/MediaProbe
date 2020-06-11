@@ -69,7 +69,8 @@ class Ascii extends EntryBase
      */
     public function getValue(array $options = [])
     {
-        return $this->toString();
+        $val = rtrim($this->value, "\x0");
+        return $val === '' ? null : $val;
     }
 
     /**

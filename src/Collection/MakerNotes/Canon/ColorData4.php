@@ -22,6 +22,16 @@ class ColorData4 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AverageBlackLevel' => 231,
+    'ColorDataVersion' => 0,
+    'LinearityUpperMargin' => 725,
+    'NormalWhiteLevel' => 723,
+    'PerChannelBlackLevel' => 715,
+    'RawMeasuredRGGB' => 640,
+    'SpecularWhiteLevel' => 724,
+  ),
   'items' =>
   array (
     0 =>
@@ -181,16 +191,6 @@ class ColorData4 extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AverageBlackLevel' => 231,
-    'ColorDataVersion' => 0,
-    'LinearityUpperMargin' => 725,
-    'NormalWhiteLevel' => 723,
-    'PerChannelBlackLevel' => 715,
-    'RawMeasuredRGGB' => 640,
-    'SpecularWhiteLevel' => 724,
   ),
 );
 }

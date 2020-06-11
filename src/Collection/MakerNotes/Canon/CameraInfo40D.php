@@ -22,6 +22,28 @@ class CameraInfo40D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 48,
+    'CameraTemperature' => 24,
+    'ColorTemperature' => 115,
+    'DirectoryIndex' => 319,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 307,
+    'FirmwareVersion' => 255,
+    'FlashMeteringMode' => 21,
+    'FocalLength' => 29,
+    'FocusDistanceLower' => 69,
+    'FocusDistanceUpper' => 67,
+    'ISO' => 6,
+    'LensModel' => 2347,
+    'LensType' => 214,
+    'MacroMagnification' => 27,
+    'MaxFocalLength' => 218,
+    'MinFocalLength' => 216,
+    'WhiteBalance' => 111,
+  ),
   'items' =>
   array (
     3 =>
@@ -667,28 +689,6 @@ class CameraInfo40D extends Collection {
         0 => 2,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 48,
-    'CameraTemperature' => 24,
-    'ColorTemperature' => 115,
-    'DirectoryIndex' => 319,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 307,
-    'FirmwareVersion' => 255,
-    'FlashMeteringMode' => 21,
-    'FocalLength' => 29,
-    'FocusDistanceLower' => 69,
-    'FocusDistanceUpper' => 67,
-    'ISO' => 6,
-    'LensModel' => 2347,
-    'LensType' => 214,
-    'MacroMagnification' => 27,
-    'MaxFocalLength' => 218,
-    'MinFocalLength' => 216,
-    'WhiteBalance' => 111,
   ),
 );
 }

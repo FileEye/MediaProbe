@@ -22,6 +22,24 @@ class CameraInfo70D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 132,
+    'CameraTemperature' => 27,
+    'ColorTemperature' => 199,
+    'DirectoryIndex' => 703,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 691,
+    'FirmwareVersion' => 606,
+    'FocalLength' => 35,
+    'FocusDistanceLower' => 149,
+    'FocusDistanceUpper' => 147,
+    'ISO' => 6,
+    'LensType' => 358,
+    'MaxFocalLength' => 362,
+    'MinFocalLength' => 360,
+  ),
   'items' =>
   array (
     3 =>
@@ -587,24 +605,6 @@ class CameraInfo70D extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 132,
-    'CameraTemperature' => 27,
-    'ColorTemperature' => 199,
-    'DirectoryIndex' => 703,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 691,
-    'FirmwareVersion' => 606,
-    'FocalLength' => 35,
-    'FocusDistanceLower' => 149,
-    'FocusDistanceUpper' => 147,
-    'ISO' => 6,
-    'LensType' => 358,
-    'MaxFocalLength' => 362,
-    'MinFocalLength' => 360,
   ),
 );
 }

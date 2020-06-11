@@ -64,6 +64,10 @@ class WindowsString extends Byte
      */
     public function getValue(array $options = [])
     {
+        $format = $options['format'] ?? null;
+        if ($format === 'phpExif') {
+            return mb_convert_encoding($this->value[0], '8bit');
+        }
         return $this->value;
     }
 

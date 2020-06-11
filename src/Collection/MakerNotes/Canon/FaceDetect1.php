@@ -22,6 +22,20 @@ class FaceDetect1 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'Face1Position' => 8,
+    'Face2Position' => 10,
+    'Face3Position' => 12,
+    'Face4Position' => 14,
+    'Face5Position' => 16,
+    'Face6Position' => 18,
+    'Face7Position' => 20,
+    'Face8Position' => 22,
+    'Face9Position' => 24,
+    'FaceDetectFrameSize' => 3,
+    'FacesDetected' => 2,
+  ),
   'items' =>
   array (
     2 =>
@@ -144,20 +158,6 @@ class FaceDetect1 extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'Face1Position' => 8,
-    'Face2Position' => 10,
-    'Face3Position' => 12,
-    'Face4Position' => 14,
-    'Face5Position' => 16,
-    'Face6Position' => 18,
-    'Face7Position' => 20,
-    'Face8Position' => 22,
-    'Face9Position' => 24,
-    'FaceDetectFrameSize' => 3,
-    'FacesDetected' => 2,
   ),
 );
 }

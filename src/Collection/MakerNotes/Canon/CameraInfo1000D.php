@@ -22,6 +22,28 @@ class CameraInfo1000D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 48,
+    'CameraTemperature' => 24,
+    'ColorTemperature' => 115,
+    'DirectoryIndex' => 311,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 323,
+    'FirmwareVersion' => 267,
+    'FlashMeteringMode' => 21,
+    'FocalLength' => 29,
+    'FocusDistanceLower' => 69,
+    'FocusDistanceUpper' => 67,
+    'ISO' => 6,
+    'LensModel' => 2359,
+    'LensType' => 226,
+    'MacroMagnification' => 27,
+    'MaxFocalLength' => 230,
+    'MinFocalLength' => 228,
+    'WhiteBalance' => 111,
+  ),
   'items' =>
   array (
     3 =>
@@ -667,28 +689,6 @@ class CameraInfo1000D extends Collection {
         0 => 2,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 48,
-    'CameraTemperature' => 24,
-    'ColorTemperature' => 115,
-    'DirectoryIndex' => 311,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 323,
-    'FirmwareVersion' => 267,
-    'FlashMeteringMode' => 21,
-    'FocalLength' => 29,
-    'FocusDistanceLower' => 69,
-    'FocusDistanceUpper' => 67,
-    'ISO' => 6,
-    'LensModel' => 2359,
-    'LensType' => 226,
-    'MacroMagnification' => 27,
-    'MaxFocalLength' => 230,
-    'MinFocalLength' => 228,
-    'WhiteBalance' => 111,
   ),
 );
 }

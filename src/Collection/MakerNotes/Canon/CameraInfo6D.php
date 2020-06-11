@@ -22,6 +22,26 @@ class CameraInfo6D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 131,
+    'CameraTemperature' => 27,
+    'ColorTemperature' => 198,
+    'DirectoryIndex' => 694,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 682,
+    'FirmwareVersion' => 598,
+    'FocalLength' => 35,
+    'FocusDistanceLower' => 148,
+    'FocusDistanceUpper' => 146,
+    'ISO' => 6,
+    'LensType' => 353,
+    'MaxFocalLength' => 357,
+    'MinFocalLength' => 355,
+    'PictureStyle' => 250,
+    'WhiteBalance' => 194,
+  ),
   'items' =>
   array (
     3 =>
@@ -665,26 +685,6 @@ class CameraInfo6D extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 131,
-    'CameraTemperature' => 27,
-    'ColorTemperature' => 198,
-    'DirectoryIndex' => 694,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 682,
-    'FirmwareVersion' => 598,
-    'FocalLength' => 35,
-    'FocusDistanceLower' => 148,
-    'FocusDistanceUpper' => 146,
-    'ISO' => 6,
-    'LensType' => 353,
-    'MaxFocalLength' => 357,
-    'MinFocalLength' => 355,
-    'PictureStyle' => 250,
-    'WhiteBalance' => 194,
   ),
 );
 }

@@ -17,6 +17,19 @@ class ColorDataResolver extends Collection {
   'title' => 'Canon Color Data Map Resolver',
   'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
+  'itemsByName' =>
+  array (
+    'CanonColorData1' => 1,
+    'CanonColorData2' => 2,
+    'CanonColorData3' => 3,
+    'CanonColorData4' => 4,
+    'CanonColorData5' => 5,
+    'CanonColorData6' => 6,
+    'CanonColorData7' => 7,
+    'CanonColorData8' => 8,
+    'CanonColorData9' => 9,
+    'CanonColorDataUnknown' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -122,19 +135,6 @@ class ColorDataResolver extends Collection {
         2 => 1824,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CanonColorData1' => 1,
-    'CanonColorData2' => 2,
-    'CanonColorData3' => 3,
-    'CanonColorData4' => 4,
-    'CanonColorData5' => 5,
-    'CanonColorData6' => 6,
-    'CanonColorData7' => 7,
-    'CanonColorData8' => 8,
-    'CanonColorData9' => 9,
-    'CanonColorDataUnknown' => 0,
   ),
 );
 }

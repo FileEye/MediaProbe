@@ -23,6 +23,20 @@ class SensorInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'BlackMaskBottomBorder' => 12,
+    'BlackMaskLeftBorder' => 9,
+    'BlackMaskRightBorder' => 11,
+    'BlackMaskTopBorder' => 10,
+    'SensorBottomBorder' => 8,
+    'SensorHeight' => 2,
+    'SensorLeftBorder' => 5,
+    'SensorRightBorder' => 7,
+    'SensorTopBorder' => 6,
+    'SensorWidth' => 1,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -134,20 +148,6 @@ class SensorInfo extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'BlackMaskBottomBorder' => 12,
-    'BlackMaskLeftBorder' => 9,
-    'BlackMaskRightBorder' => 11,
-    'BlackMaskTopBorder' => 10,
-    'SensorBottomBorder' => 8,
-    'SensorHeight' => 2,
-    'SensorLeftBorder' => 5,
-    'SensorRightBorder' => 7,
-    'SensorTopBorder' => 6,
-    'SensorWidth' => 1,
-    'indexSize' => 0,
   ),
 );
 }

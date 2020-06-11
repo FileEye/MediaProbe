@@ -22,6 +22,14 @@ class IHL extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CRCDevelParams' => 6,
+    'IHL_EXIF' => 1,
+    'PreviewImage' => 4,
+    'RawCodecVersion' => 5,
+    'ThumbnailImage' => 3,
+  ),
   'items' =>
   array (
     1 =>
@@ -74,14 +82,6 @@ class IHL extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CRCDevelParams' => 6,
-    'IHL_EXIF' => 1,
-    'PreviewImage' => 4,
-    'RawCodecVersion' => 5,
-    'ThumbnailImage' => 3,
   ),
 );
 }

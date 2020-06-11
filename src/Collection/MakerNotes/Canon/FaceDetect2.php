@@ -22,6 +22,11 @@ class FaceDetect2 extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'FaceWidth' => 1,
+    'FacesDetected' => 2,
+  ),
   'items' =>
   array (
     1 =>
@@ -44,11 +49,6 @@ class FaceDetect2 extends Collection {
         0 => 1,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'FaceWidth' => 1,
-    'FacesDetected' => 2,
   ),
 );
 }

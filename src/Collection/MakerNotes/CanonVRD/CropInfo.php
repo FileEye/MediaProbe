@@ -22,6 +22,19 @@ class CropInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CropActive' => 0,
+    'CropHeight' => 6,
+    'CropOriginalHeight' => 11,
+    'CropOriginalWidth' => 10,
+    'CropRotatedOriginalHeight' => 2,
+    'CropRotatedOriginalWidth' => 1,
+    'CropRotation' => 8,
+    'CropWidth' => 5,
+    'CropX' => 3,
+    'CropY' => 4,
+  ),
   'items' =>
   array (
     0 =>
@@ -132,19 +145,6 @@ class CropInfo extends Collection {
         0 => 9,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CropActive' => 0,
-    'CropHeight' => 6,
-    'CropOriginalHeight' => 11,
-    'CropOriginalWidth' => 10,
-    'CropRotatedOriginalHeight' => 2,
-    'CropRotatedOriginalWidth' => 1,
-    'CropRotation' => 8,
-    'CropWidth' => 5,
-    'CropX' => 3,
-    'CropY' => 4,
   ),
 );
 }

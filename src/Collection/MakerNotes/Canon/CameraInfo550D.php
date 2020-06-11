@@ -22,6 +22,28 @@ class CameraInfo550D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 53,
+    'CameraTemperature' => 25,
+    'ColorTemperature' => 124,
+    'DirectoryIndex' => 496,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 484,
+    'FirmwareVersion' => 420,
+    'FlashMeteringMode' => 21,
+    'FocalLength' => 30,
+    'FocusDistanceLower' => 86,
+    'FocusDistanceUpper' => 84,
+    'HighlightTonePriority' => 7,
+    'ISO' => 6,
+    'LensType' => 255,
+    'MaxFocalLength' => 259,
+    'MinFocalLength' => 257,
+    'PictureStyle' => 176,
+    'WhiteBalance' => 120,
+  ),
   'items' =>
   array (
     3 =>
@@ -704,28 +726,6 @@ class CameraInfo550D extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 53,
-    'CameraTemperature' => 25,
-    'ColorTemperature' => 124,
-    'DirectoryIndex' => 496,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 484,
-    'FirmwareVersion' => 420,
-    'FlashMeteringMode' => 21,
-    'FocalLength' => 30,
-    'FocusDistanceLower' => 86,
-    'FocusDistanceUpper' => 84,
-    'HighlightTonePriority' => 7,
-    'ISO' => 6,
-    'LensType' => 255,
-    'MaxFocalLength' => 259,
-    'MinFocalLength' => 257,
-    'PictureStyle' => 176,
-    'WhiteBalance' => 120,
   ),
 );
 }

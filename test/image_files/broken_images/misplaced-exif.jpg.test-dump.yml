@@ -1,0 +1,473 @@
+skip:
+    phpExif:
+        - ExifVersion
+fileName: misplaced-exif.jpg
+mimeType: image/jpeg
+fileContentHash: b14a62158bfab96530f8c257cb619371a39ca5d28c9e23a65e95e7b4ac4ba3b2
+elements:
+    node: media
+    path: /media
+    class: FileEye\MediaProbe\Media
+    valid: true
+    collection: Media
+    elements:
+        -
+            node: jpeg
+            path: /media/jpeg
+            class: FileEye\MediaProbe\Block\Jpeg
+            valid: true
+            id: Jpeg
+            collection: Jpeg
+            elements:
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:SOI:216'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: SOI
+                    id: '216'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:SOI:216/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 2
+                            bytesHash: 71563ad80061407ede9c6f316836284bd3710a520c5a792b5eda1cb703690815
+                            text: '2 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:APP0:224'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: APP0
+                    id: '224'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:APP0:224/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 18
+                            bytesHash: 04085feff5a66932455f3842f562bb65160eb7bf2b6a733115873d7acf472eb4
+                            text: '18 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:APP1:225'
+                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    valid: true
+                    name: APP1
+                    id: '225'
+                    collection: Jpeg\SegmentApp1
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:APP1:225/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 458
+                            bytesHash: be2e770f2315069122d7575741a9ff8ea497e9700522dfaedef1c90b20def142
+                            text: '458 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:APP1:225'
+                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    valid: true
+                    name: APP1
+                    id: '225'
+                    collection: Jpeg\SegmentApp1
+                    elements:
+                        -
+                            node: exif
+                            path: '/media/jpeg/jpegSegment:APP1:225/exif'
+                            class: FileEye\MediaProbe\Block\Exif
+                            valid: true
+                            id: Exif
+                            collection: Exif
+                            elements:
+                                -
+                                    node: tiff
+                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
+                                    class: FileEye\MediaProbe\Block\Tiff
+                                    valid: true
+                                    id: Tiff
+                                    collection: Tiff
+                                    elements:
+                                        -
+                                            node: ifd
+                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
+                                            class: FileEye\MediaProbe\Block\Ifd
+                                            valid: true
+                                            name: IFD0
+                                            id: '0'
+                                            collection: Ifd\Ifd0
+                                            elements:
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XPTitle:40091'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    valid: true
+                                                    name: XPTitle
+                                                    id: '40091'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XPTitle:40091/entry'
+                                                            class: FileEye\MediaProbe\Entry\WindowsString
+                                                            valid: true
+                                                            format: Byte
+                                                            components: 2
+                                                            bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                            text: ''
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    valid: true
+                                                    name: ImageDescription
+                                                    id: '270'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            valid: true
+                                                            format: Ascii
+                                                            components: 6
+                                                            bytesHash: 059d7955ee15906a5f9fe69c6c94d419db9f9e8489a99f8d5a5aba5bb11a6c2e
+                                                            text: Test1
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    valid: true
+                                                    name: ModifyDate
+                                                    id: '306'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
+                                                            class: FileEye\MediaProbe\Entry\Time
+                                                            valid: true
+                                                            format: Ascii
+                                                            components: 11
+                                                            bytesHash: 8082e900bcd25e2f020ec7473bdc84b09feba7c72eba59119286e9bb8efb2dfc
+                                                            text: '0000:00:00 00:00:00'
+                                                -
+                                                    node: ifd
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
+                                                    class: FileEye\MediaProbe\Block\Ifd
+                                                    valid: true
+                                                    name: GPS
+                                                    id: '34853'
+                                                    collection: Ifd\Gps
+                                                    elements:
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSVersionID:0'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            valid: true
+                                                            name: GPSVersionID
+                                                            id: '0'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSVersionID:0/entry'
+                                                                    class: FileEye\MediaProbe\Entry\GPSVersionId
+                                                                    valid: true
+                                                                    format: Byte
+                                                                    components: 4
+                                                                    bytesHash: 3c7a246021bffd30e44bb63887f5ea8e6b87b5dae4db1110fabe67c1683200d0
+                                                                    text: 2.3.0.0
+                                                -
+                                                    node: ifd
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
+                                                    class: FileEye\MediaProbe\Block\Ifd
+                                                    valid: true
+                                                    name: ExifIFD
+                                                    id: '34665'
+                                                    collection: Ifd\Exif
+                                                    elements:
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            valid: true
+                                                            name: ExifVersion
+                                                            id: '36864'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Version
+                                                                    valid: false
+                                                                    format: Undefined
+                                                                    components: 4
+                                                                    bytesHash: 9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0
+                                                                    text: '0.0'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTime:37520'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            valid: true
+                                                            name: SubSecTime
+                                                            id: '37520'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTime:37520/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    valid: true
+                                                                    format: Ascii
+                                                                    components: 2
+                                                                    bytesHash: e4f60d0aa6d7f3d3b6a6494b1c861b99f649c6f9ec51abaf201b20f297327c95
+                                                                    text: '0'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            valid: true
+                                                            name: OffsetTime
+                                                            id: '36880'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    valid: true
+                                                                    format: Ascii
+                                                                    components: 7
+                                                                    bytesHash: 3c23203d1c5f9debe4a838f6b142a1dcae721fba060615dc95718b30adf2900c
+                                                                    text: '+00:00'
+                                        -
+                                            node: ifd
+                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
+                                            class: FileEye\MediaProbe\Block\Ifd
+                                            valid: true
+                                            name: IFD1
+                                            id: '1'
+                                            collection: Ifd\Ifd1
+                                            elements:
+                                                -
+                                                    node: thumbnail
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail'
+                                                    class: FileEye\MediaProbe\Block\Thumbnail
+                                                    valid: true
+                                                    collection: Thumbnail
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                            valid: true
+                                                            format: Undefined
+                                                            components: 1457
+                                                            bytesHash: f61c1bfebdbdc57435c7a567225ba1fc9e907285192bb74fab92dc0a4a7dfe55
+                                                            text: '1457 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:COM:254'
+                    class: FileEye\MediaProbe\Block\JpegSegmentCom
+                    valid: true
+                    name: COM
+                    id: '254'
+                    collection: Jpeg\SegmentCom
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:COM:254/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                            valid: true
+                            format: Ascii
+                            components: 18
+                            bytesHash: 13b9871a286d9d10af675161201c67198c4db756b96cedbfe944be8aa623416d
+                            text: 'Created with GIMP'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DQT:219'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: DQT
+                    id: '219'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DQT:219/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 69
+                            bytesHash: a6f9ef7a75ff7f267a8826a24d6a648deb9459cef5c5364d3ebd38029eb4ffac
+                            text: '69 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DQT:219'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: DQT
+                    id: '219'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DQT:219/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 69
+                            bytesHash: af60179a7a2c75500394253953ac37178bb9e6f72a43d9a2ad9be61c53c3c6d7
+                            text: '69 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:SOF2:194'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: SOF2
+                    id: '194'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:SOF2:194/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 19
+                            bytesHash: 5bbeefdda9b936aeabf74efa880078bac2df75986ed192e9906e6f3de9f80d94
+                            text: '19 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 28
+                            bytesHash: cdc6ead4795d62aac4b3f93fb9ad1c1941aef2d761690529fbebc3fa104843e6
+                            text: '28 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 22
+                            bytesHash: f575307044c1cabbd4cb71c98fe6e707b998b9a9d45e477db5c07eab9e4caf92
+                            text: '22 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:SOS:218'
+                    class: FileEye\MediaProbe\Block\JpegSegmentSos
+                    valid: true
+                    name: SOS
+                    id: '218'
+                    collection: Jpeg\SegmentSos
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:SOS:218/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 2224
+                            bytesHash: fc2dc0cb942824a22eb2d38bb00fdf61330d03db0e9ca0056f301c5a988a5650
+                            text: '2224 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:EOI:217'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    valid: true
+                    name: EOI
+                    id: '217'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:EOI:217/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 2
+                            bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
+                            text: '2 byte(s) of data'
+log:
+    ERROR:
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
+            message: 'Incorrect version data.'
+    WARNING:
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
+            message: 'Found 11 data components, expected 20'
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
+            message: 'Found Byte data format, expected Undefined'
+gdInfo:
+    0: 320
+    1: 200
+    2: 2
+    3: 'width="320" height="200"'
+    bits: 8
+    channels: 3
+    mime: image/jpeg
+exifReadData:
+    FileName: misplaced-exif.jpg
+    FileDateTime: 1584462457
+    FileSize: 4587
+    FileType: 2
+    MimeType: image/jpeg
+    SectionsFound: 'ANY_TAG, IFD0, THUMBNAIL, COMMENT, EXIF, GPS, WINXP'
+    COMPUTED:
+        html: 'width="320" height="200"'
+        Height: 200
+        Width: 320
+        IsColor: 1
+        ByteOrderMotorola: 0
+        Thumbnail.FileType: 2
+        Thumbnail.MimeType: image/jpeg
+    Title: ''
+    ImageDescription: Test1
+    DateTime: '1509749992'
+    GPS_IFD_Pointer: 91
+    Exif_IFD_Pointer: 109
+    THUMBNAIL:
+        JPEGInterchangeFormatLength: 1457
+        JPEGInterchangeFormat: 188
+    COMMENT:
+        - 'Created with GIMP'
+    ExifVersion: !!binary AAIDAQ==
+    SubSecTime: '0'
+    'UndefinedTag:0x9010': '+00:00'
+    GPSVersion: !!binary AgMAAA==
+exiftool: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/broken_images/misplaced-exif.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:XMP-tmp0='http://ns.exiftool.ca/XMP/XMP-tmp0/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>misplaced-exif.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>4.5 kB</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Little-endian (Intel, II)</File:ExifByteOrder>\n <File:Comment et:id='Comment' et:table='Extra'>Created with GIMP</File:Comment>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>320</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>200</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Progressive DCT, Huffman coding</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:4:4 (1 1)</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1.01</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>inches</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>72</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>72</JFIF:YResolution>\n <XMP-tmp0:Title et:id='tmp0:title' et:table='XMP::other'>Test</XMP-tmp0:Title>\n <IFD0:XPTitle et:id='40091' et:table='Exif::Main'></IFD0:XPTitle>\n <IFD0:ImageDescription et:id='270' et:table='Exif::Main'>Test1</IFD0:ImageDescription>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>1509749992</IFD0:ModifyDate>\n <GPS:GPSVersionID et:id='0' et:table='GPS::Main'>2.3.0.0</GPS:GPSVersionID>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0 2 3 1</ExifIFD:ExifVersion>\n <ExifIFD:SubSecTime et:id='37520' et:table='Exif::Main'>0</ExifIFD:SubSecTime>\n <ExifIFD:OffsetTime et:id='36880' et:table='Exif::Main'>+00:00</ExifIFD:OffsetTime>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>1457</IFD1:ThumbnailLength>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>676</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 1457 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>320x200</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.064</Composite:Megapixels>\n <Composite:SubSecModifyDate et:id='SubSecModifyDate' et:table='Composite'>1509749992+00:00</Composite:SubSecModifyDate>\n</rdf:Description>\n</rdf:RDF>\n"
+exiftool_raw: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/broken_images/misplaced-exif.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:XMP-tmp0='http://ns.exiftool.ca/XMP/XMP-tmp0/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>misplaced-exif.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>4587</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>II</File:ExifByteOrder>\n <File:Comment et:id='Comment' et:table='Extra'>Created with GIMP</File:Comment>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>320</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>200</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>2</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>1 1</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1 1</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>1</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>72</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>72</JFIF:YResolution>\n <XMP-tmp0:Title et:id='tmp0:title' et:table='XMP::other'>Test</XMP-tmp0:Title>\n <IFD0:XPTitle et:id='40091' et:table='Exif::Main'></IFD0:XPTitle>\n <IFD0:ImageDescription et:id='270' et:table='Exif::Main'>Test1</IFD0:ImageDescription>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>1509749992</IFD0:ModifyDate>\n <GPS:GPSVersionID et:id='0' et:table='GPS::Main'>2 3 0 0</GPS:GPSVersionID>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0 2 3 1</ExifIFD:ExifVersion>\n <ExifIFD:SubSecTime et:id='37520' et:table='Exif::Main'>0</ExifIFD:SubSecTime>\n <ExifIFD:OffsetTime et:id='36880' et:table='Exif::Main'>+00:00</ExifIFD:OffsetTime>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>1457</IFD1:ThumbnailLength>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>676</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 1457 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>320x200</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.064</Composite:Megapixels>\n <Composite:SubSecModifyDate et:id='SubSecModifyDate' et:table='Composite'>1509749992+00:00</Composite:SubSecModifyDate>\n</rdf:Description>\n</rdf:RDF>\n"

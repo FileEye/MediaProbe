@@ -14,6 +14,11 @@ class MakerNotes extends Collection {
 
   protected static $map = array (
   'class' => '????',
+  'itemsByName' =>
+  array (
+    'Apple' => 'Apple',
+    'Canon' => 'Canon',
+  ),
   'items' =>
   array (
     'Apple' =>
@@ -30,11 +35,6 @@ class MakerNotes extends Collection {
       'make' => 'Canon',
       'model' => '.*',
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'Apple' => 'Apple',
-    'Canon' => 'Canon',
   ),
 );
 }

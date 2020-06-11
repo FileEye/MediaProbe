@@ -22,6 +22,11 @@ class FlashInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'FlashGuideNumber' => 0,
+    'FlashThreshold' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -44,11 +49,6 @@ class FlashInfo extends Collection {
         0 => 11,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'FlashGuideNumber' => 0,
-    'FlashThreshold' => 1,
   ),
 );
 }

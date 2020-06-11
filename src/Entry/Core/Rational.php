@@ -65,13 +65,20 @@ class Rational extends Long
     /**
      * {@inheritdoc}
      */
-    protected function formatNumber($number, $short = false)
+    protected function formatNumber($number, array $options = [])
     {
-//        return $number[0] . '/' . $number[1];
-        if ($number[1] === 0) {
-            return $number[0] . '/' . $number[1];
-        } else {
-            return $number[0] / $number[1];
+        $format = $options['format'] ?? null;
+        switch ($format) {
+          case 'core':
+              if ($number[1] === 0) {
+                  return 0; // xxx throw exception
+              } else {
+                  return $number[0] / $number[1];
+              }
+          case 'phpExif':
+              return (string) $number[0] . '/' . (string) $number[1];
+          default:
+              return $number;
         }
     }
 }

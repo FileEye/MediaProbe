@@ -22,6 +22,12 @@ class TimeStamp extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'DateTimeOriginal' => 0,
+    'TimeZoneCode' => 1,
+    'TimeZoneInfo' => 2,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,12 +60,6 @@ class TimeStamp extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'DateTimeOriginal' => 0,
-    'TimeZoneCode' => 1,
-    'TimeZoneInfo' => 2,
   ),
 );
 }

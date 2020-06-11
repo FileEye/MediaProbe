@@ -22,6 +22,27 @@ class CameraInfo1DX extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 125,
+    'CameraTemperature' => 27,
+    'ColorTemperature' => 192,
+    'DirectoryIndex' => 732,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 720,
+    'FirmwareVersion' => 640,
+    'FirmwareVersionLookAhead' => 0,
+    'FocalLength' => 35,
+    'FocusDistanceLower' => 142,
+    'FocusDistanceUpper' => 140,
+    'ISO' => 6,
+    'LensType' => 423,
+    'MaxFocalLength' => 427,
+    'MinFocalLength' => 425,
+    'PictureStyle' => 244,
+    'WhiteBalance' => 188,
+  ),
   'items' =>
   array (
     0 =>
@@ -675,27 +696,6 @@ class CameraInfo1DX extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 125,
-    'CameraTemperature' => 27,
-    'ColorTemperature' => 192,
-    'DirectoryIndex' => 732,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 720,
-    'FirmwareVersion' => 640,
-    'FirmwareVersionLookAhead' => 0,
-    'FocalLength' => 35,
-    'FocusDistanceLower' => 142,
-    'FocusDistanceUpper' => 140,
-    'ISO' => 6,
-    'LensType' => 423,
-    'MaxFocalLength' => 427,
-    'MinFocalLength' => 425,
-    'PictureStyle' => 244,
-    'WhiteBalance' => 188,
   ),
 );
 }

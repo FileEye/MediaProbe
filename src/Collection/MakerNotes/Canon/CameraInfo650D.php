@@ -22,6 +22,26 @@ class CameraInfo650D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 125,
+    'CameraTemperature' => 27,
+    'ColorTemperature' => 192,
+    'DirectoryIndex' => 640,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 628,
+    'FirmwareVersion' => 544,
+    'FocalLength' => 35,
+    'FocusDistanceLower' => 142,
+    'FocusDistanceUpper' => 140,
+    'ISO' => 6,
+    'LensType' => 295,
+    'MaxFocalLength' => 299,
+    'MinFocalLength' => 297,
+    'PictureStyle' => 244,
+    'WhiteBalance' => 188,
+  ),
   'items' =>
   array (
     3 =>
@@ -696,26 +716,6 @@ class CameraInfo650D extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 125,
-    'CameraTemperature' => 27,
-    'ColorTemperature' => 192,
-    'DirectoryIndex' => 640,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 628,
-    'FirmwareVersion' => 544,
-    'FocalLength' => 35,
-    'FocusDistanceLower' => 142,
-    'FocusDistanceUpper' => 140,
-    'ISO' => 6,
-    'LensType' => 295,
-    'MaxFocalLength' => 299,
-    'MinFocalLength' => 297,
-    'PictureStyle' => 244,
-    'WhiteBalance' => 188,
   ),
 );
 }

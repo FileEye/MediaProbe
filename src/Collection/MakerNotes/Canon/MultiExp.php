@@ -22,6 +22,12 @@ class MultiExp extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'MultiExposure' => 1,
+    'MultiExposureControl' => 2,
+    'MultiExposureShots' => 3,
+  ),
   'items' =>
   array (
     1 =>
@@ -73,12 +79,6 @@ class MultiExp extends Collection {
         0 => 9,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'MultiExposure' => 1,
-    'MultiExposureControl' => 2,
-    'MultiExposureShots' => 3,
   ),
 );
 }

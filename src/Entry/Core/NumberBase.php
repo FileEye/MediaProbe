@@ -61,9 +61,15 @@ abstract class NumberBase extends EntryBase
     public function getValue(array $options = [])
     {
         if ($this->components == 1) {
-            return $this->value[0];
+            return $this->formatNumber($this->value[0], $options);
         } else {
-            return $this->value;
+            $ret = [];
+            if ($this->value) {
+                foreach ($this->value as $value) {
+                    $ret[] = $this->formatNumber($value, $options);
+                }
+            }
+            return $ret;
         }
     }
 
@@ -168,13 +174,12 @@ abstract class NumberBase extends EntryBase
      * @param int $number
      *            the number which will be formatted.
      *
-     * @param bool $short
-     *            it could be that there is both a verbose and a short
-     *            formatting available, and this argument controls that.
+     * @param array $options
+     *            (Optional) an array of options to format the value.
      *
      * @return string the number formatted as a string suitable for display.
      */
-    protected function formatNumber($number, $short = false)
+    protected function formatNumber($number, array $options = [])
     {
         return $number;
     }
@@ -194,10 +199,10 @@ abstract class NumberBase extends EntryBase
             return '';
         }
 
-        $str = $this->formatNumber($this->value[0]);
+        $str = $this->formatNumber($this->value[0], ['format' => 'core']);
         for ($i = 1; $i < $this->components; $i ++) {
             $str .= ($short ? ' ' : ', ');
-            $str .= $this->formatNumber($this->value[$i]);
+            $str .= $this->formatNumber($this->value[$i], ['format' => 'core']);
         }
 
         return $str;

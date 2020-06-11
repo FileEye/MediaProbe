@@ -22,6 +22,10 @@ class Flags extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ModifiedParamFlag' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -34,10 +38,6 @@ class Flags extends Collection {
         0 => 8,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ModifiedParamFlag' => 1,
   ),
 );
 }

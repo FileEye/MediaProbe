@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -17,6 +18,7 @@ class ExifToolResourceUpdateCommand extends Command
 
     protected $specDir;
     protected $exiftoolXml;
+    protected $phpExifTags;
 
     /**
      * {@inheritdoc}
@@ -42,9 +44,18 @@ class ExifToolResourceUpdateCommand extends Command
         $filesystem = new Filesystem();
 
         $this->specDir = $input->getArgument('spec-dir');
-        $this->exiftoolXml = simplexml_load_file($this->specDir . DIRECTORY_SEPARATOR . 'exiftool.xml');
+//        $this->exiftoolXml = simplexml_load_file($this->specDir . DIRECTORY_SEPARATOR . 'exiftool.xml');
+        $this->exiftoolXml = simplexml_load_file('specs/exiftool.xml');
         $output->writeln('Loaded ExifTool XML...');
 
+        $this->phpExifTags = Yaml::parse(file_get_contents('specs/exiftags.yaml'));
+
+        $finder = new Finder();
+        $finder->files()->in($this->specDir)->name('*.yaml');
+        foreach ($finder as $file) {
+            $this->updateWithExifTool($input, $output, $file);
+            $output->writeln("Processed $file.");
+        }
 /*        $updates = [
           'Ifd\\Any' => "//table[@name='Exif::Main']/tag",
           'Ifd\\Ifd0' => "//table[@name='Exif::Main']/tag[not(@g1)]",
@@ -72,7 +83,7 @@ class ExifToolResourceUpdateCommand extends Command
         }
 */
         // Build Canon maker notes specs.
-        foreach ($this->exiftoolXml->xpath("//table[@g0='MakerNotes' and @g1='CanonCustom']") as $table) {
+/*        foreach ($this->exiftoolXml->xpath("//table[@g0='MakerNotes' and @g1='CanonCustom']") as $table) {
             $name = (string) $table->attributes()->name;
             [$a, $b] = explode('::', $name);
             $directory = 'MakerNotes' . DIRECTORY_SEPARATOR . $a;
@@ -123,42 +134,30 @@ class ExifToolResourceUpdateCommand extends Command
         return(0);
     }
 
-    protected function updateWithExifTool(InputInterface $input, OutputInterface $output, $collection_file, $g1, $collection, $table)
+    protected function updateWithExifTool(InputInterface $input, OutputInterface $output, $collection_file)
     {
-        $exiftool_ifd = $this->exiftoolXml->xpath($g1);
-
-        $file_path = $this->specDir . DIRECTORY_SEPARATOR . $collection_file;
-
-        if (file_exists($file_path)) {
-            $ifd = Yaml::parse(file_get_contents($file_path));
-        }
-        else {
-            $desc = $table->xpath("desc[@lang='en']");
-            $ifd = [
-                'collection' => $collection,
-                'name' => str_replace('::', '', $table->attributes()->name),
-                'title' => (string) $desc[0],
-                'class' => 'tbd',
-                'DOMNode' => 'tbd',
-                'format' => 'tbd',
-                'defaultItemCollection' => 'Tag',
-                'compiler' => [
-                    'exiftool' => [
-                        'xpath' => $g1,
-                    ],
-                ],
-            ];
-        }
+        $spec = Yaml::parse(file_get_contents($collection_file));
+        $exiftool_ifd = $this->exiftoolXml->xpath($spec['compiler']['exiftool']['xpath']);
 
         foreach ($exiftool_ifd as $exiftool_tag) {
               $id = (string) $exiftool_tag->attributes()->id;
               $index = (string) ($exiftool_tag->attributes()->index ?? 0);
-              unset($ifd['items'][$id]['exiftool'][$index]);
 
-              if (($ifd['items'][$id]['collection'] ?? null) === ($ifd['defaultItemCollection'] ?? null)) {
-                  unset($ifd['items'][$id]['collection']);
+// Reset exiftool metadata.
+unset($spec['items'][$id]['exifReadData']);
+if (isset($this->phpExifTags['items'][$id])) {
+  $spec['items'][$id]['exifReadData']['key'] = $this->phpExifTags['items'][$id];
+}
+
+              // Reset exiftool metadata.
+              unset($spec['items'][$id]['exiftool'][$index]);
+
+              // Sanity - remove actual collection if it's the same as the default one.
+              if (($spec['items'][$id]['collection'] ?? null) === ($spec['defaultItemCollection'] ?? null)) {
+                  unset($spec['items'][$id]['collection']);
               }
 
+              // Scan through the attributes.
               foreach ($exiftool_tag->attributes() as $key => $val) {
                   if (in_array($key, ['id', 'index'])) {
                       continue;
@@ -172,20 +171,38 @@ class ExifToolResourceUpdateCommand extends Command
                   else {
                       $val = (string) $val;
                   }
-                  $ifd['items'][$id]['exiftool'][$index][$key] = $val;
+                  $spec['items'][$id]['exiftool'][$index][$key] = $val;
               }
+
+              // Set exiftool item DOM node name.
+              if ($spec['compiler']['exiftool']['g1Default'] === '') {
+                  if ($exiftool_tag->attributes()->g1) {
+                      $prefix = (string) $exiftool_tag->attributes()->g1;
+                  }
+                  else {
+                      $prefix = 'IFD0';
+                  }
+              }
+              else {
+                  $prefix = $spec['compiler']['exiftool']['g1Default'];
+              }
+              $spec['items'][$id]['exiftool'][$index]['DOMNode'] = $prefix . ':' . (string) $exiftool_tag->attributes()->name;
+
+              // Add the English description of the item.
               $desc = $exiftool_tag->xpath("desc[@lang='en']");
-              $ifd['items'][$id]['exiftool'][$index]['desc'] = (string) $desc[0];
+              $spec['items'][$id]['exiftool'][$index]['desc'] = (string) $desc[0];
+
+              // Add the decodable values, with their English description.
               if ($exiftool_tag->values) {
                   foreach ($exiftool_tag->values->key as $key) {
                       $key_id = (string) $key->attributes()->id;
                       $key_val = $key->xpath("val[@lang='en']");
-                      $ifd['items'][$id]['exiftool'][$index]['values'][$key_id] = (string) $key_val[0];
+                      $spec['items'][$id]['exiftool'][$index]['values'][$key_id] = (string) $key_val[0];
                   }
               }
         }
-        ksort($ifd['items']);
+        ksort($spec['items']);
 
-        file_put_contents($file_path, Yaml::dump($ifd, 7));
+        file_put_contents($collection_file, Yaml::dump($spec, 7));
     }
 }

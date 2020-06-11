@@ -22,6 +22,22 @@ class GammaInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'GammaBlackPoint' => 12,
+    'GammaColorTone' => 3,
+    'GammaContrast' => 2,
+    'GammaCurveOutputRange' => 15,
+    'GammaHighlight' => 10,
+    'GammaMidPoint' => 14,
+    'GammaSaturation' => 4,
+    'GammaShadow' => 9,
+    'GammaSharpnessStrength' => 8,
+    'GammaUnsharpMaskFineness' => 6,
+    'GammaUnsharpMaskStrength' => 5,
+    'GammaUnsharpMaskThreshold' => 7,
+    'GammaWhitePoint' => 13,
+  ),
   'items' =>
   array (
     2 =>
@@ -155,22 +171,6 @@ class GammaInfo extends Collection {
         0 => 12,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'GammaBlackPoint' => 12,
-    'GammaColorTone' => 3,
-    'GammaContrast' => 2,
-    'GammaCurveOutputRange' => 15,
-    'GammaHighlight' => 10,
-    'GammaMidPoint' => 14,
-    'GammaSaturation' => 4,
-    'GammaShadow' => 9,
-    'GammaSharpnessStrength' => 8,
-    'GammaUnsharpMaskFineness' => 6,
-    'GammaUnsharpMaskStrength' => 5,
-    'GammaUnsharpMaskThreshold' => 7,
-    'GammaWhitePoint' => 13,
   ),
 );
 }

@@ -22,6 +22,10 @@ class DR4Header extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'DR4CameraModel' => 3,
+  ),
   'items' =>
   array (
     3 =>
@@ -367,10 +371,6 @@ class DR4Header extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'DR4CameraModel' => 3,
   ),
 );
 }

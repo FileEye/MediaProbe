@@ -23,6 +23,28 @@ class FileInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'BracketMode' => 3,
+    'BracketShotNumber' => 5,
+    'BracketValue' => 4,
+    'FileNumber' => 1,
+    'FilterEffect' => 14,
+    'FlashExposureLock' => 25,
+    'FocusDistanceLower' => 21,
+    'FocusDistanceUpper' => 20,
+    'LiveViewShooting' => 19,
+    'LongExposureNoiseReduction2' => 8,
+    'MacroMagnification' => 16,
+    'RawJpgQuality' => 6,
+    'RawJpgSize' => 7,
+    'ToningEffect' => 15,
+    'WBBracketMode' => 9,
+    'WBBracketValueAB' => 12,
+    'WBBracketValueGM' => 13,
+    'indexSize' => 0,
+    2 => 2,
+  ),
   'items' =>
   array (
     0 =>
@@ -323,28 +345,6 @@ class FileInfo extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'BracketMode' => 3,
-    'BracketShotNumber' => 5,
-    'BracketValue' => 4,
-    'FileNumber' => 1,
-    'FilterEffect' => 14,
-    'FlashExposureLock' => 25,
-    'FocusDistanceLower' => 21,
-    'FocusDistanceUpper' => 20,
-    'LiveViewShooting' => 19,
-    'LongExposureNoiseReduction2' => 8,
-    'MacroMagnification' => 16,
-    'RawJpgQuality' => 6,
-    'RawJpgSize' => 7,
-    'ToningEffect' => 15,
-    'WBBracketMode' => 9,
-    'WBBracketValueAB' => 12,
-    'WBBracketValueGM' => 13,
-    'indexSize' => 0,
-    2 => 2,
   ),
 );
 }

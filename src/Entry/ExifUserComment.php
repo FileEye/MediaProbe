@@ -3,10 +3,11 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Block\BlockBase;
-use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -30,7 +31,7 @@ class ExifUserComment extends Undefined
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
         if ($item_definition->getValuesCount() < 8) {
-            $this->setValue([]);
+            $this->setValue(['', rtrim($data_element->getBytes(0, $item_definition->getValuesCount()))]);
         } else {
             $this->setValue([$data_element->getBytes(8, $item_definition->getValuesCount() - 8), rtrim($data_element->getBytes(0, 8))]);
         }
@@ -51,11 +52,27 @@ class ExifUserComment extends Undefined
     {
         $this->valid = true;
 
-        $this->value = array_replace(['', 'ASCII'], $data);
+        $this->value = [$data[0] ?? '', $data[1] ?? ''];
         $this->components = 8 + strlen($this->value[0]);
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        $format = $options['format'] ?? null;
+        if ($format === 'phpExif') {
+            $val = rtrim($this->value[0], " \x00");
+            if (strlen($val) === 0 && substr($this->value[0], 0, 1) === ' ') {
+                $val = ' ';
+            }
+            return str_pad($this->value[1], 8, chr(0)) . str_pad($val, strlen($this->value[0]), chr(0));
+        }
+        return parent::getValue();
     }
 
     /**

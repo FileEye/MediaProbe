@@ -22,6 +22,24 @@ class CameraInfo60D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'CameraOrientation' => 54,
+    'CameraTemperature' => 25,
+    'ColorTemperature' => 125,
+    'DirectoryIndex' => 485,
+    'ExposureTime' => 4,
+    'FNumber' => 3,
+    'FileIndex' => 473,
+    'FirmwareVersion' => 409,
+    'FocalLength' => 30,
+    'FocusDistanceLower' => 87,
+    'FocusDistanceUpper' => 85,
+    'ISO' => 6,
+    'LensType' => 232,
+    'MaxFocalLength' => 236,
+    'MinFocalLength' => 234,
+  ),
   'items' =>
   array (
     3 =>
@@ -587,24 +605,6 @@ class CameraInfo60D extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'CameraOrientation' => 54,
-    'CameraTemperature' => 25,
-    'ColorTemperature' => 125,
-    'DirectoryIndex' => 485,
-    'ExposureTime' => 4,
-    'FNumber' => 3,
-    'FileIndex' => 473,
-    'FirmwareVersion' => 409,
-    'FocalLength' => 30,
-    'FocusDistanceLower' => 87,
-    'FocusDistanceUpper' => 85,
-    'ISO' => 6,
-    'LensType' => 232,
-    'MaxFocalLength' => 236,
-    'MinFocalLength' => 234,
   ),
 );
 }

@@ -26,7 +26,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function mediaFileProvider()
     {
         $finder = new Finder();
-        $finder->files()->in(dirname(__FILE__) . '/image_files')->name('*.dump.yml');
+        $finder->files()->in(dirname(__FILE__) . '/image_files')->name('*.test-dump.yml');
         $result = [];
         foreach ($finder as $file) {
             $result[$file->getBasename()] = [$file];
@@ -47,7 +47,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 //        $this->assertEquals($test['exifReadData'], @exif_read_data($mediaDumpFile->getPath() . '/' . $test['fileName']));
 
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $media);
+            $this->assertElement($test['elements'], $media, $test);
         }
 
         foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
@@ -103,11 +103,11 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 //        $this->assertEquals($test['exifReadData'], @exif_read_data($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite.img'));
 
         if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $media, true);
+            $this->assertElement($test['elements'], $media, $test, true);
         }
     }
 
-    protected function assertElement($expected, $element, $rewritten = false)
+    protected function assertElement($expected, $element, $test, $rewritten = false)
     {
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
         $this->assertSame($expected['path'], $element->getContextPath());
@@ -121,6 +121,26 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             $this->assertNull($element->getElement('*'));
             $this->assertSame($expected['format'], ItemFormat::getName($element->getFormat()), $element->getContextPath());
             $this->assertSame($expected['components'], $element->getComponents(), $element->getContextPath());
+
+            // Check PHP Exif tag equivalence.
+            if ($php_exif_tag = $element->getParentElement()->getCollection()->getPropertyValue('phpExifTag')) {
+                $php_exif_skip = $test['skip']['phpExif'] ?? [];
+                if (!in_array($php_exif_tag, $php_exif_skip)) {
+                    $tag = explode('::', $php_exif_tag);
+                    if (count($tag) === 1) {
+                        $expected_tag_value = $test['exifReadData'][$tag[0]];
+                    } else {
+                        $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
+                    }
+//if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
+/*if ($element->getParentElement() && $element->getParentElement()->getAttribute('name') === 'WhiteBalance') {
+  dump(MediaProbe::dumpHexFormatted($expected_tag_value));
+  dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'phpExif'])));
+}*/
+                    $this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                }
+            }
+
             if (!$rewritten) {
                 $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
                 if (isset($expected['exiftool_text'])) {
@@ -133,9 +153,9 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         // Recursively check sub-blocks.
         if (isset($expected['elements'])) {
             foreach ($expected['elements'] as $i => $expected_element) {
-                $test = $element->getMultipleElements('*');
-                $this->assertArrayHasKey($i, $test, $expected_element['path']);
-                $this->assertElement($expected_element, $test[$i], $rewritten);
+                $sub = $element->getMultipleElements('*');
+                $this->assertArrayHasKey($i, $sub, $expected_element['path']);
+                $this->assertElement($expected_element, $sub[$i], $test, $rewritten);
             }
         }
     }

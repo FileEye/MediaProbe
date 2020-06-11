@@ -58,6 +58,18 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
+    public function getValue(array $options = [])
+    {
+        $format = $options['format'] ?? null;
+        if ($format === 'phpExif') {
+            return $this->toBytes();
+        }
+        return parent::getValue();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
         $major = floor($this->getValue());

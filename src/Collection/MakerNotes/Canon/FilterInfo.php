@@ -18,6 +18,19 @@ class FilterInfo extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'FisheyeFilter' => 1281,
+    'GrainyBWFilter' => 257,
+    'MiniatureFilter' => 1025,
+    'MiniatureFilterOrientation' => 1026,
+    'MiniatureFilterParameter' => 1028,
+    'MiniatureFilterPosition' => 1027,
+    'PaintingFilter' => 1537,
+    'SoftFocusFilter' => 513,
+    'ToyCameraFilter' => 769,
+    'WatercolorFilter' => 1793,
+  ),
   'items' =>
   array (
     257 =>
@@ -177,19 +190,6 @@ class FilterInfo extends Collection {
         ),
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'FisheyeFilter' => 1281,
-    'GrainyBWFilter' => 257,
-    'MiniatureFilter' => 1025,
-    'MiniatureFilterOrientation' => 1026,
-    'MiniatureFilterParameter' => 1028,
-    'MiniatureFilterPosition' => 1027,
-    'PaintingFilter' => 1537,
-    'SoftFocusFilter' => 513,
-    'ToyCameraFilter' => 769,
-    'WatercolorFilter' => 1793,
   ),
 );
 }

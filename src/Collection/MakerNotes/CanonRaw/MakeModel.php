@@ -22,6 +22,11 @@ class MakeModel extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'Make' => 0,
+    'Model' => 6,
+  ),
   'items' =>
   array (
     0 =>
@@ -45,11 +50,6 @@ class MakeModel extends Collection {
         0 => 2,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'Make' => 0,
-    'Model' => 6,
   ),
 );
 }

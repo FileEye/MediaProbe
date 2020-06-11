@@ -18,6 +18,13 @@ class RunTime extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Apple\\RunTime',
   'DOMNode' => 'plist',
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'RunTimeEpoch' => 'epoch',
+    'RunTimeFlags' => 'flags',
+    'RunTimeScale' => 'timescale',
+    'RunTimeValue' => 'value',
+  ),
   'items' =>
   array (
     'epoch' =>
@@ -71,13 +78,6 @@ class RunTime extends Collection {
       'name' => 'RunTimeValue',
       'title' => 'Run Time Value',
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'RunTimeEpoch' => 'epoch',
-    'RunTimeFlags' => 'flags',
-    'RunTimeScale' => 'timescale',
-    'RunTimeValue' => 'value',
   ),
 );
 }

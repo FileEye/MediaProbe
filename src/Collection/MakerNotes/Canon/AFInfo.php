@@ -22,6 +22,21 @@ class AFInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AFAreaHeight' => 7,
+    'AFAreaWidth' => 6,
+    'AFAreaXPositions' => 8,
+    'AFAreaYPositions' => 9,
+    'AFImageHeight' => 5,
+    'AFImageWidth' => 4,
+    'AFPointsInFocus' => 10,
+    'CanonImageHeight' => 3,
+    'CanonImageWidth' => 2,
+    'NumAFPoints' => 0,
+    'PrimaryAFPoint' => 12,
+    'ValidAFPoints' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -155,21 +170,6 @@ class AFInfo extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AFAreaHeight' => 7,
-    'AFAreaWidth' => 6,
-    'AFAreaXPositions' => 8,
-    'AFAreaYPositions' => 9,
-    'AFImageHeight' => 5,
-    'AFImageWidth' => 4,
-    'AFPointsInFocus' => 10,
-    'CanonImageHeight' => 3,
-    'CanonImageWidth' => 2,
-    'NumAFPoints' => 0,
-    'PrimaryAFPoint' => 12,
-    'ValidAFPoints' => 1,
   ),
 );
 }

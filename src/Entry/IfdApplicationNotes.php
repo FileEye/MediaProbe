@@ -12,6 +12,18 @@ class IfdApplicationNotes extends Byte
     /**
      * {@inheritdoc}
      */
+    public function getValue(array $options = [])
+    {
+        $format = $options['format'] ?? null;
+        if ($format === 'phpExif') {
+            return $this->toString();
+        }
+        return parent::getValue();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toString(array $options = [])
     {
         $str = '';

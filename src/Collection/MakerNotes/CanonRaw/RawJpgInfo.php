@@ -22,6 +22,13 @@ class RawJpgInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'RawJpgHeight' => 4,
+    'RawJpgQuality' => 1,
+    'RawJpgSize' => 2,
+    'RawJpgWidth' => 3,
+  ),
   'items' =>
   array (
     1 =>
@@ -83,13 +90,6 @@ class RawJpgInfo extends Collection {
         0 => 3,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'RawJpgHeight' => 4,
-    'RawJpgQuality' => 1,
-    'RawJpgSize' => 2,
-    'RawJpgWidth' => 3,
   ),
 );
 }

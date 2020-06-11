@@ -22,6 +22,10 @@ class CameraInfoUnknown extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'LensSerialNumber' => 363,
+  ),
   'items' =>
   array (
     363 =>
@@ -35,10 +39,6 @@ class CameraInfoUnknown extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'LensSerialNumber' => 363,
   ),
 );
 }

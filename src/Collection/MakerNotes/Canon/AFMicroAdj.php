@@ -23,6 +23,12 @@ class AFMicroAdj extends Collection {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AFMicroAdjMode' => 1,
+    'AFMicroAdjValue' => 2,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -63,12 +69,6 @@ class AFMicroAdj extends Collection {
         0 => 10,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AFMicroAdjMode' => 1,
-    'AFMicroAdjValue' => 2,
-    'indexSize' => 0,
   ),
 );
 }

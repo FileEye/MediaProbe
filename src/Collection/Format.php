@@ -14,6 +14,24 @@ class Format extends Collection {
 
   protected static $map = array (
   'title' => 'The list of MediaProbe supported data formats.',
+  'itemsByName' =>
+  array (
+    'Ascii' => 2,
+    'Byte' => 1,
+    'Double' => 12,
+    'Float' => 11,
+    'Long' => 4,
+    'Rational' => 5,
+    'Short' => 3,
+    'ShortRational' => 1001,
+    'ShortRev' => 1000,
+    'SignedByte' => 6,
+    'SignedLong' => 9,
+    'SignedRational' => 10,
+    'SignedShort' => 8,
+    'SignedShortRational' => 1002,
+    'Undefined' => 7,
+  ),
   'items' =>
   array (
     1 =>
@@ -134,24 +152,6 @@ class Format extends Collection {
       'class' => 'FileEye\\MediaProbe\\Entry\\Core\\SignedShortRational',
       'collection' => 'VoidCollection',
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'Ascii' => 2,
-    'Byte' => 1,
-    'Double' => 12,
-    'Float' => 11,
-    'Long' => 4,
-    'Rational' => 5,
-    'Short' => 3,
-    'ShortRational' => 1001,
-    'ShortRev' => 1000,
-    'SignedByte' => 6,
-    'SignedLong' => 9,
-    'SignedRational' => 10,
-    'SignedShort' => 8,
-    'SignedShortRational' => 1002,
-    'Undefined' => 7,
   ),
 );
 }

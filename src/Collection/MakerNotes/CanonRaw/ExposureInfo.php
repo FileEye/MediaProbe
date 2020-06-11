@@ -22,6 +22,12 @@ class ExposureInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'ApertureValue' => 2,
+    'ExposureCompensation' => 0,
+    'ShutterSpeedValue' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,12 +60,6 @@ class ExposureInfo extends Collection {
         0 => 11,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'ApertureValue' => 2,
-    'ExposureCompensation' => 0,
-    'ShutterSpeedValue' => 1,
   ),
 );
 }

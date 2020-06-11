@@ -23,6 +23,17 @@ class MovieInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AudioBitrate' => 108,
+    'AudioChannels' => 112,
+    'AudioSampleRate' => 110,
+    'Duration' => 106,
+    'FrameCount' => 4,
+    'FrameRate' => 6,
+    'VideoCodec' => 116,
+    'indexSize' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -125,17 +136,6 @@ class MovieInfo extends Collection {
         0 => 7,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AudioBitrate' => 108,
-    'AudioChannels' => 112,
-    'AudioSampleRate' => 110,
-    'Duration' => 106,
-    'FrameCount' => 4,
-    'FrameRate' => 6,
-    'VideoCodec' => 116,
-    'indexSize' => 0,
   ),
 );
 }

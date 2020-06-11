@@ -22,6 +22,11 @@ class ImageFormat extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'FileFormat' => 0,
+    'TargetCompressionRatio' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,11 +59,6 @@ class ImageFormat extends Collection {
         0 => 11,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'FileFormat' => 0,
-    'TargetCompressionRatio' => 1,
   ),
 );
 }

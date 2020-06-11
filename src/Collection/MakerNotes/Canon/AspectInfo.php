@@ -22,6 +22,14 @@ class AspectInfo extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'AspectRatio' => 0,
+    'CroppedImageHeight' => 2,
+    'CroppedImageLeft' => 3,
+    'CroppedImageTop' => 4,
+    'CroppedImageWidth' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -85,14 +93,6 @@ class AspectInfo extends Collection {
         0 => 4,
       ),
     ),
-  ),
-  'itemsByName' =>
-  array (
-    'AspectRatio' => 0,
-    'CroppedImageHeight' => 2,
-    'CroppedImageLeft' => 3,
-    'CroppedImageTop' => 4,
-    'CroppedImageWidth' => 1,
   ),
 );
 }
