@@ -3755,6 +3755,8 @@ class Any extends Collection {
     ),
     36864 =>
     array (
+      'components' => 4,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
       'collection' => 'Tag',
       'name' => 'ExifVersion',
       'title' => 'Exif Version',

@@ -54,8 +54,7 @@ class Version extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-dump([$this->value, (string) $this->value]);
-            return (string) $this->value;
+            return $this->value;
         }
         if (isset($this->value) && is_numeric($this->value)) {
             $version = $this->value > 99 ? $this->value / 100 : $this->value / 10;
