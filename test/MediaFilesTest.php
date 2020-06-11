@@ -124,18 +124,21 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
             // Check PHP Exif tag equivalence.
             if ($php_exif_tag = $element->getParentElement()->getCollection()->getPropertyValue('phpExifTag')) {
-                $tag = explode('::', $php_exif_tag);
-                if (count($tag) === 1) {
-                    $expected_tag_value = $test['exifReadData'][$tag[0]];
-                } else {
-                    $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
-                }
+                $php_exif_skip = $test['skip']['phpExif'] ?? [];
+                if (!in_array($php_exif_tag, $php_exif_skip)) {
+                    $tag = explode('::', $php_exif_tag);
+                    if (count($tag) === 1) {
+                        $expected_tag_value = $test['exifReadData'][$tag[0]];
+                    } else {
+                        $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
+                    }
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
 // if ($element->getParentElement() && $element->getParentElement()->getAttribute('name') === 'UserComment') {
 /*  dump(MediaProbe::dumpHexFormatted($expected_tag_value));
   dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'phpExif'])));
 }*/
-                $this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                    $this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
+                }
             }
 
             if (!$rewritten) {
