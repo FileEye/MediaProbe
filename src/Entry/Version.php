@@ -57,9 +57,8 @@ class Version extends Undefined
             return $this->toBytes();
         }
         if (isset($this->value) && is_numeric($this->value)) {
-            $version = $this->value > 99 ? $this->value / 100 : $this->value;
+            $version = $this->value > 99 ? $this->value / 100 : $this->value / 10;
         } else {
-            $this->error('Incorrect version data.');
             $version = 0;
         }
         $major = floor($version);
@@ -73,9 +72,6 @@ class Version extends Undefined
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-/*        $major = floor($this->getValue());
-        $minor = ($this->getValue() - $major) * 100;
-        return sprintf('%02.0f%02.0f', $major, $minor);*/
         return $this->value;
     }
 
