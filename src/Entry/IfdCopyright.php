@@ -63,7 +63,7 @@ class IfdCopyright extends Ascii
         if ($format === 'phpExif') {
             return rtrim($this->toBytes(), "\x00");
         }
-        return $this->toString();
+        return $this->value;
     }
 
     /**
