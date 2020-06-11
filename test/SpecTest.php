@@ -201,10 +201,10 @@ class SpecTest extends MediaProbeTestCaseBase
                 '-0.5', 'FileEye\MediaProbe\Entry\ExifExposureBiasValue', 'Ifd\\Exif', 'ExposureCompensation', [[-5, 10]],
             ],
             'Exif/ExifVersion - short' => [
-                '2.2', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Ifd\\Exif', 'ExifVersion', ['2200'], true,
+                '2.2', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Ifd\\Exif', 'ExifVersion', ['0220'], true,
             ],
             'Exif/FlashPixVersion - short' => [
-                '2.5', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Ifd\\Exif', 'FlashpixVersion', ['2500'], true,
+                '2.5', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Ifd\\Exif', 'FlashpixVersion', ['0250'], true,
             ],
             'Interoperability/InteropVersion - short' => [
                 '1.0', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Ifd\\Interoperability', 'InteropVersion', ['0100'], true,
