@@ -244,7 +244,7 @@ elements:
                                                             class: FileEye\MediaProbe\Entry\Time
                                                             valid: true
                                                             format: Ascii
-                                                            components: 20
+                                                            components: 21
                                                             bytesHash: f9af2a9c0702cdb5ff7fe0c0e9ab4888f48663138d34faf24ce9b71121d2140b
                                                             text: '2007:06:05 11:12:11'
                                                 -
@@ -379,7 +379,7 @@ elements:
                                                                     class: FileEye\MediaProbe\Entry\Time
                                                                     valid: true
                                                                     format: Ascii
-                                                                    components: 20
+                                                                    components: 21
                                                                     bytesHash: f9af2a9c0702cdb5ff7fe0c0e9ab4888f48663138d34faf24ce9b71121d2140b
                                                                     text: '2007:06:05 11:12:11'
                                                         -
@@ -397,7 +397,7 @@ elements:
                                                                     class: FileEye\MediaProbe\Entry\Time
                                                                     valid: true
                                                                     format: Ascii
-                                                                    components: 20
+                                                                    components: 21
                                                                     bytesHash: f9af2a9c0702cdb5ff7fe0c0e9ab4888f48663138d34faf24ce9b71121d2140b
                                                                     text: '2007:06:05 11:12:11'
                                                         -
@@ -639,7 +639,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965'
                                                             class: FileEye\MediaProbe\Block\Ifd
                                                             valid: true
-                                                            name: Interoperability
+                                                            name: InteropIFD
                                                             id: '40965'
                                                             collection: Ifd\Interoperability
                                                             elements:
@@ -1566,7 +1566,7 @@ log:
     NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:40965'
-            message: 'No specification for item UnknownTag in ''Interoperability'''
+            message: 'No specification for item UnknownTag in ''InteropIFD'''
 gdInfo:
     0: 50
     1: 38
