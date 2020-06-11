@@ -64,8 +64,10 @@ abstract class NumberBase extends EntryBase
             return $this->formatNumber($this->value[0], $options);
         } else {
             $ret = [];
-            foreach ($this->value as $value) {
-                $ret[] = $this->formatNumber($value, $options);
+            if ($this->value) {
+                foreach ($this->value as $value) {
+                    $ret[] = $this->formatNumber($value, $options);
+                }
             }
             return $ret;
         }
