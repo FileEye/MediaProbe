@@ -67,14 +67,15 @@ class Version extends Undefined
         if ($format === 'phpExif') {
             return $this->toBytes();
         }
-        $version = isset($this->value) ? $this->value : 0.0;
-        if (!is_numeric($version)) {
+        if (isset($this->value) && is_numeric($this->value)) {
+            $version = $this->value / 100;
+        } else {
             $this->error('Incorrect version data.');
             $version = 0;
         }
         $major = floor($version);
         $minor = ($version - $major) * 100;
-        $bytes = sprintf('%02.0f%02.0f', $major, $minor);
+//        $bytes = sprintf('%02.0f%02.0f', $major, $minor);
 
         return (string) ($version . ($minor === 0.0 ? '.0' : ''));
         //return parent::getValue();
