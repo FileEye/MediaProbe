@@ -34,6 +34,12 @@ class EntryVersionTest extends EntryTestBase
         $entry->setValue(['afol']);
         $this->assertEquals(0.0, $entry->getValue());
         $this->assertEquals('0.0', $entry->toString());
-        $this->assertEquals('0000', $entry->toBytes());
+        $this->assertEquals('afol', $entry->toBytes());
+
+        // Invalid version data.
+        $entry->setValue(['\xDC000']);
+        $this->assertEquals(0.0, $entry->getValue());
+        $this->assertEquals('0.0', $entry->toString());
+        $this->assertEquals('\xDC000', $entry->toBytes());
     }
 }

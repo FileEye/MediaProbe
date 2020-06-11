@@ -25,10 +25,7 @@ class Version extends Undefined
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-        $version = $data_element->getBytes(0, $item_definition->getValuesCount());
-// xx        $value = is_numeric($version) ? [$version / 100] : [$version];
-// xx        $this->setValue($value);
-        $this->setValue([$version]);
+        $this->setValue([$data_element->getBytes(0, $item_definition->getValuesCount())]);
         return $this;
     }
 
@@ -39,18 +36,10 @@ class Version extends Undefined
     {
         $this->valid = true;
 
-/*        $version = isset($data[0]) ? $data[0] : 0.0;
-        if (!is_numeric($version)) {
+        if (!is_numeric($data[0])) {
             $this->error('Incorrect version data.');
-            $version = 0;
             $this->valid = false;
         }
-        $major = floor($version);
-        $minor = ($version - $major) * 100;
-        $bytes = sprintf('%02.0f%02.0f', $major, $minor);
-
-        $this->value = (string) ($version . ($minor === 0.0 ? '.0' : ''));
-        $this->components = strlen($bytes);*/
 
         $this->value = $data[0];
         $this->components = strlen($this->value);
@@ -68,17 +57,15 @@ class Version extends Undefined
             return $this->toBytes();
         }
         if (isset($this->value) && is_numeric($this->value)) {
-            $version = $this->value / 100;
+            $version = $this->value > 99 ? $this->value / 100 : $this->value;
         } else {
             $this->error('Incorrect version data.');
             $version = 0;
         }
         $major = floor($version);
         $minor = ($version - $major) * 100;
-//        $bytes = sprintf('%02.0f%02.0f', $major, $minor);
 
-        return (string) ($version . ($minor === 0.0 ? '.0' : ''));
-        //return parent::getValue();
+        return $version . ($minor === 0.0 ? '.0' : '');
     }
 
     /**
