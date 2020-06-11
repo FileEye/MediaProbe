@@ -61,7 +61,9 @@ class IfdCopyright extends Ascii
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return rtrim($this->toBytes(), "\x00");
+            $ret = rtrim($this->toBytes(), "\x00");
+dump(MediaProbe::dumpHexFormatted($ret));
+            return $ret;
         }
         return $this->value;
     }
