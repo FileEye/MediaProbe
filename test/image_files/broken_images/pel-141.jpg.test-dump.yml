@@ -152,12 +152,12 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExifVersion:36864/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Byte
-                                                            valid: true
-                                                            format: Byte
+                                                            class: FileEye\MediaProbe\Entry\Version
+                                                            valid: false
+                                                            format: Undefined
                                                             components: 4
                                                             bytesHash: c9ef9bd66be720a334bfda5cb425f28b35f20c5c82cf95c86a41995bdaab34c9
-                                                            text: '220, 0, 0, 0'
+                                                            text: '0.0'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
@@ -859,6 +859,10 @@ elements:
                             bytesHash: e10c8cb376b41e426480944fa8de7a0e6796b32fbfb77e6c016529cb3a20e1f6
                             text: '3504 byte(s) of data'
 log:
+    ERROR:
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExifVersion:36864/entry'
+            message: 'Incorrect version data.'
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExifVersion:36864'
