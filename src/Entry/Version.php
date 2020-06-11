@@ -54,7 +54,7 @@ class Version extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-dump($this->value)
+dump([$this->value, (string) $this->value]);
             return (string) $this->value;
         }
         if (isset($this->value) && is_numeric($this->value)) {
