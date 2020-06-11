@@ -61,6 +61,9 @@ class DumpCommand extends Command
         foreach ($finder as $file) {
             $output->write('Processing ' . $file . '... ');
 
+            $test_dump_file = (string) $file . '.test-dump.yml';
+            $input_yaml = Yaml::parse(file_get_contents($test_dump_file));
+
             // Dump via MediaProbe.
             $output->write('1');
             $yaml = $this->fileToTestDumpArray($file);
@@ -88,7 +91,14 @@ class DumpCommand extends Command
                 }
             }
 
-            $fs->dumpFile((string) $file . '.test-dump.yml', Yaml::dump($yaml, 40));
+            // Prepare output.
+            $output_yaml = [];
+            if (isset($input_yaml['skip'])) {
+                $output_yaml['skip'] = $input_yaml['skip'];
+            }
+            $output_yaml = array_merge($output_yaml, $yaml);
+
+            $fs->dumpFile($test_dump_file, Yaml::dump($output_yaml, 40));
             $output->writeln(' done.');
         }
 
