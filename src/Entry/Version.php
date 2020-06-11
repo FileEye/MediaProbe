@@ -26,8 +26,9 @@ class Version extends Undefined
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
         $version = $data_element->getBytes(0, $item_definition->getValuesCount());
-        $value = is_numeric($version) ? [$version / 100] : [$version];
-        $this->setValue($value);
+// xx        $value = is_numeric($version) ? [$version / 100] : [$version];
+// xx        $this->setValue($value);
+        $this->setValue([$version]);
         return $this;
     }
 
@@ -38,7 +39,7 @@ class Version extends Undefined
     {
         $this->valid = true;
 
-        $version = isset($data[0]) ? $data[0] : 0.0;
+/*        $version = isset($data[0]) ? $data[0] : 0.0;
         if (!is_numeric($version)) {
             $this->error('Incorrect version data.');
             $version = 0;
@@ -49,8 +50,10 @@ class Version extends Undefined
         $bytes = sprintf('%02.0f%02.0f', $major, $minor);
 
         $this->value = (string) ($version . ($minor === 0.0 ? '.0' : ''));
-        $this->components = strlen($bytes);
+        $this->components = strlen($bytes);*/
 
+        $this->value = $data[0];
+        $this->components = strlen($this->value);
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
     }
@@ -64,7 +67,17 @@ class Version extends Undefined
         if ($format === 'phpExif') {
             return $this->toBytes();
         }
-        return parent::getValue();
+        $version = isset($this->value) ? $this->value : 0.0;
+        if (!is_numeric($version)) {
+            $this->error('Incorrect version data.');
+            $version = 0;
+        }
+        $major = floor($version);
+        $minor = ($version - $major) * 100;
+        $bytes = sprintf('%02.0f%02.0f', $major, $minor);
+
+        return (string) ($version . ($minor === 0.0 ? '.0' : ''));
+        //return parent::getValue();
     }
 
     /**
@@ -72,9 +85,10 @@ class Version extends Undefined
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-        $major = floor($this->getValue());
+/*        $major = floor($this->getValue());
         $minor = ($this->getValue() - $major) * 100;
-        return sprintf('%02.0f%02.0f', $major, $minor);
+        return sprintf('%02.0f%02.0f', $major, $minor);*/
+        return $this->value;
     }
 
     /**
