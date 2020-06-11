@@ -176,6 +176,6 @@ class Time extends Ascii
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-        return substr($this->getValue(), 0, 19) . "\x0";
+        return $this->value[0];
     }
 }
