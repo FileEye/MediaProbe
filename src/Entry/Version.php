@@ -57,7 +57,7 @@ class Version extends Undefined
             return $this->value;
         }
         if (isset($this->value) && is_numeric($this->value)) {
-            $version = $this->value > 99 ? $this->value / 100 : $this->value / 10;
+            $version = $this->value / 100;
         } else {
             $version = 0;
         }
