@@ -210,6 +210,7 @@ class Gps extends Collection {
     ),
     5 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSAltitudeRef',
       'components' => 1,
       'collection' => 'Tag',
       'name' => 'GPSAltitudeRef',
