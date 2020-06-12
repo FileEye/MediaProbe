@@ -638,12 +638,12 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ExposureTime:33434/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                    class: FileEye\MediaProbe\Entry\ExifExposureTime
                                     valid: true
                                     format: Rational
                                     components: 1
                                     bytesHash: 3d8bf0c2e9cd805d30f507fe273b4a5bf4826d5e8241be1237c41bfeaa0d615b
-                                    text: 0.00035211267605634
+                                    text: '1/2840 sec.'
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:FNumber:33437'
@@ -656,12 +656,12 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:FNumber:33437/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                    class: FileEye\MediaProbe\Entry\ExifFNumber
                                     valid: true
                                     format: Rational
                                     components: 1
                                     bytesHash: a1c385b62301d07f90c5b9d911db8f0cb1c15ef74b4a823542405336240641f8
-                                    text: 1.9
+                                    text: f/1.9
                         -
                             node: ifd
                             path: '/media/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
@@ -1251,7 +1251,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:DateTimeOriginal:36867/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                    class: FileEye\MediaProbe\Entry\Time
                                     valid: true
                                     format: Ascii
                                     components: 20
@@ -1269,7 +1269,7 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:CreateDate:36868/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                    class: FileEye\MediaProbe\Entry\Time
                                     valid: true
                                     format: Ascii
                                     components: 20
@@ -1287,12 +1287,13 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ShutterSpeedValue:37377/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                    class: FileEye\MediaProbe\Entry\ExifShutterSpeedValue
                                     valid: true
                                     format: SignedRational
                                     components: 1
                                     bytesHash: b2a6018142721c2af397fa37445d0e4d49a673ec5c7c45c2287f97ee6eadb6d3
-                                    text: 11.47
+                                    text: '1147/100 sec. (APEX: 53)'
+                                    exiftool_text: 1/2837
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ApertureValue:37378'
@@ -1305,12 +1306,12 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ApertureValue:37378/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                    class: FileEye\MediaProbe\Entry\ExifApertureValue
                                     valid: true
                                     format: Rational
                                     components: 1
                                     bytesHash: d4824fac959e8bb244173862bb5061704908bc605fd825af060beb9df29bf74a
-                                    text: 1.85
+                                    text: '1.9'
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:BrightnessValue:37379'
@@ -1323,12 +1324,12 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:BrightnessValue:37379/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                    class: FileEye\MediaProbe\Entry\ExifBrightnessValue
                                     valid: true
                                     format: SignedRational
                                     components: 1
                                     bytesHash: 0cb3901526ff798747baa640e5d3ac3ea34b1e8c24410ab0fbdb5bd69f99b81d
-                                    text: 9.79
+                                    text: '9.79'
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ExposureCompensation:37380'
@@ -1341,12 +1342,12 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ExposureCompensation:37380/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                    class: FileEye\MediaProbe\Entry\ExifExposureBiasValue
                                     valid: true
                                     format: SignedRational
                                     components: 1
                                     bytesHash: dd73a46975594b97bfef18db6ea376dafa119d27bfa7b0e2f94e0e3e67420f42
-                                    text: 0
+                                    text: '0.0'
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:MaxApertureValue:37381'
@@ -1413,25 +1414,25 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:FocalLength:37386/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                    class: FileEye\MediaProbe\Entry\ExifFocalLength
                                     valid: true
                                     format: Rational
                                     components: 1
                                     bytesHash: ffdc6bb41f3d6c31fd51f2d77a093e4f559c290d1732bf01436eaf39b27824a9
-                                    text: 4.3
+                                    text: '4.3 mm'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:MakerNoteApple:37500'
+                            path: '/media/tiff/ifd:IFD0:0/tag:MakerNote:37500'
                             class: FileEye\MediaProbe\Block\Tag
                             valid: true
-                            name: MakerNoteApple
+                            name: MakerNote
                             id: '37500'
                             collection: Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:MakerNoteApple:37500/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                    path: '/media/tiff/ifd:IFD0:0/tag:MakerNote:37500/entry'
+                                    class: FileEye\MediaProbe\Entry\ExifMakerNote
                                     valid: true
                                     format: Undefined
                                     components: 98
@@ -1449,12 +1450,12 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:UserComment:37510/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                    class: FileEye\MediaProbe\Entry\ExifUserComment
                                     valid: true
                                     format: Undefined
                                     components: 21
                                     bytesHash: c90232586b801f9558a76f2f963eccd831d9fe6775e4c8f1446b2331aa2132f2
-                                    text: '21 byte(s) of data'
+                                    text: "\0\0\0\0\0\0\0\0\0\0\0\0\0"
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:FlashpixVersion:40960'
@@ -1467,12 +1468,12 @@ elements:
                                 -
                                     node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:FlashpixVersion:40960/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                    class: FileEye\MediaProbe\Entry\Version
                                     valid: true
                                     format: Undefined
                                     components: 4
                                     bytesHash: 5e7b571a60a7c187d6a4cb8bbedbe4e69d4caa49b51d9ddf3320afd793f146bf
-                                    text: '4 byte(s) of data'
+                                    text: '1.0'
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ColorSpace:40961'

@@ -98,7 +98,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:CreateDate:36868/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            class: FileEye\MediaProbe\Entry\Time
                                                             valid: true
                                                             format: Ascii
                                                             components: 20
@@ -134,7 +134,7 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:DateTimeOriginal:36867/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            class: FileEye\MediaProbe\Entry\Time
                                                             valid: true
                                                             format: Ascii
                                                             components: 20
@@ -251,12 +251,12 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExposureTime:33434/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                            class: FileEye\MediaProbe\Entry\ExifExposureTime
                                                             valid: true
-                                                            format: SignedRational
+                                                            format: Rational
                                                             components: 1
                                                             bytesHash: 36b02cd66047c3b5cf8282d0db8ef8076868525a7a48944eb42a111cd2896342
-                                                            text: 0.000613
+                                                            text: '1/1631 sec.'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageWidth:256'
@@ -305,12 +305,12 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ComponentsConfiguration:37121/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Byte
+                                                            class: FileEye\MediaProbe\Entry\ExifComponentsConfiguration
                                                             valid: true
-                                                            format: Byte
+                                                            format: Undefined
                                                             components: 4
                                                             bytesHash: 8417eb4e5447e04d669bfed0cc1a3a7b26ad04a5ae839b4669a26983f95fe8fb
-                                                            text: '206, 4, 0, 0'
+                                                            text: '206 R - -'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:FNumber:33437'
@@ -323,12 +323,12 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:FNumber:33437/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                            class: FileEye\MediaProbe\Entry\ExifFNumber
                                                             valid: true
-                                                            format: SignedRational
+                                                            format: Rational
                                                             components: 1
                                                             bytesHash: bdc45700e6e3f05b47376dd0c4ff8bb425d15b5e1e966b951dad838908579ae8
-                                                            text: 2.6
+                                                            text: f/2.6
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
@@ -431,12 +431,12 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExposureCompensation:37380/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                            class: FileEye\MediaProbe\Entry\ExifExposureBiasValue
                                                             valid: true
                                                             format: SignedRational
                                                             components: 1
                                                             bytesHash: 2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135
-                                                            text: 0
+                                                            text: '0.0'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:MaxApertureValue:37381'
@@ -467,12 +467,12 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:FocalLength:37386/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Rational
+                                                            class: FileEye\MediaProbe\Entry\ExifFocalLength
                                                             valid: true
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 9f2379e54c713a1fde2251f4ecfa56d41f9a57a81693af699589fa26042791d0
-                                                            text: 3.54
+                                                            text: '3.5 mm'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:SceneCaptureType:41990'
@@ -539,12 +539,12 @@ elements:
                                                         -
                                                             node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:UserComment:37510/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            class: FileEye\MediaProbe\Entry\ExifUserComment
                                                             valid: true
-                                                            format: Ascii
+                                                            format: Undefined
                                                             components: 14
                                                             bytesHash: 12d4e633a2e51494830e7c2eaf731bf9f636e9504874200b0763c60bd377e11b
-                                                            text: 'User comments'
+                                                            text: "ments\0"
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:WhiteBalance:41987'
