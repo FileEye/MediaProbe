@@ -81,12 +81,12 @@ class ExifUserComment extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-/*            $val = rtrim($this->value[0], " \x00");
-            if (strlen($val) === 0 && substr($this->value[0], 0, 1) === ' ') {
-                $val = ' ';
+            $encoding = rtrim(substr($this->value, 0, 8), "\x00");
+            $value = rtrim(substr($this->value, 8), " \x00");
+            if (strlen($value) === 0 && substr($this->value, 8, 1) === ' ') {
+                $value = ' ';
             }
-            return str_pad($this->value[1], 8, chr(0)) . str_pad($val, strlen($this->value[0]), chr(0));*/
-            return $this->toBytes();
+            return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->value) - 8, chr(0));
         }
         return rtrim(substr($this->value, 8), "\x00");
     }
