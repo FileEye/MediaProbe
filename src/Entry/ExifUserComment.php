@@ -77,7 +77,12 @@ class ExifUserComment extends Undefined
             if (strlen($value) === 0 && substr($this->value, 8, 1) === ' ') {
                 $value = ' ';
             }
-            return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->value) - 8, chr(0));
+            if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
+              return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->value) - 8, chr(0));
+            } else {
+              return rtrim($this->value, "\x00");
+            }
+
         }
         return rtrim(substr($this->value, 8), "\x00");
     }
