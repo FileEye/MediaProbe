@@ -30,12 +30,6 @@ class ExifUserComment extends Undefined
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-/*        if ($item_definition->getValuesCount() < 8) {
-            $this->setValue(['', rtrim($data_element->getBytes(0, $item_definition->getValuesCount()))]);
-        } else {
-            $this->setValue([$data_element->getBytes(8, $item_definition->getValuesCount() - 8), rtrim($data_element->getBytes(0, 8))]);
-        }*/
-
         $this->setValue([$data_element->getBytes(0, $item_definition->getValuesCount())]);
         return $this;
     }
@@ -67,9 +61,6 @@ class ExifUserComment extends Undefined
             $this->error('Invalid EXIF text encoding for UserComment.');
         }
 
-//        $this->value = [$data[0] ?? '', $data[1] ?? ''];
-//        $this->components = 8 + strlen($this->value[0]);
-
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
     }
@@ -96,7 +87,6 @@ class ExifUserComment extends Undefined
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-//        return str_pad($this->value[1], 8, chr(0)) . $this->value[0];
         return $this->value;
     }
 
