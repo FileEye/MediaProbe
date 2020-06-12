@@ -30,12 +30,13 @@ class ExifUserComment extends Undefined
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-        if ($item_definition->getValuesCount() < 8) {
+/*        if ($item_definition->getValuesCount() < 8) {
             $this->setValue(['', rtrim($data_element->getBytes(0, $item_definition->getValuesCount()))]);
         } else {
             $this->setValue([$data_element->getBytes(8, $item_definition->getValuesCount() - 8), rtrim($data_element->getBytes(0, 8))]);
-        }
+        }*/
 
+        $this->setValue([$data_element->getBytes(0, $item_definition->getValuesCount())]);
         return $this;
     }
 
@@ -50,10 +51,24 @@ class ExifUserComment extends Undefined
      */
     public function setValue(array $data)
     {
-        $this->valid = true;
+        $this->value = $data[0];
+        $this->components = strlen($this->value);
 
-        $this->value = [$data[0] ?? '', $data[1] ?? ''];
-        $this->components = 8 + strlen($this->value[0]);
+        if (strlen($this->value) < 8) {
+            $this->valid = false;
+        } else {
+            $encoding = strtoupper(rtrim(substr($this->value, 0, 8), "\x00"));
+            if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
+              $this->valid = true;
+            }
+        }
+
+        if (!$this->valid) {
+            $this->error('Invalid EXIF text encoding for UserComment.');
+        }
+
+//        $this->value = [$data[0] ?? '', $data[1] ?? ''];
+//        $this->components = 8 + strlen($this->value[0]);
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
@@ -66,13 +81,14 @@ class ExifUserComment extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            $val = rtrim($this->value[0], " \x00");
+/*            $val = rtrim($this->value[0], " \x00");
             if (strlen($val) === 0 && substr($this->value[0], 0, 1) === ' ') {
                 $val = ' ';
             }
-            return str_pad($this->value[1], 8, chr(0)) . str_pad($val, strlen($this->value[0]), chr(0));
+            return str_pad($this->value[1], 8, chr(0)) . str_pad($val, strlen($this->value[0]), chr(0));*/
+            return rtrim($this->toBytes(), "\x00");
         }
-        return parent::getValue();
+        return rtrim(substr($this->value, 8), "\x00");
     }
 
     /**
@@ -80,7 +96,8 @@ class ExifUserComment extends Undefined
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-        return str_pad($this->value[1], 8, chr(0)) . $this->value[0];
+//        return str_pad($this->value[1], 8, chr(0)) . $this->value[0];
+        return $this->value;
     }
 
     /**
@@ -88,6 +105,6 @@ class ExifUserComment extends Undefined
      */
     public function toString(array $options = [])
     {
-        return $this->value[0];
+        return $this->valid ? $this->getValue($options) : '';
     }
 }
