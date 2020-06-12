@@ -21,6 +21,8 @@ items:
                     R98: 'R98 - DCF basic file (sRGB)'
                     THM: 'THM - DCF thumbnail file'
     2:
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\Version
         exiftool:
             -
                 name: InteropVersion
@@ -606,6 +608,8 @@ items:
                 DOMNode: 'IFD0:Software'
                 desc: Software
     306:
+        components: 20
+        entryClass: FileEye\MediaProbe\Entry\Time
         exifReadData:
             key: DateTime
         exiftool:
@@ -1310,6 +1314,8 @@ items:
                 DOMNode: 'IFD0:YCbCrCoefficients'
                 desc: 'Y Cb Cr Coefficients'
     530:
+        __todo: 'adjust decoding'
+        entryClass: FileEye\MediaProbe\Entry\IfdYCbCrSubSampling
         exifReadData:
             key: YCbCrSubSampling
         exiftool:
@@ -1363,6 +1369,7 @@ items:
                 DOMNode: 'ExifIFD:StripRowCounts'
                 desc: 'Strip Row Counts'
     700:
+        __todo: 'add ifd for XMP tags'
         entryClass: FileEye\MediaProbe\Entry\IfdApplicationNotes
         exifReadData:
             key: ExtensibleMetadataPlatform
@@ -1764,6 +1771,7 @@ items:
                 DOMNode: 'ExifIFD:BatteryLevel'
                 desc: 'Battery Level'
     33432:
+        entryClass: FileEye\MediaProbe\Entry\IfdCopyright
         exifReadData:
             key: Copyright
         exiftool:
@@ -1775,6 +1783,8 @@ items:
                 DOMNode: 'IFD0:Copyright'
                 desc: Copyright
     33434:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifExposureTime
         exifReadData:
             key: ExposureTime
         exiftool:
@@ -1786,6 +1796,8 @@ items:
                 DOMNode: 'ExifIFD:ExposureTime'
                 desc: 'Exposure Time'
     33437:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifFNumber
         exifReadData:
             key: FNumber
         exiftool:
@@ -2498,6 +2510,8 @@ items:
                 DOMNode: 'ExifIFD:ExifVersion'
                 desc: 'Exif Version'
     36867:
+        components: 20
+        entryClass: FileEye\MediaProbe\Entry\Time
         exifReadData:
             key: DateTimeOriginal
         exiftool:
@@ -2510,6 +2524,8 @@ items:
                 DOMNode: 'ExifIFD:DateTimeOriginal'
                 desc: 'Date/Time Original'
     36868:
+        components: 20
+        entryClass: FileEye\MediaProbe\Entry\Time
         exifReadData:
             key: DateTimeDigitized
         exiftool:
@@ -2561,6 +2577,8 @@ items:
                 DOMNode: 'ExifIFD:OffsetTimeDigitized'
                 desc: 'Offset Time Digitized'
     37121:
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\ExifComponentsConfiguration
         exifReadData:
             key: ComponentsConfiguration
         exiftool:
@@ -2592,6 +2610,8 @@ items:
                 DOMNode: 'ExifIFD:CompressedBitsPerPixel'
                 desc: 'Compressed Bits Per Pixel'
     37377:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifShutterSpeedValue
         exifReadData:
             key: ShutterSpeedValue
         exiftool:
@@ -2603,6 +2623,8 @@ items:
                 DOMNode: 'ExifIFD:ShutterSpeedValue'
                 desc: 'Shutter Speed Value'
     37378:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifApertureValue
         exifReadData:
             key: ApertureValue
         exiftool:
@@ -2614,6 +2636,8 @@ items:
                 DOMNode: 'ExifIFD:ApertureValue'
                 desc: 'Aperture Value'
     37379:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifBrightnessValue
         exifReadData:
             key: BrightnessValue
         exiftool:
@@ -2625,6 +2649,8 @@ items:
                 DOMNode: 'ExifIFD:BrightnessValue'
                 desc: 'Brightness Value'
     37380:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifExposureBiasValue
         exifReadData:
             key: ExposureBiasValue
         exiftool:
@@ -2648,6 +2674,8 @@ items:
                 DOMNode: 'ExifIFD:MaxApertureValue'
                 desc: 'Max Aperture Value'
     37382:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifSubjectDistance
         exifReadData:
             key: SubjectDistance
         exiftool:
@@ -2756,6 +2784,8 @@ items:
                     93: 'Auto, Fired, Red-eye reduction, Return not detected'
                     95: 'Auto, Fired, Red-eye reduction, Return detected'
     37386:
+        components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifFocalLength
         exifReadData:
             key: FocalLength
         exiftool:
@@ -2881,6 +2911,7 @@ items:
                 DOMNode: 'ExifIFD:ImageHistory'
                 desc: 'Image History'
     37396:
+        entryClass: FileEye\MediaProbe\Entry\ExifSubjectArea
         exifReadData:
             key: SubjectLocation
         exiftool:
@@ -2974,6 +3005,10 @@ items:
                 DOMNode: 'ExifIFD:StoNits'
                 desc: 'Sto Nits'
     37500:
+        name: MakerNote
+        title: 'Maker Note'
+        format: Undefined
+        entryClass: FileEye\MediaProbe\Entry\ExifMakerNote
         exiftool:
             -
                 name: MakerNoteApple
@@ -3578,6 +3613,7 @@ items:
                 DOMNode: 'ExifIFD:MakerNoteUnknown'
                 desc: 'Maker Note Unknown'
     37510:
+        entryClass: FileEye\MediaProbe\Entry\ExifUserComment
         exifReadData:
             key: UserComment
         exiftool:
@@ -3716,6 +3752,7 @@ items:
                 DOMNode: 'ExifIFD:CameraElevationAngle'
                 desc: 'Camera Elevation Angle'
     40091:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
         exifReadData:
             key: Title
         exiftool:
@@ -3726,6 +3763,7 @@ items:
                 DOMNode: 'IFD0:XPTitle'
                 desc: 'XP Title'
     40092:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
         exifReadData:
             key: Comments
         exiftool:
@@ -3736,6 +3774,7 @@ items:
                 DOMNode: 'IFD0:XPComment'
                 desc: 'XP Comment'
     40093:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
         exifReadData:
             key: Author
         exiftool:
@@ -3747,6 +3786,7 @@ items:
                 DOMNode: 'IFD0:XPAuthor'
                 desc: 'XP Author'
     40094:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
         exifReadData:
             key: Keywords
         exiftool:
@@ -3757,6 +3797,7 @@ items:
                 DOMNode: 'IFD0:XPKeywords'
                 desc: 'XP Keywords'
     40095:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
         exifReadData:
             key: Subject
         exiftool:
@@ -3767,6 +3808,8 @@ items:
                 DOMNode: 'IFD0:XPSubject'
                 desc: 'XP Subject'
     40960:
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\Version
         exifReadData:
             key: FlashPixVersion
         exiftool:
