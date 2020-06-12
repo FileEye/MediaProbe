@@ -86,7 +86,7 @@ class ExifUserComment extends Undefined
                 $val = ' ';
             }
             return str_pad($this->value[1], 8, chr(0)) . str_pad($val, strlen($this->value[0]), chr(0));*/
-            return rtrim($this->toBytes(), "\x00");
+            return $this->toBytes();
         }
         return rtrim(substr($this->value, 8), "\x00");
     }
