@@ -658,12 +658,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:ExposureTime:33434/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            class: FileEye\MediaProbe\Entry\ExifExposureTime
                                                                             valid: true
-                                                                            format: SignedRational
+                                                                            format: Rational
                                                                             components: 1
                                                                             bytesHash: a4f247e774c06222c79089bd939082498fdf84a59246c037078a94b91a96f908
-                                                                            text: 0.002
+                                                                            text: '1/500 sec.'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:FNumber:33437'
@@ -676,12 +676,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:FNumber:33437/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            class: FileEye\MediaProbe\Entry\ExifFNumber
                                                                             valid: true
-                                                                            format: SignedRational
+                                                                            format: Rational
                                                                             components: 1
                                                                             bytesHash: 4fba140f7315a66df6d4de21b4a92a26248a9a96a0c83a33b8b9ecf3cb10301b
-                                                                            text: 2.8
+                                                                            text: f/2.8
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:ExposureProgram:34850'
@@ -730,12 +730,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:ExifVersion:36864/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                            class: FileEye\MediaProbe\Entry\Version
                                                                             valid: true
                                                                             format: Undefined
                                                                             components: 4
                                                                             bytesHash: a67ae99df04ecbdbbd885e266be5c7ffaba85d003ca5b9c9e7ac1c5699acb1ac
-                                                                            text: '4 byte(s) of data'
+                                                                            text: '2.21'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:DateTimeOriginal:36867'
@@ -748,7 +748,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:DateTimeOriginal:36867/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                            class: FileEye\MediaProbe\Entry\Time
                                                                             valid: true
                                                                             format: Ascii
                                                                             components: 21
@@ -766,7 +766,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:CreateDate:36868/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                            class: FileEye\MediaProbe\Entry\Time
                                                                             valid: true
                                                                             format: Ascii
                                                                             components: 21
@@ -784,12 +784,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:ComponentsConfiguration:37121/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                            class: FileEye\MediaProbe\Entry\ExifComponentsConfiguration
                                                                             valid: true
                                                                             format: Undefined
                                                                             components: 4
                                                                             bytesHash: 1666d9845b241586380fe85194c47f1d1868c4d7d30ba806ecc6d581df9eeadc
-                                                                            text: '4 byte(s) of data'
+                                                                            text: 'Y Cb Cr -'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:CompressedBitsPerPixel:37122'
@@ -820,12 +820,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:ExposureCompensation:37380/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            class: FileEye\MediaProbe\Entry\ExifExposureBiasValue
                                                                             valid: true
                                                                             format: SignedRational
                                                                             components: 1
                                                                             bytesHash: dd73a46975594b97bfef18db6ea376dafa119d27bfa7b0e2f94e0e3e67420f42
-                                                                            text: 0
+                                                                            text: '0.0'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:MaxApertureValue:37381'
@@ -910,25 +910,25 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:FocalLength:37386/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            class: FileEye\MediaProbe\Entry\ExifFocalLength
                                                                             valid: true
-                                                                            format: SignedRational
+                                                                            format: Rational
                                                                             components: 1
                                                                             bytesHash: aaecc262dc576a30e0b0870330060d0f8eca3fd373f5719d5f34e4e78e081b19
-                                                                            text: 6.3
+                                                                            text: '6.3 mm'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:MakerNoteApple:37500'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:MakerNote:37500'
                                                                     class: FileEye\MediaProbe\Block\Tag
                                                                     valid: true
-                                                                    name: MakerNoteApple
+                                                                    name: MakerNote
                                                                     id: '37500'
                                                                     collection: Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:MakerNoteApple:37500/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:MakerNote:37500/entry'
+                                                                            class: FileEye\MediaProbe\Entry\ExifMakerNote
                                                                             valid: true
                                                                             format: Undefined
                                                                             components: 2036
@@ -946,12 +946,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:FlashpixVersion:40960/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                            class: FileEye\MediaProbe\Entry\Version
                                                                             valid: true
                                                                             format: Undefined
                                                                             components: 4
                                                                             bytesHash: 5e7b571a60a7c187d6a4cb8bbedbe4e69d4caa49b51d9ddf3320afd793f146bf
-                                                                            text: '4 byte(s) of data'
+                                                                            text: '1.0'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:ColorSpace:40961'
@@ -1551,6 +1551,12 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:FNumber:33437'
             message: 'Found SignedRational data format, expected Rational'
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:DateTimeOriginal:36867'
+            message: 'Found 21 data components, expected 20'
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:CreateDate:36868'
+            message: 'Found 21 data components, expected 20'
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:CompressedBitsPerPixel:37122'
             message: 'Found SignedRational data format, expected Rational'

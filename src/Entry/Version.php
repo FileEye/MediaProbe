@@ -25,9 +25,7 @@ class Version extends Undefined
      */
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
-        $version = $data_element->getBytes(0, $item_definition->getValuesCount());
-        $value = is_numeric($version) ? [$version / 100] : [$version];
-        $this->setValue($value);
+        $this->setValue([$data_element->getBytes(0, $item_definition->getValuesCount())]);
         return $this;
     }
 
@@ -38,19 +36,13 @@ class Version extends Undefined
     {
         $this->valid = true;
 
-        $version = isset($data[0]) ? $data[0] : 0.0;
-        if (!is_numeric($version)) {
+        if (!is_numeric($data[0])) {
             $this->error('Incorrect version data.');
-            $version = 0;
             $this->valid = false;
         }
-        $major = floor($version);
-        $minor = ($version - $major) * 100;
-        $bytes = sprintf('%02.0f%02.0f', $major, $minor);
 
-        $this->value = (string) ($version . ($minor === 0.0 ? '.0' : ''));
-        $this->components = strlen($bytes);
-
+        $this->value = $data[0];
+        $this->components = strlen($this->value);
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
     }
@@ -62,9 +54,17 @@ class Version extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'phpExif') {
-            return $this->toBytes();
+            return $this->value;
         }
-        return parent::getValue();
+        if (isset($this->value) && is_numeric($this->value)) {
+            $version = $this->value / 100;
+        } else {
+            $version = 0;
+        }
+        $major = floor($version);
+        $minor = ($version - $major) * 100;
+
+        return $version . ($minor === 0.0 ? '.0' : '');
     }
 
     /**
@@ -72,9 +72,7 @@ class Version extends Undefined
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
-        $major = floor($this->getValue());
-        $minor = ($this->getValue() - $major) * 100;
-        return sprintf('%02.0f%02.0f', $major, $minor);
+        return $this->value;
     }
 
     /**

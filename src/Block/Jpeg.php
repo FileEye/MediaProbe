@@ -131,7 +131,7 @@ class Jpeg extends BlockBase
      */
     protected function getJpegSegmentIdOffset(DataElement $data_element, int $offset): int
     {
-        for ($i = $offset; $i < $offset + 7; $i++) {
+        for ($i = $offset; $i < $offset + 128; $i++) {
             if ($data_element->getByte($i) === Jpeg::JPEG_DELIMITER && $data_element->getByte($i + 1) !== Jpeg::JPEG_DELIMITER) {
                 return $i;
             }
