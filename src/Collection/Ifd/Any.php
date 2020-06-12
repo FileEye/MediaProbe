@@ -244,7 +244,7 @@ class Any extends Collection {
     'MSDocumentTextPosition' => 37681,
     'MSPropertySetStorage' => 37680,
     'Make' => 271,
-    'MakerNoteApple' => 37500,
+    'MakerNote' => 37500,
     'MakerNoteSafety' => 50741,
     'MaskedAreas' => 50830,
     'MatrixWorldToCamera' => 33306,
@@ -918,6 +918,8 @@ class Any extends Collection {
     ),
     2 =>
     array (
+      'components' => 4,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
       'collection' => 'Tag',
       'name' => 'InteropVersion',
       'title' => 'Interoperability Version',
@@ -1585,6 +1587,8 @@ class Any extends Collection {
     ),
     306 =>
     array (
+      'components' => 20,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Time',
       'collection' => 'Tag',
       'name' => 'ModifyDate',
       'title' => 'Modify Date',
@@ -2295,6 +2299,8 @@ class Any extends Collection {
     ),
     530 =>
     array (
+      '__todo' => 'adjust decoding',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\IfdYCbCrSubSampling',
       'collection' => 'Tag',
       'name' => 'YCbCrSubSampling',
       'title' => 'Y Cb Cr Sub Sampling',
@@ -2366,6 +2372,7 @@ class Any extends Collection {
     ),
     700 =>
     array (
+      '__todo' => 'add ifd for XMP tags',
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\IfdApplicationNotes',
       'collection' => 'Tag',
       'name' => 'ApplicationNotes',
@@ -2859,6 +2866,7 @@ class Any extends Collection {
     ),
     33432 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\IfdCopyright',
       'collection' => 'Tag',
       'name' => 'Copyright',
       'title' => 'Copyright',
@@ -2871,6 +2879,8 @@ class Any extends Collection {
     ),
     33434 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -2883,6 +2893,8 @@ class Any extends Collection {
     ),
     33437 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifFNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -3755,6 +3767,8 @@ class Any extends Collection {
     ),
     36864 =>
     array (
+      'components' => 4,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
       'collection' => 'Tag',
       'name' => 'ExifVersion',
       'title' => 'Exif Version',
@@ -3767,6 +3781,8 @@ class Any extends Collection {
     ),
     36867 =>
     array (
+      'components' => 20,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Time',
       'collection' => 'Tag',
       'name' => 'DateTimeOriginal',
       'title' => 'Date/Time Original',
@@ -3779,6 +3795,8 @@ class Any extends Collection {
     ),
     36868 =>
     array (
+      'components' => 20,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Time',
       'collection' => 'Tag',
       'name' => 'CreateDate',
       'title' => 'Create Date',
@@ -3835,10 +3853,11 @@ class Any extends Collection {
     ),
     37121 =>
     array (
+      'components' => 4,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifComponentsConfiguration',
       'collection' => 'Tag',
       'name' => 'ComponentsConfiguration',
       'title' => 'Components Configuration',
-      'components' => 4,
       'format' =>
       array (
         0 => 7,
@@ -3873,6 +3892,8 @@ class Any extends Collection {
     ),
     37377 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifShutterSpeedValue',
       'collection' => 'Tag',
       'name' => 'ShutterSpeedValue',
       'title' => 'Shutter Speed Value',
@@ -3885,6 +3906,8 @@ class Any extends Collection {
     ),
     37378 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
       'collection' => 'Tag',
       'name' => 'ApertureValue',
       'title' => 'Aperture Value',
@@ -3897,6 +3920,8 @@ class Any extends Collection {
     ),
     37379 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifBrightnessValue',
       'collection' => 'Tag',
       'name' => 'BrightnessValue',
       'title' => 'Brightness Value',
@@ -3909,6 +3934,8 @@ class Any extends Collection {
     ),
     37380 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifExposureBiasValue',
       'collection' => 'Tag',
       'name' => 'ExposureCompensation',
       'title' => 'Exposure Compensation',
@@ -3933,6 +3960,8 @@ class Any extends Collection {
     ),
     37382 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifSubjectDistance',
       'collection' => 'Tag',
       'name' => 'SubjectDistance',
       'title' => 'Subject Distance',
@@ -4056,6 +4085,8 @@ class Any extends Collection {
     ),
     37386 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifFocalLength',
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',
@@ -4198,6 +4229,7 @@ class Any extends Collection {
     ),
     37396 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifSubjectArea',
       'collection' => 'Tag',
       'name' => 'SubjectArea',
       'title' => 'Subject Area',
@@ -4305,17 +4337,19 @@ class Any extends Collection {
     ),
     37500 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'MakerNoteApple',
-      'title' => 'Maker Note Apple',
+      'name' => 'MakerNote',
+      'title' => 'Maker Note',
       'format' =>
       array (
         0 => 7,
       ),
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
+      'collection' => 'Tag',
       'exiftoolDOMNode' => 'ExifIFD:MakerNoteApple',
     ),
     37510 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifUserComment',
       'collection' => 'Tag',
       'name' => 'UserComment',
       'title' => 'User Comment',
@@ -4475,6 +4509,7 @@ class Any extends Collection {
     ),
     40091 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\WindowsString',
       'collection' => 'Tag',
       'name' => 'XPTitle',
       'title' => 'XP Title',
@@ -4487,6 +4522,7 @@ class Any extends Collection {
     ),
     40092 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\WindowsString',
       'collection' => 'Tag',
       'name' => 'XPComment',
       'title' => 'XP Comment',
@@ -4499,6 +4535,7 @@ class Any extends Collection {
     ),
     40093 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\WindowsString',
       'collection' => 'Tag',
       'name' => 'XPAuthor',
       'title' => 'XP Author',
@@ -4511,6 +4548,7 @@ class Any extends Collection {
     ),
     40094 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\WindowsString',
       'collection' => 'Tag',
       'name' => 'XPKeywords',
       'title' => 'XP Keywords',
@@ -4523,6 +4561,7 @@ class Any extends Collection {
     ),
     40095 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\WindowsString',
       'collection' => 'Tag',
       'name' => 'XPSubject',
       'title' => 'XP Subject',
@@ -4535,6 +4574,8 @@ class Any extends Collection {
     ),
     40960 =>
     array (
+      'components' => 4,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
       'collection' => 'Tag',
       'name' => 'FlashpixVersion',
       'title' => 'Flashpix Version',

@@ -133,7 +133,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                         $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
                     }
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
-/*if ($element->getParentElement() && $element->getParentElement()->getAttribute('name') === 'WhiteBalance') {
+/*if ($element->getParentElement() && $element->getParentElement()->getAttribute('name') === 'UserComment') {
   dump(MediaProbe::dumpHexFormatted($expected_tag_value));
   dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'phpExif'])));
 }*/

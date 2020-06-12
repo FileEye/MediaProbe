@@ -66,11 +66,14 @@ script:
   #- php examples/dump-media.php -d test/image_files/camera_samples/apple-iphone6s.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/apple-iphone7.JPG
   #- php examples/dump-media.php -d    test/image_files/camera_samples/apple-iphone7.JPG-rewrite.img
-  - php examples/dump-media.php -d -w test/image_files/camera_samples/apple-iphone11.jpg
+  #- php examples/dump-media.php -d -w test/image_files/camera_samples/apple-iphone11.jpg
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/nikon-e5000.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/nikon-e5000.jpg-rewrite.img
   #- php examples/dump-media.php -d test/image_files/camera_samples/pentax-istDS.jpg
   #- php examples/dump-media.php -d test/image_files/camera_samples/pentax-istDS.jpg-rewrite.img
+  - php examples/dump-media.php -d test/image_files/broken_images/pel-141.jpg
+  - php examples/dump-media.php -d -w test/image_files/broken_images/pel-152.jpg
+  - php examples/dump-media.php -d    test/image_files/broken_images/pel-152.jpg-rewrite.img
   #- php examples/dump-media.php -d test/image_files/broken_images/gh-10-a.jpg
   #- php examples/dump-media.php -d test/image_files/broken_images/gh-10-a.jpg-rewrite.img
   #- php examples/dump-media.php test/image_files/broken_images/gh-10-b.jpg
@@ -89,6 +92,8 @@ script:
   #- php examples/dump-media.php -d -w test/image_files/no-exif.jpg
   #- php examples/dump-media.php -d    test/image_files/no-exif.jpg-rewrite.img
   #- php examples/dump-media.php -d    test/image_files/sample-1.tiff
+  - php examples/dump-media.php -d -w test/image_files/pel-157.tiff
+  - php examples/dump-media.php -d    test/image_files/pel-157.tiff-rewrite.img
   #- php examples/dump-media.php -d test/image_files/broken_images/gh-11.jpg-rewrite.img
   #- php examples/dump-media.php -d test/image_files/camera_samples/olympus-c765uz.jpg
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/fujifilm_x_a5.jpg
