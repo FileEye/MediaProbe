@@ -90,7 +90,8 @@ abstract class DataElement
     protected function validateOffset(int $offset): void
     {
         if ($offset < 0 || $offset > ($this->size - 1)) {
-            throw new DataException('Offset out of bounds - rel %d [%d, %d], abs %d [%d, %d]',
+            throw new DataException(
+                'Offset out of bounds - rel %d [%d, %d], abs %d [%d, %d]',
                 $offset,
                 0,
                 $this->size - 1,

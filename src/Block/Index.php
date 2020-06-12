@@ -182,8 +182,7 @@ class Index extends ListBase
             // When writing back, the index size itself is a short, part of the
             // actual size, so we add 2 to the written value.
             return ConvertBytes::fromShort($actual_size + 2, $byte_order) . $data_bytes;
-        }
-        else {
+        } else {
             return $data_bytes;
         }
     }
@@ -241,5 +240,4 @@ class Index extends ListBase
             'size' => $this->getDefinition()->getSize(),
         ]);
     }
-
 }

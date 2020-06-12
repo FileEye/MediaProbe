@@ -7,6 +7,8 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -44,10 +46,23 @@ class Jpeg extends BlockBase
         while ($offset < $data_element->getSize()) {
             // Get the next JPEG segment id offset.
             try {
-                $offset = $this->getJpegSegmentIdOffset($data_element, $offset);
-                // xx todo --> fail if there's a gap in the offset
-            }
-            catch (DataException $e) {
+                $new_offset = $this->getJpegSegmentIdOffset($data_element, $offset);
+                $segment_id = $segment_id ?? 0;
+                if ($new_offset !== $offset) {
+                    // Add any trailing data from previous segment in a
+                    // RawData block.
+                    $this->error('Unexpected data found at end of JPEG segment {id}/{hexid} @ offset {offset}, size {size}', [
+                        'id' => $segment_id,
+                        'hexid' => '0x' . strtoupper(dechex($segment_id)),
+                        'offset' => $data_element->getAbsoluteOffset($offset),
+                        'size' => $new_offset - $offset,
+                    ]);
+                    $this
+                        ->addItemWithDefinition(new ItemDefinition(Collection::get('RawData', ['name' => 'trail']), ItemFormat::BYTE, $offset))
+                        ->parseData(new DataWindow($data_element, $offset, $new_offset - $offset));
+                }
+                $offset = $new_offset;
+            } catch (DataException $e) {
                 $this->error($e->getMessage());
                 $this->valid = false;
                 return;

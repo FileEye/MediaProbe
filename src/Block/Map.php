@@ -38,7 +38,6 @@ class Map extends Index
         $offset = 0;
         $size = $this->getDefinition()->getSize();
         foreach ($this->getCollection()->listItemIds() as $item) {
-
             // Adds the 'tag'.
             try {
                 $n = $offset + ($item * ItemFormat::getSize($this->getFormat()));
@@ -53,8 +52,7 @@ class Map extends Index
                 $item = new $item_class($item_definition, $this);
                 $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
                 $item->parseData($item_data_window);
-            }
-            catch (DataException $e) {
+            } catch (DataException $e) {
                 $this->notice($e->getMessage());
             }
 

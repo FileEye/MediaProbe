@@ -130,14 +130,16 @@ class ItemDefinition
         // default class for the format.
         if (!$entry_class = $this->collection->getPropertyValue('entryClass')) {
             if (empty($this->getFormat())) {
-                throw new MediaProbeException('No format can be derived for item: %s (%s)',
+                throw new MediaProbeException(
+                    'No format can be derived for item: %s (%s)',
                     $this->collection->getPropertyValue('item') ?? 'n/a',
                     $this->collection->getPropertyValue('name') ?? 'n/a'
                 );
             }
 
             if (!$entry_class = ItemFormat::getClass($this->getFormat())) {
-                throw new MediaProbeException('Unsupported format %d for item: %s (%s)',
+                throw new MediaProbeException(
+                    'Unsupported format %d for item: %s (%s)',
                     $this->getFormat(),
                     $this->collection->getPropertyValue('item') ?? 'n/a',
                     $this->collection->getPropertyValue('name') ?? 'n/a'

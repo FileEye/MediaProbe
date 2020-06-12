@@ -73,21 +73,19 @@ class DumpCommand extends Command
                 $output->write('2');
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D']);
                 try {
-                  $process->run();
-                  $yaml['exiftool'] = $process->getOutput();
-                }
-                catch (\Exception $e) {
-                  $output->write(' error: ' . $e->getMessage());
+                    $process->run();
+                    $yaml['exiftool'] = $process->getOutput();
+                } catch (\Exception $e) {
+                    $output->write(' error: ' . $e->getMessage());
                 }
 
                 $output->write('3');
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D', '-n']);
                 try {
-                  $process->run();
-                  $yaml['exiftool_raw'] = $process->getOutput();
-                }
-                catch (\Exception $e) {
-                  $output->write(' error: ' . $e->getMessage());
+                    $process->run();
+                    $yaml['exiftool_raw'] = $process->getOutput();
+                } catch (\Exception $e) {
+                    $output->write(' error: ' . $e->getMessage());
                 }
             }
 

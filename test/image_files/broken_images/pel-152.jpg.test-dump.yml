@@ -71,6 +71,23 @@ elements:
                             bytesHash: fdbd4c965be870d01be15273edabb34c185ff79561578b909ca0f3e506ad6210
                             text: '30 byte(s) of data'
                 -
+                    node: rawData
+                    path: '/media/jpeg/rawData:trail'
+                    class: FileEye\MediaProbe\Block\RawData
+                    valid: true
+                    name: trail
+                    collection: RawData
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/rawData:trail/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            valid: true
+                            format: Undefined
+                            components: 63
+                            bytesHash: d12449c8124182545ae91924286cc6af13528bcf62a5ddbd5e00b891fffc1b48
+                            text: '63 byte(s) of data'
+                -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
                     class: FileEye\MediaProbe\Block\JpegSegment
@@ -232,7 +249,11 @@ elements:
                             components: 2
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
-log: {  }
+log:
+    ERROR:
+        -
+            path: /media/jpeg
+            message: 'Unexpected data found at end of JPEG segment 237/0xED @ offset 50, size 63'
 gdInfo:
     0: 600
     1: 400
