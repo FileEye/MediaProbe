@@ -20,7 +20,7 @@ class ExifShutterSpeedValue extends SignedRational
             $val = $this->value[0] / $this->value[1];
             $val = abs($val) < 100 ? pow(2, -$val) : 0;
             if ($val < 0.25001 && $val > 0) {
-                return 1 / ((int) (0.5 + 1 / $val)));
+                return 1 / ((int) (0.5 + 1 / $val));
             } else {
                 return $val;
             }
