@@ -54,6 +54,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         if (isset($this->testDump['exiftool_raw'])) {
             $this->exiftoolRawDump =new \DOMDocument();
             $this->exiftoolRawDump->loadXML($this->testDump['exiftool_raw']);
+dump($this->exiftoolRawDump);
         }
         $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
 
@@ -165,7 +166,8 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                 $exiftool_node_skip = $this->testDump['skip']['exiftool'] ?? [];
                 if (!in_array($exiftool_node, $exiftool_node_skip)) {
                     $xml_node = $this->exiftoolRawDump->getElementsByTagName($exiftool_node);
-                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
+                    dump([$element->getContextPath(), $exiftool_node]);
+//                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
                     //$this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
                 }
             }
