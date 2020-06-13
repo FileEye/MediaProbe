@@ -178,7 +178,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 //                    dump([$element->getContextPath(), $exiftool_node, $n->textContent, (string) $element->getValue()]);
 //                    $this->fail('xxx');
 //                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
-                    $this->assertSame($n->textContent, $element->getValue(), 'Exiftool raw: ' . $element->getContextPath());
+                    $this->assertSame($n->textContent, $element->getValue(['format' => 'exiftool']), 'Exiftool raw: ' . $element->getContextPath());
                 }
             }
 

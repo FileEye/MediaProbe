@@ -181,6 +181,10 @@ abstract class NumberBase extends EntryBase
      */
     protected function formatNumber($number, array $options = [])
     {
+        $format = $options['format'] ?? null;
+        if ($format === 'exiftool') {
+            return (string) $number;
+        }
         return $number;
     }
 
