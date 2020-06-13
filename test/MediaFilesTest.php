@@ -167,7 +167,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     $XPath = new \DOMXPath($this->exiftoolRawDump);
                     $xml_node = $XPath->query($exiftool_node);
                     //$xml_node = $this->exiftoolRawDump->getElementsByTagName($exiftool_node);
-                    dump([$element->getContextPath(), $exiftool_node, $xml_node]);
+                    dump([$element->getContextPath(), $exiftool_node, count($xml_node)]);
 //                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
                     //$this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
                 }
