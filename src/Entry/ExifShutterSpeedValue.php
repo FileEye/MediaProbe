@@ -16,7 +16,7 @@ class ExifShutterSpeedValue extends SignedRational
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
-        if ($format === 'phpExif') {
+        if ($format === 'exiftool') {
             $val = $this->value[0][0] / $this->value[0][1];
             $val = abs($val) < 100 ? pow(2, -$val) : 0;
             if ($val < 0.25001 && $val > 0) {
