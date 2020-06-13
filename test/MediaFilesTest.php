@@ -179,7 +179,11 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 //                    $this->fail('xxx');
 //                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
                     $this->assertNotNull($n, 'Exiftool raw missing: ' . $exiftool_node);
-                    $this->assertSame($n->textContent, $element->getValue(['format' => 'exiftool']), 'Exiftool raw: ' . $element->getContextPath());
+                    if (in_array($element->getFormat(), [ItemFormat::RATIONAL, ItemFormat::SIGNED_RATIONAL, ItemFormat::SHORT_RATIONAL, ItemFormat::SHORT_SIGENED_RATIONAL, ItemFormat::DOUBLE, ItemFormat::FLOAT])) {
+                        $this->assertEquals($n->textContent, $element->getValue(['format' => 'exiftool']), 'Exiftool raw: ' . $element->getContextPath());
+                    } else {
+                        $this->assertSame($n->textContent, $element->getValue(['format' => 'exiftool']), 'Exiftool raw: ' . $element->getContextPath());
+                    }
                 }
             }
 

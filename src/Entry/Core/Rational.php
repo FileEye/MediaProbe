@@ -80,7 +80,7 @@ class Rational extends Long
                 if ($number[1] === 0) {
                     return '0'; // xxx throw exception
                 } else {
-                    return (string) round(($number[0] / $number[1]), 12);
+                    return (string) ($number[0] / $number[1]);
                 }
                 break;
             case 'phpExif':
