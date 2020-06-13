@@ -25,7 +25,7 @@ class ExifShutterSpeedValue extends SignedRational
                 return $val;
             }
         }
-        return parent::getValue();
+        return parent::getValue($options);
     }
 
     /**
@@ -33,7 +33,8 @@ class ExifShutterSpeedValue extends SignedRational
      */
     public function toString(array $options = [])
     {
-        if (($options['format'] ?? null) === 'exiftool') {
+        $format = $options['format'] ?? null;
+        if ($format === 'exiftool') {
             $val = $this->value[0] / $this->value[1];
             $val = abs($val) < 100 ? pow(2, -$val) : 0;
             if ($val < 0.25001 && $val > 0) {
