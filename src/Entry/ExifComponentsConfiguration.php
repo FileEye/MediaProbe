@@ -12,8 +12,29 @@ class ExifComponentsConfiguration extends Undefined
     /**
      * {@inheritdoc}
      */
+    public function getValue(array $options = [])
+    {
+        $format = $options['format'] ?? null;
+        if ($format === 'exiftool') {
+        $value = $this->getValue();
+            $v = '';
+            for ($i = 0; $i < 4; $i ++) {
+                $v .= (string) $this->value[$i];
+                if ($i < 3) {
+                    $v .= ' ';
+                }
+            }
+            return $v;
+        }
+        return parent::getValue($options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toString(array $options = [])
     {
+        $format = $options['format'] ?? null;
         $value = $this->getValue();
         $v = '';
         for ($i = 0; $i < 4; $i ++) {
