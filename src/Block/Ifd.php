@@ -25,7 +25,7 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, $xxx=0): void
+    public function parseData(DataElement $data_element, $xxx = 0): void
     {
         $valid = true;
 
@@ -42,10 +42,9 @@ class Ifd extends ListBase
                 $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Ifd\\Any');
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
-                if (is_a($item_class, Ifd::class, TRUE)) {
+                if (is_a($item_class, Ifd::class, true)) {
                     $item->parseData($data_element);
-                }
-                else {
+                } else {
                     // In case of an IFD terminator item entry, i.e. zero
                     // components, the data window size is still 4 bytes, from
                     // the IFD index area.
@@ -134,15 +133,13 @@ class Ifd extends ListBase
         // the appropriate one.
         try {
             $item_collection = $this->getCollection()->getItemCollection($id);
-        }
-        catch (MediaProbeException $e) {
+        } catch (MediaProbeException $e) {
             if ($fallback_collection_id !== null) {
                 $item_collection = Collection::get($fallback_collection_id)->getItemCollection($id, 'UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);
-            }
-            else {
+            } else {
                 $item_collection = $this->getCollection()->getItemCollection($id, 'UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
@@ -151,9 +148,9 @@ class Ifd extends ListBase
         }
 
         // If the item is an Ifd, recurse in loading the item at offset.
-        if (is_a($item_collection->getPropertyValue('class'), Ifd::class, TRUE)) {
-          // Check the offset.
-          $item_offset = $data_element->getLong($offset + 8);
+        if (is_a($item_collection->getPropertyValue('class'), Ifd::class, true)) {
+            // Check the offset.
+            $item_offset = $data_element->getLong($offset + 8);
 /*          if ($item_offset <= $offset) {
             $this->error('Invalid offset pointer to IFD: {offset}.', [
                 'offset' => $item_definition->getDataOffset(),
@@ -161,9 +158,9 @@ class Ifd extends ListBase
             $valid = false;
             continue;
           }*/
-          $components = $data_element->getShort($item_offset - 8);
-          $format = ItemFormat::LONG;
-          $data_offset = $item_offset;
+            $components = $data_element->getShort($item_offset - 8);
+            $format = ItemFormat::LONG;
+            $data_offset = $item_offset;
         }
 
         return new ItemDefinition($item_collection, $format, $components, $data_offset, $data_element->getStart() + $offset, $seq);

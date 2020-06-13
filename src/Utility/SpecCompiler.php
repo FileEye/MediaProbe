@@ -209,10 +209,9 @@ DATA;
 
             // Convert format string to its ID.
             if (isset($item['format'])) {
-                $item['format'] = $this->format2Id($item['format'], 'base',  $item['name'] ?? $item['collection'], $file);
-            }
-            elseif ($exiftool['type'] ?? false) {
-                $item['format'] = $this->format2Id($exiftool['type'], 'exiftool',  $item['name'] ?? $item['collection'], $file);
+                $item['format'] = $this->format2Id($item['format'], 'base', $item['name'] ?? $item['collection'], $file);
+            } elseif ($exiftool['type'] ?? false) {
+                $item['format'] = $this->format2Id($exiftool['type'], 'exiftool', $item['name'] ?? $item['collection'], $file);
             }
 
             // Add text mapping if available.
@@ -266,8 +265,7 @@ DATA;
         $class_name = array_pop($parts);
         if ($parts) {
             $namespace = $collection_namespace . '\\' . implode('\\', $parts);
-        }
-        else {
+        } else {
             $namespace = $collection_namespace;
         }
 
@@ -319,8 +317,7 @@ DATA;
                 $formats[] = $this->formats[$name];
             }
             return $formats;
-        }
-        elseif ($type === 'exiftool') {
+        } elseif ($type === 'exiftool') {
             $format_name = $this->exiftoolFormats['items'][$input]['format'] ?? null;
             if ($format_name === null) {
                 throw new SpecCompilerException($file->getFileName() . ": invalid '" . $input . "' Exiftool format found for item '" . $item_name . "'");

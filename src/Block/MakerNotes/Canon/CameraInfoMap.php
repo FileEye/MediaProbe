@@ -42,19 +42,16 @@ class CameraInfoMap extends Map
             if ($this->getFormat() === ItemFormat::LONG) {
                 if (in_array($this->getDefinition()->getValuesCount(), [138, 148])) {
                     $this->collection = $this->getCollection()->getItemCollection('CanonCameraInfoPowerShot');
-                }
-                elseif (in_array($this->getDefinition()->getValuesCount(), [156, 162, 167, 171, 264])) {
+                } elseif (in_array($this->getDefinition()->getValuesCount(), [156, 162, 167, 171, 264])) {
                     $this->collection = $this->getCollection()->getItemCollection('CanonCameraInfoPowerShot2');
-                }
-                else {
+                } else {
                     $this->collection = $this->getCollection()->getItemCollection('CanonCameraInfoUnknown32');
                 }
-            }
 // xx todo add when newer exiftoolxml is available
 //            elseif ($this->getFormat() === ItemFormat::SHORT) {
 //                $this->collection = $this->getCollection()->getItemCollection('CanonCameraInfoUnknown16');
 //            }
-            else {
+            } else {
                 $this->collection = $this->getCollection()->getItemCollection('CanonCameraInfoUnknown');
             }
         }

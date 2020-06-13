@@ -1,6 +1,6 @@
 build:
   environment:
-    php: '7.2'
+    php: '7.3'
   nodes:
     analysis:
       tests:
@@ -8,6 +8,7 @@ build:
           - php-scrutinizer-run
           -
             command: ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+            idle_timeout: 600
             coverage:
               file: build/logs/clover.xml
               format: clover

@@ -140,66 +140,62 @@ class ExifToolResourceUpdateCommand extends Command
         $exiftool_ifd = $this->exiftoolXml->xpath($spec['compiler']['exiftool']['xpath']);
 
         foreach ($exiftool_ifd as $exiftool_tag) {
-              $id = (string) $exiftool_tag->attributes()->id;
-              $index = (string) ($exiftool_tag->attributes()->index ?? 0);
+            $id = (string) $exiftool_tag->attributes()->id;
+            $index = (string) ($exiftool_tag->attributes()->index ?? 0);
 
-// Reset exiftool metadata.
-unset($spec['items'][$id]['exifReadData']);
-if (isset($this->phpExifTags['items'][$id])) {
-  $spec['items'][$id]['exifReadData']['key'] = $this->phpExifTags['items'][$id];
-}
+            // Reset exiftool metadata.
+            unset($spec['items'][$id]['exifReadData']);
+            if (isset($this->phpExifTags['items'][$id])) {
+                $spec['items'][$id]['exifReadData']['key'] = $this->phpExifTags['items'][$id];
+            }
 
-              // Reset exiftool metadata.
-              unset($spec['items'][$id]['exiftool'][$index]);
+            // Reset exiftool metadata.
+            unset($spec['items'][$id]['exiftool'][$index]);
 
-              // Sanity - remove actual collection if it's the same as the default one.
-              if (($spec['items'][$id]['collection'] ?? null) === ($spec['defaultItemCollection'] ?? null)) {
-                  unset($spec['items'][$id]['collection']);
-              }
+            // Sanity - remove actual collection if it's the same as the default one.
+            if (($spec['items'][$id]['collection'] ?? null) === ($spec['defaultItemCollection'] ?? null)) {
+                unset($spec['items'][$id]['collection']);
+            }
 
-              // Scan through the attributes.
-              foreach ($exiftool_tag->attributes() as $key => $val) {
-                  if (in_array($key, ['id', 'index'])) {
-                      continue;
-                  }
-                  if ($key === 'writable') {
-                      $val = ((string) $val) === 'true' ? true : false;
-                  }
-                  elseif ($key === 'count') {
-                      $val = (int) $val;
-                  }
-                  else {
-                      $val = (string) $val;
-                  }
-                  $spec['items'][$id]['exiftool'][$index][$key] = $val;
-              }
+            // Scan through the attributes.
+            foreach ($exiftool_tag->attributes() as $key => $val) {
+                if (in_array($key, ['id', 'index'])) {
+                    continue;
+                }
+                if ($key === 'writable') {
+                    $val = ((string) $val) === 'true' ? true : false;
+                } elseif ($key === 'count') {
+                    $val = (int) $val;
+                } else {
+                    $val = (string) $val;
+                }
+                $spec['items'][$id]['exiftool'][$index][$key] = $val;
+            }
 
-              // Set exiftool item DOM node name.
-              if ($spec['compiler']['exiftool']['g1Default'] === '') {
-                  if ($exiftool_tag->attributes()->g1) {
-                      $prefix = (string) $exiftool_tag->attributes()->g1;
-                  }
-                  else {
-                      $prefix = 'IFD0';
-                  }
-              }
-              else {
-                  $prefix = $spec['compiler']['exiftool']['g1Default'];
-              }
-              $spec['items'][$id]['exiftool'][$index]['DOMNode'] = $prefix . ':' . (string) $exiftool_tag->attributes()->name;
+            // Set exiftool item DOM node name.
+            if ($spec['compiler']['exiftool']['g1Default'] === '') {
+                if ($exiftool_tag->attributes()->g1) {
+                    $prefix = (string) $exiftool_tag->attributes()->g1;
+                } else {
+                    $prefix = 'IFD0';
+                }
+            } else {
+                $prefix = $spec['compiler']['exiftool']['g1Default'];
+            }
+            $spec['items'][$id]['exiftool'][$index]['DOMNode'] = $prefix . ':' . (string) $exiftool_tag->attributes()->name;
 
-              // Add the English description of the item.
-              $desc = $exiftool_tag->xpath("desc[@lang='en']");
-              $spec['items'][$id]['exiftool'][$index]['desc'] = (string) $desc[0];
+            // Add the English description of the item.
+            $desc = $exiftool_tag->xpath("desc[@lang='en']");
+            $spec['items'][$id]['exiftool'][$index]['desc'] = (string) $desc[0];
 
-              // Add the decodable values, with their English description.
-              if ($exiftool_tag->values) {
-                  foreach ($exiftool_tag->values->key as $key) {
-                      $key_id = (string) $key->attributes()->id;
-                      $key_val = $key->xpath("val[@lang='en']");
-                      $spec['items'][$id]['exiftool'][$index]['values'][$key_id] = (string) $key_val[0];
-                  }
-              }
+            // Add the decodable values, with their English description.
+            if ($exiftool_tag->values) {
+                foreach ($exiftool_tag->values->key as $key) {
+                    $key_id = (string) $key->attributes()->id;
+                    $key_val = $key->xpath("val[@lang='en']");
+                    $spec['items'][$id]['exiftool'][$index]['values'][$key_id] = (string) $key_val[0];
+                }
+            }
         }
         ksort($spec['items']);
 

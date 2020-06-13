@@ -126,7 +126,7 @@ class Time extends Ascii
         }
 
         if ($format === 'phpExif') {
-          return rtrim($this->value[0], "\x00");
+            return rtrim($this->value[0], "\x00");
         }
 
         // Clean the timestamp: some timestamps are broken other

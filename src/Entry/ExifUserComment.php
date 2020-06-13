@@ -53,7 +53,7 @@ class ExifUserComment extends Undefined
         } else {
             $encoding = strtoupper(rtrim(substr($this->value, 0, 8), "\x00"));
             if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-              $this->valid = true;
+                $this->valid = true;
             }
         }
 
@@ -78,11 +78,10 @@ class ExifUserComment extends Undefined
                 $value = ' ';
             }
             if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-              return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->value) - 8, chr(0));
+                return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->value) - 8, chr(0));
             } else {
-              return rtrim($this->value, "\x00");
+                return rtrim($this->value, "\x00");
             }
-
         }
         return rtrim(substr($this->value, 8), "\x00");
     }

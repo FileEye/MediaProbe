@@ -97,7 +97,7 @@ abstract class Collection
     public static function get($id, array $overrides = [])
     {
         $class = static::DEFAULT_COLLECTION_NAMESPACE . '\\' . $id;
-        return new $class($id, $overrides);;
+        return new $class($id, $overrides);
     }
 
     /**

@@ -23,7 +23,7 @@ class MakerNote extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, $xxx=0): void
+    public function parseData(DataElement $data_element, $xxx = 0): void
     {
         $size = $data_element->getSize();
         $offset = $this->getDefinition()->getDataOffset();
@@ -47,10 +47,9 @@ class MakerNote extends Ifd
                 $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset);
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
-                if (is_a($item_class, Ifd::class, TRUE)) {
+                if (is_a($item_class, Ifd::class, true)) {
                     $item->parseData($data_element);
-                }
-                else {
+                } else {
                     $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
                     $item->parseData($item_data_window);
                 }

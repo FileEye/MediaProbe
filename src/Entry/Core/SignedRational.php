@@ -70,21 +70,23 @@ class SignedRational extends SignedLong
     {
         $format = $options['format'] ?? null;
         switch ($format) {
-          case 'core':
-              if ($number[1] === 0) {
-                  return 0; // xxx throw exception
-              } else {
-                  return $number[0] / $number[1];
-              }
-          case 'phpExif':
-              if ($number[1] < 0) {
-                  // Turn output like 1/-2 into -1/2.
-                  return (- $number[0]) . '/' . (- $number[1]);
-              } else {
-                  return $number[0] . '/' . $number[1];
-              }
-          default:
-              return $number;
+            case 'core':
+                if ($number[1] === 0) {
+                    return 0; // xxx throw exception
+                } else {
+                    return $number[0] / $number[1];
+                }
+                break;
+            case 'phpExif':
+                if ($number[1] < 0) {
+                    // Turn output like 1/-2 into -1/2.
+                    return (- $number[0]) . '/' . (- $number[1]);
+                } else {
+                    return $number[0] . '/' . $number[1];
+                }
+                break;
+            default:
+                return $number;
         }
     }
 }
