@@ -169,7 +169,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     $xml_nodes = $this->exiftoolRawDump->getElementsByTagName('*');
 //$json = json_encode($this->exiftoolRawDump);
 //$array = json_decode($json,TRUE);
-                    dump([$element->getContextPath(), $exiftool_node, $xml_nodes]);
+                    dump([$element->getContextPath(), $exiftool_node, $xml_nodes->item(0), $xml_nodes->item(1)]);
                     $this->fail('xxx');
 //                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
                     //$this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
