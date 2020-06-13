@@ -19,7 +19,7 @@ class ExifComponentsConfiguration extends Undefined
         $value = $this->getValue();
             $v = '';
             for ($i = 0; $i < 4; $i ++) {
-                $v .= (string) $this->value[$i];
+                $v .= ord($this->value[$i]);
                 if ($i < 3) {
                     $v .= ' ';
                 }
