@@ -53,7 +53,7 @@ class Version extends Undefined
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
-        if (in_array($format, ['phpExif', 'exiftool']) {
+        if (in_array($format, ['phpExif', 'exiftool'])) {
             return $this->value;
         }
         if (isset($this->value) && is_numeric($this->value)) {
