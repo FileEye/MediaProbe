@@ -164,10 +164,13 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             if ($exiftool_node = $element->getParentElement()->getCollection()->getPropertyValue('exiftoolDOMNode')) {
                 $exiftool_node_skip = $this->testDump['skip']['exiftool'] ?? [];
                 if (!in_array($exiftool_node, $exiftool_node_skip)) {
-                    $XPath = new \DOMXPath($this->exiftoolRawDump);
-                    $xml_node = $XPath->query($exiftool_node);
+                    //$XPath = new \DOMXPath($this->exiftoolRawDump);
+                    //$xml_node = $XPath->query($exiftool_node);
                     //$xml_node = $this->exiftoolRawDump->getElementsByTagName($exiftool_node);
-                    dump([$element->getContextPath(), $exiftool_node, count($xml_node)]);
+$json = json_encode($this->exiftoolRawDump);
+$array = json_decode($json,TRUE);
+                    dump([$element->getContextPath(), $exiftool_node, $array]);
+                    $this->fail('xxx');
 //                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
                     //$this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
                 }
