@@ -60,6 +60,7 @@ abstract class NumberBase extends EntryBase
      */
     public function getValue(array $options = [])
     {
+        $format = $options['format'] ?? null;
         if ($this->components == 1) {
             return $this->formatNumber($this->value[0], $options);
         } else {
@@ -69,7 +70,7 @@ abstract class NumberBase extends EntryBase
                     $ret[] = $this->formatNumber($value, $options);
                 }
             }
-            return $ret;
+            return $format === 'exiftool' ? implode(' ', $ret) : $ret;
         }
     }
 
