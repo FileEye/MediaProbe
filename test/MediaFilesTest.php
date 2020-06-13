@@ -47,10 +47,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function testParse($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
-        if (isset($this->testDump['exiftool']) {
+        if (isset($this->testDump['exiftool'])) {
             $this->exiftoolDump = \DOMDocument::loadXML($this->testDump['exiftool']);
         }
-        if (isset($this->testDump['exiftool']) {
+        if (isset($this->testDump['exiftool_raw'])) {
             $this->exiftoolRawDump = \DOMDocument::loadXML($this->testDump['exiftool_raw']);
         }
         $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
@@ -105,10 +105,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function testRewrite($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
-        if (isset($this->testDump['exiftool']) {
+        if (isset($this->testDump['exiftool'])) {
             $this->exiftoolDump = \DOMDocument::loadXML($this->testDump['exiftool']);
         }
-        if (isset($this->testDump['exiftool']) {
+        if (isset($this->testDump['exiftool_raw'])) {
             $this->exiftoolRawDump = \DOMDocument::loadXML($this->testDump['exiftool_raw']);
         }
         $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
