@@ -175,7 +175,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                             $n = $node;
                         }
                     }
-                    dump([$element->getContextPath(), $exiftool_node, $n,  $element->getValue()]);
+                    dump([$element->getContextPath(), $exiftool_node, $n->textContent, $element->getValue()]);
                     $this->fail('xxx');
 //                    dump([$element->getContextPath(), $element->getValue(), $xml_node]);
                     //$this->assertSame($expected_tag_value, $element->getValue(['format' => 'phpExif']), $element->getContextPath());
