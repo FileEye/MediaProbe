@@ -192,9 +192,6 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
             if (!$rewritten) {
                 $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
-                if (isset($expected['exiftool_text'])) {
-                    $this->assertEquals($expected['exiftool_text'], $element->toString(['format' => 'exiftool']), $element->getContextPath());
-                }
                 $this->assertSame($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
             }
         }
