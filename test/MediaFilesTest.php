@@ -174,8 +174,8 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     $this->assertNotNull($n, 'Exiftool raw missing: ' . $exiftool_node);
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
 if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['SceneType', 'FileSource', 'Software'])) {
-  dump(MediaProbe::dumpHexFormatted($expected_tag_value));
-  dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'phpExif'])));
+  dump(MediaProbe::dumpHexFormatted($n->textContent));
+  dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'exiftool'])));
 }
                     if (in_array($element->getFormat(), [ItemFormat::RATIONAL, ItemFormat::SIGNED_RATIONAL, ItemFormat::SHORT_RATIONAL, ItemFormat::SHORT_SIGNED_RATIONAL, ItemFormat::DOUBLE, ItemFormat::FLOAT])) {
                         $this->assertEqualsWithDelta((float) $n->textContent, (float) $element->getValue(['format' => 'exiftool']), 0.001, 'Exiftool raw: ' . $element->getContextPath());
