@@ -172,15 +172,17 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                         }
                     }
                     $this->assertNotNull($n, 'Exiftool raw missing: ' . $exiftool_node);
+                    $valx = $n->textContent;
+                    $vala = $element->getValue(['format' => 'exiftool']);
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
-if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['SceneType', 'FileSource', 'Software'])) {
-  dump(MediaProbe::dumpHexFormatted($n->textContent));
-  dump(MediaProbe::dumpHexFormatted($element->getValue(['format' => 'exiftool'])));
+if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['SceneType', 'FileSource'])) {
+  dump(MediaProbe::dumpHexFormatted($valx));
+  dump(MediaProbe::dumpHexFormatted($vala));
 }
                     if (in_array($element->getFormat(), [ItemFormat::RATIONAL, ItemFormat::SIGNED_RATIONAL, ItemFormat::SHORT_RATIONAL, ItemFormat::SHORT_SIGNED_RATIONAL, ItemFormat::DOUBLE, ItemFormat::FLOAT])) {
-                        $this->assertEqualsWithDelta((float) $n->textContent, (float) $element->getValue(['format' => 'exiftool']), 0.001, 'Exiftool raw: ' . $element->getContextPath());
+                        $this->assertEqualsWithDelta((float) $valx, (float) $vala, 0.001, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
-                        $this->assertSame($n->textContent, $element->getValue(['format' => 'exiftool']), 'Exiftool raw: ' . $element->getContextPath());
+                        $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     }
                 }
             }
