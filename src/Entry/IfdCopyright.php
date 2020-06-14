@@ -62,7 +62,7 @@ class IfdCopyright extends Ascii
         $format = $options['format'] ?? null;
         switch ($format) {
             case 'exiftool':
-                return $this->toString(['short' => true]);
+                return rtrim($this->toString(['short' => true]), ' ');
             case 'phpExif':
                 $ret = rtrim($this->toBytes(), "\x00");
                 return $ret === '' ? null : $ret;
