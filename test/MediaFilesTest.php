@@ -175,7 +175,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     $valx = rtrim($n->textContent, " ");
                     $vala = $element->getValue(['format' => 'exiftool']);
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
-if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['UserComment'])) {
+if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['Copyright'])) {
   dump([
     'element_' => $element->getParentElement()->getAttribute('name'),
     'expected' => MediaProbe::dumpHexFormatted($valx),
