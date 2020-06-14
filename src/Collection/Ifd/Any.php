@@ -3948,6 +3948,8 @@ class Any extends Collection {
     ),
     37381 =>
     array (
+      'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
       'collection' => 'Tag',
       'name' => 'MaxApertureValue',
       'title' => 'Max Aperture Value',
