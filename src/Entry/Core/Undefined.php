@@ -60,7 +60,11 @@ class Undefined extends EntryBase
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            return implode(' ', $this->value);
+            $val = str_split($this->value);
+            array_walk($val, function (&$value) {
+              $value = (int) $value;
+            });
+            return implode(' ', $val);
         }
         return parent::getValue($options);
     }
