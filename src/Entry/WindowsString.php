@@ -65,8 +65,6 @@ class WindowsString extends Byte
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
-        if ($format === 'phpExif') {
-        }
         switch ($format) {
             case 'exiftool':
                 return $this->toString();
