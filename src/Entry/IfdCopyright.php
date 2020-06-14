@@ -60,11 +60,15 @@ class IfdCopyright extends Ascii
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
-        if ($format === 'phpExif') {
-            $ret = rtrim($this->toBytes(), "\x00");
-            return $ret === '' ? null : $ret;
+        switch ($format) {
+            case 'exiftool':
+                return $this->toString();
+            case 'phpExif':
+                $ret = rtrim($this->toBytes(), "\x00");
+                return $ret === '' ? null : $ret;
+            default:
+                return $this->value;
         }
-        return $this->value;
     }
 
     /**
