@@ -175,13 +175,13 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     $valx = rtrim($n->textContent, " ");
                     $vala = $element->getValue(['format' => 'exiftool']);
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
-/*if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['ImageDescription'])) {
+if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['UserComment'])) {
   dump([
     'element_' => $element->getParentElement()->getAttribute('name'),
     'expected' => MediaProbe::dumpHexFormatted($valx),
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
-}*/
+}
                     if (in_array($element->getFormat(), [ItemFormat::RATIONAL, ItemFormat::SIGNED_RATIONAL, ItemFormat::SHORT_RATIONAL, ItemFormat::SHORT_SIGNED_RATIONAL, ItemFormat::DOUBLE, ItemFormat::FLOAT])) {
                         $this->assertEqualsWithDelta((float) $valx, (float) $vala, 0.001, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
