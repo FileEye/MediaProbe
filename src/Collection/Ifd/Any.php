@@ -604,7 +604,6 @@ class Any extends Collection {
     'ExifIFD:MSDocumentText' => 37679,
     'ExifIFD:MSDocumentTextPosition' => 37681,
     'ExifIFD:MSPropertySetStorage' => 37680,
-    'ExifIFD:MakerNoteApple' => 37500,
     'ExifIFD:MatrixWorldToCamera' => 33306,
     'ExifIFD:MatrixWorldToScreen' => 33305,
     'ExifIFD:Matteing' => 32995,
@@ -4347,7 +4346,6 @@ class Any extends Collection {
       ),
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
       'collection' => 'Tag',
-      'exiftoolDOMNode' => 'ExifIFD:MakerNoteApple',
     ),
     37510 =>
     array (

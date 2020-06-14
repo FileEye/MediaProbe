@@ -56,6 +56,18 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
+    public function getValue(array $options = [])
+    {
+        $format = $options['format'] ?? null;
+        if ($format === 'exiftool') {
+            return implode(' ', $this->value);
+        }
+        return parent::getValue($options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
         return $this->value;
