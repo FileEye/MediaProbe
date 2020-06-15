@@ -25,11 +25,11 @@ class ExifCFAPattern extends Undefined
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
             // @todo xxx improve, two shorts initially
-            $ret = [$this->value[1], $this->value[3]];
+            $ret = [ord($this->value[1]), ord($this->value[3])];
             for ($i = 4; $i < $this->getComponents(); $i++) {
-                $ret[] = $this->value[$i];
+                $ret[] = ord($this->value[$i]);
             }
-            return $ret;
+            return implode(' ', $ret);
         }
         return parent::getValue($options);
     }
