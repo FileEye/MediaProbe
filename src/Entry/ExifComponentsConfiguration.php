@@ -16,7 +16,6 @@ class ExifComponentsConfiguration extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-        $value = $this->getValue();
             $v = '';
             for ($i = 0; $i < 4; $i ++) {
                 $v .= ord($this->value[$i]);

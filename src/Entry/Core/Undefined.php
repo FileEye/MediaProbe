@@ -62,7 +62,7 @@ class Undefined extends EntryBase
         if ($format === 'exiftool') {
             $val = str_split($this->value);
             array_walk($val, function (&$value) {
-              $value = ord($value);
+                $value = ord($value);
             });
             return implode(' ', $val);
         }
