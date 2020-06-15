@@ -68,6 +68,52 @@ class Ver1 extends Collection {
     'WhiteBalanceAdj' => 24,
     'WorkColorSpace' => 624,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:BlueCurveLimits' => 510,
+    'CanonVRD:BlueCurvePoints' => 468,
+    'CanonVRD:BrightnessAdj' => 276,
+    'CanonVRD:CheckMark' => 618,
+    'CanonVRD:ColorToneAdj' => 286,
+    'CanonVRD:ConstrainedCropHeight' => 614,
+    'CanonVRD:ConstrainedCropWidth' => 610,
+    'CanonVRD:ContrastAdj' => 277,
+    'CanonVRD:CropActive' => 580,
+    'CanonVRD:CropAspectRatio' => 608,
+    'CanonVRD:CropHeight' => 588,
+    'CanonVRD:CropLeft' => 582,
+    'CanonVRD:CropTop' => 584,
+    'CanonVRD:CropWidth' => 586,
+    'CanonVRD:DynamicRangeMax' => 124,
+    'CanonVRD:DynamicRangeMin' => 122,
+    'CanonVRD:GreenCurveLimits' => 452,
+    'CanonVRD:GreenCurvePoints' => 410,
+    'CanonVRD:LuminanceCurveLimits' => 336,
+    'CanonVRD:LuminanceCurvePoints' => 294,
+    'CanonVRD:RGBCurveLimits' => 568,
+    'CanonVRD:RGBCurvePoints' => 526,
+    'CanonVRD:RawBrightnessAdj' => 56,
+    'CanonVRD:RawColorAdj' => 46,
+    'CanonVRD:RawCustomSaturation' => 48,
+    'CanonVRD:RawCustomTone' => 52,
+    'CanonVRD:RedCurveLimits' => 394,
+    'CanonVRD:RedCurvePoints' => 352,
+    'CanonVRD:Rotation' => 622,
+    'CanonVRD:SaturationAdj' => 278,
+    'CanonVRD:SharpnessAdj' => 602,
+    'CanonVRD:ToneCurveActive' => 272,
+    'CanonVRD:ToneCurveInterpolation' => 345,
+    'CanonVRD:ToneCurveMode' => 275,
+    'CanonVRD:ToneCurveProperty' => 60,
+    'CanonVRD:VRDVersion' => 2,
+    'CanonVRD:WBAdjColorTemp' => 26,
+    'CanonVRD:WBAdjRGGBLevels' => 6,
+    'CanonVRD:WBFineTuneActive' => 36,
+    'CanonVRD:WBFineTuneSaturation' => 40,
+    'CanonVRD:WBFineTuneTone' => 44,
+    'CanonVRD:WhiteBalanceAdj' => 24,
+    'CanonVRD:WorkColorSpace' => 624,
+  ),
   'items' =>
   array (
     2 =>
@@ -79,6 +125,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:VRDVersion',
     ),
     6 =>
     array (
@@ -90,6 +137,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBAdjRGGBLevels',
     ),
     24 =>
     array (
@@ -116,6 +164,7 @@ class Ver1 extends Collection {
           31 => 'Shot Settings',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WhiteBalanceAdj',
     ),
     26 =>
     array (
@@ -126,6 +175,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBAdjColorTemp',
     ),
     36 =>
     array (
@@ -144,6 +194,7 @@ class Ver1 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBFineTuneActive',
     ),
     40 =>
     array (
@@ -154,6 +205,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBFineTuneSaturation',
     ),
     44 =>
     array (
@@ -164,6 +216,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBFineTuneTone',
     ),
     46 =>
     array (
@@ -183,6 +236,7 @@ class Ver1 extends Collection {
           2 => 'Custom',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RawColorAdj',
     ),
     48 =>
     array (
@@ -193,6 +247,7 @@ class Ver1 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RawCustomSaturation',
     ),
     52 =>
     array (
@@ -203,6 +258,7 @@ class Ver1 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RawCustomTone',
     ),
     56 =>
     array (
@@ -213,6 +269,7 @@ class Ver1 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RawBrightnessAdj',
     ),
     60 =>
     array (
@@ -236,6 +293,7 @@ class Ver1 extends Collection {
           6 => 'Custom 5',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveProperty',
     ),
     122 =>
     array (
@@ -246,6 +304,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DynamicRangeMin',
     ),
     124 =>
     array (
@@ -256,6 +315,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DynamicRangeMax',
     ),
     272 =>
     array (
@@ -274,6 +334,7 @@ class Ver1 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveActive',
     ),
     275 =>
     array (
@@ -292,6 +353,7 @@ class Ver1 extends Collection {
           1 => 'Luminance',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveMode',
     ),
     276 =>
     array (
@@ -302,6 +364,7 @@ class Ver1 extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:BrightnessAdj',
     ),
     277 =>
     array (
@@ -312,6 +375,7 @@ class Ver1 extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ContrastAdj',
     ),
     278 =>
     array (
@@ -322,6 +386,7 @@ class Ver1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:SaturationAdj',
     ),
     286 =>
     array (
@@ -332,6 +397,7 @@ class Ver1 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ColorToneAdj',
     ),
     294 =>
     array (
@@ -343,6 +409,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:LuminanceCurvePoints',
     ),
     336 =>
     array (
@@ -354,6 +421,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:LuminanceCurveLimits',
     ),
     345 =>
     array (
@@ -372,6 +440,7 @@ class Ver1 extends Collection {
           1 => 'Straight',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveInterpolation',
     ),
     352 =>
     array (
@@ -383,6 +452,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RedCurvePoints',
     ),
     394 =>
     array (
@@ -394,6 +464,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RedCurveLimits',
     ),
     410 =>
     array (
@@ -405,6 +476,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GreenCurvePoints',
     ),
     452 =>
     array (
@@ -416,6 +488,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GreenCurveLimits',
     ),
     468 =>
     array (
@@ -427,6 +500,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:BlueCurvePoints',
     ),
     510 =>
     array (
@@ -438,6 +512,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:BlueCurveLimits',
     ),
     526 =>
     array (
@@ -449,6 +524,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RGBCurvePoints',
     ),
     568 =>
     array (
@@ -460,6 +536,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RGBCurveLimits',
     ),
     580 =>
     array (
@@ -478,6 +555,7 @@ class Ver1 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropActive',
     ),
     582 =>
     array (
@@ -488,6 +566,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropLeft',
     ),
     584 =>
     array (
@@ -498,6 +577,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropTop',
     ),
     586 =>
     array (
@@ -508,6 +588,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropWidth',
     ),
     588 =>
     array (
@@ -518,6 +599,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropHeight',
     ),
     602 =>
     array (
@@ -528,6 +610,7 @@ class Ver1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:SharpnessAdj',
     ),
     608 =>
     array (
@@ -558,6 +641,7 @@ class Ver1 extends Collection {
           65535 => 'Custom',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropAspectRatio',
     ),
     610 =>
     array (
@@ -568,6 +652,7 @@ class Ver1 extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ConstrainedCropWidth',
     ),
     614 =>
     array (
@@ -578,6 +663,7 @@ class Ver1 extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ConstrainedCropHeight',
     ),
     618 =>
     array (
@@ -598,6 +684,7 @@ class Ver1 extends Collection {
           3 => '3',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CheckMark',
     ),
     622 =>
     array (
@@ -618,6 +705,7 @@ class Ver1 extends Collection {
           3 => '270',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:Rotation',
     ),
     624 =>
     array (
@@ -639,6 +727,7 @@ class Ver1 extends Collection {
           4 => 'ColorMatch RGB',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WorkColorSpace',
     ),
   ),
 );

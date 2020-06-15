@@ -118,6 +118,106 @@ class Functions2 extends Collection {
     'ViewfinderWarnings' => 1034,
     'WBMediaImageSizeSetting' => 1800,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonCustom:AEBAutoCancel' => 260,
+    'CanonCustom:AEBSequence' => 261,
+    'CanonCustom:AEBShotCount' => 262,
+    'CanonCustom:AELockMeterModeAfterFocus' => 276,
+    'CanonCustom:AEMicroadjustment' => 272,
+    'CanonCustom:AFAreaSelectMethod' => 1307,
+    'CanonCustom:AFAssistBeam' => 1294,
+    'CanonCustom:AFDuringLiveView' => 1297,
+    'CanonCustom:AFMicroadjustment' => 1287,
+    'CanonCustom:AFOnAELockButtonSwitch' => 1794,
+    'CanonCustom:AFPointAreaExpansion' => 1288,
+    'CanonCustom:AFPointAutoSelection' => 1291,
+    'CanonCustom:AFPointBrightness' => 1293,
+    'CanonCustom:AFPointDisplayDuringFocus' => 1292,
+    'CanonCustom:AFPointSelectionMethod' => 1295,
+    'CanonCustom:AIServoFirstImagePriority' => 1305,
+    'CanonCustom:AIServoImagePriority' => 1283,
+    'CanonCustom:AIServoSecondImagePriority' => 1306,
+    'CanonCustom:AIServoTrackingMethod' => 1284,
+    'CanonCustom:AIServoTrackingSensitivity' => 1282,
+    'CanonCustom:AccelerationTracking' => 1304,
+    'CanonCustom:AddAspectRatioInfo' => 2062,
+    'CanonCustom:AddIPTCInformation' => 2069,
+    'CanonCustom:AddOriginalDecisionData' => 2063,
+    'CanonCustom:ApertureRange' => 269,
+    'CanonCustom:ApplyShootingMeteringMode' => 270,
+    'CanonCustom:AssignFuncButton' => 1803,
+    'CanonCustom:AutoAFPointColorTracking' => 1308,
+    'CanonCustom:AutoLightingOptimizer' => 516,
+    'CanonCustom:AvSettingWithoutLens' => 1799,
+    'CanonCustom:ButtonFunctionControlOff' => 1802,
+    'CanonCustom:ContinuousShootingSpeed' => 1552,
+    'CanonCustom:ContinuousShotLimit' => 1553,
+    'CanonCustom:ControlRingRotation' => 1810,
+    'CanonCustom:CustomControls' => 1804,
+    'CanonCustom:CustomizeDials' => 1813,
+    'CanonCustom:DefaultEraseOption' => 2067,
+    'CanonCustom:DialDirectionTvAv' => 1798,
+    'CanonCustom:DisplayAllAFPoints' => 1300,
+    'CanonCustom:ETTLII' => 772,
+    'CanonCustom:ExposureCompAutoCancel' => 275,
+    'CanonCustom:ExposureLevelIncrements' => 257,
+    'CanonCustom:ExposureModeInManual' => 267,
+    'CanonCustom:FEMicroadjustment' => 273,
+    'CanonCustom:FlashButtonFunction' => 1806,
+    'CanonCustom:FlashFiring' => 774,
+    'CanonCustom:FlashSyncSpeedAv' => 271,
+    'CanonCustom:FocusDisplayAIServoAndMF' => 1301,
+    'CanonCustom:FocusRingRotation' => 1811,
+    'CanonCustom:FocusingScreen' => 2059,
+    'CanonCustom:HighISONoiseReduction' => 514,
+    'CanonCustom:HighlightTonePriority' => 515,
+    'CanonCustom:ISOSpeedIncrements' => 258,
+    'CanonCustom:ISOSpeedRange' => 259,
+    'CanonCustom:InfoButtonWhenShooting' => 1033,
+    'CanonCustom:InitialAFPointAIServoAF' => 1310,
+    'CanonCustom:LCDDisplayAtPowerOn' => 2065,
+    'CanonCustom:LCDIlluminationDuringBulb' => 1032,
+    'CanonCustom:LVShootingAreaDisplay' => 1036,
+    'CanonCustom:LensAFStopButton' => 1286,
+    'CanonCustom:LensDriveNoAF' => 1285,
+    'CanonCustom:LiveViewExposureSimulation' => 2064,
+    'CanonCustom:LockMicrophoneButton' => 1801,
+    'CanonCustom:LongExposureNoiseReduction' => 513,
+    'CanonCustom:ManualAFPointSelectPattern' => 1299,
+    'CanonCustom:ManualTv' => 1797,
+    'CanonCustom:MemoAudioQuality' => 2066,
+    'CanonCustom:MirrorLockup' => 1551,
+    'CanonCustom:MultiControllerWhileMetering' => 1303,
+    'CanonCustom:MultiFunctionLock' => 1807,
+    'CanonCustom:OrientationLinkedAFPoint' => 1302,
+    'CanonCustom:QuickControlDialInMeter' => 1795,
+    'CanonCustom:RFLensMFFocusRingSensitivity' => 1812,
+    'CanonCustom:RestrictDriveModes' => 1554,
+    'CanonCustom:RetractLensOnPowerOff' => 2068,
+    'CanonCustom:SafetyShift' => 264,
+    'CanonCustom:SameExposureForNewAperture' => 274,
+    'CanonCustom:SelectAFAreaSelectMode' => 1298,
+    'CanonCustom:SelectableAFPoint' => 1289,
+    'CanonCustom:SetButtonWhenShooting' => 1796,
+    'CanonCustom:ShortReleaseTimeLag' => 2061,
+    'CanonCustom:Shutter-AELock' => 1793,
+    'CanonCustom:ShutterCurtainSync' => 773,
+    'CanonCustom:ShutterReleaseWithoutLens' => 1809,
+    'CanonCustom:ShutterSpeedRange' => 268,
+    'CanonCustom:SpotMeterLinkToAFPoint' => 263,
+    'CanonCustom:StartMovieShooting' => 1805,
+    'CanonCustom:SwitchToRegisteredAFPoint' => 1290,
+    'CanonCustom:TimerLength' => 2060,
+    'CanonCustom:TrashButtonFunction' => 1808,
+    'CanonCustom:USMLensElectronicMF' => 1281,
+    'CanonCustom:UsableMeteringModes' => 266,
+    'CanonCustom:UsableShootingModes' => 265,
+    'CanonCustom:VFDisplayIllumination' => 1309,
+    'CanonCustom:ViewInfoDuringExposure' => 1031,
+    'CanonCustom:ViewfinderWarnings' => 1034,
+    'CanonCustom:WBMediaImageSizeSetting' => 1800,
+  ),
   'items' =>
   array (
     257 =>
@@ -138,6 +238,7 @@ class Functions2 extends Collection {
           2 => '1/2-stop set, 1/2-stop comp.',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ExposureLevelIncrements',
     ),
     258 =>
     array (
@@ -156,6 +257,7 @@ class Functions2 extends Collection {
           1 => '1 Stop',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ISOSpeedIncrements',
     ),
     259 =>
     array (
@@ -175,6 +277,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ISOSpeedRange',
     ),
     260 =>
     array (
@@ -193,6 +296,7 @@ class Functions2 extends Collection {
           1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AEBAutoCancel',
     ),
     261 =>
     array (
@@ -212,6 +316,7 @@ class Functions2 extends Collection {
           2 => '+,0,-',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AEBSequence',
     ),
     262 =>
     array (
@@ -232,6 +337,7 @@ class Functions2 extends Collection {
           3 => '7 shots',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AEBShotCount',
     ),
     263 =>
     array (
@@ -250,6 +356,7 @@ class Functions2 extends Collection {
           1 => 'Enable (use active AF point)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SpotMeterLinkToAFPoint',
     ),
     264 =>
     array (
@@ -269,6 +376,7 @@ class Functions2 extends Collection {
           2 => 'Enable (ISO speed)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SafetyShift',
     ),
     265 =>
     array (
@@ -288,6 +396,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:UsableShootingModes',
     ),
     266 =>
     array (
@@ -307,6 +416,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:UsableMeteringModes',
     ),
     267 =>
     array (
@@ -328,6 +438,7 @@ class Functions2 extends Collection {
           4 => 'Center-weighted average',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ExposureModeInManual',
     ),
     268 =>
     array (
@@ -347,6 +458,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterSpeedRange',
     ),
     269 =>
     array (
@@ -366,6 +478,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ApertureRange',
     ),
     270 =>
     array (
@@ -385,6 +498,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ApplyShootingMeteringMode',
     ),
     271 =>
     array (
@@ -403,6 +517,7 @@ class Functions2 extends Collection {
           1 => '1/250 Fixed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FlashSyncSpeedAv',
     ),
     272 =>
     array (
@@ -422,6 +537,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AEMicroadjustment',
     ),
     273 =>
     array (
@@ -441,6 +557,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FEMicroadjustment',
     ),
     274 =>
     array (
@@ -460,6 +577,7 @@ class Functions2 extends Collection {
           2 => 'Shutter Speed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SameExposureForNewAperture',
     ),
     275 =>
     array (
@@ -478,6 +596,7 @@ class Functions2 extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ExposureCompAutoCancel',
     ),
     276 =>
     array (
@@ -498,6 +617,7 @@ class Functions2 extends Collection {
           8 => 'Center-weighted',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AELockMeterModeAfterFocus',
     ),
     513 =>
     array (
@@ -517,6 +637,7 @@ class Functions2 extends Collection {
           2 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LongExposureNoiseReduction',
     ),
     514 =>
     array (
@@ -537,6 +658,7 @@ class Functions2 extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:HighISONoiseReduction',
     ),
     515 =>
     array (
@@ -555,6 +677,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:HighlightTonePriority',
     ),
     516 =>
     array (
@@ -575,6 +698,7 @@ class Functions2 extends Collection {
           3 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AutoLightingOptimizer',
     ),
     772 =>
     array (
@@ -593,6 +717,7 @@ class Functions2 extends Collection {
           1 => 'Average',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ETTLII',
     ),
     773 =>
     array (
@@ -611,6 +736,7 @@ class Functions2 extends Collection {
           1 => '2nd-curtain sync',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterCurtainSync',
     ),
     774 =>
     array (
@@ -629,6 +755,7 @@ class Functions2 extends Collection {
           1 => 'Does not fire',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FlashFiring',
     ),
     1031 =>
     array (
@@ -647,6 +774,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ViewInfoDuringExposure',
     ),
     1032 =>
     array (
@@ -665,6 +793,7 @@ class Functions2 extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LCDIlluminationDuringBulb',
     ),
     1033 =>
     array (
@@ -683,6 +812,7 @@ class Functions2 extends Collection {
           1 => 'Displays shooting functions',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:InfoButtonWhenShooting',
     ),
     1034 =>
     array (
@@ -704,6 +834,7 @@ class Functions2 extends Collection {
           16 => 'Spot metering',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ViewfinderWarnings',
     ),
     1035 =>
     array (
@@ -722,6 +853,7 @@ class Functions2 extends Collection {
           1 => 'Outlined',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LVShootingAreaDisplay',
     ),
     1036 =>
     array (
@@ -740,6 +872,7 @@ class Functions2 extends Collection {
           1 => 'Outlined',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LVShootingAreaDisplay',
     ),
     1281 =>
     array (
@@ -759,6 +892,7 @@ class Functions2 extends Collection {
           2 => 'Disable in AF mode',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:USMLensElectronicMF',
     ),
     1282 =>
     array (
@@ -780,6 +914,7 @@ class Functions2 extends Collection {
           2 => 'Fast',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AIServoTrackingSensitivity',
     ),
     1283 =>
     array (
@@ -800,6 +935,7 @@ class Functions2 extends Collection {
           3 => '1: Release, 2: Tracking',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AIServoImagePriority',
     ),
     1284 =>
     array (
@@ -818,6 +954,7 @@ class Functions2 extends Collection {
           1 => 'Continuous AF track priority',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AIServoTrackingMethod',
     ),
     1285 =>
     array (
@@ -836,6 +973,7 @@ class Functions2 extends Collection {
           1 => 'Focus search off',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LensDriveNoAF',
     ),
     1286 =>
     array (
@@ -860,6 +998,7 @@ class Functions2 extends Collection {
           7 => 'Spot AF',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LensAFStopButton',
     ),
     1287 =>
     array (
@@ -880,6 +1019,7 @@ class Functions2 extends Collection {
           2 => 'Adjust by lens',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFMicroadjustment',
     ),
     1288 =>
     array (
@@ -898,6 +1038,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointAreaExpansion',
     ),
     1289 =>
     array (
@@ -919,6 +1060,7 @@ class Functions2 extends Collection {
           4 => 'Outer 9 points',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SelectableAFPoint',
     ),
     1290 =>
     array (
@@ -938,6 +1080,7 @@ class Functions2 extends Collection {
           2 => 'Only while AEL is pressed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SwitchToRegisteredAFPoint',
     ),
     1291 =>
     array (
@@ -957,6 +1100,7 @@ class Functions2 extends Collection {
           2 => 'Control-direct:enable/Main:enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointAutoSelection',
     ),
     1292 =>
     array (
@@ -976,6 +1120,7 @@ class Functions2 extends Collection {
           2 => 'On (when focus achieved)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointDisplayDuringFocus',
     ),
     1293 =>
     array (
@@ -994,6 +1139,7 @@ class Functions2 extends Collection {
           1 => 'Brighter',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointBrightness',
     ),
     1294 =>
     array (
@@ -1013,6 +1159,7 @@ class Functions2 extends Collection {
           2 => 'IR AF assist beam only',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFAssistBeam',
     ),
     1295 =>
     array (
@@ -1032,6 +1179,7 @@ class Functions2 extends Collection {
           2 => 'Quick Control Dial direct',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointSelectionMethod',
     ),
     1296 =>
     array (
@@ -1051,6 +1199,7 @@ class Functions2 extends Collection {
           2 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:VFDisplayIllumination',
     ),
     1297 =>
     array (
@@ -1069,6 +1218,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFDuringLiveView',
     ),
     1298 =>
     array (
@@ -1089,6 +1239,7 @@ class Functions2 extends Collection {
           3 => 'Select AF-modes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SelectAFAreaSelectMode',
     ),
     1299 =>
     array (
@@ -1107,6 +1258,7 @@ class Functions2 extends Collection {
           1 => 'Continuous',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ManualAFPointSelectPattern',
     ),
     1300 =>
     array (
@@ -1125,6 +1277,7 @@ class Functions2 extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:DisplayAllAFPoints',
     ),
     1301 =>
     array (
@@ -1143,6 +1296,7 @@ class Functions2 extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FocusDisplayAIServoAndMF',
     ),
     1302 =>
     array (
@@ -1161,6 +1315,7 @@ class Functions2 extends Collection {
           1 => 'Select different AF points',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:OrientationLinkedAFPoint',
     ),
     1303 =>
     array (
@@ -1179,6 +1334,7 @@ class Functions2 extends Collection {
           1 => 'AF point selection',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MultiControllerWhileMetering',
     ),
     1304 =>
     array (
@@ -1189,6 +1345,7 @@ class Functions2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AccelerationTracking',
     ),
     1305 =>
     array (
@@ -1208,6 +1365,7 @@ class Functions2 extends Collection {
           1 => 'Focus priority',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AIServoFirstImagePriority',
     ),
     1306 =>
     array (
@@ -1227,6 +1385,7 @@ class Functions2 extends Collection {
           1 => 'Focus priority',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AIServoSecondImagePriority',
     ),
     1307 =>
     array (
@@ -1245,6 +1404,7 @@ class Functions2 extends Collection {
           1 => 'Main dial',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFAreaSelectMethod',
     ),
     1308 =>
     array (
@@ -1263,6 +1423,7 @@ class Functions2 extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AutoAFPointColorTracking',
     ),
     1309 =>
     array (
@@ -1282,6 +1443,7 @@ class Functions2 extends Collection {
           2 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:VFDisplayIllumination',
     ),
     1310 =>
     array (
@@ -1301,6 +1463,7 @@ class Functions2 extends Collection {
           2 => 'Manual AF point',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:InitialAFPointAIServoAF',
     ),
     1551 =>
     array (
@@ -1320,6 +1483,7 @@ class Functions2 extends Collection {
           2 => 'Enable: Down with Set',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MirrorLockup',
     ),
     1552 =>
     array (
@@ -1339,6 +1503,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ContinuousShootingSpeed',
     ),
     1553 =>
     array (
@@ -1358,6 +1523,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ContinuousShotLimit',
     ),
     1554 =>
     array (
@@ -1377,6 +1543,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:RestrictDriveModes',
     ),
     1793 =>
     array (
@@ -1397,6 +1564,7 @@ class Functions2 extends Collection {
           3 => 'AE/AF, No AE lock',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:Shutter-AELock',
     ),
     1794 =>
     array (
@@ -1415,6 +1583,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFOnAELockButtonSwitch',
     ),
     1795 =>
     array (
@@ -1436,6 +1605,7 @@ class Functions2 extends Collection {
           4 => 'ISO speed swapped with Exposure comp',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:QuickControlDialInMeter',
     ),
     1796 =>
     array (
@@ -1459,6 +1629,7 @@ class Functions2 extends Collection {
           6 => 'Record movie (Live View)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SetButtonWhenShooting',
     ),
     1797 =>
     array (
@@ -1477,6 +1648,7 @@ class Functions2 extends Collection {
           1 => 'Tv=Control/Av=Main',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ManualTv',
     ),
     1798 =>
     array (
@@ -1495,6 +1667,7 @@ class Functions2 extends Collection {
           1 => 'Reversed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:DialDirectionTvAv',
     ),
     1799 =>
     array (
@@ -1513,6 +1686,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AvSettingWithoutLens',
     ),
     1800 =>
     array (
@@ -1532,6 +1706,7 @@ class Functions2 extends Collection {
           2 => 'Off (disable button)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:WBMediaImageSizeSetting',
     ),
     1801 =>
     array (
@@ -1552,6 +1727,7 @@ class Functions2 extends Collection {
           3 => 'Rating (protect/memo:disable)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LockMicrophoneButton',
     ),
     1802 =>
     array (
@@ -1570,6 +1746,7 @@ class Functions2 extends Collection {
           1 => 'Disable main, Control, Multi-control',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ButtonFunctionControlOff',
     ),
     1803 =>
     array (
@@ -1591,6 +1768,7 @@ class Functions2 extends Collection {
           4 => 'Live view function settings',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AssignFuncButton',
     ),
     1804 =>
     array (
@@ -1601,6 +1779,7 @@ class Functions2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:CustomControls',
     ),
     1805 =>
     array (
@@ -1619,6 +1798,7 @@ class Functions2 extends Collection {
           1 => 'Quick start (FEL button)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:StartMovieShooting',
     ),
     1806 =>
     array (
@@ -1637,6 +1817,7 @@ class Functions2 extends Collection {
           1 => 'ISO speed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FlashButtonFunction',
     ),
     1807 =>
     array (
@@ -1657,6 +1838,7 @@ class Functions2 extends Collection {
           3 => 'On (main dial and quick control dial)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MultiFunctionLock',
     ),
     1808 =>
     array (
@@ -1675,6 +1857,7 @@ class Functions2 extends Collection {
           1 => 'Depth-of-field preview',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:TrashButtonFunction',
     ),
     1809 =>
     array (
@@ -1693,6 +1876,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterReleaseWithoutLens',
     ),
     1810 =>
     array (
@@ -1711,6 +1895,7 @@ class Functions2 extends Collection {
           1 => 'Reversed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ControlRingRotation',
     ),
     1811 =>
     array (
@@ -1729,6 +1914,7 @@ class Functions2 extends Collection {
           1 => 'Reversed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FocusRingRotation',
     ),
     1812 =>
     array (
@@ -1747,6 +1933,7 @@ class Functions2 extends Collection {
           1 => 'Linked To Rotation Angle',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:RFLensMFFocusRingSensitivity',
     ),
     1813 =>
     array (
@@ -1757,6 +1944,7 @@ class Functions2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:CustomizeDials',
     ),
     2059 =>
     array (
@@ -1776,6 +1964,7 @@ class Functions2 extends Collection {
           2 => 'Ef-S',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FocusingScreen',
     ),
     2060 =>
     array (
@@ -1795,6 +1984,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:TimerLength',
     ),
     2061 =>
     array (
@@ -1813,6 +2003,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShortReleaseTimeLag',
     ),
     2062 =>
     array (
@@ -1836,6 +2027,7 @@ class Functions2 extends Collection {
           6 => '5:7',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AddAspectRatioInfo',
     ),
     2063 =>
     array (
@@ -1854,6 +2046,7 @@ class Functions2 extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AddOriginalDecisionData',
     ),
     2064 =>
     array (
@@ -1872,6 +2065,7 @@ class Functions2 extends Collection {
           1 => 'Enable (simulates exposure)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LiveViewExposureSimulation',
     ),
     2065 =>
     array (
@@ -1890,6 +2084,7 @@ class Functions2 extends Collection {
           1 => 'Retain power off status',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LCDDisplayAtPowerOn',
     ),
     2066 =>
     array (
@@ -1908,6 +2103,7 @@ class Functions2 extends Collection {
           1 => 'Low (8 kHz)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MemoAudioQuality',
     ),
     2067 =>
     array (
@@ -1926,6 +2122,7 @@ class Functions2 extends Collection {
           1 => 'Erase selected',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:DefaultEraseOption',
     ),
     2068 =>
     array (
@@ -1944,6 +2141,7 @@ class Functions2 extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:RetractLensOnPowerOff',
     ),
     2069 =>
     array (
@@ -1962,6 +2160,7 @@ class Functions2 extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AddIPTCInformation',
     ),
   ),
 );

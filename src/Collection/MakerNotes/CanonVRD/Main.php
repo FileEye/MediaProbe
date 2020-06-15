@@ -26,6 +26,10 @@ class Main extends Collection {
   array (
     'XMP' => '4294902006',
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:XMP' => '4294902006',
+  ),
   'items' =>
   array (
     '4294902006' =>
@@ -37,6 +41,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:XMP',
     ),
   ),
 );

@@ -88,6 +88,72 @@ class DR4 extends Collection {
     'WorkColorSpace' => 66048,
     'YellowHSL' => 133394,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:AngleAdj' => 65539,
+    'CanonVRD:AquaHSL' => 133396,
+    'CanonVRD:AutoLightingOptimizer' => 132352,
+    'CanonVRD:AutoLightingOptimizerOn' => '0x20500.0',
+    'CanonVRD:BlueHSL' => 133397,
+    'CanonVRD:CheckMark' => 65793,
+    'CanonVRD:ChromaticAberration' => 132867,
+    'CanonVRD:ChromaticAberrationBlue' => 132872,
+    'CanonVRD:ChromaticAberrationOn' => '0x20703.0',
+    'CanonVRD:ChromaticAberrationRed' => 132871,
+    'CanonVRD:ChrominanceNoiseReduction' => 132609,
+    'CanonVRD:ColorBlurOn' => 132868,
+    'CanonVRD:ColorHue' => 133376,
+    'CanonVRD:ColorMoireReduction' => 132720,
+    'CanonVRD:ColorMoireReductionOn' => '0x20670.0',
+    'CanonVRD:ColorSaturationAdj' => 131845,
+    'CanonVRD:ColorToneAdj' => 131844,
+    'CanonVRD:ContrastAdj' => 131843,
+    'CanonVRD:CropAspectRatio' => 196865,
+    'CanonVRD:CropAspectRatioCustom' => 196866,
+    'CanonVRD:CustomPictureStyle' => 65569,
+    'CanonVRD:CustomPictureStyleData' => 984320,
+    'CanonVRD:DLOOn' => '0x20706.0',
+    'CanonVRD:DLOSetting' => 132870,
+    'CanonVRD:DiffractionCorrectionOn' => 132875,
+    'CanonVRD:DistortionCorrection' => 132869,
+    'CanonVRD:DistortionCorrectionOn' => '0x20705.0',
+    'CanonVRD:DistortionEffect' => 132873,
+    'CanonVRD:GammaLinear' => 131584,
+    'CanonVRD:GreenHSL' => 133395,
+    'CanonVRD:HighlightAdj' => 131852,
+    'CanonVRD:LensFocalLength' => 984338,
+    'CanonVRD:LuminanceNoiseReduction' => 132608,
+    'CanonVRD:MagentaHSL' => 133399,
+    'CanonVRD:MonochromeFilterEffect' => 131847,
+    'CanonVRD:MonochromeToningEffect' => 131846,
+    'CanonVRD:OrangeHSL' => 133393,
+    'CanonVRD:PeripheralIllumination' => 132866,
+    'CanonVRD:PeripheralIlluminationOn' => '0x20702.0',
+    'CanonVRD:PictureStyle' => 131841,
+    'CanonVRD:PurpleHSL' => 133398,
+    'CanonVRD:RawBrightnessAdj' => 131073,
+    'CanonVRD:RedHSL' => 133392,
+    'CanonVRD:Rotation' => 65538,
+    'CanonVRD:SaturationAdj' => 133377,
+    'CanonVRD:ShadowAdj' => 131851,
+    'CanonVRD:SharpnessAdj' => 131856,
+    'CanonVRD:SharpnessAdjOn' => '0x20310.0',
+    'CanonVRD:SharpnessStrength' => 131857,
+    'CanonVRD:ShootingDistance' => 132865,
+    'CanonVRD:ToneCurveBrightness' => 132112,
+    'CanonVRD:ToneCurveContrast' => 132113,
+    'CanonVRD:ToneCurveOriginal' => '0x20400.1',
+    'CanonVRD:UnsharpMaskFineness' => 131849,
+    'CanonVRD:UnsharpMaskStrength' => 131848,
+    'CanonVRD:UnsharpMaskThreshold' => 131850,
+    'CanonVRD:WBAdjBlueAmber' => 131334,
+    'CanonVRD:WBAdjColorTemp' => 131330,
+    'CanonVRD:WBAdjMagentaGreen' => 131333,
+    'CanonVRD:WBAdjRGGBLevels' => 131365,
+    'CanonVRD:WhiteBalanceAdj' => 131329,
+    'CanonVRD:WorkColorSpace' => 66048,
+    'CanonVRD:YellowHSL' => 133394,
+  ),
   'items' =>
   array (
     '0x20310.0' =>
@@ -107,6 +173,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:SharpnessAdjOn',
     ),
     '0x20400.1' =>
     array (
@@ -125,6 +192,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveOriginal',
     ),
     '0x20500.0' =>
     array (
@@ -143,6 +211,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:AutoLightingOptimizerOn',
     ),
     '0x20670.0' =>
     array (
@@ -161,6 +230,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ColorMoireReductionOn',
     ),
     '0x20702.0' =>
     array (
@@ -179,6 +249,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:PeripheralIlluminationOn',
     ),
     '0x20703.0' =>
     array (
@@ -197,6 +268,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ChromaticAberrationOn',
     ),
     '0x20705.0' =>
     array (
@@ -215,6 +287,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DistortionCorrectionOn',
     ),
     '0x20706.0' =>
     array (
@@ -233,6 +306,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DLOOn',
     ),
     65538 =>
     array (
@@ -243,6 +317,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:Rotation',
     ),
     65539 =>
     array (
@@ -253,6 +328,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:AngleAdj',
     ),
     65569 =>
     array (
@@ -263,6 +339,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CustomPictureStyle',
     ),
     65793 =>
     array (
@@ -285,6 +362,7 @@ class DR4 extends Collection {
           5 => '5',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CheckMark',
     ),
     66048 =>
     array (
@@ -306,6 +384,7 @@ class DR4 extends Collection {
           5 => 'ColorMatch RGB',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WorkColorSpace',
     ),
     131073 =>
     array (
@@ -316,6 +395,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RawBrightnessAdj',
     ),
     131329 =>
     array (
@@ -342,6 +422,7 @@ class DR4 extends Collection {
           255 => 'Shot Settings',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WhiteBalanceAdj',
     ),
     131330 =>
     array (
@@ -352,6 +433,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBAdjColorTemp',
     ),
     131333 =>
     array (
@@ -362,6 +444,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBAdjMagentaGreen',
     ),
     131334 =>
     array (
@@ -372,6 +455,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBAdjBlueAmber',
     ),
     131365 =>
     array (
@@ -382,6 +466,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:WBAdjRGGBLevels',
     ),
     131584 =>
     array (
@@ -400,6 +485,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaLinear',
     ),
     131841 =>
     array (
@@ -426,6 +512,7 @@ class DR4 extends Collection {
           255 => 'Custom',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:PictureStyle',
     ),
     131843 =>
     array (
@@ -436,6 +523,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ContrastAdj',
     ),
     131844 =>
     array (
@@ -446,6 +534,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ColorToneAdj',
     ),
     131845 =>
     array (
@@ -456,6 +545,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ColorSaturationAdj',
     ),
     131846 =>
     array (
@@ -477,6 +567,7 @@ class DR4 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:MonochromeToningEffect',
     ),
     131847 =>
     array (
@@ -498,6 +589,7 @@ class DR4 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:MonochromeFilterEffect',
     ),
     131848 =>
     array (
@@ -508,6 +600,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:UnsharpMaskStrength',
     ),
     131849 =>
     array (
@@ -518,6 +611,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:UnsharpMaskFineness',
     ),
     131850 =>
     array (
@@ -528,6 +622,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:UnsharpMaskThreshold',
     ),
     131851 =>
     array (
@@ -538,6 +633,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ShadowAdj',
     ),
     131852 =>
     array (
@@ -548,6 +644,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:HighlightAdj',
     ),
     131856 =>
     array (
@@ -566,6 +663,7 @@ class DR4 extends Collection {
           1 => 'Unsharp Mask',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:SharpnessAdj',
     ),
     131857 =>
     array (
@@ -576,6 +674,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:SharpnessStrength',
     ),
     132112 =>
     array (
@@ -586,6 +685,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveBrightness',
     ),
     132113 =>
     array (
@@ -596,6 +696,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveContrast',
     ),
     132352 =>
     array (
@@ -615,6 +716,7 @@ class DR4 extends Collection {
           2 => 'Strong',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:AutoLightingOptimizer',
     ),
     132608 =>
     array (
@@ -625,6 +727,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:LuminanceNoiseReduction',
     ),
     132609 =>
     array (
@@ -635,6 +738,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ChrominanceNoiseReduction',
     ),
     132720 =>
     array (
@@ -645,6 +749,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ColorMoireReduction',
     ),
     132865 =>
     array (
@@ -655,6 +760,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ShootingDistance',
     ),
     132866 =>
     array (
@@ -665,6 +771,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:PeripheralIllumination',
     ),
     132867 =>
     array (
@@ -675,6 +782,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ChromaticAberration',
     ),
     132868 =>
     array (
@@ -693,6 +801,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ColorBlurOn',
     ),
     132869 =>
     array (
@@ -703,6 +812,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DistortionCorrection',
     ),
     132870 =>
     array (
@@ -713,6 +823,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DLOSetting',
     ),
     132871 =>
     array (
@@ -723,6 +834,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ChromaticAberrationRed',
     ),
     132872 =>
     array (
@@ -733,6 +845,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ChromaticAberrationBlue',
     ),
     132873 =>
     array (
@@ -754,6 +867,7 @@ class DR4 extends Collection {
           4 => 'Emphasize Center',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DistortionEffect',
     ),
     132875 =>
     array (
@@ -772,6 +886,7 @@ class DR4 extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DiffractionCorrectionOn',
     ),
     133376 =>
     array (
@@ -782,6 +897,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ColorHue',
     ),
     133377 =>
     array (
@@ -792,6 +908,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:SaturationAdj',
     ),
     133392 =>
     array (
@@ -802,6 +919,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RedHSL',
     ),
     133393 =>
     array (
@@ -812,6 +930,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:OrangeHSL',
     ),
     133394 =>
     array (
@@ -822,6 +941,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:YellowHSL',
     ),
     133395 =>
     array (
@@ -832,6 +952,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GreenHSL',
     ),
     133396 =>
     array (
@@ -842,6 +963,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:AquaHSL',
     ),
     133397 =>
     array (
@@ -852,6 +974,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:BlueHSL',
     ),
     133398 =>
     array (
@@ -862,6 +985,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:PurpleHSL',
     ),
     133399 =>
     array (
@@ -872,6 +996,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:MagentaHSL',
     ),
     196865 =>
     array (
@@ -899,6 +1024,7 @@ class DR4 extends Collection {
           10 => '9:16',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropAspectRatio',
     ),
     196866 =>
     array (
@@ -909,6 +1035,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropAspectRatioCustom',
     ),
     984320 =>
     array (
@@ -919,6 +1046,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CustomPictureStyleData',
     ),
     984338 =>
     array (
@@ -929,6 +1057,7 @@ class DR4 extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:LensFocalLength',
     ),
   ),
 );

@@ -56,6 +56,40 @@ class Main extends Collection {
     'ThumbnailFileName' => 2071,
     'ThumbnailImage' => 8200,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:BaseISO' => 4124,
+    'CanonRaw:CanonColorInfo1' => 50,
+    'CanonRaw:CanonColorInfo2' => 4140,
+    'CanonRaw:CanonFileDescription' => 2053,
+    'CanonRaw:CanonFirmwareVersion' => 2059,
+    'CanonRaw:CanonFlashInfo' => 4136,
+    'CanonRaw:CanonImageType' => 2069,
+    'CanonRaw:CanonModelID' => 6196,
+    'CanonRaw:ColorSpace' => 4276,
+    'CanonRaw:ColorTemperature' => 4270,
+    'CanonRaw:ComponentVersion' => 2060,
+    'CanonRaw:FileNumber' => 6167,
+    'CanonRaw:FreeBytes' => 1,
+    'CanonRaw:JpgFromRaw' => 8199,
+    'CanonRaw:MeasuredEV' => 6164,
+    'CanonRaw:NullRecord' => 0,
+    'CanonRaw:OriginalFileName' => 2070,
+    'CanonRaw:OwnerName' => 2064,
+    'CanonRaw:ROMOperationMode' => 2061,
+    'CanonRaw:RawData' => 8197,
+    'CanonRaw:RecordID' => 6148,
+    'CanonRaw:ReleaseSetting' => 4118,
+    'CanonRaw:SelfTimerTime' => 6150,
+    'CanonRaw:SerialNumber' => 6155,
+    'CanonRaw:SerialNumberFormat' => 6203,
+    'CanonRaw:ShutterReleaseMethod' => 4112,
+    'CanonRaw:ShutterReleaseTiming' => 4113,
+    'CanonRaw:TargetDistanceSetting' => 6151,
+    'CanonRaw:TargetImageType' => 4106,
+    'CanonRaw:ThumbnailFileName' => 2071,
+    'CanonRaw:ThumbnailImage' => 8200,
+  ),
   'items' =>
   array (
     0 =>
@@ -67,6 +101,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:NullRecord',
     ),
     1 =>
     array (
@@ -77,6 +112,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:FreeBytes',
     ),
     50 =>
     array (
@@ -87,6 +123,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CanonColorInfo1',
     ),
     2053 =>
     array (
@@ -98,6 +135,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CanonFileDescription',
     ),
     2059 =>
     array (
@@ -109,6 +147,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CanonFirmwareVersion',
     ),
     2060 =>
     array (
@@ -119,6 +158,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ComponentVersion',
     ),
     2061 =>
     array (
@@ -130,6 +170,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ROMOperationMode',
     ),
     2064 =>
     array (
@@ -141,6 +182,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:OwnerName',
     ),
     2069 =>
     array (
@@ -152,6 +194,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CanonImageType',
     ),
     2070 =>
     array (
@@ -163,6 +206,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:OriginalFileName',
     ),
     2071 =>
     array (
@@ -174,6 +218,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ThumbnailFileName',
     ),
     4106 =>
     array (
@@ -192,6 +237,7 @@ class Main extends Collection {
           1 => 'Written Document',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:TargetImageType',
     ),
     4112 =>
     array (
@@ -210,6 +256,7 @@ class Main extends Collection {
           2 => 'Continuous Shooting',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ShutterReleaseMethod',
     ),
     4113 =>
     array (
@@ -228,6 +275,7 @@ class Main extends Collection {
           1 => 'Priority on focus',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ShutterReleaseTiming',
     ),
     4118 =>
     array (
@@ -238,6 +286,7 @@ class Main extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ReleaseSetting',
     ),
     4124 =>
     array (
@@ -248,6 +297,7 @@ class Main extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:BaseISO',
     ),
     4136 =>
     array (
@@ -259,6 +309,7 @@ class Main extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CanonFlashInfo',
     ),
     4140 =>
     array (
@@ -269,6 +320,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CanonColorInfo2',
     ),
     4270 =>
     array (
@@ -279,6 +331,7 @@ class Main extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ColorTemperature',
     ),
     4276 =>
     array (
@@ -298,6 +351,7 @@ class Main extends Collection {
           65535 => 'Uncalibrated',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ColorSpace',
     ),
     6148 =>
     array (
@@ -308,6 +362,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:RecordID',
     ),
     6150 =>
     array (
@@ -318,6 +373,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:SelfTimerTime',
     ),
     6151 =>
     array (
@@ -328,6 +384,7 @@ class Main extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:TargetDistanceSetting',
     ),
     6155 =>
     array (
@@ -338,6 +395,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:SerialNumber',
     ),
     6164 =>
     array (
@@ -348,6 +406,7 @@ class Main extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:MeasuredEV',
     ),
     6167 =>
     array (
@@ -358,6 +417,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:FileNumber',
     ),
     6196 =>
     array (
@@ -701,6 +761,7 @@ class Main extends Collection {
           '2147484722' => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CanonModelID',
     ),
     6203 =>
     array (
@@ -719,6 +780,7 @@ class Main extends Collection {
           '2684354560' => 'Format 2',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:SerialNumberFormat',
     ),
     8197 =>
     array (
@@ -729,6 +791,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:RawData',
     ),
     8199 =>
     array (
@@ -739,6 +802,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:JpgFromRaw',
     ),
     8200 =>
     array (
@@ -749,6 +813,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ThumbnailImage',
     ),
   ),
 );

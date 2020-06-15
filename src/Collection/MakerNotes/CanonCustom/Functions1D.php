@@ -47,6 +47,31 @@ class Functions1D extends Collection {
     'SwitchToRegisteredAFPoint' => 18,
     'USMLensElectronicMF' => 7,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonCustom:AEBSequenceAutoCancel' => 9,
+    'CanonCustom:AFPointActivationArea' => 17,
+    'CanonCustom:AFPointIllumination' => 10,
+    'CanonCustom:AFPointSelection' => 11,
+    'CanonCustom:AFPointSpotMetering' => 13,
+    'CanonCustom:AIServoContinuousShooting' => 21,
+    'CanonCustom:AIServoTrackingSensitivity' => 20,
+    'CanonCustom:ExposureLevelIncrements' => 6,
+    'CanonCustom:FillFlashAutoReduction' => 14,
+    'CanonCustom:FinderDisplayDuringExposure' => 1,
+    'CanonCustom:FocusingScreen' => 0,
+    'CanonCustom:ISOSpeedExpansion' => 3,
+    'CanonCustom:LCDPanels' => 8,
+    'CanonCustom:LensAFStopButton' => 19,
+    'CanonCustom:ManualTv' => 5,
+    'CanonCustom:MirrorLockup' => 12,
+    'CanonCustom:SafetyShiftInAvOrTv' => 16,
+    'CanonCustom:ShutterAELButton' => 4,
+    'CanonCustom:ShutterCurtainSync' => 15,
+    'CanonCustom:ShutterReleaseNoCFCard' => 2,
+    'CanonCustom:SwitchToRegisteredAFPoint' => 18,
+    'CanonCustom:USMLensElectronicMF' => 7,
+  ),
   'items' =>
   array (
     0 =>
@@ -66,6 +91,7 @@ class Functions1D extends Collection {
           1 => 'Ec-A,B,C,CII,CIII,D,H,I,L',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FocusingScreen',
     ),
     1 =>
     array (
@@ -84,6 +110,7 @@ class Functions1D extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FinderDisplayDuringExposure',
     ),
     2 =>
     array (
@@ -102,6 +129,7 @@ class Functions1D extends Collection {
           1 => 'No',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterReleaseNoCFCard',
     ),
     3 =>
     array (
@@ -120,6 +148,7 @@ class Functions1D extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ISOSpeedExpansion',
     ),
     4 =>
     array (
@@ -140,6 +169,7 @@ class Functions1D extends Collection {
           3 => 'AE/AF, No AE lock',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterAELButton',
     ),
     5 =>
     array (
@@ -160,6 +190,7 @@ class Functions1D extends Collection {
           3 => 'Tv=Control/Av=Main w/o lens',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ManualTv',
     ),
     6 =>
     array (
@@ -179,6 +210,7 @@ class Functions1D extends Collection {
           2 => '1/2-stop set, 1/2-stop comp.',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ExposureLevelIncrements',
     ),
     7 =>
     array (
@@ -198,6 +230,7 @@ class Functions1D extends Collection {
           2 => 'Always turned off',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:USMLensElectronicMF',
     ),
     8 =>
     array (
@@ -218,6 +251,7 @@ class Functions1D extends Collection {
           3 => 'Shots in folder/Remain. shots',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LCDPanels',
     ),
     9 =>
     array (
@@ -238,6 +272,7 @@ class Functions1D extends Collection {
           3 => '-,0,+/Disabled',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AEBSequenceAutoCancel',
     ),
     10 =>
     array (
@@ -258,6 +293,7 @@ class Functions1D extends Collection {
           3 => 'Brighter',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointIllumination',
     ),
     11 =>
     array (
@@ -278,6 +314,7 @@ class Functions1D extends Collection {
           3 => 'H=FEL+Main/V=FEL+Command',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointSelection',
     ),
     12 =>
     array (
@@ -296,6 +333,7 @@ class Functions1D extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MirrorLockup',
     ),
     13 =>
     array (
@@ -316,6 +354,7 @@ class Functions1D extends Collection {
           3 => '9/Active AF point',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointSpotMetering',
     ),
     14 =>
     array (
@@ -334,6 +373,7 @@ class Functions1D extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FillFlashAutoReduction',
     ),
     15 =>
     array (
@@ -352,6 +392,7 @@ class Functions1D extends Collection {
           1 => '2nd-curtain sync',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterCurtainSync',
     ),
     16 =>
     array (
@@ -370,6 +411,7 @@ class Functions1D extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SafetyShiftInAvOrTv',
     ),
     17 =>
     array (
@@ -389,6 +431,7 @@ class Functions1D extends Collection {
           2 => 'Automatic expanded (max. 13)',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointActivationArea',
     ),
     18 =>
     array (
@@ -408,6 +451,7 @@ class Functions1D extends Collection {
           2 => 'Only while pressing assist',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SwitchToRegisteredAFPoint',
     ),
     19 =>
     array (
@@ -430,6 +474,7 @@ class Functions1D extends Collection {
           5 => 'IS start',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LensAFStopButton',
     ),
     20 =>
     array (
@@ -451,6 +496,7 @@ class Functions1D extends Collection {
           4 => 'Fast',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AIServoTrackingSensitivity',
     ),
     21 =>
     array (
@@ -469,6 +515,7 @@ class Functions1D extends Collection {
           1 => 'Shooting possible without focus',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AIServoContinuousShooting',
     ),
   ),
 );

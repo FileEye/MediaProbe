@@ -27,6 +27,11 @@ class MakeModel extends Collection {
     'Make' => 0,
     'Model' => 6,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:Make' => 0,
+    'CanonRaw:Model' => 6,
+  ),
   'items' =>
   array (
     0 =>
@@ -39,6 +44,7 @@ class MakeModel extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:Make',
     ),
     6 =>
     array (
@@ -49,6 +55,7 @@ class MakeModel extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:Model',
     ),
   ),
 );
