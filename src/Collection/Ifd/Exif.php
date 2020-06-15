@@ -538,7 +538,6 @@ class Exif extends Collection {
     'ExifIFD:MSDocumentText' => 37679,
     'ExifIFD:MSDocumentTextPosition' => 37681,
     'ExifIFD:MSPropertySetStorage' => 37680,
-    'ExifIFD:MakerNoteApple' => 37500,
     'ExifIFD:MatrixWorldToCamera' => 33306,
     'ExifIFD:MatrixWorldToScreen' => 33305,
     'ExifIFD:Matteing' => 32995,
@@ -2620,6 +2619,7 @@ class Exif extends Collection {
     37381 =>
     array (
       'components' => 1,
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
       'collection' => 'Tag',
       'name' => 'MaxApertureValue',
       'title' => 'Max Aperture Value',
@@ -3020,7 +3020,6 @@ class Exif extends Collection {
       ),
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
       'collection' => 'Tag',
-      'exiftoolDOMNode' => 'ExifIFD:MakerNoteApple',
     ),
     37510 =>
     array (
@@ -3536,6 +3535,7 @@ class Exif extends Collection {
     ),
     41730 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifCFAPattern',
       'collection' => 'Tag',
       'name' => 'CFAPattern',
       'title' => 'CFA Pattern',

@@ -15,10 +15,14 @@ class GPSVersionId extends Byte
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
-        if ($format === 'phpExif') {
-            return $this->toBytes();
+        switch ($format) {
+            case 'exiftool':
+                return implode(' ', $this->value);
+            case 'phpExif':
+                return $this->toBytes();
+            default:
+                return parent::getValue();
         }
-        return parent::getValue();
     }
 
     /**

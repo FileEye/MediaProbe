@@ -1645,6 +1645,7 @@ items:
                 desc: 'Exposure Compensation'
     37381:
         components: 1
+        entryClass: FileEye\MediaProbe\Entry\ExifApertureValue
         exifReadData:
             key: MaxApertureValue
         exiftool:
@@ -3044,6 +3045,7 @@ items:
                 values:
                     1: 'Directly photographed'
     41730:
+        entryClass: FileEye\MediaProbe\Entry\ExifCFAPattern
         exifReadData:
             key: CFAPattern
         exiftool:

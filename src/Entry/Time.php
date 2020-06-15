@@ -125,7 +125,7 @@ class Time extends Ascii
             return false;
         }
 
-        if ($format === 'phpExif') {
+        if (in_array($format, ['phpExif', 'exiftool'])) {
             return rtrim($this->value[0], "\x00");
         }
 

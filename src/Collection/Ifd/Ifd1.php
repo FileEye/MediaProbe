@@ -319,7 +319,6 @@ class Ifd1 extends Collection {
     'IFD1:PreviewSettingsDigest' => 50969,
     'IFD1:PreviewSettingsName' => 50968,
     'IFD1:PrimaryChromaticities' => 319,
-    'IFD1:PrintIM' => 50341,
     'IFD1:ProcessingSoftware' => 11,
     'IFD1:ProfileCalibrationSig' => 50932,
     'IFD1:ProfileCopyright' => 50942,
@@ -1432,7 +1431,6 @@ class Ifd1 extends Collection {
       array (
         0 => 7,
       ),
-      'exiftoolDOMNode' => 'IFD1:PrintIM',
     ),
     50706 =>
     array (

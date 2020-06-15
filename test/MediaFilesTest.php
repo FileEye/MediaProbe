@@ -15,11 +15,18 @@ use Symfony\Component\Yaml\Yaml;
  */
 class MediaFilesTest extends MediaProbeTestCaseBase
 {
+    protected $testDump;
+    protected $exiftoolDump;
+    protected $exiftoolRawDump;
+
     /**
      * {@inheritdoc}
      */
     public function fcTearDown()
     {
+        $this->testDump = null;
+        $this->exiftoolDump = null;
+        $this->exiftoolRawDump = null;
         gc_collect_cycles();
     }
 
@@ -39,20 +46,26 @@ class MediaFilesTest extends MediaProbeTestCaseBase
      */
     public function testParse($mediaDumpFile)
     {
-        $test_file_content = $mediaDumpFile->getContents();
-        $test = Yaml::parse($test_file_content);
-        $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $test['fileName']);
+        $this->testDump = Yaml::parse($mediaDumpFile->getContents());
+        if (isset($this->testDump['exiftool'])) {
+            $this->exiftoolDump =new \DOMDocument();
+            $this->exiftoolDump->loadXML($this->testDump['exiftool']);
+        }
+        if (isset($this->testDump['exiftool_raw'])) {
+            $this->exiftoolRawDump =new \DOMDocument();
+            $this->exiftoolRawDump->loadXML($this->testDump['exiftool_raw']);
+        }
+        $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
 
-        $this->assertEquals($test['mimeType'], $media->getMimeType());
-//        $this->assertEquals($test['exifReadData'], @exif_read_data($mediaDumpFile->getPath() . '/' . $test['fileName']));
+        $this->assertEquals($this->testDump['mimeType'], $media->getMimeType());
 
-        if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $media, $test);
+        if (isset($this->testDump['elements'])) {
+            $this->assertElement($this->testDump['elements'], $media);
         }
 
         foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
-            if (isset($test['log'][$level])) {
-                $this->assertEquals(count($test['log'][$level]), count($media->dumpLog($level)));
+            if (isset($this->testDump['log'][$level])) {
+                $this->assertEquals(count($this->testDump['log'][$level]), count($media->dumpLog($level)));
             }
         }
     }
@@ -62,29 +75,29 @@ class MediaFilesTest extends MediaProbeTestCaseBase
      */
     public function testRewriteThroughGd($mediaDumpFile)
     {
-        $test = Yaml::parse($mediaDumpFile->getContents());
-        $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $test['fileName']);
-        $original_media->saveToFile($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite-gd.img');
+        $this->testDump = Yaml::parse($mediaDumpFile->getContents());
+        $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
+        $original_media->saveToFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img');
 
         // Test via getimagesize.
-        $gd_info = getimagesize($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite-gd.img');
-        $this->assertEquals($test['gdInfo'], $gd_info);
+        $gd_info = getimagesize($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img');
+        $this->assertEquals($this->testDump['gdInfo'], $gd_info);
 
-        if ($test['mimeType'] === 'image/tiff') {
-            $this->markTestIncomplete($test['fileName'] . ' of MIME type ' . $test['mimeType'] . ' can not be tested via GD.');
+        if ($this->testDump['mimeType'] === 'image/tiff') {
+            $this->markTestIncomplete($this->testDump['fileName'] . ' of MIME type ' . $this->testDump['mimeType'] . ' can not be tested via GD.');
         }
 
         // Test loading the image to GD; it fails hard in case of errors.
         $gd_resource = imagecreatefromstring($original_media->toBytes());
         $this->assertNotFalse($gd_resource);
-        $this->assertEquals($test['gdInfo'][0], imagesx($gd_resource));
-        $this->assertEquals($test['gdInfo'][1], imagesy($gd_resource));
+        $this->assertEquals($this->testDump['gdInfo'][0], imagesx($gd_resource));
+        $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
         imagedestroy($gd_resource);
 
-        $gd_resource = imagecreatefromjpeg($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite-gd.img');
+        $gd_resource = imagecreatefromjpeg($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img');
         $this->assertNotFalse($gd_resource);
-        $this->assertEquals($test['gdInfo'][0], imagesx($gd_resource));
-        $this->assertEquals($test['gdInfo'][1], imagesy($gd_resource));
+        $this->assertEquals($this->testDump['gdInfo'][0], imagesx($gd_resource));
+        $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
         imagedestroy($gd_resource);
     }
 
@@ -93,21 +106,27 @@ class MediaFilesTest extends MediaProbeTestCaseBase
      */
     public function testRewrite($mediaDumpFile)
     {
-        $test_file_content = $mediaDumpFile->getContents();
-        $test = Yaml::parse($test_file_content);
-        $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $test['fileName']);
-        $original_media->saveToFile($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite.img');
-        $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite.img');
+        $this->testDump = Yaml::parse($mediaDumpFile->getContents());
+        if (isset($this->testDump['exiftool'])) {
+            $this->exiftoolDump =new \DOMDocument();
+            $this->exiftoolDump->loadXML($this->testDump['exiftool']);
+        }
+        if (isset($this->testDump['exiftool_raw'])) {
+            $this->exiftoolRawDump =new \DOMDocument();
+            $this->exiftoolRawDump->loadXML($this->testDump['exiftool_raw']);
+        }
+        $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
+        $original_media->saveToFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite.img');
+        $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite.img');
 
-        $this->assertEquals($test['mimeType'], $media->getMimeType());
-//        $this->assertEquals($test['exifReadData'], @exif_read_data($mediaDumpFile->getPath() . '/' . $test['fileName'] . '-rewrite.img'));
+        $this->assertEquals($this->testDump['mimeType'], $media->getMimeType());
 
-        if (isset($test['elements'])) {
-            $this->assertElement($test['elements'], $media, $test, true);
+        if (isset($this->testDump['elements'])) {
+            $this->assertElement($this->testDump['elements'], $media, true);
         }
     }
 
-    protected function assertElement($expected, $element, $test, $rewritten = false)
+    protected function assertElement($expected, $element, $rewritten = false)
     {
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
         $this->assertSame($expected['path'], $element->getContextPath());
@@ -124,13 +143,13 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
             // Check PHP Exif tag equivalence.
             if ($php_exif_tag = $element->getParentElement()->getCollection()->getPropertyValue('phpExifTag')) {
-                $php_exif_skip = $test['skip']['phpExif'] ?? [];
+                $php_exif_skip = $this->testDump['skip']['phpExif'] ?? [];
                 if (!in_array($php_exif_tag, $php_exif_skip)) {
                     $tag = explode('::', $php_exif_tag);
                     if (count($tag) === 1) {
-                        $expected_tag_value = $test['exifReadData'][$tag[0]];
+                        $expected_tag_value = $this->testDump['exifReadData'][$tag[0]];
                     } else {
-                        $expected_tag_value = $test['exifReadData'][$tag[0]][$tag[1]];
+                        $expected_tag_value = $this->testDump['exifReadData'][$tag[0]][$tag[1]];
                     }
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
 /*if ($element->getParentElement() && $element->getParentElement()->getAttribute('name') === 'UserComment') {
@@ -141,11 +160,38 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                 }
             }
 
+            // Check Exiftool tag equivalence.
+            if ($exiftool_node = $element->getParentElement()->getCollection()->getPropertyValue('exiftoolDOMNode')) {
+                $exiftool_node_skip = $this->testDump['skip']['exiftool'] ?? [];
+                if (!in_array($exiftool_node, $exiftool_node_skip)) {
+                    $xml_nodes = $this->exiftoolRawDump->getElementsByTagName('*');
+                    $n = null;
+                    foreach ($xml_nodes as $node) {
+                        if ($node->nodeName === $exiftool_node) {
+                            $n = $node;
+                        }
+                    }
+                    $this->assertNotNull($n, 'Exiftool raw missing: ' . $exiftool_node);
+                    $valx = rtrim($n->textContent, " ");
+                    $vala = $element->getValue(['format' => 'exiftool']);
+//if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
+/*if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['Copyright'])) {
+  dump([
+    'element_' => $element->getParentElement()->getAttribute('name'),
+    'expected' => MediaProbe::dumpHexFormatted($valx),
+    'actual__' => MediaProbe::dumpHexFormatted($vala),
+  ]);
+}*/
+                    if (in_array($element->getFormat(), [ItemFormat::RATIONAL, ItemFormat::SIGNED_RATIONAL, ItemFormat::SHORT_RATIONAL, ItemFormat::SHORT_SIGNED_RATIONAL, ItemFormat::DOUBLE, ItemFormat::FLOAT])) {
+                        $this->assertEqualsWithDelta((float) $valx, (float) $vala, 0.001, 'Exiftool raw: ' . $element->getContextPath());
+                    } else {
+                        $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
+                    }
+                }
+            }
+
             if (!$rewritten) {
                 $this->assertEquals($expected['text'], $element->toString(), $element->getContextPath());
-                if (isset($expected['exiftool_text'])) {
-                    $this->assertEquals($expected['exiftool_text'], $element->toString(['format' => 'exiftool']), $element->getContextPath());
-                }
                 $this->assertSame($expected['bytesHash'], hash('sha256', $element->toBytes()), $element->getContextPath());
             }
         }
@@ -155,7 +201,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             foreach ($expected['elements'] as $i => $expected_element) {
                 $sub = $element->getMultipleElements('*');
                 $this->assertArrayHasKey($i, $sub, $expected_element['path']);
-                $this->assertElement($expected_element, $sub[$i], $test, $rewritten);
+                $this->assertElement($expected_element, $sub[$i], $rewritten);
             }
         }
     }
