@@ -145,9 +145,6 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             'bytesHash' => hash('sha256', $this->toBytes()),
             'text' => $this->toString(),
         ];
-        if (($exiftool_text = $this->toString(['format' => 'exiftool'])) !== $dump['text']) {
-            $dump['exiftool_text'] = $exiftool_text;
-        }
         return array_merge(parent::toDumpArray(), $dump);
     }
 }

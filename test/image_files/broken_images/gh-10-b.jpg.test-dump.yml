@@ -4,6 +4,13 @@ skip:
         - FocalPlaneYResolution
         - FocalPlaneResolutionUnit
         - FileSource
+    exiftool:
+        - 'ExifIFD:SensingMethod'
+        - 'ExifIFD:CustomRendered'
+        - 'ExifIFD:ExposureMode'
+        - 'ExifIFD:WhiteBalance'
+        - 'ExifIFD:DigitalZoomRatio'
+        - 'ExifIFD:SceneCaptureType'
 fileName: gh-10-b.jpg
 mimeType: image/jpeg
 fileContentHash: 8a2c852a40b471cc65c67ce6d9f0554f779cca76db8e557b03ea4c2e06352eab
@@ -497,7 +504,6 @@ elements:
                                                                     components: 1
                                                                     bytesHash: 1fe6e083d1d945bebc561f0767afc95c67bb785b2d761fca515a12ab05a263a1
                                                                     text: '255/32 sec. (APEX: 15)'
-                                                                    exiftool_text: 1/251
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378'
@@ -546,12 +552,12 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\ExifApertureValue
                                                                     valid: true
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 13fc56f4e2c0aaaa19cde570ddd08e31d3a418333ac05a2ecf1c7ae23e8f0a56
-                                                                    text: 2.28125
+                                                                    text: '2.2'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383'

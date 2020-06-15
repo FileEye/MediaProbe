@@ -71,6 +71,10 @@ class ExifUserComment extends Undefined
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
+        if ($format === 'exiftool') {
+            $value = rtrim(substr($this->value, 8), " \x00");
+            return rtrim($value, " ");
+        }
         if ($format === 'phpExif') {
             $encoding = rtrim(substr($this->value, 0, 8), "\x00");
             $value = rtrim(substr($this->value, 8), " \x00");

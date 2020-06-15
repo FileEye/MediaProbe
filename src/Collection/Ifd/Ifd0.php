@@ -320,7 +320,6 @@ class Ifd0 extends Collection {
     'IFD0:PreviewSettingsDigest' => 50969,
     'IFD0:PreviewSettingsName' => 50968,
     'IFD0:PrimaryChromaticities' => 319,
-    'IFD0:PrintIM' => 50341,
     'IFD0:ProcessingSoftware' => 11,
     'IFD0:ProfileCalibrationSig' => 50932,
     'IFD0:ProfileCopyright' => 50942,
@@ -1433,7 +1432,6 @@ class Ifd0 extends Collection {
       array (
         0 => 7,
       ),
-      'exiftoolDOMNode' => 'IFD0:PrintIM',
     ),
     50706 =>
     array (
