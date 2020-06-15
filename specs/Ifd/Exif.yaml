@@ -3729,6 +3729,9 @@ items:
                 DOMNode: 'ExifIFD:RowInterleaveFactor'
                 desc: 'Row Interleave Factor'
     59932:
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: Padding

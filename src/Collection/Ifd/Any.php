@@ -727,7 +727,6 @@ class Any extends Collection {
     '*:OriginalRawFileDigest' => 50973,
     '*:OriginalRawFileName' => 50827,
     '*:OwnerName' => 65000,
-    '*:Padding' => 59932,
     '*:PageName' => 285,
     '*:PageNumber' => 297,
     '*:PanasonicTitle' => 50898,
@@ -6953,7 +6952,6 @@ class Any extends Collection {
       array (
         0 => 7,
       ),
-      'exiftoolDOMNode' => '*:Padding',
     ),
     59933 =>
     array (
