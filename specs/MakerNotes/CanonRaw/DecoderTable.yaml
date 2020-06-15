@@ -16,6 +16,7 @@ items:
                 name: DecoderTableNumber
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:DecoderTableNumber'
                 desc: 'Decoder Table Number'
     2:
         exiftool:
@@ -23,6 +24,7 @@ items:
                 name: CompressedDataOffset
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:CompressedDataOffset'
                 desc: 'Compressed Data Offset'
     3:
         exiftool:
@@ -30,4 +32,5 @@ items:
                 name: CompressedDataLength
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:CompressedDataLength'
                 desc: 'Compressed Data Length'

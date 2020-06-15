@@ -16,6 +16,7 @@ items:
                 name: IHL_EXIF
                 type: '?'
                 writable: false
+                DOMNode: 'CanonVRD:IHL_EXIF'
                 desc: 'IHL EXIF'
     3:
         exiftool:
@@ -24,6 +25,7 @@ items:
                 type: '?'
                 writable: false
                 g2: Preview
+                DOMNode: 'CanonVRD:ThumbnailImage'
                 desc: 'Thumbnail Image'
     4:
         exiftool:
@@ -32,6 +34,7 @@ items:
                 type: '?'
                 writable: false
                 g2: Preview
+                DOMNode: 'CanonVRD:PreviewImage'
                 desc: 'Preview Image'
     5:
         exiftool:
@@ -39,6 +42,7 @@ items:
                 name: RawCodecVersion
                 type: '?'
                 writable: false
+                DOMNode: 'CanonVRD:RawCodecVersion'
                 desc: 'Raw Codec Version'
     6:
         exiftool:
@@ -46,4 +50,5 @@ items:
                 name: CRCDevelParams
                 type: '?'
                 writable: false
+                DOMNode: 'CanonVRD:CRCDevelParams'
                 desc: 'CRC Devel Params'

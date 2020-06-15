@@ -16,6 +16,7 @@ items:
                 name: DateTimeOriginal
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:DateTimeOriginal'
                 desc: 'Date/Time Original'
     -
         exiftool:
@@ -23,6 +24,7 @@ items:
                 name: TimeZoneCode
                 type: int32s
                 writable: true
+                DOMNode: 'CanonRaw:TimeZoneCode'
                 desc: 'Time Zone Code'
     -
         exiftool:
@@ -30,4 +32,5 @@ items:
                 name: TimeZoneInfo
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:TimeZoneInfo'
                 desc: 'Time Zone Info'

@@ -16,6 +16,7 @@ items:
                 name: RawJpgQuality
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:RawJpgQuality'
                 desc: 'Raw Jpg Quality'
                 values:
                     1: Economy
@@ -28,6 +29,7 @@ items:
                 name: RawJpgSize
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:RawJpgSize'
                 desc: 'Raw Jpg Size'
                 values:
                     - Large
@@ -39,6 +41,7 @@ items:
                 name: RawJpgWidth
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:RawJpgWidth'
                 desc: 'Raw Jpg Width'
     4:
         exiftool:
@@ -46,4 +49,5 @@ items:
                 name: RawJpgHeight
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:RawJpgHeight'
                 desc: 'Raw Jpg Height'

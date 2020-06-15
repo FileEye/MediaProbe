@@ -16,6 +16,7 @@ items:
                 name: CropActive
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropActive'
                 desc: 'Crop Active'
                 values:
                     - 'No'
@@ -26,6 +27,7 @@ items:
                 name: CropRotatedOriginalWidth
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropRotatedOriginalWidth'
                 desc: 'Crop Rotated Original Width'
     2:
         exiftool:
@@ -33,6 +35,7 @@ items:
                 name: CropRotatedOriginalHeight
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropRotatedOriginalHeight'
                 desc: 'Crop Rotated Original Height'
     3:
         exiftool:
@@ -40,6 +43,7 @@ items:
                 name: CropX
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropX'
                 desc: 'Crop X'
     4:
         exiftool:
@@ -47,6 +51,7 @@ items:
                 name: CropY
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropY'
                 desc: 'Crop Y'
     5:
         exiftool:
@@ -54,6 +59,7 @@ items:
                 name: CropWidth
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropWidth'
                 desc: 'Crop Width'
     6:
         exiftool:
@@ -61,6 +67,7 @@ items:
                 name: CropHeight
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropHeight'
                 desc: 'Crop Height'
     8:
         exiftool:
@@ -68,6 +75,7 @@ items:
                 name: CropRotation
                 type: double
                 writable: true
+                DOMNode: 'CanonVRD:CropRotation'
                 desc: 'Crop Rotation'
     10:
         exiftool:
@@ -75,6 +83,7 @@ items:
                 name: CropOriginalWidth
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropOriginalWidth'
                 desc: 'Crop Original Width'
     11:
         exiftool:
@@ -82,4 +91,5 @@ items:
                 name: CropOriginalHeight
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:CropOriginalHeight'
                 desc: 'Crop Original Height'
