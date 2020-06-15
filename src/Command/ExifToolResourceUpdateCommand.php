@@ -137,6 +137,15 @@ class ExifToolResourceUpdateCommand extends Command
     protected function updateWithExifTool(InputInterface $input, OutputInterface $output, $collection_file)
     {
         $spec = Yaml::parse(file_get_contents($collection_file));
+
+        if ($spec['compiler']['exiftool']['skip'] ?? false) {
+            return;
+        }
+
+        if (!($spec['compiler']['exiftool']['xpath'] ?? null)) {
+            return;
+        }
+
         $exiftool_ifd = $this->exiftoolXml->xpath($spec['compiler']['exiftool']['xpath']);
 
         foreach ($exiftool_ifd as $exiftool_tag) {
