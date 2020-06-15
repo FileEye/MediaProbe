@@ -183,6 +183,7 @@ class ExifToolResourceUpdateCommand extends Command
 
             // Set exiftool item DOM node name.
             if (($spec['compiler']['exiftool']['g1'] ?? null) === null) {
+dump($exiftool_tag->attributes());
                 $prefix = (string) $exiftool_tag->attributes()->g1;
             } else {
                 $prefix = $spec['compiler']['exiftool']['g1'];
