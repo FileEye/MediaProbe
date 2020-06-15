@@ -3011,6 +3011,9 @@ items:
         title: 'Maker Note'
         format: Undefined
         entryClass: FileEye\MediaProbe\Entry\ExifMakerNote
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: MakerNoteApple
@@ -4697,6 +4700,9 @@ items:
                 DOMNode: '*:Annotations'
                 desc: Annotations
     50341:
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: PrintIM

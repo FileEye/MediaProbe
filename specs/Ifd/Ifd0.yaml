@@ -876,6 +876,9 @@ items:
                 DOMNode: 'IFD0:XPSubject'
                 desc: 'XP Subject'
     50341:
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: PrintIM

@@ -192,6 +192,10 @@ DATA;
             // Fetch the first available Exiftool definition if available.
             $exiftool = isset($item['exiftool']) ? reset($item['exiftool']) : null;
 
+            if ($exiftool['compiler']['exiftool']['skipDOMNode'] ?? false) {
+                unset($exiftool['DOMNode']);
+            }
+
             // Add the name.
             if (!isset($item['name']) && isset($exiftool['name'])) {
                 $item['name'] = $exiftool['name'];

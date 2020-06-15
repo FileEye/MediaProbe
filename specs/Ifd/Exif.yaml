@@ -1995,6 +1995,9 @@ items:
         title: 'Maker Note'
         format: Undefined
         entryClass: FileEye\MediaProbe\Entry\ExifMakerNote
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: MakerNoteApple
