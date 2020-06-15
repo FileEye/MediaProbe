@@ -164,6 +164,11 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             if ($exiftool_node = $element->getParentElement()->getCollection()->getPropertyValue('exiftoolDOMNode')) {
                 $exiftool_node_skip = $this->testDump['skip']['exiftool'] ?? [];
                 if (!in_array($exiftool_node, $exiftool_node_skip)) {
+                    [$g1, $tag] = explode(':', $exiftool_node);
+                    if ($g1 === '*') {
+                        $ifd = $element->getParentElement()->getParentElement()->getAttribute('name');
+                        $exiftool_node = implode(':', [$ifd, $tag]);
+                    }
                     $xml_nodes = $this->exiftoolRawDump->getElementsByTagName('*');
                     $n = null;
                     foreach ($xml_nodes as $node) {
