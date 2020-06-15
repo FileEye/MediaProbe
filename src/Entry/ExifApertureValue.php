@@ -6,7 +6,7 @@ use FileEye\MediaProbe\Entry\Core\Rational;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
- * Handler for a Exif/ApertureValue tags.
+ * Handler for Exif ApertureValue tags.
  *
  * This is displayed as an F number, but stored as an APEX value.
  */

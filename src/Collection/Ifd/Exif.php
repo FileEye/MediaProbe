@@ -3535,6 +3535,7 @@ class Exif extends Collection {
     ),
     41730 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifCFAPattern',
       'collection' => 'Tag',
       'name' => 'CFAPattern',
       'title' => 'CFA Pattern',
