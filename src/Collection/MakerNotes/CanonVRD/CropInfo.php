@@ -35,6 +35,19 @@ class CropInfo extends Collection {
     'CropX' => 3,
     'CropY' => 4,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:CropActive' => 0,
+    'CanonVRD:CropHeight' => 6,
+    'CanonVRD:CropOriginalHeight' => 11,
+    'CanonVRD:CropOriginalWidth' => 10,
+    'CanonVRD:CropRotatedOriginalHeight' => 2,
+    'CanonVRD:CropRotatedOriginalWidth' => 1,
+    'CanonVRD:CropRotation' => 8,
+    'CanonVRD:CropWidth' => 5,
+    'CanonVRD:CropX' => 3,
+    'CanonVRD:CropY' => 4,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,6 +67,7 @@ class CropInfo extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropActive',
     ),
     1 =>
     array (
@@ -64,6 +78,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropRotatedOriginalWidth',
     ),
     2 =>
     array (
@@ -74,6 +89,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropRotatedOriginalHeight',
     ),
     3 =>
     array (
@@ -84,6 +100,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropX',
     ),
     4 =>
     array (
@@ -94,6 +111,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropY',
     ),
     5 =>
     array (
@@ -104,6 +122,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropWidth',
     ),
     6 =>
     array (
@@ -114,6 +133,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropHeight',
     ),
     8 =>
     array (
@@ -124,6 +144,7 @@ class CropInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropRotation',
     ),
     10 =>
     array (
@@ -134,6 +155,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropOriginalWidth',
     ),
     11 =>
     array (
@@ -144,6 +166,7 @@ class CropInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CropOriginalHeight',
     ),
   ),
 );

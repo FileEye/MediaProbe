@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonVRD
         xpath: '//table[@name=''CanonVRD::Ver2'']/tag'
 items:
     2:
@@ -15,6 +16,7 @@ items:
                 name: PictureStyle
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PictureStyle'
                 desc: 'Picture Style'
                 values:
                     - Standard
@@ -31,6 +33,7 @@ items:
                 name: IsCustomPictureStyle
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:IsCustomPictureStyle'
                 desc: 'Is Custom Picture Style'
                 values:
                     - 'No'
@@ -41,6 +44,7 @@ items:
                 name: StandardRawColorTone
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawColorTone'
                 desc: 'Standard Raw Color Tone'
     14:
         exiftool:
@@ -48,6 +52,7 @@ items:
                 name: StandardRawSaturation
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawSaturation'
                 desc: 'Standard Raw Saturation'
     15:
         exiftool:
@@ -55,6 +60,7 @@ items:
                 name: StandardRawContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawContrast'
                 desc: 'Standard Raw Contrast'
     16:
         exiftool:
@@ -62,6 +68,7 @@ items:
                 name: StandardRawLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawLinear'
                 desc: 'Standard Raw Linear'
                 values:
                     - 'No'
@@ -72,6 +79,7 @@ items:
                 name: StandardRawSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawSharpness'
                 desc: 'Standard Raw Sharpness'
     18:
         exiftool:
@@ -79,6 +87,7 @@ items:
                 name: StandardRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawHighlightPoint'
                 desc: 'Standard Raw Highlight Point'
     19:
         exiftool:
@@ -86,6 +95,7 @@ items:
                 name: StandardRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawShadowPoint'
                 desc: 'Standard Raw Shadow Point'
     20:
         exiftool:
@@ -93,6 +103,7 @@ items:
                 name: StandardOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardOutputHighlightPoint'
                 desc: 'Standard Output Highlight Point'
     21:
         exiftool:
@@ -100,6 +111,7 @@ items:
                 name: StandardOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardOutputShadowPoint'
                 desc: 'Standard Output Shadow Point'
     22:
         exiftool:
@@ -107,6 +119,7 @@ items:
                 name: PortraitRawColorTone
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawColorTone'
                 desc: 'Portrait Raw Color Tone'
     23:
         exiftool:
@@ -114,6 +127,7 @@ items:
                 name: PortraitRawSaturation
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawSaturation'
                 desc: 'Portrait Raw Saturation'
     24:
         exiftool:
@@ -121,6 +135,7 @@ items:
                 name: PortraitRawContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawContrast'
                 desc: 'Portrait Raw Contrast'
     25:
         exiftool:
@@ -128,6 +143,7 @@ items:
                 name: PortraitRawLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawLinear'
                 desc: 'Portrait Raw Linear'
                 values:
                     - 'No'
@@ -138,6 +154,7 @@ items:
                 name: PortraitRawSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawSharpness'
                 desc: 'Portrait Raw Sharpness'
     27:
         exiftool:
@@ -145,6 +162,7 @@ items:
                 name: PortraitRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawHighlightPoint'
                 desc: 'Portrait Raw Highlight Point'
     28:
         exiftool:
@@ -152,6 +170,7 @@ items:
                 name: PortraitRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawShadowPoint'
                 desc: 'Portrait Raw Shadow Point'
     29:
         exiftool:
@@ -159,6 +178,7 @@ items:
                 name: PortraitOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitOutputHighlightPoint'
                 desc: 'Portrait Output Highlight Point'
     30:
         exiftool:
@@ -166,6 +186,7 @@ items:
                 name: PortraitOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitOutputShadowPoint'
                 desc: 'Portrait Output Shadow Point'
     31:
         exiftool:
@@ -173,6 +194,7 @@ items:
                 name: LandscapeRawColorTone
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawColorTone'
                 desc: 'Landscape Raw Color Tone'
     32:
         exiftool:
@@ -180,6 +202,7 @@ items:
                 name: LandscapeRawSaturation
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawSaturation'
                 desc: 'Landscape Raw Saturation'
     33:
         exiftool:
@@ -187,6 +210,7 @@ items:
                 name: LandscapeRawContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawContrast'
                 desc: 'Landscape Raw Contrast'
     34:
         exiftool:
@@ -194,6 +218,7 @@ items:
                 name: LandscapeRawLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawLinear'
                 desc: 'Landscape Raw Linear'
                 values:
                     - 'No'
@@ -204,6 +229,7 @@ items:
                 name: LandscapeRawSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawSharpness'
                 desc: 'Landscape Raw Sharpness'
     36:
         exiftool:
@@ -211,6 +237,7 @@ items:
                 name: LandscapeRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawHighlightPoint'
                 desc: 'Landscape Raw Highlight Point'
     37:
         exiftool:
@@ -218,6 +245,7 @@ items:
                 name: LandscapeRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawShadowPoint'
                 desc: 'Landscape Raw Shadow Point'
     38:
         exiftool:
@@ -225,6 +253,7 @@ items:
                 name: LandscapeOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeOutputHighlightPoint'
                 desc: 'Landscape Output Highlight Point'
     39:
         exiftool:
@@ -232,6 +261,7 @@ items:
                 name: LandscapeOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeOutputShadowPoint'
                 desc: 'Landscape Output Shadow Point'
     40:
         exiftool:
@@ -239,6 +269,7 @@ items:
                 name: NeutralRawColorTone
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawColorTone'
                 desc: 'Neutral Raw Color Tone'
     41:
         exiftool:
@@ -246,6 +277,7 @@ items:
                 name: NeutralRawSaturation
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawSaturation'
                 desc: 'Neutral Raw Saturation'
     42:
         exiftool:
@@ -253,6 +285,7 @@ items:
                 name: NeutralRawContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawContrast'
                 desc: 'Neutral Raw Contrast'
     43:
         exiftool:
@@ -260,6 +293,7 @@ items:
                 name: NeutralRawLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawLinear'
                 desc: 'Neutral Raw Linear'
                 values:
                     - 'No'
@@ -270,6 +304,7 @@ items:
                 name: NeutralRawSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawSharpness'
                 desc: 'Neutral Raw Sharpness'
     45:
         exiftool:
@@ -277,6 +312,7 @@ items:
                 name: NeutralRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawHighlightPoint'
                 desc: 'Neutral Raw Highlight Point'
     46:
         exiftool:
@@ -284,6 +320,7 @@ items:
                 name: NeutralRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawShadowPoint'
                 desc: 'Neutral Raw Shadow Point'
     47:
         exiftool:
@@ -291,6 +328,7 @@ items:
                 name: NeutralOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralOutputHighlightPoint'
                 desc: 'Neutral Output Highlight Point'
     48:
         exiftool:
@@ -298,6 +336,7 @@ items:
                 name: NeutralOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralOutputShadowPoint'
                 desc: 'Neutral Output Shadow Point'
     49:
         exiftool:
@@ -305,6 +344,7 @@ items:
                 name: FaithfulRawColorTone
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawColorTone'
                 desc: 'Faithful Raw Color Tone'
     50:
         exiftool:
@@ -312,6 +352,7 @@ items:
                 name: FaithfulRawSaturation
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawSaturation'
                 desc: 'Faithful Raw Saturation'
     51:
         exiftool:
@@ -319,6 +360,7 @@ items:
                 name: FaithfulRawContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawContrast'
                 desc: 'Faithful Raw Contrast'
     52:
         exiftool:
@@ -326,6 +368,7 @@ items:
                 name: FaithfulRawLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawLinear'
                 desc: 'Faithful Raw Linear'
                 values:
                     - 'No'
@@ -336,6 +379,7 @@ items:
                 name: FaithfulRawSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawSharpness'
                 desc: 'Faithful Raw Sharpness'
     54:
         exiftool:
@@ -343,6 +387,7 @@ items:
                 name: FaithfulRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawHighlightPoint'
                 desc: 'Faithful Raw Highlight Point'
     55:
         exiftool:
@@ -350,6 +395,7 @@ items:
                 name: FaithfulRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawShadowPoint'
                 desc: 'Faithful Raw Shadow Point'
     56:
         exiftool:
@@ -357,6 +403,7 @@ items:
                 name: FaithfulOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulOutputHighlightPoint'
                 desc: 'Faithful Output Highlight Point'
     57:
         exiftool:
@@ -364,6 +411,7 @@ items:
                 name: FaithfulOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulOutputShadowPoint'
                 desc: 'Faithful Output Shadow Point'
     58:
         exiftool:
@@ -371,6 +419,7 @@ items:
                 name: MonochromeFilterEffect
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeFilterEffect'
                 desc: 'Monochrome Filter Effect'
                 values:
                     -2: None
@@ -384,6 +433,7 @@ items:
                 name: MonochromeToningEffect
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeToningEffect'
                 desc: 'Monochrome Toning Effect'
                 values:
                     -2: None
@@ -397,6 +447,7 @@ items:
                 name: MonochromeContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeContrast'
                 desc: 'Monochrome Contrast'
     61:
         exiftool:
@@ -404,6 +455,7 @@ items:
                 name: MonochromeLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeLinear'
                 desc: 'Monochrome Linear'
                 values:
                     - 'No'
@@ -414,6 +466,7 @@ items:
                 name: MonochromeSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeSharpness'
                 desc: 'Monochrome Sharpness'
     63:
         exiftool:
@@ -421,6 +474,7 @@ items:
                 name: MonochromeRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeRawHighlightPoint'
                 desc: 'Monochrome Raw Highlight Point'
     64:
         exiftool:
@@ -428,6 +482,7 @@ items:
                 name: MonochromeRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeRawShadowPoint'
                 desc: 'Monochrome Raw Shadow Point'
     65:
         exiftool:
@@ -435,6 +490,7 @@ items:
                 name: MonochromeOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeOutputHighlightPoint'
                 desc: 'Monochrome Output Highlight Point'
     66:
         exiftool:
@@ -442,6 +498,7 @@ items:
                 name: MonochromeOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeOutputShadowPoint'
                 desc: 'Monochrome Output Shadow Point'
     69:
         exiftool:
@@ -449,6 +506,7 @@ items:
                 name: UnknownContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownContrast'
                 desc: 'Unknown Contrast'
     70:
         exiftool:
@@ -456,6 +514,7 @@ items:
                 name: UnknownLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownLinear'
                 desc: 'Unknown Linear'
                 values:
                     - 'No'
@@ -466,6 +525,7 @@ items:
                 name: UnknownSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownSharpness'
                 desc: 'Unknown Sharpness'
     72:
         exiftool:
@@ -473,6 +533,7 @@ items:
                 name: UnknownRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownRawHighlightPoint'
                 desc: 'Unknown Raw Highlight Point'
     73:
         exiftool:
@@ -480,6 +541,7 @@ items:
                 name: UnknownRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownRawShadowPoint'
                 desc: 'Unknown Raw Shadow Point'
     74:
         exiftool:
@@ -487,6 +549,7 @@ items:
                 name: UnknownOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownOutputHighlightPoint'
                 desc: 'Unknown Output Highlight Point'
     75:
         exiftool:
@@ -494,6 +557,7 @@ items:
                 name: UnknownOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownOutputShadowPoint'
                 desc: 'Unknown Output Shadow Point'
     76:
         exiftool:
@@ -501,6 +565,7 @@ items:
                 name: CustomColorTone
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomColorTone'
                 desc: 'Custom Color Tone'
     77:
         exiftool:
@@ -508,6 +573,7 @@ items:
                 name: CustomSaturation
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomSaturation'
                 desc: 'Custom Saturation'
     78:
         exiftool:
@@ -515,6 +581,7 @@ items:
                 name: CustomContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomContrast'
                 desc: 'Custom Contrast'
     79:
         exiftool:
@@ -522,6 +589,7 @@ items:
                 name: CustomLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomLinear'
                 desc: 'Custom Linear'
                 values:
                     - 'No'
@@ -532,6 +600,7 @@ items:
                 name: CustomSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomSharpness'
                 desc: 'Custom Sharpness'
     81:
         exiftool:
@@ -539,6 +608,7 @@ items:
                 name: CustomRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomRawHighlightPoint'
                 desc: 'Custom Raw Highlight Point'
     82:
         exiftool:
@@ -546,6 +616,7 @@ items:
                 name: CustomRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomRawShadowPoint'
                 desc: 'Custom Raw Shadow Point'
     83:
         exiftool:
@@ -553,6 +624,7 @@ items:
                 name: CustomOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomOutputHighlightPoint'
                 desc: 'Custom Output Highlight Point'
     84:
         exiftool:
@@ -560,6 +632,7 @@ items:
                 name: CustomOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomOutputShadowPoint'
                 desc: 'Custom Output Shadow Point'
     88:
         exiftool:
@@ -567,6 +640,7 @@ items:
                 name: CustomPictureStyleData
                 type: var_int16u
                 writable: true
+                DOMNode: 'CanonVRD:CustomPictureStyleData'
                 desc: 'Custom Picture Style Data'
     94:
         exiftool:
@@ -574,6 +648,7 @@ items:
                 name: ChrominanceNoiseReduction
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChrominanceNoiseReduction'
                 desc: 'Chrominance Noise Reduction'
                 values:
                     0: 'Off'
@@ -583,6 +658,7 @@ items:
                 name: ChrominanceNoiseReduction
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChrominanceNoiseReduction'
                 desc: 'Chrominance Noise Reduction'
                 values:
                     0: '0'
@@ -612,6 +688,7 @@ items:
                 name: LuminanceNoiseReduction
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LuminanceNoiseReduction'
                 desc: 'Luminance Noise Reduction'
                 values:
                     0: 'Off'
@@ -621,6 +698,7 @@ items:
                 name: LuminanceNoiseReduction
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LuminanceNoiseReduction'
                 desc: 'Luminance Noise Reduction'
                 values:
                     0: '0'
@@ -650,6 +728,7 @@ items:
                 name: ChrominanceNR_TIFF_JPEG
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChrominanceNR_TIFF_JPEG'
                 desc: 'Chrominance NR TIFF JPEG'
                 values:
                     0: 'Off'
@@ -659,6 +738,7 @@ items:
                 name: ChrominanceNR_TIFF_JPEG
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChrominanceNR_TIFF_JPEG'
                 desc: 'Chrominance NR TIFF JPEG'
                 values:
                     0: '0'
@@ -688,6 +768,7 @@ items:
                 name: ChromaticAberrationOn
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberrationOn'
                 desc: 'Chromatic Aberration On'
                 values:
                     - 'No'
@@ -698,6 +779,7 @@ items:
                 name: DistortionCorrectionOn
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:DistortionCorrectionOn'
                 desc: 'Distortion Correction On'
                 values:
                     - 'No'
@@ -708,6 +790,7 @@ items:
                 name: PeripheralIlluminationOn
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PeripheralIlluminationOn'
                 desc: 'Peripheral Illumination On'
                 values:
                     - 'No'
@@ -718,6 +801,7 @@ items:
                 name: ColorBlur
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ColorBlur'
                 desc: 'Color Blur'
                 values:
                     - 'No'
@@ -728,6 +812,7 @@ items:
                 name: ChromaticAberration
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberration'
                 desc: 'Chromatic Aberration'
     103:
         exiftool:
@@ -735,6 +820,7 @@ items:
                 name: DistortionCorrection
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:DistortionCorrection'
                 desc: 'Distortion Correction'
     104:
         exiftool:
@@ -742,6 +828,7 @@ items:
                 name: PeripheralIllumination
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PeripheralIllumination'
                 desc: 'Peripheral Illumination'
     105:
         exiftool:
@@ -749,6 +836,7 @@ items:
                 name: AberrationCorrectionDistance
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:AberrationCorrectionDistance'
                 desc: 'Aberration Correction Distance'
     106:
         exiftool:
@@ -756,6 +844,7 @@ items:
                 name: ChromaticAberrationRed
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberrationRed'
                 desc: 'Chromatic Aberration Red'
     107:
         exiftool:
@@ -763,6 +852,7 @@ items:
                 name: ChromaticAberrationBlue
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberrationBlue'
                 desc: 'Chromatic Aberration Blue'
     109:
         exiftool:
@@ -770,6 +860,7 @@ items:
                 name: LuminanceNR_TIFF_JPEG
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LuminanceNR_TIFF_JPEG'
                 desc: 'Luminance NR TIFF JPEG'
     110:
         exiftool:
@@ -777,6 +868,7 @@ items:
                 name: AutoLightingOptimizerOn
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:AutoLightingOptimizerOn'
                 desc: 'Auto Lighting Optimizer On'
                 values:
                     - 'No'
@@ -787,6 +879,7 @@ items:
                 name: AutoLightingOptimizer
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:AutoLightingOptimizer'
                 desc: 'Auto Lighting Optimizer'
                 values:
                     100: Low
@@ -799,6 +892,7 @@ items:
                 name: StandardRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawHighlight'
                 desc: 'Standard Raw Highlight'
     118:
         exiftool:
@@ -806,6 +900,7 @@ items:
                 name: PortraitRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawHighlight'
                 desc: 'Portrait Raw Highlight'
     119:
         exiftool:
@@ -813,6 +908,7 @@ items:
                 name: LandscapeRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawHighlight'
                 desc: 'Landscape Raw Highlight'
     120:
         exiftool:
@@ -820,6 +916,7 @@ items:
                 name: NeutralRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawHighlight'
                 desc: 'Neutral Raw Highlight'
     121:
         exiftool:
@@ -827,6 +924,7 @@ items:
                 name: FaithfulRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawHighlight'
                 desc: 'Faithful Raw Highlight'
     122:
         exiftool:
@@ -834,6 +932,7 @@ items:
                 name: MonochromeRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeRawHighlight'
                 desc: 'Monochrome Raw Highlight'
     123:
         exiftool:
@@ -841,6 +940,7 @@ items:
                 name: UnknownRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownRawHighlight'
                 desc: 'Unknown Raw Highlight'
     124:
         exiftool:
@@ -848,6 +948,7 @@ items:
                 name: CustomRawHighlight
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomRawHighlight'
                 desc: 'Custom Raw Highlight'
     126:
         exiftool:
@@ -855,6 +956,7 @@ items:
                 name: StandardRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardRawShadow'
                 desc: 'Standard Raw Shadow'
     127:
         exiftool:
@@ -862,6 +964,7 @@ items:
                 name: PortraitRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitRawShadow'
                 desc: 'Portrait Raw Shadow'
     128:
         exiftool:
@@ -869,6 +972,7 @@ items:
                 name: LandscapeRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeRawShadow'
                 desc: 'Landscape Raw Shadow'
     129:
         exiftool:
@@ -876,6 +980,7 @@ items:
                 name: NeutralRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralRawShadow'
                 desc: 'Neutral Raw Shadow'
     130:
         exiftool:
@@ -883,6 +988,7 @@ items:
                 name: FaithfulRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulRawShadow'
                 desc: 'Faithful Raw Shadow'
     131:
         exiftool:
@@ -890,6 +996,7 @@ items:
                 name: MonochromeRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeRawShadow'
                 desc: 'Monochrome Raw Shadow'
     132:
         exiftool:
@@ -897,6 +1004,7 @@ items:
                 name: UnknownRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnknownRawShadow'
                 desc: 'Unknown Raw Shadow'
     133:
         exiftool:
@@ -904,6 +1012,7 @@ items:
                 name: CustomRawShadow
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomRawShadow'
                 desc: 'Custom Raw Shadow'
     139:
         exiftool:
@@ -911,6 +1020,7 @@ items:
                 name: AngleAdj
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:AngleAdj'
                 desc: 'Angle Adj'
     142:
         exiftool:
@@ -918,6 +1028,7 @@ items:
                 name: CheckMark2
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CheckMark2'
                 desc: 'Check Mark 2'
                 values:
                     - Clear
@@ -932,6 +1043,7 @@ items:
                 name: UnsharpMask
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:UnsharpMask'
                 desc: 'Unsharp Mask'
                 values:
                     - 'Off'
@@ -942,6 +1054,7 @@ items:
                 name: StandardUnsharpMaskStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardUnsharpMaskStrength'
                 desc: 'Standard Unsharp Mask Strength'
     148:
         exiftool:
@@ -949,6 +1062,7 @@ items:
                 name: StandardUnsharpMaskFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardUnsharpMaskFineness'
                 desc: 'Standard Unsharp Mask Fineness'
     150:
         exiftool:
@@ -956,6 +1070,7 @@ items:
                 name: StandardUnsharpMaskThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:StandardUnsharpMaskThreshold'
                 desc: 'Standard Unsharp Mask Threshold'
     152:
         exiftool:
@@ -963,6 +1078,7 @@ items:
                 name: PortraitUnsharpMaskStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitUnsharpMaskStrength'
                 desc: 'Portrait Unsharp Mask Strength'
     154:
         exiftool:
@@ -970,6 +1086,7 @@ items:
                 name: PortraitUnsharpMaskFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitUnsharpMaskFineness'
                 desc: 'Portrait Unsharp Mask Fineness'
     156:
         exiftool:
@@ -977,6 +1094,7 @@ items:
                 name: PortraitUnsharpMaskThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:PortraitUnsharpMaskThreshold'
                 desc: 'Portrait Unsharp Mask Threshold'
     158:
         exiftool:
@@ -984,6 +1102,7 @@ items:
                 name: LandscapeUnsharpMaskStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeUnsharpMaskStrength'
                 desc: 'Landscape Unsharp Mask Strength'
     160:
         exiftool:
@@ -991,6 +1110,7 @@ items:
                 name: LandscapeUnsharpMaskFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeUnsharpMaskFineness'
                 desc: 'Landscape Unsharp Mask Fineness'
     162:
         exiftool:
@@ -998,6 +1118,7 @@ items:
                 name: LandscapeUnsharpMaskThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:LandscapeUnsharpMaskThreshold'
                 desc: 'Landscape Unsharp Mask Threshold'
     164:
         exiftool:
@@ -1005,6 +1126,7 @@ items:
                 name: NeutraUnsharpMaskStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutraUnsharpMaskStrength'
                 desc: 'Neutra Unsharp Mask Strength'
     166:
         exiftool:
@@ -1012,6 +1134,7 @@ items:
                 name: NeutralUnsharpMaskFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralUnsharpMaskFineness'
                 desc: 'Neutral Unsharp Mask Fineness'
     168:
         exiftool:
@@ -1019,6 +1142,7 @@ items:
                 name: NeutralUnsharpMaskThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:NeutralUnsharpMaskThreshold'
                 desc: 'Neutral Unsharp Mask Threshold'
     170:
         exiftool:
@@ -1026,6 +1150,7 @@ items:
                 name: FaithfulUnsharpMaskStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulUnsharpMaskStrength'
                 desc: 'Faithful Unsharp Mask Strength'
     172:
         exiftool:
@@ -1033,6 +1158,7 @@ items:
                 name: FaithfulUnsharpMaskFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulUnsharpMaskFineness'
                 desc: 'Faithful Unsharp Mask Fineness'
     174:
         exiftool:
@@ -1040,6 +1166,7 @@ items:
                 name: FaithfulUnsharpMaskThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:FaithfulUnsharpMaskThreshold'
                 desc: 'Faithful Unsharp Mask Threshold'
     176:
         exiftool:
@@ -1047,6 +1174,7 @@ items:
                 name: MonochromeUnsharpMaskStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeUnsharpMaskStrength'
                 desc: 'Monochrome Unsharp Mask Strength'
     178:
         exiftool:
@@ -1054,6 +1182,7 @@ items:
                 name: MonochromeUnsharpMaskFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeUnsharpMaskFineness'
                 desc: 'Monochrome Unsharp Mask Fineness'
     180:
         exiftool:
@@ -1061,6 +1190,7 @@ items:
                 name: MonochromeUnsharpMaskThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeUnsharpMaskThreshold'
                 desc: 'Monochrome Unsharp Mask Threshold'
     182:
         exiftool:
@@ -1068,6 +1198,7 @@ items:
                 name: CustomUnsharpMaskStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomUnsharpMaskStrength'
                 desc: 'Custom Unsharp Mask Strength'
     184:
         exiftool:
@@ -1075,6 +1206,7 @@ items:
                 name: CustomUnsharpMaskFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomUnsharpMaskFineness'
                 desc: 'Custom Unsharp Mask Fineness'
     186:
         exiftool:
@@ -1082,6 +1214,7 @@ items:
                 name: CustomUnsharpMaskThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomUnsharpMaskThreshold'
                 desc: 'Custom Unsharp Mask Threshold'
     188:
         exiftool:
@@ -1089,6 +1222,7 @@ items:
                 name: CustomDefaultUnsharpStrength
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomDefaultUnsharpStrength'
                 desc: 'Custom Default Unsharp Strength'
     190:
         exiftool:
@@ -1096,6 +1230,7 @@ items:
                 name: CustomDefaultUnsharpFineness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomDefaultUnsharpFineness'
                 desc: 'Custom Default Unsharp Fineness'
     192:
         exiftool:
@@ -1103,6 +1238,7 @@ items:
                 name: CustomDefaultUnsharpThreshold
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CustomDefaultUnsharpThreshold'
                 desc: 'Custom Default Unsharp Threshold'
     214:
         exiftool:
@@ -1110,6 +1246,7 @@ items:
                 name: CropCircleActive
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CropCircleActive'
                 desc: 'Crop Circle Active'
                 values:
                     - 'No'
@@ -1120,6 +1257,7 @@ items:
                 name: CropCircleX
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CropCircleX'
                 desc: 'Crop Circle X'
     216:
         exiftool:
@@ -1127,6 +1265,7 @@ items:
                 name: CropCircleY
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CropCircleY'
                 desc: 'Crop Circle Y'
     217:
         exiftool:
@@ -1134,6 +1273,7 @@ items:
                 name: CropCircleRadius
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CropCircleRadius'
                 desc: 'Crop Circle Radius'
     220:
         exiftool:
@@ -1141,6 +1281,7 @@ items:
                 name: DLOOn
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:DLOOn'
                 desc: 'DLO On'
                 values:
                     - 'No'
@@ -1151,6 +1292,7 @@ items:
                 name: DLOSetting
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:DLOSetting'
                 desc: 'DLO Setting'
     222:
         exiftool:
@@ -1158,6 +1300,7 @@ items:
                 name: DLOShootingDistance
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:DLOShootingDistance'
                 desc: 'DLO Shooting Distance'
     223:
         exiftool:
@@ -1165,6 +1308,7 @@ items:
                 name: DLODataLength
                 type: int32u
                 writable: true
+                DOMNode: 'CanonVRD:DLODataLength'
                 desc: 'DLO Data Length'
     225:
         exiftool:
@@ -1172,6 +1316,7 @@ items:
                 name: CameraRawColorTone
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawColorTone'
                 desc: 'Camera Raw Color Tone'
     226:
         exiftool:
@@ -1179,6 +1324,7 @@ items:
                 name: CameraRawSaturation
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawSaturation'
                 desc: 'Camera Raw Saturation'
     227:
         exiftool:
@@ -1186,6 +1332,7 @@ items:
                 name: CameraRawContrast
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawContrast'
                 desc: 'Camera Raw Contrast'
     228:
         exiftool:
@@ -1193,6 +1340,7 @@ items:
                 name: CameraRawLinear
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawLinear'
                 desc: 'Camera Raw Linear'
                 values:
                     - 'No'
@@ -1203,6 +1351,7 @@ items:
                 name: CameraRawSharpness
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawSharpness'
                 desc: 'Camera Raw Sharpness'
     230:
         exiftool:
@@ -1210,6 +1359,7 @@ items:
                 name: CameraRawHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawHighlightPoint'
                 desc: 'Camera Raw Highlight Point'
     231:
         exiftool:
@@ -1217,6 +1367,7 @@ items:
                 name: CameraRawShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawShadowPoint'
                 desc: 'Camera Raw Shadow Point'
     232:
         exiftool:
@@ -1224,6 +1375,7 @@ items:
                 name: CameraRawOutputHighlightPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawOutputHighlightPoint'
                 desc: 'Camera Raw Output Highlight Point'
     233:
         exiftool:
@@ -1231,4 +1383,5 @@ items:
                 name: CameraRawOutputShadowPoint
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:CameraRawOutputShadowPoint'
                 desc: 'Camera Raw Output Shadow Point'

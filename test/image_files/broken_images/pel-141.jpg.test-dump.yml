@@ -1,22 +1,7 @@
 skip:
     exiftool:
-        - 'ExifIFD:CreateDate'
-        - 'ExifIFD:DateTimeOriginal'
-        - 'ExifIFD:ExifVersion'
-        - 'ExifIFD:ExposureTime'
-        - 'ExifIFD:ComponentsConfiguration'
-        - 'ExifIFD:FNumber'
-        - 'ExifIFD:ColorSpace'
-        - 'ExifIFD:MeteringMode'
-        - 'ExifIFD:ExposureCompensation'
-        - 'ExifIFD:MaxApertureValue'
-        - 'ExifIFD:FocalLength'
-        - 'ExifIFD:SceneCaptureType'
-        - 'ExifIFD:Flash'
-        - 'ExifIFD:CustomRendered'
-        - 'ExifIFD:UserComment'
-        - 'ExifIFD:WhiteBalance'
-        - 'ExifIFD:ExposureMode'
+        - '*:ExifVersion'
+        - '*:UserComment'
         - 'ExifIFD:OtherImageStart'
 fileName: pel-141.jpg
 mimeType: image/jpeg

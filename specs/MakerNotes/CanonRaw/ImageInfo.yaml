@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonRaw
         xpath: '//table[@name=''CanonRaw::ImageInfo'']/tag'
 items:
     -
@@ -15,6 +16,7 @@ items:
                 name: ImageWidth
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:ImageWidth'
                 desc: 'Image Width'
     -
         exiftool:
@@ -22,6 +24,7 @@ items:
                 name: ImageHeight
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:ImageHeight'
                 desc: 'Image Height'
     -
         exiftool:
@@ -29,6 +32,7 @@ items:
                 name: PixelAspectRatio
                 type: float
                 writable: false
+                DOMNode: 'CanonRaw:PixelAspectRatio'
                 desc: 'Pixel Aspect Ratio'
     -
         exiftool:
@@ -36,6 +40,7 @@ items:
                 name: Rotation
                 type: int32s
                 writable: true
+                DOMNode: 'CanonRaw:Rotation'
                 desc: Rotation
     -
         exiftool:
@@ -43,6 +48,7 @@ items:
                 name: ComponentBitDepth
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:ComponentBitDepth'
                 desc: 'Component Bit Depth'
     -
         exiftool:
@@ -50,6 +56,7 @@ items:
                 name: ColorBitDepth
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:ColorBitDepth'
                 desc: 'Color Bit Depth'
     -
         exiftool:
@@ -57,4 +64,5 @@ items:
                 name: ColorBW
                 type: int32u
                 writable: false
+                DOMNode: 'CanonRaw:ColorBW'
                 desc: 'Color BW'

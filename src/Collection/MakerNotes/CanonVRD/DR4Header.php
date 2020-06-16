@@ -26,6 +26,10 @@ class DR4Header extends Collection {
   array (
     'DR4CameraModel' => 3,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:DR4CameraModel' => 3,
+  ),
   'items' =>
   array (
     3 =>
@@ -370,6 +374,7 @@ class DR4Header extends Collection {
           '2147484722' => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DR4CameraModel',
     ),
   ),
 );

@@ -6,6 +6,7 @@ DOMNode: index
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonCustom
         xpath: '//table[@name=''CanonCustom::Functions2'']/tag'
 items:
     257:
@@ -14,6 +15,7 @@ items:
                 name: ExposureLevelIncrements
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ExposureLevelIncrements'
                 desc: 'Exposure Level Increments'
                 values:
                     - '1/3-stop set, 1/3-stop comp.'
@@ -23,6 +25,7 @@ items:
                 name: ExposureLevelIncrements
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ExposureLevelIncrements'
                 desc: 'Exposure Level Increments'
                 values:
                     - '1/3 Stop'
@@ -33,17 +36,20 @@ items:
                 name: ISOSpeedIncrements
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ISOSpeedIncrements'
                 desc: 'ISO Speed Increments'
                 values:
                     - '1/3 Stop'
                     - '1 Stop'
     259:
+        entryClass: FileEye\MediaProbe\Entry\CanonCustomIsoSpeedRange
         exiftool:
             -
                 name: ISOSpeedRange
                 type: int32s
                 count: 3
                 writable: true
+                DOMNode: 'CanonCustom:ISOSpeedRange'
                 desc: 'ISO Speed Range'
                 values:
                     - Disable
@@ -52,6 +58,7 @@ items:
                 name: ISOExpansion
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ISOExpansion'
                 desc: 'ISO Expansion'
                 values:
                     - 'Off'
@@ -62,6 +69,7 @@ items:
                 name: AEBAutoCancel
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AEBAutoCancel'
                 desc: 'AEB Auto Cancel'
                 values:
                     - 'On'
@@ -72,6 +80,7 @@ items:
                 name: AEBSequence
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AEBSequence'
                 desc: 'AEB Sequence'
                 values:
                     - '0,-,+'
@@ -83,6 +92,7 @@ items:
                 name: AEBShotCount
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AEBShotCount'
                 desc: 'AEB Shot Count'
                 values:
                     - '3 shots'
@@ -94,6 +104,7 @@ items:
                 type: int32s
                 count: 2
                 writable: true
+                DOMNode: 'CanonCustom:AEBShotCount'
                 desc: 'AEB Shot Count'
                 values:
                     '2 1': '2 shots'
@@ -106,6 +117,7 @@ items:
                 name: SpotMeterLinkToAFPoint
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SpotMeterLinkToAFPoint'
                 desc: 'Spot Meter Link To AF Point'
                 values:
                     - 'Disable (use center AF point)'
@@ -116,6 +128,7 @@ items:
                 name: SafetyShift
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SafetyShift'
                 desc: 'Safety Shift'
                 values:
                     - Disable
@@ -128,6 +141,7 @@ items:
                 type: int32s
                 count: 2
                 writable: true
+                DOMNode: 'CanonCustom:UsableShootingModes'
                 desc: 'Usable Shooting Modes'
                 values:
                     - Disable
@@ -139,6 +153,7 @@ items:
                 type: int32s
                 count: 2
                 writable: true
+                DOMNode: 'CanonCustom:UsableMeteringModes'
                 desc: 'Usable Metering Modes'
                 values:
                     - Disable
@@ -149,6 +164,7 @@ items:
                 name: ExposureModeInManual
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ExposureModeInManual'
                 desc: 'Exposure Mode In Manual'
                 values:
                     - 'Specified metering mode'
@@ -157,12 +173,14 @@ items:
                     - 'Spot metering'
                     - 'Center-weighted average'
     268:
+        entryClass: FileEye\MediaProbe\Entry\CanonCustomShutterSpeedRange
         exiftool:
             -
                 name: ShutterSpeedRange
                 type: int32s
                 count: 3
                 writable: true
+                DOMNode: 'CanonCustom:ShutterSpeedRange'
                 desc: 'Shutter Speed Range'
                 values:
                     - Disable
@@ -172,14 +190,17 @@ items:
                 type: int32s
                 count: 4
                 writable: true
+                DOMNode: 'CanonCustom:ShutterSpeedRange'
                 desc: 'Shutter Speed Range'
     269:
+        entryClass: FileEye\MediaProbe\Entry\CanonCustomApertureRange
         exiftool:
             -
                 name: ApertureRange
                 type: int32s
                 count: 3
                 writable: true
+                DOMNode: 'CanonCustom:ApertureRange'
                 desc: 'Aperture Range'
                 values:
                     - Disable
@@ -189,6 +210,7 @@ items:
                 type: int32s
                 count: 4
                 writable: true
+                DOMNode: 'CanonCustom:ApertureRange'
                 desc: 'Aperture Range'
     270:
         exiftool:
@@ -197,6 +219,7 @@ items:
                 type: int32s
                 count: 8
                 writable: true
+                DOMNode: 'CanonCustom:ApplyShootingMeteringMode'
                 desc: 'Apply Shooting Metering Mode'
                 values:
                     - Disable
@@ -207,6 +230,7 @@ items:
                 name: FlashSyncSpeedAv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
                 desc: 'Flash Sync Speed Av'
                 values:
                     - Auto
@@ -215,6 +239,7 @@ items:
                 name: FlashSyncSpeedAv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
                 desc: 'Flash Sync Speed Av'
                 values:
                     - Auto
@@ -224,6 +249,7 @@ items:
                 name: FlashSyncSpeedAv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
                 desc: 'Flash Sync Speed Av'
                 values:
                     - Auto
@@ -232,6 +258,7 @@ items:
                 name: FlashSyncSpeedAv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
                 desc: 'Flash Sync Speed Av'
                 values:
                     - Auto
@@ -240,6 +267,7 @@ items:
                 name: FlashSyncSpeedAv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
                 desc: 'Flash Sync Speed Av'
                 values:
                     - Auto
@@ -249,6 +277,7 @@ items:
                 name: FlashSyncSpeedAv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
                 desc: 'Flash Sync Speed Av'
                 values:
                     - Auto
@@ -261,6 +290,7 @@ items:
                 type: int32s
                 count: 3
                 writable: true
+                DOMNode: 'CanonCustom:AEMicroadjustment'
                 desc: 'AE Microadjustment'
                 values:
                     - Disable
@@ -272,6 +302,7 @@ items:
                 type: int32s
                 count: 3
                 writable: true
+                DOMNode: 'CanonCustom:FEMicroadjustment'
                 desc: 'FE Microadjustment'
                 values:
                     - Disable
@@ -282,6 +313,7 @@ items:
                 name: SameExposureForNewAperture
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SameExposureForNewAperture'
                 desc: 'Same Exposure For New Aperture'
                 values:
                     - Disable
@@ -291,6 +323,7 @@ items:
                 name: SameExposureForNewAperture
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SameExposureForNewAperture'
                 desc: 'Same Exposure For New Aperture'
                 values:
                     - Disable
@@ -303,6 +336,7 @@ items:
                 name: ExposureCompAutoCancel
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ExposureCompAutoCancel'
                 desc: 'Exposure Comp Auto Cancel'
                 values:
                     - Enable
@@ -313,6 +347,7 @@ items:
                 name: AELockMeterModeAfterFocus
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AELockMeterModeAfterFocus'
                 desc: 'AE Lock Meter Mode After Focus'
                 values:
                     1: Evaluative
@@ -325,6 +360,7 @@ items:
                 name: LongExposureNoiseReduction
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LongExposureNoiseReduction'
                 desc: 'Long Exposure Noise Reduction'
                 values:
                     - 'Off'
@@ -336,6 +372,7 @@ items:
                 name: HighISONoiseReduction
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:HighISONoiseReduction'
                 desc: 'High ISO Noise Reduction'
                 values:
                     - Standard
@@ -346,6 +383,7 @@ items:
                 name: HighISONoiseReduction
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:HighISONoiseReduction'
                 desc: 'High ISO Noise Reduction'
                 values:
                     - 'Off'
@@ -356,6 +394,7 @@ items:
                 name: HighlightTonePriority
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:HighlightTonePriority'
                 desc: 'Highlight Tone Priority'
                 values:
                     - Disable
@@ -366,6 +405,7 @@ items:
                 name: AutoLightingOptimizer
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AutoLightingOptimizer'
                 desc: 'Auto Lighting Optimizer'
                 values:
                     - Standard
@@ -376,6 +416,7 @@ items:
                 name: AutoLightingOptimizer
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AutoLightingOptimizer'
                 desc: 'Auto Lighting Optimizer'
                 values:
                     - Enable
@@ -386,6 +427,7 @@ items:
                 name: ETTLII
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ETTLII'
                 desc: 'E-TTL II'
                 values:
                     - Evaluative
@@ -396,6 +438,7 @@ items:
                 name: ShutterCurtainSync
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ShutterCurtainSync'
                 desc: 'Shutter Curtain Sync'
                 values:
                     - '1st-curtain sync'
@@ -406,6 +449,7 @@ items:
                 name: FlashFiring
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashFiring'
                 desc: 'Flash Firing'
                 values:
                     - Fires
@@ -416,6 +460,7 @@ items:
                 name: ViewInfoDuringExposure
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ViewInfoDuringExposure'
                 desc: 'View Info During Exposure'
                 values:
                     - Disable
@@ -426,6 +471,7 @@ items:
                 name: LCDIlluminationDuringBulb
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LCDIlluminationDuringBulb'
                 desc: 'LCD Illumination During Bulb'
                 values:
                     - 'Off'
@@ -436,6 +482,7 @@ items:
                 name: InfoButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:InfoButtonWhenShooting'
                 desc: 'Info Button When Shooting'
                 values:
                     - 'Displays camera settings'
@@ -444,6 +491,7 @@ items:
                 name: InfoButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:InfoButtonWhenShooting'
                 desc: 'Info Button When Shooting'
                 values:
                     - 'Displays shooting functions'
@@ -454,6 +502,7 @@ items:
                 name: ViewfinderWarnings
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ViewfinderWarnings'
                 desc: 'Viewfinder Warnings'
                 values:
                     1: Monochrome
@@ -467,6 +516,7 @@ items:
                 name: LVShootingAreaDisplay
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LVShootingAreaDisplay'
                 desc: 'LV Shooting Area Display'
                 values:
                     - Masked
@@ -477,6 +527,7 @@ items:
                 name: LVShootingAreaDisplay
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LVShootingAreaDisplay'
                 desc: 'LV Shooting Area Display'
                 values:
                     - Masked
@@ -487,6 +538,7 @@ items:
                 name: USMLensElectronicMF
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:USMLensElectronicMF'
                 desc: 'USM Lens Electronic MF'
                 values:
                     - 'Enable after one-shot AF'
@@ -498,6 +550,7 @@ items:
                 name: AIServoTrackingSensitivity
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AIServoTrackingSensitivity'
                 desc: 'AI Servo Tracking Sensitivity'
                 values:
                     -2: Slow
@@ -511,6 +564,7 @@ items:
                 name: AIServoImagePriority
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AIServoImagePriority'
                 desc: 'AI Servo Image Priority'
                 values:
                     - '1: AF, 2: Tracking'
@@ -523,6 +577,7 @@ items:
                 name: AIServoTrackingMethod
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AIServoTrackingMethod'
                 desc: 'AI Servo Tracking Method'
                 values:
                     - 'Main focus point priority'
@@ -533,6 +588,7 @@ items:
                 name: LensDriveNoAF
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LensDriveNoAF'
                 desc: 'Lens Drive No AF'
                 values:
                     - 'Focus search on'
@@ -543,6 +599,7 @@ items:
                 name: LensAFStopButton
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LensAFStopButton'
                 desc: 'Lens AF Stop Button'
                 values:
                     - 'AF stop'
@@ -560,6 +617,7 @@ items:
                 type: int32s
                 count: 5
                 writable: true
+                DOMNode: 'CanonCustom:AFMicroadjustment'
                 desc: 'AF Microadjustment'
                 values:
                     - Disable
@@ -571,6 +629,7 @@ items:
                 name: AFPointAreaExpansion
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointAreaExpansion'
                 desc: 'AF Point Area Expansion'
                 values:
                     - Disable
@@ -579,6 +638,7 @@ items:
                 name: AFPointAreaExpansion
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointAreaExpansion'
                 desc: 'AF Point Area Expansion'
                 values:
                     - Disable
@@ -588,6 +648,7 @@ items:
                 name: AFPointAreaExpansion
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointAreaExpansion'
                 desc: 'AF Point Area Expansion'
                 values:
                     - Disable
@@ -600,6 +661,7 @@ items:
                 name: SelectableAFPoint
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SelectableAFPoint'
                 desc: 'Selectable AF Point'
                 values:
                     - '45 points'
@@ -611,6 +673,7 @@ items:
                 name: SelectableAFPoint
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SelectableAFPoint'
                 desc: 'Selectable AF Point'
                 values:
                     - '19 points'
@@ -625,6 +688,7 @@ items:
                 name: SwitchToRegisteredAFPoint
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SwitchToRegisteredAFPoint'
                 desc: 'Switch To Registered AF Point'
                 values:
                     - Disable
@@ -634,6 +698,7 @@ items:
                 name: SwitchToRegisteredAFPoint
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SwitchToRegisteredAFPoint'
                 desc: 'Switch To Registered AF Point'
                 values:
                     - Disable
@@ -644,6 +709,7 @@ items:
                 name: AFPointAutoSelection
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointAutoSelection'
                 desc: 'AF Point Auto Selection'
                 values:
                     - 'Control-direct:disable/Main:enable'
@@ -655,6 +721,7 @@ items:
                 name: AFPointDisplayDuringFocus
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointDisplayDuringFocus'
                 desc: 'AF Point Display During Focus'
                 values:
                     - 'On'
@@ -664,6 +731,7 @@ items:
                 name: AFPointDisplayDuringFocus
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointDisplayDuringFocus'
                 desc: 'AF Point Display During Focus'
                 values:
                     - 'Selected (constant)'
@@ -677,6 +745,7 @@ items:
                 name: AFPointBrightness
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointBrightness'
                 desc: 'AF Point Brightness'
                 values:
                     - Normal
@@ -687,6 +756,7 @@ items:
                 name: AFAssistBeam
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFAssistBeam'
                 desc: 'AF Assist Beam'
                 values:
                     - Emits
@@ -696,6 +766,7 @@ items:
                 name: AFAssistBeam
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFAssistBeam'
                 desc: 'AF Assist Beam'
                 values:
                     - Emits
@@ -708,6 +779,7 @@ items:
                 name: AFPointSelectionMethod
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointSelectionMethod'
                 desc: 'AF Point Selection Method'
                 values:
                     - Normal
@@ -717,6 +789,7 @@ items:
                 name: AFPointSelectionMethod
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFPointSelectionMethod'
                 desc: 'AF Point Selection Method'
                 values:
                     - 'AF point button: Activate AF Sel; Rear dial: Select AF points'
@@ -727,6 +800,7 @@ items:
                 name: VFDisplayIllumination
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:VFDisplayIllumination'
                 desc: 'VF Display Illumination'
                 values:
                     - Auto
@@ -736,6 +810,7 @@ items:
                 name: SuperimposedDisplay
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SuperimposedDisplay'
                 desc: 'Superimposed Display'
                 values:
                     - 'On'
@@ -746,6 +821,7 @@ items:
                 name: AFDuringLiveView
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFDuringLiveView'
                 desc: 'AF During Live View'
                 values:
                     - Disable
@@ -754,6 +830,7 @@ items:
                 name: AFDuringLiveView
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFDuringLiveView'
                 desc: 'AF During Live View'
                 values:
                     - Disable
@@ -765,6 +842,7 @@ items:
                 name: SelectAFAreaSelectMode
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SelectAFAreaSelectMode'
                 desc: 'Select AF Area Select Mode'
                 values:
                     - Disable
@@ -777,6 +855,7 @@ items:
                 name: ManualAFPointSelectPattern
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ManualAFPointSelectPattern'
                 desc: 'Manual AF Point Select Pattern'
                 values:
                     - 'Stops at AF area edges'
@@ -787,6 +866,7 @@ items:
                 name: DisplayAllAFPoints
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:DisplayAllAFPoints'
                 desc: 'Display All AF Points'
                 values:
                     - Enable
@@ -797,6 +877,7 @@ items:
                 name: FocusDisplayAIServoAndMF
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusDisplayAIServoAndMF'
                 desc: 'Focus Display AI Servo And MF'
                 values:
                     - Enable
@@ -807,6 +888,7 @@ items:
                 name: OrientationLinkedAFPoint
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:OrientationLinkedAFPoint'
                 desc: 'Orientation Linked AF Point'
                 values:
                     - 'Same for vertical and horizontal'
@@ -817,6 +899,7 @@ items:
                 name: MultiControllerWhileMetering
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:MultiControllerWhileMetering'
                 desc: 'Multi Controller While Metering'
                 values:
                     - 'Off'
@@ -827,6 +910,7 @@ items:
                 name: AccelerationTracking
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AccelerationTracking'
                 desc: 'Acceleration Tracking'
     1305:
         exiftool:
@@ -834,6 +918,7 @@ items:
                 name: AIServoFirstImagePriority
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AIServoFirstImagePriority'
                 desc: 'AI Servo First Image Priority'
                 values:
                     -1: 'Release priority'
@@ -845,6 +930,7 @@ items:
                 name: AIServoSecondImagePriority
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AIServoSecondImagePriority'
                 desc: 'AI Servo Second Image Priority'
                 values:
                     -1: 'Shooting speed priority'
@@ -856,6 +942,7 @@ items:
                 name: AFAreaSelectMethod
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFAreaSelectMethod'
                 desc: 'AF Area Select Method'
                 values:
                     - 'AF area selection button'
@@ -866,6 +953,7 @@ items:
                 name: AutoAFPointColorTracking
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AutoAFPointColorTracking'
                 desc: 'Auto AF Point Color Tracking'
                 values:
                     - 'On-Shot AF only'
@@ -876,6 +964,7 @@ items:
                 name: VFDisplayIllumination
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:VFDisplayIllumination'
                 desc: 'VF Display Illumination'
                 values:
                     - Auto
@@ -887,6 +976,7 @@ items:
                 name: InitialAFPointAIServoAF
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:InitialAFPointAIServoAF'
                 desc: 'Initial AF Point AI Servo AF'
                 values:
                     - Auto
@@ -898,6 +988,7 @@ items:
                 name: MirrorLockup
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:MirrorLockup'
                 desc: 'Mirror Lockup'
                 values:
                     - Disable
@@ -910,6 +1001,7 @@ items:
                 type: int32s
                 count: 3
                 writable: true
+                DOMNode: 'CanonCustom:ContinuousShootingSpeed'
                 desc: 'Continuous Shooting Speed'
                 values:
                     - Disable
@@ -921,6 +1013,7 @@ items:
                 type: int32s
                 count: 2
                 writable: true
+                DOMNode: 'CanonCustom:ContinuousShotLimit'
                 desc: 'Continuous Shot Limit'
                 values:
                     - Disable
@@ -932,6 +1025,7 @@ items:
                 type: int32s
                 count: 2
                 writable: true
+                DOMNode: 'CanonCustom:RestrictDriveModes'
                 desc: 'Restrict Drive Modes'
                 values:
                     - Disable
@@ -942,6 +1036,7 @@ items:
                 name: Shutter-AELock
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:Shutter-AELock'
                 desc: 'Shutter-AE Lock'
                 values:
                     - 'AF/AE lock'
@@ -952,6 +1047,7 @@ items:
                 name: AFAndMeteringButtons
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFAndMeteringButtons'
                 desc: 'AF And Metering Buttons'
                 values:
                     - 'Metering start'
@@ -963,6 +1059,7 @@ items:
                 name: ShutterButtonAFOnButton
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ShutterButtonAFOnButton'
                 desc: 'Shutter Button AF On Button'
                 values:
                     - 'Metering + AF start'
@@ -976,6 +1073,7 @@ items:
                 name: AFOnAELockButtonSwitch
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AFOnAELockButtonSwitch'
                 desc: 'AF On AE Lock Button Switch'
                 values:
                     - Disable
@@ -986,6 +1084,7 @@ items:
                 name: QuickControlDialInMeter
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:QuickControlDialInMeter'
                 desc: 'Quick Control Dial In Meter'
                 values:
                     - 'Exposure comp/Aperture'
@@ -999,6 +1098,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'Normal (disabled)'
@@ -1012,6 +1112,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'Normal (disabled)'
@@ -1024,6 +1125,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'Normal (disabled)'
@@ -1036,6 +1138,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'Normal (disabled)'
@@ -1048,6 +1151,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'LCD monitor On/Off'
@@ -1059,6 +1163,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'Quick control screen'
@@ -1071,6 +1176,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'Normal (disabled)'
@@ -1087,6 +1193,7 @@ items:
                 name: ManualTv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ManualTv'
                 desc: 'Manual Tv/Av For M'
                 values:
                     - Tv=Main/Av=Control
@@ -1097,6 +1204,7 @@ items:
                 name: DialDirectionTvAv
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:DialDirectionTvAv'
                 desc: 'Dial Direction Tv Av'
                 values:
                     - Normal
@@ -1107,6 +1215,7 @@ items:
                 name: AvSettingWithoutLens
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AvSettingWithoutLens'
                 desc: 'Av Setting Without Lens'
                 values:
                     - Disable
@@ -1117,6 +1226,7 @@ items:
                 name: WBMediaImageSizeSetting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:WBMediaImageSizeSetting'
                 desc: 'WB Media Image Size Setting'
                 values:
                     - 'Rear LCD panel'
@@ -1128,6 +1238,7 @@ items:
                 name: LockMicrophoneButton
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LockMicrophoneButton'
                 desc: 'Lock Microphone Button'
                 values:
                     - 'Protect (hold:record memo)'
@@ -1140,6 +1251,7 @@ items:
                 name: ButtonFunctionControlOff
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ButtonFunctionControlOff'
                 desc: 'Button Function Control Off'
                 values:
                     - 'Normal (enable)'
@@ -1150,6 +1262,7 @@ items:
                 name: AssignFuncButton
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AssignFuncButton'
                 desc: 'Assign Func Button'
                 values:
                     - 'LCD brightness'
@@ -1163,6 +1276,7 @@ items:
                 name: CustomControls
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:CustomControls'
                 desc: 'Custom Controls'
     1805:
         exiftool:
@@ -1170,6 +1284,7 @@ items:
                 name: StartMovieShooting
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:StartMovieShooting'
                 desc: 'Start Movie Shooting'
                 values:
                     - 'Default (from LV)'
@@ -1180,6 +1295,7 @@ items:
                 name: FlashButtonFunction
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FlashButtonFunction'
                 desc: 'Flash Button Function'
                 values:
                     - 'Raise built-in flash'
@@ -1190,6 +1306,7 @@ items:
                 name: MultiFunctionLock
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:MultiFunctionLock'
                 desc: 'Multi Function Lock'
                 values:
                     - 'Off'
@@ -1202,6 +1319,7 @@ items:
                 name: TrashButtonFunction
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:TrashButtonFunction'
                 desc: 'Trash Button Function'
                 values:
                     - 'Normal (set center AF point)'
@@ -1212,6 +1330,7 @@ items:
                 name: ShutterReleaseWithoutLens
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ShutterReleaseWithoutLens'
                 desc: 'Shutter Release Without Lens'
                 values:
                     - Disable
@@ -1222,6 +1341,7 @@ items:
                 name: ControlRingRotation
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ControlRingRotation'
                 desc: 'Control Ring Rotation'
                 values:
                     - Normal
@@ -1232,6 +1352,7 @@ items:
                 name: FocusRingRotation
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusRingRotation'
                 desc: 'Focus Ring Rotation'
                 values:
                     - Normal
@@ -1242,6 +1363,7 @@ items:
                 name: RFLensMFFocusRingSensitivity
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:RFLensMFFocusRingSensitivity'
                 desc: 'RF Lens MF Focus Ring Sensitivity'
                 values:
                     - 'Varies With Rotation Speed'
@@ -1252,6 +1374,7 @@ items:
                 name: CustomizeDials
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:CustomizeDials'
                 desc: 'Customize Dials'
     2059:
         exiftool:
@@ -1259,6 +1382,7 @@ items:
                 name: FocusingScreen
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusingScreen'
                 desc: 'Focusing Screen'
                 values:
                     - Ef-A
@@ -1268,6 +1392,7 @@ items:
                 name: FocusingScreen
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusingScreen'
                 desc: 'Focusing Screen'
                 values:
                     - Eg-A
@@ -1277,6 +1402,7 @@ items:
                 name: FocusingScreen
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusingScreen'
                 desc: 'Focusing Screen'
                 values:
                     - 'Eg-A II'
@@ -1286,6 +1412,7 @@ items:
                 name: FocusingScreen
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusingScreen'
                 desc: 'Focusing Screen'
                 values:
                     - Eh-A
@@ -1294,6 +1421,7 @@ items:
                 name: FocusingScreen
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusingScreen'
                 desc: 'Focusing Screen'
                 values:
                     - Ec-CV
@@ -1302,6 +1430,7 @@ items:
                 name: FocusingScreen
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:FocusingScreen'
                 desc: 'Focusing Screen'
                 values:
                     - Ec-CIV
@@ -1315,6 +1444,7 @@ items:
                 type: int32s
                 count: 4
                 writable: true
+                DOMNode: 'CanonCustom:TimerLength'
                 desc: 'Timer Length'
                 values:
                     - Disable
@@ -1325,6 +1455,7 @@ items:
                 name: ShortReleaseTimeLag
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:ShortReleaseTimeLag'
                 desc: 'Short Release Time Lag'
                 values:
                     - Disable
@@ -1335,6 +1466,7 @@ items:
                 name: AddAspectRatioInfo
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AddAspectRatioInfo'
                 desc: 'Add Aspect Ratio Info'
                 values:
                     - 'Off'
@@ -1350,6 +1482,7 @@ items:
                 name: AddOriginalDecisionData
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AddOriginalDecisionData'
                 desc: 'Add Original Decision Data'
                 values:
                     - 'Off'
@@ -1360,6 +1493,7 @@ items:
                 name: LiveViewExposureSimulation
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LiveViewExposureSimulation'
                 desc: 'Live View Exposure Simulation'
                 values:
                     - 'Disable (LCD auto adjust)'
@@ -1370,6 +1504,7 @@ items:
                 name: LCDDisplayAtPowerOn
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:LCDDisplayAtPowerOn'
                 desc: 'LCD Display At Power On'
                 values:
                     - Display
@@ -1380,6 +1515,7 @@ items:
                 name: MemoAudioQuality
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:MemoAudioQuality'
                 desc: 'Memo Audio Quality'
                 values:
                     - 'High (48 kHz)'
@@ -1390,6 +1526,7 @@ items:
                 name: DefaultEraseOption
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:DefaultEraseOption'
                 desc: 'Default Erase Option'
                 values:
                     - 'Cancel selected'
@@ -1400,6 +1537,7 @@ items:
                 name: RetractLensOnPowerOff
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:RetractLensOnPowerOff'
                 desc: 'Retract Lens On Power Off'
                 values:
                     - Enable
@@ -1410,6 +1548,7 @@ items:
                 name: AddIPTCInformation
                 type: int32s
                 writable: true
+                DOMNode: 'CanonCustom:AddIPTCInformation'
                 desc: 'Add IPTC Information'
                 values:
                     - Disable

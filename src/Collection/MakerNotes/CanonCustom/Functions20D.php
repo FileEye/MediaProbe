@@ -43,6 +43,27 @@ class Functions20D extends Collection {
     'ShutterCurtainSync' => 14,
     'SuperimposedDisplay' => 9,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonCustom:AEBSequenceAutoCancel' => 8,
+    'CanonCustom:AFAssistBeam' => 4,
+    'CanonCustom:AFPointSelectionMethod' => 12,
+    'CanonCustom:AddOriginalDecisionData' => 17,
+    'CanonCustom:ETTLII' => 13,
+    'CanonCustom:ExposureLevelIncrements' => 5,
+    'CanonCustom:FlashFiring' => 6,
+    'CanonCustom:FlashSyncSpeedAv' => 2,
+    'CanonCustom:ISOExpansion' => 7,
+    'CanonCustom:LensAFStopButton' => 16,
+    'CanonCustom:LongExposureNoiseReduction' => 1,
+    'CanonCustom:MenuButtonDisplayPosition' => 10,
+    'CanonCustom:MirrorLockup' => 11,
+    'CanonCustom:SafetyShiftInAvOrTv' => 15,
+    'CanonCustom:SetFunctionWhenShooting' => 0,
+    'CanonCustom:Shutter-AELock' => 3,
+    'CanonCustom:ShutterCurtainSync' => 14,
+    'CanonCustom:SuperimposedDisplay' => 9,
+  ),
   'items' =>
   array (
     0 =>
@@ -65,6 +86,7 @@ class Functions20D extends Collection {
           4 => 'Image replay',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SetFunctionWhenShooting',
     ),
     1 =>
     array (
@@ -83,6 +105,7 @@ class Functions20D extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LongExposureNoiseReduction',
     ),
     2 =>
     array (
@@ -101,6 +124,7 @@ class Functions20D extends Collection {
           1 => '1/250 Fixed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FlashSyncSpeedAv',
     ),
     3 =>
     array (
@@ -121,6 +145,7 @@ class Functions20D extends Collection {
           3 => 'AE/AF, No AE lock',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:Shutter-AELock',
     ),
     4 =>
     array (
@@ -140,6 +165,7 @@ class Functions20D extends Collection {
           2 => 'Only ext. flash emits',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFAssistBeam',
     ),
     5 =>
     array (
@@ -158,6 +184,7 @@ class Functions20D extends Collection {
           1 => '1/2 Stop',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ExposureLevelIncrements',
     ),
     6 =>
     array (
@@ -176,6 +203,7 @@ class Functions20D extends Collection {
           1 => 'Does not fire',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FlashFiring',
     ),
     7 =>
     array (
@@ -194,6 +222,7 @@ class Functions20D extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ISOExpansion',
     ),
     8 =>
     array (
@@ -214,6 +243,7 @@ class Functions20D extends Collection {
           3 => '-,0,+/Disabled',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AEBSequenceAutoCancel',
     ),
     9 =>
     array (
@@ -232,6 +262,7 @@ class Functions20D extends Collection {
           1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SuperimposedDisplay',
     ),
     10 =>
     array (
@@ -251,6 +282,7 @@ class Functions20D extends Collection {
           2 => 'Top',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MenuButtonDisplayPosition',
     ),
     11 =>
     array (
@@ -269,6 +301,7 @@ class Functions20D extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MirrorLockup',
     ),
     12 =>
     array (
@@ -288,6 +321,7 @@ class Functions20D extends Collection {
           2 => 'Quick Control Dial direct',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointSelectionMethod',
     ),
     13 =>
     array (
@@ -306,6 +340,7 @@ class Functions20D extends Collection {
           1 => 'Average',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ETTLII',
     ),
     14 =>
     array (
@@ -324,6 +359,7 @@ class Functions20D extends Collection {
           1 => '2nd-curtain sync',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterCurtainSync',
     ),
     15 =>
     array (
@@ -342,6 +378,7 @@ class Functions20D extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SafetyShiftInAvOrTv',
     ),
     16 =>
     array (
@@ -364,6 +401,7 @@ class Functions20D extends Collection {
           5 => 'IS start',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LensAFStopButton',
     ),
     17 =>
     array (
@@ -382,6 +420,7 @@ class Functions20D extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AddOriginalDecisionData',
     ),
   ),
 );

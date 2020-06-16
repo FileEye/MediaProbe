@@ -27,6 +27,11 @@ class ImageFormat extends Collection {
     'FileFormat' => 0,
     'TargetCompressionRatio' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:FileFormat' => 0,
+    'CanonRaw:TargetCompressionRatio' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -48,6 +53,7 @@ class ImageFormat extends Collection {
           131073 => 'CRW',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:FileFormat',
     ),
     1 =>
     array (
@@ -58,6 +64,7 @@ class ImageFormat extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:TargetCompressionRatio',
     ),
   ),
 );

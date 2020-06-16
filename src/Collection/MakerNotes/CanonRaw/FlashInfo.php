@@ -27,6 +27,11 @@ class FlashInfo extends Collection {
     'FlashGuideNumber' => 0,
     'FlashThreshold' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:FlashGuideNumber' => 0,
+    'CanonRaw:FlashThreshold' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -38,6 +43,7 @@ class FlashInfo extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:FlashGuideNumber',
     ),
     1 =>
     array (
@@ -48,6 +54,7 @@ class FlashInfo extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:FlashThreshold',
     ),
   ),
 );

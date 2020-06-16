@@ -42,6 +42,26 @@ class Functions10D extends Collection {
     'ShutterReleaseNoCFCard' => 2,
     'SuperimposedDisplay' => 10,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonCustom:AEBSequenceAutoCancel' => 9,
+    'CanonCustom:AFAssist' => 5,
+    'CanonCustom:AFPointRegistration' => 7,
+    'CanonCustom:AssistButtonFunction' => 13,
+    'CanonCustom:ExposureLevelIncrements' => 6,
+    'CanonCustom:FillFlashAutoReduction' => 14,
+    'CanonCustom:FlashSyncSpeedAv' => 3,
+    'CanonCustom:LensAFStopButton' => 17,
+    'CanonCustom:MenuButtonDisplayPosition' => 11,
+    'CanonCustom:MirrorLockup' => 12,
+    'CanonCustom:RawAndJpgRecording' => 8,
+    'CanonCustom:SafetyShiftInAvOrTv' => 16,
+    'CanonCustom:SetButtonWhenShooting' => 1,
+    'CanonCustom:Shutter-AELock' => 4,
+    'CanonCustom:ShutterCurtainSync' => 15,
+    'CanonCustom:ShutterReleaseNoCFCard' => 2,
+    'CanonCustom:SuperimposedDisplay' => 10,
+  ),
   'items' =>
   array (
     1 =>
@@ -64,6 +84,7 @@ class Functions10D extends Collection {
           4 => 'Image playback',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SetButtonWhenShooting',
     ),
     2 =>
     array (
@@ -82,6 +103,7 @@ class Functions10D extends Collection {
           1 => 'No',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterReleaseNoCFCard',
     ),
     3 =>
     array (
@@ -100,6 +122,7 @@ class Functions10D extends Collection {
           1 => '1/200 Fixed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FlashSyncSpeedAv',
     ),
     4 =>
     array (
@@ -120,6 +143,7 @@ class Functions10D extends Collection {
           3 => 'AE/AF, No AE lock',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:Shutter-AELock',
     ),
     5 =>
     array (
@@ -140,6 +164,7 @@ class Functions10D extends Collection {
           3 => 'Emits/Does not fire',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFAssist',
     ),
     6 =>
     array (
@@ -158,6 +183,7 @@ class Functions10D extends Collection {
           1 => '1/3 Stop',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ExposureLevelIncrements',
     ),
     7 =>
     array (
@@ -182,6 +208,7 @@ class Functions10D extends Collection {
           7 => 'Top',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFPointRegistration',
     ),
     8 =>
     array (
@@ -204,6 +231,7 @@ class Functions10D extends Collection {
           5 => 'RAW+Large/Fine',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:RawAndJpgRecording',
     ),
     9 =>
     array (
@@ -224,6 +252,7 @@ class Functions10D extends Collection {
           3 => '-,0,+/Disabled',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AEBSequenceAutoCancel',
     ),
     10 =>
     array (
@@ -242,6 +271,7 @@ class Functions10D extends Collection {
           1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SuperimposedDisplay',
     ),
     11 =>
     array (
@@ -261,6 +291,7 @@ class Functions10D extends Collection {
           2 => 'Top',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MenuButtonDisplayPosition',
     ),
     12 =>
     array (
@@ -279,6 +310,7 @@ class Functions10D extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MirrorLockup',
     ),
     13 =>
     array (
@@ -300,6 +332,7 @@ class Functions10D extends Collection {
           4 => 'FE lock',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AssistButtonFunction',
     ),
     14 =>
     array (
@@ -318,6 +351,7 @@ class Functions10D extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FillFlashAutoReduction',
     ),
     15 =>
     array (
@@ -336,6 +370,7 @@ class Functions10D extends Collection {
           1 => '2nd-curtain sync',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterCurtainSync',
     ),
     16 =>
     array (
@@ -354,6 +389,7 @@ class Functions10D extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SafetyShiftInAvOrTv',
     ),
     17 =>
     array (
@@ -376,6 +412,7 @@ class Functions10D extends Collection {
           5 => 'IS start',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LensAFStopButton',
     ),
   ),
 );

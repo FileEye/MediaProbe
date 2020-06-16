@@ -26,6 +26,10 @@ class StampTool extends Collection {
   array (
     'StampToolCount' => 0,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:StampToolCount' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -37,6 +41,7 @@ class StampTool extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:StampToolCount',
     ),
   ),
 );

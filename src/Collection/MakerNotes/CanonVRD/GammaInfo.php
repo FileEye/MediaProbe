@@ -38,6 +38,22 @@ class GammaInfo extends Collection {
     'GammaUnsharpMaskThreshold' => 7,
     'GammaWhitePoint' => 13,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:GammaBlackPoint' => 12,
+    'CanonVRD:GammaColorTone' => 3,
+    'CanonVRD:GammaContrast' => 2,
+    'CanonVRD:GammaCurveOutputRange' => 15,
+    'CanonVRD:GammaHighlight' => 10,
+    'CanonVRD:GammaMidPoint' => 14,
+    'CanonVRD:GammaSaturation' => 4,
+    'CanonVRD:GammaShadow' => 9,
+    'CanonVRD:GammaSharpnessStrength' => 8,
+    'CanonVRD:GammaUnsharpMaskFineness' => 6,
+    'CanonVRD:GammaUnsharpMaskStrength' => 5,
+    'CanonVRD:GammaUnsharpMaskThreshold' => 7,
+    'CanonVRD:GammaWhitePoint' => 13,
+  ),
   'items' =>
   array (
     2 =>
@@ -49,6 +65,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaContrast',
     ),
     3 =>
     array (
@@ -59,6 +76,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaColorTone',
     ),
     4 =>
     array (
@@ -69,6 +87,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaSaturation',
     ),
     5 =>
     array (
@@ -79,6 +98,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaUnsharpMaskStrength',
     ),
     6 =>
     array (
@@ -89,6 +109,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaUnsharpMaskFineness',
     ),
     7 =>
     array (
@@ -99,6 +120,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaUnsharpMaskThreshold',
     ),
     8 =>
     array (
@@ -109,6 +131,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaSharpnessStrength',
     ),
     9 =>
     array (
@@ -119,6 +142,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaShadow',
     ),
     10 =>
     array (
@@ -129,6 +153,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaHighlight',
     ),
     12 =>
     array (
@@ -139,6 +164,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaBlackPoint',
     ),
     13 =>
     array (
@@ -149,6 +175,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaWhitePoint',
     ),
     14 =>
     array (
@@ -159,6 +186,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaMidPoint',
     ),
     15 =>
     array (
@@ -170,6 +198,7 @@ class GammaInfo extends Collection {
       array (
         0 => 12,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GammaCurveOutputRange',
     ),
   ),
 );

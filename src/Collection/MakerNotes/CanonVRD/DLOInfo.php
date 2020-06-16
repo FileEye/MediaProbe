@@ -28,6 +28,12 @@ class DLOInfo extends Collection {
     'DLOSettingApplied' => 4,
     'DLOVersion' => 5,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:DLOData' => 10,
+    'CanonVRD:DLOSettingApplied' => 4,
+    'CanonVRD:DLOVersion' => 5,
+  ),
   'items' =>
   array (
     4 =>
@@ -39,6 +45,7 @@ class DLOInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DLOSettingApplied',
     ),
     5 =>
     array (
@@ -50,6 +57,7 @@ class DLOInfo extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DLOVersion',
     ),
     10 =>
     array (
@@ -60,6 +68,7 @@ class DLOInfo extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DLOData',
     ),
   ),
 );

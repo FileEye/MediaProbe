@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonVRD
         xpath: '//table[@name=''CanonVRD::DR4'']/tag'
 items:
     0x20310.0:
@@ -15,6 +16,7 @@ items:
                 name: SharpnessAdjOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:SharpnessAdjOn'
                 desc: 'Sharpness Adj On'
                 values:
                     - 'No'
@@ -25,6 +27,7 @@ items:
                 name: ToneCurveOriginal
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveOriginal'
                 desc: 'Tone Curve Original'
                 values:
                     - 'No'
@@ -35,6 +38,7 @@ items:
                 name: AutoLightingOptimizerOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:AutoLightingOptimizerOn'
                 desc: 'Auto Lighting Optimizer On'
                 values:
                     - 'No'
@@ -45,6 +49,7 @@ items:
                 name: ColorMoireReductionOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ColorMoireReductionOn'
                 desc: 'Color Moire Reduction On'
                 values:
                     - 'No'
@@ -55,6 +60,7 @@ items:
                 name: PeripheralIlluminationOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:PeripheralIlluminationOn'
                 desc: 'Peripheral Illumination On'
                 values:
                     - 'No'
@@ -65,6 +71,7 @@ items:
                 name: ChromaticAberrationOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberrationOn'
                 desc: 'Chromatic Aberration On'
                 values:
                     - 'No'
@@ -75,6 +82,7 @@ items:
                 name: DistortionCorrectionOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:DistortionCorrectionOn'
                 desc: 'Distortion Correction On'
                 values:
                     - 'No'
@@ -85,6 +93,7 @@ items:
                 name: DLOOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:DLOOn'
                 desc: 'DLO On'
                 values:
                     - 'No'
@@ -95,6 +104,7 @@ items:
                 name: Rotation
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:Rotation'
                 desc: Rotation
     65539:
         exiftool:
@@ -102,6 +112,7 @@ items:
                 name: AngleAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:AngleAdj'
                 desc: 'Angle Adj'
     65569:
         exiftool:
@@ -109,6 +120,7 @@ items:
                 name: CustomPictureStyle
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:CustomPictureStyle'
                 desc: 'Custom Picture Style'
     65793:
         exiftool:
@@ -116,6 +128,7 @@ items:
                 name: CheckMark
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:CheckMark'
                 desc: 'Check Mark'
                 values:
                     - Clear
@@ -130,6 +143,7 @@ items:
                 name: WorkColorSpace
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:WorkColorSpace'
                 desc: 'Work Color Space'
                 values:
                     1: sRGB
@@ -143,6 +157,7 @@ items:
                 name: RawBrightnessAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:RawBrightnessAdj'
                 desc: 'Raw Brightness Adj'
     131329:
         exiftool:
@@ -150,6 +165,7 @@ items:
                 name: WhiteBalanceAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:WhiteBalanceAdj'
                 desc: 'White Balance Adj'
                 values:
                     -1: 'Manual (Click)'
@@ -168,6 +184,7 @@ items:
                 name: WBAdjColorTemp
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:WBAdjColorTemp'
                 desc: 'WB Adj Color Temp'
     131333:
         exiftool:
@@ -175,6 +192,7 @@ items:
                 name: WBAdjMagentaGreen
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:WBAdjMagentaGreen'
                 desc: 'WB Adj Magenta Green'
     131334:
         exiftool:
@@ -182,6 +200,7 @@ items:
                 name: WBAdjBlueAmber
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:WBAdjBlueAmber'
                 desc: 'WB Adj Blue Amber'
     131365:
         exiftool:
@@ -189,6 +208,7 @@ items:
                 name: WBAdjRGGBLevels
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:WBAdjRGGBLevels'
                 desc: 'WB Adj RGGB Levels'
     131584:
         exiftool:
@@ -196,6 +216,7 @@ items:
                 name: GammaLinear
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:GammaLinear'
                 desc: 'Gamma Linear'
                 values:
                     - 'No'
@@ -206,6 +227,7 @@ items:
                 name: PictureStyle
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:PictureStyle'
                 desc: 'Picture Style'
                 values:
                     129: Standard
@@ -224,6 +246,7 @@ items:
                 name: ContrastAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ContrastAdj'
                 desc: 'Contrast Adj'
     131844:
         exiftool:
@@ -231,6 +254,7 @@ items:
                 name: ColorToneAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ColorToneAdj'
                 desc: 'Color Tone Adj'
     131845:
         exiftool:
@@ -238,6 +262,7 @@ items:
                 name: ColorSaturationAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ColorSaturationAdj'
                 desc: 'Color Saturation Adj'
     131846:
         exiftool:
@@ -245,6 +270,7 @@ items:
                 name: MonochromeToningEffect
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeToningEffect'
                 desc: 'Monochrome Toning Effect'
                 values:
                     - None
@@ -258,6 +284,7 @@ items:
                 name: MonochromeFilterEffect
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:MonochromeFilterEffect'
                 desc: 'Monochrome Filter Effect'
                 values:
                     - None
@@ -271,6 +298,7 @@ items:
                 name: UnsharpMaskStrength
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:UnsharpMaskStrength'
                 desc: 'Unsharp Mask Strength'
     131849:
         exiftool:
@@ -278,6 +306,7 @@ items:
                 name: UnsharpMaskFineness
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:UnsharpMaskFineness'
                 desc: 'Unsharp Mask Fineness'
     131850:
         exiftool:
@@ -285,6 +314,7 @@ items:
                 name: UnsharpMaskThreshold
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:UnsharpMaskThreshold'
                 desc: 'Unsharp Mask Threshold'
     131851:
         exiftool:
@@ -292,6 +322,7 @@ items:
                 name: ShadowAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ShadowAdj'
                 desc: 'Shadow Adj'
     131852:
         exiftool:
@@ -299,6 +330,7 @@ items:
                 name: HighlightAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:HighlightAdj'
                 desc: 'Highlight Adj'
     131856:
         exiftool:
@@ -306,6 +338,7 @@ items:
                 name: SharpnessAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:SharpnessAdj'
                 desc: 'Sharpness Adj'
                 values:
                     - Sharpness
@@ -316,6 +349,7 @@ items:
                 name: SharpnessStrength
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:SharpnessStrength'
                 desc: 'Sharpness Strength'
     132112:
         exiftool:
@@ -323,6 +357,7 @@ items:
                 name: ToneCurveBrightness
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveBrightness'
                 desc: 'Tone Curve Brightness'
     132113:
         exiftool:
@@ -330,6 +365,7 @@ items:
                 name: ToneCurveContrast
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveContrast'
                 desc: 'Tone Curve Contrast'
     132352:
         exiftool:
@@ -337,6 +373,7 @@ items:
                 name: AutoLightingOptimizer
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:AutoLightingOptimizer'
                 desc: 'Auto Lighting Optimizer'
                 values:
                     - Low
@@ -348,6 +385,7 @@ items:
                 name: LuminanceNoiseReduction
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:LuminanceNoiseReduction'
                 desc: 'Luminance Noise Reduction'
     132609:
         exiftool:
@@ -355,6 +393,7 @@ items:
                 name: ChrominanceNoiseReduction
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ChrominanceNoiseReduction'
                 desc: 'Chrominance Noise Reduction'
     132720:
         exiftool:
@@ -362,6 +401,7 @@ items:
                 name: ColorMoireReduction
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ColorMoireReduction'
                 desc: 'Color Moire Reduction'
     132865:
         exiftool:
@@ -369,6 +409,7 @@ items:
                 name: ShootingDistance
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ShootingDistance'
                 desc: 'Shooting Distance'
     132866:
         exiftool:
@@ -376,6 +417,7 @@ items:
                 name: PeripheralIllumination
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:PeripheralIllumination'
                 desc: 'Peripheral Illumination'
     132867:
         exiftool:
@@ -383,6 +425,7 @@ items:
                 name: ChromaticAberration
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberration'
                 desc: 'Chromatic Aberration'
     132868:
         exiftool:
@@ -390,6 +433,7 @@ items:
                 name: ColorBlurOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ColorBlurOn'
                 desc: 'Color Blur On'
                 values:
                     - 'No'
@@ -400,6 +444,7 @@ items:
                 name: DistortionCorrection
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:DistortionCorrection'
                 desc: 'Distortion Correction'
     132870:
         exiftool:
@@ -407,6 +452,7 @@ items:
                 name: DLOSetting
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:DLOSetting'
                 desc: 'DLO Setting'
     132871:
         exiftool:
@@ -414,6 +460,7 @@ items:
                 name: ChromaticAberrationRed
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberrationRed'
                 desc: 'Chromatic Aberration Red'
     132872:
         exiftool:
@@ -421,6 +468,7 @@ items:
                 name: ChromaticAberrationBlue
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ChromaticAberrationBlue'
                 desc: 'Chromatic Aberration Blue'
     132873:
         exiftool:
@@ -428,6 +476,7 @@ items:
                 name: DistortionEffect
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:DistortionEffect'
                 desc: 'Distortion Effect'
                 values:
                     - 'Shot Settings'
@@ -441,6 +490,7 @@ items:
                 name: DiffractionCorrectionOn
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:DiffractionCorrectionOn'
                 desc: 'Diffraction Correction On'
                 values:
                     - 'No'
@@ -451,6 +501,7 @@ items:
                 name: ColorHue
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:ColorHue'
                 desc: 'Color Hue'
     133377:
         exiftool:
@@ -458,6 +509,7 @@ items:
                 name: SaturationAdj
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:SaturationAdj'
                 desc: 'Saturation Adj'
     133392:
         exiftool:
@@ -465,6 +517,7 @@ items:
                 name: RedHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:RedHSL'
                 desc: 'Red HSL'
     133393:
         exiftool:
@@ -472,6 +525,7 @@ items:
                 name: OrangeHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:OrangeHSL'
                 desc: 'Orange HSL'
     133394:
         exiftool:
@@ -479,6 +533,7 @@ items:
                 name: YellowHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:YellowHSL'
                 desc: 'Yellow HSL'
     133395:
         exiftool:
@@ -486,6 +541,7 @@ items:
                 name: GreenHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:GreenHSL'
                 desc: 'Green HSL'
     133396:
         exiftool:
@@ -493,6 +549,7 @@ items:
                 name: AquaHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:AquaHSL'
                 desc: 'Aqua HSL'
     133397:
         exiftool:
@@ -500,6 +557,7 @@ items:
                 name: BlueHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:BlueHSL'
                 desc: 'Blue HSL'
     133398:
         exiftool:
@@ -507,6 +565,7 @@ items:
                 name: PurpleHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:PurpleHSL'
                 desc: 'Purple HSL'
     133399:
         exiftool:
@@ -514,6 +573,7 @@ items:
                 name: MagentaHSL
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:MagentaHSL'
                 desc: 'Magenta HSL'
     196865:
         exiftool:
@@ -521,6 +581,7 @@ items:
                 name: CropAspectRatio
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:CropAspectRatio'
                 desc: 'Crop Aspect Ratio'
                 values:
                     - Free
@@ -540,6 +601,7 @@ items:
                 name: CropAspectRatioCustom
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:CropAspectRatioCustom'
                 desc: 'Crop Aspect Ratio Custom'
     984320:
         exiftool:
@@ -547,6 +609,7 @@ items:
                 name: CustomPictureStyleData
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:CustomPictureStyleData'
                 desc: 'Custom Picture Style Data'
     984338:
         exiftool:
@@ -554,4 +617,5 @@ items:
                 name: LensFocalLength
                 type: '?'
                 writable: true
+                DOMNode: 'CanonVRD:LensFocalLength'
                 desc: 'Lens Focal Length'

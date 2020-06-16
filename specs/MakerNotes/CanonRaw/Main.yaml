@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonRaw
         xpath: '//table[@name=''CanonRaw::Main'']/tag'
 items:
     0:
@@ -15,6 +16,7 @@ items:
                 name: NullRecord
                 type: undef
                 writable: true
+                DOMNode: 'CanonRaw:NullRecord'
                 desc: 'Null Record'
     1:
         exiftool:
@@ -22,6 +24,7 @@ items:
                 name: FreeBytes
                 type: undef
                 writable: true
+                DOMNode: 'CanonRaw:FreeBytes'
                 desc: 'Free Bytes'
     50:
         exiftool:
@@ -29,6 +32,7 @@ items:
                 name: CanonColorInfo1
                 type: '?'
                 writable: true
+                DOMNode: 'CanonRaw:CanonColorInfo1'
                 desc: 'Canon Color Info 1'
     2053:
         exiftool:
@@ -37,12 +41,14 @@ items:
                 type: string
                 count: 32
                 writable: true
+                DOMNode: 'CanonRaw:CanonFileDescription'
                 desc: 'Canon File Description'
             -
                 name: UserComment
                 type: string
                 count: 256
                 writable: true
+                DOMNode: 'CanonRaw:UserComment'
                 desc: 'User Comment'
     2059:
         exiftool:
@@ -51,6 +57,7 @@ items:
                 type: string
                 count: 32
                 writable: true
+                DOMNode: 'CanonRaw:CanonFirmwareVersion'
                 desc: 'Canon Firmware Version'
     2060:
         exiftool:
@@ -58,6 +65,7 @@ items:
                 name: ComponentVersion
                 type: string
                 writable: true
+                DOMNode: 'CanonRaw:ComponentVersion'
                 desc: 'Component Version'
     2061:
         exiftool:
@@ -66,6 +74,7 @@ items:
                 type: string
                 count: 8
                 writable: true
+                DOMNode: 'CanonRaw:ROMOperationMode'
                 desc: 'ROM Operation Mode'
     2064:
         exiftool:
@@ -74,6 +83,7 @@ items:
                 type: string
                 count: 32
                 writable: true
+                DOMNode: 'CanonRaw:OwnerName'
                 desc: 'Owner Name'
     2069:
         exiftool:
@@ -82,6 +92,7 @@ items:
                 type: string
                 count: 32
                 writable: true
+                DOMNode: 'CanonRaw:CanonImageType'
                 desc: 'Canon Image Type'
     2070:
         exiftool:
@@ -90,6 +101,7 @@ items:
                 type: string
                 count: 32
                 writable: true
+                DOMNode: 'CanonRaw:OriginalFileName'
                 desc: 'Original File Name'
     2071:
         exiftool:
@@ -98,6 +110,7 @@ items:
                 type: string
                 count: 32
                 writable: true
+                DOMNode: 'CanonRaw:ThumbnailFileName'
                 desc: 'Thumbnail File Name'
     4106:
         exiftool:
@@ -105,6 +118,7 @@ items:
                 name: TargetImageType
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:TargetImageType'
                 desc: 'Target Image Type'
                 values:
                     - 'Real-world Subject'
@@ -115,6 +129,7 @@ items:
                 name: ShutterReleaseMethod
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:ShutterReleaseMethod'
                 desc: 'Shutter Release Method'
                 values:
                     0: 'Single Shot'
@@ -125,6 +140,7 @@ items:
                 name: ShutterReleaseTiming
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:ShutterReleaseTiming'
                 desc: 'Shutter Release Timing'
                 values:
                     - 'Priority on shutter'
@@ -135,6 +151,7 @@ items:
                 name: ReleaseSetting
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:ReleaseSetting'
                 desc: 'Release Setting'
     4124:
         exiftool:
@@ -142,6 +159,7 @@ items:
                 name: BaseISO
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:BaseISO'
                 desc: 'Base ISO'
     4136:
         exiftool:
@@ -150,6 +168,7 @@ items:
                 type: int16u
                 count: 4
                 writable: true
+                DOMNode: 'CanonRaw:CanonFlashInfo'
                 desc: 'Canon Flash Info'
     4140:
         exiftool:
@@ -157,6 +176,7 @@ items:
                 name: CanonColorInfo2
                 type: '?'
                 writable: true
+                DOMNode: 'CanonRaw:CanonColorInfo2'
                 desc: 'Canon Color Info 2'
     4270:
         exiftool:
@@ -164,6 +184,7 @@ items:
                 name: ColorTemperature
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:ColorTemperature'
                 desc: 'Color Temperature'
     4276:
         exiftool:
@@ -171,6 +192,7 @@ items:
                 name: ColorSpace
                 type: int16u
                 writable: true
+                DOMNode: 'CanonRaw:ColorSpace'
                 desc: 'Color Space'
                 values:
                     1: sRGB
@@ -182,6 +204,7 @@ items:
                 name: RecordID
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:RecordID'
                 desc: 'Record ID'
     6150:
         exiftool:
@@ -189,6 +212,7 @@ items:
                 name: SelfTimerTime
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:SelfTimerTime'
                 desc: 'Self Timer Time'
     6151:
         exiftool:
@@ -196,6 +220,7 @@ items:
                 name: TargetDistanceSetting
                 type: float
                 writable: true
+                DOMNode: 'CanonRaw:TargetDistanceSetting'
                 desc: 'Target Distance Setting'
     6155:
         exiftool:
@@ -203,16 +228,19 @@ items:
                 name: SerialNumber
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:SerialNumber'
                 desc: 'Serial Number'
             -
                 name: SerialNumber
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:SerialNumber'
                 desc: 'Serial Number'
             -
                 name: UnknownNumber
                 type: '?'
                 writable: true
+                DOMNode: 'CanonRaw:UnknownNumber'
                 desc: 'Unknown Number'
     6164:
         exiftool:
@@ -220,6 +248,7 @@ items:
                 name: MeasuredEV
                 type: float
                 writable: true
+                DOMNode: 'CanonRaw:MeasuredEV'
                 desc: 'Measured EV'
     6167:
         exiftool:
@@ -228,6 +257,7 @@ items:
                 type: int32u
                 writable: true
                 g2: Image
+                DOMNode: 'CanonRaw:FileNumber'
                 desc: 'File Number'
     6196:
         exiftool:
@@ -235,6 +265,7 @@ items:
                 name: CanonModelID
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:CanonModelID'
                 desc: 'Canon Model ID'
                 values:
                     1042: 'EOS M50 / Kiss M'
@@ -570,6 +601,7 @@ items:
                 name: SerialNumberFormat
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:SerialNumberFormat'
                 desc: 'Serial Number Format'
                 values:
                     '2415919104': 'Format 1'
@@ -580,6 +612,7 @@ items:
                 name: RawData
                 type: '?'
                 writable: true
+                DOMNode: 'CanonRaw:RawData'
                 desc: 'Raw Data'
     8199:
         exiftool:
@@ -588,6 +621,7 @@ items:
                 type: resize
                 writable: true
                 g2: Preview
+                DOMNode: 'CanonRaw:JpgFromRaw'
                 desc: 'Jpg From Raw'
     8200:
         exiftool:
@@ -596,4 +630,5 @@ items:
                 type: resize
                 writable: true
                 g2: Preview
+                DOMNode: 'CanonRaw:ThumbnailImage'
                 desc: 'Thumbnail Image'

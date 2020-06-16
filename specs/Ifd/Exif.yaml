@@ -6,7 +6,6 @@ DOMNode: ifd
 defaultItemCollection: Tag
 compiler:
     exiftool:
-        g1Default: ExifIFD
         xpath: '//table[@name=''Exif::Main'']/tag[@g1=''ExifIFD'']'
 items:
     273:
@@ -1996,6 +1995,9 @@ items:
         title: 'Maker Note'
         format: Undefined
         entryClass: FileEye\MediaProbe\Entry\ExifMakerNote
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: MakerNoteApple
@@ -3727,6 +3729,9 @@ items:
                 DOMNode: 'ExifIFD:RowInterleaveFactor'
                 desc: 'Row Interleave Factor'
     59932:
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: Padding
