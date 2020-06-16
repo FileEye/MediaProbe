@@ -49,6 +49,33 @@ class PersonalFuncValues extends Collection {
     'PF5ApertureMin' => 6,
     'PF8BracketShots' => 8,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonCustom:PF19ShootingSpeedHigh' => 10,
+    'CanonCustom:PF19ShootingSpeedLow' => 9,
+    'CanonCustom:PF1Value' => 1,
+    'CanonCustom:PF20MaxContinousShots' => 11,
+    'CanonCustom:PF23FELockTime' => 13,
+    'CanonCustom:PF23PostReleaseTime' => 14,
+    'CanonCustom:PF23ShutterButtonTime' => 12,
+    'CanonCustom:PF25AEMode' => 15,
+    'CanonCustom:PF25AFMode' => 18,
+    'CanonCustom:PF25AFPointSel' => 19,
+    'CanonCustom:PF25ColorMatrix' => 23,
+    'CanonCustom:PF25DriveMode' => 17,
+    'CanonCustom:PF25ImageSize' => 20,
+    'CanonCustom:PF25MeteringMode' => 16,
+    'CanonCustom:PF25Parameters' => 22,
+    'CanonCustom:PF25WBMode' => 21,
+    'CanonCustom:PF27Value' => 24,
+    'CanonCustom:PF2Value' => 2,
+    'CanonCustom:PF3Value' => 3,
+    'CanonCustom:PF4ExposureTimeMax' => 5,
+    'CanonCustom:PF4ExposureTimeMin' => 4,
+    'CanonCustom:PF5ApertureMax' => 7,
+    'CanonCustom:PF5ApertureMin' => 6,
+    'CanonCustom:PF8BracketShots' => 8,
+  ),
   'items' =>
   array (
     1 =>
@@ -60,6 +87,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF1Value',
     ),
     2 =>
     array (
@@ -70,6 +98,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF2Value',
     ),
     3 =>
     array (
@@ -80,6 +109,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF3Value',
     ),
     4 =>
     array (
@@ -90,6 +120,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF4ExposureTimeMin',
     ),
     5 =>
     array (
@@ -100,6 +131,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF4ExposureTimeMax',
     ),
     6 =>
     array (
@@ -110,6 +142,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF5ApertureMin',
     ),
     7 =>
     array (
@@ -120,6 +153,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF5ApertureMax',
     ),
     8 =>
     array (
@@ -130,6 +164,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF8BracketShots',
     ),
     9 =>
     array (
@@ -140,6 +175,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF19ShootingSpeedLow',
     ),
     10 =>
     array (
@@ -150,6 +186,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF19ShootingSpeedHigh',
     ),
     11 =>
     array (
@@ -160,6 +197,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF20MaxContinousShots',
     ),
     12 =>
     array (
@@ -170,6 +208,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF23ShutterButtonTime',
     ),
     13 =>
     array (
@@ -180,6 +219,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF23FELockTime',
     ),
     14 =>
     array (
@@ -190,6 +230,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF23PostReleaseTime',
     ),
     15 =>
     array (
@@ -200,6 +241,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25AEMode',
     ),
     16 =>
     array (
@@ -210,6 +252,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25MeteringMode',
     ),
     17 =>
     array (
@@ -220,6 +263,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25DriveMode',
     ),
     18 =>
     array (
@@ -230,6 +274,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25AFMode',
     ),
     19 =>
     array (
@@ -240,6 +285,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25AFPointSel',
     ),
     20 =>
     array (
@@ -250,6 +296,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25ImageSize',
     ),
     21 =>
     array (
@@ -260,6 +307,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25WBMode',
     ),
     22 =>
     array (
@@ -270,6 +318,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25Parameters',
     ),
     23 =>
     array (
@@ -280,6 +329,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25ColorMatrix',
     ),
     24 =>
     array (
@@ -290,6 +340,7 @@ class PersonalFuncValues extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF27Value',
     ),
   ),
 );

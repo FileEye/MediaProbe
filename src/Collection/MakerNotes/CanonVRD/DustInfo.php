@@ -26,6 +26,10 @@ class DustInfo extends Collection {
   array (
     'DustDeleteApplied' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:DustDeleteApplied' => 2,
+  ),
   'items' =>
   array (
     2 =>
@@ -45,6 +49,7 @@ class DustInfo extends Collection {
           1 => 'Yes',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:DustDeleteApplied',
     ),
   ),
 );

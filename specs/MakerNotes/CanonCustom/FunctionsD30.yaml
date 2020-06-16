@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonCustom
         xpath: '//table[@name=''CanonCustom::FunctionsD30'']/tag'
 items:
     1:
@@ -15,6 +16,7 @@ items:
                 name: LongExposureNoiseReduction
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:LongExposureNoiseReduction'
                 desc: 'Long Exposure Noise Reduction'
                 values:
                     - 'Off'
@@ -25,6 +27,7 @@ items:
                 name: Shutter-AELock
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:Shutter-AELock'
                 desc: 'Shutter-AE Lock'
                 values:
                     - 'AF/AE lock'
@@ -37,6 +40,7 @@ items:
                 name: MirrorLockup
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:MirrorLockup'
                 desc: 'Mirror Lockup'
                 values:
                     - Disable
@@ -47,6 +51,7 @@ items:
                 name: ExposureLevelIncrements
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:ExposureLevelIncrements'
                 desc: 'Exposure Level Increments'
                 values:
                     - '1/2 Stop'
@@ -57,6 +62,7 @@ items:
                 name: AFAssist
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:AFAssist'
                 desc: 'AF Assist'
                 values:
                     - Emits/Fires
@@ -69,6 +75,7 @@ items:
                 name: FlashSyncSpeedAv
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
                 desc: 'Flash Sync Speed Av'
                 values:
                     - Auto
@@ -79,6 +86,7 @@ items:
                 name: AEBSequenceAutoCancel
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:AEBSequenceAutoCancel'
                 desc: 'AEB Sequence/Auto Cancel'
                 values:
                     - '0,-,+/Enabled'
@@ -91,6 +99,7 @@ items:
                 name: ShutterCurtainSync
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:ShutterCurtainSync'
                 desc: 'Shutter Curtain Sync'
                 values:
                     - '1st-curtain sync'
@@ -101,6 +110,7 @@ items:
                 name: LensAFStopButton
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:LensAFStopButton'
                 desc: 'Lens AF Stop Button'
                 values:
                     - 'AF Stop'
@@ -112,6 +122,7 @@ items:
                 name: FillFlashAutoReduction
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:FillFlashAutoReduction'
                 desc: 'Fill Flash Auto Reduction'
                 values:
                     - Enable
@@ -122,6 +133,7 @@ items:
                 name: MenuButtonReturn
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:MenuButtonReturn'
                 desc: 'Menu Button Return'
                 values:
                     - Top
@@ -133,6 +145,7 @@ items:
                 name: SetButtonWhenShooting
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
                 desc: 'Set Button When Shooting'
                 values:
                     - 'Default (no function)'
@@ -145,6 +158,7 @@ items:
                 name: SensorCleaning
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:SensorCleaning'
                 desc: 'Sensor Cleaning'
                 values:
                     - Disable
@@ -155,6 +169,7 @@ items:
                 name: SuperimposedDisplay
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:SuperimposedDisplay'
                 desc: 'Superimposed Display'
                 values:
                     - 'On'
@@ -165,6 +180,7 @@ items:
                 name: ShutterReleaseNoCFCard
                 type: int8u
                 writable: true
+                DOMNode: 'CanonCustom:ShutterReleaseNoCFCard'
                 desc: 'Shutter Release W/O CF Card'
                 values:
                     - 'Yes'

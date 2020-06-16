@@ -35,6 +35,19 @@ class ToneCurve extends Collection {
     'ToneCurveX' => 10,
     'ToneCurveY' => 11,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:BlueCurvePoints' => 121,
+    'CanonVRD:GreenCurvePoints' => 83,
+    'CanonVRD:RGBCurvePoints' => 7,
+    'CanonVRD:RedCurvePoints' => 45,
+    'CanonVRD:ToneCurveColorSpace' => 0,
+    'CanonVRD:ToneCurveInputRange' => 3,
+    'CanonVRD:ToneCurveOutputRange' => 5,
+    'CanonVRD:ToneCurveShape' => 1,
+    'CanonVRD:ToneCurveX' => 10,
+    'CanonVRD:ToneCurveY' => 11,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,6 +67,7 @@ class ToneCurve extends Collection {
           1 => 'Luminance',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveColorSpace',
     ),
     1 =>
     array (
@@ -72,6 +86,7 @@ class ToneCurve extends Collection {
           1 => 'Straight',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveShape',
     ),
     3 =>
     array (
@@ -83,6 +98,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveInputRange',
     ),
     5 =>
     array (
@@ -94,6 +110,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveOutputRange',
     ),
     7 =>
     array (
@@ -105,6 +122,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RGBCurvePoints',
     ),
     10 =>
     array (
@@ -115,6 +133,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveX',
     ),
     11 =>
     array (
@@ -125,6 +144,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ToneCurveY',
     ),
     45 =>
     array (
@@ -136,6 +156,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RedCurvePoints',
     ),
     83 =>
     array (
@@ -147,6 +168,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:GreenCurvePoints',
     ),
     121 =>
     array (
@@ -158,6 +180,7 @@ class ToneCurve extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:BlueCurvePoints',
     ),
   ),
 );

@@ -12,7 +12,7 @@ postLoad:
     - 'FileEye\MediaProbe\Block\Ifd::makerNoteToBlock'
 compiler:
     exiftool:
-        g1Default: IFD0
+        g1: IFD0
         xpath: '//table[@name=''Exif::Main'']/tag[not(@g1)]'
 items:
     11:
@@ -876,6 +876,9 @@ items:
                 DOMNode: 'IFD0:XPSubject'
                 desc: 'XP Subject'
     50341:
+        compiler:
+            exiftool:
+                skipDOMNode: true
         exiftool:
             -
                 name: PrintIM

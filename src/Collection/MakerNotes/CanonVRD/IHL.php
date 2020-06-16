@@ -30,6 +30,14 @@ class IHL extends Collection {
     'RawCodecVersion' => 5,
     'ThumbnailImage' => 3,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonVRD:CRCDevelParams' => 6,
+    'CanonVRD:IHL_EXIF' => 1,
+    'CanonVRD:PreviewImage' => 4,
+    'CanonVRD:RawCodecVersion' => 5,
+    'CanonVRD:ThumbnailImage' => 3,
+  ),
   'items' =>
   array (
     1 =>
@@ -41,6 +49,7 @@ class IHL extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:IHL_EXIF',
     ),
     3 =>
     array (
@@ -51,6 +60,7 @@ class IHL extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:ThumbnailImage',
     ),
     4 =>
     array (
@@ -61,6 +71,7 @@ class IHL extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:PreviewImage',
     ),
     5 =>
     array (
@@ -71,6 +82,7 @@ class IHL extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:RawCodecVersion',
     ),
     6 =>
     array (
@@ -81,6 +93,7 @@ class IHL extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'CanonVRD:CRCDevelParams',
     ),
   ),
 );

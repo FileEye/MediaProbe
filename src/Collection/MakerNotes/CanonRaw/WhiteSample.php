@@ -30,6 +30,14 @@ class WhiteSample extends Collection {
     'WhiteSampleTopBorder' => 4,
     'WhiteSampleWidth' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:WhiteSampleBits' => 5,
+    'CanonRaw:WhiteSampleHeight' => 2,
+    'CanonRaw:WhiteSampleLeftBorder' => 3,
+    'CanonRaw:WhiteSampleTopBorder' => 4,
+    'CanonRaw:WhiteSampleWidth' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -41,6 +49,7 @@ class WhiteSample extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:WhiteSampleWidth',
     ),
     2 =>
     array (
@@ -51,6 +60,7 @@ class WhiteSample extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:WhiteSampleHeight',
     ),
     3 =>
     array (
@@ -61,6 +71,7 @@ class WhiteSample extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:WhiteSampleLeftBorder',
     ),
     4 =>
     array (
@@ -71,6 +82,7 @@ class WhiteSample extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:WhiteSampleTopBorder',
     ),
     5 =>
     array (
@@ -81,6 +93,7 @@ class WhiteSample extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:WhiteSampleBits',
     ),
   ),
 );

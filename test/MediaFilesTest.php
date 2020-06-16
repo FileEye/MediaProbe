@@ -164,6 +164,11 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             if ($exiftool_node = $element->getParentElement()->getCollection()->getPropertyValue('exiftoolDOMNode')) {
                 $exiftool_node_skip = $this->testDump['skip']['exiftool'] ?? [];
                 if (!in_array($exiftool_node, $exiftool_node_skip)) {
+                    [$g1, $tag] = explode(':', $exiftool_node);
+                    if ($g1 === '*') {
+                        $ifd = $element->getParentElement()->getParentElement()->getAttribute('name');
+                        $exiftool_node = implode(':', [$ifd, $tag]);
+                    }
                     $xml_nodes = $this->exiftoolRawDump->getElementsByTagName('*');
                     $n = null;
                     foreach ($xml_nodes as $node) {
@@ -182,8 +187,19 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
 }*/
-                    if (in_array($element->getFormat(), [ItemFormat::RATIONAL, ItemFormat::SIGNED_RATIONAL, ItemFormat::SHORT_RATIONAL, ItemFormat::SHORT_SIGNED_RATIONAL, ItemFormat::DOUBLE, ItemFormat::FLOAT])) {
-                        $this->assertEqualsWithDelta((float) $valx, (float) $vala, 0.001, 'Exiftool raw: ' . $element->getContextPath());
+                    if ($element->getFormat() !== ItemFormat::ASCII) {
+                        $sep = strpos($valx, ':') !== false ? ':' : ' ';
+                        $valx_a = explode($sep, $valx);
+                        $valx_aa = [];
+                        foreach ($valx_a as $v) {
+                            $valx_aa[] = (float) $v;
+                        }
+                        $vala_a = explode(' ', $vala);
+                        $vala_aa = [];
+                        foreach ($vala_a as $v) {
+                            $vala_aa[] = (float) $v;
+                        }
+                        $this->assertEqualsWithDelta($valx_aa, $vala_aa, 0.001, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
                         $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     }

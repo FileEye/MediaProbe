@@ -32,6 +32,16 @@ class ImageInfo extends Collection {
     'PixelAspectRatio' => 2,
     'Rotation' => 3,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:ColorBW' => 6,
+    'CanonRaw:ColorBitDepth' => 5,
+    'CanonRaw:ComponentBitDepth' => 4,
+    'CanonRaw:ImageHeight' => 1,
+    'CanonRaw:ImageWidth' => 0,
+    'CanonRaw:PixelAspectRatio' => 2,
+    'CanonRaw:Rotation' => 3,
+  ),
   'items' =>
   array (
     0 =>
@@ -43,6 +53,7 @@ class ImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ImageWidth',
     ),
     1 =>
     array (
@@ -53,6 +64,7 @@ class ImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ImageHeight',
     ),
     2 =>
     array (
@@ -63,6 +75,7 @@ class ImageInfo extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:PixelAspectRatio',
     ),
     3 =>
     array (
@@ -73,6 +86,7 @@ class ImageInfo extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:Rotation',
     ),
     4 =>
     array (
@@ -83,6 +97,7 @@ class ImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ComponentBitDepth',
     ),
     5 =>
     array (
@@ -93,6 +108,7 @@ class ImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ColorBitDepth',
     ),
     6 =>
     array (
@@ -103,6 +119,7 @@ class ImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ColorBW',
     ),
   ),
 );

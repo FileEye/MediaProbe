@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonVRD
         xpath: '//table[@name=''CanonVRD::Ver1'']/tag'
 items:
     2:
@@ -15,6 +16,7 @@ items:
                 name: VRDVersion
                 type: int16u
                 writable: false
+                DOMNode: 'CanonVRD:VRDVersion'
                 desc: 'VRD Version'
     6:
         exiftool:
@@ -23,6 +25,7 @@ items:
                 type: int16u
                 count: 4
                 writable: true
+                DOMNode: 'CanonVRD:WBAdjRGGBLevels'
                 desc: 'WB Adj RGGB Levels'
     24:
         exiftool:
@@ -30,6 +33,7 @@ items:
                 name: WhiteBalanceAdj
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:WhiteBalanceAdj'
                 desc: 'White Balance Adj'
                 values:
                     0: Auto
@@ -48,6 +52,7 @@ items:
                 name: WBAdjColorTemp
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:WBAdjColorTemp'
                 desc: 'WB Adj Color Temp'
     36:
         exiftool:
@@ -55,6 +60,7 @@ items:
                 name: WBFineTuneActive
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:WBFineTuneActive'
                 desc: 'WB Fine Tune Active'
                 values:
                     - 'No'
@@ -65,6 +71,7 @@ items:
                 name: WBFineTuneSaturation
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:WBFineTuneSaturation'
                 desc: 'WB Fine Tune Saturation'
     44:
         exiftool:
@@ -72,6 +79,7 @@ items:
                 name: WBFineTuneTone
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:WBFineTuneTone'
                 desc: 'WB Fine Tune Tone'
     46:
         exiftool:
@@ -79,6 +87,7 @@ items:
                 name: RawColorAdj
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:RawColorAdj'
                 desc: 'Raw Color Adj'
                 values:
                     - 'Shot Settings'
@@ -90,6 +99,7 @@ items:
                 name: RawCustomSaturation
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:RawCustomSaturation'
                 desc: 'Raw Custom Saturation'
     52:
         exiftool:
@@ -97,6 +107,7 @@ items:
                 name: RawCustomTone
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:RawCustomTone'
                 desc: 'Raw Custom Tone'
     56:
         exiftool:
@@ -104,6 +115,7 @@ items:
                 name: RawBrightnessAdj
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:RawBrightnessAdj'
                 desc: 'Raw Brightness Adj'
     60:
         exiftool:
@@ -111,6 +123,7 @@ items:
                 name: ToneCurveProperty
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveProperty'
                 desc: 'Tone Curve Property'
                 values:
                     - 'Shot Settings'
@@ -126,6 +139,7 @@ items:
                 name: DynamicRangeMin
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:DynamicRangeMin'
                 desc: 'Dynamic Range Min'
     124:
         exiftool:
@@ -133,6 +147,7 @@ items:
                 name: DynamicRangeMax
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:DynamicRangeMax'
                 desc: 'Dynamic Range Max'
     272:
         exiftool:
@@ -140,6 +155,7 @@ items:
                 name: ToneCurveActive
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveActive'
                 desc: 'Tone Curve Active'
                 values:
                     - 'No'
@@ -150,6 +166,7 @@ items:
                 name: ToneCurveMode
                 type: int8u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveMode'
                 desc: 'Tone Curve Mode'
                 values:
                     - RGB
@@ -160,6 +177,7 @@ items:
                 name: BrightnessAdj
                 type: int8s
                 writable: true
+                DOMNode: 'CanonVRD:BrightnessAdj'
                 desc: 'Brightness Adj'
     277:
         exiftool:
@@ -167,6 +185,7 @@ items:
                 name: ContrastAdj
                 type: int8s
                 writable: true
+                DOMNode: 'CanonVRD:ContrastAdj'
                 desc: 'Contrast Adj'
     278:
         exiftool:
@@ -174,6 +193,7 @@ items:
                 name: SaturationAdj
                 type: int16s
                 writable: true
+                DOMNode: 'CanonVRD:SaturationAdj'
                 desc: 'Saturation Adj'
     286:
         exiftool:
@@ -181,6 +201,7 @@ items:
                 name: ColorToneAdj
                 type: int32s
                 writable: true
+                DOMNode: 'CanonVRD:ColorToneAdj'
                 desc: 'Color Tone Adj'
     294:
         exiftool:
@@ -189,6 +210,7 @@ items:
                 type: int16u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:LuminanceCurvePoints'
                 desc: 'Luminance Curve Points'
     336:
         exiftool:
@@ -197,6 +219,7 @@ items:
                 type: int16u
                 count: 4
                 writable: true
+                DOMNode: 'CanonVRD:LuminanceCurveLimits'
                 desc: 'Luminance Curve Limits'
     345:
         exiftool:
@@ -204,6 +227,7 @@ items:
                 name: ToneCurveInterpolation
                 type: int8u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveInterpolation'
                 desc: 'Tone Curve Interpolation'
                 values:
                     - Curve
@@ -215,6 +239,7 @@ items:
                 type: int16u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:RedCurvePoints'
                 desc: 'Red Curve Points'
     394:
         exiftool:
@@ -223,6 +248,7 @@ items:
                 type: int16u
                 count: 4
                 writable: true
+                DOMNode: 'CanonVRD:RedCurveLimits'
                 desc: 'Red Curve Limits'
     410:
         exiftool:
@@ -231,6 +257,7 @@ items:
                 type: int16u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:GreenCurvePoints'
                 desc: 'Green Curve Points'
     452:
         exiftool:
@@ -239,6 +266,7 @@ items:
                 type: int16u
                 count: 4
                 writable: true
+                DOMNode: 'CanonVRD:GreenCurveLimits'
                 desc: 'Green Curve Limits'
     468:
         exiftool:
@@ -247,6 +275,7 @@ items:
                 type: int16u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:BlueCurvePoints'
                 desc: 'Blue Curve Points'
     510:
         exiftool:
@@ -255,6 +284,7 @@ items:
                 type: int16u
                 count: 4
                 writable: true
+                DOMNode: 'CanonVRD:BlueCurveLimits'
                 desc: 'Blue Curve Limits'
     526:
         exiftool:
@@ -263,6 +293,7 @@ items:
                 type: int16u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:RGBCurvePoints'
                 desc: 'RGB Curve Points'
     568:
         exiftool:
@@ -271,6 +302,7 @@ items:
                 type: int16u
                 count: 4
                 writable: true
+                DOMNode: 'CanonVRD:RGBCurveLimits'
                 desc: 'RGB Curve Limits'
     580:
         exiftool:
@@ -278,6 +310,7 @@ items:
                 name: CropActive
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CropActive'
                 desc: 'Crop Active'
                 values:
                     - 'No'
@@ -288,6 +321,7 @@ items:
                 name: CropLeft
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CropLeft'
                 desc: 'Crop Left'
     584:
         exiftool:
@@ -295,6 +329,7 @@ items:
                 name: CropTop
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CropTop'
                 desc: 'Crop Top'
     586:
         exiftool:
@@ -302,6 +337,7 @@ items:
                 name: CropWidth
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CropWidth'
                 desc: 'Crop Width'
     588:
         exiftool:
@@ -309,6 +345,7 @@ items:
                 name: CropHeight
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CropHeight'
                 desc: 'Crop Height'
     602:
         exiftool:
@@ -316,6 +353,7 @@ items:
                 name: SharpnessAdj
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:SharpnessAdj'
                 desc: 'Sharpness Adj'
     608:
         exiftool:
@@ -323,6 +361,7 @@ items:
                 name: CropAspectRatio
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CropAspectRatio'
                 desc: 'Crop Aspect Ratio'
                 values:
                     0: Free
@@ -345,6 +384,7 @@ items:
                 name: ConstrainedCropWidth
                 type: float
                 writable: true
+                DOMNode: 'CanonVRD:ConstrainedCropWidth'
                 desc: 'Constrained Crop Width'
     614:
         exiftool:
@@ -352,6 +392,7 @@ items:
                 name: ConstrainedCropHeight
                 type: float
                 writable: true
+                DOMNode: 'CanonVRD:ConstrainedCropHeight'
                 desc: 'Constrained Crop Height'
     618:
         exiftool:
@@ -359,6 +400,7 @@ items:
                 name: CheckMark
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:CheckMark'
                 desc: 'Check Mark'
                 values:
                     - Clear
@@ -371,6 +413,7 @@ items:
                 name: Rotation
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:Rotation'
                 desc: Rotation
                 values:
                     - '0'
@@ -383,6 +426,7 @@ items:
                 name: WorkColorSpace
                 type: int16u
                 writable: true
+                DOMNode: 'CanonVRD:WorkColorSpace'
                 desc: 'Work Color Space'
                 values:
                     - sRGB

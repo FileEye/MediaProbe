@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonVRD
         xpath: '//table[@name=''CanonVRD::ToneCurve'']/tag'
 items:
     0:
@@ -15,6 +16,7 @@ items:
                 name: ToneCurveColorSpace
                 type: int32u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveColorSpace'
                 desc: 'Tone Curve Color Space'
                 values:
                     - RGB
@@ -25,6 +27,7 @@ items:
                 name: ToneCurveShape
                 type: int32u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveShape'
                 desc: 'Tone Curve Shape'
                 values:
                     - Curve
@@ -36,6 +39,7 @@ items:
                 type: int32u
                 count: 2
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveInputRange'
                 desc: 'Tone Curve Input Range'
     5:
         exiftool:
@@ -44,6 +48,7 @@ items:
                 type: int32u
                 count: 2
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveOutputRange'
                 desc: 'Tone Curve Output Range'
     7:
         exiftool:
@@ -52,6 +57,7 @@ items:
                 type: int32u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:RGBCurvePoints'
                 desc: 'RGB Curve Points'
     10:
         exiftool:
@@ -59,6 +65,7 @@ items:
                 name: ToneCurveX
                 type: int32u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveX'
                 desc: 'Tone Curve X'
     11:
         exiftool:
@@ -66,6 +73,7 @@ items:
                 name: ToneCurveY
                 type: int32u
                 writable: true
+                DOMNode: 'CanonVRD:ToneCurveY'
                 desc: 'Tone Curve Y'
     45:
         exiftool:
@@ -74,6 +82,7 @@ items:
                 type: int32u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:RedCurvePoints'
                 desc: 'Red Curve Points'
     83:
         exiftool:
@@ -82,6 +91,7 @@ items:
                 type: int32u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:GreenCurvePoints'
                 desc: 'Green Curve Points'
     121:
         exiftool:
@@ -90,4 +100,5 @@ items:
                 type: int32u
                 count: 21
                 writable: true
+                DOMNode: 'CanonVRD:BlueCurvePoints'
                 desc: 'Blue Curve Points'

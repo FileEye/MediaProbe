@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonRaw
         xpath: '//table[@name=''CanonRaw::ImageFormat'']/tag'
 items:
     -
@@ -15,6 +16,7 @@ items:
                 name: FileFormat
                 type: int32u
                 writable: true
+                DOMNode: 'CanonRaw:FileFormat'
                 desc: 'File Format'
                 values:
                     65536: 'JPEG (lossy)'
@@ -27,4 +29,5 @@ items:
                 name: TargetCompressionRatio
                 type: float
                 writable: true
+                DOMNode: 'CanonRaw:TargetCompressionRatio'
                 desc: 'Target Compression Ratio'

@@ -28,6 +28,12 @@ class TimeStamp extends Collection {
     'TimeZoneCode' => 1,
     'TimeZoneInfo' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:DateTimeOriginal' => 0,
+    'CanonRaw:TimeZoneCode' => 1,
+    'CanonRaw:TimeZoneInfo' => 2,
+  ),
   'items' =>
   array (
     0 =>
@@ -39,6 +45,7 @@ class TimeStamp extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:DateTimeOriginal',
     ),
     1 =>
     array (
@@ -49,6 +56,7 @@ class TimeStamp extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:TimeZoneCode',
     ),
     2 =>
     array (
@@ -59,6 +67,7 @@ class TimeStamp extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:TimeZoneInfo',
     ),
   ),
 );

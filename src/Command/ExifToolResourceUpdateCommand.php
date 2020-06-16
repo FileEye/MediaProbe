@@ -18,7 +18,7 @@ class ExifToolResourceUpdateCommand extends Command
 
     protected $specDir;
     protected $exiftoolXml;
-    protected $phpExifTags;
+    //protected $phpExifTags;
 
     /**
      * {@inheritdoc}
@@ -48,7 +48,7 @@ class ExifToolResourceUpdateCommand extends Command
         $this->exiftoolXml = simplexml_load_file('specs/exiftool.xml');
         $output->writeln('Loaded ExifTool XML...');
 
-        $this->phpExifTags = Yaml::parse(file_get_contents('specs/exiftags.yaml'));
+        //$this->phpExifTags = Yaml::parse(file_get_contents('specs/exiftags.yaml'));
 
         $finder = new Finder();
         $finder->files()->in($this->specDir)->name('*.yaml');
@@ -137,6 +137,15 @@ class ExifToolResourceUpdateCommand extends Command
     protected function updateWithExifTool(InputInterface $input, OutputInterface $output, $collection_file)
     {
         $spec = Yaml::parse(file_get_contents($collection_file));
+
+        if ($spec['compiler']['exiftool']['skip'] ?? false) {
+            return;
+        }
+
+        if (!($spec['compiler']['exiftool']['xpath'] ?? null)) {
+            return;
+        }
+
         $exiftool_ifd = $this->exiftoolXml->xpath($spec['compiler']['exiftool']['xpath']);
 
         foreach ($exiftool_ifd as $exiftool_tag) {
@@ -144,10 +153,10 @@ class ExifToolResourceUpdateCommand extends Command
             $index = (string) ($exiftool_tag->attributes()->index ?? 0);
 
             // Reset exiftool metadata.
-            unset($spec['items'][$id]['exifReadData']);
+            /*unset($spec['items'][$id]['exifReadData']);
             if (isset($this->phpExifTags['items'][$id])) {
                 $spec['items'][$id]['exifReadData']['key'] = $this->phpExifTags['items'][$id];
-            }
+            }*/
 
             // Reset exiftool metadata.
             unset($spec['items'][$id]['exiftool'][$index]);
@@ -173,14 +182,10 @@ class ExifToolResourceUpdateCommand extends Command
             }
 
             // Set exiftool item DOM node name.
-            if ($spec['compiler']['exiftool']['g1Default'] === '') {
-                if ($exiftool_tag->attributes()->g1) {
-                    $prefix = (string) $exiftool_tag->attributes()->g1;
-                } else {
-                    $prefix = 'IFD0';
-                }
+            if (($spec['compiler']['exiftool']['g1'] ?? null) === null) {
+                $prefix = (string) $exiftool_tag->attributes()->g1;
             } else {
-                $prefix = $spec['compiler']['exiftool']['g1Default'];
+                $prefix = $spec['compiler']['exiftool']['g1'];
             }
             $spec['items'][$id]['exiftool'][$index]['DOMNode'] = $prefix . ':' . (string) $exiftool_tag->attributes()->name;
 

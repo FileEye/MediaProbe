@@ -29,6 +29,13 @@ class RawJpgInfo extends Collection {
     'RawJpgSize' => 2,
     'RawJpgWidth' => 3,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:RawJpgHeight' => 4,
+    'CanonRaw:RawJpgQuality' => 1,
+    'CanonRaw:RawJpgSize' => 2,
+    'CanonRaw:RawJpgWidth' => 3,
+  ),
   'items' =>
   array (
     1 =>
@@ -50,6 +57,7 @@ class RawJpgInfo extends Collection {
           5 => 'Superfine',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:RawJpgQuality',
     ),
     2 =>
     array (
@@ -69,6 +77,7 @@ class RawJpgInfo extends Collection {
           2 => 'Small',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonRaw:RawJpgSize',
     ),
     3 =>
     array (
@@ -79,6 +88,7 @@ class RawJpgInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:RawJpgWidth',
     ),
     4 =>
     array (
@@ -89,6 +99,7 @@ class RawJpgInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:RawJpgHeight',
     ),
   ),
 );

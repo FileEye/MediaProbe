@@ -7,6 +7,7 @@ format: Short
 defaultItemCollection: Tag
 compiler:
     exiftool:
+        g1: CanonCustom
         xpath: '//table[@name=''CanonCustom::PersonalFuncs'']/tag'
 items:
     1:
@@ -15,6 +16,7 @@ items:
                 name: PF0CustomFuncRegistration
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF0CustomFuncRegistration'
                 desc: 'PF0 Custom Func Registration'
     2:
         exiftool:
@@ -22,6 +24,7 @@ items:
                 name: PF1DisableShootingModes
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF1DisableShootingModes'
                 desc: 'PF1 Disable Shooting Modes'
     3:
         exiftool:
@@ -29,6 +32,7 @@ items:
                 name: PF2DisableMeteringModes
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF2DisableMeteringModes'
                 desc: 'PF2 Disable Metering Modes'
     4:
         exiftool:
@@ -36,6 +40,7 @@ items:
                 name: PF3ManualExposureMetering
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF3ManualExposureMetering'
                 desc: 'PF3 Manual Exposure Metering'
     5:
         exiftool:
@@ -43,6 +48,7 @@ items:
                 name: PF4ExposureTimeLimits
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF4ExposureTimeLimits'
                 desc: 'PF4 Exposure Time Limits'
     6:
         exiftool:
@@ -50,6 +56,7 @@ items:
                 name: PF5ApertureLimits
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF5ApertureLimits'
                 desc: 'PF5 Aperture Limits'
     7:
         exiftool:
@@ -57,6 +64,7 @@ items:
                 name: PF6PresetShootingModes
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF6PresetShootingModes'
                 desc: 'PF6 Preset Shooting Modes'
     8:
         exiftool:
@@ -64,6 +72,7 @@ items:
                 name: PF7BracketContinuousShoot
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF7BracketContinuousShoot'
                 desc: 'PF7 Bracket Continuous Shoot'
     9:
         exiftool:
@@ -71,6 +80,7 @@ items:
                 name: PF8SetBracketShots
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF8SetBracketShots'
                 desc: 'PF8 Set Bracket Shots'
     10:
         exiftool:
@@ -78,6 +88,7 @@ items:
                 name: PF9ChangeBracketSequence
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF9ChangeBracketSequence'
                 desc: 'PF9 Change Bracket Sequence'
     11:
         exiftool:
@@ -85,6 +96,7 @@ items:
                 name: PF10RetainProgramShift
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF10RetainProgramShift'
                 desc: 'PF10 Retain Program Shift'
     14:
         exiftool:
@@ -92,6 +104,7 @@ items:
                 name: PF13DrivePriority
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF13DrivePriority'
                 desc: 'PF13 Drive Priority'
     15:
         exiftool:
@@ -99,6 +112,7 @@ items:
                 name: PF14DisableFocusSearch
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF14DisableFocusSearch'
                 desc: 'PF14 Disable Focus Search'
     16:
         exiftool:
@@ -106,6 +120,7 @@ items:
                 name: PF15DisableAFAssistBeam
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF15DisableAFAssistBeam'
                 desc: 'PF15 Disable AF Assist Beam'
     17:
         exiftool:
@@ -113,6 +128,7 @@ items:
                 name: PF16AutoFocusPointShoot
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF16AutoFocusPointShoot'
                 desc: 'PF16 Auto Focus Point Shoot'
     18:
         exiftool:
@@ -120,6 +136,7 @@ items:
                 name: PF17DisableAFPointSel
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF17DisableAFPointSel'
                 desc: 'PF17 Disable AF Point Sel'
     19:
         exiftool:
@@ -127,6 +144,7 @@ items:
                 name: PF18EnableAutoAFPointSel
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF18EnableAutoAFPointSel'
                 desc: 'PF18 Enable Auto AF Point Sel'
     20:
         exiftool:
@@ -134,6 +152,7 @@ items:
                 name: PF19ContinuousShootSpeed
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF19ContinuousShootSpeed'
                 desc: 'PF19 Continuous Shoot Speed'
     21:
         exiftool:
@@ -141,6 +160,7 @@ items:
                 name: PF20LimitContinousShots
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF20LimitContinousShots'
                 desc: 'PF20 Limit Continous Shots'
     22:
         exiftool:
@@ -148,6 +168,7 @@ items:
                 name: PF21EnableQuietOperation
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF21EnableQuietOperation'
                 desc: 'PF21 Enable Quiet Operation'
     24:
         exiftool:
@@ -155,6 +176,7 @@ items:
                 name: PF23SetTimerLengths
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF23SetTimerLengths'
                 desc: 'PF23 Set Timer Lengths'
     25:
         exiftool:
@@ -162,6 +184,7 @@ items:
                 name: PF24LightLCDDuringBulb
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF24LightLCDDuringBulb'
                 desc: 'PF24 Light LCD During Bulb'
     26:
         exiftool:
@@ -169,6 +192,7 @@ items:
                 name: PF25DefaultClearSettings
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF25DefaultClearSettings'
                 desc: 'PF25 Default Clear Settings'
     27:
         exiftool:
@@ -176,6 +200,7 @@ items:
                 name: PF26ShortenReleaseLag
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF26ShortenReleaseLag'
                 desc: 'PF26 Shorten Release Lag'
     28:
         exiftool:
@@ -183,6 +208,7 @@ items:
                 name: PF27ReverseDialRotation
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF27ReverseDialRotation'
                 desc: 'PF27 Reverse Dial Rotation'
     29:
         exiftool:
@@ -190,6 +216,7 @@ items:
                 name: PF28NoQuickDialExpComp
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF28NoQuickDialExpComp'
                 desc: 'PF28 No Quick Dial Exp Comp'
     30:
         exiftool:
@@ -197,6 +224,7 @@ items:
                 name: PF29QuickDialSwitchOff
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF29QuickDialSwitchOff'
                 desc: 'PF29 Quick Dial Switch Off'
     31:
         exiftool:
@@ -204,6 +232,7 @@ items:
                 name: PF30EnlargementMode
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF30EnlargementMode'
                 desc: 'PF30 Enlargement Mode'
     32:
         exiftool:
@@ -211,4 +240,5 @@ items:
                 name: PF31OriginalDecisionData
                 type: int16u
                 writable: true
+                DOMNode: 'CanonCustom:PF31OriginalDecisionData'
                 desc: 'PF31 Original Decision Data'

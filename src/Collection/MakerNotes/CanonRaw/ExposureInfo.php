@@ -28,6 +28,12 @@ class ExposureInfo extends Collection {
     'ExposureCompensation' => 0,
     'ShutterSpeedValue' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:ApertureValue' => 2,
+    'CanonRaw:ExposureCompensation' => 0,
+    'CanonRaw:ShutterSpeedValue' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -39,6 +45,7 @@ class ExposureInfo extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ExposureCompensation',
     ),
     1 =>
     array (
@@ -49,6 +56,7 @@ class ExposureInfo extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ShutterSpeedValue',
     ),
     2 =>
     array (
@@ -59,6 +67,7 @@ class ExposureInfo extends Collection {
       array (
         0 => 11,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:ApertureValue',
     ),
   ),
 );

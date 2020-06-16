@@ -28,6 +28,12 @@ class DecoderTable extends Collection {
     'CompressedDataOffset' => 2,
     'DecoderTableNumber' => 0,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonRaw:CompressedDataLength' => 3,
+    'CanonRaw:CompressedDataOffset' => 2,
+    'CanonRaw:DecoderTableNumber' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -39,6 +45,7 @@ class DecoderTable extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:DecoderTableNumber',
     ),
     2 =>
     array (
@@ -49,6 +56,7 @@ class DecoderTable extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CompressedDataOffset',
     ),
     3 =>
     array (
@@ -59,6 +67,7 @@ class DecoderTable extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'CanonRaw:CompressedDataLength',
     ),
   ),
 );

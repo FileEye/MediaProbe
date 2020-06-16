@@ -565,7 +565,6 @@ class Exif extends Collection {
     'ExifIFD:OtherImageLength' => 514,
     'ExifIFD:OtherImageStart' => 513,
     'ExifIFD:OwnerName' => 65000,
-    'ExifIFD:Padding' => 59932,
     'ExifIFD:PixelFormat' => 48129,
     'ExifIFD:PixelIntensityRange' => 34027,
     'ExifIFD:PixelMagicJBIGOptions' => 34232,
@@ -4396,7 +4395,6 @@ class Exif extends Collection {
       array (
         0 => 7,
       ),
-      'exiftoolDOMNode' => 'ExifIFD:Padding',
     ),
     59933 =>
     array (

@@ -192,6 +192,10 @@ DATA;
             // Fetch the first available Exiftool definition if available.
             $exiftool = isset($item['exiftool']) ? reset($item['exiftool']) : null;
 
+            if ($item['compiler']['exiftool']['skipDOMNode'] ?? false) {
+                unset($exiftool['DOMNode']);
+            }
+
             // Add the name.
             if (!isset($item['name']) && isset($exiftool['name'])) {
                 $item['name'] = $exiftool['name'];
@@ -221,6 +225,7 @@ DATA;
 
             $item_exif_tag = $item['exifReadData']['key'] ?? null;
 
+            unset($item['compiler']);
             unset($item['exifReadData']);
             unset($item['exiftool']);
 

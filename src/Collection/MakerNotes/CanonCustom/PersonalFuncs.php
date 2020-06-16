@@ -54,6 +54,38 @@ class PersonalFuncs extends Collection {
     'PF8SetBracketShots' => 9,
     'PF9ChangeBracketSequence' => 10,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonCustom:PF0CustomFuncRegistration' => 1,
+    'CanonCustom:PF10RetainProgramShift' => 11,
+    'CanonCustom:PF13DrivePriority' => 14,
+    'CanonCustom:PF14DisableFocusSearch' => 15,
+    'CanonCustom:PF15DisableAFAssistBeam' => 16,
+    'CanonCustom:PF16AutoFocusPointShoot' => 17,
+    'CanonCustom:PF17DisableAFPointSel' => 18,
+    'CanonCustom:PF18EnableAutoAFPointSel' => 19,
+    'CanonCustom:PF19ContinuousShootSpeed' => 20,
+    'CanonCustom:PF1DisableShootingModes' => 2,
+    'CanonCustom:PF20LimitContinousShots' => 21,
+    'CanonCustom:PF21EnableQuietOperation' => 22,
+    'CanonCustom:PF23SetTimerLengths' => 24,
+    'CanonCustom:PF24LightLCDDuringBulb' => 25,
+    'CanonCustom:PF25DefaultClearSettings' => 26,
+    'CanonCustom:PF26ShortenReleaseLag' => 27,
+    'CanonCustom:PF27ReverseDialRotation' => 28,
+    'CanonCustom:PF28NoQuickDialExpComp' => 29,
+    'CanonCustom:PF29QuickDialSwitchOff' => 30,
+    'CanonCustom:PF2DisableMeteringModes' => 3,
+    'CanonCustom:PF30EnlargementMode' => 31,
+    'CanonCustom:PF31OriginalDecisionData' => 32,
+    'CanonCustom:PF3ManualExposureMetering' => 4,
+    'CanonCustom:PF4ExposureTimeLimits' => 5,
+    'CanonCustom:PF5ApertureLimits' => 6,
+    'CanonCustom:PF6PresetShootingModes' => 7,
+    'CanonCustom:PF7BracketContinuousShoot' => 8,
+    'CanonCustom:PF8SetBracketShots' => 9,
+    'CanonCustom:PF9ChangeBracketSequence' => 10,
+  ),
   'items' =>
   array (
     1 =>
@@ -65,6 +97,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF0CustomFuncRegistration',
     ),
     2 =>
     array (
@@ -75,6 +108,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF1DisableShootingModes',
     ),
     3 =>
     array (
@@ -85,6 +119,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF2DisableMeteringModes',
     ),
     4 =>
     array (
@@ -95,6 +130,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF3ManualExposureMetering',
     ),
     5 =>
     array (
@@ -105,6 +141,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF4ExposureTimeLimits',
     ),
     6 =>
     array (
@@ -115,6 +152,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF5ApertureLimits',
     ),
     7 =>
     array (
@@ -125,6 +163,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF6PresetShootingModes',
     ),
     8 =>
     array (
@@ -135,6 +174,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF7BracketContinuousShoot',
     ),
     9 =>
     array (
@@ -145,6 +185,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF8SetBracketShots',
     ),
     10 =>
     array (
@@ -155,6 +196,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF9ChangeBracketSequence',
     ),
     11 =>
     array (
@@ -165,6 +207,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF10RetainProgramShift',
     ),
     14 =>
     array (
@@ -175,6 +218,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF13DrivePriority',
     ),
     15 =>
     array (
@@ -185,6 +229,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF14DisableFocusSearch',
     ),
     16 =>
     array (
@@ -195,6 +240,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF15DisableAFAssistBeam',
     ),
     17 =>
     array (
@@ -205,6 +251,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF16AutoFocusPointShoot',
     ),
     18 =>
     array (
@@ -215,6 +262,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF17DisableAFPointSel',
     ),
     19 =>
     array (
@@ -225,6 +273,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF18EnableAutoAFPointSel',
     ),
     20 =>
     array (
@@ -235,6 +284,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF19ContinuousShootSpeed',
     ),
     21 =>
     array (
@@ -245,6 +295,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF20LimitContinousShots',
     ),
     22 =>
     array (
@@ -255,6 +306,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF21EnableQuietOperation',
     ),
     24 =>
     array (
@@ -265,6 +317,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF23SetTimerLengths',
     ),
     25 =>
     array (
@@ -275,6 +328,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF24LightLCDDuringBulb',
     ),
     26 =>
     array (
@@ -285,6 +339,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF25DefaultClearSettings',
     ),
     27 =>
     array (
@@ -295,6 +350,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF26ShortenReleaseLag',
     ),
     28 =>
     array (
@@ -305,6 +361,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF27ReverseDialRotation',
     ),
     29 =>
     array (
@@ -315,6 +372,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF28NoQuickDialExpComp',
     ),
     30 =>
     array (
@@ -325,6 +383,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF29QuickDialSwitchOff',
     ),
     31 =>
     array (
@@ -335,6 +394,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF30EnlargementMode',
     ),
     32 =>
     array (
@@ -345,6 +405,7 @@ class PersonalFuncs extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'CanonCustom:PF31OriginalDecisionData',
     ),
   ),
 );

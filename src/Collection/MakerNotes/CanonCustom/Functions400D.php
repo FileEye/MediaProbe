@@ -36,6 +36,20 @@ class Functions400D extends Collection {
     'Shutter-AELock' => 3,
     'ShutterCurtainSync' => 8,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'CanonCustom:AFAssistBeam' => 4,
+    'CanonCustom:ETTLII' => 7,
+    'CanonCustom:ExposureLevelIncrements' => 5,
+    'CanonCustom:FlashSyncSpeedAv' => 2,
+    'CanonCustom:LCDDisplayAtPowerOn' => 10,
+    'CanonCustom:LongExposureNoiseReduction' => 1,
+    'CanonCustom:MagnifiedView' => 9,
+    'CanonCustom:MirrorLockup' => 6,
+    'CanonCustom:SetButtonCrossKeysFunc' => 0,
+    'CanonCustom:Shutter-AELock' => 3,
+    'CanonCustom:ShutterCurtainSync' => 8,
+  ),
   'items' =>
   array (
     0 =>
@@ -58,6 +72,7 @@ class Functions400D extends Collection {
           4 => 'Cross keys: AF point select',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:SetButtonCrossKeysFunc',
     ),
     1 =>
     array (
@@ -77,6 +92,7 @@ class Functions400D extends Collection {
           2 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LongExposureNoiseReduction',
     ),
     2 =>
     array (
@@ -95,6 +111,7 @@ class Functions400D extends Collection {
           1 => '1/200 Fixed',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:FlashSyncSpeedAv',
     ),
     3 =>
     array (
@@ -115,6 +132,7 @@ class Functions400D extends Collection {
           3 => 'AE/AF, No AE lock',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:Shutter-AELock',
     ),
     4 =>
     array (
@@ -134,6 +152,7 @@ class Functions400D extends Collection {
           2 => 'Only ext. flash emits',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:AFAssistBeam',
     ),
     5 =>
     array (
@@ -152,6 +171,7 @@ class Functions400D extends Collection {
           1 => '1/2 Stop',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ExposureLevelIncrements',
     ),
     6 =>
     array (
@@ -170,6 +190,7 @@ class Functions400D extends Collection {
           1 => 'Enable',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MirrorLockup',
     ),
     7 =>
     array (
@@ -188,6 +209,7 @@ class Functions400D extends Collection {
           1 => 'Average',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ETTLII',
     ),
     8 =>
     array (
@@ -206,6 +228,7 @@ class Functions400D extends Collection {
           1 => '2nd-curtain sync',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:ShutterCurtainSync',
     ),
     9 =>
     array (
@@ -224,6 +247,7 @@ class Functions400D extends Collection {
           1 => 'Image review and playback',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:MagnifiedView',
     ),
     10 =>
     array (
@@ -242,6 +266,7 @@ class Functions400D extends Collection {
           1 => 'Retain power off status',
         ),
       ),
+      'exiftoolDOMNode' => 'CanonCustom:LCDDisplayAtPowerOn',
     ),
   ),
 );
