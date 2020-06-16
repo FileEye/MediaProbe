@@ -189,8 +189,16 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 }*/
                     if ($element->getFormat() !== ItemFormat::ASCII) {
                         $valx_a = explode(' ', $valx);
+                        $valx_aa = [];
+                        foreach ($valx_a as $v) {
+                          $valx_aa[] = (float) $v;
+                        }
                         $vala_a = explode(' ', $vala);
-                        $this->assertEqualsWithDelta($valx_a, $vala_a, 0.001, 'Exiftool raw: ' . $element->getContextPath());
+                        $vala_aa = [];
+                        foreach ($vala_a as $v) {
+                          $vala_aa[] = (float) $v;
+                        }
+                        $this->assertEqualsWithDelta($valx_aa, $vala_aa, 0.001, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
                         $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     }
