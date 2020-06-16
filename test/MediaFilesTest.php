@@ -192,12 +192,12 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                         $valx_a = explode($sep, $valx);
                         $valx_aa = [];
                         foreach ($valx_a as $v) {
-                          $valx_aa[] = (float) $v;
+                            $valx_aa[] = (float) $v;
                         }
                         $vala_a = explode(' ', $vala);
                         $vala_aa = [];
                         foreach ($vala_a as $v) {
-                          $vala_aa[] = (float) $v;
+                            $vala_aa[] = (float) $v;
                         }
                         $this->assertEqualsWithDelta($valx_aa, $vala_aa, 0.001, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
