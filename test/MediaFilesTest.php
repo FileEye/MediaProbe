@@ -188,7 +188,8 @@ class MediaFilesTest extends MediaProbeTestCaseBase
   ]);
 }*/
                     if ($element->getFormat() !== ItemFormat::ASCII) {
-                        $valx_a = explode(' ', $valx);
+                        $sep = strpos($valx, ':') !== false ? ':' : ' ';
+                        $valx_a = explode($sep, $valx);
                         $valx_aa = [];
                         foreach ($valx_a as $v) {
                           $valx_aa[] = (float) $v;
