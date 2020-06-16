@@ -187,8 +187,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
 }*/
-                    if (in_array($element->getFormat(), [ItemFormat::RATIONAL, ItemFormat::SIGNED_RATIONAL, ItemFormat::SHORT_RATIONAL, ItemFormat::SHORT_SIGNED_RATIONAL, ItemFormat::DOUBLE, ItemFormat::FLOAT])) {
-                        $this->assertEqualsWithDelta((float) $valx, (float) $vala, 0.001, 'Exiftool raw: ' . $element->getContextPath());
+                    if ($element->getFormat() !== ItemFormat::ASCII) {
+                        $valx_a = explode(' ', $valx);
+                        $vala_a = explode(' ', $vala);
+                        $this->assertEqualsWithDelta($valx_a, $vala_a, 0.001, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
                         $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     }
