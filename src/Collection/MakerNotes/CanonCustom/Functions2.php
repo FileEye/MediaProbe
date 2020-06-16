@@ -261,6 +261,7 @@ class Functions2 extends Collection {
     ),
     259 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCustomIsoSpeedRange',
       'collection' => 'Tag',
       'name' => 'ISOSpeedRange',
       'title' => 'ISO Speed Range',
@@ -442,6 +443,7 @@ class Functions2 extends Collection {
     ),
     268 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCustomShutterSpeedRange',
       'collection' => 'Tag',
       'name' => 'ShutterSpeedRange',
       'title' => 'Shutter Speed Range',
@@ -462,6 +464,7 @@ class Functions2 extends Collection {
     ),
     269 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCustomApertureRange',
       'collection' => 'Tag',
       'name' => 'ApertureRange',
       'title' => 'Aperture Range',
