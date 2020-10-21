@@ -70,6 +70,7 @@ class FocalLength extends Collection {
     ),
     2 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocalPlaneSize',
       'collection' => 'Tag',
       'name' => 'FocalPlaneXSize',
       'title' => 'Focal Plane X Size',
@@ -81,6 +82,7 @@ class FocalLength extends Collection {
     ),
     3 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocalPlaneSize',
       'collection' => 'Tag',
       'name' => 'FocalPlaneYSize',
       'title' => 'Focal Plane Y Size',

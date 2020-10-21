@@ -7,8 +7,6 @@ use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon ApertureValue tags.
- *
- * This is displayed as an F number, but stored as an APEX value.
  */
 class CanonApertureValue extends SignedShort
 {
@@ -17,10 +15,7 @@ class CanonApertureValue extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        $xx = $this->CanonEv($this->value[0]);
-        $yy = exp($xx * log(2) / 2);
-//dump([$this->value, $xx, $yy]);
-        return $yy;
+        return exp($this->CanonEv($this->value[0]) * log(2) / 2);
     }
 
     /**
@@ -28,7 +23,6 @@ class CanonApertureValue extends SignedShort
      */
     public function toString(array $options = [])
     {
-//dump(['tostring', $this->getValue()]);
         return round($this->getValue());
     }
 
