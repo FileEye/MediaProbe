@@ -42,7 +42,7 @@ class ColorBalance extends Collection {
     0 =>
     array (
       'collection' => 'RawData',
-      'name' => 'indexSize',
+      'name' => 'mapSize',
       'format' =>
       array (
         0 => 8,
