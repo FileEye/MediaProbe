@@ -52,14 +52,14 @@ script:
   #- php bin/fileeye-mediaprobe compile
   #- php bin/fileeye-mediaprobe dump test/image_files
 
-  - if [ "$TRAVIS_PHP_VERSION" == "7.3" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
-  - ./vendor/bin/phpunit ./test
+  #- if [ "$TRAVIS_PHP_VERSION" == "7.3" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
+  #- ./vendor/bin/phpunit ./test
 
   #- php examples/dump-media.php -d -w test/image_files/broken_images/canon-eos-650d.jpg
   #- php examples/dump-media.php -d    test/image_files/broken_images/canon-eos-650d.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
   #- php examples/dump-media.php -d test/image_files/exiftool/Canon1DmkIII.jpg-rewrite.img
-  #- php examples/dump-media.php -d test/image_files/exiftool/Canon.jpg
+  - php examples/dump-media.php -d test/image_files/exiftool/Canon.jpg
   #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-powershot-s60.jpg
   #- php examples/dump-media.php -d test/image_files/camera_samples/canon-powershot-s60.jpg-rewrite.img
   #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-ixus-ii.jpg
@@ -94,7 +94,7 @@ script:
   #- php examples/dump-media.php -d -w test/image_files/no-exif.jpg
   #- php examples/dump-media.php -d    test/image_files/no-exif.jpg-rewrite.img
   #- php examples/dump-media.php -d    test/image_files/sample-1.tiff
-  - php examples/dump-media.php -d -w test/image_files/broken_images/pel-156.jpg
+  #- php examples/dump-media.php -d -w test/image_files/broken_images/pel-156.jpg
   #- php examples/dump-media.php -d    test/image_files/pel-157.tiff-rewrite.img
   #- php examples/dump-media.php -d test/image_files/broken_images/gh-11.jpg-rewrite.img
   #- php examples/dump-media.php -d test/image_files/camera_samples/olympus-c765uz.jpg
