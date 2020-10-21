@@ -989,6 +989,7 @@ class CameraSettings extends Collection {
     ),
     26 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
       'collection' => 'Tag',
       'name' => 'MaxAperture',
       'title' => 'Max Aperture',
@@ -1000,6 +1001,7 @@ class CameraSettings extends Collection {
     ),
     27 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
       'collection' => 'Tag',
       'name' => 'MinAperture',
       'title' => 'Min Aperture',
