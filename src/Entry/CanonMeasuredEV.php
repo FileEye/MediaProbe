@@ -23,6 +23,6 @@ class CanonMeasuredEV extends SignedShort
      */
     public function toString(array $options = [])
     {
-        return round($this->getValue());
+        return round($this->getValue(), 2);
     }
 }
