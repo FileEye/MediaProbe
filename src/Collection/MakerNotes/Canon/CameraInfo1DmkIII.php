@@ -46,6 +46,30 @@ class CameraInfo1DmkIII extends Collection {
     'TimeStamp1' => 1114,
     'WhiteBalance' => 94,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraOrientation' => 48,
+    'Canon:CameraTemperature' => 24,
+    'Canon:ColorTemperature' => 98,
+    'Canon:DirectoryIndex' => 382,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 370,
+    'Canon:FirmwareVersion' => 310,
+    'Canon:FocalLength' => 29,
+    'Canon:FocusDistanceLower' => 69,
+    'Canon:FocusDistanceUpper' => 67,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 273,
+    'Canon:MacroMagnification' => 27,
+    'Canon:MaxFocalLength' => 277,
+    'Canon:MinFocalLength' => 275,
+    'Canon:PictureStyle' => 134,
+    'Canon:ShutterCount' => 374,
+    'Canon:TimeStamp' => 1118,
+    'Canon:TimeStamp1' => 1114,
+    'Canon:WhiteBalance' => 94,
+  ),
   'items' =>
   array (
     3 =>
@@ -57,6 +81,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -67,6 +92,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -77,6 +103,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     24 =>
     array (
@@ -87,6 +114,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     27 =>
     array (
@@ -97,6 +125,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:MacroMagnification',
     ),
     29 =>
     array (
@@ -107,6 +136,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     48 =>
     array (
@@ -126,6 +156,7 @@ class CameraInfo1DmkIII extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     67 =>
     array (
@@ -136,6 +167,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     69 =>
     array (
@@ -146,6 +178,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     94 =>
     array (
@@ -184,6 +217,7 @@ class CameraInfo1DmkIII extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     98 =>
     array (
@@ -194,6 +228,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     134 =>
     array (
@@ -234,6 +269,7 @@ class CameraInfo1DmkIII extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     273 =>
     array (
@@ -647,6 +683,7 @@ class CameraInfo1DmkIII extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     275 =>
     array (
@@ -657,6 +694,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     277 =>
     array (
@@ -667,6 +705,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     310 =>
     array (
@@ -678,6 +717,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     370 =>
     array (
@@ -688,6 +728,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     374 =>
     array (
@@ -698,6 +739,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:ShutterCount',
     ),
     382 =>
     array (
@@ -708,6 +750,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
     1114 =>
     array (
@@ -718,6 +761,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:TimeStamp1',
     ),
     1118 =>
     array (
@@ -728,6 +772,7 @@ class CameraInfo1DmkIII extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:TimeStamp',
     ),
   ),
 );

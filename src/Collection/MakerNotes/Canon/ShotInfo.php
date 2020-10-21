@@ -75,6 +75,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:AutoISO',
     ),
     2 =>
     array (
@@ -85,6 +86,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:BaseISO',
     ),
     3 =>
     array (
@@ -95,6 +97,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:MeasuredEV',
     ),
     4 =>
     array (
@@ -105,6 +108,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:TargetAperture',
     ),
     5 =>
     array (
@@ -115,6 +119,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:TargetExposureTime',
     ),
     6 =>
     array (
@@ -125,6 +130,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureCompensation',
     ),
     7 =>
     array (
@@ -163,6 +169,7 @@ class ShotInfo extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     8 =>
     array (
@@ -184,6 +191,7 @@ class ShotInfo extends Collection {
           3 => 'None',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SlowShutter',
     ),
     9 =>
     array (
@@ -194,6 +202,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:SequenceNumber',
     ),
     10 =>
     array (
@@ -204,6 +213,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:OpticalZoomCode',
     ),
     12 =>
     array (
@@ -214,6 +224,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     13 =>
     array (
@@ -224,6 +235,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FlashGuideNumber',
     ),
     14 =>
     array (
@@ -248,6 +260,7 @@ class ShotInfo extends Collection {
           12295 => 'All',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFPointsInFocus',
     ),
     15 =>
     array (
@@ -258,6 +271,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FlashExposureComp',
     ),
     16 =>
     array (
@@ -279,6 +293,7 @@ class ShotInfo extends Collection {
           3 => 'On (shot 3)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoExposureBracketing',
     ),
     17 =>
     array (
@@ -289,6 +304,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:AEBBracketValue',
     ),
     18 =>
     array (
@@ -308,6 +324,7 @@ class ShotInfo extends Collection {
           3 => 'Computer Remote Control',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ControlMode',
     ),
     19 =>
     array (
@@ -318,6 +335,7 @@ class ShotInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     20 =>
     array (
@@ -328,6 +346,7 @@ class ShotInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     21 =>
     array (
@@ -338,6 +357,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     22 =>
     array (
@@ -348,6 +368,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     23 =>
     array (
@@ -358,6 +379,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:MeasuredEV2',
     ),
     24 =>
     array (
@@ -368,6 +390,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:BulbDuration',
     ),
     26 =>
     array (
@@ -389,6 +412,7 @@ class ShotInfo extends Collection {
           255 => 'DV Camera',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraType',
     ),
     27 =>
     array (
@@ -410,6 +434,7 @@ class ShotInfo extends Collection {
           3 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoRotate',
     ),
     28 =>
     array (
@@ -429,6 +454,7 @@ class ShotInfo extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:NDFilter',
     ),
     29 =>
     array (
@@ -439,6 +465,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:SelfTimer2',
     ),
     33 =>
     array (
@@ -449,7 +476,39 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FlashOutput',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AEBBracketValue' => 17,
+    'Canon:AFPointsInFocus' => 14,
+    'Canon:AutoExposureBracketing' => 16,
+    'Canon:AutoISO' => 1,
+    'Canon:AutoRotate' => 27,
+    'Canon:BaseISO' => 2,
+    'Canon:BulbDuration' => 24,
+    'Canon:CameraTemperature' => 12,
+    'Canon:CameraType' => 26,
+    'Canon:ControlMode' => 18,
+    'Canon:ExposureCompensation' => 6,
+    'Canon:ExposureTime' => 22,
+    'Canon:FNumber' => 21,
+    'Canon:FlashExposureComp' => 15,
+    'Canon:FlashGuideNumber' => 13,
+    'Canon:FlashOutput' => 33,
+    'Canon:FocusDistanceLower' => 20,
+    'Canon:FocusDistanceUpper' => 19,
+    'Canon:MeasuredEV' => 3,
+    'Canon:MeasuredEV2' => 23,
+    'Canon:NDFilter' => 28,
+    'Canon:OpticalZoomCode' => 10,
+    'Canon:SelfTimer2' => 29,
+    'Canon:SequenceNumber' => 9,
+    'Canon:SlowShutter' => 8,
+    'Canon:TargetAperture' => 4,
+    'Canon:TargetExposureTime' => 5,
+    'Canon:WhiteBalance' => 7,
   ),
 );
 }

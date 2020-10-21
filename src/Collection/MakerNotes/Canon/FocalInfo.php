@@ -26,6 +26,10 @@ class FocalInfo extends Collection {
   array (
     'FocalLength' => 0,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:FocalLength' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -37,6 +41,7 @@ class FocalInfo extends Collection {
       array (
         0 => 1001,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
   ),
 );

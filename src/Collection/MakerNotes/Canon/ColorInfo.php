@@ -28,6 +28,12 @@ class ColorInfo extends Collection {
     'ColorTone' => 2,
     'Saturation' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ColorSpace' => 3,
+    'Canon:ColorTone' => 2,
+    'Canon:Saturation' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -46,6 +52,7 @@ class ColorInfo extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Saturation',
     ),
     2 =>
     array (
@@ -63,6 +70,7 @@ class ColorInfo extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTone',
     ),
     3 =>
     array (
@@ -81,6 +89,7 @@ class ColorInfo extends Collection {
           2 => 'Adobe RGB',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorSpace',
     ),
   ),
 );

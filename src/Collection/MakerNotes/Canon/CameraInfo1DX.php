@@ -43,6 +43,27 @@ class CameraInfo1DX extends Collection {
     'PictureStyle' => 244,
     'WhiteBalance' => 188,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraOrientation' => 125,
+    'Canon:CameraTemperature' => 27,
+    'Canon:ColorTemperature' => 192,
+    'Canon:DirectoryIndex' => 732,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 720,
+    'Canon:FirmwareVersion' => 640,
+    'Canon:FirmwareVersionLookAhead' => 0,
+    'Canon:FocalLength' => 35,
+    'Canon:FocusDistanceLower' => 142,
+    'Canon:FocusDistanceUpper' => 140,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 423,
+    'Canon:MaxFocalLength' => 427,
+    'Canon:MinFocalLength' => 425,
+    'Canon:PictureStyle' => 244,
+    'Canon:WhiteBalance' => 188,
+  ),
   'items' =>
   array (
     0 =>
@@ -54,6 +75,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersionLookAhead',
     ),
     3 =>
     array (
@@ -64,6 +86,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -74,6 +97,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -84,6 +108,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     27 =>
     array (
@@ -94,6 +119,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     35 =>
     array (
@@ -104,6 +130,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     125 =>
     array (
@@ -123,6 +150,7 @@ class CameraInfo1DX extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     140 =>
     array (
@@ -133,6 +161,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     142 =>
     array (
@@ -143,6 +172,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     188 =>
     array (
@@ -181,6 +211,7 @@ class CameraInfo1DX extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     192 =>
     array (
@@ -191,6 +222,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     244 =>
     array (
@@ -231,6 +263,7 @@ class CameraInfo1DX extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     423 =>
     array (
@@ -644,6 +677,7 @@ class CameraInfo1DX extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     425 =>
     array (
@@ -654,6 +688,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     427 =>
     array (
@@ -664,6 +699,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     640 =>
     array (
@@ -675,6 +711,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     720 =>
     array (
@@ -685,6 +722,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     732 =>
     array (
@@ -695,6 +733,7 @@ class CameraInfo1DX extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
   ),
 );

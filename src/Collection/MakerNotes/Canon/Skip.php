@@ -23,6 +23,10 @@ class Skip extends Collection {
   array (
     'Unknown_CNDB' => 'CNDB',
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:Unknown_CNDB' => 'CNDB',
+  ),
   'items' =>
   array (
     'CNDB' =>
@@ -34,6 +38,7 @@ class Skip extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:Unknown_CNDB',
     ),
   ),
 );

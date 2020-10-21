@@ -38,6 +38,22 @@ class CameraInfo1DmkIIN extends Collection {
     'Sharpness' => 116,
     'WhiteBalance' => 54,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ColorTemperature' => 55,
+    'Canon:ColorTone' => 119,
+    'Canon:Contrast' => 117,
+    'Canon:ExposureTime' => 4,
+    'Canon:FocalLength' => 9,
+    'Canon:ISO' => 121,
+    'Canon:LensType' => 12,
+    'Canon:MaxFocalLength' => 19,
+    'Canon:MinFocalLength' => 17,
+    'Canon:PictureStyle' => 115,
+    'Canon:Saturation' => 118,
+    'Canon:Sharpness' => 116,
+    'Canon:WhiteBalance' => 54,
+  ),
   'items' =>
   array (
     4 =>
@@ -49,6 +65,7 @@ class CameraInfo1DmkIIN extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     9 =>
     array (
@@ -59,6 +76,7 @@ class CameraInfo1DmkIIN extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     12 =>
     array (
@@ -472,6 +490,7 @@ class CameraInfo1DmkIIN extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     17 =>
     array (
@@ -482,6 +501,7 @@ class CameraInfo1DmkIIN extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     19 =>
     array (
@@ -492,6 +512,7 @@ class CameraInfo1DmkIIN extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     54 =>
     array (
@@ -530,6 +551,7 @@ class CameraInfo1DmkIIN extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     55 =>
     array (
@@ -540,6 +562,7 @@ class CameraInfo1DmkIIN extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     115 =>
     array (
@@ -580,6 +603,7 @@ class CameraInfo1DmkIIN extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     116 =>
     array (
@@ -590,6 +614,7 @@ class CameraInfo1DmkIIN extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:Sharpness',
     ),
     117 =>
     array (
@@ -607,6 +632,7 @@ class CameraInfo1DmkIIN extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Contrast',
     ),
     118 =>
     array (
@@ -624,6 +650,7 @@ class CameraInfo1DmkIIN extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Saturation',
     ),
     119 =>
     array (
@@ -641,6 +668,7 @@ class CameraInfo1DmkIIN extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTone',
     ),
     121 =>
     array (
@@ -652,6 +680,7 @@ class CameraInfo1DmkIIN extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
   ),
 );

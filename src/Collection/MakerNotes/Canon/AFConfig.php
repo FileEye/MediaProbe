@@ -66,6 +66,7 @@ class AFConfig extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:AFConfigTool',
     ),
     2 =>
     array (
@@ -76,6 +77,7 @@ class AFConfig extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:AFTrackingSensitivity',
     ),
     3 =>
     array (
@@ -86,6 +88,7 @@ class AFConfig extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:AFAccelDecelTracking',
     ),
     4 =>
     array (
@@ -96,6 +99,7 @@ class AFConfig extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:AFPointSwitching',
     ),
     5 =>
     array (
@@ -115,6 +119,7 @@ class AFConfig extends Collection {
           2 => 'Focus Priority',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AIServoFirstImage',
     ),
     6 =>
     array (
@@ -136,6 +141,7 @@ class AFConfig extends Collection {
           4 => 'Focus High Priority',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AIServoSecondImage',
     ),
     7 =>
     array (
@@ -155,6 +161,7 @@ class AFConfig extends Collection {
           2 => 'Disable in AF Mode',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:USMLensElectronicMF',
     ),
     8 =>
     array (
@@ -174,6 +181,7 @@ class AFConfig extends Collection {
           2 => 'IR AF Assist Beam Only',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFAssistBeam',
     ),
     9 =>
     array (
@@ -192,6 +200,7 @@ class AFConfig extends Collection {
           1 => 'Release Priority',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:OneShotAFRelease',
     ),
     10 =>
     array (
@@ -210,6 +219,7 @@ class AFConfig extends Collection {
           1 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoAFPointSelEOSiTRAF',
     ),
     11 =>
     array (
@@ -228,6 +238,7 @@ class AFConfig extends Collection {
           1 => 'Stop Focus Search',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensDriveWhenAFImpossible',
     ),
     12 =>
     array (
@@ -250,6 +261,7 @@ class AFConfig extends Collection {
           32 => 'AF Point Expansion (8 point)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SelectAFAreaSelectionMode',
     ),
     13 =>
     array (
@@ -268,6 +280,7 @@ class AFConfig extends Collection {
           1 => 'Main Dial',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFAreaSelectionMethod',
     ),
     14 =>
     array (
@@ -287,6 +300,7 @@ class AFConfig extends Collection {
           2 => 'Separate Area+Points',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:OrientationLinkedAF',
     ),
     15 =>
     array (
@@ -305,6 +319,7 @@ class AFConfig extends Collection {
           1 => 'Continuous',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ManualAFPointSelPattern',
     ),
     16 =>
     array (
@@ -326,6 +341,7 @@ class AFConfig extends Collection {
           4 => 'Disabled',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFPointDisplayDuringFocus',
     ),
     17 =>
     array (
@@ -345,6 +361,7 @@ class AFConfig extends Collection {
           2 => 'Disable',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:VFDisplayIllumination',
     ),
     18 =>
     array (
@@ -363,6 +380,7 @@ class AFConfig extends Collection {
           1 => 'Show Outside View',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFStatusViewfinder',
     ),
     19 =>
     array (
@@ -382,7 +400,30 @@ class AFConfig extends Collection {
           2 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:InitialAFPointInServo',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AFAccelDecelTracking' => 3,
+    'Canon:AFAreaSelectionMethod' => 13,
+    'Canon:AFAssistBeam' => 8,
+    'Canon:AFConfigTool' => 1,
+    'Canon:AFPointDisplayDuringFocus' => 16,
+    'Canon:AFPointSwitching' => 4,
+    'Canon:AFStatusViewfinder' => 18,
+    'Canon:AFTrackingSensitivity' => 2,
+    'Canon:AIServoFirstImage' => 5,
+    'Canon:AIServoSecondImage' => 6,
+    'Canon:AutoAFPointSelEOSiTRAF' => 10,
+    'Canon:InitialAFPointInServo' => 19,
+    'Canon:LensDriveWhenAFImpossible' => 11,
+    'Canon:ManualAFPointSelPattern' => 15,
+    'Canon:OneShotAFRelease' => 9,
+    'Canon:OrientationLinkedAF' => 14,
+    'Canon:SelectAFAreaSelectionMode' => 12,
+    'Canon:USMLensElectronicMF' => 7,
+    'Canon:VFDisplayIllumination' => 17,
   ),
 );
 }

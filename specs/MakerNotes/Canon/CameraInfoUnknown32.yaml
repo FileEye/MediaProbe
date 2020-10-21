@@ -1,0 +1,60 @@
+collection: MakerNotes\Canon\CameraInfoUnknown32
+name: CanonCameraInfoUnknown32
+title: 'Canon CameraInfoUnknown32'
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\CameraInfoMap
+DOMNode: map
+format: Long
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::CameraInfoUnknown32'']/tag'
+items:
+    -3:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'
+    71:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'
+    83:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'
+    91:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'
+    92:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'
+    100:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'

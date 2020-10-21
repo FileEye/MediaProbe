@@ -1,0 +1,59 @@
+collection: MakerNotes\Apple\Main
+name: Apple
+title: 'Apple Maker Notes'
+class: FileEye\MediaProbe\Block\MakerNotes\Apple\MakerNote
+DOMNode: makerNote
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Apple
+        xpath: '//table[@name=''Apple::Main'']/tag'
+items:
+    3:
+        name: AppleRuntime
+        collection: MakerNotes\Apple\RunTime
+    8:
+        exiftool:
+            -
+                name: AccelerationVector
+                type: rational64s
+                count: 3
+                writable: true
+                g2: Camera
+                DOMNode: 'Apple:AccelerationVector'
+                desc: 'Acceleration Vector'
+    10:
+        exiftool:
+            -
+                name: HDRImageType
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:HDRImageType'
+                desc: 'HDR Image Type'
+                values:
+                    3: 'HDR Image'
+                    4: 'Original Image'
+    11:
+        exiftool:
+            -
+                name: BurstUUID
+                type: string
+                writable: true
+                DOMNode: 'Apple:BurstUUID'
+                desc: 'Burst UUID'
+    17:
+        exiftool:
+            -
+                name: ContentIdentifier
+                type: string
+                writable: true
+                DOMNode: 'Apple:ContentIdentifier'
+                desc: 'Content Identifier'
+    21:
+        exiftool:
+            -
+                name: ImageUniqueID
+                type: string
+                writable: true
+                DOMNode: 'Apple:ImageUniqueID'
+                desc: 'Image Unique ID'

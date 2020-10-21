@@ -65,6 +65,7 @@ class FileInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileNumber',
     ),
     2 =>
     array (
@@ -97,6 +98,7 @@ class FileInfo extends Collection {
           4 => 'WB',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:BracketMode',
     ),
     4 =>
     array (
@@ -107,6 +109,7 @@ class FileInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:BracketValue',
     ),
     5 =>
     array (
@@ -117,6 +120,7 @@ class FileInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:BracketShotNumber',
     ),
     6 =>
     array (
@@ -142,6 +146,7 @@ class FileInfo extends Collection {
           131 => 'Movie (2)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:RawJpgQuality',
     ),
     7 =>
     array (
@@ -177,6 +182,7 @@ class FileInfo extends Collection {
           143 => '4096x2160 Movie',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:RawJpgSize',
     ),
     8 =>
     array (
@@ -197,6 +203,7 @@ class FileInfo extends Collection {
           4 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LongExposureNoiseReduction2',
     ),
     9 =>
     array (
@@ -216,6 +223,7 @@ class FileInfo extends Collection {
           2 => 'On (shift GM)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WBBracketMode',
     ),
     12 =>
     array (
@@ -226,6 +234,7 @@ class FileInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WBBracketValueAB',
     ),
     13 =>
     array (
@@ -236,6 +245,7 @@ class FileInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WBBracketValueGM',
     ),
     14 =>
     array (
@@ -257,6 +267,7 @@ class FileInfo extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffect',
     ),
     15 =>
     array (
@@ -278,6 +289,7 @@ class FileInfo extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffect',
     ),
     16 =>
     array (
@@ -288,6 +300,7 @@ class FileInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:MacroMagnification',
     ),
     19 =>
     array (
@@ -306,6 +319,7 @@ class FileInfo extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LiveViewShooting',
     ),
     20 =>
     array (
@@ -316,6 +330,7 @@ class FileInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     21 =>
     array (
@@ -326,6 +341,7 @@ class FileInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     25 =>
     array (
@@ -344,7 +360,28 @@ class FileInfo extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FlashExposureLock',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:BracketMode' => 3,
+    'Canon:BracketShotNumber' => 5,
+    'Canon:BracketValue' => 4,
+    'Canon:FileNumber' => 1,
+    'Canon:FilterEffect' => 14,
+    'Canon:FlashExposureLock' => 25,
+    'Canon:FocusDistanceLower' => 21,
+    'Canon:FocusDistanceUpper' => 20,
+    'Canon:LiveViewShooting' => 19,
+    'Canon:LongExposureNoiseReduction2' => 8,
+    'Canon:MacroMagnification' => 16,
+    'Canon:RawJpgQuality' => 6,
+    'Canon:RawJpgSize' => 7,
+    'Canon:ToningEffect' => 15,
+    'Canon:WBBracketMode' => 9,
+    'Canon:WBBracketValueAB' => 12,
+    'Canon:WBBracketValueGM' => 13,
   ),
 );
 }

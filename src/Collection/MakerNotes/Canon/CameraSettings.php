@@ -88,6 +88,7 @@ class CameraSettings extends Collection {
           2 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:MacroMode',
     ),
     2 =>
     array (
@@ -98,6 +99,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:SelfTimer',
     ),
     3 =>
     array (
@@ -123,6 +125,7 @@ class CameraSettings extends Collection {
           131 => 'Movie (2)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Quality',
     ),
     4 =>
     array (
@@ -148,6 +151,7 @@ class CameraSettings extends Collection {
           16 => 'External flash',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CanonFlashMode',
     ),
     5 =>
     array (
@@ -173,6 +177,7 @@ class CameraSettings extends Collection {
           10 => 'Continuous, Silent',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContinuousDrive',
     ),
     7 =>
     array (
@@ -200,6 +205,7 @@ class CameraSettings extends Collection {
           519 => 'Movie Servo AF',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FocusMode',
     ),
     9 =>
     array (
@@ -228,6 +234,7 @@ class CameraSettings extends Collection {
           13 => 'CR3+JPEG',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:RecordMode',
     ),
     10 =>
     array (
@@ -263,6 +270,7 @@ class CameraSettings extends Collection {
           143 => '4096x2160 Movie',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CanonImageSize',
     ),
     11 =>
     array (
@@ -350,6 +358,7 @@ class CameraSettings extends Collection {
           265 => 'Low Light 2',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:EasyMode',
     ),
     12 =>
     array (
@@ -370,6 +379,7 @@ class CameraSettings extends Collection {
           3 => 'Other',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:DigitalZoom',
     ),
     13 =>
     array (
@@ -387,6 +397,7 @@ class CameraSettings extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Contrast',
     ),
     14 =>
     array (
@@ -404,6 +415,7 @@ class CameraSettings extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Saturation',
     ),
     15 =>
     array (
@@ -414,6 +426,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Sharpness',
     ),
     16 =>
     array (
@@ -424,6 +437,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraISO',
     ),
     17 =>
     array (
@@ -446,6 +460,7 @@ class CameraSettings extends Collection {
           5 => 'Center-weighted average',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:MeteringMode',
     ),
     18 =>
     array (
@@ -473,6 +488,7 @@ class CameraSettings extends Collection {
           10 => 'Infinity',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FocusRange',
     ),
     19 =>
     array (
@@ -497,6 +513,7 @@ class CameraSettings extends Collection {
           16390 => 'Face Detect',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFPoint',
     ),
     20 =>
     array (
@@ -521,6 +538,7 @@ class CameraSettings extends Collection {
           7 => 'Bulb',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CanonExposureMode',
     ),
     22 =>
     array (
@@ -934,6 +952,7 @@ class CameraSettings extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     23 =>
     array (
@@ -944,6 +963,7 @@ class CameraSettings extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     24 =>
     array (
@@ -954,6 +974,7 @@ class CameraSettings extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     25 =>
     array (
@@ -964,6 +985,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalUnits',
     ),
     26 =>
     array (
@@ -974,6 +996,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxAperture',
     ),
     27 =>
     array (
@@ -984,6 +1007,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:MinAperture',
     ),
     28 =>
     array (
@@ -994,6 +1018,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FlashActivity',
     ),
     29 =>
     array (
@@ -1020,6 +1045,7 @@ class CameraSettings extends Collection {
           16384 => 'External',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FlashBits',
     ),
     32 =>
     array (
@@ -1039,6 +1065,7 @@ class CameraSettings extends Collection {
           8 => 'Manual',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FocusContinuous',
     ),
     33 =>
     array (
@@ -1060,6 +1087,7 @@ class CameraSettings extends Collection {
           4 => 'No AE',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AESetting',
     ),
     34 =>
     array (
@@ -1086,6 +1114,7 @@ class CameraSettings extends Collection {
           260 => 'Dynamic (2)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ImageStabilization',
     ),
     35 =>
     array (
@@ -1096,6 +1125,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:DisplayAperture',
     ),
     36 =>
     array (
@@ -1106,6 +1136,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ZoomSourceWidth',
     ),
     37 =>
     array (
@@ -1116,6 +1147,7 @@ class CameraSettings extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ZoomTargetWidth',
     ),
     39 =>
     array (
@@ -1134,6 +1166,7 @@ class CameraSettings extends Collection {
           1 => 'AF Point',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SpotMeteringMode',
     ),
     40 =>
     array (
@@ -1158,6 +1191,7 @@ class CameraSettings extends Collection {
           100 => 'My Color Data',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PhotoEffect',
     ),
     41 =>
     array (
@@ -1179,6 +1213,7 @@ class CameraSettings extends Collection {
           32767 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ManualFlashOutput',
     ),
     42 =>
     array (
@@ -1196,6 +1231,7 @@ class CameraSettings extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTone',
     ),
     46 =>
     array (
@@ -1215,7 +1251,48 @@ class CameraSettings extends Collection {
           2 => 'sRAW2 (sRAW)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SRAWQuality',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AESetting' => 33,
+    'Canon:AFPoint' => 19,
+    'Canon:CameraISO' => 16,
+    'Canon:CanonExposureMode' => 20,
+    'Canon:CanonFlashMode' => 4,
+    'Canon:CanonImageSize' => 10,
+    'Canon:ColorTone' => 42,
+    'Canon:ContinuousDrive' => 5,
+    'Canon:Contrast' => 13,
+    'Canon:DigitalZoom' => 12,
+    'Canon:DisplayAperture' => 35,
+    'Canon:EasyMode' => 11,
+    'Canon:FlashActivity' => 28,
+    'Canon:FlashBits' => 29,
+    'Canon:FocalUnits' => 25,
+    'Canon:FocusContinuous' => 32,
+    'Canon:FocusMode' => 7,
+    'Canon:FocusRange' => 18,
+    'Canon:ImageStabilization' => 34,
+    'Canon:LensType' => 22,
+    'Canon:MacroMode' => 1,
+    'Canon:ManualFlashOutput' => 41,
+    'Canon:MaxAperture' => 26,
+    'Canon:MaxFocalLength' => 23,
+    'Canon:MeteringMode' => 17,
+    'Canon:MinAperture' => 27,
+    'Canon:MinFocalLength' => 24,
+    'Canon:PhotoEffect' => 40,
+    'Canon:Quality' => 3,
+    'Canon:RecordMode' => 9,
+    'Canon:SRAWQuality' => 46,
+    'Canon:Saturation' => 14,
+    'Canon:SelfTimer' => 2,
+    'Canon:Sharpness' => 15,
+    'Canon:SpotMeteringMode' => 39,
+    'Canon:ZoomSourceWidth' => 36,
+    'Canon:ZoomTargetWidth' => 37,
   ),
 );
 }

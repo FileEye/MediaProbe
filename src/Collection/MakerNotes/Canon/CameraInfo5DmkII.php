@@ -48,6 +48,32 @@ class CameraInfo5DmkII extends Collection {
     'PictureStyle' => 167,
     'WhiteBalance' => 111,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AutoLightingOptimizer' => 191,
+    'Canon:CameraOrientation' => 49,
+    'Canon:CameraTemperature' => 25,
+    'Canon:ColorTemperature' => 115,
+    'Canon:DirectoryIndex' => 455,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 443,
+    'Canon:FirmwareVersion' => 382,
+    'Canon:FirmwareVersionLookAhead' => 0,
+    'Canon:FlashMeteringMode' => 21,
+    'Canon:FocalLength' => 30,
+    'Canon:FocusDistanceLower' => 82,
+    'Canon:FocusDistanceUpper' => 80,
+    'Canon:HighISONoiseReduction' => 189,
+    'Canon:HighlightTonePriority' => 7,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 230,
+    'Canon:MacroMagnification' => 27,
+    'Canon:MaxFocalLength' => 234,
+    'Canon:MinFocalLength' => 232,
+    'Canon:PictureStyle' => 167,
+    'Canon:WhiteBalance' => 111,
+  ),
   'items' =>
   array (
     0 =>
@@ -60,6 +86,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersionLookAhead',
     ),
     3 =>
     array (
@@ -70,6 +97,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -80,6 +108,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -90,6 +119,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     7 =>
     array (
@@ -108,6 +138,7 @@ class CameraInfo5DmkII extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighlightTonePriority',
     ),
     21 =>
     array (
@@ -129,6 +160,7 @@ class CameraInfo5DmkII extends Collection {
           6 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FlashMeteringMode',
     ),
     25 =>
     array (
@@ -139,6 +171,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     27 =>
     array (
@@ -149,6 +182,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:MacroMagnification',
     ),
     30 =>
     array (
@@ -159,6 +193,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     49 =>
     array (
@@ -178,6 +213,7 @@ class CameraInfo5DmkII extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     80 =>
     array (
@@ -188,6 +224,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     82 =>
     array (
@@ -198,6 +235,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     111 =>
     array (
@@ -236,6 +274,7 @@ class CameraInfo5DmkII extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     115 =>
     array (
@@ -246,6 +285,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     167 =>
     array (
@@ -286,6 +326,7 @@ class CameraInfo5DmkII extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     189 =>
     array (
@@ -306,6 +347,7 @@ class CameraInfo5DmkII extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
     ),
     191 =>
     array (
@@ -326,6 +368,7 @@ class CameraInfo5DmkII extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoLightingOptimizer',
     ),
     230 =>
     array (
@@ -739,6 +782,7 @@ class CameraInfo5DmkII extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     232 =>
     array (
@@ -749,6 +793,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     234 =>
     array (
@@ -759,6 +804,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     382 =>
     array (
@@ -770,6 +816,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     443 =>
     array (
@@ -780,6 +827,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     455 =>
     array (
@@ -790,6 +838,7 @@ class CameraInfo5DmkII extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
   ),
 );

@@ -28,6 +28,12 @@ class MultiExp extends Collection {
     'MultiExposureControl' => 2,
     'MultiExposureShots' => 3,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:MultiExposure' => 1,
+    'Canon:MultiExposureControl' => 2,
+    'Canon:MultiExposureShots' => 3,
+  ),
   'items' =>
   array (
     1 =>
@@ -48,6 +54,7 @@ class MultiExp extends Collection {
           2 => 'On (RAW)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:MultiExposure',
     ),
     2 =>
     array (
@@ -68,6 +75,7 @@ class MultiExp extends Collection {
           3 => 'Dark (comparative)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:MultiExposureControl',
     ),
     3 =>
     array (
@@ -78,6 +86,7 @@ class MultiExp extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:MultiExposureShots',
     ),
   ),
 );

@@ -30,6 +30,14 @@ class CameraInfoPowerShot extends Collection {
     'ISO' => 0,
     'Rotation' => 23,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraTemperature' => 145,
+    'Canon:ExposureTime' => 6,
+    'Canon:FNumber' => 5,
+    'Canon:ISO' => 0,
+    'Canon:Rotation' => 23,
+  ),
   'items' =>
   array (
     0 =>
@@ -41,6 +49,7 @@ class CameraInfoPowerShot extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     5 =>
     array (
@@ -51,6 +60,7 @@ class CameraInfoPowerShot extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     6 =>
     array (
@@ -61,6 +71,7 @@ class CameraInfoPowerShot extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     23 =>
     array (
@@ -71,6 +82,7 @@ class CameraInfoPowerShot extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:Rotation',
     ),
     135 =>
     array (
@@ -81,6 +93,7 @@ class CameraInfoPowerShot extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     145 =>
     array (
@@ -91,6 +104,7 @@ class CameraInfoPowerShot extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
   ),
 );

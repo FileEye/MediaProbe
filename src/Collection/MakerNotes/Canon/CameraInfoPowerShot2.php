@@ -30,6 +30,14 @@ class CameraInfoPowerShot2 extends Collection {
     'ISO' => 1,
     'Rotation' => 24,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraTemperature' => 261,
+    'Canon:ExposureTime' => 7,
+    'Canon:FNumber' => 6,
+    'Canon:ISO' => 1,
+    'Canon:Rotation' => 24,
+  ),
   'items' =>
   array (
     1 =>
@@ -41,6 +49,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     6 =>
     array (
@@ -51,6 +60,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     7 =>
     array (
@@ -61,6 +71,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     24 =>
     array (
@@ -71,6 +82,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:Rotation',
     ),
     153 =>
     array (
@@ -81,6 +93,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     159 =>
     array (
@@ -91,6 +104,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     164 =>
     array (
@@ -101,6 +115,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     168 =>
     array (
@@ -111,6 +126,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     261 =>
     array (
@@ -121,6 +137,7 @@ class CameraInfoPowerShot2 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
   ),
 );

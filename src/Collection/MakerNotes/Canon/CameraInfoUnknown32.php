@@ -26,6 +26,10 @@ class CameraInfoUnknown32 extends Collection {
   array (
     'CameraTemperature' => 100,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraTemperature' => 100,
+  ),
   'items' =>
   array (
     -3 =>
@@ -37,6 +41,7 @@ class CameraInfoUnknown32 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     71 =>
     array (
@@ -47,6 +52,7 @@ class CameraInfoUnknown32 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     83 =>
     array (
@@ -57,6 +63,7 @@ class CameraInfoUnknown32 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     91 =>
     array (
@@ -67,6 +74,7 @@ class CameraInfoUnknown32 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     92 =>
     array (
@@ -77,6 +85,7 @@ class CameraInfoUnknown32 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     100 =>
     array (
@@ -87,6 +96,7 @@ class CameraInfoUnknown32 extends Collection {
       array (
         0 => 9,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
   ),
 );

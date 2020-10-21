@@ -1,0 +1,21 @@
+__todo: true
+collection: MakerNotes\Canon\CNTH
+name: CanonCNTH
+title: 'Canon CNTH'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::CNTH'']/tag'
+items:
+    CNDA:
+        exiftool:
+            -
+                name: ThumbnailImage
+                type: undef
+                writable: false
+                g2: Preview
+                DOMNode: 'Canon:ThumbnailImage'
+                desc: 'Thumbnail Image'

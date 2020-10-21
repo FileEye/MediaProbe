@@ -58,6 +58,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsAuto',
     ),
     5 =>
     array (
@@ -69,6 +70,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsDaylight',
     ),
     9 =>
     array (
@@ -80,6 +82,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsShade',
     ),
     13 =>
     array (
@@ -91,6 +94,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsCloudy',
     ),
     17 =>
     array (
@@ -102,6 +106,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsTungsten',
     ),
     21 =>
     array (
@@ -113,6 +118,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsFluorescent',
     ),
     25 =>
     array (
@@ -124,6 +130,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsFlash',
     ),
     29 =>
     array (
@@ -135,6 +142,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsCustom',
     ),
     33 =>
     array (
@@ -146,6 +154,7 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsKelvin',
     ),
     37 =>
     array (
@@ -157,7 +166,21 @@ class ColorBalance extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBBlackLevels',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:WB_RGGBBlackLevels' => 37,
+    'Canon:WB_RGGBLevelsAuto' => 1,
+    'Canon:WB_RGGBLevelsCloudy' => 13,
+    'Canon:WB_RGGBLevelsCustom' => 29,
+    'Canon:WB_RGGBLevelsDaylight' => 5,
+    'Canon:WB_RGGBLevelsFlash' => 25,
+    'Canon:WB_RGGBLevelsFluorescent' => 21,
+    'Canon:WB_RGGBLevelsKelvin' => 33,
+    'Canon:WB_RGGBLevelsShade' => 9,
+    'Canon:WB_RGGBLevelsTungsten' => 17,
   ),
 );
 }

@@ -121,6 +121,7 @@ class Main extends Collection {
       'collection' => 'Tag',
       'name' => 'CanonFlashInfo',
       'title' => 'Canon Flash Info',
+      'exiftoolDOMNode' => 'Canon:CanonFlashInfo',
     ),
     4 =>
     array (
@@ -141,6 +142,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:CanonImageType',
     ),
     7 =>
     array (
@@ -151,6 +153,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:CanonFirmwareVersion',
     ),
     8 =>
     array (
@@ -161,6 +164,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileNumber',
     ),
     9 =>
     array (
@@ -171,6 +175,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:OwnerName',
     ),
     10 =>
     array (
@@ -187,6 +192,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:SerialNumber',
     ),
     13 =>
     array (
@@ -202,6 +208,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:CanonFileLength',
     ),
     15 =>
     array (
@@ -551,6 +558,7 @@ class Main extends Collection {
           '2147484722' => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CanonModelID',
     ),
     17 =>
     array (
@@ -572,6 +580,7 @@ class Main extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ThumbnailImageValidArea',
     ),
     21 =>
     array (
@@ -590,6 +599,7 @@ class Main extends Collection {
           '2684354560' => 'Format 2',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SerialNumberFormat',
     ),
     26 =>
     array (
@@ -609,6 +619,7 @@ class Main extends Collection {
           2 => 'On (2)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SuperMacro',
     ),
     28 =>
     array (
@@ -628,6 +639,7 @@ class Main extends Collection {
           2 => 'Date & Time',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:DateStampMode',
     ),
     29 =>
     array (
@@ -643,6 +655,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareRevision',
     ),
     35 =>
     array (
@@ -668,6 +681,7 @@ class Main extends Collection {
           64 => 'To Do',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Categories',
     ),
     36 =>
     array (
@@ -698,6 +712,7 @@ class Main extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ImageUniqueID',
     ),
     41 =>
     array (
@@ -724,6 +739,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:BatteryType',
     ),
     60 =>
     array (
@@ -739,6 +755,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:RawDataOffset',
     ),
     131 =>
     array (
@@ -749,6 +766,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:OriginalDecisionDataOffset',
     ),
     144 =>
     array (
@@ -782,6 +800,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:AFPointsInFocus1D',
     ),
     149 =>
     array (
@@ -792,6 +811,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:LensModel',
     ),
     150 =>
     array (
@@ -802,6 +822,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:InternalSerialNumber',
     ),
     151 =>
     array (
@@ -812,6 +833,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:DustRemovalData',
     ),
     152 =>
     array (
@@ -842,6 +864,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:ToneCurveTable',
     ),
     162 =>
     array (
@@ -852,6 +875,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessTable',
     ),
     163 =>
     array (
@@ -862,6 +886,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessFreqTable',
     ),
     164 =>
     array (
@@ -872,6 +897,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalanceTable',
     ),
     169 =>
     array (
@@ -892,6 +918,7 @@ class Main extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     176 =>
     array (
@@ -912,6 +939,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:ToneCurveMatching',
     ),
     179 =>
     array (
@@ -922,6 +950,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalanceMatching',
     ),
     180 =>
     array (
@@ -941,6 +970,7 @@ class Main extends Collection {
           2 => 'Adobe RGB',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorSpace',
     ),
     182 =>
     array (
@@ -956,6 +986,7 @@ class Main extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:VRDOffset',
     ),
     224 =>
     array (
@@ -976,6 +1007,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:CRWParam',
     ),
     16387 =>
     array (
@@ -991,6 +1023,7 @@ class Main extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:Flavor',
     ),
     16392 =>
     array (
@@ -1033,6 +1066,7 @@ class Main extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyleUserDef',
     ),
     16393 =>
     array (
@@ -1075,6 +1109,7 @@ class Main extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStylePC',
     ),
     16400 =>
     array (
@@ -1085,6 +1120,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:CustomPictureStyleFileName',
     ),
     16403 =>
     array (
@@ -1138,6 +1174,45 @@ class Main extends Collection {
       '__collection' => 'MakerNotes\\Canon\\RawBurstModeRoll',
       'collection' => 'Tag',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AFPointsInFocus1D' => 148,
+    'Canon:BatteryType' => 56,
+    'Canon:CRWParam' => 16386,
+    'Canon:CanonFileLength' => 14,
+    'Canon:CanonFirmwareVersion' => 7,
+    'Canon:CanonFlashInfo' => 3,
+    'Canon:CanonImageType' => 6,
+    'Canon:CanonModelID' => 16,
+    'Canon:Categories' => 35,
+    'Canon:ColorSpace' => 180,
+    'Canon:ColorTemperature' => 174,
+    'Canon:CustomPictureStyleFileName' => 16400,
+    'Canon:DateStampMode' => 28,
+    'Canon:DustRemovalData' => 151,
+    'Canon:FileNumber' => 8,
+    'Canon:FirmwareRevision' => 30,
+    'Canon:Flavor' => 16389,
+    'Canon:ImageUniqueID' => 40,
+    'Canon:InternalSerialNumber' => 150,
+    'Canon:LensModel' => 149,
+    'Canon:OriginalDecisionDataOffset' => 131,
+    'Canon:OwnerName' => 9,
+    'Canon:PictureStylePC' => 16393,
+    'Canon:PictureStyleUserDef' => 16392,
+    'Canon:RawDataOffset' => 129,
+    'Canon:SerialNumber' => 12,
+    'Canon:SerialNumberFormat' => 21,
+    'Canon:SharpnessFreqTable' => 163,
+    'Canon:SharpnessTable' => 162,
+    'Canon:SuperMacro' => 26,
+    'Canon:ThumbnailImageValidArea' => 19,
+    'Canon:ToneCurveMatching' => 178,
+    'Canon:ToneCurveTable' => 161,
+    'Canon:VRDOffset' => 208,
+    'Canon:WhiteBalanceMatching' => 179,
+    'Canon:WhiteBalanceTable' => 164,
   ),
 );
 }

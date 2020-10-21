@@ -40,6 +40,24 @@ class CameraInfo70D extends Collection {
     'MaxFocalLength' => 362,
     'MinFocalLength' => 360,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraOrientation' => 132,
+    'Canon:CameraTemperature' => 27,
+    'Canon:ColorTemperature' => 199,
+    'Canon:DirectoryIndex' => 703,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 691,
+    'Canon:FirmwareVersion' => 606,
+    'Canon:FocalLength' => 35,
+    'Canon:FocusDistanceLower' => 149,
+    'Canon:FocusDistanceUpper' => 147,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 358,
+    'Canon:MaxFocalLength' => 362,
+    'Canon:MinFocalLength' => 360,
+  ),
   'items' =>
   array (
     3 =>
@@ -51,6 +69,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -61,6 +80,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -71,6 +91,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     27 =>
     array (
@@ -81,6 +102,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     35 =>
     array (
@@ -91,6 +113,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     132 =>
     array (
@@ -110,6 +133,7 @@ class CameraInfo70D extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     147 =>
     array (
@@ -120,6 +144,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     149 =>
     array (
@@ -130,6 +155,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     199 =>
     array (
@@ -140,6 +166,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     358 =>
     array (
@@ -553,6 +580,7 @@ class CameraInfo70D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     360 =>
     array (
@@ -563,6 +591,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     362 =>
     array (
@@ -573,6 +602,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     606 =>
     array (
@@ -584,6 +614,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     691 =>
     array (
@@ -594,6 +625,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     703 =>
     array (
@@ -604,6 +636,7 @@ class CameraInfo70D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
   ),
 );

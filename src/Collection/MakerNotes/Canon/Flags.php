@@ -26,6 +26,10 @@ class Flags extends Collection {
   array (
     'ModifiedParamFlag' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ModifiedParamFlag' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -37,6 +41,7 @@ class Flags extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedParamFlag',
     ),
   ),
 );

@@ -46,6 +46,30 @@ class CameraInfo500D extends Collection {
     'PictureStyle' => 171,
     'WhiteBalance' => 115,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AutoLightingOptimizer' => 190,
+    'Canon:CameraOrientation' => 49,
+    'Canon:CameraTemperature' => 25,
+    'Canon:ColorTemperature' => 119,
+    'Canon:DirectoryIndex' => 479,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 467,
+    'Canon:FirmwareVersion' => 400,
+    'Canon:FlashMeteringMode' => 21,
+    'Canon:FocalLength' => 30,
+    'Canon:FocusDistanceLower' => 82,
+    'Canon:FocusDistanceUpper' => 80,
+    'Canon:HighISONoiseReduction' => 188,
+    'Canon:HighlightTonePriority' => 7,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 246,
+    'Canon:MaxFocalLength' => 250,
+    'Canon:MinFocalLength' => 248,
+    'Canon:PictureStyle' => 171,
+    'Canon:WhiteBalance' => 115,
+  ),
   'items' =>
   array (
     3 =>
@@ -57,6 +81,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -67,6 +92,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -77,6 +103,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     7 =>
     array (
@@ -95,6 +122,7 @@ class CameraInfo500D extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighlightTonePriority',
     ),
     21 =>
     array (
@@ -116,6 +144,7 @@ class CameraInfo500D extends Collection {
           6 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FlashMeteringMode',
     ),
     25 =>
     array (
@@ -126,6 +155,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     30 =>
     array (
@@ -136,6 +166,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     49 =>
     array (
@@ -155,6 +186,7 @@ class CameraInfo500D extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     80 =>
     array (
@@ -165,6 +197,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     82 =>
     array (
@@ -175,6 +208,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     115 =>
     array (
@@ -213,6 +247,7 @@ class CameraInfo500D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     119 =>
     array (
@@ -223,6 +258,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     171 =>
     array (
@@ -263,6 +299,7 @@ class CameraInfo500D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     188 =>
     array (
@@ -283,6 +320,7 @@ class CameraInfo500D extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
     ),
     190 =>
     array (
@@ -303,6 +341,7 @@ class CameraInfo500D extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoLightingOptimizer',
     ),
     246 =>
     array (
@@ -716,6 +755,7 @@ class CameraInfo500D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     248 =>
     array (
@@ -726,6 +766,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     250 =>
     array (
@@ -736,6 +777,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     400 =>
     array (
@@ -747,6 +789,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     467 =>
     array (
@@ -757,6 +800,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     479 =>
     array (
@@ -767,6 +811,7 @@ class CameraInfo500D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
   ),
 );
