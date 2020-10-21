@@ -15,8 +15,7 @@ class CanonFileNumber extends Long
      */
     public function getValue(array $options = [])
     {
-dump($this->value);  
-        return exp($this->value[0] / 32 * log(2)) * 100;
+        return $this->value[0];
     }
 
     /**
