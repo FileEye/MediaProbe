@@ -45,7 +45,7 @@ dump([$this->value, $xx, $yy]);
         // Convert 1/3 and 2/3 codes
         if ($frac == 0x0c) {
             $frac = 0x20 / 3;
-        } elsif ($frac == 0x14) {
+        } elseif ($frac == 0x14) {
             $frac = 0x40 / 3;
         }
         return $sign * ($val + $frac) / 0x20;
