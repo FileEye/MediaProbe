@@ -2,13 +2,13 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Entry\Core\Short;
+use FileEye\MediaProbe\Entry\Core\SignedShort;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon Auto ISO tags.
  */
-class CanonAutoIso extends Short
+class CanonAutoIso extends SignedShort
 {
     /**
      * {@inheritdoc}
