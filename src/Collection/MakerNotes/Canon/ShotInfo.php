@@ -380,6 +380,7 @@ class ShotInfo extends Collection {
     ),
     23 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonMeasuredEV2',
       'collection' => 'Tag',
       'name' => 'MeasuredEV2',
       'title' => 'Measured EV 2',
@@ -391,6 +392,7 @@ class ShotInfo extends Collection {
     ),
     24 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonBulbDuration',
       'collection' => 'Tag',
       'name' => 'BulbDuration',
       'title' => 'Bulb Duration',
