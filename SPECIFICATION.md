@@ -128,3 +128,6 @@ class MyClass
 
 
 ## exiftool
+
+https://github.com/exiftool/exiftool
+https://github.com/exiftool/exiftool/tree/master/lib/Image/ExifTool

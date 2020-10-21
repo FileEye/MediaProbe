@@ -17,7 +17,6 @@ class ExifApertureValue extends Rational
      */
     public function getValue(array $options = [])
     {
-dump([$this->value, $options]);
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
             return pow(2, $this->value[0][0] / $this->value[0][1] / 2);
