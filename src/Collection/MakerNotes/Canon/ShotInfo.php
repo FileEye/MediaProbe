@@ -68,6 +68,7 @@ class ShotInfo extends Collection {
     ),
     1 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonAutoIso',
       'collection' => 'Tag',
       'name' => 'AutoISO',
       'title' => 'Auto ISO',
