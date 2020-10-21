@@ -19,7 +19,7 @@ class CanonApertureValue extends SignedShort
     {
         $xx = $this->CanonEv($this->value[0]);
         $yy = exp($xx * log(2) / 2);
-dump([$this->value, $xx, $yy]);
+//dump([$this->value, $xx, $yy]);
         return $yy;
     }
 
@@ -28,8 +28,8 @@ dump([$this->value, $xx, $yy]);
      */
     public function toString(array $options = [])
     {
-dump(['tostring', $this->getValue()]);
-        return MediaProbe::fmt('%.01f', $this->getValue());
+//dump(['tostring', $this->getValue()]);
+        return round($this->getValue());
     }
 
     private function CanonEv($val) {
