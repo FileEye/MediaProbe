@@ -8,7 +8,7 @@ use FileEye\MediaProbe\MediaProbe;
 /**
  * Handler for Canon Focal Plane tags.
  */
-class FocalPlaneSize extends Short
+class CanonFocalPlaneSize extends Short
 {
     /**
      * {@inheritdoc}
