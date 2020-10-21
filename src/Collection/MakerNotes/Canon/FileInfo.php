@@ -58,6 +58,7 @@ class FileInfo extends Collection {
     ),
     1 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFileNumber',
       'collection' => 'Tag',
       'name' => 'FileNumber',
       'title' => 'File Number',
