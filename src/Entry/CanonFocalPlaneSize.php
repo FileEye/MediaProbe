@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Entry\Core\SignedShort;
+use FileEye\MediaProbe\Entry\Core\Short;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
