@@ -28,7 +28,7 @@ dump([$this->value, $xx, $yy]);
      */
     public function toString(array $options = [])
     {
-        return MediaProbe::fmt('%.01f', $this->getValue()[0] / $this->getValue()[1] / 2));
+        return MediaProbe::fmt('%.01f', $this->getValue());
     }
     
     private function CanonEv($val) {
