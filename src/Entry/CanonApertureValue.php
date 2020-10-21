@@ -17,7 +17,7 @@ class CanonApertureValue extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        $xx = $this->CanonEv($this->value[0]); 
+        $xx = $this->CanonEv($this->value[0]);
         $yy = exp($xx * log(2) / 2);
 dump([$this->value, $xx, $yy]);
         return $yy;
@@ -30,9 +30,9 @@ dump([$this->value, $xx, $yy]);
     {
         return MediaProbe::fmt('%.01f', $this->getValue());
     }
-    
+
     private function CanonEv($val) {
-        # temporarily make the number positive
+        // temporarily make the number positive
         if ($val < 0) {
             $val = -$val;
             $sign = -1;
@@ -40,8 +40,9 @@ dump([$this->value, $xx, $yy]);
             $sign = 1;
         }
         $frac = $val & 0x1f;
-        $val -= $frac;      # remove fraction
-        # Convert 1/3 and 2/3 codes
+        $val -= $frac;
+        // remove fraction
+        // Convert 1/3 and 2/3 codes
         if ($frac == 0x0c) {
             $frac = 0x20 / 3;
         } elsif ($frac == 0x14) {

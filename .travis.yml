@@ -5,8 +5,8 @@ language: php
 jobs:
   include:
     #- php: 7.2
-    #- php: 7.3
-    - php: 7.4
+    - php: 7.3
+    #- php: 7.4
     #- php: nightly
   fast_finish: true
   allow_failures:
@@ -22,7 +22,7 @@ env:
 
 cache:
   directories:
-    #- $FILEEYE_STAGING_DIR
+    - $FILEEYE_STAGING_DIR
 
 before_install:
   # Remove XDebug.
@@ -59,7 +59,7 @@ script:
   #- php examples/dump-media.php -d    test/image_files/broken_images/canon-eos-650d.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
   #- php examples/dump-media.php -d test/image_files/exiftool/Canon1DmkIII.jpg-rewrite.img
-  - php examples/dump-media.php -d test/image_files/exiftool/Canon.jpg
+  - php examples/dump-media.php -d -s test/image_files/exiftool/Canon.jpg
   #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-powershot-s60.jpg
   #- php examples/dump-media.php -d test/image_files/camera_samples/canon-powershot-s60.jpg-rewrite.img
   #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-ixus-ii.jpg
