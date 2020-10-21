@@ -368,6 +368,7 @@ class ShotInfo extends Collection {
     ),
     22 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
