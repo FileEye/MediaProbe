@@ -104,6 +104,7 @@ class ShotInfo extends Collection {
     ),
     4 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonApertureValue',
       'collection' => 'Tag',
       'name' => 'TargetAperture',
       'title' => 'Target Aperture',
