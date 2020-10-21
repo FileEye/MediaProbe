@@ -19,7 +19,6 @@ class CanonApertureValue extends SignedShort
     {
         $xx = $this->CanonEv($this->value[0]);
         $yy = exp($xx * log(2) / 2);
-dump([$this->value, $xx, $yy]);
         return $yy;
     }
 
