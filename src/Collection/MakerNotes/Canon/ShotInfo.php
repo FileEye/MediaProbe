@@ -92,6 +92,7 @@ class ShotInfo extends Collection {
     ),
     3 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\MeasuredEV',
       'collection' => 'Tag',
       'name' => 'MeasuredEV',
       'title' => 'Measured EV',
