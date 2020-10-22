@@ -17,11 +17,12 @@ class CanonFocalLength extends Short
     {
         // Get the Focal Units.
         if (!$focal_units = $this->getRootElement()->getElement("//makerNote[@name='Canon']//tag[@name='FocalUnits']/entry")) {
-            return 1;
+            $denominator = 1;
+        } else {
+            $denominator = $focal_units->getValue();
         }
 
-        dump($focal_units);
-        return $focal_units->getValue();
+        return $this->value[0] / $denominator;
     }
 
     /**
@@ -29,6 +30,6 @@ class CanonFocalLength extends Short
      */
     public function toString(array $options = [])
     {
-        return $this->getValue();
+        return round($this->getValue(), 2);
     }
 }
