@@ -431,6 +431,7 @@ class CameraSettings extends Collection {
     ),
     16 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraISO',
       'collection' => 'Tag',
       'name' => 'CameraISO',
       'title' => 'Camera ISO',
