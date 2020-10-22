@@ -30,6 +30,6 @@ class CanonFocalLength extends Short
      */
     public function toString(array $options = [])
     {
-        return round($this->getValue()) . ' mm';
+        return $this->getValue() . ' mm';
     }
 }
