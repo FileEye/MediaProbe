@@ -2,13 +2,13 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Entry\Core\SignedShort;
+use FileEye\MediaProbe\Entry\Core\Short;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon Camera ISO tags.
  */
-class CanonFocalLength extends SignedShort
+class CanonFocalLength extends Short
 {
     /**
      * {@inheritdoc}
@@ -16,11 +16,11 @@ class CanonFocalLength extends SignedShort
     public function getValue(array $options = [])
     {
         // Get the Focal Units.
-        if (!$focal_units = $this->getRootElement()->getElement("makerNote[@name='Canon']//tag[@name='FocalUnits']")) {
+        if (!$focal_units = $this->getRootElement()->getElement("//makerNote[@name='Canon']//tag[@name='FocalUnits']")) {
             return 1;
         }
 
-        dump($focal_units->getValue());
+        dump($focal_units);
         return 1;
     }
 
