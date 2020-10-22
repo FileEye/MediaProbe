@@ -29,7 +29,7 @@ class CanonCameraISO extends SignedShort
             return 0;
         }
         if ($this->value[0] & 0x4000) {
-            return = $this->value[0] & 0x3fff;
+            return $this->value[0] & 0x3fff;
         } else {
             return isset($isoLookup[$this->value[0]]) ? $isoLookup[$this->value[0]] : "Unknown ({$this->value[0]})";
         }
