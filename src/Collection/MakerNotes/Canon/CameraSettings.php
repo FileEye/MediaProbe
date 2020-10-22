@@ -419,6 +419,7 @@ class CameraSettings extends Collection {
     ),
     15 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonSharpness',
       'collection' => 'Tag',
       'name' => 'Sharpness',
       'title' => 'Sharpness',
