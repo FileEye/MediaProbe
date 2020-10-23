@@ -15,7 +15,7 @@ class CanonCameraTemperature extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0] - 128;
+        return $this->value[0] === 0 ? 0 : $this->value[0] - 128;
     }
 
     /**
@@ -23,6 +23,7 @@ class CanonCameraTemperature extends SignedShort
      */
     public function toString(array $options = [])
     {
-        return $this->getValue() . ' C';
+        $value = $this->getValue();
+        return $value === 0 ? 'n/a' : $value . ' C';
     }
 }
