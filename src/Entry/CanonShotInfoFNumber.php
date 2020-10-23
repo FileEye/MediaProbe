@@ -21,8 +21,17 @@ class CanonShotInfoFNumber extends SignedShort
         } else {
             return exp($this->CanonEv($this->value[0]) * log(2) / 2);
         }*/
-        dump([$this->value[0], exp($this->CanonEv($this->value[0]) * log(2) / 2), $alternative ? $alternative->getValue() : 'nope']);
-        return exp($this->CanonEv($this->value[0]) * log(2) / 2);
+        $value = exp($this->CanonEv($this->value[0]) * log(2) / 2);
+        dump([$this->value[0], $value, $alternative ? $alternative->getValue() : 'nope']);
+        return $value;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString(array $options = [])
+    {
+        return round($this->getValue(), 1);
     }
 
     private function CanonEv($val) {
