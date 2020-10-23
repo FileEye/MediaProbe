@@ -22,7 +22,7 @@ class CanonShotInfoFNumber extends SignedShort
             return exp($this->CanonEv($this->value[0]) * log(2) / 2);
         }*/
         $value = exp($this->CanonEv($this->value[0]) * log(2) / 2);
-        dump([$this->value[0], $value, $alternative ? $alternative->getValue() : 'nope']);
+//        dump([$this->value[0], $value, $alternative ? $alternative->getValue() : 'nope']);
         return $value;
     }
 
