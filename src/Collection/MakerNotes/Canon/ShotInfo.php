@@ -15,8 +15,8 @@ class ShotInfo extends Collection {
   protected static $map = array (
   'name' => 'CanonShotInfo',
   'title' => 'Shot Information',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
-  'DOMNode' => 'index',
+  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>
   array (
