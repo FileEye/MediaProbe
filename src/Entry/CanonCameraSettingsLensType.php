@@ -16,7 +16,7 @@ class CanonCameraSettingsLensType extends Short
     public function getValue(array $options = [])
     {
         if (!$lens_type = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
-            return -1;
+            return 65535;
         } else {
             return $lens_type->getValue($options);
         }
