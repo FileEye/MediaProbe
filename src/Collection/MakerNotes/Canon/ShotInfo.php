@@ -246,6 +246,7 @@ class ShotInfo extends Collection {
     ),
     14 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoAFPointsInFocus',
       'collection' => 'Tag',
       'name' => 'AFPointsInFocus',
       'title' => 'AF Points In Focus',
