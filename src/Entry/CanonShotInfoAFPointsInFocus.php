@@ -29,5 +29,5 @@ class CanonShotInfoAFPointsInFocus extends SignedShort
     {
         $value = $this->getValue();
         return $value > 0 ? "+$value" : $value;
-    }*(
+    }*/
 }
