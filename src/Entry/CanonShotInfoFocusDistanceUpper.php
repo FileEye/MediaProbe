@@ -12,8 +12,8 @@ class CanonShotInfoFocusDistanceUpper extends CanonFocusDistance
      */
     public function getValue(array $options = [])
     {
-        if ($alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='FocusDistanceUpper']/entry")) {
-            return $alternative->getValue($options) / 100;
+        if ($alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonFileInfo']/tag[@name='FocusDistanceUpper']/entry")) {
+            return $alternative->getValue($options);
         } else {
             return $this->value[0] / 100;
         }

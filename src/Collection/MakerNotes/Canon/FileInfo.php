@@ -324,6 +324,7 @@ class FileInfo extends Collection {
     ),
     20 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -335,6 +336,7 @@ class FileInfo extends Collection {
     ),
     21 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
