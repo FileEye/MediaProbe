@@ -128,6 +128,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
     protected function assertElement($expected, $element, $rewritten = false)
     {
+        if (in_array($element->getContextPath(), $this->testDump['skip']['mediaprobe'])) {
+            return;
+        }
+
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
         $this->assertSame($expected['path'], $element->getContextPath());
         if (!$rewritten) {
