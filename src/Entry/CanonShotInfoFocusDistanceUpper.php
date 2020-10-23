@@ -2,13 +2,10 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Entry\Core\Short;
-use FileEye\MediaProbe\MediaProbe;
-
 /**
  * Handler for Canon ShotInfo FocusDistanceUpper tags.
  */
-class CanonShotInfoFocusDistanceUpper extends Short
+class CanonShotInfoFocusDistanceUpper extends CanonFocusDistance
 {
     /**
      * {@inheritdoc}
