@@ -346,6 +346,7 @@ class CameraInfo500D extends Collection {
     ),
     246 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',

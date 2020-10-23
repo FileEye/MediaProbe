@@ -268,6 +268,7 @@ class CameraInfo1DX extends Collection {
     ),
     423 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',

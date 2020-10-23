@@ -80,6 +80,7 @@ class CameraInfo1DmkIIN extends Collection {
     ),
     12 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',

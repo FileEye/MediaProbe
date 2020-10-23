@@ -274,6 +274,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     339 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',

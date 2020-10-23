@@ -170,6 +170,7 @@ class CameraInfo60D extends Collection {
     ),
     232 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
