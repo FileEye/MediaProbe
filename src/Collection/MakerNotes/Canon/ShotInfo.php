@@ -116,6 +116,7 @@ class ShotInfo extends Collection {
     ),
     5 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonExposureTime',
       'collection' => 'Tag',
       'name' => 'TargetExposureTime',
       'title' => 'Target Exposure Time',
@@ -127,6 +128,7 @@ class ShotInfo extends Collection {
     ),
     6 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonExposureCompensation',
       'collection' => 'Tag',
       'name' => 'ExposureCompensation',
       'title' => 'Exposure Compensation',
