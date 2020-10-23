@@ -179,6 +179,7 @@ class CameraInfo1000D extends Collection {
     ),
     67 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -190,6 +191,7 @@ class CameraInfo1000D extends Collection {
     ),
     69 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',

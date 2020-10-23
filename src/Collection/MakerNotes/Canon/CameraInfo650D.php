@@ -142,6 +142,7 @@ class CameraInfo650D extends Collection {
     ),
     140 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -153,6 +154,7 @@ class CameraInfo650D extends Collection {
     ),
     142 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
