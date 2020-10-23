@@ -2,13 +2,13 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Entry\Core\Short;
+use FileEye\MediaProbe\Entry\Core\ShortRev;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon CameraInfo Lens Type tags.
  */
-class CanonCameraInfoLensType extends Short
+class CanonCameraInfoLensType extends ShortRev
 {
     /**
      * {@inheritdoc}
