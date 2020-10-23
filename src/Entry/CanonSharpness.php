@@ -15,8 +15,13 @@ class CanonSharpness extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        dump($this->value);
-        return $this->value[0] === 0x7fff ? 0 : $this->value[0];
+        if (!$alternative_sharpness = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name!='CanonCameraSettings']/tag[@name='LensType']/entry")) {
+            $value = $alternative_sharpness->getValue($options);
+        } else {
+            $value = $this->value[0];
+        }
+
+        return $value === 0x7fff ? 0 : $value;
     }
 
     /**
