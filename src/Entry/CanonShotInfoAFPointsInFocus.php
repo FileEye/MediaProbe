@@ -21,13 +21,4 @@ class CanonShotInfoAFPointsInFocus extends SignedShort
             return $this->value[0];
         }
     }
-
-    /**
-     * {@inheritdoc}
-     */
-/*    public function toString(array $options = [])
-    {
-        $value = $this->getValue();
-        return $value > 0 ? "+$value" : $value;
-    }*/
 }
