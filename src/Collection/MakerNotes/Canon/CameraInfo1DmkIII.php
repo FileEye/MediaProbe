@@ -74,6 +74,7 @@ class CameraInfo1DmkIII extends Collection {
   array (
     3 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
