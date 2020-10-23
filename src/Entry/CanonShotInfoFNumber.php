@@ -15,7 +15,7 @@ class CanonShotInfoFNumber extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        if ($alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='FNumber']/entry")) {
+        if ($alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCamedddraInfo']/tag[@name='FNumber']/entry")) {
             return exp($this->CanonEv($alternative->getValue($options)) * log(2) / 2);
         } else {
             return exp($this->CanonEv($this->value[0]) * log(2) / 2);
