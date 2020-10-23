@@ -15,8 +15,8 @@ class CanonTargetExposureTime extends CanonExposureTime
     public function toString(array $options = [])
     {
         $value = $this->getValue();
-        if ($value < 0.25001 and $value > 0) {
-            return sprintf("1/%d", int(0.5 + 1 / $value));
+        if ($value < 0.25001 && $value > 0) {
+            return sprintf("1/%d", floor(0.5 + 1 / $value));
         }
         $ret = sprintf("%.1f", $value);
         return $ret;
