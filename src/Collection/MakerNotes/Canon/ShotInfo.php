@@ -360,7 +360,7 @@ class ShotInfo extends Collection {
     ),
     21 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonApertureValue',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoFNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
