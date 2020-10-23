@@ -128,7 +128,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
     protected function assertElement($expected, $element, $rewritten = false)
     {
-        if (in_array($element->getContextPath(), $this->testDump['skip']['mediaprobe'])) {
+        if (in_array($element->getContextPath(), $this->testDump['skip']['mediaprobe'] ?? [])) {
             return;
         }
 
