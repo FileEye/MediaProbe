@@ -595,6 +595,7 @@ class CameraInfo5D extends Collection {
     ),
     23 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',

@@ -93,6 +93,7 @@ class CameraInfo750D extends Collection {
     ),
     27 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
