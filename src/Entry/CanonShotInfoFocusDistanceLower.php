@@ -12,8 +12,8 @@ class CanonShotInfoFocusDistanceLower extends CanonFocusDistance
      */
     public function getValue(array $options = [])
     {
-        if ($alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonShotInfo']/tag[@name='FocusDistanceLower']/entry")) {
-            return $alternative_af_points_in_focus->getValue($options);
+        if ($alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='FocusDistanceLower']/entry")) {
+            return $alternative->getValue($options);
         } else {
             return $this->value[0];
         }
