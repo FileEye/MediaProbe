@@ -22,4 +22,12 @@ class CanonRawMeasuredRGGB extends Long
         }
         return $format === 'exiftool' ? implode(' ', $value) : $value;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString(array $options = [])
+    {
+        return implode(' ', $this->getValue());
+    }
 }
