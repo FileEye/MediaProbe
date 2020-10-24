@@ -14,7 +14,7 @@ class CanonCIExposureTime extends Byte
      */
     public function getValue(array $options = [])
     {
-        return exp(4 * log(2) * (1 - $this->CanonEv($this->val[0] - 24)));
+        return exp(4 * log(2) * (1 - $this->CanonEv($this->value[0] - 24)));
     }
 
     /**
