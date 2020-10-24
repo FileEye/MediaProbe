@@ -16,9 +16,6 @@ class CanonRawMeasuredRGGB extends Long
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
-        if ($format = 'xx') {
-            return $this->value;
-        }
         $value = [];
         foreach ($this->value as $v) {
             $value[] = (($v >> 16) | ($v << 16)) & 0xffffffff;
