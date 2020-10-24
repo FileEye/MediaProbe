@@ -8,7 +8,7 @@ use FileEye\MediaProbe\MediaProbe;
 /**
  * Handler for Canon File Index tags.
  */
-class CanonCIFileIndex extends Long
+class CanonCIShutterCount extends Long
 {
     /**
      * {@inheritdoc}
