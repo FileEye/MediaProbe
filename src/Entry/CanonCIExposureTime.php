@@ -22,7 +22,12 @@ class CanonCIExposureTime extends Byte
      */
     public function toString(array $options = [])
     {
-        return round($this->getValue(), 1);
+        $value = $this->getValue();
+        if ($value < 1) {
+            return MediaProbe::fmt('1/%d sec.', $value);
+        } else {
+            return MediaProbe::fmt('%d sec.', $value);
+        }
     }
 
     private function CanonEv($val) {
