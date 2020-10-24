@@ -82,13 +82,14 @@ class ColorData4 extends Collection {
     ),
     640 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonRawMeasuredRGGB',
       'collection' => 'Tag',
       'name' => 'RawMeasuredRGGB',
       'title' => 'Raw Measured RGGB',
       'components' => 4,
       'format' =>
       array (
-        0 => 9,
+        0 => 4,
       ),
       'exiftoolDOMNode' => 'Canon:RawMeasuredRGGB',
     ),
