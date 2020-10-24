@@ -194,9 +194,9 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     if ($element->getFormat() === ItemFormat::ASCII || stripos($element->getContextPath(), 'tag:timestamp') !== false) {
                         $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
-if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
-    dump([$valx, $vala, $element->getValue()]);
-}
+/*if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
+    dump([$valx, $vala, $element->getValue(), $element->getValue(['format' => 'xx'])])  ;
+}*/
                         $sep = strpos($valx, ':') !== false ? ':' : ' ';
                         $valx_a = explode($sep, $valx);
                         $valx_aa = [];
@@ -208,9 +208,9 @@ if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
                         foreach ($vala_a as $v) {
                             $vala_aa[] = (float) $v;
                         }
-if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
+/*if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
     dump([$valx_aa, $vala_aa]);
-}
+}*/
                         $this->assertEqualsWithDelta($valx_aa, $vala_aa, 0.001, 'Exiftool raw: ' . $element->getContextPath());
                     }
                 }
