@@ -729,6 +729,7 @@ class CameraInfo1DmkIII extends Collection {
     ),
     370 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFileIndex',
       'collection' => 'Tag',
       'name' => 'FileIndex',
       'title' => 'File Index',
