@@ -15,8 +15,8 @@ class FileInfo extends Collection {
   protected static $map = array (
   'name' => 'CanonFileInfo',
   'title' => 'File Information',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
-  'DOMNode' => 'index',
+  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>
   array (
