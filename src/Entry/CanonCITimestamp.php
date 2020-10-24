@@ -17,7 +17,7 @@ class CanonCITimestamp extends Long
     {
         return date('Y-m-d h:i:s', $this->value[0]);
 
-        $jd = (int) (floor($this->value[0] / 86400) + 2440588)
+        $jd = (int) (floor($this->value[0] / 86400) + 2440588);
 
         if ($jd == 0) {
             return '0000:00:00 00:00:00';
