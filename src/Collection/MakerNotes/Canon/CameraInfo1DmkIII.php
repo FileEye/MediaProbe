@@ -741,6 +741,7 @@ class CameraInfo1DmkIII extends Collection {
     ),
     374 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIShutterCount',
       'collection' => 'Tag',
       'name' => 'ShutterCount',
       'title' => 'Shutter Count',
@@ -752,6 +753,7 @@ class CameraInfo1DmkIII extends Collection {
     ),
     382 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIDirectoryIndex',
       'collection' => 'Tag',
       'name' => 'DirectoryIndex',
       'title' => 'Directory Index',
