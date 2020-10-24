@@ -11,7 +11,7 @@ jobs:
   fast_finish: true
   allow_failures:
     - php: nightly
-    
+
 branches:
   except:
     - /^dev-.*/
@@ -100,6 +100,8 @@ script:
   #- php examples/dump-media.php -d test/image_files/camera_samples/olympus-c765uz.jpg
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/fujifilm_x_a5.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/fujifilm_x_a5.jpg-rewrite.img
+  - php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_850d_08.jpg
+  - php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_70d_29.jpg
 
 notifications:
   email:
