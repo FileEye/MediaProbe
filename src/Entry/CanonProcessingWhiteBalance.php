@@ -19,6 +19,9 @@ class CanonProcessingWhiteBalance extends SignedShort
             if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='WhiteBalance']/entry")) {
                 return $alternate->getValue($options);
             }
+            if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonShotInfo']/tag[@name='WhiteBalance']/entry")) {
+                return $alternate->getValue($options);
+            }
         }
         return $this->value[0];
     }
