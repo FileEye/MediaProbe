@@ -20,7 +20,6 @@ class CanonRawMeasuredRGGB extends Long
         foreach ($this->value as $v) {
             $value[] = (($v >> 16) | ($v << 16)) & 0xffffffff;
         }
-        dump([$this->value, $value]);
         return $format === 'exiftool' ? implode(' ', $value) : $value;
     }
 
