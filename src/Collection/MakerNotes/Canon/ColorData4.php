@@ -88,7 +88,7 @@ class ColorData4 extends Collection {
       'components' => 4,
       'format' =>
       array (
-        0 => 4,
+        0 => 9,
       ),
       'exiftoolDOMNode' => 'Canon:RawMeasuredRGGB',
     ),
