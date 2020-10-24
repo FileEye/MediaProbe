@@ -15,10 +15,11 @@ class CanonRawMeasuredRGGB extends Long
      */
     public function getValue(array $options = [])
     {
+        $format = $options['format'] ?? null;
         $value = [];
         foreach ($this->value as $v) {
             $value[] = (($v >> 16) | ($v << 16)) & 0xffffffff;
         }
-        return $value;
+        return $format === 'exiftool' ? implode(' ', $value) : $value;
     }
 }
