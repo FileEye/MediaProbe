@@ -765,6 +765,7 @@ class CameraInfo1DmkIII extends Collection {
     ),
     1114 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCITimestamp',
       'collection' => 'Tag',
       'name' => 'TimeStamp1',
       'title' => 'Time Stamp 1',
@@ -776,6 +777,7 @@ class CameraInfo1DmkIII extends Collection {
     ),
     1118 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCITimestamp',
       'collection' => 'Tag',
       'name' => 'TimeStamp',
       'title' => 'Time Stamp',
