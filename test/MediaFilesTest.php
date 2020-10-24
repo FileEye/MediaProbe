@@ -191,7 +191,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
 }*/
-                    if ($element->getFormat() !== ItemFormat::ASCII) {
+                    if ($element->getFormat() !== ItemFormat::ASCII && !stripos('time',$exiftool_node)) {
                         $sep = strpos($valx, ':') !== false ? ':' : ' ';
                         $valx_a = explode($sep, $valx);
                         $valx_aa = [];
