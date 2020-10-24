@@ -195,7 +195,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                         $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
 if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
-    dump([$valx, $vala]);
+    dump([$valx, $vala, $element->getValue()]);
 }
                         $sep = strpos($valx, ':') !== false ? ':' : ' ';
                         $valx_a = explode($sep, $valx);
