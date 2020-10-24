@@ -17,4 +17,12 @@ class CanonCIFileIndex extends Long
     {
         return $this->value[0] + 1;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString(array $options = [])
+    {
+        return $this->getValue();
+    }
 }
