@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Entry\Core\Byte;
+use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Common handler for Canon ExposureTime tags.
