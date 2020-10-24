@@ -151,6 +151,7 @@ class Processing extends Collection {
     ),
     8 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonProcessingWhiteBalance',
       'collection' => 'Tag',
       'name' => 'WhiteBalance',
       'title' => 'White Balance',
