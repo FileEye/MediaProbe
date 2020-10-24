@@ -191,7 +191,9 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
 }*/
-                    if ($element->getFormat() !== ItemFormat::ASCII && stripos($exiftool_node, 'time') !== FALSE) {
+                    if ($element->getFormat() === ItemFormat::ASCII || stripos($element->getContextPath(), 'tag:timestamp') !== false) {
+                        $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
+                    } else {
                         $sep = strpos($valx, ':') !== false ? ':' : ' ';
                         $valx_a = explode($sep, $valx);
                         $valx_aa = [];
@@ -204,8 +206,6 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                             $vala_aa[] = (float) $v;
                         }
                         $this->assertEqualsWithDelta($valx_aa, $vala_aa, 0.001, 'Exiftool raw: ' . $element->getContextPath());
-                    } else {
-                        $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     }
                 }
             }
