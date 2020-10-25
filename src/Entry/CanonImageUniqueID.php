@@ -21,4 +21,12 @@ class CanonImageUniqueID extends Byte
         }
         return bin2hex($str);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString(array $options = [])
+    {
+        return $this->getValue();
+    }
 }
