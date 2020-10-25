@@ -59,6 +59,7 @@ class FocalLength extends Collection {
     ),
     1 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFLFocalLength',
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',
