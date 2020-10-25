@@ -4,10 +4,10 @@ language: php
 
 jobs:
   include:
-    #- php: 7.2
+    - php: 7.2
     - php: 7.3
-    #- php: 7.4
-    #- php: nightly
+    - php: 7.4
+    - php: nightly
   fast_finish: true
   allow_failures:
     - php: nightly
@@ -22,7 +22,7 @@ env:
 
 cache:
   directories:
-    - $FILEEYE_STAGING_DIR
+    #- $FILEEYE_STAGING_DIR
 
 before_install:
   # Remove XDebug.
@@ -52,7 +52,7 @@ script:
   #- php bin/fileeye-mediaprobe compile
   #- php bin/fileeye-mediaprobe dump test/image_files
 
-  #- if [ "$TRAVIS_PHP_VERSION" == "7.3" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
+  - if [ "$TRAVIS_PHP_VERSION" == "7.3" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
   - ./vendor/bin/phpunit ./test
 
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_850d_08.jpg
