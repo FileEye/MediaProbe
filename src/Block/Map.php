@@ -74,7 +74,7 @@ class Map extends Index
 if ($this->getAttribute('name') === 'CanonCameraInfo') dump($this->getAttribute('name'), 'fetch', MediaProbe::dumpHexFormatted($data_bytes));
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
-            $bytes_offset = $sub->getAttribute('id') * 2;
+            $bytes_offset = $sub->getAttribute('id') * ItemFormat::getSize($this->getFormat());
 //if ($this->getAttribute('name') === 'CanonCameraSettings') dump($sub_id, 'bytes_offset', $bytes_offset);
             $bytes = $sub->toBytes($byte_order);
 //if ($this->getAttribute('name') === 'CanonCameraSettings') dump($sub_id, 'bytes', MediaProbe::dumpHexFormatted($bytes));
