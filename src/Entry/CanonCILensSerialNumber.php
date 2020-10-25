@@ -15,11 +15,7 @@ class CanonCILensSerialNumber extends Undefined
      */
     public function getValue(array $options = [])
     {
-        $str = '';
-        foreach ($this->value as $v) {
-            $str .= $v;
-        }
-        return implode(array_map("chr", $this->value));
+        return bin2hex($this->value);
     }
 
     /**
