@@ -1125,6 +1125,7 @@ class CameraSettings extends Collection {
     ),
     35 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonDisplayAperture',
       'collection' => 'Tag',
       'name' => 'DisplayAperture',
       'title' => 'Display Aperture',

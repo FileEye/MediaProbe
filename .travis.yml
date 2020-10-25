@@ -60,7 +60,7 @@ script:
   #- php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
   #- php examples/dump-media.php -d test/image_files/exiftool/Canon1DmkIII.jpg-rewrite.img
   #- php examples/dump-media.php -d -s test/image_files/exiftool/Canon.jpg
-  #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-powershot-s60.jpg
+  - php examples/dump-media.php -d  test/image_files/camera_samples/canon-powershot-s60.jpg
   #- php examples/dump-media.php -d test/image_files/camera_samples/canon-powershot-s60.jpg-rewrite.img
   #- php examples/dump-media.php -d  test/image_files/camera_samples/canon-ixus-ii.jpg
   #- php examples/dump-media.php -d test/image_files/camera_samples/canon-ixus-ii.jpg-rewrite.img
@@ -100,7 +100,7 @@ script:
   #- php examples/dump-media.php -d test/image_files/camera_samples/olympus-c765uz.jpg
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/fujifilm_x_a5.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/fujifilm_x_a5.jpg-rewrite.img
-  - php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_70d_29.jpg
+  #- php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_70d_29.jpg
   - php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_850d_08.jpg
 
 notifications:
