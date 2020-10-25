@@ -17,7 +17,7 @@ class CanonImageUniqueID extends Byte
     {
         $str = '';
         foreach ($this->value as $v) {
-          $str .= $v;
+          $str .= chr($v);
         }
         return bin2hex($str);
     }
