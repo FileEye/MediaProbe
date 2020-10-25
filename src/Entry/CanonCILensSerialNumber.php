@@ -15,7 +15,9 @@ class CanonCILensSerialNumber extends Undefined
      */
     public function getValue(array $options = [])
     {
-        if ($alternate = $this->getRootElement()->getElement("//ifd[@name='Exif']/tag[@name='LensSerialNumber']/entry")) {
+        $alternate = $this->getRootElement()->getElement("//ifd[@name='Exif']/tag[@name='LensSerialNumber']/entry"):
+        dump($alternate);
+        if ($alternate) {
             return $alternate->getValue($options);
         } else {
             return bin2hex($this->value);
