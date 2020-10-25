@@ -1088,7 +1088,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 2dfb4247f67b4118edbf074d2a07f30d812a7c9d7ec7a536de69e2c4fb69bcef
-                                                                                    text: n/a
+                                                                                    text: null
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxFocalLength:23'
@@ -1281,7 +1281,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DisplayAperture:35/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\CanonDisplayAperture
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1434,12 +1434,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalLength:1/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    class: FileEye\MediaProbe\Entry\CanonFLFocalLength
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 40767381548186b93285ab84b0374fb50707c185172a95307e41d5f146111256
-                                                                                    text: 22528
+                                                                                    text: '2.7135629968682 mm'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneXSize:2'
