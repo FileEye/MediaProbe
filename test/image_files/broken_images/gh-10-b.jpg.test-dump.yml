@@ -732,24 +732,6 @@ elements:
                                                                                     bytesHash: 936efb97edad28aefabbed67a08e1aa8043200d89c71c653fe12ab05febff7be
                                                                                     text: '92 byte(s) of data'
                                                                         -
-                                                                            node: rawData
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:indexSize'
-                                                                            class: FileEye\MediaProbe\Block\RawData
-                                                                            valid: true
-                                                                            name: indexSize
-                                                                            id: '0'
-                                                                            collection: RawData
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:indexSize/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
-                                                                                    valid: true
-                                                                                    format: Undefined
-                                                                                    components: 2
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: '2 byte(s) of data'
-                                                                        -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MacroMode:1'
                                                                             class: FileEye\MediaProbe\Block\Tag
@@ -3227,9 +3209,6 @@ log:
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
             message: 'Offset out of bounds - rel 1564 [0, 1554], abs 1594 [30, 1584]'
     WARNING:
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
-            message: 'Size mismatch between IFD and index header'
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4'
             message: 'Size mismatch between IFD and index header'
