@@ -16,7 +16,8 @@ class CanonFLFocalLength extends Short
     public function getValue(array $options = [])
     {
         if ($alternate = $this->getRootElement()->getElement("//ifd[@name='ExifIFD']/tag[@name='FocalLength']/entry")) {
-            return $alternate->getValue();
+            $value = $alternate->getValue();
+            return $value[0] / $value[1];
         }
 
         if (!$focal_units = $this->getRootElement()->getElement("//makerNote[@name='Canon']//tag[@name='FocalUnits']/entry")) {
