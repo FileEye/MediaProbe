@@ -182,7 +182,9 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     }
                     $this->assertNotNull($n, 'Exiftool raw missing: ' . $exiftool_node);
                     $valx = rtrim($n->textContent, " ");
-                    $vala = $element->getValue(['format' => 'exiftool']);
+                    $vala = $element->getFormat() === ItemFormat::ASCII ?
+                        $element->toString(['format' => 'exiftool']) :
+                        $element->getValue(['format' => 'exiftool']);
 //if (($expected['class'] ?? null) === 'FileEye\MediaProbe\Entry\Time') {
 /*if ($element->getParentElement() && in_array($element->getParentElement()->getAttribute('name'), ['Copyright'])) {
   dump([
