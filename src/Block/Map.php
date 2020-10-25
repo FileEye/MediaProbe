@@ -71,7 +71,7 @@ class Map extends Index
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false)
     {
         $data_bytes = $this->getElement("rawData[@name='mapdata']/entry")->getValue();
-
+dump($this->getAttribute('name'), 'fetch', MediaProbe::dumpHexFormatted($data_bytes));
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
             $bytes_offset = $sub_id * 2;
@@ -84,6 +84,7 @@ class Map extends Index
 
             $data_bytes = $tmp;
         }
+dump($this->getAttribute('name'), 'save', MediaProbe::dumpHexFormatted($data_bytes));
 
         return $data_bytes;
     }
