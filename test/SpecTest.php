@@ -79,7 +79,7 @@ class SpecTest extends MediaProbeTestCaseBase
     {
         $this->assertEquals(ExifUserComment::class, Collection::get('Ifd\Exif')->getItemCollection(0x9286)->getPropertyValue('entryClass'));
         $this->assertEquals(Time::class, Collection::get('Ifd\Exif')->getItemCollection(0x9003)->getPropertyValue('entryClass'));
-        $this->assertNull(Collection::get('MakerNotes\\Canon\\CameraSettings')->getItemCollection(0)->getPropertyValue('entryClass'));
+        $this->assertNull(Collection::get('MakerNotes\\Canon\\CameraSettings')->getItemCollection(1)->getPropertyValue('entryClass'));
     }
 
     /**
