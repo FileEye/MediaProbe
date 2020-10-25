@@ -15,6 +15,6 @@ class CanonImageUniqueID extends Byte
      */
     public function getValue(array $options = [])
     {
-        return return bin2hex($this->value);
+        return bin2hex($this->value);
     }
 }
