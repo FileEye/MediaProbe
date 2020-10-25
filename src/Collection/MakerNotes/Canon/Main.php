@@ -705,7 +705,7 @@ class Main extends Collection {
     ),
     40 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonImageUniqueId',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonImageUniqueID',
       'collection' => 'Tag',
       'name' => 'ImageUniqueID',
       'title' => 'Image Unique ID',
