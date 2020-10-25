@@ -15,7 +15,7 @@ class CanonExposureCompensation extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return $this->CanonEv($this->value[0]);
+        return $this->canonEv($this->value[0]);
     }
 
     /**
@@ -26,7 +26,8 @@ class CanonExposureCompensation extends SignedShort
         return round($this->getValue());
     }
 
-    private function CanonEv($val) {
+    private function canonEv($val)
+    {
         // temporarily make the number positive
         if ($val < 0) {
             $val = -$val;

@@ -15,7 +15,7 @@ class CanonCIExposureTime extends Byte
      */
     public function getValue(array $options = [])
     {
-        return exp(4 * log(2) * (1 - $this->CanonEv($this->value[0] - 24)));
+        return exp(4 * log(2) * (1 - $this->canonEv($this->value[0] - 24)));
     }
 
     /**
@@ -31,7 +31,8 @@ class CanonCIExposureTime extends Byte
         return $ret;
     }
 
-    private function CanonEv($val) {
+    private function canonEv($val)
+    {
         // temporarily make the number positive
         if ($val < 0) {
             $val = -$val;

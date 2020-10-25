@@ -18,7 +18,7 @@ class CanonExposureTime extends SignedShort
         if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='ExposureTime']/entry")) {
             return $alternate->getValue($options);
         }
-        return exp(-$this->CanonEv($this->value[0]) * log(2));
+        return exp(-$this->canonEv($this->value[0]) * log(2));
     }
 
     /**
@@ -29,7 +29,8 @@ class CanonExposureTime extends SignedShort
         return round($this->getValue());
     }
 
-    private function CanonEv($val) {
+    private function canonEv($val)
+    {
         // temporarily make the number positive
         if ($val < 0) {
             $val = -$val;
