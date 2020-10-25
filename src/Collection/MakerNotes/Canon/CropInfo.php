@@ -29,6 +29,13 @@ class CropInfo extends Collection {
     'CropRightMargin' => 1,
     'CropTopMargin' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CropBottomMargin' => 3,
+    'Canon:CropLeftMargin' => 0,
+    'Canon:CropRightMargin' => 1,
+    'Canon:CropTopMargin' => 2,
+  ),
   'items' =>
   array (
     0 =>
@@ -40,6 +47,7 @@ class CropInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:CropLeftMargin',
     ),
     1 =>
     array (
@@ -50,6 +58,7 @@ class CropInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:CropRightMargin',
     ),
     2 =>
     array (
@@ -60,6 +69,7 @@ class CropInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:CropTopMargin',
     ),
     3 =>
     array (
@@ -70,6 +80,7 @@ class CropInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:CropBottomMargin',
     ),
   ),
 );

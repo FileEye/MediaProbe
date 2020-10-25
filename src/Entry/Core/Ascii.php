@@ -72,7 +72,9 @@ class Ascii extends EntryBase
         $format = $options['format'] ?? null;
         $val = rtrim($this->value, "\x0");
         if ($format === 'exiftool') {
-            return rtrim($val, " ");
+            $val = rtrim($val, " ");
+            $first_zero_pos = strpos($val, "\x0");
+            return substr($val, 0, $first_zero_pos === false ? strlen($val) : $first_zero_pos);
         }
         return $val === '' ? null : $val;
     }

@@ -1,0 +1,37 @@
+collection: MakerNotes\Canon\AFMicroAdj
+name: CanonAFMicroAdj
+title: 'Canon AF Micro Adj'
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
+format: Long
+hasIndexSize: true
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::AFMicroAdj'']/tag'
+items:
+    -
+        collection: RawData
+        name: indexSize
+        format: Long
+    -
+        exiftool:
+            -
+                name: AFMicroAdjMode
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFMicroAdjMode'
+                desc: 'AF Micro Adj Mode'
+                values:
+                    - Disable
+                    - 'Adjust all by the same amount'
+                    - 'Adjust by lens'
+    -
+        exiftool:
+            -
+                name: AFMicroAdjValue
+                type: rational64s
+                writable: true
+                DOMNode: 'Canon:AFMicroAdjValue'
+                desc: 'AF Micro Adj Value'

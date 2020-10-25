@@ -41,6 +41,25 @@ class CameraInfo1DmkII extends Collection {
     'Sharpness' => 114,
     'WhiteBalance' => 54,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CanonImageSize' => 57,
+    'Canon:ColorTemperature' => 55,
+    'Canon:ColorTone' => 111,
+    'Canon:Contrast' => 115,
+    'Canon:ExposureTime' => 4,
+    'Canon:FocalLength' => 9,
+    'Canon:FocalType' => 45,
+    'Canon:ISO' => 117,
+    'Canon:JPEGQuality' => 102,
+    'Canon:LensType' => 12,
+    'Canon:MaxFocalLength' => 19,
+    'Canon:MinFocalLength' => 17,
+    'Canon:PictureStyle' => 108,
+    'Canon:Saturation' => 110,
+    'Canon:Sharpness' => 114,
+    'Canon:WhiteBalance' => 54,
+  ),
   'items' =>
   array (
     4 =>
@@ -52,6 +71,7 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     9 =>
     array (
@@ -62,9 +82,11 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     12 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -475,6 +497,7 @@ class CameraInfo1DmkII extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     17 =>
     array (
@@ -485,6 +508,7 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     19 =>
     array (
@@ -495,6 +519,7 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     45 =>
     array (
@@ -513,6 +538,7 @@ class CameraInfo1DmkII extends Collection {
           2 => 'Zoom',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FocalType',
     ),
     54 =>
     array (
@@ -551,6 +577,7 @@ class CameraInfo1DmkII extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     55 =>
     array (
@@ -561,6 +588,7 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     57 =>
     array (
@@ -596,6 +624,7 @@ class CameraInfo1DmkII extends Collection {
           143 => '4096x2160 Movie',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CanonImageSize',
     ),
     102 =>
     array (
@@ -606,6 +635,7 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:JPEGQuality',
     ),
     108 =>
     array (
@@ -646,6 +676,7 @@ class CameraInfo1DmkII extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     110 =>
     array (
@@ -663,6 +694,7 @@ class CameraInfo1DmkII extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Saturation',
     ),
     111 =>
     array (
@@ -680,6 +712,7 @@ class CameraInfo1DmkII extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTone',
     ),
     114 =>
     array (
@@ -690,6 +723,7 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:Sharpness',
     ),
     115 =>
     array (
@@ -707,6 +741,7 @@ class CameraInfo1DmkII extends Collection {
           0 => 'Normal',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:Contrast',
     ),
     117 =>
     array (
@@ -718,6 +753,7 @@ class CameraInfo1DmkII extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
   ),
 );

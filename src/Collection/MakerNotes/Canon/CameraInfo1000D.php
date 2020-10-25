@@ -44,6 +44,28 @@ class CameraInfo1000D extends Collection {
     'MinFocalLength' => 228,
     'WhiteBalance' => 111,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraOrientation' => 48,
+    'Canon:CameraTemperature' => 24,
+    'Canon:ColorTemperature' => 115,
+    'Canon:DirectoryIndex' => 311,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 323,
+    'Canon:FirmwareVersion' => 267,
+    'Canon:FlashMeteringMode' => 21,
+    'Canon:FocalLength' => 29,
+    'Canon:FocusDistanceLower' => 69,
+    'Canon:FocusDistanceUpper' => 67,
+    'Canon:ISO' => 6,
+    'Canon:LensModel' => 2359,
+    'Canon:LensType' => 226,
+    'Canon:MacroMagnification' => 27,
+    'Canon:MaxFocalLength' => 230,
+    'Canon:MinFocalLength' => 228,
+    'Canon:WhiteBalance' => 111,
+  ),
   'items' =>
   array (
     3 =>
@@ -55,6 +77,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -65,6 +88,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -75,6 +99,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     21 =>
     array (
@@ -96,9 +121,11 @@ class CameraInfo1000D extends Collection {
           6 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FlashMeteringMode',
     ),
     24 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -106,6 +133,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     27 =>
     array (
@@ -116,6 +144,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:MacroMagnification',
     ),
     29 =>
     array (
@@ -126,6 +155,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     48 =>
     array (
@@ -145,9 +175,11 @@ class CameraInfo1000D extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     67 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -155,9 +187,11 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     69 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -165,6 +199,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     111 =>
     array (
@@ -203,6 +238,7 @@ class CameraInfo1000D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     115 =>
     array (
@@ -213,9 +249,11 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     226 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -626,6 +664,7 @@ class CameraInfo1000D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     228 =>
     array (
@@ -636,6 +675,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     230 =>
     array (
@@ -646,6 +686,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     267 =>
     array (
@@ -657,6 +698,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     311 =>
     array (
@@ -667,6 +709,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
     323 =>
     array (
@@ -677,6 +720,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     2359 =>
     array (
@@ -688,6 +732,7 @@ class CameraInfo1000D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:LensModel',
     ),
   ),
 );

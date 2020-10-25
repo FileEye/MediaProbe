@@ -88,6 +88,72 @@ class PSInfo2 extends Collection {
     'UserDef2PictureStyle' => 242,
     'UserDef3PictureStyle' => 244,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ColorToneAuto' => 156,
+    'Canon:ColorToneFaithful' => 108,
+    'Canon:ColorToneLandscape' => 60,
+    'Canon:ColorToneMonochrome' => 132,
+    'Canon:ColorToneNeutral' => 84,
+    'Canon:ColorTonePortrait' => 36,
+    'Canon:ColorToneStandard' => 12,
+    'Canon:ColorToneUserDef1' => 180,
+    'Canon:ColorToneUserDef2' => 204,
+    'Canon:ColorToneUserDef3' => 228,
+    'Canon:ContrastAuto' => 144,
+    'Canon:ContrastFaithful' => 96,
+    'Canon:ContrastLandscape' => 48,
+    'Canon:ContrastMonochrome' => 120,
+    'Canon:ContrastNeutral' => 72,
+    'Canon:ContrastPortrait' => 24,
+    'Canon:ContrastStandard' => 0,
+    'Canon:ContrastUserDef1' => 168,
+    'Canon:ContrastUserDef2' => 192,
+    'Canon:ContrastUserDef3' => 216,
+    'Canon:FilterEffectAuto' => 160,
+    'Canon:FilterEffectFaithful' => 112,
+    'Canon:FilterEffectLandscape' => 64,
+    'Canon:FilterEffectMonochrome' => 136,
+    'Canon:FilterEffectNeutral' => 88,
+    'Canon:FilterEffectPortrait' => 40,
+    'Canon:FilterEffectStandard' => 16,
+    'Canon:FilterEffectUserDef1' => 184,
+    'Canon:FilterEffectUserDef2' => 208,
+    'Canon:FilterEffectUserDef3' => 232,
+    'Canon:SaturationAuto' => 152,
+    'Canon:SaturationFaithful' => 104,
+    'Canon:SaturationLandscape' => 56,
+    'Canon:SaturationMonochrome' => 128,
+    'Canon:SaturationNeutral' => 80,
+    'Canon:SaturationPortrait' => 32,
+    'Canon:SaturationStandard' => 8,
+    'Canon:SaturationUserDef1' => 176,
+    'Canon:SaturationUserDef2' => 200,
+    'Canon:SaturationUserDef3' => 224,
+    'Canon:SharpnessAuto' => 148,
+    'Canon:SharpnessFaithful' => 100,
+    'Canon:SharpnessLandscape' => 52,
+    'Canon:SharpnessMonochrome' => 124,
+    'Canon:SharpnessNeutral' => 76,
+    'Canon:SharpnessPortrait' => 28,
+    'Canon:SharpnessStandard' => 4,
+    'Canon:SharpnessUserDef1' => 172,
+    'Canon:SharpnessUserDef2' => 196,
+    'Canon:SharpnessUserDef3' => 220,
+    'Canon:ToningEffectAuto' => 164,
+    'Canon:ToningEffectFaithful' => 116,
+    'Canon:ToningEffectLandscape' => 68,
+    'Canon:ToningEffectMonochrome' => 140,
+    'Canon:ToningEffectNeutral' => 92,
+    'Canon:ToningEffectPortrait' => 44,
+    'Canon:ToningEffectStandard' => 20,
+    'Canon:ToningEffectUserDef1' => 188,
+    'Canon:ToningEffectUserDef2' => 212,
+    'Canon:ToningEffectUserDef3' => 236,
+    'Canon:UserDef1PictureStyle' => 240,
+    'Canon:UserDef2PictureStyle' => 242,
+    'Canon:UserDef3PictureStyle' => 244,
+  ),
   'items' =>
   array (
     0 =>
@@ -106,6 +172,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastStandard',
     ),
     4 =>
     array (
@@ -123,6 +190,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessStandard',
     ),
     8 =>
     array (
@@ -140,6 +208,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationStandard',
     ),
     12 =>
     array (
@@ -157,6 +226,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneStandard',
     ),
     16 =>
     array (
@@ -174,6 +244,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectStandard',
     ),
     20 =>
     array (
@@ -191,6 +262,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectStandard',
     ),
     24 =>
     array (
@@ -208,6 +280,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastPortrait',
     ),
     28 =>
     array (
@@ -225,6 +298,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessPortrait',
     ),
     32 =>
     array (
@@ -242,6 +316,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationPortrait',
     ),
     36 =>
     array (
@@ -259,6 +334,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTonePortrait',
     ),
     40 =>
     array (
@@ -276,6 +352,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectPortrait',
     ),
     44 =>
     array (
@@ -293,6 +370,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectPortrait',
     ),
     48 =>
     array (
@@ -310,6 +388,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastLandscape',
     ),
     52 =>
     array (
@@ -327,6 +406,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessLandscape',
     ),
     56 =>
     array (
@@ -344,6 +424,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationLandscape',
     ),
     60 =>
     array (
@@ -361,6 +442,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneLandscape',
     ),
     64 =>
     array (
@@ -378,6 +460,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectLandscape',
     ),
     68 =>
     array (
@@ -395,6 +478,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectLandscape',
     ),
     72 =>
     array (
@@ -412,6 +496,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastNeutral',
     ),
     76 =>
     array (
@@ -429,6 +514,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessNeutral',
     ),
     80 =>
     array (
@@ -446,6 +532,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationNeutral',
     ),
     84 =>
     array (
@@ -463,6 +550,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneNeutral',
     ),
     88 =>
     array (
@@ -480,6 +568,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectNeutral',
     ),
     92 =>
     array (
@@ -497,6 +586,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectNeutral',
     ),
     96 =>
     array (
@@ -514,6 +604,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastFaithful',
     ),
     100 =>
     array (
@@ -531,6 +622,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessFaithful',
     ),
     104 =>
     array (
@@ -548,6 +640,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationFaithful',
     ),
     108 =>
     array (
@@ -565,6 +658,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneFaithful',
     ),
     112 =>
     array (
@@ -582,6 +676,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectFaithful',
     ),
     116 =>
     array (
@@ -599,6 +694,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectFaithful',
     ),
     120 =>
     array (
@@ -616,6 +712,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastMonochrome',
     ),
     124 =>
     array (
@@ -633,6 +730,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessMonochrome',
     ),
     128 =>
     array (
@@ -650,6 +748,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationMonochrome',
     ),
     132 =>
     array (
@@ -667,6 +766,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneMonochrome',
     ),
     136 =>
     array (
@@ -689,6 +789,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectMonochrome',
     ),
     140 =>
     array (
@@ -711,6 +812,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectMonochrome',
     ),
     144 =>
     array (
@@ -728,6 +830,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastAuto',
     ),
     148 =>
     array (
@@ -745,6 +848,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessAuto',
     ),
     152 =>
     array (
@@ -762,6 +866,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationAuto',
     ),
     156 =>
     array (
@@ -779,6 +884,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneAuto',
     ),
     160 =>
     array (
@@ -801,6 +907,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectAuto',
     ),
     164 =>
     array (
@@ -823,6 +930,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectAuto',
     ),
     168 =>
     array (
@@ -840,6 +948,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastUserDef1',
     ),
     172 =>
     array (
@@ -857,6 +966,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessUserDef1',
     ),
     176 =>
     array (
@@ -874,6 +984,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationUserDef1',
     ),
     180 =>
     array (
@@ -891,6 +1002,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneUserDef1',
     ),
     184 =>
     array (
@@ -913,6 +1025,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectUserDef1',
     ),
     188 =>
     array (
@@ -935,6 +1048,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectUserDef1',
     ),
     192 =>
     array (
@@ -952,6 +1066,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastUserDef2',
     ),
     196 =>
     array (
@@ -969,6 +1084,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessUserDef2',
     ),
     200 =>
     array (
@@ -986,6 +1102,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationUserDef2',
     ),
     204 =>
     array (
@@ -1003,6 +1120,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneUserDef2',
     ),
     208 =>
     array (
@@ -1025,6 +1143,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectUserDef2',
     ),
     212 =>
     array (
@@ -1047,6 +1166,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectUserDef2',
     ),
     216 =>
     array (
@@ -1064,6 +1184,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastUserDef3',
     ),
     220 =>
     array (
@@ -1081,6 +1202,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessUserDef3',
     ),
     224 =>
     array (
@@ -1098,6 +1220,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationUserDef3',
     ),
     228 =>
     array (
@@ -1115,6 +1238,7 @@ class PSInfo2 extends Collection {
           -559038737 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneUserDef3',
     ),
     232 =>
     array (
@@ -1137,6 +1261,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectUserDef3',
     ),
     236 =>
     array (
@@ -1159,6 +1284,7 @@ class PSInfo2 extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectUserDef3',
     ),
     240 =>
     array (
@@ -1185,6 +1311,7 @@ class PSInfo2 extends Collection {
           135 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:UserDef1PictureStyle',
     ),
     242 =>
     array (
@@ -1211,6 +1338,7 @@ class PSInfo2 extends Collection {
           135 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:UserDef2PictureStyle',
     ),
     244 =>
     array (
@@ -1237,6 +1365,7 @@ class PSInfo2 extends Collection {
           135 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:UserDef3PictureStyle',
     ),
   ),
 );

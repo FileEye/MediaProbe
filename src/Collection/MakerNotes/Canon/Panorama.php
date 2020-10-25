@@ -49,6 +49,7 @@ class Panorama extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:PanoramaFrameNumber',
     ),
     5 =>
     array (
@@ -70,7 +71,13 @@ class Panorama extends Collection {
           4 => '2x2 Matrix (Clockwise)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PanoramaDirection',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:PanoramaDirection' => 5,
+    'Canon:PanoramaFrameNumber' => 2,
   ),
 );
 }

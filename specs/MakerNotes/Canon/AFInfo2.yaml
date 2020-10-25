@@ -1,0 +1,160 @@
+collection: MakerNotes\Canon\AFInfo2
+name: CanonAFInfo2
+title: 'Canon AF Info2'
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\AFInfoIndex
+DOMNode: index
+format: Short
+hasIndexSize: true
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::AFInfo2'']/tag'
+items:
+    -
+        collection: RawData
+        name: indexSize
+        format: SignedShort
+        exiftool:
+            -
+                name: AFInfoSize
+                type: int16u
+                writable: false
+                DOMNode: 'Canon:AFInfoSize'
+                desc: 'AF Info Size'
+    -
+        exiftool:
+            -
+                name: AFAreaMode
+                type: int16u
+                writable: false
+                DOMNode: 'Canon:AFAreaMode'
+                desc: 'AF Area Mode'
+                values:
+                    0: 'Off (Manual Focus)'
+                    1: 'AF Point Expansion (surround)'
+                    2: 'Single-point AF'
+                    4: Auto
+                    5: 'Face Detect AF'
+                    6: 'Face + Tracking'
+                    7: 'Zone AF'
+                    8: 'AF Point Expansion (4 point)'
+                    9: 'Spot AF'
+                    10: 'AF Point Expansion (8 point)'
+                    11: 'Flexizone Multi'
+                    13: 'Flexizone Single'
+                    14: 'Large Zone AF'
+    -
+        exiftool:
+            -
+                name: NumAFPoints
+                type: int16u
+                writable: false
+                DOMNode: 'Canon:NumAFPoints'
+                desc: 'Num AF Points'
+    -
+        exiftool:
+            -
+                name: ValidAFPoints
+                type: int16u
+                writable: false
+                DOMNode: 'Canon:ValidAFPoints'
+                desc: 'Valid AF Points'
+    -
+        exiftool:
+            -
+                name: CanonImageWidth
+                type: int16u
+                writable: false
+                g2: Image
+                DOMNode: 'Canon:CanonImageWidth'
+                desc: 'Canon Image Width'
+    -
+        exiftool:
+            -
+                name: CanonImageHeight
+                type: int16u
+                writable: false
+                g2: Image
+                DOMNode: 'Canon:CanonImageHeight'
+                desc: 'Canon Image Height'
+    -
+        exiftool:
+            -
+                name: AFImageWidth
+                type: int16u
+                writable: false
+                DOMNode: 'Canon:AFImageWidth'
+                desc: 'AF Image Width'
+    -
+        exiftool:
+            -
+                name: AFImageHeight
+                type: int16u
+                writable: false
+                DOMNode: 'Canon:AFImageHeight'
+                desc: 'AF Image Height'
+    -
+        exiftool:
+            -
+                name: AFAreaWidths
+                type: int16s
+                writable: false
+                DOMNode: 'Canon:AFAreaWidths'
+                desc: 'AF Area Widths'
+    -
+        exiftool:
+            -
+                name: AFAreaHeights
+                type: int16s
+                writable: false
+                DOMNode: 'Canon:AFAreaHeights'
+                desc: 'AF Area Heights'
+    -
+        exiftool:
+            -
+                name: AFAreaXPositions
+                type: int16s
+                writable: false
+                DOMNode: 'Canon:AFAreaXPositions'
+                desc: 'AF Area X Positions'
+    -
+        exiftool:
+            -
+                name: AFAreaYPositions
+                type: int16s
+                writable: false
+                DOMNode: 'Canon:AFAreaYPositions'
+                desc: 'AF Area Y Positions'
+    -
+        __todo: 'add decoding'
+        exiftool:
+            -
+                name: AFPointsInFocus
+                type: int16s
+                writable: false
+                DOMNode: 'Canon:AFPointsInFocus'
+                desc: 'AF Points In Focus'
+    -
+        __todo: 'add decoding'
+        exiftool:
+            -
+                name: AFPointsSelected
+                type: int16s
+                writable: false
+                DOMNode: 'Canon:AFPointsSelected'
+                desc: 'AF Points Selected'
+            -
+                name: Canon_AFInfo2_0x000d
+                type: int16s
+                writable: false
+                DOMNode: 'Canon:Canon_AFInfo2_0x000d'
+                desc: 'Canon AF Info 2 0x000d'
+    -
+        exiftool:
+            -
+                name: PrimaryAFPoint
+                type: int16u
+                writable: false
+                DOMNode: 'Canon:PrimaryAFPoint'
+                desc: 'Primary AF Point'

@@ -31,6 +31,15 @@ class VignettingCorr extends Collection {
     'PeripheralLightingValue' => 6,
     'VignettingCorrVersion' => 0,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ChromaticAberrationCorr' => 5,
+    'Canon:OriginalImageHeight' => 12,
+    'Canon:OriginalImageWidth' => 11,
+    'Canon:PeripheralLighting' => 2,
+    'Canon:PeripheralLightingValue' => 6,
+    'Canon:VignettingCorrVersion' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -42,6 +51,7 @@ class VignettingCorr extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:VignettingCorrVersion',
     ),
     2 =>
     array (
@@ -60,6 +70,7 @@ class VignettingCorr extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PeripheralLighting',
     ),
     4 =>
     array (
@@ -78,6 +89,7 @@ class VignettingCorr extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ChromaticAberrationCorr',
     ),
     5 =>
     array (
@@ -96,6 +108,7 @@ class VignettingCorr extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ChromaticAberrationCorr',
     ),
     6 =>
     array (
@@ -106,6 +119,7 @@ class VignettingCorr extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:PeripheralLightingValue',
     ),
     11 =>
     array (
@@ -116,6 +130,7 @@ class VignettingCorr extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:OriginalImageWidth',
     ),
     12 =>
     array (
@@ -126,6 +141,7 @@ class VignettingCorr extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:OriginalImageHeight',
     ),
   ),
 );

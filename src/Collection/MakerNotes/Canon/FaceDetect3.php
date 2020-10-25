@@ -26,6 +26,10 @@ class FaceDetect3 extends Collection {
   array (
     'FacesDetected' => 3,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:FacesDetected' => 3,
+  ),
   'items' =>
   array (
     3 =>
@@ -37,6 +41,7 @@ class FaceDetect3 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FacesDetected',
     ),
   ),
 );

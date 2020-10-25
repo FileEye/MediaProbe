@@ -27,6 +27,11 @@ class FaceDetect2 extends Collection {
     'FaceWidth' => 1,
     'FacesDetected' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:FaceWidth' => 1,
+    'Canon:FacesDetected' => 2,
+  ),
   'items' =>
   array (
     1 =>
@@ -38,6 +43,7 @@ class FaceDetect2 extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FaceWidth',
     ),
     2 =>
     array (
@@ -48,6 +54,7 @@ class FaceDetect2 extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FacesDetected',
     ),
   ),
 );

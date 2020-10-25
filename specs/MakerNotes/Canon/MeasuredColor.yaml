@@ -1,0 +1,26 @@
+collection: MakerNotes\Canon\MeasuredColor
+name: CanonMeasuredColor
+title: 'Canon Measured Color'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+hasIndexSize: true
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::MeasuredColor'']/tag'
+items:
+    -
+        collection: RawData
+        name: indexSize
+        format: SignedShort
+    -
+        exiftool:
+            -
+                name: MeasuredRGGB
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:MeasuredRGGB'
+                desc: 'Measured RGGB'

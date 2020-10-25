@@ -40,6 +40,24 @@ class ColorCalib2 extends Collection {
     'CameraColorCalibration14' => 65,
     'CameraColorCalibration15' => 70,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraColorCalibration01' => 0,
+    'Canon:CameraColorCalibration02' => 5,
+    'Canon:CameraColorCalibration03' => 10,
+    'Canon:CameraColorCalibration04' => 15,
+    'Canon:CameraColorCalibration05' => 20,
+    'Canon:CameraColorCalibration06' => 25,
+    'Canon:CameraColorCalibration07' => 30,
+    'Canon:CameraColorCalibration08' => 35,
+    'Canon:CameraColorCalibration09' => 40,
+    'Canon:CameraColorCalibration10' => 45,
+    'Canon:CameraColorCalibration11' => 50,
+    'Canon:CameraColorCalibration12' => 55,
+    'Canon:CameraColorCalibration13' => 60,
+    'Canon:CameraColorCalibration14' => 65,
+    'Canon:CameraColorCalibration15' => 70,
+  ),
   'items' =>
   array (
     0 =>
@@ -52,6 +70,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration01',
     ),
     5 =>
     array (
@@ -63,6 +82,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration02',
     ),
     10 =>
     array (
@@ -74,6 +94,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration03',
     ),
     15 =>
     array (
@@ -85,6 +106,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration04',
     ),
     20 =>
     array (
@@ -96,6 +118,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration05',
     ),
     25 =>
     array (
@@ -107,6 +130,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration06',
     ),
     30 =>
     array (
@@ -118,6 +142,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration07',
     ),
     35 =>
     array (
@@ -129,6 +154,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration08',
     ),
     40 =>
     array (
@@ -140,6 +166,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration09',
     ),
     45 =>
     array (
@@ -151,6 +178,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration10',
     ),
     50 =>
     array (
@@ -162,6 +190,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration11',
     ),
     55 =>
     array (
@@ -173,6 +202,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration12',
     ),
     60 =>
     array (
@@ -184,6 +214,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration13',
     ),
     65 =>
     array (
@@ -195,6 +226,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration14',
     ),
     70 =>
     array (
@@ -206,6 +238,7 @@ class ColorCalib2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraColorCalibration15',
     ),
   ),
 );

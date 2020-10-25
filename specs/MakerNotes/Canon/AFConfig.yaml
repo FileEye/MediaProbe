@@ -1,0 +1,230 @@
+collection: MakerNotes\Canon\AFConfig
+name: CanonAFConfig
+title: 'Canon AF Config'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Long
+hasIndexSize: true
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::AFConfig'']/tag'
+items:
+    -
+        collection: RawData
+        name: indexSize
+        format: Long
+    -
+        exiftool:
+            -
+                name: AFConfigTool
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFConfigTool'
+                desc: 'AF Config Tool'
+    -
+        exiftool:
+            -
+                name: AFTrackingSensitivity
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFTrackingSensitivity'
+                desc: 'AF Tracking Sensitivity'
+    -
+        exiftool:
+            -
+                name: AFAccelDecelTracking
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFAccelDecelTracking'
+                desc: 'AF Accel/Decel Tracking'
+    -
+        exiftool:
+            -
+                name: AFPointSwitching
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFPointSwitching'
+                desc: 'AF Point Switching'
+    -
+        exiftool:
+            -
+                name: AIServoFirstImage
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AIServoFirstImage'
+                desc: 'AI Servo First Image'
+                values:
+                    - 'Equal Priority'
+                    - 'Release Priority'
+                    - 'Focus Priority'
+    -
+        exiftool:
+            -
+                name: AIServoSecondImage
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AIServoSecondImage'
+                desc: 'AI Servo Second Image'
+                values:
+                    - 'Equal Priority'
+                    - 'Release Priority'
+                    - 'Focus Priority'
+                    - 'Release High Priority'
+                    - 'Focus High Priority'
+    -
+        exiftool:
+            -
+                name: USMLensElectronicMF
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:USMLensElectronicMF'
+                desc: 'USM Lens Electronic MF'
+                values:
+                    - 'Enable After AF'
+                    - 'Disable After AF'
+                    - 'Disable in AF Mode'
+    -
+        exiftool:
+            -
+                name: AFAssistBeam
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFAssistBeam'
+                desc: 'AF Assist Beam'
+                values:
+                    - Enable
+                    - Disable
+                    - 'IR AF Assist Beam Only'
+    -
+        exiftool:
+            -
+                name: OneShotAFRelease
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:OneShotAFRelease'
+                desc: 'One Shot AF Release'
+                values:
+                    - 'Focus Priority'
+                    - 'Release Priority'
+    -
+        exiftool:
+            -
+                name: AutoAFPointSelEOSiTRAF
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AutoAFPointSelEOSiTRAF'
+                desc: 'Auto AF Point Sel EOS iTR AF'
+                values:
+                    - Enable
+                    - Disable
+    -
+        exiftool:
+            -
+                name: LensDriveWhenAFImpossible
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:LensDriveWhenAFImpossible'
+                desc: 'Lens Drive When AF Impossible'
+                values:
+                    - 'Continue Focus Search'
+                    - 'Stop Focus Search'
+    -
+        exiftool:
+            -
+                name: SelectAFAreaSelectionMode
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:SelectAFAreaSelectionMode'
+                desc: 'Select AF Area Selection Mode'
+                values:
+                    1: 'Single-point AF'
+                    2: Auto
+                    4: 'Zone AF'
+                    8: 'AF Point Expansion (4 point)'
+                    16: 'Spot AF'
+                    32: 'AF Point Expansion (8 point)'
+    -
+        exiftool:
+            -
+                name: AFAreaSelectionMethod
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFAreaSelectionMethod'
+                desc: 'AF Area Selection Method'
+                values:
+                    - 'M-Fn Button'
+                    - 'Main Dial'
+    -
+        exiftool:
+            -
+                name: OrientationLinkedAF
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:OrientationLinkedAF'
+                desc: 'Orientation Linked AF'
+                values:
+                    - 'Same for Vert/Horiz Points'
+                    - 'Separate Vert/Horiz Points'
+                    - 'Separate Area+Points'
+    -
+        exiftool:
+            -
+                name: ManualAFPointSelPattern
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:ManualAFPointSelPattern'
+                desc: 'Manual AF Point Sel Pattern'
+                values:
+                    - 'Stops at AF Area Edges'
+                    - Continuous
+    -
+        exiftool:
+            -
+                name: AFPointDisplayDuringFocus
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFPointDisplayDuringFocus'
+                desc: 'AF Point Display During Focus'
+                values:
+                    - 'Selected (constant)'
+                    - 'All (constant)'
+                    - 'Selected (pre-AF, focused)'
+                    - 'Selected (focused)'
+                    - Disabled
+    -
+        exiftool:
+            -
+                name: VFDisplayIllumination
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:VFDisplayIllumination'
+                desc: 'VF Display Illumination'
+                values:
+                    - Auto
+                    - Enable
+                    - Disable
+    -
+        exiftool:
+            -
+                name: AFStatusViewfinder
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AFStatusViewfinder'
+                desc: 'AF Status Viewfinder'
+                values:
+                    - 'Show in Field of View'
+                    - 'Show Outside View'
+    -
+        exiftool:
+            -
+                name: InitialAFPointInServo
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:InitialAFPointInServo'
+                desc: 'Initial AF Point In Servo'
+                values:
+                    - 'Initial AF Point Selected'
+                    - 'Manual AF Point'
+                    - Auto

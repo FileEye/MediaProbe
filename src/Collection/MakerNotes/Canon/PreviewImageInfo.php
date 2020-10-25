@@ -30,6 +30,14 @@ class PreviewImageInfo extends Collection {
     'PreviewImageWidth' => 3,
     'PreviewQuality' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:PreviewImageHeight' => 4,
+    'Canon:PreviewImageLength' => 2,
+    'Canon:PreviewImageStart' => 5,
+    'Canon:PreviewImageWidth' => 3,
+    'Canon:PreviewQuality' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -56,6 +64,7 @@ class PreviewImageInfo extends Collection {
           131 => 'Movie (2)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PreviewQuality',
     ),
     2 =>
     array (
@@ -66,6 +75,7 @@ class PreviewImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:PreviewImageLength',
     ),
     3 =>
     array (
@@ -76,6 +86,7 @@ class PreviewImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:PreviewImageWidth',
     ),
     4 =>
     array (
@@ -86,6 +97,7 @@ class PreviewImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:PreviewImageHeight',
     ),
     5 =>
     array (
@@ -96,6 +108,7 @@ class PreviewImageInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:PreviewImageStart',
     ),
   ),
 );

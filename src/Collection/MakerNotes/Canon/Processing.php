@@ -69,6 +69,7 @@ class Processing extends Collection {
           2 => 'Custom',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToneCurve',
     ),
     2 =>
     array (
@@ -79,6 +80,7 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Sharpness',
     ),
     3 =>
     array (
@@ -101,6 +103,7 @@ class Processing extends Collection {
           5 => 'Highest',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessFrequency',
     ),
     4 =>
     array (
@@ -111,6 +114,7 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:SensorRedLevel',
     ),
     5 =>
     array (
@@ -121,6 +125,7 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:SensorBlueLevel',
     ),
     6 =>
     array (
@@ -131,6 +136,7 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalanceRed',
     ),
     7 =>
     array (
@@ -141,9 +147,11 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalanceBlue',
     ),
     8 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonProcessingWhiteBalance',
       'collection' => 'Tag',
       'name' => 'WhiteBalance',
       'title' => 'White Balance',
@@ -179,6 +187,7 @@ class Processing extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     9 =>
     array (
@@ -189,6 +198,7 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     10 =>
     array (
@@ -229,6 +239,7 @@ class Processing extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     11 =>
     array (
@@ -239,6 +250,7 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:DigitalGain',
     ),
     12 =>
     array (
@@ -249,6 +261,7 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WBShiftAB',
     ),
     13 =>
     array (
@@ -259,7 +272,24 @@ class Processing extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WBShiftGM',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ColorTemperature' => 9,
+    'Canon:DigitalGain' => 11,
+    'Canon:PictureStyle' => 10,
+    'Canon:SensorBlueLevel' => 5,
+    'Canon:SensorRedLevel' => 4,
+    'Canon:Sharpness' => 2,
+    'Canon:SharpnessFrequency' => 3,
+    'Canon:ToneCurve' => 1,
+    'Canon:WBShiftAB' => 12,
+    'Canon:WBShiftGM' => 13,
+    'Canon:WhiteBalance' => 8,
+    'Canon:WhiteBalanceBlue' => 7,
+    'Canon:WhiteBalanceRed' => 6,
   ),
 );
 }

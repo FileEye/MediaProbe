@@ -26,6 +26,10 @@ class ContrastInfo extends Collection {
   array (
     'IntelligentContrast' => 4,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:IntelligentContrast' => 4,
+  ),
   'items' =>
   array (
     4 =>
@@ -46,6 +50,7 @@ class ContrastInfo extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:IntelligentContrast',
     ),
   ),
 );

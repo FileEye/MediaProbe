@@ -1,0 +1,41 @@
+collection: MakerNotes\Canon\ColorData5
+name: CanonColorData5
+title: 'Canon Color Data5'
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\ColorDataMap
+DOMNode: map
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::ColorData5'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: ColorDataVersion
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorDataVersion'
+                desc: 'Color Data Version'
+                values:
+                    -4: '-4 (M100/M5/M6)'
+                    -3: '-3 (M10/M3)'
+    264:
+        exiftool:
+            -
+                name: PerChannelBlackLevel
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:PerChannelBlackLevel'
+                desc: 'Per Channel Black Level'
+    333:
+        exiftool:
+            -
+                name: PerChannelBlackLevel
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:PerChannelBlackLevel'
+                desc: 'Per Channel Black Level'

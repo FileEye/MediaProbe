@@ -53,6 +53,7 @@ class VignettingCorr2 extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PeripheralLightingSetting',
     ),
     6 =>
     array (
@@ -71,7 +72,13 @@ class VignettingCorr2 extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ChromaticAberrationSetting',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ChromaticAberrationSetting' => 6,
+    'Canon:PeripheralLightingSetting' => 5,
   ),
 );
 }

@@ -24,6 +24,11 @@ class Uuid extends Collection {
     'CompressorVersion' => 'CNCV',
     'ThumbnailImage' => 'THMB',
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CompressorVersion' => 'CNCV',
+    'Canon:ThumbnailImage' => 'THMB',
+  ),
   'items' =>
   array (
     'CNCV' =>
@@ -35,6 +40,7 @@ class Uuid extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:CompressorVersion',
     ),
     'THMB' =>
     array (
@@ -45,6 +51,7 @@ class Uuid extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:ThumbnailImage',
     ),
   ),
 );
