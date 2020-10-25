@@ -17,7 +17,6 @@ class CameraSettings extends Collection {
   'title' => 'Canon Camera Settings',
   'class' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
-  'hasIndexSize' => true,
   'format' =>
   array (
     0 => 3,
@@ -62,15 +61,9 @@ class CameraSettings extends Collection {
     'SpotMeteringMode' => 39,
     'ZoomSourceWidth' => 36,
     'ZoomTargetWidth' => 37,
-    'indexSize' => 0,
   ),
   'items' =>
   array (
-    0 =>
-    array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-    ),
     1 =>
     array (
       'collection' => 'Tag',
