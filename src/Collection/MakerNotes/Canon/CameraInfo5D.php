@@ -83,6 +83,67 @@ class CameraInfo5D extends Collection {
     'UserDef3PictureStyle' => 272,
     'WhiteBalance' => 84,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AFPointsInFocus5D' => 56,
+    'Canon:CameraOrientation' => 39,
+    'Canon:CameraTemperature' => 23,
+    'Canon:ColorTemperature' => 88,
+    'Canon:ColorToneFaithful' => 263,
+    'Canon:ColorToneLandscape' => 261,
+    'Canon:ColorToneNeutral' => 262,
+    'Canon:ColorTonePortrait' => 260,
+    'Canon:ColorToneStandard' => 259,
+    'Canon:ColorToneUserDef1' => 265,
+    'Canon:ColorToneUserDef2' => 266,
+    'Canon:ColorToneUserDef3' => 267,
+    'Canon:ContrastFaithful' => 236,
+    'Canon:ContrastLandscape' => 234,
+    'Canon:ContrastMonochrome' => 237,
+    'Canon:ContrastNeutral' => 235,
+    'Canon:ContrastPortrait' => 233,
+    'Canon:ContrastStandard' => 232,
+    'Canon:ContrastUserDef1' => 238,
+    'Canon:ContrastUserDef2' => 239,
+    'Canon:ContrastUserDef3' => 240,
+    'Canon:DirectoryIndex' => 204,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 208,
+    'Canon:FilterEffectMonochrome' => 255,
+    'Canon:FirmwareRevision' => 164,
+    'Canon:FocalLength' => 40,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 151,
+    'Canon:MacroMagnification' => 27,
+    'Canon:MaxFocalLength' => 149,
+    'Canon:MinFocalLength' => 147,
+    'Canon:PictureStyle' => 108,
+    'Canon:SaturationFaithful' => 254,
+    'Canon:SaturationLandscape' => 252,
+    'Canon:SaturationNeutral' => 253,
+    'Canon:SaturationPortrait' => 251,
+    'Canon:SaturationStandard' => 250,
+    'Canon:SaturationUserDef1' => 256,
+    'Canon:SaturationUserDef2' => 257,
+    'Canon:SaturationUserDef3' => 258,
+    'Canon:SharpnessFaithful' => 245,
+    'Canon:SharpnessLandscape' => 243,
+    'Canon:SharpnessMonochrome' => 246,
+    'Canon:SharpnessNeutral' => 244,
+    'Canon:SharpnessPortrait' => 242,
+    'Canon:SharpnessStandard' => 241,
+    'Canon:SharpnessUserDef1' => 247,
+    'Canon:SharpnessUserDef2' => 248,
+    'Canon:SharpnessUserDef3' => 249,
+    'Canon:ShortOwnerName' => 172,
+    'Canon:TimeStamp' => 284,
+    'Canon:ToningEffectMonochrome' => 264,
+    'Canon:UserDef1PictureStyle' => 268,
+    'Canon:UserDef2PictureStyle' => 270,
+    'Canon:UserDef3PictureStyle' => 272,
+    'Canon:WhiteBalance' => 84,
+  ),
   'items' =>
   array (
     3 =>
@@ -94,6 +155,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -104,6 +166,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -114,9 +177,11 @@ class CameraInfo5D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     12 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -527,9 +592,11 @@ class CameraInfo5D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     23 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -537,6 +604,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     27 =>
     array (
@@ -547,6 +615,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:MacroMagnification',
     ),
     39 =>
     array (
@@ -566,6 +635,7 @@ class CameraInfo5D extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     40 =>
     array (
@@ -576,6 +646,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     56 =>
     array (
@@ -608,6 +679,7 @@ class CameraInfo5D extends Collection {
           16384 => 'AI Servo6',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFPointsInFocus5D',
     ),
     84 =>
     array (
@@ -646,6 +718,7 @@ class CameraInfo5D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     88 =>
     array (
@@ -656,6 +729,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     108 =>
     array (
@@ -696,6 +770,7 @@ class CameraInfo5D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     147 =>
     array (
@@ -706,6 +781,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     149 =>
     array (
@@ -716,9 +792,11 @@ class CameraInfo5D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     151 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -1129,6 +1207,7 @@ class CameraInfo5D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     164 =>
     array (
@@ -1140,6 +1219,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareRevision',
     ),
     172 =>
     array (
@@ -1151,6 +1231,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:ShortOwnerName',
     ),
     204 =>
     array (
@@ -1161,6 +1242,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
     208 =>
     array (
@@ -1171,6 +1253,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     232 =>
     array (
@@ -1181,6 +1264,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastStandard',
     ),
     233 =>
     array (
@@ -1191,6 +1275,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastPortrait',
     ),
     234 =>
     array (
@@ -1201,6 +1286,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastLandscape',
     ),
     235 =>
     array (
@@ -1211,6 +1297,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastNeutral',
     ),
     236 =>
     array (
@@ -1221,6 +1308,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastFaithful',
     ),
     237 =>
     array (
@@ -1231,6 +1319,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastMonochrome',
     ),
     238 =>
     array (
@@ -1241,6 +1330,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastUserDef1',
     ),
     239 =>
     array (
@@ -1251,6 +1341,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastUserDef2',
     ),
     240 =>
     array (
@@ -1261,6 +1352,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ContrastUserDef3',
     ),
     241 =>
     array (
@@ -1271,6 +1363,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessStandard',
     ),
     242 =>
     array (
@@ -1281,6 +1374,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessPortrait',
     ),
     243 =>
     array (
@@ -1291,6 +1385,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessLandscape',
     ),
     244 =>
     array (
@@ -1301,6 +1396,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessNeutral',
     ),
     245 =>
     array (
@@ -1311,6 +1407,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessFaithful',
     ),
     246 =>
     array (
@@ -1321,6 +1418,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessMonochrome',
     ),
     247 =>
     array (
@@ -1331,6 +1429,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessUserDef1',
     ),
     248 =>
     array (
@@ -1341,6 +1440,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessUserDef2',
     ),
     249 =>
     array (
@@ -1351,6 +1451,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessUserDef3',
     ),
     250 =>
     array (
@@ -1361,6 +1462,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationStandard',
     ),
     251 =>
     array (
@@ -1371,6 +1473,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationPortrait',
     ),
     252 =>
     array (
@@ -1381,6 +1484,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationLandscape',
     ),
     253 =>
     array (
@@ -1391,6 +1495,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationNeutral',
     ),
     254 =>
     array (
@@ -1401,6 +1506,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationFaithful',
     ),
     255 =>
     array (
@@ -1423,6 +1529,7 @@ class CameraInfo5D extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FilterEffectMonochrome',
     ),
     256 =>
     array (
@@ -1433,6 +1540,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationUserDef1',
     ),
     257 =>
     array (
@@ -1443,6 +1551,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationUserDef2',
     ),
     258 =>
     array (
@@ -1453,6 +1562,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:SaturationUserDef3',
     ),
     259 =>
     array (
@@ -1463,6 +1573,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneStandard',
     ),
     260 =>
     array (
@@ -1473,6 +1584,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTonePortrait',
     ),
     261 =>
     array (
@@ -1483,6 +1595,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneLandscape',
     ),
     262 =>
     array (
@@ -1493,6 +1606,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneNeutral',
     ),
     263 =>
     array (
@@ -1503,6 +1617,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneFaithful',
     ),
     264 =>
     array (
@@ -1525,6 +1640,7 @@ class CameraInfo5D extends Collection {
           4 => 'Green',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToningEffectMonochrome',
     ),
     265 =>
     array (
@@ -1535,6 +1651,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneUserDef1',
     ),
     266 =>
     array (
@@ -1545,6 +1662,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneUserDef2',
     ),
     267 =>
     array (
@@ -1555,6 +1673,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorToneUserDef3',
     ),
     268 =>
     array (
@@ -1581,6 +1700,7 @@ class CameraInfo5D extends Collection {
           135 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:UserDef1PictureStyle',
     ),
     270 =>
     array (
@@ -1607,6 +1727,7 @@ class CameraInfo5D extends Collection {
           135 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:UserDef2PictureStyle',
     ),
     272 =>
     array (
@@ -1633,6 +1754,7 @@ class CameraInfo5D extends Collection {
           135 => 'Auto',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:UserDef3PictureStyle',
     ),
     284 =>
     array (
@@ -1643,6 +1765,7 @@ class CameraInfo5D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:TimeStamp',
     ),
   ),
 );

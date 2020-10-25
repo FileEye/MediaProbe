@@ -23,6 +23,10 @@ class CTMD extends Collection {
   array (
     'TimeStamp' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:TimeStamp' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -34,6 +38,7 @@ class CTMD extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:TimeStamp',
     ),
   ),
 );

@@ -40,6 +40,24 @@ class CameraInfo60D extends Collection {
     'MaxFocalLength' => 236,
     'MinFocalLength' => 234,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraOrientation' => 54,
+    'Canon:CameraTemperature' => 25,
+    'Canon:ColorTemperature' => 125,
+    'Canon:DirectoryIndex' => 485,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 473,
+    'Canon:FirmwareVersion' => 409,
+    'Canon:FocalLength' => 30,
+    'Canon:FocusDistanceLower' => 87,
+    'Canon:FocusDistanceUpper' => 85,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 232,
+    'Canon:MaxFocalLength' => 236,
+    'Canon:MinFocalLength' => 234,
+  ),
   'items' =>
   array (
     3 =>
@@ -51,6 +69,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -61,6 +80,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -71,6 +91,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     25 =>
     array (
@@ -81,6 +102,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     30 =>
     array (
@@ -91,6 +113,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     54 =>
     array (
@@ -110,9 +133,11 @@ class CameraInfo60D extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     85 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -120,9 +145,11 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     87 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -130,6 +157,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     125 =>
     array (
@@ -140,9 +168,11 @@ class CameraInfo60D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     232 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -553,6 +583,7 @@ class CameraInfo60D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     234 =>
     array (
@@ -563,6 +594,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     236 =>
     array (
@@ -573,6 +605,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     409 =>
     array (
@@ -584,6 +617,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     473 =>
     array (
@@ -594,6 +628,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     485 =>
     array (
@@ -604,6 +639,7 @@ class CameraInfo60D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
   ),
 );

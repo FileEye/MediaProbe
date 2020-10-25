@@ -27,6 +27,11 @@ class HDRInfo extends Collection {
     'HDR' => 1,
     'HDREffect' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:HDR' => 1,
+    'Canon:HDREffect' => 2,
+  ),
   'items' =>
   array (
     1 =>
@@ -47,6 +52,7 @@ class HDRInfo extends Collection {
           2 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HDR',
     ),
     2 =>
     array (
@@ -68,6 +74,7 @@ class HDRInfo extends Collection {
           4 => 'Art (embossed)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HDREffect',
     ),
   ),
 );

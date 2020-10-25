@@ -44,6 +44,7 @@ class Main extends Collection {
       array (
         0 => 10,
       ),
+      'exiftoolDOMNode' => 'Apple:AccelerationVector',
     ),
     10 =>
     array (
@@ -62,6 +63,7 @@ class Main extends Collection {
           4 => 'Original Image',
         ),
       ),
+      'exiftoolDOMNode' => 'Apple:HDRImageType',
     ),
     11 =>
     array (
@@ -72,6 +74,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Apple:BurstUUID',
     ),
     17 =>
     array (
@@ -82,6 +85,7 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Apple:ContentIdentifier',
     ),
     21 =>
     array (
@@ -92,7 +96,16 @@ class Main extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Apple:ImageUniqueID',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Apple:AccelerationVector' => 8,
+    'Apple:BurstUUID' => 11,
+    'Apple:ContentIdentifier' => 17,
+    'Apple:HDRImageType' => 10,
+    'Apple:ImageUniqueID' => 21,
   ),
 );
 }

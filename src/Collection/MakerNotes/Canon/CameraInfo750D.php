@@ -39,6 +39,23 @@ class CameraInfo750D extends Collection {
     'PictureStyle' => 361,
     'WhiteBalance' => 305,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraTemperature' => 27,
+    'Canon:ColorTemperature' => 309,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FirmwareVersion' => 1097,
+    'Canon:FocalLength' => 35,
+    'Canon:FocusDistanceLower' => 167,
+    'Canon:FocusDistanceUpper' => 165,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 388,
+    'Canon:MaxFocalLength' => 392,
+    'Canon:MinFocalLength' => 390,
+    'Canon:PictureStyle' => 361,
+    'Canon:WhiteBalance' => 305,
+  ),
   'items' =>
   array (
     3 =>
@@ -50,6 +67,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -60,6 +78,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -70,9 +89,11 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     27 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -80,6 +101,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     35 =>
     array (
@@ -90,9 +112,11 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     165 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -100,9 +124,11 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     167 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -110,6 +136,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     305 =>
     array (
@@ -148,6 +175,7 @@ class CameraInfo750D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     309 =>
     array (
@@ -158,6 +186,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     361 =>
     array (
@@ -198,9 +227,11 @@ class CameraInfo750D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     388 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -611,6 +642,7 @@ class CameraInfo750D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     390 =>
     array (
@@ -621,6 +653,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     392 =>
     array (
@@ -631,6 +664,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     1085 =>
     array (
@@ -642,6 +676,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     1097 =>
     array (
@@ -653,6 +688,7 @@ class CameraInfo750D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
   ),
 );

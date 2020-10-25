@@ -49,7 +49,12 @@ class MeasuredColor extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:MeasuredRGGB',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:MeasuredRGGB' => 1,
   ),
 );
 }

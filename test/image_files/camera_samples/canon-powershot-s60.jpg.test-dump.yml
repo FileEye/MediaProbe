@@ -1,3 +1,11 @@
+skip:
+    exiftool:
+        - 'Canon:FlashActivity'
+        - 'Canon:ImageStabilization'
+        - 'Canon:ColorTone'
+        - 'Canon:CanonFlashInfo'
+        - 'Canon:CameraTemperature'
+        - 'Canon:MeasuredEV2'
 fileName: canon-powershot-s60.jpg
 mimeType: image/jpeg
 fileContentHash: 784a2577904635ed738e7f5d4da33ffae08aad2f36769a5afc49492dd4a0e80b
@@ -483,9 +491,9 @@ elements:
                                                             collection: MakerNotes\Canon\Main
                                                             elements:
                                                                 -
-                                                                    node: index
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1'
-                                                                    class: FileEye\MediaProbe\Block\Index
+                                                                    node: map
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
+                                                                    class: FileEye\MediaProbe\Block\Map
                                                                     valid: true
                                                                     name: CanonCameraSettings
                                                                     id: '1'
@@ -493,7 +501,24 @@ elements:
                                                                     elements:
                                                                         -
                                                                             node: rawData
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/rawData:indexSize'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:mapdata'
+                                                                            class: FileEye\MediaProbe\Block\RawData
+                                                                            valid: true
+                                                                            name: mapdata
+                                                                            collection: RawData
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:mapdata/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                                    valid: true
+                                                                                    format: Undefined
+                                                                                    components: 92
+                                                                                    bytesHash: 0f0ea873dddc134518c18d1836f872811fcbc75a468b9bf44cf59602763adf5a
+                                                                                    text: '92 byte(s) of data'
+                                                                        -
+                                                                            node: rawData
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:indexSize'
                                                                             class: FileEye\MediaProbe\Block\RawData
                                                                             valid: true
                                                                             name: indexSize
@@ -502,7 +527,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/rawData:indexSize/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:indexSize/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\Undefined
                                                                                     valid: true
                                                                                     format: Undefined
@@ -511,7 +536,7 @@ elements:
                                                                                     text: '2 byte(s) of data'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MacroMode:1'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MacroMode:1'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MacroMode
@@ -520,7 +545,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MacroMode:1/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MacroMode:1/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -529,7 +554,7 @@ elements:
                                                                                     text: Normal
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:SelfTimer:2'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SelfTimer:2'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: SelfTimer
@@ -538,7 +563,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:SelfTimer:2/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SelfTimer:2/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -547,7 +572,7 @@ elements:
                                                                                     text: 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Quality:3'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Quality:3'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: Quality
@@ -556,7 +581,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Quality:3/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Quality:3/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -565,7 +590,7 @@ elements:
                                                                                     text: Normal
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CanonFlashMode:4'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonFlashMode:4'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: CanonFlashMode
@@ -574,7 +599,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CanonFlashMode:4/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonFlashMode:4/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -583,7 +608,7 @@ elements:
                                                                                     text: 'Off'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ContinuousDrive:5'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ContinuousDrive:5'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ContinuousDrive
@@ -592,7 +617,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ContinuousDrive:5/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ContinuousDrive:5/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -601,24 +626,7 @@ elements:
                                                                                     text: Single
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:6'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '6'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:6/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocusMode:7'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusMode:7'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FocusMode
@@ -627,7 +635,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocusMode:7/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusMode:7/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -636,24 +644,7 @@ elements:
                                                                                     text: Single
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:8'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '8'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:8/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:RecordMode:9'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:RecordMode:9'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: RecordMode
@@ -662,7 +653,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:RecordMode:9/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:RecordMode:9/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -671,7 +662,7 @@ elements:
                                                                                     text: JPEG
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CanonImageSize:10'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonImageSize:10'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: CanonImageSize
@@ -680,7 +671,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CanonImageSize:10/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonImageSize:10/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -689,7 +680,7 @@ elements:
                                                                                     text: Small
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:EasyMode:11'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:EasyMode:11'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: EasyMode
@@ -698,7 +689,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:EasyMode:11/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:EasyMode:11/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -707,7 +698,7 @@ elements:
                                                                                     text: 'Full auto'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:DigitalZoom:12'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DigitalZoom:12'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: DigitalZoom
@@ -716,7 +707,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:DigitalZoom:12/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DigitalZoom:12/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -725,7 +716,7 @@ elements:
                                                                                     text: None
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Contrast:13'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Contrast:13'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: Contrast
@@ -734,7 +725,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Contrast:13/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Contrast:13/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -743,7 +734,7 @@ elements:
                                                                                     text: Normal
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Saturation:14'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Saturation:14'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: Saturation
@@ -752,7 +743,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Saturation:14/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Saturation:14/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -761,7 +752,7 @@ elements:
                                                                                     text: Normal
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Sharpness:15'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Sharpness:15'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: Sharpness
@@ -770,8 +761,8 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:Sharpness:15/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Sharpness:15/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonSharpness
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -779,7 +770,7 @@ elements:
                                                                                     text: 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CameraISO:16'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CameraISO:16'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: CameraISO
@@ -788,16 +779,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CameraISO:16/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CameraISO:16/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonCameraISO
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 46e04d129d7b45d054469ce34e24069a1426b3e34f1b68a3d1bff1e070aee192
-                                                                                    text: 15
+                                                                                    text: Auto
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MeteringMode:17'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MeteringMode:17'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MeteringMode
@@ -806,7 +797,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MeteringMode:17/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MeteringMode:17/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -815,7 +806,7 @@ elements:
                                                                                     text: Evaluative
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocusRange:18'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusRange:18'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FocusRange
@@ -824,7 +815,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocusRange:18/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusRange:18/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -833,7 +824,7 @@ elements:
                                                                                     text: Auto
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:AFPoint:19'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AFPoint:19'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: AFPoint
@@ -842,7 +833,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:AFPoint:19/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AFPoint:19/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -851,7 +842,7 @@ elements:
                                                                                     text: 'Auto AF point selection'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CanonExposureMode:20'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonExposureMode:20'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: CanonExposureMode
@@ -860,7 +851,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:CanonExposureMode:20/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonExposureMode:20/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -869,24 +860,7 @@ elements:
                                                                                     text: Easy
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:21'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '21'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:21/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 8f96c15501bef61baf5bd943201979595736b66b6a7e3b35c353729ab8d9a561
-                                                                                    text: 32767
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:LensType:22'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:LensType:22'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: LensType
@@ -895,8 +869,8 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:LensType:22/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:LensType:22/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonCameraSettingsLensType
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -904,7 +878,7 @@ elements:
                                                                                     text: n/a
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MaxFocalLength:23'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxFocalLength:23'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MaxFocalLength
@@ -913,16 +887,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MaxFocalLength:23/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxFocalLength:23/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalLength
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: cc6404511df91370546d31bd31d56aa16fd48f053b321554b10badcc7b06a132
-                                                                                    text: 662
+                                                                                    text: '20.6875 mm'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MinFocalLength:24'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinFocalLength:24'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MinFocalLength
@@ -931,16 +905,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MinFocalLength:24/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinFocalLength:24/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalLength
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 74bd8b6945a3203664d4eff36b173ae96e8ceb822b4ef99cb8d54741791923bd
-                                                                                    text: 186
+                                                                                    text: '5.8125 mm'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocalUnits:25'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocalUnits:25'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FocalUnits
@@ -949,7 +923,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocalUnits:25/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocalUnits:25/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -958,7 +932,7 @@ elements:
                                                                                     text: 32
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MaxAperture:26'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxAperture:26'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MaxAperture
@@ -967,16 +941,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MaxAperture:26/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxAperture:26/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonApertureValue
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: c56d60f5ac1fa3ff907ea2d50c13bda711a33f1b1538fd4cb8568658fa7f5148
-                                                                                    text: 157
+                                                                                    text: !!float 5
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MinAperture:27'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinAperture:27'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MinAperture
@@ -985,16 +959,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:MinAperture:27/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinAperture:27/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonApertureValue
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: e9aff84fdb699ca706c0a1fed47bb095cb25e3c95aa5d1c5d216ff2cfbcd4998
-                                                                                    text: 192
+                                                                                    text: !!float 8
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FlashActivity:28'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashActivity:28'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FlashActivity
@@ -1003,7 +977,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FlashActivity:28/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashActivity:28/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1012,7 +986,7 @@ elements:
                                                                                     text: -1
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FlashBits:29'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FlashBits
@@ -1021,7 +995,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FlashBits:29/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1030,41 +1004,7 @@ elements:
                                                                                     text: (none)
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:30'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '30'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:30/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:31'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '31'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:31/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocusContinuous:32'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusContinuous:32'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FocusContinuous
@@ -1073,7 +1013,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:FocusContinuous:32/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusContinuous:32/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1082,7 +1022,7 @@ elements:
                                                                                     text: Single
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:AESetting:33'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AESetting:33'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: AESetting
@@ -1091,7 +1031,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:AESetting:33/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AESetting:33/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1100,7 +1040,7 @@ elements:
                                                                                     text: 'Normal AE'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ImageStabilization:34'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ImageStabilization:34'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ImageStabilization
@@ -1109,7 +1049,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ImageStabilization:34/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ImageStabilization:34/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1118,7 +1058,7 @@ elements:
                                                                                     text: -1
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:DisplayAperture:35'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DisplayAperture:35'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: DisplayAperture
@@ -1127,16 +1067,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:DisplayAperture:35/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DisplayAperture:35/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonDisplayAperture
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 166f829e016f2315a8099e3a8d2dbec6d91572379ff02c760ba4e0335789d47f
-                                                                                    text: 53
+                                                                                    text: 5.3
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ZoomSourceWidth:36'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomSourceWidth:36'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ZoomSourceWidth
@@ -1145,7 +1085,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ZoomSourceWidth:36/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomSourceWidth:36/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1154,7 +1094,7 @@ elements:
                                                                                     text: 2592
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ZoomTargetWidth:37'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomTargetWidth:37'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ZoomTargetWidth
@@ -1163,7 +1103,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ZoomTargetWidth:37/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomTargetWidth:37/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1172,24 +1112,7 @@ elements:
                                                                                     text: 2592
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:38'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '38'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:38/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:SpotMeteringMode:39'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SpotMeteringMode:39'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: SpotMeteringMode
@@ -1198,7 +1121,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:SpotMeteringMode:39/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SpotMeteringMode:39/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1207,7 +1130,7 @@ elements:
                                                                                     text: Center
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:PhotoEffect:40'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:PhotoEffect:40'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: PhotoEffect
@@ -1216,7 +1139,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:PhotoEffect:40/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:PhotoEffect:40/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1225,7 +1148,7 @@ elements:
                                                                                     text: 'Off'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ManualFlashOutput:41'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ManualFlashOutput:41'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ManualFlashOutput
@@ -1234,7 +1157,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ManualFlashOutput:41/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ManualFlashOutput:41/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1243,7 +1166,7 @@ elements:
                                                                                     text: n/a
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ColorTone:42'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ColorTone:42'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ColorTone
@@ -1252,64 +1175,13 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:ColorTone:42/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ColorTone:42/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 8f96c15501bef61baf5bd943201979595736b66b6a7e3b35c353729ab8d9a561
                                                                                     text: 32767
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:43'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '43'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:43/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 8f96c15501bef61baf5bd943201979595736b66b6a7e3b35c353729ab8d9a561
-                                                                                    text: 32767
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:44'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '44'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:44/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:45'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '45'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:45/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2'
@@ -1349,12 +1221,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalLength:1/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    class: FileEye\MediaProbe\Entry\CanonFLFocalLength
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: cc6404511df91370546d31bd31d56aa16fd48f053b321554b10badcc7b06a132
-                                                                                    text: 662
+                                                                                    text: '20.6875 mm'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneXSize:2'
@@ -1367,12 +1239,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneXSize:2/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalPlaneSize
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 55059c2796b8ca06f46b91d734f1b4f9b8ae929b7dc24a6bb14315cd4651eb87
-                                                                                    text: 290
+                                                                                    text: '7.37 mm'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneYSize:3'
@@ -1385,12 +1257,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneYSize:3/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalPlaneSize
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 28426ff241652c8c0e9f9f2e7606e1b99c5714c87d6fdc0138412137e2f1be8c
-                                                                                    text: 217
+                                                                                    text: '5.51 mm'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonFlashInfo:3'
@@ -1410,9 +1282,9 @@ elements:
                                                                             bytesHash: af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc
                                                                             text: '0, 0, 0, 0'
                                                                 -
-                                                                    node: index
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4'
-                                                                    class: FileEye\MediaProbe\Block\Index
+                                                                    node: map
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4'
+                                                                    class: FileEye\MediaProbe\Block\Map
                                                                     valid: true
                                                                     name: CanonShotInfo
                                                                     id: '4'
@@ -1420,7 +1292,24 @@ elements:
                                                                     elements:
                                                                         -
                                                                             node: rawData
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/rawData:indexSize'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/rawData:mapdata'
+                                                                            class: FileEye\MediaProbe\Block\RawData
+                                                                            valid: true
+                                                                            name: mapdata
+                                                                            collection: RawData
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/rawData:mapdata/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                                    valid: true
+                                                                                    format: Undefined
+                                                                                    components: 68
+                                                                                    bytesHash: 564827642fb79629fa04c7f159c9d33c90919b72e88c8facac91355f5039365e
+                                                                                    text: '68 byte(s) of data'
+                                                                        -
+                                                                            node: rawData
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/rawData:indexSize'
                                                                             class: FileEye\MediaProbe\Block\RawData
                                                                             valid: true
                                                                             name: indexSize
@@ -1429,7 +1318,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/rawData:indexSize/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/rawData:indexSize/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\Undefined
                                                                                     valid: true
                                                                                     format: Undefined
@@ -1438,7 +1327,7 @@ elements:
                                                                                     text: '2 byte(s) of data'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AutoISO:1'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoISO:1'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: AutoISO
@@ -1447,16 +1336,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AutoISO:1/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoISO:1/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonAutoIso
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 869f1dfb999a452f497a4cf7f44db2d6ee661f74a9e7e05251bc1420e50672d4
-                                                                                    text: 32
+                                                                                    text: !!float 200
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:BaseISO:2'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:BaseISO:2'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: BaseISO
@@ -1465,16 +1354,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:BaseISO:2/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:BaseISO:2/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonBaseIso
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 8509b81230019d2ad970d970f791dfbdc8caf54f5c594fcd327cef9feed206c1
-                                                                                    text: 128
+                                                                                    text: !!float 50
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:MeasuredEV:3'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV:3'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MeasuredEV
@@ -1483,16 +1372,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:MeasuredEV:3/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV:3/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonMeasuredEV
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: aa4fb8a61cab7db73f42671f2bb987a7291a436929b3d5f17ffe05f96be13371
-                                                                                    text: 54
+                                                                                    text: 6.69
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:TargetAperture:4'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetAperture:4'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: TargetAperture
@@ -1501,16 +1390,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:TargetAperture:4/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetAperture:4/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonApertureValue
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 34ad8d8ddb8069126254db5e1fccace0936d305ffee48f29a101ef5c89240419
-                                                                                    text: 154
+                                                                                    text: !!float 5
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:TargetExposureTime:5'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetExposureTime:5'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: TargetExposureTime
@@ -1519,16 +1408,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:TargetExposureTime:5/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetExposureTime:5/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonTargetExposureTime
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: f3df0a62b10f205b0f29768aa3d69e777154caaa179f64aabb0a4899c666b017
-                                                                                    text: 96
+                                                                                    text: 1/8
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:ExposureCompensation:6'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ExposureCompensation:6'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ExposureCompensation
@@ -1537,16 +1426,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:ExposureCompensation:6/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ExposureCompensation:6/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonExposureCompensation
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: !!float 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:WhiteBalance:7'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:WhiteBalance:7'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: WhiteBalance
@@ -1555,7 +1444,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:WhiteBalance:7/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:WhiteBalance:7/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1564,7 +1453,7 @@ elements:
                                                                                     text: Auto
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:SlowShutter:8'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:SlowShutter:8'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: SlowShutter
@@ -1573,7 +1462,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:SlowShutter:8/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:SlowShutter:8/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1582,7 +1471,7 @@ elements:
                                                                                     text: 'Off'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:SequenceNumber:9'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:SequenceNumber:9'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: SequenceNumber
@@ -1591,7 +1480,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:SequenceNumber:9/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:SequenceNumber:9/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1600,7 +1489,7 @@ elements:
                                                                                     text: 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:OpticalZoomCode:10'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:OpticalZoomCode:10'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: OpticalZoomCode
@@ -1609,7 +1498,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:OpticalZoomCode:10/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:OpticalZoomCode:10/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1618,24 +1507,7 @@ elements:
                                                                                     text: 8
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:11'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '11'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:11/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:CameraTemperature:12'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:CameraTemperature:12'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: CameraTemperature
@@ -1644,16 +1516,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:CameraTemperature:12/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:CameraTemperature:12/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonCameraTemperature
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: n/a
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FlashGuideNumber:13'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashGuideNumber:13'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FlashGuideNumber
@@ -1662,7 +1534,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FlashGuideNumber:13/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashGuideNumber:13/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1671,7 +1543,7 @@ elements:
                                                                                     text: 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AFPointsInFocus:14'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AFPointsInFocus:14'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: AFPointsInFocus
@@ -1680,16 +1552,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AFPointsInFocus:14/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AFPointsInFocus:14/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoAFPointsInFocus
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: 32
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FlashExposureComp:15'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashExposureComp:15'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FlashExposureComp
@@ -1698,7 +1570,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FlashExposureComp:15/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashExposureComp:15/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1707,7 +1579,7 @@ elements:
                                                                                     text: 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AutoExposureBracketing:16'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoExposureBracketing:16'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: AutoExposureBracketing
@@ -1716,7 +1588,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AutoExposureBracketing:16/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoExposureBracketing:16/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1725,7 +1597,7 @@ elements:
                                                                                     text: 'Off'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AEBBracketValue:17'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AEBBracketValue:17'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: AEBBracketValue
@@ -1734,7 +1606,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AEBBracketValue:17/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AEBBracketValue:17/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1743,7 +1615,7 @@ elements:
                                                                                     text: 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:ControlMode:18'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ControlMode:18'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ControlMode
@@ -1752,7 +1624,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:ControlMode:18/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ControlMode:18/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1761,7 +1633,7 @@ elements:
                                                                                     text: 'Camera Local Control'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FocusDistanceUpper:19'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FocusDistanceUpper:19'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FocusDistanceUpper
@@ -1770,16 +1642,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FocusDistanceUpper:19/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FocusDistanceUpper:19/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoFocusDistanceUpper
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 91046df2aa008410555df240b14243aa348b37cd16582c9d8a80ca305afccab2
-                                                                                    text: 106
+                                                                                    text: '1.06 m'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FocusDistanceLower:20'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FocusDistanceLower:20'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FocusDistanceLower
@@ -1788,16 +1660,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FocusDistanceLower:20/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FocusDistanceLower:20/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoFocusDistanceLower
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: '0 m'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FNumber:21'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FNumber:21'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FNumber
@@ -1806,16 +1678,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FNumber:21/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FNumber:21/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoFNumber
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: c56d60f5ac1fa3ff907ea2d50c13bda711a33f1b1538fd4cb8568658fa7f5148
-                                                                                    text: 157
+                                                                                    text: 5.5
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:ExposureTime:22'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ExposureTime:22'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: ExposureTime
@@ -1824,16 +1696,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:ExposureTime:22/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ExposureTime:22/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonExposureTime
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: f3df0a62b10f205b0f29768aa3d69e777154caaa179f64aabb0a4899c666b017
-                                                                                    text: 96
+                                                                                    text: !!float 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:MeasuredEV2:23'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV2:23'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: MeasuredEV2
@@ -1842,16 +1714,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:MeasuredEV2:23/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV2:23/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonMeasuredEV2
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: !!float -6
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:BulbDuration:24'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:BulbDuration:24'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: BulbDuration
@@ -1860,33 +1732,16 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:BulbDuration:24/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:BulbDuration:24/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\CanonBulbDuration
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: !!float 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:25'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '25'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:25/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
-                                                                                    text: 1
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:CameraType:26'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:CameraType:26'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: CameraType
@@ -1895,7 +1750,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:CameraType:26/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:CameraType:26/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1904,7 +1759,7 @@ elements:
                                                                                     text: Compact
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AutoRotate:27'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoRotate:27'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: AutoRotate
@@ -1913,7 +1768,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:AutoRotate:27/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoRotate:27/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1922,7 +1777,7 @@ elements:
                                                                                     text: None
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:NDFilter:28'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:NDFilter:28'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: NDFilter
@@ -1931,7 +1786,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:NDFilter:28/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:NDFilter:28/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1940,7 +1795,7 @@ elements:
                                                                                     text: 'Off'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:SelfTimer2:29'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:SelfTimer2:29'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: SelfTimer2
@@ -1949,7 +1804,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:SelfTimer2:29/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:SelfTimer2:29/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -1958,58 +1813,7 @@ elements:
                                                                                     text: 0
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:30'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '30'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:30/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:31'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '31'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:31/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:32'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: true
-                                                                            id: '32'
-                                                                            collection: UnknownTag
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:32/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
-                                                                                    format: Short
-                                                                                    components: 1
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FlashOutput:33'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashOutput:33'
                                                                             class: FileEye\MediaProbe\Block\Tag
                                                                             valid: true
                                                                             name: FlashOutput
@@ -2018,7 +1822,7 @@ elements:
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:FlashOutput:33/entry'
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashOutput:33/entry'
                                                                                     class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
                                                                                     format: SignedShort
@@ -3010,47 +2814,8 @@ elements:
 log:
     NOTICE:
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:6'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:8'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:21'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:30'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:31'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:38'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:43'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:44'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCameraSettings:1/tag:45'
-            message: 'No specification for item UnknownTag in ''CanonCameraSettings'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:11'
-            message: 'No specification for item UnknownTag in ''CanonShotInfo'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:25'
-            message: 'No specification for item UnknownTag in ''CanonShotInfo'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:30'
-            message: 'No specification for item UnknownTag in ''CanonShotInfo'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:31'
-            message: 'No specification for item UnknownTag in ''CanonShotInfo'''
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonShotInfo:4/tag:32'
-            message: 'No specification for item UnknownTag in ''CanonShotInfo'''
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
+            message: 'Offset 92 out of bounds'
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
             message: 'No specification for item UnknownTag in ''Canon'''

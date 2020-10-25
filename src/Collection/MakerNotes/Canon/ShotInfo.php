@@ -15,8 +15,8 @@ class ShotInfo extends Collection {
   protected static $map = array (
   'name' => 'CanonShotInfo',
   'title' => 'Shot Information',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
-  'DOMNode' => 'index',
+  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>
   array (
@@ -68,6 +68,7 @@ class ShotInfo extends Collection {
     ),
     1 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonAutoIso',
       'collection' => 'Tag',
       'name' => 'AutoISO',
       'title' => 'Auto ISO',
@@ -75,9 +76,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:AutoISO',
     ),
     2 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonBaseIso',
       'collection' => 'Tag',
       'name' => 'BaseISO',
       'title' => 'Base ISO',
@@ -85,9 +88,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:BaseISO',
     ),
     3 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonMeasuredEV',
       'collection' => 'Tag',
       'name' => 'MeasuredEV',
       'title' => 'Measured EV',
@@ -95,9 +100,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:MeasuredEV',
     ),
     4 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonApertureValue',
       'collection' => 'Tag',
       'name' => 'TargetAperture',
       'title' => 'Target Aperture',
@@ -105,9 +112,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:TargetAperture',
     ),
     5 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonTargetExposureTime',
       'collection' => 'Tag',
       'name' => 'TargetExposureTime',
       'title' => 'Target Exposure Time',
@@ -115,9 +124,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:TargetExposureTime',
     ),
     6 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonExposureCompensation',
       'collection' => 'Tag',
       'name' => 'ExposureCompensation',
       'title' => 'Exposure Compensation',
@@ -125,6 +136,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureCompensation',
     ),
     7 =>
     array (
@@ -163,6 +175,7 @@ class ShotInfo extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     8 =>
     array (
@@ -184,6 +197,7 @@ class ShotInfo extends Collection {
           3 => 'None',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SlowShutter',
     ),
     9 =>
     array (
@@ -194,6 +208,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:SequenceNumber',
     ),
     10 =>
     array (
@@ -204,9 +219,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:OpticalZoomCode',
     ),
     12 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -214,6 +231,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     13 =>
     array (
@@ -224,9 +242,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FlashGuideNumber',
     ),
     14 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoAFPointsInFocus',
       'collection' => 'Tag',
       'name' => 'AFPointsInFocus',
       'title' => 'AF Points In Focus',
@@ -248,6 +268,7 @@ class ShotInfo extends Collection {
           12295 => 'All',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFPointsInFocus',
     ),
     15 =>
     array (
@@ -258,6 +279,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FlashExposureComp',
     ),
     16 =>
     array (
@@ -279,6 +301,7 @@ class ShotInfo extends Collection {
           3 => 'On (shot 3)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoExposureBracketing',
     ),
     17 =>
     array (
@@ -289,6 +312,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:AEBBracketValue',
     ),
     18 =>
     array (
@@ -308,9 +332,11 @@ class ShotInfo extends Collection {
           3 => 'Computer Remote Control',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ControlMode',
     ),
     19 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoFocusDistanceUpper',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -318,9 +344,11 @@ class ShotInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     20 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoFocusDistanceLower',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -328,9 +356,11 @@ class ShotInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     21 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoFNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -338,9 +368,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     22 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -348,9 +380,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     23 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonMeasuredEV2',
       'collection' => 'Tag',
       'name' => 'MeasuredEV2',
       'title' => 'Measured EV 2',
@@ -358,9 +392,11 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:MeasuredEV2',
     ),
     24 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonBulbDuration',
       'collection' => 'Tag',
       'name' => 'BulbDuration',
       'title' => 'Bulb Duration',
@@ -368,6 +404,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:BulbDuration',
     ),
     26 =>
     array (
@@ -389,6 +426,7 @@ class ShotInfo extends Collection {
           255 => 'DV Camera',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraType',
     ),
     27 =>
     array (
@@ -410,6 +448,7 @@ class ShotInfo extends Collection {
           3 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoRotate',
     ),
     28 =>
     array (
@@ -429,6 +468,7 @@ class ShotInfo extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:NDFilter',
     ),
     29 =>
     array (
@@ -439,6 +479,7 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:SelfTimer2',
     ),
     33 =>
     array (
@@ -449,7 +490,39 @@ class ShotInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:FlashOutput',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AEBBracketValue' => 17,
+    'Canon:AFPointsInFocus' => 14,
+    'Canon:AutoExposureBracketing' => 16,
+    'Canon:AutoISO' => 1,
+    'Canon:AutoRotate' => 27,
+    'Canon:BaseISO' => 2,
+    'Canon:BulbDuration' => 24,
+    'Canon:CameraTemperature' => 12,
+    'Canon:CameraType' => 26,
+    'Canon:ControlMode' => 18,
+    'Canon:ExposureCompensation' => 6,
+    'Canon:ExposureTime' => 22,
+    'Canon:FNumber' => 21,
+    'Canon:FlashExposureComp' => 15,
+    'Canon:FlashGuideNumber' => 13,
+    'Canon:FlashOutput' => 33,
+    'Canon:FocusDistanceLower' => 20,
+    'Canon:FocusDistanceUpper' => 19,
+    'Canon:MeasuredEV' => 3,
+    'Canon:MeasuredEV2' => 23,
+    'Canon:NDFilter' => 28,
+    'Canon:OpticalZoomCode' => 10,
+    'Canon:SelfTimer2' => 29,
+    'Canon:SequenceNumber' => 9,
+    'Canon:SlowShutter' => 8,
+    'Canon:TargetAperture' => 4,
+    'Canon:TargetExposureTime' => 5,
+    'Canon:WhiteBalance' => 7,
   ),
 );
 }

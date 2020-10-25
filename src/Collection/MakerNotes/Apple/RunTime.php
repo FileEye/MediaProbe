@@ -25,6 +25,13 @@ class RunTime extends Collection {
     'RunTimeScale' => 'timescale',
     'RunTimeValue' => 'value',
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Apple:RunTimeEpoch' => 'epoch',
+    'Apple:RunTimeFlags' => 'flags',
+    'Apple:RunTimeScale' => 'timescale',
+    'Apple:RunTimeValue' => 'value',
+  ),
   'items' =>
   array (
     'epoch' =>
@@ -36,6 +43,7 @@ class RunTime extends Collection {
       'collection' => 'Tag',
       'name' => 'RunTimeEpoch',
       'title' => 'Run Time Epoch',
+      'exiftoolDOMNode' => 'Apple:RunTimeEpoch',
     ),
     'flags' =>
     array (
@@ -57,6 +65,7 @@ class RunTime extends Collection {
           16 => 'Indefinite',
         ),
       ),
+      'exiftoolDOMNode' => 'Apple:RunTimeFlags',
     ),
     'timescale' =>
     array (
@@ -67,6 +76,7 @@ class RunTime extends Collection {
       'collection' => 'Tag',
       'name' => 'RunTimeScale',
       'title' => 'Run Time Scale',
+      'exiftoolDOMNode' => 'Apple:RunTimeScale',
     ),
     'value' =>
     array (
@@ -77,6 +87,7 @@ class RunTime extends Collection {
       'collection' => 'Tag',
       'name' => 'RunTimeValue',
       'title' => 'Run Time Value',
+      'exiftoolDOMNode' => 'Apple:RunTimeValue',
     ),
   ),
 );

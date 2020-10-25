@@ -129,15 +129,15 @@ class Media extends BlockBase
         // media format. Then load the media according to the media format.
         $media = new static($external_logger, $fail_level);
         $media->debugBlockInfo($data_element);
-        try {
+//        try {
             $media_format_class = $media_format_collection->getPropertyValue('class');
             $media_format = new $media_format_class($media_format_collection, $media);
             $media_format->parseData($data_element);
             $media->valid = $media_format->isValid();
-        } catch (\Throwable $e) { // @ todo xxx better
-            $media->error(get_class($e) . ': ' . $e->getMessage());
-            $media->valid = false;
-        }
+//        } catch (\Throwable $e) { // @ todo xxx better
+//            $media->error(get_class($e) . ': ' . $e->getMessage());
+//            $media->valid = false;
+//        }
         return $media;
     }
 

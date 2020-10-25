@@ -29,6 +29,13 @@ class FocalLength extends Collection {
     'FocalPlaneYSize' => 3,
     'FocalType' => 0,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:FocalLength' => 1,
+    'Canon:FocalPlaneXSize' => 2,
+    'Canon:FocalPlaneYSize' => 3,
+    'Canon:FocalType' => 0,
+  ),
   'items' =>
   array (
     0 =>
@@ -48,9 +55,11 @@ class FocalLength extends Collection {
           2 => 'Zoom',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FocalType',
     ),
     1 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFLFocalLength',
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',
@@ -58,9 +67,11 @@ class FocalLength extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     2 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocalPlaneSize',
       'collection' => 'Tag',
       'name' => 'FocalPlaneXSize',
       'title' => 'Focal Plane X Size',
@@ -68,9 +79,11 @@ class FocalLength extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalPlaneXSize',
     ),
     3 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocalPlaneSize',
       'collection' => 'Tag',
       'name' => 'FocalPlaneYSize',
       'title' => 'Focal Plane Y Size',
@@ -78,6 +91,7 @@ class FocalLength extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalPlaneYSize',
     ),
   ),
 );

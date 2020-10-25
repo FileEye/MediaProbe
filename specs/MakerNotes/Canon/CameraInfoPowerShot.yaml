@@ -1,0 +1,63 @@
+collection: MakerNotes\Canon\CameraInfoPowerShot
+name: CanonCameraInfoPowerShot
+title: 'Canon CameraInfoPowerShot'
+class: FileEye\MediaProbe\Block\MakerNotes\Canon\CameraInfoMap
+DOMNode: map
+format: Long
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::CameraInfoPowerShot'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: ISO
+                type: int32s
+                writable: true
+                g2: Image
+                DOMNode: 'Canon:ISO'
+                desc: ISO
+    5:
+        exiftool:
+            -
+                name: FNumber
+                type: int32s
+                writable: true
+                g2: Image
+                DOMNode: 'Canon:FNumber'
+                desc: 'F Number'
+    6:
+        exiftool:
+            -
+                name: ExposureTime
+                type: int32s
+                writable: true
+                g2: Image
+                DOMNode: 'Canon:ExposureTime'
+                desc: 'Exposure Time'
+    23:
+        exiftool:
+            -
+                name: Rotation
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:Rotation'
+                desc: Rotation
+    135:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'
+    145:
+        exiftool:
+            -
+                name: CameraTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:CameraTemperature'
+                desc: 'Camera Temperature'

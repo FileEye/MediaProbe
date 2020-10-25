@@ -27,6 +27,11 @@ class ColorData5 extends Collection {
     'ColorDataVersion' => 0,
     'PerChannelBlackLevel' => 333,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ColorDataVersion' => 0,
+    'Canon:PerChannelBlackLevel' => 333,
+  ),
   'items' =>
   array (
     0 =>
@@ -46,6 +51,7 @@ class ColorData5 extends Collection {
           -3 => '-3 (M10/M3)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorDataVersion',
     ),
     264 =>
     array (
@@ -57,6 +63,7 @@ class ColorData5 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
     ),
     333 =>
     array (
@@ -68,6 +75,7 @@ class ColorData5 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
     ),
   ),
 );

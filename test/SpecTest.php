@@ -4,6 +4,7 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Ifd;
 use FileEye\MediaProbe\Block\Index;
+use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection;
@@ -38,7 +39,7 @@ class SpecTest extends MediaProbeTestCaseBase
 
         // Test retrieving IFD class.
         $this->assertEquals(Ifd::class, $ifd_0->getCollection()->getPropertyValue('class'));
-        $this->assertEquals(Index::class, $ifd_canon_camera_settings->getCollection()->getPropertyValue('class'));
+        $this->assertEquals(Map::class, $ifd_canon_camera_settings->getCollection()->getPropertyValue('class'));
 
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals([

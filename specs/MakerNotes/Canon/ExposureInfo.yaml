@@ -1,0 +1,36 @@
+collection: MakerNotes\Canon\ExposureInfo
+name: CanonExposureInfo
+title: 'Canon ExposureInfo'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Long
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::ExposureInfo'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: FNumber
+                type: rational32u
+                writable: false
+                DOMNode: 'Canon:FNumber'
+                desc: 'F Number'
+    -
+        exiftool:
+            -
+                name: ExposureTime
+                type: rational32u
+                writable: false
+                DOMNode: 'Canon:ExposureTime'
+                desc: 'Exposure Time'
+    -
+        exiftool:
+            -
+                name: ISO
+                type: int32u
+                writable: false
+                DOMNode: 'Canon:ISO'
+                desc: ISO
