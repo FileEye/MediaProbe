@@ -15,8 +15,8 @@ class TimeInfo extends Collection {
   protected static $map = array (
   'name' => 'CanonTimeInfo',
   'title' => 'Canon TimeInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
-  'DOMNode' => 'index',
+  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>
   array (
@@ -28,15 +28,9 @@ class TimeInfo extends Collection {
     'DaylightSavings' => 3,
     'TimeZone' => 1,
     'TimeZoneCity' => 2,
-    'indexSize' => 0,
   ),
   'items' =>
   array (
-    0 =>
-    array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-    ),
     1 =>
     array (
       'collection' => 'Tag',

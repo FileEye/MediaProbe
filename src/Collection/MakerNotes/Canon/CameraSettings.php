@@ -17,6 +17,7 @@ class CameraSettings extends Collection {
   'title' => 'Canon Camera Settings',
   'class' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
+  'hasIndexSize' => true,
   'format' =>
   array (
     0 => 3,
