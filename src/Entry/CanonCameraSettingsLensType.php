@@ -15,10 +15,10 @@ class CanonCameraSettingsLensType extends Short
      */
     public function getValue(array $options = [])
     {
-        if (!$lens_type = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
-            return 65535;
+        if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
+            return $alternate->getValue($options);
         } else {
-            return $lens_type->getValue($options);
+            return $this->value[0];
         }
     }
 
@@ -27,10 +27,12 @@ class CanonCameraSettingsLensType extends Short
      */
     public function toString(array $options = [])
     {
-        if (!$lens_type = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
+        $value = $this->getValue();
+        return $this->getMappedText($value);
+/*        if (!$lens_type = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
             return 'n/a';
         } else {
             return $lens_type->toString($options);
-        }
+        }*/
     }
 }
