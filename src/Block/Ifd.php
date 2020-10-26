@@ -197,9 +197,10 @@ class Ifd extends ListBase
             $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
             $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
             $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
-if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump($sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($bytes));
+if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump('IFD entry', $sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($bytes));
 
             $data = $sub_block->toBytes($byte_order, $data_area_offset);
+if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump('IFD data', $data_area_offset, MediaProbe::dumpHexFormatted($data));
             $s = strlen($data);
             if ($s > 4) {
                 $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
