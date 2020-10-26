@@ -30,7 +30,7 @@ class Ifd extends ListBase
         $valid = true;
 
         $offset = $this->getDefinition()->getDataOffset();
-if ($this->getAttribute('name') === 'CanonFilterInfo') dump($offset, MediaProbe::dumpHexFormatted($data_element->getBytes($offset - 1024, 10000)));
+//if ($this->getAttribute('name') === 'CanonFilterInfo') dump($offset, MediaProbe::dumpHexFormatted($data_element->getBytes($offset - 1024, 10000)));
 
         // Get the number of entries.
         $n = $this->getItemsCountFromData($data_element, $offset);
