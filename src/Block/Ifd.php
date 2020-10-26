@@ -34,7 +34,7 @@ class Ifd extends ListBase
         // Get the number of entries.
         $n = $this->getItemsCountFromData($data_element, $offset);
         $this->debugBlockInfo($data_element, $n);
-if ($this->getAttribute('name') === 'CanonFilterInfo') dump($n, MediaProbe::dumpHexFormatted($data_element->getBytes()));
+//if ($this->getAttribute('name') === 'CanonFilterInfo') dump($n, $item));
 
         // Parse the items.
         for ($i = 0; $i < $n; $i++) {
@@ -197,6 +197,7 @@ if ($this->getAttribute('name') === 'CanonFilterInfo') dump($n, MediaProbe::dump
             $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
             $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
             $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
+if ($$sub_block->getAttribute('name') === 'CanonFilterInfo') dump($sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($bytes));
 
             $data = $sub_block->toBytes($byte_order, $data_area_offset);
             $s = strlen($data);
@@ -239,7 +240,6 @@ if ($this->getAttribute('name') === 'CanonFilterInfo') dump($n, MediaProbe::dump
         // Append data area.
         $bytes .= $data_area_bytes;
 
-if ($this->getAttribute('name') === 'CanonFilterInfo') dump($n, MediaProbe::dumpHexFormatted($bytes));
         return $bytes;
     }
 
