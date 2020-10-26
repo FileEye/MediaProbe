@@ -15,8 +15,8 @@ class MultiExp extends Collection {
   protected static $map = array (
   'name' => 'CanonMultiExp',
   'title' => 'Canon MultiExp',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
-  'DOMNode' => 'index',
+  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'DOMNode' => 'map',
   'format' =>
   array (
     0 => 4,
