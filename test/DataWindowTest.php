@@ -7,7 +7,7 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
-// @todo xxx add a test for negative/zero window size 
+// @todo xxx add a test for negative/zero window size
 // @todo xxx add a test for excessive window size
 
 class DataWindowTest extends MediaProbeTestCaseBase
@@ -90,8 +90,7 @@ class DataWindowTest extends MediaProbeTestCaseBase
         try {
             $this->assertNull($window->getBytes(8));
             $this->fail('No DataException thrown when offset out of bonds');
-        }
-        catch (DataException $e) {
+        } catch (DataException $e) {
             $this->assertEquals('Offset out of bounds - rel 8 [0, 7], abs 8 [0, 7]', $e->getMessage());
         }
         $this->assertEquals('h', $window->getBytes(-1));
@@ -101,15 +100,13 @@ class DataWindowTest extends MediaProbeTestCaseBase
         try {
             $this->assertNull($window->getBytes(0, 10));
             $this->fail('No DataException thrown when offset out of bonds');
-        }
-        catch (DataException $e) {
+        } catch (DataException $e) {
             $this->assertEquals('Offset out of bounds - rel 9 [0, 7], abs 9 [0, 7]', $e->getMessage());
         }
         try {
             $this->assertNull($window->getBytes(-10));
             $this->fail('No DataException thrown when offset out of bonds');
-        }
-        catch (DataException $e) {
+        } catch (DataException $e) {
             $this->assertEquals('Offset out of bounds - rel -2 [0, 7], abs -2 [0, 7]', $e->getMessage());
         }
 
@@ -123,8 +120,7 @@ class DataWindowTest extends MediaProbeTestCaseBase
         try {
             $this->assertNull($sub_window->getBytes(4));
             $this->fail('No DataException thrown when offset out of bonds');
-        }
-        catch (DataException $e) {
+        } catch (DataException $e) {
             $this->assertEquals('Offset out of bounds - rel 4 [0, 3], abs 6 [2, 5]', $e->getMessage());
         }
         $this->assertEquals('f', $sub_window->getBytes(-1));
@@ -134,23 +130,20 @@ class DataWindowTest extends MediaProbeTestCaseBase
         try {
             $this->assertNull($sub_window->getBytes(0, 6));
             $this->fail('No DataException thrown when offset out of bonds');
-        }
-        catch (DataException $e) {
+        } catch (DataException $e) {
             $this->assertEquals('Offset out of bounds - rel 5 [0, 3], abs 7 [2, 5]', $e->getMessage());
         }
         $this->assertEquals('cdef', $sub_window->getBytes(-4));
         try {
             $this->assertNull($sub_window->getBytes(-7));
             $this->fail('No DataException thrown when offset out of bonds');
-        }
-        catch (DataException $e) {
+        } catch (DataException $e) {
             $this->assertEquals('Offset out of bounds - rel -3 [0, 3], abs -1 [2, 5]', $e->getMessage());
         }
         try {
             $this->assertNull($sub_window->getBytes(-20));
             $this->fail('No DataException thrown when offset out of bonds');
-        }
-        catch (DataException $e) {
+        } catch (DataException $e) {
             $this->assertEquals('Offset out of bounds - rel -16 [0, 3], abs -14 [2, 5]', $e->getMessage());
         }
     }
