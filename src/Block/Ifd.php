@@ -34,7 +34,7 @@ class Ifd extends ListBase
         // Get the number of entries.
         $n = $this->getItemsCountFromData($data_element, $offset);
         $this->debugBlockInfo($data_element, $n);
-if ($this->getAttribute('name') === 'CanonFilterInfo') dump(MediaProbe::dumpHexFormatted($n, $data_element));
+if ($this->getAttribute('name') === 'CanonFilterInfo') dump($, MediaProbe::dumpHexFormatted($data_element->getBytes()));
 
         // Parse the items.
         for ($i = 0; $i < $n; $i++) {
