@@ -62,15 +62,9 @@ class CameraSettings extends Collection {
     'SpotMeteringMode' => 39,
     'ZoomSourceWidth' => 36,
     'ZoomTargetWidth' => 37,
-    'indexSize' => 0,
   ),
   'items' =>
   array (
-    0 =>
-    array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-    ),
     1 =>
     array (
       'collection' => 'Tag',

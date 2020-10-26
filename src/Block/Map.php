@@ -74,7 +74,7 @@ class Map extends Index
 
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
-            $bytes_offset = $sub_id * 2;
+            $bytes_offset = $sub->getAttribute('id') * ItemFormat::getSize($this->getFormat());
             $bytes = $sub->toBytes($byte_order);
             $bytes_length = strlen($bytes);
 

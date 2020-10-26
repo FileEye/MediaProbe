@@ -15,8 +15,8 @@ class LightingOpt extends Collection {
   protected static $map = array (
   'name' => 'CanonLightingOpt',
   'title' => 'Canon LightingOpt',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
-  'DOMNode' => 'index',
+  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>
   array (
@@ -30,15 +30,9 @@ class LightingOpt extends Collection {
     'HighlightTonePriority' => 3,
     'LongExposureNoiseReduction' => 4,
     'PeripheralIlluminationCorr' => 1,
-    'indexSize' => 0,
   ),
   'items' =>
   array (
-    0 =>
-    array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-    ),
     1 =>
     array (
       'collection' => 'Tag',

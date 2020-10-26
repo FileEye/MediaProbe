@@ -15,7 +15,7 @@ class CanonApertureValue extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return exp($this->CanonEv($this->value[0]) * log(2) / 2);
+        return exp($this->canonEv($this->value[0]) * log(2) / 2);
     }
 
     /**
@@ -26,7 +26,8 @@ class CanonApertureValue extends SignedShort
         return round($this->getValue());
     }
 
-    private function CanonEv($val) {
+    private function canonEv($val)
+    {
         // temporarily make the number positive
         if ($val < 0) {
             $val = -$val;
