@@ -34,6 +34,7 @@ class Ifd extends ListBase
         // Get the number of entries.
         $n = $this->getItemsCountFromData($data_element, $offset);
         $this->debugBlockInfo($data_element, $n);
+if ($this->getAttribute('name') === 'CanonFilterInfo') dump(MediaProbe::dumpHexFormatted($n, $data_element));
 
         // Parse the items.
         for ($i = 0; $i < $n; $i++) {
@@ -178,6 +179,7 @@ class Ifd extends ListBase
         if ($thumbnail = $this->getElement('thumbnail')) {
             $n += 1;
         }
+
         $bytes .= ConvertBytes::fromShort($n, $byte_order);
 
         // Data area. We need to reserve 12 bytes for each IFD tag + 4 bytes
@@ -237,6 +239,7 @@ class Ifd extends ListBase
         // Append data area.
         $bytes .= $data_area_bytes;
 
+if ($this->getAttribute('name') === 'CanonFilterInfo') dump($n, MediaProbe::dumpHexFormatted($bytes));
         return $bytes;
     }
 
