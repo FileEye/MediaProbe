@@ -36,6 +36,20 @@ class FaceDetect1 extends Collection {
     'FaceDetectFrameSize' => 3,
     'FacesDetected' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:Face1Position' => 8,
+    'Canon:Face2Position' => 10,
+    'Canon:Face3Position' => 12,
+    'Canon:Face4Position' => 14,
+    'Canon:Face5Position' => 16,
+    'Canon:Face6Position' => 18,
+    'Canon:Face7Position' => 20,
+    'Canon:Face8Position' => 22,
+    'Canon:Face9Position' => 24,
+    'Canon:FaceDetectFrameSize' => 3,
+    'Canon:FacesDetected' => 2,
+  ),
   'items' =>
   array (
     2 =>
@@ -47,6 +61,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FacesDetected',
     ),
     3 =>
     array (
@@ -58,6 +73,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FaceDetectFrameSize',
     ),
     8 =>
     array (
@@ -69,6 +85,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face1Position',
     ),
     10 =>
     array (
@@ -80,6 +97,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face2Position',
     ),
     12 =>
     array (
@@ -91,6 +109,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face3Position',
     ),
     14 =>
     array (
@@ -102,6 +121,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face4Position',
     ),
     16 =>
     array (
@@ -113,6 +133,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face5Position',
     ),
     18 =>
     array (
@@ -124,6 +145,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face6Position',
     ),
     20 =>
     array (
@@ -135,6 +157,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face7Position',
     ),
     22 =>
     array (
@@ -146,6 +169,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face8Position',
     ),
     24 =>
     array (
@@ -157,6 +181,7 @@ class FaceDetect1 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:Face9Position',
     ),
   ),
 );

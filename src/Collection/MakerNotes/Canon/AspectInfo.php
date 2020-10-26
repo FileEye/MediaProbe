@@ -30,6 +30,14 @@ class AspectInfo extends Collection {
     'CroppedImageTop' => 4,
     'CroppedImageWidth' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AspectRatio' => 0,
+    'Canon:CroppedImageHeight' => 2,
+    'Canon:CroppedImageLeft' => 3,
+    'Canon:CroppedImageTop' => 4,
+    'Canon:CroppedImageWidth' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -52,6 +60,7 @@ class AspectInfo extends Collection {
           8 => '4:5',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AspectRatio',
     ),
     1 =>
     array (
@@ -62,6 +71,7 @@ class AspectInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:CroppedImageWidth',
     ),
     2 =>
     array (
@@ -72,6 +82,7 @@ class AspectInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:CroppedImageHeight',
     ),
     3 =>
     array (
@@ -82,6 +93,7 @@ class AspectInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:CroppedImageLeft',
     ),
     4 =>
     array (
@@ -92,6 +104,7 @@ class AspectInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:CroppedImageTop',
     ),
   ),
 );

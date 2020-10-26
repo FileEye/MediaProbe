@@ -26,10 +26,15 @@ class CameraInfoUnknown extends Collection {
   array (
     'LensSerialNumber' => 363,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:LensSerialNumber' => 363,
+  ),
   'items' =>
   array (
     363 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCILensSerialNumber',
       'collection' => 'Tag',
       'name' => 'LensSerialNumber',
       'title' => 'Lens Serial Number',
@@ -38,6 +43,7 @@ class CameraInfoUnknown extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:LensSerialNumber',
     ),
   ),
 );

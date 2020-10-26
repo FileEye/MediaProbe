@@ -26,6 +26,10 @@ class SerialInfo extends Collection {
   array (
     'InternalSerialNumber' => 9,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:InternalSerialNumber' => 9,
+  ),
   'items' =>
   array (
     9 =>
@@ -37,6 +41,7 @@ class SerialInfo extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:InternalSerialNumber',
     ),
   ),
 );

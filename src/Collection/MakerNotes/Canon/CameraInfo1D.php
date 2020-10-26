@@ -35,6 +35,19 @@ class CameraInfo1D extends Collection {
     'SharpnessFrequency' => 71,
     'WhiteBalance' => 74,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ColorTemperature' => 78,
+    'Canon:ExposureTime' => 4,
+    'Canon:FocalLength' => 10,
+    'Canon:LensType' => 13,
+    'Canon:MaxFocalLength' => 16,
+    'Canon:MinFocalLength' => 14,
+    'Canon:PictureStyle' => 81,
+    'Canon:Sharpness' => 66,
+    'Canon:SharpnessFrequency' => 71,
+    'Canon:WhiteBalance' => 74,
+  ),
   'items' =>
   array (
     4 =>
@@ -46,6 +59,7 @@ class CameraInfo1D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     10 =>
     array (
@@ -56,9 +70,11 @@ class CameraInfo1D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     13 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -469,6 +485,7 @@ class CameraInfo1D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     14 =>
     array (
@@ -479,6 +496,7 @@ class CameraInfo1D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     16 =>
     array (
@@ -489,6 +507,7 @@ class CameraInfo1D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     65 =>
     array (
@@ -511,6 +530,7 @@ class CameraInfo1D extends Collection {
           5 => 'Highest',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessFrequency',
     ),
     66 =>
     array (
@@ -521,6 +541,7 @@ class CameraInfo1D extends Collection {
       array (
         0 => 6,
       ),
+      'exiftoolDOMNode' => 'Canon:Sharpness',
     ),
     68 =>
     array (
@@ -559,6 +580,7 @@ class CameraInfo1D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     71 =>
     array (
@@ -581,6 +603,7 @@ class CameraInfo1D extends Collection {
           5 => 'Highest',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SharpnessFrequency',
     ),
     72 =>
     array (
@@ -591,6 +614,7 @@ class CameraInfo1D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     74 =>
     array (
@@ -629,6 +653,7 @@ class CameraInfo1D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     75 =>
     array (
@@ -669,6 +694,7 @@ class CameraInfo1D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     78 =>
     array (
@@ -679,6 +705,7 @@ class CameraInfo1D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     81 =>
     array (
@@ -719,6 +746,7 @@ class CameraInfo1D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
   ),
 );

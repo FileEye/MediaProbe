@@ -63,7 +63,12 @@ class Ambience extends Collection {
           8 => 'Monochrome',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AmbienceSelection',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AmbienceSelection' => 1,
   ),
 );
 }

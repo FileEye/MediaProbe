@@ -31,6 +31,19 @@ class FilterInfo extends Collection {
     'ToyCameraFilter' => 769,
     'WatercolorFilter' => 1793,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:FisheyeFilter' => 1281,
+    'Canon:GrainyBWFilter' => 257,
+    'Canon:MiniatureFilter' => 1025,
+    'Canon:MiniatureFilterOrientation' => 1026,
+    'Canon:MiniatureFilterParameter' => 1028,
+    'Canon:MiniatureFilterPosition' => 1027,
+    'Canon:PaintingFilter' => 1537,
+    'Canon:SoftFocusFilter' => 513,
+    'Canon:ToyCameraFilter' => 769,
+    'Canon:WatercolorFilter' => 1793,
+  ),
   'items' =>
   array (
     257 =>
@@ -49,6 +62,7 @@ class FilterInfo extends Collection {
           -1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:GrainyBWFilter',
     ),
     513 =>
     array (
@@ -66,6 +80,7 @@ class FilterInfo extends Collection {
           -1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:SoftFocusFilter',
     ),
     769 =>
     array (
@@ -83,6 +98,7 @@ class FilterInfo extends Collection {
           -1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ToyCameraFilter',
     ),
     1025 =>
     array (
@@ -100,6 +116,7 @@ class FilterInfo extends Collection {
           -1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:MiniatureFilter',
     ),
     1026 =>
     array (
@@ -118,6 +135,7 @@ class FilterInfo extends Collection {
           1 => 'Vertical',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:MiniatureFilterOrientation',
     ),
     1027 =>
     array (
@@ -128,6 +146,7 @@ class FilterInfo extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:MiniatureFilterPosition',
     ),
     1028 =>
     array (
@@ -138,6 +157,7 @@ class FilterInfo extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:MiniatureFilterParameter',
     ),
     1281 =>
     array (
@@ -155,6 +175,7 @@ class FilterInfo extends Collection {
           -1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FisheyeFilter',
     ),
     1537 =>
     array (
@@ -172,6 +193,7 @@ class FilterInfo extends Collection {
           -1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PaintingFilter',
     ),
     1793 =>
     array (
@@ -189,6 +211,7 @@ class FilterInfo extends Collection {
           -1 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WatercolorFilter',
     ),
   ),
 );

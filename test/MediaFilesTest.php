@@ -104,7 +104,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     /**
      * @dataProvider mediaFileProvider
      */
-    public function testRewrite($mediaDumpFile)
+    public function __testRewrite($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
         if (isset($this->testDump['exiftool'])) {
@@ -128,6 +128,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
     protected function assertElement($expected, $element, $rewritten = false)
     {
+        if (in_array($element->getContextPath(), $this->testDump['skip']['mediaprobe'] ?? [])) {
+            return;
+        }
+
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
         $this->assertSame($expected['path'], $element->getContextPath());
         if (!$rewritten) {
@@ -187,7 +191,16 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
 }*/
-                    if ($element->getFormat() !== ItemFormat::ASCII) {
+                    if ($element->getFormat() === ItemFormat::ASCII ||
+                      stripos($element->getContextPath(), 'tag:timestamp') !== false ||
+                      stripos($element->getContextPath(), 'tag:LensSerialNumber') !== false ||
+                      stripos($element->getContextPath(), 'tag:ImageUniqueID') !== false
+                    ) {
+                        $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
+                    } else {
+/*if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
+    dump([$valx, $vala, $element->getValue(), $element->getValue(['format' => 'xx'])])  ;
+}*/
                         $sep = strpos($valx, ':') !== false ? ':' : ' ';
                         $valx_a = explode($sep, $valx);
                         $valx_aa = [];
@@ -199,9 +212,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                         foreach ($vala_a as $v) {
                             $vala_aa[] = (float) $v;
                         }
+/*if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {
+    dump([$valx_aa, $vala_aa]);
+}*/
                         $this->assertEqualsWithDelta($valx_aa, $vala_aa, 0.001, 'Exiftool raw: ' . $element->getContextPath());
-                    } else {
-                        $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     }
                 }
             }

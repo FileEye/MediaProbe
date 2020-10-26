@@ -58,6 +58,7 @@ class AFMicroAdj extends Collection {
           2 => 'Adjust by lens',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AFMicroAdjMode',
     ),
     2 =>
     array (
@@ -68,7 +69,13 @@ class AFMicroAdj extends Collection {
       array (
         0 => 10,
       ),
+      'exiftoolDOMNode' => 'Canon:AFMicroAdjValue',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AFMicroAdjMode' => 1,
+    'Canon:AFMicroAdjValue' => 2,
   ),
 );
 }

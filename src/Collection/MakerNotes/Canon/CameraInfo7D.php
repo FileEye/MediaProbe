@@ -48,6 +48,32 @@ class CameraInfo7D extends Collection {
     'MinFocalLength' => 276,
     'WhiteBalance' => 119,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraOrientation' => 53,
+    'Canon:CameraPictureStyle' => 175,
+    'Canon:CameraTemperature' => 25,
+    'Canon:ColorTemperature' => 123,
+    'Canon:DirectoryIndex' => 503,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 491,
+    'Canon:FirmwareVersion' => 428,
+    'Canon:FirmwareVersionLookAhead' => 0,
+    'Canon:FlashMeteringMode' => 21,
+    'Canon:FocalLength' => 30,
+    'Canon:FocusDistanceLower' => 86,
+    'Canon:FocusDistanceUpper' => 84,
+    'Canon:HighISONoiseReduction' => 201,
+    'Canon:HighlightTonePriority' => 7,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 274,
+    'Canon:MaxFocalLength' => 278,
+    'Canon:MeasuredEV' => 9,
+    'Canon:MeasuredEV2' => 8,
+    'Canon:MinFocalLength' => 276,
+    'Canon:WhiteBalance' => 119,
+  ),
   'items' =>
   array (
     0 =>
@@ -60,6 +86,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersionLookAhead',
     ),
     3 =>
     array (
@@ -70,6 +97,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -80,6 +108,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -90,6 +119,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     7 =>
     array (
@@ -108,6 +138,7 @@ class CameraInfo7D extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighlightTonePriority',
     ),
     8 =>
     array (
@@ -118,6 +149,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:MeasuredEV2',
     ),
     9 =>
     array (
@@ -128,6 +160,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:MeasuredEV',
     ),
     21 =>
     array (
@@ -149,9 +182,11 @@ class CameraInfo7D extends Collection {
           6 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FlashMeteringMode',
     ),
     25 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -159,6 +194,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     30 =>
     array (
@@ -169,6 +205,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     53 =>
     array (
@@ -188,9 +225,11 @@ class CameraInfo7D extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     84 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -198,9 +237,11 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     86 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -208,6 +249,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     119 =>
     array (
@@ -246,6 +288,7 @@ class CameraInfo7D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     123 =>
     array (
@@ -256,6 +299,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     175 =>
     array (
@@ -281,6 +325,7 @@ class CameraInfo7D extends Collection {
           134 => 'Monochrome',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraPictureStyle',
     ),
     201 =>
     array (
@@ -301,9 +346,11 @@ class CameraInfo7D extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
     ),
     274 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -714,6 +761,7 @@ class CameraInfo7D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     276 =>
     array (
@@ -724,6 +772,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     278 =>
     array (
@@ -734,6 +783,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     428 =>
     array (
@@ -745,6 +795,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     491 =>
     array (
@@ -755,6 +806,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     503 =>
     array (
@@ -765,6 +817,7 @@ class CameraInfo7D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
   ),
 );

@@ -56,6 +56,7 @@ class LightingOpt extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PeripheralIlluminationCorr',
     ),
     2 =>
     array (
@@ -76,6 +77,7 @@ class LightingOpt extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:AutoLightingOptimizer',
     ),
     3 =>
     array (
@@ -94,6 +96,7 @@ class LightingOpt extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighlightTonePriority',
     ),
     4 =>
     array (
@@ -113,6 +116,7 @@ class LightingOpt extends Collection {
           2 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LongExposureNoiseReduction',
     ),
     5 =>
     array (
@@ -133,7 +137,16 @@ class LightingOpt extends Collection {
           3 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
     ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AutoLightingOptimizer' => 2,
+    'Canon:HighISONoiseReduction' => 5,
+    'Canon:HighlightTonePriority' => 3,
+    'Canon:LongExposureNoiseReduction' => 4,
+    'Canon:PeripheralIlluminationCorr' => 1,
   ),
 );
 }

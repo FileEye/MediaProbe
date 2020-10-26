@@ -82,6 +82,66 @@ class ColorData2 extends Collection {
     'WB_RGGBLevelsUnknown8' => 104,
     'WB_RGGBLevelsUnknown9' => 109,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ColorTempAsShot' => 38,
+    'Canon:ColorTempAuto' => 28,
+    'Canon:ColorTempCloudy' => 53,
+    'Canon:ColorTempDaylight' => 43,
+    'Canon:ColorTempFlash' => 73,
+    'Canon:ColorTempFluorescent' => 63,
+    'Canon:ColorTempKelvin' => 68,
+    'Canon:ColorTempPC1' => 148,
+    'Canon:ColorTempPC2' => 153,
+    'Canon:ColorTempPC3' => 158,
+    'Canon:ColorTempShade' => 48,
+    'Canon:ColorTempTungsten' => 58,
+    'Canon:ColorTempUnknown' => 33,
+    'Canon:ColorTempUnknown10' => 118,
+    'Canon:ColorTempUnknown11' => 123,
+    'Canon:ColorTempUnknown12' => 128,
+    'Canon:ColorTempUnknown13' => 133,
+    'Canon:ColorTempUnknown14' => 138,
+    'Canon:ColorTempUnknown15' => 143,
+    'Canon:ColorTempUnknown16' => 163,
+    'Canon:ColorTempUnknown2' => 78,
+    'Canon:ColorTempUnknown3' => 83,
+    'Canon:ColorTempUnknown4' => 88,
+    'Canon:ColorTempUnknown5' => 93,
+    'Canon:ColorTempUnknown6' => 98,
+    'Canon:ColorTempUnknown7' => 103,
+    'Canon:ColorTempUnknown8' => 108,
+    'Canon:ColorTempUnknown9' => 113,
+    'Canon:RawMeasuredRGGB' => 618,
+    'Canon:WB_RGGBLevelsAsShot' => 34,
+    'Canon:WB_RGGBLevelsAuto' => 24,
+    'Canon:WB_RGGBLevelsCloudy' => 49,
+    'Canon:WB_RGGBLevelsDaylight' => 39,
+    'Canon:WB_RGGBLevelsFlash' => 69,
+    'Canon:WB_RGGBLevelsFluorescent' => 59,
+    'Canon:WB_RGGBLevelsKelvin' => 64,
+    'Canon:WB_RGGBLevelsPC1' => 144,
+    'Canon:WB_RGGBLevelsPC2' => 149,
+    'Canon:WB_RGGBLevelsPC3' => 154,
+    'Canon:WB_RGGBLevelsShade' => 44,
+    'Canon:WB_RGGBLevelsTungsten' => 54,
+    'Canon:WB_RGGBLevelsUnknown' => 29,
+    'Canon:WB_RGGBLevelsUnknown10' => 114,
+    'Canon:WB_RGGBLevelsUnknown11' => 119,
+    'Canon:WB_RGGBLevelsUnknown12' => 124,
+    'Canon:WB_RGGBLevelsUnknown13' => 129,
+    'Canon:WB_RGGBLevelsUnknown14' => 134,
+    'Canon:WB_RGGBLevelsUnknown15' => 139,
+    'Canon:WB_RGGBLevelsUnknown16' => 159,
+    'Canon:WB_RGGBLevelsUnknown2' => 74,
+    'Canon:WB_RGGBLevelsUnknown3' => 79,
+    'Canon:WB_RGGBLevelsUnknown4' => 84,
+    'Canon:WB_RGGBLevelsUnknown5' => 89,
+    'Canon:WB_RGGBLevelsUnknown6' => 94,
+    'Canon:WB_RGGBLevelsUnknown7' => 99,
+    'Canon:WB_RGGBLevelsUnknown8' => 104,
+    'Canon:WB_RGGBLevelsUnknown9' => 109,
+  ),
   'items' =>
   array (
     24 =>
@@ -94,6 +154,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsAuto',
     ),
     28 =>
     array (
@@ -104,6 +165,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempAuto',
     ),
     29 =>
     array (
@@ -115,6 +177,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown',
     ),
     33 =>
     array (
@@ -125,6 +188,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown',
     ),
     34 =>
     array (
@@ -136,6 +200,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsAsShot',
     ),
     38 =>
     array (
@@ -146,6 +211,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempAsShot',
     ),
     39 =>
     array (
@@ -157,6 +223,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsDaylight',
     ),
     43 =>
     array (
@@ -167,6 +234,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempDaylight',
     ),
     44 =>
     array (
@@ -178,6 +246,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsShade',
     ),
     48 =>
     array (
@@ -188,6 +257,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempShade',
     ),
     49 =>
     array (
@@ -199,6 +269,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsCloudy',
     ),
     53 =>
     array (
@@ -209,6 +280,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempCloudy',
     ),
     54 =>
     array (
@@ -220,6 +292,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsTungsten',
     ),
     58 =>
     array (
@@ -230,6 +303,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempTungsten',
     ),
     59 =>
     array (
@@ -241,6 +315,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsFluorescent',
     ),
     63 =>
     array (
@@ -251,6 +326,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempFluorescent',
     ),
     64 =>
     array (
@@ -262,6 +338,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsKelvin',
     ),
     68 =>
     array (
@@ -272,6 +349,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempKelvin',
     ),
     69 =>
     array (
@@ -283,6 +361,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsFlash',
     ),
     73 =>
     array (
@@ -293,6 +372,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempFlash',
     ),
     74 =>
     array (
@@ -304,6 +384,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown2',
     ),
     78 =>
     array (
@@ -314,6 +395,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown2',
     ),
     79 =>
     array (
@@ -325,6 +407,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown3',
     ),
     83 =>
     array (
@@ -335,6 +418,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown3',
     ),
     84 =>
     array (
@@ -346,6 +430,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown4',
     ),
     88 =>
     array (
@@ -356,6 +441,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown4',
     ),
     89 =>
     array (
@@ -367,6 +453,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown5',
     ),
     93 =>
     array (
@@ -377,6 +464,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown5',
     ),
     94 =>
     array (
@@ -388,6 +476,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown6',
     ),
     98 =>
     array (
@@ -398,6 +487,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown6',
     ),
     99 =>
     array (
@@ -409,6 +499,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown7',
     ),
     103 =>
     array (
@@ -419,6 +510,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown7',
     ),
     104 =>
     array (
@@ -430,6 +522,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown8',
     ),
     108 =>
     array (
@@ -440,6 +533,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown8',
     ),
     109 =>
     array (
@@ -451,6 +545,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown9',
     ),
     113 =>
     array (
@@ -461,6 +556,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown9',
     ),
     114 =>
     array (
@@ -472,6 +568,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown10',
     ),
     118 =>
     array (
@@ -482,6 +579,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown10',
     ),
     119 =>
     array (
@@ -493,6 +591,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown11',
     ),
     123 =>
     array (
@@ -503,6 +602,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown11',
     ),
     124 =>
     array (
@@ -514,6 +614,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown12',
     ),
     128 =>
     array (
@@ -524,6 +625,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown12',
     ),
     129 =>
     array (
@@ -535,6 +637,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown13',
     ),
     133 =>
     array (
@@ -545,6 +648,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown13',
     ),
     134 =>
     array (
@@ -556,6 +660,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown14',
     ),
     138 =>
     array (
@@ -566,6 +671,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown14',
     ),
     139 =>
     array (
@@ -577,6 +683,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown15',
     ),
     143 =>
     array (
@@ -587,6 +694,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown15',
     ),
     144 =>
     array (
@@ -598,6 +706,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsPC1',
     ),
     148 =>
     array (
@@ -608,6 +717,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempPC1',
     ),
     149 =>
     array (
@@ -619,6 +729,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsPC2',
     ),
     153 =>
     array (
@@ -629,6 +740,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempPC2',
     ),
     154 =>
     array (
@@ -640,6 +752,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsPC3',
     ),
     158 =>
     array (
@@ -650,6 +763,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempPC3',
     ),
     159 =>
     array (
@@ -661,6 +775,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsUnknown16',
     ),
     163 =>
     array (
@@ -671,6 +786,7 @@ class ColorData2 extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTempUnknown16',
     ),
     618 =>
     array (
@@ -682,6 +798,7 @@ class ColorData2 extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:RawMeasuredRGGB',
     ),
   ),
 );

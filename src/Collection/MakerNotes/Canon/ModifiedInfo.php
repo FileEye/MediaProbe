@@ -36,6 +36,20 @@ class ModifiedInfo extends Collection {
     'ModifiedWhiteBalanceBlue' => 7,
     'ModifiedWhiteBalanceRed' => 6,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ModifiedColorTemp' => 9,
+    'Canon:ModifiedDigitalGain' => 11,
+    'Canon:ModifiedPictureStyle' => 10,
+    'Canon:ModifiedSensorBlueLevel' => 5,
+    'Canon:ModifiedSensorRedLevel' => 4,
+    'Canon:ModifiedSharpness' => 2,
+    'Canon:ModifiedSharpnessFreq' => 3,
+    'Canon:ModifiedToneCurve' => 1,
+    'Canon:ModifiedWhiteBalance' => 8,
+    'Canon:ModifiedWhiteBalanceBlue' => 7,
+    'Canon:ModifiedWhiteBalanceRed' => 6,
+  ),
   'items' =>
   array (
     1 =>
@@ -56,6 +70,7 @@ class ModifiedInfo extends Collection {
           2 => 'Custom',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedToneCurve',
     ),
     2 =>
     array (
@@ -66,6 +81,7 @@ class ModifiedInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedSharpness',
     ),
     3 =>
     array (
@@ -88,6 +104,7 @@ class ModifiedInfo extends Collection {
           5 => 'Highest',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedSharpnessFreq',
     ),
     4 =>
     array (
@@ -98,6 +115,7 @@ class ModifiedInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedSensorRedLevel',
     ),
     5 =>
     array (
@@ -108,6 +126,7 @@ class ModifiedInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedSensorBlueLevel',
     ),
     6 =>
     array (
@@ -118,6 +137,7 @@ class ModifiedInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedWhiteBalanceRed',
     ),
     7 =>
     array (
@@ -128,6 +148,7 @@ class ModifiedInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedWhiteBalanceBlue',
     ),
     8 =>
     array (
@@ -166,6 +187,7 @@ class ModifiedInfo extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedWhiteBalance',
     ),
     9 =>
     array (
@@ -176,6 +198,7 @@ class ModifiedInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedColorTemp',
     ),
     10 =>
     array (
@@ -216,6 +239,7 @@ class ModifiedInfo extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedPictureStyle',
     ),
     11 =>
     array (
@@ -226,6 +250,7 @@ class ModifiedInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:ModifiedDigitalGain',
     ),
   ),
 );

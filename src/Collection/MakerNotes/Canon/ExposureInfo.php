@@ -28,6 +28,12 @@ class ExposureInfo extends Collection {
     'FNumber' => 0,
     'ISO' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ExposureTime' => 1,
+    'Canon:FNumber' => 0,
+    'Canon:ISO' => 2,
+  ),
   'items' =>
   array (
     0 =>
@@ -39,6 +45,7 @@ class ExposureInfo extends Collection {
       array (
         0 => 1001,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     1 =>
     array (
@@ -49,6 +56,7 @@ class ExposureInfo extends Collection {
       array (
         0 => 1001,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     2 =>
     array (
@@ -59,6 +67,7 @@ class ExposureInfo extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
   ),
 );

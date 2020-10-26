@@ -23,6 +23,10 @@ class CNTH extends Collection {
   array (
     'ThumbnailImage' => 'CNDA',
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:ThumbnailImage' => 'CNDA',
+  ),
   'items' =>
   array (
     'CNDA' =>
@@ -34,6 +38,7 @@ class CNTH extends Collection {
       array (
         0 => 7,
       ),
+      'exiftoolDOMNode' => 'Canon:ThumbnailImage',
     ),
   ),
 );

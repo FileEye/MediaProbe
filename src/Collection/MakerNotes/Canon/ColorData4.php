@@ -32,6 +32,16 @@ class ColorData4 extends Collection {
     'RawMeasuredRGGB' => 640,
     'SpecularWhiteLevel' => 724,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AverageBlackLevel' => 231,
+    'Canon:ColorDataVersion' => 0,
+    'Canon:LinearityUpperMargin' => 725,
+    'Canon:NormalWhiteLevel' => 723,
+    'Canon:PerChannelBlackLevel' => 715,
+    'Canon:RawMeasuredRGGB' => 640,
+    'Canon:SpecularWhiteLevel' => 724,
+  ),
   'items' =>
   array (
     0 =>
@@ -56,6 +66,7 @@ class ColorData4 extends Collection {
           9 => '9 (60D/1100D)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:ColorDataVersion',
     ),
     231 =>
     array (
@@ -67,9 +78,11 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:AverageBlackLevel',
     ),
     640 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonRawMeasuredRGGB',
       'collection' => 'Tag',
       'name' => 'RawMeasuredRGGB',
       'title' => 'Raw Measured RGGB',
@@ -78,6 +91,7 @@ class ColorData4 extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:RawMeasuredRGGB',
     ),
     692 =>
     array (
@@ -89,6 +103,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
     ),
     696 =>
     array (
@@ -99,6 +114,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:NormalWhiteLevel',
     ),
     697 =>
     array (
@@ -109,6 +125,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:SpecularWhiteLevel',
     ),
     698 =>
     array (
@@ -119,6 +136,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:LinearityUpperMargin',
     ),
     715 =>
     array (
@@ -130,6 +148,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
     ),
     719 =>
     array (
@@ -140,6 +159,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:NormalWhiteLevel',
     ),
     720 =>
     array (
@@ -150,6 +170,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:SpecularWhiteLevel',
     ),
     721 =>
     array (
@@ -160,6 +181,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:LinearityUpperMargin',
     ),
     723 =>
     array (
@@ -170,6 +192,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:NormalWhiteLevel',
     ),
     724 =>
     array (
@@ -180,6 +203,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:SpecularWhiteLevel',
     ),
     725 =>
     array (
@@ -190,6 +214,7 @@ class ColorData4 extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:LinearityUpperMargin',
     ),
   ),
 );

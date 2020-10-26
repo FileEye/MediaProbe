@@ -44,6 +44,28 @@ class CameraInfo550D extends Collection {
     'PictureStyle' => 176,
     'WhiteBalance' => 120,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:CameraOrientation' => 53,
+    'Canon:CameraTemperature' => 25,
+    'Canon:ColorTemperature' => 124,
+    'Canon:DirectoryIndex' => 496,
+    'Canon:ExposureTime' => 4,
+    'Canon:FNumber' => 3,
+    'Canon:FileIndex' => 484,
+    'Canon:FirmwareVersion' => 420,
+    'Canon:FlashMeteringMode' => 21,
+    'Canon:FocalLength' => 30,
+    'Canon:FocusDistanceLower' => 86,
+    'Canon:FocusDistanceUpper' => 84,
+    'Canon:HighlightTonePriority' => 7,
+    'Canon:ISO' => 6,
+    'Canon:LensType' => 255,
+    'Canon:MaxFocalLength' => 259,
+    'Canon:MinFocalLength' => 257,
+    'Canon:PictureStyle' => 176,
+    'Canon:WhiteBalance' => 120,
+  ),
   'items' =>
   array (
     3 =>
@@ -55,6 +77,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     4 =>
     array (
@@ -65,6 +88,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     6 =>
     array (
@@ -75,6 +99,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:ISO',
     ),
     7 =>
     array (
@@ -93,6 +118,7 @@ class CameraInfo550D extends Collection {
           1 => 'On',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:HighlightTonePriority',
     ),
     21 =>
     array (
@@ -114,9 +140,11 @@ class CameraInfo550D extends Collection {
           6 => 'Off',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:FlashMeteringMode',
     ),
     25 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -124,6 +152,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1,
       ),
+      'exiftoolDOMNode' => 'Canon:CameraTemperature',
     ),
     30 =>
     array (
@@ -134,6 +163,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
     53 =>
     array (
@@ -153,9 +183,11 @@ class CameraInfo550D extends Collection {
           2 => 'Rotate 270 CW',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:CameraOrientation',
     ),
     84 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -163,9 +195,11 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceUpper',
     ),
     86 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -173,6 +207,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
     ),
     120 =>
     array (
@@ -211,6 +246,7 @@ class CameraInfo550D extends Collection {
           23 => 'Auto (ambience priority)',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:WhiteBalance',
     ),
     124 =>
     array (
@@ -221,6 +257,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ColorTemperature',
     ),
     176 =>
     array (
@@ -261,9 +298,11 @@ class CameraInfo550D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:PictureStyle',
     ),
     255 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -674,6 +713,7 @@ class CameraInfo550D extends Collection {
           65535 => 'n/a',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:LensType',
     ),
     257 =>
     array (
@@ -684,6 +724,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MinFocalLength',
     ),
     259 =>
     array (
@@ -694,6 +735,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 1000,
       ),
+      'exiftoolDOMNode' => 'Canon:MaxFocalLength',
     ),
     420 =>
     array (
@@ -705,6 +747,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 2,
       ),
+      'exiftoolDOMNode' => 'Canon:FirmwareVersion',
     ),
     484 =>
     array (
@@ -715,6 +758,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:FileIndex',
     ),
     496 =>
     array (
@@ -725,6 +769,7 @@ class CameraInfo550D extends Collection {
       array (
         0 => 4,
       ),
+      'exiftoolDOMNode' => 'Canon:DirectoryIndex',
     ),
   ),
 );

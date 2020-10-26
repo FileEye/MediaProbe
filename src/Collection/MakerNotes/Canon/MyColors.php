@@ -26,6 +26,10 @@ class MyColors extends Collection {
   array (
     'MyColorMode' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:MyColorMode' => 2,
+  ),
   'items' =>
   array (
     2 =>
@@ -57,6 +61,7 @@ class MyColors extends Collection {
           15 => 'B&W',
         ),
       ),
+      'exiftoolDOMNode' => 'Canon:MyColorMode',
     ),
   ),
 );

@@ -37,6 +37,21 @@ class AFInfo extends Collection {
     'PrimaryAFPoint' => 12,
     'ValidAFPoints' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AFAreaHeight' => 7,
+    'Canon:AFAreaWidth' => 6,
+    'Canon:AFAreaXPositions' => 8,
+    'Canon:AFAreaYPositions' => 9,
+    'Canon:AFImageHeight' => 5,
+    'Canon:AFImageWidth' => 4,
+    'Canon:AFPointsInFocus' => 10,
+    'Canon:CanonImageHeight' => 3,
+    'Canon:CanonImageWidth' => 2,
+    'Canon:NumAFPoints' => 0,
+    'Canon:PrimaryAFPoint' => 12,
+    'Canon:ValidAFPoints' => 1,
+  ),
   'items' =>
   array (
     0 =>
@@ -48,6 +63,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:NumAFPoints',
     ),
     1 =>
     array (
@@ -58,6 +74,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:ValidAFPoints',
     ),
     2 =>
     array (
@@ -68,6 +85,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:CanonImageWidth',
     ),
     3 =>
     array (
@@ -78,6 +96,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:CanonImageHeight',
     ),
     4 =>
     array (
@@ -88,6 +107,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:AFImageWidth',
     ),
     5 =>
     array (
@@ -98,6 +118,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:AFImageHeight',
     ),
     6 =>
     array (
@@ -108,6 +129,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:AFAreaWidth',
     ),
     7 =>
     array (
@@ -118,6 +140,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:AFAreaHeight',
     ),
     8 =>
     array (
@@ -128,6 +151,7 @@ class AFInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:AFAreaXPositions',
     ),
     9 =>
     array (
@@ -138,6 +162,7 @@ class AFInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:AFAreaYPositions',
     ),
     10 =>
     array (
@@ -149,6 +174,7 @@ class AFInfo extends Collection {
       array (
         0 => 8,
       ),
+      'exiftoolDOMNode' => 'Canon:AFPointsInFocus',
     ),
     11 =>
     array (
@@ -159,6 +185,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:PrimaryAFPoint',
     ),
     12 =>
     array (
@@ -169,6 +196,7 @@ class AFInfo extends Collection {
       array (
         0 => 3,
       ),
+      'exiftoolDOMNode' => 'Canon:PrimaryAFPoint',
     ),
   ),
 );
