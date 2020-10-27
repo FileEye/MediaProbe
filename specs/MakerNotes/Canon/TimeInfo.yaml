@@ -1,8 +1,8 @@
 collection: MakerNotes\Canon\TimeInfo
 name: CanonTimeInfo
 title: 'Canon TimeInfo'
-class: FileEye\MediaProbe\Block\Index
-DOMNode: index
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
 hasIndexSize: true
 format: Long
 defaultItemCollection: Tag
@@ -11,10 +11,7 @@ compiler:
         g1: Canon
         xpath: '//table[@name=''Canon::TimeInfo'']/tag'
 items:
-    -
-        collection: RawData
-        name: indexSize
-    -
+    1:
         exiftool:
             -
                 name: TimeZone
@@ -22,7 +19,7 @@ items:
                 writable: true
                 DOMNode: 'Canon:TimeZone'
                 desc: 'Time Zone'
-    -
+    2:
         exiftool:
             -
                 name: TimeZoneCity
@@ -66,7 +63,7 @@ items:
                     32: Honolulu
                     33: Samoa
                     32766: '(not set)'
-    -
+    3:
         exiftool:
             -
                 name: DaylightSavings

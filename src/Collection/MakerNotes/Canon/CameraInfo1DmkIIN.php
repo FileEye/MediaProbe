@@ -58,6 +58,7 @@ class CameraInfo1DmkIIN extends Collection {
   array (
     4 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -673,6 +674,7 @@ class CameraInfo1DmkIIN extends Collection {
     ),
     121 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',

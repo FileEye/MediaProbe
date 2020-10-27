@@ -85,6 +85,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     3 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -96,6 +97,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     4 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -107,6 +109,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     6 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',
@@ -118,7 +121,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     27 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCICameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -161,7 +164,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     140 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -173,7 +176,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     142 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -713,6 +716,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     356 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCILensSerialNumber',
       'collection' => 'Tag',
       'name' => 'LensSerialNumber',
       'title' => 'Lens Serial Number',
@@ -737,6 +741,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     652 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFileIndex',
       'collection' => 'Tag',
       'name' => 'FileIndex',
       'title' => 'File Index',
@@ -759,6 +764,7 @@ class CameraInfo5DmkIII extends Collection {
     ),
     664 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIDirectoryIndex',
       'collection' => 'Tag',
       'name' => 'DirectoryIndex',
       'title' => 'Directory Index',

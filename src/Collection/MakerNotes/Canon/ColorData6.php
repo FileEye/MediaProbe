@@ -751,6 +751,7 @@ class ColorData6 extends Collection {
     ),
     404 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonRawMeasuredRGGB',
       'collection' => 'Tag',
       'name' => 'RawMeasuredRGGB',
       'title' => 'Raw Measured RGGB',

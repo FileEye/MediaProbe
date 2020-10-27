@@ -51,7 +51,7 @@ script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
   # media file dumps.
-  #- php bin/fileeye-mediaprobe compile
+  - php bin/fileeye-mediaprobe compile
   #- php bin/fileeye-mediaprobe dump test/image_files
 
   - if [ "$TRAVIS_PHP_VERSION" == "7.3" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi

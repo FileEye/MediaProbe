@@ -1,8 +1,8 @@
 collection: MakerNotes\Canon\ColorBalance
 name: CanonColorBalance
 title: 'Canon Color Balance'
-class: FileEye\MediaProbe\Block\Index
-DOMNode: index
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
 hasIndexSize: true
 format: Short
 defaultItemCollection: Tag
@@ -11,10 +11,6 @@ compiler:
         g1: Canon
         xpath: '//table[@name=''Canon::ColorBalance'']/tag'
 items:
-    0:
-        collection: RawData
-        name: indexSize
-        format: SignedShort
     1:
         exiftool:
             -

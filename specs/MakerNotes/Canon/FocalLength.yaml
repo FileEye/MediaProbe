@@ -22,6 +22,7 @@ items:
                     1: Fixed
                     2: Zoom
     -
+        entryClass: FileEye\MediaProbe\Entry\CanonFLFocalLength
         exiftool:
             -
                 name: FocalLength
@@ -30,6 +31,7 @@ items:
                 DOMNode: 'Canon:FocalLength'
                 desc: 'Focal Length'
     -
+        entryClass: FileEye\MediaProbe\Entry\CanonFocalPlaneSize
         exiftool:
             -
                 name: FocalPlaneXSize
@@ -44,6 +46,7 @@ items:
                 DOMNode: 'Canon:FocalPlaneXUnknown'
                 desc: 'Focal Plane X Unknown'
     -
+        entryClass: FileEye\MediaProbe\Entry\CanonFocalPlaneSize
         exiftool:
             -
                 name: FocalPlaneYSize

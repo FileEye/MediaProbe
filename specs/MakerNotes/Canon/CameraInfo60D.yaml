@@ -11,6 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfo60D'']/tag'
 items:
     3:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFNumber
         exiftool:
             -
                 name: FNumber
@@ -20,6 +21,7 @@ items:
                 DOMNode: 'Canon:FNumber'
                 desc: 'F Number'
     4:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -29,6 +31,7 @@ items:
                 DOMNode: 'Canon:ExposureTime'
                 desc: 'Exposure Time'
     6:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
         exiftool:
             -
                 name: ISO
@@ -38,6 +41,7 @@ items:
                 DOMNode: 'Canon:ISO'
                 desc: ISO
     25:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -66,6 +70,7 @@ items:
                     - 'Rotate 90 CW'
                     - 'Rotate 270 CW'
     85:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFocusDistance
         exiftool:
             -
                 name: FocusDistanceUpper
@@ -74,6 +79,7 @@ items:
                 DOMNode: 'Canon:FocusDistanceUpper'
                 desc: 'Focus Distance Upper'
     87:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFocusDistance
         exiftool:
             -
                 name: FocusDistanceLower
@@ -90,6 +96,7 @@ items:
                 DOMNode: 'Canon:ColorTemperature'
                 desc: 'Color Temperature'
     232:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraInfoLensType
         exiftool:
             -
                 name: LensType
@@ -521,6 +528,7 @@ items:
                 DOMNode: 'Canon:FirmwareVersion'
                 desc: 'Firmware Version'
     473:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFileIndex
         exiftool:
             -
                 name: FileIndex
@@ -530,6 +538,7 @@ items:
                 DOMNode: 'Canon:FileIndex'
                 desc: 'File Index'
     485:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIDirectoryIndex
         exiftool:
             -
                 name: DirectoryIndex

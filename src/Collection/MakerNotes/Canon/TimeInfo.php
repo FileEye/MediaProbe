@@ -29,6 +29,12 @@ class TimeInfo extends Collection {
     'TimeZone' => 1,
     'TimeZoneCity' => 2,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:DaylightSavings' => 3,
+    'Canon:TimeZone' => 1,
+    'Canon:TimeZoneCity' => 2,
+  ),
   'items' =>
   array (
     1 =>
@@ -113,12 +119,6 @@ class TimeInfo extends Collection {
       ),
       'exiftoolDOMNode' => 'Canon:DaylightSavings',
     ),
-  ),
-  'itemsByExiftoolDOMNode' =>
-  array (
-    'Canon:DaylightSavings' => 3,
-    'Canon:TimeZone' => 1,
-    'Canon:TimeZoneCity' => 2,
   ),
 );
 }

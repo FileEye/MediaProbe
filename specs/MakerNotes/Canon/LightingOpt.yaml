@@ -1,8 +1,8 @@
 collection: MakerNotes\Canon\LightingOpt
 name: CanonLightingOpt
 title: 'Canon LightingOpt'
-class: FileEye\MediaProbe\Block\Index
-DOMNode: index
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
 hasIndexSize: true
 format: Long
 defaultItemCollection: Tag
@@ -11,10 +11,7 @@ compiler:
         g1: Canon
         xpath: '//table[@name=''Canon::LightingOpt'']/tag'
 items:
-    -
-        collection: RawData
-        name: indexSize
-    -
+    1:
         exiftool:
             -
                 name: PeripheralIlluminationCorr
@@ -25,7 +22,7 @@ items:
                 values:
                     - 'Off'
                     - 'On'
-    -
+    2:
         exiftool:
             -
                 name: AutoLightingOptimizer
@@ -38,7 +35,7 @@ items:
                     - Low
                     - Strong
                     - 'Off'
-    -
+    3:
         exiftool:
             -
                 name: HighlightTonePriority
@@ -49,7 +46,7 @@ items:
                 values:
                     - 'Off'
                     - 'On'
-    -
+    4:
         exiftool:
             -
                 name: LongExposureNoiseReduction
@@ -61,7 +58,7 @@ items:
                     - 'Off'
                     - Auto
                     - 'On'
-    -
+    5:
         exiftool:
             -
                 name: HighISONoiseReduction
