@@ -1,8 +1,8 @@
 collection: MakerNotes\Canon\FileInfo
 name: CanonFileInfo
 title: 'File Information'
-class: FileEye\MediaProbe\Block\Index
-DOMNode: index
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
 hasIndexSize: true
 format: Short
 defaultItemCollection: Tag
@@ -11,11 +11,8 @@ compiler:
         g1: Canon
         xpath: '//table[@name=''Canon::FileInfo'']/tag'
 items:
-    0:
-        collection: RawData
-        name: indexSize
-        format: SignedShort
     1:
+        entryClass: FileEye\MediaProbe\Entry\CanonFileNumber
         exiftool:
             -
                 name: FileNumber
@@ -41,12 +38,6 @@ items:
                 writable: true
                 DOMNode: 'Canon:ShutterCount'
                 desc: 'Shutter Count'
-    2:
-        collection: RawData
-        name: 2
-        title: '0x0002'
-        format: SignedShort
-        skip: true
     3:
         exiftool:
             -
@@ -212,6 +203,7 @@ items:
                     - 'Off'
                     - 'On'
     20:
+        entryClass: FileEye\MediaProbe\Entry\CanonFocusDistance
         exiftool:
             -
                 name: FocusDistanceUpper
@@ -220,6 +212,7 @@ items:
                 DOMNode: 'Canon:FocusDistanceUpper'
                 desc: 'Focus Distance Upper'
     21:
+        entryClass: FileEye\MediaProbe\Entry\CanonFocusDistance
         exiftool:
             -
                 name: FocusDistanceLower

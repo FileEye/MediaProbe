@@ -1,8 +1,8 @@
 collection: MakerNotes\Canon\ShotInfo
 name: CanonShotInfo
 title: 'Shot Information'
-class: FileEye\MediaProbe\Block\Index
-DOMNode: index
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
 hasIndexSize: true
 format: Short
 defaultItemCollection: Tag
@@ -11,11 +11,8 @@ compiler:
         g1: Canon
         xpath: '//table[@name=''Canon::ShotInfo'']/tag'
 items:
-    0:
-        collection: RawData
-        name: indexSize
-        format: SignedShort
     1:
+        entryClass: FileEye\MediaProbe\Entry\CanonAutoIso
         exiftool:
             -
                 name: AutoISO
@@ -24,6 +21,7 @@ items:
                 DOMNode: 'Canon:AutoISO'
                 desc: 'Auto ISO'
     2:
+        entryClass: FileEye\MediaProbe\Entry\CanonBaseIso
         exiftool:
             -
                 name: BaseISO
@@ -32,6 +30,7 @@ items:
                 DOMNode: 'Canon:BaseISO'
                 desc: 'Base ISO'
     3:
+        entryClass: FileEye\MediaProbe\Entry\CanonMeasuredEV
         exiftool:
             -
                 name: MeasuredEV
@@ -40,6 +39,7 @@ items:
                 DOMNode: 'Canon:MeasuredEV'
                 desc: 'Measured EV'
     4:
+        entryClass: FileEye\MediaProbe\Entry\CanonApertureValue
         exiftool:
             -
                 name: TargetAperture
@@ -48,6 +48,7 @@ items:
                 DOMNode: 'Canon:TargetAperture'
                 desc: 'Target Aperture'
     5:
+        entryClass: FileEye\MediaProbe\Entry\CanonTargetExposureTime
         exiftool:
             -
                 name: TargetExposureTime
@@ -56,6 +57,7 @@ items:
                 DOMNode: 'Canon:TargetExposureTime'
                 desc: 'Target Exposure Time'
     6:
+        entryClass: FileEye\MediaProbe\Entry\CanonExposureCompensation
         exiftool:
             -
                 name: ExposureCompensation
@@ -126,6 +128,7 @@ items:
                 DOMNode: 'Canon:OpticalZoomCode'
                 desc: 'Optical Zoom Code'
     12:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -143,6 +146,7 @@ items:
                 DOMNode: 'Canon:FlashGuideNumber'
                 desc: 'Flash Guide Number'
     14:
+        entryClass: FileEye\MediaProbe\Entry\CanonShotInfoAFPointsInFocus
         exiftool:
             -
                 name: AFPointsInFocus
@@ -203,6 +207,7 @@ items:
                     1: 'Camera Local Control'
                     3: 'Computer Remote Control'
     19:
+        entryClass: FileEye\MediaProbe\Entry\CanonShotInfoFocusDistanceUpper
         exiftool:
             -
                 name: FocusDistanceUpper
@@ -211,6 +216,7 @@ items:
                 DOMNode: 'Canon:FocusDistanceUpper'
                 desc: 'Focus Distance Upper'
     20:
+        entryClass: FileEye\MediaProbe\Entry\CanonShotInfoFocusDistanceLower
         exiftool:
             -
                 name: FocusDistanceLower
@@ -219,6 +225,7 @@ items:
                 DOMNode: 'Canon:FocusDistanceLower'
                 desc: 'Focus Distance Lower'
     21:
+        entryClass: FileEye\MediaProbe\Entry\CanonShotInfoFNumber
         exiftool:
             -
                 name: FNumber
@@ -227,6 +234,7 @@ items:
                 DOMNode: 'Canon:FNumber'
                 desc: 'F Number'
     22:
+        entryClass: FileEye\MediaProbe\Entry\CanonExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -241,6 +249,7 @@ items:
                 DOMNode: 'Canon:ExposureTime'
                 desc: 'Exposure Time'
     23:
+        entryClass: FileEye\MediaProbe\Entry\CanonMeasuredEV2
         exiftool:
             -
                 name: MeasuredEV2
@@ -249,6 +258,7 @@ items:
                 DOMNode: 'Canon:MeasuredEV2'
                 desc: 'Measured EV 2'
     24:
+        entryClass: FileEye\MediaProbe\Entry\CanonBulbDuration
         exiftool:
             -
                 name: BulbDuration

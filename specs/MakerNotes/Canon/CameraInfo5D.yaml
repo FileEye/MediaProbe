@@ -11,6 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfo5D'']/tag'
 items:
     3:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFNumber
         exiftool:
             -
                 name: FNumber
@@ -20,6 +21,7 @@ items:
                 DOMNode: 'Canon:FNumber'
                 desc: 'F Number'
     4:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -29,6 +31,7 @@ items:
                 DOMNode: 'Canon:ExposureTime'
                 desc: 'Exposure Time'
     6:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
         exiftool:
             -
                 name: ISO
@@ -38,6 +41,7 @@ items:
                 DOMNode: 'Canon:ISO'
                 desc: ISO
     12:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraInfoLensType
         exiftool:
             -
                 name: LensType
@@ -444,6 +448,7 @@ items:
                     61496: 'Canon CN-E 35mm T1.5 L F'
                     65535: n/a
     23:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -452,6 +457,7 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     27:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIMacroMagnification
         exiftool:
             -
                 name: MacroMagnification
@@ -593,6 +599,7 @@ items:
                 DOMNode: 'Canon:MaxFocalLength'
                 desc: 'Max Focal Length'
     151:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraInfoLensType
         exiftool:
             -
                 name: LensType
@@ -1017,6 +1024,7 @@ items:
                 DOMNode: 'Canon:ShortOwnerName'
                 desc: 'Short Owner Name'
     204:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIDirectoryIndex
         exiftool:
             -
                 name: DirectoryIndex
@@ -1026,6 +1034,7 @@ items:
                 DOMNode: 'Canon:DirectoryIndex'
                 desc: 'Directory Index'
     208:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFileIndex
         exiftool:
             -
                 name: FileIndex
@@ -1394,6 +1403,7 @@ items:
                     134: Monochrome
                     135: Auto
     284:
+        entryClass: FileEye\MediaProbe\Entry\CanonCITimestamp
         exiftool:
             -
                 name: TimeStamp

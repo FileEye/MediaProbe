@@ -11,6 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfoPowerShot2'']/tag'
 items:
     1:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
         exiftool:
             -
                 name: ISO
@@ -20,6 +21,7 @@ items:
                 DOMNode: 'Canon:ISO'
                 desc: ISO
     6:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFNumber
         exiftool:
             -
                 name: FNumber
@@ -29,6 +31,7 @@ items:
                 DOMNode: 'Canon:FNumber'
                 desc: 'F Number'
     7:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -46,6 +49,7 @@ items:
                 DOMNode: 'Canon:Rotation'
                 desc: Rotation
     153:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -54,6 +58,7 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     159:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -62,6 +67,7 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     164:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -70,6 +76,7 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     168:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -78,6 +85,7 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     261:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature

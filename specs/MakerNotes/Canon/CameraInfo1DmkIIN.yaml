@@ -11,6 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfo1DmkIIN'']/tag'
 items:
     4:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -28,6 +29,7 @@ items:
                 DOMNode: 'Canon:FocalLength'
                 desc: 'Focal Length'
     12:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraInfoLensType
         exiftool:
             -
                 name: LensType
@@ -560,6 +562,7 @@ items:
                 values:
                     - Normal
     121:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
         exiftool:
             -
                 name: ISO

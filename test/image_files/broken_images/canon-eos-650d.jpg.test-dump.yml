@@ -1467,24 +1467,6 @@ elements:
                                                                                     bytesHash: ddf0494bcf4f130e0a8af343377b1efb5ce87bedb6fc74fca3ed967e1671924a
                                                                                     text: '68 byte(s) of data'
                                                                         -
-                                                                            node: rawData
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/rawData:indexSize'
-                                                                            class: FileEye\MediaProbe\Block\RawData
-                                                                            valid: true
-                                                                            name: indexSize
-                                                                            id: '0'
-                                                                            collection: RawData
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/rawData:indexSize/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
-                                                                                    valid: true
-                                                                                    format: Undefined
-                                                                                    components: 2
-                                                                                    bytesHash: 08a2afecc9feaef6737f055c177a56a363d28a78d7b259b8c5f66b32174f2e7d
-                                                                                    text: '2 byte(s) of data'
-                                                                        -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoISO:1'
                                                                             class: FileEye\MediaProbe\Block\Tag
@@ -2188,12 +2170,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:FocusDistanceUpper:140/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFocusDistance
+                                                                                    class: FileEye\MediaProbe\Entry\CanonCIFocusDistance
                                                                                     valid: true
-                                                                                    format: Short
+                                                                                    format: ShortRev
                                                                                     components: 1
                                                                                     bytesHash: 8d31ecd46d44acf94a97ccad2cdc3f6c23e762192af2b76754b0544c75301ffa
-                                                                                    text: '56.22 m'
+                                                                                    text: '629.97 m'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:FocusDistanceLower:142'
@@ -2901,24 +2883,6 @@ elements:
                                                                                     bytesHash: d05e7f8539a814f99191001b9e895a2ba0ca9b13a2f6f4f67d777a127cee2b89
                                                                                     text: '64 byte(s) of data'
                                                                         -
-                                                                            node: rawData
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/rawData:indexSize'
-                                                                            class: FileEye\MediaProbe\Block\RawData
-                                                                            valid: true
-                                                                            name: indexSize
-                                                                            id: '0'
-                                                                            collection: RawData
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/rawData:indexSize/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
-                                                                                    valid: true
-                                                                                    format: Undefined
-                                                                                    components: 2
-                                                                                    bytesHash: b8811852747cfa3620c3dd2af5d59498c240f208e689b4052bac934c29faf094
-                                                                                    text: '2 byte(s) of data'
-                                                                        -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:FileNumber:1'
                                                                             class: FileEye\MediaProbe\Block\Tag
@@ -2936,24 +2900,6 @@ elements:
                                                                                     components: 1
                                                                                     bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
                                                                                     text: !!float 0
-                                                                        -
-                                                                            node: rawData
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/rawData:2'
-                                                                            class: FileEye\MediaProbe\Block\RawData
-                                                                            valid: true
-                                                                            name: '2'
-                                                                            id: '2'
-                                                                            collection: RawData
-                                                                            elements:
-                                                                                -
-                                                                                    node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/rawData:2/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
-                                                                                    valid: true
-                                                                                    format: Undefined
-                                                                                    components: 2
-                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: '2 byte(s) of data'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:BracketMode:3'
@@ -5577,12 +5523,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonColorData:16385/tag:RawMeasuredRGGB:619/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Long
+                                                                                    class: FileEye\MediaProbe\Entry\CanonRawMeasuredRGGB
                                                                                     valid: true
                                                                                     format: Long
                                                                                     components: 4
                                                                                     bytesHash: 374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb
-                                                                                    text: '0, 0, 0, 0'
+                                                                                    text: '0 0 0 0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonColorData:16385/tag:PerChannelBlackLevel:728'

@@ -1,8 +1,8 @@
 collection: MakerNotes\Canon\CameraSettings
 name: CanonCameraSettings
 title: 'Canon Camera Settings'
-class: FileEye\MediaProbe\Block\Index
-DOMNode: index
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
 hasIndexSize: true
 format: Short
 defaultItemCollection: Tag
@@ -11,9 +11,6 @@ compiler:
         g1: Canon
         xpath: '//table[@name=''Canon::CameraSettings'']/tag'
 items:
-    0:
-        collection: RawData
-        name: indexSize
     1:
         exiftool:
             -
@@ -270,6 +267,7 @@ items:
                 values:
                     - Normal
     15:
+        entryClass: FileEye\MediaProbe\Entry\CanonSharpness
         exiftool:
             -
                 name: Sharpness
@@ -278,6 +276,7 @@ items:
                 DOMNode: 'Canon:Sharpness'
                 desc: Sharpness
     16:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraISO
         exiftool:
             -
                 name: CameraISO
@@ -355,6 +354,7 @@ items:
                     - M-Dep
                     - Bulb
     22:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraSettingsLensType
         exiftool:
             -
                 name: LensType
@@ -761,6 +761,7 @@ items:
                     61496: 'Canon CN-E 35mm T1.5 L F'
                     65535: n/a
     23:
+        entryClass: FileEye\MediaProbe\Entry\CanonFocalLength
         exiftool:
             -
                 name: MaxFocalLength
@@ -769,6 +770,7 @@ items:
                 DOMNode: 'Canon:MaxFocalLength'
                 desc: 'Max Focal Length'
     24:
+        entryClass: FileEye\MediaProbe\Entry\CanonFocalLength
         exiftool:
             -
                 name: MinFocalLength
@@ -785,7 +787,7 @@ items:
                 DOMNode: 'Canon:FocalUnits'
                 desc: 'Focal Units'
     26:
-        entryClass: FileEye\MediaProbe\Entry\ExifApertureValue
+        entryClass: FileEye\MediaProbe\Entry\CanonApertureValue
         exiftool:
             -
                 name: MaxAperture
@@ -794,7 +796,7 @@ items:
                 DOMNode: 'Canon:MaxAperture'
                 desc: 'Max Aperture'
     27:
-        entryClass: FileEye\MediaProbe\Entry\ExifApertureValue
+        entryClass: FileEye\MediaProbe\Entry\CanonApertureValue
         exiftool:
             -
                 name: MinAperture
@@ -875,6 +877,7 @@ items:
                     259: 'Panning (2)'
                     260: 'Dynamic (2)'
     35:
+        entryClass: FileEye\MediaProbe\Entry\CanonDisplayAperture
         exiftool:
             -
                 name: DisplayAperture

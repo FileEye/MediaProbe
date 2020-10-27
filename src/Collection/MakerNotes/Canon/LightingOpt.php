@@ -31,6 +31,14 @@ class LightingOpt extends Collection {
     'LongExposureNoiseReduction' => 4,
     'PeripheralIlluminationCorr' => 1,
   ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:AutoLightingOptimizer' => 2,
+    'Canon:HighISONoiseReduction' => 5,
+    'Canon:HighlightTonePriority' => 3,
+    'Canon:LongExposureNoiseReduction' => 4,
+    'Canon:PeripheralIlluminationCorr' => 1,
+  ),
   'items' =>
   array (
     1 =>
@@ -133,14 +141,6 @@ class LightingOpt extends Collection {
       ),
       'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
     ),
-  ),
-  'itemsByExiftoolDOMNode' =>
-  array (
-    'Canon:AutoLightingOptimizer' => 2,
-    'Canon:HighISONoiseReduction' => 5,
-    'Canon:HighlightTonePriority' => 3,
-    'Canon:LongExposureNoiseReduction' => 4,
-    'Canon:PeripheralIlluminationCorr' => 1,
   ),
 );
 }

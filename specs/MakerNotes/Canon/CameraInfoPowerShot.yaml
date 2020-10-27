@@ -11,6 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfoPowerShot'']/tag'
 items:
     0:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
         exiftool:
             -
                 name: ISO
@@ -20,6 +21,7 @@ items:
                 DOMNode: 'Canon:ISO'
                 desc: ISO
     5:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFNumber
         exiftool:
             -
                 name: FNumber
@@ -29,6 +31,7 @@ items:
                 DOMNode: 'Canon:FNumber'
                 desc: 'F Number'
     6:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -46,6 +49,7 @@ items:
                 DOMNode: 'Canon:Rotation'
                 desc: Rotation
     135:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -54,6 +58,7 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     145:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature

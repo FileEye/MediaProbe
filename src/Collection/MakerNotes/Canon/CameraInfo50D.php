@@ -88,6 +88,7 @@ class CameraInfo50D extends Collection {
     ),
     3 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -99,6 +100,7 @@ class CameraInfo50D extends Collection {
     ),
     4 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -110,6 +112,7 @@ class CameraInfo50D extends Collection {
     ),
     6 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',
@@ -162,7 +165,7 @@ class CameraInfo50D extends Collection {
     ),
     25 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCICameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -205,7 +208,7 @@ class CameraInfo50D extends Collection {
     ),
     80 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -217,7 +220,7 @@ class CameraInfo50D extends Collection {
     ),
     82 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -811,6 +814,7 @@ class CameraInfo50D extends Collection {
     ),
     411 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFileIndex',
       'collection' => 'Tag',
       'name' => 'FileIndex',
       'title' => 'File Index',
@@ -822,6 +826,7 @@ class CameraInfo50D extends Collection {
     ),
     423 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIDirectoryIndex',
       'collection' => 'Tag',
       'name' => 'DirectoryIndex',
       'title' => 'Directory Index',

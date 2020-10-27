@@ -35,19 +35,22 @@ class ColorBalance extends Collection {
     'WB_RGGBLevelsKelvin' => 33,
     'WB_RGGBLevelsShade' => 9,
     'WB_RGGBLevelsTungsten' => 17,
-    'indexSize' => 0,
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:WB_RGGBBlackLevels' => 37,
+    'Canon:WB_RGGBLevelsAuto' => 1,
+    'Canon:WB_RGGBLevelsCloudy' => 13,
+    'Canon:WB_RGGBLevelsCustom' => 29,
+    'Canon:WB_RGGBLevelsDaylight' => 5,
+    'Canon:WB_RGGBLevelsFlash' => 25,
+    'Canon:WB_RGGBLevelsFluorescent' => 21,
+    'Canon:WB_RGGBLevelsKelvin' => 33,
+    'Canon:WB_RGGBLevelsShade' => 9,
+    'Canon:WB_RGGBLevelsTungsten' => 17,
   ),
   'items' =>
   array (
-    0 =>
-    array (
-      'collection' => 'RawData',
-      'name' => 'mapSize',
-      'format' =>
-      array (
-        0 => 8,
-      ),
-    ),
     1 =>
     array (
       'collection' => 'Tag',
@@ -168,19 +171,6 @@ class ColorBalance extends Collection {
       ),
       'exiftoolDOMNode' => 'Canon:WB_RGGBBlackLevels',
     ),
-  ),
-  'itemsByExiftoolDOMNode' =>
-  array (
-    'Canon:WB_RGGBBlackLevels' => 37,
-    'Canon:WB_RGGBLevelsAuto' => 1,
-    'Canon:WB_RGGBLevelsCloudy' => 13,
-    'Canon:WB_RGGBLevelsCustom' => 29,
-    'Canon:WB_RGGBLevelsDaylight' => 5,
-    'Canon:WB_RGGBLevelsFlash' => 25,
-    'Canon:WB_RGGBLevelsFluorescent' => 21,
-    'Canon:WB_RGGBLevelsKelvin' => 33,
-    'Canon:WB_RGGBLevelsShade' => 9,
-    'Canon:WB_RGGBLevelsTungsten' => 17,
   ),
 );
 }

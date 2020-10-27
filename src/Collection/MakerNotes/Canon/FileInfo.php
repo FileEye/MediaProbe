@@ -42,20 +42,29 @@ class FileInfo extends Collection {
     'WBBracketMode' => 9,
     'WBBracketValueAB' => 12,
     'WBBracketValueGM' => 13,
-    'indexSize' => 0,
-    2 => 2,
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Canon:BracketMode' => 3,
+    'Canon:BracketShotNumber' => 5,
+    'Canon:BracketValue' => 4,
+    'Canon:FileNumber' => 1,
+    'Canon:FilterEffect' => 14,
+    'Canon:FlashExposureLock' => 25,
+    'Canon:FocusDistanceLower' => 21,
+    'Canon:FocusDistanceUpper' => 20,
+    'Canon:LiveViewShooting' => 19,
+    'Canon:LongExposureNoiseReduction2' => 8,
+    'Canon:MacroMagnification' => 16,
+    'Canon:RawJpgQuality' => 6,
+    'Canon:RawJpgSize' => 7,
+    'Canon:ToningEffect' => 15,
+    'Canon:WBBracketMode' => 9,
+    'Canon:WBBracketValueAB' => 12,
+    'Canon:WBBracketValueGM' => 13,
   ),
   'items' =>
   array (
-    0 =>
-    array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-      'format' =>
-      array (
-        0 => 8,
-      ),
-    ),
     1 =>
     array (
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFileNumber',
@@ -67,17 +76,6 @@ class FileInfo extends Collection {
         0 => 4,
       ),
       'exiftoolDOMNode' => 'Canon:FileNumber',
-    ),
-    2 =>
-    array (
-      'collection' => 'RawData',
-      'name' => 2,
-      'title' => '0x0002',
-      'format' =>
-      array (
-        0 => 8,
-      ),
-      'skip' => true,
     ),
     3 =>
     array (
@@ -365,26 +363,6 @@ class FileInfo extends Collection {
       ),
       'exiftoolDOMNode' => 'Canon:FlashExposureLock',
     ),
-  ),
-  'itemsByExiftoolDOMNode' =>
-  array (
-    'Canon:BracketMode' => 3,
-    'Canon:BracketShotNumber' => 5,
-    'Canon:BracketValue' => 4,
-    'Canon:FileNumber' => 1,
-    'Canon:FilterEffect' => 14,
-    'Canon:FlashExposureLock' => 25,
-    'Canon:FocusDistanceLower' => 21,
-    'Canon:FocusDistanceUpper' => 20,
-    'Canon:LiveViewShooting' => 19,
-    'Canon:LongExposureNoiseReduction2' => 8,
-    'Canon:MacroMagnification' => 16,
-    'Canon:RawJpgQuality' => 6,
-    'Canon:RawJpgSize' => 7,
-    'Canon:ToningEffect' => 15,
-    'Canon:WBBracketMode' => 9,
-    'Canon:WBBracketValueAB' => 12,
-    'Canon:WBBracketValueGM' => 13,
   ),
 );
 }

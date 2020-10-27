@@ -19,6 +19,7 @@ items:
                 DOMNode: 'Canon:FirmwareVersionLookAhead'
                 desc: 'Firmware Version Look Ahead'
     3:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFNumber
         exiftool:
             -
                 name: FNumber
@@ -28,6 +29,7 @@ items:
                 DOMNode: 'Canon:FNumber'
                 desc: 'F Number'
     4:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -37,6 +39,7 @@ items:
                 DOMNode: 'Canon:ExposureTime'
                 desc: 'Exposure Time'
     6:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
         exiftool:
             -
                 name: ISO
@@ -46,6 +49,7 @@ items:
                 DOMNode: 'Canon:ISO'
                 desc: ISO
     27:
+        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -74,6 +78,7 @@ items:
                     - 'Rotate 90 CW'
                     - 'Rotate 270 CW'
     140:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFocusDistance
         exiftool:
             -
                 name: FocusDistanceUpper
@@ -82,6 +87,7 @@ items:
                 DOMNode: 'Canon:FocusDistanceUpper'
                 desc: 'Focus Distance Upper'
     142:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFocusDistance
         exiftool:
             -
                 name: FocusDistanceLower
@@ -162,6 +168,7 @@ items:
                     255: n/a
                     65535: n/a
     339:
+        entryClass: FileEye\MediaProbe\Entry\CanonCameraInfoLensType
         exiftool:
             -
                 name: LensType
@@ -584,6 +591,7 @@ items:
                 DOMNode: 'Canon:MaxFocalLength'
                 desc: 'Max Focal Length'
     356:
+        entryClass: FileEye\MediaProbe\Entry\CanonCILensSerialNumber
         exiftool:
             -
                 name: LensSerialNumber
@@ -602,6 +610,7 @@ items:
                 DOMNode: 'Canon:FirmwareVersion'
                 desc: 'Firmware Version'
     652:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIFileIndex
         exiftool:
             -
                 name: FileIndex
@@ -620,6 +629,7 @@ items:
                 DOMNode: 'Canon:FileIndex2'
                 desc: 'File Index 2'
     664:
+        entryClass: FileEye\MediaProbe\Entry\CanonCIDirectoryIndex
         exiftool:
             -
                 name: DirectoryIndex

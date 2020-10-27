@@ -11,6 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfoUnknown'']/tag'
 items:
     363:
+        entryClass: FileEye\MediaProbe\Entry\CanonCILensSerialNumber
         exiftool:
             -
                 name: LensSerialNumber
