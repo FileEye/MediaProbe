@@ -15,7 +15,7 @@ class Functions2Header extends Collection {
   protected static $map = array (
   'name' => 'CanonCustomFunctions2Header',
   'title' => 'CanonCustom Functions2 Header',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CustomFunctions2Header',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2Header',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'MakerNotes\\CanonCustom\\Functions2',
   'itemsByName' =>

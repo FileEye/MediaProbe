@@ -15,7 +15,7 @@ class AFInfo extends Collection {
   protected static $map = array (
   'name' => 'CanonAFInfo',
   'title' => 'Canon AF Info',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\AFInfoIndex',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\AFInfoIndex',
   'DOMNode' => 'index',
   'format' =>
   array (

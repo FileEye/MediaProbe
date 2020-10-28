@@ -15,7 +15,7 @@ class Main extends Collection {
   protected static $map = array (
   'name' => 'Canon',
   'title' => 'Canon Maker Notes',
-  'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'makerNote',
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
@@ -705,7 +705,7 @@ class Main extends Collection {
     ),
     40 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonImageUniqueID',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ImageUniqueID',
       'collection' => 'Tag',
       'name' => 'ImageUniqueID',
       'title' => 'Image Unique ID',
@@ -1149,7 +1149,7 @@ class Main extends Collection {
     array (
       'name' => 'CanonLensInfo',
       'title' => 'Canon LensInfo',
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonLensInfo',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\LensInfo',
       '__collection' => 'MakerNotes\\Canon\\LensInfo',
       'collection' => 'Tag',
     ),

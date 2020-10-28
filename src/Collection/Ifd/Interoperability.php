@@ -15,7 +15,7 @@ class Interoperability extends Collection {
   protected static $map = array (
   'name' => 'InteropIFD',
   'title' => 'Interoperability IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'alias' =>
   array (

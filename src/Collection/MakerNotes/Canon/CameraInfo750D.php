@@ -15,7 +15,7 @@ class CameraInfo750D extends Collection {
   protected static $map = array (
   'name' => 'CanonCameraInfo750D',
   'title' => 'Canon CameraInfo750D',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CameraInfoMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -60,7 +60,7 @@ class CameraInfo750D extends Collection {
   array (
     3 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFNumber',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -72,7 +72,7 @@ class CameraInfo750D extends Collection {
     ),
     4 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -84,7 +84,7 @@ class CameraInfo750D extends Collection {
     ),
     6 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',
@@ -96,7 +96,7 @@ class CameraInfo750D extends Collection {
     ),
     27 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCICameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -119,7 +119,7 @@ class CameraInfo750D extends Collection {
     ),
     165 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -131,7 +131,7 @@ class CameraInfo750D extends Collection {
     ),
     167 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -234,7 +234,7 @@ class CameraInfo750D extends Collection {
     ),
     388 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',

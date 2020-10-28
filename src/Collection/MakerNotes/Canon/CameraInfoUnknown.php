@@ -15,7 +15,7 @@ class CameraInfoUnknown extends Collection {
   protected static $map = array (
   'name' => 'CanonCameraInfoUnknown',
   'title' => 'Canon CameraInfoUnknown',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CameraInfoMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -34,7 +34,7 @@ class CameraInfoUnknown extends Collection {
   array (
     363 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCILensSerialNumber',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensSerialNumber',
       'collection' => 'Tag',
       'name' => 'LensSerialNumber',
       'title' => 'Lens Serial Number',

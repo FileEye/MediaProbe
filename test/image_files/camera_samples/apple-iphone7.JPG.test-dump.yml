@@ -64,7 +64,7 @@ elements:
                         -
                             node: exif
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
-                            class: FileEye\MediaProbe\Block\Exif
+                            class: FileEye\MediaProbe\Block\Exif\Exif
                             valid: true
                             id: Exif
                             collection: Exif
@@ -80,7 +80,7 @@ elements:
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            class: FileEye\MediaProbe\Block\Ifd
+                                            class: FileEye\MediaProbe\Block\Exif\Ifd
                                             valid: true
                                             name: IFD0
                                             id: '0'
@@ -233,7 +233,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    class: FileEye\MediaProbe\Block\Ifd
+                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
                                                     valid: true
                                                     name: ExifIFD
                                                     id: '34665'
@@ -530,7 +530,7 @@ elements:
                                                         -
                                                             node: makerNote
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
-                                                            class: FileEye\MediaProbe\Block\MakerNotes\Apple\MakerNote
+                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Apple\MakerNote
                                                             valid: true
                                                             name: Apple
                                                             id: '37500'
@@ -590,7 +590,7 @@ elements:
                                                                 -
                                                                     node: plist
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3'
-                                                                    class: FileEye\MediaProbe\Block\MakerNotes\Apple\RunTime
+                                                                    class: FileEye\MediaProbe\Block\Exif\Vendor\Apple\RunTime
                                                                     valid: true
                                                                     name: AppleRuntime
                                                                     id: '3'
@@ -1215,7 +1215,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
-                                                    class: FileEye\MediaProbe\Block\Ifd
+                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
                                                     valid: true
                                                     name: GPS
                                                     id: '34853'

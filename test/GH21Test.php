@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif;
+use FileEye\MediaProbe\Block\Exif\Exif;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\JpegSegmentApp1;
 use FileEye\MediaProbe\Collection;

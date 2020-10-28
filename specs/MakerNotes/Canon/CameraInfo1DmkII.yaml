@@ -1,7 +1,7 @@
 collection: MakerNotes\Canon\CameraInfo1DmkII
 name: CanonCameraInfo1DmkII
 title: 'Canon CameraInfo1DmkII'
-class: FileEye\MediaProbe\Block\MakerNotes\Canon\CameraInfoMap
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CameraInfoMap
 DOMNode: map
 format: Byte
 defaultItemCollection: Tag
@@ -11,7 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfo1DmkII'']/tag'
 items:
     4:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\ExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -29,7 +29,7 @@ items:
                 DOMNode: 'Canon:FocalLength'
                 desc: 'Focal Length'
     12:
-        entryClass: FileEye\MediaProbe\Entry\CanonCameraInfoLensType
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
         exiftool:
             -
                 name: LensType
@@ -609,7 +609,7 @@ items:
                 values:
                     - Normal
     117:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\ISO
         exiftool:
             -
                 name: ISO

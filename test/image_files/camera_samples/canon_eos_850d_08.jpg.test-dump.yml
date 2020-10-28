@@ -152,7 +152,7 @@ elements:
                         -
                             node: exif
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
-                            class: FileEye\MediaProbe\Block\Exif
+                            class: FileEye\MediaProbe\Block\Exif\Exif
                             valid: true
                             id: Exif
                             collection: Exif
@@ -168,7 +168,7 @@ elements:
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            class: FileEye\MediaProbe\Block\Ifd
+                                            class: FileEye\MediaProbe\Block\Exif\Ifd
                                             valid: true
                                             name: IFD0
                                             id: '0'
@@ -321,7 +321,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    class: FileEye\MediaProbe\Block\Ifd
+                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
                                                     valid: true
                                                     name: ExifIFD
                                                     id: '34665'
@@ -690,7 +690,7 @@ elements:
                                                         -
                                                             node: makerNote
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500'
-                                                            class: FileEye\MediaProbe\Block\Ifd
+                                                            class: FileEye\MediaProbe\Block\Exif\Ifd
                                                             valid: true
                                                             name: Canon
                                                             id: '37500'
@@ -950,7 +950,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Sharpness:15/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonSharpness
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Sharpness
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -968,7 +968,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CameraISO:16/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonCameraISO
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraISO
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1058,7 +1058,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:LensType:22/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonCameraSettingsLensType
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettingsLensType
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1076,7 +1076,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxFocalLength:23/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalLength
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1094,7 +1094,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinFocalLength:24/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalLength
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1130,7 +1130,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxAperture:26/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonApertureValue
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1148,7 +1148,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinAperture:27/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonApertureValue
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1256,7 +1256,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DisplayAperture:35/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonDisplayAperture
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\DisplayAperture
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1427,7 +1427,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalLength:1/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFLFocalLength
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FLFocalLength
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1445,7 +1445,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneXSize:2/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalPlaneSize
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalPlaneSize
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1463,7 +1463,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneYSize:3/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFocalPlaneSize
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalPlaneSize
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1525,7 +1525,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoISO:1/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonAutoIso
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\AutoIso
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1543,7 +1543,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:BaseISO:2/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonBaseIso
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\BaseIso
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1561,7 +1561,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV:3/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonMeasuredEV
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\MeasuredEV
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1579,7 +1579,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetAperture:4/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonApertureValue
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1597,7 +1597,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetExposureTime:5/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonTargetExposureTime
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\TargetExposureTime
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1615,7 +1615,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ExposureCompensation:6/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonExposureCompensation
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ExposureCompensation
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1705,7 +1705,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:CameraTemperature:12/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonCameraTemperature
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraTemperature
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1741,7 +1741,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AFPointsInFocus:14/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoAFPointsInFocus
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ShotInfo\AFPointsInFocus
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1831,7 +1831,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FocusDistanceUpper:19/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoFocusDistanceUpper
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ShotInfo\FocusDistanceUpper
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1849,7 +1849,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FocusDistanceLower:20/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoFocusDistanceLower
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ShotInfo\FocusDistanceLower
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -1867,7 +1867,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FNumber:21/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonShotInfoFNumber
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ShotInfo\FNumber
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1885,7 +1885,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ExposureTime:22/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonExposureTime
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ExposureTime
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1903,7 +1903,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV2:23/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonMeasuredEV2
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\MeasuredEV2
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1921,7 +1921,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:BulbDuration:24/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonBulbDuration
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\BulbDuration
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -2074,7 +2074,7 @@ elements:
                                                                 -
                                                                     node: map
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13'
-                                                                    class: FileEye\MediaProbe\Block\MakerNotes\Canon\CameraInfoMap
+                                                                    class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CameraInfoMap
                                                                     valid: true
                                                                     name: CanonCameraInfo
                                                                     id: '13'
@@ -2109,7 +2109,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:LensSerialNumber:363/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonCILensSerialNumber
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensSerialNumber
                                                                                     valid: true
                                                                                     format: Undefined
                                                                                     components: 5
@@ -2171,7 +2171,7 @@ elements:
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo2:38'
-                                                                    class: FileEye\MediaProbe\Block\MakerNotes\Canon\AFInfoIndex
+                                                                    class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\AFInfoIndex
                                                                     valid: true
                                                                     name: CanonAFInfo2
                                                                     id: '38'
@@ -2612,7 +2612,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:ImageUniqueID:40/entry'
-                                                                            class: FileEye\MediaProbe\Entry\CanonImageUniqueID
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ImageUniqueID
                                                                             valid: true
                                                                             format: Byte
                                                                             components: 16
@@ -2822,7 +2822,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:FileNumber:1/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFileNumber
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FileNumber
                                                                                     valid: true
                                                                                     format: Long
                                                                                     components: 1
@@ -3074,7 +3074,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:FocusDistanceUpper:20/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFocusDistance
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocusDistance
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -3092,7 +3092,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:FocusDistanceLower:21/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonFocusDistance
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocusDistance
                                                                                     valid: true
                                                                                     format: Short
                                                                                     components: 1
@@ -3254,7 +3254,7 @@ elements:
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153'
-                                                                    class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2Header
+                                                                    class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CustomFunctions2Header
                                                                     valid: true
                                                                     name: CanonCustomFunctions2Header
                                                                     id: '153'
@@ -3263,7 +3263,7 @@ elements:
                                                                         -
                                                                             node: index
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1'
-                                                                            class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CustomFunctions2
                                                                             valid: true
                                                                             name: Exposure
                                                                             id: '1'
@@ -3317,7 +3317,7 @@ elements:
                                                                                         -
                                                                                             node: entry
                                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ISOSpeedRange:259/entry'
-                                                                                            class: FileEye\MediaProbe\Entry\CanonCustomIsoSpeedRange
+                                                                                            class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomIsoSpeedRange
                                                                                             valid: true
                                                                                             format: SignedLong
                                                                                             components: 1
@@ -3362,7 +3362,7 @@ elements:
                                                                         -
                                                                             node: index
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3'
-                                                                            class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CustomFunctions2
                                                                             valid: true
                                                                             name: AutoFocusDrive
                                                                             id: '3'
@@ -3461,7 +3461,7 @@ elements:
                                                                         -
                                                                             node: index
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4'
-                                                                            class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CustomFunctions2
                                                                             valid: true
                                                                             name: OperationOthers
                                                                             id: '4'
@@ -3803,7 +3803,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:WhiteBalance:8/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\CanonProcessingWhiteBalance
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ProcessingWhiteBalance
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -4377,7 +4377,7 @@ elements:
                                                                 -
                                                                     node: map
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonColorData:16385'
-                                                                    class: FileEye\MediaProbe\Block\MakerNotes\Canon\ColorDataMap
+                                                                    class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\ColorDataMap
                                                                     valid: true
                                                                     name: CanonColorData
                                                                     id: '16385'
@@ -6288,7 +6288,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonLensInfo:16409/entry'
-                                                                            class: FileEye\MediaProbe\Entry\CanonLensInfo
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\LensInfo
                                                                             valid: true
                                                                             format: Undefined
                                                                             components: 30
@@ -6359,7 +6359,7 @@ elements:
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420'
-                                                                    class: FileEye\MediaProbe\Block\MakerNotes\Canon\FilterInfoIndex
+                                                                    class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\FilterInfoIndex
                                                                     valid: false
                                                                     name: CanonFilterInfo
                                                                     id: '16420'
@@ -6884,7 +6884,7 @@ elements:
                                                         -
                                                             node: ifd
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965'
-                                                            class: FileEye\MediaProbe\Block\Ifd
+                                                            class: FileEye\MediaProbe\Block\Exif\Ifd
                                                             valid: true
                                                             name: InteropIFD
                                                             id: '40965'
@@ -7145,7 +7145,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
-                                                    class: FileEye\MediaProbe\Block\Ifd
+                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
                                                     valid: true
                                                     name: GPS
                                                     id: '34853'
@@ -7172,7 +7172,7 @@ elements:
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
-                                            class: FileEye\MediaProbe\Block\Ifd
+                                            class: FileEye\MediaProbe\Block\Exif\Ifd
                                             valid: true
                                             name: IFD1
                                             id: '1'

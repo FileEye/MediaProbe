@@ -33,7 +33,7 @@ An IFD is fully described by a single YAML file. The file name should convention
 
 ```
 type: 'IFD0'
-class: FileEye\MediaProbe\Block\Ifd
+class: FileEye\MediaProbe\Block\Exif\Ifd
 alias:
   - '0'
   - 'Main'

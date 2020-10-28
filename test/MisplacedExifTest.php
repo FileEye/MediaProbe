@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Media;
-use FileEye\MediaProbe\Block\Exif;
+use FileEye\MediaProbe\Block\Exif\Exif;
 use FileEye\MediaProbe\Block\JpegSegmentApp1;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Collection;
@@ -22,7 +22,7 @@ class MisplacedExifTest extends MediaProbeTestCaseBase
         $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(2, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif', $app1[1]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Exif', $app1[1]->getElement("exif"));
 
         // Add a new APP1 segment.
         $app1_segment = new JpegSegmentApp1(Collection::get('Jpeg\\SegmentApp1'), $jpeg);
@@ -32,8 +32,8 @@ class MisplacedExifTest extends MediaProbeTestCaseBase
         $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(3, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif', $app1[1]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif', $app1[2]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Exif', $app1[1]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Exif', $app1[2]->getElement("exif"));
         $this->assertSame($newExif, $app1[2]->getElement("exif"));
 
         // Remove the first APP1 segment containing a valid EXIF block.
@@ -43,7 +43,7 @@ class MisplacedExifTest extends MediaProbeTestCaseBase
         $app1 = $jpeg->getMultipleElements("jpegSegment[@name='APP1']");
         $this->assertCount(2, $app1);
         $this->assertNull($app1[0]->getElement("exif"));
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif', $app1[1]->getElement("exif"));
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Exif', $app1[1]->getElement("exif"));
         $this->assertSame($newExif, $app1[1]->getElement("exif"));
     }
 }

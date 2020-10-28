@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif;
+use FileEye\MediaProbe\Block\Exif\Exif;
 use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Jpeg;
@@ -18,7 +18,7 @@ use FileEye\MediaProbe\Entry\Core\SignedByte;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 use FileEye\MediaProbe\Entry\Core\SignedShort;
 use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Block\Ifd;
+use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Media;
 
 class ReadWriteTest extends MediaProbeTestCaseBase
@@ -79,14 +79,14 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $r_media = Media::createFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
         $r_jpeg = $r_media->getElement("jpeg");
 
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif', $r_jpeg->getElement("jpegSegment/exif"));
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Exif', $r_jpeg->getElement("jpegSegment/exif"));
 
         $tiff = $r_jpeg->getElement("jpegSegment/exif/tiff");
         $this->assertInstanceOf('FileEye\MediaProbe\Block\Tiff', $tiff);
         $this->assertCount(1, $tiff->getMultipleElements("ifd"));
 
         $ifd = $tiff->getElement("ifd[@name='IFD0']");
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Ifd', $ifd);
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Ifd', $ifd);
         $this->assertEquals($ifd->getAttribute('name'), 'IFD0');
 
         foreach ($entries as $entry_name => $entry) {

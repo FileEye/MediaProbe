@@ -89,7 +89,7 @@ class ShotInfo extends Collection {
   array (
     1 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonAutoIso',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\AutoIso',
       'collection' => 'Tag',
       'name' => 'AutoISO',
       'title' => 'Auto ISO',
@@ -101,7 +101,7 @@ class ShotInfo extends Collection {
     ),
     2 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonBaseIso',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\BaseIso',
       'collection' => 'Tag',
       'name' => 'BaseISO',
       'title' => 'Base ISO',
@@ -113,7 +113,7 @@ class ShotInfo extends Collection {
     ),
     3 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonMeasuredEV',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\MeasuredEV',
       'collection' => 'Tag',
       'name' => 'MeasuredEV',
       'title' => 'Measured EV',
@@ -125,7 +125,7 @@ class ShotInfo extends Collection {
     ),
     4 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonApertureValue',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ApertureValue',
       'collection' => 'Tag',
       'name' => 'TargetAperture',
       'title' => 'Target Aperture',
@@ -137,7 +137,7 @@ class ShotInfo extends Collection {
     ),
     5 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonTargetExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\TargetExposureTime',
       'collection' => 'Tag',
       'name' => 'TargetExposureTime',
       'title' => 'Target Exposure Time',
@@ -149,7 +149,7 @@ class ShotInfo extends Collection {
     ),
     6 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonExposureCompensation',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ExposureCompensation',
       'collection' => 'Tag',
       'name' => 'ExposureCompensation',
       'title' => 'Exposure Compensation',
@@ -244,7 +244,7 @@ class ShotInfo extends Collection {
     ),
     12 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -267,7 +267,7 @@ class ShotInfo extends Collection {
     ),
     14 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoAFPointsInFocus',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\AFPointsInFocus',
       'collection' => 'Tag',
       'name' => 'AFPointsInFocus',
       'title' => 'AF Points In Focus',
@@ -357,7 +357,7 @@ class ShotInfo extends Collection {
     ),
     19 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoFocusDistanceUpper',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\FocusDistanceUpper',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -369,7 +369,7 @@ class ShotInfo extends Collection {
     ),
     20 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoFocusDistanceLower',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\FocusDistanceLower',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -381,7 +381,7 @@ class ShotInfo extends Collection {
     ),
     21 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonShotInfoFNumber',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\FNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -393,7 +393,7 @@ class ShotInfo extends Collection {
     ),
     22 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -405,7 +405,7 @@ class ShotInfo extends Collection {
     ),
     23 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonMeasuredEV2',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\MeasuredEV2',
       'collection' => 'Tag',
       'name' => 'MeasuredEV2',
       'title' => 'Measured EV 2',
@@ -417,7 +417,7 @@ class ShotInfo extends Collection {
     ),
     24 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonBulbDuration',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\BulbDuration',
       'collection' => 'Tag',
       'name' => 'BulbDuration',
       'title' => 'Bulb Duration',

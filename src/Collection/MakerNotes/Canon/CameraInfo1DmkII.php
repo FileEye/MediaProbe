@@ -15,7 +15,7 @@ class CameraInfo1DmkII extends Collection {
   protected static $map = array (
   'name' => 'CanonCameraInfo1DmkII',
   'title' => 'Canon CameraInfo1DmkII',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CameraInfoMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -64,7 +64,7 @@ class CameraInfo1DmkII extends Collection {
   array (
     4 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -87,7 +87,7 @@ class CameraInfo1DmkII extends Collection {
     ),
     12 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -746,7 +746,7 @@ class CameraInfo1DmkII extends Collection {
     ),
     117 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',

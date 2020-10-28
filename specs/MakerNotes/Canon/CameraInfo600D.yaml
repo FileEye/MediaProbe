@@ -1,7 +1,7 @@
 collection: MakerNotes\Canon\CameraInfo600D
 name: CanonCameraInfo600D
 title: 'Canon CameraInfo600D'
-class: FileEye\MediaProbe\Block\MakerNotes\Canon\CameraInfoMap
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CameraInfoMap
 DOMNode: map
 format: Byte
 defaultItemCollection: Tag
@@ -11,7 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfo600D'']/tag'
 items:
     3:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIFNumber
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\FNumber
         exiftool:
             -
                 name: FNumber
@@ -21,7 +21,7 @@ items:
                 DOMNode: 'Canon:FNumber'
                 desc: 'F Number'
     4:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIExposureTime
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\ExposureTime
         exiftool:
             -
                 name: ExposureTime
@@ -31,7 +31,7 @@ items:
                 DOMNode: 'Canon:ExposureTime'
                 desc: 'Exposure Time'
     6:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIISO
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\ISO
         exiftool:
             -
                 name: ISO
@@ -66,7 +66,7 @@ items:
                     5: 'External Manual'
                     6: 'Off'
     25:
-        entryClass: FileEye\MediaProbe\Entry\CanonCICameraTemperature
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\CameraTemperature
         exiftool:
             -
                 name: CameraTemperature
@@ -95,7 +95,7 @@ items:
                     - 'Rotate 90 CW'
                     - 'Rotate 270 CW'
     87:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIFocusDistance
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\FocusDistance
         exiftool:
             -
                 name: FocusDistanceUpper
@@ -104,7 +104,7 @@ items:
                 DOMNode: 'Canon:FocusDistanceUpper'
                 desc: 'Focus Distance Upper'
     89:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIFocusDistance
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\FocusDistance
         exiftool:
             -
                 name: FocusDistanceLower
@@ -185,7 +185,7 @@ items:
                     255: n/a
                     65535: n/a
     234:
-        entryClass: FileEye\MediaProbe\Entry\CanonCameraInfoLensType
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
         exiftool:
             -
                 name: LensType
@@ -617,7 +617,7 @@ items:
                 DOMNode: 'Canon:FirmwareVersion'
                 desc: 'Firmware Version'
     475:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIFileIndex
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\FileIndex
         exiftool:
             -
                 name: FileIndex
@@ -627,7 +627,7 @@ items:
                 DOMNode: 'Canon:FileIndex'
                 desc: 'File Index'
     487:
-        entryClass: FileEye\MediaProbe\Entry\CanonCIDirectoryIndex
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\DirectoryIndex
         exiftool:
             -
                 name: DirectoryIndex

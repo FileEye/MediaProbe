@@ -15,7 +15,7 @@ class FilterInfo extends Collection {
   protected static $map = array (
   'name' => 'CanonFilterInfo',
   'title' => 'Canon FilterInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\FilterInfoIndex',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\FilterInfoIndex',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>

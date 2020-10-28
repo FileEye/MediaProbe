@@ -2,11 +2,11 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif;
+use FileEye\MediaProbe\Block\Exif\Exif;
 use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Entry\Core\Ascii;
-use FileEye\MediaProbe\Block\Ifd;
+use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Jpeg;

@@ -15,7 +15,7 @@ class Gps extends Collection {
   protected static $map = array (
   'name' => 'GPS',
   'title' => 'GPS IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>

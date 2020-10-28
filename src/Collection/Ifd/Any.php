@@ -14,7 +14,7 @@ class Any extends Collection {
 
   protected static $map = array (
   'title' => 'A catchall generic IFD definition, used as a fallback to describe tags that are not expected in a specific IFD.',
-  'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (

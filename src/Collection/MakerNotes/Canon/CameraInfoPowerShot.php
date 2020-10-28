@@ -15,7 +15,7 @@ class CameraInfoPowerShot extends Collection {
   protected static $map = array (
   'name' => 'CanonCameraInfoPowerShot',
   'title' => 'Canon CameraInfoPowerShot',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CameraInfoMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -42,7 +42,7 @@ class CameraInfoPowerShot extends Collection {
   array (
     0 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',
@@ -54,7 +54,7 @@ class CameraInfoPowerShot extends Collection {
     ),
     5 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFNumber',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -66,7 +66,7 @@ class CameraInfoPowerShot extends Collection {
     ),
     6 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -89,7 +89,7 @@ class CameraInfoPowerShot extends Collection {
     ),
     135 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCICameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -101,7 +101,7 @@ class CameraInfoPowerShot extends Collection {
     ),
     145 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCICameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',

@@ -15,7 +15,7 @@ class Main extends Collection {
   protected static $map = array (
   'name' => 'Apple',
   'title' => 'Apple Maker Notes',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Apple\\MakerNote',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\MakerNote',
   'DOMNode' => 'makerNote',
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>

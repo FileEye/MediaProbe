@@ -1,7 +1,7 @@
 collection: MakerNotes\Canon\CameraInfoUnknown
 name: CanonCameraInfoUnknown
 title: 'Canon CameraInfoUnknown'
-class: FileEye\MediaProbe\Block\MakerNotes\Canon\CameraInfoMap
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CameraInfoMap
 DOMNode: map
 format: Byte
 defaultItemCollection: Tag
@@ -11,7 +11,7 @@ compiler:
         xpath: '//table[@name=''Canon::CameraInfoUnknown'']/tag'
 items:
     363:
-        entryClass: FileEye\MediaProbe\Entry\CanonCILensSerialNumber
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensSerialNumber
         exiftool:
             -
                 name: LensSerialNumber

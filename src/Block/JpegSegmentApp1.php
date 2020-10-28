@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
+use FileEye\MediaProbe\Block\Exif\Exif;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;

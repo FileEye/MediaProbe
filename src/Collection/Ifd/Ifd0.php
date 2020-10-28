@@ -15,7 +15,7 @@ class Ifd0 extends Collection {
   protected static $map = array (
   'name' => 'IFD0',
   'title' => 'IFD0',
-  'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
   'alias' =>
@@ -25,8 +25,8 @@ class Ifd0 extends Collection {
   ),
   'postLoad' =>
   array (
-    0 => 'FileEye\\MediaProbe\\Block\\Ifd::thumbnailToBlock',
-    1 => 'FileEye\\MediaProbe\\Block\\Ifd::makerNoteToBlock',
+    0 => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd::thumbnailToBlock',
+    1 => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd::makerNoteToBlock',
   ),
   'itemsByName' =>
   array (

@@ -12,7 +12,7 @@ compiler:
         xpath: '//table[@name=''Canon::FileInfo'']/tag'
 items:
     1:
-        entryClass: FileEye\MediaProbe\Entry\CanonFileNumber
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FileNumber
         exiftool:
             -
                 name: FileNumber
@@ -203,7 +203,7 @@ items:
                     - 'Off'
                     - 'On'
     20:
-        entryClass: FileEye\MediaProbe\Entry\CanonFocusDistance
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocusDistance
         exiftool:
             -
                 name: FocusDistanceUpper
@@ -212,7 +212,7 @@ items:
                 DOMNode: 'Canon:FocusDistanceUpper'
                 desc: 'Focus Distance Upper'
     21:
-        entryClass: FileEye\MediaProbe\Entry\CanonFocusDistance
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocusDistance
         exiftool:
             -
                 name: FocusDistanceLower

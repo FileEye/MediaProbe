@@ -15,7 +15,7 @@ class CameraInfo1D extends Collection {
   protected static $map = array (
   'name' => 'CanonCameraInfo1D',
   'title' => 'Canon CameraInfo1D',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CameraInfoMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -52,7 +52,7 @@ class CameraInfo1D extends Collection {
   array (
     4 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -75,7 +75,7 @@ class CameraInfo1D extends Collection {
     ),
     13 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',

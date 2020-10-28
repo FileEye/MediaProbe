@@ -1,7 +1,7 @@
 collection: MakerNotes\Canon\ColorData7
 name: CanonColorData7
 title: 'Canon Color Data7'
-class: FileEye\MediaProbe\Block\MakerNotes\Canon\ColorDataMap
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\ColorDataMap
 DOMNode: map
 format: Short
 defaultItemCollection: Tag
@@ -541,7 +541,7 @@ items:
                 DOMNode: 'Canon:AverageBlackLevel'
                 desc: 'Average Black Level'
     429:
-        entryClass: FileEye\MediaProbe\Entry\CanonRawMeasuredRGGB
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\RawMeasuredRGGB
         exiftool:
             -
                 name: RawMeasuredRGGB
@@ -584,7 +584,7 @@ items:
                 DOMNode: 'Canon:LinearityUpperMargin'
                 desc: 'Linearity Upper Margin'
     619:
-        entryClass: FileEye\MediaProbe\Entry\CanonRawMeasuredRGGB
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\RawMeasuredRGGB
         exiftool:
             -
                 name: RawMeasuredRGGB

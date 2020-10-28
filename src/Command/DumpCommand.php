@@ -3,8 +3,8 @@
 namespace FileEye\MediaProbe\Command;
 
 use FileEye\MediaProbe\Block\BlockBase;
-use FileEye\MediaProbe\Block\Exif;
-use FileEye\MediaProbe\Block\Ifd;
+use FileEye\MediaProbe\Block\Exif\Exif;
+use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
