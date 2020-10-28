@@ -6,15 +6,15 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection;
+namespace FileEye\MediaProbe\Collection\MakerNotes\Canon;
 
 use FileEye\MediaProbe\Collection;
 
-class UnknownTag extends Collection {
+class Filter extends Collection {
 
   protected static $map = array (
-  'title' => 'Unknown Tag',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tag',
-  'DOMNode' => 'tag',
+  'title' => 'Canon Filter',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\Filter',
+  'DOMNode' => 'filter',
 );
 }

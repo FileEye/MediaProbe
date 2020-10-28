@@ -6360,10 +6360,264 @@ elements:
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420'
                                                                     class: FileEye\MediaProbe\Block\MakerNotes\Canon\FilterInfoIndex
-                                                                    valid: true
+                                                                    valid: false
                                                                     name: CanonFilterInfo
                                                                     id: '16420'
                                                                     collection: MakerNotes\Canon\FilterInfo
+                                                                    elements:
+                                                                        -
+                                                                            node: rawData
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/rawData:filterHeader'
+                                                                            class: FileEye\MediaProbe\Block\RawData
+                                                                            valid: true
+                                                                            name: filterHeader
+                                                                            collection: RawData
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/rawData:filterHeader/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                                    valid: true
+                                                                                    format: Undefined
+                                                                                    components: 4
+                                                                                    bytesHash: 7d77cd3c850b580eb161cc980642c3d9a70344ff6e127935aa11c79218f2a968
+                                                                                    text: '4 byte(s) of data'
+                                                                        -
+                                                                            node: filter
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:1'
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\Filter
+                                                                            valid: false
+                                                                            id: '1'
+                                                                            collection: MakerNotes\Canon\Filter
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:1/tag:GrainyBWFilter:257'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: GrainyBWFilter
+                                                                                    id: '257'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:1/tag:GrainyBWFilter:257/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e
+                                                                                            text: 'Off'
+                                                                        -
+                                                                            node: filter
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:2'
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\Filter
+                                                                            valid: false
+                                                                            id: '2'
+                                                                            collection: MakerNotes\Canon\Filter
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:2/tag:SoftFocusFilter:513'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: SoftFocusFilter
+                                                                                    id: '513'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:2/tag:SoftFocusFilter:513/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e
+                                                                                            text: 'Off'
+                                                                        -
+                                                                            node: filter
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:3'
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\Filter
+                                                                            valid: false
+                                                                            id: '3'
+                                                                            collection: MakerNotes\Canon\Filter
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:3/tag:ToyCameraFilter:769'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: ToyCameraFilter
+                                                                                    id: '769'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:3/tag:ToyCameraFilter:769/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e
+                                                                                            text: 'Off'
+                                                                        -
+                                                                            node: filter
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4'
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\Filter
+                                                                            valid: false
+                                                                            id: '4'
+                                                                            collection: MakerNotes\Canon\Filter
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilter:1025'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: MiniatureFilter
+                                                                                    id: '1025'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilter:1025/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e
+                                                                                            text: 'Off'
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilterOrientation:1026'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: MiniatureFilterOrientation
+                                                                                    id: '1026'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilterOrientation:1026/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: Horizontal
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilterPosition:1027'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: MiniatureFilterPosition
+                                                                                    id: '1027'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilterPosition:1027/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: 0
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilterParameter:1028'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: MiniatureFilterParameter
+                                                                                    id: '1028'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:4/tag:MiniatureFilterParameter:1028/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                            text: 0
+                                                                        -
+                                                                            node: filter
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:5'
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\Filter
+                                                                            valid: false
+                                                                            id: '5'
+                                                                            collection: MakerNotes\Canon\Filter
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:5/tag:FisheyeFilter:1281'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: FisheyeFilter
+                                                                                    id: '1281'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:5/tag:FisheyeFilter:1281/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e
+                                                                                            text: 'Off'
+                                                                        -
+                                                                            node: filter
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:6'
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\Filter
+                                                                            valid: false
+                                                                            id: '6'
+                                                                            collection: MakerNotes\Canon\Filter
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:6/tag:PaintingFilter:1537'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: PaintingFilter
+                                                                                    id: '1537'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:6/tag:PaintingFilter:1537/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e
+                                                                                            text: 'Off'
+                                                                        -
+                                                                            node: filter
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:7'
+                                                                            class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\Filter
+                                                                            valid: false
+                                                                            id: '7'
+                                                                            collection: MakerNotes\Canon\Filter
+                                                                            elements:
+                                                                                -
+                                                                                    node: tag
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:7/tag:WatercolorFilter:1793'
+                                                                                    class: FileEye\MediaProbe\Block\Tag
+                                                                                    valid: true
+                                                                                    name: WatercolorFilter
+                                                                                    id: '1793'
+                                                                                    collection: Tag
+                                                                                    elements:
+                                                                                        -
+                                                                                            node: entry
+                                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFilterInfo:16420/filter:7/tag:WatercolorFilter:1793/entry'
+                                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                            valid: true
+                                                                                            format: SignedLong
+                                                                                            components: 1
+                                                                                            bytesHash: ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e
+                                                                                            text: 'Off'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonRawBurstModeRoll:16421'

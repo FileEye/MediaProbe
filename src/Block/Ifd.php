@@ -179,7 +179,6 @@ class Ifd extends ListBase
         if ($thumbnail = $this->getElement('thumbnail')) {
             $n += 1;
         }
-
         $bytes .= ConvertBytes::fromShort($n, $byte_order);
 
         // Data area. We need to reserve 12 bytes for each IFD tag + 4 bytes
@@ -199,7 +198,7 @@ class Ifd extends ListBase
             $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
 
             $data = $sub_block->toBytes($byte_order, $data_area_offset);
-//if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump('IFD entry', $sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($data_area_bytes));
+//if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump('IFD entry', $sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($data));
             $s = strlen($data);
             if ($s > 4) {
                 $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);

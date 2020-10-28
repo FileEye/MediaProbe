@@ -48,13 +48,13 @@ class FilterInfo extends Collection {
   array (
     257 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'GrainyBWFilter',
       'title' => 'Grainy B/W Filter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
@@ -66,13 +66,13 @@ class FilterInfo extends Collection {
     ),
     513 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'SoftFocusFilter',
       'title' => 'Soft Focus Filter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
@@ -84,13 +84,13 @@ class FilterInfo extends Collection {
     ),
     769 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'ToyCameraFilter',
       'title' => 'Toy Camera Filter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
@@ -102,13 +102,13 @@ class FilterInfo extends Collection {
     ),
     1025 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'MiniatureFilter',
       'title' => 'Miniature Filter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
@@ -120,13 +120,13 @@ class FilterInfo extends Collection {
     ),
     1026 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'MiniatureFilterOrientation',
       'title' => 'Miniature Filter Orientation',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
@@ -139,35 +139,35 @@ class FilterInfo extends Collection {
     ),
     1027 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'MiniatureFilterPosition',
       'title' => 'Miniature Filter Position',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'exiftoolDOMNode' => 'Canon:MiniatureFilterPosition',
     ),
     1028 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'MiniatureFilterParameter',
       'title' => 'Miniature Filter Parameter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'exiftoolDOMNode' => 'Canon:MiniatureFilterParameter',
     ),
     1281 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'FisheyeFilter',
       'title' => 'Fisheye Filter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
@@ -179,13 +179,13 @@ class FilterInfo extends Collection {
     ),
     1537 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'PaintingFilter',
       'title' => 'Painting Filter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
@@ -197,13 +197,13 @@ class FilterInfo extends Collection {
     ),
     1793 =>
     array (
+      'format' =>
+      array (
+        0 => 9,
+      ),
       'collection' => 'Tag',
       'name' => 'WatercolorFilter',
       'title' => 'Watercolor Filter',
-      'format' =>
-      array (
-        0 => 7,
-      ),
       'text' =>
       array (
         'mapping' =>
