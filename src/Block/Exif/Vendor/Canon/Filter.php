@@ -63,6 +63,8 @@ class Filter extends ListBase
 
             $offset += 4 * $val_count;
         }
+
+        $this->parsed = true;
     }
 
     /**
