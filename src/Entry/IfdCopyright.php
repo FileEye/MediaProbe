@@ -40,7 +40,7 @@ class IfdCopyright extends Ascii
      */
     public function setValue(array $data)
     {
-        $this->valid = true;
+        $this->parsed = true;
 
         $this->value = array_replace(['', ''], $data);
 

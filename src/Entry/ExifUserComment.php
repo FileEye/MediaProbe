@@ -49,15 +49,15 @@ class ExifUserComment extends Undefined
         $this->components = strlen($this->value);
 
         if (strlen($this->value) < 8) {
-            $this->valid = false;
+            $this->parsed = false;
         } else {
             $encoding = strtoupper(rtrim(substr($this->value, 0, 8), "\x00"));
             if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-                $this->valid = true;
+                $this->parsed = true;
             }
         }
 
-        if (!$this->valid) {
+        if (!$this->parsed) {
             $this->error('Invalid EXIF text encoding for UserComment.');
         }
 
@@ -103,6 +103,6 @@ class ExifUserComment extends Undefined
      */
     public function toString(array $options = [])
     {
-        return $this->valid ? $this->getValue($options) : '';
+        return $this->parsed ? $this->getValue($options) : '';
     }
 }

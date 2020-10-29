@@ -101,7 +101,7 @@ class Tiff extends BlockBase
             }
         }
 
-        $this->valid = true;
+        $this->parsed = true;
     }
 
     /**

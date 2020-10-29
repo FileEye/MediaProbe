@@ -10,23 +10,23 @@ class NumberRationalTest extends NumberTestCase
     public function testOverflow()
     {
         $entry = new Rational($this->mockParentElement, [[1, 2]]);
-        $this->assertTrue($entry->isValid());
+        $this->assertTrue($entry->isParsed());
         $this->assertEquals([1, 2], $entry->getValue());
 
         $entry->setValue([[3, 4], [-1, 2], [7, 8]]);
-        $this->assertFalse($entry->isValid());
+        $this->assertFalse($entry->isParsed());
         $this->assertEquals([[3, 4], [0, 2], [7, 8]], $entry->getValue());
 
         $entry->setValue([[3, 4], [1, 4294967296]]);
-        $this->assertFalse($entry->isValid());
+        $this->assertFalse($entry->isParsed());
         $this->assertEquals([[3, 4], [1, 0]], $entry->getValue());
 
         $entry->setValue([[3, 4], [4294967296, 1]]);
-        $this->assertFalse($entry->isValid());
+        $this->assertFalse($entry->isParsed());
         $this->assertEquals([[3, 4], [0, 1]], $entry->getValue());
 
         $entry->setValue([[3, 4], [0, 4294967295]]);
-        $this->assertTrue($entry->isValid());
+        $this->assertTrue($entry->isParsed());
         $this->assertEquals([[3, 4], [0, 4294967295]], $entry->getValue());
     }
 

@@ -20,7 +20,7 @@ class JpegSegmentCom extends JpegSegmentBase
         $segment_data = new DataWindow($data_element, $start, $size);
         $this->debugBlockInfo($segment_data);
         $entry = new Ascii($this, [$segment_data->getBytes(4)]);
-        $this->valid = true;
+        $this->parsed = true;
     }
 
     /**

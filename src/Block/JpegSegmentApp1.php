@@ -35,7 +35,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
             $entry->debug("Not an Exif segment. Parsed {text}", ['text' => $entry->toString()]);
         }
 
-        $this->valid = true;
+        $this->parsed = true;
     }
 
     /**

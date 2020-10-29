@@ -117,7 +117,7 @@ class Jpeg extends BlockBase
             $this->error('Missing EOI (End Of Image) JPEG marker');
         }
 
-        $this->valid = true;
+        $this->parsed = true;
     }
 
     /**

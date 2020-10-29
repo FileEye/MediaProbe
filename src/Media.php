@@ -133,10 +133,10 @@ class Media extends BlockBase
             $media_format_class = $media_format_collection->getPropertyValue('class');
             $media_format = new $media_format_class($media_format_collection, $media);
             $media_format->parseData($data_element);
-            $media->valid = $media_format->isValid();
+            $media->parsed = $media_format->isParsed();
 //        } catch (\Throwable $e) { // @ todo xxx better
 //            $media->error(get_class($e) . ': ' . $e->getMessage());
-//            $media->valid = false;
+//            $media->parsed = false;
 //        }
         return $media;
     }

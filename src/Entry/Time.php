@@ -59,7 +59,7 @@ class Time extends Ascii
             $this->error('Expected UNIX_TIMESTAMP, EXIF_STRING, or JULIAN_DAY_COUNT for \'type\', got {type}.', [
                 'type' => $type,
             ]);
-            $this->valid = false;
+            $this->parsed = false;
             return $this;
         }
 
@@ -90,7 +90,7 @@ class Time extends Ascii
         $this->value = [$value];
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
-        $this->valid = true;
+        $this->parsed = true;
         return $this;
     }
 

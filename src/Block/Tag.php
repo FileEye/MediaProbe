@@ -88,7 +88,7 @@ class Tag extends BlockBase
             $this->error($e->getMessage());
         }
 
-        $this->valid = true;
+        $this->parsed = true;
     }
 
     /**

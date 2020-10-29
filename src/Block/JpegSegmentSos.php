@@ -63,6 +63,6 @@ class JpegSegmentSos extends JpegSegmentBase
             $trail->parseData($trail_data_window);
         }
 
-        $this->valid = true;
+        $this->parsed = true;
     }
 }

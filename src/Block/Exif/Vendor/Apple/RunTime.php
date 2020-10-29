@@ -39,10 +39,10 @@ class RunTime extends ListBase
             $tag = new Tag($item_definition, $this);
             $entry_class = $item_definition->getEntryClass();
             new $entry_class($tag, [$value]);
-            $tag->valid = true;
+            $tag->parsed = true;
         }
 
-        $this->valid = true;
+        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($runtime_data);

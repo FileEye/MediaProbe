@@ -58,7 +58,7 @@ class CustomFunctions2 extends ListBase
             $rec_pos += ($num * 4);
         }
 
-        $this->valid = true;
+        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($functions_data);

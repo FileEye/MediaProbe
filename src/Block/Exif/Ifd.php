@@ -59,7 +59,7 @@ class Ifd extends ListBase
             }
         }
 
-        $this->valid = true;
+        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($data_element);
@@ -271,7 +271,7 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'length' => $length,
             ]);
-            $ifd->valid = false;
+            $ifd->parsed = false;
             return;
         }
 
@@ -280,7 +280,7 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'size' => $data_element->getSize(),
             ]);
-            $ifd->valid = false;
+            $ifd->parsed = false;
             return;
         }
 
@@ -317,7 +317,7 @@ class Ifd extends ListBase
                 'length' => $length,
             ]);
             new Undefined($thumbnail_block, [$thumbnail_data]);
-            $thumbnail_block->valid = true;
+            $thumbnail_block->parsed = true;
         } catch (DataException $e) {
             $ifd->error($e->getMessage());
         }

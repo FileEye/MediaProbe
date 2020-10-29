@@ -34,11 +34,11 @@ class Version extends Undefined
      */
     public function setValue(array $data)
     {
-        $this->valid = true;
+        $this->parsed = true;
 
         if (!is_numeric($data[0])) {
             $this->error('Incorrect version data.');
-            $this->valid = false;
+            $this->parsed = false;
         }
 
         $this->value = $data[0];

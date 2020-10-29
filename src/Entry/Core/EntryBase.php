@@ -103,7 +103,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function setValue(array $value)
     {
-        $this->valid = true;
+        $this->parsed = true;
         return $this;
     }
 
