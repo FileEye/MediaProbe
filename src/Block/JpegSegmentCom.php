@@ -15,10 +15,11 @@ class JpegSegmentCom extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
-        $this->debugBlockInfo($data_element);
-        $entry = new Ascii($this, [$data_element->getBytes(4)]);
+        $segment_data = new DataWindow($data_element, $start, $size);
+        $this->debugBlockInfo($segment_data);
+        $entry = new Ascii($this, [$segment_data->getBytes(4)]);
         $this->valid = true;
     }
 

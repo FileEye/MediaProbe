@@ -61,10 +61,11 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
-        $this->debugBlockInfo($data_element);
-        new Undefined($this, [$data_element->getBytes()]);
+        $raw_data = new DataWindow($data_element, $start, $size);
+        $this->debugBlockInfo($raw_data);
+        new Undefined($this, [$raw_data->getBytes()]);
         $this->valid = true;
     }
 

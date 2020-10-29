@@ -1765,6 +1765,7 @@ class CameraInfo5D extends Collection {
     284 =>
     array (
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\Timestamp',
+      'outputFormat' => 2,
       'collection' => 'Tag',
       'name' => 'TimeStamp',
       'title' => 'Time Stamp',

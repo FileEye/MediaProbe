@@ -37,20 +37,21 @@ class FilterInfoIndex extends Index
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
-        $this->debugBlockInfo($data_element);
+        $filter_info_data = new DataWindow($data_element, $start, $size);
+        $this->debugBlockInfo($filter_info_data);
 
         $offset = 0;
 
         // The first 4 bytes is a marker (?), store as RawData.
         $this
             ->addItemWithDefinition(new ItemDefinition(Collection::get('RawData', ['name' => 'filterHeader']), ItemFormat::BYTE, 4))
-            ->parseData(new DataWindow($data_element, $offset, 4));
+            ->parseData(new DataWindow($filter_info_data, $offset, 4));
         $offset += 4;
 
         // The next 4 bytes define the count of filters.
-        $index_components = $data_element->getLong($offset);
+        $index_components = $filter_info_data->getLong($offset);
         $this->debug("{filters} filters", [
             'filters' => $index_components,
         ]);
@@ -58,10 +59,10 @@ class FilterInfoIndex extends Index
 
         // Loop and parse through the filters.
         for ($i = 0; $i < $index_components; $i++) {
-            $filter_size = $data_element->getLong($offset + 4);
+            $filter_size = $filter_info_data->getLong($offset + 4);
             $this
                 ->addItemWithDefinition(new ItemDefinition(Collection::get('MakerNotes\Canon\Filter'), ItemFormat::BYTE, $filter_size, $offset, 0, $i))
-                ->parseData(new DataWindow($data_element, $offset, $filter_size + 4));
+                ->parseData(new DataWindow($filter_info_data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }
     }

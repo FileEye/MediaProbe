@@ -218,6 +218,11 @@ DATA;
                 $item['format'] = $this->format2Id($exiftool['type'], 'exiftool', $item['name'] ?? $item['collection'], $file);
             }
 
+            // Add output format if available.
+            if (isset($item['outputFormat'])) {
+                $item['outputFormat'] = $this->format2Id($item['outputFormat'], 'base', $item['name'] ?? $item['collection'], $file)[0];
+            }
+
             // Add text mapping if available.
             if (!isset($item['text']['mapping']) && isset($exiftool['values'])) {
                 $item['text']['mapping'] = $exiftool['values'];

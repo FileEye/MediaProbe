@@ -23,7 +23,7 @@ class MakerNote extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, $xxx = 0): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null, $xxx = 0): void
     {
         $size = $data_element->getSize();
         $offset = $this->getDefinition()->getDataOffset();
@@ -55,7 +55,6 @@ class MakerNote extends Ifd
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
-                $valid = false;
             }
         }
 

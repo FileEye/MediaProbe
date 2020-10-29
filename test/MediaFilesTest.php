@@ -191,11 +191,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
 }*/
-                    if ($element->getFormat() === ItemFormat::ASCII ||
-                      stripos($element->getContextPath(), 'tag:timestamp') !== false ||
-                      stripos($element->getContextPath(), 'tag:LensSerialNumber') !== false ||
-                      stripos($element->getContextPath(), 'tag:ImageUniqueID') !== false
-                    ) {
+                    if ($element->getOutputFormat() === ItemFormat::ASCII) {
                         $this->assertSame($valx, $vala, 'Exiftool raw: ' . $element->getContextPath());
                     } else {
 /*if (stripos($element->getContextPath(), 'tag:RawMeasuredRGGB') !== false) {

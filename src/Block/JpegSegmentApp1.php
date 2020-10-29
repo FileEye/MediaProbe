@@ -18,19 +18,20 @@ class JpegSegmentApp1 extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
-        $this->debugBlockInfo($data_element);
+        $segment_data = new DataWindow($data_element, $start, $size);
+        $this->debugBlockInfo($segment_data);
 
         // If we have an Exif table, parse it.
-        if (Exif::isExifSegment($data_element, 4)) {
+        if (Exif::isExifSegment($segment_data, 4)) {
             $this
                 ->addItem('Exif')
-                ->parseData(new DataWindow($data_element, 4, $data_element->getSize() - 4));
+                ->parseData($segment_data, 4, $segment_data->getSize() - 4);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.
-            $entry = new Undefined($this, [$data_element->getBytes()]);
+            $entry = new Undefined($this, [$segment_data->getBytes()]);
             $entry->debug("Not an Exif segment. Parsed {text}", ['text' => $entry->toString()]);
         }
 

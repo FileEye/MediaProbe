@@ -116,10 +116,10 @@ abstract class DataElement
     /**
      * Gets the byte order of the data element.
      *
-     * @return int
+     * @return null|int
      *   The byte order.
      */
-    public function getByteOrder(): int
+    public function getByteOrder(): ?int
     {
         return $this->order;
     }

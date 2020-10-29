@@ -24,23 +24,26 @@ class Exif extends BlockBase
      *
      * The Exif data must start with these six bytes to be considered valid.
      */
+    // @todo xxx the trailing bytes may not be zeros
     const EXIF_HEADER = "Exif\0\0";
 
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
-        $this->debugBlockInfo($data_element);
+        $exif_data = new DataWindow($data_element, $start, $size);
 
-        if (Tiff::getTiffSegmentByteOrder($data_element, strlen(self::EXIF_HEADER)) !== null) {
+        $this->debugBlockInfo($exif_data);
+
+        if (Tiff::getTiffSegmentByteOrder($exif_data, strlen(self::EXIF_HEADER)) !== null) {
             $this
                 ->addItem('Tiff')
-                ->parseData(new DataWindow($data_element, strlen(self::EXIF_HEADER), $data_element->getSize() - strlen(self::EXIF_HEADER)));
+                ->parseData($exif_data, strlen(self::EXIF_HEADER), $exif_data->getSize() - strlen(self::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.
-            $entry = new Undefined($this, [$data_element->getBytes()]);
+            $entry = new Undefined($this, [$exif_data->getBytes()]);
             $this->error("TIFF header not found. Parsed {text}", ['text' => $entry->toString()]);
         }
 

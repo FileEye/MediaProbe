@@ -77,6 +77,20 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     }
 
     /**
+     * @todo xxx
+     */
+    public function getOutputFormat()
+    {
+        if (!$this->getParentElement()) {
+            return $this->format;
+        }
+        if ($output_format = $this->getParentElement()->getCollection()->getPropertyValue('outputFormat')) {
+            return $output_format;
+        }
+        return $this->format;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getComponents()

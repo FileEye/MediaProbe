@@ -56,7 +56,7 @@ abstract class BlockBase extends ElementBase
      * @param DataElement $data_element
      *   The data element that will provide the data.
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
         throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }

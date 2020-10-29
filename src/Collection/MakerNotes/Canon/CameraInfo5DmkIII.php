@@ -717,6 +717,7 @@ class CameraInfo5DmkIII extends Collection {
     356 =>
     array (
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensSerialNumber',
+      'outputFormat' => 2,
       'collection' => 'Tag',
       'name' => 'LensSerialNumber',
       'title' => 'Lens Serial Number',
