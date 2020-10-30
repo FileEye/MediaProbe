@@ -58,6 +58,20 @@ abstract class BlockBase extends ElementBase
      */
     public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
+        $data = new DataWindow($data_element, $start, $size);
+        $this->debugBlockInfo($data);
+        $this->doParseData($data);
+        $this->parsed = true;
+    }
+
+    /**
+     * Parse data into a MediaProbe block.
+     *
+     * @param DataElement $data_element
+     *   The data element that will provide the data.
+     */
+    protected function doParseData(DataElement $data): void
+    {
         throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
