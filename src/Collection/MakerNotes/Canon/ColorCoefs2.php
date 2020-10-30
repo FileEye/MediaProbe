@@ -15,7 +15,7 @@ class ColorCoefs2 extends Collection {
   protected static $map = array (
   'name' => 'CanonColorCoefs2',
   'title' => 'Canon ColorCoefs2',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\ColorCalibMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorCalibMap',
   'DOMNode' => 'index',
   'format' =>
   array (

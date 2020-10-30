@@ -67,7 +67,7 @@ class FileInfo extends Collection {
   array (
     1 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFileNumber',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
       'collection' => 'Tag',
       'name' => 'FileNumber',
       'title' => 'File Number',
@@ -322,7 +322,7 @@ class FileInfo extends Collection {
     ),
     20 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -334,7 +334,7 @@ class FileInfo extends Collection {
     ),
     21 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',

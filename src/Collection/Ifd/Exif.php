@@ -15,7 +15,7 @@ class Exif extends Collection {
   protected static $map = array (
   'name' => 'ExifIFD',
   'title' => 'Exif IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>

@@ -23,22 +23,25 @@ class Map extends Index
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
-        $this->debugBlockInfo($data_element);
+//dump('data element', $data_element->getAbsoluteOffset(), $start, $size, MediaProbe::dumpHexFormatted($data_element->getBytes(0, min(100, $size))));
+        $map_data = new DataWindow($data_element, $start, $size);
+//dump('map data', $map_data->getAbsoluteOffset(), MediaProbe::dumpHexFormatted($map_data->getBytes()));
+        $this->debugBlockInfo($map_data);
 
-        $this->validate($data_element);
+        $this->validate($map_data);
 
-        // Load the map as a raw data block.
-        $map_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']), ItemFormat::BYTE);
-        $map = new RawData($map_data_definition, $this);
-        $map->parseData($data_element);
+        // Preserve the entire map as a raw data block.
+        $this
+            ->addItemWithDefinition(new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']), ItemFormat::BYTE))
+            ->parseData($map_data, 0, $size);
 
         $i = 0;
         $offset = 0;
         $size = $this->getDefinition()->getSize();
         foreach ($this->getCollection()->listItemIds() as $item) {
-            // Adds the 'tag'.
+            // Adds a 'tag'.
             try {
                 $n = $offset + ($item * ItemFormat::getSize($this->getFormat()));
 
@@ -47,11 +50,10 @@ class Map extends Index
                     throw new DataException("Offset $n out of bounds");
                 }
 
-                $item_definition = $this->getItemDefinitionFromData($i, $item, $data_element, $n);
+                $item_definition = $this->getItemDefinitionFromData($i, $item, $map_data, $n);
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
-                $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
-                $item->parseData($item_data_window);
+                $item->parseData($map_data, $item_definition->getDataOffset(), $item_definition->getSize());
             } catch (DataException $e) {
                 $this->notice($e->getMessage());
             }
@@ -59,10 +61,10 @@ class Map extends Index
             $i++;
         }
 
-        $this->valid = true;
+        $this->parsed = true;
 
         // Invoke post-load callbacks.
-        $this->executePostLoadCallbacks($data_element);
+        $this->executePostLoadCallbacks($map_data);
     }
 
     /**

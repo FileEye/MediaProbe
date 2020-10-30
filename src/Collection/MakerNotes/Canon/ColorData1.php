@@ -15,7 +15,7 @@ class ColorData1 extends Collection {
   protected static $map = array (
   'name' => 'CanonColorData1',
   'title' => 'Canon Color Data1',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\ColorDataMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
   'format' =>
   array (

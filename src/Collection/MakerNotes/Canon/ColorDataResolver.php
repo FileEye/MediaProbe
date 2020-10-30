@@ -15,7 +15,7 @@ class ColorDataResolver extends Collection {
   protected static $map = array (
   'name' => 'CanonColorDataResolver',
   'title' => 'Canon Color Data Map Resolver',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\ColorDataMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
   'itemsByName' =>
   array (

@@ -1,14 +1,14 @@
 collection: Ifd\Ifd1
 name: IFD1
 title: IFD1
-class: FileEye\MediaProbe\Block\Ifd
+class: FileEye\MediaProbe\Block\Exif\Ifd
 DOMNode: ifd
 defaultItemCollection: Tag
 alias:
     - '1'
     - Thumbnail
 postLoad:
-    - 'FileEye\MediaProbe\Block\Ifd::thumbnailToBlock'
+    - 'FileEye\MediaProbe\Block\Exif\Ifd::thumbnailToBlock'
 compiler:
     exiftool:
         g1: IFD1

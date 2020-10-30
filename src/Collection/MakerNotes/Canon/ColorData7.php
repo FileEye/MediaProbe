@@ -15,7 +15,7 @@ class ColorData7 extends Collection {
   protected static $map = array (
   'name' => 'CanonColorData7',
   'title' => 'Canon Color Data7',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\ColorDataMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -887,7 +887,7 @@ class ColorData7 extends Collection {
     ),
     429 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonRawMeasuredRGGB',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\RawMeasuredRGGB',
       'collection' => 'Tag',
       'name' => 'RawMeasuredRGGB',
       'title' => 'Raw Measured RGGB',
@@ -945,7 +945,7 @@ class ColorData7 extends Collection {
     ),
     619 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonRawMeasuredRGGB',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\RawMeasuredRGGB',
       'collection' => 'Tag',
       'name' => 'RawMeasuredRGGB',
       'title' => 'Raw Measured RGGB',

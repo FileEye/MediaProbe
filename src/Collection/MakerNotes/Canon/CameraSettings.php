@@ -453,7 +453,7 @@ class CameraSettings extends Collection {
     ),
     15 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonSharpness',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Sharpness',
       'collection' => 'Tag',
       'name' => 'Sharpness',
       'title' => 'Sharpness',
@@ -465,7 +465,7 @@ class CameraSettings extends Collection {
     ),
     16 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraISO',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraISO',
       'collection' => 'Tag',
       'name' => 'CameraISO',
       'title' => 'Camera ISO',
@@ -578,7 +578,7 @@ class CameraSettings extends Collection {
     ),
     22 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraSettingsLensType',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraSettingsLensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -993,7 +993,7 @@ class CameraSettings extends Collection {
     ),
     23 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocalLength',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalLength',
       'collection' => 'Tag',
       'name' => 'MaxFocalLength',
       'title' => 'Max Focal Length',
@@ -1005,7 +1005,7 @@ class CameraSettings extends Collection {
     ),
     24 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonFocalLength',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalLength',
       'collection' => 'Tag',
       'name' => 'MinFocalLength',
       'title' => 'Min Focal Length',
@@ -1028,7 +1028,7 @@ class CameraSettings extends Collection {
     ),
     26 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonApertureValue',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ApertureValue',
       'collection' => 'Tag',
       'name' => 'MaxAperture',
       'title' => 'Max Aperture',
@@ -1040,7 +1040,7 @@ class CameraSettings extends Collection {
     ),
     27 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonApertureValue',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ApertureValue',
       'collection' => 'Tag',
       'name' => 'MinAperture',
       'title' => 'Min Aperture',
@@ -1159,7 +1159,7 @@ class CameraSettings extends Collection {
     ),
     35 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonDisplayAperture',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\DisplayAperture',
       'collection' => 'Tag',
       'name' => 'DisplayAperture',
       'title' => 'Display Aperture',

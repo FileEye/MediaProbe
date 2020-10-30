@@ -30,11 +30,9 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
         $this->debugBlockInfo($data_element);
-
-        $this->valid = true;
 
         // JPEG data is stored in big-endian format.
         $data_element->setByteOrder(ConvertBytes::BIG_ENDIAN);
@@ -59,12 +57,11 @@ class Jpeg extends BlockBase
                     ]);
                     $this
                         ->addItemWithDefinition(new ItemDefinition(Collection::get('RawData', ['name' => 'trail']), ItemFormat::BYTE, $offset))
-                        ->parseData(new DataWindow($data_element, $offset, $new_offset - $offset));
+                        ->parseData($data_element, $offset, $new_offset - $offset);
                 }
                 $offset = $new_offset;
             } catch (DataException $e) {
                 $this->error($e->getMessage());
-                $this->valid = false;
                 return;
             }
 
@@ -111,11 +108,6 @@ class Jpeg extends BlockBase
             $segment_data_window = new DataWindow($data_element, $offset, $segment_size);
             $segment->parseData($segment_data_window);
 
-            // Fail JPEG validity if the segment is invalid.
-            if (!$segment->isValid()) {
-                $this->valid = false;
-            }
-
             // Position to end of the segment.
             $offset += $segment_data_window->getSize();
         }
@@ -123,8 +115,9 @@ class Jpeg extends BlockBase
         // Fail if EOI is missing.
         if (!$this->getElement("jpegSegment[@name='EOI']")) {
             $this->error('Missing EOI (End Of Image) JPEG marker');
-            $this->valid = false;
         }
+
+        $this->parsed = true;
     }
 
     /**

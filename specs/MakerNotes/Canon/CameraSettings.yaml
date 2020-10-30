@@ -267,7 +267,7 @@ items:
                 values:
                     - Normal
     15:
-        entryClass: FileEye\MediaProbe\Entry\CanonSharpness
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Sharpness
         exiftool:
             -
                 name: Sharpness
@@ -276,7 +276,7 @@ items:
                 DOMNode: 'Canon:Sharpness'
                 desc: Sharpness
     16:
-        entryClass: FileEye\MediaProbe\Entry\CanonCameraISO
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraISO
         exiftool:
             -
                 name: CameraISO
@@ -354,7 +354,7 @@ items:
                     - M-Dep
                     - Bulb
     22:
-        entryClass: FileEye\MediaProbe\Entry\CanonCameraSettingsLensType
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettingsLensType
         exiftool:
             -
                 name: LensType
@@ -761,7 +761,7 @@ items:
                     61496: 'Canon CN-E 35mm T1.5 L F'
                     65535: n/a
     23:
-        entryClass: FileEye\MediaProbe\Entry\CanonFocalLength
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
         exiftool:
             -
                 name: MaxFocalLength
@@ -770,7 +770,7 @@ items:
                 DOMNode: 'Canon:MaxFocalLength'
                 desc: 'Max Focal Length'
     24:
-        entryClass: FileEye\MediaProbe\Entry\CanonFocalLength
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
         exiftool:
             -
                 name: MinFocalLength
@@ -787,7 +787,7 @@ items:
                 DOMNode: 'Canon:FocalUnits'
                 desc: 'Focal Units'
     26:
-        entryClass: FileEye\MediaProbe\Entry\CanonApertureValue
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue
         exiftool:
             -
                 name: MaxAperture
@@ -796,7 +796,7 @@ items:
                 DOMNode: 'Canon:MaxAperture'
                 desc: 'Max Aperture'
     27:
-        entryClass: FileEye\MediaProbe\Entry\CanonApertureValue
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue
         exiftool:
             -
                 name: MinAperture
@@ -877,7 +877,7 @@ items:
                     259: 'Panning (2)'
                     260: 'Dynamic (2)'
     35:
-        entryClass: FileEye\MediaProbe\Entry\CanonDisplayAperture
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\DisplayAperture
         exiftool:
             -
                 name: DisplayAperture

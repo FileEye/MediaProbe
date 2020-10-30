@@ -15,7 +15,7 @@ class ColorCalib extends Collection {
   protected static $map = array (
   'name' => 'CanonColorCalib',
   'title' => 'Canon ColorCalib',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\ColorCalibMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorCalibMap',
   'DOMNode' => 'index',
   'format' =>
   array (

@@ -1,7 +1,7 @@
 collection: MakerNotes\Canon\ColorData2
 name: CanonColorData2
 title: 'Canon Color Data2'
-class: FileEye\MediaProbe\Block\MakerNotes\Canon\ColorDataMap
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\ColorDataMap
 DOMNode: map
 format: Short
 defaultItemCollection: Tag
@@ -487,7 +487,7 @@ items:
                 DOMNode: 'Canon:ColorTempUnknown16'
                 desc: 'Color Temp Unknown 16'
     618:
-        entryClass: FileEye\MediaProbe\Entry\CanonRawMeasuredRGGB
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\RawMeasuredRGGB
         exiftool:
             -
                 name: RawMeasuredRGGB

@@ -75,22 +75,20 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element): void
+    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
-        $this->debugBlockInfo($data_element);
-
-        $valid = true;
+        $tag_data = new DataWindow($data_element, $start, $size);
+        $this->debugBlockInfo($tag_data);
 
         $class = $this->getDefinition()->getEntryClass();
         $entry = new $class($this);
         try {
-            $entry->loadFromData($data_element, 0, $data_element->getSize(), [], $this->getDefinition());
+            $entry->loadFromData($tag_data, 0, $tag_data->getSize(), [], $this->getDefinition());
         } catch (DataException $e) {
             $this->error($e->getMessage());
-            $valid = false;
         }
 
-        $this->valid = $valid;
+        $this->parsed = true;
     }
 
     /**

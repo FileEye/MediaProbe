@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Ifd;
+use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tag;

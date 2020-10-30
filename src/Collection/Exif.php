@@ -14,7 +14,7 @@ class Exif extends Collection {
 
   protected static $map = array (
   'title' => 'JPEG Exif data',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Exif',
   'DOMNode' => 'exif',
   'items' =>
   array (

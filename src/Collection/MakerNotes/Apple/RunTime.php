@@ -15,7 +15,7 @@ class RunTime extends Collection {
   protected static $map = array (
   'name' => 'AppleRuntime',
   'title' => 'Apple Runtime',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Apple\\RunTime',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\RunTime',
   'DOMNode' => 'plist',
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>

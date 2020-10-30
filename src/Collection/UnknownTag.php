@@ -13,7 +13,7 @@ use FileEye\MediaProbe\Collection;
 class UnknownTag extends Collection {
 
   protected static $map = array (
-  'title' => 'Unknown Tag used to capture data even in absence of a definition.',
+  'title' => 'Unknown Tag',
   'class' => 'FileEye\\MediaProbe\\Block\\Tag',
   'DOMNode' => 'tag',
 );

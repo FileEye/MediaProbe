@@ -108,11 +108,11 @@ interface ElementInterface
     public function getContextPath();
 
     /**
-     * Gets validity of the element.
+     * Determines if the element has been parsed successfully from data.
      *
      * @return bool
      */
-    public function isValid();
+    public function isParsed();
 
     /**
      * Returns the value of this element, if the element supports it.

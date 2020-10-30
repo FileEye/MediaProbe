@@ -1,7 +1,7 @@
 collection: MakerNotes\CanonCustom\Functions2
 name: CanonCustomFunctions2
 title: 'CanonCustom Functions2 - a set of custom function tags which are (reasonably) consistent across models'
-class: FileEye\MediaProbe\Block\MakerNotes\Canon\CustomFunctions2
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CustomFunctions2
 DOMNode: index
 defaultItemCollection: Tag
 compiler:
@@ -42,7 +42,7 @@ items:
                     - '1/3 Stop'
                     - '1 Stop'
     259:
-        entryClass: FileEye\MediaProbe\Entry\CanonCustomIsoSpeedRange
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomIsoSpeedRange
         exiftool:
             -
                 name: ISOSpeedRange
@@ -173,7 +173,7 @@ items:
                     - 'Spot metering'
                     - 'Center-weighted average'
     268:
-        entryClass: FileEye\MediaProbe\Entry\CanonCustomShutterSpeedRange
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomShutterSpeedRange
         exiftool:
             -
                 name: ShutterSpeedRange
@@ -193,7 +193,7 @@ items:
                 DOMNode: 'CanonCustom:ShutterSpeedRange'
                 desc: 'Shutter Speed Range'
     269:
-        entryClass: FileEye\MediaProbe\Entry\CanonCustomApertureRange
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomApertureRange
         exiftool:
             -
                 name: ApertureRange

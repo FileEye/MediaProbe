@@ -15,7 +15,7 @@ class CameraInfo50D extends Collection {
   protected static $map = array (
   'name' => 'CanonCameraInfo50D',
   'title' => 'Canon CameraInfo50D',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CameraInfoMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -88,7 +88,7 @@ class CameraInfo50D extends Collection {
     ),
     3 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFNumber',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -100,7 +100,7 @@ class CameraInfo50D extends Collection {
     ),
     4 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -112,7 +112,7 @@ class CameraInfo50D extends Collection {
     ),
     6 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',
@@ -165,7 +165,7 @@ class CameraInfo50D extends Collection {
     ),
     25 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCICameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -208,7 +208,7 @@ class CameraInfo50D extends Collection {
     ),
     80 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -220,7 +220,7 @@ class CameraInfo50D extends Collection {
     ),
     82 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -365,7 +365,7 @@ class CameraInfo50D extends Collection {
     ),
     234 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -814,7 +814,7 @@ class CameraInfo50D extends Collection {
     ),
     411 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFileIndex',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FileIndex',
       'collection' => 'Tag',
       'name' => 'FileIndex',
       'title' => 'File Index',
@@ -826,7 +826,7 @@ class CameraInfo50D extends Collection {
     ),
     423 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIDirectoryIndex',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\DirectoryIndex',
       'collection' => 'Tag',
       'name' => 'DirectoryIndex',
       'title' => 'Directory Index',

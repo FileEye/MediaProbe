@@ -1,7 +1,7 @@
 collection: MakerNotes\Canon\Main
 name: Canon
 title: 'Canon Maker Notes'
-class: FileEye\MediaProbe\Block\Ifd
+class: FileEye\MediaProbe\Block\Exif\Ifd
 DOMNode: makerNote
 defaultItemCollection: Tag
 compiler:
@@ -531,7 +531,8 @@ items:
         name: CanonContrastInfo
         collection: MakerNotes\Canon\ContrastInfo
     40:
-        entryClass: FileEye\MediaProbe\Entry\CanonImageUniqueID
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ImageUniqueID
+        outputFormat: Ascii
         exiftool:
             -
                 name: ImageUniqueID
@@ -845,7 +846,7 @@ items:
     16409:
         name: CanonLensInfo
         title: 'Canon LensInfo'
-        entryClass: FileEye\MediaProbe\Entry\CanonLensInfo
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\LensInfo
         __collection: MakerNotes\Canon\LensInfo
     16416:
         name: CanonAmbience

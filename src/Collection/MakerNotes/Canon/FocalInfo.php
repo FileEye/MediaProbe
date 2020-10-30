@@ -15,7 +15,7 @@ class FocalInfo extends Collection {
   protected static $map = array (
   'name' => 'CanonFocalInfo',
   'title' => 'Canon FocalInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'index',
   'format' =>
   array (

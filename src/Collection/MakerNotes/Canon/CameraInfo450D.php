@@ -15,7 +15,7 @@ class CameraInfo450D extends Collection {
   protected static $map = array (
   'name' => 'CanonCameraInfo450D',
   'title' => 'Canon CameraInfo450D',
-  'class' => 'FileEye\\MediaProbe\\Block\\MakerNotes\\Canon\\CameraInfoMap',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (
@@ -68,7 +68,7 @@ class CameraInfo450D extends Collection {
   array (
     3 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFNumber',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FNumber',
       'collection' => 'Tag',
       'name' => 'FNumber',
       'title' => 'F Number',
@@ -80,7 +80,7 @@ class CameraInfo450D extends Collection {
     ),
     4 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIExposureTime',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
       'collection' => 'Tag',
       'name' => 'ExposureTime',
       'title' => 'Exposure Time',
@@ -92,7 +92,7 @@ class CameraInfo450D extends Collection {
     ),
     6 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIISO',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
       'collection' => 'Tag',
       'name' => 'ISO',
       'title' => 'ISO',
@@ -126,7 +126,7 @@ class CameraInfo450D extends Collection {
     ),
     24 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCICameraTemperature',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
       'collection' => 'Tag',
       'name' => 'CameraTemperature',
       'title' => 'Camera Temperature',
@@ -138,7 +138,7 @@ class CameraInfo450D extends Collection {
     ),
     27 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIMacroMagnification',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\MacroMagnification',
       'collection' => 'Tag',
       'name' => 'MacroMagnification',
       'title' => 'Macro Magnification',
@@ -181,7 +181,7 @@ class CameraInfo450D extends Collection {
     ),
     67 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceUpper',
       'title' => 'Focus Distance Upper',
@@ -193,7 +193,7 @@ class CameraInfo450D extends Collection {
     ),
     69 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFocusDistance',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
       'collection' => 'Tag',
       'name' => 'FocusDistanceLower',
       'title' => 'Focus Distance Lower',
@@ -255,7 +255,7 @@ class CameraInfo450D extends Collection {
     ),
     222 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCameraInfoLensType',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensType',
       'collection' => 'Tag',
       'name' => 'LensType',
       'title' => 'Lens Type',
@@ -694,7 +694,7 @@ class CameraInfo450D extends Collection {
     ),
     307 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIDirectoryIndex',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\DirectoryIndex',
       'collection' => 'Tag',
       'name' => 'DirectoryIndex',
       'title' => 'Directory Index',
@@ -706,7 +706,7 @@ class CameraInfo450D extends Collection {
     ),
     319 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\CanonCIFileIndex',
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FileIndex',
       'collection' => 'Tag',
       'name' => 'FileIndex',
       'title' => 'File Index',
