@@ -79,7 +79,7 @@ class Index extends ListBase
             $offset += $item_definition->getSize();
         }
 
-        $this->valid = true;
+        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($index_data);

@@ -55,10 +55,10 @@ class AFInfoIndex extends Index
 
             $entry_class = $item_definition->getEntryClass();
             new $entry_class($item, $this->getValueFromData($index_data, $offset, $item_definition->getFormat(), $value_components));
-            $item->valid = true;
+            $item->parsed = true;
         }
 
-        $this->valid = true;
+        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($index_data);

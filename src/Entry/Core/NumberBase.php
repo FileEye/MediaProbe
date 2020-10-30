@@ -95,7 +95,7 @@ abstract class NumberBase extends EntryBase
                     'max' => $this->max,
                 ]);
                 $n = 0;
-                $this->valid = false;
+                $this->parsed = false;
             }
         } else {
             for ($i = 0; $i < $this->dimension; $i ++) {
@@ -106,7 +106,7 @@ abstract class NumberBase extends EntryBase
                         'max' => $this->max,
                     ]);
                     $n[$i] = 0;
-                    $this->valid = false;
+                    $this->parsed = false;
                 }
             }
         }

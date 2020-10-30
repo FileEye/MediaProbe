@@ -76,7 +76,7 @@ class CustomFunctions2Header extends ListBase
             $pos += ($rec_len - 8);
         }
 
-        $this->valid = true;
+        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostLoadCallbacks($functions_header_data);

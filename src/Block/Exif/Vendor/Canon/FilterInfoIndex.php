@@ -65,6 +65,8 @@ class FilterInfoIndex extends Index
                 ->parseData(new DataWindow($filter_info_data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }
+
+        $this->parsed = true;
     }
 
     /**

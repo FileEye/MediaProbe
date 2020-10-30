@@ -47,7 +47,7 @@ class Exif extends BlockBase
             $this->error("TIFF header not found. Parsed {text}", ['text' => $entry->toString()]);
         }
 
-        $this->valid = true;
+        $this->parsed = true;
     }
 
     /**
