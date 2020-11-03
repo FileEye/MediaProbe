@@ -37,21 +37,18 @@ class FilterInfoIndex extends Index
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $filter_info_data = new DataWindow($data_element, $start, $size);
-        $this->debugBlockInfo($filter_info_data);
-
         $offset = 0;
 
         // The first 4 bytes is a marker (?), store as RawData.
         $this
-            ->addItemWithDefinition(new ItemDefinition(Collection::get('RawData', ['name' => 'filterHeader']), ItemFormat::BYTE, 4))
-            ->parseData(new DataWindow($filter_info_data, $offset, 4));
+            ->addBlock(new ItemDefinition(Collection::get('RawData', ['name' => 'filterHeader']), ItemFormat::BYTE, 4))
+            ->parseData(new DataWindow($data, $offset, 4));
         $offset += 4;
 
         // The next 4 bytes define the count of filters.
-        $index_components = $filter_info_data->getLong($offset);
+        $index_components = $data->getLong($offset);
         $this->debug("{filters} filters", [
             'filters' => $index_components,
         ]);
@@ -59,14 +56,12 @@ class FilterInfoIndex extends Index
 
         // Loop and parse through the filters.
         for ($i = 0; $i < $index_components; $i++) {
-            $filter_size = $filter_info_data->getLong($offset + 4);
+            $filter_size = $data->getLong($offset + 4);
             $this
-                ->addItemWithDefinition(new ItemDefinition(Collection::get('MakerNotes\Canon\Filter'), ItemFormat::BYTE, $filter_size, $offset, 0, $i))
-                ->parseData(new DataWindow($filter_info_data, $offset, $filter_size + 4));
+                ->addBlock(new ItemDefinition(Collection::get('MakerNotes\Canon\Filter'), ItemFormat::BYTE, $filter_size, $offset, 0, $i))
+                ->parseData(new DataWindow($data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }
-
-        $this->parsed = true;
     }
 
     /**

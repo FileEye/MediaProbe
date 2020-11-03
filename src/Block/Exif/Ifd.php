@@ -32,7 +32,6 @@ class Ifd extends ListBase
     {
         //$ifd_data = new DataWindow($data_element, $start, $size);
         $offset = $this->getDefinition()->getDataOffset();
-//if ($this->getAttribute('name') === 'CanonFilterInfo') dump($offset, MediaProbe::dumpHexFormatted($data_element->getBytes($offset - 1024, 10000)));
 
         // Get the number of entries.
         $n = $this->getItemsCountFromData($data_element, $offset);
@@ -62,7 +61,7 @@ class Ifd extends ListBase
         $this->parsed = true;
 
         // Invoke post-load callbacks.
-        $this->executePostLoadCallbacks($data_element);
+        $this->executePostParseCallbacks($data_element);
     }
 
     /**
@@ -197,7 +196,7 @@ class Ifd extends ListBase
             $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
 
             $data = $sub_block->toBytes($byte_order, $data_area_offset);
-//if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump('IFD entry', $sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($data));
+//if ($sub_block->getAttribute('name') === 'CanonCameraInfo') dump('IFD entry', $sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($data));
             $s = strlen($data);
             if ($s > 4) {
                 $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
@@ -309,15 +308,11 @@ class Ifd extends ListBase
                     'size' => $size,
                 ]);
             }
-            $thumbnail_data = $dataxx->getBytes(0, $size);
 
-            $thumbnail_block = new Thumbnail(Collection::get('Thumbnail'), $ifd);
-            $thumbnail_block->debug('JPEG thumbnail found at offset {offset} of length {length}', [
-                'offset' => $offset,
-                'length' => $length,
-            ]);
-            new Undefined($thumbnail_block, [$thumbnail_data]);
-            $thumbnail_block->parsed = true;
+            $thumbnail = new ItemDefinition(
+                Collection::get('Thumbnail')
+            );
+            $ifd->addBlock($thumbnail)->parseData($dataxx, 0, $size);
         } catch (DataException $e) {
             $ifd->error($e->getMessage());
         }

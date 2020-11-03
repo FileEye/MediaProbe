@@ -24,21 +24,19 @@ class CustomFunctions2 extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $functions_data = new DataWindow($data_element, $start, $size);
-
         $rec_pos = 0;
         for ($n = 0; $n < $this->getDefinition()->getValuesCount(); $n++) {
-            $id = $functions_data->getLong($rec_pos);
-            $num = $functions_data->getLong($rec_pos + 4);
+            $id = $data->getLong($rec_pos);
+            $num = $data->getLong($rec_pos + 4);
             $this->debug("#{seq}, tag {id}/{hexid}, f {format}, c {components}, data @{offset}, size {size}", [
                 'seq' => $n + 1,
                 'id' => $id,
                 'hexid' => '0x' . strtoupper(dechex($id)),
                 'format' => ItemFormat::getName(ItemFormat::SIGNED_LONG),
                 'components' => $num,
-                'offset' => $functions_data->getStart() + $rec_pos + 8,
+                'offset' => $data->getStart() + $rec_pos + 8,
                 'size' => $num * 4,
             ]);
             $rec_pos += 8;
@@ -50,18 +48,13 @@ class CustomFunctions2 extends ListBase
                 $item_definition = new ItemDefinition($item_collection, ItemFormat::SIGNED_LONG, $num, $rec_pos);
                 $class = $item_definition->getCollection()->getPropertyValue('class');
                 $tag = new $class($item_definition, $this);
-                $tag_data_window = new DataWindow($functions_data, $item_definition->getDataOffset(), $item_definition->getSize());
+                $tag_data_window = new DataWindow($data, $item_definition->getDataOffset(), $item_definition->getSize());
                 $tag->parseData($tag_data_window);
             } catch (DataException $e) {
                 $tag->error($e->getMessage());
             }
             $rec_pos += ($num * 4);
         }
-
-        $this->parsed = true;
-
-        // Invoke post-load callbacks.
-        $this->executePostLoadCallbacks($functions_data);
     }
 
     /**

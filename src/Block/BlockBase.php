@@ -21,33 +21,68 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 abstract class BlockBase extends ElementBase
 {
     /**
-     * The Collection of this Block.
+     * The Definition of this Block.
+     *
+     * @var \FileEye\MediaProbe\ItemDefinition
+     */
+    protected $definition;
+
+    /**
+     * The size of this Block in bytes.
      *
      * @var \FileEye\MediaProbe\Collection
      */
-    protected $collection;
+    protected $size;
 
     /**
      * Constructs a Block object.
      *
-     * @param \FileEye\MediaProbe\Collection $collection
-     *            The Collection of this Block.
+     * @param \FileEye\MediaProbe\ItemDefinition $definition
+     *            The Item Definition of this Block.
      * @param \FileEye\MediaProbe\Block\BlockBase|null $parent
      *            (Optional) the parent Block of this Block.
      * @param \FileEye\MediaProbe\Block\BlockBase|null $reference
      *            (Optional) if specified, the new Block will be inserted
      *            before the reference Block.
      */
-    public function __construct(Collection $collection, BlockBase $parent = null, BlockBase $reference = null)
+    public function __construct(ItemDefinition $definition, BlockBase $parent = null, BlockBase $reference = null)
     {
-        $this->collection = $collection;
-        parent::__construct($collection->getPropertyValue('DOMNode'), $parent, $reference);
-        if ($collection->getPropertyValue('item') !== null) {
-            $this->setAttribute('id', $collection->getPropertyValue('item'));
+        $this->definition = $definition;
+
+        parent::__construct($this->getCollection()->getPropertyValue('DOMNode'), $parent, $reference);
+
+        if ($this->getCollection()->hasProperty('item')) {
+            $this->setAttribute('id', $this->getCollection()->getPropertyValue('item'));
         }
-        if ($collection->getPropertyValue('name') !== null) {
-            $this->setAttribute('name', $collection->getPropertyValue('name'));
+        if ($this->getCollection()->hasProperty('name')) {
+            $this->setAttribute('name', $this->getCollection()->getPropertyValue('name'));
         }
+    }
+
+    /**
+     * Gets the Definition of this Block.
+     *
+     * @return \FileEye\MediaProbe\ItemDefinition
+     */
+    public function getDefinition(): ItemDefinition
+    {
+        return $this->definition;
+    }
+
+    /**
+     * Gets the Collection of this Block.
+     *
+     * @return \FileEye\MediaProbe\Collection
+     */
+    public function getCollection(): Collection
+    {
+        return $this->getDefinition()->getCollection();
+    }
+
+    // xx
+    public function getFormat()
+    {
+        return $this->getDefinition()->getFormat();
     }
 
     /**
@@ -58,33 +93,61 @@ abstract class BlockBase extends ElementBase
      */
     public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
     {
+        $data = new DataWindow($data_element, $start, $size);
+        $this->size = $data->getSize();
+        $this->debugBlockInfo($data);
+        $this->doParseData($data);
+        $this->parsed = true;
+
+        // Invoke post-parse callbacks.
+        $this->executePostParseCallbacks($data);
+    }
+
+    /**
+     * Parse data into a MediaProbe block.
+     *
+     * @param DataElement $data_element
+     *   The data element that will provide the data.
+     */
+    protected function doParseData(DataElement $data): void
+    {
         throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
 
     /**
-     * @todo
+     * Invoke post-parse callbacks.
+     *
+     * @param \FileEye\MediaProbe\Data\DataElement $data_element
+     *   @todo
      */
-    public function addItem(string $collection_id): BlockBase
+    protected function executePostParseCallbacks(DataElement $data_element)
     {
-        $collection = $this->getCollection()->getItemCollection($collection_id);
-        $class = $collection->getPropertyValue('class');
-        return new $class($collection, $this);
-    }
-
-    public function addItemWithDefinition(ItemDefinition $item_definition): BlockBase
-    {
-        $class = $item_definition->getCollection()->getPropertyValue('class');
-        return new $class($item_definition, $this);
+        $post_load_callbacks = $this->getCollection()->getPropertyValue('postParse');
+        if (!empty($post_load_callbacks)) {
+            foreach ($post_load_callbacks as $callback) {
+                call_user_func($callback, $data_element, $this);
+            }
+        }
+        return $this;
     }
 
     /**
-     * Gets the Collection of this Block.
-     *
-     * @return \FileEye\MediaProbe\Collection
+     * @todo xxx
      */
-    public function getCollection()
+    public function addBlock(ItemDefinition $item_definition, ?BlockBase $parent = null, ?BlockBase $reference = null): BlockBase
     {
-        return $this->collection;
+        $class = $item_definition->getCollection()->getPropertyValue('class');
+        return new $class($item_definition, $parent ?? $this, $reference);
+    }
+
+    /**
+     * Gets the size of this Block in bytes.
+     *
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
     }
 
     /**

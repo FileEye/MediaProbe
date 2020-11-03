@@ -52,7 +52,7 @@ found in that IFD.
 | ---------- | ----------------------------------------------------------------------------------------------------- |
 | type       | A string identifying the IFD type. |
 | class      | A string identifying the IFD's PHP class to be used to process the IFD information. |
-| postLoad   | (Optional) An array of callbacks to be fired at the end of the IFD loading process. |
+| postParse   | (Optional) An array of callbacks to be fired at the end of the IFD loading process. |
 | alias      | (Optional) An array of strings alternatively identifying the IFD type. |
 | tags       | An array of TAGs (see below). |
 | makerNotes | (Optional) If the IFD is relative to custom manufacturer notes, this array of string specifies the values of the EXIF/MakerNote TAG that will match this type of maker notes. |

@@ -25,42 +25,39 @@ class CustomFunctions2Header extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $functions_header_data = new DataWindow($data_element, $start, $size);
-        $this->debugBlockInfo($functions_header_data);
-
         $offset = 0;
         $size = $this->getDefinition()->getSize();
 
         // Validate incoming size.
-        if ($size !== $functions_header_data->getLong($offset)) {
+        if ($size !== $data->getLong($offset)) {
             throw new DataException("index:%s mismatching data size", $this->getAttribute('name')); // @todo ingest in logging
         } elseif ($size < 8) {
             throw new DataException("index:%s invalid data size", $this->getAttribute('name')); // @todo ingest in logging
         }
 
         // Get groups count.
-        $groups_count = $functions_header_data->getLong($offset + 4);
+        $groups_count = $data->getLong($offset + 4);
         $this->debug("index:{name} @{offset} with {tags} groups, size {size}", [
             'name' => $this->getAttribute('name'),
             'tags' => $groups_count,
-            'offset' => $functions_header_data->getStart() + $offset,
+            'offset' => $data->getStart() + $offset,
             'size' => $size,
         ]);
 
         // Parse groups.
         $pos = $offset + 8;
         for ($i = 0; $i < $groups_count; $i++) {
-            $rec_num = $functions_header_data->getLong($pos);
-            $rec_len = $functions_header_data->getLong($pos + 4);
-            $rec_count = $functions_header_data->getLong($pos + 8);
+            $rec_num = $data->getLong($pos);
+            $rec_len = $data->getLong($pos + 4);
+            $rec_count = $data->getLong($pos + 8);
             $this->debug("index:{name} group {num} with {tags} tags, size {size} @{offset}", [
                 'name' => $this->getAttribute('name'),
                 'num' => $rec_num,
                 'tags' => $rec_count,
                 'size' => $rec_len,
-                'offset' => $functions_header_data->getStart() + $pos,
+                'offset' => $data->getStart() + $pos,
             ]);
 
             $pos += 12;
@@ -68,18 +65,13 @@ class CustomFunctions2Header extends ListBase
                 $item_definition = new ItemDefinition($this->getCollection()->getItemCollection($rec_num), ItemFormat::SIGNED_LONG, $rec_count);
                 $class = $item_definition->getCollection()->getPropertyValue('class');
                 $group = new $class($item_definition, $this);
-                $group->parseData($functions_header_data, $pos, min($rec_len, $functions_header_data->getSize() - $pos));
+                $group->parseData($data, $pos, min($rec_len, $data->getSize() - $pos));
             } catch (\Exception $e) {
                 $this->error($e->getMessage());
                 throw new MediaProbeException($e->getMessage()); // @todo ingest in logging
             }
             $pos += ($rec_len - 8);
         }
-
-        $this->parsed = true;
-
-        // Invoke post-load callbacks.
-        $this->executePostLoadCallbacks($functions_header_data);
     }
 
     /**

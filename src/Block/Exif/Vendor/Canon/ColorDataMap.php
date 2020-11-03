@@ -2,11 +2,13 @@
 
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
-use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\Block\Index;
-use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Map;
+use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -27,7 +29,7 @@ class ColorDataMap extends Map
         foreach ($this->getCollection()->listItemIds() as $color_data_map) {
             $map_t = $this->getCollection()->getItemCollection($color_data_map);
             if (in_array($this->getDefinition()->getValuesCount(), $map_t->getPropertyValue('condition') ?? [])) {
-                $this->collection = $map_t;
+                $this->definition = new ItemDefinition($map_t, $map_t->getPropertyValue('format')[0]);
                 break;
             }
         }

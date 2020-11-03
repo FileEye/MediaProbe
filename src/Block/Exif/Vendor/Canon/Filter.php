@@ -36,35 +36,30 @@ class Filter extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $filter_data = new DataWindow($data_element, $start, $size);
         $offset = 0;
 
         // The id of the filter is at offset 0.
-        $this->setAttribute('id', $filter_data->getLong($offset));
+        $this->setAttribute('id', $data->getLong($offset));
 
         // The count of filter parameters is at offset 8.
-        $this->paramsCount = $filter_data->getLong($offset + 8);
+        $this->paramsCount = $data->getLong($offset + 8);
         $offset += 12;
-
-        $this->debugBlockInfo($filter_data);
 
         // Loop and parse through the parameters.
         for ($p = 0; $p < $this->paramsCount; $p++) {
-            $id = $filter_data->getLong($offset);
-            $val_count = $filter_data->getLong($offset + 4);
+            $id = $data->getLong($offset);
+            $val_count = $data->getLong($offset + 4);
             $offset += 8;
 
             // The items are defined in the collection of the parent element.
             $this
-                ->addItemWithDefinition(new ItemDefinition($this->getParentElement()->getCollection()->getItemCollection($id), ItemFormat::SIGNED_LONG, $val_count))
-                ->parseData(new DataWindow($filter_data, $offset, $val_count * ItemFormat::getSize(ItemFormat::SIGNED_LONG)));
+                ->addBlock(new ItemDefinition($this->getParentElement()->getCollection()->getItemCollection($id), ItemFormat::SIGNED_LONG, $val_count))
+                ->parseData(new DataWindow($data, $offset, $val_count * ItemFormat::getSize(ItemFormat::SIGNED_LONG)));
 
             $offset += 4 * $val_count;
         }
-
-        $this->parsed = true;
     }
 
     /**

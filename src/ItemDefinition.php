@@ -54,7 +54,7 @@ class ItemDefinition
      *
      * @todo xxx
      */
-    public function __construct(Collection $collection, int $format, int $values_count = 1, int $data_offset = 0, int $item_definition_offset = 0, int $sequence = 0)
+    public function __construct(Collection $collection, int $format = ItemFormat::BYTE, int $values_count = 1, int $data_offset = 0, int $item_definition_offset = 0, int $sequence = 0)
     {
         $this->collection = $collection;
         $this->format = $format;

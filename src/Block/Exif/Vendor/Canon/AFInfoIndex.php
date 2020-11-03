@@ -18,12 +18,9 @@ class AFInfoIndex extends Index
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $index_data = new DataWindow($data_element, $start, $size);
-        $this->debugBlockInfo($index_data);
-
-        $this->validate($index_data);
+        $this->validate($data);
 
         // Loops through the index and loads the tags. If the 'hasIndexSize'
         // property is true, the first entry is a special case that is handled
@@ -31,7 +28,7 @@ class AFInfoIndex extends Index
         $offset = 0;
         $index_components = $this->getDefinition()->getValuesCount();
         for ($i = 0; $i < $index_components; $i++) {
-            $item_definition = $this->getItemDefinitionFromData($i, $i, $index_data, $offset);
+            $item_definition = $this->getItemDefinitionFromData($i, $i, $data, $offset);
 
             // Check if this tag should be skipped.
             if ($item_definition->getCollection()->getPropertyValue('skip')) {
@@ -54,14 +51,9 @@ class AFInfoIndex extends Index
             $item = new $item_class($item_definition, $this);
 
             $entry_class = $item_definition->getEntryClass();
-            new $entry_class($item, $this->getValueFromData($index_data, $offset, $item_definition->getFormat(), $value_components));
+            new $entry_class($item, $this->getValueFromData($data, $offset, $item_definition->getFormat(), $value_components));
             $item->parsed = true;
         }
-
-        $this->parsed = true;
-
-        // Invoke post-load callbacks.
-        $this->executePostLoadCallbacks($index_data);
     }
 
     /**
