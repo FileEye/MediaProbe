@@ -45,8 +45,8 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals([
             'FileEye\MediaProbe\Block\Exif\Ifd::thumbnailToBlock',
             'FileEye\MediaProbe\Block\Exif\Ifd::makerNoteToBlock',
-        ], $ifd_0->getCollection()->getPropertyValue('postLoad'));
-        $this->assertNull($ifd_canon_camera_settings->getCollection()->getPropertyValue('postLoad'));
+        ], $ifd_0->getCollection()->getPropertyValue('postParse'));
+        $this->assertNull($ifd_canon_camera_settings->getCollection()->getPropertyValue('postParse'));
 
         // Test retrieving TAG name.
         $this->assertEquals('ExifIFD', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('name'));

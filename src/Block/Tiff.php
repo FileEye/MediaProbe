@@ -44,27 +44,30 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $tiff_data = new DataWindow($data_element, $start, $size);
-
         // Determine the byte order of the TIFF data.
-        $this->byteOrder = self::getTiffSegmentByteOrder($tiff_data);
-        $tiff_data->setByteOrder($this->byteOrder);
+        $this->byteOrder = self::getTiffSegmentByteOrder($data);
+        $data->setByteOrder($this->byteOrder);
 
-        $this->debugBlockInfo($tiff_data);
+        $this->debug('byte order: {byte_order} ({byte_order_description})', [
+            'byte_order' => $this->byteOrder === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
+            'byte_order_description' => $this->byteOrder === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
+        ]);
 
         // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
         // header).
-        $ifd_offset = $tiff_data->getLong(4);
+        $ifd_offset = $data->getLong(4);
 
         // If the offset to first IFD is higher than 8, then there may be an
         // image scan (TIFF) in between. Store that in a RawData block.
         if ($ifd_offset > 8) {
-            $scan_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'scan']), ItemFormat::BYTE, $ifd_offset - 8);
-            $scan_data_window = new DataWindow($tiff_data, 8, $ifd_offset - 8);
-            $scan = new RawData($scan_definition, $this);
-            $scan->parseData($scan_data_window);
+            $scan = new ItemDefinition(
+                Collection::get('RawData', ['name' => 'scan']),
+                ItemFormat::BYTE,
+                $ifd_offset - 8
+            );
+            $this->addBlock($scan)->parseData($data, 8, $ifd_offset - 8);
         }
 
         // Loops through IFDs. In fact we should only have IFD0 and IFD1.
@@ -80,13 +83,13 @@ class Tiff extends BlockBase
                 // be split in windows since any pointer will refer to the
                 // entire segment space.
                 $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
-                $ifd_tags_count = $tiff_data->getShort($ifd_offset);
+                $ifd_tags_count = $data->getShort($ifd_offset);
                 $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
                 $ifd = new $ifd_class($ifd_item, $this);
-                $ifd->parseData($tiff_data);
+                $ifd->parseData($data);
 
                 // Offset to next IFD.
-                $ifd_offset = $tiff_data->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
+                $ifd_offset = $data->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
                     'ifd_name' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name'),
@@ -100,8 +103,6 @@ class Tiff extends BlockBase
                 break;
             }
         }
-
-        $this->parsed = true;
     }
 
     /**
@@ -217,7 +218,6 @@ class Tiff extends BlockBase
         if ($title ==! null) {
             $msg .= ' ({title})';
         }
-        $msg .= ' byte order {byte_order} ({byte_order_description})';
         if ($data_element instanceof DataWindow) {
             $msg .= ' @{offset} size {size}';
             $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
@@ -228,8 +228,6 @@ class Tiff extends BlockBase
             'node' => $node,
             'name' => $name,
             'title' => $title,
-            'byte_order' => $data_element->getDataElement()->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
-            'byte_order_description' => $data_element->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
             'offset' => $offset ?? null,
             'size' => $data_element ? $data_element->getSize() : null,
         ]);

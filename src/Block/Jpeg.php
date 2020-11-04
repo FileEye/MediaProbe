@@ -30,21 +30,19 @@ class Jpeg extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $this->debugBlockInfo($data_element);
-
         // JPEG data is stored in big-endian format.
-        $data_element->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
-        // Run through the data to read the segments in the image. After each
-        // segment is read, the offset will be moved forward, and after the last
-        // segment we will terminate.
+        // Run through the data to parse the segments in the image. After each
+        // segment is parsed, the offset will be moved forward, and after the
+        // last segment we will terminate.
         $offset = 0;
-        while ($offset < $data_element->getSize()) {
+        while ($offset < $data->getSize()) {
             // Get the next JPEG segment id offset.
             try {
-                $new_offset = $this->getJpegSegmentIdOffset($data_element, $offset);
+                $new_offset = $this->getJpegSegmentIdOffset($data, $offset);
                 $segment_id = $segment_id ?? 0;
                 if ($new_offset !== $offset) {
                     // Add any trailing data from previous segment in a
@@ -52,12 +50,15 @@ class Jpeg extends BlockBase
                     $this->error('Unexpected data found at end of JPEG segment {id}/{hexid} @ offset {offset}, size {size}', [
                         'id' => $segment_id,
                         'hexid' => '0x' . strtoupper(dechex($segment_id)),
-                        'offset' => $data_element->getAbsoluteOffset($offset),
+                        'offset' => $data->getAbsoluteOffset($offset),
                         'size' => $new_offset - $offset,
                     ]);
-                    $this
-                        ->addItemWithDefinition(new ItemDefinition(Collection::get('RawData', ['name' => 'trail']), ItemFormat::BYTE, $offset))
-                        ->parseData($data_element, $offset, $new_offset - $offset);
+                    $trail = new ItemDefinition(
+                        Collection::get('RawData', ['name' => 'trail']),
+                        ItemFormat::BYTE,
+                        $offset
+                    );
+                    $this->addBlock($trail)->parseData($data, $offset, $new_offset - $offset);
                 }
                 $offset = $new_offset;
             } catch (DataException $e) {
@@ -66,14 +67,14 @@ class Jpeg extends BlockBase
             }
 
             // Get the JPEG segment id.
-            $segment_id = $data_element->getByte($offset + 1);
+            $segment_id = $data->getByte($offset + 1);
 
             // Warn if an unidentified segment is detected.
             if (!in_array($segment_id, $this->getCollection()->listItemIds())) {
                 $this->warning('Invalid JPEG marker {id}/{hexid} found @ offset {offset}', [
                     'id' => $segment_id,
                     'hexid' => '0x' . strtoupper(dechex($segment_id)),
-                    'offset' => $data_element->getAbsoluteOffset($offset),
+                    'offset' => $data->getAbsoluteOffset($offset),
                 ]);
             }
 
@@ -89,7 +90,7 @@ class Jpeg extends BlockBase
                     // Read the length of the segment. The data window size
                     // includes the JPEG delimiter byte, the segment identifier
                     // byte and two bytes used to store the segment length.
-                    $segment_size = $data_element->getShort($offset + 2) + 2;
+                    $segment_size = $data->getShort($offset + 2) + 2;
                     break;
                 case 'fixed':
                     // The data window size includes the JPEG delimiter byte
@@ -103,13 +104,13 @@ class Jpeg extends BlockBase
                     break;
             }
 
-            // Load the MediaProbe JPEG segment data.
-            $segment = $this->addItem($segment_id);
-            $segment_data_window = new DataWindow($data_element, $offset, $segment_size);
-            $segment->parseData($segment_data_window);
+            // Parse the MediaProbe JPEG segment data.
+            $segment_definition = new ItemDefinition($segment_collection);
+            $segment = $this->addBlock($segment_definition);
+            $segment->parseData($data, $offset, $segment_size);
 
             // Position to end of the segment.
-            $offset += $segment_data_window->getSize();
+            $offset += $segment->getSize();
         }
 
         // Fail if EOI is missing.

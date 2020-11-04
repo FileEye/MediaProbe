@@ -4,11 +4,11 @@ language: php
 
 jobs:
   include:
-    - php: 7.2
-    - php: 7.3
+    #- php: 7.2
+    #- php: 7.3
     - php: 7.4
-    - php: 8.0snapshot
-    - php: nightly
+    #- php: 8.0snapshot
+    #- php: nightly
   fast_finish: true
   allow_failures:
     - php: nightly
@@ -24,7 +24,7 @@ env:
 
 cache:
   directories:
-    #- $FILEEYE_STAGING_DIR
+    - $FILEEYE_STAGING_DIR
 
 before_install:
   #- composer self-update 1.10.16
@@ -53,7 +53,7 @@ script:
   # Remove the comment to the lines below during development, to let TravisCI
   # re-compile the specification PHP file from the YAML files, and refresh the
   # media file dumps.
-  #- php bin/fileeye-mediaprobe compile
+  - php bin/fileeye-mediaprobe compile
   #- php bin/fileeye-mediaprobe dump test/image_files
 
   - if [ "$TRAVIS_PHP_VERSION" == "7.3" ]; then ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
@@ -63,8 +63,8 @@ script:
   #- php examples/dump-media.php -d    test/image_files/broken_images/canon-eos-650d.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
   #- php examples/dump-media.php -d    test/image_files/exiftool/Canon1DmkIII.jpg-rewrite.img
-  #- php examples/dump-media.php -d -w test/image_files/exiftool/Canon.jpg
-  #- php examples/dump-media.php -d    test/image_files/exiftool/Canon.jpg-rewrite.img
+  - php examples/dump-media.php -d -w test/image_files/exiftool/Canon.jpg
+  - php examples/dump-media.php -d    test/image_files/exiftool/Canon.jpg-rewrite.img
   #- php examples/dump-media.php -d    test/image_files/camera_samples/canon-powershot-s60.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/canon-powershot-s60.jpg-rewrite.img
   #- php examples/dump-media.php -d    test/image_files/camera_samples/canon-ixus-ii.jpg
@@ -106,7 +106,7 @@ script:
   #- php examples/dump-media.php -d    test/image_files/camera_samples/olympus-c765uz.jpg
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/fujifilm_x_a5.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/fujifilm_x_a5.jpg-rewrite.img
-  - php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_70d_29.jpg
+  #- php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_70d_29.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/canon_eos_70d_29.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_850d_08.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/canon_eos_850d_08.jpg-rewrite.img

@@ -13,58 +13,73 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
- * Class representing a map of values, for Canon Camera information.
+ * Class representing a map of values.
  *
- * In this case, instead of accessing the data sequentially, we determine the
- * CameraInfo map to use and access it directly.
+ * This class is useful when you have a sparse table of data and want to access
+ * it directly by offset.
  */
 class Map extends Index
 {
     /**
+     * The format of map data.
+     */
+    protected $format;
+
+    /**
+     * The amount of components in the map.
+     */
+    protected $components;
+
+    /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    public function __construct(ItemDefinition $definition, BlockBase $parent = null, BlockBase $reference = null)
     {
-//dump('data element', $data_element->getAbsoluteOffset(), $start, $size, MediaProbe::dumpHexFormatted($data_element->getBytes(0, min(100, $size))));
-        $map_data = new DataWindow($data_element, $start, $size);
-//dump('map data', $map_data->getAbsoluteOffset(), MediaProbe::dumpHexFormatted($map_data->getBytes()));
-        $this->debugBlockInfo($map_data);
+        parent::__construct($definition, $parent, $reference);
+        $this->components = $definition->getValuesCount();
+        $this->format = $definition->getFormat();
+//dump($definition);
+    }
 
-        $this->validate($map_data);
+    /**
+     * {@inheritdoc}
+     */
+    protected function doParseData(DataElement $data): void
+    {
+        $this->validate($data);
 
         // Preserve the entire map as a raw data block.
-        $this
-            ->addItemWithDefinition(new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']), ItemFormat::BYTE))
-            ->parseData($map_data, 0, $size);
+        $mapdata = new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']));
+        $this->addBlock($mapdata)->parseData($data);
 
         $i = 0;
-        $offset = 0;
-        $size = $this->getDefinition()->getSize();
         foreach ($this->getCollection()->listItemIds() as $item) {
             // Adds a 'tag'.
             try {
-                $n = $offset + ($item * ItemFormat::getSize($this->getFormat()));
-
-                // todo xx manage better the out-of-bounds
-                if ($n > $offset + $size - 1) {
-                    throw new DataException("Offset $n out of bounds");
-                }
-
-                $item_definition = $this->getItemDefinitionFromData($i, $item, $map_data, $n);
-                $item_class = $item_definition->getCollection()->getPropertyValue('class');
-                $item = new $item_class($item_definition, $this);
-                $item->parseData($map_data, $item_definition->getDataOffset(), $item_definition->getSize());
+                $n = $item * ItemFormat::getSize($this->getFormat());
+                $item_definition = $this->getItemDefinitionFromData($i, $item, $data, $n);
+                $this->addBlock($item_definition)->parseData($data, $item_definition->getDataOffset(), $item_definition->getSize());
             } catch (DataException $e) {
                 $this->notice($e->getMessage());
             }
-
             $i++;
         }
+    }
 
-        $this->parsed = true;
+    /**
+     * {@inheritdoc}
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
 
-        // Invoke post-load callbacks.
-        $this->executePostLoadCallbacks($map_data);
+    /**
+     * {@inheritdoc}
+     */
+    public function getComponents()
+    {
+        return $this->components;
     }
 
     /**
@@ -73,6 +88,8 @@ class Map extends Index
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false)
     {
         $data_bytes = $this->getElement("rawData[@name='mapdata']/entry")->getValue();
+//if ($this->getAttribute('name') === 'CanonFilterInfo') dump($offset, MediaProbe::dumpHexFormatted($data_element->getBytes($offset - 1024, 10000)));
+//dump($this->getAttribute('name'), MediaProbe::dumpHexFormatted($data_bytes));
 
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
@@ -88,13 +105,5 @@ class Map extends Index
         }
 
         return $data_bytes;
-    }
-
-    /**
-     * @todo not quite right??
-     */
-    public function getComponents()
-    {
-        return $this->getDefinition()->getValuesCount();
     }
 }

@@ -81,7 +81,7 @@ class Media extends BlockBase
         $magic_data_element = new DataString(file_get_contents($path, false, null, 0, 10));
         $media_format_collection = static::getMatchingMediaCollection($magic_data_element);
         $data_element = new DataString(file_get_contents($path));
-        return static::doCreate($media_format_collection, $data_element, $external_logger, $fail_level);
+        return static::parse($media_format_collection, $data_element, $external_logger, $fail_level);
     }
 
     /**
@@ -104,7 +104,7 @@ class Media extends BlockBase
     public static function createFromData(DataElement $data_element, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
         $media_format_collection = static::getMatchingMediaCollection($data_element);
-        return static::doCreate($media_format_collection, $data_element, $external_logger, $fail_level);
+        return static::parse($media_format_collection, $data_element, $external_logger, $fail_level);
     }
 
     /**
@@ -123,20 +123,18 @@ class Media extends BlockBase
      * @return Media
      *            The Media object.
      */
-    protected static function doCreate(Collection $media_format_collection, DataElement $data_element, ?LoggerInterface $external_logger, ?string $fail_level): Media
+    protected static function parse(Collection $media_format_collection, DataElement $data_element, ?LoggerInterface $external_logger, ?string $fail_level): Media
     {
         // Build the Media object and its immediate child, that represents the
-        // media format. Then load the media according to the media format.
+        // media format. Then parse the media according to the media format.
         $media = new static($external_logger, $fail_level);
         $media->debugBlockInfo($data_element);
 //        try {
-            $media_format_class = $media_format_collection->getPropertyValue('class');
-            $media_format = new $media_format_class($media_format_collection, $media);
-            $media_format->parseData($data_element);
-            $media->parsed = $media_format->isParsed();
+            $media_format = new ItemDefinition($media_format_collection);
+            $media->addBlock($media_format)->parseData($data_element);
+            $media->parsed = true;
 //        } catch (\Throwable $e) { // @ todo xxx better
 //            $media->error(get_class($e) . ': ' . $e->getMessage());
-//            $media->parsed = false;
 //        }
         return $media;
     }
@@ -181,7 +179,8 @@ class Media extends BlockBase
      */
     public function __construct(?LoggerInterface $external_logger, ?string $fail_level)
     {
-        parent::__construct(Collection::get('Media'));
+        $media = new ItemDefinition(Collection::get('Media'));
+        parent::__construct($media);
         $this->logger = (new Logger('mediaprobe'))
           ->pushHandler(new TestHandler(Logger::INFO))
           ->pushProcessor(new PsrLogMessageProcessor());

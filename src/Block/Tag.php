@@ -18,21 +18,12 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 class Tag extends BlockBase
 {
-    // xx
-    protected $definition;
-
     /**
      * Constructs a Tag block object.
      */
-    public function __construct(ItemDefinition $definition, BlockBase $parent, ElementInterface $reference = null)
+    public function __construct(ItemDefinition $definition, BlockBase $parent = null, ElementInterface $reference = null)
     {
-        $collection = $definition->getCollection();
-
-        parent::__construct($collection, $parent, $reference);
-
-        $this->setAttribute('id', $collection->getPropertyValue('item'));
-
-        $this->definition = $definition;
+        parent::__construct($definition, $parent, $reference);
         $this->validate();
     }
 
@@ -42,7 +33,7 @@ class Tag extends BlockBase
     public function validate()
     {
         // Check if MediaProbe has a definition for this TAG.
-        if (in_array($this->collection->getId(), ['VoidCollection', 'UnknownTag'])) {
+        if (in_array($this->getCollection()->getId(), ['VoidCollection', 'UnknownTag'])) {
             $this->notice("No specification for item {item} in '{ifd}'", [
                 'item' => $this->getCollection()->getId(),
                 'ifd' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',
@@ -62,7 +53,7 @@ class Tag extends BlockBase
             }
 
             // Warn if components are not as expected.
-            $expected_components = $this->collection->getPropertyValue('components');
+            $expected_components = $this->getCollection()->getPropertyValue('components');
             if ($expected_components !== null && $this->getComponents() !== null && $this->getComponents() !== $expected_components) {
                 $this->warning("Found {components} data components, expected {expected_components}", [
                     'components' => $this->getComponents(),
@@ -75,20 +66,15 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $tag_data = new DataWindow($data_element, $start, $size);
-        $this->debugBlockInfo($tag_data);
-
         $class = $this->getDefinition()->getEntryClass();
         $entry = new $class($this);
         try {
-            $entry->loadFromData($tag_data, 0, $tag_data->getSize(), [], $this->getDefinition());
+            $entry->loadFromData($data, 0, $data->getSize(), [], $this->getDefinition());
         } catch (DataException $e) {
             $this->error($e->getMessage());
         }
-
-        $this->parsed = true;
     }
 
     /**
@@ -113,14 +99,6 @@ class Tag extends BlockBase
     public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
     {
         return $this->getElement("entry") ? $this->getElement("entry")->toBytes($order, $offset) : null;
-    }
-
-    /**
-     * {@todo}
-     */
-    public function getDefinition()
-    {
-        return $this->definition;
     }
 
     /**

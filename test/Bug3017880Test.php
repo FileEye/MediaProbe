@@ -25,17 +25,19 @@ class Bug3017880Test extends MediaProbeTestCaseBase
             $jpeg = $media->getElement("jpeg");
             $this->assertInstanceOf(Jpeg::class, $jpeg);
 
-            // should all exif data on photo be cleared (gd and iu will always strip it anyway, so only
-            // force strip if you know the image you're branding is an original)
-            // $jpeg->clearExif();
+            // should all exif data on photo be cleared (gd and iu will always
+            // strip it anyway, so only force strip if you know the image you're
+            // branding is an original)
 
             if ($exif === null) {
                 $app1_segment_mock = $this->getMockBuilder('FileEye\MediaProbe\Block\JpegSegmentApp1')
                     ->disableOriginalConstructor()
                     ->getMock();
 
-                $exif = new Exif(Collection::get('Exif'), $app1_segment_mock);
-                new Tiff(Collection::get('Tiff'), $exif);
+                $exif_definition = new ItemDefinition(Collection::get('Exif'));
+                $exif = new Exif($exif_definition, $app1_segment_mock);
+                $tiff_definition = new ItemDefinition(Collection::get('Tiff'));
+                new Tiff($tiff_definition, $exif);
             }
 
             $tiff = $exif->getElement("tiff");

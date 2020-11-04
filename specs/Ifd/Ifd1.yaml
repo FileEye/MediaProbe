@@ -7,7 +7,7 @@ defaultItemCollection: Tag
 alias:
     - '1'
     - Thumbnail
-postLoad:
+postParse:
     - 'FileEye\MediaProbe\Block\Exif\Ifd::thumbnailToBlock'
 compiler:
     exiftool:

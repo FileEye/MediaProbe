@@ -8,6 +8,7 @@ use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -30,24 +31,17 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $exif_data = new DataWindow($data_element, $start, $size);
-
-        $this->debugBlockInfo($exif_data);
-
-        if (Tiff::getTiffSegmentByteOrder($exif_data, strlen(self::EXIF_HEADER)) !== null) {
-            $this
-                ->addItem('Tiff')
-                ->parseData($exif_data, strlen(self::EXIF_HEADER), $exif_data->getSize() - strlen(self::EXIF_HEADER));
+        if (Tiff::getTiffSegmentByteOrder($data, strlen(self::EXIF_HEADER)) !== null) {
+            $tiff = new ItemDefinition(Collection::get('Tiff'));
+            $this->addBlock($tiff)->parseData($data, strlen(self::EXIF_HEADER), $data->getSize() - strlen(self::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.
-            $entry = new Undefined($this, [$exif_data->getBytes()]);
+            $entry = new Undefined($this, [$data->getBytes()]);
             $this->error("TIFF header not found. Parsed {text}", ['text' => $entry->toString()]);
         }
-
-        $this->parsed = true;
     }
 
     /**

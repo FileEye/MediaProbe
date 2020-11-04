@@ -23,7 +23,7 @@ class Ifd1 extends Collection {
     0 => '1',
     1 => 'Thumbnail',
   ),
-  'postLoad' =>
+  'postParse' =>
   array (
     0 => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd::thumbnailToBlock',
   ),

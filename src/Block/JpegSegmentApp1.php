@@ -7,6 +7,7 @@ use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -18,24 +19,18 @@ class JpegSegmentApp1 extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null): void
+    protected function doParseData(DataElement $data): void
     {
-        $segment_data = new DataWindow($data_element, $start, $size);
-        $this->debugBlockInfo($segment_data);
-
         // If we have an Exif table, parse it.
-        if (Exif::isExifSegment($segment_data, 4)) {
-            $this
-                ->addItem('Exif')
-                ->parseData($segment_data, 4, $segment_data->getSize() - 4);
+        if (Exif::isExifSegment($data, 4)) {
+            $exif = new ItemDefinition(Collection::get('Exif'));
+            $this->addBlock($exif)->parseData($data, 4, $data->getSize() - 4);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.
-            $entry = new Undefined($this, [$segment_data->getBytes()]);
+            $entry = new Undefined($this, [$data->getBytes()]);
             $entry->debug("Not an Exif segment. Parsed {text}", ['text' => $entry->toString()]);
         }
-
-        $this->parsed = true;
     }
 
     /**

@@ -145,6 +145,14 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
+    public function setAttribute($name, $value)
+    {
+        return $this->DOMNode->setAttribute($name, $value);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getAttributes()
     {
         $attr = [];
@@ -152,14 +160,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             $attr[$attribute->name] = $attribute->value;
         }
         return $attr;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setAttribute($name, $value)
-    {
-        return $this->DOMNode->setAttribute($name, $value);
     }
 
     /**

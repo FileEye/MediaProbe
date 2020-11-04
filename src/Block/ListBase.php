@@ -25,56 +25,9 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 abstract class ListBase extends BlockBase
 {
-    // xx
-    protected $definition;
-
     /**
-     * Base constructor.
-     *
-     * @todo xx
+     * {@inheritdoc}
      */
-    public function __construct(ItemDefinition $definition, BlockBase $parent = null, BlockBase $reference = null)
-    {
-        $collection = $definition->getCollection();
-
-        parent::__construct($collection, $parent, $reference);
-
-        if ($collection->getPropertyValue('item') !== null) {
-            $this->setAttribute('id', $collection->getPropertyValue('item'));
-        }
-        $this->setAttribute('name', $collection->getPropertyValue('name'));
-        $this->definition = $definition;
-    }
-
-    /**
-     * Invoke post-load callbacks.
-     *
-     * @param \FileEye\MediaProbe\Data\DataElement $data_element
-     *   @todo
-     */
-    protected function executePostLoadCallbacks(DataElement $data_element)
-    {
-        $post_load_callbacks = $this->getCollection()->getPropertyValue('postLoad');
-        if (!empty($post_load_callbacks)) {
-            foreach ($post_load_callbacks as $callback) {
-                call_user_func($callback, $data_element, $this);
-            }
-        }
-        return $this;
-    }
-
-    public function getDefinition()
-    {
-        return $this->definition;
-    }
-
-    // xx
-    public function getFormat()
-    {
-        return $this->getDefinition()->getFormat();
-    }
-
-    // xx
     public function getComponents()
     {
         return count($this->getMultipleElements('*[not(self::rawData)]'));

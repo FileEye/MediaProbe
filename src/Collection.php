@@ -143,6 +143,23 @@ abstract class Collection
     }
 
     /**
+     * Determines if a property exists.
+     *
+     * @param string $property
+     *   The property.
+     *
+     * @return bool
+     *   TRUE if the property exists, FALSE otherwise.
+     */
+    public function hasProperty($property)
+    {
+        if (array_key_exists($property, $this->overrides)) {
+            return true;
+        }
+        return array_key_exists($property, static::$map);
+    }
+
+    /**
      * Returns the value a property.
      *
      * @param string $property

@@ -3,8 +3,7 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\ItemFormat;
-use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\JpegSegmentApp1;
 use FileEye\MediaProbe\Block\Tag;
@@ -17,9 +16,10 @@ use FileEye\MediaProbe\Entry\Core\Short;
 use FileEye\MediaProbe\Entry\Core\SignedByte;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 use FileEye\MediaProbe\Entry\Core\SignedShort;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Block\Exif\Ifd;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\Media;
+use FileEye\MediaProbe\MediaProbe;
 
 class ReadWriteTest extends MediaProbeTestCaseBase
 {
@@ -46,13 +46,14 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $com_segment = $jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $app1_segment = new JpegSegmentApp1($jpeg->getCollection()->getItemCollectionByName('APP1'), $jpeg, $com_segment);
+        $app1_segment_definition = new ItemDefinition($jpeg->getCollection()->getItemCollectionByName('APP1'));
+        $app1_segment = new JpegSegmentApp1($app1_segment_definition, $jpeg, $com_segment);
 
-        $exif = new Exif($app1_segment->getCollection()->getItemCollection('Exif'), $app1_segment);
+        $exif = new Exif(new ItemDefinition($app1_segment->getCollection()->getItemCollection('Exif')), $app1_segment);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
-        $tiff = new Tiff($exif->getCollection()->getItemCollection('Tiff'), $exif);
+        $tiff = new Tiff(new ItemDefinition($exif->getCollection()->getItemCollection('Tiff')), $exif);
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 

@@ -7,7 +7,7 @@ defaultItemCollection: Tag
 alias:
     - '0'
     - Main
-postLoad:
+postParse:
     - 'FileEye\MediaProbe\Block\Exif\Ifd::thumbnailToBlock'
     - 'FileEye\MediaProbe\Block\Exif\Ifd::makerNoteToBlock'
 compiler:
