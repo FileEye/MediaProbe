@@ -110,6 +110,7 @@ script:
   #- php examples/dump-media.php -d    test/image_files/camera_samples/canon_eos_70d_29.jpg-rewrite.img
   #- php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_850d_08.jpg
   #- php examples/dump-media.php -d    test/image_files/camera_samples/canon_eos_850d_08.jpg-rewrite.img
+  - php examples/dump-media.php -d    test/image_files/broken_images/pel-176-RPT200076_03.jpg
 
 notifications:
   email:
