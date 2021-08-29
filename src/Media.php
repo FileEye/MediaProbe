@@ -181,9 +181,9 @@ class Media extends BlockBase
     {
         $media = new ItemDefinition(Collection::get('Media'));
         parent::__construct($media);
-        $this->logger = (new Logger('mediaprobe'))
-          ->pushHandler(new TestHandler(Logger::INFO))
-          ->pushProcessor(new PsrLogMessageProcessor());
+        $this->logger = new Logger('mediaprobe');
+        $this->logger->pushHandler(new TestHandler(Logger::INFO));
+        $this->logger->pushProcessor(new PsrLogMessageProcessor());
         $this->externalLogger = $external_logger;
         $this->failLevel = $fail_level ? Logger::toMonologLevel($fail_level) : null;
     }
