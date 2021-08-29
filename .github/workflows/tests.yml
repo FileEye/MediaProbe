@@ -14,10 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.4"
-          - "8.0"
-
-
+          - "7.2"
     steps:
     - uses: actions/checkout@v2
 
@@ -50,7 +47,7 @@ jobs:
         vendor/bin/phpunit ./test
 
     - name: Code style test
-      if: ${{ matrix.php-version == 7.4 }}
+      if: ${{ matrix.php-version == 7.2 }}
       run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
 
     - name: Image file dumps
