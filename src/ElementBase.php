@@ -240,7 +240,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, $message, array $context = []): void
     {
         $context['path'] = $this->getContextPath();
         $root_element = $this->getRootElement();
