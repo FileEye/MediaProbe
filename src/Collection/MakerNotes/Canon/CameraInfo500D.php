@@ -163,6 +163,10 @@ class CameraInfo500D extends Collection {
     ),
     30 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value} mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',

@@ -2599,12 +2599,12 @@ class Exif extends Collection {
     ),
     37380 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifExposureBiasValue',
       'alias' =>
       array (
         0 => 'ExposureBiasValue',
       ),
       'components' => 1,
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifExposureBiasValue',
       'collection' => 'Tag',
       'name' => 'ExposureCompensation',
       'title' => 'Exposure Compensation',
@@ -2617,8 +2617,8 @@ class Exif extends Collection {
     ),
     37381 =>
     array (
-      'components' => 1,
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
+      'components' => 1,
       'collection' => 'Tag',
       'name' => 'MaxApertureValue',
       'title' => 'Max Aperture Value',
@@ -3535,6 +3535,16 @@ class Exif extends Collection {
     41730 =>
     array (
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifCFAPattern',
+      'text' =>
+      array (
+        'mapping' =>
+        array (
+          '0 1 1 2' => '[Red,Green][Green,Blue]',
+          '1 0 2 1' => '[Green,Red][Blue,Green]',
+          '1 2 0 1' => '[Green,Blue][Red,Green]',
+          '2 1 1 0' => '[Blue,Green][Green,Red]',
+        ),
+      ),
       'collection' => 'Tag',
       'name' => 'CFAPattern',
       'title' => 'CFA Pattern',
@@ -3831,6 +3841,7 @@ class Exif extends Collection {
     ),
     42034 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifLensInfo',
       'collection' => 'Tag',
       'name' => 'LensInfo',
       'title' => 'Lens Info',

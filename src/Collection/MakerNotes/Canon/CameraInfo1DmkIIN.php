@@ -70,6 +70,10 @@ class CameraInfo1DmkIIN extends Collection {
     ),
     9 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value} mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',

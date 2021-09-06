@@ -184,7 +184,6 @@ class CameraInfo5D extends Collection {
     ),
     12 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensType',
       'text' =>
       array (
         'default' => 'Unknown ({value})',
@@ -644,6 +643,10 @@ class CameraInfo5D extends Collection {
     ),
     40 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value} mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',
