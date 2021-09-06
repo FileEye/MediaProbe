@@ -49,7 +49,7 @@ abstract class NumberBase extends EntryBase
         }
 
         $this->components = count($data);
-        $this->value = $data;
+        $this->value = empty($data) ? null : $data;
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
         return $this;
@@ -60,18 +60,17 @@ abstract class NumberBase extends EntryBase
      */
     public function getValue(array $options = [])
     {
-        $format = $options['format'] ?? null;
+        if (is_null($this->value)) {
+            return null;
+        }
         if ($this->components == 1) {
             return $this->formatNumber($this->value[0], $options);
-        } else {
-            $ret = [];
-            if ($this->value) {
-                foreach ($this->value as $value) {
-                    $ret[] = $this->formatNumber($value, $options);
-                }
-            }
-            return $format === 'exiftool' ? implode(' ', $ret) : $ret;
         }
+        $ret = [];
+        foreach ($this->value as $value) {
+            $ret[] = $this->formatNumber($value, $options);
+        }
+        return $ret;
     }
 
     /**
@@ -168,7 +167,7 @@ abstract class NumberBase extends EntryBase
     /**
      * Formats a number.
      *
-     * This method is called by ::getText to format numbers. Subclasses should
+     * Xxx update : This method is called by ::getText to format numbers. Subclasses should
      * override this method if they need more sophisticated behavior than the
      * default, which is to just return the number as is.
      *
@@ -184,32 +183,9 @@ abstract class NumberBase extends EntryBase
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            return (string) $number;
+            return $number == 0.0 ? 0 : round($number, 8);
         }
         return $number;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function toString(array $options = [])
-    {
-        if ($str = parent::toString($options)) {
-            return $str;
-        }
-
-        $short = isset($options['short']) ? $options['short'] : false;
-
-        if ($this->components == 0) {
-            return '';
-        }
-
-        $str = $this->formatNumber($this->value[0], ['format' => 'core']);
-        for ($i = 1; $i < $this->components; $i ++) {
-            $str .= ($short ? ' ' : ', ');
-            $str .= $this->formatNumber($this->value[$i], ['format' => 'core']);
-        }
-
-        return $str;
-    }
 }

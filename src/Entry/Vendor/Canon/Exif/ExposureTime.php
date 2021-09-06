@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
 use FileEye\MediaProbe\Entry\Core\SignedShort;
+use FileEye\MediaProbe\Entry\ExifTrait;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
@@ -10,6 +11,8 @@ use FileEye\MediaProbe\MediaProbe;
  */
 class ExposureTime extends SignedShort
 {
+    use ExifTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -26,6 +29,7 @@ class ExposureTime extends SignedShort
      */
     public function toString(array $options = [])
     {
+        return $this->exposureTimeToString($this->getValue());
         return round($this->getValue());
     }
 

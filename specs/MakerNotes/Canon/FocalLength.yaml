@@ -11,6 +11,8 @@ compiler:
         xpath: '//table[@name=''Canon::FocalLength'']/tag'
 items:
     -
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: FocalType

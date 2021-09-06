@@ -6,6 +6,8 @@ skip:
         - 'Canon:CanonFlashInfo'
         - 'Canon:CameraTemperature'
         - 'Canon:MeasuredEV2'
+        - '########### 201103'
+        - 'Canon:AFPointsInFocus'
 fileName: canon-ixus-ii.jpg
 mimeType: image/jpeg
 fileContentHash: 65c6eef4bdb5df565b3597eb5e5e86e37edd339774e07fa2ca232024e842169a
@@ -145,7 +147,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 8354c1ea329666ba9fcef7d5adf95cc8227f5b9af381fddc8e3cb8a6937a13b8
-                                                            text: 180
+                                                            text: '180'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
@@ -163,7 +165,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 8354c1ea329666ba9fcef7d5adf95cc8227f5b9af381fddc8e3cb8a6937a13b8
-                                                            text: 180
+                                                            text: '180'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
@@ -334,7 +336,7 @@ elements:
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 1666d9845b241586380fe85194c47f1d1868c4d7d30ba806ecc6d581df9eeadc
-                                                                    text: 'Y Cb Cr -'
+                                                                    text: 'Y, Cb, Cr, -'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CompressedBitsPerPixel:37122'
@@ -352,7 +354,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 7b2ed67587fcbc411fcb4b71b1cef1ef6cd9edf948148414cf5f0ab21362b9aa
-                                                                    text: 2
+                                                                    text: '2'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377'
@@ -549,7 +551,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: 'Off'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Quality:3'
@@ -909,7 +911,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 869f1dfb999a452f497a4cf7f44db2d6ee661f74a9e7e05251bc1420e50672d4
-                                                                                    text: 32
+                                                                                    text: '32/mm'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxAperture:26'
@@ -927,7 +929,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 91046df2aa008410555df240b14243aa348b37cd16582c9d8a80ca305afccab2
-                                                                                    text: !!float 3
+                                                                                    text: '3.2'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinAperture:27'
@@ -945,7 +947,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 2980b96166234d9747e952fc0902911bf8739860d8afcc804258dde3b7d7437d
-                                                                                    text: !!float 8
+                                                                                    text: '7.8'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashActivity:28'
@@ -963,7 +965,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: '0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29'
@@ -1035,7 +1037,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: ca2fd00fa001190744c15c317643ab092e7048ce086a243e2be9437c898de1bb
-                                                                                    text: -1
+                                                                                    text: '-1'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DisplayAperture:35'
@@ -1071,7 +1073,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: b4c43b50bf245bd727623e3c775a8fcfb8d823d00b57dd65f7f79dd33f126315
-                                                                                    text: 2048
+                                                                                    text: '2048'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomTargetWidth:37'
@@ -1089,7 +1091,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: b4c43b50bf245bd727623e3c775a8fcfb8d823d00b57dd65f7f79dd33f126315
-                                                                                    text: 2048
+                                                                                    text: '2048'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SpotMeteringMode:39'
@@ -1161,7 +1163,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 8f96c15501bef61baf5bd943201979595736b66b6a7e3b35c353729ab8d9a561
-                                                                                    text: 32767
+                                                                                    text: '32767'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SRAWQuality:46'
@@ -1268,7 +1270,7 @@ elements:
                                                                             format: Short
                                                                             components: 4
                                                                             bytesHash: fef02424157f106b48d04276276c15ebba9c516e6024d4f82ea2f648af3e09c8
-                                                                            text: '1024, 0, 0, 0'
+                                                                            text: '1024 0 0 0'
                                                                 -
                                                                     node: map
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4'
@@ -1366,7 +1368,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 3038a3216fba1e955d90addce0a77d46bdef7b51cfeb73a273989a68e093f225
-                                                                                    text: !!float 3
+                                                                                    text: '3.2'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetExposureTime:5'
@@ -1402,7 +1404,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 8b224543244c23400d65e3c3980b8878f0ae039598600c58911d9b05a9aa7bfd
-                                                                                    text: !!float -0
+                                                                                    text: '-1/3'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:WhiteBalance:7'
@@ -1456,7 +1458,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: '0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:OpticalZoomCode:10'
@@ -1474,7 +1476,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
-                                                                                    text: 1
+                                                                                    text: '1'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:CameraTemperature:12'
@@ -1510,7 +1512,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: '0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AFPointsInFocus:14'
@@ -1528,7 +1530,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 1
+                                                                                    text: '0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashExposureComp:15'
@@ -1546,7 +1548,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: '0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:AutoExposureBracketing:16'
@@ -1582,7 +1584,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: '0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:ControlMode:18'
@@ -1672,7 +1674,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 4ba6fbf83ee13f77b7e61de31948933953afd6bb0be6d484855083d7483d462e
-                                                                                    text: !!float 0
+                                                                                    text: '1/33'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV2:23'
@@ -1780,7 +1782,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: 0
+                                                                                    text: '0'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashOutput:33'
@@ -1798,7 +1800,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 206014a4266c2082b9433011fb2991059f972d570a8b3c976e5b2b8dfcfbfc8d
-                                                                                    text: 43
+                                                                                    text: '43'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
@@ -1815,7 +1817,7 @@ elements:
                                                                             format: Short
                                                                             components: 6
                                                                             bytesHash: 15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b
-                                                                            text: '0, 0, 0, 0, 0, 0'
+                                                                            text: '0 0 0 0 0 0'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
@@ -1832,7 +1834,7 @@ elements:
                                                                             format: Short
                                                                             components: 4
                                                                             bytesHash: af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc
-                                                                            text: '0, 0, 0, 0'
+                                                                            text: '0 0 0 0'
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18'
@@ -1859,7 +1861,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: a2c4aed1cf757cd9a509734a267ffc7b1166b55f4c8f9c3e3550c56e743328fc
-                                                                                    text: 9
+                                                                                    text: '9'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:ValidAFPoints:1'
@@ -1877,7 +1879,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: a2c4aed1cf757cd9a509734a267ffc7b1166b55f4c8f9c3e3550c56e743328fc
-                                                                                    text: 9
+                                                                                    text: '9'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:CanonImageWidth:2'
@@ -1895,7 +1897,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: d404b24986b2963deb3378e98664bfe617910d92095df1f0bdb40d7c2d813e21
-                                                                                    text: 640
+                                                                                    text: '640'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:CanonImageHeight:3'
@@ -1913,7 +1915,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: f5e0da8d7a9a79e7141b9e674d0d70eefd2f5416fda74ef18c8665bfc3812a54
-                                                                                    text: 480
+                                                                                    text: '480'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:AFImageWidth:4'
@@ -1931,7 +1933,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: b4c43b50bf245bd727623e3c775a8fcfb8d823d00b57dd65f7f79dd33f126315
-                                                                                    text: 2048
+                                                                                    text: '2048'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:AFImageHeight:5'
@@ -1949,7 +1951,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2
-                                                                                    text: 256
+                                                                                    text: '256'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:AFAreaWidth:6'
@@ -1967,7 +1969,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: ea8e010605f026cde3e4c2102586b119931d5458f404c232c5f272d8cb79d5d4
-                                                                                    text: 369
+                                                                                    text: '369'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:AFAreaHeight:7'
@@ -1985,7 +1987,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 17d5f5a33ab5f6aed0395d2bc0a4e5df61d92441ea8d77b0952c01bc8aa8bde0
-                                                                                    text: 42
+                                                                                    text: '42'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:AFAreaXPositions:8'
@@ -2003,7 +2005,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 9
                                                                                     bytesHash: 24463daad3f8f28af5ecc88db3110aab2016ff82febe198c4e80be1785eea1cc
-                                                                                    text: '-370, 0, 370, -370, 0, 370, -370, 0, 370'
+                                                                                    text: '-370 0 370 -370 0 370 -370 0 370'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:AFAreaYPositions:9'
@@ -2021,7 +2023,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 9
                                                                                     bytesHash: 4cf276b8737bdfdf09a9c792b4796efd3447fbb60919feb64752adf4950832d3
-                                                                                    text: '-48, -48, -48, 0, 0, 0, 48, 48, 48'
+                                                                                    text: '-48 -48 -48 0 0 0 48 48 48'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:AFPointsInFocus:10'
@@ -2039,7 +2041,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
-                                                                                    text: 1
+                                                                                    text: '1'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo:18/tag:PrimaryAFPoint:11'
@@ -2057,7 +2059,7 @@ elements:
                                                                                     format: Short
                                                                                     components: 1
                                                                                     bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
-                                                                                    text: 2
+                                                                                    text: '2'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:ThumbnailImageValidArea:19'
@@ -2075,7 +2077,7 @@ elements:
                                                                             format: Short
                                                                             components: 4
                                                                             bytesHash: af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc
-                                                                            text: '0, 0, 0, 0'
+                                                                            text: '0 0 0 0'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonImageType:6'
@@ -2129,7 +2131,7 @@ elements:
                                                                             format: Long
                                                                             components: 1
                                                                             bytesHash: b9d1bdff18301bb05ee17a07c6d06278450c333846706b7cedf7aeaf05694c11
-                                                                            text: 1202044
+                                                                            text: '1202044'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:OwnerName:9'
@@ -2271,7 +2273,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: d404b24986b2963deb3378e98664bfe617910d92095df1f0bdb40d7c2d813e21
-                                                                    text: 640
+                                                                    text: '640'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
@@ -2289,7 +2291,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: f5e0da8d7a9a79e7141b9e674d0d70eefd2f5416fda74ef18c8665bfc3812a54
-                                                                    text: 480
+                                                                    text: '480'
                                                         -
                                                             node: ifd
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965'
@@ -2352,7 +2354,7 @@ elements:
                                                                             format: Short
                                                                             components: 1
                                                                             bytesHash: d404b24986b2963deb3378e98664bfe617910d92095df1f0bdb40d7c2d813e21
-                                                                            text: 640
+                                                                            text: '640'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:RelatedImageHeight:4098'
@@ -2370,7 +2372,7 @@ elements:
                                                                             format: Short
                                                                             components: 1
                                                                             bytesHash: f5e0da8d7a9a79e7141b9e674d0d70eefd2f5416fda74ef18c8665bfc3812a54
-                                                                            text: 480
+                                                                            text: '480'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneXResolution:41486'
@@ -2388,7 +2390,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: ee6f4e20c7a0783f3710c92a865aeb65c41fa67b89bcb0a6bd7091dced404145
-                                                                    text: 3076.9230769231
+                                                                    text: '3076.9230769231'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneYResolution:41487'
@@ -2406,7 +2408,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: becf7eb31ad78a86943bd7017c080025258a2d1281347871e6cf808b926e446b
-                                                                    text: 3076.9230769231
+                                                                    text: '3076.9230769231'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneResolutionUnit:41488'
@@ -2532,7 +2534,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: e72491dcb24135d5f27387834449aa94fd96ed38c506d37e0ba7db253fa23db8
-                                                                    text: 1
+                                                                    text: '1'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneCaptureType:41990'
@@ -2595,7 +2597,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 8354c1ea329666ba9fcef7d5adf95cc8227f5b9af381fddc8e3cb8a6937a13b8
-                                                            text: 180
+                                                            text: '180'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:YResolution:283'
@@ -2613,7 +2615,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 8354c1ea329666ba9fcef7d5adf95cc8227f5b9af381fddc8e3cb8a6937a13b8
-                                                            text: 180
+                                                            text: '180'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:ResolutionUnit:296'

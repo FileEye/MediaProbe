@@ -22,6 +22,6 @@ class CustomApertureRange extends SignedLong
             $v[2] = exp(($this->value[2] / 8 - 1) * log(2) / 2);
             return implode(' ', $v);
         }
-        return parent::getValue();
+        return parent::getValue($options);
     }
 }

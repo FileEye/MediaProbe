@@ -41,7 +41,8 @@ items:
                 DOMNode: 'Canon:ISO'
                 desc: ISO
     12:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: LensType
@@ -478,6 +479,8 @@ items:
                     - 'Rotate 90 CW'
                     - 'Rotate 270 CW'
     40:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: FocalLength
@@ -599,7 +602,8 @@ items:
                 DOMNode: 'Canon:MaxFocalLength'
                 desc: 'Max Focal Length'
     151:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: LensType

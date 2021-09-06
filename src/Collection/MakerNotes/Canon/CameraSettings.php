@@ -107,20 +107,21 @@ class CameraSettings extends Collection {
   array (
     1 =>
     array (
+      'text' =>
+      array (
+        'default' => 'Unknown ({value})',
+        'mapping' =>
+        array (
+          1 => 'Macro',
+          2 => 'Normal',
+        ),
+      ),
       'collection' => 'Tag',
       'name' => 'MacroMode',
       'title' => 'Macro Mode',
       'format' =>
       array (
         0 => 8,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
-        array (
-          1 => 'Macro',
-          2 => 'Normal',
-        ),
       ),
       'exiftoolDOMNode' => 'Canon:MacroMode',
     ),
@@ -579,15 +580,9 @@ class CameraSettings extends Collection {
     22 =>
     array (
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraSettingsLensType',
-      'collection' => 'Tag',
-      'name' => 'LensType',
-      'title' => 'Lens Type',
-      'format' =>
-      array (
-        0 => 3,
-      ),
       'text' =>
       array (
+        'default' => 'Unknown ({value})',
         'mapping' =>
         array (
           -1 => 'n/a',
@@ -988,6 +983,13 @@ class CameraSettings extends Collection {
           61496 => 'Canon CN-E 35mm T1.5 L F',
           65535 => 'n/a',
         ),
+      ),
+      'collection' => 'Tag',
+      'name' => 'LensType',
+      'title' => 'Lens Type',
+      'format' =>
+      array (
+        0 => 3,
       ),
       'exiftoolDOMNode' => 'Canon:LensType',
     ),

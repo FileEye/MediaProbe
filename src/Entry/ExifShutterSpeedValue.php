@@ -44,7 +44,7 @@ class ExifShutterSpeedValue extends SignedRational
                 return preg_replace('/\.0$/', '', $val);
             }
         } else {
-            return MediaProbe::fmt('%.0f/%.0f sec. (APEX: %d)', $this->getValue()[0], $this->getValue()[1], pow(sqrt(2), $this->getValue()[0] / $this->getValue()[1]));
+            return MediaProbe::fmt('%.0f/%.0f sec. (APEX: %d)', $this->value[0][0], $this->value[0][1], pow(sqrt(2), $this->value[0][0] / $this->value[0][1]));
         }
     }
 }

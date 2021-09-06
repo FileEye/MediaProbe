@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
 use FileEye\MediaProbe\Entry\Core\SignedShort;
+use FileEye\MediaProbe\Entry\ExifTrait;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
@@ -10,6 +11,8 @@ use FileEye\MediaProbe\MediaProbe;
  */
 class ExposureCompensation extends SignedShort
 {
+    use ExifTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -23,7 +26,7 @@ class ExposureCompensation extends SignedShort
      */
     public function toString(array $options = [])
     {
-        return round($this->getValue());
+        return $this->fractionToString($this->getValue());
     }
 
     private function canonEv($val)

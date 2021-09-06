@@ -10,15 +10,23 @@ use FileEye\MediaProbe\MediaProbe;
  */
 class ExifExposureTime extends Rational
 {
+    use ExifTrait;
+
     /**
      * {@inheritdoc}
      */
     public function toString(array $options = [])
     {
-        if ($this->getValue()[0] / $this->getValue()[1] < 1) {
-            return MediaProbe::fmt('1/%d sec.', $this->getValue()[1] / $this->getValue()[0]);
+        if (($options['format'] ?? null) === 'exiftool') {
+            return $this->exposureTimeToString($this->getValue());
+        }
+
+        $sec = ($options['short'] ?? false) ? '' : ' sec.';
+
+        if ($this->getValue() < 1) {
+            return MediaProbe::fmt('1/%d%s', $this->value[0][1] / $this->value[0][0], $sec);
         } else {
-            return MediaProbe::fmt('%d sec.', $this->getValue()[0] / $this->getValue()[1]);
+            return MediaProbe::fmt('%d%s', $this->getValue(), $sec);
         }
     }
 }

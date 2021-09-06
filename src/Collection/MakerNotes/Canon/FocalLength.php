@@ -40,20 +40,21 @@ class FocalLength extends Collection {
   array (
     0 =>
     array (
+      'text' =>
+      array (
+        'default' => 'Unknown ({value})',
+        'mapping' =>
+        array (
+          1 => 'Fixed',
+          2 => 'Zoom',
+        ),
+      ),
       'collection' => 'Tag',
       'name' => 'FocalType',
       'title' => 'Focal Type',
       'format' =>
       array (
         0 => 3,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
-        array (
-          1 => 'Fixed',
-          2 => 'Zoom',
-        ),
       ),
       'exiftoolDOMNode' => 'Canon:FocalType',
     ),

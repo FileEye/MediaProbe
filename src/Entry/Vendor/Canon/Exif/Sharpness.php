@@ -29,7 +29,7 @@ class Sharpness extends SignedShort
      */
     public function toString(array $options = [])
     {
-        $value = $this->getValue();
-        return $value > 0 ? "+$value" : $value;
+        $val = $this->getValue();
+        return $val > 0 ? "+$val" : $val;
     }
 }

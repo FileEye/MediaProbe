@@ -16,7 +16,7 @@ class FLFocalLength extends Short
     public function getValue(array $options = [])
     {
         if ($alternate = $this->getRootElement()->getElement("//ifd[@name='ExifIFD']/tag[@name='FocalLength']/entry")) {
-            $value = $alternate->getValue();
+            $value = $alternate->getValue(['format' => 'parsed']);
             return $value[0] / $value[1];
         }
 

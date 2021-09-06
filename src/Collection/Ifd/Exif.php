@@ -3632,6 +3632,10 @@ class Exif extends Collection {
         0 => 'FocalLengthIn35mmFilm',
       ),
       'components' => 1,
+      'text' =>
+      array (
+        'default' => '{value} mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalLengthIn35mmFormat',
       'title' => 'Focal Length In 35mm Format',

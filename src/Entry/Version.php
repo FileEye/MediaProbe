@@ -80,6 +80,6 @@ class Version extends Undefined
      */
     public function toString(array $options = [])
     {
-        return $this->getValue();
+        return $this->getValue($options);
     }
 }

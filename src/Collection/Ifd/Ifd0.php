@@ -482,15 +482,9 @@ class Ifd0 extends Collection {
     259 =>
     array (
       'components' => 1,
-      'collection' => 'Tag',
-      'name' => 'Compression',
-      'title' => 'Compression',
-      'format' =>
-      array (
-        0 => 3,
-      ),
       'text' =>
       array (
+        'default' => 'Unknown ({value})',
         'mapping' =>
         array (
           1 => 'Uncompressed',
@@ -543,6 +537,13 @@ class Ifd0 extends Collection {
           65000 => 'Kodak DCR Compressed',
           65535 => 'Pentax PEF Compressed',
         ),
+      ),
+      'collection' => 'Tag',
+      'name' => 'Compression',
+      'title' => 'Compression',
+      'format' =>
+      array (
+        0 => 3,
       ),
       'phpExifTag' => 'Compression',
       'exiftoolDOMNode' => 'IFD0:Compression',

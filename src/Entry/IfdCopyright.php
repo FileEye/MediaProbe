@@ -100,7 +100,8 @@ class IfdCopyright extends Ascii
      */
     public function toString(array $options = [])
     {
-        $short = isset($options['short']) ? $options['short'] : false;
+        $short = $options['short'] ?? false || ($options['format'] ?? null) === 'exiftool';
+
         if ($short) {
             $p = '';
             $e = '';

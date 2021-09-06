@@ -305,16 +305,9 @@ class CameraInfo600D extends Collection {
     ),
     234 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensType',
-      'collection' => 'Tag',
-      'name' => 'LensType',
-      'title' => 'Lens Type',
-      'format' =>
-      array (
-        0 => 1000,
-      ),
       'text' =>
       array (
+        'default' => 'Unknown ({value})',
         'mapping' =>
         array (
           -1 => 'n/a',
@@ -715,6 +708,13 @@ class CameraInfo600D extends Collection {
           61496 => 'Canon CN-E 35mm T1.5 L F',
           65535 => 'n/a',
         ),
+      ),
+      'collection' => 'Tag',
+      'name' => 'LensType',
+      'title' => 'Lens Type',
+      'format' =>
+      array (
+        0 => 1000,
       ),
       'exiftoolDOMNode' => 'Canon:LensType',
     ),

@@ -1628,10 +1628,10 @@ items:
                 DOMNode: 'ExifIFD:BrightnessValue'
                 desc: 'Brightness Value'
     37380:
+        entryClass: FileEye\MediaProbe\Entry\ExifExposureBiasValue
         alias:
             - ExposureBiasValue
         components: 1
-        entryClass: FileEye\MediaProbe\Entry\ExifExposureBiasValue
         exifReadData:
             key: ExposureBiasValue
         exiftool:
@@ -1643,8 +1643,8 @@ items:
                 DOMNode: 'ExifIFD:ExposureCompensation'
                 desc: 'Exposure Compensation'
     37381:
-        components: 1
         entryClass: FileEye\MediaProbe\Entry\ExifApertureValue
+        components: 1
         exifReadData:
             key: MaxApertureValue
         exiftool:
@@ -3048,6 +3048,12 @@ items:
                     1: 'Directly photographed'
     41730:
         entryClass: FileEye\MediaProbe\Entry\ExifCFAPattern
+        text:
+            mapping:
+                '0 1 1 2': '[Red,Green][Green,Blue]'
+                '1 0 2 1': '[Green,Red][Blue,Green]'
+                '1 2 0 1': '[Green,Blue][Red,Green]'
+                '2 1 1 0': '[Blue,Green][Green,Red]'
         exifReadData:
             key: CFAPattern
         exiftool:
@@ -3126,6 +3132,8 @@ items:
         alias:
             - FocalLengthIn35mmFilm
         components: 1
+        text:
+            default: '{value} mm'
         exifReadData:
             key: FocalLengthIn35mmFilm
         exiftool:
@@ -3286,6 +3294,7 @@ items:
                 DOMNode: 'ExifIFD:SerialNumber'
                 desc: 'Serial Number'
     42034:
+        entryClass: FileEye\MediaProbe\Entry\ExifLensInfo
         exiftool:
             -
                 name: LensInfo

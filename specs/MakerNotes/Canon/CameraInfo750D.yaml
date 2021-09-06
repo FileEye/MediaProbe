@@ -50,6 +50,8 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     35:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: FocalLength
@@ -148,7 +150,8 @@ items:
                     255: n/a
                     65535: n/a
     388:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: LensType

@@ -22,6 +22,6 @@ class CameraTemperature extends Byte
      */
     public function toString(array $options = [])
     {
-        return round($this->getValue());
+        return "{$this->getValue()} C";
     }
 }

@@ -109,6 +109,8 @@ items:
                 DOMNode: '*:BitsPerSample'
                 desc: 'Bits Per Sample'
     259:
+        text:
+            default: 'Unknown ({value})'
         exifReadData:
             key: Compression
         exiftool:
@@ -4106,6 +4108,12 @@ items:
                     1: 'Directly photographed'
     41730:
         entryClass: FileEye\MediaProbe\Entry\ExifCFAPattern
+        text:
+            mapping:
+                '0 1 1 2': '[Red,Green][Green,Blue]'
+                '1 0 2 1': '[Green,Red][Blue,Green]'
+                '1 2 0 1': '[Green,Blue][Red,Green]'
+                '2 1 1 0': '[Blue,Green][Green,Red]'
         exifReadData:
             key: CFAPattern
         exiftool:
@@ -4177,6 +4185,8 @@ items:
                 DOMNode: '*:DigitalZoomRatio'
                 desc: 'Digital Zoom Ratio'
     41989:
+        text:
+            default: '{value} mm'
         exifReadData:
             key: FocalLengthIn35mmFilm
         exiftool:
@@ -4330,6 +4340,7 @@ items:
                 DOMNode: '*:SerialNumber'
                 desc: 'Serial Number'
     42034:
+        entryClass: FileEye\MediaProbe\Entry\ExifLensInfo
         exiftool:
             -
                 name: LensInfo

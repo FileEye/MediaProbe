@@ -115,7 +115,10 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         return $this->value;
     }
 
-    public function hasMappedText(): bool
+    /**
+     * @todo xxx
+     */
+    protected function hasMappedText(): bool
     {
         if (!$this->getParentElement()) {
             return false;
@@ -126,11 +129,75 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         return isset($text_config['mapping']);
     }
 
-    public function getMappedText($value, $default = null, $variant = 0, $key = 0)
+    /**
+     * @todo xxx
+     */
+    protected function getMappedText($value)
     {
         $text_config = $this->getParentElement()->getCollection()->getPropertyValue('text');
         $id = is_int($value) ? $value : (string) $value;
-        return $text_config['mapping'][$id] ?? $default;
+        return $text_config['mapping'][$id] ?? null;
+    }
+
+    /**
+     * @todo xxx
+     */
+    protected function hasDefaultText(): bool
+    {
+        if (!$this->getParentElement()) {
+            return false;
+        }
+        if (!$text_config = $this->getParentElement()->getCollection()->getPropertyValue('text')) {
+            return false;
+        }
+        return isset($text_config['default']);
+    }
+
+    /**
+     * @todo xxx
+     */
+    public function resolveText($value, bool $null_on_missing = FALSE)
+    {
+//dump([$value, 'mapped' => $this->hasMappedText(), 'default' => $this->hasDefaultText()]);
+        if (!$this->getParentElement()) {
+            return is_array($value) ? implode(' ', $value) : $value;
+        }
+
+        if (is_array($value)) {
+            $tmp = [];
+            foreach ($value as $v) {
+                $id = is_int($v) ? $v : (string) $v;
+                if ($this->hasMappedText()) {
+                    $tmp[] = str_replace('{value}', $v, $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? (string) $v);
+                } elseif ($this->hasDefaultText()) {
+                    $tmp[] = str_replace('{value}', $v, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+                } else {
+                    $tmp[] = $v;
+                }
+            }
+            return $tmp;
+        }
+
+        $text = null;
+        if ($this->hasMappedText()) {
+            $id = is_int($value) ? $value : (string) $value;
+            $raw = $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? null;
+            if (!is_null($raw)) {
+              $text = str_replace('{value}', $value, $raw);
+            }
+        }
+        if (is_null($text) && $this->hasDefaultText()) {
+            $text = str_replace('{value}', $value, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+        }
+        if (is_null($text) && $null_on_missing) {
+            return null;
+        }
+        if (!is_null($text)) {
+            return $text;
+        }
+
+//if (!is_scalar($value)) dump($value);
+        return is_scalar($value) ? $value : serialize($value);
     }
 
     /**
@@ -138,14 +205,17 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function toString(array $options = [])
     {
-        if (!$this->getParentElement()) {
-            return null;
+        $text = $this->resolveText($this->getValue($options));
+        if (is_array($text)) {
+            if (!$this->hasMappedText() && !$this->hasDefaultText()) {
+                return implode(' ', $text);
+            }
+            if (($options['format'] ?? null) === 'exiftool') {
+                return implode('; ', $text);
+            }
+            return implode(', ', $text);
         }
-        $value = $options['value'] ?? $this->getValue();
-        if (!is_scalar($value)) {
-            return null;
-        }
-        return $this->hasMappedText() ? $this->getMappedText($value, $value) : null;
+        return is_null($text) ? null : (string) $text;
     }
 
     /**

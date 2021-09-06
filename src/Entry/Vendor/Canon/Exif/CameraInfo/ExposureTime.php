@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo;
 
 use FileEye\MediaProbe\Entry\Core\Byte;
+use FileEye\MediaProbe\Entry\ExifTrait;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
@@ -10,6 +11,8 @@ use FileEye\MediaProbe\MediaProbe;
  */
 class ExposureTime extends Byte
 {
+    use ExifTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -23,12 +26,7 @@ class ExposureTime extends Byte
      */
     public function toString(array $options = [])
     {
-        $value = $this->getValue();
-        if ($value < 0.25001 && $value > 0) {
-            return sprintf("1/%d", floor(0.5 + 1 / $value));
-        }
-        $ret = sprintf("%.1f", $value);
-        return $ret;
+        return $this->exposureTimeToString($this->getValue());
     }
 
     private function canonEv($val)

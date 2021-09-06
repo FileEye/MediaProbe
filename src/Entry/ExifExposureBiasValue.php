@@ -9,11 +9,16 @@ use FileEye\MediaProbe\Entry\Core\SignedRational;
  */
 class ExifExposureBiasValue extends SignedRational
 {
+    use ExifTrait;
+
     /**
      * {@inheritdoc}
      */
     public function toString(array $options = [])
     {
-        return sprintf('%s%.01f', $this->getValue()[0] * $this->getValue()[1] > 0 ? '+' : '', $this->getValue()[0] / $this->getValue()[1]);
+        if (($options['format'] ?? null) === 'exiftool') {
+            return $this->fractionToString($this->getValue());
+        }
+        return $this->value[0][0] == 0 ? '0' : sprintf('%s%.01f', $this->value[0][0] * $this->value[0][1] > 0 ? '+' : '', $this->value[0][0] / $this->value[0][1]);
     }
 }

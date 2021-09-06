@@ -15,15 +15,20 @@ class ExifSubjectArea extends Short
      */
     public function toString(array $options = [])
     {
-        switch ($this->getComponents()) {
-            case 2:
-                return MediaProbe::fmt('(x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1]);
-            case 3:
-                return MediaProbe::fmt('Within distance %d of (x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1], $this->getValue()[2]);
-            case 4:
-                return MediaProbe::fmt('Within rectangle (width %d, height %d) around (x,y) = (%d,%d)', $this->getValue()[0], $this->getValue()[1], $this->getValue()[2], $this->getValue()[3]);
-            default:
-                return MediaProbe::fmt('Unexpected number of components (%d, expected 2, 3, or 4).', $this->getComponents());
+        $val = $this->getValue();
+        if (($options['format'] ?? null) === 'exiftool') {
+            return implode(' ', $val);
+        } else {
+            switch ($this->getComponents()) {
+                case 2:
+                    return MediaProbe::fmt('(x,y) = (%d,%d)', $val[0], $val[1]);
+                case 3:
+                    return MediaProbe::fmt('Within distance %d of (x,y) = (%d,%d)', $val[0], $val[1], $val[2]);
+                case 4:
+                    return MediaProbe::fmt('Within rectangle (width %d, height %d) around (x,y) = (%d,%d)', $val[0], $val[1], $val[2], $val[3]);
+                default:
+                    return MediaProbe::fmt('Unexpected number of components (%d, expected 2, 3, or 4).', $this->getComponents());
+            }
         }
     }
 }

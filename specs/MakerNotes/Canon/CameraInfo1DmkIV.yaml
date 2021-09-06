@@ -90,6 +90,8 @@ items:
                 writable: true
                 desc: 'Camera Temperature'
     30:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: FocalLength
@@ -161,7 +163,8 @@ items:
                 writable: true
                 desc: 'Color Temperature'
     335:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: LensType
