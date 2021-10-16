@@ -110,6 +110,10 @@ class CameraInfo80D extends Collection {
     ),
     35 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value} mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',

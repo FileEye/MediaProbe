@@ -64,6 +64,10 @@ class CameraInfo1D extends Collection {
     ),
     10 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value} mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalLength',
       'title' => 'Focal Length',

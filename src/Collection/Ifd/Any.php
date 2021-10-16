@@ -4911,6 +4911,16 @@ class Any extends Collection {
     41730 =>
     array (
       'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifCFAPattern',
+      'text' =>
+      array (
+        'mapping' =>
+        array (
+          '0 1 1 2' => '[Red,Green][Green,Blue]',
+          '1 0 2 1' => '[Green,Red][Blue,Green]',
+          '1 2 0 1' => '[Green,Blue][Red,Green]',
+          '2 1 1 0' => '[Blue,Green][Green,Red]',
+        ),
+      ),
       'collection' => 'Tag',
       'name' => 'CFAPattern',
       'title' => 'CFA Pattern',
@@ -4999,6 +5009,10 @@ class Any extends Collection {
     ),
     41989 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value} mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalLengthIn35mmFormat',
       'title' => 'Focal Length In 35mm Format',
@@ -5187,6 +5201,7 @@ class Any extends Collection {
     ),
     42034 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifLensInfo',
       'collection' => 'Tag',
       'name' => 'LensInfo',
       'title' => 'Lens Info',

@@ -232,6 +232,7 @@ class Gps extends Collection {
     ),
     6 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSAltitude',
       'components' => 1,
       'collection' => 'Tag',
       'name' => 'GPSAltitude',
@@ -245,6 +246,7 @@ class Gps extends Collection {
     ),
     7 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSTimeStamp',
       'collection' => 'Tag',
       'name' => 'GPSTimeStamp',
       'title' => 'GPS Time Stamp',
@@ -634,6 +636,10 @@ class Gps extends Collection {
     ),
     31 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value} m',
+      ),
       'collection' => 'Tag',
       'name' => 'GPSHPositioningError',
       'title' => 'GPS Horizontal Positioning Error',

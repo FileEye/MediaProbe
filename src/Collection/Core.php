@@ -308,9 +308,9 @@ abstract class Core {
     'Tag' => 'Tag',
     'Thumbnail' => 'Ifd\\Ifd1',
     'Tiff' => 'Tiff',
+    0 => 'Ifd\\Ifd0',
     'UnknownTag' => 'UnknownTag',
     'VoidCollection' => 'VoidCollection',
-    0 => 'Ifd\\Ifd0',
     1 => 'Ifd\\Ifd1',
   ),
 );

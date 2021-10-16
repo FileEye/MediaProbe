@@ -127,6 +127,13 @@ class CameraSettings extends Collection {
     ),
     2 =>
     array (
+      'text' =>
+      array (
+        'mapping' =>
+        array (
+          0 => 'Off',
+        ),
+      ),
       'collection' => 'Tag',
       'name' => 'SelfTimer',
       'title' => 'Self Timer',
@@ -397,15 +404,9 @@ class CameraSettings extends Collection {
     ),
     12 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'DigitalZoom',
-      'title' => 'Digital Zoom',
-      'format' =>
-      array (
-        0 => 8,
-      ),
       'text' =>
       array (
+        'default' => 'Unknown ({value})',
         'mapping' =>
         array (
           0 => 'None',
@@ -414,10 +415,18 @@ class CameraSettings extends Collection {
           3 => 'Other',
         ),
       ),
+      'collection' => 'Tag',
+      'name' => 'DigitalZoom',
+      'title' => 'Digital Zoom',
+      'format' =>
+      array (
+        0 => 8,
+      ),
       'exiftoolDOMNode' => 'Canon:DigitalZoom',
     ),
     13 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Contrast',
       'collection' => 'Tag',
       'name' => 'Contrast',
       'title' => 'Contrast',
@@ -436,6 +445,7 @@ class CameraSettings extends Collection {
     ),
     14 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Saturation',
       'collection' => 'Tag',
       'name' => 'Saturation',
       'title' => 'Saturation',
@@ -1019,6 +1029,10 @@ class CameraSettings extends Collection {
     ),
     25 =>
     array (
+      'text' =>
+      array (
+        'default' => '{value}/mm',
+      ),
       'collection' => 'Tag',
       'name' => 'FocalUnits',
       'title' => 'Focal Units',

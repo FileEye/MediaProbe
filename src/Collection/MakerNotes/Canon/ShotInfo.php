@@ -233,6 +233,7 @@ class ShotInfo extends Collection {
     ),
     10 =>
     array (
+      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\OpticalZoomCode',
       'collection' => 'Tag',
       'name' => 'OpticalZoomCode',
       'title' => 'Optical Zoom Code',
