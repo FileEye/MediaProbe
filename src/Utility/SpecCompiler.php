@@ -189,33 +189,9 @@ DATA;
             // Item must have a collection.
             $item['collection'] = $item['collection'] ?? $input['defaultItemCollection'] ?? static::VOID_COLLECTION;
 
-            // Fetch the first available Exiftool definition if available.
-            $exiftool = isset($item['exiftool']) ? reset($item['exiftool']) : null;
-
-            if ($item['compiler']['exiftool']['skipDOMNode'] ?? false) {
-                unset($exiftool['DOMNode']);
-            }
-
-            // Add the name.
-            if (!isset($item['name']) && isset($exiftool['name'])) {
-                $item['name'] = $exiftool['name'];
-            }
-
-            // Add a title if available.
-            if (!isset($item['title']) && isset($exiftool['desc'])) {
-                $item['title'] = $exiftool['desc'];
-            }
-
-            // Add components if available.
-            if (!isset($item['components']) && isset($exiftool['count'])) {
-                $item['components'] = $exiftool['count'];
-            }
-
             // Convert format string to its ID.
             if (isset($item['format'])) {
                 $item['format'] = $this->format2Id($item['format'], 'base', $item['name'] ?? $item['collection'], $file);
-            } elseif ($exiftool['type'] ?? false) {
-                $item['format'] = $this->format2Id($exiftool['type'], 'exiftool', $item['name'] ?? $item['collection'], $file);
             }
 
             // Add output format if available.
@@ -223,9 +199,17 @@ DATA;
                 $item['outputFormat'] = $this->format2Id($item['outputFormat'], 'base', $item['name'] ?? $item['collection'], $file)[0];
             }
 
-            // Add text mapping if available.
-            if (!isset($item['text']['mapping']) && isset($exiftool['values'])) {
-                $item['text']['mapping'] = $exiftool['values'];
+            $count_exiftool = count($item['exiftool'] ?? []);
+            if ($count_exiftool > 0) {
+                // Fetch the first available Exiftool definition if available.
+                $exiftool = reset($item['exiftool']);
+
+                if ($item['compiler']['exiftool']['skipDOMNode'] ?? false) {
+                    unset($exiftool['DOMNode']);
+                }
+
+                $process_exiftool = $this->processExiftoolEntry($exiftool, $item, $file);
+                $item = array_merge($item, $process_exiftool);
             }
 
             $item_exif_tag = $item['exifReadData']['key'] ?? null;
@@ -235,8 +219,11 @@ DATA;
             unset($item['exiftool']);
 
             // Add item to map by collection/name.
-            if (isset($item['name'])) { // xx
-                $map['itemsByName'][$item['name']] = $id;
+            if (isset($item['name'])) {
+//                if (!in_array($id, array_values($map['itemsByName'][$item['name']] ?? []))) {
+//                    $map['itemsByName'][$item['name']][] = $id;
+//                }
+                  $map['itemsByName'][$item['name']] = $id;
             }
 
             // Add item to map by exif_read_data key.
@@ -253,6 +240,7 @@ DATA;
 
             // Add item to map by collection/id.
             $map['items'][$id] = $item;
+            $exiftool = null;
         }
 
         if (isset($map['items'])) {
@@ -310,7 +298,39 @@ DATA;
         $this->fs->dumpFile($collection_path . "/" . implode("/", $parts) . "/$class_name.php", $data);
     }
 
-    protected function format2Id($input, string $type, string $item_name, SplFileInfo $file): array
+    private function processExiftoolEntry(array $input, array $item, $file): array
+    {
+        $output = $item;
+
+        // Add the name.
+        if (!isset($item['name']) && isset($input['name'])) {
+            $output['name'] = $input['name'];
+        }
+
+        // Add a title if available.
+        if (!isset($item['title']) && isset($input['desc'])) {
+            $output['title'] = $input['desc'];
+        }
+
+        // Add components if available.
+        if (!isset($item['components']) && isset($input['count'])) {
+            $output['components'] = $input['count'];
+        }
+
+        // Convert format string to its ID.
+        if (!isset($item['format']) && ($input['type'] ?? false)) {
+            $output['format'] = $this->format2Id($input['type'], 'exiftool', $item['name'] ?? $item['collection'], $file);
+        }
+
+        // Add text mapping if available.
+        if (!isset($item['text']['mapping']) && isset($input['values'])) {
+            $output['text']['mapping'] = $input['values'];
+        }
+
+        return $output;
+    }
+
+    private function format2Id($input, string $type, string $item_name, SplFileInfo $file): array
     {
         if ($type === 'base') {
             $temp = [];
