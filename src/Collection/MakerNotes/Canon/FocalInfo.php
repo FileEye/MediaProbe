@@ -24,24 +24,33 @@ class FocalInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'FocalLength' => 0,
+    'FocalLength' =>
+    array (
+      0 => 0,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:FocalLength' => 0,
+    'Canon:FocalLength' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FocalLength',
-      'title' => 'Focal Length',
-      'format' =>
+      0 =>
       array (
-        0 => 1001,
+        'collection' => 'Tag',
+        'name' => 'FocalLength',
+        'title' => 'Focal Length',
+        'format' =>
+        array (
+          0 => 1001,
+        ),
+        'exiftoolDOMNode' => 'Canon:FocalLength',
       ),
-      'exiftoolDOMNode' => 'Canon:FocalLength',
     ),
   ),
 );

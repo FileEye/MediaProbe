@@ -24,163 +24,253 @@ class ToneCurve extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'BlueCurvePoints' => 121,
-    'GreenCurvePoints' => 83,
-    'RGBCurvePoints' => 7,
-    'RedCurvePoints' => 45,
-    'ToneCurveColorSpace' => 0,
-    'ToneCurveInputRange' => 3,
-    'ToneCurveOutputRange' => 5,
-    'ToneCurveShape' => 1,
-    'ToneCurveX' => 10,
-    'ToneCurveY' => 11,
+    'BlueCurvePoints' =>
+    array (
+      0 => 121,
+    ),
+    'GreenCurvePoints' =>
+    array (
+      0 => 83,
+    ),
+    'RGBCurvePoints' =>
+    array (
+      0 => 7,
+    ),
+    'RedCurvePoints' =>
+    array (
+      0 => 45,
+    ),
+    'ToneCurveColorSpace' =>
+    array (
+      0 => 0,
+    ),
+    'ToneCurveInputRange' =>
+    array (
+      0 => 3,
+    ),
+    'ToneCurveOutputRange' =>
+    array (
+      0 => 5,
+    ),
+    'ToneCurveShape' =>
+    array (
+      0 => 1,
+    ),
+    'ToneCurveX' =>
+    array (
+      0 => 10,
+    ),
+    'ToneCurveY' =>
+    array (
+      0 => 11,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonVRD:BlueCurvePoints' => 121,
-    'CanonVRD:GreenCurvePoints' => 83,
-    'CanonVRD:RGBCurvePoints' => 7,
-    'CanonVRD:RedCurvePoints' => 45,
-    'CanonVRD:ToneCurveColorSpace' => 0,
-    'CanonVRD:ToneCurveInputRange' => 3,
-    'CanonVRD:ToneCurveOutputRange' => 5,
-    'CanonVRD:ToneCurveShape' => 1,
-    'CanonVRD:ToneCurveX' => 10,
-    'CanonVRD:ToneCurveY' => 11,
+    'CanonVRD:BlueCurvePoints' =>
+    array (
+      0 => 121,
+    ),
+    'CanonVRD:GreenCurvePoints' =>
+    array (
+      0 => 83,
+    ),
+    'CanonVRD:RGBCurvePoints' =>
+    array (
+      0 => 7,
+    ),
+    'CanonVRD:RedCurvePoints' =>
+    array (
+      0 => 45,
+    ),
+    'CanonVRD:ToneCurveColorSpace' =>
+    array (
+      0 => 0,
+    ),
+    'CanonVRD:ToneCurveInputRange' =>
+    array (
+      0 => 3,
+    ),
+    'CanonVRD:ToneCurveOutputRange' =>
+    array (
+      0 => 5,
+    ),
+    'CanonVRD:ToneCurveShape' =>
+    array (
+      0 => 1,
+    ),
+    'CanonVRD:ToneCurveX' =>
+    array (
+      0 => 10,
+    ),
+    'CanonVRD:ToneCurveY' =>
+    array (
+      0 => 11,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ToneCurveColorSpace',
-      'title' => 'Tone Curve Color Space',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'ToneCurveColorSpace',
+        'title' => 'Tone Curve Color Space',
+        'format' =>
         array (
-          0 => 'RGB',
-          1 => 'Luminance',
+          0 => 4,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'RGB',
+            1 => 'Luminance',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:ToneCurveColorSpace',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:ToneCurveColorSpace',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ToneCurveShape',
-      'title' => 'Tone Curve Shape',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'ToneCurveShape',
+        'title' => 'Tone Curve Shape',
+        'format' =>
         array (
-          0 => 'Curve',
-          1 => 'Straight',
+          0 => 4,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Curve',
+            1 => 'Straight',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:ToneCurveShape',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:ToneCurveShape',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ToneCurveInputRange',
-      'title' => 'Tone Curve Input Range',
-      'components' => 2,
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ToneCurveInputRange',
+        'title' => 'Tone Curve Input Range',
+        'components' => 2,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:ToneCurveInputRange',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:ToneCurveInputRange',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ToneCurveOutputRange',
-      'title' => 'Tone Curve Output Range',
-      'components' => 2,
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ToneCurveOutputRange',
+        'title' => 'Tone Curve Output Range',
+        'components' => 2,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:ToneCurveOutputRange',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:ToneCurveOutputRange',
     ),
     7 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'RGBCurvePoints',
-      'title' => 'RGB Curve Points',
-      'components' => 21,
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'RGBCurvePoints',
+        'title' => 'RGB Curve Points',
+        'components' => 21,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:RGBCurvePoints',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:RGBCurvePoints',
     ),
     10 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ToneCurveX',
-      'title' => 'Tone Curve X',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ToneCurveX',
+        'title' => 'Tone Curve X',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:ToneCurveX',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:ToneCurveX',
     ),
     11 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ToneCurveY',
-      'title' => 'Tone Curve Y',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ToneCurveY',
+        'title' => 'Tone Curve Y',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:ToneCurveY',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:ToneCurveY',
     ),
     45 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'RedCurvePoints',
-      'title' => 'Red Curve Points',
-      'components' => 21,
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'RedCurvePoints',
+        'title' => 'Red Curve Points',
+        'components' => 21,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:RedCurvePoints',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:RedCurvePoints',
     ),
     83 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'GreenCurvePoints',
-      'title' => 'Green Curve Points',
-      'components' => 21,
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'GreenCurvePoints',
+        'title' => 'Green Curve Points',
+        'components' => 21,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:GreenCurvePoints',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:GreenCurvePoints',
     ),
     121 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'BlueCurvePoints',
-      'title' => 'Blue Curve Points',
-      'components' => 21,
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'BlueCurvePoints',
+        'title' => 'Blue Curve Points',
+        'components' => 21,
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:BlueCurvePoints',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:BlueCurvePoints',
     ),
   ),
 );

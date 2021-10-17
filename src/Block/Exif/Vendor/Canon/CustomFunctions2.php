@@ -41,7 +41,7 @@ class CustomFunctions2 extends ListBase
             ]);
             $rec_pos += 8;
             try {
-                $item_collection = $this->getCollection()->getItemCollection($id, 'UnknownTag', [
+                $item_collection = $this->getCollection()->getItemCollection($id, 0, 'UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);

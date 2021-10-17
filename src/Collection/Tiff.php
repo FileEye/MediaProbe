@@ -20,11 +20,17 @@ class Tiff extends Collection {
   array (
     0 =>
     array (
-      'collection' => 'Ifd\\Ifd0',
+      0 =>
+      array (
+        'collection' => 'Ifd\\Ifd0',
+      ),
     ),
     1 =>
     array (
-      'collection' => 'Ifd\\Ifd1',
+      0 =>
+      array (
+        'collection' => 'Ifd\\Ifd1',
+      ),
     ),
   ),
 );

@@ -24,149 +24,239 @@ class CropInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'CropActive' => 0,
-    'CropHeight' => 6,
-    'CropOriginalHeight' => 11,
-    'CropOriginalWidth' => 10,
-    'CropRotatedOriginalHeight' => 2,
-    'CropRotatedOriginalWidth' => 1,
-    'CropRotation' => 8,
-    'CropWidth' => 5,
-    'CropX' => 3,
-    'CropY' => 4,
+    'CropActive' =>
+    array (
+      0 => 0,
+    ),
+    'CropHeight' =>
+    array (
+      0 => 6,
+    ),
+    'CropOriginalHeight' =>
+    array (
+      0 => 11,
+    ),
+    'CropOriginalWidth' =>
+    array (
+      0 => 10,
+    ),
+    'CropRotatedOriginalHeight' =>
+    array (
+      0 => 2,
+    ),
+    'CropRotatedOriginalWidth' =>
+    array (
+      0 => 1,
+    ),
+    'CropRotation' =>
+    array (
+      0 => 8,
+    ),
+    'CropWidth' =>
+    array (
+      0 => 5,
+    ),
+    'CropX' =>
+    array (
+      0 => 3,
+    ),
+    'CropY' =>
+    array (
+      0 => 4,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonVRD:CropActive' => 0,
-    'CanonVRD:CropHeight' => 6,
-    'CanonVRD:CropOriginalHeight' => 11,
-    'CanonVRD:CropOriginalWidth' => 10,
-    'CanonVRD:CropRotatedOriginalHeight' => 2,
-    'CanonVRD:CropRotatedOriginalWidth' => 1,
-    'CanonVRD:CropRotation' => 8,
-    'CanonVRD:CropWidth' => 5,
-    'CanonVRD:CropX' => 3,
-    'CanonVRD:CropY' => 4,
+    'CanonVRD:CropActive' =>
+    array (
+      0 => 0,
+    ),
+    'CanonVRD:CropHeight' =>
+    array (
+      0 => 6,
+    ),
+    'CanonVRD:CropOriginalHeight' =>
+    array (
+      0 => 11,
+    ),
+    'CanonVRD:CropOriginalWidth' =>
+    array (
+      0 => 10,
+    ),
+    'CanonVRD:CropRotatedOriginalHeight' =>
+    array (
+      0 => 2,
+    ),
+    'CanonVRD:CropRotatedOriginalWidth' =>
+    array (
+      0 => 1,
+    ),
+    'CanonVRD:CropRotation' =>
+    array (
+      0 => 8,
+    ),
+    'CanonVRD:CropWidth' =>
+    array (
+      0 => 5,
+    ),
+    'CanonVRD:CropX' =>
+    array (
+      0 => 3,
+    ),
+    'CanonVRD:CropY' =>
+    array (
+      0 => 4,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropActive',
-      'title' => 'Crop Active',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'CropActive',
+        'title' => 'Crop Active',
+        'format' =>
         array (
-          0 => 'No',
-          1 => 'Yes',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'No',
+            1 => 'Yes',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropActive',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropActive',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropRotatedOriginalWidth',
-      'title' => 'Crop Rotated Original Width',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropRotatedOriginalWidth',
+        'title' => 'Crop Rotated Original Width',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropRotatedOriginalWidth',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropRotatedOriginalWidth',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropRotatedOriginalHeight',
-      'title' => 'Crop Rotated Original Height',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropRotatedOriginalHeight',
+        'title' => 'Crop Rotated Original Height',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropRotatedOriginalHeight',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropRotatedOriginalHeight',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropX',
-      'title' => 'Crop X',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropX',
+        'title' => 'Crop X',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropX',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropX',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropY',
-      'title' => 'Crop Y',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropY',
+        'title' => 'Crop Y',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropY',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropY',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropWidth',
-      'title' => 'Crop Width',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropWidth',
+        'title' => 'Crop Width',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropWidth',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropWidth',
     ),
     6 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropHeight',
-      'title' => 'Crop Height',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropHeight',
+        'title' => 'Crop Height',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropHeight',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropHeight',
     ),
     8 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropRotation',
-      'title' => 'Crop Rotation',
-      'format' =>
+      0 =>
       array (
-        0 => 12,
+        'collection' => 'Tag',
+        'name' => 'CropRotation',
+        'title' => 'Crop Rotation',
+        'format' =>
+        array (
+          0 => 12,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropRotation',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropRotation',
     ),
     10 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropOriginalWidth',
-      'title' => 'Crop Original Width',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropOriginalWidth',
+        'title' => 'Crop Original Width',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropOriginalWidth',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropOriginalWidth',
     ),
     11 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropOriginalHeight',
-      'title' => 'Crop Original Height',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'CropOriginalHeight',
+        'title' => 'Crop Original Height',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropOriginalHeight',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CropOriginalHeight',
     ),
   ),
 );

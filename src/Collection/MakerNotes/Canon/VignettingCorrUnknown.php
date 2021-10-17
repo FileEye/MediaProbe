@@ -24,18 +24,24 @@ class VignettingCorrUnknown extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'VignettingCorrVersion' => 0,
+    'VignettingCorrVersion' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'VignettingCorrVersion',
-      'title' => 'Vignetting Corr Version',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
+        'collection' => 'Tag',
+        'name' => 'VignettingCorrVersion',
+        'title' => 'Vignetting Corr Version',
+        'format' =>
+        array (
+          0 => 1,
+        ),
       ),
     ),
   ),

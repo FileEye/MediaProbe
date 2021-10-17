@@ -20,92 +20,143 @@ class Main extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'AccelerationVector' => 8,
-    'AppleRuntime' => 3,
-    'BurstUUID' => 11,
-    'ContentIdentifier' => 17,
-    'HDRImageType' => 10,
-    'ImageUniqueID' => 21,
+    'AccelerationVector' =>
+    array (
+      0 => 8,
+    ),
+    'AppleRuntime' =>
+    array (
+      0 => 3,
+    ),
+    'BurstUUID' =>
+    array (
+      0 => 11,
+    ),
+    'ContentIdentifier' =>
+    array (
+      0 => 17,
+    ),
+    'HDRImageType' =>
+    array (
+      0 => 10,
+    ),
+    'ImageUniqueID' =>
+    array (
+      0 => 21,
+    ),
   ),
   'items' =>
   array (
     3 =>
     array (
-      'name' => 'AppleRuntime',
-      'collection' => 'MakerNotes\\Apple\\RunTime',
+      0 =>
+      array (
+        'name' => 'AppleRuntime',
+        'collection' => 'MakerNotes\\Apple\\RunTime',
+      ),
     ),
     8 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AccelerationVector',
-      'title' => 'Acceleration Vector',
-      'components' => 3,
-      'format' =>
+      0 =>
       array (
-        0 => 10,
+        'collection' => 'Tag',
+        'name' => 'AccelerationVector',
+        'title' => 'Acceleration Vector',
+        'components' => 3,
+        'format' =>
+        array (
+          0 => 10,
+        ),
+        'exiftoolDOMNode' => 'Apple:AccelerationVector',
       ),
-      'exiftoolDOMNode' => 'Apple:AccelerationVector',
     ),
     10 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'HDRImageType',
-      'title' => 'HDR Image Type',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'HDRImageType',
+        'title' => 'HDR Image Type',
+        'format' =>
         array (
-          3 => 'HDR Image',
-          4 => 'Original Image',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            3 => 'HDR Image',
+            4 => 'Original Image',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Apple:HDRImageType',
       ),
-      'exiftoolDOMNode' => 'Apple:HDRImageType',
     ),
     11 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'BurstUUID',
-      'title' => 'Burst UUID',
-      'format' =>
+      0 =>
       array (
-        0 => 2,
+        'collection' => 'Tag',
+        'name' => 'BurstUUID',
+        'title' => 'Burst UUID',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'Apple:BurstUUID',
       ),
-      'exiftoolDOMNode' => 'Apple:BurstUUID',
     ),
     17 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ContentIdentifier',
-      'title' => 'Content Identifier',
-      'format' =>
+      0 =>
       array (
-        0 => 2,
+        'collection' => 'Tag',
+        'name' => 'ContentIdentifier',
+        'title' => 'Content Identifier',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'Apple:ContentIdentifier',
       ),
-      'exiftoolDOMNode' => 'Apple:ContentIdentifier',
     ),
     21 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ImageUniqueID',
-      'title' => 'Image Unique ID',
-      'format' =>
+      0 =>
       array (
-        0 => 2,
+        'collection' => 'Tag',
+        'name' => 'ImageUniqueID',
+        'title' => 'Image Unique ID',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'Apple:ImageUniqueID',
       ),
-      'exiftoolDOMNode' => 'Apple:ImageUniqueID',
     ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Apple:AccelerationVector' => 8,
-    'Apple:BurstUUID' => 11,
-    'Apple:ContentIdentifier' => 17,
-    'Apple:HDRImageType' => 10,
-    'Apple:ImageUniqueID' => 21,
+    'Apple:AccelerationVector' =>
+    array (
+      0 => 8,
+    ),
+    'Apple:BurstUUID' =>
+    array (
+      0 => 11,
+    ),
+    'Apple:ContentIdentifier' =>
+    array (
+      0 => 17,
+    ),
+    'Apple:HDRImageType' =>
+    array (
+      0 => 10,
+    ),
+    'Apple:ImageUniqueID' =>
+    array (
+      0 => 21,
+    ),
   ),
 );
 }

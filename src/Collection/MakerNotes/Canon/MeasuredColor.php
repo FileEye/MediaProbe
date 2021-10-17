@@ -25,36 +25,51 @@ class MeasuredColor extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'MeasuredRGGB' => 1,
-    'indexSize' => 0,
+    'MeasuredRGGB' =>
+    array (
+      0 => 1,
+    ),
+    'indexSize' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'RawData',
+        'name' => 'indexSize',
+        'format' =>
+        array (
+          0 => 8,
+        ),
       ),
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'MeasuredRGGB',
-      'title' => 'Measured RGGB',
-      'components' => 4,
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'MeasuredRGGB',
+        'title' => 'Measured RGGB',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:MeasuredRGGB',
       ),
-      'exiftoolDOMNode' => 'Canon:MeasuredRGGB',
     ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:MeasuredRGGB' => 1,
+    'Canon:MeasuredRGGB' =>
+    array (
+      0 => 1,
+    ),
   ),
 );
 }

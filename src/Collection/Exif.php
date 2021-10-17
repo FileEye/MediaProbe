@@ -20,7 +20,10 @@ class Exif extends Collection {
   array (
     'Tiff' =>
     array (
-      'collection' => 'Tiff',
+      0 =>
+      array (
+        'collection' => 'Tiff',
+      ),
     ),
   ),
 );

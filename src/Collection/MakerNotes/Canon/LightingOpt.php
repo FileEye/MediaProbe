@@ -25,121 +25,166 @@ class LightingOpt extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'AutoLightingOptimizer' => 2,
-    'HighISONoiseReduction' => 5,
-    'HighlightTonePriority' => 3,
-    'LongExposureNoiseReduction' => 4,
-    'PeripheralIlluminationCorr' => 1,
+    'AutoLightingOptimizer' =>
+    array (
+      0 => 2,
+    ),
+    'HighISONoiseReduction' =>
+    array (
+      0 => 5,
+    ),
+    'HighlightTonePriority' =>
+    array (
+      0 => 3,
+    ),
+    'LongExposureNoiseReduction' =>
+    array (
+      0 => 4,
+    ),
+    'PeripheralIlluminationCorr' =>
+    array (
+      0 => 1,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:AutoLightingOptimizer' => 2,
-    'Canon:HighISONoiseReduction' => 5,
-    'Canon:HighlightTonePriority' => 3,
-    'Canon:LongExposureNoiseReduction' => 4,
-    'Canon:PeripheralIlluminationCorr' => 1,
+    'Canon:AutoLightingOptimizer' =>
+    array (
+      0 => 2,
+    ),
+    'Canon:HighISONoiseReduction' =>
+    array (
+      0 => 5,
+    ),
+    'Canon:HighlightTonePriority' =>
+    array (
+      0 => 3,
+    ),
+    'Canon:LongExposureNoiseReduction' =>
+    array (
+      0 => 4,
+    ),
+    'Canon:PeripheralIlluminationCorr' =>
+    array (
+      0 => 1,
+    ),
   ),
   'items' =>
   array (
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PeripheralIlluminationCorr',
-      'title' => 'Peripheral Illumination Corr',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'PeripheralIlluminationCorr',
+        'title' => 'Peripheral Illumination Corr',
+        'format' =>
         array (
-          0 => 'Off',
-          1 => 'On',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:PeripheralIlluminationCorr',
       ),
-      'exiftoolDOMNode' => 'Canon:PeripheralIlluminationCorr',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AutoLightingOptimizer',
-      'title' => 'Auto Lighting Optimizer',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'AutoLightingOptimizer',
+        'title' => 'Auto Lighting Optimizer',
+        'format' =>
         array (
-          0 => 'Standard',
-          1 => 'Low',
-          2 => 'Strong',
-          3 => 'Off',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Standard',
+            1 => 'Low',
+            2 => 'Strong',
+            3 => 'Off',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:AutoLightingOptimizer',
       ),
-      'exiftoolDOMNode' => 'Canon:AutoLightingOptimizer',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'HighlightTonePriority',
-      'title' => 'Highlight Tone Priority',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'HighlightTonePriority',
+        'title' => 'Highlight Tone Priority',
+        'format' =>
         array (
-          0 => 'Off',
-          1 => 'On',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:HighlightTonePriority',
       ),
-      'exiftoolDOMNode' => 'Canon:HighlightTonePriority',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'LongExposureNoiseReduction',
-      'title' => 'Long Exposure Noise Reduction',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'LongExposureNoiseReduction',
+        'title' => 'Long Exposure Noise Reduction',
+        'format' =>
         array (
-          0 => 'Off',
-          1 => 'Auto',
-          2 => 'On',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'Auto',
+            2 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:LongExposureNoiseReduction',
       ),
-      'exiftoolDOMNode' => 'Canon:LongExposureNoiseReduction',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'HighISONoiseReduction',
-      'title' => 'High ISO Noise Reduction',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'HighISONoiseReduction',
+        'title' => 'High ISO Noise Reduction',
+        'format' =>
         array (
-          0 => 'Standard',
-          1 => 'Low',
-          2 => 'Strong',
-          3 => 'Off',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Standard',
+            1 => 'Low',
+            2 => 'Strong',
+            3 => 'Off',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
       ),
-      'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
     ),
   ),
 );

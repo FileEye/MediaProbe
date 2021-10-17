@@ -24,24 +24,33 @@ class FaceDetect3 extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'FacesDetected' => 3,
+    'FacesDetected' =>
+    array (
+      0 => 3,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:FacesDetected' => 3,
+    'Canon:FacesDetected' =>
+    array (
+      0 => 3,
+    ),
   ),
   'items' =>
   array (
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FacesDetected',
-      'title' => 'Faces Detected',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'FacesDetected',
+        'title' => 'Faces Detected',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:FacesDetected',
       ),
-      'exiftoolDOMNode' => 'Canon:FacesDetected',
     ),
   ),
 );

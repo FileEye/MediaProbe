@@ -24,25 +24,34 @@ class LensInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'LensSerialNumber' => 0,
+    'LensSerialNumber' =>
+    array (
+      0 => 0,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:LensSerialNumber' => 0,
+    'Canon:LensSerialNumber' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'LensSerialNumber',
-      'title' => 'Lens Serial Number',
-      'components' => 5,
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'LensSerialNumber',
+        'title' => 'Lens Serial Number',
+        'components' => 5,
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:LensSerialNumber',
       ),
-      'exiftoolDOMNode' => 'Canon:LensSerialNumber',
     ),
   ),
 );

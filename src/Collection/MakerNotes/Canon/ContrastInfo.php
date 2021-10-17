@@ -24,33 +24,42 @@ class ContrastInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'IntelligentContrast' => 4,
+    'IntelligentContrast' =>
+    array (
+      0 => 4,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:IntelligentContrast' => 4,
+    'Canon:IntelligentContrast' =>
+    array (
+      0 => 4,
+    ),
   ),
   'items' =>
   array (
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'IntelligentContrast',
-      'title' => 'Intelligent Contrast',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'IntelligentContrast',
+        'title' => 'Intelligent Contrast',
+        'format' =>
         array (
-          0 => 'Off',
-          8 => 'On',
-          65535 => 'n/a',
+          0 => 3,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            8 => 'On',
+            65535 => 'n/a',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:IntelligentContrast',
       ),
-      'exiftoolDOMNode' => 'Canon:IntelligentContrast',
     ),
   ),
 );

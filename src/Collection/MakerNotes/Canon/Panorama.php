@@ -25,59 +25,83 @@ class Panorama extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'PanoramaDirection' => 5,
-    'PanoramaFrameNumber' => 2,
-    'indexSize' => 0,
+    'PanoramaDirection' =>
+    array (
+      0 => 5,
+    ),
+    'PanoramaFrameNumber' =>
+    array (
+      0 => 2,
+    ),
+    'indexSize' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'RawData',
+        'name' => 'indexSize',
+        'format' =>
+        array (
+          0 => 8,
+        ),
       ),
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PanoramaFrameNumber',
-      'title' => 'Panorama Frame Number',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'PanoramaFrameNumber',
+        'title' => 'Panorama Frame Number',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:PanoramaFrameNumber',
       ),
-      'exiftoolDOMNode' => 'Canon:PanoramaFrameNumber',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PanoramaDirection',
-      'title' => 'Panorama Direction',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'PanoramaDirection',
+        'title' => 'Panorama Direction',
+        'format' =>
         array (
-          0 => 'Left to Right',
-          1 => 'Right to Left',
-          2 => 'Bottom to Top',
-          3 => 'Top to Bottom',
-          4 => '2x2 Matrix (Clockwise)',
+          0 => 8,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Left to Right',
+            1 => 'Right to Left',
+            2 => 'Bottom to Top',
+            3 => 'Top to Bottom',
+            4 => '2x2 Matrix (Clockwise)',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:PanoramaDirection',
       ),
-      'exiftoolDOMNode' => 'Canon:PanoramaDirection',
     ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:PanoramaDirection' => 5,
-    'Canon:PanoramaFrameNumber' => 2,
+    'Canon:PanoramaDirection' =>
+    array (
+      0 => 5,
+    ),
+    'Canon:PanoramaFrameNumber' =>
+    array (
+      0 => 2,
+    ),
   ),
 );
 }

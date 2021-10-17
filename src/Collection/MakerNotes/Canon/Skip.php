@@ -21,24 +21,33 @@ class Skip extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'Unknown_CNDB' => 'CNDB',
+    'Unknown_CNDB' =>
+    array (
+      0 => 'CNDB',
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:Unknown_CNDB' => 'CNDB',
+    'Canon:Unknown_CNDB' =>
+    array (
+      0 => 'CNDB',
+    ),
   ),
   'items' =>
   array (
     'CNDB' =>
     array (
-      'collection' => 'Tag',
-      'name' => 'Unknown_CNDB',
-      'title' => 'Unknown CNDB',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'Unknown_CNDB',
+        'title' => 'Unknown CNDB',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:Unknown_CNDB',
       ),
-      'exiftoolDOMNode' => 'Canon:Unknown_CNDB',
     ),
   ),
 );

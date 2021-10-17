@@ -24,50 +24,77 @@ class ExposureInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'ExposureTime' => 1,
-    'FNumber' => 0,
-    'ISO' => 2,
+    'ExposureTime' =>
+    array (
+      0 => 1,
+    ),
+    'FNumber' =>
+    array (
+      0 => 0,
+    ),
+    'ISO' =>
+    array (
+      0 => 2,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:ExposureTime' => 1,
-    'Canon:FNumber' => 0,
-    'Canon:ISO' => 2,
+    'Canon:ExposureTime' =>
+    array (
+      0 => 1,
+    ),
+    'Canon:FNumber' =>
+    array (
+      0 => 0,
+    ),
+    'Canon:ISO' =>
+    array (
+      0 => 2,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FNumber',
-      'title' => 'F Number',
-      'format' =>
+      0 =>
       array (
-        0 => 1001,
+        'collection' => 'Tag',
+        'name' => 'FNumber',
+        'title' => 'F Number',
+        'format' =>
+        array (
+          0 => 1001,
+        ),
+        'exiftoolDOMNode' => 'Canon:FNumber',
       ),
-      'exiftoolDOMNode' => 'Canon:FNumber',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ExposureTime',
-      'title' => 'Exposure Time',
-      'format' =>
+      0 =>
       array (
-        0 => 1001,
+        'collection' => 'Tag',
+        'name' => 'ExposureTime',
+        'title' => 'Exposure Time',
+        'format' =>
+        array (
+          0 => 1001,
+        ),
+        'exiftoolDOMNode' => 'Canon:ExposureTime',
       ),
-      'exiftoolDOMNode' => 'Canon:ExposureTime',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ISO',
-      'title' => 'ISO',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ISO',
+        'title' => 'ISO',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'Canon:ISO',
       ),
-      'exiftoolDOMNode' => 'Canon:ISO',
     ),
   ),
 );
