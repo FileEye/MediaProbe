@@ -30,7 +30,6 @@ class ExposureTime extends SignedShort
     public function toString(array $options = [])
     {
         return $this->exposureTimeToString($this->getValue());
-        return round($this->getValue());
     }
 
     private function canonEv($val)

@@ -1,14 +1,17 @@
 <?php
 
-namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
+namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
 
 use FileEye\MediaProbe\Entry\Core\SignedLong;
+use FileEye\MediaProbe\Entry\ExifTrait;
 
 /**
- * Handler for CanonCustom tags representing ISO speed range.
+ * Handler for CanonCustom tags representing Shutter speed range.
  */
-class CustomIsoSpeedRange extends SignedLong
+class ShutterSpeedRange extends SignedLong
 {
+    use ExifTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -18,11 +21,11 @@ class CustomIsoSpeedRange extends SignedLong
         if ($format === 'exiftool') {
             $v = [];
             $v[0] = $this->value[0];
-            $v[1] = $this->value[1] < 2 ? $this->value[1] : ($this->value[1] < 1000 ? exp(($this->value[1] / 8 - 9) * log(2)) * 100 : 0);
-            $v[2] = $this->value[2] < 2 ? $this->value[2] : ($this->value[2] < 1000 ? exp(($this->value[2] / 8 - 9) * log(2)) * 100 : 0);
-            return $v;
+            $v[1] = exp(-($this->value[1] / 8 - 7) * log(2));
+            $v[2] = exp(-($this->value[2] / 8 - 7) * log(2));
+            return implode(' ', $v);
         }
-        return parent::getValue($options);
+        return parent::getValue();
     }
 
     /**
@@ -33,8 +36,9 @@ class CustomIsoSpeedRange extends SignedLong
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
             $val = $this->getValue($options);
-            $str = $val[0] === 0 ? 'Disable; Max ' : 'Enable; Max ';
-            $str .= $val[1] . '; Min ' . $val[2];
+            $str = $val[0] === 0 ? 'Disable; Hi ' : 'Enable; Hi ';
+            $str .= $this->exposureTimeToString($val[1]) . '; Lo ';
+            $str .= $this->exposureTimeToString($val[2]);
             return $str;
         }
         return parent::toString($options);

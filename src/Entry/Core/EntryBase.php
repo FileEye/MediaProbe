@@ -156,9 +156,18 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * @todo xxx
      */
+    protected function resolveValuePlaceholder(string $value, string $source): string
+    {
+        $tmp = str_replace('{value}', $value, $source);
+        $tmp = str_replace('{valuehex}', dechex($value), $tmp);
+        return $tmp;
+    }
+
+    /**
+     * @todo xxx
+     */
     public function resolveText($value, bool $null_on_missing = FALSE)
     {
-//dump([$value, 'mapped' => $this->hasMappedText(), 'default' => $this->hasDefaultText()]);
         if (!$this->getParentElement()) {
             return is_array($value) ? implode(' ', $value) : $value;
         }
@@ -168,9 +177,9 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             foreach ($value as $v) {
                 $id = is_int($v) ? $v : (string) $v;
                 if ($this->hasMappedText()) {
-                    $tmp[] = str_replace('{value}', $v, $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? (string) $v);
+                    $tmp[] = $this->resolveValuePlaceholder($v, $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? (string) $v);
                 } elseif ($this->hasDefaultText()) {
-                    $tmp[] = str_replace('{value}', $v, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+                    $tmp[] = $this->resolveValuePlaceholder($v, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
                 } else {
                     $tmp[] = $v;
                 }
@@ -183,11 +192,11 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             $id = is_int($value) ? $value : (string) $value;
             $raw = $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? null;
             if (!is_null($raw)) {
-              $text = str_replace('{value}', $value, $raw);
+              $text = $this->resolveValuePlaceholder($value, $raw);
             }
         }
         if (is_null($text) && $this->hasDefaultText()) {
-            $text = str_replace('{value}', $value, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+            $text = $this->resolveValuePlaceholder($value, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
         }
         if (is_null($text) && $null_on_missing) {
             return null;

@@ -135,6 +135,7 @@ items:
                     - 'Enable (Tv/Av)'
                     - 'Enable (ISO speed)'
     265:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\UsableShootingModes
         exiftool:
             -
                 name: UsableShootingModes
@@ -147,6 +148,7 @@ items:
                     - Disable
                     - Enable
     266:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\UsableShootingModes
         exiftool:
             -
                 name: UsableMeteringModes
@@ -173,7 +175,7 @@ items:
                     - 'Spot metering'
                     - 'Center-weighted average'
     268:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomShutterSpeedRange
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ShutterSpeedRange
         exiftool:
             -
                 name: ShutterSpeedRange
