@@ -46,6 +46,7 @@ class CustomFunctions2 extends ListBase
                     null,
                     'UnknownTag',
                     ['item' => $id, 'DOMNode' => 'tag'],
+                    $num,
                     $this->getRootElement()
                 );
                 $item_definition = new ItemDefinition($item_collection, ItemFormat::SIGNED_LONG, $num, $rec_pos);

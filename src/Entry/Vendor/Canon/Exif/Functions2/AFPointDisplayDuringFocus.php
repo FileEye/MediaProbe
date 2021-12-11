@@ -6,9 +6,9 @@ use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 
 /**
- * Handler for CanonCustom ExposureLevelIncrements tags.
+ * Handler for CanonCustom AFPointDisplayDuringFocus tags.
  */
-class ExposureLevelIncrements extends SignedLong
+class AFPointDisplayDuringFocus extends SignedLong
 {
     /**
      * {@inheritdoc}
@@ -18,8 +18,8 @@ class ExposureLevelIncrements extends SignedLong
         // Gets the Model from IFD0.
         $model = $context->getElement("//ifd[@name='IFD0']/tag[@name='Model']/entry")->getValue();
 
-        if (preg_match('/\b1D.*\b/', $model) === 1) {
-            // 1DmkIII and 1DmkIV.
+        if (preg_match('/\b1D\b/', $model) === 1) {
+            // 1D models.
             return 0;
         }
         // Other models.

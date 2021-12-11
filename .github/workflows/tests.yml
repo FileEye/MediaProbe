@@ -58,7 +58,7 @@ jobs:
       run: |
         #- php examples/dump-media.php -d -w test/image_files/broken_images/canon-eos-650d.jpg
         #- php examples/dump-media.php -d    test/image_files/broken_images/canon-eos-650d.jpg-rewrite.img
-        #- php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
+        php examples/dump-media.php -d -w test/image_files/exiftool/Canon1DmkIII.jpg
         #- php examples/dump-media.php -d    test/image_files/exiftool/Canon1DmkIII.jpg-rewrite.img
         #php examples/dump-media.php -d -w test/image_files/exiftool/Canon.jpg
         #php examples/dump-media.php -d    test/image_files/exiftool/Canon.jpg-rewrite.img
@@ -103,9 +103,9 @@ jobs:
         #- php examples/dump-media.php -d    test/image_files/camera_samples/olympus-c765uz.jpg
         #- php examples/dump-media.php -d -w test/image_files/camera_samples/fujifilm_x_a5.jpg
         #- php examples/dump-media.php -d    test/image_files/camera_samples/fujifilm_x_a5.jpg-rewrite.img
-        #- php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_70d_29.jpg
+        php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_70d_29.jpg
         #- php examples/dump-media.php -d    test/image_files/camera_samples/canon_eos_70d_29.jpg-rewrite.img
-        php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_850d_08.jpg
+        #php examples/dump-media.php -d -w test/image_files/camera_samples/canon_eos_850d_08.jpg
         #- php examples/dump-media.php -d    test/image_files/camera_samples/canon_eos_850d_08.jpg-rewrite.img
         #php examples/dump-media.php -d    test/image_files/broken_images/pel-176-RPT200076_03.jpg
 
