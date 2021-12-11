@@ -188,6 +188,24 @@ abstract class Collection
     }
 
     /**
+     * Returns the collection index of an item, resolved in relation to the context.
+     *
+     * @param string $item_id
+     *   The item id.
+     * @param ElementInterface $context
+     *   An element that can be used to provide context.
+     *
+     * @return mixed
+     *   The item collection index.
+     */
+    private function getItemCollectionIndex(string $item_id, ElementInterface $context)
+    {
+        $entry_class = static::$map['items'][$item_id][0]['entryClass'] ?? null;
+
+        return $entry_class ? $entry_class::resolveItemCollectionIndex($context) : 0;
+    }
+
+    /**
      * Returns the Collection object of an item.
      *
      * @param string $item
@@ -201,8 +219,17 @@ abstract class Collection
      * @throws MediaProbeException
      *   When item is not in collection and no default given.
      */
-    public function getItemCollection(string $item, $index = 0, string $default_id = null, array $default_properties = []): Collection
+    public function getItemCollection(string $item, $index = 0, string $default_id = null, array $default_properties = [], ElementInterface $context = null): Collection
     {
+        if ($index === null) {
+            if ($context === null) {
+                $index = 0;
+            }
+            else {
+                $index = $this->getItemCollectionIndex($item, $context);
+            }
+        }
+
         if (!isset(static::$map['items'][$item][$index]['collection'])) {
             if (isset($default_id)) {
                 return static::get($default_id, $default_properties);
