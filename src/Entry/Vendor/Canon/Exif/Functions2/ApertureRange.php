@@ -4,15 +4,12 @@ namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
 
 use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
-use FileEye\MediaProbe\Entry\ExifTrait;
 
 /**
- * Handler for CanonCustom tags representing Shutter speed range.
+ * Handler for CanonCustom tags representing Aperture range.
  */
-class ShutterSpeedRange extends SignedLong
+class ApertureRange extends SignedLong
 {
-    use ExifTrait;
-
     /**
      * {@inheritdoc}
      */
@@ -38,14 +35,14 @@ class ShutterSpeedRange extends SignedLong
             switch (count($this->value)) {
                 case 3:
                     $v[0] = $this->value[0];
-                    $v[1] = exp(-($this->value[1] / 8 - 7) * log(2));
-                    $v[2] = exp(-($this->value[2] / 8 - 7) * log(2));
+                    $v[1] = exp(($this->value[1] / 8 - 1) * log(2) / 2);
+                    $v[2] = exp(($this->value[2] / 8 - 1) * log(2) / 2);
                     break;
                 case 4:
-                    $v[0] = exp(-$this->value[0] / (1600 * log(2)));
-                    $v[1] = exp(-$this->value[1] / (1600 * log(2)));
-                    $v[2] = exp(-$this->value[2] / (1600 * log(2)));
-                    $v[3] = exp(-$this->value[3] / (1600 * log(2)));
+                    $v[0] = exp($this->value[0] / 2400);
+                    $v[1] = exp($this->value[1] / 2400);
+                    $v[2] = exp($this->value[2] / 2400);
+                    $v[3] = exp($this->value[3] / 2400);
                     break;
             }
             return implode(' ', $v);
@@ -62,21 +59,21 @@ class ShutterSpeedRange extends SignedLong
             $val = explode(' ', $this->getValue($options));
             switch (count($val)) {
                 case 3:
-                    $str = (int) $val[0] === 0 ?  'Disable; Hi ' : 'Enable; Hi ';
-                    $str .= $this->exposureTimeToString($val[1]);
-                    $str .= '; Lo ';
-                    $str .= $this->exposureTimeToString($val[2]);
+                    $str = (int) $val[0] === 0 ?  'Disable; Closed ' : 'Enable; Closed ';
+                    $str .= round($val[1]);
+                    $str .= '; Open ';
+                    $str .= round($val[2]);
                     return $str;
 
                 case 4:
-                    $str = 'Manual: Hi ';
-                    $str .= $this->exposureTimeToString($val[0]);
-                    $str .= '; Lo ';
-                    $str .= $this->exposureTimeToString($val[1]);
-                    $str = '; Auto: Hi ';
-                    $str .= $this->exposureTimeToString($val[2]);
-                    $str .= '; Lo ';
-                    $str .= $this->exposureTimeToString($val[3]);
+                    $str = 'Manual: Closed ';
+                    $str .= round($val[0]);
+                    $str .= '; Open ';
+                    $str .= round($val[1]);
+                    $str = '; Auto: Closed ';
+                    $str .= round($val[1]);
+                    $str .= '; Open ';
+                    $str .= round($val[3]);
                     return $str;
 
             }

@@ -197,7 +197,7 @@ items:
                 DOMNode: 'CanonCustom:ShutterSpeedRange'
                 desc: 'Shutter Speed Range'
     269:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomApertureRange
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ApertureRange
         exiftool:
             -
                 name: ApertureRange
@@ -217,6 +217,7 @@ items:
                 DOMNode: 'CanonCustom:ApertureRange'
                 desc: 'Aperture Range'
     270:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ApplyShootingMeteringMode
         exiftool:
             -
                 name: ApplyShootingMeteringMode
@@ -371,6 +372,7 @@ items:
                     - Auto
                     - 'On'
     514:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\HighISONoiseReduction
         exiftool:
             -
                 name: HighISONoiseReduction
@@ -662,6 +664,7 @@ items:
                     - 'Surrounding AF points'
                     - 'All 45 points area'
     1289:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\SelectableAFPoint
         exiftool:
             -
                 name: SelectableAFPoint
@@ -1003,6 +1006,7 @@ items:
                     - Enable
                     - 'Enable: Down with Set'
     1552:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ContinuousShootingSpeed
         exiftool:
             -
                 name: ContinuousShootingSpeed
@@ -1015,6 +1019,7 @@ items:
                     - Disable
                     - Enable
     1553:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ContinuousShotLimit
         exiftool:
             -
                 name: ContinuousShotLimit
@@ -1386,6 +1391,7 @@ items:
                 DOMNode: 'CanonCustom:CustomizeDials'
                 desc: 'Customize Dials'
     2059:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\FocusingScreen
         exiftool:
             -
                 name: FocusingScreen
@@ -1447,6 +1453,7 @@ items:
                     - Ec-S
                     - 'Ec-N,R'
     2060:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\TimerLength
         exiftool:
             -
                 name: TimerLength
