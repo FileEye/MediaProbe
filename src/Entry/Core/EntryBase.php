@@ -229,6 +229,9 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function toString(array $options = [])
     {
+        if (is_null($this->value)) {
+            return '';
+        }
         $text = $this->resolveText($this->getValue($options));
         if (is_array($text)) {
             if (!$this->hasMappedText() && !$this->hasDefaultText()) {
