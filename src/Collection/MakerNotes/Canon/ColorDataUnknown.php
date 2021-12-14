@@ -24,18 +24,24 @@ class ColorDataUnknown extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'ColorDataVersion' => 0,
+    'ColorDataVersion' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ColorDataVersion',
-      'title' => 'Color Data Version',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'ColorDataVersion',
+        'title' => 'Color Data Version',
+        'format' =>
+        array (
+          0 => 8,
+        ),
       ),
     ),
   ),

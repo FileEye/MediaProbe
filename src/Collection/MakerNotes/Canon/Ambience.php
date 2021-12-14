@@ -25,50 +25,65 @@ class Ambience extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'AmbienceSelection' => 1,
-    'indexSize' => 0,
+    'AmbienceSelection' =>
+    array (
+      0 => 1,
+    ),
+    'indexSize' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'RawData',
+        'name' => 'indexSize',
+        'format' =>
+        array (
+          0 => 4,
+        ),
       ),
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AmbienceSelection',
-      'title' => 'Ambience Selection',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'AmbienceSelection',
+        'title' => 'Ambience Selection',
+        'format' =>
         array (
-          0 => 'Standard',
-          1 => 'Vivid',
-          2 => 'Warm',
-          3 => 'Soft',
-          4 => 'Cool',
-          5 => 'Intense',
-          6 => 'Brighter',
-          7 => 'Darker',
-          8 => 'Monochrome',
+          0 => 9,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Standard',
+            1 => 'Vivid',
+            2 => 'Warm',
+            3 => 'Soft',
+            4 => 'Cool',
+            5 => 'Intense',
+            6 => 'Brighter',
+            7 => 'Darker',
+            8 => 'Monochrome',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:AmbienceSelection',
       ),
-      'exiftoolDOMNode' => 'Canon:AmbienceSelection',
     ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:AmbienceSelection' => 1,
+    'Canon:AmbienceSelection' =>
+    array (
+      0 => 1,
+    ),
   ),
 );
 }

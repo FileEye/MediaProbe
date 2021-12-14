@@ -24,47 +24,65 @@ class ImageFormat extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'FileFormat' => 0,
-    'TargetCompressionRatio' => 1,
+    'FileFormat' =>
+    array (
+      0 => 0,
+    ),
+    'TargetCompressionRatio' =>
+    array (
+      0 => 1,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonRaw:FileFormat' => 0,
-    'CanonRaw:TargetCompressionRatio' => 1,
+    'CanonRaw:FileFormat' =>
+    array (
+      0 => 0,
+    ),
+    'CanonRaw:TargetCompressionRatio' =>
+    array (
+      0 => 1,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FileFormat',
-      'title' => 'File Format',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'FileFormat',
+        'title' => 'File Format',
+        'format' =>
         array (
-          65536 => 'JPEG (lossy)',
-          65538 => 'JPEG (non-quantization)',
-          65539 => 'JPEG (lossy/non-quantization toggled)',
-          131073 => 'CRW',
+          0 => 4,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            65536 => 'JPEG (lossy)',
+            65538 => 'JPEG (non-quantization)',
+            65539 => 'JPEG (lossy/non-quantization toggled)',
+            131073 => 'CRW',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:FileFormat',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:FileFormat',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'TargetCompressionRatio',
-      'title' => 'Target Compression Ratio',
-      'format' =>
+      0 =>
       array (
-        0 => 11,
+        'collection' => 'Tag',
+        'name' => 'TargetCompressionRatio',
+        'title' => 'Target Compression Ratio',
+        'format' =>
+        array (
+          0 => 11,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:TargetCompressionRatio',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:TargetCompressionRatio',
     ),
   ),
 );

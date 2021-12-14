@@ -25,227 +25,382 @@ class AFInfo2 extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'AFAreaHeights' => 9,
-    'AFAreaMode' => 1,
-    'AFAreaWidths' => 8,
-    'AFAreaXPositions' => 10,
-    'AFAreaYPositions' => 11,
-    'AFImageHeight' => 7,
-    'AFImageWidth' => 6,
-    'AFPointsInFocus' => 12,
-    'AFPointsSelected' => 13,
-    'CanonImageHeight' => 5,
-    'CanonImageWidth' => 4,
-    'NumAFPoints' => 2,
-    'PrimaryAFPoint' => 14,
-    'ValidAFPoints' => 3,
-    'indexSize' => 0,
+    'AFAreaHeights' =>
+    array (
+      0 => 9,
+    ),
+    'AFAreaMode' =>
+    array (
+      0 => 1,
+    ),
+    'AFAreaWidths' =>
+    array (
+      0 => 8,
+    ),
+    'AFAreaXPositions' =>
+    array (
+      0 => 10,
+    ),
+    'AFAreaYPositions' =>
+    array (
+      0 => 11,
+    ),
+    'AFImageHeight' =>
+    array (
+      0 => 7,
+    ),
+    'AFImageWidth' =>
+    array (
+      0 => 6,
+    ),
+    'AFPointsInFocus' =>
+    array (
+      0 => 12,
+    ),
+    'AFPointsSelected' =>
+    array (
+      0 => 13,
+    ),
+    'CanonImageHeight' =>
+    array (
+      0 => 5,
+    ),
+    'CanonImageWidth' =>
+    array (
+      0 => 4,
+    ),
+    'Canon_AFInfo2_0x000d' =>
+    array (
+      0 => 13,
+    ),
+    'NumAFPoints' =>
+    array (
+      0 => 2,
+    ),
+    'PrimaryAFPoint' =>
+    array (
+      0 => 14,
+    ),
+    'ValidAFPoints' =>
+    array (
+      0 => 3,
+    ),
+    'indexSize' =>
+    array (
+      0 => 0,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:AFAreaHeights' => 9,
-    'Canon:AFAreaMode' => 1,
-    'Canon:AFAreaWidths' => 8,
-    'Canon:AFAreaXPositions' => 10,
-    'Canon:AFAreaYPositions' => 11,
-    'Canon:AFImageHeight' => 7,
-    'Canon:AFImageWidth' => 6,
-    'Canon:AFInfoSize' => 0,
-    'Canon:AFPointsInFocus' => 12,
-    'Canon:AFPointsSelected' => 13,
-    'Canon:CanonImageHeight' => 5,
-    'Canon:CanonImageWidth' => 4,
-    'Canon:NumAFPoints' => 2,
-    'Canon:PrimaryAFPoint' => 14,
-    'Canon:ValidAFPoints' => 3,
+    'Canon:AFAreaHeights' =>
+    array (
+      0 => 9,
+    ),
+    'Canon:AFAreaMode' =>
+    array (
+      0 => 1,
+    ),
+    'Canon:AFAreaWidths' =>
+    array (
+      0 => 8,
+    ),
+    'Canon:AFAreaXPositions' =>
+    array (
+      0 => 10,
+    ),
+    'Canon:AFAreaYPositions' =>
+    array (
+      0 => 11,
+    ),
+    'Canon:AFImageHeight' =>
+    array (
+      0 => 7,
+    ),
+    'Canon:AFImageWidth' =>
+    array (
+      0 => 6,
+    ),
+    'Canon:AFInfoSize' =>
+    array (
+      0 => 0,
+    ),
+    'Canon:AFPointsInFocus' =>
+    array (
+      0 => 12,
+    ),
+    'Canon:AFPointsSelected' =>
+    array (
+      0 => 13,
+    ),
+    'Canon:CanonImageHeight' =>
+    array (
+      0 => 5,
+    ),
+    'Canon:CanonImageWidth' =>
+    array (
+      0 => 4,
+    ),
+    'Canon:Canon_AFInfo2_0x000d' =>
+    array (
+      0 => 13,
+    ),
+    'Canon:NumAFPoints' =>
+    array (
+      0 => 2,
+    ),
+    'Canon:PrimaryAFPoint' =>
+    array (
+      0 => 14,
+    ),
+    'Canon:ValidAFPoints' =>
+    array (
+      0 => 3,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'RawData',
+        'name' => 'indexSize',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'title' => 'AF Info Size',
+        'exiftoolDOMNode' => 'Canon:AFInfoSize',
       ),
-      'title' => 'AF Info Size',
-      'exiftoolDOMNode' => 'Canon:AFInfoSize',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFAreaMode',
-      'title' => 'AF Area Mode',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'AFAreaMode',
+        'title' => 'AF Area Mode',
+        'format' =>
         array (
-          0 => 'Off (Manual Focus)',
-          1 => 'AF Point Expansion (surround)',
-          2 => 'Single-point AF',
-          4 => 'Auto',
-          5 => 'Face Detect AF',
-          6 => 'Face + Tracking',
-          7 => 'Zone AF',
-          8 => 'AF Point Expansion (4 point)',
-          9 => 'Spot AF',
-          10 => 'AF Point Expansion (8 point)',
-          11 => 'Flexizone Multi',
-          13 => 'Flexizone Single',
-          14 => 'Large Zone AF',
+          0 => 3,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off (Manual Focus)',
+            1 => 'AF Point Expansion (surround)',
+            2 => 'Single-point AF',
+            4 => 'Auto',
+            5 => 'Face Detect AF',
+            6 => 'Face + Tracking',
+            7 => 'Zone AF',
+            8 => 'AF Point Expansion (4 point)',
+            9 => 'Spot AF',
+            10 => 'AF Point Expansion (8 point)',
+            11 => 'Flexizone Multi',
+            13 => 'Flexizone Single',
+            14 => 'Large Zone AF',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:AFAreaMode',
       ),
-      'exiftoolDOMNode' => 'Canon:AFAreaMode',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'NumAFPoints',
-      'title' => 'Num AF Points',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'NumAFPoints',
+        'title' => 'Num AF Points',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:NumAFPoints',
       ),
-      'exiftoolDOMNode' => 'Canon:NumAFPoints',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ValidAFPoints',
-      'title' => 'Valid AF Points',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'ValidAFPoints',
+        'title' => 'Valid AF Points',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:ValidAFPoints',
       ),
-      'exiftoolDOMNode' => 'Canon:ValidAFPoints',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CanonImageWidth',
-      'title' => 'Canon Image Width',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'CanonImageWidth',
+        'title' => 'Canon Image Width',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:CanonImageWidth',
       ),
-      'exiftoolDOMNode' => 'Canon:CanonImageWidth',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CanonImageHeight',
-      'title' => 'Canon Image Height',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'CanonImageHeight',
+        'title' => 'Canon Image Height',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:CanonImageHeight',
       ),
-      'exiftoolDOMNode' => 'Canon:CanonImageHeight',
     ),
     6 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFImageWidth',
-      'title' => 'AF Image Width',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'AFImageWidth',
+        'title' => 'AF Image Width',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFImageWidth',
       ),
-      'exiftoolDOMNode' => 'Canon:AFImageWidth',
     ),
     7 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFImageHeight',
-      'title' => 'AF Image Height',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'AFImageHeight',
+        'title' => 'AF Image Height',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFImageHeight',
       ),
-      'exiftoolDOMNode' => 'Canon:AFImageHeight',
     ),
     8 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFAreaWidths',
-      'title' => 'AF Area Widths',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'AFAreaWidths',
+        'title' => 'AF Area Widths',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFAreaWidths',
       ),
-      'exiftoolDOMNode' => 'Canon:AFAreaWidths',
     ),
     9 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFAreaHeights',
-      'title' => 'AF Area Heights',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'AFAreaHeights',
+        'title' => 'AF Area Heights',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFAreaHeights',
       ),
-      'exiftoolDOMNode' => 'Canon:AFAreaHeights',
     ),
     10 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFAreaXPositions',
-      'title' => 'AF Area X Positions',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'AFAreaXPositions',
+        'title' => 'AF Area X Positions',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFAreaXPositions',
       ),
-      'exiftoolDOMNode' => 'Canon:AFAreaXPositions',
     ),
     11 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFAreaYPositions',
-      'title' => 'AF Area Y Positions',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'AFAreaYPositions',
+        'title' => 'AF Area Y Positions',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFAreaYPositions',
       ),
-      'exiftoolDOMNode' => 'Canon:AFAreaYPositions',
     ),
     12 =>
     array (
-      '__todo' => 'add decoding',
-      'collection' => 'Tag',
-      'name' => 'AFPointsInFocus',
-      'title' => 'AF Points In Focus',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        '__todo' => 'add decoding',
+        'collection' => 'Tag',
+        'name' => 'AFPointsInFocus',
+        'title' => 'AF Points In Focus',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFPointsInFocus',
       ),
-      'exiftoolDOMNode' => 'Canon:AFPointsInFocus',
     ),
     13 =>
     array (
-      '__todo' => 'add decoding',
-      'collection' => 'Tag',
-      'name' => 'AFPointsSelected',
-      'title' => 'AF Points Selected',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        '__todo' => 'add decoding',
+        'collection' => 'Tag',
+        'name' => 'AFPointsSelected',
+        'title' => 'AF Points Selected',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:AFPointsSelected',
       ),
-      'exiftoolDOMNode' => 'Canon:AFPointsSelected',
+      1 =>
+      array (
+        '__todo' => 'add decoding',
+        'collection' => 'Tag',
+        'name' => 'Canon_AFInfo2_0x000d',
+        'title' => 'Canon AF Info 2 0x000d',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:Canon_AFInfo2_0x000d',
+      ),
     ),
     14 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PrimaryAFPoint',
-      'title' => 'Primary AF Point',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'PrimaryAFPoint',
+        'title' => 'Primary AF Point',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:PrimaryAFPoint',
       ),
-      'exiftoolDOMNode' => 'Canon:PrimaryAFPoint',
     ),
   ),
 );

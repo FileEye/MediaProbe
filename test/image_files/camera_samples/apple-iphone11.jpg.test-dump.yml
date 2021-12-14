@@ -1340,12 +1340,12 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensInfo:42034/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\ExifLensInfo
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 4
                                                                     bytesHash: 300484f974e1bf8268e179d78383bbbd10421e155cb1af74e57e86bb4b231b75
-                                                                    text: '1.5399999618512 4.25 1.8 2.4'
+                                                                    text: '1.53999996-4.25mm f/1.8-2.4'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensMake:42035'
@@ -1510,7 +1510,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitude:6/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\GPSAltitude
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 1

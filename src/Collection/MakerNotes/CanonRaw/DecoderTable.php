@@ -24,50 +24,77 @@ class DecoderTable extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'CompressedDataLength' => 3,
-    'CompressedDataOffset' => 2,
-    'DecoderTableNumber' => 0,
+    'CompressedDataLength' =>
+    array (
+      0 => 3,
+    ),
+    'CompressedDataOffset' =>
+    array (
+      0 => 2,
+    ),
+    'DecoderTableNumber' =>
+    array (
+      0 => 0,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonRaw:CompressedDataLength' => 3,
-    'CanonRaw:CompressedDataOffset' => 2,
-    'CanonRaw:DecoderTableNumber' => 0,
+    'CanonRaw:CompressedDataLength' =>
+    array (
+      0 => 3,
+    ),
+    'CanonRaw:CompressedDataOffset' =>
+    array (
+      0 => 2,
+    ),
+    'CanonRaw:DecoderTableNumber' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'DecoderTableNumber',
-      'title' => 'Decoder Table Number',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'DecoderTableNumber',
+        'title' => 'Decoder Table Number',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:DecoderTableNumber',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:DecoderTableNumber',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CompressedDataOffset',
-      'title' => 'Compressed Data Offset',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'CompressedDataOffset',
+        'title' => 'Compressed Data Offset',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:CompressedDataOffset',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:CompressedDataOffset',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CompressedDataLength',
-      'title' => 'Compressed Data Length',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'CompressedDataLength',
+        'title' => 'Compressed Data Length',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:CompressedDataLength',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:CompressedDataLength',
     ),
   ),
 );

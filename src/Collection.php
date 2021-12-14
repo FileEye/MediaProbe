@@ -188,10 +188,32 @@ abstract class Collection
     }
 
     /**
+     * Returns the collection index of an item, resolved in relation to the context.
+     *
+     * @param string $item_id
+     *   The item id.
+     * @param int|null $components_count
+     *   The number of components for the item.
+     * @param ElementInterface $context
+     *   An element that can be used to provide context.
+     *
+     * @return mixed
+     *   The item collection index.
+     */
+    private function getItemCollectionIndex(string $item_id, ?int $components_count, ElementInterface $context)
+    {
+        $entry_class = static::$map['items'][$item_id][0]['entryClass'] ?? null;
+
+        return $entry_class ? $entry_class::resolveItemCollectionIndex($components_count, $context) : 0;
+    }
+
+    /**
      * Returns the Collection object of an item.
      *
      * @param string $item
      *   The item id.
+     * @param mixed $index
+     *   The item id index.
      *
      * @return Collection
      *   The item collection object.
@@ -199,18 +221,27 @@ abstract class Collection
      * @throws MediaProbeException
      *   When item is not in collection and no default given.
      */
-    public function getItemCollection(string $item, string $default_id = null, array $default_properties = []): Collection
+    public function getItemCollection(string $item, $index = 0, string $default_id = null, array $default_properties = [], int $components_count = null, ElementInterface $context = null): Collection
     {
-        if (!isset(static::$map['items'][$item]['collection'])) {
+        if ($index === null) {
+            if ($context === null) {
+                $index = 0;
+            }
+            else {
+                $index = $this->getItemCollectionIndex($item, $components_count, $context);
+            }
+        }
+
+        if (!isset(static::$map['items'][$item][$index]['collection'])) {
             if (isset($default_id)) {
                 return static::get($default_id, $default_properties);
             }
             throw new MediaProbeException('Missing collection for item \'%s\' in \'%s\'', $item, $this->getId());
         }
-        $item_properties = static::$map['items'][$item];
+        $item_properties = static::$map['items'][$item][$index];
         unset($item_properties['collection']);
         $item_properties['item'] = $item;
-        return static::get(static::$map['items'][$item]['collection'], $item_properties);
+        return static::get(static::$map['items'][$item][$index]['collection'], $item_properties);
     }
 
     /**
@@ -218,15 +249,19 @@ abstract class Collection
      *
      * @param string $item_name
      *   The item name.
+     * @param mixed $index
+     *   The item name index.
      *
      * @return Collection|null
      *   The item collection object, or null if missing.
+     *
+     * @todo throw Exception if missing, do not return null
      */
-    public function getItemCollectionByName($item_name)
+    public function getItemCollectionByName(string $item_name, $index = 0): ?Collection
     {
-        if (!isset(static::$map['itemsByName'][$item_name])) {
+        if (!isset(static::$map['itemsByName'][$item_name][$index])) {
             return null;
         }
-        return $this->getItemCollection(static::$map['itemsByName'][$item_name]);
+        return $this->getItemCollection(static::$map['itemsByName'][$item_name][$index]);
     }
 }

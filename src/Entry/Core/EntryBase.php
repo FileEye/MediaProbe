@@ -69,6 +69,22 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     }
 
     /**
+     * Resolves, in relation to the context, the index of the item collection to be used to instantiate the Entry.
+     *
+     * @param int|null $components_count
+     *   The number of components for the items.
+     * @param ElementInterface $context
+     *   An element that can be used to provide context.
+     *
+     * @return mixed
+     *   The item collection index.
+     */
+    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context)
+    {
+        return 0;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getFormat()
@@ -156,9 +172,18 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * @todo xxx
      */
+    protected function resolveValuePlaceholder(string $value, string $source): string
+    {
+        $tmp = str_replace('{value}', $value, $source);
+        $tmp = str_replace('{valuehex}', dechex($value), $tmp);
+        return $tmp;
+    }
+
+    /**
+     * @todo xxx
+     */
     public function resolveText($value, bool $null_on_missing = FALSE)
     {
-//dump([$value, 'mapped' => $this->hasMappedText(), 'default' => $this->hasDefaultText()]);
         if (!$this->getParentElement()) {
             return is_array($value) ? implode(' ', $value) : $value;
         }
@@ -168,9 +193,9 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             foreach ($value as $v) {
                 $id = is_int($v) ? $v : (string) $v;
                 if ($this->hasMappedText()) {
-                    $tmp[] = str_replace('{value}', $v, $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? (string) $v);
+                    $tmp[] = $this->resolveValuePlaceholder($v, $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? (string) $v);
                 } elseif ($this->hasDefaultText()) {
-                    $tmp[] = str_replace('{value}', $v, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+                    $tmp[] = $this->resolveValuePlaceholder($v, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
                 } else {
                     $tmp[] = $v;
                 }
@@ -183,11 +208,11 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             $id = is_int($value) ? $value : (string) $value;
             $raw = $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? null;
             if (!is_null($raw)) {
-              $text = str_replace('{value}', $value, $raw);
+              $text = $this->resolveValuePlaceholder($value, $raw);
             }
         }
         if (is_null($text) && $this->hasDefaultText()) {
-            $text = str_replace('{value}', $value, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+            $text = $this->resolveValuePlaceholder($value, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
         }
         if (is_null($text) && $null_on_missing) {
             return null;
@@ -196,7 +221,6 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             return $text;
         }
 
-//if (!is_scalar($value)) dump($value);
         return is_scalar($value) ? $value : serialize($value);
     }
 
@@ -205,6 +229,9 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function toString(array $options = [])
     {
+        if (is_null($this->value)) {
+            return '';
+        }
         $text = $this->resolveText($this->getValue($options));
         if (is_array($text)) {
             if (!$this->hasMappedText() && !$this->hasDefaultText()) {

@@ -9,11 +9,4 @@ use FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue;
  */
 class FNumber extends ApertureValue
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function toString(array $options = [])
-    {
-        return round($this->getValue(), 1);
-    }
 }

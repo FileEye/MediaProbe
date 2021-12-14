@@ -1100,12 +1100,12 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensInfo:42034/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\ExifLensInfo
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 4
                                                                     bytesHash: af83b20501dab953b15760a55b1990e1a50b5798985df11bb29d74e93fa0de9c
-                                                                    text: '4.15 4.15 2.2 2.2'
+                                                                    text: '4.15mm f/2.2'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensMake:42035'
@@ -1253,7 +1253,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitude:6/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\GPSAltitude
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 1
@@ -1271,7 +1271,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSTimeStamp:7/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\GPSTimeStamp
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 3

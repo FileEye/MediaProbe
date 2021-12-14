@@ -1168,12 +1168,12 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensInfo:42034/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\ExifLensInfo
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 4
                                                                     bytesHash: 9ede23a983fb6c7ae901f4f5142ff7d4c39e2d717c7d30b6a390edc1a0e29485
-                                                                    text: '3.99 3.99 1.8 1.8'
+                                                                    text: '3.99mm f/1.8'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensMake:42035'
@@ -1321,7 +1321,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitude:6/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\GPSAltitude
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 1

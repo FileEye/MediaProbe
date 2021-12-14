@@ -24,82 +24,118 @@ class RawJpgInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'RawJpgHeight' => 4,
-    'RawJpgQuality' => 1,
-    'RawJpgSize' => 2,
-    'RawJpgWidth' => 3,
+    'RawJpgHeight' =>
+    array (
+      0 => 4,
+    ),
+    'RawJpgQuality' =>
+    array (
+      0 => 1,
+    ),
+    'RawJpgSize' =>
+    array (
+      0 => 2,
+    ),
+    'RawJpgWidth' =>
+    array (
+      0 => 3,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonRaw:RawJpgHeight' => 4,
-    'CanonRaw:RawJpgQuality' => 1,
-    'CanonRaw:RawJpgSize' => 2,
-    'CanonRaw:RawJpgWidth' => 3,
+    'CanonRaw:RawJpgHeight' =>
+    array (
+      0 => 4,
+    ),
+    'CanonRaw:RawJpgQuality' =>
+    array (
+      0 => 1,
+    ),
+    'CanonRaw:RawJpgSize' =>
+    array (
+      0 => 2,
+    ),
+    'CanonRaw:RawJpgWidth' =>
+    array (
+      0 => 3,
+    ),
   ),
   'items' =>
   array (
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'RawJpgQuality',
-      'title' => 'Raw Jpg Quality',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'RawJpgQuality',
+        'title' => 'Raw Jpg Quality',
+        'format' =>
         array (
-          1 => 'Economy',
-          2 => 'Normal',
-          3 => 'Fine',
-          5 => 'Superfine',
+          0 => 3,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Economy',
+            2 => 'Normal',
+            3 => 'Fine',
+            5 => 'Superfine',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:RawJpgQuality',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:RawJpgQuality',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'RawJpgSize',
-      'title' => 'Raw Jpg Size',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'RawJpgSize',
+        'title' => 'Raw Jpg Size',
+        'format' =>
         array (
-          0 => 'Large',
-          1 => 'Medium',
-          2 => 'Small',
+          0 => 3,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Large',
+            1 => 'Medium',
+            2 => 'Small',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:RawJpgSize',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:RawJpgSize',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'RawJpgWidth',
-      'title' => 'Raw Jpg Width',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'RawJpgWidth',
+        'title' => 'Raw Jpg Width',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:RawJpgWidth',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:RawJpgWidth',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'RawJpgHeight',
-      'title' => 'Raw Jpg Height',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'RawJpgHeight',
+        'title' => 'Raw Jpg Height',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:RawJpgHeight',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:RawJpgHeight',
     ),
   ),
 );

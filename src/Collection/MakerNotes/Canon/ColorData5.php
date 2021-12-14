@@ -24,58 +24,81 @@ class ColorData5 extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'ColorDataVersion' => 0,
-    'PerChannelBlackLevel' => 333,
+    'ColorDataVersion' =>
+    array (
+      0 => 0,
+    ),
+    'PerChannelBlackLevel' =>
+    array (
+      0 => 264,
+      1 => 333,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:ColorDataVersion' => 0,
-    'Canon:PerChannelBlackLevel' => 333,
+    'Canon:ColorDataVersion' =>
+    array (
+      0 => 0,
+    ),
+    'Canon:PerChannelBlackLevel' =>
+    array (
+      0 => 264,
+      1 => 333,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ColorDataVersion',
-      'title' => 'Color Data Version',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'ColorDataVersion',
+        'title' => 'Color Data Version',
+        'format' =>
         array (
-          -4 => '-4 (M100/M5/M6)',
-          -3 => '-3 (M10/M3)',
+          0 => 8,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            -4 => '-4 (M100/M5/M6)',
+            -3 => '-3 (M10/M3)',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:ColorDataVersion',
       ),
-      'exiftoolDOMNode' => 'Canon:ColorDataVersion',
     ),
     264 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PerChannelBlackLevel',
-      'title' => 'Per Channel Black Level',
-      'components' => 4,
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'PerChannelBlackLevel',
+        'title' => 'Per Channel Black Level',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
       ),
-      'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
     ),
     333 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PerChannelBlackLevel',
-      'title' => 'Per Channel Black Level',
-      'components' => 4,
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'PerChannelBlackLevel',
+        'title' => 'Per Channel Black Level',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
       ),
-      'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
     ),
   ),
 );

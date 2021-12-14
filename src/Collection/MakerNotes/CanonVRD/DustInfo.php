@@ -24,32 +24,41 @@ class DustInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'DustDeleteApplied' => 2,
+    'DustDeleteApplied' =>
+    array (
+      0 => 2,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonVRD:DustDeleteApplied' => 2,
+    'CanonVRD:DustDeleteApplied' =>
+    array (
+      0 => 2,
+    ),
   ),
   'items' =>
   array (
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'DustDeleteApplied',
-      'title' => 'Dust Delete Applied',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'DustDeleteApplied',
+        'title' => 'Dust Delete Applied',
+        'format' =>
         array (
-          0 => 'No',
-          1 => 'Yes',
+          0 => 4,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'No',
+            1 => 'Yes',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DustDeleteApplied',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:DustDeleteApplied',
     ),
   ),
 );

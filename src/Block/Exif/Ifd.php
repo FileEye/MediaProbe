@@ -135,12 +135,12 @@ class Ifd extends ListBase
             $item_collection = $this->getCollection()->getItemCollection($id);
         } catch (MediaProbeException $e) {
             if ($fallback_collection_id !== null) {
-                $item_collection = Collection::get($fallback_collection_id)->getItemCollection($id, 'UnknownTag', [
+                $item_collection = Collection::get($fallback_collection_id)->getItemCollection($id, 0, 'UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);
             } else {
-                $item_collection = $this->getCollection()->getItemCollection($id, 'UnknownTag', [
+                $item_collection = $this->getCollection()->getItemCollection($id, 0, 'UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);

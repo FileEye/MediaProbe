@@ -24,12 +24,4 @@ class FocalLength extends Short
 
         return $this->value[0] / $denominator;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toString(array $options = [])
-    {
-        return $this->getValue() . ' mm';
-    }
 }

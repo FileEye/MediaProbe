@@ -24,249 +24,348 @@ class Functions400D extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'AFAssistBeam' => 4,
-    'ETTLII' => 7,
-    'ExposureLevelIncrements' => 5,
-    'FlashSyncSpeedAv' => 2,
-    'LCDDisplayAtPowerOn' => 10,
-    'LongExposureNoiseReduction' => 1,
-    'MagnifiedView' => 9,
-    'MirrorLockup' => 6,
-    'SetButtonCrossKeysFunc' => 0,
-    'Shutter-AELock' => 3,
-    'ShutterCurtainSync' => 8,
+    'AFAssistBeam' =>
+    array (
+      0 => 4,
+    ),
+    'ETTLII' =>
+    array (
+      0 => 7,
+    ),
+    'ExposureLevelIncrements' =>
+    array (
+      0 => 5,
+    ),
+    'FlashSyncSpeedAv' =>
+    array (
+      0 => 2,
+    ),
+    'LCDDisplayAtPowerOn' =>
+    array (
+      0 => 10,
+    ),
+    'LongExposureNoiseReduction' =>
+    array (
+      0 => 1,
+    ),
+    'MagnifiedView' =>
+    array (
+      0 => 9,
+    ),
+    'MirrorLockup' =>
+    array (
+      0 => 6,
+    ),
+    'SetButtonCrossKeysFunc' =>
+    array (
+      0 => 0,
+    ),
+    'Shutter-AELock' =>
+    array (
+      0 => 3,
+    ),
+    'ShutterCurtainSync' =>
+    array (
+      0 => 8,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonCustom:AFAssistBeam' => 4,
-    'CanonCustom:ETTLII' => 7,
-    'CanonCustom:ExposureLevelIncrements' => 5,
-    'CanonCustom:FlashSyncSpeedAv' => 2,
-    'CanonCustom:LCDDisplayAtPowerOn' => 10,
-    'CanonCustom:LongExposureNoiseReduction' => 1,
-    'CanonCustom:MagnifiedView' => 9,
-    'CanonCustom:MirrorLockup' => 6,
-    'CanonCustom:SetButtonCrossKeysFunc' => 0,
-    'CanonCustom:Shutter-AELock' => 3,
-    'CanonCustom:ShutterCurtainSync' => 8,
+    'CanonCustom:AFAssistBeam' =>
+    array (
+      0 => 4,
+    ),
+    'CanonCustom:ETTLII' =>
+    array (
+      0 => 7,
+    ),
+    'CanonCustom:ExposureLevelIncrements' =>
+    array (
+      0 => 5,
+    ),
+    'CanonCustom:FlashSyncSpeedAv' =>
+    array (
+      0 => 2,
+    ),
+    'CanonCustom:LCDDisplayAtPowerOn' =>
+    array (
+      0 => 10,
+    ),
+    'CanonCustom:LongExposureNoiseReduction' =>
+    array (
+      0 => 1,
+    ),
+    'CanonCustom:MagnifiedView' =>
+    array (
+      0 => 9,
+    ),
+    'CanonCustom:MirrorLockup' =>
+    array (
+      0 => 6,
+    ),
+    'CanonCustom:SetButtonCrossKeysFunc' =>
+    array (
+      0 => 0,
+    ),
+    'CanonCustom:Shutter-AELock' =>
+    array (
+      0 => 3,
+    ),
+    'CanonCustom:ShutterCurtainSync' =>
+    array (
+      0 => 8,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'SetButtonCrossKeysFunc',
-      'title' => 'Set Button Cross Keys Func',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'SetButtonCrossKeysFunc',
+        'title' => 'Set Button Cross Keys Func',
+        'format' =>
         array (
-          0 => 'Set: Picture Style',
-          1 => 'Set: Quality',
-          2 => 'Set: Flash Exposure Comp',
-          3 => 'Set: Playback',
-          4 => 'Cross keys: AF point select',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Set: Picture Style',
+            1 => 'Set: Quality',
+            2 => 'Set: Flash Exposure Comp',
+            3 => 'Set: Playback',
+            4 => 'Cross keys: AF point select',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:SetButtonCrossKeysFunc',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:SetButtonCrossKeysFunc',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'LongExposureNoiseReduction',
-      'title' => 'Long Exposure Noise Reduction',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'LongExposureNoiseReduction',
+        'title' => 'Long Exposure Noise Reduction',
+        'format' =>
         array (
-          0 => 'Off',
-          1 => 'Auto',
-          2 => 'On',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'Auto',
+            2 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:LongExposureNoiseReduction',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:LongExposureNoiseReduction',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FlashSyncSpeedAv',
-      'title' => 'Flash Sync Speed Av',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'FlashSyncSpeedAv',
+        'title' => 'Flash Sync Speed Av',
+        'format' =>
         array (
-          0 => 'Auto',
-          1 => '1/200 Fixed',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Auto',
+            1 => '1/200 Fixed',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:FlashSyncSpeedAv',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:FlashSyncSpeedAv',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'Shutter-AELock',
-      'title' => 'Shutter-AE Lock',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'Shutter-AELock',
+        'title' => 'Shutter-AE Lock',
+        'format' =>
         array (
-          0 => 'AF/AE lock',
-          1 => 'AE lock/AF',
-          2 => 'AF/AF lock, No AE lock',
-          3 => 'AE/AF, No AE lock',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'AF/AE lock',
+            1 => 'AE lock/AF',
+            2 => 'AF/AF lock, No AE lock',
+            3 => 'AE/AF, No AE lock',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:Shutter-AELock',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:Shutter-AELock',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AFAssistBeam',
-      'title' => 'AF Assist Beam',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'AFAssistBeam',
+        'title' => 'AF Assist Beam',
+        'format' =>
         array (
-          0 => 'Emits',
-          1 => 'Does not emit',
-          2 => 'Only ext. flash emits',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Emits',
+            1 => 'Does not emit',
+            2 => 'Only ext. flash emits',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:AFAssistBeam',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:AFAssistBeam',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ExposureLevelIncrements',
-      'title' => 'Exposure Level Increments',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'ExposureLevelIncrements',
+        'title' => 'Exposure Level Increments',
+        'format' =>
         array (
-          0 => '1/3 Stop',
-          1 => '1/2 Stop',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => '1/3 Stop',
+            1 => '1/2 Stop',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:ExposureLevelIncrements',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:ExposureLevelIncrements',
     ),
     6 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'MirrorLockup',
-      'title' => 'Mirror Lockup',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'MirrorLockup',
+        'title' => 'Mirror Lockup',
+        'format' =>
         array (
-          0 => 'Disable',
-          1 => 'Enable',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Disable',
+            1 => 'Enable',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:MirrorLockup',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:MirrorLockup',
     ),
     7 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ETTLII',
-      'title' => 'E-TTL II',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'ETTLII',
+        'title' => 'E-TTL II',
+        'format' =>
         array (
-          0 => 'Evaluative',
-          1 => 'Average',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Evaluative',
+            1 => 'Average',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:ETTLII',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:ETTLII',
     ),
     8 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ShutterCurtainSync',
-      'title' => 'Shutter Curtain Sync',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'ShutterCurtainSync',
+        'title' => 'Shutter Curtain Sync',
+        'format' =>
         array (
-          0 => '1st-curtain sync',
-          1 => '2nd-curtain sync',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => '1st-curtain sync',
+            1 => '2nd-curtain sync',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:ShutterCurtainSync',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:ShutterCurtainSync',
     ),
     9 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'MagnifiedView',
-      'title' => 'Magnified View',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'MagnifiedView',
+        'title' => 'Magnified View',
+        'format' =>
         array (
-          0 => 'Image playback only',
-          1 => 'Image review and playback',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Image playback only',
+            1 => 'Image review and playback',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:MagnifiedView',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:MagnifiedView',
     ),
     10 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'LCDDisplayAtPowerOn',
-      'title' => 'LCD Display At Power On',
-      'format' =>
+      0 =>
       array (
-        0 => 1,
-      ),
-      'text' =>
-      array (
-        'mapping' =>
+        'collection' => 'Tag',
+        'name' => 'LCDDisplayAtPowerOn',
+        'title' => 'LCD Display At Power On',
+        'format' =>
         array (
-          0 => 'Display',
-          1 => 'Retain power off status',
+          0 => 1,
         ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Display',
+            1 => 'Retain power off status',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:LCDDisplayAtPowerOn',
       ),
-      'exiftoolDOMNode' => 'CanonCustom:LCDDisplayAtPowerOn',
     ),
   ),
 );

@@ -21,24 +21,33 @@ class CTMD extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'TimeStamp' => 1,
+    'TimeStamp' =>
+    array (
+      0 => 1,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:TimeStamp' => 1,
+    'Canon:TimeStamp' =>
+    array (
+      0 => 1,
+    ),
   ),
   'items' =>
   array (
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'TimeStamp',
-      'title' => 'Time Stamp',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'TimeStamp',
+        'title' => 'Time Stamp',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:TimeStamp',
       ),
-      'exiftoolDOMNode' => 'Canon:TimeStamp',
     ),
   ),
 );

@@ -106,6 +106,8 @@ skip:
         - 'Canon:DustRemovalData'
         - '########### 201103'
         - 'Canon:Sharpness'
+        - 'Canon:AFPointsSelected'
+        - 'Canon:AFPointsInFocus'
 fileName: canon_eos_850d_08.jpg
 mimeType: image/jpeg
 fileContentHash: 4e20f0333037b59712360f2c847b0bd4a880f54c1a1cb3ce7f763bcc76d76ebc
@@ -914,7 +916,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Contrast:13/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Contrast
                                                                                     parsed: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -932,7 +934,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Saturation:14/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Saturation
                                                                                     parsed: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1117,7 +1119,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
-                                                                                    text: '1/mm'
+                                                                                    text: 1/mm
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxAperture:26'
@@ -1153,7 +1155,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 20bd5ef69e629c299cebb132138caeffe1a216683957dc8dcbc8330b5c8bb4d3
-                                                                                    text: !!float 24
+                                                                                    text: '24'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashActivity:28'
@@ -1566,7 +1568,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 34739425d55f591d570b36e6354822dbccd6453a78cbb9a61c05521248206762
-                                                                                    text: 11.88
+                                                                                    text: '11.88'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetAperture:4'
@@ -1584,7 +1586,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: e9aff84fdb699ca706c0a1fed47bb095cb25e3c95aa5d1c5d216ff2cfbcd4998
-                                                                                    text: !!float 8
+                                                                                    text: '8'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:TargetExposureTime:5'
@@ -1620,7 +1622,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 5aeca385d8b781825b07bbec7c858b7170426c88088935850bc13dd6402368a5
-                                                                                    text: '+2/3'
+                                                                                    text: +2/3
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:WhiteBalance:7'
@@ -1687,12 +1689,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:OpticalZoomCode:10/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ShotInfo\OpticalZoomCode
                                                                                     parsed: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: e545d395bb3fd971f91bf9a2b6722831df704efae6c1aa9da0989ed0970b77bb
-                                                                                    text: 'n/a'
+                                                                                    text: n/a
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:CameraTemperature:12'
@@ -1746,7 +1748,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
-                                                                                    text: '0'
+                                                                                    text: 0
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:FlashExposureComp:15'
@@ -1890,7 +1892,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 8411fbeb6f7a0d0cba9595af2c6d9d915879d86e5e1e2d5d3a0afaf062edb1a6
-                                                                                    text: '1/470'
+                                                                                    text: 1/470
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonShotInfo:4/tag:MeasuredEV2:23'
@@ -2132,7 +2134,7 @@ elements:
                                                                             format: Long
                                                                             components: 1
                                                                             bytesHash: fe49f43f6bd4194fa91297a42ea62a8ee4967aa90635a6e1bfde266dd52a1ddb
-                                                                            text: '2147484725'
+                                                                            text: 'Unknown (0x80000435)'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:ThumbnailImageValidArea:19'
@@ -2695,7 +2697,7 @@ elements:
                                                                                     format: SignedLong
                                                                                     components: 1
                                                                                     bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                                    text: '0'
+                                                                                    text: '+00:00'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonTimeInfo:53/tag:TimeZoneCity:2'
@@ -3286,7 +3288,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                                            text: '1/3-stop set, 1/3-stop comp.'
+                                                                                            text: '1/3 Stop'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ISOSpeedIncrements:258'
@@ -3385,7 +3387,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                                            text: 'On'
+                                                                                            text: 'Selected (constant)'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:AFAreaSelectMethod:1307'
@@ -3484,7 +3486,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: d23f96d836ebed25ad1d3d2b9d92362252cc8a347a98312a75284f7f6d08bd02
-                                                                                            text: '67'
+                                                                                            text: 'Monochrome, WB corrected, [6]'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:CustomControls:1804'
@@ -5911,7 +5913,7 @@ elements:
                                                                             format: Short
                                                                             components: 3
                                                                             bytesHash: 75800624fbd086e81d92e42b6933f86c685a1e9840a69313e934563c3e8592a1
-                                                                            text: '135 135 135'
+                                                                            text: 'Auto, Auto, Auto'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:PictureStylePC:16393'
@@ -5929,7 +5931,7 @@ elements:
                                                                             format: Short
                                                                             components: 3
                                                                             bytesHash: b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44
-                                                                            text: '0 0 0'
+                                                                            text: 'None, None, None'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CustomPictureStyleFileName:16400'
@@ -7100,12 +7102,12 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensInfo:42034/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\ExifLensInfo
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 4
                                                                     bytesHash: 5e47fd08565e06efdb23dd6064e4b72859a334bfe5d7cd5663352c824644f35a
-                                                                    text: '18 55 0 0'
+                                                                    text: '18-55mm f/0'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensModel:42036'
@@ -7414,7 +7416,7 @@ log:
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ISOSpeedRange:259'
-            message: 'Found 1 data components expected 3'
+            message: 'Found 1 data components, expected 3'
     NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:25'

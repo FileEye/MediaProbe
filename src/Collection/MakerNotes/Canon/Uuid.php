@@ -21,37 +21,55 @@ class Uuid extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'CompressorVersion' => 'CNCV',
-    'ThumbnailImage' => 'THMB',
+    'CompressorVersion' =>
+    array (
+      0 => 'CNCV',
+    ),
+    'ThumbnailImage' =>
+    array (
+      0 => 'THMB',
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:CompressorVersion' => 'CNCV',
-    'Canon:ThumbnailImage' => 'THMB',
+    'Canon:CompressorVersion' =>
+    array (
+      0 => 'CNCV',
+    ),
+    'Canon:ThumbnailImage' =>
+    array (
+      0 => 'THMB',
+    ),
   ),
   'items' =>
   array (
     'CNCV' =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CompressorVersion',
-      'title' => 'Compressor Version',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'CompressorVersion',
+        'title' => 'Compressor Version',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:CompressorVersion',
       ),
-      'exiftoolDOMNode' => 'Canon:CompressorVersion',
     ),
     'THMB' =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ThumbnailImage',
-      'title' => 'Thumbnail Image',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'ThumbnailImage',
+        'title' => 'Thumbnail Image',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:ThumbnailImage',
       ),
-      'exiftoolDOMNode' => 'Canon:ThumbnailImage',
     ),
   ),
 );

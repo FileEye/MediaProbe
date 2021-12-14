@@ -199,47 +199,91 @@ DATA;
                 $item['outputFormat'] = $this->format2Id($item['outputFormat'], 'base', $item['name'] ?? $item['collection'], $file)[0];
             }
 
-            $count_exiftool = count($item['exiftool'] ?? []);
-            if ($count_exiftool > 0) {
-                // Fetch the first available Exiftool definition if available.
-                $exiftool = reset($item['exiftool']);
-
-                if ($item['compiler']['exiftool']['skipDOMNode'] ?? false) {
-                    unset($exiftool['DOMNode']);
-                }
-
-                $process_exiftool = $this->processExiftoolEntry($exiftool, $item, $file);
-                $item = array_merge($item, $process_exiftool);
-            }
-
             $item_exif_tag = $item['exifReadData']['key'] ?? null;
 
-            unset($item['compiler']);
-            unset($item['exifReadData']);
-            unset($item['exiftool']);
+            $count_exiftool = count($item['exiftool'] ?? []);
+            if ($count_exiftool === 0) {
+                $xxx = $this->processExiftoolEntry([], $item, $file);
+                // Add item to map by collection/name.
+                if (isset($xxx['name'])) {
+                    if (!in_array($id, array_values($map['itemsByName'][$xxx['name']] ?? []))) {
+                        $map['itemsByName'][$xxx['name']][] = $id;
+                    }
+                }
 
-            // Add item to map by collection/name.
-            if (isset($item['name'])) {
-//                if (!in_array($id, array_values($map['itemsByName'][$item['name']] ?? []))) {
-//                    $map['itemsByName'][$item['name']][] = $id;
-//                }
-                  $map['itemsByName'][$item['name']] = $id;
+                // Add item to map by exif_read_data key.
+                if (isset($item_exif_tag)) { // xx
+                    $xxx['phpExifTag'] = $item_exif_tag;
+                    if (!in_array($id, array_values($map['itemsByPhpExifTag'][$item_exif_tag] ?? []))) {
+                        $map['itemsByPhpExifTag'][$item_exif_tag][] = $id;
+                    }
+                }
+
+                // Add item to map by exiftool DOMNode.
+                if (isset($exiftool['DOMNode'])) { // xx
+                    $xxx['exiftoolDOMNode'] = $exiftool['DOMNode'];
+                    if (!in_array($id, array_values($map['itemsByExiftoolDOMNode'][$exiftool['DOMNode']] ?? []))) {
+                        $map['itemsByExiftoolDOMNode'][$exiftool['DOMNode']][] = $id;
+                    }
+                }
+
+                // Add item to map by collection/id.
+                $map['items'][$id][] = $xxx;
+/*                if (!isset($map['items'][$id])) {
+                    $map['items'][$id] = $xxx;
+                } else {
+                    if (isset($map['items'][$id]['collection'])) {
+                        $yyy = $map['items'][$id];
+                        unset($map['items'][$id]);
+                        $map['items'][$id][] = $yyy;
+                    }
+                    $map['items'][$id][] = $xxx;
+                }*/
+            } else {
+                foreach ($item['exiftool'] as $i => $exiftool) {
+                    if ($item['compiler']['exiftool']['skipDOMNode'] ?? false) {
+                        unset($exiftool['DOMNode']);
+                    }
+                    $xxx = $this->processExiftoolEntry($exiftool, $item, $file);
+
+                    // Add item to map by collection/name.
+                    if (isset($xxx['name'])) {
+                        if (!in_array($id, array_values($map['itemsByName'][$xxx['name']] ?? []))) {
+                            $map['itemsByName'][$xxx['name']][] = $id;
+                        }
+                    }
+
+                    // Add item to map by exif_read_data key.
+                    if (isset($item_exif_tag)) { // xx
+                        $xxx['phpExifTag'] = $item_exif_tag;
+                        if (!in_array($id, array_values($map['itemsByPhpExifTag'][$item_exif_tag] ?? []))) {
+                            $map['itemsByPhpExifTag'][$item_exif_tag][] = $id;
+                        }
+                    }
+
+                    // Add item to map by exiftool DOMNode.
+                    if (isset($exiftool['DOMNode'])) { // xx
+                        $xxx['exiftoolDOMNode'] = $exiftool['DOMNode'];
+                        if (!in_array($id, array_values($map['itemsByExiftoolDOMNode'][$exiftool['DOMNode']] ?? []))) {
+                            $map['itemsByExiftoolDOMNode'][$exiftool['DOMNode']][] = $id;
+                        }
+                    }
+
+                    // Add item to map by collection/id.
+                    $map['items'][$id][] = $xxx;
+    /*                if (!isset($map['items'][$id])) {
+                        $map['items'][$id] = $xxx;
+                    } else {
+                        if (isset($map['items'][$id]['collection'])) {
+                            $yyy = $map['items'][$id];
+                            unset($map['items'][$id]);
+                            $map['items'][$id][] = $yyy;
+                        }
+                        $map['items'][$id][] = $xxx;
+                    }*/
+                }
             }
 
-            // Add item to map by exif_read_data key.
-            if (isset($item_exif_tag)) { // xx
-                $item['phpExifTag'] = $item_exif_tag;
-                $map['itemsByPhpExifTag'][$item_exif_tag] = $id;
-            }
-
-            // Add item to map by exiftool DOMNode.
-            if (isset($exiftool['DOMNode'])) { // xx
-                $item['exiftoolDOMNode'] = $exiftool['DOMNode'];
-                $map['itemsByExiftoolDOMNode'][$exiftool['DOMNode']] = $id;
-            }
-
-            // Add item to map by collection/id.
-            $map['items'][$id] = $item;
             $exiftool = null;
         }
 
@@ -301,6 +345,9 @@ DATA;
     private function processExiftoolEntry(array $input, array $item, $file): array
     {
         $output = $item;
+        unset($output['compiler']);
+        unset($output['exifReadData']);
+        unset($output['exiftool']);
 
         // Add the name.
         if (!isset($item['name']) && isset($input['name'])) {
