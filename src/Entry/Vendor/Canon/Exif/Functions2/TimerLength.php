@@ -12,7 +12,7 @@ class TimerLength extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $val = $this->getValue($options);
         $ret = [];

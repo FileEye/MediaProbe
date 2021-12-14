@@ -21,14 +21,13 @@ class AEBShotCount extends SignedLong
 
             case 2:
                 return 1;
-
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $val = $this->getValue($options);
         return $this->getMappedText(is_array($val) ? implode(' ', $val) : $val);

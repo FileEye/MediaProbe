@@ -1287,6 +1287,10 @@ class CameraSettings extends Collection {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalLength',
+        'text' =>
+        array (
+          'default' => '{value} mm',
+        ),
         'collection' => 'Tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',
@@ -1302,6 +1306,10 @@ class CameraSettings extends Collection {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalLength',
+        'text' =>
+        array (
+          'default' => '{value} mm',
+        ),
         'collection' => 'Tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',

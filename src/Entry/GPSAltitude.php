@@ -12,7 +12,7 @@ class GPSAltitude extends Rational
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $format = $options['format'] ?? null;
         switch ($format) {

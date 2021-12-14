@@ -24,7 +24,6 @@ class ShutterSpeedRange extends SignedLong
 
             case 4:
                 return 1;
-
         }
     }
 
@@ -56,7 +55,7 @@ class ShutterSpeedRange extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         if (($options['format'] ?? null) === 'exiftool') {
             $val = explode(' ', $this->getValue($options));
@@ -78,7 +77,6 @@ class ShutterSpeedRange extends SignedLong
                     $str .= '; Lo ';
                     $str .= $this->exposureTimeToString($val[3]);
                     return $str;
-
             }
         }
         return parent::toString($options);

@@ -21,7 +21,7 @@ class FileIndex extends Long
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return $this->getValue();
     }

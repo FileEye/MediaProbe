@@ -12,7 +12,7 @@ class GPSTimeStamp extends Rational
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         switch ($options['format'] ?? null) {
             case 'exiftool':

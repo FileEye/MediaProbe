@@ -27,7 +27,7 @@ class GPSDegrees extends Rational
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $degrees = $this->getValue()[0];
         $minutes = $this->getValue()[1];

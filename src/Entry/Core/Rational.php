@@ -74,20 +74,18 @@ class Rational extends Long
             case 'exiftool':
                 if ($number[1] === 0) {
                     return 'undef'; // xxx throw exception
-                } else {
-                    $ret = $number[0] / $number[1];
-                    return $ret == 0.0 ? 0 : round($ret, 8);
                 }
+                $ret = $number[0] / $number[1];
+                return $ret == 0.0 ? 0 : round($ret, 8);
             case 'phpExif':
                 return (string) $number[0] . '/' . (string) $number[1];
             case 'core':
             default:
                 if ($number[1] === 0) {
                     return 0; // xxx throw exception
-                } else {
-                    $ret = $number[0] / $number[1];
-                    return $ret == 0.0 ? 0 : $ret;
                 }
+                $ret = $number[0] / $number[1];
+                return $ret == 0.0 ? 0 : $ret;
         }
     }
 }

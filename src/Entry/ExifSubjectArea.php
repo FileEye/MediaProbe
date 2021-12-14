@@ -13,7 +13,7 @@ class ExifSubjectArea extends Short
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $val = $this->getValue();
         if (($options['format'] ?? null) === 'exiftool') {

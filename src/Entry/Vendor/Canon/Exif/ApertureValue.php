@@ -24,7 +24,7 @@ class ApertureValue extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return sprintf("%.2g", $this->getValue());
     }

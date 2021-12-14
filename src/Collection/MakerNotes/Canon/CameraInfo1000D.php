@@ -831,6 +831,10 @@ class CameraInfo1000D extends Collection {
     array (
       0 =>
       array (
+        'text' =>
+        array (
+          'default' => '{value} mm',
+        ),
         'collection' => 'Tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',
@@ -845,6 +849,10 @@ class CameraInfo1000D extends Collection {
     array (
       0 =>
       array (
+        'text' =>
+        array (
+          'default' => '{value} mm',
+        ),
         'collection' => 'Tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',

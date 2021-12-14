@@ -166,7 +166,7 @@ class Time extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return rtrim($this->getValue($options), "\x00");
     }

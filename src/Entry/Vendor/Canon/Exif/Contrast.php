@@ -15,7 +15,7 @@ class Contrast extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return $this->parameterToString($this->getValue());
     }

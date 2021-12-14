@@ -28,7 +28,7 @@ class CustomIsoSpeedRange extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {

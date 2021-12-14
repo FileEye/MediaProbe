@@ -842,6 +842,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ExposureLevelIncrements',
         'collection' => 'Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
@@ -862,6 +863,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ExposureLevelIncrements',
         'collection' => 'Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
@@ -995,6 +997,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AEBShotCount',
         'collection' => 'Tag',
         'name' => 'AEBShotCount',
         'title' => 'AEB Shot Count',
@@ -1016,6 +1019,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AEBShotCount',
         'collection' => 'Tag',
         'name' => 'AEBShotCount',
         'title' => 'AEB Shot Count',
@@ -1086,6 +1090,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
         'collection' => 'Tag',
         'name' => 'UsableShootingModes',
         'title' => 'Usable Shooting Modes',
@@ -1109,6 +1114,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
         'collection' => 'Tag',
         'name' => 'UsableMeteringModes',
         'title' => 'Usable Metering Modes',
@@ -1157,7 +1163,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
-        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CustomShutterSpeedRange',
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ShutterSpeedRange',
         'collection' => 'Tag',
         'name' => 'ShutterSpeedRange',
         'title' => 'Shutter Speed Range',
@@ -1178,7 +1184,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
-        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CustomShutterSpeedRange',
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ShutterSpeedRange',
         'collection' => 'Tag',
         'name' => 'ShutterSpeedRange',
         'title' => 'Shutter Speed Range',
@@ -1194,7 +1200,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
-        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CustomApertureRange',
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ApertureRange',
         'collection' => 'Tag',
         'name' => 'ApertureRange',
         'title' => 'Aperture Range',
@@ -1215,7 +1221,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
-        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CustomApertureRange',
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ApertureRange',
         'collection' => 'Tag',
         'name' => 'ApertureRange',
         'title' => 'Aperture Range',
@@ -1231,6 +1237,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ApplyShootingMeteringMode',
         'collection' => 'Tag',
         'name' => 'ApplyShootingMeteringMode',
         'title' => 'Apply Shooting Metering Mode',
@@ -1533,6 +1540,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\HighISONoiseReduction',
         'collection' => 'Tag',
         'name' => 'HighISONoiseReduction',
         'title' => 'High ISO Noise Reduction',
@@ -1554,6 +1562,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\HighISONoiseReduction',
         'collection' => 'Tag',
         'name' => 'HighISONoiseReduction',
         'title' => 'High ISO Noise Reduction',
@@ -1792,6 +1801,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ViewfinderWarnings',
         'collection' => 'Tag',
         'name' => 'ViewfinderWarnings',
         'title' => 'Viewfinder Warnings',
@@ -2005,6 +2015,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AFMicroadjustment',
         'collection' => 'Tag',
         'name' => 'AFMicroadjustment',
         'title' => 'AF Microadjustment',
@@ -2092,6 +2103,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\SelectableAFPoint',
         'collection' => 'Tag',
         'name' => 'SelectableAFPoint',
         'title' => 'Selectable AF Point',
@@ -2114,6 +2126,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\SelectableAFPoint',
         'collection' => 'Tag',
         'name' => 'SelectableAFPoint',
         'title' => 'Selectable AF Point',
@@ -2205,6 +2218,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AFPointDisplayDuringFocus',
         'collection' => 'Tag',
         'name' => 'AFPointDisplayDuringFocus',
         'title' => 'AF Point Display During Focus',
@@ -2225,6 +2239,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AFPointDisplayDuringFocus',
         'collection' => 'Tag',
         'name' => 'AFPointDisplayDuringFocus',
         'title' => 'AF Point Display During Focus',
@@ -2442,6 +2457,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\SelectAFAreaSelectMode',
         'collection' => 'Tag',
         'name' => 'SelectAFAreaSelectMode',
         'title' => 'Select AF Area Select Mode',
@@ -2749,6 +2765,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShootingSpeed',
         'collection' => 'Tag',
         'name' => 'ContinuousShootingSpeed',
         'title' => 'Continuous Shooting Speed',
@@ -2772,6 +2789,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShotLimit',
         'collection' => 'Tag',
         'name' => 'ContinuousShotLimit',
         'title' => 'Continuous Shot Limit',
@@ -3317,6 +3335,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\MultiFunctionLock',
         'collection' => 'Tag',
         'name' => 'MultiFunctionLock',
         'title' => 'Multi Function Lock',
@@ -3465,6 +3484,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
         'collection' => 'Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
@@ -3485,6 +3505,7 @@ class Functions2 extends Collection {
       ),
       1 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
         'collection' => 'Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
@@ -3505,6 +3526,7 @@ class Functions2 extends Collection {
       ),
       2 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
         'collection' => 'Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
@@ -3525,6 +3547,7 @@ class Functions2 extends Collection {
       ),
       3 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
         'collection' => 'Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
@@ -3544,6 +3567,7 @@ class Functions2 extends Collection {
       ),
       4 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
         'collection' => 'Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
@@ -3563,6 +3587,7 @@ class Functions2 extends Collection {
       ),
       5 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
         'collection' => 'Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
@@ -3587,6 +3612,7 @@ class Functions2 extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\TimerLength',
         'collection' => 'Tag',
         'name' => 'TimerLength',
         'title' => 'Timer Length',

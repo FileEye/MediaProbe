@@ -37,7 +37,7 @@ class ExifCFAPattern extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         if (($options['format'] ?? null) === 'exiftool') {
             $val = $this->getValue($options);

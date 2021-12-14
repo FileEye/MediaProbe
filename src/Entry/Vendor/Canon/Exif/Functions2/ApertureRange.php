@@ -21,7 +21,6 @@ class ApertureRange extends SignedLong
 
             case 4:
                 return 1;
-
         }
     }
 
@@ -53,7 +52,7 @@ class ApertureRange extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         if (($options['format'] ?? null) === 'exiftool') {
             $val = explode(' ', $this->getValue($options));
@@ -75,7 +74,6 @@ class ApertureRange extends SignedLong
                     $str .= '; Open ';
                     $str .= round($val[3]);
                     return $str;
-
             }
         }
         return parent::toString($options);

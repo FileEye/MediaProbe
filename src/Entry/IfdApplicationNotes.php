@@ -24,7 +24,7 @@ class IfdApplicationNotes extends Byte
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $str = '';
         for ($i = 0; $i < $this->getComponents(); $i++) {

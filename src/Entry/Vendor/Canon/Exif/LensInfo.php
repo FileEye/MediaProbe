@@ -13,7 +13,7 @@ class LensInfo extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return MediaProbe::dumpHex($this->toBytes());
     }

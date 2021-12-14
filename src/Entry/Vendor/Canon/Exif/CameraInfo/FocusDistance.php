@@ -21,7 +21,7 @@ class FocusDistance extends ShortRev
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return $this->getValue() > 655.345 ? "inf" : round($this->getValue(), 2) . ' m';
     }

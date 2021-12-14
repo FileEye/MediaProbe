@@ -12,7 +12,7 @@ class ViewfinderWarnings extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $value = (int) $this->getValue($options);
 
