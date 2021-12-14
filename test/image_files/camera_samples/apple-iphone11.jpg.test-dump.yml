@@ -48,7 +48,6 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             class: FileEye\MediaProbe\Block\Exif\Exif
                             parsed: true
-                            id: Exif
                             collection: Exif
                             elements:
                                 -
@@ -56,7 +55,6 @@ elements:
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     class: FileEye\MediaProbe\Block\Tiff
                                     parsed: true
-                                    id: Tiff
                                     collection: Tiff
                                     elements:
                                         -
@@ -139,7 +137,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
-                                                            text: 72
+                                                            text: '72'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
@@ -157,7 +155,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
-                                                            text: 72
+                                                            text: '72'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
@@ -310,7 +308,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 869f1dfb999a452f497a4cf7f44db2d6ee661f74a9e7e05251bc1420e50672d4
-                                                                    text: 32
+                                                                    text: '32'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
@@ -436,7 +434,7 @@ elements:
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 1666d9845b241586380fe85194c47f1d1868c4d7d30ba806ecc6d581df9eeadc
-                                                                    text: 'Y Cb Cr -'
+                                                                    text: 'Y, Cb, Cr, -'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377'
@@ -508,7 +506,7 @@ elements:
                                                                     format: SignedRational
                                                                     components: 1
                                                                     bytesHash: 01acecb507abfe1a354aa8064f4af5d3f1acd019e37db3c11c97523b71c76e9d
-                                                                    text: '0.0'
+                                                                    text: '0'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383'
@@ -623,7 +621,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: cb30e91817239109ffd0a5870046e128f04619da80c7624d921162fdfe514f76
-                                                                            text: 11
+                                                                            text: '11'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:2'
@@ -738,7 +736,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                            text: 0
+                                                                            text: '0'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:5'
@@ -755,7 +753,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 0750704287b7ada46d7010af7c2e4c49ea779d5d36274405e850d76b1e8bb597
-                                                                            text: 168
+                                                                            text: '168'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:6'
@@ -772,7 +770,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 19d9f3bd93224272d6985347452e9208efd8a038acfebe8cf75820574d8dbb4a
-                                                                            text: 182
+                                                                            text: '182'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:7'
@@ -789,7 +787,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450
-                                                                            text: 1
+                                                                            text: '1'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AccelerationVector:8'
@@ -807,7 +805,7 @@ elements:
                                                                             format: SignedRational
                                                                             components: 3
                                                                             bytesHash: 41bf9002a5df06765d8077c5fab0611eabdd64c8e02d3ce4c395d2b4224ca2cb
-                                                                            text: '-0.011308182971366, -1.0046949386806, 0.085962392364731'
+                                                                            text: '-0.011308182971366 -1.0046949386806 0.085962392364731'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:12'
@@ -824,7 +822,7 @@ elements:
                                                                             format: SignedRational
                                                                             components: 2
                                                                             bytesHash: 9ab1426c153e32e985ab0c0b9f77563bb4692a0d90b2f10a22c5591a5fd0f151
-                                                                            text: '50.05859375, 47.22265625'
+                                                                            text: '50.05859375 47.22265625'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
@@ -841,7 +839,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 17fa9c7f5e9039a2d46e73e17d8e094a796ee4c313199bad42db4ee1dc30d865
-                                                                            text: 24
+                                                                            text: '24'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:14'
@@ -858,7 +856,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                            text: 0
+                                                                            text: '0'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:16'
@@ -875,7 +873,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450
-                                                                            text: 1
+                                                                            text: '1'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:20'
@@ -892,7 +890,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 075de2b906dbd7066da008cab735bee896370154603579a50122f9b88545bd45
-                                                                            text: 10
+                                                                            text: '10'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22'
@@ -926,7 +924,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 5e14b1324e57e6edaecd68e777b4a58adbfdf2ead5defb1a7b14cedf41dde2fa
-                                                                            text: 38805504
+                                                                            text: '38805504'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:25'
@@ -943,7 +941,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 26b25d457597a7b0463f9620f666dd10aa2c4373a505967c7c8d70922a2d6ece
-                                                                            text: 2
+                                                                            text: '2'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:26'
@@ -977,7 +975,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                            text: 0
+                                                                            text: '0'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:32'
@@ -1011,7 +1009,7 @@ elements:
                                                                             format: SignedRational
                                                                             components: 1
                                                                             bytesHash: ba8dcae7ddf9b5686106098bf8a7f83e7cb23e1aec45377688f86111f1d15f8d
-                                                                            text: 1.5531336076444
+                                                                            text: '1.5531336076444'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:35'
@@ -1028,7 +1026,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 2
                                                                             bytesHash: a08446714b99b6d4054c0606a056f6439e7b91cdc2e82c779cb430ffa90a6ea3
-                                                                            text: '171, 268435521'
+                                                                            text: '171 268435521'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:37'
@@ -1045,7 +1043,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: a508aba2f9ecb586e66af72ad7ae18a1b38f8a5bd61e5ca3022abcdd081c0531
-                                                                            text: 134
+                                                                            text: '134'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:38'
@@ -1062,7 +1060,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 9d9f290527a6be626a8f5985b26e19b237b44872b03631811df4416fc1713178
-                                                                            text: 3
+                                                                            text: '3'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:39'
@@ -1079,7 +1077,7 @@ elements:
                                                                             format: SignedRational
                                                                             components: 1
                                                                             bytesHash: 4d8fef4c5e8f2fa52ba0f5a87ef52086b71f77cd857b314a3c40ab62738f6e9a
-                                                                            text: 58.257846776915
+                                                                            text: '58.257846776915'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:40'
@@ -1096,7 +1094,7 @@ elements:
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450
-                                                                            text: 1
+                                                                            text: '1'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:43'
@@ -1203,7 +1201,7 @@ elements:
                                                                     format: Long
                                                                     components: 1
                                                                     bytesHash: d6062fb4496340377838da4cacdbb36f026217f5adb4234ca39bd9952283aab2
-                                                                    text: 4032
+                                                                    text: '4032'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
@@ -1221,7 +1219,7 @@ elements:
                                                                     format: Long
                                                                     components: 1
                                                                     bytesHash: 7ba9f0ac2df48bccf3cbea35847bebf4e8b903f5c1d8fd03217ededaf69e5654
-                                                                    text: 3024
+                                                                    text: '3024'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SensingMethod:41495'
@@ -1311,7 +1309,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: fdbb66f97af044e4b88b0bb0a4789f8f014f98b53f5fe11102bd19f45d53c45b
-                                                                    text: 26
+                                                                    text: '26 mm'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneCaptureType:41990'
@@ -1342,12 +1340,12 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensInfo:42034/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\ExifLensInfo
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 4
                                                                     bytesHash: 300484f974e1bf8268e179d78383bbbd10421e155cb1af74e57e86bb4b231b75
-                                                                    text: '1.5399999618512, 4.25, 1.8, 2.4'
+                                                                    text: '1.53999996-4.25mm f/1.8-2.4'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensMake:42035'
@@ -1400,7 +1398,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
-                                                                    text: 2
+                                                                    text: '2'
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
@@ -1512,12 +1510,12 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitude:6/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    class: FileEye\MediaProbe\Entry\GPSAltitude
                                                                     parsed: true
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 22b0df0d79e0bc55689e732c5ab4147efa11b1be6d2a263a2d0d6a549cfcc55c
-                                                                    text: 199.77742749054
+                                                                    text: '199.77742749054'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSSpeedRef:12'
@@ -1553,7 +1551,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 074207746bd9d69e34dd6a5267d22006f65abc0a240f991955e60ba39c53867d
-                                                                    text: 2.2944087992667
+                                                                    text: '2.2944087992667'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSImgDirectionRef:16'
@@ -1589,7 +1587,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 9043cf4f51f8e72e2b53ec1bdf0809f2e51ef44c87bfd675987f651035d378ed
-                                                                    text: 302.28152492669
+                                                                    text: '302.28152492669'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSDestBearingRef:23'
@@ -1625,7 +1623,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 9043cf4f51f8e72e2b53ec1bdf0809f2e51ef44c87bfd675987f651035d378ed
-                                                                    text: 302.28152492669
+                                                                    text: '302.28152492669'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSHPositioningError:31'
@@ -1643,7 +1641,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 1f5fc4d4da41de197a3542759f313663f40e7e7df2cf8f4172d09e4773784b2a
-                                                                    text: 60.2935875943
+                                                                    text: '60.2935875943 m'
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
@@ -1688,7 +1686,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
-                                                            text: 72
+                                                            text: '72'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:YResolution:283'
@@ -1706,7 +1704,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
-                                                            text: 72
+                                                            text: '72'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:ResolutionUnit:296'

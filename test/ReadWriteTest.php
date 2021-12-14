@@ -59,7 +59,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
 
         $ifd = new Ifd(new ItemDefinition($tiff->getCollection()->getItemCollection('0'), ItemFormat::LONG), $tiff);
         foreach ($entries as $entry) {
-            $item_collection = $ifd->getCollection()->getItemCollection($entry[0], 'UnknownTag', [
+            $item_collection = $ifd->getCollection()->getItemCollection($entry[0], 0, 'UnknownTag', [
                 'item' => $entry[0],
                 'DOMNode' => 'tag',
             ]);
@@ -122,7 +122,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
                     [0xF005, 'FileEye\MediaProbe\Entry\Core\Byte', 1, [254], 254],
                     [0xF006, 'FileEye\MediaProbe\Entry\Core\Byte', 1, [255], 255],
                     [0xF007, 'FileEye\MediaProbe\Entry\Core\Byte', 1, [0, 1, 2, 253, 254, 255], [0, 1, 2, 253, 254, 255]],
-                    [0xF008, 'FileEye\MediaProbe\Entry\Core\Byte', 1, [], []],
+                    [0xF008, 'FileEye\MediaProbe\Entry\Core\Byte', 1, [], null],
                 ],
             ],
             'SignedByte Read/Write Tests' => [
@@ -135,7 +135,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
                     [0xF106, 'FileEye\MediaProbe\Entry\Core\SignedByte', 6, [126], 126],
                     [0xF107, 'FileEye\MediaProbe\Entry\Core\SignedByte', 6, [127], 127],
                     [0xF108, 'FileEye\MediaProbe\Entry\Core\SignedByte', 6, [-128, -1, 0, 1, 127], [-128, -1, 0, 1, 127]],
-                    [0xF109, 'FileEye\MediaProbe\Entry\Core\SignedByte', 6, [], []],
+                    [0xF109, 'FileEye\MediaProbe\Entry\Core\SignedByte', 6, [], null],
                 ],
             ],
             'Short Read/Write Tests' => [
@@ -147,7 +147,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
                     [0xF205, 'FileEye\MediaProbe\Entry\Core\Short', 3, [65534], 65534],
                     [0xF206, 'FileEye\MediaProbe\Entry\Core\Short', 3, [65535], 65535],
                     [0xF207, 'FileEye\MediaProbe\Entry\Core\Short', 3, [0, 1, 65534, 65535], [0, 1, 65534, 65535]],
-                    [0xF208, 'FileEye\MediaProbe\Entry\Core\Short', 3, [], []],
+                    [0xF208, 'FileEye\MediaProbe\Entry\Core\Short', 3, [], null],
                 ],
             ],
             'SignedShort Read/Write Tests' => [
@@ -160,7 +160,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
                     [0xF306, 'FileEye\MediaProbe\Entry\Core\SignedShort', 8, [32766], 32766],
                     [0xF307, 'FileEye\MediaProbe\Entry\Core\SignedShort', 8, [32767], 32767],
                     [0xF308, 'FileEye\MediaProbe\Entry\Core\SignedShort', 8, [- 32768, - 1, 0, 1, 32767], [- 32768, - 1, 0, 1, 32767]],
-                    [0xF309, 'FileEye\MediaProbe\Entry\Core\SignedShort', 8, [], []],
+                    [0xF309, 'FileEye\MediaProbe\Entry\Core\SignedShort', 8, [], null],
                 ],
             ],
             'Long Read/Write Tests' => [
@@ -172,7 +172,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
                     [0xF405, 'FileEye\MediaProbe\Entry\Core\Long', 4, [4294967294], 4294967294],
                     [0xF406, 'FileEye\MediaProbe\Entry\Core\Long', 4, [4294967295], 4294967295],
                     [0xF407, 'FileEye\MediaProbe\Entry\Core\Long', 4, [0, 1, 4294967295], [0, 1, 4294967295]],
-                    [0xF408, 'FileEye\MediaProbe\Entry\Core\Long', 4, [], []],
+                    [0xF408, 'FileEye\MediaProbe\Entry\Core\Long', 4, [], null],
                 ],
             ],
             'SignedLong Read/Write Tests' => [
@@ -185,12 +185,12 @@ class ReadWriteTest extends MediaProbeTestCaseBase
                     [0xF506, 'FileEye\MediaProbe\Entry\Core\SignedLong', 9, [2147483646], 2147483646],
                     [0xF507, 'FileEye\MediaProbe\Entry\Core\SignedLong', 9, [2147483647], 2147483647],
                     [0xF508, 'FileEye\MediaProbe\Entry\Core\SignedLong', 9, [-2147483648, 0, 2147483647], [-2147483648, 0, 2147483647]],
-                    [0xF509, 'FileEye\MediaProbe\Entry\Core\SignedLong', 9, [], []],
+                    [0xF509, 'FileEye\MediaProbe\Entry\Core\SignedLong', 9, [], null],
                 ],
             ],
             'Ascii Read/Write Tests' => [
                 [
-                    [0xF601, 'FileEye\MediaProbe\Entry\Core\Ascii', 2, [], ''],
+                    [0xF601, 'FileEye\MediaProbe\Entry\Core\Ascii', 2, [], null],
                     [0xF602, 'FileEye\MediaProbe\Entry\Core\Ascii', 2, [''], ''],
                     [0xF603, 'FileEye\MediaProbe\Entry\Core\Ascii', 2, ['Hello World!'], 'Hello World!'],
                   // xx @todo  [0xF604, 'FileEye\MediaProbe\Entry\Core\Ascii', 2, ["\x00\x01\x02...\xFD\xFE\xFF"], "\x00\x01\x02...\xFD\xFE\xFF"],  // xx for some reason this generates data window overflow

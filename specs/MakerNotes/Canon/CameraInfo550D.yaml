@@ -75,6 +75,8 @@ items:
                 DOMNode: 'Canon:CameraTemperature'
                 desc: 'Camera Temperature'
     30:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: FocalLength
@@ -185,7 +187,8 @@ items:
                     255: n/a
                     65535: n/a
     255:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: LensType
@@ -592,6 +595,8 @@ items:
                     61496: 'Canon CN-E 35mm T1.5 L F'
                     65535: n/a
     257:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: MinFocalLength
@@ -600,6 +605,8 @@ items:
                 DOMNode: 'Canon:MinFocalLength'
                 desc: 'Min Focal Length'
     259:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: MaxFocalLength

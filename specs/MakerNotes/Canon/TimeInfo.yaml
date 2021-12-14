@@ -12,6 +12,7 @@ compiler:
         xpath: '//table[@name=''Canon::TimeInfo'']/tag'
 items:
     1:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\TimeInfo\TimeZone
         exiftool:
             -
                 name: TimeZone

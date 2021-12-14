@@ -251,6 +251,7 @@ items:
                 DOMNode: 'CanonRaw:MeasuredEV'
                 desc: 'Measured EV'
     6167:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FileNumber
         exiftool:
             -
                 name: FileNumber
@@ -260,6 +261,8 @@ items:
                 DOMNode: 'CanonRaw:FileNumber'
                 desc: 'File Number'
     6196:
+        text:
+            default: 'Unknown (0x{valuehex})'
         exiftool:
             -
                 name: CanonModelID

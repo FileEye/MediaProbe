@@ -24,50 +24,77 @@ class TimeStamp extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'DateTimeOriginal' => 0,
-    'TimeZoneCode' => 1,
-    'TimeZoneInfo' => 2,
+    'DateTimeOriginal' =>
+    array (
+      0 => 0,
+    ),
+    'TimeZoneCode' =>
+    array (
+      0 => 1,
+    ),
+    'TimeZoneInfo' =>
+    array (
+      0 => 2,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonRaw:DateTimeOriginal' => 0,
-    'CanonRaw:TimeZoneCode' => 1,
-    'CanonRaw:TimeZoneInfo' => 2,
+    'CanonRaw:DateTimeOriginal' =>
+    array (
+      0 => 0,
+    ),
+    'CanonRaw:TimeZoneCode' =>
+    array (
+      0 => 1,
+    ),
+    'CanonRaw:TimeZoneInfo' =>
+    array (
+      0 => 2,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'DateTimeOriginal',
-      'title' => 'Date/Time Original',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'DateTimeOriginal',
+        'title' => 'Date/Time Original',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:DateTimeOriginal',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:DateTimeOriginal',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'TimeZoneCode',
-      'title' => 'Time Zone Code',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'TimeZoneCode',
+        'title' => 'Time Zone Code',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:TimeZoneCode',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:TimeZoneCode',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'TimeZoneInfo',
-      'title' => 'Time Zone Info',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'TimeZoneInfo',
+        'title' => 'Time Zone Info',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:TimeZoneInfo',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:TimeZoneInfo',
     ),
   ),
 );

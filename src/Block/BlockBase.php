@@ -60,6 +60,22 @@ abstract class BlockBase extends ElementBase
     }
 
     /**
+     * Resolves, in relation to the context, the index of the item collection to be used to instantiate the Block.
+     *
+     * @param int|null $components_count
+     *   The number of components for the items.
+     * @param ElementInterface $context
+     *   An element that can be used to provide context.
+     *
+     * @return mixed
+     *   The item collection index.
+     */
+    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context)
+    {
+        return 0;
+    }
+
+    /**
      * Gets the Definition of this Block.
      *
      * @return \FileEye\MediaProbe\ItemDefinition

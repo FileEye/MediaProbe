@@ -25,136 +25,215 @@ class MovieInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'AudioBitrate' => 108,
-    'AudioChannels' => 112,
-    'AudioSampleRate' => 110,
-    'Duration' => 106,
-    'FrameCount' => 4,
-    'FrameRate' => 6,
-    'VideoCodec' => 116,
-    'indexSize' => 0,
+    'AudioBitrate' =>
+    array (
+      0 => 108,
+    ),
+    'AudioChannels' =>
+    array (
+      0 => 112,
+    ),
+    'AudioSampleRate' =>
+    array (
+      0 => 110,
+    ),
+    'Duration' =>
+    array (
+      0 => 106,
+    ),
+    'FrameCount' =>
+    array (
+      0 => 2,
+      1 => 4,
+    ),
+    'FrameRate' =>
+    array (
+      0 => 1,
+      1 => 6,
+    ),
+    'VideoCodec' =>
+    array (
+      0 => 116,
+    ),
+    'indexSize' =>
+    array (
+      0 => 0,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'RawData',
-      'name' => 'indexSize',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'RawData',
+        'name' => 'indexSize',
+        'format' =>
+        array (
+          0 => 8,
+        ),
       ),
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FrameRate',
-      'title' => 'Frame Rate',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'FrameRate',
+        'title' => 'Frame Rate',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:FrameRate',
       ),
-      'exiftoolDOMNode' => 'Canon:FrameRate',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FrameCount',
-      'title' => 'Frame Count',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'FrameCount',
+        'title' => 'Frame Count',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:FrameCount',
       ),
-      'exiftoolDOMNode' => 'Canon:FrameCount',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FrameCount',
-      'title' => 'Frame Count',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'FrameCount',
+        'title' => 'Frame Count',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'Canon:FrameCount',
       ),
-      'exiftoolDOMNode' => 'Canon:FrameCount',
     ),
     6 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'FrameRate',
-      'title' => 'Frame Rate',
-      'format' =>
+      0 =>
       array (
-        0 => 1001,
+        'collection' => 'Tag',
+        'name' => 'FrameRate',
+        'title' => 'Frame Rate',
+        'format' =>
+        array (
+          0 => 1001,
+        ),
+        'exiftoolDOMNode' => 'Canon:FrameRate',
       ),
-      'exiftoolDOMNode' => 'Canon:FrameRate',
     ),
     106 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'Duration',
-      'title' => 'Duration',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'Duration',
+        'title' => 'Duration',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'Canon:Duration',
       ),
-      'exiftoolDOMNode' => 'Canon:Duration',
     ),
     108 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AudioBitrate',
-      'title' => 'Audio Bitrate',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'AudioBitrate',
+        'title' => 'Audio Bitrate',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'Canon:AudioBitrate',
       ),
-      'exiftoolDOMNode' => 'Canon:AudioBitrate',
     ),
     110 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AudioSampleRate',
-      'title' => 'Audio Sample Rate',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'AudioSampleRate',
+        'title' => 'Audio Sample Rate',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'Canon:AudioSampleRate',
       ),
-      'exiftoolDOMNode' => 'Canon:AudioSampleRate',
     ),
     112 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'AudioChannels',
-      'title' => 'Audio Channels',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'AudioChannels',
+        'title' => 'Audio Channels',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'Canon:AudioChannels',
       ),
-      'exiftoolDOMNode' => 'Canon:AudioChannels',
     ),
     116 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'VideoCodec',
-      'title' => 'Video Codec',
-      'components' => 4,
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'VideoCodec',
+        'title' => 'Video Codec',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:VideoCodec',
       ),
-      'exiftoolDOMNode' => 'Canon:VideoCodec',
     ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:AudioBitrate' => 108,
-    'Canon:AudioChannels' => 112,
-    'Canon:AudioSampleRate' => 110,
-    'Canon:Duration' => 106,
-    'Canon:FrameCount' => 4,
-    'Canon:FrameRate' => 6,
-    'Canon:VideoCodec' => 116,
+    'Canon:AudioBitrate' =>
+    array (
+      0 => 108,
+    ),
+    'Canon:AudioChannels' =>
+    array (
+      0 => 112,
+    ),
+    'Canon:AudioSampleRate' =>
+    array (
+      0 => 110,
+    ),
+    'Canon:Duration' =>
+    array (
+      0 => 106,
+    ),
+    'Canon:FrameCount' =>
+    array (
+      0 => 2,
+      1 => 4,
+    ),
+    'Canon:FrameRate' =>
+    array (
+      0 => 1,
+      1 => 6,
+    ),
+    'Canon:VideoCodec' =>
+    array (
+      0 => 116,
+    ),
   ),
 );
 }

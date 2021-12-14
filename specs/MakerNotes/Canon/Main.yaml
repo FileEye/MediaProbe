@@ -48,6 +48,7 @@ items:
                 DOMNode: 'Canon:CanonFirmwareVersion'
                 desc: 'Canon Firmware Version'
     8:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FileNumber
         exiftool:
             -
                 name: FileNumber
@@ -104,6 +105,8 @@ items:
         name: CanonCustomFunctions
         collection: MakerNotes\CanonCustom\FunctionsResolver
     16:
+        text:
+            default: 'Unknown (0x{valuehex})'
         exiftool:
             -
                 name: CanonModelID

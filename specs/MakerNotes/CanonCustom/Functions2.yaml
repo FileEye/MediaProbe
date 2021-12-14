@@ -10,6 +10,7 @@ compiler:
         xpath: '//table[@name=''CanonCustom::Functions2'']/tag'
 items:
     257:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ExposureLevelIncrements
         exiftool:
             -
                 name: ExposureLevelIncrements
@@ -87,6 +88,7 @@ items:
                     - '-,0,+'
                     - '+,0,-'
     262:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\AEBShotCount
         exiftool:
             -
                 name: AEBShotCount
@@ -135,6 +137,7 @@ items:
                     - 'Enable (Tv/Av)'
                     - 'Enable (ISO speed)'
     265:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\UsableShootingModes
         exiftool:
             -
                 name: UsableShootingModes
@@ -147,6 +150,7 @@ items:
                     - Disable
                     - Enable
     266:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\UsableShootingModes
         exiftool:
             -
                 name: UsableMeteringModes
@@ -173,7 +177,7 @@ items:
                     - 'Spot metering'
                     - 'Center-weighted average'
     268:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomShutterSpeedRange
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ShutterSpeedRange
         exiftool:
             -
                 name: ShutterSpeedRange
@@ -193,7 +197,7 @@ items:
                 DOMNode: 'CanonCustom:ShutterSpeedRange'
                 desc: 'Shutter Speed Range'
     269:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CustomApertureRange
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ApertureRange
         exiftool:
             -
                 name: ApertureRange
@@ -213,6 +217,7 @@ items:
                 DOMNode: 'CanonCustom:ApertureRange'
                 desc: 'Aperture Range'
     270:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ApplyShootingMeteringMode
         exiftool:
             -
                 name: ApplyShootingMeteringMode
@@ -367,6 +372,7 @@ items:
                     - Auto
                     - 'On'
     514:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\HighISONoiseReduction
         exiftool:
             -
                 name: HighISONoiseReduction
@@ -497,6 +503,7 @@ items:
                     - 'Displays shooting functions'
                     - 'Displays camera settings'
     1034:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ViewfinderWarnings
         exiftool:
             -
                 name: ViewfinderWarnings
@@ -611,6 +618,7 @@ items:
                     - 'Switch to registered AF point'
                     - 'Spot AF'
     1287:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\AFMicroadjustment
         exiftool:
             -
                 name: AFMicroadjustment
@@ -656,6 +664,7 @@ items:
                     - 'Surrounding AF points'
                     - 'All 45 points area'
     1289:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\SelectableAFPoint
         exiftool:
             -
                 name: SelectableAFPoint
@@ -716,6 +725,7 @@ items:
                     - 'Control-direct:disable/Main:disable'
                     - 'Control-direct:enable/Main:enable'
     1292:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\AFPointDisplayDuringFocus
         exiftool:
             -
                 name: AFPointDisplayDuringFocus
@@ -837,6 +847,7 @@ items:
                     - 'Quick mode'
                     - 'Live mode'
     1298:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\SelectAFAreaSelectMode
         exiftool:
             -
                 name: SelectAFAreaSelectMode
@@ -995,6 +1006,7 @@ items:
                     - Enable
                     - 'Enable: Down with Set'
     1552:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ContinuousShootingSpeed
         exiftool:
             -
                 name: ContinuousShootingSpeed
@@ -1007,6 +1019,7 @@ items:
                     - Disable
                     - Enable
     1553:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ContinuousShotLimit
         exiftool:
             -
                 name: ContinuousShotLimit
@@ -1301,6 +1314,7 @@ items:
                     - 'Raise built-in flash'
                     - 'ISO speed'
     1807:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\MultiFunctionLock
         exiftool:
             -
                 name: MultiFunctionLock
@@ -1377,6 +1391,7 @@ items:
                 DOMNode: 'CanonCustom:CustomizeDials'
                 desc: 'Customize Dials'
     2059:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\FocusingScreen
         exiftool:
             -
                 name: FocusingScreen
@@ -1438,6 +1453,7 @@ items:
                     - Ec-S
                     - 'Ec-N,R'
     2060:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\TimerLength
         exiftool:
             -
                 name: TimerLength

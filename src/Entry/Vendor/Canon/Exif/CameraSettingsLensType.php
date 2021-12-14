@@ -6,7 +6,7 @@ use FileEye\MediaProbe\Entry\Core\Short;
 use FileEye\MediaProbe\MediaProbe;
 
 /**
- * Handler for Canon CameraSettings Lens Type tags.
+ * Decoder for Canon CameraSettings Lens Type tags.
  */
 class CameraSettingsLensType extends Short
 {
@@ -20,19 +20,5 @@ class CameraSettingsLensType extends Short
         } else {
             return $this->value[0];
         }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toString(array $options = [])
-    {
-        $value = $this->getValue();
-        return $this->getMappedText($value);
-/*        if (!$lens_type = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
-            return 'n/a';
-        } else {
-            return $lens_type->toString($options);
-        }*/
     }
 }

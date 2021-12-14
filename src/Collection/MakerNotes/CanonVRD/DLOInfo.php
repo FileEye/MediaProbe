@@ -24,51 +24,78 @@ class DLOInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'DLOData' => 10,
-    'DLOSettingApplied' => 4,
-    'DLOVersion' => 5,
+    'DLOData' =>
+    array (
+      0 => 10,
+    ),
+    'DLOSettingApplied' =>
+    array (
+      0 => 4,
+    ),
+    'DLOVersion' =>
+    array (
+      0 => 5,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonVRD:DLOData' => 10,
-    'CanonVRD:DLOSettingApplied' => 4,
-    'CanonVRD:DLOVersion' => 5,
+    'CanonVRD:DLOData' =>
+    array (
+      0 => 10,
+    ),
+    'CanonVRD:DLOSettingApplied' =>
+    array (
+      0 => 4,
+    ),
+    'CanonVRD:DLOVersion' =>
+    array (
+      0 => 5,
+    ),
   ),
   'items' =>
   array (
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'DLOSettingApplied',
-      'title' => 'DLO Setting Applied',
-      'format' =>
+      0 =>
       array (
-        0 => 8,
+        'collection' => 'Tag',
+        'name' => 'DLOSettingApplied',
+        'title' => 'DLO Setting Applied',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DLOSettingApplied',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:DLOSettingApplied',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'DLOVersion',
-      'title' => 'DLO Version',
-      'components' => 10,
-      'format' =>
+      0 =>
       array (
-        0 => 2,
+        'collection' => 'Tag',
+        'name' => 'DLOVersion',
+        'title' => 'DLO Version',
+        'components' => 10,
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DLOVersion',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:DLOVersion',
     ),
     10 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'DLOData',
-      'title' => 'DLO Data',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'DLOData',
+        'title' => 'DLO Data',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DLOData',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:DLOData',
     ),
   ),
 );

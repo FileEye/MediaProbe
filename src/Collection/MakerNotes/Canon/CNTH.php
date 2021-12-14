@@ -21,24 +21,33 @@ class CNTH extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'ThumbnailImage' => 'CNDA',
+    'ThumbnailImage' =>
+    array (
+      0 => 'CNDA',
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:ThumbnailImage' => 'CNDA',
+    'Canon:ThumbnailImage' =>
+    array (
+      0 => 'CNDA',
+    ),
   ),
   'items' =>
   array (
     'CNDA' =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ThumbnailImage',
-      'title' => 'Thumbnail Image',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'ThumbnailImage',
+        'title' => 'Thumbnail Image',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:ThumbnailImage',
       ),
-      'exiftoolDOMNode' => 'Canon:ThumbnailImage',
     ),
   ),
 );

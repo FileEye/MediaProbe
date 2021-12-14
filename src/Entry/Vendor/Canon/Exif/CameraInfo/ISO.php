@@ -20,7 +20,7 @@ class ISO extends Byte
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return round($this->getValue());
     }

@@ -12,8 +12,8 @@ class ExifBrightnessValue extends SignedRational
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
-        return (string) ($this->getValue()[0] / $this->getValue()[1]);
+        return (string) $this->getValue();
     }
 }

@@ -21,7 +21,7 @@ class DisplayAperture extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return $this->getValue();
     }

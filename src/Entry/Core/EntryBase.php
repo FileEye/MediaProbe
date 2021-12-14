@@ -69,6 +69,22 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     }
 
     /**
+     * Resolves, in relation to the context, the index of the item collection to be used to instantiate the Entry.
+     *
+     * @param int|null $components_count
+     *   The number of components for the items.
+     * @param ElementInterface $context
+     *   An element that can be used to provide context.
+     *
+     * @return mixed
+     *   The item collection index.
+     */
+    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context)
+    {
+        return 0;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getFormat()
@@ -115,7 +131,10 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         return $this->value;
     }
 
-    public function hasMappedText(): bool
+    /**
+     * @todo xxx
+     */
+    protected function hasMappedText(): bool
     {
         if (!$this->getParentElement()) {
             return false;
@@ -126,26 +145,104 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         return isset($text_config['mapping']);
     }
 
-    public function getMappedText($value, $default = null, $variant = 0, $key = 0)
+    /**
+     * @todo xxx
+     */
+    protected function getMappedText($value)
     {
         $text_config = $this->getParentElement()->getCollection()->getPropertyValue('text');
         $id = is_int($value) ? $value : (string) $value;
-        return $text_config['mapping'][$id] ?? $default;
+        return $text_config['mapping'][$id] ?? null;
+    }
+
+    /**
+     * @todo xxx
+     */
+    protected function hasDefaultText(): bool
+    {
+        if (!$this->getParentElement()) {
+            return false;
+        }
+        if (!$text_config = $this->getParentElement()->getCollection()->getPropertyValue('text')) {
+            return false;
+        }
+        return isset($text_config['default']);
+    }
+
+    /**
+     * @todo xxx
+     */
+    protected function resolveValuePlaceholder(string $value, string $source): string
+    {
+        $tmp = str_replace('{value}', $value, $source);
+        $tmp = str_replace('{valuehex}', dechex((int) $value), $tmp);
+        return $tmp;
+    }
+
+    /**
+     * @todo xxx
+     */
+    public function resolveText($value, bool $null_on_missing = false)
+    {
+        if (!$this->getParentElement()) {
+            return is_array($value) ? implode(' ', $value) : $value;
+        }
+
+        if (is_array($value)) {
+            $tmp = [];
+            foreach ($value as $v) {
+                $id = is_int($v) ? $v : (string) $v;
+                if ($this->hasMappedText()) {
+                    $tmp[] = $this->resolveValuePlaceholder($v, $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? (string) $v);
+                } elseif ($this->hasDefaultText()) {
+                    $tmp[] = $this->resolveValuePlaceholder($v, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+                } else {
+                    $tmp[] = $v;
+                }
+            }
+            return $tmp;
+        }
+
+        $text = null;
+        if ($this->hasMappedText()) {
+            $id = is_int($value) ? $value : (string) $value;
+            $raw = $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? null;
+            if (!is_null($raw)) {
+                $text = $this->resolveValuePlaceholder($value, $raw);
+            }
+        }
+        if (is_null($text) && $this->hasDefaultText()) {
+            $text = $this->resolveValuePlaceholder($value, $this->getParentElement()->getCollection()->getPropertyValue('text')['default']);
+        }
+        if (is_null($text) && $null_on_missing) {
+            return null;
+        }
+        if (!is_null($text)) {
+            return $text;
+        }
+
+        return is_scalar($value) ? $value : serialize($value);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
-        if (!$this->getParentElement()) {
-            return null;
+        if (is_null($this->value)) {
+            return '';
         }
-        $value = $options['value'] ?? $this->getValue();
-        if (!is_scalar($value)) {
-            return null;
+        $text = $this->resolveText($this->getValue($options));
+        if (is_array($text)) {
+            if (!$this->hasMappedText() && !$this->hasDefaultText()) {
+                return implode(' ', $text);
+            }
+            if (($options['format'] ?? null) === 'exiftool') {
+                return implode('; ', $text);
+            }
+            return implode(', ', $text);
         }
-        return $this->hasMappedText() ? $this->getMappedText($value, $value) : null;
+        return is_null($text) ? null : (string) $text;
     }
 
     /**

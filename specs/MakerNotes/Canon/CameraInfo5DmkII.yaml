@@ -93,6 +93,8 @@ items:
                 DOMNode: 'Canon:MacroMagnification'
                 desc: 'Macro Magnification'
     30:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: FocalLength
@@ -229,7 +231,8 @@ items:
                     - Strong
                     - 'Off'
     230:
-        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensType
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: LensType
@@ -636,6 +639,8 @@ items:
                     61496: 'Canon CN-E 35mm T1.5 L F'
                     65535: n/a
     232:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: MinFocalLength
@@ -644,6 +649,8 @@ items:
                 DOMNode: 'Canon:MinFocalLength'
                 desc: 'Min Focal Length'
     234:
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: MaxFocalLength

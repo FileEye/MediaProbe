@@ -93,11 +93,10 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $first_zero_pos = strpos($this->value, "\x0");
         $value = substr($this->value, 0, $first_zero_pos === false ? strlen($this->value) : $first_zero_pos);
-        $options['value'] = $value;
-        return parent::toString($options) ?? $value;
+        return $this->resolveText($value);
     }
 }

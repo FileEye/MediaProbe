@@ -12,6 +12,8 @@ compiler:
         xpath: '//table[@name=''Canon::CameraSettings'']/tag'
 items:
     1:
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: MacroMode
@@ -23,6 +25,9 @@ items:
                     1: Macro
                     2: Normal
     2:
+        text:
+            mapping:
+                0: Off
         exiftool:
             -
                 name: SelfTimer
@@ -234,6 +239,8 @@ items:
                     264: Surface
                     265: 'Low Light 2'
     12:
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: DigitalZoom
@@ -247,6 +254,7 @@ items:
                     - 4x
                     - Other
     13:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Contrast
         exiftool:
             -
                 name: Contrast
@@ -257,6 +265,7 @@ items:
                 values:
                     - Normal
     14:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Saturation
         exiftool:
             -
                 name: Saturation
@@ -355,6 +364,8 @@ items:
                     - Bulb
     22:
         entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettingsLensType
+        text:
+            default: 'Unknown ({value})'
         exiftool:
             -
                 name: LensType
@@ -762,6 +773,8 @@ items:
                     65535: n/a
     23:
         entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: MaxFocalLength
@@ -771,6 +784,8 @@ items:
                 desc: 'Max Focal Length'
     24:
         entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
+        text:
+            default: '{value} mm'
         exiftool:
             -
                 name: MinFocalLength
@@ -779,6 +794,8 @@ items:
                 DOMNode: 'Canon:MinFocalLength'
                 desc: 'Min Focal Length'
     25:
+        text:
+            default: '{value}/mm'
         exiftool:
             -
                 name: FocalUnits

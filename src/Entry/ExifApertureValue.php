@@ -27,8 +27,8 @@ class ExifApertureValue extends Rational
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
-        return MediaProbe::fmt('%.01f', pow(2, $this->getValue()[0] / $this->getValue()[1] / 2));
+        return MediaProbe::fmt('%.01f', pow(2, $this->getValue() / 2));
     }
 }

@@ -24,24 +24,33 @@ class StampInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'StampToolCount' => 2,
+    'StampToolCount' =>
+    array (
+      0 => 2,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonVRD:StampToolCount' => 2,
+    'CanonVRD:StampToolCount' =>
+    array (
+      0 => 2,
+    ),
   ),
   'items' =>
   array (
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'StampToolCount',
-      'title' => 'Stamp Tool Count',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'StampToolCount',
+        'title' => 'Stamp Tool Count',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:StampToolCount',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:StampToolCount',
     ),
   ),
 );

@@ -88,7 +88,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return $this->getElement("entry") ? $this->getElement("entry")->toString($options) : null;
     }

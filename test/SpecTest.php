@@ -121,7 +121,7 @@ class SpecTest extends MediaProbeTestCaseBase
                 'Chunky', 'FileEye\MediaProbe\Entry\Core\Short', 'Ifd\\Ifd0', 'PlanarConfiguration', [1],
             ],
             'IFD0/PlanarConfiguration - missing mapping' => [
-                6.1, 'FileEye\MediaProbe\Entry\Core\Short', 'Ifd\\Ifd0', 'PlanarConfiguration', [6.1],
+                '6', 'FileEye\MediaProbe\Entry\Core\Short', 'Ifd\\Ifd0', 'PlanarConfiguration', [6],
             ],
             'CanonPanoramaInformation/PanoramaDirection - value 4' => [
                 '2x2 Matrix (Clockwise)', 'FileEye\MediaProbe\Entry\Core\SignedShort', 'MakerNotes\\Canon\\Panorama', 'PanoramaDirection', [4],
@@ -211,7 +211,7 @@ class SpecTest extends MediaProbeTestCaseBase
                 '1.0', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Ifd\\Interoperability', 'InteropVersion', ['0100'], true,
             ],
             'Exif/ComponentsConfiguration' => [
-                'Y Cb Cr -', 'FileEye\MediaProbe\Entry\ExifComponentsConfiguration', 'Ifd\\Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
+                'Y, Cb, Cr, -', 'FileEye\MediaProbe\Entry\ExifComponentsConfiguration', 'Ifd\\Exif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
             ],
             'Exif/FileSource' => [
                 'Digital Camera', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Ifd\\Exif', 'FileSource', ["\x03"],

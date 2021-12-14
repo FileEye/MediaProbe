@@ -27,9 +27,9 @@ class Sharpness extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
-        $value = $this->getValue();
-        return $value > 0 ? "+$value" : $value;
+        $val = $this->getValue();
+        return $val > 0 ? "+$val" : $val;
     }
 }

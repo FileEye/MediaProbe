@@ -89,6 +89,7 @@ items:
                     - 'Above Sea Level'
                     - 'Below Sea Level'
     -
+        entryClass: FileEye\MediaProbe\Entry\GPSAltitude
         components: 1
         exifReadData:
             key: GPSAltitude
@@ -100,6 +101,7 @@ items:
                 DOMNode: 'GPS:GPSAltitude'
                 desc: 'GPS Altitude'
     -
+        entryClass: FileEye\MediaProbe\Entry\GPSTimeStamp
         exifReadData:
             key: GPSTimeStamp
         exiftool:
@@ -393,6 +395,8 @@ items:
                     - 'No Correction'
                     - 'Differential Corrected'
     -
+        text:
+            default: '{value} m'
         exiftool:
             -
                 name: GPSHPositioningError

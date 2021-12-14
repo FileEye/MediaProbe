@@ -219,7 +219,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
     }
@@ -240,7 +240,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, $message, array $context = []): void
     {
         $context['path'] = $this->getContextPath();
         $root_element = $this->getRootElement();

@@ -24,27 +24,36 @@ class CameraInfoUnknown extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'LensSerialNumber' => 363,
+    'LensSerialNumber' =>
+    array (
+      0 => 363,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:LensSerialNumber' => 363,
+    'Canon:LensSerialNumber' =>
+    array (
+      0 => 363,
+    ),
   ),
   'items' =>
   array (
     363 =>
     array (
-      'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensSerialNumber',
-      'outputFormat' => 2,
-      'collection' => 'Tag',
-      'name' => 'LensSerialNumber',
-      'title' => 'Lens Serial Number',
-      'components' => 5,
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensSerialNumber',
+        'outputFormat' => 2,
+        'collection' => 'Tag',
+        'name' => 'LensSerialNumber',
+        'title' => 'Lens Serial Number',
+        'components' => 5,
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:LensSerialNumber',
       ),
-      'exiftoolDOMNode' => 'Canon:LensSerialNumber',
     ),
   ),
 );

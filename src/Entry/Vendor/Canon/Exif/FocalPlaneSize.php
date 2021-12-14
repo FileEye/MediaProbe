@@ -21,7 +21,7 @@ class FocalPlaneSize extends Short
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return round($this->getValue(), 2) . ' mm';
     }

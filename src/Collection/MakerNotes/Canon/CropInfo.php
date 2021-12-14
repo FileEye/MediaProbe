@@ -24,63 +24,99 @@ class CropInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'CropBottomMargin' => 3,
-    'CropLeftMargin' => 0,
-    'CropRightMargin' => 1,
-    'CropTopMargin' => 2,
+    'CropBottomMargin' =>
+    array (
+      0 => 3,
+    ),
+    'CropLeftMargin' =>
+    array (
+      0 => 0,
+    ),
+    'CropRightMargin' =>
+    array (
+      0 => 1,
+    ),
+    'CropTopMargin' =>
+    array (
+      0 => 2,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'Canon:CropBottomMargin' => 3,
-    'Canon:CropLeftMargin' => 0,
-    'Canon:CropRightMargin' => 1,
-    'Canon:CropTopMargin' => 2,
+    'Canon:CropBottomMargin' =>
+    array (
+      0 => 3,
+    ),
+    'Canon:CropLeftMargin' =>
+    array (
+      0 => 0,
+    ),
+    'Canon:CropRightMargin' =>
+    array (
+      0 => 1,
+    ),
+    'Canon:CropTopMargin' =>
+    array (
+      0 => 2,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropLeftMargin',
-      'title' => 'Crop Left Margin',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'CropLeftMargin',
+        'title' => 'Crop Left Margin',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:CropLeftMargin',
       ),
-      'exiftoolDOMNode' => 'Canon:CropLeftMargin',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropRightMargin',
-      'title' => 'Crop Right Margin',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'CropRightMargin',
+        'title' => 'Crop Right Margin',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:CropRightMargin',
       ),
-      'exiftoolDOMNode' => 'Canon:CropRightMargin',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropTopMargin',
-      'title' => 'Crop Top Margin',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'CropTopMargin',
+        'title' => 'Crop Top Margin',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:CropTopMargin',
       ),
-      'exiftoolDOMNode' => 'Canon:CropTopMargin',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CropBottomMargin',
-      'title' => 'Crop Bottom Margin',
-      'format' =>
+      0 =>
       array (
-        0 => 3,
+        'collection' => 'Tag',
+        'name' => 'CropBottomMargin',
+        'title' => 'Crop Bottom Margin',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:CropBottomMargin',
       ),
-      'exiftoolDOMNode' => 'Canon:CropBottomMargin',
     ),
   ),
 );

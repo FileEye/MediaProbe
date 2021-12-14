@@ -13,8 +13,8 @@ class ExifFocalLength extends Rational
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
-        return MediaProbe::fmt('%.1f mm', $this->getValue()[0] / $this->getValue()[1]);
+        return MediaProbe::fmt('%.1f mm', $this->getValue());
     }
 }

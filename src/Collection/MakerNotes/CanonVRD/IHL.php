@@ -24,76 +24,121 @@ class IHL extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'CRCDevelParams' => 6,
-    'IHL_EXIF' => 1,
-    'PreviewImage' => 4,
-    'RawCodecVersion' => 5,
-    'ThumbnailImage' => 3,
+    'CRCDevelParams' =>
+    array (
+      0 => 6,
+    ),
+    'IHL_EXIF' =>
+    array (
+      0 => 1,
+    ),
+    'PreviewImage' =>
+    array (
+      0 => 4,
+    ),
+    'RawCodecVersion' =>
+    array (
+      0 => 5,
+    ),
+    'ThumbnailImage' =>
+    array (
+      0 => 3,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonVRD:CRCDevelParams' => 6,
-    'CanonVRD:IHL_EXIF' => 1,
-    'CanonVRD:PreviewImage' => 4,
-    'CanonVRD:RawCodecVersion' => 5,
-    'CanonVRD:ThumbnailImage' => 3,
+    'CanonVRD:CRCDevelParams' =>
+    array (
+      0 => 6,
+    ),
+    'CanonVRD:IHL_EXIF' =>
+    array (
+      0 => 1,
+    ),
+    'CanonVRD:PreviewImage' =>
+    array (
+      0 => 4,
+    ),
+    'CanonVRD:RawCodecVersion' =>
+    array (
+      0 => 5,
+    ),
+    'CanonVRD:ThumbnailImage' =>
+    array (
+      0 => 3,
+    ),
   ),
   'items' =>
   array (
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'IHL_EXIF',
-      'title' => 'IHL EXIF',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'IHL_EXIF',
+        'title' => 'IHL EXIF',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:IHL_EXIF',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:IHL_EXIF',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ThumbnailImage',
-      'title' => 'Thumbnail Image',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'ThumbnailImage',
+        'title' => 'Thumbnail Image',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:ThumbnailImage',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:ThumbnailImage',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PreviewImage',
-      'title' => 'Preview Image',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'PreviewImage',
+        'title' => 'Preview Image',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:PreviewImage',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:PreviewImage',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'RawCodecVersion',
-      'title' => 'Raw Codec Version',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'RawCodecVersion',
+        'title' => 'Raw Codec Version',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:RawCodecVersion',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:RawCodecVersion',
     ),
     6 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'CRCDevelParams',
-      'title' => 'CRC Devel Params',
-      'format' =>
+      0 =>
       array (
-        0 => 7,
+        'collection' => 'Tag',
+        'name' => 'CRCDevelParams',
+        'title' => 'CRC Devel Params',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CRCDevelParams',
       ),
-      'exiftoolDOMNode' => 'CanonVRD:CRCDevelParams',
     ),
   ),
 );

@@ -16,24 +16,36 @@ class MakerNotes extends Collection {
   'class' => '????',
   'itemsByName' =>
   array (
-    'Apple' => 'Apple',
-    'Canon' => 'Canon',
+    'Apple' =>
+    array (
+      0 => 'Apple',
+    ),
+    'Canon' =>
+    array (
+      0 => 'Canon',
+    ),
   ),
   'items' =>
   array (
     'Apple' =>
     array (
-      'collection' => 'MakerNotes\\Apple\\Main',
-      'name' => 'Apple',
-      'make' => 'Apple',
-      'model' => '.*',
+      0 =>
+      array (
+        'collection' => 'MakerNotes\\Apple\\Main',
+        'name' => 'Apple',
+        'make' => 'Apple',
+        'model' => '.*',
+      ),
     ),
     'Canon' =>
     array (
-      'collection' => 'MakerNotes\\Canon\\Main',
-      'name' => 'Canon',
-      'make' => 'Canon',
-      'model' => '.*',
+      0 =>
+      array (
+        'collection' => 'MakerNotes\\Canon\\Main',
+        'name' => 'Canon',
+        'make' => 'Canon',
+        'model' => '.*',
+      ),
     ),
   ),
 );

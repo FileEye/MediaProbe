@@ -24,102 +24,165 @@ class ImageInfo extends Collection {
   'defaultItemCollection' => 'Tag',
   'itemsByName' =>
   array (
-    'ColorBW' => 6,
-    'ColorBitDepth' => 5,
-    'ComponentBitDepth' => 4,
-    'ImageHeight' => 1,
-    'ImageWidth' => 0,
-    'PixelAspectRatio' => 2,
-    'Rotation' => 3,
+    'ColorBW' =>
+    array (
+      0 => 6,
+    ),
+    'ColorBitDepth' =>
+    array (
+      0 => 5,
+    ),
+    'ComponentBitDepth' =>
+    array (
+      0 => 4,
+    ),
+    'ImageHeight' =>
+    array (
+      0 => 1,
+    ),
+    'ImageWidth' =>
+    array (
+      0 => 0,
+    ),
+    'PixelAspectRatio' =>
+    array (
+      0 => 2,
+    ),
+    'Rotation' =>
+    array (
+      0 => 3,
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'CanonRaw:ColorBW' => 6,
-    'CanonRaw:ColorBitDepth' => 5,
-    'CanonRaw:ComponentBitDepth' => 4,
-    'CanonRaw:ImageHeight' => 1,
-    'CanonRaw:ImageWidth' => 0,
-    'CanonRaw:PixelAspectRatio' => 2,
-    'CanonRaw:Rotation' => 3,
+    'CanonRaw:ColorBW' =>
+    array (
+      0 => 6,
+    ),
+    'CanonRaw:ColorBitDepth' =>
+    array (
+      0 => 5,
+    ),
+    'CanonRaw:ComponentBitDepth' =>
+    array (
+      0 => 4,
+    ),
+    'CanonRaw:ImageHeight' =>
+    array (
+      0 => 1,
+    ),
+    'CanonRaw:ImageWidth' =>
+    array (
+      0 => 0,
+    ),
+    'CanonRaw:PixelAspectRatio' =>
+    array (
+      0 => 2,
+    ),
+    'CanonRaw:Rotation' =>
+    array (
+      0 => 3,
+    ),
   ),
   'items' =>
   array (
     0 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ImageWidth',
-      'title' => 'Image Width',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ImageWidth',
+        'title' => 'Image Width',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:ImageWidth',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:ImageWidth',
     ),
     1 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ImageHeight',
-      'title' => 'Image Height',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ImageHeight',
+        'title' => 'Image Height',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:ImageHeight',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:ImageHeight',
     ),
     2 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'PixelAspectRatio',
-      'title' => 'Pixel Aspect Ratio',
-      'format' =>
+      0 =>
       array (
-        0 => 11,
+        'collection' => 'Tag',
+        'name' => 'PixelAspectRatio',
+        'title' => 'Pixel Aspect Ratio',
+        'format' =>
+        array (
+          0 => 11,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:PixelAspectRatio',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:PixelAspectRatio',
     ),
     3 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'Rotation',
-      'title' => 'Rotation',
-      'format' =>
+      0 =>
       array (
-        0 => 9,
+        'collection' => 'Tag',
+        'name' => 'Rotation',
+        'title' => 'Rotation',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:Rotation',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:Rotation',
     ),
     4 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ComponentBitDepth',
-      'title' => 'Component Bit Depth',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ComponentBitDepth',
+        'title' => 'Component Bit Depth',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:ComponentBitDepth',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:ComponentBitDepth',
     ),
     5 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ColorBitDepth',
-      'title' => 'Color Bit Depth',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ColorBitDepth',
+        'title' => 'Color Bit Depth',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:ColorBitDepth',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:ColorBitDepth',
     ),
     6 =>
     array (
-      'collection' => 'Tag',
-      'name' => 'ColorBW',
-      'title' => 'Color BW',
-      'format' =>
+      0 =>
       array (
-        0 => 4,
+        'collection' => 'Tag',
+        'name' => 'ColorBW',
+        'title' => 'Color BW',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'CanonRaw:ColorBW',
       ),
-      'exiftoolDOMNode' => 'CanonRaw:ColorBW',
     ),
   ),
 );

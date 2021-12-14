@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe;
 
-use PackageVersions\Versions;
+use Composer\InstalledVersions;
 
 /**
  * Class with miscellaneous static methods.
@@ -25,7 +25,7 @@ class MediaProbe
      */
     public static function version(): string
     {
-        return Versions::getVersion('fileeye/mediaprobe');
+        return InstalledVersions::getPrettyVersion('fileeye/mediaprobe');
     }
 
     /**

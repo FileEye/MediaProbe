@@ -98,9 +98,10 @@ class IfdCopyright extends Ascii
      *
      * @return string the copyright information in a string.
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
-        $short = isset($options['short']) ? $options['short'] : false;
+        $short = $options['short'] ?? false || ($options['format'] ?? null) === 'exiftool';
+
         if ($short) {
             $p = '';
             $e = '';

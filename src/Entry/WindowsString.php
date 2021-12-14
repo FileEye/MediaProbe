@@ -35,7 +35,9 @@ class WindowsString extends Byte
     public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
     {
         $bytes = $data_element->getBytes(0, min($data_element->getSize(), $item_definition->getValuesCount()));
-        $this->setValue([mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE')]);
+        // Remove any question marks that have been introduced because of illegal characters.
+        $value = str_replace('?', '', mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE'));
+        $this->setValue([$value]);
         return $this;
     }
 
@@ -44,14 +46,14 @@ class WindowsString extends Byte
      */
     public function setValue(array $data)
     {
-        parent::setValue($data);
-
         $php_string = rtrim($data[0], "\0");
         $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
         $this->components = strlen($windows_string) + 2;
         $this->value = [$php_string, $windows_string];
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
+
+        $this->parsed = true;
         return $this;
     }
 
@@ -86,7 +88,7 @@ class WindowsString extends Byte
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return $this->getValue()[0];
     }

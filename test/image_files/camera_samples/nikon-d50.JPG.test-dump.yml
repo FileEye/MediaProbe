@@ -48,7 +48,6 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             class: FileEye\MediaProbe\Block\Exif\Exif
                             parsed: true
-                            id: Exif
                             collection: Exif
                             elements:
                                 -
@@ -56,7 +55,6 @@ elements:
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     class: FileEye\MediaProbe\Block\Tiff
                                     parsed: true
-                                    id: Tiff
                                     collection: Tiff
                                     elements:
                                         -
@@ -139,7 +137,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
-                                                            text: 300
+                                                            text: '300'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
@@ -157,7 +155,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
-                                                            text: 300
+                                                            text: '300'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
@@ -364,7 +362,7 @@ elements:
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 1666d9845b241586380fe85194c47f1d1868c4d7d30ba806ecc6d581df9eeadc
-                                                                    text: 'Y Cb Cr -'
+                                                                    text: 'Y, Cb, Cr, -'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CompressedBitsPerPixel:37122'
@@ -382,7 +380,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 7b2ed67587fcbc411fcb4b71b1cef1ef6cd9edf948148414cf5f0ab21362b9aa
-                                                                    text: 2
+                                                                    text: '2'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380'
@@ -400,7 +398,7 @@ elements:
                                                                     format: SignedRational
                                                                     components: 1
                                                                     bytesHash: 20aef0af2bb62267e2f5c157abdc51d1ce6506e42478ae204f1fab5494907df1
-                                                                    text: '0.0'
+                                                                    text: '0'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381'
@@ -634,7 +632,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 4c60cf6491c1f144f5007cebef07b67a483b931f20d1e2585b57a779f16ea956
-                                                                    text: 3008
+                                                                    text: '3008'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
@@ -652,7 +650,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: dde12454138143570a55716b7cdc99c7f811f2d0d24397d182d574a6dbbdfe16
-                                                                    text: 2000
+                                                                    text: '2000'
                                                         -
                                                             node: ifd
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965'
@@ -841,7 +839,7 @@ elements:
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 64ed86b909d6d0502b64b28db0ea1272ffb358e20e9b1d88b63ccb07fa900cf5
-                                                                    text: 1
+                                                                    text: '1'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLengthIn35mmFormat:41989'
@@ -859,7 +857,7 @@ elements:
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: b58d15e89a953322b7ac8fc0d6e37710c1eacd25d8304efd002904cb18ef62c6
-                                                                    text: 57
+                                                                    text: '57 mm'
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneCaptureType:41990'
@@ -1012,7 +1010,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
-                                                            text: 300
+                                                            text: '300'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:YResolution:283'
@@ -1030,7 +1028,7 @@ elements:
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
-                                                            text: 300
+                                                            text: '300'
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:ResolutionUnit:296'
