@@ -1,8 +1,6 @@
 # MediaProbe
 
-[![Tests](https://github.com/mondrake/MediaProbe/actions/workflows/tests.yml/badge.svg)](https://github.com/mondrake/MediaProbe/actions/workflows/tests.yml)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/FileEye/MediaProbe/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/FileEye/MediaProbe/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/FileEye/MediaProbe/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/FileEye/MediaProbe/?branch=master)
+[![Tests](https://github.com/FileEye/MediaProbe/actions/workflows/tests.yml/badge.svg)](https://github.com/FileEye/MediaProbe/actions/workflows/tests.yml)
 
 A PHP library for reading and writing Exif headers in JPEG and TIFF images.
 
