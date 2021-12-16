@@ -1,0 +1,1562 @@
+collection: Tiff\Ifd1
+name: IFD1
+title: IFD1
+class: FileEye\MediaProbe\Block\Exif\Ifd
+DOMNode: ifd
+defaultItemCollection: Tag
+alias:
+    - '1'
+    - Thumbnail
+postParse:
+    - 'FileEye\MediaProbe\Block\Exif\Ifd::thumbnailToBlock'
+compiler:
+    exiftool:
+        g1: IFD1
+        xpath: '//table[@name=''Exif::Main'']/tag[not(@g1) or @g1=''IFD1'']'
+items:
+    11:
+        exifReadData:
+            key: 'THUMBNAIL::ACDComment'
+        exiftool:
+            -
+                name: ProcessingSoftware
+                type: string
+                writable: true
+                DOMNode: 'IFD1:ProcessingSoftware'
+                desc: 'Processing Software'
+    254:
+        exifReadData:
+            key: 'THUMBNAIL::NewSubFile'
+        exiftool:
+            -
+                name: SubfileType
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:SubfileType'
+                desc: 'Subfile Type'
+                values:
+                    0: 'Full-resolution Image'
+                    1: 'Reduced-resolution image'
+                    2: 'Single page of multi-page image'
+                    3: 'Single page of multi-page reduced-resolution image'
+                    4: 'Transparency mask'
+                    5: 'Transparency mask of reduced-resolution image'
+                    6: 'Transparency mask of multi-page image'
+                    7: 'Transparency mask of reduced-resolution multi-page image'
+                    8: 'TIFF/IT final page'
+                    16: 'TIFF-FX mixed raster content'
+                    65537: 'Alternate reduced-resolution image'
+                    '4294967295': invalid
+    255:
+        exifReadData:
+            key: 'THUMBNAIL::SubFile'
+        exiftool:
+            -
+                name: OldSubfileType
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:OldSubfileType'
+                desc: 'Old Subfile Type'
+                values:
+                    1: 'Full-resolution image'
+                    2: 'Reduced-resolution image'
+                    3: 'Single page of multi-page image'
+    256:
+        components: 1
+        format:
+            - Short
+            - Long
+        exifReadData:
+            key: 'THUMBNAIL::ImageWidth'
+        exiftool:
+            -
+                name: ImageWidth
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:ImageWidth'
+                desc: 'Image Width'
+    257:
+        components: 1
+        format:
+            - Short
+            - Long
+        exifReadData:
+            key: 'THUMBNAIL::ImageLength'
+        exiftool:
+            -
+                name: ImageHeight
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:ImageHeight'
+                desc: 'Image Height'
+    258:
+        exifReadData:
+            key: 'THUMBNAIL::BitsPerSample'
+        exiftool:
+            -
+                name: BitsPerSample
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:BitsPerSample'
+                desc: 'Bits Per Sample'
+    259:
+        components: 1
+        text:
+            default: 'Unknown ({value})'
+        exifReadData:
+            key: 'THUMBNAIL::Compression'
+        exiftool:
+            -
+                name: Compression
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:Compression'
+                desc: Compression
+                values:
+                    1: Uncompressed
+                    2: 'CCITT 1D'
+                    3: 'T4/Group 3 Fax'
+                    4: 'T6/Group 4 Fax'
+                    5: LZW
+                    6: 'JPEG (old-style)'
+                    7: JPEG
+                    8: 'Adobe Deflate'
+                    9: 'JBIG B&W'
+                    10: 'JBIG Color'
+                    99: JPEG
+                    262: 'Kodak 262'
+                    32766: Next
+                    32767: 'Sony ARW Compressed'
+                    32769: 'Packed RAW'
+                    32770: 'Samsung SRW Compressed'
+                    32771: CCIRLEW
+                    32772: 'Samsung SRW Compressed 2'
+                    32773: PackBits
+                    32809: Thunderscan
+                    32867: 'Kodak KDC Compressed'
+                    32895: IT8CTPAD
+                    32896: IT8LW
+                    32897: IT8MP
+                    32898: IT8BL
+                    32908: PixarFilm
+                    32909: PixarLog
+                    32946: Deflate
+                    32947: DCS
+                    33003: 'Aperio JPEG 2000 YCbCr'
+                    33005: 'Aperio JPEG 2000 RGB'
+                    34661: JBIG
+                    34676: SGILog
+                    34677: SGILog24
+                    34712: 'JPEG 2000'
+                    34713: 'Nikon NEF Compressed'
+                    34715: 'JBIG2 TIFF FX'
+                    34718: 'Microsoft Document Imaging (MDI) Binary Level Codec'
+                    34719: 'Microsoft Document Imaging (MDI) Progressive Transform Codec'
+                    34720: 'Microsoft Document Imaging (MDI) Vector'
+                    34887: 'ESRI Lerc'
+                    34892: 'Lossy JPEG'
+                    34925: LZMA2
+                    34926: Zstd
+                    34927: WebP
+                    34933: PNG
+                    34934: 'JPEG XR'
+                    65000: 'Kodak DCR Compressed'
+                    65535: 'Pentax PEF Compressed'
+    262:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::PhotometricInterpretation'
+        exiftool:
+            -
+                name: PhotometricInterpretation
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:PhotometricInterpretation'
+                desc: 'Photometric Interpretation'
+                values:
+                    0: WhiteIsZero
+                    1: BlackIsZero
+                    2: RGB
+                    3: 'RGB Palette'
+                    4: 'Transparency Mask'
+                    5: CMYK
+                    6: YCbCr
+                    8: CIELab
+                    9: ICCLab
+                    10: ITULab
+                    32803: 'Color Filter Array'
+                    32844: 'Pixar LogL'
+                    32845: 'Pixar LogLuv'
+                    32892: 'Sequential Color Filter'
+                    34892: 'Linear Raw'
+    263:
+        exiftool:
+            -
+                name: Thresholding
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:Thresholding'
+                desc: Thresholding
+                values:
+                    1: 'No dithering or halftoning'
+                    2: 'Ordered dither or halftone'
+                    3: 'Randomized dither'
+    264:
+        exiftool:
+            -
+                name: CellWidth
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:CellWidth'
+                desc: 'Cell Width'
+    265:
+        exiftool:
+            -
+                name: CellLength
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:CellLength'
+                desc: 'Cell Length'
+    266:
+        exifReadData:
+            key: 'THUMBNAIL::FillOrder'
+        exiftool:
+            -
+                name: FillOrder
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:FillOrder'
+                desc: 'Fill Order'
+                values:
+                    1: Normal
+                    2: Reversed
+    269:
+        exifReadData:
+            key: 'THUMBNAIL::DocumentName'
+        exiftool:
+            -
+                name: DocumentName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:DocumentName'
+                desc: 'Document Name'
+    270:
+        exifReadData:
+            key: 'THUMBNAIL::ImageDescription'
+        exiftool:
+            -
+                name: ImageDescription
+                type: string
+                writable: true
+                DOMNode: 'IFD1:ImageDescription'
+                desc: 'Image Description'
+    271:
+        exifReadData:
+            key: 'THUMBNAIL::Make'
+        exiftool:
+            -
+                name: Make
+                type: string
+                writable: true
+                g2: Camera
+                DOMNode: 'IFD1:Make'
+                desc: Make
+    272:
+        exifReadData:
+            key: 'THUMBNAIL::Model'
+        exiftool:
+            -
+                name: Model
+                type: string
+                writable: true
+                g2: Camera
+                DOMNode: 'IFD1:Model'
+                desc: 'Camera Model Name'
+    273:
+        format:
+            - Short
+            - Long
+        exifReadData:
+            key: 'THUMBNAIL::StripOffsets'
+        exiftool:
+            2:
+                name: PreviewImageStart
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:PreviewImageStart'
+                desc: 'Preview Image Start'
+    274:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::Orientation'
+        exiftool:
+            -
+                name: Orientation
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:Orientation'
+                desc: Orientation
+                values:
+                    1: 'Horizontal (normal)'
+                    2: 'Mirror horizontal'
+                    3: 'Rotate 180'
+                    4: 'Mirror vertical'
+                    5: 'Mirror horizontal and rotate 270 CW'
+                    6: 'Rotate 90 CW'
+                    7: 'Mirror horizontal and rotate 90 CW'
+                    8: 'Rotate 270 CW'
+    277:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::SamplesPerPixel'
+        exiftool:
+            -
+                name: SamplesPerPixel
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:SamplesPerPixel'
+                desc: 'Samples Per Pixel'
+    278:
+        components: 1
+        format:
+            - Short
+            - Long
+        exifReadData:
+            key: 'THUMBNAIL::RowsPerStrip'
+        exiftool:
+            -
+                name: RowsPerStrip
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:RowsPerStrip'
+                desc: 'Rows Per Strip'
+    279:
+        format:
+            - Short
+            - Long
+        exifReadData:
+            key: 'THUMBNAIL::StripByteCounts'
+        exiftool:
+            2:
+                name: PreviewImageLength
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:PreviewImageLength'
+                desc: 'Preview Image Length'
+    280:
+        exifReadData:
+            key: 'THUMBNAIL::MinSampleValue'
+        exiftool:
+            -
+                name: MinSampleValue
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:MinSampleValue'
+                desc: 'Min Sample Value'
+    281:
+        exifReadData:
+            key: 'THUMBNAIL::MaxSampleValue'
+        exiftool:
+            -
+                name: MaxSampleValue
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:MaxSampleValue'
+                desc: 'Max Sample Value'
+    282:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::XResolution'
+        exiftool:
+            -
+                name: XResolution
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:XResolution'
+                desc: 'X Resolution'
+    283:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::YResolution'
+        exiftool:
+            -
+                name: YResolution
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:YResolution'
+                desc: 'Y Resolution'
+    284:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::PlanarConfiguration'
+        exiftool:
+            -
+                name: PlanarConfiguration
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:PlanarConfiguration'
+                desc: 'Planar Configuration'
+                values:
+                    1: Chunky
+                    2: Planar
+    285:
+        exifReadData:
+            key: 'THUMBNAIL::PageName'
+        exiftool:
+            -
+                name: PageName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:PageName'
+                desc: 'Page Name'
+    286:
+        exifReadData:
+            key: 'THUMBNAIL::XPosition'
+        exiftool:
+            -
+                name: XPosition
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:XPosition'
+                desc: 'X Position'
+    287:
+        exifReadData:
+            key: 'THUMBNAIL::YPosition'
+        exiftool:
+            -
+                name: YPosition
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:YPosition'
+                desc: 'Y Position'
+    290:
+        exifReadData:
+            key: 'THUMBNAIL::GrayResponseUnit'
+        exiftool:
+            -
+                name: GrayResponseUnit
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:GrayResponseUnit'
+                desc: 'Gray Response Unit'
+                values:
+                    1: '0.1'
+                    2: '0.001'
+                    3: '0.0001'
+                    4: '1e-05'
+                    5: '1e-06'
+    296:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::ResolutionUnit'
+        exiftool:
+            -
+                name: ResolutionUnit
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:ResolutionUnit'
+                desc: 'Resolution Unit'
+                values:
+                    1: None
+                    2: inches
+                    3: cm
+    297:
+        exifReadData:
+            key: 'THUMBNAIL::PageNumber'
+        exiftool:
+            -
+                name: PageNumber
+                type: int16u
+                count: 2
+                writable: true
+                DOMNode: 'IFD1:PageNumber'
+                desc: 'Page Number'
+    301:
+        exifReadData:
+            key: 'THUMBNAIL::TransferFunction'
+        exiftool:
+            -
+                name: TransferFunction
+                type: int16u
+                count: 768
+                writable: true
+                DOMNode: 'IFD1:TransferFunction'
+                desc: 'Transfer Function'
+    305:
+        exifReadData:
+            key: 'THUMBNAIL::Software'
+        exiftool:
+            -
+                name: Software
+                type: string
+                writable: true
+                DOMNode: 'IFD1:Software'
+                desc: Software
+    306:
+        components: 20
+        entryClass: FileEye\MediaProbe\Entry\Time
+        exifReadData:
+            key: 'THUMBNAIL::DateTime'
+        exiftool:
+            -
+                name: ModifyDate
+                type: string
+                writable: true
+                g2: Time
+                DOMNode: 'IFD1:ModifyDate'
+                desc: 'Modify Date'
+    315:
+        exifReadData:
+            key: 'THUMBNAIL::Artist'
+        exiftool:
+            -
+                name: Artist
+                type: string
+                writable: true
+                g2: Author
+                DOMNode: 'IFD1:Artist'
+                desc: Artist
+    316:
+        exifReadData:
+            key: 'THUMBNAIL::HostComputer'
+        exiftool:
+            -
+                name: HostComputer
+                type: string
+                writable: true
+                DOMNode: 'IFD1:HostComputer'
+                desc: 'Host Computer'
+    317:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::Predictor'
+        exiftool:
+            -
+                name: Predictor
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:Predictor'
+                desc: Predictor
+                values:
+                    1: None
+                    2: 'Horizontal differencing'
+    318:
+        exifReadData:
+            key: 'THUMBNAIL::WhitePoint'
+        exiftool:
+            -
+                name: WhitePoint
+                type: rational64u
+                count: 2
+                writable: true
+                g2: Camera
+                DOMNode: 'IFD1:WhitePoint'
+                desc: 'White Point'
+    319:
+        exifReadData:
+            key: 'THUMBNAIL::PrimaryChromaticities'
+        exiftool:
+            -
+                name: PrimaryChromaticities
+                type: rational64u
+                count: 6
+                writable: true
+                DOMNode: 'IFD1:PrimaryChromaticities'
+                desc: 'Primary Chromaticities'
+    321:
+        exifReadData:
+            key: 'THUMBNAIL::HalfToneHints'
+        exiftool:
+            -
+                name: HalftoneHints
+                type: int16u
+                count: 2
+                writable: true
+                DOMNode: 'IFD1:HalftoneHints'
+                desc: 'Halftone Hints'
+    322:
+        exifReadData:
+            key: 'THUMBNAIL::TileWidth'
+        exiftool:
+            -
+                name: TileWidth
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:TileWidth'
+                desc: 'Tile Width'
+    323:
+        exifReadData:
+            key: 'THUMBNAIL::TileLength'
+        exiftool:
+            -
+                name: TileLength
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:TileLength'
+                desc: 'Tile Length'
+    330:
+        exifReadData:
+            key: 'THUMBNAIL::SubIFD'
+        exiftool:
+            1:
+                name: A100DataOffset
+                type: '?'
+                writable: false
+                DOMNode: 'IFD1:A100DataOffset'
+                desc: 'A100 Data Offset'
+    332:
+        exifReadData:
+            key: 'THUMBNAIL::InkSet'
+        exiftool:
+            -
+                name: InkSet
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:InkSet'
+                desc: 'Ink Set'
+                values:
+                    1: CMYK
+                    2: 'Not CMYK'
+    337:
+        exifReadData:
+            key: 'THUMBNAIL::TargetPrinter'
+        exiftool:
+            -
+                name: TargetPrinter
+                type: string
+                writable: true
+                DOMNode: 'IFD1:TargetPrinter'
+                desc: 'Target Printer'
+    513:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::JPEGInterchangeFormat'
+        exiftool:
+            0:
+                name: ThumbnailOffset
+                type: int32u
+                writable: true
+                g1: IFD1
+                DOMNode: 'IFD1:ThumbnailOffset'
+                desc: 'Thumbnail Offset'
+            1:
+                name: ThumbnailOffset
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:ThumbnailOffset'
+                desc: 'Thumbnail Offset'
+            4:
+                name: PreviewImageStart
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:PreviewImageStart'
+                desc: 'Preview Image Start'
+    514:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::JPEGInterchangeFormatLength'
+        exiftool:
+            0:
+                name: ThumbnailLength
+                type: int32u
+                writable: true
+                g1: IFD1
+                DOMNode: 'IFD1:ThumbnailLength'
+                desc: 'Thumbnail Length'
+            1:
+                name: ThumbnailLength
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:ThumbnailLength'
+                desc: 'Thumbnail Length'
+            4:
+                name: PreviewImageLength
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:PreviewImageLength'
+                desc: 'Preview Image Length'
+    529:
+        exifReadData:
+            key: 'THUMBNAIL::YCbCrCoefficients'
+        exiftool:
+            -
+                name: YCbCrCoefficients
+                type: rational64u
+                count: 3
+                writable: true
+                DOMNode: 'IFD1:YCbCrCoefficients'
+                desc: 'Y Cb Cr Coefficients'
+    530:
+        __todo: 'adjust decoding'
+        entryClass: FileEye\MediaProbe\Entry\IfdYCbCrSubSampling
+        exifReadData:
+            key: 'THUMBNAIL::YCbCrSubSampling'
+        exiftool:
+            -
+                name: YCbCrSubSampling
+                type: int16u
+                count: 2
+                writable: true
+                DOMNode: 'IFD1:YCbCrSubSampling'
+                desc: 'Y Cb Cr Sub Sampling'
+                values:
+                    '1 1': 'YCbCr4:4:4 (1 1)'
+                    '1 2': 'YCbCr4:4:0 (1 2)'
+                    '1 4': 'YCbCr4:4:1 (1 4)'
+                    '2 1': 'YCbCr4:2:2 (2 1)'
+                    '2 2': 'YCbCr4:2:0 (2 2)'
+                    '2 4': 'YCbCr4:2:1 (2 4)'
+                    '4 1': 'YCbCr4:1:1 (4 1)'
+                    '4 2': 'YCbCr4:1:0 (4 2)'
+    531:
+        components: 1
+        exifReadData:
+            key: 'THUMBNAIL::YCbCrPositioning'
+        exiftool:
+            -
+                name: YCbCrPositioning
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:YCbCrPositioning'
+                desc: 'Y Cb Cr Positioning'
+                values:
+                    1: Centered
+                    2: Co-sited
+    532:
+        components: 6
+        exifReadData:
+            key: 'THUMBNAIL::ReferenceBlackWhite'
+        exiftool:
+            -
+                name: ReferenceBlackWhite
+                type: rational64u
+                count: 6
+                writable: true
+                DOMNode: 'IFD1:ReferenceBlackWhite'
+                desc: 'Reference Black White'
+    700:
+        __todo: 'add ifd for XMP tags'
+        entryClass: FileEye\MediaProbe\Entry\IfdApplicationNotes
+        exifReadData:
+            key: 'THUMBNAIL::ExtensibleMetadataPlatform'
+        exiftool:
+            -
+                name: ApplicationNotes
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:ApplicationNotes'
+                desc: 'Application Notes'
+    18246:
+        components: 1
+        exiftool:
+            -
+                name: Rating
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:Rating'
+                desc: Rating
+    18249:
+        components: 1
+        exiftool:
+            -
+                name: RatingPercent
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:RatingPercent'
+                desc: 'Rating Percent'
+    33432:
+        entryClass: FileEye\MediaProbe\Entry\IfdCopyright
+        exifReadData:
+            key: 'THUMBNAIL::Copyright'
+        exiftool:
+            -
+                name: Copyright
+                type: string
+                writable: true
+                g2: Author
+                DOMNode: 'IFD1:Copyright'
+                desc: Copyright
+    33723:
+        exifReadData:
+            key: 'THUMBNAIL::IPTC/NAA'
+        exiftool:
+            -
+                name: IPTC-NAA
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:IPTC-NAA'
+                desc: IPTC-NAA
+    34118:
+        exiftool:
+            -
+                name: SEMInfo
+                type: string
+                writable: true
+                DOMNode: 'IFD1:SEMInfo'
+                desc: 'SEM Info'
+    34665:
+        collection: Tiff\IfdExif
+        name: ExifIFD
+    34735:
+        exiftool:
+            -
+                name: GeoTiffDirectory
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:GeoTiffDirectory'
+                desc: 'Geo Tiff Directory'
+    34736:
+        exiftool:
+            -
+                name: GeoTiffDoubleParams
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:GeoTiffDoubleParams'
+                desc: 'Geo Tiff Double Params'
+    34737:
+        exiftool:
+            -
+                name: GeoTiffAsciiParams
+                type: string
+                writable: true
+                DOMNode: 'IFD1:GeoTiffAsciiParams'
+                desc: 'Geo Tiff Ascii Params'
+    34853:
+        collection: Tiff\IfdGps
+        name: GPS
+    37724:
+        exifReadData:
+            key: 'THUMBNAIL::ImageSourceData'
+        exiftool:
+            -
+                name: ImageSourceData
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:ImageSourceData'
+                desc: 'Image Source Data'
+    40091:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: 'THUMBNAIL::Title'
+        exiftool:
+            -
+                name: XPTitle
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:XPTitle'
+                desc: 'XP Title'
+    40092:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: 'THUMBNAIL::Comments'
+        exiftool:
+            -
+                name: XPComment
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:XPComment'
+                desc: 'XP Comment'
+    40093:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: 'THUMBNAIL::Author'
+        exiftool:
+            -
+                name: XPAuthor
+                type: int8u
+                writable: true
+                g2: Author
+                DOMNode: 'IFD1:XPAuthor'
+                desc: 'XP Author'
+    40094:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: 'THUMBNAIL::Keywords'
+        exiftool:
+            -
+                name: XPKeywords
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:XPKeywords'
+                desc: 'XP Keywords'
+    40095:
+        entryClass: FileEye\MediaProbe\Entry\WindowsString
+        exifReadData:
+            key: 'THUMBNAIL::Subject'
+        exiftool:
+            -
+                name: XPSubject
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:XPSubject'
+                desc: 'XP Subject'
+    50341:
+        compiler:
+            exiftool:
+                skipDOMNode: true
+        exiftool:
+            -
+                name: PrintIM
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:PrintIM'
+                desc: 'Print Image Matching'
+    50706:
+        exiftool:
+            -
+                name: DNGVersion
+                type: int8u
+                count: 4
+                writable: true
+                DOMNode: 'IFD1:DNGVersion'
+                desc: 'DNG Version'
+    50707:
+        exiftool:
+            -
+                name: DNGBackwardVersion
+                type: int8u
+                count: 4
+                writable: true
+                DOMNode: 'IFD1:DNGBackwardVersion'
+                desc: 'DNG Backward Version'
+    50708:
+        exiftool:
+            -
+                name: UniqueCameraModel
+                type: string
+                writable: true
+                DOMNode: 'IFD1:UniqueCameraModel'
+                desc: 'Unique Camera Model'
+    50709:
+        exiftool:
+            -
+                name: LocalizedCameraModel
+                type: string
+                writable: true
+                DOMNode: 'IFD1:LocalizedCameraModel'
+                desc: 'Localized Camera Model'
+    50721:
+        exiftool:
+            -
+                name: ColorMatrix1
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ColorMatrix1'
+                desc: 'Color Matrix 1'
+    50722:
+        exiftool:
+            -
+                name: ColorMatrix2
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ColorMatrix2'
+                desc: 'Color Matrix 2'
+    50723:
+        exiftool:
+            -
+                name: CameraCalibration1
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:CameraCalibration1'
+                desc: 'Camera Calibration 1'
+    50724:
+        exiftool:
+            -
+                name: CameraCalibration2
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:CameraCalibration2'
+                desc: 'Camera Calibration 2'
+    50725:
+        exiftool:
+            -
+                name: ReductionMatrix1
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ReductionMatrix1'
+                desc: 'Reduction Matrix 1'
+    50726:
+        exiftool:
+            -
+                name: ReductionMatrix2
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ReductionMatrix2'
+                desc: 'Reduction Matrix 2'
+    50727:
+        exiftool:
+            -
+                name: AnalogBalance
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:AnalogBalance'
+                desc: 'Analog Balance'
+    50728:
+        exiftool:
+            -
+                name: AsShotNeutral
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:AsShotNeutral'
+                desc: 'As Shot Neutral'
+    50729:
+        exiftool:
+            -
+                name: AsShotWhiteXY
+                type: rational64u
+                count: 2
+                writable: true
+                DOMNode: 'IFD1:AsShotWhiteXY'
+                desc: 'As Shot White XY'
+    50730:
+        exiftool:
+            -
+                name: BaselineExposure
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:BaselineExposure'
+                desc: 'Baseline Exposure'
+    50731:
+        exiftool:
+            -
+                name: BaselineNoise
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:BaselineNoise'
+                desc: 'Baseline Noise'
+    50732:
+        exiftool:
+            -
+                name: BaselineSharpness
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:BaselineSharpness'
+                desc: 'Baseline Sharpness'
+    50734:
+        exiftool:
+            -
+                name: LinearResponseLimit
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:LinearResponseLimit'
+                desc: 'Linear Response Limit'
+    50735:
+        exiftool:
+            -
+                name: CameraSerialNumber
+                type: string
+                writable: true
+                g2: Camera
+                DOMNode: 'IFD1:CameraSerialNumber'
+                desc: 'Camera Serial Number'
+    50736:
+        exiftool:
+            -
+                name: DNGLensInfo
+                type: rational64u
+                count: 4
+                writable: true
+                g2: Camera
+                DOMNode: 'IFD1:DNGLensInfo'
+                desc: 'DNG Lens Info'
+    50739:
+        exiftool:
+            -
+                name: ShadowScale
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:ShadowScale'
+                desc: 'Shadow Scale'
+    50740:
+        exiftool:
+            1:
+                name: DNGAdobeData
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:DNGAdobeData'
+                desc: 'DNG Adobe Data'
+            4:
+                name: DNGPrivateData
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:DNGPrivateData'
+                desc: 'DNG Private Data'
+    50741:
+        exiftool:
+            -
+                name: MakerNoteSafety
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:MakerNoteSafety'
+                desc: 'Maker Note Safety'
+                values:
+                    - Unsafe
+                    - Safe
+    50778:
+        exiftool:
+            -
+                name: CalibrationIlluminant1
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:CalibrationIlluminant1'
+                desc: 'Calibration Illuminant 1'
+                values:
+                    0: Unknown
+                    1: Daylight
+                    2: Fluorescent
+                    3: 'Tungsten (Incandescent)'
+                    4: Flash
+                    9: 'Fine Weather'
+                    10: Cloudy
+                    11: Shade
+                    12: 'Daylight Fluorescent'
+                    13: 'Day White Fluorescent'
+                    14: 'Cool White Fluorescent'
+                    15: 'White Fluorescent'
+                    16: 'Warm White Fluorescent'
+                    17: 'Standard Light A'
+                    18: 'Standard Light B'
+                    19: 'Standard Light C'
+                    20: D55
+                    21: D65
+                    22: D75
+                    23: D50
+                    24: 'ISO Studio Tungsten'
+                    255: Other
+    50779:
+        exiftool:
+            -
+                name: CalibrationIlluminant2
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:CalibrationIlluminant2'
+                desc: 'Calibration Illuminant 2'
+                values:
+                    0: Unknown
+                    1: Daylight
+                    2: Fluorescent
+                    3: 'Tungsten (Incandescent)'
+                    4: Flash
+                    9: 'Fine Weather'
+                    10: Cloudy
+                    11: Shade
+                    12: 'Daylight Fluorescent'
+                    13: 'Day White Fluorescent'
+                    14: 'Cool White Fluorescent'
+                    15: 'White Fluorescent'
+                    16: 'Warm White Fluorescent'
+                    17: 'Standard Light A'
+                    18: 'Standard Light B'
+                    19: 'Standard Light C'
+                    20: D55
+                    21: D65
+                    22: D75
+                    23: D50
+                    24: 'ISO Studio Tungsten'
+                    255: Other
+    50781:
+        exiftool:
+            -
+                name: RawDataUniqueID
+                type: int8u
+                count: 16
+                writable: true
+                DOMNode: 'IFD1:RawDataUniqueID'
+                desc: 'Raw Data Unique ID'
+    50827:
+        exiftool:
+            -
+                name: OriginalRawFileName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:OriginalRawFileName'
+                desc: 'Original Raw File Name'
+    50828:
+        exiftool:
+            -
+                name: OriginalRawFileData
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:OriginalRawFileData'
+                desc: 'Original Raw File Data'
+    50831:
+        exiftool:
+            -
+                name: AsShotICCProfile
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:AsShotICCProfile'
+                desc: 'As Shot ICC Profile'
+    50832:
+        exiftool:
+            -
+                name: AsShotPreProfileMatrix
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:AsShotPreProfileMatrix'
+                desc: 'As Shot Pre Profile Matrix'
+    50833:
+        exiftool:
+            -
+                name: CurrentICCProfile
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:CurrentICCProfile'
+                desc: 'Current ICC Profile'
+    50834:
+        exiftool:
+            -
+                name: CurrentPreProfileMatrix
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:CurrentPreProfileMatrix'
+                desc: 'Current Pre Profile Matrix'
+    50879:
+        exiftool:
+            -
+                name: ColorimetricReference
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:ColorimetricReference'
+                desc: 'Colorimetric Reference'
+    50885:
+        exiftool:
+            -
+                name: SRawType
+                type: '?'
+                writable: false
+                DOMNode: 'IFD1:SRawType'
+                desc: 'SRaw Type'
+    50898:
+        exiftool:
+            -
+                name: PanasonicTitle
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:PanasonicTitle'
+                desc: 'Panasonic Title'
+    50899:
+        exiftool:
+            -
+                name: PanasonicTitle2
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:PanasonicTitle2'
+                desc: 'Panasonic Title 2'
+    50931:
+        exiftool:
+            -
+                name: CameraCalibrationSig
+                type: string
+                writable: true
+                DOMNode: 'IFD1:CameraCalibrationSig'
+                desc: 'Camera Calibration Sig'
+    50932:
+        exiftool:
+            -
+                name: ProfileCalibrationSig
+                type: string
+                writable: true
+                DOMNode: 'IFD1:ProfileCalibrationSig'
+                desc: 'Profile Calibration Sig'
+    50934:
+        exiftool:
+            -
+                name: AsShotProfileName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:AsShotProfileName'
+                desc: 'As Shot Profile Name'
+    50936:
+        exiftool:
+            -
+                name: ProfileName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:ProfileName'
+                desc: 'Profile Name'
+    50937:
+        exiftool:
+            -
+                name: ProfileHueSatMapDims
+                type: int32u
+                count: 3
+                writable: true
+                DOMNode: 'IFD1:ProfileHueSatMapDims'
+                desc: 'Profile Hue Sat Map Dims'
+    50938:
+        exiftool:
+            -
+                name: ProfileHueSatMapData1
+                type: float
+                writable: true
+                DOMNode: 'IFD1:ProfileHueSatMapData1'
+                desc: 'Profile Hue Sat Map Data 1'
+    50939:
+        exiftool:
+            -
+                name: ProfileHueSatMapData2
+                type: float
+                writable: true
+                DOMNode: 'IFD1:ProfileHueSatMapData2'
+                desc: 'Profile Hue Sat Map Data 2'
+    50940:
+        exiftool:
+            -
+                name: ProfileToneCurve
+                type: float
+                writable: true
+                DOMNode: 'IFD1:ProfileToneCurve'
+                desc: 'Profile Tone Curve'
+    50941:
+        exiftool:
+            -
+                name: ProfileEmbedPolicy
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:ProfileEmbedPolicy'
+                desc: 'Profile Embed Policy'
+                values:
+                    - 'Allow Copying'
+                    - 'Embed if Used'
+                    - 'Never Embed'
+                    - 'No Restrictions'
+    50942:
+        exiftool:
+            -
+                name: ProfileCopyright
+                type: string
+                writable: true
+                DOMNode: 'IFD1:ProfileCopyright'
+                desc: 'Profile Copyright'
+    50964:
+        exiftool:
+            -
+                name: ForwardMatrix1
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ForwardMatrix1'
+                desc: 'Forward Matrix 1'
+    50965:
+        exiftool:
+            -
+                name: ForwardMatrix2
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ForwardMatrix2'
+                desc: 'Forward Matrix 2'
+    50966:
+        exiftool:
+            -
+                name: PreviewApplicationName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:PreviewApplicationName'
+                desc: 'Preview Application Name'
+    50967:
+        exiftool:
+            -
+                name: PreviewApplicationVersion
+                type: string
+                writable: true
+                DOMNode: 'IFD1:PreviewApplicationVersion'
+                desc: 'Preview Application Version'
+    50968:
+        exiftool:
+            -
+                name: PreviewSettingsName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:PreviewSettingsName'
+                desc: 'Preview Settings Name'
+    50969:
+        exiftool:
+            -
+                name: PreviewSettingsDigest
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:PreviewSettingsDigest'
+                desc: 'Preview Settings Digest'
+    50970:
+        exiftool:
+            -
+                name: PreviewColorSpace
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:PreviewColorSpace'
+                desc: 'Preview Color Space'
+                values:
+                    - Unknown
+                    - 'Gray Gamma 2.2'
+                    - sRGB
+                    - 'Adobe RGB'
+                    - 'ProPhoto RGB'
+    50971:
+        exiftool:
+            -
+                name: PreviewDateTime
+                type: string
+                writable: true
+                g2: Time
+                DOMNode: 'IFD1:PreviewDateTime'
+                desc: 'Preview Date Time'
+    50972:
+        exiftool:
+            -
+                name: RawImageDigest
+                type: int8u
+                count: 16
+                writable: true
+                DOMNode: 'IFD1:RawImageDigest'
+                desc: 'Raw Image Digest'
+    50973:
+        exiftool:
+            -
+                name: OriginalRawFileDigest
+                type: int8u
+                count: 16
+                writable: true
+                DOMNode: 'IFD1:OriginalRawFileDigest'
+                desc: 'Original Raw File Digest'
+    50981:
+        exiftool:
+            -
+                name: ProfileLookTableDims
+                type: int32u
+                count: 3
+                writable: true
+                DOMNode: 'IFD1:ProfileLookTableDims'
+                desc: 'Profile Look Table Dims'
+    50982:
+        exiftool:
+            -
+                name: ProfileLookTableData
+                type: float
+                writable: true
+                DOMNode: 'IFD1:ProfileLookTableData'
+                desc: 'Profile Look Table Data'
+    51043:
+        exiftool:
+            -
+                name: TimeCodes
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:TimeCodes'
+                desc: 'Time Codes'
+    51044:
+        exiftool:
+            -
+                name: FrameRate
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:FrameRate'
+                desc: 'Frame Rate'
+    51058:
+        exiftool:
+            -
+                name: TStop
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:TStop'
+                desc: 'T Stop'
+    51081:
+        exiftool:
+            -
+                name: ReelName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:ReelName'
+                desc: 'Reel Name'
+    51089:
+        exiftool:
+            -
+                name: OriginalDefaultFinalSize
+                type: int32u
+                count: 2
+                writable: true
+                DOMNode: 'IFD1:OriginalDefaultFinalSize'
+                desc: 'Original Default Final Size'
+    51090:
+        exiftool:
+            -
+                name: OriginalBestQualitySize
+                type: int32u
+                count: 2
+                writable: true
+                DOMNode: 'IFD1:OriginalBestQualitySize'
+                desc: 'Original Best Quality Size'
+    51091:
+        exiftool:
+            -
+                name: OriginalDefaultCropSize
+                type: rational64u
+                count: 2
+                writable: true
+                DOMNode: 'IFD1:OriginalDefaultCropSize'
+                desc: 'Original Default Crop Size'
+    51105:
+        exiftool:
+            -
+                name: CameraLabel
+                type: string
+                writable: true
+                DOMNode: 'IFD1:CameraLabel'
+                desc: 'Camera Label'
+    51107:
+        exiftool:
+            -
+                name: ProfileHueSatMapEncoding
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:ProfileHueSatMapEncoding'
+                desc: 'Profile Hue Sat Map Encoding'
+                values:
+                    - Linear
+                    - sRGB
+    51108:
+        exiftool:
+            -
+                name: ProfileLookTableEncoding
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:ProfileLookTableEncoding'
+                desc: 'Profile Look Table Encoding'
+                values:
+                    - Linear
+                    - sRGB
+    51109:
+        exiftool:
+            -
+                name: BaselineExposureOffset
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:BaselineExposureOffset'
+                desc: 'Baseline Exposure Offset'
+    51110:
+        exiftool:
+            -
+                name: DefaultBlackRender
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:DefaultBlackRender'
+                desc: 'Default Black Render'
+                values:
+                    - Auto
+                    - None
+    51111:
+        exiftool:
+            -
+                name: NewRawImageDigest
+                type: int8u
+                count: 16
+                writable: true
+                DOMNode: 'IFD1:NewRawImageDigest'
+                desc: 'New Raw Image Digest'
+    51112:
+        exiftool:
+            -
+                name: RawToPreviewGain
+                type: double
+                writable: true
+                DOMNode: 'IFD1:RawToPreviewGain'
+                desc: 'Raw To Preview Gain'

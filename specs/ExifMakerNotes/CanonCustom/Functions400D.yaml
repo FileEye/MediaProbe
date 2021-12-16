@@ -1,0 +1,140 @@
+collection: ExifMakerNotes\CanonCustom\Functions400D
+name: CanonCustomFunctions400D
+title: 'CanonCustom Functions400D'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: CanonCustom
+        xpath: '//table[@name=''CanonCustom::Functions400D'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: SetButtonCrossKeysFunc
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:SetButtonCrossKeysFunc'
+                desc: 'Set Button Cross Keys Func'
+                values:
+                    - 'Set: Picture Style'
+                    - 'Set: Quality'
+                    - 'Set: Flash Exposure Comp'
+                    - 'Set: Playback'
+                    - 'Cross keys: AF point select'
+    -
+        exiftool:
+            -
+                name: LongExposureNoiseReduction
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:LongExposureNoiseReduction'
+                desc: 'Long Exposure Noise Reduction'
+                values:
+                    - 'Off'
+                    - Auto
+                    - 'On'
+    -
+        exiftool:
+            -
+                name: FlashSyncSpeedAv
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:FlashSyncSpeedAv'
+                desc: 'Flash Sync Speed Av'
+                values:
+                    - Auto
+                    - '1/200 Fixed'
+    -
+        exiftool:
+            -
+                name: Shutter-AELock
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:Shutter-AELock'
+                desc: 'Shutter-AE Lock'
+                values:
+                    - 'AF/AE lock'
+                    - 'AE lock/AF'
+                    - 'AF/AF lock, No AE lock'
+                    - 'AE/AF, No AE lock'
+    -
+        exiftool:
+            -
+                name: AFAssistBeam
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:AFAssistBeam'
+                desc: 'AF Assist Beam'
+                values:
+                    - Emits
+                    - 'Does not emit'
+                    - 'Only ext. flash emits'
+    -
+        exiftool:
+            -
+                name: ExposureLevelIncrements
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:ExposureLevelIncrements'
+                desc: 'Exposure Level Increments'
+                values:
+                    - '1/3 Stop'
+                    - '1/2 Stop'
+    -
+        exiftool:
+            -
+                name: MirrorLockup
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:MirrorLockup'
+                desc: 'Mirror Lockup'
+                values:
+                    - Disable
+                    - Enable
+    -
+        exiftool:
+            -
+                name: ETTLII
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:ETTLII'
+                desc: 'E-TTL II'
+                values:
+                    - Evaluative
+                    - Average
+    -
+        exiftool:
+            -
+                name: ShutterCurtainSync
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:ShutterCurtainSync'
+                desc: 'Shutter Curtain Sync'
+                values:
+                    - '1st-curtain sync'
+                    - '2nd-curtain sync'
+    -
+        exiftool:
+            -
+                name: MagnifiedView
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:MagnifiedView'
+                desc: 'Magnified View'
+                values:
+                    - 'Image playback only'
+                    - 'Image review and playback'
+    -
+        exiftool:
+            -
+                name: LCDDisplayAtPowerOn
+                type: int8u
+                writable: true
+                DOMNode: 'CanonCustom:LCDDisplayAtPowerOn'
+                desc: 'LCD Display At Power On'
+                values:
+                    - Display
+                    - 'Retain power off status'

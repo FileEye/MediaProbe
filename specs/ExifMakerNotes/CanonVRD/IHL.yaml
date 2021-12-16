@@ -1,0 +1,54 @@
+collection: ExifMakerNotes\CanonVRD\IHL
+name: CanonVRDIHL
+title: 'CanonVRD IHL'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: CanonVRD
+        xpath: '//table[@name=''CanonVRD::IHL'']/tag'
+items:
+    1:
+        exiftool:
+            1:
+                name: IHL_EXIF
+                type: '?'
+                writable: false
+                DOMNode: 'CanonVRD:IHL_EXIF'
+                desc: 'IHL EXIF'
+    3:
+        exiftool:
+            -
+                name: ThumbnailImage
+                type: '?'
+                writable: false
+                g2: Preview
+                DOMNode: 'CanonVRD:ThumbnailImage'
+                desc: 'Thumbnail Image'
+    4:
+        exiftool:
+            -
+                name: PreviewImage
+                type: '?'
+                writable: false
+                g2: Preview
+                DOMNode: 'CanonVRD:PreviewImage'
+                desc: 'Preview Image'
+    5:
+        exiftool:
+            -
+                name: RawCodecVersion
+                type: '?'
+                writable: false
+                DOMNode: 'CanonVRD:RawCodecVersion'
+                desc: 'Raw Codec Version'
+    6:
+        exiftool:
+            -
+                name: CRCDevelParams
+                type: '?'
+                writable: false
+                DOMNode: 'CanonVRD:CRCDevelParams'
+                desc: 'CRC Devel Params'

@@ -19,7 +19,7 @@ class IfdTest extends MediaProbeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd(new ItemDefinition(Collection::get('Ifd\Ifd0'), ItemFormat::LONG), $tiff_mock);
+        $ifd = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), ItemFormat::LONG), $tiff_mock);
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 

@@ -1,0 +1,77 @@
+collection: ExifMakerNotes\Canon\VignettingCorr
+name: CanonVignettingCorr
+title: 'Canon VignettingCorr'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::VignettingCorr'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: VignettingCorrVersion
+                type: int8u
+                writable: true
+                DOMNode: 'Canon:VignettingCorrVersion'
+                desc: 'Vignetting Corr Version'
+    2:
+        exiftool:
+            -
+                name: PeripheralLighting
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:PeripheralLighting'
+                desc: 'Peripheral Lighting'
+                values:
+                    - 'Off'
+                    - 'On'
+    4:
+        exiftool:
+            -
+                name: ChromaticAberrationCorr
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ChromaticAberrationCorr'
+                desc: 'Chromatic Aberration Corr'
+                values:
+                    - 'Off'
+                    - 'On'
+    5:
+        exiftool:
+            -
+                name: ChromaticAberrationCorr
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ChromaticAberrationCorr'
+                desc: 'Chromatic Aberration Corr'
+                values:
+                    - 'Off'
+                    - 'On'
+    6:
+        exiftool:
+            -
+                name: PeripheralLightingValue
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:PeripheralLightingValue'
+                desc: 'Peripheral Lighting Value'
+    11:
+        exiftool:
+            -
+                name: OriginalImageWidth
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:OriginalImageWidth'
+                desc: 'Original Image Width'
+    12:
+        exiftool:
+            -
+                name: OriginalImageHeight
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:OriginalImageHeight'
+                desc: 'Original Image Height'

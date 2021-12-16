@@ -89,7 +89,7 @@ class ExifToolResourceUpdateCommand extends Command
             $directory = 'MakerNotes' . DIRECTORY_SEPARATOR . $a;
             $filesystem->mkdir($this->specDir . DIRECTORY_SEPARATOR . $directory);
             $collection = $directory . DIRECTORY_SEPARATOR . $b;
-            $c = "MakerNotes\\$a\\$b";
+            $c = "ExifMakerNotes\\$a\\$b";
             $x_path = "//table[@name='" . $name . "']/tag";
             $this->updateWithExifTool($input, $output, $collection . '.yaml', $x_path, $c, $table);
             $output->writeln("Processed $collection.");
@@ -102,7 +102,7 @@ class ExifToolResourceUpdateCommand extends Command
             $directory = 'MakerNotes' . DIRECTORY_SEPARATOR . $a;
             $filesystem->mkdir($this->specDir . DIRECTORY_SEPARATOR . $directory);
             $collection = $directory . DIRECTORY_SEPARATOR . $b;
-            $c = "MakerNotes\\$a\\$b";
+            $c = "ExifMakerNotes\\$a\\$b";
             $x_path = "//table[@name='" . $name . "']/tag";
             $this->updateWithExifTool($input, $output, $collection . '.yaml', $x_path, $c, $table);
             $output->writeln("Processed $collection.");
@@ -115,7 +115,7 @@ class ExifToolResourceUpdateCommand extends Command
             $directory = 'MakerNotes' . DIRECTORY_SEPARATOR . $a;
             $filesystem->mkdir($this->specDir . DIRECTORY_SEPARATOR . $directory);
             $collection = $directory . DIRECTORY_SEPARATOR . $b;
-            $c = "MakerNotes\\$a\\$b";
+            $c = "ExifMakerNotes\\$a\\$b";
             $x_path = "//table[@name='" . $name . "']/tag";
             $this->updateWithExifTool($input, $output, $collection . '.yaml', $x_path, $c, $table);
             $output->writeln("Processed $collection.");

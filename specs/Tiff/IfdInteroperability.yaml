@@ -1,0 +1,78 @@
+collection: Tiff\IfdInteroperability
+name: InteropIFD
+title: 'Interoperability IFD'
+class: FileEye\MediaProbe\Block\Exif\Ifd
+DOMNode: ifd
+alias:
+    - Interop
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        xpath: '//table[@name=''Exif::Main'']/tag[@g1=''InteropIFD'']'
+items:
+    1:
+        components: 4
+        exifReadData:
+            key: InterOperabilityIndex
+        exiftool:
+            -
+                name: InteropIndex
+                type: string
+                writable: true
+                g1: InteropIFD
+                DOMNode: 'InteropIFD:InteropIndex'
+                desc: 'Interoperability Index'
+                values:
+                    R03: 'R03 - DCF option file (Adobe RGB)'
+                    R98: 'R98 - DCF basic file (sRGB)'
+                    THM: 'THM - DCF thumbnail file'
+    2:
+        components: 4
+        entryClass: FileEye\MediaProbe\Entry\Version
+        exifReadData:
+            key: InterOperabilityVersion
+        exiftool:
+            -
+                name: InteropVersion
+                type: undef
+                writable: true
+                g1: InteropIFD
+                DOMNode: 'InteropIFD:InteropVersion'
+                desc: 'Interoperability Version'
+    4096:
+        exifReadData:
+            key: RelatedFileFormat
+        exiftool:
+            -
+                name: RelatedImageFileFormat
+                type: string
+                writable: true
+                g1: InteropIFD
+                DOMNode: 'InteropIFD:RelatedImageFileFormat'
+                desc: 'Related Image File Format'
+    4097:
+        components: 1
+        exifReadData:
+            key: RelatedImageWidth
+        exiftool:
+            -
+                name: RelatedImageWidth
+                type: int16u
+                writable: true
+                g1: InteropIFD
+                DOMNode: 'InteropIFD:RelatedImageWidth'
+                desc: 'Related Image Width'
+    4098:
+        alias:
+            - RelatedImageLength
+        components: 1
+        exifReadData:
+            key: RelatedImageHeight
+        exiftool:
+            -
+                name: RelatedImageHeight
+                type: int16u
+                writable: true
+                g1: InteropIFD
+                DOMNode: 'InteropIFD:RelatedImageHeight'
+                desc: 'Related Image Height'

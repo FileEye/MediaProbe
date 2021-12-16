@@ -1,0 +1,68 @@
+collection: ExifMakerNotes\CanonRaw\ImageInfo
+name: CanonRawImageInfo
+title: 'CanonRaw ImageInfo'
+class: tbd
+DOMNode: tbd
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: CanonRaw
+        xpath: '//table[@name=''CanonRaw::ImageInfo'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: ImageWidth
+                type: int32u
+                writable: false
+                DOMNode: 'CanonRaw:ImageWidth'
+                desc: 'Image Width'
+    -
+        exiftool:
+            -
+                name: ImageHeight
+                type: int32u
+                writable: false
+                DOMNode: 'CanonRaw:ImageHeight'
+                desc: 'Image Height'
+    -
+        exiftool:
+            -
+                name: PixelAspectRatio
+                type: float
+                writable: false
+                DOMNode: 'CanonRaw:PixelAspectRatio'
+                desc: 'Pixel Aspect Ratio'
+    -
+        exiftool:
+            -
+                name: Rotation
+                type: int32s
+                writable: true
+                DOMNode: 'CanonRaw:Rotation'
+                desc: Rotation
+    -
+        exiftool:
+            -
+                name: ComponentBitDepth
+                type: int32u
+                writable: false
+                DOMNode: 'CanonRaw:ComponentBitDepth'
+                desc: 'Component Bit Depth'
+    -
+        exiftool:
+            -
+                name: ColorBitDepth
+                type: int32u
+                writable: false
+                DOMNode: 'CanonRaw:ColorBitDepth'
+                desc: 'Color Bit Depth'
+    -
+        exiftool:
+            -
+                name: ColorBW
+                type: int32u
+                writable: false
+                DOMNode: 'CanonRaw:ColorBW'
+                desc: 'Color BW'

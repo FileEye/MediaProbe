@@ -1,0 +1,24 @@
+collection: ExifMakerNotes\Canon\ContrastInfo
+name: CanonContrastInfo
+title: 'Canon ContrastInfo'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::ContrastInfo'']/tag'
+items:
+    4:
+        exiftool:
+            -
+                name: IntelligentContrast
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:IntelligentContrast'
+                desc: 'Intelligent Contrast'
+                values:
+                    0: 'Off'
+                    8: 'On'
+                    65535: n/a

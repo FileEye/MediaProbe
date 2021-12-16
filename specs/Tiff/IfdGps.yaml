@@ -1,0 +1,406 @@
+collection: Tiff\IfdGps
+name: GPS
+title: 'GPS IFD'
+class: FileEye\MediaProbe\Block\Exif\Ifd
+DOMNode: ifd
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: GPS
+        xpath: '//table[@name=''GPS::Main'']/tag'
+items:
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSVersionId
+        exifReadData:
+            key: GPSVersion
+        exiftool:
+            -
+                name: GPSVersionID
+                type: int8u
+                count: 4
+                writable: true
+                DOMNode: 'GPS:GPSVersionID'
+                desc: 'GPS Version ID'
+    -
+        exifReadData:
+            key: GPSLatitudeRef
+        exiftool:
+            -
+                name: GPSLatitudeRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSLatitudeRef'
+                desc: 'GPS Latitude Ref'
+                values:
+                    'N': North
+                    S: South
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSDegrees
+        exifReadData:
+            key: GPSLatitude
+        exiftool:
+            -
+                name: GPSLatitude
+                type: rational64u
+                count: 3
+                writable: true
+                DOMNode: 'GPS:GPSLatitude'
+                desc: 'GPS Latitude'
+    -
+        exifReadData:
+            key: GPSLongitudeRef
+        exiftool:
+            -
+                name: GPSLongitudeRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSLongitudeRef'
+                desc: 'GPS Longitude Ref'
+                values:
+                    E: East
+                    W: West
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSDegrees
+        exifReadData:
+            key: GPSLongitude
+        exiftool:
+            -
+                name: GPSLongitude
+                type: rational64u
+                count: 3
+                writable: true
+                DOMNode: 'GPS:GPSLongitude'
+                desc: 'GPS Longitude'
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSAltitudeRef
+        components: 1
+        exifReadData:
+            key: GPSAltitudeRef
+        exiftool:
+            -
+                name: GPSAltitudeRef
+                type: int8u
+                writable: true
+                DOMNode: 'GPS:GPSAltitudeRef'
+                desc: 'GPS Altitude Ref'
+                values:
+                    - 'Above Sea Level'
+                    - 'Below Sea Level'
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSAltitude
+        components: 1
+        exifReadData:
+            key: GPSAltitude
+        exiftool:
+            -
+                name: GPSAltitude
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSAltitude'
+                desc: 'GPS Altitude'
+    -
+        entryClass: FileEye\MediaProbe\Entry\GPSTimeStamp
+        exifReadData:
+            key: GPSTimeStamp
+        exiftool:
+            -
+                name: GPSTimeStamp
+                type: rational64u
+                count: 3
+                writable: true
+                g2: Time
+                DOMNode: 'GPS:GPSTimeStamp'
+                desc: 'GPS Time Stamp'
+    -
+        exifReadData:
+            key: GPSSatellites
+        exiftool:
+            -
+                name: GPSSatellites
+                type: string
+                writable: true
+                DOMNode: 'GPS:GPSSatellites'
+                desc: 'GPS Satellites'
+    -
+        exifReadData:
+            key: GPSStatus
+        exiftool:
+            -
+                name: GPSStatus
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSStatus'
+                desc: 'GPS Status'
+                values:
+                    A: 'Measurement Active'
+                    V: 'Measurement Void'
+    -
+        exifReadData:
+            key: GPSMeasureMode
+        exiftool:
+            -
+                name: GPSMeasureMode
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSMeasureMode'
+                desc: 'GPS Measure Mode'
+                values:
+                    2: '2-Dimensional Measurement'
+                    3: '3-Dimensional Measurement'
+    -
+        components: 1
+        exifReadData:
+            key: GPSDOP
+        exiftool:
+            -
+                name: GPSDOP
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSDOP'
+                desc: 'GPS Dilution Of Precision'
+    -
+        exifReadData:
+            key: GPSSpeedRef
+        exiftool:
+            -
+                name: GPSSpeedRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSSpeedRef'
+                desc: 'GPS Speed Ref'
+                values:
+                    K: km/h
+                    M: mph
+                    'N': knots
+    -
+        exifReadData:
+            key: GPSSpeed
+        exiftool:
+            -
+                name: GPSSpeed
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSSpeed'
+                desc: 'GPS Speed'
+    -
+        exifReadData:
+            key: GPSTrackRef
+        exiftool:
+            -
+                name: GPSTrackRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSTrackRef'
+                desc: 'GPS Track Ref'
+                values:
+                    M: 'Magnetic North'
+                    T: 'True North'
+    -
+        components: 1
+        exifReadData:
+            key: GPSTrack
+        exiftool:
+            -
+                name: GPSTrack
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSTrack'
+                desc: 'GPS Track'
+    -
+        exifReadData:
+            key: GPSImgDirectionRef
+        exiftool:
+            -
+                name: GPSImgDirectionRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSImgDirectionRef'
+                desc: 'GPS Img Direction Ref'
+                values:
+                    M: 'Magnetic North'
+                    T: 'True North'
+    -
+        components: 1
+        exifReadData:
+            key: GPSImgDirection
+        exiftool:
+            -
+                name: GPSImgDirection
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSImgDirection'
+                desc: 'GPS Img Direction'
+    -
+        exifReadData:
+            key: GPSMapDatum
+        exiftool:
+            -
+                name: GPSMapDatum
+                type: string
+                writable: true
+                DOMNode: 'GPS:GPSMapDatum'
+                desc: 'GPS Map Datum'
+    -
+        exifReadData:
+            key: GPSDestLatitudeRef
+        exiftool:
+            -
+                name: GPSDestLatitudeRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSDestLatitudeRef'
+                desc: 'GPS Dest Latitude Ref'
+                values:
+                    'N': North
+                    S: South
+    -
+        exifReadData:
+            key: GPSDestLatitude
+        exiftool:
+            -
+                name: GPSDestLatitude
+                type: rational64u
+                count: 3
+                writable: true
+                DOMNode: 'GPS:GPSDestLatitude'
+                desc: 'GPS Dest Latitude'
+    -
+        exifReadData:
+            key: GPSDestLongitudeRef
+        exiftool:
+            -
+                name: GPSDestLongitudeRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSDestLongitudeRef'
+                desc: 'GPS Dest Longitude Ref'
+                values:
+                    E: East
+                    W: West
+    -
+        exifReadData:
+            key: GPSDestLongitude
+        exiftool:
+            -
+                name: GPSDestLongitude
+                type: rational64u
+                count: 3
+                writable: true
+                DOMNode: 'GPS:GPSDestLongitude'
+                desc: 'GPS Dest Longitude'
+    -
+        exifReadData:
+            key: GPSDestBearingRef
+        exiftool:
+            -
+                name: GPSDestBearingRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSDestBearingRef'
+                desc: 'GPS Dest Bearing Ref'
+                values:
+                    M: 'Magnetic North'
+                    T: 'True North'
+    -
+        components: 1
+        exifReadData:
+            key: GPSDestBearing
+        exiftool:
+            -
+                name: GPSDestBearing
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSDestBearing'
+                desc: 'GPS Dest Bearing'
+    -
+        exifReadData:
+            key: GPSDestDistanceRef
+        exiftool:
+            -
+                name: GPSDestDistanceRef
+                type: string
+                count: 2
+                writable: true
+                DOMNode: 'GPS:GPSDestDistanceRef'
+                desc: 'GPS Dest Distance Ref'
+                values:
+                    K: Kilometers
+                    M: Miles
+                    'N': 'Nautical Miles'
+    -
+        components: 1
+        exifReadData:
+            key: GPSDestDistance
+        exiftool:
+            -
+                name: GPSDestDistance
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSDestDistance'
+                desc: 'GPS Dest Distance'
+    -
+        exifReadData:
+            key: GPSProcessingMode
+        exiftool:
+            -
+                name: GPSProcessingMethod
+                type: undef
+                writable: true
+                DOMNode: 'GPS:GPSProcessingMethod'
+                desc: 'GPS Processing Method'
+    -
+        exifReadData:
+            key: GPSAreaInformation
+        exiftool:
+            -
+                name: GPSAreaInformation
+                type: undef
+                writable: true
+                DOMNode: 'GPS:GPSAreaInformation'
+                desc: 'GPS Area Information'
+    -
+        exifReadData:
+            key: GPSDateStamp
+        exiftool:
+            -
+                name: GPSDateStamp
+                type: string
+                count: 11
+                writable: true
+                g2: Time
+                DOMNode: 'GPS:GPSDateStamp'
+                desc: 'GPS Date Stamp'
+    -
+        components: 1
+        exifReadData:
+            key: GPSDifferential
+        exiftool:
+            -
+                name: GPSDifferential
+                type: int16u
+                writable: true
+                DOMNode: 'GPS:GPSDifferential'
+                desc: 'GPS Differential'
+                values:
+                    - 'No Correction'
+                    - 'Differential Corrected'
+    -
+        text:
+            default: '{value} m'
+        exiftool:
+            -
+                name: GPSHPositioningError
+                type: rational64u
+                writable: true
+                DOMNode: 'GPS:GPSHPositioningError'
+                desc: 'GPS Horizontal Positioning Error'
