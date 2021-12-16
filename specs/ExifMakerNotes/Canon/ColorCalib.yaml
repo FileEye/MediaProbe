@@ -1,0 +1,147 @@
+collection: ExifMakerNotes\Canon\ColorCalib
+name: CanonColorCalib
+title: 'Canon ColorCalib'
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\ColorCalibMap
+DOMNode: index
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::ColorCalib'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: CameraColorCalibration01
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration01'
+                desc: 'Camera Color Calibration 01'
+    4:
+        exiftool:
+            -
+                name: CameraColorCalibration02
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration02'
+                desc: 'Camera Color Calibration 02'
+    8:
+        exiftool:
+            -
+                name: CameraColorCalibration03
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration03'
+                desc: 'Camera Color Calibration 03'
+    12:
+        exiftool:
+            -
+                name: CameraColorCalibration04
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration04'
+                desc: 'Camera Color Calibration 04'
+    16:
+        exiftool:
+            -
+                name: CameraColorCalibration05
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration05'
+                desc: 'Camera Color Calibration 05'
+    20:
+        exiftool:
+            -
+                name: CameraColorCalibration06
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration06'
+                desc: 'Camera Color Calibration 06'
+    24:
+        exiftool:
+            -
+                name: CameraColorCalibration07
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration07'
+                desc: 'Camera Color Calibration 07'
+    28:
+        exiftool:
+            -
+                name: CameraColorCalibration08
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration08'
+                desc: 'Camera Color Calibration 08'
+    32:
+        exiftool:
+            -
+                name: CameraColorCalibration09
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration09'
+                desc: 'Camera Color Calibration 09'
+    36:
+        exiftool:
+            -
+                name: CameraColorCalibration10
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration10'
+                desc: 'Camera Color Calibration 10'
+    40:
+        exiftool:
+            -
+                name: CameraColorCalibration11
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration11'
+                desc: 'Camera Color Calibration 11'
+    44:
+        exiftool:
+            -
+                name: CameraColorCalibration12
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration12'
+                desc: 'Camera Color Calibration 12'
+    48:
+        exiftool:
+            -
+                name: CameraColorCalibration13
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration13'
+                desc: 'Camera Color Calibration 13'
+    52:
+        exiftool:
+            -
+                name: CameraColorCalibration14
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration14'
+                desc: 'Camera Color Calibration 14'
+    56:
+        exiftool:
+            -
+                name: CameraColorCalibration15
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:CameraColorCalibration15'
+                desc: 'Camera Color Calibration 15'

@@ -1,0 +1,130 @@
+<?php
+/**
+ * This file is generated automatically by executing the 'fileeye-mediaprobe compile' command.
+ *
+ * DO NOT CHANGE MANUALLY.
+ */
+// phpcs:disable
+
+namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Apple;
+
+use FileEye\MediaProbe\Collection;
+
+class RunTime extends Collection {
+
+  protected static $map = array (
+  'name' => 'AppleRuntime',
+  'title' => 'Apple Runtime',
+  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\RunTime',
+  'DOMNode' => 'plist',
+  'defaultItemCollection' => 'Tag',
+  'itemsByName' =>
+  array (
+    'RunTimeEpoch' =>
+    array (
+      0 => 'epoch',
+    ),
+    'RunTimeFlags' =>
+    array (
+      0 => 'flags',
+    ),
+    'RunTimeScale' =>
+    array (
+      0 => 'timescale',
+    ),
+    'RunTimeValue' =>
+    array (
+      0 => 'value',
+    ),
+  ),
+  'itemsByExiftoolDOMNode' =>
+  array (
+    'Apple:RunTimeEpoch' =>
+    array (
+      0 => 'epoch',
+    ),
+    'Apple:RunTimeFlags' =>
+    array (
+      0 => 'flags',
+    ),
+    'Apple:RunTimeScale' =>
+    array (
+      0 => 'timescale',
+    ),
+    'Apple:RunTimeValue' =>
+    array (
+      0 => 'value',
+    ),
+  ),
+  'items' =>
+  array (
+    'epoch' =>
+    array (
+      0 =>
+      array (
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'collection' => 'Tag',
+        'name' => 'RunTimeEpoch',
+        'title' => 'Run Time Epoch',
+        'exiftoolDOMNode' => 'Apple:RunTimeEpoch',
+      ),
+    ),
+    'flags' =>
+    array (
+      0 =>
+      array (
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'collection' => 'Tag',
+        'name' => 'RunTimeFlags',
+        'title' => 'Run Time Flags',
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            1 => 'Valid',
+            2 => 'Has been rounded',
+            4 => 'Positive infinity',
+            8 => 'Negative infinity',
+            16 => 'Indefinite',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Apple:RunTimeFlags',
+      ),
+    ),
+    'timescale' =>
+    array (
+      0 =>
+      array (
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'collection' => 'Tag',
+        'name' => 'RunTimeScale',
+        'title' => 'Run Time Scale',
+        'exiftoolDOMNode' => 'Apple:RunTimeScale',
+      ),
+    ),
+    'value' =>
+    array (
+      0 =>
+      array (
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'collection' => 'Tag',
+        'name' => 'RunTimeValue',
+        'title' => 'Run Time Value',
+        'exiftoolDOMNode' => 'Apple:RunTimeValue',
+      ),
+    ),
+  ),
+);
+}

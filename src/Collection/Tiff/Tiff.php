@@ -1,0 +1,37 @@
+<?php
+/**
+ * This file is generated automatically by executing the 'fileeye-mediaprobe compile' command.
+ *
+ * DO NOT CHANGE MANUALLY.
+ */
+// phpcs:disable
+
+namespace FileEye\MediaProbe\Collection\Tiff;
+
+use FileEye\MediaProbe\Collection;
+
+class Tiff extends Collection {
+
+  protected static $map = array (
+  'title' => 'TIFF image data',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff',
+  'DOMNode' => 'tiff',
+  'items' =>
+  array (
+    0 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Ifd0',
+      ),
+    ),
+    1 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Ifd1',
+      ),
+    ),
+  ),
+);
+}

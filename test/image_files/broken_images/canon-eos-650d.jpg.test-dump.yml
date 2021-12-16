@@ -217,7 +217,7 @@ elements:
                                             parsed: true
                                             name: IFD0
                                             id: '0'
-                                            collection: Ifd\Ifd0
+                                            collection: Tiff\Ifd0
                                             elements:
                                                 -
                                                     node: tag
@@ -388,7 +388,7 @@ elements:
                                                     parsed: true
                                                     name: ExifIFD
                                                     id: '34665'
-                                                    collection: Ifd\Exif
+                                                    collection: Tiff\IfdExif
                                                     elements:
                                                         -
                                                             node: tag
@@ -649,7 +649,7 @@ elements:
                                                             parsed: true
                                                             name: Canon
                                                             id: '37500'
-                                                            collection: MakerNotes\Canon\Main
+                                                            collection: ExifMakerNotes\Canon\Main
                                                             elements:
                                                                 -
                                                                     node: map
@@ -658,7 +658,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonCameraSettings
                                                                     id: '1'
-                                                                    collection: MakerNotes\Canon\CameraSettings
+                                                                    collection: ExifMakerNotes\Canon\CameraSettings
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -1350,7 +1350,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonFocalLength
                                                                     id: '2'
-                                                                    collection: MakerNotes\Canon\FocalLength
+                                                                    collection: ExifMakerNotes\Canon\FocalLength
                                                                     elements:
                                                                         -
                                                                             node: tag
@@ -1449,7 +1449,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonShotInfo
                                                                     id: '4'
-                                                                    collection: MakerNotes\Canon\ShotInfo
+                                                                    collection: ExifMakerNotes\Canon\ShotInfo
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -2033,7 +2033,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonCameraInfo
                                                                     id: '13'
-                                                                    collection: MakerNotes\Canon\CameraInfo650D
+                                                                    collection: ExifMakerNotes\Canon\CameraInfo650D
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -2472,7 +2472,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonAFInfo2
                                                                     id: '38'
-                                                                    collection: MakerNotes\Canon\AFInfo2
+                                                                    collection: ExifMakerNotes\Canon\AFInfo2
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -2785,7 +2785,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonTimeInfo
                                                                     id: '53'
-                                                                    collection: MakerNotes\Canon\TimeInfo
+                                                                    collection: ExifMakerNotes\Canon\TimeInfo
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -2865,7 +2865,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonFileInfo
                                                                     id: '147'
-                                                                    collection: MakerNotes\Canon\FileInfo
+                                                                    collection: ExifMakerNotes\Canon\FileInfo
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -3251,7 +3251,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonCropInfo
                                                                     id: '152'
-                                                                    collection: MakerNotes\Canon\CropInfo
+                                                                    collection: ExifMakerNotes\Canon\CropInfo
                                                                     elements:
                                                                         -
                                                                             node: tag
@@ -3332,7 +3332,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonCustomFunctions2Header
                                                                     id: '153'
-                                                                    collection: MakerNotes\CanonCustom\Functions2Header
+                                                                    collection: ExifMakerNotes\CanonCustom\Functions2Header
                                                                     elements:
                                                                         -
                                                                             node: index
@@ -3341,7 +3341,7 @@ elements:
                                                                             parsed: true
                                                                             name: Exposure
                                                                             id: '1'
-                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            collection: ExifMakerNotes\CanonCustom\Functions2
                                                                             elements:
                                                                                 -
                                                                                     node: tag
@@ -3386,7 +3386,7 @@ elements:
                                                                             parsed: true
                                                                             name: ImageFlashExposureDisplay
                                                                             id: '2'
-                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            collection: ExifMakerNotes\CanonCustom\Functions2
                                                                             elements:
                                                                                 -
                                                                                     node: tag
@@ -3413,7 +3413,7 @@ elements:
                                                                             parsed: true
                                                                             name: AutoFocusDrive
                                                                             id: '3'
-                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            collection: ExifMakerNotes\CanonCustom\Functions2
                                                                             elements:
                                                                                 -
                                                                                     node: tag
@@ -3458,7 +3458,7 @@ elements:
                                                                             parsed: true
                                                                             name: OperationOthers
                                                                             id: '4'
-                                                                            collection: MakerNotes\CanonCustom\Functions2
+                                                                            collection: ExifMakerNotes\CanonCustom\Functions2
                                                                             elements:
                                                                                 -
                                                                                     node: tag
@@ -3521,7 +3521,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonAspectInfo
                                                                     id: '154'
-                                                                    collection: MakerNotes\Canon\AspectInfo
+                                                                    collection: ExifMakerNotes\Canon\AspectInfo
                                                                     elements:
                                                                         -
                                                                             node: tag
@@ -3620,7 +3620,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonProcessing
                                                                     id: '160'
-                                                                    collection: MakerNotes\Canon\Processing
+                                                                    collection: ExifMakerNotes\Canon\Processing
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -3881,7 +3881,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonMeasuredColor
                                                                     id: '170'
-                                                                    collection: MakerNotes\Canon\MeasuredColor
+                                                                    collection: ExifMakerNotes\Canon\MeasuredColor
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -3979,7 +3979,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonSensorInfo
                                                                     id: '224'
-                                                                    collection: MakerNotes\Canon\SensorInfo
+                                                                    collection: ExifMakerNotes\Canon\SensorInfo
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -4288,7 +4288,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonColorData
                                                                     id: '16385'
-                                                                    collection: MakerNotes\Canon\ColorData7
+                                                                    collection: ExifMakerNotes\Canon\ColorData7
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -5698,7 +5698,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonAFMicroAdj
                                                                     id: '16403'
-                                                                    collection: MakerNotes\Canon\AFMicroAdj
+                                                                    collection: ExifMakerNotes\Canon\AFMicroAdj
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -5796,7 +5796,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonVignettingCorr2
                                                                     id: '16406'
-                                                                    collection: MakerNotes\Canon\VignettingCorr2
+                                                                    collection: ExifMakerNotes\Canon\VignettingCorr2
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -5876,7 +5876,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonLightingOpt
                                                                     id: '16408'
-                                                                    collection: MakerNotes\Canon\LightingOpt
+                                                                    collection: ExifMakerNotes\Canon\LightingOpt
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -6010,7 +6010,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonAmbience
                                                                     id: '16416'
-                                                                    collection: MakerNotes\Canon\Ambience
+                                                                    collection: ExifMakerNotes\Canon\Ambience
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -6251,7 +6251,7 @@ elements:
                                                             parsed: true
                                                             name: InteropIFD
                                                             id: '40965'
-                                                            collection: Ifd\Interoperability
+                                                            collection: Tiff\IfdInteroperability
                                                             elements:
                                                                 -
                                                                     node: tag
@@ -6422,7 +6422,7 @@ elements:
                                                     parsed: true
                                                     name: GPS
                                                     id: '34853'
-                                                    collection: Ifd\Gps
+                                                    collection: Tiff\IfdGps
                                                     elements:
                                                         -
                                                             node: tag
@@ -6449,7 +6449,7 @@ elements:
                                             parsed: true
                                             name: IFD1
                                             id: '1'
-                                            collection: Ifd\Ifd1
+                                            collection: Tiff\Ifd1
                                             elements:
                                                 -
                                                     node: tag

@@ -1,0 +1,58 @@
+collection: ExifMakerNotes\Canon\AspectInfo
+name: CanonAspectInfo
+title: 'Canon AspectInfo'
+class: FileEye\MediaProbe\Block\Index
+DOMNode: index
+format: Long
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::AspectInfo'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: AspectRatio
+                type: int32u
+                writable: true
+                DOMNode: 'Canon:AspectRatio'
+                desc: 'Aspect Ratio'
+                values:
+                    0: '3:2'
+                    1: '1:1'
+                    2: '4:3'
+                    7: '16:9'
+                    8: '4:5'
+    -
+        exiftool:
+            -
+                name: CroppedImageWidth
+                type: int32u
+                writable: true
+                DOMNode: 'Canon:CroppedImageWidth'
+                desc: 'Cropped Image Width'
+    -
+        exiftool:
+            -
+                name: CroppedImageHeight
+                type: int32u
+                writable: true
+                DOMNode: 'Canon:CroppedImageHeight'
+                desc: 'Cropped Image Height'
+    -
+        exiftool:
+            -
+                name: CroppedImageLeft
+                type: int32u
+                writable: true
+                DOMNode: 'Canon:CroppedImageLeft'
+                desc: 'Cropped Image Left'
+    -
+        exiftool:
+            -
+                name: CroppedImageTop
+                type: int32u
+                writable: true
+                DOMNode: 'Canon:CroppedImageTop'
+                desc: 'Cropped Image Top'

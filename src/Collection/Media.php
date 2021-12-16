@@ -21,14 +21,14 @@ class Media extends Collection {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg',
+        'collection' => 'Jpeg\\Jpeg',
       ),
     ),
     'Tiff' =>
     array (
       0 =>
       array (
-        'collection' => 'Tiff',
+        'collection' => 'Tiff\\Tiff',
       ),
     ),
   ),

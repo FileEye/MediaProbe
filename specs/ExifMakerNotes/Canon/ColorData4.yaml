@@ -1,0 +1,144 @@
+collection: ExifMakerNotes\Canon\ColorData4
+name: CanonColorData4
+title: 'Canon Color Data4'
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\ColorDataMap
+DOMNode: map
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::ColorData4'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: ColorDataVersion
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorDataVersion'
+                desc: 'Color Data Version'
+                values:
+                    2: '2 (1DmkIII)'
+                    3: '3 (40D)'
+                    4: '4 (1DSmkIII)'
+                    5: '5 (450D/1000D)'
+                    6: '6 (50D/5DmkII)'
+                    7: '7 (500D/550D/7D/1DmkIV)'
+                    9: '9 (60D/1100D)'
+    231:
+        exiftool:
+            -
+                name: AverageBlackLevel
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:AverageBlackLevel'
+                desc: 'Average Black Level'
+    640:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\RawMeasuredRGGB
+        exiftool:
+            -
+                name: RawMeasuredRGGB
+                type: int32u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:RawMeasuredRGGB'
+                desc: 'Raw Measured RGGB'
+    692:
+        exiftool:
+            -
+                name: PerChannelBlackLevel
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:PerChannelBlackLevel'
+                desc: 'Per Channel Black Level'
+    696:
+        exiftool:
+            -
+                name: NormalWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:NormalWhiteLevel'
+                desc: 'Normal White Level'
+    697:
+        exiftool:
+            -
+                name: SpecularWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:SpecularWhiteLevel'
+                desc: 'Specular White Level'
+    698:
+        exiftool:
+            -
+                name: LinearityUpperMargin
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:LinearityUpperMargin'
+                desc: 'Linearity Upper Margin'
+    715:
+        exiftool:
+            -
+                name: PerChannelBlackLevel
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:PerChannelBlackLevel'
+                desc: 'Per Channel Black Level'
+    719:
+        exiftool:
+            -
+                name: NormalWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:NormalWhiteLevel'
+                desc: 'Normal White Level'
+            -
+                name: PerChannelBlackLevel
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:PerChannelBlackLevel'
+                desc: 'Per Channel Black Level'
+    720:
+        exiftool:
+            -
+                name: SpecularWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:SpecularWhiteLevel'
+                desc: 'Specular White Level'
+    721:
+        exiftool:
+            -
+                name: LinearityUpperMargin
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:LinearityUpperMargin'
+                desc: 'Linearity Upper Margin'
+    723:
+        exiftool:
+            -
+                name: NormalWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:NormalWhiteLevel'
+                desc: 'Normal White Level'
+    724:
+        exiftool:
+            -
+                name: SpecularWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:SpecularWhiteLevel'
+                desc: 'Specular White Level'
+    725:
+        exiftool:
+            -
+                name: LinearityUpperMargin
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:LinearityUpperMargin'
+                desc: 'Linearity Upper Margin'

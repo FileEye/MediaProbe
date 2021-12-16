@@ -1,0 +1,23 @@
+collection: ExifMakerNotes\Canon\CameraInfoUnknown
+name: CanonCameraInfoUnknown
+title: 'Canon CameraInfoUnknown'
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\CameraInfoMap
+DOMNode: map
+format: Byte
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::CameraInfoUnknown'']/tag'
+items:
+    363:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensSerialNumber
+        outputFormat: Ascii
+        exiftool:
+            -
+                name: LensSerialNumber
+                type: undef
+                count: 5
+                writable: true
+                DOMNode: 'Canon:LensSerialNumber'
+                desc: 'Lens Serial Number'

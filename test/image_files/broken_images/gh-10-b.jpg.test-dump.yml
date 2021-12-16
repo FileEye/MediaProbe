@@ -179,7 +179,7 @@ elements:
                                             parsed: true
                                             name: IFD0
                                             id: '0'
-                                            collection: Ifd\Ifd0
+                                            collection: Tiff\Ifd0
                                             elements:
                                                 -
                                                     node: tag
@@ -440,7 +440,7 @@ elements:
                                                     parsed: true
                                                     name: ExifIFD
                                                     id: '34665'
-                                                    collection: Ifd\Exif
+                                                    collection: Tiff\IfdExif
                                                     elements:
                                                         -
                                                             node: tag
@@ -701,7 +701,7 @@ elements:
                                                             parsed: true
                                                             name: Canon
                                                             id: '37500'
-                                                            collection: MakerNotes\Canon\Main
+                                                            collection: ExifMakerNotes\Canon\Main
                                                             elements:
                                                                 -
                                                                     node: map
@@ -710,7 +710,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonCameraSettings
                                                                     id: '1'
-                                                                    collection: MakerNotes\Canon\CameraSettings
+                                                                    collection: ExifMakerNotes\Canon\CameraSettings
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -1392,7 +1392,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonFocalLength
                                                                     id: '2'
-                                                                    collection: MakerNotes\Canon\FocalLength
+                                                                    collection: ExifMakerNotes\Canon\FocalLength
                                                                     elements:
                                                                         -
                                                                             node: tag
@@ -1491,7 +1491,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonShotInfo
                                                                     id: '4'
-                                                                    collection: MakerNotes\Canon\ShotInfo
+                                                                    collection: ExifMakerNotes\Canon\ShotInfo
                                                                     elements:
                                                                         -
                                                                             node: rawData
@@ -2055,7 +2055,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonAFInfo
                                                                     id: '18'
-                                                                    collection: MakerNotes\Canon\AFInfo
+                                                                    collection: ExifMakerNotes\Canon\AFInfo
                                                                     elements:
                                                                         -
                                                                             node: tag
@@ -2848,7 +2848,7 @@ elements:
                                                                     parsed: true
                                                                     name: CanonCameraInfo
                                                                     id: '13'
-                                                                    collection: MakerNotes\Canon\CameraInfoUnknown
+                                                                    collection: ExifMakerNotes\Canon\CameraInfoUnknown
                                                                     elements:
                                                                         -
                                                                             node: rawData

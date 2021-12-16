@@ -1,0 +1,45 @@
+collection: ExifMakerNotes\Canon\MultiExp
+name: CanonMultiExp
+title: 'Canon MultiExp'
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
+format: Long
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::MultiExp'']/tag'
+items:
+    1:
+        exiftool:
+            -
+                name: MultiExposure
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:MultiExposure'
+                desc: 'Multi Exposure'
+                values:
+                    - 'Off'
+                    - 'On'
+                    - 'On (RAW)'
+    2:
+        exiftool:
+            -
+                name: MultiExposureControl
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:MultiExposureControl'
+                desc: 'Multi Exposure Control'
+                values:
+                    - Additive
+                    - Average
+                    - 'Bright (comparative)'
+                    - 'Dark (comparative)'
+    3:
+        exiftool:
+            -
+                name: MultiExposureShots
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:MultiExposureShots'
+                desc: 'Multi Exposure Shots'

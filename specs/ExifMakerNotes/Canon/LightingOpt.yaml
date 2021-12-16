@@ -1,0 +1,73 @@
+collection: ExifMakerNotes\Canon\LightingOpt
+name: CanonLightingOpt
+title: 'Canon LightingOpt'
+class: FileEye\MediaProbe\Block\Map
+DOMNode: map
+hasIndexSize: true
+format: Long
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::LightingOpt'']/tag'
+items:
+    1:
+        exiftool:
+            -
+                name: PeripheralIlluminationCorr
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:PeripheralIlluminationCorr'
+                desc: 'Peripheral Illumination Corr'
+                values:
+                    - 'Off'
+                    - 'On'
+    2:
+        exiftool:
+            -
+                name: AutoLightingOptimizer
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:AutoLightingOptimizer'
+                desc: 'Auto Lighting Optimizer'
+                values:
+                    - Standard
+                    - Low
+                    - Strong
+                    - 'Off'
+    3:
+        exiftool:
+            -
+                name: HighlightTonePriority
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:HighlightTonePriority'
+                desc: 'Highlight Tone Priority'
+                values:
+                    - 'Off'
+                    - 'On'
+    4:
+        exiftool:
+            -
+                name: LongExposureNoiseReduction
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:LongExposureNoiseReduction'
+                desc: 'Long Exposure Noise Reduction'
+                values:
+                    - 'Off'
+                    - Auto
+                    - 'On'
+    5:
+        exiftool:
+            -
+                name: HighISONoiseReduction
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:HighISONoiseReduction'
+                desc: 'High ISO Noise Reduction'
+                values:
+                    - Standard
+                    - Low
+                    - Strong
+                    - 'Off'
