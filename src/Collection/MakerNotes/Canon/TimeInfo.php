@@ -59,6 +59,7 @@ class TimeInfo extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\TimeInfo\\TimeZone',
         'collection' => 'Tag',
         'name' => 'TimeZone',
         'title' => 'Time Zone',

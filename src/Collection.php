@@ -226,8 +226,7 @@ abstract class Collection
         if ($index === null) {
             if ($context === null) {
                 $index = 0;
-            }
-            else {
+            } else {
                 $index = $this->getItemCollectionIndex($item, $components_count, $context);
             }
         }

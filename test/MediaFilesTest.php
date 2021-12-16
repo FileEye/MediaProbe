@@ -74,7 +74,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     /**
      * @dataProvider mediaFileProvider
      */
-    public function __testRewriteThroughGd($mediaDumpFile)
+    public function testRewriteThroughGd($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
         $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
@@ -105,7 +105,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     /**
      * @dataProvider mediaFileProvider
      */
-    public function __testRewrite($mediaDumpFile)
+    public function testRewrite($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
         if (isset($this->testDump['exiftool'])) {
@@ -282,7 +282,6 @@ class MediaFilesTest extends MediaProbeTestCaseBase
                     $ret[] = $trail;
                 }
             }
-
         }
         return $ret;
     }

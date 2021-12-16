@@ -175,14 +175,14 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     protected function resolveValuePlaceholder(string $value, string $source): string
     {
         $tmp = str_replace('{value}', $value, $source);
-        $tmp = str_replace('{valuehex}', dechex($value), $tmp);
+        $tmp = str_replace('{valuehex}', dechex((int) $value), $tmp);
         return $tmp;
     }
 
     /**
      * @todo xxx
      */
-    public function resolveText($value, bool $null_on_missing = FALSE)
+    public function resolveText($value, bool $null_on_missing = false)
     {
         if (!$this->getParentElement()) {
             return is_array($value) ? implode(' ', $value) : $value;
@@ -208,7 +208,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
             $id = is_int($value) ? $value : (string) $value;
             $raw = $this->getParentElement()->getCollection()->getPropertyValue('text')['mapping'][$id] ?? null;
             if (!is_null($raw)) {
-              $text = $this->resolveValuePlaceholder($value, $raw);
+                $text = $this->resolveValuePlaceholder($value, $raw);
             }
         }
         if (is_null($text) && $this->hasDefaultText()) {
@@ -227,7 +227,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         if (is_null($this->value)) {
             return '';

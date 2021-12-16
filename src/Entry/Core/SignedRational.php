@@ -75,25 +75,22 @@ class SignedRational extends SignedLong
             case 'exiftool':
                 if ($number[1] === 0) {
                     return 0; // xxx throw exception
-                } else {
-                    $ret = $number[0] / $number[1];
-                    return $ret == 0.0 ? 0 : round($ret, 8);
                 }
+                $ret = $number[0] / $number[1];
+                return $ret == 0.0 ? 0 : round($ret, 8);
             case 'phpExif':
                 if ($number[1] < 0) {
                     // Turn output like 1/-2 into -1/2.
                     return (- $number[0]) . '/' . (- $number[1]);
-                } else {
-                    return $number[0] . '/' . $number[1];
                 }
+                return $number[0] . '/' . $number[1];
             case 'core':
             default:
                 if ($number[1] === 0) {
                     return 0; // xxx throw exception
-                } else {
-                    $ret = $number[0] / $number[1];
-                    return $ret == 0.0 ? 0 : $ret;
                 }
+                $ret = $number[0] / $number[1];
+                return $ret == 0.0 ? 0 : $ret;
         }
     }
 }

@@ -144,7 +144,7 @@ interface ElementInterface
      * @throws \FileEye\MediaProbe\MediaProbeException
      *            when the element does not support returning a value.
      */
-    public function toString(array $options = []);
+    public function toString(array $options = []): string;
 
     /**
      * Returns the bytes representing this element.

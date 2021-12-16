@@ -723,6 +723,7 @@ class Main extends Collection {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
         'collection' => 'Tag',
         'name' => 'FileNumber',
         'title' => 'File Number',
@@ -737,15 +738,9 @@ class Main extends Collection {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
-        'name' => 'CanonModelID',
-        'title' => 'Canon Model ID',
-        'format' =>
-        array (
-          0 => 4,
-        ),
         'text' =>
         array (
+          'default' => 'Unknown (0x{valuehex})',
           'mapping' =>
           array (
             1042 => 'EOS M50 / Kiss M',
@@ -1076,6 +1071,13 @@ class Main extends Collection {
             '2147484708' => 'EOR R',
             '2147484722' => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
           ),
+        ),
+        'collection' => 'Tag',
+        'name' => 'CanonModelID',
+        'title' => 'Canon Model ID',
+        'format' =>
+        array (
+          0 => 4,
         ),
         'exiftoolDOMNode' => 'CanonRaw:CanonModelID',
       ),

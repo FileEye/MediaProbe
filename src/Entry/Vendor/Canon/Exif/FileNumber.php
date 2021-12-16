@@ -13,7 +13,7 @@ class FileNumber extends Long
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $val = (string) $this->getValue();
         return empty($val) ? '0' : substr($val, 0, 3) . '-' . substr($val, 3);

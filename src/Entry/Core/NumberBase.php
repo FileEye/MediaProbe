@@ -187,5 +187,4 @@ abstract class NumberBase extends EntryBase
         }
         return $number;
     }
-
 }

@@ -32,7 +32,7 @@ class ExifComponentsConfiguration extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $value = $this->getValue();
         $v = '';

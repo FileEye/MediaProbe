@@ -28,7 +28,7 @@ class AFPointsInFocus extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         return $this->resolveText($this->value[0]);
     }

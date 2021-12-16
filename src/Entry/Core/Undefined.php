@@ -80,7 +80,7 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toString(array $options = [])
+    public function toString(array $options = []): string
     {
         $value = null;
         if ($this->components === 1) {
