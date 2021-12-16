@@ -24,7 +24,7 @@ class SegmentApp1 extends Collection {
     array (
       0 =>
       array (
-        'collection' => 'Exif',
+        'collection' => 'Exif\\Exif',
       ),
     ),
   ),

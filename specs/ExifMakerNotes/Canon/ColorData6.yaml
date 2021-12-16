@@ -1,0 +1,499 @@
+collection: ExifMakerNotes\Canon\ColorData6
+name: CanonColorData6
+title: 'Canon Color Data6'
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\ColorDataMap
+DOMNode: map
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::ColorData6'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: ColorDataVersion
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorDataVersion'
+                desc: 'Color Data Version'
+                values:
+                    10: '10 (600D/1200D)'
+    63:
+        exiftool:
+            -
+                name: WB_RGGBLevelsAsShot
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsAsShot'
+                desc: 'WB RGGB Levels As Shot'
+    67:
+        exiftool:
+            -
+                name: ColorTempAsShot
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempAsShot'
+                desc: 'Color Temp As Shot'
+    68:
+        exiftool:
+            -
+                name: WB_RGGBLevelsAuto
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsAuto'
+                desc: 'WB RGGB Levels Auto'
+    72:
+        exiftool:
+            -
+                name: ColorTempAuto
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempAuto'
+                desc: 'Color Temp Auto'
+    73:
+        exiftool:
+            -
+                name: WB_RGGBLevelsMeasured
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsMeasured'
+                desc: 'WB RGGB Levels Measured'
+    77:
+        exiftool:
+            -
+                name: ColorTempMeasured
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempMeasured'
+                desc: 'Color Temp Measured'
+    78:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown'
+                desc: 'WB RGGB Levels Unknown'
+    82:
+        exiftool:
+            -
+                name: ColorTempUnknown
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown'
+                desc: 'Color Temp Unknown'
+    83:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown2
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown2'
+                desc: 'WB RGGB Levels Unknown 2'
+    87:
+        exiftool:
+            -
+                name: ColorTempUnknown2
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown2'
+                desc: 'Color Temp Unknown 2'
+    88:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown3
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown3'
+                desc: 'WB RGGB Levels Unknown 3'
+    92:
+        exiftool:
+            -
+                name: ColorTempUnknown3
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown3'
+                desc: 'Color Temp Unknown 3'
+    93:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown4
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown4'
+                desc: 'WB RGGB Levels Unknown 4'
+    97:
+        exiftool:
+            -
+                name: ColorTempUnknown4
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown4'
+                desc: 'Color Temp Unknown 4'
+    98:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown5
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown5'
+                desc: 'WB RGGB Levels Unknown 5'
+    102:
+        exiftool:
+            -
+                name: ColorTempUnknown5
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown5'
+                desc: 'Color Temp Unknown 5'
+    103:
+        exiftool:
+            -
+                name: WB_RGGBLevelsDaylight
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsDaylight'
+                desc: 'WB RGGB Levels Daylight'
+    107:
+        exiftool:
+            -
+                name: ColorTempDaylight
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempDaylight'
+                desc: 'Color Temp Daylight'
+    108:
+        exiftool:
+            -
+                name: WB_RGGBLevelsShade
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsShade'
+                desc: 'WB RGGB Levels Shade'
+    112:
+        exiftool:
+            -
+                name: ColorTempShade
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempShade'
+                desc: 'Color Temp Shade'
+    113:
+        exiftool:
+            -
+                name: WB_RGGBLevelsCloudy
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsCloudy'
+                desc: 'WB RGGB Levels Cloudy'
+    117:
+        exiftool:
+            -
+                name: ColorTempCloudy
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempCloudy'
+                desc: 'Color Temp Cloudy'
+    118:
+        exiftool:
+            -
+                name: WB_RGGBLevelsTungsten
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsTungsten'
+                desc: 'WB RGGB Levels Tungsten'
+    122:
+        exiftool:
+            -
+                name: ColorTempTungsten
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempTungsten'
+                desc: 'Color Temp Tungsten'
+    123:
+        exiftool:
+            -
+                name: WB_RGGBLevelsFluorescent
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsFluorescent'
+                desc: 'WB RGGB Levels Fluorescent'
+    127:
+        exiftool:
+            -
+                name: ColorTempFluorescent
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempFluorescent'
+                desc: 'Color Temp Fluorescent'
+    128:
+        exiftool:
+            -
+                name: WB_RGGBLevelsKelvin
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsKelvin'
+                desc: 'WB RGGB Levels Kelvin'
+    132:
+        exiftool:
+            -
+                name: ColorTempKelvin
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempKelvin'
+                desc: 'Color Temp Kelvin'
+    133:
+        exiftool:
+            -
+                name: WB_RGGBLevelsFlash
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsFlash'
+                desc: 'WB RGGB Levels Flash'
+    137:
+        exiftool:
+            -
+                name: ColorTempFlash
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempFlash'
+                desc: 'Color Temp Flash'
+    138:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown6
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown6'
+                desc: 'WB RGGB Levels Unknown 6'
+    142:
+        exiftool:
+            -
+                name: ColorTempUnknown6
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown6'
+                desc: 'Color Temp Unknown 6'
+    143:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown7
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown7'
+                desc: 'WB RGGB Levels Unknown 7'
+    147:
+        exiftool:
+            -
+                name: ColorTempUnknown7
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown7'
+                desc: 'Color Temp Unknown 7'
+    148:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown8
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown8'
+                desc: 'WB RGGB Levels Unknown 8'
+    152:
+        exiftool:
+            -
+                name: ColorTempUnknown8
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown8'
+                desc: 'Color Temp Unknown 8'
+    153:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown9
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown9'
+                desc: 'WB RGGB Levels Unknown 9'
+    157:
+        exiftool:
+            -
+                name: ColorTempUnknown9
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown9'
+                desc: 'Color Temp Unknown 9'
+    158:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown10
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown10'
+                desc: 'WB RGGB Levels Unknown 10'
+    162:
+        exiftool:
+            -
+                name: ColorTempUnknown10
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown10'
+                desc: 'Color Temp Unknown 10'
+    163:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown11
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown11'
+                desc: 'WB RGGB Levels Unknown 11'
+    167:
+        exiftool:
+            -
+                name: ColorTempUnknown11
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown11'
+                desc: 'Color Temp Unknown 11'
+    168:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown12
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown12'
+                desc: 'WB RGGB Levels Unknown 12'
+    172:
+        exiftool:
+            -
+                name: ColorTempUnknown12
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown12'
+                desc: 'Color Temp Unknown 12'
+    173:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown13
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown13'
+                desc: 'WB RGGB Levels Unknown 13'
+    177:
+        exiftool:
+            -
+                name: ColorTempUnknown13
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown13'
+                desc: 'Color Temp Unknown 13'
+    178:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown14
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown14'
+                desc: 'WB RGGB Levels Unknown 14'
+    182:
+        exiftool:
+            -
+                name: ColorTempUnknown14
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown14'
+                desc: 'Color Temp Unknown 14'
+    183:
+        exiftool:
+            -
+                name: WB_RGGBLevelsUnknown15
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsUnknown15'
+                desc: 'WB RGGB Levels Unknown 15'
+    187:
+        exiftool:
+            -
+                name: ColorTempUnknown15
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempUnknown15'
+                desc: 'Color Temp Unknown 15'
+    251:
+        exiftool:
+            -
+                name: AverageBlackLevel
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:AverageBlackLevel'
+                desc: 'Average Black Level'
+    404:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\RawMeasuredRGGB
+        exiftool:
+            -
+                name: RawMeasuredRGGB
+                type: int32u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:RawMeasuredRGGB'
+                desc: 'Raw Measured RGGB'
+    479:
+        exiftool:
+            -
+                name: PerChannelBlackLevel
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:PerChannelBlackLevel'
+                desc: 'Per Channel Black Level'
+    483:
+        exiftool:
+            -
+                name: NormalWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:NormalWhiteLevel'
+                desc: 'Normal White Level'
+    484:
+        exiftool:
+            -
+                name: SpecularWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:SpecularWhiteLevel'
+                desc: 'Specular White Level'
+    485:
+        exiftool:
+            -
+                name: LinearityUpperMargin
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:LinearityUpperMargin'
+                desc: 'Linearity Upper Margin'

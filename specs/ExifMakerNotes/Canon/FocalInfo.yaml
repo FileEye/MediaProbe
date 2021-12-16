@@ -1,0 +1,20 @@
+collection: ExifMakerNotes\Canon\FocalInfo
+name: CanonFocalInfo
+title: 'Canon FocalInfo'
+class: FileEye\MediaProbe\Block\Exif\Ifd
+DOMNode: index
+format: Long
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::FocalInfo'']/tag'
+items:
+    -
+        exiftool:
+            -
+                name: FocalLength
+                type: rational32u
+                writable: false
+                DOMNode: 'Canon:FocalLength'
+                desc: 'Focal Length'

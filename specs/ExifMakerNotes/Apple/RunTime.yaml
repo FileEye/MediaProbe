@@ -1,0 +1,53 @@
+collection: ExifMakerNotes\Apple\RunTime
+name: AppleRuntime
+title: 'Apple Runtime'
+class: FileEye\MediaProbe\Block\Exif\Vendor\Apple\RunTime
+DOMNode: plist
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Apple
+        xpath: '//table[@name=''Apple::RunTime'']/tag'
+items:
+    epoch:
+        format: Ascii
+        exiftool:
+            -
+                name: RunTimeEpoch
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:RunTimeEpoch'
+                desc: 'Run Time Epoch'
+    flags:
+        format: Ascii
+        exiftool:
+            -
+                name: RunTimeFlags
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:RunTimeFlags'
+                desc: 'Run Time Flags'
+                values:
+                    1: Valid
+                    2: 'Has been rounded'
+                    4: 'Positive infinity'
+                    8: 'Negative infinity'
+                    16: Indefinite
+    timescale:
+        format: Ascii
+        exiftool:
+            -
+                name: RunTimeScale
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:RunTimeScale'
+                desc: 'Run Time Scale'
+    value:
+        format: Ascii
+        exiftool:
+            -
+                name: RunTimeValue
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:RunTimeValue'
+                desc: 'Run Time Value'

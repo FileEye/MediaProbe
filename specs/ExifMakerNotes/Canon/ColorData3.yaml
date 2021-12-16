@@ -1,0 +1,302 @@
+collection: ExifMakerNotes\Canon\ColorData3
+name: CanonColorData3
+title: 'Canon Color Data3'
+class: FileEye\MediaProbe\Block\Exif\Vendor\Canon\ColorDataMap
+DOMNode: map
+format: Short
+defaultItemCollection: Tag
+compiler:
+    exiftool:
+        g1: Canon
+        xpath: '//table[@name=''Canon::ColorData3'']/tag'
+items:
+    0:
+        exiftool:
+            -
+                name: ColorDataVersion
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorDataVersion'
+                desc: 'Color Data Version'
+                values:
+                    1: '1 (1DmkIIN/5D/30D/400D)'
+    63:
+        exiftool:
+            -
+                name: WB_RGGBLevelsAsShot
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsAsShot'
+                desc: 'WB RGGB Levels As Shot'
+    67:
+        exiftool:
+            -
+                name: ColorTempAsShot
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempAsShot'
+                desc: 'Color Temp As Shot'
+    68:
+        exiftool:
+            -
+                name: WB_RGGBLevelsAuto
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsAuto'
+                desc: 'WB RGGB Levels Auto'
+    72:
+        exiftool:
+            -
+                name: ColorTempAuto
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempAuto'
+                desc: 'Color Temp Auto'
+    73:
+        exiftool:
+            -
+                name: WB_RGGBLevelsMeasured
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsMeasured'
+                desc: 'WB RGGB Levels Measured'
+    77:
+        exiftool:
+            -
+                name: ColorTempMeasured
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempMeasured'
+                desc: 'Color Temp Measured'
+    78:
+        exiftool:
+            -
+                name: WB_RGGBLevelsDaylight
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsDaylight'
+                desc: 'WB RGGB Levels Daylight'
+    82:
+        exiftool:
+            -
+                name: ColorTempDaylight
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempDaylight'
+                desc: 'Color Temp Daylight'
+    83:
+        exiftool:
+            -
+                name: WB_RGGBLevelsShade
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsShade'
+                desc: 'WB RGGB Levels Shade'
+    87:
+        exiftool:
+            -
+                name: ColorTempShade
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempShade'
+                desc: 'Color Temp Shade'
+    88:
+        exiftool:
+            -
+                name: WB_RGGBLevelsCloudy
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsCloudy'
+                desc: 'WB RGGB Levels Cloudy'
+    92:
+        exiftool:
+            -
+                name: ColorTempCloudy
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempCloudy'
+                desc: 'Color Temp Cloudy'
+    93:
+        exiftool:
+            -
+                name: WB_RGGBLevelsTungsten
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsTungsten'
+                desc: 'WB RGGB Levels Tungsten'
+    97:
+        exiftool:
+            -
+                name: ColorTempTungsten
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempTungsten'
+                desc: 'Color Temp Tungsten'
+    98:
+        exiftool:
+            -
+                name: WB_RGGBLevelsFluorescent
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsFluorescent'
+                desc: 'WB RGGB Levels Fluorescent'
+    102:
+        exiftool:
+            -
+                name: ColorTempFluorescent
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempFluorescent'
+                desc: 'Color Temp Fluorescent'
+    103:
+        exiftool:
+            -
+                name: WB_RGGBLevelsKelvin
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsKelvin'
+                desc: 'WB RGGB Levels Kelvin'
+    107:
+        exiftool:
+            -
+                name: ColorTempKelvin
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempKelvin'
+                desc: 'Color Temp Kelvin'
+    108:
+        exiftool:
+            -
+                name: WB_RGGBLevelsFlash
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsFlash'
+                desc: 'WB RGGB Levels Flash'
+    112:
+        exiftool:
+            -
+                name: ColorTempFlash
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempFlash'
+                desc: 'Color Temp Flash'
+    113:
+        exiftool:
+            -
+                name: WB_RGGBLevelsPC1
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsPC1'
+                desc: 'WB RGGB Levels PC1'
+    117:
+        exiftool:
+            -
+                name: ColorTempPC1
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempPC1'
+                desc: 'Color Temp PC1'
+    118:
+        exiftool:
+            -
+                name: WB_RGGBLevelsPC2
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsPC2'
+                desc: 'WB RGGB Levels PC2'
+    122:
+        exiftool:
+            -
+                name: ColorTempPC2
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempPC2'
+                desc: 'Color Temp PC2'
+    123:
+        exiftool:
+            -
+                name: WB_RGGBLevelsPC3
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsPC3'
+                desc: 'WB RGGB Levels PC3'
+    127:
+        exiftool:
+            -
+                name: ColorTempPC3
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempPC3'
+                desc: 'Color Temp PC3'
+    128:
+        exiftool:
+            -
+                name: WB_RGGBLevelsCustom
+                type: int16s
+                count: 4
+                writable: true
+                DOMNode: 'Canon:WB_RGGBLevelsCustom'
+                desc: 'WB RGGB Levels Custom'
+    132:
+        exiftool:
+            -
+                name: ColorTempCustom
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempCustom'
+                desc: 'Color Temp Custom'
+    196:
+        exiftool:
+            -
+                name: PerChannelBlackLevel
+                type: int16u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:PerChannelBlackLevel'
+                desc: 'Per Channel Black Level'
+    584:
+        exiftool:
+            -
+                name: FlashOutput
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:FlashOutput'
+                desc: 'Flash Output'
+    585:
+        exiftool:
+            -
+                name: FlashBatteryLevel
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:FlashBatteryLevel'
+                desc: 'Flash Battery Level'
+    586:
+        exiftool:
+            -
+                name: ColorTempFlashData
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:ColorTempFlashData'
+                desc: 'Color Temp Flash Data'
+    647:
+        exiftool:
+            -
+                name: MeasuredRGGBData
+                type: int32u
+                count: 4
+                writable: true
+                DOMNode: 'Canon:MeasuredRGGBData'
+                desc: 'Measured RGGB Data'

@@ -34,16 +34,16 @@ class Bug3017880Test extends MediaProbeTestCaseBase
                     ->disableOriginalConstructor()
                     ->getMock();
 
-                $exif_definition = new ItemDefinition(Collection::get('Exif'));
+                $exif_definition = new ItemDefinition(Collection::get('Exif\Exif'));
                 $exif = new Exif($exif_definition, $app1_segment_mock);
-                $tiff_definition = new ItemDefinition(Collection::get('Tiff'));
+                $tiff_definition = new ItemDefinition(Collection::get('Tiff\Tiff'));
                 new Tiff($tiff_definition, $exif);
             }
 
             $tiff = $exif->getElement("tiff");
             $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd(new ItemDefinition(Collection::get('Ifd\Ifd0'), ItemFormat::LONG));
+                $ifd0 = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), ItemFormat::LONG));
             }
 
             $software_name = 'Example V2';

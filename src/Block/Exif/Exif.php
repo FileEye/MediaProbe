@@ -34,7 +34,7 @@ class Exif extends BlockBase
     protected function doParseData(DataElement $data): void
     {
         if (Tiff::getTiffSegmentByteOrder($data, strlen(self::EXIF_HEADER)) !== null) {
-            $tiff = new ItemDefinition(Collection::get('Tiff'));
+            $tiff = new ItemDefinition(Collection::get('Tiff\Tiff'));
             $this->addBlock($tiff)->parseData($data, strlen(self::EXIF_HEADER), $data->getSize() - strlen(self::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be
