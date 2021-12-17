@@ -11,6 +11,7 @@ use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
+use PrettyXml\Formatter;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -37,13 +38,18 @@ class DumpCommand extends Command
             ->addArgument(
                 'file-path',
                 InputArgument::REQUIRED,
-                'Path to the media file'
+                'Path to the media file(s)'
+            )
+            ->addArgument(
+                'dump-path',
+                InputArgument::REQUIRED,
+                'Path to the media dump(s)'
             )
             ->addOption(
                 'exiftool',
                 null,
                 InputOption::VALUE_NONE,
-                'Dump via exiftool.'
+                'Dump exiftool XML results too.'
             )
         ;
     }
@@ -56,13 +62,14 @@ class DumpCommand extends Command
         $fs = new Filesystem();
 
         $finder = new Finder();
-        $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG')->name('*.tiff');
+        $finder->files()->in($input->getArgument('file-path'))->name('*');
 
         foreach ($finder as $file) {
             $output->write('Processing ' . $file . '... ');
 
             $test_dump_file = (string) $file . '.test-dump.yml';
             $input_yaml = Yaml::parse(file_get_contents($test_dump_file));
+            unset($input_yaml['exiftool'], $input_yaml['exiftool_raw']);
 
             // Dump via MediaProbe.
             $output->write('1');
@@ -74,7 +81,8 @@ class DumpCommand extends Command
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D']);
                 try {
                     $process->run();
-                    $yaml['exiftool'] = $process->getOutput();
+                    $formatter = new Formatter();
+//                    $yaml['exiftool'] = $formatter->format($process->getOutput());
                 } catch (\Exception $e) {
                     $output->write(' error: ' . $e->getMessage());
                 }
@@ -83,7 +91,8 @@ class DumpCommand extends Command
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D', '-n']);
                 try {
                     $process->run();
-                    $yaml['exiftool_raw'] = $process->getOutput();
+                    $formatter = new Formatter();
+//                    $yaml['exiftool_raw'] = $formatter->format($process->getOutput());
                 } catch (\Exception $e) {
                     $output->write(' error: ' . $e->getMessage());
                 }
@@ -96,7 +105,7 @@ class DumpCommand extends Command
             }
             $output_yaml = array_merge($output_yaml, $yaml);
 
-            $fs->dumpFile($test_dump_file, Yaml::dump($output_yaml, 40));
+//            $fs->dumpFile($test_dump_file, Yaml::dump($output_yaml, 40));
             $output->writeln(' done.');
         }
 
