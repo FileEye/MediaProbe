@@ -70,7 +70,7 @@ class DumpCommand extends Command
         foreach ($finder as $file) {
             $output->write('Processing ' . $file . '... ');
 
-            $dumpFile = $dumpPath . '/' . $file->getFileName() . '.dump.yml';
+            $dumpFile = $dumpPath . '/' . $file->getRelativePathName() . '.dump.yml';
             $input_yaml = Yaml::parse(file_get_contents($dumpFile));
             unset($input_yaml['exiftool'], $input_yaml['exiftool_raw']);
 dump($input_yaml);
