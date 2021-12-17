@@ -59,18 +59,21 @@ class DumpCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $sourcePath = $input->getArgument('file-path');
+        $dumpPath = $input->getArgument('dump-path');
+
         $fs = new Filesystem();
 
         $finder = new Finder();
-        $finder->files()->in($input->getArgument('file-path'))->name('*');
+        $finder->files()->in($sourcePath)->name('*');
 
         foreach ($finder as $file) {
             $output->write('Processing ' . $file . '... ');
 
-dump($file);
-            $test_dump_file = (string) $file . '.test-dump.yml';
-            $input_yaml = Yaml::parse(file_get_contents($test_dump_file));
+            $dumpFile = $dumpPath . '/' . $file->getFileName() . '.dump.yml';
+            $input_yaml = Yaml::parse(file_get_contents($dumpFile));
             unset($input_yaml['exiftool'], $input_yaml['exiftool_raw']);
+dump($input_yaml);
 
             // Dump via MediaProbe.
             $output->write('1');
@@ -106,7 +109,7 @@ dump($file);
             }
             $output_yaml = array_merge($output_yaml, $yaml);
 
-//            $fs->dumpFile($test_dump_file, Yaml::dump($output_yaml, 40));
+            $fs->dumpFile($dumpFile, Yaml::dump($output_yaml, 40));
             $output->writeln(' done.');
         }
 
