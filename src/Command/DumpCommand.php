@@ -73,11 +73,15 @@ class DumpCommand extends Command
             $dumpFile = $dumpPath . '/' . $file->getRelativePathName() . '.dump.yml';
             $input_yaml = Yaml::parse(file_get_contents($dumpFile));
             unset($input_yaml['exiftool'], $input_yaml['exiftool_raw']);
-dump($input_yaml);
 
             // Dump via MediaProbe.
             $output->write('1');
-            $yaml = $this->fileToTestDumpArray($file);
+            try {
+                $yaml = $this->fileToTestDumpArray($file);
+            } catch (\Exception $e) {
+                $output->write(' error: ' . $e->getMessage());
+                continue;
+            }
 
             if ($input->getOption('exiftool')) {
                 // Dump via Exiftool.
