@@ -14,7 +14,7 @@ elements:
             class: FileEye\MediaProbe\Block\Jpeg
             parsed: true
             id: Jpeg
-            collection: Jpeg
+            collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
@@ -274,5 +274,77 @@ exifReadData:
         Height: 400
         Width: 600
         IsColor: 1
-exiftool: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/broken_images/pel-152.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>pel-152.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>17 kB</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:CurrentIPTCDigest et:id='CurrentIPTCDigest' et:table='Extra'>d41d8cd98f00b204e9800998ecf8427e</File:CurrentIPTCDigest>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>600</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>400</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:0 (2 2)</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1.01</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>inches</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>599</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>599</JFIF:YResolution>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>600x400</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.240</Composite:Megapixels>\n</rdf:Description>\n</rdf:RDF>\n"
-exiftool_raw: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/broken_images/pel-152.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>pel-152.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>17694</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:CurrentIPTCDigest et:id='CurrentIPTCDigest' et:table='Extra'>d41d8cd98f00b204e9800998ecf8427e</File:CurrentIPTCDigest>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>600</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>400</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 2</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1 1</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>1</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>599</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>599</JFIF:YResolution>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>600x400</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.24</Composite:Megapixels>\n</rdf:Description>\n</rdf:RDF>\n"
+exiftool: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/broken_images/pel-152.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>pel-152.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>17 kB</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:CurrentIPTCDigest et:id='CurrentIPTCDigest' et:table='Extra'>d41d8cd98f00b204e9800998ecf8427e</File:CurrentIPTCDigest>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>600</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>400</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:0 (2 2)</File:YCbCrSubSampling>
+    <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1.01</JFIF:JFIFVersion>
+    <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>inches</JFIF:ResolutionUnit>
+    <JFIF:XResolution et:id='3' et:table='JFIF::Main'>599</JFIF:XResolution>
+    <JFIF:YResolution et:id='5' et:table='JFIF::Main'>599</JFIF:YResolution>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>600x400</Composite:ImageSize>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.240</Composite:Megapixels>
+    </rdf:Description>
+    </rdf:RDF>
+exiftool_raw: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/broken_images/pel-152.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>pel-152.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>17694</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:06:14 15:59:42+01:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:CurrentIPTCDigest et:id='CurrentIPTCDigest' et:table='Extra'>d41d8cd98f00b204e9800998ecf8427e</File:CurrentIPTCDigest>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>600</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>400</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 2</File:YCbCrSubSampling>
+    <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1 1</JFIF:JFIFVersion>
+    <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>1</JFIF:ResolutionUnit>
+    <JFIF:XResolution et:id='3' et:table='JFIF::Main'>599</JFIF:XResolution>
+    <JFIF:YResolution et:id='5' et:table='JFIF::Main'>599</JFIF:YResolution>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>600x400</Composite:ImageSize>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.24</Composite:Megapixels>
+    </rdf:Description>
+    </rdf:RDF>

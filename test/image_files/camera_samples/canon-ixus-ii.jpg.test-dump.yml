@@ -24,7 +24,7 @@ elements:
             class: FileEye\MediaProbe\Block\Jpeg
             parsed: true
             id: Jpeg
-            collection: Jpeg
+            collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
@@ -58,14 +58,14 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             class: FileEye\MediaProbe\Block\Exif\Exif
                             parsed: true
-                            collection: Exif
+                            collection: Exif\Exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     class: FileEye\MediaProbe\Block\Tiff
                                     parsed: true
-                                    collection: Tiff
+                                    collection: Tiff\Tiff
                                     elements:
                                         -
                                             node: ifd
@@ -3003,5 +3003,367 @@ exifReadData:
         - 108
         - 0
         - 6
-exiftool: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/camera_samples/canon-ixus-ii.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:Canon='http://ns.exiftool.ca/MakerNotes/Canon/1.0/'\n  xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>canon-ixus-ii.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>37 kB</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Little-endian (Intel, II)</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>640</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>480</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:2 (2 1)</File:YCbCrSubSampling>\n <IFD0:Make et:id='271' et:table='Exif::Main'>Canon</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>Canon DIGITAL IXUS II</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>Rotate 90 CW</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>180</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>180</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2004:07:10 19:43:48</IFD0:ModifyDate>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Centered</IFD0:YCbCrPositioning>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/30</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>3.2</ExifIFD:FNumber>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0220</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>\n <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>2</ExifIFD:CompressedBitsPerPixel>\n <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>1/30</ExifIFD:ShutterSpeedValue>\n <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>3.2</ExifIFD:ApertureValue>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>-1/3</ExifIFD:ExposureCompensation>\n <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>3.2</ExifIFD:MaxApertureValue>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Off, Did not fire</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.7 mm</ExifIFD:FocalLength>\n <ExifIFD:UserComment et:id='37510' et:table='Exif::Main'></ExifIFD:UserComment>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>sRGB</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>640</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>480</ExifIFD:ExifImageHeight>\n <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneXResolution>\n <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneYResolution>\n <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>inches</ExifIFD:FocalPlaneResolutionUnit>\n <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>One-chip color area</ExifIFD:SensingMethod>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Manual</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Manual</ExifIFD:WhiteBalance>\n <ExifIFD:DigitalZoomRatio et:id='41988' et:table='Exif::Main'>1</ExifIFD:DigitalZoomRatio>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Standard</ExifIFD:SceneCaptureType>\n <Canon:MacroMode et:id='1' et:table='Canon::CameraSettings'>Normal</Canon:MacroMode>\n <Canon:SelfTimer et:id='2' et:table='Canon::CameraSettings'>Off</Canon:SelfTimer>\n <Canon:Quality et:id='3' et:table='Canon::CameraSettings'>Normal</Canon:Quality>\n <Canon:CanonFlashMode et:id='4' et:table='Canon::CameraSettings'>Off</Canon:CanonFlashMode>\n <Canon:ContinuousDrive et:id='5' et:table='Canon::CameraSettings'>Single</Canon:ContinuousDrive>\n <Canon:FocusMode et:id='7' et:table='Canon::CameraSettings'>Single</Canon:FocusMode>\n <Canon:RecordMode et:id='9' et:table='Canon::CameraSettings'>JPEG</Canon:RecordMode>\n <Canon:CanonImageSize et:id='10' et:table='Canon::CameraSettings'>Small</Canon:CanonImageSize>\n <Canon:EasyMode et:id='11' et:table='Canon::CameraSettings'>Manual</Canon:EasyMode>\n <Canon:DigitalZoom et:id='12' et:table='Canon::CameraSettings'>None</Canon:DigitalZoom>\n <Canon:Contrast et:id='13' et:table='Canon::CameraSettings'>Normal</Canon:Contrast>\n <Canon:Saturation et:id='14' et:table='Canon::CameraSettings'>Normal</Canon:Saturation>\n <Canon:Sharpness et:id='15' et:table='Canon::CameraSettings'>0</Canon:Sharpness>\n <Canon:CameraISO et:id='16' et:table='Canon::CameraSettings'>Auto</Canon:CameraISO>\n <Canon:MeteringMode et:id='17' et:table='Canon::CameraSettings'>Evaluative</Canon:MeteringMode>\n <Canon:FocusRange et:id='18' et:table='Canon::CameraSettings'>Auto</Canon:FocusRange>\n <Canon:AFPoint et:id='19' et:table='Canon::CameraSettings'>Auto AF point selection</Canon:AFPoint>\n <Canon:CanonExposureMode et:id='20' et:table='Canon::CameraSettings'>Easy</Canon:CanonExposureMode>\n <Canon:LensType et:id='22' et:table='Canon::CameraSettings'>n/a</Canon:LensType>\n <Canon:MaxFocalLength et:id='23' et:table='Canon::CameraSettings'>10.8125 mm</Canon:MaxFocalLength>\n <Canon:MinFocalLength et:id='24' et:table='Canon::CameraSettings'>5.40625 mm</Canon:MinFocalLength>\n <Canon:FocalUnits et:id='25' et:table='Canon::CameraSettings'>32/mm</Canon:FocalUnits>\n <Canon:MaxAperture et:id='26' et:table='Canon::CameraSettings'>3.2</Canon:MaxAperture>\n <Canon:MinAperture et:id='27' et:table='Canon::CameraSettings'>7.8</Canon:MinAperture>\n <Canon:FlashActivity et:id='28' et:table='Canon::CameraSettings'>0</Canon:FlashActivity>\n <Canon:FlashBits et:id='29' et:table='Canon::CameraSettings'>(none)</Canon:FlashBits>\n <Canon:FocusContinuous et:id='32' et:table='Canon::CameraSettings'>Single</Canon:FocusContinuous>\n <Canon:AESetting et:id='33' et:table='Canon::CameraSettings'>Exposure Compensation</Canon:AESetting>\n <Canon:ZoomSourceWidth et:id='36' et:table='Canon::CameraSettings'>2048</Canon:ZoomSourceWidth>\n <Canon:ZoomTargetWidth et:id='37' et:table='Canon::CameraSettings'>2048</Canon:ZoomTargetWidth>\n <Canon:SpotMeteringMode et:id='39' et:table='Canon::CameraSettings'>Center</Canon:SpotMeteringMode>\n <Canon:PhotoEffect et:id='40' et:table='Canon::CameraSettings'>Smooth</Canon:PhotoEffect>\n <Canon:ManualFlashOutput et:id='41' et:table='Canon::CameraSettings'>n/a</Canon:ManualFlashOutput>\n <Canon:FocalType et:id='0' et:table='Canon::FocalLength'>Zoom</Canon:FocalType>\n <Canon:FocalLength et:id='1' et:table='Canon::FocalLength'>6.71875 mm</Canon:FocalLength>\n <Canon:FocalPlaneXSize et:id='2' et:table='Canon::FocalLength' et:index='0'>5.41 mm</Canon:FocalPlaneXSize>\n <Canon:FocalPlaneYSize et:id='3' et:table='Canon::FocalLength' et:index='0'>4.04 mm</Canon:FocalPlaneYSize>\n <Canon:AutoISO et:id='1' et:table='Canon::ShotInfo'>100</Canon:AutoISO>\n <Canon:BaseISO et:id='2' et:table='Canon::ShotInfo'>50</Canon:BaseISO>\n <Canon:MeasuredEV et:id='3' et:table='Canon::ShotInfo'>9.03</Canon:MeasuredEV>\n <Canon:TargetAperture et:id='4' et:table='Canon::ShotInfo'>3.2</Canon:TargetAperture>\n <Canon:TargetExposureTime et:id='5' et:table='Canon::ShotInfo'>1/30</Canon:TargetExposureTime>\n <Canon:ExposureCompensation et:id='6' et:table='Canon::ShotInfo'>-1/3</Canon:ExposureCompensation>\n <Canon:WhiteBalance et:id='7' et:table='Canon::ShotInfo'>Fluorescent</Canon:WhiteBalance>\n <Canon:SlowShutter et:id='8' et:table='Canon::ShotInfo'>Off</Canon:SlowShutter>\n <Canon:SequenceNumber et:id='9' et:table='Canon::ShotInfo'>0</Canon:SequenceNumber>\n <Canon:OpticalZoomCode et:id='10' et:table='Canon::ShotInfo'>1</Canon:OpticalZoomCode>\n <Canon:FlashGuideNumber et:id='13' et:table='Canon::ShotInfo'>0</Canon:FlashGuideNumber>\n <Canon:FlashExposureComp et:id='15' et:table='Canon::ShotInfo'>0</Canon:FlashExposureComp>\n <Canon:AutoExposureBracketing et:id='16' et:table='Canon::ShotInfo'>Off</Canon:AutoExposureBracketing>\n <Canon:AEBBracketValue et:id='17' et:table='Canon::ShotInfo'>0</Canon:AEBBracketValue>\n <Canon:ControlMode et:id='18' et:table='Canon::ShotInfo'>Camera Local Control</Canon:ControlMode>\n <Canon:FocusDistanceUpper et:id='19' et:table='Canon::ShotInfo'>0.54 m</Canon:FocusDistanceUpper>\n <Canon:FocusDistanceLower et:id='20' et:table='Canon::ShotInfo'>0 m</Canon:FocusDistanceLower>\n <Canon:FNumber et:id='21' et:table='Canon::ShotInfo'>3.2</Canon:FNumber>\n <Canon:ExposureTime et:id='22' et:table='Canon::ShotInfo' et:index='1'>1/33</Canon:ExposureTime>\n <Canon:BulbDuration et:id='24' et:table='Canon::ShotInfo'>0</Canon:BulbDuration>\n <Canon:CameraType et:id='26' et:table='Canon::ShotInfo'>Compact</Canon:CameraType>\n <Canon:AutoRotate et:id='27' et:table='Canon::ShotInfo'>Rotate 90 CW</Canon:AutoRotate>\n <Canon:NDFilter et:id='28' et:table='Canon::ShotInfo'>Off</Canon:NDFilter>\n <Canon:SelfTimer2 et:id='29' et:table='Canon::ShotInfo'>0</Canon:SelfTimer2>\n <Canon:FlashOutput et:id='33' et:table='Canon::ShotInfo'>43</Canon:FlashOutput>\n <Canon:NumAFPoints et:id='0' et:table='Canon::AFInfo'>9</Canon:NumAFPoints>\n <Canon:ValidAFPoints et:id='1' et:table='Canon::AFInfo'>9</Canon:ValidAFPoints>\n <Canon:CanonImageWidth et:id='2' et:table='Canon::AFInfo'>640</Canon:CanonImageWidth>\n <Canon:CanonImageHeight et:id='3' et:table='Canon::AFInfo'>480</Canon:CanonImageHeight>\n <Canon:AFImageWidth et:id='4' et:table='Canon::AFInfo'>2048</Canon:AFImageWidth>\n <Canon:AFImageHeight et:id='5' et:table='Canon::AFInfo'>256</Canon:AFImageHeight>\n <Canon:AFAreaWidth et:id='6' et:table='Canon::AFInfo'>369</Canon:AFAreaWidth>\n <Canon:AFAreaHeight et:id='7' et:table='Canon::AFInfo'>42</Canon:AFAreaHeight>\n <Canon:AFAreaXPositions et:id='8' et:table='Canon::AFInfo'>-370 0 370 -370 0 370 -370 0 370</Canon:AFAreaXPositions>\n <Canon:AFAreaYPositions et:id='9' et:table='Canon::AFInfo'>-48 -48 -48 0 0 0 48 48 48</Canon:AFAreaYPositions>\n <Canon:AFPointsInFocus et:id='10' et:table='Canon::AFInfo'>0</Canon:AFPointsInFocus>\n <Canon:PrimaryAFPoint et:id='11' et:table='Canon::AFInfo' et:index='0'>2</Canon:PrimaryAFPoint>\n <Canon:ThumbnailImageValidArea et:id='19' et:table='Canon::Main'>0 0 0 0</Canon:ThumbnailImageValidArea>\n <Canon:CanonImageType et:id='6' et:table='Canon::Main'>IMG:DIGITAL IXUS II JPEG</Canon:CanonImageType>\n <Canon:CanonFirmwareVersion et:id='7' et:table='Canon::Main'>Firmware Version 1.00</Canon:CanonFirmwareVersion>\n <Canon:FileNumber et:id='8' et:table='Canon::Main'>120-2044</Canon:FileNumber>\n <Canon:OwnerName et:id='9' et:table='Canon::Main'></Canon:OwnerName>\n <Canon:CanonModelID et:id='16' et:table='Canon::Main'>PowerShot SD100 / Digital IXUS II / IXY Digital 30</Canon:CanonModelID>\n <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R98 - DCF basic file (sRGB)</InteropIFD:InteropIndex>\n <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>\n <InteropIFD:RelatedImageWidth et:id='4097' et:table='Exif::Main'>640</InteropIFD:RelatedImageWidth>\n <InteropIFD:RelatedImageHeight et:id='4098' et:table='Exif::Main'>480</InteropIFD:RelatedImageHeight>\n <IFD1:Compression et:id='259' et:table='Exif::Main'>JPEG (old-style)</IFD1:Compression>\n <IFD1:XResolution et:id='282' et:table='Exif::Main'>180</IFD1:XResolution>\n <IFD1:YResolution et:id='283' et:table='Exif::Main'>180</IFD1:YResolution>\n <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD1:ResolutionUnit>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>2048</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>4853</IFD1:ThumbnailLength>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 4853 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>3.2</Composite:Aperture>\n <Composite:DriveMode et:id='DriveMode' et:table='Composite'>Single-frame Shooting</Composite:DriveMode>\n <Composite:ISO et:id='ISO' et:table='Composite'>50</Composite:ISO>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>640x480</Composite:ImageSize>\n <Composite:Lens et:id='Lens' et:table='Composite'>5.4 - 10.8 mm</Composite:Lens>\n <Composite:LensID et:id='LensID' et:table='Composite'>Unknown 5-10mm</Composite:LensID>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.307</Composite:Megapixels>\n <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>6.6</Composite:ScaleFactor35efl>\n <Composite:ShootingMode et:id='ShootingMode' et:table='Composite'>Manual</Composite:ShootingMode>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/30</Composite:ShutterSpeed>\n <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.005 mm</Composite:CircleOfConfusion>\n <Composite:DOF et:id='DOF' et:table='Composite'>0.05 m (0.25 - 0.30 m)</Composite:DOF>\n <Composite:FOV et:id='FOV' et:table='Composite'>44.5 deg</Composite:FOV>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>6.7 mm (35 mm equivalent: 44.0 mm)</Composite:FocalLength35efl>\n <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>3.08 m</Composite:HyperfocalDistance>\n <Composite:Lens35efl et:id='Lens35efl' et:table='Composite'>5.4 - 10.8 mm (35 mm equivalent: 35.4 - 70.8 mm)</Composite:Lens35efl>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>9.3</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
-exiftool_raw: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/camera_samples/canon-ixus-ii.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:Canon='http://ns.exiftool.ca/MakerNotes/Canon/1.0/'\n  xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>canon-ixus-ii.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>37553</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>II</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>640</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>480</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 1</File:YCbCrSubSampling>\n <IFD0:Make et:id='271' et:table='Exif::Main'>Canon</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>Canon DIGITAL IXUS II</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>6</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>180</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>180</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2004:07:10 19:43:48</IFD0:ModifyDate>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>1</IFD0:YCbCrPositioning>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.03333333333</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>3.2</ExifIFD:FNumber>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0220</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>\n <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>2</ExifIFD:CompressedBitsPerPixel>\n <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>0.0333481375211507</ExifIFD:ShutterSpeedValue>\n <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>3.18628430268453</ExifIFD:ApertureValue>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>-0.3333333333</ExifIFD:ExposureCompensation>\n <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>3.18628430268453</ExifIFD:MaxApertureValue>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>16</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.71875</ExifIFD:FocalLength>\n <ExifIFD:UserComment et:id='37510' et:table='Exif::Main'></ExifIFD:UserComment>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>1</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>640</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>480</ExifIFD:ExifImageHeight>\n <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneXResolution>\n <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneYResolution>\n <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>2</ExifIFD:FocalPlaneResolutionUnit>\n <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>2</ExifIFD:SensingMethod>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>1</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>1</ExifIFD:WhiteBalance>\n <ExifIFD:DigitalZoomRatio et:id='41988' et:table='Exif::Main'>1</ExifIFD:DigitalZoomRatio>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>0</ExifIFD:SceneCaptureType>\n <Canon:MacroMode et:id='1' et:table='Canon::CameraSettings'>2</Canon:MacroMode>\n <Canon:SelfTimer et:id='2' et:table='Canon::CameraSettings'>0</Canon:SelfTimer>\n <Canon:Quality et:id='3' et:table='Canon::CameraSettings'>2</Canon:Quality>\n <Canon:CanonFlashMode et:id='4' et:table='Canon::CameraSettings'>0</Canon:CanonFlashMode>\n <Canon:ContinuousDrive et:id='5' et:table='Canon::CameraSettings'>0</Canon:ContinuousDrive>\n <Canon:FocusMode et:id='7' et:table='Canon::CameraSettings'>4</Canon:FocusMode>\n <Canon:RecordMode et:id='9' et:table='Canon::CameraSettings'>1</Canon:RecordMode>\n <Canon:CanonImageSize et:id='10' et:table='Canon::CameraSettings'>2</Canon:CanonImageSize>\n <Canon:EasyMode et:id='11' et:table='Canon::CameraSettings'>1</Canon:EasyMode>\n <Canon:DigitalZoom et:id='12' et:table='Canon::CameraSettings'>0</Canon:DigitalZoom>\n <Canon:Contrast et:id='13' et:table='Canon::CameraSettings'>0</Canon:Contrast>\n <Canon:Saturation et:id='14' et:table='Canon::CameraSettings'>0</Canon:Saturation>\n <Canon:Sharpness et:id='15' et:table='Canon::CameraSettings'>0</Canon:Sharpness>\n <Canon:CameraISO et:id='16' et:table='Canon::CameraSettings'>Auto</Canon:CameraISO>\n <Canon:MeteringMode et:id='17' et:table='Canon::CameraSettings'>3</Canon:MeteringMode>\n <Canon:FocusRange et:id='18' et:table='Canon::CameraSettings'>1</Canon:FocusRange>\n <Canon:AFPoint et:id='19' et:table='Canon::CameraSettings'>16385</Canon:AFPoint>\n <Canon:CanonExposureMode et:id='20' et:table='Canon::CameraSettings'>0</Canon:CanonExposureMode>\n <Canon:LensType et:id='22' et:table='Canon::CameraSettings'>65535</Canon:LensType>\n <Canon:MaxFocalLength et:id='23' et:table='Canon::CameraSettings'>10.8125</Canon:MaxFocalLength>\n <Canon:MinFocalLength et:id='24' et:table='Canon::CameraSettings'>5.40625</Canon:MinFocalLength>\n <Canon:FocalUnits et:id='25' et:table='Canon::CameraSettings'>32</Canon:FocalUnits>\n <Canon:MaxAperture et:id='26' et:table='Canon::CameraSettings'>3.15196169021577</Canon:MaxAperture>\n <Canon:MinAperture et:id='27' et:table='Canon::CameraSettings'>7.8285764967016</Canon:MinAperture>\n <Canon:FlashActivity et:id='28' et:table='Canon::CameraSettings'>0</Canon:FlashActivity>\n <Canon:FlashBits et:id='29' et:table='Canon::CameraSettings'>0</Canon:FlashBits>\n <Canon:FocusContinuous et:id='32' et:table='Canon::CameraSettings'>0</Canon:FocusContinuous>\n <Canon:AESetting et:id='33' et:table='Canon::CameraSettings'>1</Canon:AESetting>\n <Canon:ZoomSourceWidth et:id='36' et:table='Canon::CameraSettings'>2048</Canon:ZoomSourceWidth>\n <Canon:ZoomTargetWidth et:id='37' et:table='Canon::CameraSettings'>2048</Canon:ZoomTargetWidth>\n <Canon:SpotMeteringMode et:id='39' et:table='Canon::CameraSettings'>0</Canon:SpotMeteringMode>\n <Canon:PhotoEffect et:id='40' et:table='Canon::CameraSettings'>3</Canon:PhotoEffect>\n <Canon:ManualFlashOutput et:id='41' et:table='Canon::CameraSettings'>0</Canon:ManualFlashOutput>\n <Canon:FocalType et:id='0' et:table='Canon::FocalLength'>2</Canon:FocalType>\n <Canon:FocalLength et:id='1' et:table='Canon::FocalLength'>6.71875</Canon:FocalLength>\n <Canon:FocalPlaneXSize et:id='2' et:table='Canon::FocalLength' et:index='0'>5.4102</Canon:FocalPlaneXSize>\n <Canon:FocalPlaneYSize et:id='3' et:table='Canon::FocalLength' et:index='0'>4.0386</Canon:FocalPlaneYSize>\n <Canon:AutoISO et:id='1' et:table='Canon::ShotInfo'>100</Canon:AutoISO>\n <Canon:BaseISO et:id='2' et:table='Canon::ShotInfo'>50</Canon:BaseISO>\n <Canon:MeasuredEV et:id='3' et:table='Canon::ShotInfo'>9.03125</Canon:MeasuredEV>\n <Canon:TargetAperture et:id='4' et:table='Canon::ShotInfo'>3.18628430268453</Canon:TargetAperture>\n <Canon:TargetExposureTime et:id='5' et:table='Canon::ShotInfo'>0.0333481375211507</Canon:TargetExposureTime>\n <Canon:ExposureCompensation et:id='6' et:table='Canon::ShotInfo'>-0.333333333333333</Canon:ExposureCompensation>\n <Canon:WhiteBalance et:id='7' et:table='Canon::ShotInfo'>4</Canon:WhiteBalance>\n <Canon:SlowShutter et:id='8' et:table='Canon::ShotInfo'>0</Canon:SlowShutter>\n <Canon:SequenceNumber et:id='9' et:table='Canon::ShotInfo'>0</Canon:SequenceNumber>\n <Canon:OpticalZoomCode et:id='10' et:table='Canon::ShotInfo'>1</Canon:OpticalZoomCode>\n <Canon:FlashGuideNumber et:id='13' et:table='Canon::ShotInfo'>0</Canon:FlashGuideNumber>\n <Canon:FlashExposureComp et:id='15' et:table='Canon::ShotInfo'>0</Canon:FlashExposureComp>\n <Canon:AutoExposureBracketing et:id='16' et:table='Canon::ShotInfo'>0</Canon:AutoExposureBracketing>\n <Canon:AEBBracketValue et:id='17' et:table='Canon::ShotInfo'>0</Canon:AEBBracketValue>\n <Canon:ControlMode et:id='18' et:table='Canon::ShotInfo'>1</Canon:ControlMode>\n <Canon:FocusDistanceUpper et:id='19' et:table='Canon::ShotInfo'>0.54</Canon:FocusDistanceUpper>\n <Canon:FocusDistanceLower et:id='20' et:table='Canon::ShotInfo'>0</Canon:FocusDistanceLower>\n <Canon:FNumber et:id='21' et:table='Canon::ShotInfo'>3.15196169021577</Canon:FNumber>\n <Canon:ExposureTime et:id='22' et:table='Canon::ShotInfo' et:index='1'>0.0305803769402406</Canon:ExposureTime>\n <Canon:BulbDuration et:id='24' et:table='Canon::ShotInfo'>0</Canon:BulbDuration>\n <Canon:CameraType et:id='26' et:table='Canon::ShotInfo'>250</Canon:CameraType>\n <Canon:AutoRotate et:id='27' et:table='Canon::ShotInfo'>1</Canon:AutoRotate>\n <Canon:NDFilter et:id='28' et:table='Canon::ShotInfo'>0</Canon:NDFilter>\n <Canon:SelfTimer2 et:id='29' et:table='Canon::ShotInfo'>0</Canon:SelfTimer2>\n <Canon:FlashOutput et:id='33' et:table='Canon::ShotInfo'>43</Canon:FlashOutput>\n <Canon:NumAFPoints et:id='0' et:table='Canon::AFInfo'>9</Canon:NumAFPoints>\n <Canon:ValidAFPoints et:id='1' et:table='Canon::AFInfo'>9</Canon:ValidAFPoints>\n <Canon:CanonImageWidth et:id='2' et:table='Canon::AFInfo'>640</Canon:CanonImageWidth>\n <Canon:CanonImageHeight et:id='3' et:table='Canon::AFInfo'>480</Canon:CanonImageHeight>\n <Canon:AFImageWidth et:id='4' et:table='Canon::AFInfo'>2048</Canon:AFImageWidth>\n <Canon:AFImageHeight et:id='5' et:table='Canon::AFInfo'>256</Canon:AFImageHeight>\n <Canon:AFAreaWidth et:id='6' et:table='Canon::AFInfo'>369</Canon:AFAreaWidth>\n <Canon:AFAreaHeight et:id='7' et:table='Canon::AFInfo'>42</Canon:AFAreaHeight>\n <Canon:AFAreaXPositions et:id='8' et:table='Canon::AFInfo'>-370 0 370 -370 0 370 -370 0 370</Canon:AFAreaXPositions>\n <Canon:AFAreaYPositions et:id='9' et:table='Canon::AFInfo'>-48 -48 -48 0 0 0 48 48 48</Canon:AFAreaYPositions>\n <Canon:AFPointsInFocus et:id='10' et:table='Canon::AFInfo'>1</Canon:AFPointsInFocus>\n <Canon:PrimaryAFPoint et:id='11' et:table='Canon::AFInfo' et:index='0'>2</Canon:PrimaryAFPoint>\n <Canon:ThumbnailImageValidArea et:id='19' et:table='Canon::Main'>0 0 0 0</Canon:ThumbnailImageValidArea>\n <Canon:CanonImageType et:id='6' et:table='Canon::Main'>IMG:DIGITAL IXUS II JPEG</Canon:CanonImageType>\n <Canon:CanonFirmwareVersion et:id='7' et:table='Canon::Main'>Firmware Version 1.00</Canon:CanonFirmwareVersion>\n <Canon:FileNumber et:id='8' et:table='Canon::Main'>1202044</Canon:FileNumber>\n <Canon:OwnerName et:id='9' et:table='Canon::Main'></Canon:OwnerName>\n <Canon:CanonModelID et:id='16' et:table='Canon::Main'>19070976</Canon:CanonModelID>\n <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R98</InteropIFD:InteropIndex>\n <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>\n <InteropIFD:RelatedImageWidth et:id='4097' et:table='Exif::Main'>640</InteropIFD:RelatedImageWidth>\n <InteropIFD:RelatedImageHeight et:id='4098' et:table='Exif::Main'>480</InteropIFD:RelatedImageHeight>\n <IFD1:Compression et:id='259' et:table='Exif::Main'>6</IFD1:Compression>\n <IFD1:XResolution et:id='282' et:table='Exif::Main'>180</IFD1:XResolution>\n <IFD1:YResolution et:id='283' et:table='Exif::Main'>180</IFD1:YResolution>\n <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD1:ResolutionUnit>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>2048</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>4853</IFD1:ThumbnailLength>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 4853 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>3.2</Composite:Aperture>\n <Composite:DriveMode et:id='DriveMode' et:table='Composite'>2</Composite:DriveMode>\n <Composite:ISO et:id='ISO' et:table='Composite'>50</Composite:ISO>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>640x480</Composite:ImageSize>\n <Composite:Lens et:id='Lens' et:table='Composite'>5.40625</Composite:Lens>\n <Composite:LensID et:id='LensID' et:table='Composite'>65535</Composite:LensID>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.3072</Composite:Megapixels>\n <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>6.55157712077042</Composite:ScaleFactor35efl>\n <Composite:ShootingMode et:id='ShootingMode' et:table='Composite'>11</Composite:ShootingMode>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.03333333333</Composite:ShutterSpeed>\n <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.00458611111111111</Composite:CircleOfConfusion>\n <Composite:DOF et:id='DOF' et:table='Composite'>0.248712027219364 0.295273283712037</Composite:DOF>\n <Composite:FOV et:id='FOV' et:table='Composite'>44.4812896513926</Composite:FOV>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>44.0184087801763</Composite:FocalLength35efl>\n <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>3.07597224456769</Composite:HyperfocalDistance>\n <Composite:Lens35efl et:id='Lens35efl' et:table='Composite'>35.4194638091651</Composite:Lens35efl>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>9.26303440597806</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
+exiftool: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/camera_samples/canon-ixus-ii.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:Canon='http://ns.exiftool.ca/MakerNotes/Canon/1.0/'
+    xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'
+    xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>canon-ixus-ii.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>37 kB</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Little-endian (Intel, II)</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>640</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>480</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:2 (2 1)</File:YCbCrSubSampling>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>Canon</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>Canon DIGITAL IXUS II</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>Rotate 90 CW</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>180</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>180</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2004:07:10 19:43:48</IFD0:ModifyDate>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Centered</IFD0:YCbCrPositioning>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/30</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>3.2</ExifIFD:FNumber>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0220</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>2</ExifIFD:CompressedBitsPerPixel>
+    <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>1/30</ExifIFD:ShutterSpeedValue>
+    <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>3.2</ExifIFD:ApertureValue>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>-1/3</ExifIFD:ExposureCompensation>
+    <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>3.2</ExifIFD:MaxApertureValue>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Off, Did not fire</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.7 mm</ExifIFD:FocalLength>
+    <ExifIFD:UserComment et:id='37510' et:table='Exif::Main'>
+    </ExifIFD:UserComment>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>sRGB</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>640</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>480</ExifIFD:ExifImageHeight>
+    <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneXResolution>
+    <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneYResolution>
+    <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>inches</ExifIFD:FocalPlaneResolutionUnit>
+    <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>One-chip color area</ExifIFD:SensingMethod>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Manual</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Manual</ExifIFD:WhiteBalance>
+    <ExifIFD:DigitalZoomRatio et:id='41988' et:table='Exif::Main'>1</ExifIFD:DigitalZoomRatio>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Standard</ExifIFD:SceneCaptureType>
+    <Canon:MacroMode et:id='1' et:table='Canon::CameraSettings'>Normal</Canon:MacroMode>
+    <Canon:SelfTimer et:id='2' et:table='Canon::CameraSettings'>Off</Canon:SelfTimer>
+    <Canon:Quality et:id='3' et:table='Canon::CameraSettings'>Normal</Canon:Quality>
+    <Canon:CanonFlashMode et:id='4' et:table='Canon::CameraSettings'>Off</Canon:CanonFlashMode>
+    <Canon:ContinuousDrive et:id='5' et:table='Canon::CameraSettings'>Single</Canon:ContinuousDrive>
+    <Canon:FocusMode et:id='7' et:table='Canon::CameraSettings'>Single</Canon:FocusMode>
+    <Canon:RecordMode et:id='9' et:table='Canon::CameraSettings'>JPEG</Canon:RecordMode>
+    <Canon:CanonImageSize et:id='10' et:table='Canon::CameraSettings'>Small</Canon:CanonImageSize>
+    <Canon:EasyMode et:id='11' et:table='Canon::CameraSettings'>Manual</Canon:EasyMode>
+    <Canon:DigitalZoom et:id='12' et:table='Canon::CameraSettings'>None</Canon:DigitalZoom>
+    <Canon:Contrast et:id='13' et:table='Canon::CameraSettings'>Normal</Canon:Contrast>
+    <Canon:Saturation et:id='14' et:table='Canon::CameraSettings'>Normal</Canon:Saturation>
+    <Canon:Sharpness et:id='15' et:table='Canon::CameraSettings'>0</Canon:Sharpness>
+    <Canon:CameraISO et:id='16' et:table='Canon::CameraSettings'>Auto</Canon:CameraISO>
+    <Canon:MeteringMode et:id='17' et:table='Canon::CameraSettings'>Evaluative</Canon:MeteringMode>
+    <Canon:FocusRange et:id='18' et:table='Canon::CameraSettings'>Auto</Canon:FocusRange>
+    <Canon:AFPoint et:id='19' et:table='Canon::CameraSettings'>Auto AF point selection</Canon:AFPoint>
+    <Canon:CanonExposureMode et:id='20' et:table='Canon::CameraSettings'>Easy</Canon:CanonExposureMode>
+    <Canon:LensType et:id='22' et:table='Canon::CameraSettings'>n/a</Canon:LensType>
+    <Canon:MaxFocalLength et:id='23' et:table='Canon::CameraSettings'>10.8125 mm</Canon:MaxFocalLength>
+    <Canon:MinFocalLength et:id='24' et:table='Canon::CameraSettings'>5.40625 mm</Canon:MinFocalLength>
+    <Canon:FocalUnits et:id='25' et:table='Canon::CameraSettings'>32/mm</Canon:FocalUnits>
+    <Canon:MaxAperture et:id='26' et:table='Canon::CameraSettings'>3.2</Canon:MaxAperture>
+    <Canon:MinAperture et:id='27' et:table='Canon::CameraSettings'>7.8</Canon:MinAperture>
+    <Canon:FlashActivity et:id='28' et:table='Canon::CameraSettings'>0</Canon:FlashActivity>
+    <Canon:FlashBits et:id='29' et:table='Canon::CameraSettings'>(none)</Canon:FlashBits>
+    <Canon:FocusContinuous et:id='32' et:table='Canon::CameraSettings'>Single</Canon:FocusContinuous>
+    <Canon:AESetting et:id='33' et:table='Canon::CameraSettings'>Exposure Compensation</Canon:AESetting>
+    <Canon:ZoomSourceWidth et:id='36' et:table='Canon::CameraSettings'>2048</Canon:ZoomSourceWidth>
+    <Canon:ZoomTargetWidth et:id='37' et:table='Canon::CameraSettings'>2048</Canon:ZoomTargetWidth>
+    <Canon:SpotMeteringMode et:id='39' et:table='Canon::CameraSettings'>Center</Canon:SpotMeteringMode>
+    <Canon:PhotoEffect et:id='40' et:table='Canon::CameraSettings'>Smooth</Canon:PhotoEffect>
+    <Canon:ManualFlashOutput et:id='41' et:table='Canon::CameraSettings'>n/a</Canon:ManualFlashOutput>
+    <Canon:FocalType et:id='0' et:table='Canon::FocalLength'>Zoom</Canon:FocalType>
+    <Canon:FocalLength et:id='1' et:table='Canon::FocalLength'>6.71875 mm</Canon:FocalLength>
+    <Canon:FocalPlaneXSize et:id='2' et:table='Canon::FocalLength' et:index='0'>5.41 mm</Canon:FocalPlaneXSize>
+    <Canon:FocalPlaneYSize et:id='3' et:table='Canon::FocalLength' et:index='0'>4.04 mm</Canon:FocalPlaneYSize>
+    <Canon:AutoISO et:id='1' et:table='Canon::ShotInfo'>100</Canon:AutoISO>
+    <Canon:BaseISO et:id='2' et:table='Canon::ShotInfo'>50</Canon:BaseISO>
+    <Canon:MeasuredEV et:id='3' et:table='Canon::ShotInfo'>9.03</Canon:MeasuredEV>
+    <Canon:TargetAperture et:id='4' et:table='Canon::ShotInfo'>3.2</Canon:TargetAperture>
+    <Canon:TargetExposureTime et:id='5' et:table='Canon::ShotInfo'>1/30</Canon:TargetExposureTime>
+    <Canon:ExposureCompensation et:id='6' et:table='Canon::ShotInfo'>-1/3</Canon:ExposureCompensation>
+    <Canon:WhiteBalance et:id='7' et:table='Canon::ShotInfo'>Fluorescent</Canon:WhiteBalance>
+    <Canon:SlowShutter et:id='8' et:table='Canon::ShotInfo'>Off</Canon:SlowShutter>
+    <Canon:SequenceNumber et:id='9' et:table='Canon::ShotInfo'>0</Canon:SequenceNumber>
+    <Canon:OpticalZoomCode et:id='10' et:table='Canon::ShotInfo'>1</Canon:OpticalZoomCode>
+    <Canon:FlashGuideNumber et:id='13' et:table='Canon::ShotInfo'>0</Canon:FlashGuideNumber>
+    <Canon:FlashExposureComp et:id='15' et:table='Canon::ShotInfo'>0</Canon:FlashExposureComp>
+    <Canon:AutoExposureBracketing et:id='16' et:table='Canon::ShotInfo'>Off</Canon:AutoExposureBracketing>
+    <Canon:AEBBracketValue et:id='17' et:table='Canon::ShotInfo'>0</Canon:AEBBracketValue>
+    <Canon:ControlMode et:id='18' et:table='Canon::ShotInfo'>Camera Local Control</Canon:ControlMode>
+    <Canon:FocusDistanceUpper et:id='19' et:table='Canon::ShotInfo'>0.54 m</Canon:FocusDistanceUpper>
+    <Canon:FocusDistanceLower et:id='20' et:table='Canon::ShotInfo'>0 m</Canon:FocusDistanceLower>
+    <Canon:FNumber et:id='21' et:table='Canon::ShotInfo'>3.2</Canon:FNumber>
+    <Canon:ExposureTime et:id='22' et:table='Canon::ShotInfo' et:index='1'>1/33</Canon:ExposureTime>
+    <Canon:BulbDuration et:id='24' et:table='Canon::ShotInfo'>0</Canon:BulbDuration>
+    <Canon:CameraType et:id='26' et:table='Canon::ShotInfo'>Compact</Canon:CameraType>
+    <Canon:AutoRotate et:id='27' et:table='Canon::ShotInfo'>Rotate 90 CW</Canon:AutoRotate>
+    <Canon:NDFilter et:id='28' et:table='Canon::ShotInfo'>Off</Canon:NDFilter>
+    <Canon:SelfTimer2 et:id='29' et:table='Canon::ShotInfo'>0</Canon:SelfTimer2>
+    <Canon:FlashOutput et:id='33' et:table='Canon::ShotInfo'>43</Canon:FlashOutput>
+    <Canon:NumAFPoints et:id='0' et:table='Canon::AFInfo'>9</Canon:NumAFPoints>
+    <Canon:ValidAFPoints et:id='1' et:table='Canon::AFInfo'>9</Canon:ValidAFPoints>
+    <Canon:CanonImageWidth et:id='2' et:table='Canon::AFInfo'>640</Canon:CanonImageWidth>
+    <Canon:CanonImageHeight et:id='3' et:table='Canon::AFInfo'>480</Canon:CanonImageHeight>
+    <Canon:AFImageWidth et:id='4' et:table='Canon::AFInfo'>2048</Canon:AFImageWidth>
+    <Canon:AFImageHeight et:id='5' et:table='Canon::AFInfo'>256</Canon:AFImageHeight>
+    <Canon:AFAreaWidth et:id='6' et:table='Canon::AFInfo'>369</Canon:AFAreaWidth>
+    <Canon:AFAreaHeight et:id='7' et:table='Canon::AFInfo'>42</Canon:AFAreaHeight>
+    <Canon:AFAreaXPositions et:id='8' et:table='Canon::AFInfo'>-370 0 370 -370 0 370 -370 0 370</Canon:AFAreaXPositions>
+    <Canon:AFAreaYPositions et:id='9' et:table='Canon::AFInfo'>-48 -48 -48 0 0 0 48 48 48</Canon:AFAreaYPositions>
+    <Canon:AFPointsInFocus et:id='10' et:table='Canon::AFInfo'>0</Canon:AFPointsInFocus>
+    <Canon:PrimaryAFPoint et:id='11' et:table='Canon::AFInfo' et:index='0'>2</Canon:PrimaryAFPoint>
+    <Canon:ThumbnailImageValidArea et:id='19' et:table='Canon::Main'>0 0 0 0</Canon:ThumbnailImageValidArea>
+    <Canon:CanonImageType et:id='6' et:table='Canon::Main'>IMG:DIGITAL IXUS II JPEG</Canon:CanonImageType>
+    <Canon:CanonFirmwareVersion et:id='7' et:table='Canon::Main'>Firmware Version 1.00</Canon:CanonFirmwareVersion>
+    <Canon:FileNumber et:id='8' et:table='Canon::Main'>120-2044</Canon:FileNumber>
+    <Canon:OwnerName et:id='9' et:table='Canon::Main'>
+    </Canon:OwnerName>
+    <Canon:CanonModelID et:id='16' et:table='Canon::Main'>PowerShot SD100 / Digital IXUS II / IXY Digital 30</Canon:CanonModelID>
+    <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R98 - DCF basic file (sRGB)</InteropIFD:InteropIndex>
+    <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>
+    <InteropIFD:RelatedImageWidth et:id='4097' et:table='Exif::Main'>640</InteropIFD:RelatedImageWidth>
+    <InteropIFD:RelatedImageHeight et:id='4098' et:table='Exif::Main'>480</InteropIFD:RelatedImageHeight>
+    <IFD1:Compression et:id='259' et:table='Exif::Main'>JPEG (old-style)</IFD1:Compression>
+    <IFD1:XResolution et:id='282' et:table='Exif::Main'>180</IFD1:XResolution>
+    <IFD1:YResolution et:id='283' et:table='Exif::Main'>180</IFD1:YResolution>
+    <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD1:ResolutionUnit>
+    <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>2048</IFD1:ThumbnailOffset>
+    <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>4853</IFD1:ThumbnailLength>
+    <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 4853 bytes, use -b option to extract)</IFD1:ThumbnailImage>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>3.2</Composite:Aperture>
+    <Composite:DriveMode et:id='DriveMode' et:table='Composite'>Single-frame Shooting</Composite:DriveMode>
+    <Composite:ISO et:id='ISO' et:table='Composite'>50</Composite:ISO>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>640x480</Composite:ImageSize>
+    <Composite:Lens et:id='Lens' et:table='Composite'>5.4 - 10.8 mm</Composite:Lens>
+    <Composite:LensID et:id='LensID' et:table='Composite'>Unknown 5-10mm</Composite:LensID>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.307</Composite:Megapixels>
+    <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>6.6</Composite:ScaleFactor35efl>
+    <Composite:ShootingMode et:id='ShootingMode' et:table='Composite'>Manual</Composite:ShootingMode>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/30</Composite:ShutterSpeed>
+    <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.005 mm</Composite:CircleOfConfusion>
+    <Composite:DOF et:id='DOF' et:table='Composite'>0.05 m (0.25 - 0.30 m)</Composite:DOF>
+    <Composite:FOV et:id='FOV' et:table='Composite'>44.5 deg</Composite:FOV>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>6.7 mm (35 mm equivalent: 44.0 mm)</Composite:FocalLength35efl>
+    <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>3.08 m</Composite:HyperfocalDistance>
+    <Composite:Lens35efl et:id='Lens35efl' et:table='Composite'>5.4 - 10.8 mm (35 mm equivalent: 35.4 - 70.8 mm)</Composite:Lens35efl>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>9.3</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>
+exiftool_raw: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/camera_samples/canon-ixus-ii.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:Canon='http://ns.exiftool.ca/MakerNotes/Canon/1.0/'
+    xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'
+    xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>canon-ixus-ii.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>37553</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>II</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>640</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>480</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 1</File:YCbCrSubSampling>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>Canon</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>Canon DIGITAL IXUS II</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>6</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>180</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>180</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2004:07:10 19:43:48</IFD0:ModifyDate>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>1</IFD0:YCbCrPositioning>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.03333333333</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>3.2</ExifIFD:FNumber>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0220</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2004:07:10 19:43:48</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>2</ExifIFD:CompressedBitsPerPixel>
+    <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>0.0333481375211507</ExifIFD:ShutterSpeedValue>
+    <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>3.18628430268453</ExifIFD:ApertureValue>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>-0.3333333333</ExifIFD:ExposureCompensation>
+    <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>3.18628430268453</ExifIFD:MaxApertureValue>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>16</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.71875</ExifIFD:FocalLength>
+    <ExifIFD:UserComment et:id='37510' et:table='Exif::Main'>
+    </ExifIFD:UserComment>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>1</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>640</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>480</ExifIFD:ExifImageHeight>
+    <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneXResolution>
+    <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>3076.923077</ExifIFD:FocalPlaneYResolution>
+    <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>2</ExifIFD:FocalPlaneResolutionUnit>
+    <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>2</ExifIFD:SensingMethod>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>1</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>1</ExifIFD:WhiteBalance>
+    <ExifIFD:DigitalZoomRatio et:id='41988' et:table='Exif::Main'>1</ExifIFD:DigitalZoomRatio>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>0</ExifIFD:SceneCaptureType>
+    <Canon:MacroMode et:id='1' et:table='Canon::CameraSettings'>2</Canon:MacroMode>
+    <Canon:SelfTimer et:id='2' et:table='Canon::CameraSettings'>0</Canon:SelfTimer>
+    <Canon:Quality et:id='3' et:table='Canon::CameraSettings'>2</Canon:Quality>
+    <Canon:CanonFlashMode et:id='4' et:table='Canon::CameraSettings'>0</Canon:CanonFlashMode>
+    <Canon:ContinuousDrive et:id='5' et:table='Canon::CameraSettings'>0</Canon:ContinuousDrive>
+    <Canon:FocusMode et:id='7' et:table='Canon::CameraSettings'>4</Canon:FocusMode>
+    <Canon:RecordMode et:id='9' et:table='Canon::CameraSettings'>1</Canon:RecordMode>
+    <Canon:CanonImageSize et:id='10' et:table='Canon::CameraSettings'>2</Canon:CanonImageSize>
+    <Canon:EasyMode et:id='11' et:table='Canon::CameraSettings'>1</Canon:EasyMode>
+    <Canon:DigitalZoom et:id='12' et:table='Canon::CameraSettings'>0</Canon:DigitalZoom>
+    <Canon:Contrast et:id='13' et:table='Canon::CameraSettings'>0</Canon:Contrast>
+    <Canon:Saturation et:id='14' et:table='Canon::CameraSettings'>0</Canon:Saturation>
+    <Canon:Sharpness et:id='15' et:table='Canon::CameraSettings'>0</Canon:Sharpness>
+    <Canon:CameraISO et:id='16' et:table='Canon::CameraSettings'>Auto</Canon:CameraISO>
+    <Canon:MeteringMode et:id='17' et:table='Canon::CameraSettings'>3</Canon:MeteringMode>
+    <Canon:FocusRange et:id='18' et:table='Canon::CameraSettings'>1</Canon:FocusRange>
+    <Canon:AFPoint et:id='19' et:table='Canon::CameraSettings'>16385</Canon:AFPoint>
+    <Canon:CanonExposureMode et:id='20' et:table='Canon::CameraSettings'>0</Canon:CanonExposureMode>
+    <Canon:LensType et:id='22' et:table='Canon::CameraSettings'>65535</Canon:LensType>
+    <Canon:MaxFocalLength et:id='23' et:table='Canon::CameraSettings'>10.8125</Canon:MaxFocalLength>
+    <Canon:MinFocalLength et:id='24' et:table='Canon::CameraSettings'>5.40625</Canon:MinFocalLength>
+    <Canon:FocalUnits et:id='25' et:table='Canon::CameraSettings'>32</Canon:FocalUnits>
+    <Canon:MaxAperture et:id='26' et:table='Canon::CameraSettings'>3.15196169021577</Canon:MaxAperture>
+    <Canon:MinAperture et:id='27' et:table='Canon::CameraSettings'>7.8285764967016</Canon:MinAperture>
+    <Canon:FlashActivity et:id='28' et:table='Canon::CameraSettings'>0</Canon:FlashActivity>
+    <Canon:FlashBits et:id='29' et:table='Canon::CameraSettings'>0</Canon:FlashBits>
+    <Canon:FocusContinuous et:id='32' et:table='Canon::CameraSettings'>0</Canon:FocusContinuous>
+    <Canon:AESetting et:id='33' et:table='Canon::CameraSettings'>1</Canon:AESetting>
+    <Canon:ZoomSourceWidth et:id='36' et:table='Canon::CameraSettings'>2048</Canon:ZoomSourceWidth>
+    <Canon:ZoomTargetWidth et:id='37' et:table='Canon::CameraSettings'>2048</Canon:ZoomTargetWidth>
+    <Canon:SpotMeteringMode et:id='39' et:table='Canon::CameraSettings'>0</Canon:SpotMeteringMode>
+    <Canon:PhotoEffect et:id='40' et:table='Canon::CameraSettings'>3</Canon:PhotoEffect>
+    <Canon:ManualFlashOutput et:id='41' et:table='Canon::CameraSettings'>0</Canon:ManualFlashOutput>
+    <Canon:FocalType et:id='0' et:table='Canon::FocalLength'>2</Canon:FocalType>
+    <Canon:FocalLength et:id='1' et:table='Canon::FocalLength'>6.71875</Canon:FocalLength>
+    <Canon:FocalPlaneXSize et:id='2' et:table='Canon::FocalLength' et:index='0'>5.4102</Canon:FocalPlaneXSize>
+    <Canon:FocalPlaneYSize et:id='3' et:table='Canon::FocalLength' et:index='0'>4.0386</Canon:FocalPlaneYSize>
+    <Canon:AutoISO et:id='1' et:table='Canon::ShotInfo'>100</Canon:AutoISO>
+    <Canon:BaseISO et:id='2' et:table='Canon::ShotInfo'>50</Canon:BaseISO>
+    <Canon:MeasuredEV et:id='3' et:table='Canon::ShotInfo'>9.03125</Canon:MeasuredEV>
+    <Canon:TargetAperture et:id='4' et:table='Canon::ShotInfo'>3.18628430268453</Canon:TargetAperture>
+    <Canon:TargetExposureTime et:id='5' et:table='Canon::ShotInfo'>0.0333481375211507</Canon:TargetExposureTime>
+    <Canon:ExposureCompensation et:id='6' et:table='Canon::ShotInfo'>-0.333333333333333</Canon:ExposureCompensation>
+    <Canon:WhiteBalance et:id='7' et:table='Canon::ShotInfo'>4</Canon:WhiteBalance>
+    <Canon:SlowShutter et:id='8' et:table='Canon::ShotInfo'>0</Canon:SlowShutter>
+    <Canon:SequenceNumber et:id='9' et:table='Canon::ShotInfo'>0</Canon:SequenceNumber>
+    <Canon:OpticalZoomCode et:id='10' et:table='Canon::ShotInfo'>1</Canon:OpticalZoomCode>
+    <Canon:FlashGuideNumber et:id='13' et:table='Canon::ShotInfo'>0</Canon:FlashGuideNumber>
+    <Canon:FlashExposureComp et:id='15' et:table='Canon::ShotInfo'>0</Canon:FlashExposureComp>
+    <Canon:AutoExposureBracketing et:id='16' et:table='Canon::ShotInfo'>0</Canon:AutoExposureBracketing>
+    <Canon:AEBBracketValue et:id='17' et:table='Canon::ShotInfo'>0</Canon:AEBBracketValue>
+    <Canon:ControlMode et:id='18' et:table='Canon::ShotInfo'>1</Canon:ControlMode>
+    <Canon:FocusDistanceUpper et:id='19' et:table='Canon::ShotInfo'>0.54</Canon:FocusDistanceUpper>
+    <Canon:FocusDistanceLower et:id='20' et:table='Canon::ShotInfo'>0</Canon:FocusDistanceLower>
+    <Canon:FNumber et:id='21' et:table='Canon::ShotInfo'>3.15196169021577</Canon:FNumber>
+    <Canon:ExposureTime et:id='22' et:table='Canon::ShotInfo' et:index='1'>0.0305803769402406</Canon:ExposureTime>
+    <Canon:BulbDuration et:id='24' et:table='Canon::ShotInfo'>0</Canon:BulbDuration>
+    <Canon:CameraType et:id='26' et:table='Canon::ShotInfo'>250</Canon:CameraType>
+    <Canon:AutoRotate et:id='27' et:table='Canon::ShotInfo'>1</Canon:AutoRotate>
+    <Canon:NDFilter et:id='28' et:table='Canon::ShotInfo'>0</Canon:NDFilter>
+    <Canon:SelfTimer2 et:id='29' et:table='Canon::ShotInfo'>0</Canon:SelfTimer2>
+    <Canon:FlashOutput et:id='33' et:table='Canon::ShotInfo'>43</Canon:FlashOutput>
+    <Canon:NumAFPoints et:id='0' et:table='Canon::AFInfo'>9</Canon:NumAFPoints>
+    <Canon:ValidAFPoints et:id='1' et:table='Canon::AFInfo'>9</Canon:ValidAFPoints>
+    <Canon:CanonImageWidth et:id='2' et:table='Canon::AFInfo'>640</Canon:CanonImageWidth>
+    <Canon:CanonImageHeight et:id='3' et:table='Canon::AFInfo'>480</Canon:CanonImageHeight>
+    <Canon:AFImageWidth et:id='4' et:table='Canon::AFInfo'>2048</Canon:AFImageWidth>
+    <Canon:AFImageHeight et:id='5' et:table='Canon::AFInfo'>256</Canon:AFImageHeight>
+    <Canon:AFAreaWidth et:id='6' et:table='Canon::AFInfo'>369</Canon:AFAreaWidth>
+    <Canon:AFAreaHeight et:id='7' et:table='Canon::AFInfo'>42</Canon:AFAreaHeight>
+    <Canon:AFAreaXPositions et:id='8' et:table='Canon::AFInfo'>-370 0 370 -370 0 370 -370 0 370</Canon:AFAreaXPositions>
+    <Canon:AFAreaYPositions et:id='9' et:table='Canon::AFInfo'>-48 -48 -48 0 0 0 48 48 48</Canon:AFAreaYPositions>
+    <Canon:AFPointsInFocus et:id='10' et:table='Canon::AFInfo'>1</Canon:AFPointsInFocus>
+    <Canon:PrimaryAFPoint et:id='11' et:table='Canon::AFInfo' et:index='0'>2</Canon:PrimaryAFPoint>
+    <Canon:ThumbnailImageValidArea et:id='19' et:table='Canon::Main'>0 0 0 0</Canon:ThumbnailImageValidArea>
+    <Canon:CanonImageType et:id='6' et:table='Canon::Main'>IMG:DIGITAL IXUS II JPEG</Canon:CanonImageType>
+    <Canon:CanonFirmwareVersion et:id='7' et:table='Canon::Main'>Firmware Version 1.00</Canon:CanonFirmwareVersion>
+    <Canon:FileNumber et:id='8' et:table='Canon::Main'>1202044</Canon:FileNumber>
+    <Canon:OwnerName et:id='9' et:table='Canon::Main'>
+    </Canon:OwnerName>
+    <Canon:CanonModelID et:id='16' et:table='Canon::Main'>19070976</Canon:CanonModelID>
+    <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R98</InteropIFD:InteropIndex>
+    <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>
+    <InteropIFD:RelatedImageWidth et:id='4097' et:table='Exif::Main'>640</InteropIFD:RelatedImageWidth>
+    <InteropIFD:RelatedImageHeight et:id='4098' et:table='Exif::Main'>480</InteropIFD:RelatedImageHeight>
+    <IFD1:Compression et:id='259' et:table='Exif::Main'>6</IFD1:Compression>
+    <IFD1:XResolution et:id='282' et:table='Exif::Main'>180</IFD1:XResolution>
+    <IFD1:YResolution et:id='283' et:table='Exif::Main'>180</IFD1:YResolution>
+    <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD1:ResolutionUnit>
+    <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>2048</IFD1:ThumbnailOffset>
+    <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>4853</IFD1:ThumbnailLength>
+    <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 4853 bytes, use -b option to extract)</IFD1:ThumbnailImage>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>3.2</Composite:Aperture>
+    <Composite:DriveMode et:id='DriveMode' et:table='Composite'>2</Composite:DriveMode>
+    <Composite:ISO et:id='ISO' et:table='Composite'>50</Composite:ISO>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>640x480</Composite:ImageSize>
+    <Composite:Lens et:id='Lens' et:table='Composite'>5.40625</Composite:Lens>
+    <Composite:LensID et:id='LensID' et:table='Composite'>65535</Composite:LensID>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.3072</Composite:Megapixels>
+    <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>6.55157712077042</Composite:ScaleFactor35efl>
+    <Composite:ShootingMode et:id='ShootingMode' et:table='Composite'>11</Composite:ShootingMode>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.03333333333</Composite:ShutterSpeed>
+    <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.00458611111111111</Composite:CircleOfConfusion>
+    <Composite:DOF et:id='DOF' et:table='Composite'>0.248712027219364 0.295273283712037</Composite:DOF>
+    <Composite:FOV et:id='FOV' et:table='Composite'>44.4812896513926</Composite:FOV>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>44.0184087801763</Composite:FocalLength35efl>
+    <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>3.07597224456769</Composite:HyperfocalDistance>
+    <Composite:Lens35efl et:id='Lens35efl' et:table='Composite'>35.4194638091651</Composite:Lens35efl>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>9.26303440597806</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>

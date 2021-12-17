@@ -14,7 +14,7 @@ elements:
             class: FileEye\MediaProbe\Block\Jpeg
             parsed: true
             id: Jpeg
-            collection: Jpeg
+            collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
@@ -48,14 +48,14 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             class: FileEye\MediaProbe\Block\Exif\Exif
                             parsed: true
-                            collection: Exif
+                            collection: Exif\Exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     class: FileEye\MediaProbe\Block\Tiff
                                     parsed: true
-                                    collection: Tiff
+                                    collection: Tiff\Tiff
                                     elements:
                                         -
                                             node: rawData
@@ -1206,5 +1206,423 @@ exifReadData:
     'UndefinedTag:0xA500': 22/10
     InterOperabilityIndex: R03
     InterOperabilityVersion: '0100'
-exiftool: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/camera_samples/pentax-istDS.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:Pentax='http://ns.exiftool.ca/MakerNotes/Pentax/1.0/'\n  xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'\n  xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>pentax-istDS.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>169 kB</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Big-endian (Motorola, MM)</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>1536</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>1024</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:2 (2 1)</File:YCbCrSubSampling>\n <IFD0:Make et:id='271' et:table='Exif::Main'>PENTAX Corporation</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>PENTAX *ist DS</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>\n <IFD0:Software et:id='305' et:table='Exif::Main'>*ist DS     Ver 1.00</IFD0:Software>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2005:01:26 14:32:50</IFD0:ModifyDate>\n <IFD0:WhitePoint et:id='318' et:table='Exif::Main'>0.313 0.329</IFD0:WhitePoint>\n <IFD0:PrimaryChromaticities et:id='319' et:table='Exif::Main'>0.64 0.33 0.21 0.71 0.15 0.06</IFD0:PrimaryChromaticities>\n <IFD0:YCbCrCoefficients et:id='529' et:table='Exif::Main'>0.299 0.587 0.114</IFD0:YCbCrCoefficients>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Co-sited</IFD0:YCbCrPositioning>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/4</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>4.5</ExifIFD:FNumber>\n <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>Program AE</ExifIFD:ExposureProgram>\n <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>200</ExifIFD:ISO>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Off, Did not fire</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>45.0 mm</ExifIFD:FocalLength>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>Uncalibrated</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>1536</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1024</ExifIFD:ExifImageHeight>\n <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>One-chip color area</ExifIFD:SensingMethod>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>\n <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>Directly photographed</ExifIFD:SceneType>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Auto</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Manual</ExifIFD:WhiteBalance>\n <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>67 mm</ExifIFD:FocalLengthIn35mmFormat>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Standard</ExifIFD:SceneCaptureType>\n <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>Normal</ExifIFD:Contrast>\n <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>Normal</ExifIFD:Saturation>\n <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>Normal</ExifIFD:Sharpness>\n <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>Macro</ExifIFD:SubjectDistanceRange>\n <ExifIFD:Gamma et:id='42240' et:table='Exif::Main'>2.2</ExifIFD:Gamma>\n <Pentax:PentaxModelType et:id='1' et:table='Pentax::Main'>0</Pentax:PentaxModelType>\n <Pentax:PreviewImageSize et:id='2' et:table='Pentax::Main'>640x480</Pentax:PreviewImageSize>\n <Pentax:PreviewImageLength et:id='3' et:table='Pentax::Main'>23556</Pentax:PreviewImageLength>\n <Pentax:PreviewImageStart et:id='4' et:table='Pentax::Main'>2376</Pentax:PreviewImageStart>\n <Pentax:PentaxModelID et:id='5' et:table='Pentax::Main'>*ist DS</Pentax:PentaxModelID>\n <Pentax:Date et:id='6' et:table='Pentax::Main'>2005:01:26</Pentax:Date>\n <Pentax:Time et:id='7' et:table='Pentax::Main'>14:32:50</Pentax:Time>\n <Pentax:Quality et:id='8' et:table='Pentax::Main'>Good</Pentax:Quality>\n <Pentax:PentaxImageSize et:id='9' et:table='Pentax::Main'>1536x1024</Pentax:PentaxImageSize>\n <Pentax:FlashMode et:id='12' et:table='Pentax::Main'>Off, Did not fire</Pentax:FlashMode>\n <Pentax:FocusMode et:id='13' et:table='Pentax::Main' et:index='0'>AF-S (Focus-priority)</Pentax:FocusMode>\n <Pentax:AFPointSelected et:id='14' et:table='Pentax::Main' et:index='2'>Auto</Pentax:AFPointSelected>\n <Pentax:ExposureTime et:id='18' et:table='Pentax::Main'>1/4</Pentax:ExposureTime>\n <Pentax:FNumber et:id='19' et:table='Pentax::Main'>4.5</Pentax:FNumber>\n <Pentax:ISO et:id='20' et:table='Pentax::Main'>200</Pentax:ISO>\n <Pentax:ExposureCompensation et:id='22' et:table='Pentax::Main' et:index='0'>0</Pentax:ExposureCompensation>\n <Pentax:MeteringMode et:id='23' et:table='Pentax::Main'>Multi-segment</Pentax:MeteringMode>\n <Pentax:AutoBracketing et:id='24' et:table='Pentax::Main'>0</Pentax:AutoBracketing>\n <Pentax:WhiteBalance et:id='25' et:table='Pentax::Main'>Tungsten</Pentax:WhiteBalance>\n <Pentax:WhiteBalanceMode et:id='26' et:table='Pentax::Main'>User-Selected</Pentax:WhiteBalanceMode>\n <Pentax:FocalLength et:id='29' et:table='Pentax::Main' et:index='1'>45.0 mm</Pentax:FocalLength>\n <Pentax:Saturation et:id='31' et:table='Pentax::Main'>0 (normal); 0</Pentax:Saturation>\n <Pentax:Contrast et:id='32' et:table='Pentax::Main'>0 (normal); 0</Pentax:Contrast>\n <Pentax:Sharpness et:id='33' et:table='Pentax::Main'>0 (normal); 0</Pentax:Sharpness>\n <Pentax:WorldTimeLocation et:id='34' et:table='Pentax::Main'>Hometown</Pentax:WorldTimeLocation>\n <Pentax:HometownCity et:id='35' et:table='Pentax::Main'>Milan</Pentax:HometownCity>\n <Pentax:DestinationCity et:id='36' et:table='Pentax::Main'>Milan</Pentax:DestinationCity>\n <Pentax:HometownDST et:id='37' et:table='Pentax::Main'>Yes</Pentax:HometownDST>\n <Pentax:DestinationDST et:id='38' et:table='Pentax::Main'>Yes</Pentax:DestinationDST>\n <Pentax:DSPFirmwareVersion et:id='39' et:table='Pentax::Main'>1.00.00.00</Pentax:DSPFirmwareVersion>\n <Pentax:CPUFirmwareVersion et:id='40' et:table='Pentax::Main'>1.00.00.00</Pentax:CPUFirmwareVersion>\n <Pentax:FrameNumber et:id='41' et:table='Pentax::Main'>1350</Pentax:FrameNumber>\n <Pentax:EffectiveLV et:id='45' et:table='Pentax::Main' et:index='0'>5.6</Pentax:EffectiveLV>\n <Pentax:ImageEditing et:id='50' et:table='Pentax::Main'>None</Pentax:ImageEditing>\n <Pentax:PictureMode et:id='51' et:table='Pentax::Main'>Program (HyP); 1/3 EV steps</Pentax:PictureMode>\n <Pentax:DriveMode et:id='52' et:table='Pentax::Main'>Single-frame; No Timer; Shutter Button; Single Exposure</Pentax:DriveMode>\n <Pentax:SensorSize et:id='53' et:table='Pentax::Main'>24.024 x 15.974 mm</Pentax:SensorSize>\n <Pentax:ColorSpace et:id='55' et:table='Pentax::Main'>Adobe RGB</Pentax:ColorSpace>\n <Pentax:DataScaling et:id='61' et:table='Pentax::Main'>8192</Pentax:DataScaling>\n <Pentax:PreviewImageBorders et:id='62' et:table='Pentax::Main'>26 26 0 0</Pentax:PreviewImageBorders>\n <Pentax:LensType et:id='0' et:table='Pentax::LensRec'>smc PENTAX-DA 18-55mm F3.5-5.6 AL</Pentax:LensType>\n <Pentax:ImageEditCount et:id='65' et:table='Pentax::Main'>0</Pentax:ImageEditCount>\n <Pentax:CameraTemperature et:id='71' et:table='Pentax::Main'>17 C</Pentax:CameraTemperature>\n <Pentax:AELock et:id='72' et:table='Pentax::Main'>Off</Pentax:AELock>\n <Pentax:NoiseReduction et:id='73' et:table='Pentax::Main'>On</Pentax:NoiseReduction>\n <Pentax:ImageTone et:id='79' et:table='Pentax::Main'>Bright</Pentax:ImageTone>\n <Pentax:BlackPoint et:id='512' et:table='Pentax::Main'>0 0 0 0</Pentax:BlackPoint>\n <Pentax:WhitePoint et:id='513' et:table='Pentax::Main'>8352 8192 8192 17184</Pentax:WhitePoint>\n <Pentax:PictureMode2 et:id='0' et:table='Pentax::CameraSettings'>Program AE</Pentax:PictureMode2>\n <Pentax:ProgramLine et:id='1.1' et:table='Pentax::CameraSettings'>Normal</Pentax:ProgramLine>\n <Pentax:EVSteps et:id='1.2' et:table='Pentax::CameraSettings'>1/3 EV Steps</Pentax:EVSteps>\n <Pentax:E-DialInProgram et:id='1.3' et:table='Pentax::CameraSettings'>P Shift</Pentax:E-DialInProgram>\n <Pentax:ApertureRingUse et:id='1.4' et:table='Pentax::CameraSettings'>Prohibited</Pentax:ApertureRingUse>\n <Pentax:FlashOptions et:id='2' et:table='Pentax::CameraSettings'>Red-eye reduction</Pentax:FlashOptions>\n <Pentax:MeteringMode2 et:id='2.1' et:table='Pentax::CameraSettings'>Multi-segment</Pentax:MeteringMode2>\n <Pentax:AFPointMode et:id='3' et:table='Pentax::CameraSettings'>Auto</Pentax:AFPointMode>\n <Pentax:FocusMode2 et:id='3.1' et:table='Pentax::CameraSettings'>AF-S</Pentax:FocusMode2>\n <Pentax:AFPointSelected2 et:id='4' et:table='Pentax::CameraSettings'>Auto</Pentax:AFPointSelected2>\n <Pentax:ISOFloor et:id='6' et:table='Pentax::CameraSettings'>200</Pentax:ISOFloor>\n <Pentax:DriveMode2 et:id='7' et:table='Pentax::CameraSettings'>Single-frame</Pentax:DriveMode2>\n <Pentax:ExposureBracketStepSize et:id='8' et:table='Pentax::CameraSettings'>0.3</Pentax:ExposureBracketStepSize>\n <Pentax:BracketShotNumber et:id='9' et:table='Pentax::CameraSettings'>n/a</Pentax:BracketShotNumber>\n <Pentax:WhiteBalanceSet et:id='10' et:table='Pentax::CameraSettings'>Tungsten</Pentax:WhiteBalanceSet>\n <Pentax:MultipleExposureSet et:id='10.1' et:table='Pentax::CameraSettings'>Off</Pentax:MultipleExposureSet>\n <Pentax:AEExposureTime et:id='0' et:table='Pentax::AEInfo'>0.3</Pentax:AEExposureTime>\n <Pentax:AEAperture et:id='1' et:table='Pentax::AEInfo'>5.2</Pentax:AEAperture>\n <Pentax:AE_ISO et:id='2' et:table='Pentax::AEInfo'>200</Pentax:AE_ISO>\n <Pentax:AEXv et:id='3' et:table='Pentax::AEInfo'>0</Pentax:AEXv>\n <Pentax:AEBXv et:id='4' et:table='Pentax::AEInfo'>0</Pentax:AEBXv>\n <Pentax:AEMinExposureTime et:id='5' et:table='Pentax::AEInfo'>1/3862</Pentax:AEMinExposureTime>\n <Pentax:AEProgramMode et:id='6' et:table='Pentax::AEInfo'>Sv or Green Mode</Pentax:AEProgramMode>\n <Pentax:AEApertureSteps et:id='8' et:table='Pentax::AEInfo'>0</Pentax:AEApertureSteps>\n <Pentax:AEMaxAperture et:id='9' et:table='Pentax::AEInfo'>4.8</Pentax:AEMaxAperture>\n <Pentax:AEMaxAperture2 et:id='10' et:table='Pentax::AEInfo'>5.2</Pentax:AEMaxAperture2>\n <Pentax:AEMinAperture et:id='11' et:table='Pentax::AEInfo'>32</Pentax:AEMinAperture>\n <Pentax:AEMeteringMode et:id='12' et:table='Pentax::AEInfo'>Multi-segment</Pentax:AEMeteringMode>\n <Pentax:LensType et:id='0' et:table='Pentax::LensInfo'>smc PENTAX-DA 18-55mm F3.5-5.6 AL</Pentax:LensType>\n <Pentax:AutoAperture et:id='0.1' et:table='Pentax::LensData'>On</Pentax:AutoAperture>\n <Pentax:MinAperture et:id='0.2' et:table='Pentax::LensData'>22</Pentax:MinAperture>\n <Pentax:LensFStops et:id='0.3' et:table='Pentax::LensData'>5</Pentax:LensFStops>\n <Pentax:MinFocusDistance et:id='3' et:table='Pentax::LensData'>0.25-0.28 m</Pentax:MinFocusDistance>\n <Pentax:FocusRangeIndex et:id='3.1' et:table='Pentax::LensData'>0 (very close)</Pentax:FocusRangeIndex>\n <Pentax:LensFocalLength et:id='9' et:table='Pentax::LensData' et:index='0'>45.0 mm</Pentax:LensFocalLength>\n <Pentax:NominalMaxAperture et:id='10' et:table='Pentax::LensData'>4.8</Pentax:NominalMaxAperture>\n <Pentax:NominalMinAperture et:id='10.1' et:table='Pentax::LensData'>32</Pentax:NominalMinAperture>\n <Pentax:MaxAperture et:id='14.1' et:table='Pentax::LensData'>5.2</Pentax:MaxAperture>\n <Pentax:AEMeteringSegments et:id='521' et:table='Pentax::Main'>5.0 4.8 4.6 4.5 4.8 4.5 5.1 4.9 5.2 4.9 5.1 5.4 5.1 5.4 4.8 5.8</Pentax:AEMeteringSegments>\n <Pentax:FlashMeteringSegments et:id='522' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:FlashMeteringSegments>\n <Pentax:SlaveFlashMeteringSegments et:id='523' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:SlaveFlashMeteringSegments>\n <Pentax:WB_RGGBLevelsDaylight et:id='525' et:table='Pentax::Main'>13528 8192 8192 7100</Pentax:WB_RGGBLevelsDaylight>\n <Pentax:WB_RGGBLevelsShade et:id='526' et:table='Pentax::Main'>16295 8192 8192 5401</Pentax:WB_RGGBLevelsShade>\n <Pentax:WB_RGGBLevelsCloudy et:id='527' et:table='Pentax::Main'>14635 8192 8192 6351</Pentax:WB_RGGBLevelsCloudy>\n <Pentax:WB_RGGBLevelsTungsten et:id='528' et:table='Pentax::Main'>7683 8192 8192 14746</Pentax:WB_RGGBLevelsTungsten>\n <Pentax:WB_RGGBLevelsFluorescentD et:id='529' et:table='Pentax::Main'>15853 8192 8192 7201</Pentax:WB_RGGBLevelsFluorescentD>\n <Pentax:WB_RGGBLevelsFluorescentN et:id='530' et:table='Pentax::Main'>13129 8192 8192 8030</Pentax:WB_RGGBLevelsFluorescentN>\n <Pentax:WB_RGGBLevelsFluorescentW et:id='531' et:table='Pentax::Main'>11668 8192 8192 9770</Pentax:WB_RGGBLevelsFluorescentW>\n <Pentax:WB_RGGBLevelsFlash et:id='532' et:table='Pentax::Main'>14081 8192 8192 6655</Pentax:WB_RGGBLevelsFlash>\n <Pentax:PentaxModelID et:id='0' et:table='Pentax::CameraInfo'>*ist DS</Pentax:PentaxModelID>\n <Pentax:ManufactureDate et:id='1' et:table='Pentax::CameraInfo'>2004:11:22</Pentax:ManufactureDate>\n <Pentax:ProductionCode et:id='2' et:table='Pentax::CameraInfo'>2.2</Pentax:ProductionCode>\n <Pentax:InternalSerialNumber et:id='4' et:table='Pentax::CameraInfo'>6002203</Pentax:InternalSerialNumber>\n <Pentax:PowerSource et:id='0.1' et:table='Pentax::BatteryInfo'>Body Battery</Pentax:PowerSource>\n <Pentax:BodyBatteryState et:id='1.1' et:table='Pentax::BatteryInfo' et:index='0'>Full</Pentax:BodyBatteryState>\n <Pentax:BodyBatteryADNoLoad et:id='2' et:table='Pentax::BatteryInfo' et:index='1'>154</Pentax:BodyBatteryADNoLoad>\n <Pentax:BodyBatteryADLoad et:id='3' et:table='Pentax::BatteryInfo' et:index='1'>144</Pentax:BodyBatteryADLoad>\n <Pentax:GripBatteryADNoLoad et:id='4' et:table='Pentax::BatteryInfo' et:index='0'>0</Pentax:GripBatteryADNoLoad>\n <Pentax:GripBatteryADLoad et:id='5' et:table='Pentax::BatteryInfo'>0</Pentax:GripBatteryADLoad>\n <Pentax:AFPredictor et:id='4' et:table='Pentax::AFInfo'>17</Pentax:AFPredictor>\n <Pentax:AFDefocus et:id='6' et:table='Pentax::AFInfo'>12</Pentax:AFDefocus>\n <Pentax:AFIntegrationTime et:id='7' et:table='Pentax::AFInfo'>244 ms</Pentax:AFIntegrationTime>\n <Pentax:AFPointsInFocus et:id='11' et:table='Pentax::AFInfo'>Top, Center</Pentax:AFPointsInFocus>\n <Pentax:PreviewImage et:id='PreviewImage' et:table='Composite'>(Binary data 23556 bytes, use -b option to extract)</Pentax:PreviewImage>\n <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R03 - DCF option file (Adobe RGB)</InteropIFD:InteropIndex>\n <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>\n <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0300</PrintIM:PrintIMVersion>\n <IFD1:Compression et:id='259' et:table='Exif::Main'>JPEG (old-style)</IFD1:Compression>\n <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>\n <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>\n <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD1:ResolutionUnit>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>56620</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>3239</IFD1:ThumbnailLength>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 3239 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>4.5</Composite:Aperture>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>1536x1024</Composite:ImageSize>\n <Composite:LensID et:id='LensID' et:table='Composite'>smc PENTAX-DA 18-55mm F3.5-5.6 AL</Composite:LensID>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>1.6</Composite:Megapixels>\n <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.5</Composite:ScaleFactor35efl>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/4</Composite:ShutterSpeed>\n <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.020 mm</Composite:CircleOfConfusion>\n <Composite:FOV et:id='FOV' et:table='Composite'>30.1 deg</Composite:FOV>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>45.0 mm (35 mm equivalent: 67.0 mm)</Composite:FocalLength35efl>\n <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>22.30 m</Composite:HyperfocalDistance>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>5.3</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
-exiftool_raw: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/camera_samples/pentax-istDS.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:Pentax='http://ns.exiftool.ca/MakerNotes/Pentax/1.0/'\n  xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'\n  xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>pentax-istDS.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>173014</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>MM</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>1536</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>1024</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 1</File:YCbCrSubSampling>\n <IFD0:Make et:id='271' et:table='Exif::Main'>PENTAX Corporation</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>PENTAX *ist DS</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>1</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>\n <IFD0:Software et:id='305' et:table='Exif::Main'>*ist DS     Ver 1.00</IFD0:Software>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2005:01:26 14:32:50</IFD0:ModifyDate>\n <IFD0:WhitePoint et:id='318' et:table='Exif::Main'>0.313 0.329</IFD0:WhitePoint>\n <IFD0:PrimaryChromaticities et:id='319' et:table='Exif::Main'>0.64 0.33 0.21 0.71 0.15 0.06</IFD0:PrimaryChromaticities>\n <IFD0:YCbCrCoefficients et:id='529' et:table='Exif::Main'>0.299 0.587 0.114</IFD0:YCbCrCoefficients>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>2</IFD0:YCbCrPositioning>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.25</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>4.5</ExifIFD:FNumber>\n <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>2</ExifIFD:ExposureProgram>\n <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>200</ExifIFD:ISO>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>16</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>45</ExifIFD:FocalLength>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>65535</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>1536</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1024</ExifIFD:ExifImageHeight>\n <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>2</ExifIFD:SensingMethod>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>\n <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>1</ExifIFD:SceneType>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>0</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>1</ExifIFD:WhiteBalance>\n <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>67</ExifIFD:FocalLengthIn35mmFormat>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>0</ExifIFD:SceneCaptureType>\n <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>0</ExifIFD:Contrast>\n <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>0</ExifIFD:Saturation>\n <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>0</ExifIFD:Sharpness>\n <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>1</ExifIFD:SubjectDistanceRange>\n <ExifIFD:Gamma et:id='42240' et:table='Exif::Main'>2.2</ExifIFD:Gamma>\n <Pentax:PentaxModelType et:id='1' et:table='Pentax::Main'>0</Pentax:PentaxModelType>\n <Pentax:PreviewImageSize et:id='2' et:table='Pentax::Main'>640 480</Pentax:PreviewImageSize>\n <Pentax:PreviewImageLength et:id='3' et:table='Pentax::Main'>23556</Pentax:PreviewImageLength>\n <Pentax:PreviewImageStart et:id='4' et:table='Pentax::Main'>2376</Pentax:PreviewImageStart>\n <Pentax:PentaxModelID et:id='5' et:table='Pentax::Main'>76450</Pentax:PentaxModelID>\n <Pentax:Date et:id='6' et:table='Pentax::Main'>2005:01:26</Pentax:Date>\n <Pentax:Time et:id='7' et:table='Pentax::Main'>14:32:50</Pentax:Time>\n <Pentax:Quality et:id='8' et:table='Pentax::Main'>0</Pentax:Quality>\n <Pentax:PentaxImageSize et:id='9' et:table='Pentax::Main'>34 2</Pentax:PentaxImageSize>\n <Pentax:FlashMode et:id='12' et:table='Pentax::Main'>1</Pentax:FlashMode>\n <Pentax:FocusMode et:id='13' et:table='Pentax::Main' et:index='0'>16</Pentax:FocusMode>\n <Pentax:AFPointSelected et:id='14' et:table='Pentax::Main' et:index='2'>65535</Pentax:AFPointSelected>\n <Pentax:ExposureTime et:id='18' et:table='Pentax::Main'>0.25</Pentax:ExposureTime>\n <Pentax:FNumber et:id='19' et:table='Pentax::Main'>4.5</Pentax:FNumber>\n <Pentax:ISO et:id='20' et:table='Pentax::Main'>9</Pentax:ISO>\n <Pentax:ExposureCompensation et:id='22' et:table='Pentax::Main' et:index='0'>0</Pentax:ExposureCompensation>\n <Pentax:MeteringMode et:id='23' et:table='Pentax::Main'>0</Pentax:MeteringMode>\n <Pentax:AutoBracketing et:id='24' et:table='Pentax::Main'>0</Pentax:AutoBracketing>\n <Pentax:WhiteBalance et:id='25' et:table='Pentax::Main'>4</Pentax:WhiteBalance>\n <Pentax:WhiteBalanceMode et:id='26' et:table='Pentax::Main'>65535</Pentax:WhiteBalanceMode>\n <Pentax:FocalLength et:id='29' et:table='Pentax::Main' et:index='1'>45</Pentax:FocalLength>\n <Pentax:Saturation et:id='31' et:table='Pentax::Main'>1 0</Pentax:Saturation>\n <Pentax:Contrast et:id='32' et:table='Pentax::Main'>1 0</Pentax:Contrast>\n <Pentax:Sharpness et:id='33' et:table='Pentax::Main'>1 0</Pentax:Sharpness>\n <Pentax:WorldTimeLocation et:id='34' et:table='Pentax::Main'>0</Pentax:WorldTimeLocation>\n <Pentax:HometownCity et:id='35' et:table='Pentax::Main'>22</Pentax:HometownCity>\n <Pentax:DestinationCity et:id='36' et:table='Pentax::Main'>22</Pentax:DestinationCity>\n <Pentax:HometownDST et:id='37' et:table='Pentax::Main'>1</Pentax:HometownDST>\n <Pentax:DestinationDST et:id='38' et:table='Pentax::Main'>1</Pentax:DestinationDST>\n <Pentax:DSPFirmwareVersion et:id='39' et:table='Pentax::Main'>1 00 00 00</Pentax:DSPFirmwareVersion>\n <Pentax:CPUFirmwareVersion et:id='40' et:table='Pentax::Main'>1 00 00 00</Pentax:CPUFirmwareVersion>\n <Pentax:FrameNumber et:id='41' et:table='Pentax::Main'>1350</Pentax:FrameNumber>\n <Pentax:EffectiveLV et:id='45' et:table='Pentax::Main' et:index='0'>5.625</Pentax:EffectiveLV>\n <Pentax:ImageEditing et:id='50' et:table='Pentax::Main'>0 0 0 0</Pentax:ImageEditing>\n <Pentax:PictureMode et:id='51' et:table='Pentax::Main'>2 0 1</Pentax:PictureMode>\n <Pentax:DriveMode et:id='52' et:table='Pentax::Main'>0 0 0 0</Pentax:DriveMode>\n <Pentax:SensorSize et:id='53' et:table='Pentax::Main'>24.024 15.974</Pentax:SensorSize>\n <Pentax:ColorSpace et:id='55' et:table='Pentax::Main'>1</Pentax:ColorSpace>\n <Pentax:DataScaling et:id='61' et:table='Pentax::Main'>8192</Pentax:DataScaling>\n <Pentax:PreviewImageBorders et:id='62' et:table='Pentax::Main'>26 26 0 0</Pentax:PreviewImageBorders>\n <Pentax:LensType et:id='0' et:table='Pentax::LensRec'>4 252</Pentax:LensType>\n <Pentax:ImageEditCount et:id='65' et:table='Pentax::Main'>0</Pentax:ImageEditCount>\n <Pentax:CameraTemperature et:id='71' et:table='Pentax::Main'>17</Pentax:CameraTemperature>\n <Pentax:AELock et:id='72' et:table='Pentax::Main'>0</Pentax:AELock>\n <Pentax:NoiseReduction et:id='73' et:table='Pentax::Main'>1</Pentax:NoiseReduction>\n <Pentax:ImageTone et:id='79' et:table='Pentax::Main'>1</Pentax:ImageTone>\n <Pentax:BlackPoint et:id='512' et:table='Pentax::Main'>0 0 0 0</Pentax:BlackPoint>\n <Pentax:WhitePoint et:id='513' et:table='Pentax::Main'>8352 8192 8192 17184</Pentax:WhitePoint>\n <Pentax:PictureMode2 et:id='0' et:table='Pentax::CameraSettings'>2</Pentax:PictureMode2>\n <Pentax:ProgramLine et:id='1.1' et:table='Pentax::CameraSettings'>0</Pentax:ProgramLine>\n <Pentax:EVSteps et:id='1.2' et:table='Pentax::CameraSettings'>1</Pentax:EVSteps>\n <Pentax:E-DialInProgram et:id='1.3' et:table='Pentax::CameraSettings'>1</Pentax:E-DialInProgram>\n <Pentax:ApertureRingUse et:id='1.4' et:table='Pentax::CameraSettings'>0</Pentax:ApertureRingUse>\n <Pentax:FlashOptions et:id='2' et:table='Pentax::CameraSettings'>1</Pentax:FlashOptions>\n <Pentax:MeteringMode2 et:id='2.1' et:table='Pentax::CameraSettings'>0</Pentax:MeteringMode2>\n <Pentax:AFPointMode et:id='3' et:table='Pentax::CameraSettings'>0</Pentax:AFPointMode>\n <Pentax:FocusMode2 et:id='3.1' et:table='Pentax::CameraSettings'>1</Pentax:FocusMode2>\n <Pentax:AFPointSelected2 et:id='4' et:table='Pentax::CameraSettings'>0</Pentax:AFPointSelected2>\n <Pentax:ISOFloor et:id='6' et:table='Pentax::CameraSettings'>200</Pentax:ISOFloor>\n <Pentax:DriveMode2 et:id='7' et:table='Pentax::CameraSettings'>0</Pentax:DriveMode2>\n <Pentax:ExposureBracketStepSize et:id='8' et:table='Pentax::CameraSettings'>3</Pentax:ExposureBracketStepSize>\n <Pentax:BracketShotNumber et:id='9' et:table='Pentax::CameraSettings'>0</Pentax:BracketShotNumber>\n <Pentax:WhiteBalanceSet et:id='10' et:table='Pentax::CameraSettings'>7</Pentax:WhiteBalanceSet>\n <Pentax:MultipleExposureSet et:id='10.1' et:table='Pentax::CameraSettings'>0</Pentax:MultipleExposureSet>\n <Pentax:AEExposureTime et:id='0' et:table='Pentax::AEInfo'>0.289164529763989</Pentax:AEExposureTime>\n <Pentax:AEAperture et:id='1' et:table='Pentax::AEInfo'>5.18735821860404</Pentax:AEAperture>\n <Pentax:AE_ISO et:id='2' et:table='Pentax::AEInfo'>200</Pentax:AE_ISO>\n <Pentax:AEXv et:id='3' et:table='Pentax::AEInfo'>0</Pentax:AEXv>\n <Pentax:AEBXv et:id='4' et:table='Pentax::AEInfo'>0</Pentax:AEBXv>\n <Pentax:AEMinExposureTime et:id='5' et:table='Pentax::AEInfo'>0.000258950237250933</Pentax:AEMinExposureTime>\n <Pentax:AEProgramMode et:id='6' et:table='Pentax::AEInfo'>3</Pentax:AEProgramMode>\n <Pentax:AEApertureSteps et:id='8' et:table='Pentax::AEInfo'>0</Pentax:AEApertureSteps>\n <Pentax:AEMaxAperture et:id='9' et:table='Pentax::AEInfo'>4.75682846001088</Pentax:AEMaxAperture>\n <Pentax:AEMaxAperture2 et:id='10' et:table='Pentax::AEInfo'>5.18735821860404</Pentax:AEMaxAperture2>\n <Pentax:AEMinAperture et:id='11' et:table='Pentax::AEInfo'>32</Pentax:AEMinAperture>\n <Pentax:AEMeteringMode et:id='12' et:table='Pentax::AEInfo'>0</Pentax:AEMeteringMode>\n <Pentax:LensType et:id='0' et:table='Pentax::LensInfo'>4 252</Pentax:LensType>\n <Pentax:AutoAperture et:id='0.1' et:table='Pentax::LensData'>0</Pentax:AutoAperture>\n <Pentax:MinAperture et:id='0.2' et:table='Pentax::LensData'>0</Pentax:MinAperture>\n <Pentax:LensFStops et:id='0.3' et:table='Pentax::LensData'>5</Pentax:LensFStops>\n <Pentax:MinFocusDistance et:id='3' et:table='Pentax::LensData'>2</Pentax:MinFocusDistance>\n <Pentax:FocusRangeIndex et:id='3.1' et:table='Pentax::LensData'>7</Pentax:FocusRangeIndex>\n <Pentax:LensFocalLength et:id='9' et:table='Pentax::LensData' et:index='0'>45</Pentax:LensFocalLength>\n <Pentax:NominalMaxAperture et:id='10' et:table='Pentax::LensData'>4.75682846001088</Pentax:NominalMaxAperture>\n <Pentax:NominalMinAperture et:id='10.1' et:table='Pentax::LensData'>32</Pentax:NominalMinAperture>\n <Pentax:MaxAperture et:id='14.1' et:table='Pentax::LensData'>5.18735821860404</Pentax:MaxAperture>\n <Pentax:AEMeteringSegments et:id='521' et:table='Pentax::Main'>88 86 85 84 86 84 89 87 90 87 89 91 89 91 86 94</Pentax:AEMeteringSegments>\n <Pentax:FlashMeteringSegments et:id='522' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:FlashMeteringSegments>\n <Pentax:SlaveFlashMeteringSegments et:id='523' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:SlaveFlashMeteringSegments>\n <Pentax:WB_RGGBLevelsDaylight et:id='525' et:table='Pentax::Main'>13528 8192 8192 7100</Pentax:WB_RGGBLevelsDaylight>\n <Pentax:WB_RGGBLevelsShade et:id='526' et:table='Pentax::Main'>16295 8192 8192 5401</Pentax:WB_RGGBLevelsShade>\n <Pentax:WB_RGGBLevelsCloudy et:id='527' et:table='Pentax::Main'>14635 8192 8192 6351</Pentax:WB_RGGBLevelsCloudy>\n <Pentax:WB_RGGBLevelsTungsten et:id='528' et:table='Pentax::Main'>7683 8192 8192 14746</Pentax:WB_RGGBLevelsTungsten>\n <Pentax:WB_RGGBLevelsFluorescentD et:id='529' et:table='Pentax::Main'>15853 8192 8192 7201</Pentax:WB_RGGBLevelsFluorescentD>\n <Pentax:WB_RGGBLevelsFluorescentN et:id='530' et:table='Pentax::Main'>13129 8192 8192 8030</Pentax:WB_RGGBLevelsFluorescentN>\n <Pentax:WB_RGGBLevelsFluorescentW et:id='531' et:table='Pentax::Main'>11668 8192 8192 9770</Pentax:WB_RGGBLevelsFluorescentW>\n <Pentax:WB_RGGBLevelsFlash et:id='532' et:table='Pentax::Main'>14081 8192 8192 6655</Pentax:WB_RGGBLevelsFlash>\n <Pentax:PentaxModelID et:id='0' et:table='Pentax::CameraInfo'>76450</Pentax:PentaxModelID>\n <Pentax:ManufactureDate et:id='1' et:table='Pentax::CameraInfo'>2004:11:22</Pentax:ManufactureDate>\n <Pentax:ProductionCode et:id='2' et:table='Pentax::CameraInfo'>2.2</Pentax:ProductionCode>\n <Pentax:InternalSerialNumber et:id='4' et:table='Pentax::CameraInfo'>6002203</Pentax:InternalSerialNumber>\n <Pentax:PowerSource et:id='0.1' et:table='Pentax::BatteryInfo'>2</Pentax:PowerSource>\n <Pentax:BodyBatteryState et:id='1.1' et:table='Pentax::BatteryInfo' et:index='0'>4</Pentax:BodyBatteryState>\n <Pentax:BodyBatteryADNoLoad et:id='2' et:table='Pentax::BatteryInfo' et:index='1'>154</Pentax:BodyBatteryADNoLoad>\n <Pentax:BodyBatteryADLoad et:id='3' et:table='Pentax::BatteryInfo' et:index='1'>144</Pentax:BodyBatteryADLoad>\n <Pentax:GripBatteryADNoLoad et:id='4' et:table='Pentax::BatteryInfo' et:index='0'>0</Pentax:GripBatteryADNoLoad>\n <Pentax:GripBatteryADLoad et:id='5' et:table='Pentax::BatteryInfo'>0</Pentax:GripBatteryADLoad>\n <Pentax:AFPredictor et:id='4' et:table='Pentax::AFInfo'>17</Pentax:AFPredictor>\n <Pentax:AFDefocus et:id='6' et:table='Pentax::AFInfo'>12</Pentax:AFDefocus>\n <Pentax:AFIntegrationTime et:id='7' et:table='Pentax::AFInfo'>244</Pentax:AFIntegrationTime>\n <Pentax:AFPointsInFocus et:id='11' et:table='Pentax::AFInfo'>14</Pentax:AFPointsInFocus>\n <Pentax:PreviewImage et:id='PreviewImage' et:table='Composite'>(Binary data 23556 bytes, use -b option to extract)</Pentax:PreviewImage>\n <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R03</InteropIFD:InteropIndex>\n <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>\n <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0300</PrintIM:PrintIMVersion>\n <IFD1:Compression et:id='259' et:table='Exif::Main'>6</IFD1:Compression>\n <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>\n <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>\n <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD1:ResolutionUnit>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>56620</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>3239</IFD1:ThumbnailLength>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 3239 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>4.5</Composite:Aperture>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>1536x1024</Composite:ImageSize>\n <Composite:LensID et:id='LensID' et:table='Composite'>4 252</Composite:LensID>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>1.572864</Composite:Megapixels>\n <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.48888888888889</Composite:ScaleFactor35efl>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.25</Composite:ShutterSpeed>\n <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.0201803243029701</Composite:CircleOfConfusion>\n <Composite:FOV et:id='FOV' et:table='Composite'>30.0756572109853</Composite:FOV>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>67.0000000000001</Composite:FocalLength35efl>\n <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>22.2989478882542</Composite:HyperfocalDistance>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>5.33985000288462</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
+exiftool: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/camera_samples/pentax-istDS.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:Pentax='http://ns.exiftool.ca/MakerNotes/Pentax/1.0/'
+    xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'
+    xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'
+    xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>pentax-istDS.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>169 kB</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Big-endian (Motorola, MM)</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>1536</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>1024</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:2 (2 1)</File:YCbCrSubSampling>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>PENTAX Corporation</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>PENTAX *ist DS</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>
+    <IFD0:Software et:id='305' et:table='Exif::Main'>*ist DS     Ver 1.00</IFD0:Software>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2005:01:26 14:32:50</IFD0:ModifyDate>
+    <IFD0:WhitePoint et:id='318' et:table='Exif::Main'>0.313 0.329</IFD0:WhitePoint>
+    <IFD0:PrimaryChromaticities et:id='319' et:table='Exif::Main'>0.64 0.33 0.21 0.71 0.15 0.06</IFD0:PrimaryChromaticities>
+    <IFD0:YCbCrCoefficients et:id='529' et:table='Exif::Main'>0.299 0.587 0.114</IFD0:YCbCrCoefficients>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Co-sited</IFD0:YCbCrPositioning>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/4</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>4.5</ExifIFD:FNumber>
+    <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>Program AE</ExifIFD:ExposureProgram>
+    <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>200</ExifIFD:ISO>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Off, Did not fire</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>45.0 mm</ExifIFD:FocalLength>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>Uncalibrated</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>1536</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1024</ExifIFD:ExifImageHeight>
+    <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>One-chip color area</ExifIFD:SensingMethod>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>
+    <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>Directly photographed</ExifIFD:SceneType>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Auto</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Manual</ExifIFD:WhiteBalance>
+    <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>67 mm</ExifIFD:FocalLengthIn35mmFormat>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Standard</ExifIFD:SceneCaptureType>
+    <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>Normal</ExifIFD:Contrast>
+    <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>Normal</ExifIFD:Saturation>
+    <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>Normal</ExifIFD:Sharpness>
+    <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>Macro</ExifIFD:SubjectDistanceRange>
+    <ExifIFD:Gamma et:id='42240' et:table='Exif::Main'>2.2</ExifIFD:Gamma>
+    <Pentax:PentaxModelType et:id='1' et:table='Pentax::Main'>0</Pentax:PentaxModelType>
+    <Pentax:PreviewImageSize et:id='2' et:table='Pentax::Main'>640x480</Pentax:PreviewImageSize>
+    <Pentax:PreviewImageLength et:id='3' et:table='Pentax::Main'>23556</Pentax:PreviewImageLength>
+    <Pentax:PreviewImageStart et:id='4' et:table='Pentax::Main'>2376</Pentax:PreviewImageStart>
+    <Pentax:PentaxModelID et:id='5' et:table='Pentax::Main'>*ist DS</Pentax:PentaxModelID>
+    <Pentax:Date et:id='6' et:table='Pentax::Main'>2005:01:26</Pentax:Date>
+    <Pentax:Time et:id='7' et:table='Pentax::Main'>14:32:50</Pentax:Time>
+    <Pentax:Quality et:id='8' et:table='Pentax::Main'>Good</Pentax:Quality>
+    <Pentax:PentaxImageSize et:id='9' et:table='Pentax::Main'>1536x1024</Pentax:PentaxImageSize>
+    <Pentax:FlashMode et:id='12' et:table='Pentax::Main'>Off, Did not fire</Pentax:FlashMode>
+    <Pentax:FocusMode et:id='13' et:table='Pentax::Main' et:index='0'>AF-S (Focus-priority)</Pentax:FocusMode>
+    <Pentax:AFPointSelected et:id='14' et:table='Pentax::Main' et:index='2'>Auto</Pentax:AFPointSelected>
+    <Pentax:ExposureTime et:id='18' et:table='Pentax::Main'>1/4</Pentax:ExposureTime>
+    <Pentax:FNumber et:id='19' et:table='Pentax::Main'>4.5</Pentax:FNumber>
+    <Pentax:ISO et:id='20' et:table='Pentax::Main'>200</Pentax:ISO>
+    <Pentax:ExposureCompensation et:id='22' et:table='Pentax::Main' et:index='0'>0</Pentax:ExposureCompensation>
+    <Pentax:MeteringMode et:id='23' et:table='Pentax::Main'>Multi-segment</Pentax:MeteringMode>
+    <Pentax:AutoBracketing et:id='24' et:table='Pentax::Main'>0</Pentax:AutoBracketing>
+    <Pentax:WhiteBalance et:id='25' et:table='Pentax::Main'>Tungsten</Pentax:WhiteBalance>
+    <Pentax:WhiteBalanceMode et:id='26' et:table='Pentax::Main'>User-Selected</Pentax:WhiteBalanceMode>
+    <Pentax:FocalLength et:id='29' et:table='Pentax::Main' et:index='1'>45.0 mm</Pentax:FocalLength>
+    <Pentax:Saturation et:id='31' et:table='Pentax::Main'>0 (normal); 0</Pentax:Saturation>
+    <Pentax:Contrast et:id='32' et:table='Pentax::Main'>0 (normal); 0</Pentax:Contrast>
+    <Pentax:Sharpness et:id='33' et:table='Pentax::Main'>0 (normal); 0</Pentax:Sharpness>
+    <Pentax:WorldTimeLocation et:id='34' et:table='Pentax::Main'>Hometown</Pentax:WorldTimeLocation>
+    <Pentax:HometownCity et:id='35' et:table='Pentax::Main'>Milan</Pentax:HometownCity>
+    <Pentax:DestinationCity et:id='36' et:table='Pentax::Main'>Milan</Pentax:DestinationCity>
+    <Pentax:HometownDST et:id='37' et:table='Pentax::Main'>Yes</Pentax:HometownDST>
+    <Pentax:DestinationDST et:id='38' et:table='Pentax::Main'>Yes</Pentax:DestinationDST>
+    <Pentax:DSPFirmwareVersion et:id='39' et:table='Pentax::Main'>1.00.00.00</Pentax:DSPFirmwareVersion>
+    <Pentax:CPUFirmwareVersion et:id='40' et:table='Pentax::Main'>1.00.00.00</Pentax:CPUFirmwareVersion>
+    <Pentax:FrameNumber et:id='41' et:table='Pentax::Main'>1350</Pentax:FrameNumber>
+    <Pentax:EffectiveLV et:id='45' et:table='Pentax::Main' et:index='0'>5.6</Pentax:EffectiveLV>
+    <Pentax:ImageEditing et:id='50' et:table='Pentax::Main'>None</Pentax:ImageEditing>
+    <Pentax:PictureMode et:id='51' et:table='Pentax::Main'>Program (HyP); 1/3 EV steps</Pentax:PictureMode>
+    <Pentax:DriveMode et:id='52' et:table='Pentax::Main'>Single-frame; No Timer; Shutter Button; Single Exposure</Pentax:DriveMode>
+    <Pentax:SensorSize et:id='53' et:table='Pentax::Main'>24.024 x 15.974 mm</Pentax:SensorSize>
+    <Pentax:ColorSpace et:id='55' et:table='Pentax::Main'>Adobe RGB</Pentax:ColorSpace>
+    <Pentax:DataScaling et:id='61' et:table='Pentax::Main'>8192</Pentax:DataScaling>
+    <Pentax:PreviewImageBorders et:id='62' et:table='Pentax::Main'>26 26 0 0</Pentax:PreviewImageBorders>
+    <Pentax:LensType et:id='0' et:table='Pentax::LensRec'>smc PENTAX-DA 18-55mm F3.5-5.6 AL</Pentax:LensType>
+    <Pentax:ImageEditCount et:id='65' et:table='Pentax::Main'>0</Pentax:ImageEditCount>
+    <Pentax:CameraTemperature et:id='71' et:table='Pentax::Main'>17 C</Pentax:CameraTemperature>
+    <Pentax:AELock et:id='72' et:table='Pentax::Main'>Off</Pentax:AELock>
+    <Pentax:NoiseReduction et:id='73' et:table='Pentax::Main'>On</Pentax:NoiseReduction>
+    <Pentax:ImageTone et:id='79' et:table='Pentax::Main'>Bright</Pentax:ImageTone>
+    <Pentax:BlackPoint et:id='512' et:table='Pentax::Main'>0 0 0 0</Pentax:BlackPoint>
+    <Pentax:WhitePoint et:id='513' et:table='Pentax::Main'>8352 8192 8192 17184</Pentax:WhitePoint>
+    <Pentax:PictureMode2 et:id='0' et:table='Pentax::CameraSettings'>Program AE</Pentax:PictureMode2>
+    <Pentax:ProgramLine et:id='1.1' et:table='Pentax::CameraSettings'>Normal</Pentax:ProgramLine>
+    <Pentax:EVSteps et:id='1.2' et:table='Pentax::CameraSettings'>1/3 EV Steps</Pentax:EVSteps>
+    <Pentax:E-DialInProgram et:id='1.3' et:table='Pentax::CameraSettings'>P Shift</Pentax:E-DialInProgram>
+    <Pentax:ApertureRingUse et:id='1.4' et:table='Pentax::CameraSettings'>Prohibited</Pentax:ApertureRingUse>
+    <Pentax:FlashOptions et:id='2' et:table='Pentax::CameraSettings'>Red-eye reduction</Pentax:FlashOptions>
+    <Pentax:MeteringMode2 et:id='2.1' et:table='Pentax::CameraSettings'>Multi-segment</Pentax:MeteringMode2>
+    <Pentax:AFPointMode et:id='3' et:table='Pentax::CameraSettings'>Auto</Pentax:AFPointMode>
+    <Pentax:FocusMode2 et:id='3.1' et:table='Pentax::CameraSettings'>AF-S</Pentax:FocusMode2>
+    <Pentax:AFPointSelected2 et:id='4' et:table='Pentax::CameraSettings'>Auto</Pentax:AFPointSelected2>
+    <Pentax:ISOFloor et:id='6' et:table='Pentax::CameraSettings'>200</Pentax:ISOFloor>
+    <Pentax:DriveMode2 et:id='7' et:table='Pentax::CameraSettings'>Single-frame</Pentax:DriveMode2>
+    <Pentax:ExposureBracketStepSize et:id='8' et:table='Pentax::CameraSettings'>0.3</Pentax:ExposureBracketStepSize>
+    <Pentax:BracketShotNumber et:id='9' et:table='Pentax::CameraSettings'>n/a</Pentax:BracketShotNumber>
+    <Pentax:WhiteBalanceSet et:id='10' et:table='Pentax::CameraSettings'>Tungsten</Pentax:WhiteBalanceSet>
+    <Pentax:MultipleExposureSet et:id='10.1' et:table='Pentax::CameraSettings'>Off</Pentax:MultipleExposureSet>
+    <Pentax:AEExposureTime et:id='0' et:table='Pentax::AEInfo'>0.3</Pentax:AEExposureTime>
+    <Pentax:AEAperture et:id='1' et:table='Pentax::AEInfo'>5.2</Pentax:AEAperture>
+    <Pentax:AE_ISO et:id='2' et:table='Pentax::AEInfo'>200</Pentax:AE_ISO>
+    <Pentax:AEXv et:id='3' et:table='Pentax::AEInfo'>0</Pentax:AEXv>
+    <Pentax:AEBXv et:id='4' et:table='Pentax::AEInfo'>0</Pentax:AEBXv>
+    <Pentax:AEMinExposureTime et:id='5' et:table='Pentax::AEInfo'>1/3862</Pentax:AEMinExposureTime>
+    <Pentax:AEProgramMode et:id='6' et:table='Pentax::AEInfo'>Sv or Green Mode</Pentax:AEProgramMode>
+    <Pentax:AEApertureSteps et:id='8' et:table='Pentax::AEInfo'>0</Pentax:AEApertureSteps>
+    <Pentax:AEMaxAperture et:id='9' et:table='Pentax::AEInfo'>4.8</Pentax:AEMaxAperture>
+    <Pentax:AEMaxAperture2 et:id='10' et:table='Pentax::AEInfo'>5.2</Pentax:AEMaxAperture2>
+    <Pentax:AEMinAperture et:id='11' et:table='Pentax::AEInfo'>32</Pentax:AEMinAperture>
+    <Pentax:AEMeteringMode et:id='12' et:table='Pentax::AEInfo'>Multi-segment</Pentax:AEMeteringMode>
+    <Pentax:LensType et:id='0' et:table='Pentax::LensInfo'>smc PENTAX-DA 18-55mm F3.5-5.6 AL</Pentax:LensType>
+    <Pentax:AutoAperture et:id='0.1' et:table='Pentax::LensData'>On</Pentax:AutoAperture>
+    <Pentax:MinAperture et:id='0.2' et:table='Pentax::LensData'>22</Pentax:MinAperture>
+    <Pentax:LensFStops et:id='0.3' et:table='Pentax::LensData'>5</Pentax:LensFStops>
+    <Pentax:MinFocusDistance et:id='3' et:table='Pentax::LensData'>0.25-0.28 m</Pentax:MinFocusDistance>
+    <Pentax:FocusRangeIndex et:id='3.1' et:table='Pentax::LensData'>0 (very close)</Pentax:FocusRangeIndex>
+    <Pentax:LensFocalLength et:id='9' et:table='Pentax::LensData' et:index='0'>45.0 mm</Pentax:LensFocalLength>
+    <Pentax:NominalMaxAperture et:id='10' et:table='Pentax::LensData'>4.8</Pentax:NominalMaxAperture>
+    <Pentax:NominalMinAperture et:id='10.1' et:table='Pentax::LensData'>32</Pentax:NominalMinAperture>
+    <Pentax:MaxAperture et:id='14.1' et:table='Pentax::LensData'>5.2</Pentax:MaxAperture>
+    <Pentax:AEMeteringSegments et:id='521' et:table='Pentax::Main'>5.0 4.8 4.6 4.5 4.8 4.5 5.1 4.9 5.2 4.9 5.1 5.4 5.1 5.4 4.8 5.8</Pentax:AEMeteringSegments>
+    <Pentax:FlashMeteringSegments et:id='522' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:FlashMeteringSegments>
+    <Pentax:SlaveFlashMeteringSegments et:id='523' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:SlaveFlashMeteringSegments>
+    <Pentax:WB_RGGBLevelsDaylight et:id='525' et:table='Pentax::Main'>13528 8192 8192 7100</Pentax:WB_RGGBLevelsDaylight>
+    <Pentax:WB_RGGBLevelsShade et:id='526' et:table='Pentax::Main'>16295 8192 8192 5401</Pentax:WB_RGGBLevelsShade>
+    <Pentax:WB_RGGBLevelsCloudy et:id='527' et:table='Pentax::Main'>14635 8192 8192 6351</Pentax:WB_RGGBLevelsCloudy>
+    <Pentax:WB_RGGBLevelsTungsten et:id='528' et:table='Pentax::Main'>7683 8192 8192 14746</Pentax:WB_RGGBLevelsTungsten>
+    <Pentax:WB_RGGBLevelsFluorescentD et:id='529' et:table='Pentax::Main'>15853 8192 8192 7201</Pentax:WB_RGGBLevelsFluorescentD>
+    <Pentax:WB_RGGBLevelsFluorescentN et:id='530' et:table='Pentax::Main'>13129 8192 8192 8030</Pentax:WB_RGGBLevelsFluorescentN>
+    <Pentax:WB_RGGBLevelsFluorescentW et:id='531' et:table='Pentax::Main'>11668 8192 8192 9770</Pentax:WB_RGGBLevelsFluorescentW>
+    <Pentax:WB_RGGBLevelsFlash et:id='532' et:table='Pentax::Main'>14081 8192 8192 6655</Pentax:WB_RGGBLevelsFlash>
+    <Pentax:PentaxModelID et:id='0' et:table='Pentax::CameraInfo'>*ist DS</Pentax:PentaxModelID>
+    <Pentax:ManufactureDate et:id='1' et:table='Pentax::CameraInfo'>2004:11:22</Pentax:ManufactureDate>
+    <Pentax:ProductionCode et:id='2' et:table='Pentax::CameraInfo'>2.2</Pentax:ProductionCode>
+    <Pentax:InternalSerialNumber et:id='4' et:table='Pentax::CameraInfo'>6002203</Pentax:InternalSerialNumber>
+    <Pentax:PowerSource et:id='0.1' et:table='Pentax::BatteryInfo'>Body Battery</Pentax:PowerSource>
+    <Pentax:BodyBatteryState et:id='1.1' et:table='Pentax::BatteryInfo' et:index='0'>Full</Pentax:BodyBatteryState>
+    <Pentax:BodyBatteryADNoLoad et:id='2' et:table='Pentax::BatteryInfo' et:index='1'>154</Pentax:BodyBatteryADNoLoad>
+    <Pentax:BodyBatteryADLoad et:id='3' et:table='Pentax::BatteryInfo' et:index='1'>144</Pentax:BodyBatteryADLoad>
+    <Pentax:GripBatteryADNoLoad et:id='4' et:table='Pentax::BatteryInfo' et:index='0'>0</Pentax:GripBatteryADNoLoad>
+    <Pentax:GripBatteryADLoad et:id='5' et:table='Pentax::BatteryInfo'>0</Pentax:GripBatteryADLoad>
+    <Pentax:AFPredictor et:id='4' et:table='Pentax::AFInfo'>17</Pentax:AFPredictor>
+    <Pentax:AFDefocus et:id='6' et:table='Pentax::AFInfo'>12</Pentax:AFDefocus>
+    <Pentax:AFIntegrationTime et:id='7' et:table='Pentax::AFInfo'>244 ms</Pentax:AFIntegrationTime>
+    <Pentax:AFPointsInFocus et:id='11' et:table='Pentax::AFInfo'>Top, Center</Pentax:AFPointsInFocus>
+    <Pentax:PreviewImage et:id='PreviewImage' et:table='Composite'>(Binary data 23556 bytes, use -b option to extract)</Pentax:PreviewImage>
+    <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R03 - DCF option file (Adobe RGB)</InteropIFD:InteropIndex>
+    <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>
+    <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0300</PrintIM:PrintIMVersion>
+    <IFD1:Compression et:id='259' et:table='Exif::Main'>JPEG (old-style)</IFD1:Compression>
+    <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>
+    <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>
+    <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD1:ResolutionUnit>
+    <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>56620</IFD1:ThumbnailOffset>
+    <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>3239</IFD1:ThumbnailLength>
+    <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 3239 bytes, use -b option to extract)</IFD1:ThumbnailImage>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>4.5</Composite:Aperture>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>1536x1024</Composite:ImageSize>
+    <Composite:LensID et:id='LensID' et:table='Composite'>smc PENTAX-DA 18-55mm F3.5-5.6 AL</Composite:LensID>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>1.6</Composite:Megapixels>
+    <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.5</Composite:ScaleFactor35efl>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/4</Composite:ShutterSpeed>
+    <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.020 mm</Composite:CircleOfConfusion>
+    <Composite:FOV et:id='FOV' et:table='Composite'>30.1 deg</Composite:FOV>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>45.0 mm (35 mm equivalent: 67.0 mm)</Composite:FocalLength35efl>
+    <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>22.30 m</Composite:HyperfocalDistance>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>5.3</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>
+exiftool_raw: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/camera_samples/pentax-istDS.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:Pentax='http://ns.exiftool.ca/MakerNotes/Pentax/1.0/'
+    xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'
+    xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'
+    xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>pentax-istDS.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>173014</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:38+00:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>MM</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>1536</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>1024</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 1</File:YCbCrSubSampling>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>PENTAX Corporation</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>PENTAX *ist DS</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>1</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>
+    <IFD0:Software et:id='305' et:table='Exif::Main'>*ist DS     Ver 1.00</IFD0:Software>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2005:01:26 14:32:50</IFD0:ModifyDate>
+    <IFD0:WhitePoint et:id='318' et:table='Exif::Main'>0.313 0.329</IFD0:WhitePoint>
+    <IFD0:PrimaryChromaticities et:id='319' et:table='Exif::Main'>0.64 0.33 0.21 0.71 0.15 0.06</IFD0:PrimaryChromaticities>
+    <IFD0:YCbCrCoefficients et:id='529' et:table='Exif::Main'>0.299 0.587 0.114</IFD0:YCbCrCoefficients>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>2</IFD0:YCbCrPositioning>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.25</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>4.5</ExifIFD:FNumber>
+    <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>2</ExifIFD:ExposureProgram>
+    <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>200</ExifIFD:ISO>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2005:01:26 14:32:50</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>16</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>45</ExifIFD:FocalLength>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>65535</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>1536</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1024</ExifIFD:ExifImageHeight>
+    <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>2</ExifIFD:SensingMethod>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>
+    <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>1</ExifIFD:SceneType>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>0</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>1</ExifIFD:WhiteBalance>
+    <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>67</ExifIFD:FocalLengthIn35mmFormat>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>0</ExifIFD:SceneCaptureType>
+    <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>0</ExifIFD:Contrast>
+    <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>0</ExifIFD:Saturation>
+    <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>0</ExifIFD:Sharpness>
+    <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>1</ExifIFD:SubjectDistanceRange>
+    <ExifIFD:Gamma et:id='42240' et:table='Exif::Main'>2.2</ExifIFD:Gamma>
+    <Pentax:PentaxModelType et:id='1' et:table='Pentax::Main'>0</Pentax:PentaxModelType>
+    <Pentax:PreviewImageSize et:id='2' et:table='Pentax::Main'>640 480</Pentax:PreviewImageSize>
+    <Pentax:PreviewImageLength et:id='3' et:table='Pentax::Main'>23556</Pentax:PreviewImageLength>
+    <Pentax:PreviewImageStart et:id='4' et:table='Pentax::Main'>2376</Pentax:PreviewImageStart>
+    <Pentax:PentaxModelID et:id='5' et:table='Pentax::Main'>76450</Pentax:PentaxModelID>
+    <Pentax:Date et:id='6' et:table='Pentax::Main'>2005:01:26</Pentax:Date>
+    <Pentax:Time et:id='7' et:table='Pentax::Main'>14:32:50</Pentax:Time>
+    <Pentax:Quality et:id='8' et:table='Pentax::Main'>0</Pentax:Quality>
+    <Pentax:PentaxImageSize et:id='9' et:table='Pentax::Main'>34 2</Pentax:PentaxImageSize>
+    <Pentax:FlashMode et:id='12' et:table='Pentax::Main'>1</Pentax:FlashMode>
+    <Pentax:FocusMode et:id='13' et:table='Pentax::Main' et:index='0'>16</Pentax:FocusMode>
+    <Pentax:AFPointSelected et:id='14' et:table='Pentax::Main' et:index='2'>65535</Pentax:AFPointSelected>
+    <Pentax:ExposureTime et:id='18' et:table='Pentax::Main'>0.25</Pentax:ExposureTime>
+    <Pentax:FNumber et:id='19' et:table='Pentax::Main'>4.5</Pentax:FNumber>
+    <Pentax:ISO et:id='20' et:table='Pentax::Main'>9</Pentax:ISO>
+    <Pentax:ExposureCompensation et:id='22' et:table='Pentax::Main' et:index='0'>0</Pentax:ExposureCompensation>
+    <Pentax:MeteringMode et:id='23' et:table='Pentax::Main'>0</Pentax:MeteringMode>
+    <Pentax:AutoBracketing et:id='24' et:table='Pentax::Main'>0</Pentax:AutoBracketing>
+    <Pentax:WhiteBalance et:id='25' et:table='Pentax::Main'>4</Pentax:WhiteBalance>
+    <Pentax:WhiteBalanceMode et:id='26' et:table='Pentax::Main'>65535</Pentax:WhiteBalanceMode>
+    <Pentax:FocalLength et:id='29' et:table='Pentax::Main' et:index='1'>45</Pentax:FocalLength>
+    <Pentax:Saturation et:id='31' et:table='Pentax::Main'>1 0</Pentax:Saturation>
+    <Pentax:Contrast et:id='32' et:table='Pentax::Main'>1 0</Pentax:Contrast>
+    <Pentax:Sharpness et:id='33' et:table='Pentax::Main'>1 0</Pentax:Sharpness>
+    <Pentax:WorldTimeLocation et:id='34' et:table='Pentax::Main'>0</Pentax:WorldTimeLocation>
+    <Pentax:HometownCity et:id='35' et:table='Pentax::Main'>22</Pentax:HometownCity>
+    <Pentax:DestinationCity et:id='36' et:table='Pentax::Main'>22</Pentax:DestinationCity>
+    <Pentax:HometownDST et:id='37' et:table='Pentax::Main'>1</Pentax:HometownDST>
+    <Pentax:DestinationDST et:id='38' et:table='Pentax::Main'>1</Pentax:DestinationDST>
+    <Pentax:DSPFirmwareVersion et:id='39' et:table='Pentax::Main'>1 00 00 00</Pentax:DSPFirmwareVersion>
+    <Pentax:CPUFirmwareVersion et:id='40' et:table='Pentax::Main'>1 00 00 00</Pentax:CPUFirmwareVersion>
+    <Pentax:FrameNumber et:id='41' et:table='Pentax::Main'>1350</Pentax:FrameNumber>
+    <Pentax:EffectiveLV et:id='45' et:table='Pentax::Main' et:index='0'>5.625</Pentax:EffectiveLV>
+    <Pentax:ImageEditing et:id='50' et:table='Pentax::Main'>0 0 0 0</Pentax:ImageEditing>
+    <Pentax:PictureMode et:id='51' et:table='Pentax::Main'>2 0 1</Pentax:PictureMode>
+    <Pentax:DriveMode et:id='52' et:table='Pentax::Main'>0 0 0 0</Pentax:DriveMode>
+    <Pentax:SensorSize et:id='53' et:table='Pentax::Main'>24.024 15.974</Pentax:SensorSize>
+    <Pentax:ColorSpace et:id='55' et:table='Pentax::Main'>1</Pentax:ColorSpace>
+    <Pentax:DataScaling et:id='61' et:table='Pentax::Main'>8192</Pentax:DataScaling>
+    <Pentax:PreviewImageBorders et:id='62' et:table='Pentax::Main'>26 26 0 0</Pentax:PreviewImageBorders>
+    <Pentax:LensType et:id='0' et:table='Pentax::LensRec'>4 252</Pentax:LensType>
+    <Pentax:ImageEditCount et:id='65' et:table='Pentax::Main'>0</Pentax:ImageEditCount>
+    <Pentax:CameraTemperature et:id='71' et:table='Pentax::Main'>17</Pentax:CameraTemperature>
+    <Pentax:AELock et:id='72' et:table='Pentax::Main'>0</Pentax:AELock>
+    <Pentax:NoiseReduction et:id='73' et:table='Pentax::Main'>1</Pentax:NoiseReduction>
+    <Pentax:ImageTone et:id='79' et:table='Pentax::Main'>1</Pentax:ImageTone>
+    <Pentax:BlackPoint et:id='512' et:table='Pentax::Main'>0 0 0 0</Pentax:BlackPoint>
+    <Pentax:WhitePoint et:id='513' et:table='Pentax::Main'>8352 8192 8192 17184</Pentax:WhitePoint>
+    <Pentax:PictureMode2 et:id='0' et:table='Pentax::CameraSettings'>2</Pentax:PictureMode2>
+    <Pentax:ProgramLine et:id='1.1' et:table='Pentax::CameraSettings'>0</Pentax:ProgramLine>
+    <Pentax:EVSteps et:id='1.2' et:table='Pentax::CameraSettings'>1</Pentax:EVSteps>
+    <Pentax:E-DialInProgram et:id='1.3' et:table='Pentax::CameraSettings'>1</Pentax:E-DialInProgram>
+    <Pentax:ApertureRingUse et:id='1.4' et:table='Pentax::CameraSettings'>0</Pentax:ApertureRingUse>
+    <Pentax:FlashOptions et:id='2' et:table='Pentax::CameraSettings'>1</Pentax:FlashOptions>
+    <Pentax:MeteringMode2 et:id='2.1' et:table='Pentax::CameraSettings'>0</Pentax:MeteringMode2>
+    <Pentax:AFPointMode et:id='3' et:table='Pentax::CameraSettings'>0</Pentax:AFPointMode>
+    <Pentax:FocusMode2 et:id='3.1' et:table='Pentax::CameraSettings'>1</Pentax:FocusMode2>
+    <Pentax:AFPointSelected2 et:id='4' et:table='Pentax::CameraSettings'>0</Pentax:AFPointSelected2>
+    <Pentax:ISOFloor et:id='6' et:table='Pentax::CameraSettings'>200</Pentax:ISOFloor>
+    <Pentax:DriveMode2 et:id='7' et:table='Pentax::CameraSettings'>0</Pentax:DriveMode2>
+    <Pentax:ExposureBracketStepSize et:id='8' et:table='Pentax::CameraSettings'>3</Pentax:ExposureBracketStepSize>
+    <Pentax:BracketShotNumber et:id='9' et:table='Pentax::CameraSettings'>0</Pentax:BracketShotNumber>
+    <Pentax:WhiteBalanceSet et:id='10' et:table='Pentax::CameraSettings'>7</Pentax:WhiteBalanceSet>
+    <Pentax:MultipleExposureSet et:id='10.1' et:table='Pentax::CameraSettings'>0</Pentax:MultipleExposureSet>
+    <Pentax:AEExposureTime et:id='0' et:table='Pentax::AEInfo'>0.289164529763989</Pentax:AEExposureTime>
+    <Pentax:AEAperture et:id='1' et:table='Pentax::AEInfo'>5.18735821860404</Pentax:AEAperture>
+    <Pentax:AE_ISO et:id='2' et:table='Pentax::AEInfo'>200</Pentax:AE_ISO>
+    <Pentax:AEXv et:id='3' et:table='Pentax::AEInfo'>0</Pentax:AEXv>
+    <Pentax:AEBXv et:id='4' et:table='Pentax::AEInfo'>0</Pentax:AEBXv>
+    <Pentax:AEMinExposureTime et:id='5' et:table='Pentax::AEInfo'>0.000258950237250933</Pentax:AEMinExposureTime>
+    <Pentax:AEProgramMode et:id='6' et:table='Pentax::AEInfo'>3</Pentax:AEProgramMode>
+    <Pentax:AEApertureSteps et:id='8' et:table='Pentax::AEInfo'>0</Pentax:AEApertureSteps>
+    <Pentax:AEMaxAperture et:id='9' et:table='Pentax::AEInfo'>4.75682846001088</Pentax:AEMaxAperture>
+    <Pentax:AEMaxAperture2 et:id='10' et:table='Pentax::AEInfo'>5.18735821860404</Pentax:AEMaxAperture2>
+    <Pentax:AEMinAperture et:id='11' et:table='Pentax::AEInfo'>32</Pentax:AEMinAperture>
+    <Pentax:AEMeteringMode et:id='12' et:table='Pentax::AEInfo'>0</Pentax:AEMeteringMode>
+    <Pentax:LensType et:id='0' et:table='Pentax::LensInfo'>4 252</Pentax:LensType>
+    <Pentax:AutoAperture et:id='0.1' et:table='Pentax::LensData'>0</Pentax:AutoAperture>
+    <Pentax:MinAperture et:id='0.2' et:table='Pentax::LensData'>0</Pentax:MinAperture>
+    <Pentax:LensFStops et:id='0.3' et:table='Pentax::LensData'>5</Pentax:LensFStops>
+    <Pentax:MinFocusDistance et:id='3' et:table='Pentax::LensData'>2</Pentax:MinFocusDistance>
+    <Pentax:FocusRangeIndex et:id='3.1' et:table='Pentax::LensData'>7</Pentax:FocusRangeIndex>
+    <Pentax:LensFocalLength et:id='9' et:table='Pentax::LensData' et:index='0'>45</Pentax:LensFocalLength>
+    <Pentax:NominalMaxAperture et:id='10' et:table='Pentax::LensData'>4.75682846001088</Pentax:NominalMaxAperture>
+    <Pentax:NominalMinAperture et:id='10.1' et:table='Pentax::LensData'>32</Pentax:NominalMinAperture>
+    <Pentax:MaxAperture et:id='14.1' et:table='Pentax::LensData'>5.18735821860404</Pentax:MaxAperture>
+    <Pentax:AEMeteringSegments et:id='521' et:table='Pentax::Main'>88 86 85 84 86 84 89 87 90 87 89 91 89 91 86 94</Pentax:AEMeteringSegments>
+    <Pentax:FlashMeteringSegments et:id='522' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:FlashMeteringSegments>
+    <Pentax:SlaveFlashMeteringSegments et:id='523' et:table='Pentax::Main'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Pentax:SlaveFlashMeteringSegments>
+    <Pentax:WB_RGGBLevelsDaylight et:id='525' et:table='Pentax::Main'>13528 8192 8192 7100</Pentax:WB_RGGBLevelsDaylight>
+    <Pentax:WB_RGGBLevelsShade et:id='526' et:table='Pentax::Main'>16295 8192 8192 5401</Pentax:WB_RGGBLevelsShade>
+    <Pentax:WB_RGGBLevelsCloudy et:id='527' et:table='Pentax::Main'>14635 8192 8192 6351</Pentax:WB_RGGBLevelsCloudy>
+    <Pentax:WB_RGGBLevelsTungsten et:id='528' et:table='Pentax::Main'>7683 8192 8192 14746</Pentax:WB_RGGBLevelsTungsten>
+    <Pentax:WB_RGGBLevelsFluorescentD et:id='529' et:table='Pentax::Main'>15853 8192 8192 7201</Pentax:WB_RGGBLevelsFluorescentD>
+    <Pentax:WB_RGGBLevelsFluorescentN et:id='530' et:table='Pentax::Main'>13129 8192 8192 8030</Pentax:WB_RGGBLevelsFluorescentN>
+    <Pentax:WB_RGGBLevelsFluorescentW et:id='531' et:table='Pentax::Main'>11668 8192 8192 9770</Pentax:WB_RGGBLevelsFluorescentW>
+    <Pentax:WB_RGGBLevelsFlash et:id='532' et:table='Pentax::Main'>14081 8192 8192 6655</Pentax:WB_RGGBLevelsFlash>
+    <Pentax:PentaxModelID et:id='0' et:table='Pentax::CameraInfo'>76450</Pentax:PentaxModelID>
+    <Pentax:ManufactureDate et:id='1' et:table='Pentax::CameraInfo'>2004:11:22</Pentax:ManufactureDate>
+    <Pentax:ProductionCode et:id='2' et:table='Pentax::CameraInfo'>2.2</Pentax:ProductionCode>
+    <Pentax:InternalSerialNumber et:id='4' et:table='Pentax::CameraInfo'>6002203</Pentax:InternalSerialNumber>
+    <Pentax:PowerSource et:id='0.1' et:table='Pentax::BatteryInfo'>2</Pentax:PowerSource>
+    <Pentax:BodyBatteryState et:id='1.1' et:table='Pentax::BatteryInfo' et:index='0'>4</Pentax:BodyBatteryState>
+    <Pentax:BodyBatteryADNoLoad et:id='2' et:table='Pentax::BatteryInfo' et:index='1'>154</Pentax:BodyBatteryADNoLoad>
+    <Pentax:BodyBatteryADLoad et:id='3' et:table='Pentax::BatteryInfo' et:index='1'>144</Pentax:BodyBatteryADLoad>
+    <Pentax:GripBatteryADNoLoad et:id='4' et:table='Pentax::BatteryInfo' et:index='0'>0</Pentax:GripBatteryADNoLoad>
+    <Pentax:GripBatteryADLoad et:id='5' et:table='Pentax::BatteryInfo'>0</Pentax:GripBatteryADLoad>
+    <Pentax:AFPredictor et:id='4' et:table='Pentax::AFInfo'>17</Pentax:AFPredictor>
+    <Pentax:AFDefocus et:id='6' et:table='Pentax::AFInfo'>12</Pentax:AFDefocus>
+    <Pentax:AFIntegrationTime et:id='7' et:table='Pentax::AFInfo'>244</Pentax:AFIntegrationTime>
+    <Pentax:AFPointsInFocus et:id='11' et:table='Pentax::AFInfo'>14</Pentax:AFPointsInFocus>
+    <Pentax:PreviewImage et:id='PreviewImage' et:table='Composite'>(Binary data 23556 bytes, use -b option to extract)</Pentax:PreviewImage>
+    <InteropIFD:InteropIndex et:id='1' et:table='Exif::Main'>R03</InteropIFD:InteropIndex>
+    <InteropIFD:InteropVersion et:id='2' et:table='Exif::Main'>0100</InteropIFD:InteropVersion>
+    <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0300</PrintIM:PrintIMVersion>
+    <IFD1:Compression et:id='259' et:table='Exif::Main'>6</IFD1:Compression>
+    <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>
+    <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>
+    <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD1:ResolutionUnit>
+    <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>56620</IFD1:ThumbnailOffset>
+    <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>3239</IFD1:ThumbnailLength>
+    <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 3239 bytes, use -b option to extract)</IFD1:ThumbnailImage>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>4.5</Composite:Aperture>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>1536x1024</Composite:ImageSize>
+    <Composite:LensID et:id='LensID' et:table='Composite'>4 252</Composite:LensID>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>1.572864</Composite:Megapixels>
+    <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.48888888888889</Composite:ScaleFactor35efl>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.25</Composite:ShutterSpeed>
+    <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.0201803243029701</Composite:CircleOfConfusion>
+    <Composite:FOV et:id='FOV' et:table='Composite'>30.0756572109853</Composite:FOV>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>67.0000000000001</Composite:FocalLength35efl>
+    <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>22.2989478882542</Composite:HyperfocalDistance>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>5.33985000288462</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>

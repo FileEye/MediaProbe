@@ -47,7 +47,7 @@ elements:
             class: FileEye\MediaProbe\Block\Jpeg
             parsed: true
             id: Jpeg
-            collection: Jpeg
+            collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
@@ -99,14 +99,14 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             class: FileEye\MediaProbe\Block\Exif\Exif
                             parsed: true
-                            collection: Exif
+                            collection: Exif\Exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     class: FileEye\MediaProbe\Block\Tiff
                                     parsed: true
-                                    collection: Tiff
+                                    collection: Tiff\Tiff
                                     elements:
                                         -
                                             node: rawData
@@ -1687,7 +1687,9 @@ exifReadData:
     'UndefinedTag:0xA002': !!binary Ew==
     'UndefinedTag:0xA003': 1944
     'UndefinedTag:0xA005': 8
-    'UndefinedTag:0xA300': !!binary AAACAAAAaYcEAAEAAAAIAAAAnAoAADIwMDc6MDY6MDU=
+    'UndefinedTag:0xA300': |-
+             iá       ú
+          2007:06:05
     'UndefinedTag:0xA301': !!binary IDExOjEyOjExAAAASAAAAAEAAABIAAAAAQAAAA==
     'UndefinedTag:0xA401': 0
     'UndefinedTag:0xA402': 0
@@ -1714,12 +1716,208 @@ exifReadData:
     'UndefinedTag:0x9001': !!binary AAAAAC8B5gB9AAUAAADY/wAAAAAAoAHHAABsisRdAAAAAEDc3L0AYAB1ABgAcwCgACgAKwBgAZcBAAFxAQABAAEAAQAN7Q+cU5buf729vb0AAOy6BFMM3FbjcPdwqooiaU/+/AA9AHRF6z5FW/XYilEw+AApAAIAUwCSh3tMJxpEGidMWOqcdKlnAMnw3fDd8N1MXw==
     'UndefinedTag:0x9002': !!binary 4t0zEOA44DgaJwEAGieHVwFpUQi2BAFc/3uuAVaVzSRATMNdMEGDYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAC9vb29vb29vQAAAAAA3Ny8XxAIARsuGy4bPxuEGz8bPxs/Gz91AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACVADkArAB6AJUAOQCsAHoAAAAbLksAGy6aABs/BwAbhKsAGy5LABsumgAbPwcAG4Sr////Fv///xH///+///8=
     'UndefinedTag:0x9005': !!binary AACOhwAAjmuH8O/v7/CHh/Dv7+/wh/Dv4Mvg7/Dv4H9Xf+Dv78tXSlfL7+/gf1d/4O/w7+DL4O/wAAAACABpLSCTIIG29AVyVs4AoyAHvjC+kiCztgzNIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
-    'UndefinedTag:0x9006': !!binary AAAAAAAA6rmKKYrY6gfn2F5eAKMFmLapcEMF6gQxDiMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXIBcgFyAXIBcgC9pAKOKOooKcM1wOHAecMoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAB/5pgAahNBAGqLEgDC+e8AAKr7AAXn7wBemWcAXs2SAM2lBgAA40wAiCmNAOf8QgBWPDoAac8mAAAEswAACABpYAjYAAAHQTmDh1f//1wtXHs5pAcnxWXisawTGrHF3BpPXNwH40yDhxWHRMXu
+    'UndefinedTag:0x9006': |-
+              Íπä)äÿÍÁÿ^^ £ò∂©pCÍ1#                                        \Ä\Ä\Ä\Ä\Ä/i £ä:ä
+        pÕp8pp                                         @    Êò jA jã ¬˘Ô  ™˚ ÁÔ ^ôg ^Õí Õ•  „L à)ç Á¸B V<: iœ&  ≥   i`ÿ  A9ÉáWˇˇ\-\{9§'≈e‚±¨±≈‹O\‹„LÉááD≈Ó
     'UndefinedTag:0x9007': !!binary h0EH3MV0TLxMc0xzxcOH1AdFh3TvROLd8N1MRPBEXcQH7vBbJFhMWMXbTBBMQUxETHMaGEyDTNtMgwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC5sggUMhCYCdPCmRYrWFUn2M0SJBaSnAn5sucwENKVLrvSaBQyEJgJ08KZFg/tbyfYzRIkFpKcCfmy5zC70mgUMhCYCdPCmRYP7W8n2M0SJBaSnAn5sucwENKVKcYMiyWNtrsZlLYcJU1Q9SKCd8Qjzdo=
     'UndefinedTag:0x9008': !!binary Iyh5hhcNzKYUJQDUSgynwbw06N9oMtte/A0/AAAACgAAADAAAAAQAAAAAAAAAAoAAAAEAAAAAQAAADIwMDc6MDY6MDUgMTE6MTI6MTEAAAAcAAAACgAAAAoAAACIEwAACgAOAQIAIQAAAHoKAAAPAQIABgAAAHQKAAAQAQIACQAAAGoKAAASAQMAAQAAAAEAAAAaAQoAAQAAAGIKAAAbAQoAAQAAAFoKAAAoAQMAAQAAAAIAAAAyAQIAFQAAAEQKAAATAgMAAQA=
     'UndefinedTag:0xA100': null
     'UndefinedTag:0xA101': null
     'UndefinedTag:0xA200': null
-    'UndefinedTag:0xA400': !!binary RFNDLVc1NQAAAFNPTlkAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAAAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwY=
-exiftool: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/broken_images/gh-11.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:Sony='http://ns.exiftool.ca/MakerNotes/Sony/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Possibly incorrect maker notes offsets (fix by -314?)</ExifTool:Warning>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Bad offset for MakerNotes tag 0xa400</ExifTool:Warning>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>InteropIFD pointer references previous ExifIFD directory</ExifTool:Warning>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>Bad IFD1 directory</ExifTool:Warning>\n <System:FileName et:id='FileName' et:table='Extra'>gh-11.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>4.2 kB</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Little-endian (Intel, II)</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>50</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>38</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:0 (2 2)</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1.01</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>inches</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>72</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>72</JFIF:YResolution>\n <IFD0:ImageDescription et:id='270' et:table='Exif::Main'>                               </IFD0:ImageDescription>\n <IFD0:Make et:id='271' et:table='Exif::Main'>SONY</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>DSC-W55</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2007:06:05 11:12:11</IFD0:ModifyDate>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Co-sited</IFD0:YCbCrPositioning>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/500</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>\n <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>Portrait</ExifIFD:ExposureProgram>\n <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>100</ExifIFD:ISO>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>\n <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>4</ExifIFD:CompressedBitsPerPixel>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>\n <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.8</ExifIFD:MaxApertureValue>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>\n <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>Unknown</ExifIFD:LightSource>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Auto, Did not fire</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.3 mm</ExifIFD:FocalLength>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>sRGB</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>2592</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1944</ExifIFD:ExifImageHeight>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>\n <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>Directly photographed</ExifIFD:SceneType>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Auto</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Auto</ExifIFD:WhiteBalance>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Portrait</ExifIFD:SceneCaptureType>\n <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>Normal</ExifIFD:Contrast>\n <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>Normal</ExifIFD:Saturation>\n <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>Normal</ExifIFD:Sharpness>\n <Sony:CreativeStyle et:id='45088' et:table='Sony::Main'></Sony:CreativeStyle>\n <Sony:Macro et:id='45120' et:table='Sony::Main'>Off</Sony:Macro>\n <Sony:ExposureMode et:id='45121' et:table='Sony::Main'>Soft Snap/Portrait</Sony:ExposureMode>\n <Sony:FocusMode et:id='45122' et:table='Sony::Main'>AF-S</Sony:FocusMode>\n <Sony:AFAreaMode et:id='45123' et:table='Sony::Main' et:index='0'>Multi</Sony:AFAreaMode>\n <Sony:AFIlluminator et:id='45124' et:table='Sony::Main'>Auto</Sony:AFIlluminator>\n <Sony:JPEGQuality et:id='45127' et:table='Sony::Main'>Fine</Sony:JPEGQuality>\n <Sony:FlashLevel et:id='45128' et:table='Sony::Main'>Normal</Sony:FlashLevel>\n <Sony:ReleaseMode et:id='45129' et:table='Sony::Main'>Normal</Sony:ReleaseMode>\n <Sony:SequenceNumber et:id='45130' et:table='Sony::Main'>Single</Sony:SequenceNumber>\n <Sony:Anti-Blur et:id='45131' et:table='Sony::Main'>Off</Sony:Anti-Blur>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>50x38</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.002</Composite:Megapixels>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/500</Composite:ShutterSpeed>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>6.3 mm</Composite:FocalLength35efl>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>11.9</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
-exiftool_raw: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/broken_images/gh-11.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:Sony='http://ns.exiftool.ca/MakerNotes/Sony/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Possibly incorrect maker notes offsets (fix by -314?)</ExifTool:Warning>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Bad offset for MakerNotes tag 0xa400</ExifTool:Warning>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>InteropIFD pointer references previous ExifIFD directory</ExifTool:Warning>\n <ExifTool:Warning et:id='Warning' et:table='Extra'>Bad IFD1 directory</ExifTool:Warning>\n <System:FileName et:id='FileName' et:table='Extra'>gh-11.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>4304</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>II</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>50</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>38</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 2</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1 1</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>1</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>72</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>72</JFIF:YResolution>\n <IFD0:ImageDescription et:id='270' et:table='Exif::Main'>                               </IFD0:ImageDescription>\n <IFD0:Make et:id='271' et:table='Exif::Main'>SONY</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>DSC-W55</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>1</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2007:06:05 11:12:11</IFD0:ModifyDate>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>2</IFD0:YCbCrPositioning>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.002</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>\n <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>7</ExifIFD:ExposureProgram>\n <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>100</ExifIFD:ISO>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>\n <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>4</ExifIFD:CompressedBitsPerPixel>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>\n <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.82842712474619</ExifIFD:MaxApertureValue>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>\n <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>0</ExifIFD:LightSource>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>24</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.3</ExifIFD:FocalLength>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>1</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>2592</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1944</ExifIFD:ExifImageHeight>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>\n <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>1</ExifIFD:SceneType>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>0</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>0</ExifIFD:WhiteBalance>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>2</ExifIFD:SceneCaptureType>\n <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>0</ExifIFD:Contrast>\n <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>0</ExifIFD:Saturation>\n <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>0</ExifIFD:Sharpness>\n <Sony:CreativeStyle et:id='45088' et:table='Sony::Main'></Sony:CreativeStyle>\n <Sony:Macro et:id='45120' et:table='Sony::Main'>0</Sony:Macro>\n <Sony:ExposureMode et:id='45121' et:table='Sony::Main'>12</Sony:ExposureMode>\n <Sony:FocusMode et:id='45122' et:table='Sony::Main'>1</Sony:FocusMode>\n <Sony:AFAreaMode et:id='45123' et:table='Sony::Main' et:index='0'>1</Sony:AFAreaMode>\n <Sony:AFIlluminator et:id='45124' et:table='Sony::Main'>1</Sony:AFIlluminator>\n <Sony:JPEGQuality et:id='45127' et:table='Sony::Main'>1</Sony:JPEGQuality>\n <Sony:FlashLevel et:id='45128' et:table='Sony::Main'>0</Sony:FlashLevel>\n <Sony:ReleaseMode et:id='45129' et:table='Sony::Main'>0</Sony:ReleaseMode>\n <Sony:SequenceNumber et:id='45130' et:table='Sony::Main'>0</Sony:SequenceNumber>\n <Sony:Anti-Blur et:id='45131' et:table='Sony::Main'>0</Sony:Anti-Blur>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>50x38</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.0019</Composite:Megapixels>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.002</Composite:ShutterSpeed>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>6.3</Composite:FocalLength35efl>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>11.9366379390026</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
+    'UndefinedTag:0xA400': |-
+        DSC-W55   SONY                                    ˇ€ C 
+        
+exiftool: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/broken_images/gh-11.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:Sony='http://ns.exiftool.ca/MakerNotes/Sony/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Possibly incorrect maker notes offsets (fix by -314?)</ExifTool:Warning>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Bad offset for MakerNotes tag 0xa400</ExifTool:Warning>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>InteropIFD pointer references previous ExifIFD directory</ExifTool:Warning>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>Bad IFD1 directory</ExifTool:Warning>
+    <System:FileName et:id='FileName' et:table='Extra'>gh-11.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>4.2 kB</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Little-endian (Intel, II)</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>50</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>38</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:0 (2 2)</File:YCbCrSubSampling>
+    <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1.01</JFIF:JFIFVersion>
+    <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>inches</JFIF:ResolutionUnit>
+    <JFIF:XResolution et:id='3' et:table='JFIF::Main'>72</JFIF:XResolution>
+    <JFIF:YResolution et:id='5' et:table='JFIF::Main'>72</JFIF:YResolution>
+    <IFD0:ImageDescription et:id='270' et:table='Exif::Main'>                               </IFD0:ImageDescription>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>SONY</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>DSC-W55</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2007:06:05 11:12:11</IFD0:ModifyDate>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Co-sited</IFD0:YCbCrPositioning>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/500</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>
+    <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>Portrait</ExifIFD:ExposureProgram>
+    <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>100</ExifIFD:ISO>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>4</ExifIFD:CompressedBitsPerPixel>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>
+    <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.8</ExifIFD:MaxApertureValue>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>
+    <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>Unknown</ExifIFD:LightSource>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Auto, Did not fire</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.3 mm</ExifIFD:FocalLength>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>sRGB</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>2592</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1944</ExifIFD:ExifImageHeight>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>
+    <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>Directly photographed</ExifIFD:SceneType>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Auto</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Auto</ExifIFD:WhiteBalance>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Portrait</ExifIFD:SceneCaptureType>
+    <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>Normal</ExifIFD:Contrast>
+    <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>Normal</ExifIFD:Saturation>
+    <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>Normal</ExifIFD:Sharpness>
+    <Sony:CreativeStyle et:id='45088' et:table='Sony::Main'>
+    </Sony:CreativeStyle>
+    <Sony:Macro et:id='45120' et:table='Sony::Main'>Off</Sony:Macro>
+    <Sony:ExposureMode et:id='45121' et:table='Sony::Main'>Soft Snap/Portrait</Sony:ExposureMode>
+    <Sony:FocusMode et:id='45122' et:table='Sony::Main'>AF-S</Sony:FocusMode>
+    <Sony:AFAreaMode et:id='45123' et:table='Sony::Main' et:index='0'>Multi</Sony:AFAreaMode>
+    <Sony:AFIlluminator et:id='45124' et:table='Sony::Main'>Auto</Sony:AFIlluminator>
+    <Sony:JPEGQuality et:id='45127' et:table='Sony::Main'>Fine</Sony:JPEGQuality>
+    <Sony:FlashLevel et:id='45128' et:table='Sony::Main'>Normal</Sony:FlashLevel>
+    <Sony:ReleaseMode et:id='45129' et:table='Sony::Main'>Normal</Sony:ReleaseMode>
+    <Sony:SequenceNumber et:id='45130' et:table='Sony::Main'>Single</Sony:SequenceNumber>
+    <Sony:Anti-Blur et:id='45131' et:table='Sony::Main'>Off</Sony:Anti-Blur>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>50x38</Composite:ImageSize>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.002</Composite:Megapixels>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/500</Composite:ShutterSpeed>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>6.3 mm</Composite:FocalLength35efl>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>11.9</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>
+exiftool_raw: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/broken_images/gh-11.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:Sony='http://ns.exiftool.ca/MakerNotes/Sony/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Possibly incorrect maker notes offsets (fix by -314?)</ExifTool:Warning>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Bad offset for MakerNotes tag 0xa400</ExifTool:Warning>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>InteropIFD pointer references previous ExifIFD directory</ExifTool:Warning>
+    <ExifTool:Warning et:id='Warning' et:table='Extra'>Bad IFD1 directory</ExifTool:Warning>
+    <System:FileName et:id='FileName' et:table='Extra'>gh-11.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/broken_images</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>4304</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:03:17 16:27:37+00:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>II</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>50</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>38</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 2</File:YCbCrSubSampling>
+    <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1 1</JFIF:JFIFVersion>
+    <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>1</JFIF:ResolutionUnit>
+    <JFIF:XResolution et:id='3' et:table='JFIF::Main'>72</JFIF:XResolution>
+    <JFIF:YResolution et:id='5' et:table='JFIF::Main'>72</JFIF:YResolution>
+    <IFD0:ImageDescription et:id='270' et:table='Exif::Main'>                               </IFD0:ImageDescription>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>SONY</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>DSC-W55</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>1</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2007:06:05 11:12:11</IFD0:ModifyDate>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>2</IFD0:YCbCrPositioning>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.002</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>
+    <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>7</ExifIFD:ExposureProgram>
+    <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>100</ExifIFD:ISO>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0221</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2007:06:05 11:12:11</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:CompressedBitsPerPixel et:id='37122' et:table='Exif::Main'>4</ExifIFD:CompressedBitsPerPixel>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>
+    <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.82842712474619</ExifIFD:MaxApertureValue>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>
+    <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>0</ExifIFD:LightSource>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>24</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>6.3</ExifIFD:FocalLength>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>1</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>2592</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>1944</ExifIFD:ExifImageHeight>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>
+    <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>1</ExifIFD:SceneType>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>0</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>0</ExifIFD:WhiteBalance>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>2</ExifIFD:SceneCaptureType>
+    <ExifIFD:Contrast et:id='41992' et:table='Exif::Main'>0</ExifIFD:Contrast>
+    <ExifIFD:Saturation et:id='41993' et:table='Exif::Main'>0</ExifIFD:Saturation>
+    <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>0</ExifIFD:Sharpness>
+    <Sony:CreativeStyle et:id='45088' et:table='Sony::Main'>
+    </Sony:CreativeStyle>
+    <Sony:Macro et:id='45120' et:table='Sony::Main'>0</Sony:Macro>
+    <Sony:ExposureMode et:id='45121' et:table='Sony::Main'>12</Sony:ExposureMode>
+    <Sony:FocusMode et:id='45122' et:table='Sony::Main'>1</Sony:FocusMode>
+    <Sony:AFAreaMode et:id='45123' et:table='Sony::Main' et:index='0'>1</Sony:AFAreaMode>
+    <Sony:AFIlluminator et:id='45124' et:table='Sony::Main'>1</Sony:AFIlluminator>
+    <Sony:JPEGQuality et:id='45127' et:table='Sony::Main'>1</Sony:JPEGQuality>
+    <Sony:FlashLevel et:id='45128' et:table='Sony::Main'>0</Sony:FlashLevel>
+    <Sony:ReleaseMode et:id='45129' et:table='Sony::Main'>0</Sony:ReleaseMode>
+    <Sony:SequenceNumber et:id='45130' et:table='Sony::Main'>0</Sony:SequenceNumber>
+    <Sony:Anti-Blur et:id='45131' et:table='Sony::Main'>0</Sony:Anti-Blur>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>50x38</Composite:ImageSize>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.0019</Composite:Megapixels>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.002</Composite:ShutterSpeed>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>6.3</Composite:FocalLength35efl>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>11.9366379390026</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>

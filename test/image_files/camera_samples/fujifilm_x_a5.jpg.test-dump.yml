@@ -18,7 +18,7 @@ elements:
             class: FileEye\MediaProbe\Block\Jpeg
             parsed: true
             id: Jpeg
-            collection: Jpeg
+            collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
@@ -70,14 +70,14 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             class: FileEye\MediaProbe\Block\Exif\Exif
                             parsed: true
-                            collection: Exif
+                            collection: Exif\Exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     class: FileEye\MediaProbe\Block\Tiff
                                     parsed: true
-                                    collection: Tiff
+                                    collection: Tiff\Tiff
                                     elements:
                                         -
                                             node: ifd
@@ -1685,5 +1685,333 @@ exifReadData:
     'UndefinedTag:0x4100': 0
     'UndefinedTag:0x4200': 0
     'UndefinedTag:0xF010': !!binary AAAAAAAAOAAAAAA2ADUxLjIwAAAAAAAAIzZiIwFBMCRTSENGVUKMUEgA//8A8HeBAQAAANQAvQMAbDIAAAAAAA4APAAidgIC/////wEAAABmAKAA7mQDAq4PgBcAAKAFAAAAAAAAAAD/AR8BAACjAv///////wAA/////+7u7u4AAMUCUwEAAAAABgAwQWM4NTA2MwAAAAADACoAAQALAAIAHgB2/wAAEwAdAIj/DwAAAAAAAAAAAAAAAAAAAB0AHQD+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAAAAAAAAAAAAD//////////xd0QRcBBQABDCcAAHMOAABXFAAAKA/kDnMOLw5tGAAAqhkAAN0RAABJHUkdbRgAAIkKvgAcHEABTRLdEQEK//8AHiA+7h2hEgAAAAAAAAD///////////8AACgAAEgcAMcUAACkEQAAAAAgAG0YAAAAHR1uABgAIBd1URcAPQQCAADFAgAAAAAEAAoAAAsHCpUgCAEDAAAAFACwAOktFXj0d8R3yXQTeBN4AAAAAAAAUwHAAQAAAAAAAAAA//////////////8A/////5UdIxv/KUEnAABCIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACVHSMb/ylBJwAAQiIAAAAAPxkrF8cjciEAADYdAAAAAA0oAwAoOrUrsTJCPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////////////F3ERF2RkVggARwBkAAAAAAAAAACOAdYBAAAAAAAAAAAAAAF/vCJVKTw1SlRQAagAAAAAAAAAAAD//////////wAAgAA3MEYAAAAAAAAAAAAAAAAAAAAAAG0BE4QAAAAAH/03KkVFRUVrA6wBbQG5A9gA8AAZAAAAAARxDYAAgQAgQBAA84KYggb2//8+Ao0BAAAsAAAJAAAAAAAAAAAAAKWlpaUAAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+vr6+gAAAAAACAAA/////wAASAb//////////////////////////xiIgRgAAH8BAAAAkAAAAAAAAIaGAAQGAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+AL4AAAAAAAAAAADwDLcPnBuFFAAAAAAAAADgCyMAAAAAAAAAAAAAahgAABwAHABqGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFb9//9W/f//AgABAB0A3QBkAAAAAAAAAAAAAAAAAAAAAAAAABiHcRgAAhMAAAAQACAAAAEAAAAAAADjAgAAAAD0dwAA9XcAAAAAAAAAAAAAAAAAAAAAAADpLQAAOUUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4ATAAAAAAAAQA1AAgAAAAAAAEAAAA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAA0AB4AAQABAAgA+QIAAAAAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAc4FCC8AANsUAKIAAAAAAAAAAAAAAAAAACABAAAgAQAAAAAAAAAAAAAEGuktAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADbdwAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/An4CQQIDAF4AZQAAAAAAAAAAAPYA/QDmDJUgAQAAAAAA4CAukAggAAAAAAAAAAAAAAAAAAAGBgAAAAAAAAAAAAAAAAAAAAAAAAAAJ2cIALoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAABLeAHAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPR373cDeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAOAB0AJ8AVIB2gCwAAAAAAAAAAAAgAFWAdoAsACxAFcB2wB/AeAB0AIAAAAAAAAAAAAAAAAAAAAAGIVRGDQPZBD/////g4ODgwAAkAAAAAAAAAAAAAAAAACzs7OzAAAAAAAAAAAAAAAAAAAAAP////////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAP//////////////////////////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACvIwGvDABkAAAAAAAVeBV4AAAVeBV4E3gTeAB4A3jsd+932Hfbd8R3zlbOVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArFwAAPxkAAHIhAADHIwAANh0AAI7XPg0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIxsAAJUdAABBJwAA/ykAAEIiAACO1z4NAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJL3AADW/wAAXRoBAOodAQD9AgEAjtc+DQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACbDQEAnBYBAIIzAQBgNwEACxoBAI7XPg0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6JMBAGqhAQDDzAEAkNIBAJCmAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0oAAC1KwAAKDoAAEI+AACxMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQ/v//XP7//1D+//8m/v//Mv7//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAywAAAMQAAACIAAAARwAAAG4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCAAAAQgAAAEIAAABCAAAAQgAAAFD+//9c/v//UP7//yb+//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADLAAAAxAAAAIgAAABHAAAA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
-exiftool: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/camera_samples/fujifilm_x_a5.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:FujiFilm='http://ns.exiftool.ca/MakerNotes/FujiFilm/1.0/'\n  xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'\n  xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>fujifilm_x_a5.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>23 kB</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Little-endian (Intel, II)</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>149</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>84</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:0 (2 2)</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1.01</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>None</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>1</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>1</JFIF:YResolution>\n <IFD0:Make et:id='271' et:table='Exif::Main'>FUJIFILM</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>X-A5</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>\n <IFD0:Software et:id='305' et:table='Exif::Main'>Digital Camera X-A5 Ver1.20</IFD0:Software>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2019:04:22 13:31:48</IFD0:ModifyDate>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Centered</IFD0:YCbCrPositioning>\n <IFD0:Copyright et:id='33432' et:table='Exif::Main'></IFD0:Copyright>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/160</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>\n <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>Manual</ExifIFD:ExposureProgram>\n <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>320</ExifIFD:ISO>\n <ExifIFD:SensitivityType et:id='34864' et:table='Exif::Main'>Standard Output Sensitivity</ExifIFD:SensitivityType>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0230</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>\n <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>1/158</ExifIFD:ShutterSpeedValue>\n <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>2.8</ExifIFD:ApertureValue>\n <ExifIFD:BrightnessValue et:id='37379' et:table='Exif::Main'>3.7</ExifIFD:BrightnessValue>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>\n <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.8</ExifIFD:MaxApertureValue>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>\n <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>Shade</ExifIFD:LightSource>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Off, Did not fire</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>27.0 mm</ExifIFD:FocalLength>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>sRGB</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>4240</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>2384</ExifIFD:ExifImageHeight>\n <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneXResolution>\n <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneYResolution>\n <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>cm</ExifIFD:FocalPlaneResolutionUnit>\n <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>One-chip color area</ExifIFD:SensingMethod>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>\n <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>Directly photographed</ExifIFD:SceneType>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Manual</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Manual</ExifIFD:WhiteBalance>\n <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>41 mm</ExifIFD:FocalLengthIn35mmFormat>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Standard</ExifIFD:SceneCaptureType>\n <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>Normal</ExifIFD:Sharpness>\n <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>Unknown</ExifIFD:SubjectDistanceRange>\n <ExifIFD:LensInfo et:id='42034' et:table='Exif::Main'>27mm f/2.8</ExifIFD:LensInfo>\n <ExifIFD:LensMake et:id='42035' et:table='Exif::Main'>FUJIFILM</ExifIFD:LensMake>\n <ExifIFD:LensModel et:id='42036' et:table='Exif::Main'>XF27mmF2.8</ExifIFD:LensModel>\n <ExifIFD:LensSerialNumber et:id='42037' et:table='Exif::Main'>8cA03605</ExifIFD:LensSerialNumber>\n <FujiFilm:Version et:id='0' et:table='FujiFilm::Main'>0130</FujiFilm:Version>\n <FujiFilm:InternalSerialNumber et:id='16' et:table='FujiFilm::Main'>592D3534303031 2018:08:07 91B58UL14427</FujiFilm:InternalSerialNumber>\n <FujiFilm:Quality et:id='4096' et:table='FujiFilm::Main'>FINE   </FujiFilm:Quality>\n <FujiFilm:Sharpness et:id='4097' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:Sharpness>\n <FujiFilm:WhiteBalance et:id='4098' et:table='FujiFilm::Main'>Cloudy</FujiFilm:WhiteBalance>\n <FujiFilm:Saturation et:id='4099' et:table='FujiFilm::Main'>+1 (medium high)</FujiFilm:Saturation>\n <FujiFilm:WhiteBalanceFineTune et:id='4106' et:table='FujiFilm::Main'>Red +0, Blue +0</FujiFilm:WhiteBalanceFineTune>\n <FujiFilm:NoiseReduction et:id='4110' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:NoiseReduction>\n <FujiFilm:FujiFlashMode et:id='4112' et:table='FujiFilm::Main'>Off</FujiFilm:FujiFlashMode>\n <FujiFilm:FlashExposureComp et:id='4113' et:table='FujiFilm::Main'>0</FujiFilm:FlashExposureComp>\n <FujiFilm:Macro et:id='4128' et:table='FujiFilm::Main'>Off</FujiFilm:Macro>\n <FujiFilm:FocusMode et:id='4129' et:table='FujiFilm::Main'>Auto</FujiFilm:FocusMode>\n <FujiFilm:AFMode et:id='4130' et:table='FujiFilm::Main'>Single Point</FujiFilm:AFMode>\n <FujiFilm:FocusPixel et:id='4131' et:table='FujiFilm::Main'>2108 983</FujiFilm:FocusPixel>\n <FujiFilm:SlowSync et:id='4144' et:table='FujiFilm::Main'>Off</FujiFilm:SlowSync>\n <FujiFilm:PictureMode et:id='4145' et:table='FujiFilm::Main'>Manual</FujiFilm:PictureMode>\n <FujiFilm:ExposureCount et:id='4146' et:table='FujiFilm::Main'>1</FujiFilm:ExposureCount>\n <FujiFilm:ShadowTone et:id='4160' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:ShadowTone>\n <FujiFilm:HighlightTone et:id='4161' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:HighlightTone>\n <FujiFilm:ShutterType et:id='4176' et:table='FujiFilm::Main'>Mechanical</FujiFilm:ShutterType>\n <FujiFilm:AutoBracketing et:id='4352' et:table='FujiFilm::Main' et:index='1'>Off</FujiFilm:AutoBracketing>\n <FujiFilm:SequenceNumber et:id='4353' et:table='FujiFilm::Main'>0</FujiFilm:SequenceNumber>\n <FujiFilm:BlurWarning et:id='4864' et:table='FujiFilm::Main'>None</FujiFilm:BlurWarning>\n <FujiFilm:FocusWarning et:id='4865' et:table='FujiFilm::Main'>Good</FujiFilm:FocusWarning>\n <FujiFilm:ExposureWarning et:id='4866' et:table='FujiFilm::Main'>Good</FujiFilm:ExposureWarning>\n <FujiFilm:DynamicRange et:id='5120' et:table='FujiFilm::Main'>Standard</FujiFilm:DynamicRange>\n <FujiFilm:FilmMode et:id='5121' et:table='FujiFilm::Main'>F0/Standard (Provia)</FujiFilm:FilmMode>\n <FujiFilm:DynamicRangeSetting et:id='5122' et:table='FujiFilm::Main'>Auto (100-400%)</FujiFilm:DynamicRangeSetting>\n <FujiFilm:MinFocalLength et:id='5124' et:table='FujiFilm::Main'>27</FujiFilm:MinFocalLength>\n <FujiFilm:MaxFocalLength et:id='5125' et:table='FujiFilm::Main'>27</FujiFilm:MaxFocalLength>\n <FujiFilm:MaxApertureAtMinFocal et:id='5126' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMinFocal>\n <FujiFilm:MaxApertureAtMaxFocal et:id='5127' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMaxFocal>\n <FujiFilm:AutoDynamicRange et:id='5131' et:table='FujiFilm::Main'>100%</FujiFilm:AutoDynamicRange>\n <FujiFilm:ImageStabilization et:id='5154' et:table='FujiFilm::Main'>None; Off; 0</FujiFilm:ImageStabilization>\n <FujiFilm:Rating et:id='5169' et:table='FujiFilm::Main'>0</FujiFilm:Rating>\n <FujiFilm:ImageGeneration et:id='5174' et:table='FujiFilm::Main'>Original Image</FujiFilm:ImageGeneration>\n <FujiFilm:FacesDetected et:id='16640' et:table='FujiFilm::Main'>0</FujiFilm:FacesDetected>\n <FujiFilm:NumFaceElements et:id='16896' et:table='FujiFilm::Main'>0</FujiFilm:NumFaceElements>\n <GPS:GPSVersionID et:id='0' et:table='GPS::Main'>2.3.0.0</GPS:GPSVersionID>\n <GPS:GPSLatitudeRef et:id='1' et:table='GPS::Main'>North</GPS:GPSLatitudeRef>\n <GPS:GPSLatitude et:id='2' et:table='GPS::Main'>45 deg 33&#39; 25.17&quot;</GPS:GPSLatitude>\n <GPS:GPSLongitudeRef et:id='3' et:table='GPS::Main'>West</GPS:GPSLongitudeRef>\n <GPS:GPSLongitude et:id='4' et:table='GPS::Main'>73 deg 33&#39; 30.11&quot;</GPS:GPSLongitude>\n <GPS:GPSAltitudeRef et:id='5' et:table='GPS::Main'>Above Sea Level</GPS:GPSAltitudeRef>\n <GPS:GPSAltitude et:id='6' et:table='GPS::Main'>15 m</GPS:GPSAltitude>\n <GPS:GPSTimeStamp et:id='7' et:table='GPS::Main'>17:30:52</GPS:GPSTimeStamp>\n <GPS:GPSSpeedRef et:id='12' et:table='GPS::Main'>km/h</GPS:GPSSpeedRef>\n <GPS:GPSSpeed et:id='13' et:table='GPS::Main'>0</GPS:GPSSpeed>\n <GPS:GPSMapDatum et:id='18' et:table='GPS::Main'>WGS-84</GPS:GPSMapDatum>\n <GPS:GPSDateStamp et:id='29' et:table='GPS::Main'>2019:04:22</GPS:GPSDateStamp>\n <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0250</PrintIM:PrintIMVersion>\n <IFD1:Compression et:id='259' et:table='Exif::Main'>JPEG (old-style)</IFD1:Compression>\n <IFD1:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD1:Orientation>\n <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>\n <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>\n <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD1:ResolutionUnit>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>11110</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>8200</IFD1:ThumbnailLength>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 8200 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>\n <Composite:GPSAltitude et:id='GPSAltitude' et:table='Composite'>15 m Above Sea Level</Composite:GPSAltitude>\n <Composite:GPSDateTime et:id='GPSDateTime' et:table='Composite'>2019:04:22 17:30:52Z</Composite:GPSDateTime>\n <Composite:GPSLatitude et:id='GPSLatitude' et:table='Composite'>45 deg 33&#39; 25.17&quot; N</Composite:GPSLatitude>\n <Composite:GPSLongitude et:id='GPSLongitude' et:table='Composite'>73 deg 33&#39; 30.11&quot; W</Composite:GPSLongitude>\n <Composite:GPSPosition et:id='GPSPosition' et:table='Composite'>45 deg 33&#39; 25.17&quot; N, 73 deg 33&#39; 30.11&quot; W</Composite:GPSPosition>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>149x84</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.013</Composite:Megapixels>\n <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.5</Composite:ScaleFactor35efl>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/160</Composite:ShutterSpeed>\n <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.020 mm</Composite:CircleOfConfusion>\n <Composite:FOV et:id='FOV' et:table='Composite'>47.4 deg</Composite:FOV>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>27.0 mm (35 mm equivalent: 41.0 mm)</Composite:FocalLength35efl>\n <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>13.16 m</Composite:HyperfocalDistance>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>8.6</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
-exiftool_raw: "<?xml version='1.0' encoding='UTF-8'?>\n<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n\n<rdf:Description rdf:about='test/image_files/camera_samples/fujifilm_x_a5.jpg'\n  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'\n  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'\n  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'\n  xmlns:File='http://ns.exiftool.ca/File/1.0/'\n  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'\n  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'\n  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'\n  xmlns:FujiFilm='http://ns.exiftool.ca/MakerNotes/FujiFilm/1.0/'\n  xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'\n  xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'\n  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'\n  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>\n <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>\n <System:FileName et:id='FileName' et:table='Extra'>fujifilm_x_a5.jpg</System:FileName>\n <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>\n <System:FileSize et:id='FileSize' et:table='Extra'>23108</System:FileSize>\n <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileModifyDate>\n <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileAccessDate>\n <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileInodeChangeDate>\n <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>\n <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>\n <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>\n <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>\n <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>II</File:ExifByteOrder>\n <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>149</File:ImageWidth>\n <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>84</File:ImageHeight>\n <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>\n <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>\n <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>\n <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 2</File:YCbCrSubSampling>\n <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1 1</JFIF:JFIFVersion>\n <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>0</JFIF:ResolutionUnit>\n <JFIF:XResolution et:id='3' et:table='JFIF::Main'>1</JFIF:XResolution>\n <JFIF:YResolution et:id='5' et:table='JFIF::Main'>1</JFIF:YResolution>\n <IFD0:Make et:id='271' et:table='Exif::Main'>FUJIFILM</IFD0:Make>\n <IFD0:Model et:id='272' et:table='Exif::Main'>X-A5</IFD0:Model>\n <IFD0:Orientation et:id='274' et:table='Exif::Main'>1</IFD0:Orientation>\n <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>\n <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>\n <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>\n <IFD0:Software et:id='305' et:table='Exif::Main'>Digital Camera X-A5 Ver1.20</IFD0:Software>\n <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2019:04:22 13:31:48</IFD0:ModifyDate>\n <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>1</IFD0:YCbCrPositioning>\n <IFD0:Copyright et:id='33432' et:table='Exif::Main'></IFD0:Copyright>\n <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.00625</ExifIFD:ExposureTime>\n <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>\n <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>1</ExifIFD:ExposureProgram>\n <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>320</ExifIFD:ISO>\n <ExifIFD:SensitivityType et:id='34864' et:table='Exif::Main'>1</ExifIFD:SensitivityType>\n <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0230</ExifIFD:ExifVersion>\n <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:DateTimeOriginal>\n <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:CreateDate>\n <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>\n <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>0.00632911391605357</ExifIFD:ShutterSpeedValue>\n <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>2.80000000452162</ExifIFD:ApertureValue>\n <ExifIFD:BrightnessValue et:id='37379' et:table='Exif::Main'>3.7</ExifIFD:BrightnessValue>\n <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>\n <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.80000000452162</ExifIFD:MaxApertureValue>\n <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>\n <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>11</ExifIFD:LightSource>\n <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>16</ExifIFD:Flash>\n <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>27</ExifIFD:FocalLength>\n <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>\n <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>1</ExifIFD:ColorSpace>\n <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>4240</ExifIFD:ExifImageWidth>\n <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>2384</ExifIFD:ExifImageHeight>\n <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneXResolution>\n <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneYResolution>\n <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>3</ExifIFD:FocalPlaneResolutionUnit>\n <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>2</ExifIFD:SensingMethod>\n <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>\n <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>1</ExifIFD:SceneType>\n <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>\n <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>1</ExifIFD:ExposureMode>\n <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>1</ExifIFD:WhiteBalance>\n <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>41</ExifIFD:FocalLengthIn35mmFormat>\n <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>0</ExifIFD:SceneCaptureType>\n <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>0</ExifIFD:Sharpness>\n <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>0</ExifIFD:SubjectDistanceRange>\n <ExifIFD:LensInfo et:id='42034' et:table='Exif::Main'>27 27 2.8 2.8</ExifIFD:LensInfo>\n <ExifIFD:LensMake et:id='42035' et:table='Exif::Main'>FUJIFILM</ExifIFD:LensMake>\n <ExifIFD:LensModel et:id='42036' et:table='Exif::Main'>XF27mmF2.8</ExifIFD:LensModel>\n <ExifIFD:LensSerialNumber et:id='42037' et:table='Exif::Main'>8cA03605</ExifIFD:LensSerialNumber>\n <FujiFilm:Version et:id='0' et:table='FujiFilm::Main'>0130</FujiFilm:Version>\n <FujiFilm:InternalSerialNumber et:id='16' et:table='FujiFilm::Main'>592D353430303118080791B58UL14427</FujiFilm:InternalSerialNumber>\n <FujiFilm:Quality et:id='4096' et:table='FujiFilm::Main'>FINE   </FujiFilm:Quality>\n <FujiFilm:Sharpness et:id='4097' et:table='FujiFilm::Main'>3</FujiFilm:Sharpness>\n <FujiFilm:WhiteBalance et:id='4098' et:table='FujiFilm::Main'>512</FujiFilm:WhiteBalance>\n <FujiFilm:Saturation et:id='4099' et:table='FujiFilm::Main'>128</FujiFilm:Saturation>\n <FujiFilm:WhiteBalanceFineTune et:id='4106' et:table='FujiFilm::Main'>0 0</FujiFilm:WhiteBalanceFineTune>\n <FujiFilm:NoiseReduction et:id='4110' et:table='FujiFilm::Main'>0</FujiFilm:NoiseReduction>\n <FujiFilm:FujiFlashMode et:id='4112' et:table='FujiFilm::Main'>2</FujiFilm:FujiFlashMode>\n <FujiFilm:FlashExposureComp et:id='4113' et:table='FujiFilm::Main'>0</FujiFilm:FlashExposureComp>\n <FujiFilm:Macro et:id='4128' et:table='FujiFilm::Main'>0</FujiFilm:Macro>\n <FujiFilm:FocusMode et:id='4129' et:table='FujiFilm::Main'>0</FujiFilm:FocusMode>\n <FujiFilm:AFMode et:id='4130' et:table='FujiFilm::Main'>1</FujiFilm:AFMode>\n <FujiFilm:FocusPixel et:id='4131' et:table='FujiFilm::Main'>2108 983</FujiFilm:FocusPixel>\n <FujiFilm:SlowSync et:id='4144' et:table='FujiFilm::Main'>0</FujiFilm:SlowSync>\n <FujiFilm:PictureMode et:id='4145' et:table='FujiFilm::Main'>768</FujiFilm:PictureMode>\n <FujiFilm:ExposureCount et:id='4146' et:table='FujiFilm::Main'>1</FujiFilm:ExposureCount>\n <FujiFilm:ShadowTone et:id='4160' et:table='FujiFilm::Main'>0</FujiFilm:ShadowTone>\n <FujiFilm:HighlightTone et:id='4161' et:table='FujiFilm::Main'>0</FujiFilm:HighlightTone>\n <FujiFilm:ShutterType et:id='4176' et:table='FujiFilm::Main'>0</FujiFilm:ShutterType>\n <FujiFilm:AutoBracketing et:id='4352' et:table='FujiFilm::Main' et:index='1'>0</FujiFilm:AutoBracketing>\n <FujiFilm:SequenceNumber et:id='4353' et:table='FujiFilm::Main'>0</FujiFilm:SequenceNumber>\n <FujiFilm:BlurWarning et:id='4864' et:table='FujiFilm::Main'>0</FujiFilm:BlurWarning>\n <FujiFilm:FocusWarning et:id='4865' et:table='FujiFilm::Main'>0</FujiFilm:FocusWarning>\n <FujiFilm:ExposureWarning et:id='4866' et:table='FujiFilm::Main'>0</FujiFilm:ExposureWarning>\n <FujiFilm:DynamicRange et:id='5120' et:table='FujiFilm::Main'>1</FujiFilm:DynamicRange>\n <FujiFilm:FilmMode et:id='5121' et:table='FujiFilm::Main'>0</FujiFilm:FilmMode>\n <FujiFilm:DynamicRangeSetting et:id='5122' et:table='FujiFilm::Main'>0</FujiFilm:DynamicRangeSetting>\n <FujiFilm:MinFocalLength et:id='5124' et:table='FujiFilm::Main'>27</FujiFilm:MinFocalLength>\n <FujiFilm:MaxFocalLength et:id='5125' et:table='FujiFilm::Main'>27</FujiFilm:MaxFocalLength>\n <FujiFilm:MaxApertureAtMinFocal et:id='5126' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMinFocal>\n <FujiFilm:MaxApertureAtMaxFocal et:id='5127' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMaxFocal>\n <FujiFilm:AutoDynamicRange et:id='5131' et:table='FujiFilm::Main'>100</FujiFilm:AutoDynamicRange>\n <FujiFilm:ImageStabilization et:id='5154' et:table='FujiFilm::Main'>0 0 0</FujiFilm:ImageStabilization>\n <FujiFilm:Rating et:id='5169' et:table='FujiFilm::Main'>0</FujiFilm:Rating>\n <FujiFilm:ImageGeneration et:id='5174' et:table='FujiFilm::Main'>0</FujiFilm:ImageGeneration>\n <FujiFilm:FacesDetected et:id='16640' et:table='FujiFilm::Main'>0</FujiFilm:FacesDetected>\n <FujiFilm:NumFaceElements et:id='16896' et:table='FujiFilm::Main'>0</FujiFilm:NumFaceElements>\n <GPS:GPSVersionID et:id='0' et:table='GPS::Main'>2 3 0 0</GPS:GPSVersionID>\n <GPS:GPSLatitudeRef et:id='1' et:table='GPS::Main'>N</GPS:GPSLatitudeRef>\n <GPS:GPSLatitude et:id='2' et:table='GPS::Main'>45.5569913888889</GPS:GPSLatitude>\n <GPS:GPSLongitudeRef et:id='3' et:table='GPS::Main'>W</GPS:GPSLongitudeRef>\n <GPS:GPSLongitude et:id='4' et:table='GPS::Main'>73.5583647222222</GPS:GPSLongitude>\n <GPS:GPSAltitudeRef et:id='5' et:table='GPS::Main'>0</GPS:GPSAltitudeRef>\n <GPS:GPSAltitude et:id='6' et:table='GPS::Main'>15</GPS:GPSAltitude>\n <GPS:GPSTimeStamp et:id='7' et:table='GPS::Main'>17:30:52</GPS:GPSTimeStamp>\n <GPS:GPSSpeedRef et:id='12' et:table='GPS::Main'>K</GPS:GPSSpeedRef>\n <GPS:GPSSpeed et:id='13' et:table='GPS::Main'>0</GPS:GPSSpeed>\n <GPS:GPSMapDatum et:id='18' et:table='GPS::Main'>WGS-84</GPS:GPSMapDatum>\n <GPS:GPSDateStamp et:id='29' et:table='GPS::Main'>2019:04:22</GPS:GPSDateStamp>\n <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0250</PrintIM:PrintIMVersion>\n <IFD1:Compression et:id='259' et:table='Exif::Main'>6</IFD1:Compression>\n <IFD1:Orientation et:id='274' et:table='Exif::Main'>1</IFD1:Orientation>\n <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>\n <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>\n <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD1:ResolutionUnit>\n <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>11110</IFD1:ThumbnailOffset>\n <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>8200</IFD1:ThumbnailLength>\n <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 8200 bytes, use -b option to extract)</IFD1:ThumbnailImage>\n <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>\n <Composite:GPSAltitude et:id='GPSAltitude' et:table='Composite'>15</Composite:GPSAltitude>\n <Composite:GPSDateTime et:id='GPSDateTime' et:table='Composite'>2019:04:22 17:30:52Z</Composite:GPSDateTime>\n <Composite:GPSLatitude et:id='GPSLatitude' et:table='Composite'>45.5569913888889</Composite:GPSLatitude>\n <Composite:GPSLongitude et:id='GPSLongitude' et:table='Composite'>-73.5583647222222</Composite:GPSLongitude>\n <Composite:GPSPosition et:id='GPSPosition' et:table='Composite'>45.5569913888889 -73.5583647222222</Composite:GPSPosition>\n <Composite:ImageSize et:id='ImageSize' et:table='Composite'>149x84</Composite:ImageSize>\n <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.012516</Composite:Megapixels>\n <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.51851851851852</Composite:ScaleFactor35efl>\n <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.00625</Composite:ShutterSpeed>\n <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.0197865618775463</Composite:CircleOfConfusion>\n <Composite:FOV et:id='FOV' et:table='Composite'>47.4053319435034</Composite:FOV>\n <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>41</Composite:FocalLength35efl>\n <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>13.1582810833142</Composite:HyperfocalDistance>\n <Composite:LightValue et:id='LightValue' et:table='Composite'>8.61470984411521</Composite:LightValue>\n</rdf:Description>\n</rdf:RDF>\n"
+exiftool: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/camera_samples/fujifilm_x_a5.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:FujiFilm='http://ns.exiftool.ca/MakerNotes/FujiFilm/1.0/'
+    xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'
+    xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'
+    xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>fujifilm_x_a5.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>23 kB</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>rw-r--r--</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>jpg</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>Little-endian (Intel, II)</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>149</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>84</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>Baseline DCT, Huffman coding</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>YCbCr4:2:0 (2 2)</File:YCbCrSubSampling>
+    <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1.01</JFIF:JFIFVersion>
+    <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>None</JFIF:ResolutionUnit>
+    <JFIF:XResolution et:id='3' et:table='JFIF::Main'>1</JFIF:XResolution>
+    <JFIF:YResolution et:id='5' et:table='JFIF::Main'>1</JFIF:YResolution>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>FUJIFILM</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>X-A5</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD0:ResolutionUnit>
+    <IFD0:Software et:id='305' et:table='Exif::Main'>Digital Camera X-A5 Ver1.20</IFD0:Software>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2019:04:22 13:31:48</IFD0:ModifyDate>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>Centered</IFD0:YCbCrPositioning>
+    <IFD0:Copyright et:id='33432' et:table='Exif::Main'>
+    </IFD0:Copyright>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>1/160</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>
+    <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>Manual</ExifIFD:ExposureProgram>
+    <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>320</ExifIFD:ISO>
+    <ExifIFD:SensitivityType et:id='34864' et:table='Exif::Main'>Standard Output Sensitivity</ExifIFD:SensitivityType>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0230</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>Y, Cb, Cr, -</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>1/158</ExifIFD:ShutterSpeedValue>
+    <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>2.8</ExifIFD:ApertureValue>
+    <ExifIFD:BrightnessValue et:id='37379' et:table='Exif::Main'>3.7</ExifIFD:BrightnessValue>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>
+    <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.8</ExifIFD:MaxApertureValue>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>Multi-segment</ExifIFD:MeteringMode>
+    <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>Shade</ExifIFD:LightSource>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>Off, Did not fire</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>27.0 mm</ExifIFD:FocalLength>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>sRGB</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>4240</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>2384</ExifIFD:ExifImageHeight>
+    <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneXResolution>
+    <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneYResolution>
+    <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>cm</ExifIFD:FocalPlaneResolutionUnit>
+    <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>One-chip color area</ExifIFD:SensingMethod>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>Digital Camera</ExifIFD:FileSource>
+    <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>Directly photographed</ExifIFD:SceneType>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>Normal</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>Manual</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>Manual</ExifIFD:WhiteBalance>
+    <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>41 mm</ExifIFD:FocalLengthIn35mmFormat>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>Standard</ExifIFD:SceneCaptureType>
+    <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>Normal</ExifIFD:Sharpness>
+    <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>Unknown</ExifIFD:SubjectDistanceRange>
+    <ExifIFD:LensInfo et:id='42034' et:table='Exif::Main'>27mm f/2.8</ExifIFD:LensInfo>
+    <ExifIFD:LensMake et:id='42035' et:table='Exif::Main'>FUJIFILM</ExifIFD:LensMake>
+    <ExifIFD:LensModel et:id='42036' et:table='Exif::Main'>XF27mmF2.8</ExifIFD:LensModel>
+    <ExifIFD:LensSerialNumber et:id='42037' et:table='Exif::Main'>8cA03605</ExifIFD:LensSerialNumber>
+    <FujiFilm:Version et:id='0' et:table='FujiFilm::Main'>0130</FujiFilm:Version>
+    <FujiFilm:InternalSerialNumber et:id='16' et:table='FujiFilm::Main'>592D3534303031 2018:08:07 91B58UL14427</FujiFilm:InternalSerialNumber>
+    <FujiFilm:Quality et:id='4096' et:table='FujiFilm::Main'>FINE   </FujiFilm:Quality>
+    <FujiFilm:Sharpness et:id='4097' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:Sharpness>
+    <FujiFilm:WhiteBalance et:id='4098' et:table='FujiFilm::Main'>Cloudy</FujiFilm:WhiteBalance>
+    <FujiFilm:Saturation et:id='4099' et:table='FujiFilm::Main'>+1 (medium high)</FujiFilm:Saturation>
+    <FujiFilm:WhiteBalanceFineTune et:id='4106' et:table='FujiFilm::Main'>Red +0, Blue +0</FujiFilm:WhiteBalanceFineTune>
+    <FujiFilm:NoiseReduction et:id='4110' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:NoiseReduction>
+    <FujiFilm:FujiFlashMode et:id='4112' et:table='FujiFilm::Main'>Off</FujiFilm:FujiFlashMode>
+    <FujiFilm:FlashExposureComp et:id='4113' et:table='FujiFilm::Main'>0</FujiFilm:FlashExposureComp>
+    <FujiFilm:Macro et:id='4128' et:table='FujiFilm::Main'>Off</FujiFilm:Macro>
+    <FujiFilm:FocusMode et:id='4129' et:table='FujiFilm::Main'>Auto</FujiFilm:FocusMode>
+    <FujiFilm:AFMode et:id='4130' et:table='FujiFilm::Main'>Single Point</FujiFilm:AFMode>
+    <FujiFilm:FocusPixel et:id='4131' et:table='FujiFilm::Main'>2108 983</FujiFilm:FocusPixel>
+    <FujiFilm:SlowSync et:id='4144' et:table='FujiFilm::Main'>Off</FujiFilm:SlowSync>
+    <FujiFilm:PictureMode et:id='4145' et:table='FujiFilm::Main'>Manual</FujiFilm:PictureMode>
+    <FujiFilm:ExposureCount et:id='4146' et:table='FujiFilm::Main'>1</FujiFilm:ExposureCount>
+    <FujiFilm:ShadowTone et:id='4160' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:ShadowTone>
+    <FujiFilm:HighlightTone et:id='4161' et:table='FujiFilm::Main'>0 (normal)</FujiFilm:HighlightTone>
+    <FujiFilm:ShutterType et:id='4176' et:table='FujiFilm::Main'>Mechanical</FujiFilm:ShutterType>
+    <FujiFilm:AutoBracketing et:id='4352' et:table='FujiFilm::Main' et:index='1'>Off</FujiFilm:AutoBracketing>
+    <FujiFilm:SequenceNumber et:id='4353' et:table='FujiFilm::Main'>0</FujiFilm:SequenceNumber>
+    <FujiFilm:BlurWarning et:id='4864' et:table='FujiFilm::Main'>None</FujiFilm:BlurWarning>
+    <FujiFilm:FocusWarning et:id='4865' et:table='FujiFilm::Main'>Good</FujiFilm:FocusWarning>
+    <FujiFilm:ExposureWarning et:id='4866' et:table='FujiFilm::Main'>Good</FujiFilm:ExposureWarning>
+    <FujiFilm:DynamicRange et:id='5120' et:table='FujiFilm::Main'>Standard</FujiFilm:DynamicRange>
+    <FujiFilm:FilmMode et:id='5121' et:table='FujiFilm::Main'>F0/Standard (Provia)</FujiFilm:FilmMode>
+    <FujiFilm:DynamicRangeSetting et:id='5122' et:table='FujiFilm::Main'>Auto (100-400%)</FujiFilm:DynamicRangeSetting>
+    <FujiFilm:MinFocalLength et:id='5124' et:table='FujiFilm::Main'>27</FujiFilm:MinFocalLength>
+    <FujiFilm:MaxFocalLength et:id='5125' et:table='FujiFilm::Main'>27</FujiFilm:MaxFocalLength>
+    <FujiFilm:MaxApertureAtMinFocal et:id='5126' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMinFocal>
+    <FujiFilm:MaxApertureAtMaxFocal et:id='5127' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMaxFocal>
+    <FujiFilm:AutoDynamicRange et:id='5131' et:table='FujiFilm::Main'>100%</FujiFilm:AutoDynamicRange>
+    <FujiFilm:ImageStabilization et:id='5154' et:table='FujiFilm::Main'>None; Off; 0</FujiFilm:ImageStabilization>
+    <FujiFilm:Rating et:id='5169' et:table='FujiFilm::Main'>0</FujiFilm:Rating>
+    <FujiFilm:ImageGeneration et:id='5174' et:table='FujiFilm::Main'>Original Image</FujiFilm:ImageGeneration>
+    <FujiFilm:FacesDetected et:id='16640' et:table='FujiFilm::Main'>0</FujiFilm:FacesDetected>
+    <FujiFilm:NumFaceElements et:id='16896' et:table='FujiFilm::Main'>0</FujiFilm:NumFaceElements>
+    <GPS:GPSVersionID et:id='0' et:table='GPS::Main'>2.3.0.0</GPS:GPSVersionID>
+    <GPS:GPSLatitudeRef et:id='1' et:table='GPS::Main'>North</GPS:GPSLatitudeRef>
+    <GPS:GPSLatitude et:id='2' et:table='GPS::Main'>45 deg 33&#39; 25.17&quot;</GPS:GPSLatitude>
+    <GPS:GPSLongitudeRef et:id='3' et:table='GPS::Main'>West</GPS:GPSLongitudeRef>
+    <GPS:GPSLongitude et:id='4' et:table='GPS::Main'>73 deg 33&#39; 30.11&quot;</GPS:GPSLongitude>
+    <GPS:GPSAltitudeRef et:id='5' et:table='GPS::Main'>Above Sea Level</GPS:GPSAltitudeRef>
+    <GPS:GPSAltitude et:id='6' et:table='GPS::Main'>15 m</GPS:GPSAltitude>
+    <GPS:GPSTimeStamp et:id='7' et:table='GPS::Main'>17:30:52</GPS:GPSTimeStamp>
+    <GPS:GPSSpeedRef et:id='12' et:table='GPS::Main'>km/h</GPS:GPSSpeedRef>
+    <GPS:GPSSpeed et:id='13' et:table='GPS::Main'>0</GPS:GPSSpeed>
+    <GPS:GPSMapDatum et:id='18' et:table='GPS::Main'>WGS-84</GPS:GPSMapDatum>
+    <GPS:GPSDateStamp et:id='29' et:table='GPS::Main'>2019:04:22</GPS:GPSDateStamp>
+    <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0250</PrintIM:PrintIMVersion>
+    <IFD1:Compression et:id='259' et:table='Exif::Main'>JPEG (old-style)</IFD1:Compression>
+    <IFD1:Orientation et:id='274' et:table='Exif::Main'>Horizontal (normal)</IFD1:Orientation>
+    <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>
+    <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>
+    <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>inches</IFD1:ResolutionUnit>
+    <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>11110</IFD1:ThumbnailOffset>
+    <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>8200</IFD1:ThumbnailLength>
+    <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 8200 bytes, use -b option to extract)</IFD1:ThumbnailImage>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>
+    <Composite:GPSAltitude et:id='GPSAltitude' et:table='Composite'>15 m Above Sea Level</Composite:GPSAltitude>
+    <Composite:GPSDateTime et:id='GPSDateTime' et:table='Composite'>2019:04:22 17:30:52Z</Composite:GPSDateTime>
+    <Composite:GPSLatitude et:id='GPSLatitude' et:table='Composite'>45 deg 33&#39; 25.17&quot; N</Composite:GPSLatitude>
+    <Composite:GPSLongitude et:id='GPSLongitude' et:table='Composite'>73 deg 33&#39; 30.11&quot; W</Composite:GPSLongitude>
+    <Composite:GPSPosition et:id='GPSPosition' et:table='Composite'>45 deg 33&#39; 25.17&quot; N, 73 deg 33&#39; 30.11&quot; W</Composite:GPSPosition>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>149x84</Composite:ImageSize>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.013</Composite:Megapixels>
+    <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.5</Composite:ScaleFactor35efl>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>1/160</Composite:ShutterSpeed>
+    <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.020 mm</Composite:CircleOfConfusion>
+    <Composite:FOV et:id='FOV' et:table='Composite'>47.4 deg</Composite:FOV>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>27.0 mm (35 mm equivalent: 41.0 mm)</Composite:FocalLength35efl>
+    <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>13.16 m</Composite:HyperfocalDistance>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>8.6</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>
+exiftool_raw: |-
+    <?xml version='1.0' encoding='UTF-8'?>
+    <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+
+    <rdf:Description rdf:about='test/image_files/camera_samples/fujifilm_x_a5.jpg'
+    xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
+    xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
+    xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
+    xmlns:File='http://ns.exiftool.ca/File/1.0/'
+    xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'
+    xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
+    xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
+    xmlns:FujiFilm='http://ns.exiftool.ca/MakerNotes/FujiFilm/1.0/'
+    xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'
+    xmlns:PrintIM='http://ns.exiftool.ca/PrintIM/PrintIM/1.0/'
+    xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'
+    xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
+    <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+    <System:FileName et:id='FileName' et:table='Extra'>fujifilm_x_a5.jpg</System:FileName>
+    <System:Directory et:id='Directory' et:table='Extra'>test/image_files/camera_samples</System:Directory>
+    <System:FileSize et:id='FileSize' et:table='Extra'>23108</System:FileSize>
+    <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileModifyDate>
+    <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileAccessDate>
+    <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2020:04:12 19:55:27+01:00</System:FileInodeChangeDate>
+    <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+    <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
+    <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>
+    <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
+    <File:ExifByteOrder et:id='ExifByteOrder' et:table='Extra'>II</File:ExifByteOrder>
+    <File:ImageWidth et:id='ImageWidth' et:table='JPEG::SOF'>149</File:ImageWidth>
+    <File:ImageHeight et:id='ImageHeight' et:table='JPEG::SOF'>84</File:ImageHeight>
+    <File:EncodingProcess et:id='EncodingProcess' et:table='JPEG::SOF'>0</File:EncodingProcess>
+    <File:BitsPerSample et:id='BitsPerSample' et:table='JPEG::SOF'>8</File:BitsPerSample>
+    <File:ColorComponents et:id='ColorComponents' et:table='JPEG::SOF'>3</File:ColorComponents>
+    <File:YCbCrSubSampling et:id='YCbCrSubSampling' et:table='JPEG::SOF'>2 2</File:YCbCrSubSampling>
+    <JFIF:JFIFVersion et:id='0' et:table='JFIF::Main'>1 1</JFIF:JFIFVersion>
+    <JFIF:ResolutionUnit et:id='2' et:table='JFIF::Main'>0</JFIF:ResolutionUnit>
+    <JFIF:XResolution et:id='3' et:table='JFIF::Main'>1</JFIF:XResolution>
+    <JFIF:YResolution et:id='5' et:table='JFIF::Main'>1</JFIF:YResolution>
+    <IFD0:Make et:id='271' et:table='Exif::Main'>FUJIFILM</IFD0:Make>
+    <IFD0:Model et:id='272' et:table='Exif::Main'>X-A5</IFD0:Model>
+    <IFD0:Orientation et:id='274' et:table='Exif::Main'>1</IFD0:Orientation>
+    <IFD0:XResolution et:id='282' et:table='Exif::Main'>72</IFD0:XResolution>
+    <IFD0:YResolution et:id='283' et:table='Exif::Main'>72</IFD0:YResolution>
+    <IFD0:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD0:ResolutionUnit>
+    <IFD0:Software et:id='305' et:table='Exif::Main'>Digital Camera X-A5 Ver1.20</IFD0:Software>
+    <IFD0:ModifyDate et:id='306' et:table='Exif::Main'>2019:04:22 13:31:48</IFD0:ModifyDate>
+    <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>1</IFD0:YCbCrPositioning>
+    <IFD0:Copyright et:id='33432' et:table='Exif::Main'>
+    </IFD0:Copyright>
+    <ExifIFD:ExposureTime et:id='33434' et:table='Exif::Main'>0.00625</ExifIFD:ExposureTime>
+    <ExifIFD:FNumber et:id='33437' et:table='Exif::Main'>2.8</ExifIFD:FNumber>
+    <ExifIFD:ExposureProgram et:id='34850' et:table='Exif::Main'>1</ExifIFD:ExposureProgram>
+    <ExifIFD:ISO et:id='34855' et:table='Exif::Main'>320</ExifIFD:ISO>
+    <ExifIFD:SensitivityType et:id='34864' et:table='Exif::Main'>1</ExifIFD:SensitivityType>
+    <ExifIFD:ExifVersion et:id='36864' et:table='Exif::Main'>0230</ExifIFD:ExifVersion>
+    <ExifIFD:DateTimeOriginal et:id='36867' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:DateTimeOriginal>
+    <ExifIFD:CreateDate et:id='36868' et:table='Exif::Main'>2019:04:22 13:31:48</ExifIFD:CreateDate>
+    <ExifIFD:ComponentsConfiguration et:id='37121' et:table='Exif::Main'>1 2 3 0</ExifIFD:ComponentsConfiguration>
+    <ExifIFD:ShutterSpeedValue et:id='37377' et:table='Exif::Main'>0.00632911391605357</ExifIFD:ShutterSpeedValue>
+    <ExifIFD:ApertureValue et:id='37378' et:table='Exif::Main'>2.80000000452162</ExifIFD:ApertureValue>
+    <ExifIFD:BrightnessValue et:id='37379' et:table='Exif::Main'>3.7</ExifIFD:BrightnessValue>
+    <ExifIFD:ExposureCompensation et:id='37380' et:table='Exif::Main'>0</ExifIFD:ExposureCompensation>
+    <ExifIFD:MaxApertureValue et:id='37381' et:table='Exif::Main'>2.80000000452162</ExifIFD:MaxApertureValue>
+    <ExifIFD:MeteringMode et:id='37383' et:table='Exif::Main'>5</ExifIFD:MeteringMode>
+    <ExifIFD:LightSource et:id='37384' et:table='Exif::Main'>11</ExifIFD:LightSource>
+    <ExifIFD:Flash et:id='37385' et:table='Exif::Main'>16</ExifIFD:Flash>
+    <ExifIFD:FocalLength et:id='37386' et:table='Exif::Main'>27</ExifIFD:FocalLength>
+    <ExifIFD:FlashpixVersion et:id='40960' et:table='Exif::Main'>0100</ExifIFD:FlashpixVersion>
+    <ExifIFD:ColorSpace et:id='40961' et:table='Exif::Main'>1</ExifIFD:ColorSpace>
+    <ExifIFD:ExifImageWidth et:id='40962' et:table='Exif::Main'>4240</ExifIFD:ExifImageWidth>
+    <ExifIFD:ExifImageHeight et:id='40963' et:table='Exif::Main'>2384</ExifIFD:ExifImageHeight>
+    <ExifIFD:FocalPlaneXResolution et:id='41486' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneXResolution>
+    <ExifIFD:FocalPlaneYResolution et:id='41487' et:table='Exif::Main'>1807</ExifIFD:FocalPlaneYResolution>
+    <ExifIFD:FocalPlaneResolutionUnit et:id='41488' et:table='Exif::Main'>3</ExifIFD:FocalPlaneResolutionUnit>
+    <ExifIFD:SensingMethod et:id='41495' et:table='Exif::Main'>2</ExifIFD:SensingMethod>
+    <ExifIFD:FileSource et:id='41728' et:table='Exif::Main'>3</ExifIFD:FileSource>
+    <ExifIFD:SceneType et:id='41729' et:table='Exif::Main'>1</ExifIFD:SceneType>
+    <ExifIFD:CustomRendered et:id='41985' et:table='Exif::Main'>0</ExifIFD:CustomRendered>
+    <ExifIFD:ExposureMode et:id='41986' et:table='Exif::Main'>1</ExifIFD:ExposureMode>
+    <ExifIFD:WhiteBalance et:id='41987' et:table='Exif::Main'>1</ExifIFD:WhiteBalance>
+    <ExifIFD:FocalLengthIn35mmFormat et:id='41989' et:table='Exif::Main'>41</ExifIFD:FocalLengthIn35mmFormat>
+    <ExifIFD:SceneCaptureType et:id='41990' et:table='Exif::Main'>0</ExifIFD:SceneCaptureType>
+    <ExifIFD:Sharpness et:id='41994' et:table='Exif::Main'>0</ExifIFD:Sharpness>
+    <ExifIFD:SubjectDistanceRange et:id='41996' et:table='Exif::Main'>0</ExifIFD:SubjectDistanceRange>
+    <ExifIFD:LensInfo et:id='42034' et:table='Exif::Main'>27 27 2.8 2.8</ExifIFD:LensInfo>
+    <ExifIFD:LensMake et:id='42035' et:table='Exif::Main'>FUJIFILM</ExifIFD:LensMake>
+    <ExifIFD:LensModel et:id='42036' et:table='Exif::Main'>XF27mmF2.8</ExifIFD:LensModel>
+    <ExifIFD:LensSerialNumber et:id='42037' et:table='Exif::Main'>8cA03605</ExifIFD:LensSerialNumber>
+    <FujiFilm:Version et:id='0' et:table='FujiFilm::Main'>0130</FujiFilm:Version>
+    <FujiFilm:InternalSerialNumber et:id='16' et:table='FujiFilm::Main'>592D353430303118080791B58UL14427</FujiFilm:InternalSerialNumber>
+    <FujiFilm:Quality et:id='4096' et:table='FujiFilm::Main'>FINE   </FujiFilm:Quality>
+    <FujiFilm:Sharpness et:id='4097' et:table='FujiFilm::Main'>3</FujiFilm:Sharpness>
+    <FujiFilm:WhiteBalance et:id='4098' et:table='FujiFilm::Main'>512</FujiFilm:WhiteBalance>
+    <FujiFilm:Saturation et:id='4099' et:table='FujiFilm::Main'>128</FujiFilm:Saturation>
+    <FujiFilm:WhiteBalanceFineTune et:id='4106' et:table='FujiFilm::Main'>0 0</FujiFilm:WhiteBalanceFineTune>
+    <FujiFilm:NoiseReduction et:id='4110' et:table='FujiFilm::Main'>0</FujiFilm:NoiseReduction>
+    <FujiFilm:FujiFlashMode et:id='4112' et:table='FujiFilm::Main'>2</FujiFilm:FujiFlashMode>
+    <FujiFilm:FlashExposureComp et:id='4113' et:table='FujiFilm::Main'>0</FujiFilm:FlashExposureComp>
+    <FujiFilm:Macro et:id='4128' et:table='FujiFilm::Main'>0</FujiFilm:Macro>
+    <FujiFilm:FocusMode et:id='4129' et:table='FujiFilm::Main'>0</FujiFilm:FocusMode>
+    <FujiFilm:AFMode et:id='4130' et:table='FujiFilm::Main'>1</FujiFilm:AFMode>
+    <FujiFilm:FocusPixel et:id='4131' et:table='FujiFilm::Main'>2108 983</FujiFilm:FocusPixel>
+    <FujiFilm:SlowSync et:id='4144' et:table='FujiFilm::Main'>0</FujiFilm:SlowSync>
+    <FujiFilm:PictureMode et:id='4145' et:table='FujiFilm::Main'>768</FujiFilm:PictureMode>
+    <FujiFilm:ExposureCount et:id='4146' et:table='FujiFilm::Main'>1</FujiFilm:ExposureCount>
+    <FujiFilm:ShadowTone et:id='4160' et:table='FujiFilm::Main'>0</FujiFilm:ShadowTone>
+    <FujiFilm:HighlightTone et:id='4161' et:table='FujiFilm::Main'>0</FujiFilm:HighlightTone>
+    <FujiFilm:ShutterType et:id='4176' et:table='FujiFilm::Main'>0</FujiFilm:ShutterType>
+    <FujiFilm:AutoBracketing et:id='4352' et:table='FujiFilm::Main' et:index='1'>0</FujiFilm:AutoBracketing>
+    <FujiFilm:SequenceNumber et:id='4353' et:table='FujiFilm::Main'>0</FujiFilm:SequenceNumber>
+    <FujiFilm:BlurWarning et:id='4864' et:table='FujiFilm::Main'>0</FujiFilm:BlurWarning>
+    <FujiFilm:FocusWarning et:id='4865' et:table='FujiFilm::Main'>0</FujiFilm:FocusWarning>
+    <FujiFilm:ExposureWarning et:id='4866' et:table='FujiFilm::Main'>0</FujiFilm:ExposureWarning>
+    <FujiFilm:DynamicRange et:id='5120' et:table='FujiFilm::Main'>1</FujiFilm:DynamicRange>
+    <FujiFilm:FilmMode et:id='5121' et:table='FujiFilm::Main'>0</FujiFilm:FilmMode>
+    <FujiFilm:DynamicRangeSetting et:id='5122' et:table='FujiFilm::Main'>0</FujiFilm:DynamicRangeSetting>
+    <FujiFilm:MinFocalLength et:id='5124' et:table='FujiFilm::Main'>27</FujiFilm:MinFocalLength>
+    <FujiFilm:MaxFocalLength et:id='5125' et:table='FujiFilm::Main'>27</FujiFilm:MaxFocalLength>
+    <FujiFilm:MaxApertureAtMinFocal et:id='5126' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMinFocal>
+    <FujiFilm:MaxApertureAtMaxFocal et:id='5127' et:table='FujiFilm::Main'>2.8</FujiFilm:MaxApertureAtMaxFocal>
+    <FujiFilm:AutoDynamicRange et:id='5131' et:table='FujiFilm::Main'>100</FujiFilm:AutoDynamicRange>
+    <FujiFilm:ImageStabilization et:id='5154' et:table='FujiFilm::Main'>0 0 0</FujiFilm:ImageStabilization>
+    <FujiFilm:Rating et:id='5169' et:table='FujiFilm::Main'>0</FujiFilm:Rating>
+    <FujiFilm:ImageGeneration et:id='5174' et:table='FujiFilm::Main'>0</FujiFilm:ImageGeneration>
+    <FujiFilm:FacesDetected et:id='16640' et:table='FujiFilm::Main'>0</FujiFilm:FacesDetected>
+    <FujiFilm:NumFaceElements et:id='16896' et:table='FujiFilm::Main'>0</FujiFilm:NumFaceElements>
+    <GPS:GPSVersionID et:id='0' et:table='GPS::Main'>2 3 0 0</GPS:GPSVersionID>
+    <GPS:GPSLatitudeRef et:id='1' et:table='GPS::Main'>N</GPS:GPSLatitudeRef>
+    <GPS:GPSLatitude et:id='2' et:table='GPS::Main'>45.5569913888889</GPS:GPSLatitude>
+    <GPS:GPSLongitudeRef et:id='3' et:table='GPS::Main'>W</GPS:GPSLongitudeRef>
+    <GPS:GPSLongitude et:id='4' et:table='GPS::Main'>73.5583647222222</GPS:GPSLongitude>
+    <GPS:GPSAltitudeRef et:id='5' et:table='GPS::Main'>0</GPS:GPSAltitudeRef>
+    <GPS:GPSAltitude et:id='6' et:table='GPS::Main'>15</GPS:GPSAltitude>
+    <GPS:GPSTimeStamp et:id='7' et:table='GPS::Main'>17:30:52</GPS:GPSTimeStamp>
+    <GPS:GPSSpeedRef et:id='12' et:table='GPS::Main'>K</GPS:GPSSpeedRef>
+    <GPS:GPSSpeed et:id='13' et:table='GPS::Main'>0</GPS:GPSSpeed>
+    <GPS:GPSMapDatum et:id='18' et:table='GPS::Main'>WGS-84</GPS:GPSMapDatum>
+    <GPS:GPSDateStamp et:id='29' et:table='GPS::Main'>2019:04:22</GPS:GPSDateStamp>
+    <PrintIM:PrintIMVersion et:id='PrintIMVersion' et:table='PrintIM::Main'>0250</PrintIM:PrintIMVersion>
+    <IFD1:Compression et:id='259' et:table='Exif::Main'>6</IFD1:Compression>
+    <IFD1:Orientation et:id='274' et:table='Exif::Main'>1</IFD1:Orientation>
+    <IFD1:XResolution et:id='282' et:table='Exif::Main'>72</IFD1:XResolution>
+    <IFD1:YResolution et:id='283' et:table='Exif::Main'>72</IFD1:YResolution>
+    <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD1:ResolutionUnit>
+    <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>11110</IFD1:ThumbnailOffset>
+    <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>8200</IFD1:ThumbnailLength>
+    <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 8200 bytes, use -b option to extract)</IFD1:ThumbnailImage>
+    <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>
+    <Composite:GPSAltitude et:id='GPSAltitude' et:table='Composite'>15</Composite:GPSAltitude>
+    <Composite:GPSDateTime et:id='GPSDateTime' et:table='Composite'>2019:04:22 17:30:52Z</Composite:GPSDateTime>
+    <Composite:GPSLatitude et:id='GPSLatitude' et:table='Composite'>45.5569913888889</Composite:GPSLatitude>
+    <Composite:GPSLongitude et:id='GPSLongitude' et:table='Composite'>-73.5583647222222</Composite:GPSLongitude>
+    <Composite:GPSPosition et:id='GPSPosition' et:table='Composite'>45.5569913888889 -73.5583647222222</Composite:GPSPosition>
+    <Composite:ImageSize et:id='ImageSize' et:table='Composite'>149x84</Composite:ImageSize>
+    <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.012516</Composite:Megapixels>
+    <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.51851851851852</Composite:ScaleFactor35efl>
+    <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.00625</Composite:ShutterSpeed>
+    <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.0197865618775463</Composite:CircleOfConfusion>
+    <Composite:FOV et:id='FOV' et:table='Composite'>47.4053319435034</Composite:FOV>
+    <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>41</Composite:FocalLength35efl>
+    <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>13.1582810833142</Composite:HyperfocalDistance>
+    <Composite:LightValue et:id='LightValue' et:table='Composite'>8.61470984411521</Composite:LightValue>
+    </rdf:Description>
+    </rdf:RDF>
