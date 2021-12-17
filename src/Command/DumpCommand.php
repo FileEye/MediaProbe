@@ -99,7 +99,7 @@ class DumpCommand extends Command
             }
             $output_yaml = array_merge($output_yaml, $yaml);
 
-            $fs->dumpFile($test_dump_file, Yaml::dump($output_yaml, 40));
+            $fs->dumpFile($test_dump_file, Yaml::dump($output_yaml, 40, 0, Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK));
             $output->writeln(' done.');
         }
 
