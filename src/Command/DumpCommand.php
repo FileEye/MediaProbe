@@ -76,6 +76,7 @@ class DumpCommand extends Command
                 try {
                     $process->run();
                     $formatter = new Formatter();
+                    $formatter->setIndentSize(4);
                     $yaml['exiftool'] = $formatter->format($process->getOutput());
                 } catch (\Exception $e) {
                     $output->write(' error: ' . $e->getMessage());
@@ -86,6 +87,7 @@ class DumpCommand extends Command
                 try {
                     $process->run();
                     $formatter = new Formatter();
+                    $formatter->setIndentSize(4);
                     $yaml['exiftool_raw'] = $formatter->format($process->getOutput());
                 } catch (\Exception $e) {
                     $output->write(' error: ' . $e->getMessage());
