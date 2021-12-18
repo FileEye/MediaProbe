@@ -11,7 +11,7 @@ class GH77Test extends MediaProbeTestCaseBase
 {
     public function testReturnModel()
     {
-        $file = dirname(__FILE__) . '/image_files/gh-77.jpg';
+        $file = dirname(__FILE__) . '/media-samples/image/gh-77.jpg';
 
         $media = Media::createFromFile($file);
         $input_jpeg = $media->getElement("jpeg");

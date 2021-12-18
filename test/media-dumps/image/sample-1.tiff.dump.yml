@@ -1,0 +1,371 @@
+skip:
+    exiftool:
+        - 'IFD0:PreviewImageStart'
+        - 'IFD0:PreviewImageLength'
+        - 'ExifIFD:ExtraSamples'
+        - 'SubIFD:SampleFormat'
+        - 'IFD0:ApplicationNotes'
+fileName: sample-1.tiff
+mimeType: image/tiff
+fileContentHash: 26f4b11c45ad3e56a530d03967ff4627892b3264183b85fefba194ff1fe3e08e
+elements:
+    node: media
+    path: /media
+    class: FileEye\MediaProbe\Media
+    parsed: true
+    collection: Media
+    elements:
+        -
+            node: tiff
+            path: /media/tiff
+            class: FileEye\MediaProbe\Block\Tiff
+            parsed: true
+            id: Tiff
+            collection: Tiff\Tiff
+            elements:
+                -
+                    node: rawData
+                    path: '/media/tiff/rawData:scan'
+                    class: FileEye\MediaProbe\Block\RawData
+                    parsed: true
+                    name: scan
+                    collection: RawData
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/tiff/rawData:scan/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 6392
+                            bytesHash: f83a63ebc8fcedad19dfa8937b0c0f622b8b49b51179ab8bef11b8492f2b2786
+                            text: '6392 byte(s) of data'
+                -
+                    node: ifd
+                    path: '/media/tiff/ifd:IFD0:0'
+                    class: FileEye\MediaProbe\Block\Exif\Ifd
+                    parsed: true
+                    name: IFD0
+                    id: '0'
+                    collection: Tiff\Ifd0
+                    elements:
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:ImageWidth:256'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: ImageWidth
+                            id: '256'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ImageWidth:256/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 1421d51105459aa9b26a2c454a4c542cd9b4b21842c842811e95d1b4bfecfa6d
+                                    text: '174'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:ImageHeight:257'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: ImageHeight
+                            id: '257'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ImageHeight:257/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 512f843c7b45913b2109e87cb29cc3857d2dcb48a02d304515e1e5eabd64bd29
+                                    text: '38'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:BitsPerSample:258'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: BitsPerSample
+                            id: '258'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:BitsPerSample:258/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 4
+                                    bytesHash: e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196
+                                    text: '8 8 8 8'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:Compression:259'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: Compression
+                            id: '259'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:Compression:259/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 2921a11f25dadaa24aa79a548e4e81508c2e5e56af2d833d65e2bcce448ce2f5
+                                    text: LZW
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:PhotometricInterpretation:262'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: PhotometricInterpretation
+                            id: '262'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:PhotometricInterpretation:262/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
+                                    text: RGB
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageStart:273'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: PreviewImageStart
+                            id: '273'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageStart:273/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Long
+                                    parsed: true
+                                    format: Long
+                                    components: 1
+                                    bytesHash: dc765660b06ee03dd16fd7ca5b957e8c805161ac2c4af28c5a100ab2ab432ca1
+                                    text: '8'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:Orientation:274'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: Orientation
+                            id: '274'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:Orientation:274/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                    text: 'Horizontal (normal)'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:SamplesPerPixel:277'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: SamplesPerPixel
+                            id: '277'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:SamplesPerPixel:277/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: c0ba8a33ac67f44abff5984dfbb6f56c46b880ac2b86e1f23e7fa9c402c53ae7
+                                    text: '4'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:RowsPerStrip:278'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: RowsPerStrip
+                            id: '278'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:RowsPerStrip:278/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 512f843c7b45913b2109e87cb29cc3857d2dcb48a02d304515e1e5eabd64bd29
+                                    text: '38'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageLength:279'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: PreviewImageLength
+                            id: '279'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageLength:279/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Long
+                                    parsed: true
+                                    format: Long
+                                    components: 1
+                                    bytesHash: 1b852c4d9d6f7537987b9deb5dea4cec200aff1fe3544c1e58f2bab5537a10ed
+                                    text: '6391'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:PlanarConfiguration:284'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: PlanarConfiguration
+                            id: '284'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:PlanarConfiguration:284/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                    text: Chunky
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:Predictor:317'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: Predictor
+                            id: '317'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:Predictor:317/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
+                                    text: 'Horizontal differencing'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: ExtraSamples
+                            id: '338'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 1
+                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                    text: 'Associated Alpha'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: SampleFormat
+                            id: '339'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339/entry'
+                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    parsed: true
+                                    format: Short
+                                    components: 4
+                                    bytesHash: efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70
+                                    text: 'Unsigned, Unsigned, Unsigned, Unsigned'
+                        -
+                            node: tag
+                            path: '/media/tiff/ifd:IFD0:0/tag:ApplicationNotes:700'
+                            class: FileEye\MediaProbe\Block\Tag
+                            parsed: true
+                            name: ApplicationNotes
+                            id: '700'
+                            collection: Tag
+                            elements:
+                                -
+                                    node: entry
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ApplicationNotes:700/entry'
+                                    class: FileEye\MediaProbe\Entry\IfdApplicationNotes
+                                    parsed: true
+                                    format: Byte
+                                    components: 323
+                                    bytesHash: 395dcc364f390cfa373c4cd4a37d62f10b547d51d24510386c4fc3a3f106d7e2
+                                    text: "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.1.2\">\n   <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n      <rdf:Description rdf:about=\"\"\n            xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\">\n         <tiff:Compression>5</tiff:Compression>\n      </rdf:Description>\n   </rdf:RDF>\n</x:xmpmeta>\n"
+log:
+    WARNING:
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338'
+            message: 'Found Short data format, expected Undefined'
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339'
+            message: 'Found Short data format, expected Undefined'
+gdInfo:
+    0: 174
+    1: 38
+    2: 8
+    3: 'width="174" height="38"'
+    mime: image/tiff
+exifReadData:
+    FileName: sample-1.tiff
+    FileDateTime: 1639748138
+    FileSize: 6925
+    FileType: 8
+    MimeType: image/tiff
+    SectionsFound: 'ANY_TAG, IFD0'
+    COMPUTED:
+        html: 'width="174" height="38"'
+        Height: 38
+        Width: 174
+        IsColor: 1
+        ByteOrderMotorola: 1
+    ImageWidth: 174
+    ImageLength: 38
+    BitsPerSample:
+        - 8
+        - 8
+        - 8
+        - 8
+    Compression: 5
+    PhotometricInterpretation: 2
+    StripOffsets: 8
+    Orientation: 1
+    SamplesPerPixel: 4
+    RowsPerStrip: 38
+    StripByteCounts: 6391
+    PlanarConfiguration: 1
+    Predictor: 2
+    ExtraSample: 1
+    SampleFormat:
+        - 1
+        - 1
+        - 1
+        - 1
+    ExtensibleMetadataPlatform: "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.1.2\">\n   <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n      <rdf:Description rdf:about=\"\"\n            xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\">\n         <tiff:Compression>5</tiff:Compression>\n      </rdf:Description>\n   </rdf:RDF>\n</x:xmpmeta>\n"

@@ -20,8 +20,8 @@ class GH16Test extends MediaProbeTestCaseBase
 
     public function fcSetUp()
     {
-        $this->file = dirname(__FILE__) . '/image_files/gh-16-tmp.jpg';
-        $file = dirname(__FILE__) . '/image_files/gh-16.jpg';
+        $this->file = dirname(__FILE__) . '/media-samples/image/gh-16-tmp.jpg';
+        $file = dirname(__FILE__) . '/media-samples/image/gh-16.jpg';
         copy($file, $this->file);
     }
 
