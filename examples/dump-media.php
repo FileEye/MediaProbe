@@ -37,6 +37,51 @@ function dump_element(ElementInterface $element)
     }
 }
 
+/**
+ * Converts bytes into human readable file size.
+ *
+ * @param string $bytes
+ * @return string human readable file size (2,87 Мб)
+ * @author Mogilev Arseny
+ */
+function FileSizeConvert($bytes)
+{
+    $bytes = floatval($bytes);
+        $arBytes = array(
+            0 => array(
+                "UNIT" => "TB",
+                "VALUE" => pow(1024, 4)
+            ),
+            1 => array(
+                "UNIT" => "GB",
+                "VALUE" => pow(1024, 3)
+            ),
+            2 => array(
+                "UNIT" => "MB",
+                "VALUE" => pow(1024, 2)
+            ),
+            3 => array(
+                "UNIT" => "KB",
+                "VALUE" => 1024
+            ),
+            4 => array(
+                "UNIT" => "B",
+                "VALUE" => 1
+            ),
+        );
+
+    foreach($arBytes as $arItem)
+    {
+        if($bytes >= $arItem["VALUE"])
+        {
+            $result = $bytes / $arItem["VALUE"];
+            $result = str_replace(".", "," , strval(round($result, 2)))." ".$arItem["UNIT"];
+            break;
+        }
+    }
+    return $result;
+}
+
 /* Make MediaProbe speak the users language, if it is available. */
 setlocale(LC_ALL, '');
 
@@ -90,7 +135,10 @@ if (!is_readable($file)) {
 
 try {
     /* Load data from file */
+    $baseline_memory = FileSizeConvert(memory_get_usage());
     $media = Media::loadFromFile($file, $logger, $fail_on_error);
+    $max_memory = FileSizeConvert(memory_get_peak_usage());
+    $curr_memory = FileSizeConvert(memory_get_usage());
     if ($media === null) {
         print("dump-media: Unrecognized media format!\n");
         exit(1);
@@ -104,11 +152,9 @@ try {
 
 if (!isset($err)) {
     dump_element($media);
+    print "\n\n Base: $baseline_memory Curr: $curr_memory Max: $max_memory \n\n";
 } else {
     print("dump-media: Error while reading media file: " . $err . "\n");
 }
-
-// Dump via exif_read_data().
-//dump(@exif_read_data($file));
 
 exit(0);  // xx decide exit code
