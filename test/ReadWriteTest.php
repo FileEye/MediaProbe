@@ -37,7 +37,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
      */
     public function testWriteRead(array $entries)
     {
-        $media = Media::createFromFile(dirname(__FILE__) . '/image_files/no-exif.jpg', null, 'error');
+        $media = Media::createFromFile(dirname(__FILE__) . '/media-samples/image/no-exif.jpg', null, 'error');
         $jpeg = $media->getElement("jpeg");
 
         $this->assertNull($jpeg->getElement("jpegSegment/exif"));

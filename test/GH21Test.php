@@ -17,8 +17,8 @@ class GH21Test extends MediaProbeTestCaseBase
 
     public function fcSetUp()
     {
-        $this->file = dirname(__FILE__) . '/image_files/gh-21-tmp.jpg';
-        $file = dirname(__FILE__) . '/image_files/gh-21.jpg';
+        $this->file = dirname(__FILE__) . '/media-samples/image/gh-21-tmp.jpg';
+        $file = dirname(__FILE__) . '/media-samples/image/gh-21.jpg';
         copy($file, $this->file);
     }
 

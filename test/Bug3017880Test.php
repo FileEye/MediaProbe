@@ -17,7 +17,7 @@ class Bug3017880Test extends MediaProbeTestCaseBase
 {
     public function testThisDoesNotWorkAsExpected()
     {
-        $filename = dirname(__FILE__) . '/image_files/bug3017880.jpg';
+        $filename = dirname(__FILE__) . '/media-samples/image/bug3017880.jpg';
         try {
             $exif = null;
             $resave_file = 0;

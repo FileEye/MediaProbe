@@ -2367,7 +2367,6 @@ class Ifd0 extends Collection {
     array (
       0 =>
       array (
-        '__todo' => 'adjust decoding',
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\IfdYCbCrSubSampling',
         'collection' => 'Tag',
         'name' => 'YCbCrSubSampling',

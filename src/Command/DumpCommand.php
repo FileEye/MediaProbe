@@ -37,13 +37,18 @@ class DumpCommand extends Command
             ->addArgument(
                 'file-path',
                 InputArgument::REQUIRED,
-                'Path to the media file'
+                'Path to the media file(s)'
+            )
+            ->addArgument(
+                'dump-path',
+                InputArgument::REQUIRED,
+                'Path to the media dump(s)'
             )
             ->addOption(
                 'exiftool',
                 null,
                 InputOption::VALUE_NONE,
-                'Dump via exiftool.'
+                'Dump exiftool XML results too.'
             )
         ;
     }
@@ -53,20 +58,28 @@ class DumpCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $sourcePath = $input->getArgument('file-path');
+        $dumpPath = $input->getArgument('dump-path');
+
         $fs = new Filesystem();
 
         $finder = new Finder();
-        $finder->files()->in($input->getArgument('file-path'))->name('*.jpg')->name('*.JPG')->name('*.tiff');
+        $finder->files()->in($sourcePath)->name('*');
 
         foreach ($finder as $file) {
             $output->write('Processing ' . $file . '... ');
 
-            $test_dump_file = (string) $file . '.test-dump.yml';
-            $input_yaml = Yaml::parse(file_get_contents($test_dump_file));
+            $dumpFilePrefix = $dumpPath . '/' . $file->getRelativePathName();
+            $input_yaml = Yaml::parse(@file_get_contents($dumpFilePrefix . '.dump.yml'));
 
             // Dump via MediaProbe.
             $output->write('1');
-            $yaml = $this->fileToTestDumpArray($file);
+            try {
+                $yaml = $this->fileToTestDumpArray($file);
+            } catch (\Exception $e) {
+                $output->writeln(' error: ' . $e->getMessage());
+                continue;
+            }
 
             if ($input->getOption('exiftool')) {
                 // Dump via Exiftool.
@@ -74,7 +87,7 @@ class DumpCommand extends Command
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D']);
                 try {
                     $process->run();
-                    $yaml['exiftool'] = $process->getOutput();
+                    $fs->dumpFile($dumpFilePrefix . '.exiftool.xml', $process->getOutput());
                 } catch (\Exception $e) {
                     $output->write(' error: ' . $e->getMessage());
                 }
@@ -83,7 +96,7 @@ class DumpCommand extends Command
                 $process = new Process(['exiftool', (string) $file, '-X', '-t', '-D', '-n']);
                 try {
                     $process->run();
-                    $yaml['exiftool_raw'] = $process->getOutput();
+                    $fs->dumpFile($dumpFilePrefix . '.exiftool-raw.xml', $process->getOutput());
                 } catch (\Exception $e) {
                     $output->write(' error: ' . $e->getMessage());
                 }
@@ -96,7 +109,7 @@ class DumpCommand extends Command
             }
             $output_yaml = array_merge($output_yaml, $yaml);
 
-            $fs->dumpFile($test_dump_file, Yaml::dump($output_yaml, 40));
+            $fs->dumpFile($dumpFilePrefix . '.dump.yml', Yaml::dump($output_yaml, 40));
             $output->writeln(' done.');
         }
 

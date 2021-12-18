@@ -114,7 +114,7 @@ jobs:
         #php examples/dump-media.php -d    test/image_files/broken_images/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
-      run: vendor/bin/phpunit ./test
+      run: vendor/bin/phpunit -v ./test
 
     - name: Code style test
       if: ${{ matrix.php-version == 7.4 }}

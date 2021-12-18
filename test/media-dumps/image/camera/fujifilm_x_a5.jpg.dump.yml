@@ -1,0 +1,1687 @@
+skip:
+    phpExif:
+        - WhiteBalance
+        - Sharpness
+fileName: fujifilm_x_a5.jpg
+mimeType: image/jpeg
+fileContentHash: d911854c54a54f8ccc779c740fc50b66542ff77e9bf6b0d5f0cfd7d93f1d276b
+elements:
+    node: media
+    path: /media
+    class: FileEye\MediaProbe\Media
+    parsed: true
+    collection: Media
+    elements:
+        -
+            node: jpeg
+            path: /media/jpeg
+            class: FileEye\MediaProbe\Block\Jpeg
+            parsed: true
+            id: Jpeg
+            collection: Jpeg\Jpeg
+            elements:
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:SOI:216'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: SOI
+                    id: '216'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:SOI:216/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 2
+                            bytesHash: 71563ad80061407ede9c6f316836284bd3710a520c5a792b5eda1cb703690815
+                            text: '2 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:APP0:224'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: APP0
+                    id: '224'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:APP0:224/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 18
+                            bytesHash: 66084db20c7052073ae4cbc10c3e4a610e463acea230fac553093fe4b6331623
+                            text: '18 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:APP1:225'
+                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    parsed: true
+                    name: APP1
+                    id: '225'
+                    collection: Jpeg\SegmentApp1
+                    elements:
+                        -
+                            node: exif
+                            path: '/media/jpeg/jpegSegment:APP1:225/exif'
+                            class: FileEye\MediaProbe\Block\Exif\Exif
+                            parsed: true
+                            collection: Exif\Exif
+                            elements:
+                                -
+                                    node: tiff
+                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
+                                    class: FileEye\MediaProbe\Block\Tiff
+                                    parsed: true
+                                    collection: Tiff\Tiff
+                                    elements:
+                                        -
+                                            node: ifd
+                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
+                                            class: FileEye\MediaProbe\Block\Exif\Ifd
+                                            parsed: true
+                                            name: IFD0
+                                            id: '0'
+                                            collection: Tiff\Ifd0
+                                            elements:
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: Make
+                                                    id: '271'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            parsed: true
+                                                            format: Ascii
+                                                            components: 9
+                                                            bytesHash: 3c972207ef61127c88c31d5b09f97f3ef55fde7b0f5db686a32d4e55ab65f24e
+                                                            text: FUJIFILM
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: Model
+                                                    id: '272'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            parsed: true
+                                                            format: Ascii
+                                                            components: 5
+                                                            bytesHash: ed7b34ab607efec93d6d9753872a2fefe43882a0ff826fba198570e45908c6a6
+                                                            text: X-A5
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: Orientation
+                                                    id: '274'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Short
+                                                            parsed: true
+                                                            format: Short
+                                                            components: 1
+                                                            bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                            text: 'Horizontal (normal)'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: XResolution
+                                                    id: '282'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Rational
+                                                            parsed: true
+                                                            format: Rational
+                                                            components: 1
+                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            text: '72'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: YResolution
+                                                    id: '283'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Rational
+                                                            parsed: true
+                                                            format: Rational
+                                                            components: 1
+                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            text: '72'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: ResolutionUnit
+                                                    id: '296'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Short
+                                                            parsed: true
+                                                            format: Short
+                                                            components: 1
+                                                            bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
+                                                            text: inches
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: Software
+                                                    id: '305'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            parsed: true
+                                                            format: Ascii
+                                                            components: 28
+                                                            bytesHash: 64f4d0af8df55a4dc2ed8fe316e9b20a7de132a05c0effd66ec77c8f87daea80
+                                                            text: 'Digital Camera X-A5 Ver1.20'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: ModifyDate
+                                                    id: '306'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
+                                                            class: FileEye\MediaProbe\Entry\Time
+                                                            parsed: true
+                                                            format: Ascii
+                                                            components: 20
+                                                            bytesHash: 82f063315d37e4297eaf76889a17d033ba63e127900c38b58f53f808b6ec61d1
+                                                            text: '2019:04:22 13:31:48'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: YCbCrPositioning
+                                                    id: '531'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Short
+                                                            parsed: true
+                                                            format: Short
+                                                            components: 1
+                                                            bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                            text: Centered
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Copyright:33432'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: Copyright
+                                                    id: '33432'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Copyright:33432/entry'
+                                                            class: FileEye\MediaProbe\Entry\IfdCopyright
+                                                            parsed: true
+                                                            format: Ascii
+                                                            components: 1
+                                                            bytesHash: 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
+                                                            text: ''
+                                                -
+                                                    node: ifd
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
+                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
+                                                    parsed: true
+                                                    name: ExifIFD
+                                                    id: '34665'
+                                                    collection: Tiff\IfdExif
+                                                    elements:
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ExposureTime
+                                                            id: '33434'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifExposureTime
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: 795814c7a919912d1e383ffd09ac6b647d3fbc44b611f921a19ef784ccf56698
+                                                                    text: '1/160 sec.'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FNumber
+                                                            id: '33437'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifFNumber
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: 54cc6e3945ddeb9071084cd374b10da33ee04a7f5ae3ef835834ed6fab36418f
+                                                                    text: f/2.8
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureProgram:34850'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ExposureProgram
+                                                            id: '34850'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureProgram:34850/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                                    text: Manual
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ISO:34855'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ISO
+                                                            id: '34855'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ISO:34855/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: d2dbb1d582f0029c27ccaa9b62186a1d8e3af5daba05f629e4b13b3741f3795b
+                                                                    text: '320'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SensitivityType:34864'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: SensitivityType
+                                                            id: '34864'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SensitivityType:34864/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                                    text: 'Standard Output Sensitivity'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ExifVersion
+                                                            id: '36864'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Version
+                                                                    parsed: true
+                                                                    format: Undefined
+                                                                    components: 4
+                                                                    bytesHash: 5f8415ac6340bbae4ebc8c77dac21c7fab54db45a306396bff6c678e012ae5fe
+                                                                    text: '2.3'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: DateTimeOriginal
+                                                            id: '36867'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Time
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 20
+                                                                    bytesHash: 82f063315d37e4297eaf76889a17d033ba63e127900c38b58f53f808b6ec61d1
+                                                                    text: '2019:04:22 13:31:48'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: CreateDate
+                                                            id: '36868'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Time
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 20
+                                                                    bytesHash: 82f063315d37e4297eaf76889a17d033ba63e127900c38b58f53f808b6ec61d1
+                                                                    text: '2019:04:22 13:31:48'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ComponentsConfiguration
+                                                            id: '37121'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifComponentsConfiguration
+                                                                    parsed: true
+                                                                    format: Undefined
+                                                                    components: 4
+                                                                    bytesHash: 1666d9845b241586380fe85194c47f1d1868c4d7d30ba806ecc6d581df9eeadc
+                                                                    text: 'Y, Cb, Cr, -'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ShutterSpeedValue
+                                                            id: '37377'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifShutterSpeedValue
+                                                                    parsed: true
+                                                                    format: SignedRational
+                                                                    components: 1
+                                                                    bytesHash: 245473db288c10c16cc8ae5a1fbbba71ddb41972474607b61bea2a1286599dda
+                                                                    text: '44239/6057 sec. (APEX: 12)'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ApertureValue
+                                                            id: '37378'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifApertureValue
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: 1eca25f8c337020d6ef3703ef14e4ac217ce8dcd68de6e2e294c8074f02f574f
+                                                                    text: '2.8'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:BrightnessValue:37379'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: BrightnessValue
+                                                            id: '37379'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:BrightnessValue:37379/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifBrightnessValue
+                                                                    parsed: true
+                                                                    format: SignedRational
+                                                                    components: 1
+                                                                    bytesHash: d8cfea29edefa82f823c69c48b617291a64bb10026ba86cb62128431454f62c9
+                                                                    text: '3.7'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ExposureCompensation
+                                                            id: '37380'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifExposureBiasValue
+                                                                    parsed: true
+                                                                    format: SignedRational
+                                                                    components: 1
+                                                                    bytesHash: 01acecb507abfe1a354aa8064f4af5d3f1acd019e37db3c11c97523b71c76e9d
+                                                                    text: '0'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: MaxApertureValue
+                                                            id: '37381'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifApertureValue
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: 1eca25f8c337020d6ef3703ef14e4ac217ce8dcd68de6e2e294c8074f02f574f
+                                                                    text: '2.8'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: MeteringMode
+                                                            id: '37383'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 2921a11f25dadaa24aa79a548e4e81508c2e5e56af2d833d65e2bcce448ce2f5
+                                                                    text: Multi-segment
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LightSource:37384'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: LightSource
+                                                            id: '37384'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LightSource:37384/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: cbe2268747c9c8072c7f9926f2288f270637dc55bb9d14d3368361d5e47d25be
+                                                                    text: Shade
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: Flash
+                                                            id: '37385'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 707bf0b938f307b5c222e670598b865d5e1f8a8003df82c7abbf7c9f8fa4d720
+                                                                    text: 'Off, Did not fire'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FocalLength
+                                                            id: '37386'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifFocalLength
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: 1f490ea63fb0ab2334f16e1eafc1b9e0527d1ced78d40c64f829826ed093a6fd
+                                                                    text: '27.0 mm'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MakerNote:37500'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: MakerNote
+                                                            id: '37500'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MakerNote:37500/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifMakerNote
+                                                                    parsed: true
+                                                                    format: Undefined
+                                                                    components: 9768
+                                                                    bytesHash: dbc7714035f4bd4d25eda97999b267f2fd13daf9b6d2649bb7812b2b7f58be10
+                                                                    text: '9768 byte(s) of data'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FlashpixVersion:40960'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FlashpixVersion
+                                                            id: '40960'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FlashpixVersion:40960/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Version
+                                                                    parsed: true
+                                                                    format: Undefined
+                                                                    components: 4
+                                                                    bytesHash: 5e7b571a60a7c187d6a4cb8bbedbe4e69d4caa49b51d9ddf3320afd793f146bf
+                                                                    text: '1.0'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ColorSpace
+                                                            id: '40961'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                                    text: sRGB
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ExifImageWidth
+                                                            id: '40962'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 9ac2289de9f6e17764df0f7fbeeee2321d47675b0db64d4d430c1a0b0ed3a61a
+                                                                    text: '4240'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ExifImageHeight
+                                                            id: '40963'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: ee34e454f0246b247faabb5b716be3462aaa1cc22097a5f42569bce3739e8e55
+                                                                    text: '2384'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneXResolution:41486'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FocalPlaneXResolution
+                                                            id: '41486'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneXResolution:41486/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: f08b64bab2d706c4436877e44c5219299c711818c0f3585e3600b1b1760a1da8
+                                                                    text: '1807'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneYResolution:41487'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FocalPlaneYResolution
+                                                            id: '41487'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneYResolution:41487/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: f08b64bab2d706c4436877e44c5219299c711818c0f3585e3600b1b1760a1da8
+                                                                    text: '1807'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneResolutionUnit:41488'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FocalPlaneResolutionUnit
+                                                            id: '41488'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneResolutionUnit:41488/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 9b4fb24edd6d1d8830e272398263cdbf026b97392cc35387b991dc0248a628f9
+                                                                    text: cm
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SensingMethod:41495'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: SensingMethod
+                                                            id: '41495'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SensingMethod:41495/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
+                                                                    text: 'One-chip color area'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FileSource:41728'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FileSource
+                                                            id: '41728'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FileSource:41728/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                    parsed: true
+                                                                    format: Undefined
+                                                                    components: 1
+                                                                    bytesHash: 084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff29c5
+                                                                    text: 'Digital Camera'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneType:41729'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: SceneType
+                                                            id: '41729'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneType:41729/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                    parsed: true
+                                                                    format: Undefined
+                                                                    components: 1
+                                                                    bytesHash: 4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a
+                                                                    text: 'Directly photographed'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CustomRendered:41985'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: CustomRendered
+                                                            id: '41985'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CustomRendered:41985/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                                    text: Normal
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureMode:41986'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: ExposureMode
+                                                            id: '41986'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureMode:41986/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                                    text: Manual
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:WhiteBalance:41987'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: WhiteBalance
+                                                            id: '41987'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:WhiteBalance:41987/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                                    text: Manual
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLengthIn35mmFormat:41989'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: FocalLengthIn35mmFormat
+                                                            id: '41989'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLengthIn35mmFormat:41989/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 7c186033295a11388eb388a21e6e25ad05e9b6c45cd3c403dc3fae8a2d19516e
+                                                                    text: '41 mm'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneCaptureType:41990'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: SceneCaptureType
+                                                            id: '41990'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneCaptureType:41990/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                                    text: Standard
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Sharpness:41994'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: Sharpness
+                                                            id: '41994'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Sharpness:41994/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                                    text: Normal
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubjectDistanceRange:41996'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: SubjectDistanceRange
+                                                            id: '41996'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubjectDistanceRange:41996/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                    parsed: true
+                                                                    format: Short
+                                                                    components: 1
+                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                                    text: Unknown
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensInfo:42034'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: LensInfo
+                                                            id: '42034'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensInfo:42034/entry'
+                                                                    class: FileEye\MediaProbe\Entry\ExifLensInfo
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 4
+                                                                    bytesHash: 2b6d86ecdd2d490822f37636fa9e2fee6c6b77406270fa51bc19c00a0959c7f0
+                                                                    text: '27mm f/2.8'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensMake:42035'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: LensMake
+                                                            id: '42035'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensMake:42035/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 9
+                                                                    bytesHash: 3c972207ef61127c88c31d5b09f97f3ef55fde7b0f5db686a32d4e55ab65f24e
+                                                                    text: FUJIFILM
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensModel:42036'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: LensModel
+                                                            id: '42036'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensModel:42036/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 11
+                                                                    bytesHash: 30294f5ebcae9aff7150ddba308bc91bab60186b28341ff1d319f877861d2dc3
+                                                                    text: XF27mmF2.8
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensSerialNumber:42037'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: LensSerialNumber
+                                                            id: '42037'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensSerialNumber:42037/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 9
+                                                                    bytesHash: 3e8059b51c14f9919c73eb323892fda91c7b64696ef0015c11e6a13fc631c07d
+                                                                    text: 8cA03605
+                                                -
+                                                    node: ifd
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
+                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
+                                                    parsed: true
+                                                    name: GPS
+                                                    id: '34853'
+                                                    collection: Tiff\IfdGps
+                                                    elements:
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSVersionID:0'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSVersionID
+                                                            id: '0'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSVersionID:0/entry'
+                                                                    class: FileEye\MediaProbe\Entry\GPSVersionId
+                                                                    parsed: true
+                                                                    format: Byte
+                                                                    components: 4
+                                                                    bytesHash: 3c7a246021bffd30e44bb63887f5ea8e6b87b5dae4db1110fabe67c1683200d0
+                                                                    text: 2.3.0.0
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLatitudeRef:1'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSLatitudeRef
+                                                            id: '1'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLatitudeRef:1/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 2
+                                                                    bytesHash: e9f86cefcfd61558fe75da7d4ea48a6c82d93191c6d49579aab49f99e543dcad
+                                                                    text: North
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLatitude:2'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSLatitude
+                                                            id: '2'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLatitude:2/entry'
+                                                                    class: FileEye\MediaProbe\Entry\GPSDegrees
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 3
+                                                                    bytesHash: 14a7204cd8e958bc737391e7019b60a0e190282b8d0c3e975a5f433b23f34f9b
+                                                                    text: '45° 33'' 25.169" (45.56°)'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLongitudeRef:3'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSLongitudeRef
+                                                            id: '3'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLongitudeRef:3/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 2
+                                                                    bytesHash: d33548389aba269e653aca9abf557278d901b39b04a7319552df7149c40c185d
+                                                                    text: West
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLongitude:4'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSLongitude
+                                                            id: '4'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLongitude:4/entry'
+                                                                    class: FileEye\MediaProbe\Entry\GPSDegrees
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 3
+                                                                    bytesHash: 372b25d578e745368f8d857644038269615edea6e9f4869c893ea7834cbc44cb
+                                                                    text: '73° 33'' 30.113" (73.56°)'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitudeRef:5'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSAltitudeRef
+                                                            id: '5'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitudeRef:5/entry'
+                                                                    class: FileEye\MediaProbe\Entry\GPSAltitudeRef
+                                                                    parsed: true
+                                                                    format: Byte
+                                                                    components: 1
+                                                                    bytesHash: 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
+                                                                    text: 'Above Sea Level'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitude:6'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSAltitude
+                                                            id: '6'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitude:6/entry'
+                                                                    class: FileEye\MediaProbe\Entry\GPSAltitude
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: 0e450eb40faf06b92e97d0937546cbd459a3d25165752e405b4613b08aac5533
+                                                                    text: '15'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSTimeStamp:7'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSTimeStamp
+                                                            id: '7'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSTimeStamp:7/entry'
+                                                                    class: FileEye\MediaProbe\Entry\GPSTimeStamp
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 3
+                                                                    bytesHash: f925b2d35befd264e7a113f768aec4d0ea5c64919a78a68d94d2a036ec3c83c6
+                                                                    text: '17 30 52'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSSpeedRef:12'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSSpeedRef
+                                                            id: '12'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSSpeedRef:12/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 2
+                                                                    bytesHash: ab3fae4e024f63b2d32d0a6c381835d845f54bc721a16727fda4bf3ab5f1f706
+                                                                    text: km/h
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSSpeed:13'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSSpeed
+                                                            id: '13'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSSpeed:13/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Rational
+                                                                    parsed: true
+                                                                    format: Rational
+                                                                    components: 1
+                                                                    bytesHash: 01acecb507abfe1a354aa8064f4af5d3f1acd019e37db3c11c97523b71c76e9d
+                                                                    text: '0'
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSMapDatum:18'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSMapDatum
+                                                            id: '18'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSMapDatum:18/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 7
+                                                                    bytesHash: d386145146ac16209ebecf530c975be323e88cdb68b3b370a64d9d2e48874bfc
+                                                                    text: WGS-84
+                                                        -
+                                                            node: tag
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSDateStamp:29'
+                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            parsed: true
+                                                            name: GPSDateStamp
+                                                            id: '29'
+                                                            collection: Tag
+                                                            elements:
+                                                                -
+                                                                    node: entry
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSDateStamp:29/entry'
+                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    parsed: true
+                                                                    format: Ascii
+                                                                    components: 11
+                                                                    bytesHash: 811b459630020ac2439be521dd5b9942d549cfe003bbd011abe3750a28b9a0b6
+                                                                    text: '2019:04:22'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:PrintIM:50341'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: PrintIM
+                                                    id: '50341'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:PrintIM:50341/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                            parsed: true
+                                                            format: Undefined
+                                                            components: 28
+                                                            bytesHash: de4cb0da674649787f6e581801fb2c105b37e25e58d8b81f769beb814511e991
+                                                            text: '28 byte(s) of data'
+                                        -
+                                            node: ifd
+                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
+                                            class: FileEye\MediaProbe\Block\Exif\Ifd
+                                            parsed: true
+                                            name: IFD1
+                                            id: '1'
+                                            collection: Tiff\Ifd1
+                                            elements:
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:Compression:259'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: Compression
+                                                    id: '259'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:Compression:259/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Short
+                                                            parsed: true
+                                                            format: Short
+                                                            components: 1
+                                                            bytesHash: ceb827ad3d3884fd4d50ae6099d6d50c09a21e72ebd309708e8b69d93df19e55
+                                                            text: 'JPEG (old-style)'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:Orientation:274'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: Orientation
+                                                    id: '274'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:Orientation:274/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Short
+                                                            parsed: true
+                                                            format: Short
+                                                            components: 1
+                                                            bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                            text: 'Horizontal (normal)'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:XResolution:282'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: XResolution
+                                                    id: '282'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:XResolution:282/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Rational
+                                                            parsed: true
+                                                            format: Rational
+                                                            components: 1
+                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            text: '72'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:YResolution:283'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: YResolution
+                                                    id: '283'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:YResolution:283/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Rational
+                                                            parsed: true
+                                                            format: Rational
+                                                            components: 1
+                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            text: '72'
+                                                -
+                                                    node: tag
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:ResolutionUnit:296'
+                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    parsed: true
+                                                    name: ResolutionUnit
+                                                    id: '296'
+                                                    collection: Tag
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:ResolutionUnit:296/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Short
+                                                            parsed: true
+                                                            format: Short
+                                                            components: 1
+                                                            bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
+                                                            text: inches
+                                                -
+                                                    node: thumbnail
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail'
+                                                    class: FileEye\MediaProbe\Block\Thumbnail
+                                                    parsed: true
+                                                    collection: Thumbnail
+                                                    elements:
+                                                        -
+                                                            node: entry
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail/entry'
+                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                            parsed: true
+                                                            format: Undefined
+                                                            components: 8200
+                                                            bytesHash: 337186c3ba88a6ef32ad621addd64a029de8991ca3d8fe070d368dbf75997c48
+                                                            text: '8200 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DQT:219'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: DQT
+                    id: '219'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DQT:219/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 69
+                            bytesHash: a908a0f966db8d29b8547d1a71bb81cca48d2dc76578edf9d972df3c70bfa072
+                            text: '69 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DQT:219'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: DQT
+                    id: '219'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DQT:219/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 69
+                            bytesHash: 74f21f07e9948f7b459f739fb60fbdcd2da39bfb5aca79422e6c073776f4e390
+                            text: '69 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:SOF0:192'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: SOF0
+                    id: '192'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:SOF0:192/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 19
+                            bytesHash: 6492e1ed67744c607cf3cec92d031d5c35294f29e58c9f8adc901effcc72ba5d
+                            text: '19 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 33
+                            bytesHash: 8b7de04a62a93a0c046ac4b10fbd481d5efad815d21c2656253ecba006b6df70
+                            text: '33 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 183
+                            bytesHash: 2a69b763ce3a04f14fccd428916925f89a70abfd7ebf6a4ebdd51f634787ede3
+                            text: '183 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 33
+                            bytesHash: f357760f29d48d6d920079702ec9b4880dc7341326f12ea7f5ebf675efd1a1ec
+                            text: '33 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:DHT:196'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: DHT
+                    id: '196'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:DHT:196/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 183
+                            bytesHash: 627f68783b5f5059bcce64dd50e21d0b9eb8a083051f105d6a80a760cd2a564e
+                            text: '183 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:SOS:218'
+                    class: FileEye\MediaProbe\Block\JpegSegmentSos
+                    parsed: true
+                    name: SOS
+                    id: '218'
+                    collection: Jpeg\SegmentSos
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:SOS:218/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 3207
+                            bytesHash: be40f10e841255357cfd2284b25f57905727670b6564be2ec53ada67397b6bd9
+                            text: '3207 byte(s) of data'
+                -
+                    node: jpegSegment
+                    path: '/media/jpeg/jpegSegment:EOI:217'
+                    class: FileEye\MediaProbe\Block\JpegSegment
+                    parsed: true
+                    name: EOI
+                    id: '217'
+                    collection: Jpeg\Segment
+                    elements:
+                        -
+                            node: entry
+                            path: '/media/jpeg/jpegSegment:EOI:217/entry'
+                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            parsed: true
+                            format: Undefined
+                            components: 2
+                            bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
+                            text: '2 byte(s) of data'
+log: {  }
+gdInfo:
+    0: 149
+    1: 84
+    2: 2
+    3: 'width="149" height="84"'
+    bits: 8
+    channels: 3
+    mime: image/jpeg
+exifReadData:
+    FileName: fujifilm_x_a5.jpg
+    FileDateTime: 1639748137
+    FileSize: 23108
+    FileType: 2
+    MimeType: image/jpeg
+    SectionsFound: 'ANY_TAG, IFD0, THUMBNAIL, EXIF, GPS, MAKERNOTE'
+    COMPUTED:
+        html: 'width="149" height="84"'
+        Height: 84
+        Width: 149
+        IsColor: 1
+        ByteOrderMotorola: 0
+        CCDWidth: 23mm
+        ApertureFNumber: f/2.8
+        Thumbnail.FileType: 2
+        Thumbnail.MimeType: image/jpeg
+    Make: FUJIFILM
+    Model: X-A5
+    Orientation: 1
+    XResolution: 72/1
+    YResolution: 72/1
+    ResolutionUnit: 2
+    Software: 'Digital Camera X-A5 Ver1.20'
+    DateTime: '2019:04:22 13:31:48'
+    YCbCrPositioning: 1
+    Copyright: null
+    Exif_IFD_Pointer: 278
+    GPS_IFD_Pointer: 10716
+    'UndefinedTag:0xC4A5': !!binary UHJpbnRJTQAwMjUwAAACAAIAAQAAAAEBAAAAAA==
+    THUMBNAIL:
+        Compression: 6
+        Orientation: 1
+        XResolution: 72/1
+        YResolution: 72/1
+        ResolutionUnit: 2
+        JPEGInterchangeFormat: 11080
+        JPEGInterchangeFormatLength: 8200
+    ExposureTime: 1/160
+    FNumber: 14/5
+    ExposureProgram: 1
+    ISOSpeedRatings: 320
+    'UndefinedTag:0x8830': 1
+    ExifVersion: '0230'
+    DateTimeOriginal: '2019:04:22 13:31:48'
+    DateTimeDigitized: '2019:04:22 13:31:48'
+    ComponentsConfiguration: !!binary AQIDAA==
+    ShutterSpeedValue: 44239/6057
+    ApertureValue: 24361/8200
+    BrightnessValue: 37/10
+    ExposureBiasValue: 0/1
+    MaxApertureValue: 24361/8200
+    MeteringMode: 5
+    LightSource: 11
+    Flash: 16
+    FocalLength: 27/1
+    MakerNote: "FUJIFILM\f"
+    FlashPixVersion: '0100'
+    ColorSpace: 1
+    ExifImageWidth: 4240
+    ExifImageLength: 2384
+    FocalPlaneXResolution: 1807/1
+    FocalPlaneYResolution: 1807/1
+    FocalPlaneResolutionUnit: 3
+    SensingMethod: 2
+    FileSource: !!binary Aw==
+    SceneType: !!binary AQ==
+    CustomRendered: 0
+    ExposureMode: 1
+    WhiteBalance: 512
+    FocalLengthIn35mmFilm: 41
+    SceneCaptureType: 0
+    Sharpness: 3
+    SubjectDistanceRange: 0
+    'UndefinedTag:0xA432':
+        - 27/1
+        - 27/1
+        - 14/5
+        - 14/5
+    'UndefinedTag:0xA433': FUJIFILM
+    'UndefinedTag:0xA434': XF27mmF2.8
+    'UndefinedTag:0xA435': 8cA03605
+    GPSVersion: !!binary AgMAAA==
+    GPSLatitudeRef: 'N'
+    GPSLatitude:
+        - 45/1
+        - 33/1
+        - 25169/1000
+    GPSLongitudeRef: W
+    GPSLongitude:
+        - 73/1
+        - 33/1
+        - 30113/1000
+    GPSAltitudeRef: "\0"
+    GPSAltitude: 15/1
+    GPSTimeStamp:
+        - 17/1
+        - 30/1
+        - 52/1
+    GPSSpeedRef: K
+    GPSSpeed: 0/1
+    GPSMapDatum: WGS-84
+    GPSDateStamp: '2019:04:22'
+    Version: '0130'
+    'UndefinedTag:0x0010': 592D353430303118080791B58UL14427
+    Quality: 'FINE   '
+    Color: 128
+    'UndefinedTag:0x100A':
+        - 0
+        - 0
+    'UndefinedTag:0x100B': 256
+    'UndefinedTag:0x100E': 0
+    FlashMode: 2
+    FlashStrength: 0/100
+    Macro: 0
+    FocusMode: 0
+    'UndefinedTag:0x1022': 1
+    'UndefinedTag:0x1023':
+        - 2108
+        - 983
+    'UndefinedTag:0x1026': 16
+    SlowSync: 0
+    PictureMode: 768
+    'UndefinedTag:0x1032': 1
+    'UndefinedTag:0x1040': 0
+    'UndefinedTag:0x1041': 0
+    'UndefinedTag:0x1050': 0
+    ContTake: 0
+    'UndefinedTag:0x1101': 0
+    'UndefinedTag:0x1200': 0
+    BlurWarning: 0
+    FocusWarning: 0
+    'AEWarning ': 0
+    'UndefinedTag:0x1304': 0
+    'UndefinedTag:0x1305': 0
+    'UndefinedTag:0x1400': 1
+    'UndefinedTag:0x1401': 0
+    'UndefinedTag:0x1402': 0
+    'UndefinedTag:0x1404': 2700/100
+    'UndefinedTag:0x1405': 2700/100
+    'UndefinedTag:0x1406': 280/100
+    'UndefinedTag:0x1407': 280/100
+    'UndefinedTag:0x1408': '0300'
+    'UndefinedTag:0x1409': '0100'
+    'UndefinedTag:0x140A': 0
+    'UndefinedTag:0x140B': 100
+    'UndefinedTag:0x1422':
+        - 0
+        - 0
+        - 0
+    'UndefinedTag:0x1424': 4096
+    'UndefinedTag:0x1430': "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    'UndefinedTag:0x1431': 0
+    'UndefinedTag:0x1436': 0
+    'UndefinedTag:0x1437': 0
+    'UndefinedTag:0x1442': 0
+    'UndefinedTag:0x4100': 0
+    'UndefinedTag:0x4200': 0
+    'UndefinedTag:0xF010': !!binary AAAAAAAAOAAAAAA2ADUxLjIwAAAAAAAAIzZiIwFBMCRTSENGVUKMUEgA//8A8HeBAQAAANQAvQMAbDIAAAAAAA4APAAidgIC/////wEAAABmAKAA7mQDAq4PgBcAAKAFAAAAAAAAAAD/AR8BAACjAv///////wAA/////+7u7u4AAMUCUwEAAAAABgAwQWM4NTA2MwAAAAADACoAAQALAAIAHgB2/wAAEwAdAIj/DwAAAAAAAAAAAAAAAAAAAB0AHQD+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAAAAAAAAAAAAD//////////xd0QRcBBQABDCcAAHMOAABXFAAAKA/kDnMOLw5tGAAAqhkAAN0RAABJHUkdbRgAAIkKvgAcHEABTRLdEQEK//8AHiA+7h2hEgAAAAAAAAD///////////8AACgAAEgcAMcUAACkEQAAAAAgAG0YAAAAHR1uABgAIBd1URcAPQQCAADFAgAAAAAEAAoAAAsHCpUgCAEDAAAAFACwAOktFXj0d8R3yXQTeBN4AAAAAAAAUwHAAQAAAAAAAAAA//////////////8A/////5UdIxv/KUEnAABCIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACVHSMb/ylBJwAAQiIAAAAAPxkrF8cjciEAADYdAAAAAA0oAwAoOrUrsTJCPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////////////F3ERF2RkVggARwBkAAAAAAAAAACOAdYBAAAAAAAAAAAAAAF/vCJVKTw1SlRQAagAAAAAAAAAAAD//////////wAAgAA3MEYAAAAAAAAAAAAAAAAAAAAAAG0BE4QAAAAAH/03KkVFRUVrA6wBbQG5A9gA8AAZAAAAAARxDYAAgQAgQBAA84KYggb2//8+Ao0BAAAsAAAJAAAAAAAAAAAAAKWlpaUAAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+vr6+gAAAAAACAAA/////wAASAb//////////////////////////xiIgRgAAH8BAAAAkAAAAAAAAIaGAAQGAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+AL4AAAAAAAAAAADwDLcPnBuFFAAAAAAAAADgCyMAAAAAAAAAAAAAahgAABwAHABqGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFb9//9W/f//AgABAB0A3QBkAAAAAAAAAAAAAAAAAAAAAAAAABiHcRgAAhMAAAAQACAAAAEAAAAAAADjAgAAAAD0dwAA9XcAAAAAAAAAAAAAAAAAAAAAAADpLQAAOUUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4ATAAAAAAAAQA1AAgAAAAAAAEAAAA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAA0AB4AAQABAAgA+QIAAAAAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAc4FCC8AANsUAKIAAAAAAAAAAAAAAAAAACABAAAgAQAAAAAAAAAAAAAEGuktAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADbdwAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/An4CQQIDAF4AZQAAAAAAAAAAAPYA/QDmDJUgAQAAAAAA4CAukAggAAAAAAAAAAAAAAAAAAAGBgAAAAAAAAAAAAAAAAAAAAAAAAAAJ2cIALoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAABLeAHAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPR373cDeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAOAB0AJ8AVIB2gCwAAAAAAAAAAAAgAFWAdoAsACxAFcB2wB/AeAB0AIAAAAAAAAAAAAAAAAAAAAAGIVRGDQPZBD/////g4ODgwAAkAAAAAAAAAAAAAAAAACzs7OzAAAAAAAAAAAAAAAAAAAAAP////////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAP//////////////////////////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACvIwGvDABkAAAAAAAVeBV4AAAVeBV4E3gTeAB4A3jsd+932Hfbd8R3zlbOVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArFwAAPxkAAHIhAADHIwAANh0AAI7XPg0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIxsAAJUdAABBJwAA/ykAAEIiAACO1z4NAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJL3AADW/wAAXRoBAOodAQD9AgEAjtc+DQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACbDQEAnBYBAIIzAQBgNwEACxoBAI7XPg0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6JMBAGqhAQDDzAEAkNIBAJCmAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0oAAC1KwAAKDoAAEI+AACxMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQ/v//XP7//1D+//8m/v//Mv7//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAywAAAMQAAACIAAAARwAAAG4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCAAAAQgAAAEIAAABCAAAAQgAAAFD+//9c/v//UP7//yb+//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADLAAAAxAAAAIgAAABHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADSgAALUrAAAoOgAAQj4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADartqucxG2F2EbOgu/EkUT0RK+E8gIpA7EDEAKJAfqCHsJrwl0FpgeihHbBsEPoQUCFWMQFQqzFh0QMgubDb0MzwtNDSsT7BTJDDIFtQgBB7UZfhPLDI0YzxMODSQKqA1yCo0OURTKDmMbRAlQEuQbSx3TGKERlhjjEXcQtwnECxoHjA3EDwUMqxxYCj4cxCEbGDQTqBNoFH8QVQ9KDlMOYwi4CcoRUgmFFGQNPQt1FV4H+wU+CMcHWQ80CosUoRNwFtcSYRHhCKMNaw62CfcRCAY5CP0F9wQkCWgINhS7EHkSxBSqF98IGwvnGpoQnA5BCfkMzQeyByUL5weeDiwOOxB/EV0ahwvrC0UX5SJNECMaKCGnE0QeiA83ChkMZQ46DqsNJhp/EmoL5htWIWYa3RdOHF8UbhwqF4AVGhAlFvoReguNIWgNBgoGJfgeyxVdF84aERUUEQ8WWxRnFeMVVxJSDd4cHg+QDiolJB3eHKUUxhnvE10MohN8E9MUCBVnE5kRqBCqDsUVkBbrGrkbKxYfGaYL3A29Ea0PBxIaEVcTqA/ADAQP3g6BDZIZ3BsJFJIYug09D/8K8QaPD58NuA5AD6sMRBBQFygRqBjTGtcQTBNWDgIQFxBVDVMK/AxND+cMFQ1FDsMZLRIYDbETwA/kDWMQ8xAkD9URuAvLDAkPEwnaq9qrmIl0nouKjouBanF7aWBta6OWW4hVg4WSlXB1h3p9e3aRjlB6X2iOm5h5fo98b4BvgZBun5+LmaCYiIeKdm58XXeDc5+on4uWkI2DhYCAa2driXyRkXRZYGNncYOOkI2SaoiAfYlwaVhRWmpth4+QiWmWnHKAh3xuZWVndoB/iIN2m5V2haiqmKWPb4N/dn1/ipuec52koJWhj5GWk4F1iXunq2uVo5uVhZCOk5OReYqBoKqAoJ+Zj3aOjY6QkIeNgIWUlJ6cmJJ7dYSJiImBjoF5e4OemZiOgHxacnuDgX+EeYeWnJeLh4N9fIN5b3uBf3uJm417foSFhYiAeHZpgJBhT54AAAAAAAAAAMgoBgC8vAUAv+wFANB8BgDHHAYAy0gGALyQBQAGJQUA75AFAPpUBQD4OAUAz9AFAAAAAAAAAAAAAAAAALt0BQDFRAYAxQwGAOPABQDoUAYA4rwFAK/gBQCloAUABSUFAO1QBQC1WAUAu3wFALHYBQCszAUAAAAAALmIBQC7eAUAtfQFALrsBQDU2AUAGDUFANGUBQCp0AUAobgFANNsBQDASAUAl2QFAK60BQC5BAYAqqwFALfIBQCwhAUAuHQFAKq4BQChjAUApXgFAMRoBQDCdAUAqdgFAKHEBQC7qAUAoHgFAJiABQC9ZAUAutQFAK7YBQDZyAUAq4AFALOMBQCxxAUAoJQFAKOABQCmeAUAsowFAKjcBQCh0AUApNAFAJmYBQCYmAUAqKAFAKGoBQDBmAUA5MwFAJxcBQCqlAUAsLAFAKGgBQCpZAUArLwEAKSYBACuGAUAq0wFAKUsBQCkUAUAnrgFAJ2kBQCbgAUAv8QFAMdgBgCdaAUAqpwFALG8BQCq8AUAqnQFAKWsBAChkAQAoIAEAJ14BACbgAQAn6AEAKTYBACcoAUAnqQFAMZEBgDBXAYAqrQFALD0BQCx4AUArWQGAKwUBgCsTAUAnJAEAJmABACQdAQAlnwEAJy4BACi7AQAn5wFAKsYBgDGdAYAujQGALs4BgCu6AUAqsQFAKxIBgCuSAYArOwFAJ7MBACqLAUAk7QEAJasBAC1EAYApMwFAJ20BQCyTAYAuiQGAK4EBgC6KAYAqbAFAKecBQCtPAYAqvAFAKsgBgCmkAUAu5gGAJjYBACmcAUAsmAGAKXUBQCo5AUAqwQGALIEBgCq6AUApLAFAKtkBQCscAUAs0QGAKacBQCuHAYAtngGAL6wBgC3iAYAsYAGAKosBgCl3AUAp+wFAKwMBgDANAYAriQGAJuIBQCviAUAs4AFAKrcBQCmtAUArBQGAKw4BgCsbAYAwNQGAK1wBgChAAYApuwFAKTsBQCuHAYAwYQGALRQBgCbiAUAswgGALSwBQCggAUApswFAKf4BQCi+AUApyQGALCMBgCwjAYAqPQFAKPQBQCp/AUAqzAGAMGcBgC7ZAYAnIwFALfQBQC4DAYAp6wFAKXABQCj6AUAouwFAKccBgClNAYAoRgGAM6cBgCtLAYAtkgGALdgBgC6ZAYAt6gFAAAAAACn1AUAqugFAKSUBQCjqAUAosgFALA0BgCoFAYAoAAGAJ7sBQCp+AUApewFALRcBgDGfAYAvhgGAAAAAAAAAAAAAAAAAKjYBQCnkAUAp7AFAKocBgC/zAYAqhwGAJvQBQCdwAUAn8AFAKUIBgCjGAYAxjAGAAAAAAAAAAAA/////xHiER4=

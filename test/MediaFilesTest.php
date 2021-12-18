@@ -33,7 +33,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function mediaFileProvider()
     {
         $finder = new Finder();
-        $finder->files()->in(dirname(__FILE__) . '/image_files')->name('*.test-dump.yml');
+        $finder->files()->in(dirname(__FILE__) . '/media-dumps/image')->name('*.dump.yml');
         $result = [];
         foreach ($finder as $file) {
             $result[$file->getBasename()] = [$file];
@@ -47,16 +47,19 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function testParse($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
-        // $this->testDump = yaml_parse_file($mediaDumpFile);
-        if (isset($this->testDump['exiftool'])) {
-            $this->exiftoolDump =new \DOMDocument();
-            $this->exiftoolDump->loadXML($this->testDump['exiftool']);
-        }
-        if (isset($this->testDump['exiftool_raw'])) {
-            $this->exiftoolRawDump =new \DOMDocument();
-            $this->exiftoolRawDump->loadXML($this->testDump['exiftool_raw']);
-        }
-        $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
+
+        $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
+        $exiftoolDumpFile = dirname(__FILE__) . '/media-dumps/image/' . $mediaDumpFile->getRelativePath() . '/' . str_replace('.dump.yml', '', $mediaDumpFile->getFileName()) . '.exiftool.xml';
+        $exiftoolRawDumpFile = dirname(__FILE__) . '/media-dumps/image/' . $mediaDumpFile->getRelativePath() . '/' . str_replace('.dump.yml', '', $mediaDumpFile->getFileName()) . '.exiftool-raw.xml';
+//dump([$testFile, $exiftoolDumpFile, $exiftoolRawDumpFile]);
+
+        $this->exiftoolDump =new \DOMDocument();
+        $this->exiftoolDump->loadXML(file_get_contents($exiftoolDumpFile));
+
+        $this->exiftoolRawDump =new \DOMDocument();
+        $this->exiftoolRawDump->loadXML(file_get_contents($exiftoolRawDumpFile));
+
+        $media = Media::createFromFile($testFile);
 
         $this->assertEquals($this->testDump['mimeType'], $media->getMimeType());
 
@@ -77,11 +80,14 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function testRewriteThroughGd($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
-        $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
-        $original_media->saveToFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img');
+
+        $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
+
+        $original_media = Media::createFromFile($testFile);
+        $original_media->saveToFile($testFile . '-rewrite-gd.img');
 
         // Test via getimagesize.
-        $gd_info = getimagesize($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img');
+        $gd_info = getimagesize($testFile . '-rewrite-gd.img');
         $this->assertEquals($this->testDump['gdInfo'], $gd_info);
 
         if ($this->testDump['mimeType'] === 'image/tiff') {
@@ -95,7 +101,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
         imagedestroy($gd_resource);
 
-        $gd_resource = imagecreatefromjpeg($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img');
+        $gd_resource = imagecreatefromjpeg($testFile . '-rewrite-gd.img');
         $this->assertNotFalse($gd_resource);
         $this->assertEquals($this->testDump['gdInfo'][0], imagesx($gd_resource));
         $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
@@ -108,17 +114,20 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function testRewrite($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
-        if (isset($this->testDump['exiftool'])) {
-            $this->exiftoolDump =new \DOMDocument();
-            $this->exiftoolDump->loadXML($this->testDump['exiftool']);
-        }
-        if (isset($this->testDump['exiftool_raw'])) {
-            $this->exiftoolRawDump =new \DOMDocument();
-            $this->exiftoolRawDump->loadXML($this->testDump['exiftool_raw']);
-        }
-        $original_media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName']);
-        $original_media->saveToFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite.img');
-        $media = Media::createFromFile($mediaDumpFile->getPath() . '/' . $this->testDump['fileName'] . '-rewrite.img');
+
+        $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
+        $exiftoolDumpFile = dirname(__FILE__) . '/media-dumps/image/' . $mediaDumpFile->getRelativePath() . '/' . str_replace('.dump.yml', '', $mediaDumpFile->getFileName()) . '.exiftool.xml';
+        $exiftoolRawDumpFile = dirname(__FILE__) . '/media-dumps/image/' . $mediaDumpFile->getRelativePath() . '/' . str_replace('.dump.yml', '', $mediaDumpFile->getFileName()) . '.exiftool-raw.xml';
+
+        $this->exiftoolDump =new \DOMDocument();
+        $this->exiftoolDump->loadXML(file_get_contents($exiftoolDumpFile));
+
+        $this->exiftoolRawDump =new \DOMDocument();
+        $this->exiftoolRawDump->loadXML(file_get_contents($exiftoolRawDumpFile));
+
+        $original_media = Media::createFromFile($testFile);
+        $original_media->saveToFile($testFile . '-rewrite.img');
+        $media = Media::createFromFile($testFile . '-rewrite.img');
 
         $this->assertEquals($this->testDump['mimeType'], $media->getMimeType());
 
