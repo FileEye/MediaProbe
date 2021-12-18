@@ -37,7 +37,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
      */
     public function testWriteRead(array $entries)
     {
-        $media = Media::createFromFile(dirname(__FILE__) . '/media-samples/image/no-exif.jpg', null, 'error');
+        $media = Media::loadFromFile(dirname(__FILE__) . '/media-samples/image/no-exif.jpg', null, 'error');
         $jpeg = $media->getElement("jpeg");
 
         $this->assertNull($jpeg->getElement("jpegSegment/exif"));
@@ -77,7 +77,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $jpeg = null;
 
         // Now read the file and see if the entries are still there.
-        $r_media = Media::createFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
+        $r_media = Media::loadFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
         $r_jpeg = $r_media->getElement("jpeg");
 
         $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Exif', $r_jpeg->getElement("jpegSegment/exif"));

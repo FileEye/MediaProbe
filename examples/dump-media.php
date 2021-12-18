@@ -90,7 +90,7 @@ if (!is_readable($file)) {
 
 try {
     /* Load data from file */
-    $media = Media::createFromFile($file, $logger, $fail_on_error);
+    $media = Media::loadFromFile($file, $logger, $fail_on_error);
     if ($media === null) {
         print("dump-media: Unrecognized media format!\n");
         exit(1);

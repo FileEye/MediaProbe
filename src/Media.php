@@ -76,7 +76,7 @@ class Media extends BlockBase
      * @throws InvalidFileException
      *            On failure.
      */
-    public static function createFromFile(string $path, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
+    public static function loadFromFile(string $path, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
         $magic_data_element = new DataString(file_get_contents($path, false, null, 0, 10));
         $media_format_collection = static::getMatchingMediaCollection($magic_data_element);
@@ -129,13 +129,11 @@ class Media extends BlockBase
         // media format. Then parse the media according to the media format.
         $media = new static($external_logger, $fail_level);
         $media->debugBlockInfo($data_element);
-//        try {
-            $media_format = new ItemDefinition($media_format_collection);
-            $media->addBlock($media_format)->parseData($data_element);
-            $media->parsed = true;
-//        } catch (\Throwable $e) { // @ todo xxx better
-//            $media->error(get_class($e) . ': ' . $e->getMessage());
-//        }
+
+        $media_format = new ItemDefinition($media_format_collection);
+        $media->addBlock($media_format)->parseData($data_element);
+        $media->parsed = true;
+
         return $media;
     }
 

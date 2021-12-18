@@ -59,7 +59,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->exiftoolRawDump =new \DOMDocument();
         $this->exiftoolRawDump->loadXML(file_get_contents($exiftoolRawDumpFile));
 
-        $media = Media::createFromFile($testFile);
+        $media = Media::loadFromFile($testFile);
 
         $this->assertEquals($this->testDump['mimeType'], $media->getMimeType());
 
@@ -83,7 +83,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
         $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
 
-        $original_media = Media::createFromFile($testFile);
+        $original_media = Media::loadFromFile($testFile);
         $original_media->saveToFile($testFile . '-rewrite-gd.img');
 
         // Test via getimagesize.
@@ -125,9 +125,9 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->exiftoolRawDump =new \DOMDocument();
         $this->exiftoolRawDump->loadXML(file_get_contents($exiftoolRawDumpFile));
 
-        $original_media = Media::createFromFile($testFile);
+        $original_media = Media::loadFromFile($testFile);
         $original_media->saveToFile($testFile . '-rewrite.img');
-        $media = Media::createFromFile($testFile . '-rewrite.img');
+        $media = Media::loadFromFile($testFile . '-rewrite.img');
 
         $this->assertEquals($this->testDump['mimeType'], $media->getMimeType());
 
