@@ -2,31 +2,31 @@
 
 namespace FileEye\MediaProbe\Data;
 
+use SplFileObject;
+
 /**
- * A DataElement object holding a string's data.
+ * A DataElement object holding a file's data.
  */
-final class DataString extends DataElement
+final class DataFile extends DataElement
 {
     /**
-     * The data.
+     * The file handle.
      *
-     * The string can contain any kind of data, including binary data.
-     *
-     * @var string
+     * @var SplFileObject
      */
-    private $data;
+    private $fileHandle;
 
     /**
-     * Construct a new DataString object with the data supplied.
+     * Construct a new DataFile object with the file supplied.
      *
      * @param string $data
      *   The data string.
      */
-    public function __construct(string $data)
+    public function __construct(SplFileObject $fileHandle)
     {
-        $this->data = $data;
+        $this->fileHandle = $fileHandle;
         $this->start = 0;
-        $this->size = strlen($this->data);
+        $this->size = $this->fileHandle->fstat()['size'];
     }
 
     /**
@@ -45,6 +45,7 @@ final class DataString extends DataElement
         }
         $this->validateOffset($offset + $size - 1);
 
-        return substr($this->data, $offset, $size);
+        $this->fileHandle->fseek($offset);
+        return $this->fileHandle->fread($size);
     }
 }
