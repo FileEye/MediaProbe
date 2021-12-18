@@ -44,7 +44,7 @@ abstract class DataElement
     /**
      * Gets the offset start of this element.
      *
-     * @return integer
+     * @return int
      *   The offset start of this element against the real underlying element.
      */
     public function getStart(): int
@@ -55,7 +55,7 @@ abstract class DataElement
     /**
      * Gets the size of the data element.
      *
-     * @return integer
+     * @return int
      *   The number of bytes covered by this data element. The allowed offsets
      *   go from 0 up to this number minus one.
      */
@@ -70,7 +70,7 @@ abstract class DataElement
      * @param int $offset
      *   (Optional) The relative offset within this data element. Defaults to 0.
      *
-     * @return integer
+     * @return int
      *   The absolute offset.
      */
     public function getAbsoluteOffset(int $offset = 0): int
@@ -81,7 +81,7 @@ abstract class DataElement
     /**
      * Validates an offset.
      *
-     * @param integer $offset
+     * @param int $offset
      *   The offset to be validated.
      *
      * @throws DataException
@@ -147,18 +147,18 @@ abstract class DataElement
     /**
      * Return an unsigned byte from the data.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-1.
      *
-     * @return integer
+     * @return int
      *            the unsigned byte found at offset.
      *
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getByte($offset = 0)
+    public function getByte(int $offset = 0): int
     {
         return ConvertBytes::toByte($this->getBytes($offset, 1));
     }
@@ -166,18 +166,18 @@ abstract class DataElement
     /**
      * Return a signed byte from the data.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-1.
      *
-     * @return integer
+     * @return int
      *            the signed byte found at offset.
      *
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getSignedByte($offset = 0)
+    public function getSignedByte(int $offset = 0): int
     {
         return ConvertBytes::toSignedByte($this->getBytes($offset, 1));
     }
@@ -185,18 +185,18 @@ abstract class DataElement
     /**
      * Return an unsigned short read from the data.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-2.
      *
-     * @return integer
+     * @return int
      *            the unsigned short found at offset.
      *
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getShort($offset = 0)
+    public function getShort(int $offset = 0): int
     {
         return ConvertBytes::toShort($this->getBytes($offset, 2), $this->getByteOrder());
     }
@@ -204,18 +204,18 @@ abstract class DataElement
     /**
      * Return an unsigned short read from the data, reversed byte order.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-2.
      *
-     * @return integer
+     * @return int
      *            the unsigned short found at offset.
      *
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getShortRev($offset = 0)
+    public function getShortRev(int $offset = 0): int
     {
         return ConvertBytes::toShortRev($this->getBytes($offset, 2), $this->getByteOrder());
     }
@@ -223,18 +223,18 @@ abstract class DataElement
     /**
      * Return a signed short read from the data.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-2.
      *
-     * @return integer
+     * @return int
      *            the signed short found at offset.
      *
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getSignedShort($offset = 0)
+    public function getSignedShort(int $offset = 0): int
     {
         return ConvertBytes::toSignedShort($this->getBytes($offset, 2), $this->getByteOrder());
     }
@@ -242,18 +242,18 @@ abstract class DataElement
     /**
      * Return an unsigned long read from the data.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-4.
      *
-     * @return integer
+     * @return int
      *            the unsigned long found at offset.
      *
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getLong($offset = 0)
+    public function getLong(int $offset = 0): int
     {
         return ConvertBytes::toLong($this->getBytes($offset, 4), $this->getByteOrder());
     }
@@ -261,18 +261,18 @@ abstract class DataElement
     /**
      * Return a signed long read from the data.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-4.
      *
-     * @return integer
+     * @return int
      *            the signed long found at offset.
      *
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getSignedLong($offset = 0)
+    public function getSignedLong(int $offset = 0): int
     {
         return ConvertBytes::toSignedLong($this->getBytes($offset, 4), $this->getByteOrder());
     }
@@ -281,7 +281,7 @@ abstract class DataElement
      * Return an unsigned rational read from the data.
      *
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-8.
@@ -294,7 +294,7 @@ abstract class DataElement
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getRational($offset = 0)
+    public function getRational(int $offset = 0): array
     {
         return ConvertBytes::toRational($this->getBytes($offset, 8), $this->getByteOrder());
     }
@@ -302,7 +302,7 @@ abstract class DataElement
     /**
      * Return a signed rational read from the data.
      *
-     * @param integer $offset
+     * @param int $offset
      *            the offset into the data. An offset of zero will return the
      *            first byte in the current allowed window. The last valid
      *            offset is equal to ::getSize()-8.
@@ -315,7 +315,7 @@ abstract class DataElement
      * @throws DataException
      *            in case of invalid offset.
      */
-    public function getSignedRational($offset = 0)
+    public function getSignedRational(int $offset = 0): array
     {
         return ConvertBytes::toSignedRational($this->getBytes($offset, 8), $this->getByteOrder());
     }
