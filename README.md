@@ -1,3 +1,5 @@
+# WORK IN PROGRESS - this code is not ready for usage
+
 # MediaProbe
 
 [![Tests](https://github.com/FileEye/MediaProbe/actions/workflows/tests.yml/badge.svg)](https://github.com/FileEye/MediaProbe/actions/workflows/tests.yml)
