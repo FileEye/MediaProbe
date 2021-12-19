@@ -79,18 +79,16 @@ class Media extends BlockBase
      */
     public static function loadFromFile(string $path, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
-        $handle = new \SplFileObject($path, 'r');
         // @todo lock file while reading, capture fstats to prevent overwrites.
-        $dataElement = new DataFile($handle);
-        $media_format_collection = static::getMatchingMediaCollection($dataElement);
-        return static::parse($media_format_collection, $dataElement, $external_logger, $fail_level);
+        $dataFile = new DataFile($path);
+        return static::parse($dataFile, $external_logger, $fail_level);
     }
 
     /**
      * Creates a Media object from data.
      *
      * @param DataElement $data_element
-     *            the data string object providing the data.
+     *            The data element providing the data.
      * @param \Psr\Log\LoggerInterface|null $external_logger
      *            (Optional) a PSR-3 compliant logger callback.
      * @param string|null $fail_level
@@ -99,34 +97,12 @@ class Media extends BlockBase
      *
      * @return Media
      *            The Media object.
-     *
-     * @throws InvalidFileException
-     *            On failure.
      */
-    public static function createFromData(DataElement $data_element, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
+    public static function parse(DataElement $data_element, ?LoggerInterface $external_logger =  null, ?string $fail_level = null): Media
     {
+        // Determine the media format.
         $media_format_collection = static::getMatchingMediaCollection($data_element);
-        return static::parse($media_format_collection, $data_element, $external_logger, $fail_level);
-    }
 
-    /**
-     * Creates a Media object from data.
-     *
-     * @param Collection $media_format_collection
-     *            The media format collection.
-     * @param DataElement $data_element
-     *            The data string object providing the data.
-     * @param \Psr\Log\LoggerInterface|null $external_logger
-     *            (Optional) a PSR-3 compliant logger callback.
-     * @param string|null $fail_level
-     *            (Optional) a PSR-3 compliant log level. Any log entry at this
-     *            level or above will force media parsing to stop.
-     *
-     * @return Media
-     *            The Media object.
-     */
-    protected static function parse(Collection $media_format_collection, DataElement $data_element, ?LoggerInterface $external_logger, ?string $fail_level): Media
-    {
         // Build the Media object and its immediate child, that represents the
         // media format. Then parse the media according to the media format.
         $media = new static($external_logger, $fail_level);

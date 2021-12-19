@@ -15,10 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.2"
-          - "7.3"
-          - "7.4"
-          - "8.0"
+#          - "7.2"
+#          - "7.3"
+#          - "7.4"
+#          - "8.0"
           - "8.1"
 
     steps:
@@ -54,8 +54,7 @@ jobs:
         # Remove the comment to the lines below during development, to let
         # re-compile the specification PHP file from the YAML files, and refresh
         # the media file dumps.
-        # php bin/fileeye-mediaprobe compile
-        # git diff
+        php bin/fileeye-mediaprobe compile
         # php bin/fileeye-mediaprobe dump tests/media-samples tests/media-dumps
 
     - name: Image file dumps
@@ -70,8 +69,8 @@ jobs:
         #- php examples/dump-media.php -d    tests/media-samples/image/camera/canon-powershot-s60.jpg-rewrite.img
         #- php examples/dump-media.php -d    tests/media-samples/image/camera/canon-ixus-ii.jpg
         #- php examples/dump-media.php -d    tests/media-samples/image/camera/canon-ixus-ii.jpg-rewrite.img
-        #- php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg
-        #- php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg-rewrite.img
+        php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg-rewrite.img
         #- php examples/dump-media.php -d -w tests/media-samples/image/camera/apple-iphone7.JPG
         #- php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone7.JPG-rewrite.img
         #- php examples/dump-media.php -d -w tests/media-samples/image/camera/apple-iphone11.jpg
@@ -104,13 +103,13 @@ jobs:
         #php examples/dump-media.php -d -s tests/media-samples/image/pel-157.tiff
         #- php examples/dump-media.php -d    tests/media-samples/image/pel-157.tiff-rewrite.img
         #- php examples/dump-media.php -d    tests/media-samples/image/broken/gh-11.jpg-rewrite.img
-        #- php examples/dump-media.php -d    tests/media-samples/image/camera/olympus-c765uz.jpg
-        #- php examples/dump-media.php -d -w tests/media-samples/image/camera/fujifilm_x_a5.jpg
+        php examples/dump-media.php -d    tests/media-samples/image/camera/olympus-c765uz.jpg
+        php examples/dump-media.php -d -w tests/media-samples/image/camera/fujifilm_x_a5.jpg
         #- php examples/dump-media.php -d    tests/media-samples/image/camera/fujifilm_x_a5.jpg-rewrite.img
         #php examples/dump-media.php -d -w tests/media-samples/image/camera/canon_eos_70d_29.jpg
         #- php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_70d_29.jpg-rewrite.img
         php examples/dump-media.php -d -w tests/media-samples/image/camera/canon_eos_850d_08.jpg
-        php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_850d_08.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_850d_08.jpg-rewrite.img
         #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
