@@ -10,6 +10,13 @@ use SplFileObject;
 final class DataFile extends DataElement
 {
     /**
+     * The file path.
+     *
+     * @var string
+     */
+    private $filePath;
+
+    /**
      * The file handle.
      *
      * @var SplFileObject
@@ -19,12 +26,13 @@ final class DataFile extends DataElement
     /**
      * Construct a new DataFile object with the file supplied.
      *
-     * @param string $data
-     *   The data string.
+     * @param string $filePath
+     *   The file path.
      */
-    public function __construct(SplFileObject $fileHandle)
+    public function __construct(string $filePath)
     {
-        $this->fileHandle = $fileHandle;
+        $this->filePath = $filePath;
+        $this->fileHandle = new \SplFileObject($this->filePath, 'r');
         $this->start = 0;
         $this->size = $this->fileHandle->fstat()['size'];
     }
