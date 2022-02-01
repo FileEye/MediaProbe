@@ -108,7 +108,7 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         // TIFF byte order. 2 bytes running.
         if ($this->byteOrder == ConvertBytes::LITTLE_ENDIAN) {

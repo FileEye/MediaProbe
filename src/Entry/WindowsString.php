@@ -80,7 +80,7 @@ class WindowsString extends Byte
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         return $this->getValue()[1] . "\x0\x0";
     }

@@ -82,7 +82,7 @@ class FilterInfoIndex extends Index
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false): string
     {
         // Marker header.
         $bytes = $this->getElement("rawData[@name = 'filterHeader']")->toBytes($byte_order);
