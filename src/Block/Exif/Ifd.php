@@ -168,7 +168,7 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false): string
     {
         $bytes = '';
 
@@ -247,7 +247,7 @@ class Ifd extends ListBase
      *            the data from which the thumbnail will be
      *            extracted.
      */
-    public static function thumbnailToBlock(DataElement $data_element, Ifd $ifd)
+    public static function thumbnailToBlock(DataElement $data_element, Ifd $ifd): void
     {
         if (!$ifd->getElement("tag[@name='ThumbnailOffset']") || !$ifd->getElement("tag[@name='ThumbnailLength']")) {
             return;
@@ -326,7 +326,7 @@ class Ifd extends ListBase
      * @param Ifd $ifd
      *            the root Ifd object.
      */
-    public static function makerNoteToBlock(DataElement $d, Ifd $ifd)
+    public static function makerNoteToBlock(DataElement $d, Ifd $ifd): void
     {
         // Get the Exif subIfd if existing.
         if (!$exif_ifd = $ifd->getElement("ifd[@name='ExifIFD']")) {

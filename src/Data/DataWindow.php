@@ -9,82 +9,69 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 use Psr\Log\LoggerInterface;
 
 /**
- * A data window object.
+ * An object opening a window on an underlying DataElement
  */
-class DataWindow extends DataElement
+final class DataWindow extends DataElement
 {
     /**
      * The underlying data element for this window.
      *
      * @var DataElement
      */
-    protected $dataElement;
+    private $underlyingDataElement;
 
     /**
      * Construct a new data window with the data supplied.
      *
-     * @param mixed $data
-     *            the data that this window will contain. This can
-     *            either be given as a string (interpreted litteraly as a sequence
-     *            of bytes) or a PHP image resource handle. The data will be copied
-     *            into the new data window.
-     *
-     * @param boolean $endianess
-     *            the initial byte order of the window. This must
-     *            be either {@link ConvertBytes::LITTLE_ENDIAN} or {@link
-     *            ConvertBytes::BIG_ENDIAN}. This will be used when integers are
-     *            read from the data, and it can be changed later with {@link
-     *            setByteOrder()}.
+     * @param DataElement $dataElement
+     *   The underlying DataElement.
+     * @param int $offset
+     *   The offset at the underlying DataElement where the window starts.
+     * @param int|null $size
+     *   The size of the data window. If unspecified, will be determined to the remaining size of the underlying
+     *   DataElement after the offset.
      */
-    public function __construct(DataElement $data_element, int $start = 0, ?int $size = null)
+    public function __construct(DataElement $dataElement, int $offset = 0, ?int $size = null)
     {
-        if ($start < 0) {
+        if ($offset < 0) {
             throw new DataException('Invalid negative offset for DataWindow');
         }
 
-        if ($data_element instanceof DataWindow) {
-            $this->dataElement = $data_element->getDataElement();
-            $this->start = $data_element->getStart() + $start;
+        if ($dataElement instanceof DataWindow) {
+            $this->underlyingDataElement = $dataElement->underlyingDataElement;
+            $this->start = $dataElement->getStart() + $offset;
         } else {
-            $this->dataElement = $data_element;
-            $this->start = $start;
+            $this->underlyingDataElement = $dataElement;
+            $this->start = $offset;
         }
 
-        $this->size = $size ?? ($data_element->getSize() - $start);
+        $this->size = $size ?? ($dataElement->getSize() - $offset);
         if ($this->size < 1) {
             throw new DataException('Zero or negative size for DataWindow');
         }
-        if ($this->size > ($data_element->getSize() - $start)) {
+        if ($this->size > ($dataElement->getSize() - $offset)) {
             throw new DataException('Excessive size for DataWindow');
         }
 
-        $this->order = $data_element->getByteOrder();
+        $this->order = $dataElement->getByteOrder();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getDataElement(): DataElement
+    public function getBytes(int $offset = 0, ?int $size = null): string
     {
-        return $this->dataElement;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBytes(int $start = 0, ?int $size = null): string
-    {
-        if ($start < 0) {
-            $start += $this->size;
+        if ($offset < 0) {
+            $offset += $this->size;
         }
-        $this->validateOffset($start);
+        $this->validateOffset($offset);
 
-        $size = $size ?? ($this->size - $start);
+        $size = $size ?? ($this->size - $offset);
         if ($size <= 0) {
-            $size += $this->size - $start;
+            $size += $this->size - $offset;
         }
-        $this->validateOffset($start + $size - 1);
+        $this->validateOffset($offset + $size - 1);
 
-        return $this->dataElement->getBytes($this->getStart() + $start, $size);
+        return $this->underlyingDataElement->getBytes($this->getStart() + $offset, $size);
     }
 }

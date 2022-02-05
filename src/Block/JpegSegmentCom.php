@@ -24,7 +24,7 @@ class JpegSegmentCom extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         $data = rtrim($this->getElement("entry")->toBytes(), "\0");
         return chr(Jpeg::JPEG_DELIMITER) . chr($this->getAttribute('id')) . ConvertBytes::fromShort(strlen($data) + 2, ConvertBytes::BIG_ENDIAN) . $data;

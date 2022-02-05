@@ -36,7 +36,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         // If we have an Exif table, dump it.
         if ($exif = $this->getElement("exif")) {

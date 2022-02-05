@@ -74,7 +74,7 @@ class IfdCopyright extends Ascii
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         if ($this->value[1] === '') {
             return $this->value[0] .  chr(0x00);

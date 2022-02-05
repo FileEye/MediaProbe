@@ -3,9 +3,9 @@
 namespace FileEye\MediaProbe\Data;
 
 /**
- * A value object holding generic data, as bytes.
+ * A DataElement object holding a string's data.
  */
-class DataString extends DataElement
+final class DataString extends DataElement
 {
     /**
      * The data.
@@ -14,7 +14,7 @@ class DataString extends DataElement
      *
      * @var string
      */
-    protected $data;
+    private $data;
 
     /**
      * Construct a new DataString object with the data supplied.
@@ -32,19 +32,19 @@ class DataString extends DataElement
     /**
      * {@inheritdoc}
      */
-    public function getBytes(int $start = 0, ?int $size = null): string
+    public function getBytes(int $offset = 0, ?int $size = null): string
     {
-        if ($start < 0) {
-            $start += $this->size;
+        if ($offset < 0) {
+            $offset += $this->size;
         }
-        $this->validateOffset($start);
+        $this->validateOffset($offset);
 
-        $size = $size ?? ($this->size - $start);
+        $size = $size ?? ($this->size - $offset);
         if ($size <= 0) {
-            $size += $this->size - $start;
+            $size += $this->size - $offset;
         }
-        $this->validateOffset($start + $size - 1);
+        $this->validateOffset($offset + $size - 1);
 
-        return substr($this->data, $start, $size);
+        return substr($this->data, $offset, $size);
     }
 }

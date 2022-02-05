@@ -1493,7 +1493,6 @@ class Main extends Collection {
     array (
       0 =>
       array (
-        '__todo' => 'add decoding per 3',
         'collection' => 'Tag',
         'name' => 'PictureStyleUserDef',
         'title' => 'Picture Style User Def',
@@ -1539,7 +1538,6 @@ class Main extends Collection {
     array (
       0 =>
       array (
-        '__todo' => 'add decoding per 3',
         'collection' => 'Tag',
         'name' => 'PictureStylePC',
         'title' => 'Picture Style PC',
