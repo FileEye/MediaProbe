@@ -79,7 +79,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     {
         $this->parsed = true;
         $this->valid = true;
-        $this->value = $dataElement;
+        $this->dataElement = $dataElement;
         $this->components = (int) ($dataElement->getSize() / $this->formatSize);
         $this->validateDataElement();
     }
@@ -94,7 +94,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function getDataElement(): DataElement
     {
-        return $this->value;
+        return $this->dataElement;
     }
 
     /**
@@ -249,7 +249,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function toString(array $options = []): string
     {
-        if (is_null($this->value)) {
+        if (is_null($this->dataElement)) {
             return '';
         }
         $text = $this->resolveText($this->getValue($options));
