@@ -27,7 +27,7 @@ class ExifUserComment extends Undefined
 {
     protected function validateDataElement(): void
     {
-        $value = $this->value->getBytes();
+        $value = $this->dataElement->getBytes();
 
         if (strlen($value) < 8) {
             $this->parsed = false;
@@ -52,22 +52,22 @@ class ExifUserComment extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            $value = rtrim(substr($this->value->getBytes(), 8), " \x00");
+            $value = rtrim(substr($this->dataElement->getBytes(), 8), " \x00");
             return rtrim($value, " ");
         }
         if ($format === 'phpExif') {
-            $encoding = rtrim(substr($this->value->getBytes(), 0, 8), "\x00");
-            $value = rtrim(substr($this->value->getBytes(), 8), " \x00");
-            if (strlen($value) === 0 && substr($this->value->getBytes(), 8, 1) === ' ') {
+            $encoding = rtrim(substr($this->dataElement->getBytes(), 0, 8), "\x00");
+            $value = rtrim(substr($this->dataElement->getBytes(), 8), " \x00");
+            if (strlen($value) === 0 && substr($this->dataElement->getBytes(), 8, 1) === ' ') {
                 $value = ' ';
             }
             if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-                return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->value->getBytes()) - 8, chr(0));
+                return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->dataElement->getBytes()) - 8, chr(0));
             } else {
-                return rtrim($this->value->getBytes(), "\x00");
+                return rtrim($this->dataElement->getBytes(), "\x00");
             }
         }
-        return rtrim(substr($this->value->getBytes(), 8), "\x00");
+        return rtrim(substr($this->dataElement->getBytes(), 8), "\x00");
     }
 
     /**

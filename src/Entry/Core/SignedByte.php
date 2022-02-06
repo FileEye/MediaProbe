@@ -29,7 +29,7 @@ class SignedByte extends NumberBase
 
     protected function getNumberFromDataElement(int $offset): int
     {
-        return $this->value->getSignedByte($offset);
+        return $this->dataElement->getSignedByte($offset);
     }
 
     /**
@@ -38,11 +38,11 @@ class SignedByte extends NumberBase
     public function getValue(array $options = [])
     {
         if ($this->components == 1) {
-            return $this->value->getSignedByte();
+            return $this->dataElement->getSignedByte();
         }
         $ret = [];
         for ($i = 0; $i < $this->components; $i++) {
-            $ret[] = $this->value->getSignedByte($i);
+            $ret[] = $this->dataElement->getSignedByte($i);
         }
         return $ret;
     }

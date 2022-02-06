@@ -14,7 +14,7 @@ class ISO extends Byte
      */
     public function getValue(array $options = [])
     {
-        return 100 * exp(($this->value->getByte(0) / 8 - 9) * log(2));
+        return 100 * exp(($this->dataElement->getByte(0) / 8 - 9) * log(2));
     }
 
     /**

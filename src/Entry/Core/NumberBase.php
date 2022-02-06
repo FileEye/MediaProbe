@@ -27,7 +27,7 @@ abstract class NumberBase extends EntryBase
     protected function validateDataElement(): void
     {
         // Check that the data size is consistent.
-        if ($this->components * $this->formatSize !== $this->value->getSize()) {
+        if ($this->components * $this->formatSize !== $this->dataElement->getSize()) {
             $this->error('Invalid data size.');
             $this->parsed = false;
             $this->valid = false;
@@ -51,25 +51,6 @@ abstract class NumberBase extends EntryBase
      * Return a number from the data element at specified offset.
      */
     abstract protected function getNumberFromDataElement(int $offset);
-
-    /**
-     * {@inheritdoc}
-     */
-/*    public function getValue(array $options = [])
-    {
-        if (is_null($this->value)) {
-            return null;
-        }
-        if ($this->components == 1) {
-            return $this->formatNumber($this->value[0], $options);
-        }
-        $ret = [];
-        foreach ($this->value as $value) {
-            $ret[] = $this->formatNumber($value, $options);
-        }
-        return $ret;
-    }
-*/
 
     /**
      * Convert a number into bytes.

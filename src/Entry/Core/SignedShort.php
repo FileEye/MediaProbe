@@ -35,7 +35,7 @@ class SignedShort extends NumberBase
 
     protected function getNumberFromDataElement(int $offset): int
     {
-        return $this->value->getSignedShort($offset);
+        return $this->dataElement->getSignedShort($offset);
     }
 
     /**
@@ -44,11 +44,11 @@ class SignedShort extends NumberBase
     public function getValue(array $options = [])
     {
         if ($this->components == 1) {
-            return $this->value->getSignedShort();
+            return $this->dataElement->getSignedShort();
         }
         $ret = [];
         for ($i = 0; $i < $this->components; $i++) {
-            $ret[] = $this->value->getSignedShort($i * 2);
+            $ret[] = $this->dataElement->getSignedShort($i * 2);
         }
         return $ret;
     }

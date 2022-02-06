@@ -18,7 +18,7 @@ class ExposureTime extends Byte
      */
     public function getValue(array $options = [])
     {
-        return exp(4 * log(2) * (1 - $this->canonEv($this->value->getByte(0) - 24)));
+        return exp(4 * log(2) * (1 - $this->canonEv($this->dataElement->getByte(0) - 24)));
     }
 
     /**

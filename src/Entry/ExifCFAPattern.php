@@ -25,9 +25,9 @@ class ExifCFAPattern extends Undefined
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
             // Two shorts initially, then 4 bytes.
-            $ret = [$this->value->getByte(1), $this->value->getByte(3)];
+            $ret = [$this->dataElement->getByte(1), $this->dataElement->getByte(3)];
             for ($i = 4; $i < $this->getComponents(); $i++) {
-                $ret[] = $this->value->getByte($i);
+                $ret[] = $this->dataElement->getByte($i);
             }
             return $ret;
         }

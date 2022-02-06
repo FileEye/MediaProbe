@@ -18,24 +18,6 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 class IfdCopyright extends Ascii
 {
-/*        $v = explode("\0", $data_element->getBytes(0, $item_definition->getValuesCount()));
-        $v[1] = isset($v[1]) ? $v[1] : '';
-        $this->setDataElement($v);*/
-
-/*        $this->parsed = true;
-
-        $this->value = array_replace(['', ''], $data);
-
-        if ($this->value[1] === '') {
-            $this->components = strlen($this->value[0]) + 1;
-        } else {
-            $this->components = strlen($this->value[0]) + 1 + strlen($this->value[1]) + 1;
-        }
-*/
-
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;

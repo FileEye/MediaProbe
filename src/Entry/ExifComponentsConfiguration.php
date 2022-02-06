@@ -19,7 +19,7 @@ class ExifComponentsConfiguration extends Undefined
         if ($format === 'exiftool') {
             $v = [];
             for ($i = 0; $i < 4; $i ++) {
-                $v[] = $this->value->getByte($i);
+                $v[] = $this->dataElement->getByte($i);
             }
             return implode(' ', $v);
         }

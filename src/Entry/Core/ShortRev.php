@@ -36,7 +36,7 @@ class ShortRev extends NumberBase
 
     protected function getNumberFromDataElement(int $offset): int
     {
-        return $this->value->getShortRev($offset);
+        return $this->dataElement->getShortRev($offset);
     }
 
     /**
@@ -45,11 +45,11 @@ class ShortRev extends NumberBase
     public function getValue(array $options = [])
     {
         if ($this->components == 1) {
-            return $this->value->getShortRev();
+            return $this->dataElement->getShortRev();
         }
         $ret = [];
         for ($i = 0; $i < $this->components; $i++) {
-            $ret[] = $this->value->getShortRev($i * 2);
+            $ret[] = $this->dataElement->getShortRev($i * 2);
         }
         return $ret;
     }
