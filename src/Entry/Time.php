@@ -44,7 +44,7 @@ class Time extends Ascii
         parent::validateDataElement();
 
         // This must be a string in the form 'YYYY:MM:DD hh:mm:ss'.
-        $value = rtrim($this->value->getBytes(), "\x00");
+        $value = rtrim($this->dataElement->getBytes(), "\x00");
 
         // Clean the timestamp: some timestamps are broken and use other separators than ':' and ' ';
         // we just take the sequence of digits regardless of the in-betweens.
@@ -87,7 +87,7 @@ class Time extends Ascii
      */
     public function getValue(array $options = [])
     {
-        $value = rtrim($this->value->getBytes(), "\x00");
+        $value = rtrim($this->dataElement->getBytes(), "\x00");
 
         $format = $options['format'] ?? null;
         $type = $options['type'] ?? self::EXIF_STRING;

@@ -17,9 +17,9 @@ class GPSAltitudeRef extends Byte
         $format = $options['format'] ?? null;
         switch ($format) {
             case 'exiftool':
-                return (string) $this->value->getByte();
+                return (string) $this->dataElement->getByte();
             case 'phpExif':
-                return chr($this->value->getByte());
+                return chr($this->dataElement->getByte());
             default:
                 return parent::getValue();
         }

@@ -36,7 +36,7 @@ class Short extends NumberBase
 
     protected function getNumberFromDataElement(int $offset): int
     {
-        return $this->value->getShort($offset);
+        return $this->dataElement->getShort($offset);
     }
 
     /**
@@ -45,11 +45,11 @@ class Short extends NumberBase
     public function getValue(array $options = [])
     {
         if ($this->components == 1) {
-            return $this->value->getShort();
+            return $this->dataElement->getShort();
         }
         $ret = [];
         for ($i = 0; $i < $this->components; $i++) {
-            $ret[] = $this->value->getShort($i * 2);
+            $ret[] = $this->dataElement->getShort($i * 2);
         }
         return $ret;
     }

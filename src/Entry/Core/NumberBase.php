@@ -27,7 +27,7 @@ abstract class NumberBase extends EntryBase
     protected function validateDataElement(): void
     {
         // Check that the data size is consistent.
-        if ($this->components * $this->formatSize !== $this->value->getSize()) {
+        if ($this->components * $this->formatSize !== $this->dataElement->getSize()) {
             $this->error('Invalid data size.');
             $this->parsed = false;
             $this->valid = false;
