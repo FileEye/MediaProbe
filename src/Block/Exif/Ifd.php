@@ -115,6 +115,7 @@ class Ifd extends ListBase
      */
     protected function getItemDefinitionFromData(int $seq, DataElement $data_element, int $offset, int $data_offset_shift = 0, string $fallback_collection_id = null): ItemDefinition
     {
+// dump([$seq, $offset, $data_offset_shift, $fallback_collection_id]);
         $id = $data_element->getShort($offset);
         $format = $data_element->getShort($offset + 2);
         $components = $data_element->getLong($offset + 4);
@@ -191,12 +192,17 @@ class Ifd extends ListBase
                 continue;
             }
 
-            $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
-            $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
-            $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
-
             $data = $sub_block->toBytes($byte_order, $data_area_offset);
-//if ($sub_block->getAttribute('name') === 'CanonCameraInfo') dump('IFD entry', $sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($data));
+
+            $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
+            if ((int) $sub_block->getAttribute('id') === 37500) {
+                $bytes .= ConvertBytes::fromShort(ItemFormat::UNDEFINED, $byte_order);
+                $bytes .= ConvertBytes::fromLong(strlen($data), $byte_order);
+            } else {
+                $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
+                $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
+            }
+
             $s = strlen($data);
             if ($s > 4) {
                 $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
@@ -207,7 +213,6 @@ class Ifd extends ListBase
                 // fill out the four bytes available.
                 $bytes .= $data . str_repeat(chr(0), 4 - $s);
             }
-//if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump('IFD data', $data_area_offset, MediaProbe::dumpHexFormatted($bytes), MediaProbe::dumpHexFormatted($data_area_bytes));
         }
 
         // Thumbnail.
@@ -319,7 +324,7 @@ class Ifd extends ListBase
     }
 
     /**
-     * Converts a maker note tag to an IFD structure for dumping.
+     * Converts a maker note tag to an IFD structure.
      *
      * @param DataWindow $d
      *            the data window that will provide the data.
@@ -364,8 +369,11 @@ class Ifd extends ListBase
         // xxx
         $ifd->setAttribute('id', 37500);
         $ifd->setAttribute('name', $maker_note_ifd_name);
-        $data = new DataWindow($d, $maker_note_tag->getElement("entry")->getValue()[1]);
-        $ifd->parseData($data, $maker_note_tag->getElement("entry")->getValue()[1], null, -$maker_note_tag->getElement("entry")->getValue()[1]);
+        $data = $maker_note_tag->getElement("entry")->getDataElement();
+// dump(MediaProbe::dumpHexFormatted($data->getBytes()));
+        // @todo the netting of the dataOffset is a Canon only thing, move to vendor
+        // @todo xxx this is incorrect, parsing should happen indepentently from add'l offset
+        $ifd->parseData($data, 0, null, -$maker_note_tag->getDefinition()->getDataOffset());
 
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");

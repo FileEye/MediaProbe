@@ -18,7 +18,7 @@ class ExposureCompensation extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return $this->canonEv($this->value[0]);
+        return $this->canonEv(parent::getValue());
     }
 
     /**

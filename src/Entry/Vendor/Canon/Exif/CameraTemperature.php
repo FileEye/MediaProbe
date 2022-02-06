@@ -15,7 +15,7 @@ class CameraTemperature extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0] === 0 ? 0 : $this->value[0] - 128;
+        return parent::getValue() === 0 ? 0 : parent::getValue() - 128;
     }
 
     /**

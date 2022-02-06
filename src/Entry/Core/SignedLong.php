@@ -28,29 +28,29 @@ class SignedLong extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $format;
+    protected $formatSize = 4;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = -2147483648;
+    const MIN = -2147483648;
+    const MAX = 2147483647;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 2147483647;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): int
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getSignedLong($i * 4);
+        return $this->value->getSignedLong($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->value->getSignedLong();
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->value->getSignedLong($i * 4);
+        }
+        return $ret;
     }
 
     /**

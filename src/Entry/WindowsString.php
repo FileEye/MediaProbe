@@ -5,7 +5,7 @@ namespace FileEye\MediaProbe\Entry;
 use FileEye\MediaProbe\Block\BlockBase;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Entry\Core\Byte;
+use FileEye\MediaProbe\Entry\Core\EntryBase;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -20,7 +20,7 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  * The data is written in a non-standard format and can thus not be loaded
  * directly --- this class is needed to translate it into normal PHP strings.
  */
-class WindowsString extends Byte
+class WindowsString extends EntryBase
 {
       // xx @todo to be cleaned up as when back to byest is not identical
 
@@ -32,57 +32,34 @@ class WindowsString extends Byte
     /**
      * {@inheritdoc}
      */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
-    {
-        $bytes = $data_element->getBytes(0, min($data_element->getSize(), $item_definition->getValuesCount()));
-        // Remove any question marks that have been introduced because of illegal characters.
-        $value = str_replace('?', '', mb_convert_encoding($bytes, 'UTF-8', 'UCS-2LE'));
-        $this->setValue([$value]);
-        return $this;
-    }
+    protected $formatName = 'Byte';
 
-    /**
-     * {@inheritdoc}
-     */
-    public function setValue(array $data)
+    protected function validateDataElement(): void
     {
-        $php_string = rtrim($data[0], "\0");
-        $windows_string = mb_convert_encoding($php_string, 'UCS-2LE', 'auto');
-        $this->components = strlen($windows_string) + 2;
-        $this->value = [$php_string, $windows_string];
-
         $this->debug("text: {text}", ['text' => $this->toString()]);
-
-        $this->parsed = true;
-        return $this;
     }
 
-    /**
-     * Returns the value of the string.
-     *
-     * @return array
-     *            key 0 - the string in PHP format.
-     *            key 1 - the string in Windows format (UCS-2LE).
-     */
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
+        $type = $options['type'] ?? 'php';
         switch ($format) {
-            case 'exiftool':
-                return $this->toString();
             case 'phpExif':
-                return mb_convert_encoding($this->value[0], '8bit');
+                $decoded = mb_convert_encoding($this->value->getBytes(), '8bit', 'UCS-2LE');
+                $trimmed = rtrim($decoded, "\0");
+                // As of PHP 8.1, illegal characters are replaced with a '?' character. For exiftool and BC
+                // with earlier PHP versions we remove them.
+                return str_replace('?', '', $trimmed);
+            case 'exiftool':
+                return $this->toString($options);
             default:
-                return $this->value;
+                switch ($type) {
+                    case 'php':
+                        return $this->toString($options) . chr(0);
+                    default:
+                        return $this->toString($options);
+                }
         }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
-    {
-        return $this->getValue()[1] . "\x0\x0";
     }
 
     /**
@@ -90,6 +67,17 @@ class WindowsString extends Byte
      */
     public function toString(array $options = []): string
     {
-        return $this->getValue()[0];
+        $format = $options['format'] ?? null;
+        $type = $options['type'] ?? 'php';
+        switch ($type) {
+            case 'php':
+                $decoded = mb_convert_encoding($this->value->getBytes(), 'UTF-8', 'UCS-2LE');
+                $trimmed = rtrim($decoded, "\0");
+                // As of PHP 8.1, illegal characters are replaced with a '?' character. For exiftool and BC
+                // with earlier PHP versions we remove them.
+                return str_replace('?', '', $trimmed);
+            default:
+                return $this->value->getBytes();
+        }
     }
 }

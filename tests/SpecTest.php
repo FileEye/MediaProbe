@@ -8,12 +8,14 @@ use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\ExifUserComment;
 use FileEye\MediaProbe\Entry\Time;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Test the Spec class.
@@ -87,7 +89,7 @@ class SpecTest extends MediaProbeTestCaseBase
      *
      * @dataProvider getTagTextProvider
      */
-    public function testGetTagText($expected_text, $expected_class, $parent_collection_id, $tag_name, array $args, $brief = false)
+    public function testGetTagText($expected_text, $expected_class, $parent_collection_id, $tag_name, string $args, $brief = false)
     {
         $ifd = $this->getMockBuilder(Ifd::class)
                     ->disableOriginalConstructor()
@@ -104,7 +106,7 @@ class SpecTest extends MediaProbeTestCaseBase
         $item_definition = new ItemDefinition($item_collection, $item_format);
         $entry_class_name = $item_definition->getEntryClass();
         $tag = new Tag($item_definition, $ifd);
-        new $entry_class_name($tag, $args);
+        new $entry_class_name($tag, new DataString($args));
 
         $this->assertInstanceOf($expected_class, $tag->getElement("entry"));
         $options['short'] = $brief;  // xx
@@ -118,112 +120,106 @@ class SpecTest extends MediaProbeTestCaseBase
     {
         return [
             'IFD0/PlanarConfiguration - value 1' => [
-                'Chunky', 'FileEye\MediaProbe\Entry\Core\Short', 'Tiff\Ifd0', 'PlanarConfiguration', [1],
+                'Chunky', 'FileEye\MediaProbe\Entry\Core\Short', 'Tiff\Ifd0', 'PlanarConfiguration', ConvertBytes::fromShort(1),
             ],
             'IFD0/PlanarConfiguration - missing mapping' => [
-                '6', 'FileEye\MediaProbe\Entry\Core\Short', 'Tiff\Ifd0', 'PlanarConfiguration', [6],
+                '6', 'FileEye\MediaProbe\Entry\Core\Short', 'Tiff\Ifd0', 'PlanarConfiguration', ConvertBytes::fromShort(6),
             ],
             'CanonPanoramaInformation/PanoramaDirection - value 4' => [
-                '2x2 Matrix (Clockwise)', 'FileEye\MediaProbe\Entry\Core\SignedShort', 'ExifMakerNotes\\Canon\\Panorama', 'PanoramaDirection', [4],
+                '2x2 Matrix (Clockwise)', 'FileEye\MediaProbe\Entry\Core\SignedShort', 'ExifMakerNotes\\Canon\\Panorama', 'PanoramaDirection', ConvertBytes::fromSignedShort(4),
             ],
             'CanonCameraSettings/LensType - value 493' => [
-                'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'FileEye\MediaProbe\Entry\Core\Short', 'ExifMakerNotes\\Canon\\CameraSettings', 'LensType', [493],
-            ],
-            'CanonCameraSettings/LensType - value 493.1' => [
-                'Canon EF 24-105mm f/4L IS USM', 'FileEye\MediaProbe\Entry\Core\Short', 'ExifMakerNotes\\Canon\\CameraSettings', 'LensType', [493.1],
+                'Canon EF 500mm f/4L IS II USM or EF 24-105mm f4L IS USM', 'FileEye\MediaProbe\Entry\Core\Short', 'ExifMakerNotes\\Canon\\CameraSettings', 'LensType', ConvertBytes::fromShort(493),
             ],
             'IFD0/YCbCrSubSampling - value 2, 1' => [
-                'YCbCr4:2:2', 'FileEye\MediaProbe\Entry\IfdYCbCrSubSampling', 'Tiff\Ifd0', 'YCbCrSubSampling', [2, 1],
+                'YCbCr4:2:2', 'FileEye\MediaProbe\Entry\IfdYCbCrSubSampling', 'Tiff\Ifd0', 'YCbCrSubSampling', ConvertBytes::fromShort(2) . ConvertBytes::fromShort(1),
             ],
             'IFD0/YCbCrSubSampling - value 2, 2' => [
-                'YCbCr4:2:0', 'FileEye\MediaProbe\Entry\IfdYCbCrSubSampling', 'Tiff\Ifd0', 'YCbCrSubSampling', [2, 2],
+                'YCbCr4:2:0', 'FileEye\MediaProbe\Entry\IfdYCbCrSubSampling', 'Tiff\Ifd0', 'YCbCrSubSampling', ConvertBytes::fromShort(2) . ConvertBytes::fromShort(2),
             ],
             'IFD0/YCbCrSubSampling - value 6, 7' => [
-                '6, 7', 'FileEye\MediaProbe\Entry\IfdYCbCrSubSampling', 'Tiff\Ifd0', 'YCbCrSubSampling', [6, 7],
+                '6, 7', 'FileEye\MediaProbe\Entry\IfdYCbCrSubSampling', 'Tiff\Ifd0', 'YCbCrSubSampling', ConvertBytes::fromShort(6) . ConvertBytes::fromShort(7),
             ],
             'Exif/SubjectArea - value 6, 7' => [
-                '(x,y) = (6,7)', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', [6, 7],
+                '(x,y) = (6,7)', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', ConvertBytes::fromShort(6) . ConvertBytes::fromShort(7),
             ],
             'Exif/SubjectArea - value 5, 6, 7' => [
-                'Within distance 5 of (x,y) = (6,7)', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', [5, 6, 7],
+                'Within distance 5 of (x,y) = (6,7)', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', ConvertBytes::fromShort(5) . ConvertBytes::fromShort(6) . ConvertBytes::fromShort(7),
             ],
             'Exif/SubjectArea - value 4, 5, 6, 7' => [
-                'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', [4, 5, 6, 7],
+                'Within rectangle (width 4, height 5) around (x,y) = (6,7)', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', ConvertBytes::fromShort(4) . ConvertBytes::fromShort(5) . ConvertBytes::fromShort(6) . ConvertBytes::fromShort(7),
             ],
             'Exif/SubjectArea - wrong components' => [
-                'Unexpected number of components (1, expected 2, 3, or 4).', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', [6],
+                'Unexpected number of components (1, expected 2, 3, or 4).', 'FileEye\MediaProbe\Entry\ExifSubjectArea', 'Tiff\IfdExif', 'SubjectArea', ConvertBytes::fromShort(6),
             ],
             'Exif/FNumber - value 60, 10' => [
-                'f/6.0', 'FileEye\MediaProbe\Entry\ExifFNumber', 'Tiff\IfdExif', 'FNumber', [[60, 10]],
+                'f/6.0', 'FileEye\MediaProbe\Entry\ExifFNumber', 'Tiff\IfdExif', 'FNumber', ConvertBytes::fromRational([60, 10]),
             ],
             'Exif/FNumber - value 26, 10' => [
-                'f/2.6', 'FileEye\MediaProbe\Entry\ExifFNumber', 'Tiff\IfdExif', 'FNumber', [[26, 10]],
+                'f/2.6', 'FileEye\MediaProbe\Entry\ExifFNumber', 'Tiff\IfdExif', 'FNumber', ConvertBytes::fromRational([26, 10]),
             ],
             'Exif/ApertureValue - value 60, 10' => [
-                '8.0', 'FileEye\MediaProbe\Entry\ExifApertureValue', 'Tiff\IfdExif', 'ApertureValue', [[60, 10]],
+                '8.0', 'FileEye\MediaProbe\Entry\ExifApertureValue', 'Tiff\IfdExif', 'ApertureValue', ConvertBytes::fromRational([60, 10]),
             ],
             'Exif/ApertureValue - value 26, 10' => [
-                '2.5', 'FileEye\MediaProbe\Entry\ExifApertureValue', 'Tiff\IfdExif', 'ApertureValue', [[26, 10]],
+                '2.5', 'FileEye\MediaProbe\Entry\ExifApertureValue', 'Tiff\IfdExif', 'ApertureValue', ConvertBytes::fromRational([26, 10]),
             ],
             'Exif/FocalLength - value 60, 10' => [
-                '6.0 mm', 'FileEye\MediaProbe\Entry\ExifFocalLength', 'Tiff\IfdExif', 'FocalLength', [[60, 10]],
+                '6.0 mm', 'FileEye\MediaProbe\Entry\ExifFocalLength', 'Tiff\IfdExif', 'FocalLength', ConvertBytes::fromRational([60, 10]),
             ],
             'Exif/FocalLength - value 26, 10' => [
-                '2.6 mm', 'FileEye\MediaProbe\Entry\ExifFocalLength', 'Tiff\IfdExif', 'FocalLength', [[26, 10]],
+                '2.6 mm', 'FileEye\MediaProbe\Entry\ExifFocalLength', 'Tiff\IfdExif', 'FocalLength', ConvertBytes::fromRational([26, 10]),
             ],
             'Exif/SubjectDistance - value 60, 10' => [
-                '6.0 m', 'FileEye\MediaProbe\Entry\ExifSubjectDistance', 'Tiff\IfdExif', 'SubjectDistance', [[60, 10]],
+                '6.0 m', 'FileEye\MediaProbe\Entry\ExifSubjectDistance', 'Tiff\IfdExif', 'SubjectDistance', ConvertBytes::fromRational([60, 10]),
             ],
             'Exif/SubjectDistance - value 26, 10' => [
-                '2.6 m', 'FileEye\MediaProbe\Entry\ExifSubjectDistance', 'Tiff\IfdExif', 'SubjectDistance', [[26, 10]],
+                '2.6 m', 'FileEye\MediaProbe\Entry\ExifSubjectDistance', 'Tiff\IfdExif', 'SubjectDistance', ConvertBytes::fromRational([26, 10]),
             ],
             'Exif/ExposureTime - value 60, 10' => [
-                '6 sec.', 'FileEye\MediaProbe\Entry\ExifExposureTime', 'Tiff\IfdExif', 'ExposureTime', [[60, 10]],
+                '6 sec.', 'FileEye\MediaProbe\Entry\ExifExposureTime', 'Tiff\IfdExif', 'ExposureTime', ConvertBytes::fromRational([60, 10]),
             ],
             'Exif/ExposureTime - value 5, 10' => [
-                '1/2 sec.', 'FileEye\MediaProbe\Entry\ExifExposureTime', 'Tiff\IfdExif', 'ExposureTime', [[5, 10]],
+                '1/2 sec.', 'FileEye\MediaProbe\Entry\ExifExposureTime', 'Tiff\IfdExif', 'ExposureTime', ConvertBytes::fromRational([5, 10]),
             ],
             'GPS/GPSLongitude' => [
-                '30° 45\' 28" (30.76°)', 'FileEye\MediaProbe\Entry\GPSDegrees', 'Tiff\IfdGps', 'GPSLongitude', [[30, 1], [45, 1], [28, 1]],
+                '30° 45\' 28" (30.76°)', 'FileEye\MediaProbe\Entry\GPSDegrees', 'Tiff\IfdGps', 'GPSLongitude', ConvertBytes::fromRational([30, 1]) . ConvertBytes::fromRational([45, 1]) . ConvertBytes::fromRational([28, 1]),
             ],
             'GPS/GPSLatitude' => [
-                '50° 33\' 12" (50.55°)', 'FileEye\MediaProbe\Entry\GPSDegrees', 'Tiff\IfdGps', 'GPSLatitude', [[50, 1], [33, 1], [12, 1]],
+                '50° 33\' 12" (50.55°)', 'FileEye\MediaProbe\Entry\GPSDegrees', 'Tiff\IfdGps', 'GPSLatitude', ConvertBytes::fromRational([50, 1]) . ConvertBytes::fromRational([33, 1]) . ConvertBytes::fromRational([12, 1]),
             ],
             'Exif/ShutterSpeedValue - value 5, 10' => [
-                '5/10 sec. (APEX: 1)', 'FileEye\MediaProbe\Entry\ExifShutterSpeedValue', 'Tiff\IfdExif', 'ShutterSpeedValue', [[5, 10]],
-            ],
-            'Exif/BrightnessValue - value 5, 10' => [
-                '0.5', 'FileEye\MediaProbe\Entry\ExifBrightnessValue', 'Tiff\IfdExif', 'BrightnessValue', [[5, 10]],
+                '5/10 sec. (APEX: 1)', 'FileEye\MediaProbe\Entry\ExifShutterSpeedValue', 'Tiff\IfdExif', 'ShutterSpeedValue', ConvertBytes::fromSignedRational([5, 10]),
             ],
             'Exif/ExposureBiasValue - value 5, 10' => [
-                '+0.5', 'FileEye\MediaProbe\Entry\ExifExposureBiasValue', 'Tiff\IfdExif', 'ExposureCompensation', [[5, 10]],
+                '+0.5', 'FileEye\MediaProbe\Entry\ExifExposureBiasValue', 'Tiff\IfdExif', 'ExposureCompensation', ConvertBytes::fromSignedRational([5, 10]),
             ],
             'Exif/ExposureBiasValue - value -5, 10' => [
-                '-0.5', 'FileEye\MediaProbe\Entry\ExifExposureBiasValue', 'Tiff\IfdExif', 'ExposureCompensation', [[-5, 10]],
+                '-0.5', 'FileEye\MediaProbe\Entry\ExifExposureBiasValue', 'Tiff\IfdExif', 'ExposureCompensation', ConvertBytes::fromSignedRational([-5, 10]),
             ],
             'Exif/ExifVersion - short' => [
-                '2.2', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'ExifVersion', ['0220'], true,
+                '2.2', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'ExifVersion', '0220', true,
             ],
             'Exif/FlashPixVersion - short' => [
-                '2.5', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FlashpixVersion', ['0250'], true,
+                '2.5', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FlashpixVersion', '0250', true,
             ],
             'Interoperability/InteropVersion - short' => [
-                '1.0', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdInteroperability', 'InteropVersion', ['0100'], true,
+                '1.0', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdInteroperability', 'InteropVersion', '0100', true,
             ],
             'Exif/ComponentsConfiguration' => [
-                'Y, Cb, Cr, -', 'FileEye\MediaProbe\Entry\ExifComponentsConfiguration', 'Tiff\IfdExif', 'ComponentsConfiguration', ["\x01\x02\x03\0"],
+                'Y, Cb, Cr, -', 'FileEye\MediaProbe\Entry\ExifComponentsConfiguration', 'Tiff\IfdExif', 'ComponentsConfiguration', "\x01\x02\x03\x00",
             ],
             'Exif/FileSource' => [
-                'Digital Camera', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FileSource', ["\x03"],
+                'Digital Camera', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FileSource', "\x03",
             ],
             'Exif/FileSource - unmatched' => [
-                '1 byte(s) of data', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FileSource', ["\x07"],
+                '1 byte(s) of data', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FileSource', "\x07",
             ],
 //            'Exif/FileSource - Sigma Digital Camera' => [
-//                'Sigma Digital Camera', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FileSource', ["\x03\x00\x00\x00"],
+//                'Sigma Digital Camera', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'FileSource', "\x03\x00\x00\x00",
 //            ],
             'Exif/SceneType' => [
-                'Directly photographed', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'SceneType', ["\x01"],
+                'Directly photographed', 'FileEye\MediaProbe\Entry\Core\Undefined', 'Tiff\IfdExif', 'SceneType', "\x01",
             ],
         ];
     }

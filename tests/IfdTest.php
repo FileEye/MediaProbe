@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Exif\Ifd;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tag;
@@ -24,10 +25,10 @@ class IfdTest extends MediaProbeTestCaseBase
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 
         $tag1 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x010E), ItemFormat::ASCII), $ifd);
-        $desc = new Ascii($tag1, ['Hello?']);
+        $desc = new Ascii($tag1, new DataString('Hello?' . chr(0)));
 
         $tag2 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x0132), ItemFormat::ASCII, 20), $ifd);
-        $date = new Time($tag2, [12345678]);
+        $date = new Time($tag2, new DataString('12345678' . chr(0)));
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));
 

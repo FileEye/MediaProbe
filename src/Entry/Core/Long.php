@@ -27,29 +27,29 @@ class Long extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $format;
+    protected $formatSize = 4;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = 0;
+    const MIN = 0;
+    const MAX = 4294967295;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 4294967295;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): int
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getLong($i * 4);
+        return $this->value->getLong($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->value->getLong();
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->value->getLong($i * 4);
+        }
+        return $ret;
     }
 
     /**

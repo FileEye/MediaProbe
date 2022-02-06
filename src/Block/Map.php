@@ -38,7 +38,6 @@ class Map extends Index
         parent::__construct($definition, $parent, $reference);
         $this->components = $definition->getValuesCount();
         $this->format = $definition->getFormat();
-//dump($definition);
     }
 
     /**
@@ -51,6 +50,7 @@ class Map extends Index
         // Preserve the entire map as a raw data block.
         $mapdata = new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']));
         $this->addBlock($mapdata)->parseData($data);
+// dump(['doParseData', $this->getAttribute('name'), MediaProbe::dumpHexFormatted($data->getBytes())]);
 
         $i = 0;
         foreach ($this->getCollection()->listItemIds() as $item) {
@@ -87,9 +87,13 @@ class Map extends Index
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false): string
     {
-        $data_bytes = $this->getElement("rawData[@name='mapdata']/entry")->getValue();
+        $mapDataElement = $this->getElement("rawData[@name='mapdata']/entry");
+        if ($mapDataElement === null) {
+            return '';
+        }
+        $mapDataBytes = $mapDataElement->toBytes();
 //if ($this->getAttribute('name') === 'CanonFilterInfo') dump($offset, MediaProbe::dumpHexFormatted($data_element->getBytes($offset - 1024, 10000)));
-//dump($this->getAttribute('name'), MediaProbe::dumpHexFormatted($data_bytes));
+//dump(['toBytes', $this->getAttribute('name'), MediaProbe::dumpHexFormatted($mapDataBytes)]);
 
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
@@ -97,13 +101,13 @@ class Map extends Index
             $bytes = $sub->toBytes($byte_order);
             $bytes_length = strlen($bytes);
 
-            $tmp = substr($data_bytes, 0, $bytes_offset);
+            $tmp = substr($mapDataBytes, 0, $bytes_offset);
             $tmp .= $bytes;
-            $tmp .= substr($data_bytes, $bytes_offset + $bytes_length);
+            $tmp .= substr($mapDataBytes, $bytes_offset + $bytes_length);
 
-            $data_bytes = $tmp;
+            $mapDataBytes = $tmp;
         }
 
-        return $data_bytes;
+        return $mapDataBytes;
     }
 }

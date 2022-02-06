@@ -1,76 +1,12 @@
-name: Tests
+- name: Image file dumps
+  continue-on-error: true
+  run: php examples/dump-media.php -d -w tests/media-samples/image/broken/canon-eos-650d.jpg
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
-jobs:
-
-  php-version:
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        php-version:
-          - "7.2"
-          - "7.3"
-          - "7.4"
-          - "8.0"
-          - "8.1"
-#          - "8.2"
-
-    steps:
-    - name: Install PHP
-      uses: "shivammathur/setup-php@v2"
-      with:
-        php-version: "${{ matrix.php-version }}"
-        coverage: "none"
-        extensions: "yaml"
-        ini-values: "zend.assertions=1"
-
-    - uses: actions/checkout@v2
-
-    - name: Validate composer.json and composer.lock
-      run: composer validate
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ matrix.php-version }}-v2-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-${{ matrix.php-version }}-v2-
-
-    - name: Install dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --no-suggest
-
-    - name: Pre-flight checks
-      run: |
-        php bin/fileeye-mediaprobe --version
-        # Remove the comment to the lines below during development, to let
-        # re-compile the specification PHP file from the YAML files, and refresh
-        # the media file dumps.
-        php bin/fileeye-mediaprobe compile
-        # php bin/fileeye-mediaprobe dump tests/media-samples tests/media-dumps
-
-    - name: Image file dumps
-      continue-on-error: true
-      run: |
-        php examples/dump-media.php -d -w tests/media-samples/image/broken/canon-eos-650d.jpg
-        php examples/dump-media.php -d    tests/media-samples/image/broken/canon-eos-650d.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/broken/gh-10-b.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-10-b.jpg-rewrite.img
-
-  #      php examples/dump-media.php -d -w tests/media-samples/image/broken/canon-eos-650d.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/broken/canon-eos-650d.jpg-rewrite.img
         #php examples/dump-media.php -d -w tests/media-samples/image/exiftool/Canon1DmkIII.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon1DmkIII.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/exiftool/Canon.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon.jpg-rewrite.img
         #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-powershot-s60.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-powershot-s60.jpg-rewrite.img
@@ -80,7 +16,8 @@ jobs:
         #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg-rewrite.img
         #php examples/dump-media.php -d -w tests/media-samples/image/camera/apple-iphone7.JPG
         #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone7.JPG-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/apple-iphone11.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone11.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/nikon-coolscan-iv.jpg
         #php examples/dump-media.php -d -w tests/media-samples/image/camera/nikon-e5000.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/camera/nikon-e5000.jpg-rewrite.img
         #php examples/dump-media.php -d    tests/media-samples/image/camera/pentax-istDS.jpg
@@ -99,9 +36,9 @@ jobs:
         #php examples/dump-media.php -d    tests/media-samples/image/gh-16.jpg-rewrite.img
         #php examples/dump-media.php -d -w tests/media-samples/image/gh-21.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/gh-21.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/gh-77.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/gh-77.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/gh-77.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/test-tags-1.jpg
+        #php examples/dump-media.php -d -w tests/media-samples/image/test-tags-1.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/test-tags-1.jpg-rewrite.img
         #php examples/dump-media.php -d -w tests/media-samples/image/no-exif.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/no-exif.jpg-rewrite.img
@@ -113,15 +50,8 @@ jobs:
         #php examples/dump-media.php -d    tests/media-samples/image/camera/olympus-c765uz.jpg
         #php examples/dump-media.php -d -w tests/media-samples/image/camera/fujifilm_x_a5.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/camera/fujifilm_x_a5.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/canon_eos_70d_29.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_70d_29.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_70d_29.jpg-rewrite.img
         #php examples/dump-media.php -d -w tests/media-samples/image/camera/canon_eos_850d_08.jpg
         #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_850d_08.jpg-rewrite.img
         #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
-
-    - name: Run test suite
-      run: vendor/bin/phpunit ./tests
-
-    - name: Code style test
-      if: ${{ matrix.php-version == 7.4 }}
-      run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1

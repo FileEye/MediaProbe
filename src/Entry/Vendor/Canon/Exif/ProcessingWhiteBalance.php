@@ -15,7 +15,7 @@ class ProcessingWhiteBalance extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        if ($this->value[0] < 0) {
+        if (parent::getValue() < 0) {
             if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='WhiteBalance']/entry")) {
                 return $alternate->getValue($options);
             }
@@ -23,6 +23,6 @@ class ProcessingWhiteBalance extends SignedShort
                 return $alternate->getValue($options);
             }
         }
-        return $this->value[0];
+        return parent::getValue();
     }
 }

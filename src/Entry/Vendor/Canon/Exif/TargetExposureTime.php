@@ -17,7 +17,7 @@ class TargetExposureTime extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return exp(-$this->canonEv($this->value[0]) * log(2));
+        return exp(-$this->canonEv(parent::getValue()) * log(2));
     }
 
     /**

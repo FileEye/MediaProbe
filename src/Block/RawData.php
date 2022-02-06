@@ -43,7 +43,7 @@ class RawData extends BlockBase
      */
     protected function doParseData(DataElement $data): void
     {
-        new Undefined($this, [$data->getBytes()]);
+        new Undefined($this, $data);
     }
 
     /**

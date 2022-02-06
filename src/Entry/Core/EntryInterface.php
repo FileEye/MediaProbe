@@ -24,14 +24,4 @@ interface EntryInterface extends ElementInterface
      * @return int
      */
     public function getComponents();
-
-    /**
-     * Sets the value of this entry.
-     *
-     * @param array
-     *            the new value.
-     *
-     * @return $this
-     */
-    public function setValue(array $value);
 }

@@ -122,8 +122,8 @@ elements:
                                                             class: FileEye\MediaProbe\Entry\WindowsString
                                                             parsed: true
                                                             format: Byte
-                                                            components: 2
-                                                            bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                            components: 1
+                                                            bytesHash: 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
                                                             text: ''
                                                 -
                                                     node: tag
@@ -160,7 +160,7 @@ elements:
                                                             format: Ascii
                                                             components: 11
                                                             bytesHash: 8082e900bcd25e2f020ec7473bdc84b09feba7c72eba59119286e9bb8efb2dfc
-                                                            text: '0000:00:00 00:00:00'
+                                                            text: '1509749992'
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
@@ -291,8 +291,8 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Ascii
                             parsed: true
                             format: Ascii
-                            components: 18
-                            bytesHash: 13b9871a286d9d10af675161201c67198c4db756b96cedbfe944be8aa623416d
+                            components: 17
+                            bytesHash: 31af3a71e475036fc7427bee0a875861b66aae02154d4d28048187025673510a
                             text: 'Created with GIMP'
                 -
                     node: jpegSegment
@@ -430,8 +430,15 @@ log:
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
             message: 'Found 11 data components, expected 20'
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
+            message: 'Invalid datetime format for ''1509749992'''
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
             message: 'Found Byte data format, expected Undefined'
+    NOTICE:
+        -
+            path: '/media/jpeg/jpegSegment:COM:254/entry'
+            message: 'Ascii entry missing final NUL character.'
 gdInfo:
     0: 320
     1: 200
@@ -442,7 +449,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: misplaced-exif.jpg
-    FileDateTime: 1639748137
+    FileDateTime: 1644099378
     FileSize: 4587
     FileType: 2
     MimeType: image/jpeg

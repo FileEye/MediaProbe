@@ -23,45 +23,15 @@ class Ascii extends EntryBase
      */
     protected $formatName = 'Ascii';
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $format;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function validateDataElement(): void
     {
-        $bytes = $data_element->getBytes();
-
-        // Check the last byte is NULL.
-        if (substr($bytes, -1) !== "\x0") {
+        // Check the last byte is NUL.
+        if (substr($this->value->getBytes(), -1) !== "\x0") {
             $this->notice('Ascii entry missing final NUL character.');
-        }
-
-        $this->setValue([$bytes]);
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setValue(array $data)
-    {
-        parent::setValue($data);
-
-        $str = isset($data[0]) ? $data[0] : '';
-
-        $this->value = $str;
-        if ($this->value === null || $this->value === '') {
-            $this->components = 1;
-        } else {
-            $this->components = substr($this->value, -1) === "\x0" ? strlen($str) : strlen($str) + 1;
+            $this->valid = false;
         }
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
-        return $this;
     }
 
     /**
@@ -70,7 +40,7 @@ class Ascii extends EntryBase
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
-        $val = rtrim($this->value, "\x0");
+        $val = rtrim($this->value->getBytes(), "\x0");
         if ($format === 'exiftool') {
             $val = rtrim($val, " ");
             $first_zero_pos = strpos($val, "\x0");
@@ -82,21 +52,10 @@ class Ascii extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
-    {
-        if ($this->value === null || $this->value === '') {
-            return "\x0";
-        }
-        return substr($this->value, -1) === "\x0" ? $this->value : $this->value . "\x0";
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
-        $first_zero_pos = strpos($this->value, "\x0");
-        $value = substr($this->value, 0, $first_zero_pos === false ? strlen($this->value) : $first_zero_pos);
+        $first_zero_pos = strpos($this->value->getBytes(), "\x0");
+        $value = substr($this->value->getBytes(), 0, $first_zero_pos === false ? strlen($this->value->getBytes()) : $first_zero_pos);
         return $this->resolveText($value);
     }
 }

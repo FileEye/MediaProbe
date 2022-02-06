@@ -9,6 +9,7 @@ use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
@@ -31,7 +32,7 @@ class RunTime extends ListBase
             $item_definition = new ItemDefinition($item_collection, $item_format);
             $tag = new Tag($item_definition, $this);
             $entry_class = $item_definition->getEntryClass();
-            new $entry_class($tag, [$value]);
+            new $entry_class($tag, new DataString((string) $value));
             $tag->parsed = true;
         }
     }

@@ -38,7 +38,7 @@ class Index extends ListBase
         // itself). This should match the size determined in the parent IFD.
         if ($this->getCollection()->getPropertyValue('hasIndexSize')) {
             $offset = 0;
-            $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0])[0];
+            $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0]);
             if ($index_size !== $this->getDefinition()->getSize()) {
                 $this->warning("Size mismatch between IFD and index header");
             }
@@ -107,53 +107,60 @@ class Index extends ListBase
     /**
      * @todo xxx
      */
-    protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): array
+    protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1)
     {
-        if ($format === ItemFormat::ASCII) {
-            $value = $data_element->getBytes($offset, $count);
-            $offset += $count;
-            return [$value];
+        $dataWindow = $this->getDataWindowFromData($data_element, $offset, $format, $count);
+        switch ($format) {
+            case ItemFormat::BYTE:
+                return $dataWindow->getByte();
+            case ItemFormat::SHORT:
+                return $dataWindow->getShort();
+            case ItemFormat::SHORT_REV:
+                return $dataWindow->getShortRev();
+            case ItemFormat::SIGNED_SHORT:
+                return $dataWindow->getSignedShort();
+            case ItemFormat::LONG:
+                return $dataWindow->getLong();
+            case ItemFormat::SIGNED_LONG:
+                return $dataWindow->getSignedLong();
+            case ItemFormat::RATIONAL:
+                return $dataWindow->getRational();
+            case ItemFormat::SIGNED_RATIONAL:
+                return $dataWindow->getSignedRational();
+            default:
+                $this->error("Unsupported format.");
         }
-        $value = [];
-        for ($h = 0; $h < $count; $h++) {
-            switch ($format) {
-                case ItemFormat::BYTE:
-                case ItemFormat::UNDEFINED:
-                    $value[] = $data_element->getByte($offset);
-                    $offset++;
-                    break;
-                case ItemFormat::SHORT:
-                    $value[] = $data_element->getShort($offset);
-                    $offset += 2;
-                    break;
-                case ItemFormat::SHORT_REV:
-                    $value[] = $data_element->getShortRev($offset);
-                    $offset += 2;
-                    break;
-                case ItemFormat::SIGNED_SHORT:
-                    $value[] = $data_element->getSignedShort($offset);
-                    $offset += 2;
-                    break;
-                case ItemFormat::LONG:
-                    $value[] = $data_element->getLong($offset);
-                    $offset += 4;
-                    break;
-                case ItemFormat::SIGNED_LONG:
-                    $value[] = $data_element->getSignedLong($offset);
-                    $offset += 4;
-                    break;
-                case ItemFormat::RATIONAL:
-                    $value[] = $data_element->getRational($offset);
-                    $offset += 8;
-                    break;
-                case ItemFormat::SIGNED_RATIONAL:
-                    $value[] = $data_element->getSignedRational($offset);
-                    $offset += 8;
-                    break;
-                default:
-                    $this->error("Unsupported format.");
-            }
+    }
+
+    /**
+     * @todo xxx
+     */
+    protected function getDataWindowFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): DataWindow
+    {
+        switch ($format) {
+            case ItemFormat::ASCII:
+            case ItemFormat::BYTE:
+            case ItemFormat::UNDEFINED:
+                $size = 1;
+                break;
+            case ItemFormat::SHORT:
+            case ItemFormat::SHORT_REV:
+            case ItemFormat::SIGNED_SHORT:
+                $size = 2;
+                break;
+            case ItemFormat::LONG:
+            case ItemFormat::SIGNED_LONG:
+                $size = 4;
+                break;
+            case ItemFormat::RATIONAL:
+            case ItemFormat::SIGNED_RATIONAL:
+                $size = 8;
+                break;
+            default:
+                $this->error("Unsupported format.");
         }
+        $value = new DataWindow($data_element, $offset, $count * $size);
+        $offset += ($count * $size);
         return $value;
     }
 

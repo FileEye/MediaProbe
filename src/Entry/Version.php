@@ -20,31 +20,13 @@ class Version extends Undefined
      */
     protected $name = 'Version';
 
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function validateDataElement(): void
     {
-        $this->setValue([$data_element->getBytes(0, $item_definition->getValuesCount())]);
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setValue(array $data)
-    {
-        $this->parsed = true;
-
-        if (!is_numeric($data[0])) {
+        if (!is_numeric($this->value->getBytes())) {
             $this->error('Incorrect version data.');
             $this->parsed = false;
+            $this->valid = false;
         }
-
-        $this->value = $data[0];
-        $this->components = strlen($this->value);
-        $this->debug("text: {text}", ['text' => $this->toString()]);
-        return $this;
     }
 
     /**
@@ -54,10 +36,10 @@ class Version extends Undefined
     {
         $format = $options['format'] ?? null;
         if (in_array($format, ['phpExif', 'exiftool'])) {
-            return $this->value;
+            return $this->value->getBytes();
         }
-        if (isset($this->value) && is_numeric($this->value)) {
-            $version = $this->value / 100;
+        if (is_numeric($this->value->getBytes())) {
+            $version = $this->value->getBytes() / 100;
         } else {
             $version = 0;
         }
@@ -65,14 +47,6 @@ class Version extends Undefined
         $minor = ($version - $major) * 100;
 
         return $version . ($minor === 0.0 ? '.0' : '');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
-    {
-        return $this->value;
     }
 
     /**

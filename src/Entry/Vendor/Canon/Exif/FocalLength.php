@@ -19,9 +19,9 @@ class FocalLength extends Short
         if (!$focal_units = $this->getRootElement()->getElement("//makerNote[@name='Canon']//tag[@name='FocalUnits']/entry")) {
             $denominator = 1;
         } else {
-            $denominator = $focal_units->getValue();
+            $denominator = $focal_units->getValue() ?: 1;
         }
 
-        return $this->value[0] / $denominator;
+        return parent::getValue() / $denominator;
     }
 }

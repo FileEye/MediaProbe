@@ -4,15 +4,16 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Exif\Exif;
 use FileEye\MediaProbe\Block\Exif\Ifd;
-use FileEye\MediaProbe\ItemFormat;
-use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Media;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\WindowsString;
-use FileEye\MediaProbe\Block\Jpeg;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Media;
+use FileEye\MediaProbe\MediaProbe;
 
 class GH16Test extends MediaProbeTestCaseBase
 {
@@ -44,7 +45,7 @@ class GH16Test extends MediaProbeTestCaseBase
         $ifd0->removeElement("tag[@name='XPSubject']");
         $new_entry_value = "Превед, медвед!";
         $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x9C9F), ItemFormat::BYTE), $ifd0);
-        new WindowsString($tag, [$new_entry_value]);
+        new WindowsString($tag, new DataString(mb_convert_encoding($new_entry_value, 'UCS-2LE', 'UTF-8') . "\x00\x00"));
         $this->assertCount(1, $ifd0->getMultipleElements('tag'));
         $this->assertEquals($new_entry_value, $ifd0->getElement("tag[@name='XPSubject']")->toString());
         $media->saveToFile($this->file);

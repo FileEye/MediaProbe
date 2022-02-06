@@ -31,17 +31,18 @@ class ApertureRange extends SignedLong
     {
         if (($options['format'] ?? null) === 'exiftool') {
             $v = [];
-            switch (count($this->value)) {
+            $value = parent::getValue();
+            switch (count($value)) {
                 case 3:
-                    $v[0] = $this->value[0];
-                    $v[1] = exp(($this->value[1] / 8 - 1) * log(2) / 2);
-                    $v[2] = exp(($this->value[2] / 8 - 1) * log(2) / 2);
+                    $v[0] = $value[0];
+                    $v[1] = exp(($value[1] / 8 - 1) * log(2) / 2);
+                    $v[2] = exp(($value[2] / 8 - 1) * log(2) / 2);
                     break;
                 case 4:
-                    $v[0] = exp($this->value[0] / 2400);
-                    $v[1] = exp($this->value[1] / 2400);
-                    $v[2] = exp($this->value[2] / 2400);
-                    $v[3] = exp($this->value[3] / 2400);
+                    $v[0] = exp($value[0] / 2400);
+                    $v[1] = exp($value[1] / 2400);
+                    $v[2] = exp($value[2] / 2400);
+                    $v[3] = exp($value[3] / 2400);
                     break;
             }
             return implode(' ', $v);

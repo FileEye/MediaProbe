@@ -17,7 +17,7 @@ class ExifShutterSpeedValue extends SignedRational
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            $val = $this->value[0][0] / $this->value[0][1];
+            $val = $this->value->getSignedRationalFloat();
             $val = abs($val) < 100 ? pow(2, -$val) : 0;
             if ($val < 0.25001 && $val > 0) {
                 return 1 / ((int) (0.5 + 1 / $val));
@@ -35,7 +35,7 @@ class ExifShutterSpeedValue extends SignedRational
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            $val = $this->value[0][0] / $this->value[0][1];
+            $val = $this->value->getSignedRationalFloat();
             $val = abs($val) < 100 ? pow(2, -$val) : 0;
             if ($val < 0.25001 && $val > 0) {
                 return MediaProbe::fmt("1/%d", (int) (0.5 + 1 / $val));
@@ -44,7 +44,7 @@ class ExifShutterSpeedValue extends SignedRational
                 return preg_replace('/\.0$/', '', $val);
             }
         } else {
-            return MediaProbe::fmt('%.0f/%.0f sec. (APEX: %d)', $this->value[0][0], $this->value[0][1], pow(sqrt(2), $this->value[0][0] / $this->value[0][1]));
+            return MediaProbe::fmt('%.0f/%.0f sec. (APEX: %d)', $this->value->getSignedLong(0), $this->value->getSignedLong(4), pow(sqrt(2), $this->value->getSignedRationalFloat()));
         }
     }
 }
