@@ -18,13 +18,13 @@ class JpegSegmentCom extends JpegSegmentBase
     protected function doParseData(DataElement $data): void
     {
         // Adds the segment data as an Ascii entry.
-        new Ascii($this, [$data->getBytes(4)]);
+        new Ascii($this, new DataWindow($data, 4));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         $data = rtrim($this->getElement("entry")->toBytes(), "\0");
         return chr(Jpeg::JPEG_DELIMITER) . chr($this->getAttribute('id')) . ConvertBytes::fromShort(strlen($data) + 2, ConvertBytes::BIG_ENDIAN) . $data;

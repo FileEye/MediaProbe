@@ -15,7 +15,7 @@ class FocusDistance extends Short
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0] / 100;
+        return parent::getValue() / 100;
     }
 
     /**

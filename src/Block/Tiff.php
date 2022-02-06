@@ -41,18 +41,29 @@ class Tiff extends BlockBase
         return 'image/tiff';
     }
 
+    public function setByteOrder(int $byteOrder): self
+    {
+        $this->byteOrder = $byteOrder;
+        return $this;
+    }
+
+    public function getByteOrder(): int
+    {
+        return $this->byteOrder;
+    }
+
     /**
      * {@inheritdoc}
      */
     protected function doParseData(DataElement $data): void
     {
         // Determine the byte order of the TIFF data.
-        $this->byteOrder = self::getTiffSegmentByteOrder($data);
-        $data->setByteOrder($this->byteOrder);
+        $this->setByteOrder(self::getTiffSegmentByteOrder($data));
+        $data->setByteOrder($this->getByteOrder());
 
         $this->debug('byte order: {byte_order} ({byte_order_description})', [
-            'byte_order' => $this->byteOrder === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
-            'byte_order_description' => $this->byteOrder === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
+            'byte_order' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
+            'byte_order_description' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
         ]);
 
         // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
@@ -108,17 +119,17 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         // TIFF byte order. 2 bytes running.
-        if ($this->byteOrder == ConvertBytes::LITTLE_ENDIAN) {
+        if ($this->getByteOrder() == ConvertBytes::LITTLE_ENDIAN) {
             $bytes = 'II';
         } else {
             $bytes = 'MM';
         }
 
         // TIFF magic number --- fixed value. 4 bytes running.
-        $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $this->byteOrder);
+        $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $this->getByteOrder());
 
         // Check if we have a image scan before first IFD.
         $scan = $this->getElement("rawData");
@@ -130,12 +141,12 @@ class Tiff extends BlockBase
         // bytes for the IFD0 offset itself). If raw data is present, this
         // will come before IFD0. 8 bytes running.
         if (!$ifd0) {
-            $bytes .= ConvertBytes::fromLong(0, $this->byteOrder);
+            $bytes .= ConvertBytes::fromLong(0, $this->getByteOrder());
         } else {
             if ($scan) {
-                $bytes .= ConvertBytes::fromLong(8 + strlen($scan->toBytes()), $this->byteOrder);
+                $bytes .= ConvertBytes::fromLong(8 + strlen($scan->toBytes()), $this->getByteOrder());
             } else {
-                $bytes .= ConvertBytes::fromLong(8, $this->byteOrder);
+                $bytes .= ConvertBytes::fromLong(8, $this->getByteOrder());
             }
         }
 
@@ -146,10 +157,10 @@ class Tiff extends BlockBase
 
         // Dumps IFD0 and IFD1.
         if ($ifd0) {
-            $bytes .= $ifd0->toBytes($this->byteOrder, strlen($bytes), (bool) $ifd1);
+            $bytes .= $ifd0->toBytes($this->getByteOrder(), strlen($bytes), (bool) $ifd1);
         }
         if ($ifd1) {
-            $bytes .= $ifd1->toBytes($this->byteOrder, strlen($bytes), false);
+            $bytes .= $ifd1->toBytes($this->getByteOrder(), strlen($bytes), false);
         }
 
         return $bytes;

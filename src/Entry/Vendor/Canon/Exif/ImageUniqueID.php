@@ -16,7 +16,7 @@ class ImageUniqueID extends Byte
     public function getValue(array $options = [])
     {
         $str = '';
-        foreach ($this->value as $v) {
+        foreach (parent::getValue() as $v) {
             $str .= chr($v);
         }
         return bin2hex($str);

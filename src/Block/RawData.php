@@ -43,13 +43,13 @@ class RawData extends BlockBase
      */
     protected function doParseData(DataElement $data): void
     {
-        new Undefined($this, [$data->getBytes()]);
+        new Undefined($this, $data);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         return $this->getElement('entry')->toBytes();
     }

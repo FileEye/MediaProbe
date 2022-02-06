@@ -29,29 +29,29 @@ class Short extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $format;
+    protected $formatSize = 2;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = 0;
+    const MIN = 0;
+    const MAX = 65535;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 65535;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): int
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getShort($i * 2);
+        return $this->value->getShort($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->value->getShort();
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->value->getShort($i * 2);
+        }
+        return $ret;
     }
 
     /**

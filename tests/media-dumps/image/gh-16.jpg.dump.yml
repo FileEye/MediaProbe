@@ -117,8 +117,8 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Ascii
                             parsed: true
                             format: Ascii
-                            components: 18
-                            bytesHash: 13b9871a286d9d10af675161201c67198c4db756b96cedbfe944be8aa623416d
+                            components: 17
+                            bytesHash: 31af3a71e475036fc7427bee0a875861b66aae02154d4d28048187025673510a
                             text: 'Created with GIMP'
                 -
                     node: jpegSegment
@@ -282,7 +282,11 @@ elements:
                             components: 2
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
-log: {  }
+log:
+    NOTICE:
+        -
+            path: '/media/jpeg/jpegSegment:COM:254/entry'
+            message: 'Ascii entry missing final NUL character.'
 gdInfo:
     0: 600
     1: 600
@@ -293,7 +297,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: gh-16.jpg
-    FileDateTime: 1639748137
+    FileDateTime: 1644099377
     FileSize: 119734
     FileType: 2
     MimeType: image/jpeg

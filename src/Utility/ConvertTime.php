@@ -27,7 +27,7 @@ abstract class ConvertTime
      * @return int
      *            the Julian Day count.
      */
-    public static function gregorianToJulianDay($year, $month, $day)
+    public static function gregorianToJulianDay(int $year, int $month, int $day): int
     {
         // Special case mapping 0/0/0 -> 0
         if ($year == 0 || $month == 0 || $day == 0) {
@@ -48,7 +48,7 @@ abstract class ConvertTime
      * @return array
      *            array with three entries: year, month, day.
      */
-    public static function julianDayToGregorian($jd)
+    public static function julianDayToGregorian(int $jd): array
     {
         // Special case mapping 0 -> 0/0/0
         if ($jd == 0) {
@@ -76,9 +76,9 @@ abstract class ConvertTime
      * @return int
      *            the Julian Day count.
      */
-    public static function unixToJulianDay($timestamp)
+    public static function unixToJulianDay(int $timestamp): float
     {
-        return (int) (floor($timestamp / 86400) + 2440588);
+        return floor($timestamp / 86400) + 2440588;
     }
 
     /**
@@ -91,7 +91,7 @@ abstract class ConvertTime
      *            the integer timestamp or false if the day count cannot be
      *            represented as a UNIX timestamp.
      */
-    public static function julianDayToUnix($jd)
+    public static function julianDayToUnix(float $jd)
     {
         if ($jd > 0) {
             $timestamp = ($jd - 2440588) * 86400;
@@ -100,5 +100,19 @@ abstract class ConvertTime
             }
         }
         return false;
+    }
+
+    /**
+     * Converts a UNIX timestamp to an EXIF datetime string.
+     */
+    public static function unixToExifString(int $timestamp): string
+    {
+        [$year, $month, $day] = static::julianDayToGregorian(static::unixToJulianDay($timestamp));
+        $beginning_of_day = static::julianDayToUnix(static::gregorianToJulianDay($year, $month, $day));
+        $seconds_count = $timestamp - $beginning_of_day;
+        $hours = (int) ($seconds_count / 3600);
+        $minutes = (int) ($seconds_count % 3600 / 60);
+        $day_count_to_seconds = $seconds_count % 60;
+        return sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $day_count_to_seconds);
     }
 }

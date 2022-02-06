@@ -100,7 +100,7 @@ elements:
                                                             parsed: true
                                                             format: Rational
                                                             components: 1
-                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            bytesHash: 467243a3c7a4edb84cce5527b8f86925d12807fb6772d7f2c5532a631b3bb3dd
                                                             text: '72'
                                                 -
                                                     node: tag
@@ -118,7 +118,7 @@ elements:
                                                             parsed: true
                                                             format: Rational
                                                             components: 1
-                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            bytesHash: 467243a3c7a4edb84cce5527b8f86925d12807fb6772d7f2c5532a631b3bb3dd
                                                             text: '72'
                                                 -
                                                     node: tag
@@ -136,7 +136,7 @@ elements:
                                                             parsed: true
                                                             format: Short
                                                             components: 1
-                                                            bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
+                                                            bytesHash: fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f
                                                             text: inches
                                                 -
                                                     node: tag
@@ -172,7 +172,7 @@ elements:
                                                             parsed: true
                                                             format: Short
                                                             components: 1
-                                                            bytesHash: e9f86cefcfd61558fe75da7d4ea48a6c82d93191c6d49579aab49f99e543dcad
+                                                            bytesHash: b722899d0815e94bdac59d8262239a4073f9055b28c8d4b80c7e7443f3c45810
                                                             text: '78'
                                                 -
                                                     node: ifd
@@ -370,7 +370,7 @@ elements:
                                                             parsed: true
                                                             format: Rational
                                                             components: 1
-                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            bytesHash: 467243a3c7a4edb84cce5527b8f86925d12807fb6772d7f2c5532a631b3bb3dd
                                                             text: '72'
                                                 -
                                                     node: tag
@@ -388,7 +388,7 @@ elements:
                                                             parsed: true
                                                             format: Rational
                                                             components: 1
-                                                            bytesHash: 2aefa085fcca66b9437773316dc7a1aebe8ac11614b03e744f60f0b6f9ae54e1
+                                                            bytesHash: 467243a3c7a4edb84cce5527b8f86925d12807fb6772d7f2c5532a631b3bb3dd
                                                             text: '72'
                                                 -
                                                     node: tag
@@ -406,7 +406,7 @@ elements:
                                                             parsed: true
                                                             format: Short
                                                             components: 1
-                                                            bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
+                                                            bytesHash: fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f
                                                             text: inches
                                                 -
                                                     node: thumbnail
@@ -439,8 +439,8 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Ascii
                             parsed: true
                             format: Ascii
-                            components: 18
-                            bytesHash: 13b9871a286d9d10af675161201c67198c4db756b96cedbfe944be8aa623416d
+                            components: 17
+                            bytesHash: 31af3a71e475036fc7427bee0a875861b66aae02154d4d28048187025673510a
                             text: 'Created with GIMP'
                 -
                     node: jpegSegment
@@ -586,7 +586,11 @@ elements:
                             components: 2
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
-log: {  }
+log:
+    NOTICE:
+        -
+            path: '/media/jpeg/jpegSegment:COM:254/entry'
+            message: 'Ascii entry missing final NUL character.'
 gdInfo:
     0: 320
     1: 200
@@ -597,7 +601,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: test-tags-1.jpg
-    FileDateTime: 1639748138
+    FileDateTime: 1644099377
     FileSize: 4385
     FileType: 2
     MimeType: image/jpeg

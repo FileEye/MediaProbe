@@ -3,14 +3,15 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\ItemFormat;
-use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Block\Exif\Ifd;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Jpeg;
+use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Entry\Core\Ascii;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\Media;
 
 class Bug3017880Test extends MediaProbeTestCaseBase
@@ -51,10 +52,10 @@ class Bug3017880Test extends MediaProbeTestCaseBase
 
             if ($software_tag === null) {
                 $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x0131), ItemFormat::ASCII), $ifd0);
-                new Ascii($tag, [$software_name]);
+                new Ascii($tag, new DataString($software_name));
                 $resave_file = 1;
             } else {
-                $software_tag->getElement("entry")->setValue([$software_name]);
+                $software_tag->getElement("entry")->setDataElement([$software_name]);
                 $resave_file = 1;
             }
 

@@ -14,7 +14,7 @@ class FNumber extends Byte
      */
     public function getValue(array $options = [])
     {
-        return exp(($this->value[0] - 8) / 16 * log(2));
+        return exp(($this->value->getByte(0) - 8) / 16 * log(2));
     }
 
     /**

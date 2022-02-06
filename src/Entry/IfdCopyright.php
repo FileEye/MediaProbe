@@ -14,33 +14,15 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  *
  * The Exif standard specifies a certain format for copyright information
  * where the COPYRIGHT tag holds both the photographer and editor copyrights,
- * separated by a NULL character.
+ * separated by a NUL character.
  */
 class IfdCopyright extends Ascii
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
-    {
-        $v = explode("\0", $data_element->getBytes(0, $item_definition->getValuesCount()));
+/*        $v = explode("\0", $data_element->getBytes(0, $item_definition->getValuesCount()));
         $v[1] = isset($v[1]) ? $v[1] : '';
-        $this->setValue($v);
-        return $this;
-    }
+        $this->setDataElement($v);*/
 
-    /**
-     * Update the copyright information.
-     *
-     * @param array $data
-     *            key 0 - the photographer copyright. Use the empty string if
-     *            there is no photographer copyright.
-     *            key 1 - the editor copyright. Use the empty string if there
-     *            is no editor copyright.
-     */
-    public function setValue(array $data)
-    {
-        $this->parsed = true;
+/*        $this->parsed = true;
 
         $this->value = array_replace(['', ''], $data);
 
@@ -49,10 +31,7 @@ class IfdCopyright extends Ascii
         } else {
             $this->components = strlen($this->value[0]) + 1 + strlen($this->value[1]) + 1;
         }
-
-        $this->debug("text: {text}", ['text' => $this->toString()]);
-        return $this;
-    }
+*/
 
     /**
      * {@inheritdoc}
@@ -67,19 +46,8 @@ class IfdCopyright extends Ascii
                 $ret = rtrim($this->toBytes(), "\x00");
                 return $ret === '' ? null : $ret;
             default:
-                return $this->value;
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
-    {
-        if ($this->value[1] === '') {
-            return $this->value[0] .  chr(0x00);
-        } else {
-            return $this->value[0] .  chr(0x00) . $this->value[1] .  chr(0x00);
+                $ret = explode("\0", rtrim($this->toBytes(), "\x00"));
+                return [$ret[0] ?? '', $ret[1] ?? ''];
         }
     }
 
@@ -110,12 +78,14 @@ class IfdCopyright extends Ascii
             $e = ' ' . MediaProbe::tra('(Editor)');
         }
 
-        if ($this->value[0] !== '' && $this->value[1] !== '') {
-            return $this->value[0] . $p . ' - ' . $this->value[1] . $e;
-        } elseif ($this->value[0] != '') {
-            return $this->value[0] . $p;
-        } elseif ($this->value[1] != '') {
-            return $this->value[1] . $e;
+        $value = $this->getValue();
+
+        if ($value[0] !== '' && $value[1] !== '') {
+            return $value[0] . $p . ' - ' . $value[1] . $e;
+        } elseif ($value[0] != '') {
+            return $value[0] . $p;
+        } elseif ($value[1] != '') {
+            return $value[1] . $e;
         }
 
         return '';

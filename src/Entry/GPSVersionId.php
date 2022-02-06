@@ -17,7 +17,7 @@ class GPSVersionId extends Byte
         $format = $options['format'] ?? null;
         switch ($format) {
             case 'exiftool':
-                return implode(' ', $this->value);
+                return implode(' ', parent::getValue());
             case 'phpExif':
                 return $this->toBytes();
             default:

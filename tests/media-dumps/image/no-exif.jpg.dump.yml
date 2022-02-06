@@ -67,8 +67,8 @@ elements:
                             class: FileEye\MediaProbe\Entry\Core\Ascii
                             parsed: true
                             format: Ascii
-                            components: 46
-                            bytesHash: f7b9fa83d64fb6ba90dc3b31a86b05596c234a068d0dd27620655869d8e470a9
+                            components: 45
+                            bytesHash: 90abb7395f48713e369dd74d1653b3e459114c5c458845033fbc72a3d2c03ccb
                             text: 'Test image for PEL, with no EXIF information.'
                 -
                     node: jpegSegment
@@ -232,7 +232,11 @@ elements:
                             components: 2
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
-log: {  }
+log:
+    NOTICE:
+        -
+            path: '/media/jpeg/jpegSegment:COM:254/entry'
+            message: 'Ascii entry missing final NUL character.'
 gdInfo:
     0: 256
     1: 256
@@ -243,7 +247,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: no-exif.jpg
-    FileDateTime: 1639748137
+    FileDateTime: 1644099377
     FileSize: 4348
     FileType: 2
     MimeType: image/jpeg

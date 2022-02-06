@@ -68,10 +68,9 @@ class Tag extends BlockBase
      */
     protected function doParseData(DataElement $data): void
     {
-        $class = $this->getDefinition()->getEntryClass();
-        $entry = new $class($this);
         try {
-            $entry->loadFromData($data, 0, $data->getSize(), [], $this->getDefinition());
+            $class = $this->getDefinition()->getEntryClass();
+            new $class($this, $data);
         } catch (DataException $e) {
             $this->error($e->getMessage());
         }
@@ -90,15 +89,15 @@ class Tag extends BlockBase
      */
     public function toString(array $options = []): string
     {
-        return $this->getElement("entry") ? $this->getElement("entry")->toString($options) : null;
+        return $this->getElement("entry") ? $this->getElement("entry")->toString($options) : '';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
-        return $this->getElement("entry") ? $this->getElement("entry")->toBytes($order, $offset) : null;
+        return $this->getElement("entry") ? $this->getElement("entry")->toBytes($order, $offset) : '';
     }
 
     /**

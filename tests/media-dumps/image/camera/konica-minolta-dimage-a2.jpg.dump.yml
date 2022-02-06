@@ -465,7 +465,7 @@ elements:
                                                                 -
                                                                     node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:BrightnessValue:37379/entry'
-                                                                    class: FileEye\MediaProbe\Entry\ExifBrightnessValue
+                                                                    class: FileEye\MediaProbe\Entry\Core\SignedRational
                                                                     parsed: true
                                                                     format: SignedRational
                                                                     components: 1
@@ -1407,7 +1407,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: konica-minolta-dimage-a2.jpg
-    FileDateTime: 1639748137
+    FileDateTime: 1644099377
     FileSize: 209855
     FileType: 2
     MimeType: image/jpeg

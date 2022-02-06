@@ -18,7 +18,7 @@ use FileEye\MediaProbe\MediaProbe;
  * The class can hold either just a single rational or an array of
  * rationals.
  */
-class SignedRational extends SignedLong
+class SignedRational extends NumberBase
 {
     /**
      * {@inheritdoc}
@@ -33,34 +33,34 @@ class SignedRational extends SignedLong
     /**
      * {@inheritdoc}
      */
-    protected $format;
+    protected $formatSize = 8;
 
     /**
      * {@inheritdoc}
      */
     protected $dimension = 2;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = -2147483648;
+    const MIN = -2147483648;
+    const MAX = 2147483647;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 2147483647;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): array
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getSignedRational($i * 8);
+        return $this->value->getSignedRational($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->formatNumber($this->value->getSignedRational(), $options);
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->formatNumber($this->value->getSignedRational($i * 8), $options);
+        }
+        return $ret;
     }
 
     /**
@@ -92,5 +92,13 @@ class SignedRational extends SignedLong
                 $ret = $number[0] / $number[1];
                 return $ret == 0.0 ? 0 : $ret;
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function numberToBytes($number, $order)
+    {
+        return ConvertBytes::fromLong($number, $order);
     }
 }

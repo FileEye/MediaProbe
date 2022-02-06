@@ -15,10 +15,10 @@ class Timestamp extends Long
      */
     public function getValue(array $options = [])
     {
-        if ($this->value[0] === 0) {
+        if ($this->value->getLong(0) === 0) {
             return '0000:00:00 00:00:00';
         }
-        return gmdate('Y:m:d H:i:s', $this->value[0]);
+        return gmdate('Y:m:d H:i:s', $this->value->getLong(0));
     }
 
     /**

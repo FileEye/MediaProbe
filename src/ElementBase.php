@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe;
 
+use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\DOMElement;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
@@ -42,6 +43,13 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      * @var bool
      */
     protected $parsed = false;
+
+    /**
+     * Whether this element was successfully validated.
+     *
+     * @var bool
+     */
+    protected $valid = true;
 
     /**
      * Constructs an Element object.
@@ -211,9 +219,17 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
+    public function getDataElement(): DataElement
+    {
+        throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getValue(array $options = [])
     {
-        throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
     /**
@@ -221,7 +237,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function toString(array $options = []): string
     {
-        throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
     /**

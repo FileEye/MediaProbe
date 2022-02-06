@@ -51,7 +51,7 @@ class AFInfoIndex extends Index
             $item = new $item_class($item_definition, $this);
 
             $entry_class = $item_definition->getEntryClass();
-            new $entry_class($item, $this->getValueFromData($data, $offset, $item_definition->getFormat(), $value_components));
+            new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->getFormat(), $value_components));
             $item->parsed = true;
         }
     }

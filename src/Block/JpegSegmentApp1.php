@@ -28,7 +28,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.
-            $entry = new Undefined($this, [$data->getBytes()]);
+            $entry = new Undefined($this, $data);
             $entry->debug("Not an Exif segment. Parsed {text}", ['text' => $entry->toString()]);
         }
     }
@@ -36,7 +36,7 @@ class JpegSegmentApp1 extends JpegSegmentBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0)
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         // If we have an Exif table, dump it.
         if ($exif = $this->getElement("exif")) {

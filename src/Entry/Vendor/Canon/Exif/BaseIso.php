@@ -15,7 +15,7 @@ class BaseIso extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return exp($this->value[0] / 32 * log(2)) * 100 / 32;
+        return exp(parent::getValue() / 32 * log(2)) * 100 / 32;
     }
 
     /**

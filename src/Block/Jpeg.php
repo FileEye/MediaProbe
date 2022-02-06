@@ -113,6 +113,11 @@ class Jpeg extends BlockBase
             $offset += $segment->getSize();
         }
 
+        // Fail if SOS is missing.
+        if (!$this->getElement("jpegSegment[@name='SOS']")) {
+            $this->error('Missing SOS (Start Of Scan) JPEG marker');
+        }
+
         // Fail if EOI is missing.
         if (!$this->getElement("jpegSegment[@name='EOI']")) {
             $this->error('Missing EOI (End Of Image) JPEG marker');

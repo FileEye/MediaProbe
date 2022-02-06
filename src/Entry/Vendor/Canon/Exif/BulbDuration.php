@@ -15,7 +15,7 @@ class BulbDuration extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0] / 10;
+        return parent::getValue() / 10;
     }
 
     /**

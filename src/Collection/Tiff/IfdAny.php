@@ -7597,7 +7597,6 @@ class IfdAny extends Collection {
       0 =>
       array (
         'components' => 1,
-        'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifBrightnessValue',
         'collection' => 'Tag',
         'name' => 'BrightnessValue',
         'title' => 'Brightness Value',

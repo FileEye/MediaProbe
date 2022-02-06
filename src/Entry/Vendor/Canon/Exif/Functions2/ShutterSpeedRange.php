@@ -34,17 +34,18 @@ class ShutterSpeedRange extends SignedLong
     {
         if (($options['format'] ?? null) === 'exiftool') {
             $v = [];
-            switch (count($this->value)) {
+            $value = parent::getValue();
+            switch (count($value)) {
                 case 3:
-                    $v[0] = $this->value[0];
-                    $v[1] = exp(-($this->value[1] / 8 - 7) * log(2));
-                    $v[2] = exp(-($this->value[2] / 8 - 7) * log(2));
+                    $v[0] = $value[0];
+                    $v[1] = exp(-($value[1] / 8 - 7) * log(2));
+                    $v[2] = exp(-($value[2] / 8 - 7) * log(2));
                     break;
                 case 4:
-                    $v[0] = exp(-$this->value[0] / (1600 * log(2)));
-                    $v[1] = exp(-$this->value[1] / (1600 * log(2)));
-                    $v[2] = exp(-$this->value[2] / (1600 * log(2)));
-                    $v[3] = exp(-$this->value[3] / (1600 * log(2)));
+                    $v[0] = exp(-$value[0] / (1600 * log(2)));
+                    $v[1] = exp(-$value[1] / (1600 * log(2)));
+                    $v[2] = exp(-$value[2] / (1600 * log(2)));
+                    $v[3] = exp(-$value[3] / (1600 * log(2)));
                     break;
             }
             return implode(' ', $v);
