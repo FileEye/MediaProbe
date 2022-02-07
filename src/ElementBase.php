@@ -38,13 +38,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     protected $XPath;
 
     /**
-     * Whether this element was successfully parsed from data.
-     *
-     * @var bool
-     */
-    protected $parsed = false;
-
-    /**
      * Whether this element was successfully validated.
      *
      * @var bool
@@ -211,9 +204,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function isParsed()
+    public function isValid()
     {
-        return $this->parsed;
+        return $this->valid;
     }
 
     /**
@@ -249,7 +242,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             'node' => $this->DOMNode->nodeName,
             'path' => $this->getContextPath(),
             'class' => get_class($this),
-            'parsed' => $this->isParsed(),
+            'valid' => $this->isValid(),
         ];
     }
 

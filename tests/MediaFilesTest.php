@@ -115,26 +115,29 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
 
         $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
+        $this->fileSystem->mkdir($this->tempWorkDirectory . '/media-samples/image/' . $mediaDumpFile->getRelativePath());
+        $rewriteFile = $this->tempWorkDirectory . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img';
 
         $original_media = Media::loadFromFile($testFile);
-        $original_media->saveToFile($testFile . '-rewrite-gd.img');
+        $original_media->saveToFile($rewriteFile);
 
         // Test via getimagesize.
-        $gd_info = getimagesize($testFile . '-rewrite-gd.img');
+        $gd_info = getimagesize($rewriteFile);
         $this->assertEquals($this->testDump['gdInfo'], $gd_info);
 
         if ($this->testDump['mimeType'] === 'image/tiff') {
             $this->markTestIncomplete($this->testDump['fileName'] . ' of MIME type ' . $this->testDump['mimeType'] . ' can not be tested via GD.');
         }
 
-        // Test loading the image to GD; it fails hard in case of errors.
+        // Test loading the image to GD from memory; it fails hard in case of errors.
         $gd_resource = imagecreatefromstring($original_media->toBytes());
         $this->assertNotFalse($gd_resource);
         $this->assertEquals($this->testDump['gdInfo'][0], imagesx($gd_resource));
         $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
         imagedestroy($gd_resource);
 
-        $gd_resource = imagecreatefromjpeg($testFile . '-rewrite-gd.img');
+        // Test loading the image to GD from file; it fails hard in case of errors.
+        $gd_resource = imagecreatefromjpeg($rewriteFile);
         $this->assertNotFalse($gd_resource);
         $this->assertEquals($this->testDump['gdInfo'][0], imagesx($gd_resource));
         $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
@@ -149,6 +152,8 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
 
         $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
+        $this->fileSystem->mkdir($this->tempWorkDirectory . '/media-samples/image/' . $mediaDumpFile->getRelativePath());
+        $rewriteFile = $this->tempWorkDirectory . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img';
         $exiftoolDumpFile = dirname(__FILE__) . '/media-dumps/image/' . $mediaDumpFile->getRelativePath() . '/' . str_replace('.dump.yml', '', $mediaDumpFile->getFileName()) . '.exiftool.xml';
         $exiftoolRawDumpFile = dirname(__FILE__) . '/media-dumps/image/' . $mediaDumpFile->getRelativePath() . '/' . str_replace('.dump.yml', '', $mediaDumpFile->getFileName()) . '.exiftool-raw.xml';
 
@@ -159,8 +164,8 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->exiftoolRawDump->loadXML(file_get_contents($exiftoolRawDumpFile));
 
         $original_media = Media::loadFromFile($testFile);
-        $original_media->saveToFile($testFile . '-rewrite.img');
-        $media = Media::loadFromFile($testFile . '-rewrite.img');
+        $original_media->saveToFile($rewriteFile);
+        $media = Media::loadFromFile($rewriteFile);
 
         $this->assertEquals($this->testDump['mimeType'], $media->getMimeType());
 
@@ -178,14 +183,21 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->assertInstanceOf($expected['class'], $element, $expected['path']);
         $this->assertSame($expected['path'], $element->getContextPath());
         if (!$rewritten) {
-            $this->assertSame($expected['parsed'], $element->isParsed(), $element->getContextPath());
+            $this->assertSame($expected['valid'], $element->isValid(), $element->getContextPath());
         }
 
         // Check entry.
         if ($element instanceof EntryInterface) {
             // No sub elements in the element being tested.
-            $this->assertNull($element->getElement('*'));
-            $this->assertSame($expected['format'], ItemFormat::getName($element->getFormat()), $element->getContextPath());
+            $this->assertNull($element->getElement('*'), $element->getContextPath());
+
+            // Check entry format.
+            $this->assertNotNull($element->getFormat(), $element->getContextPath());
+            $format_name = ItemFormat::getName($element->getFormat());
+            $this->assertNotNull($format_name, $element->getContextPath());
+            $this->assertSame($expected['format'], $format_name, $element->getContextPath());
+
+            // Check entry components.
             $this->assertSame($expected['components'], $element->getComponents(), $element->getContextPath());
 
             // Check PHP Exif tag equivalence.

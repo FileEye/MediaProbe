@@ -29,7 +29,6 @@ abstract class NumberBase extends EntryBase
         // Check that the data size is consistent.
         if ($this->components * $this->formatSize !== $this->dataElement->getSize()) {
             $this->error('Invalid data size.');
-            $this->parsed = false;
             $this->valid = false;
         }
 
@@ -40,7 +39,6 @@ abstract class NumberBase extends EntryBase
             } catch (DataException $e) {
                 $this->error($e->getMessage());
                 $this->valid = false;
-                $this->parsed = false;
             }
         }
 

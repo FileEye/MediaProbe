@@ -73,6 +73,7 @@ class Tag extends BlockBase
             new $class($this, $data);
         } catch (DataException $e) {
             $this->error($e->getMessage());
+            $this->valid = false;
         }
     }
 

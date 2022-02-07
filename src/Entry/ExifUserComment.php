@@ -30,12 +30,10 @@ class ExifUserComment extends Undefined
         $value = $this->dataElement->getBytes();
 
         if (strlen($value) < 8) {
-            $this->parsed = false;
             $this->valid = false;
         } else {
             $encoding = strtoupper(rtrim(substr($value, 0, 8), "\x00"));
             if (!in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-                $this->parsed = false;
                 $this->valid = false;
             }
         }
@@ -75,6 +73,6 @@ class ExifUserComment extends Undefined
      */
     public function toString(array $options = []): string
     {
-        return $this->parsed ? $this->getValue($options) : '';
+        return $this->valid ? $this->getValue($options) : '';
     }
 }

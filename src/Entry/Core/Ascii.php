@@ -2,25 +2,12 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
-use FileEye\MediaProbe\Block\BlockBase;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Utility\ConvertBytes;
-
 /**
- * Class for holding a plain ASCII string.
+ * Class for holding a NUL terminated ASCII string.
  */
 class Ascii extends EntryBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected $name = 'Ascii';
-
-    /**
-     * {@inheritdoc}
-     */
     protected $formatName = 'Ascii';
 
     protected function validateDataElement(): void
@@ -34,9 +21,6 @@ class Ascii extends EntryBase
         $this->debug("text: {text}", ['text' => $this->toString()]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = [])
     {
         $format = $options['format'] ?? null;
@@ -49,9 +33,6 @@ class Ascii extends EntryBase
         return $val === '' ? null : $val;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
         $first_zero_pos = strpos($this->dataElement->getBytes(), "\x0");

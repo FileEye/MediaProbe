@@ -77,8 +77,6 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function setDataElement(DataElement $dataElement): void
     {
-        $this->parsed = true;
-        $this->valid = true;
         $this->dataElement = $dataElement;
         $this->components = (int) ($dataElement->getSize() / $this->formatSize);
         $this->validateDataElement();
