@@ -26,8 +26,9 @@ class SpecCompilerTest extends MediaProbeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function fcSetUp()
+    public function setUp(): void
     {
+        parent::setUp();
         $this->testResourceDirectory = __DIR__ . '/TestClasses';
         $this->fs = new Filesystem();
         $this->fs->mkdir($this->testResourceDirectory);
@@ -36,10 +37,11 @@ class SpecCompilerTest extends MediaProbeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function fcTearDown()
+    public function tearDown(): void
     {
         $this->fs->remove($this->testResourceDirectory);
         Collection::setMapperClass(null);
+        parent::tearDown();
     }
 
     public function testFake()
@@ -52,7 +54,7 @@ class SpecCompilerTest extends MediaProbeTestCaseBase
      */
 /*    public function testInvalidYaml()
     {
-        $this->fcExpectException(ParseException::class);
+        $this->expectException(ParseException::class);
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory, 'FileEye\MediaProbe\Test\TestClasses');
     }

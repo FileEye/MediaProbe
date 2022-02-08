@@ -10,9 +10,9 @@ class NumberSignedByteTest extends NumberTestCase
     /**
      * {@inheritdoc}
      */
-    public function fcSetUp()
+    public function setUp(): void
     {
-        parent::fcSetUp();
+        parent::setUp();
         $this->num = new SignedByte($this->mockParentElement, $this->mockDataElement);
         $this->min = -128;
         $this->max = 127;

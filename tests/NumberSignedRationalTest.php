@@ -9,9 +9,9 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class NumberSignedRationalTest extends NumberTestCase
 {
-    public function fcSetUp()
+    public function setUp(): void
     {
-        parent::fcSetUp();
+        parent::setUp();
         $this->num = new SignedRational($this->mockParentElement, $this->mockDataElement);
         $this->min = -2147483648;
         $this->max = 2147483647;

@@ -13,7 +13,7 @@ class FormatTest extends MediaProbeTestCaseBase
         $this->assertSame('Ascii', ItemFormat::getName(ItemFormat::ASCII));
         $this->assertSame('Float', ItemFormat::getName(ItemFormat::FLOAT));
         $this->assertSame('Undefined', ItemFormat::getName(ItemFormat::UNDEFINED));
-        $this->fcExpectException(MediaProbeException::class);
+        $this->expectException(MediaProbeException::class);
         $this->assertNull(ItemFormat::getName(100));
     }
 
@@ -30,7 +30,7 @@ class FormatTest extends MediaProbeTestCaseBase
         $this->assertSame(1, ItemFormat::getSize(ItemFormat::ASCII));
         $this->assertSame(4, ItemFormat::getSize(ItemFormat::FLOAT));
         $this->assertSame(1, ItemFormat::getSize(ItemFormat::UNDEFINED));
-        $this->fcExpectException(MediaProbeException::class);
+        $this->expectException(MediaProbeException::class);
         $this->assertNull(ItemFormat::getSize(100));
     }
 }
