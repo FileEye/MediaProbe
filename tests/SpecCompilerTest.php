@@ -54,7 +54,7 @@ class SpecCompilerTest extends MediaProbeTestCaseBase
      */
 /*    public function testInvalidYaml()
     {
-        $this->fcExpectException(ParseException::class);
+        $this->expectException(ParseException::class);
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/invalid_yaml', $this->testResourceDirectory, 'FileEye\MediaProbe\Test\TestClasses');
     }

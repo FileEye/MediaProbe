@@ -8,6 +8,7 @@ use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\Version;
+use Symfony\Component\Filesystem\Filesystem;
 
 class MediaProbeTestCaseBase extends TestCase
 {
@@ -20,18 +21,6 @@ class MediaProbeTestCaseBase extends TestCase
         $this->tempWorkDirectory = dirname(__FILE__) . '/workdir-test';
         $this->fileSystem = new Filesystem();
         $this->fileSystem->mkdir($this->tempWorkDirectory);
-    }
-
-    public function fcExpectException($exception, $message = null)
-    {
-        if (method_exists($this, 'expectException')) {
-            $this->expectException($exception);
-            if ($message !== null) {
-                $this->expectExceptionMessage($message);
-            }
-        } else {
-            $this->setExpectedException($exception, $message);
-        }
     }
 
     public function dumpElement(ElementInterface $element)
