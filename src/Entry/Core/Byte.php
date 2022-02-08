@@ -28,7 +28,7 @@ class Byte extends NumberBase
 
     protected function getNumberFromDataElement(int $offset): int
     {
-        return $this->value->getByte($offset);
+        return $this->dataElement->getByte($offset);
     }
 
     /**
@@ -37,11 +37,11 @@ class Byte extends NumberBase
     public function getValue(array $options = [])
     {
         if ($this->components == 1) {
-            return $this->value->getByte();
+            return $this->dataElement->getByte();
         }
         $ret = [];
         for ($i = 0; $i < $this->components; $i++) {
-            $ret[] = $this->value->getByte($i);
+            $ret[] = $this->dataElement->getByte($i);
         }
         return $ret;
     }

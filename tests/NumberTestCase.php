@@ -15,11 +15,11 @@ abstract class NumberTestCase extends EntryTestBase
     public function testBase()
     {
         $this->num->setDataElement($this->toDataString([0]));
-        $this->assertTrue($this->num->isParsed());
+        $this->assertTrue($this->num->isValid());
         $this->assertSame(0, $this->num->getValue());
 
         $this->num->setDataElement($this->toDataString([$this->min, $this->max]));
-        $this->assertTrue($this->num->isParsed());
+        $this->assertTrue($this->num->isValid());
         $this->assertSame([$this->min, $this->max], $this->num->getValue());
     }
 

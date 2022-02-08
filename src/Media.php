@@ -110,7 +110,6 @@ class Media extends BlockBase
 
         $media_format = new ItemDefinition($media_format_collection);
         $media->addBlock($media_format)->parseData($data_element);
-        $media->parsed = true;
 
         return $media;
     }

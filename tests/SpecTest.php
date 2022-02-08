@@ -244,7 +244,7 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals('RST3', $collection->getItemCollection(0xD3)->getPropertyValue('name'));
         $this->assertEquals('APP3', $collection->getItemCollection(0xE3)->getPropertyValue('name'));
         $this->assertEquals('JPG11', $collection->getItemCollection(0xFB)->getPropertyValue('name'));
-        $this->fcExpectException(MediaProbeException::class);
+        $this->expectException(MediaProbeException::class);
         $this->assertNull($collection->getItemCollection(100));
     }
 

@@ -10,9 +10,9 @@ class NumberSignedShortTest extends NumberTestCase
     /**
      * {@inheritdoc}
      */
-    public function fcSetUp()
+    public function setUp(): void
     {
-        parent::fcSetUp();
+        parent::setUp();
         $this->num = new SignedShort($this->mockParentElement, $this->mockDataElement);
         $this->min = -32768;
         $this->max = 32767;

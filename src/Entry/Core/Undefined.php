@@ -37,13 +37,13 @@ class Undefined extends EntryBase
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            $val = str_split($this->value->getBytes());
+            $val = str_split($this->dataElement->getBytes());
             array_walk($val, function (&$value) {
                 $value = ord($value);
             });
             return implode(' ', $val);
         }
-        return $this->value->getBytes();
+        return $this->dataElement->getBytes();
     }
 
     /**
@@ -52,7 +52,7 @@ class Undefined extends EntryBase
     public function toString(array $options = []): string
     {
         if ($this->hasMappedText()) {
-            $value = unpack('C', $this->value->getBytes())[1]; // xx note that we may want to have alternative check for string... if the collection has a string index. see ifdExif/FileSource
+            $value = unpack('C', $this->dataElement->getBytes())[1]; // xx note that we may want to have alternative check for string... if the collection has a string index. see ifdExif/FileSource
             $text = $this->resolveText($value, true);
         }
         return $text ?? $this->components . ' byte(s) of data';

@@ -33,7 +33,6 @@ class RunTime extends ListBase
             $tag = new Tag($item_definition, $this);
             $entry_class = $item_definition->getEntryClass();
             new $entry_class($tag, new DataString((string) $value));
-            $tag->parsed = true;
         }
     }
 

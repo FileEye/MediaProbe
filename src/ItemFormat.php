@@ -24,6 +24,7 @@ class ItemFormat
     const SHORT_REV = 1000;
     const SHORT_RATIONAL = 1001;
     const SHORT_SIGNED_RATIONAL = 1002;
+    const CHAR = 2000;
 
     /**
      * Returns the name of a format like 'Ascii' for the ASCII format.

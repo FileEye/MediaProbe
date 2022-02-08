@@ -10,7 +10,7 @@ compiler:
         xpath: '//table[@name=''Apple::RunTime'']/tag'
 items:
     epoch:
-        format: Ascii
+        format: Char
         exiftool:
             -
                 name: RunTimeEpoch
@@ -19,7 +19,7 @@ items:
                 DOMNode: 'Apple:RunTimeEpoch'
                 desc: 'Run Time Epoch'
     flags:
-        format: Ascii
+        format: Char
         exiftool:
             -
                 name: RunTimeFlags
@@ -34,7 +34,7 @@ items:
                     8: 'Negative infinity'
                     16: Indefinite
     timescale:
-        format: Ascii
+        format: Char
         exiftool:
             -
                 name: RunTimeScale
@@ -43,7 +43,7 @@ items:
                 DOMNode: 'Apple:RunTimeScale'
                 desc: 'Run Time Scale'
     value:
-        format: Ascii
+        format: Char
         exiftool:
             -
                 name: RunTimeValue

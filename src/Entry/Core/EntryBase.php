@@ -48,42 +48,37 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     protected $components;
 
     /**
-     * The value held by this entry.
-     *
-     * A representation of the value of the entry which is more suitable for
-     * handling than the bytes.
+     * The data element held by this entry.
      *
      * @var DataElement
      */
-    protected $value;
+    protected $dataElement;
 
     /**
      * Constructs an EntryInterface object.
      *
      * @param ElementInterface $parent
      *            xx
-     * @param DataElement $data
+     * @param DataElement $dataElement
      *            the data that this entry will be holding.
      * @param ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
-    public function __construct(ElementInterface $parent, DataElement $data, ElementInterface $reference = null)
+    public function __construct(ElementInterface $parent, DataElement $dataElement, ElementInterface $reference = null)
     {
         parent::__construct(static::DOM_NODE_NAME, $parent, $reference);
-        $this->setDataElement($data);
+        $this->setDataElement($dataElement);
         $this->format = ItemFormat::getFromName($this->formatName);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setDataElement(DataElement $data): void
+    public function setDataElement(DataElement $dataElement): void
     {
-        $this->parsed = true;
-        $this->valid = true;
-        $this->value = $data;
-        $this->components = (int) ($data->getSize() / $this->formatSize);
+        $this->dataElement = $dataElement;
+        $this->components = (int) ($dataElement->getSize() / $this->formatSize);
         $this->validateDataElement();
     }
 
@@ -97,7 +92,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function getDataElement(): DataElement
     {
-        return $this->value;
+        return $this->dataElement;
     }
 
     /**
@@ -244,7 +239,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
-        return $this->value->getBytes();
+        return $this->dataElement->getBytes();
     }
 
     /**
@@ -252,7 +247,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      */
     public function toString(array $options = []): string
     {
-        if (is_null($this->value)) {
+        if (is_null($this->dataElement)) {
             return '';
         }
         $text = $this->resolveText($this->getValue($options));

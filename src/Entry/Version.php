@@ -22,9 +22,8 @@ class Version extends Undefined
 
     protected function validateDataElement(): void
     {
-        if (!is_numeric($this->value->getBytes())) {
+        if (!is_numeric($this->dataElement->getBytes())) {
             $this->error('Incorrect version data.');
-            $this->parsed = false;
             $this->valid = false;
         }
     }
@@ -36,10 +35,10 @@ class Version extends Undefined
     {
         $format = $options['format'] ?? null;
         if (in_array($format, ['phpExif', 'exiftool'])) {
-            return $this->value->getBytes();
+            return $this->dataElement->getBytes();
         }
-        if (is_numeric($this->value->getBytes())) {
-            $version = $this->value->getBytes() / 100;
+        if (is_numeric($this->dataElement->getBytes())) {
+            $version = $this->dataElement->getBytes() / 100;
         } else {
             $version = 0;
         }

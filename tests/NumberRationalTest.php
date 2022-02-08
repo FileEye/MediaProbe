@@ -9,9 +9,9 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class NumberRationalTest extends NumberTestCase
 {
-    public function fcSetUp()
+    public function setUp(): void
     {
-        parent::fcSetUp();
+        parent::setUp();
         $this->num = new Rational($this->mockParentElement, $this->mockDataElement);
         $this->min = 0;
         $this->max = 4294967295;
@@ -20,12 +20,12 @@ class NumberRationalTest extends NumberTestCase
     public function testBase()
     {
         $this->num->setDataElement($this->toDataString([[1, 2]]));
-        $this->assertTrue($this->num->isParsed());
+        $this->assertTrue($this->num->isValid());
         $this->assertSame([1, 2], $this->num->getValue(['format' => 'parsed']));
         $this->assertSame(0.5, $this->num->getValue());
 
         $this->num->setDataElement($this->toDataString([[3, 4], [0, 4294967295]]));
-        $this->assertTrue($this->num->isParsed());
+        $this->assertTrue($this->num->isValid());
         $this->assertSame([[3, 4], [0, 4294967295]], $this->num->getValue(['format' => 'parsed']));
         $this->assertSame([0.75, 0], $this->num->getValue());
     }

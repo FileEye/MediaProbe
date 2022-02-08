@@ -40,10 +40,10 @@ class Ifd extends ListBase
         // Parse the items.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
+            $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Tiff\IfdAny');
+            $item_class = $item_definition->getCollection()->getPropertyValue('class');
+            $item = new $item_class($item_definition, $this);
             try {
-                $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Tiff\IfdAny');
-                $item_class = $item_definition->getCollection()->getPropertyValue('class');
-                $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, true)) {
                     $item->parseData($data_element);
                 } else {
@@ -55,10 +55,9 @@ class Ifd extends ListBase
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
+                $item->valid = false;
             }
         }
-
-        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostParseCallbacks($data_element);
@@ -115,7 +114,6 @@ class Ifd extends ListBase
      */
     protected function getItemDefinitionFromData(int $seq, DataElement $data_element, int $offset, int $data_offset_shift = 0, string $fallback_collection_id = null): ItemDefinition
     {
-// dump([$seq, $offset, $data_offset_shift, $fallback_collection_id]);
         $id = $data_element->getShort($offset);
         $format = $data_element->getShort($offset + 2);
         $components = $data_element->getLong($offset + 4);
@@ -275,7 +273,7 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'length' => $length,
             ]);
-            $ifd->parsed = false;
+            $ifd->valid = false;
             return;
         }
 
@@ -284,7 +282,7 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'size' => $data_element->getSize(),
             ]);
-            $ifd->parsed = false;
+            $ifd->valid = false;
             return;
         }
 

@@ -45,7 +45,7 @@ class SignedRational extends NumberBase
 
     protected function getNumberFromDataElement(int $offset): array
     {
-        return $this->value->getSignedRational($offset);
+        return $this->dataElement->getSignedRational($offset);
     }
 
     /**
@@ -54,11 +54,11 @@ class SignedRational extends NumberBase
     public function getValue(array $options = [])
     {
         if ($this->components == 1) {
-            return $this->formatNumber($this->value->getSignedRational(), $options);
+            return $this->formatNumber($this->dataElement->getSignedRational(), $options);
         }
         $ret = [];
         for ($i = 0; $i < $this->components; $i++) {
-            $ret[] = $this->formatNumber($this->value->getSignedRational($i * 8), $options);
+            $ret[] = $this->formatNumber($this->dataElement->getSignedRational($i * 8), $options);
         }
         return $ret;
     }

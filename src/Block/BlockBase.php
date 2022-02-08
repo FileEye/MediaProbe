@@ -113,7 +113,6 @@ abstract class BlockBase extends ElementBase
         $this->size = $data->getSize();
         $this->debugBlockInfo($data);
         $this->doParseData($data);
-        $this->parsed = true;
 
         // Invoke post-parse callbacks.
         $this->executePostParseCallbacks($data);

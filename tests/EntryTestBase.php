@@ -10,8 +10,9 @@ class EntryTestBase extends MediaProbeTestCaseBase
     protected $mockParentElement;
     protected $mockDataElement;
 
-    public function fcSetUp()
+    public function setUp(): void
     {
+        parent::setUp();
         $this->mockParentElement = $this->getMockBuilder(ElementBase::class)
           ->disableOriginalConstructor()
           ->getMock();

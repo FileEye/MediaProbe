@@ -15,16 +15,18 @@ class GH21Test extends MediaProbeTestCaseBase
 {
     protected $file;
 
-    public function fcSetUp()
+    public function setUp(): void
     {
+        parent::setUp();
         $this->file = dirname(__FILE__) . '/media-samples/image/gh-21-tmp.jpg';
         $file = dirname(__FILE__) . '/media-samples/image/gh-21.jpg';
         copy($file, $this->file);
     }
 
-    public function fcTearDown()
+    public function tearDown(): void
     {
         unlink($this->file);
+        parent::tearDown();
     }
 
     public function testThisDoesNotWorkAsExpected()
