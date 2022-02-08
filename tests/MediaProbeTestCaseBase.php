@@ -9,14 +9,18 @@ use FileEye\MediaProbe\MediaProbe;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\Version;
 
-require_once __DIR__ . '/MediaProbePhpUnit8Trait.php';
-
 class MediaProbeTestCaseBase extends TestCase
 {
     protected $fileSystem;
     protected $tempWorkDirectory;
 
-    use PhpUnitTrait;
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->tempWorkDirectory = dirname(__FILE__) . '/workdir-test';
+        $this->fileSystem = new Filesystem();
+        $this->fileSystem->mkdir($this->tempWorkDirectory);
+    }
 
     public function fcExpectException($exception, $message = null)
     {

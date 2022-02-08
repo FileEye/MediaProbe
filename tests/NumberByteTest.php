@@ -10,9 +10,9 @@ class NumberByteTest extends NumberTestCase
     /**
      * {@inheritdoc}
      */
-    public function fcSetUp()
+    public function setUp(): void
     {
-        parent::fcSetUp();
+        parent::setUp();
         $this->num = new Byte($this->mockParentElement, $this->mockDataElement);
         $this->min = 0;
         $this->max = 255;

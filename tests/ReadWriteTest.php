@@ -28,10 +28,11 @@ class ReadWriteTest extends MediaProbeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function fcTearDown()
+    public function tearDown(): void
     {
         unlink(dirname(__FILE__) . '/test-output.jpg');
         gc_collect_cycles();
+        parent::tearDown();
     }
 
     /**

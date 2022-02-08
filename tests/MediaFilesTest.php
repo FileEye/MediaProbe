@@ -23,12 +23,13 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     /**
      * {@inheritdoc}
      */
-    public function fcTearDown()
+    public function tearDown(): void
     {
         $this->testDump = null;
         $this->exiftoolDump = null;
         $this->exiftoolRawDump = null;
         gc_collect_cycles();
+        parent::tearDown();
     }
 
     public function mediaFileProvider()
