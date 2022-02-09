@@ -11,7 +11,7 @@ use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 
 class Bug3017880Test extends MediaProbeTestCaseBase
@@ -44,14 +44,14 @@ class Bug3017880Test extends MediaProbeTestCaseBase
             $tiff = $exif->getElement("tiff");
             $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), ItemFormat::LONG));
+                $ifd0 = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), DataFormat::LONG));
             }
 
             $software_name = 'Example V2';
             $software_tag = $ifd0->getElement("tag[@name='Software']");
 
             if ($software_tag === null) {
-                $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x0131), ItemFormat::ASCII), $ifd0);
+                $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x0131), DataFormat::ASCII), $ifd0);
                 new Ascii($tag, new DataString($software_name));
                 $resave_file = 1;
             } else {

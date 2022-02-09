@@ -18,7 +18,7 @@ use FileEye\MediaProbe\Entry\Core\SignedByte;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 use FileEye\MediaProbe\Entry\Core\SignedShort;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -61,7 +61,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd(new ItemDefinition($tiff->getCollection()->getItemCollection('0'), ItemFormat::LONG), $tiff);
+        $ifd = new Ifd(new ItemDefinition($tiff->getCollection()->getItemCollection('0'), DataFormat::LONG), $tiff);
         foreach ($entries as $entry) {
             $item_collection = $ifd->getCollection()->getItemCollection($entry[0], 0, 'UnknownTag', [
                 'item' => $entry[0],

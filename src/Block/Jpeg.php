@@ -8,7 +8,7 @@ use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -55,7 +55,7 @@ class Jpeg extends BlockBase
                     ]);
                     $trail = new ItemDefinition(
                         Collection::get('RawData', ['name' => 'trail']),
-                        ItemFormat::BYTE,
+                        DataFormat::BYTE,
                         $offset
                     );
                     $this->addBlock($trail)->parseData($data, $offset, $new_offset - $offset);

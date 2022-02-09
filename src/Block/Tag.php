@@ -8,7 +8,7 @@ use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -44,10 +44,10 @@ class Tag extends BlockBase
             if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
                 $expected_format_names = [];
                 foreach ($expected_format as $expected_format_id) {
-                    $expected_format_names[] = ItemFormat::getName($expected_format_id);
+                    $expected_format_names[] = DataFormat::getName($expected_format_id);
                 }
                 $this->warning("Found {format_name} data format, expected {expected_format_names}", [
-                    'format_name' => ItemFormat::getName($this->getFormat()),
+                    'format_name' => DataFormat::getName($this->getFormat()),
                     'expected_format_names' => implode(', ', $expected_format_names),
                 ]);
             }
@@ -165,7 +165,7 @@ class Tag extends BlockBase
         $this->debug($msg, [
             'seq' => $seq,
             'ifdoffset' => $item_definition_offset . '/0x' . strtoupper(dechex($item_definition_offset)),
-            'format' => ItemFormat::getName($this->getDefinition()->getFormat()),
+            'format' => DataFormat::getName($this->getDefinition()->getFormat()),
             'components' => $this->getDefinition()->getValuesCount(),
             'node' => $node,
             'name' => $name,

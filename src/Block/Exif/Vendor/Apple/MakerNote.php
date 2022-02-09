@@ -13,7 +13,7 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -28,7 +28,7 @@ class MakerNote extends Ifd
         $offset = $this->getDefinition()->getDataOffset();
 
         // Load Apple's header as a raw data block.
-        $header_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'appleHeader']), ItemFormat::BYTE, 14);
+        $header_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'appleHeader']), DataFormat::BYTE, 14);
         $header_data_window = new DataWindow($data_element, $offset, 14);
         $header = new RawData($header_data_definition, $this);
         $header->parseData($header_data_window);

@@ -11,7 +11,7 @@ use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -55,8 +55,8 @@ class Filter extends ListBase
 
             // The items are defined in the collection of the parent element.
             $this
-                ->addBlock(new ItemDefinition($this->getParentElement()->getCollection()->getItemCollection($id), ItemFormat::SIGNED_LONG, $val_count))
-                ->parseData(new DataWindow($data, $offset, $val_count * ItemFormat::getSize(ItemFormat::SIGNED_LONG)));
+                ->addBlock(new ItemDefinition($this->getParentElement()->getCollection()->getItemCollection($id), DataFormat::SIGNED_LONG, $val_count))
+                ->parseData(new DataWindow($data, $offset, $val_count * DataFormat::getSize(DataFormat::SIGNED_LONG)));
 
             $offset += 4 * $val_count;
         }

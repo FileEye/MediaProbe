@@ -9,7 +9,7 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Image;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -75,7 +75,7 @@ class Tiff extends BlockBase
         if ($ifd_offset > 8) {
             $scan = new ItemDefinition(
                 Collection::get('RawData', ['name' => 'scan']),
-                ItemFormat::BYTE,
+                DataFormat::BYTE,
                 $ifd_offset - 8
             );
             $this->addBlock($scan)->parseData($data, 8, $ifd_offset - 8);
@@ -95,7 +95,7 @@ class Tiff extends BlockBase
                 // entire segment space.
                 $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
                 $ifd_tags_count = $data->getShort($ifd_offset);
-                $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
+                $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), DataFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
                 $ifd = new $ifd_class($ifd_item, $this);
                 $ifd->parseData($data);
 

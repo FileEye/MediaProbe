@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Block;
 
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
@@ -55,7 +55,7 @@ class Map extends Index
         $i = 0;
         foreach ($this->getCollection()->listItemIds() as $item) {
             // Adds a 'tag'.
-            $n = $item * ItemFormat::getSize($this->getFormat());
+            $n = $item * DataFormat::getSize($this->getFormat());
             $item_definition = $this->getItemDefinitionFromData($i, $item, $data, $n);
             $block = $this->addBlock($item_definition);
             try {
@@ -99,7 +99,7 @@ class Map extends Index
 
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
-            $bytes_offset = $sub->getAttribute('id') * ItemFormat::getSize($this->getFormat());
+            $bytes_offset = $sub->getAttribute('id') * DataFormat::getSize($this->getFormat());
             $bytes = $sub->toBytes($byte_order);
             $bytes_length = strlen($bytes);
 

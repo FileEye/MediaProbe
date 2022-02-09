@@ -12,7 +12,7 @@ use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -34,7 +34,7 @@ class CustomFunctions2 extends ListBase
                 'seq' => $n + 1,
                 'id' => $id,
                 'hexid' => '0x' . strtoupper(dechex($id)),
-                'format' => ItemFormat::getName(ItemFormat::SIGNED_LONG),
+                'format' => DataFormat::getName(DataFormat::SIGNED_LONG),
                 'components' => $num,
                 'offset' => $data->getStart() + $rec_pos + 8,
                 'size' => $num * 4,
@@ -49,7 +49,7 @@ class CustomFunctions2 extends ListBase
                     $num,
                     $this->getRootElement()
                 );
-                $item_definition = new ItemDefinition($item_collection, ItemFormat::SIGNED_LONG, $num, $rec_pos);
+                $item_definition = new ItemDefinition($item_collection, DataFormat::SIGNED_LONG, $num, $rec_pos);
                 $class = $item_definition->getCollection()->getPropertyValue('class');
                 $tag = new $class($item_definition, $this);
                 $tag_data_window = new DataWindow($data, $item_definition->getDataOffset(), $item_definition->getSize());

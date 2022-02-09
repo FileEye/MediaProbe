@@ -7,7 +7,7 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -53,7 +53,7 @@ class JpegSegmentSos extends JpegSegmentBase
             $this->warning('Found trailing content after EOI: {size} bytes', ['size' => $raw_size]);
             // There is no JPEG marker for trailing garbage, so we just collect
             // the data in a RawData object.
-            $trail_definition = new ItemDefinition(Collection::get('RawData'), ItemFormat::BYTE, $raw_size);
+            $trail_definition = new ItemDefinition(Collection::get('RawData'), DataFormat::BYTE, $raw_size);
             $trail_data_window = new DataWindow($data, $end_offset, $raw_size);
             $trail = new RawData($trail_definition, $this->getParentElement());
             $trail->parseData($trail_data_window);

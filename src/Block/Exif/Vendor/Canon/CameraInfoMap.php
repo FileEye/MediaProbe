@@ -7,7 +7,7 @@ use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -41,7 +41,7 @@ class CameraInfoMap extends Map
             }
         }
         if (!$mapped) {
-            if ($this->getFormat() === ItemFormat::LONG) {
+            if ($this->getFormat() === DataFormat::LONG) {
                 if (in_array($this->getDefinition()->getValuesCount(), [138, 148])) {
                     $this->definition = new ItemDefinition($this->getCollection()->getItemCollection('CanonCameraInfoPowerShot'));
                 } elseif (in_array($this->getDefinition()->getValuesCount(), [156, 162, 167, 171, 264])) {
@@ -50,7 +50,7 @@ class CameraInfoMap extends Map
                     $this->definition = new ItemDefinition($this->getCollection()->getItemCollection('CanonCameraInfoUnknown32'));
                 }
 // xx todo add when newer exiftoolxml is available
-//            elseif ($this->getFormat() === ItemFormat::SHORT) {
+//            elseif ($this->getFormat() === DataFormat::SHORT) {
 //                $this->definition = new ItemDefinition($this->getCollection()->getItemCollection('CanonCameraInfoUnknown16'));
 //            }
             } else {

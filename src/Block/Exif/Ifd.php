@@ -15,7 +15,7 @@ use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -117,7 +117,7 @@ class Ifd extends ListBase
         $id = $data_element->getShort($offset);
         $format = $data_element->getShort($offset + 2);
         $components = $data_element->getLong($offset + 4);
-        $size = ItemFormat::getSize($format) * $components;
+        $size = DataFormat::getSize($format) * $components;
 
         // If the data size is bigger than 4 bytes, then actual data is not in
         // the TAG's data element, but at the the offset stored in the data
@@ -157,7 +157,7 @@ class Ifd extends ListBase
             continue;
           }*/
             $components = $data_element->getShort($item_offset - 8);
-            $format = ItemFormat::LONG;
+            $format = DataFormat::LONG;
             $data_offset = $item_offset;
         }
 
@@ -194,7 +194,7 @@ class Ifd extends ListBase
 
             $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
             if ((int) $sub_block->getAttribute('id') === 37500) {
-                $bytes .= ConvertBytes::fromShort(ItemFormat::UNDEFINED, $byte_order);
+                $bytes .= ConvertBytes::fromShort(DataFormat::UNDEFINED, $byte_order);
                 $bytes .= ConvertBytes::fromLong(strlen($data), $byte_order);
             } else {
                 $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
@@ -218,12 +218,12 @@ class Ifd extends ListBase
             $thumbnail_entry = $thumbnail->getElement('entry');
             // Add offset.
             $bytes .= ConvertBytes::fromShort($this->getCollection()->getItemCollectionByName('ThumbnailOffset')->getPropertyValue('item'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(ItemFormat::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromShort(DataFormat::LONG, $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
             // Add length.
             $bytes .= ConvertBytes::fromShort($this->getCollection()->getItemCollectionByName('ThumbnailLength')->getPropertyValue('item'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(ItemFormat::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromShort(DataFormat::LONG, $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($thumbnail_entry->getComponents(), $byte_order);
             // Add thumbnail.

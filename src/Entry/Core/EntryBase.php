@@ -8,7 +8,7 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementBase;
 use FileEye\MediaProbe\ElementInterface;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -69,7 +69,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     {
         parent::__construct(static::DOM_NODE_NAME, $parent, $reference);
         $this->setDataElement($dataElement);
-        $this->format = ItemFormat::getFromName($this->formatName);
+        $this->format = DataFormat::getFromName($this->formatName);
     }
 
     /**
@@ -269,7 +269,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     public function toDumpArray()
     {
         $dump = [
-            'format' => ItemFormat::getName($this->getFormat()),
+            'format' => DataFormat::getName($this->getFormat()),
             'components' => $this->getComponents(),
             'bytesHash' => hash('sha256', $this->toBytes()),
             'text' => $this->toString(),
