@@ -253,6 +253,11 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     {
         $context['path'] = $this->getContextPath();
         $root_element = $this->getRootElement();
+
+        if (method_exists($root_element, 'getStopwatch')) {
+            $message = (string) $root_element->getStopwatch()->getEvent('media-parsing') . ' ' . $message;
+        }
+
         if (property_exists($root_element, 'logger')) {  // xx should be logging anyway
             $root_element->logger->log($level, $message, $context);
             if ($root_element->externalLogger) {  // xx should be logging anyway

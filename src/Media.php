@@ -14,6 +14,7 @@ use Monolog\Handler\TestHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 use PrettyXml\Formatter;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Stopwatch\Stopwatch;
 
 /**
  * Class to handle media data.
@@ -56,9 +57,16 @@ class Media extends BlockBase
     /**
      * An XML prettify formatter.
      *
-     * @var PrettyXml\Formatter
+     * @var \PrettyXml\Formatter
      */
     protected $xmlFormatter;
+
+    /**
+     * A Symfony stopwatch.
+     *
+     * @var \Symfony\Component\Stopwatch\Stopwatch
+     */
+    private $stopWatch;
 
     /**
      * Creates a Media object from a file.
@@ -101,15 +109,15 @@ class Media extends BlockBase
     public static function parse(DataElement $data_element, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
         // Determine the media format.
-        $media_format_collection = static::getMatchingMediaCollection($data_element);
+        $media_format = new ItemDefinition(static::getMatchingMediaCollection($data_element));
 
         // Build the Media object and its immediate child, that represents the
         // media format. Then parse the media according to the media format.
         $media = new static($external_logger, $fail_level);
+        $media->getStopwatch()->start('media-parsing');
         $media->debugBlockInfo($data_element);
-
-        $media_format = new ItemDefinition($media_format_collection);
         $media->addBlock($media_format)->parseData($data_element);
+        $media->getStopwatch()->stop('media-parsing');
 
         return $media;
     }
@@ -161,6 +169,7 @@ class Media extends BlockBase
           ->pushProcessor(new PsrLogMessageProcessor());
         $this->externalLogger = $external_logger;
         $this->failLevel = $fail_level ? Logger::toMonologLevel($fail_level) : null;
+        $this->stopWatch = new Stopwatch();
     }
 
     /**
@@ -231,5 +240,13 @@ class Media extends BlockBase
             }
         }
         return $ret;
+    }
+
+    /**
+     * Returns the stopwatch.
+     */
+    public function getStopwatch(): Stopwatch
+    {
+        return $this->stopWatch;
     }
 }

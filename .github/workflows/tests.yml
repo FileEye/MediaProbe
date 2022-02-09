@@ -41,9 +41,9 @@ jobs:
       uses: actions/cache@v2
       with:
         path: vendor
-        key: ${{ runner.os }}-php-${{ matrix.php-version }}-v2-${{ hashFiles('**/composer.lock') }}
+        key: ${{ runner.os }}-php-${{ matrix.php-version }}-v3-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
-          ${{ runner.os }}-php-${{ matrix.php-version }}-v2-
+          ${{ runner.os }}-php-${{ matrix.php-version }}-v3-
 
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
@@ -59,6 +59,7 @@ jobs:
     - name: Image file dumps
       continue-on-error: true
       run: |
+        php examples/dump-media.php -d tests/media-samples/image/pel-157.tiff
         php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
         php examples/dump-media.php -d tests/media-samples/image/exiftool/Canon.jpg
         php examples/dump-media.php -d tests/media-samples/image/exiftool/Canon1DmkIII.jpg

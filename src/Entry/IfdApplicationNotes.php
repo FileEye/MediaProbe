@@ -2,34 +2,11 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Entry\Core\Byte;
+use FileEye\MediaProbe\Entry\Core\Char;
 
 /**
  * Decode text for an Ifd/ApplicationNotes tag.
  */
-class IfdApplicationNotes extends Byte
+class IfdApplicationNotes extends Char
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getValue(array $options = [])
-    {
-        $format = $options['format'] ?? null;
-        if ($format === 'phpExif') {
-            return $this->toString();
-        }
-        return parent::getValue();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toString(array $options = []): string
-    {
-        $str = '';
-        for ($i = 0; $i < $this->getComponents(); $i++) {
-            $str .= chr($this->getValue()[$i]);
-        }
-        return $str;
-    }
 }
