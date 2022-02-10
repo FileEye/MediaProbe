@@ -59,13 +59,12 @@ jobs:
     - name: Image file dumps
       continue-on-error: true
       run: |
-        php examples/dump-media.php -d tests/media-samples/image/pel-157.tiff
+        php examples/dump-media.php -d tests/media-samples/image/broken/canon-eos-650d.jpg
         php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
-        php examples/dump-media.php -d tests/media-samples/image/exiftool/Canon.jpg
-        php examples/dump-media.php -d tests/media-samples/image/exiftool/Canon1DmkIII.jpg
 
     - name: Run test suite
       run: vendor/bin/phpunit ./tests
+#      continue-on-error: true
 
     - name: Code style test
       if: ${{ matrix.php-version == 7.4 }}

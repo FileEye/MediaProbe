@@ -9,13 +9,13 @@ use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -30,7 +30,6 @@ class Ifd extends ListBase
      */
     public function parseData(DataElement $data_element, int $start = 0, ?int $size = null, $xxx = 0): void
     {
-        //$ifd_data = new DataWindow($data_element, $start, $size);
         $offset = $this->getDefinition()->getDataOffset();
 
         // Get the number of entries.
@@ -42,6 +41,38 @@ class Ifd extends ListBase
             $i_offset = $offset + 2 + 12 * $i;
             $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Tiff\IfdAny');
             $item_class = $item_definition->getCollection()->getPropertyValue('class');
+
+            // Check data is accessible, warn otherwise.
+            if ($item_definition->getDataOffset() >= $data_element->getSize()) {
+                $this->warning(
+                    'Could not access value for item {item} in \'{ifd}\', overflow', [
+                        'item' => MediaProbe::dumpIntHex($item_definition->getCollection()->getPropertyValue('name') ?? 'n/a'),
+                        'ifd' => $this->getAttribute('name'),
+                    ]
+                );
+                continue;
+            }
+/*            $this->debug(
+                'Item Offset {o} Components {c} Format {f} Formatsize {fs} Size {s} DataElement Size {des}', [
+                    'o' => MediaProbe::dumpIntHex($data_element->getAbsoluteOffset($item_definition->getDataOffset())),
+                    'c' => $item_definition->getValuesCount(),
+                    'f' => $item_definition->getFormat(),
+                    'fs' => DataFormat::getSize($item_definition->getFormat()),
+                    's' => MediaProbe::dumpIntHex($item_definition->getSize()),
+                    'des' => MediaProbe::dumpIntHex($data_element->getSize()),
+                ]
+            );*/
+            if ($item_definition->getDataOffset() +  $item_definition->getSize() > $data_element->getSize()) {
+                $this->warning(
+                    'Could not get value for item {item} in \'{ifd}\', not enough data', [
+                        'item' => MediaProbe::dumpIntHex($item_definition->getCollection()->getPropertyValue('name') ?? 'n/a'),
+                        'ifd' => $this->getAttribute('name'),
+                    ]
+                );
+                continue;
+            }
+
+            // Adds the item to the DOM.
             $item = new $item_class($item_definition, $this);
             try {
                 if (is_a($item_class, Ifd::class, true)) {
@@ -116,17 +147,6 @@ class Ifd extends ListBase
     {
         $id = $data_element->getShort($offset);
         $format = $data_element->getShort($offset + 2);
-        $components = $data_element->getLong($offset + 4);
-        $size = DataFormat::getSize($format) * $components;
-
-        // If the data size is bigger than 4 bytes, then actual data is not in
-        // the TAG's data element, but at the the offset stored in the data
-        // element.
-        if ($size > 4) {
-            $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
-        } else {
-            $data_offset = $offset + 8;
-        }
 
         // Fall back to the generic IFD collection if the item is missing from
         // the appropriate one.
@@ -146,19 +166,27 @@ class Ifd extends ListBase
             }
         }
 
-        // If the item is an Ifd, recurse in loading the item at offset.
         if (is_a($item_collection->getPropertyValue('class'), Ifd::class, true)) {
-            // Check the offset.
-            $item_offset = $data_element->getLong($offset + 8);
-/*          if ($item_offset <= $offset) {
-            $this->error('Invalid offset pointer to IFD: {offset}.', [
-                'offset' => $item_definition->getDataOffset(),
-            ]);
-            continue;
-          }*/
-            $components = $data_element->getShort($item_offset - 8);
-            $format = DataFormat::LONG;
-            $data_offset = $item_offset;
+            // If the item is an Ifd, recurse in loading the item at offset.
+            $data_offset = $data_element->getLong($offset + 8);
+            $components = $data_element->getShort($data_offset);
+            // The first 2 bytes indicate the number of directory entries contained
+            // in the IFD. Then directory entries (12 bytes per entry) follow.
+            // After last directory entry, there are  4 bytes indicating the
+            // offset to next IFD.
+            $size = 2 + $components * DataFormat::getSize($format) + 4;
+        } else {
+            // The data is a tag.
+            $components = $data_element->getLong($offset + 4);
+            // If the data size is bigger than 4 bytes, then actual data is not in
+            // the TAG's data element, but at the the offset stored in the data
+            // element.
+            $size = DataFormat::getSize($format) * $components;
+            if ($size > 4) {
+                $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
+            } else {
+                $data_offset = $offset + 8;
+            }
         }
 
         return new ItemDefinition($item_collection, $format, $components, $data_offset, $data_element->getStart() + $offset, $seq);

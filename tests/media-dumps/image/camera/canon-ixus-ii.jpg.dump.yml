@@ -1164,14 +1164,6 @@ elements:
                                                                                     components: 1
                                                                                     bytesHash: 8f96c15501bef61baf5bd943201979595736b66b6a7e3b35c353729ab8d9a561
                                                                                     text: '32767'
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SRAWQuality:46'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: false
-                                                                            name: SRAWQuality
-                                                                            id: '46'
-                                                                            collection: Tag
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2'
@@ -2194,14 +2186,6 @@ elements:
                                                                                     components: 68
                                                                                     bytesHash: 330051d664cf9db8961ab0725e8514d7899b9941e449a752471b4b76b69932c1
                                                                                     text: '68 byte(s) of data'
-                                                                        -
-                                                                            node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:LensSerialNumber:363'
-                                                                            class: FileEye\MediaProbe\Block\Tag
-                                                                            valid: false
-                                                                            name: LensSerialNumber
-                                                                            id: '363'
-                                                                            collection: Tag
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:UserComment:37510'
@@ -2741,20 +2725,20 @@ elements:
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
 log:
-    ERROR:
+    WARNING:
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SRAWQuality:46'
-            message: 'Excessive size for DataWindow'
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
+            message: 'Could not access value for item ''SRAWQuality'' in ''CanonCameraSettings'', overflow'
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:LensSerialNumber:363'
-            message: 'Excessive size for DataWindow'
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13'
+            message: 'Could not access value for item ''LensSerialNumber'' in ''CanonCameraInfo'', overflow'
     NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
-            message: 'No specification for item UnknownTag in ''Canon'''
+            message: 'Unknown item 0/0x0 in ''Canon'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
-            message: 'No specification for item UnknownTag in ''Canon'''
+            message: 'Unknown item 0/0x0 in ''Canon'''
 gdInfo:
     0: 640
     1: 480
@@ -2765,7 +2749,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: canon-ixus-ii.jpg
-    FileDateTime: 1644251684
+    FileDateTime: 1644443574
     FileSize: 37553
     FileType: 2
     MimeType: image/jpeg

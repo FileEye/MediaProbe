@@ -32,34 +32,39 @@ class Tag extends BlockBase
      */
     public function validate()
     {
-        // Check if MediaProbe has a definition for this TAG.
+        // Check if MediaProbe has a definition for this tag.
         if (in_array($this->getCollection()->getId(), ['VoidCollection', 'UnknownTag'])) {
-            $this->notice("No specification for item {item} in '{ifd}'", [
-                'item' => $this->getCollection()->getId(),
-                'ifd' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',
+            $this->notice("Unknown item {item} in '{parent}'", [
+                'item' => MediaProbe::dumpIntHex($this->getAttribute('id')),
+                'parent' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',
             ]);
-        } else {
-            // Warn if format is not as expected.
-            $expected_format = $this->getCollection()->getPropertyValue('format');
-            if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
-                $expected_format_names = [];
-                foreach ($expected_format as $expected_format_id) {
-                    $expected_format_names[] = DataFormat::getName($expected_format_id);
-                }
-                $this->warning("Found {format_name} data format, expected {expected_format_names}", [
-                    'format_name' => DataFormat::getName($this->getFormat()),
-                    'expected_format_names' => implode(', ', $expected_format_names),
-                ]);
-            }
+            return;
+        }
 
-            // Warn if components are not as expected.
-            $expected_components = $this->getCollection()->getPropertyValue('components');
-            if ($expected_components !== null && $this->getComponents() !== null && $this->getComponents() !== $expected_components) {
-                $this->warning("Found {components} data components, expected {expected_components}", [
-                    'components' => $this->getComponents(),
-                    'expected_components' => $expected_components,
-                ]);
+        // Warn if format is not as expected.
+        $expected_format = $this->getCollection()->getPropertyValue('format');
+        if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
+            $expected_format_names = [];
+            foreach ($expected_format as $expected_format_id) {
+                $expected_format_names[] = DataFormat::getName($expected_format_id);
             }
+            $this->warning("Found {format_name} data format, expected {expected_format_names} for item '{item}' in '{parent}'", [
+                'format_name' => DataFormat::getName($this->getFormat()),
+                'expected_format_names' => implode(', ', $expected_format_names),
+                'item' => $this->getAttribute('name') ?? 'n/a',
+                'parent' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',
+            ]);
+        }
+
+        // Warn if components are not as expected.
+        $expected_components = $this->getCollection()->getPropertyValue('components');
+        if ($expected_components !== null && $this->getComponents() !== null && $this->getComponents() !== $expected_components) {
+            $this->warning("Found {components} data components, expected {expected_components} for item '{item}' in '{parent}'", [
+                'components' => $this->getComponents(),
+                'expected_components' => $expected_components,
+                'item' => $this->getAttribute('name') ?? 'n/a',
+                'parent' => $this->getParentElement() ? $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a' : 'n/a',
+            ]);
         }
     }
 
@@ -144,27 +149,21 @@ class Tag extends BlockBase
         if ($name ==! null) {
             $msg .= ':{name}';
         }
-//$title = $this->getCollection()->getPropertyValue('title');
-//if ($title ==! null) {
-//    $msg .= ' ({title})';
-//}
         $item = $this->getAttribute('id');
         if ($item ==! null) {
             $msg .= ' ({item})';
         }
-        if (is_numeric($item)) {
-            $item = $item . '/0x' . strtoupper(dechex($item));
-        }
+        $item = MediaProbe::dumpIntHex($item);
         if ($data_element instanceof DataWindow) {
             $msg .= ' @{offset} s {size}';
-            $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
+            $offset = MediaProbe::dumpIntHex($data_element->getAbsoluteOffset());
         } else {
             $msg .= ' size {size} byte(s)';
         }
         $msg .= ', f {format}, c {components}';
         $this->debug($msg, [
             'seq' => $seq,
-            'ifdoffset' => $item_definition_offset . '/0x' . strtoupper(dechex($item_definition_offset)),
+            'ifdoffset' => MediaProbe::dumpIntHex($item_definition_offset),
             'format' => DataFormat::getName($this->getDefinition()->getFormat()),
             'components' => $this->getDefinition()->getValuesCount(),
             'node' => $node,

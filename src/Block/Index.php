@@ -40,7 +40,7 @@ class Index extends ListBase
             $offset = 0;
             $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0]);
             if ($index_size !== $this->getDefinition()->getSize()) {
-                $this->warning("Size mismatch between IFD and index header");
+                $this->error("Size mismatch between IFD and index header");
             }
         }
     }

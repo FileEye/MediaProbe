@@ -50,7 +50,7 @@ final class DataWindow extends DataElement
             throw new DataException('Zero or negative size for DataWindow');
         }
         if ($this->size > ($dataElement->getSize() - $offset)) {
-            throw new DataException('Excessive size for DataWindow');
+            throw new DataException('DataWindow (offset: %d size: %d) out of bounds of DataElement (size: %d)', $offset, $size, $dataElement->getSize());
         }
 
         $this->order = $dataElement->getByteOrder();

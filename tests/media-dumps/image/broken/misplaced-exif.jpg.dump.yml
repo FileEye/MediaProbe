@@ -428,13 +428,13 @@ log:
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-            message: 'Found 11 data components, expected 20'
+            message: 'Found 11 data components, expected 20 for item ''ModifyDate'' in ''IFD0'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
             message: 'Invalid datetime format for ''1509749992'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-            message: 'Found Byte data format, expected Undefined'
+            message: 'Found Byte data format, expected Undefined for item ''ExifVersion'' in ''ExifIFD'''
 gdInfo:
     0: 320
     1: 200
@@ -445,7 +445,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: misplaced-exif.jpg
-    FileDateTime: 1644099378
+    FileDateTime: 1644443574
     FileSize: 4587
     FileType: 2
     MimeType: image/jpeg
