@@ -24,6 +24,10 @@ class Format extends Collection {
     array (
       0 => 1,
     ),
+    'Char' =>
+    array (
+      0 => 2000,
+    ),
     'Double' =>
     array (
       0 => 12,
@@ -239,6 +243,17 @@ class Format extends Collection {
         'title' => 'SignedShortRational',
         'length' => 4,
         'class' => 'FileEye\\MediaProbe\\Entry\\Core\\SignedShortRational',
+        'collection' => 'VoidCollection',
+      ),
+    ),
+    2000 =>
+    array (
+      0 =>
+      array (
+        'name' => 'Char',
+        'title' => 'Char',
+        'length' => 1,
+        'class' => 'FileEye\\MediaProbe\\Entry\\Core\\Char',
         'collection' => 'VoidCollection',
       ),
     ),

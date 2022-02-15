@@ -150,4 +150,12 @@ class MediaProbe
 
         return $ret;
     }
+
+    public static function dumpIntHex($data): string
+    {
+        if (is_numeric($data)) {
+            return $data . '/0x' . strtoupper(dechex($data));
+        }
+        return "'$data'";
+    }
 }

@@ -39,7 +39,7 @@ class ExifUserComment extends Undefined
         }
 
         if (!$this->valid) {
-            $this->error('Invalid EXIF text encoding for UserComment.');
+            $this->warning('Invalid EXIF text encoding for UserComment.');
         }
     }
 

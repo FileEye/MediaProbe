@@ -8,11 +8,12 @@ use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\CollectionException;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\ExifUserComment;
 use FileEye\MediaProbe\Entry\Time;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -30,9 +31,9 @@ class SpecTest extends MediaProbeTestCaseBase
         $tiff_mock = $this->getMockBuilder('FileEye\MediaProbe\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), ItemFormat::LONG), $tiff_mock);
-        $ifd_exif = new Ifd(new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), ItemFormat::LONG), $ifd_0);
-        $ifd_canon_camera_settings = new Index(new ItemDefinition(Collection::get('ExifMakerNotes\\Canon\\Main')->getItemCollection(1), ItemFormat::LONG), $tiff_mock);
+        $ifd_0 = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
+        $ifd_exif = new Ifd(new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), DataFormat::LONG), $ifd_0);
+        $ifd_canon_camera_settings = new Index(new ItemDefinition(Collection::get('ExifMakerNotes\\Canon\\Main')->getItemCollection(1), DataFormat::LONG), $tiff_mock);
 
         // Test retrieving IFD id by name.
         $this->assertEquals(Collection::getByName('IFD0'), Collection::getByName('0'));
@@ -65,8 +66,8 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertSame('ExifIFD', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('name'));
 
         // Check getTagFormat.
-        $this->assertEquals([ItemFormat::UNDEFINED], $ifd_exif->getCollection()->getItemCollection(0x9286)->getPropertyValue('format'));
-        $this->assertEquals([ItemFormat::SHORT, ItemFormat::LONG], $ifd_exif->getCollection()->getItemCollection(0xA002)->getPropertyValue('format'));
+        $this->assertEquals([DataFormat::UNDEFINED], $ifd_exif->getCollection()->getItemCollection(0x9286)->getPropertyValue('format'));
+        $this->assertEquals([DataFormat::SHORT, DataFormat::LONG], $ifd_exif->getCollection()->getItemCollection(0xA002)->getPropertyValue('format'));
 
         // Check getTagTitle.
         $this->assertEquals('Exif IFD', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('title'));
@@ -234,7 +235,9 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals(0xD8, $collection->getItemCollectionByName('SOI')->getPropertyValue('item'));
         $this->assertEquals(0xD9, $collection->getItemCollectionByName('EOI')->getPropertyValue('item'));
         $this->assertEquals(0xDA, $collection->getItemCollectionByName('SOS')->getPropertyValue('item'));
-        $this->assertNull($collection->getItemCollectionByName('missing'));
+        $this->expectException(CollectionException::class);
+        $this->expectExceptionMessage('Missing collection for item \'missing\' in \'Jpeg\Jpeg\'');
+        $item_collection = $collection->getItemCollectionByName('missing');
     }
 
     public function testJpegSegmentNames()
@@ -244,8 +247,9 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals('RST3', $collection->getItemCollection(0xD3)->getPropertyValue('name'));
         $this->assertEquals('APP3', $collection->getItemCollection(0xE3)->getPropertyValue('name'));
         $this->assertEquals('JPG11', $collection->getItemCollection(0xFB)->getPropertyValue('name'));
-        $this->expectException(MediaProbeException::class);
-        $this->assertNull($collection->getItemCollection(100));
+        $this->expectException(CollectionException::class);
+        $this->expectExceptionMessage('Missing collection for item \'100\' in \'Jpeg\Jpeg\'');
+        $item_collection = $collection->getItemCollection(100);
     }
 
     public function testJpegSegmentTitles()

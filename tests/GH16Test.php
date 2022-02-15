@@ -11,7 +11,7 @@ use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\WindowsString;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
 
@@ -46,7 +46,7 @@ class GH16Test extends MediaProbeTestCaseBase
         // Change the value of the Tag's entry and save the file to disk.
         $ifd0->removeElement("tag[@name='XPSubject']");
         $new_entry_value = "Превед, медвед!";
-        $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x9C9F), ItemFormat::BYTE), $ifd0);
+        $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x9C9F), DataFormat::BYTE), $ifd0);
         new WindowsString($tag, new DataString(mb_convert_encoding($new_entry_value, 'UCS-2LE', 'UTF-8') . "\x00\x00"));
         $this->assertCount(1, $ifd0->getMultipleElements('tag'));
         $this->assertEquals($new_entry_value, $ifd0->getElement("tag[@name='XPSubject']")->toString());

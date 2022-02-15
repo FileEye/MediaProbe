@@ -9,7 +9,7 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Image;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -55,62 +55,79 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected function doParseData(DataElement $data): void
+    protected function doParseData(DataElement $data_element): void
     {
         // Determine the byte order of the TIFF data.
-        $this->setByteOrder(self::getTiffSegmentByteOrder($data));
-        $data->setByteOrder($this->getByteOrder());
+        $this->setByteOrder(self::getTiffSegmentByteOrder($data_element));
+        $data_element->setByteOrder($this->getByteOrder());
 
         $this->debug('byte order: {byte_order} ({byte_order_description})', [
             'byte_order' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
             'byte_order_description' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
         ]);
 
-        // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
-        // header).
-        $ifd_offset = $data->getLong(4);
+        // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for header).
+        $ifd_offset = $data_element->getLong(4);
 
         // If the offset to first IFD is higher than 8, then there may be an
         // image scan (TIFF) in between. Store that in a RawData block.
         if ($ifd_offset > 8) {
             $scan = new ItemDefinition(
                 Collection::get('RawData', ['name' => 'scan']),
-                ItemFormat::BYTE,
+                DataFormat::BYTE,
                 $ifd_offset - 8
             );
-            $this->addBlock($scan)->parseData($data, 8, $ifd_offset - 8);
+            $this->addBlock($scan)->parseData($data_element, 8, $ifd_offset - 8);
         }
 
         // Loops through IFDs. In fact we should only have IFD0 and IFD1.
-        for ($i = 0; $i <= 2; $i++) {
-            // IFD1 shouldn't link further.
-            if ($ifd_offset === 2) {
-                $this->error('IFD1 should not link to another IFD');
-                break;
+        for ($i = 0; $i <= 1; $i++) {
+            // Check data is accessible, warn otherwise.
+            if ($ifd_offset >= $data_element->getSize() || $ifd_offset + 4 > $data_element->getSize()) {
+                $this->warning(
+                    'Could not determine number of entries for {item}, overflow',
+                    ['item' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name')]
+                );
+                continue;
             }
 
-            try {
-                // Create and load the IFDs. Note that the data element cannot
-                // be split in windows since any pointer will refer to the
-                // entire segment space.
-                $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
-                $ifd_tags_count = $data->getShort($ifd_offset);
-                $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
-                $ifd = new $ifd_class($ifd_item, $this);
-                $ifd->parseData($data);
+            // Find number of tags in IFD and warn if not enough data to read them.
+            $ifd_tags_count = $data_element->getShort($ifd_offset);
+            if ($ifd_offset + $ifd_tags_count * 4 > $data_element->getSize()) {
+                $this->warning(
+                    'Invalid data for {item}',
+                    ['item' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name')]
+                );
+                continue;
+            }
 
-                // Offset to next IFD.
-                $ifd_offset = $data->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
+            // Create and load the IFDs. Note that the data element cannot
+            // be split in windows since any pointer will refer to the
+            // entire segment space.
+            $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
+            $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), DataFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
+            $ifd = new $ifd_class($ifd_item, $this);
+            try {
+                $ifd->parseData($data_element);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
                     'ifd_name' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name'),
                     'msg' => $e->getMessage(),
                 ]);
-                break;
+                continue;
             }
+
+            // Offset to next IFD.
+            $ifd_offset = $data_element->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
 
             // If next IFD offset is 0 we are finished.
             if ($ifd_offset === 0) {
+                break;
+            }
+
+            // IFD1 shouldn't link further.
+            if ($i === 1) {
+                $this->error('IFD1 should not link to another IFD');
                 break;
             }
         }

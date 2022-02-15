@@ -2,6 +2,8 @@
 
 namespace FileEye\MediaProbe;
 
+use FileEye\MediaProbe\Data\DataFormat;
+
 /**
  * A value object defining a ListBase item.
  */
@@ -54,7 +56,7 @@ class ItemDefinition
      *
      * @todo xxx
      */
-    public function __construct(Collection $collection, int $format = ItemFormat::BYTE, int $values_count = 1, int $data_offset = 0, int $item_definition_offset = 0, int $sequence = 0)
+    public function __construct(Collection $collection, int $format = DataFormat::BYTE, int $values_count = 1, int $data_offset = 0, int $item_definition_offset = 0, int $sequence = 0)
     {
         $this->collection = $collection;
         $this->format = $format;
@@ -117,7 +119,7 @@ class ItemDefinition
      */
     public function getSize(): int
     {
-        return ItemFormat::getSize($this->getFormat()) * $this->getValuesCount();
+        return DataFormat::getSize($this->getFormat()) * $this->getValuesCount();
     }
 
     /**
@@ -137,7 +139,7 @@ class ItemDefinition
                 );
             }
 
-            if (!$entry_class = ItemFormat::getClass($this->getFormat())) {
+            if (!$entry_class = DataFormat::getClass($this->getFormat())) {
                 throw new MediaProbeException(
                     'Unsupported format %d for item: %s (%s)',
                     $this->getFormat(),

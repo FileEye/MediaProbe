@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Block;
 
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
@@ -54,16 +54,40 @@ class Map extends Index
         // Build the map items.
         $i = 0;
         foreach ($this->getCollection()->listItemIds() as $item) {
-            // Adds a 'tag'.
-            $n = $item * ItemFormat::getSize($this->getFormat());
+            $n = $item * DataFormat::getSize($this->getFormat());
             $item_definition = $this->getItemDefinitionFromData($i, $item, $data, $n);
-            $block = $this->addBlock($item_definition);
-            try {
-                $block->parseData($data, $item_definition->getDataOffset(), $item_definition->getSize());
-            } catch (DataException $e) {
-                $block->error($e->getMessage());
-                $block->valid = false;
+
+            // Check data is accessible, warn otherwise.
+            if ($item_definition->getDataOffset() >= $data->getSize()) {
+                $this->warning(
+                    'Could not access value for item \'{item}\' in \'{map}\', overflow',
+                    [
+                        'item' => $item_definition->getCollection()->getPropertyValue('name'),
+                        'map' => $this->getAttribute('name'),
+                    ]
+                );
+                continue;
             }
+            if ($item_definition->getDataOffset() +  $item_definition->getSize() > $data->getSize()) {
+                $this->warning(
+                    'Could not get value for item \'{item}\' in \'{map}\', not enough data',
+                    [
+                        'item' => $item_definition->getCollection()->getPropertyValue('name'),
+                        'map' => $this->getAttribute('name'),
+                    ]
+                );
+                continue;
+            }
+
+            // Adds the item to the DOM.
+            $item = $this->addBlock($item_definition);
+            try {
+                $item->parseData($data, $item_definition->getDataOffset(), $item_definition->getSize());
+            } catch (DataException $e) {
+                $item->error($e->getMessage());
+                $item->valid = false;
+            }
+
             $i++;
         }
     }
@@ -94,12 +118,10 @@ class Map extends Index
             return '';
         }
         $mapDataBytes = $mapDataElement->toBytes();
-//if ($this->getAttribute('name') === 'CanonFilterInfo') dump($offset, MediaProbe::dumpHexFormatted($data_element->getBytes($offset - 1024, 10000)));
-//dump(['toBytes', $this->getAttribute('name'), MediaProbe::dumpHexFormatted($mapDataBytes)]);
 
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
-            $bytes_offset = $sub->getAttribute('id') * ItemFormat::getSize($this->getFormat());
+            $bytes_offset = $sub->getAttribute('id') * DataFormat::getSize($this->getFormat());
             $bytes = $sub->toBytes($byte_order);
             $bytes_length = strlen($bytes);
 

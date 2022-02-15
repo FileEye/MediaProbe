@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Data\DataString;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
@@ -20,14 +20,14 @@ class IfdTest extends MediaProbeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), ItemFormat::LONG), $tiff_mock);
+        $ifd = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 
-        $tag1 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x010E), ItemFormat::ASCII), $ifd);
+        $tag1 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x010E), DataFormat::ASCII), $ifd);
         $desc = new Ascii($tag1, new DataString('Hello?' . chr(0)));
 
-        $tag2 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x0132), ItemFormat::ASCII, 20), $ifd);
+        $tag2 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x0132), DataFormat::ASCII, 20), $ifd);
         $date = new Time($tag2, new DataString('12345678' . chr(0)));
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));

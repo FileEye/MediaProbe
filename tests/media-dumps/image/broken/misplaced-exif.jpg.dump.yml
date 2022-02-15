@@ -147,7 +147,7 @@ elements:
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
                                                     class: FileEye\MediaProbe\Block\Tag
-                                                    valid: true
+                                                    valid: false
                                                     name: ModifyDate
                                                     id: '306'
                                                     collection: Tag
@@ -201,7 +201,7 @@ elements:
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
                                                             class: FileEye\MediaProbe\Block\Tag
-                                                            valid: true
+                                                            valid: false
                                                             name: ExifVersion
                                                             id: '36864'
                                                             collection: Tag
@@ -421,20 +421,19 @@ elements:
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
 log:
-    ERROR:
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
-            message: 'Incorrect version data.'
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-            message: 'Found 11 data components, expected 20'
+            message: 'Found 11 data components, expected 20 for item ''ModifyDate'' in ''IFD0'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
             message: 'Invalid datetime format for ''1509749992'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-            message: 'Found Byte data format, expected Undefined'
+            message: 'Found Byte data format, expected Undefined for item ''ExifVersion'' in ''ExifIFD'''
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
+            message: 'Incorrect version data.'
 gdInfo:
     0: 320
     1: 200
@@ -445,7 +444,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: misplaced-exif.jpg
-    FileDateTime: 1644099378
+    FileDateTime: 1644612165
     FileSize: 4587
     FileType: 2
     MimeType: image/jpeg

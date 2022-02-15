@@ -5,7 +5,7 @@ namespace FileEye\MediaProbe\Test;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
 use Symfony\Component\Finder\Finder;
@@ -194,7 +194,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
 
             // Check entry format.
             $this->assertNotNull($element->getFormat(), $element->getContextPath());
-            $format_name = ItemFormat::getName($element->getFormat());
+            $format_name = DataFormat::getName($element->getFormat());
             $this->assertNotNull($format_name, $element->getContextPath());
             $this->assertSame($expected['format'], $format_name, $element->getContextPath());
 
@@ -242,7 +242,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     'actual__' => MediaProbe::dumpHexFormatted($vala),
   ]);
 }*/
-                    if ($element->getOutputFormat() === ItemFormat::ASCII) {
+                    if ($element->getOutputFormat() === DataFormat::ASCII) {
                         $this->assertSame($valx, $vala, "Exiftool RAW (expected): '$valx' (actual): '$vala' " . $element->getContextPath());
                     } else {
 /*if (stripos($element->getContextPath(), 'tag:GPSVersionID') !== false) {

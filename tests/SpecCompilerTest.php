@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Test\TestClasses\Core;
 use FileEye\MediaProbe\Block\Exif\Ifd;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection;
@@ -73,8 +73,8 @@ class SpecCompilerTest extends MediaProbeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd_0 = new Ifd(new ItemDefinition(Collection::get('Ifd0'), ItemFormat::LONG), $tiff_mock);
-        $ifd_exif = new Ifd(new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), ItemFormat::LONG), $ifd_0);
+        $ifd_0 = new Ifd(new ItemDefinition(Collection::get('Ifd0'), DataFormat::LONG), $tiff_mock);
+        $ifd_exif = new Ifd(new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), DataFormat::LONG), $ifd_0);
 
         $this->assertEquals(0x0100, $ifd_0->getCollection()->getItemCollectionByName('ImageWidth')->getPropertyValue('item'));
         $this->assertEquals(0x8769, $ifd_0->getCollection()->getItemCollectionByName('ExifIFD')->getPropertyValue('item'));

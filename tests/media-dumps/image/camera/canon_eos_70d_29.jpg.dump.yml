@@ -3084,7 +3084,7 @@ elements:
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:LensModel:149'
                                                                     class: FileEye\MediaProbe\Block\Tag
-                                                                    valid: true
+                                                                    valid: false
                                                                     name: LensModel
                                                                     id: '149'
                                                                     collection: Tag
@@ -7234,50 +7234,50 @@ log:
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:AFMicroadjustment:1287'
-            message: 'Found 16 data components, expected 5'
+            message: 'Found 16 data components, expected 5 for item ''AFMicroadjustment'' in ''AutoFocusDrive'''
     NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:25'
-            message: 'No specification for item UnknownTag in ''Canon'''
+            message: 'Unknown item 25/0x19 in ''Canon'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo2:38/tag:15'
-            message: 'No specification for item UnknownTag in ''CanonAFInfo2'''
+            message: 'Unknown item 15/0xF in ''CanonAFInfo2'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonAFInfo2:38/tag:16'
-            message: 'No specification for item UnknownTag in ''CanonAFInfo2'''
+            message: 'Unknown item 16/0x10 in ''CanonAFInfo2'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:LensModel:149/entry'
             message: 'Ascii entry missing final NUL character.'
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonMeasuredColor:170/tag:2'
-            message: 'No specification for item UnknownTag in ''CanonMeasuredColor'''
+            message: 'Unknown item 2/0x2 in ''CanonMeasuredColor'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonSensorInfo:224/tag:3'
-            message: 'No specification for item UnknownTag in ''CanonSensorInfo'''
+            message: 'Unknown item 3/0x3 in ''CanonSensorInfo'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonSensorInfo:224/tag:4'
-            message: 'No specification for item UnknownTag in ''CanonSensorInfo'''
+            message: 'Unknown item 4/0x4 in ''CanonSensorInfo'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonSensorInfo:224/tag:13'
-            message: 'No specification for item UnknownTag in ''CanonSensorInfo'''
+            message: 'Unknown item 13/0xD in ''CanonSensorInfo'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonSensorInfo:224/tag:14'
-            message: 'No specification for item UnknownTag in ''CanonSensorInfo'''
+            message: 'Unknown item 14/0xE in ''CanonSensorInfo'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonSensorInfo:224/tag:15'
-            message: 'No specification for item UnknownTag in ''CanonSensorInfo'''
+            message: 'Unknown item 15/0xF in ''CanonSensorInfo'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonSensorInfo:224/tag:16'
-            message: 'No specification for item UnknownTag in ''CanonSensorInfo'''
+            message: 'Unknown item 16/0x10 in ''CanonSensorInfo'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16401'
-            message: 'No specification for item UnknownTag in ''Canon'''
+            message: 'Unknown item 16401/0x4011 in ''Canon'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16402'
-            message: 'No specification for item UnknownTag in ''Canon'''
+            message: 'Unknown item 16402/0x4012 in ''Canon'''
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16423'
-            message: 'No specification for item UnknownTag in ''Canon'''
+            message: 'Unknown item 16423/0x4027 in ''Canon'''
 gdInfo:
     0: 5472
     1: 3648
@@ -7288,7 +7288,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: canon_eos_70d_29.jpg
-    FileDateTime: 1644226017
+    FileDateTime: 1644612165
     FileSize: 7643244
     FileType: 2
     MimeType: image/jpeg

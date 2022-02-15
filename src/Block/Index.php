@@ -6,7 +6,7 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -25,10 +25,10 @@ class Index extends ListBase
         if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
-                $expected_format_names[] = ItemFormat::getName($expected_format_id);
+                $expected_format_names[] = DataFormat::getName($expected_format_id);
             }
             $this->warning("Found {format_name} data format, expected {expected_format_names}", [
-                'format_name' => ItemFormat::getName($this->getFormat()),
+                'format_name' => DataFormat::getName($this->getFormat()),
                 'expected_format_names' => implode(', ', $expected_format_names),
             ]);
         }
@@ -40,7 +40,7 @@ class Index extends ListBase
             $offset = 0;
             $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0]);
             if ($index_size !== $this->getDefinition()->getSize()) {
-                $this->warning("Size mismatch between IFD and index header");
+                $this->error("Size mismatch between IFD and index header");
             }
         }
     }
@@ -111,21 +111,21 @@ class Index extends ListBase
     {
         $dataWindow = $this->getDataWindowFromData($data_element, $offset, $format, $count);
         switch ($format) {
-            case ItemFormat::BYTE:
+            case DataFormat::BYTE:
                 return $dataWindow->getByte();
-            case ItemFormat::SHORT:
+            case DataFormat::SHORT:
                 return $dataWindow->getShort();
-            case ItemFormat::SHORT_REV:
+            case DataFormat::SHORT_REV:
                 return $dataWindow->getShortRev();
-            case ItemFormat::SIGNED_SHORT:
+            case DataFormat::SIGNED_SHORT:
                 return $dataWindow->getSignedShort();
-            case ItemFormat::LONG:
+            case DataFormat::LONG:
                 return $dataWindow->getLong();
-            case ItemFormat::SIGNED_LONG:
+            case DataFormat::SIGNED_LONG:
                 return $dataWindow->getSignedLong();
-            case ItemFormat::RATIONAL:
+            case DataFormat::RATIONAL:
                 return $dataWindow->getRational();
-            case ItemFormat::SIGNED_RATIONAL:
+            case DataFormat::SIGNED_RATIONAL:
                 return $dataWindow->getSignedRational();
             default:
                 $this->error("Unsupported format.");
@@ -138,22 +138,22 @@ class Index extends ListBase
     protected function getDataWindowFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): DataWindow
     {
         switch ($format) {
-            case ItemFormat::ASCII:
-            case ItemFormat::BYTE:
-            case ItemFormat::UNDEFINED:
+            case DataFormat::ASCII:
+            case DataFormat::BYTE:
+            case DataFormat::UNDEFINED:
                 $size = 1;
                 break;
-            case ItemFormat::SHORT:
-            case ItemFormat::SHORT_REV:
-            case ItemFormat::SIGNED_SHORT:
+            case DataFormat::SHORT:
+            case DataFormat::SHORT_REV:
+            case DataFormat::SIGNED_SHORT:
                 $size = 2;
                 break;
-            case ItemFormat::LONG:
-            case ItemFormat::SIGNED_LONG:
+            case DataFormat::LONG:
+            case DataFormat::SIGNED_LONG:
                 $size = 4;
                 break;
-            case ItemFormat::RATIONAL:
-            case ItemFormat::SIGNED_RATIONAL:
+            case DataFormat::RATIONAL:
+            case DataFormat::SIGNED_RATIONAL:
                 $size = 8;
                 break;
             default:
@@ -195,7 +195,7 @@ class Index extends ListBase
     {
         $components = 0;
         foreach ($this->getMultipleElements('tag') as $sub) {
-            $sub_size = ItemFormat::getSize($sub->getFormat()) * $sub->getComponents();
+            $sub_size = DataFormat::getSize($sub->getFormat()) * $sub->getComponents();
             // Components are in Shorts, $sub_size is in Bytes, so normalize.
             $components += $sub_size / 2;
         }
@@ -237,7 +237,7 @@ class Index extends ListBase
             'item' => $item,
             'offset' => $offset ?? null,
             'tags' => $this->getDefinition()->getValuesCount(),
-            'format' => ItemFormat::getName($this->getDefinition()->getFormat()),
+            'format' => DataFormat::getName($this->getDefinition()->getFormat()),
             'size' => $this->getDefinition()->getSize(),
         ]);
     }
