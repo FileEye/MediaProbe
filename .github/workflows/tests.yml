@@ -15,10 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-#          - "7.2"
-#          - "7.3"
-#          - "7.4"
-#          - "8.0"
+          - "7.2"
+          - "7.3"
+          - "7.4"
+          - "8.0"
           - "8.1"
 #          - "8.2"
 
@@ -59,12 +59,13 @@ jobs:
     - name: Image file dumps
       continue-on-error: true
       run: |
-        php examples/dump-media.php -d tests/media-samples/image/broken/canon-eos-650d.jpg
         php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
+        php examples/dump-media.php -d tests/media-samples/image/broken/gh-11.jpg
+        php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
       run: vendor/bin/phpunit ./tests
-#      continue-on-error: true
+ #     continue-on-error: true
 
     - name: Code style test
       if: ${{ matrix.php-version == 7.4 }}
@@ -79,4 +80,4 @@ jobs:
 #      uses: actions/upload-artifact@v2
 #      with:
 #        name: media-dumps
-#        path: tests/media-dumps
+#        path: tests/media-dumps/**/*.yml

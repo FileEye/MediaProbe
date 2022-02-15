@@ -23,7 +23,7 @@ class Version extends Undefined
     protected function validateDataElement(): void
     {
         if (!is_numeric($this->dataElement->getBytes())) {
-            $this->error('Incorrect version data.');
+            $this->warning('Incorrect version data.');
             $this->valid = false;
         }
     }

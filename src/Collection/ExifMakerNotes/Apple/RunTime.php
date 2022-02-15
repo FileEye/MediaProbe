@@ -64,7 +64,7 @@ class RunTime extends Collection {
       array (
         'format' =>
         array (
-          0 => 2,
+          0 => 2000,
         ),
         'collection' => 'Tag',
         'name' => 'RunTimeEpoch',
@@ -78,7 +78,7 @@ class RunTime extends Collection {
       array (
         'format' =>
         array (
-          0 => 2,
+          0 => 2000,
         ),
         'collection' => 'Tag',
         'name' => 'RunTimeFlags',
@@ -103,7 +103,7 @@ class RunTime extends Collection {
       array (
         'format' =>
         array (
-          0 => 2,
+          0 => 2000,
         ),
         'collection' => 'Tag',
         'name' => 'RunTimeScale',
@@ -117,7 +117,7 @@ class RunTime extends Collection {
       array (
         'format' =>
         array (
-          0 => 2,
+          0 => 2000,
         ),
         'collection' => 'Tag',
         'name' => 'RunTimeValue',

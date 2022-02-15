@@ -60,7 +60,8 @@ class Map extends Index
             // Check data is accessible, warn otherwise.
             if ($item_definition->getDataOffset() >= $data->getSize()) {
                 $this->warning(
-                    'Could not access value for item \'{item}\' in \'{map}\', overflow', [
+                    'Could not access value for item \'{item}\' in \'{map}\', overflow',
+                    [
                         'item' => $item_definition->getCollection()->getPropertyValue('name'),
                         'map' => $this->getAttribute('name'),
                     ]
@@ -69,7 +70,8 @@ class Map extends Index
             }
             if ($item_definition->getDataOffset() +  $item_definition->getSize() > $data->getSize()) {
                 $this->warning(
-                    'Could not get value for item \'{item}\' in \'{map}\', not enough data', [
+                    'Could not get value for item \'{item}\' in \'{map}\', not enough data',
+                    [
                         'item' => $item_definition->getCollection()->getPropertyValue('name'),
                         'map' => $this->getAttribute('name'),
                     ]

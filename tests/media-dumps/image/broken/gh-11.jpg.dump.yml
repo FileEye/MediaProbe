@@ -1538,11 +1538,10 @@ elements:
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
 log:
-    ERROR:
+    WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
             message: 'Error processing IFD1: Offset out of bounds - rel 2716 [0, 2715], abs 2746 [30, 2745].'
-    WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282'
             message: 'Found SignedRational data format, expected Rational for item ''XResolution'' in ''IFD0'''
