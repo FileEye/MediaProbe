@@ -1,6 +1,8 @@
 <?php
 
-namespace FileEye\MediaProbe;
+namespace FileEye\MediaProbe\Collection;
+
+use FileEye\MediaProbe\MediaProbeException;
 
 /**
  * Exception thrown when invalid Collection operations incur.

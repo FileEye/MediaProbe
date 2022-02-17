@@ -2,7 +2,6 @@
 
 namespace FileEye\MediaProbe\Utility;
 
-use FileEye\MediaProbe\Collection;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -323,9 +322,9 @@ DATA;
 
 namespace $namespace;
 
-use FileEye\\MediaProbe\\Collection;
+use FileEye\\MediaProbe\\Collection\\CollectionBase;
 
-class $class_name extends Collection {
+class $class_name extends CollectionBase {
 
   protected static \$map =
 DATA;

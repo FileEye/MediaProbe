@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Tiff extends Collection {
+class Tiff extends CollectionBase {
 
   protected static $map = array (
   'title' => 'TIFF image data',

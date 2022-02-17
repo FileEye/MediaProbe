@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
@@ -73,7 +73,7 @@ class Tiff extends BlockBase
         // image scan (TIFF) in between. Store that in a RawData block.
         if ($ifd_offset > 8) {
             $scan = new ItemDefinition(
-                Collection::get('RawData', ['name' => 'scan']),
+                CollectionFactory::get('RawData', ['name' => 'scan']),
                 DataFormat::BYTE,
                 $ifd_offset - 8
             );

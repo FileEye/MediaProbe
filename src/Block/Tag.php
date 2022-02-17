@@ -10,7 +10,6 @@ use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**

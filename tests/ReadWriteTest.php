@@ -8,7 +8,6 @@ use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\JpegSegmentApp1;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Entry\Core\Byte;

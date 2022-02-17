@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class VignettingCorr extends Collection {
+class VignettingCorr extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVignettingCorr',

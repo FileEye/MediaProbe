@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Jpeg;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class SegmentSos extends Collection {
+class SegmentSos extends CollectionBase {
 
   protected static $map = array (
   'name' => 'SOS',

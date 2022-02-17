@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonRaw;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class WhiteSample extends Collection {
+class WhiteSample extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonRawWhiteSample',

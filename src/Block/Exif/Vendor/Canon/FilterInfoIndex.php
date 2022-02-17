@@ -6,7 +6,7 @@ use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
@@ -43,7 +43,7 @@ class FilterInfoIndex extends Index
 
         // The first 4 bytes is a marker (?), store as RawData.
         $this
-            ->addBlock(new ItemDefinition(Collection::get('RawData', ['name' => 'filterHeader']), DataFormat::BYTE, 4))
+            ->addBlock(new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'filterHeader']), DataFormat::BYTE, 4))
             ->parseData(new DataWindow($data, $offset, 4));
         $offset += 4;
 
@@ -58,7 +58,7 @@ class FilterInfoIndex extends Index
         for ($i = 0; $i < $index_components; $i++) {
             $filter_size = $data->getLong($offset + 4);
             $this
-                ->addBlock(new ItemDefinition(Collection::get('ExifMakerNotes\Canon\Filter'), DataFormat::BYTE, $filter_size, $offset, 0, $i))
+                ->addBlock(new ItemDefinition(CollectionFactory::get('ExifMakerNotes\Canon\Filter'), DataFormat::BYTE, $filter_size, $offset, 0, $i))
                 ->parseData(new DataWindow($data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }

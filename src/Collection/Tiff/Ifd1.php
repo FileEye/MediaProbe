@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Ifd1 extends Collection {
+class Ifd1 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'IFD1',

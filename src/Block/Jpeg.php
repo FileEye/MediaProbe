@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
@@ -54,7 +54,7 @@ class Jpeg extends BlockBase
                         'size' => $new_offset - $offset,
                     ]);
                     $trail = new ItemDefinition(
-                        Collection::get('RawData', ['name' => 'trail']),
+                        CollectionFactory::get('RawData', ['name' => 'trail']),
                         DataFormat::BYTE,
                         $offset
                     );

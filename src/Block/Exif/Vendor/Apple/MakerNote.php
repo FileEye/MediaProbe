@@ -6,7 +6,7 @@ use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
@@ -28,7 +28,7 @@ class MakerNote extends Ifd
         $offset = $this->getDefinition()->getDataOffset();
 
         // Load Apple's header as a raw data block.
-        $header_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'appleHeader']), DataFormat::BYTE, 14);
+        $header_data_definition = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'appleHeader']), DataFormat::BYTE, 14);
         $header_data_window = new DataWindow($data_element, $offset, 14);
         $header = new RawData($header_data_definition, $this);
         $header->parseData($header_data_window);

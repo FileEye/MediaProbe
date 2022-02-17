@@ -7,7 +7,6 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**

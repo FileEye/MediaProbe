@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonRaw;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class DecoderTable extends Collection {
+class DecoderTable extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonRawDecoderTable',

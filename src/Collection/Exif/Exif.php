@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Exif;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Exif extends Collection {
+class Exif extends CollectionBase {
 
   protected static $map = array (
   'title' => 'JPEG Exif data',

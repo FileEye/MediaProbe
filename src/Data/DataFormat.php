@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Data;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 
 /**
  * Class to retrieve data format information.
@@ -33,7 +33,7 @@ abstract class DataFormat
      */
     public static function getName(int $id): string
     {
-        return Collection::get('Format')->getItemCollection($id)->getPropertyValue('name');
+        return CollectionFactory::get('Format')->getItemCollection($id)->getPropertyValue('name');
     }
 
     /**
@@ -43,7 +43,7 @@ abstract class DataFormat
      */
     public static function getFromName(string $name): int
     {
-        return (int) Collection::get('Format')->getItemCollectionByName($name)->getPropertyValue('item');
+        return (int) CollectionFactory::get('Format')->getItemCollectionByName($name)->getPropertyValue('item');
     }
 
     /**
@@ -53,7 +53,7 @@ abstract class DataFormat
      */
     public static function getSize(int $id): int
     {
-        return (int) Collection::get('Format')->getItemCollection($id)->getPropertyValue('length');
+        return (int) CollectionFactory::get('Format')->getItemCollection($id)->getPropertyValue('length');
     }
 
     /**
@@ -63,6 +63,6 @@ abstract class DataFormat
      */
     public static function getClass(int $id): string
     {
-        return Collection::get('Format')->getItemCollection($id)->getPropertyValue('class');
+        return CollectionFactory::get('Format')->getItemCollection($id)->getPropertyValue('class');
     }
 }

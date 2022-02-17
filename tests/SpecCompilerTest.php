@@ -7,7 +7,7 @@ use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Utility\SpecCompiler;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Exception\ParseException;
@@ -40,7 +40,7 @@ class SpecCompilerTest extends MediaProbeTestCaseBase
     public function tearDown(): void
     {
         $this->fs->remove($this->testResourceDirectory);
-        Collection::setMapperClass(null);
+        CollectionFactory::setCollectionIndex(null);
         parent::tearDown();
     }
 
@@ -66,14 +66,14 @@ class SpecCompilerTest extends MediaProbeTestCaseBase
     {
         $compiler = new SpecCompiler();
         $compiler->compile(__DIR__ . '/fixtures/spec/valid_stub', $this->testResourceDirectory, 'FileEye\MediaProbe\Test\TestClasses');
-        Collection::setMapperClass(Core::class);
-        $this->assertCount(4, Collection::listIds());
+        CollectionFactory::setCollectionIndex(Core::class);
+        $this->assertCount(4, CollectionFactory::listCollections());
 
         $tiff_mock = $this->getMockBuilder(Tiff::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd_0 = new Ifd(new ItemDefinition(Collection::get('Ifd0'), DataFormat::LONG), $tiff_mock);
+        $ifd_0 = new Ifd(new ItemDefinition(CollectionFactory::get('Ifd0'), DataFormat::LONG), $tiff_mock);
         $ifd_exif = new Ifd(new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), DataFormat::LONG), $ifd_0);
 
         $this->assertEquals(0x0100, $ifd_0->getCollection()->getItemCollectionByName('ImageWidth')->getPropertyValue('item'));

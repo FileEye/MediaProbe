@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementBase;
@@ -90,7 +90,7 @@ abstract class BlockBase extends ElementBase
      *
      * @return \FileEye\MediaProbe\Collection
      */
-    public function getCollection(): Collection
+    public function getCollection(): CollectionInterface
     {
         return $this->getDefinition()->getCollection();
     }
