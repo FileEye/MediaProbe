@@ -10,13 +10,6 @@ use FileEye\MediaProbe\ElementInterface;
 abstract class CollectionBase implements CollectionInterface
 {
     /**
-     * The collection id.
-     *
-     * @var string
-     */
-    protected $id;
-
-    /**
      * The overridden properties with their overriden values.
      *
      * @var array
@@ -26,23 +19,12 @@ abstract class CollectionBase implements CollectionInterface
     /**
      * Constructs a Collection object.
      *
-     * @param string $id
-     *   The id of the collection.
      * @param array $overrides
      *   (Optional) If defined, overrides properties defined in the collection.
      */
-    public function __construct(string $id, array $overrides = [])
+    public function __construct(array $overrides = [])
     {
-        $this->id = $id;
         $this->overrides = $overrides;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getId(): string
-    {
-        return $this->id;
     }
 
     /**
@@ -119,7 +101,7 @@ abstract class CollectionBase implements CollectionInterface
             if (isset($default_id)) {
                 return CollectionFactory::get($default_id, $default_properties);
             }
-            throw new CollectionException('Missing collection for item \'%s\' in \'%s\'', $item, $this->getId());
+            throw new CollectionException('Missing collection for item \'%s\' in \'%s\'', $item, $this->getPropertyValue('id'));
         }
         $item_properties = $this->getPropertyValue('items')[$item][$index];
         unset($item_properties['collection']);
@@ -133,7 +115,7 @@ abstract class CollectionBase implements CollectionInterface
     public function getItemCollectionByName(string $item_name, $index = 0): CollectionInterface
     {
         if (!isset($this->getPropertyValue('itemsByName')[$item_name][$index])) {
-            throw new CollectionException('Missing collection for item \'%s\' in \'%s\'', $item_name, $this->getId());
+            throw new CollectionException('Missing collection for item \'%s\' in \'%s\'', $item_name, $this->getPropertyValue('id'));
         }
         return $this->getItemCollection($this->getPropertyValue('itemsByName')[$item_name][$index]);
     }

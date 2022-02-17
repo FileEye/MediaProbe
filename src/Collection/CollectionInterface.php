@@ -10,22 +10,17 @@ use FileEye\MediaProbe\ElementInterface;
 interface CollectionInterface
 {
     /**
-     * Returns the id of the collection.
-     */
-    public function getId(): string;
-
-    /**
      * Returns the static properties of the collection.
      */
     public function getProperties(): array;
 
     /**
-     * Determines if a property exists.
+     * Determines if a property exists, taking overrides into account.
      */
     public function hasProperty(string $property): bool;
 
     /**
-     * Returns the value a property.
+     * Returns the value a property, taking overrides into account.
      *
      * @return mixed
      */

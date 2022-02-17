@@ -189,8 +189,8 @@ abstract class BlockBase extends ElementBase
         if ($this->getAttribute('id') !== '') {
             $attributes['id'] = $this->getAttribute('id');
         }
-        $dump = array_merge(parent::toDumpArray(), $attributes, ['collection' => $this->getCollection()->getId()]);
-        // xx todo restore $dump = array_merge(parent::toDumpArray(), $this->getAttributes(), ['collection' => $this->getCollection()->getId()]);
+        $dump = array_merge(parent::toDumpArray(), $attributes, ['collection' => $this->getCollection()->getPropertyValue('id')]);
+        // xx todo restore $dump = array_merge(parent::toDumpArray(), $this->getAttributes(), ['collection' => $this->getCollection()->getPropertyValue('id')]);
         foreach ($this->getMultipleElements("*") as $sub_element) {
             $dump['elements'][] = $sub_element->toDumpArray();
         }

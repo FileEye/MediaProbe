@@ -80,7 +80,7 @@ class MakerNote extends Ifd
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getCollection()->getId() === 'RawData') {
+            if ($sub_block->getCollection()->getPropertyValue('id') === 'RawData') {
                 continue;
             }
 

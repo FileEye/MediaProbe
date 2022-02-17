@@ -26,7 +26,7 @@ abstract class CollectionFactory
      */
     public static function setCollectionIndex(?string $class): void
     {
-        static::$collectionIndex = $class === null ? new CollectionIndex('CollectionIndex') : new $class('CollectionIndex');
+        static::$collectionIndex = $class === null ? new CollectionIndex() : new $class();
     }
 
     /**
@@ -73,7 +73,7 @@ abstract class CollectionFactory
             throw new CollectionException('Missing collection \'%s\' from the index', $id);
         }
         $class = static::getCollectionIndex()->getNamespace() . '\\' . $id;
-        return new $class($id, $overrides);
+        return new $class($overrides);
     }
 
     /**

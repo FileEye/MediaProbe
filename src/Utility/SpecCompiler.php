@@ -94,7 +94,9 @@ class SpecCompiler
 
         $collection_path = $collection_path ?: __DIR__ . static::DEFAULT_COLLECTION_PATH;
         $collection_namespace = $collection_namespace ?: static::DEFAULT_COLLECTION_NAMESPACE;
-        $this->fs->remove($this->finder->files()->in($collection_path));
+//        $this->fs->remove($this->finder->files()->in($collection_path));
+
+        $this->map['id'] = 'CollectionIndex';
 
         // Get formats.
         $formats_yaml = Yaml::parse(file_get_contents($yamlDirectory . DIRECTORY_SEPARATOR . 'Format.yaml'));
@@ -131,7 +133,13 @@ namespace $namespace;
  * DO NOT CHANGE MANUALLY.
  */
 // phpcs:disable
-abstract class Core {
+class CollectionIndex extends CollectionBase {
+
+  public function getNamespace(): string
+  {
+      return __NAMESPACE__;
+  }
+
   public static \$map =
 DATA;
         $data .= ' ';
@@ -141,7 +149,7 @@ DATA;
 }
 
 DATA;
-        $this->fs->dumpFile($resourcesDirectory . '/Core.php', $data);
+        $this->fs->dumpFile($resourcesDirectory . '/CollectionIndex.php', $data);
     }
 
     /**
@@ -167,7 +175,7 @@ DATA;
             $input['format'] = $this->format2Id($input['format'], 'base', $name, $file);
         }
 
-        // Main index entries.
+        // Add the collection to the index.
         // 'collections' entry.
         $this->map['collections'][$input['collection']] = $input['collection'];
         // 'collectionsByName' entry.
@@ -182,6 +190,7 @@ DATA;
         $tmp = $input;
         unset($tmp['collection'], $tmp['items'], $tmp['compiler']);
         $map = $tmp;
+        $map['id'] = $input['collection'];
 
         // Collection items entries.
         foreach ($input['items'] as $id => $item) {
@@ -322,7 +331,7 @@ DATA;
 
 namespace $namespace;
 
-use FileEye\\MediaProbe\\Collection\\CollectionBase;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
 class $class_name extends CollectionBase {
 

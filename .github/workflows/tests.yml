@@ -54,7 +54,11 @@ jobs:
         php bin/fileeye-mediaprobe --version
         # Remove the comment to the lines below during development, to let
         # re-compile the specification PHP file from the YAML files.
-        #php bin/fileeye-mediaprobe compile
+        php bin/fileeye-mediaprobe compile
+        git config user.email "a@a.com"
+        git config user.name "Aa Aa"
+        git add .
+        git diff --cached
 
     - name: Image file dumps
       continue-on-error: true

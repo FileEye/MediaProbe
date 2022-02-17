@@ -62,7 +62,7 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals(0x0103, $ifd_0->getCollection()->getItemCollectionByName('Compression')->getPropertyValue('item'));
 
         // Check methods identifying an IFD pointer TAG.
-        $this->assertSame('Tiff\IfdExif', $ifd_0->getCollection()->getItemCollection(0x8769)->getId());
+        $this->assertSame('Tiff\IfdExif', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('id'));
         $this->assertSame('ExifIFD', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('name'));
 
         // Check getTagFormat.
