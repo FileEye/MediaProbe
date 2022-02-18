@@ -17,6 +17,7 @@ class ColorDataResolver extends CollectionBase {
   'title' => 'Canon Color Data Map Resolver',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
+  'id' => 'ExifMakerNotes\\Canon\\ColorDataResolver',
   'itemsByName' =>
   array (
     'CanonColorData1' =>

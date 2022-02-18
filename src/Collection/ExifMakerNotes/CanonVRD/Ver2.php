@@ -22,6 +22,7 @@ class Ver2 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\Ver2',
   'itemsByName' =>
   array (
     'AberrationCorrectionDistance' =>

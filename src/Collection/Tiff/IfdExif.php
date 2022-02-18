@@ -18,6 +18,7 @@ class IfdExif extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdExif',
   'itemsByName' =>
   array (
     'Acceleration' =>

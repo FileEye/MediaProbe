@@ -22,6 +22,7 @@ class ColorCoefs2 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorCoefs2',
   'itemsByName' =>
   array (
     'ColorTempAsShot' =>

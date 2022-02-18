@@ -22,6 +22,7 @@ class FaceDetect2 extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\FaceDetect2',
   'itemsByName' =>
   array (
     'FaceWidth' =>

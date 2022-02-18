@@ -22,6 +22,7 @@ class CameraInfo1DmkIII extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo1DmkIII',
   'itemsByName' =>
   array (
     'CameraOrientation' =>

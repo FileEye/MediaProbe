@@ -22,6 +22,7 @@ class AspectInfo extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\AspectInfo',
   'itemsByName' =>
   array (
     'AspectRatio' =>

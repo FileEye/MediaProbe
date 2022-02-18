@@ -22,6 +22,7 @@ class FocalInfo extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\FocalInfo',
   'itemsByName' =>
   array (
     'FocalLength' =>

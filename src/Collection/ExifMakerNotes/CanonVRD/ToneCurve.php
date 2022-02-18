@@ -22,6 +22,7 @@ class ToneCurve extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\ToneCurve',
   'itemsByName' =>
   array (
     'BlueCurvePoints' =>

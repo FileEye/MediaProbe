@@ -22,6 +22,7 @@ class CropInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\CropInfo',
   'itemsByName' =>
   array (
     'CropActive' =>

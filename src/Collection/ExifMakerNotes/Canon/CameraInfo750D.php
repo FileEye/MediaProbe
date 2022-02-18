@@ -22,6 +22,7 @@ class CameraInfo750D extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo750D',
   'itemsByName' =>
   array (
     'CameraTemperature' =>

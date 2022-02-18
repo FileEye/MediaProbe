@@ -19,6 +19,7 @@ class Uuid extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Uuid',
   'itemsByName' =>
   array (
     'CompressorVersion' =>

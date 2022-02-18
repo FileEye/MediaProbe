@@ -22,6 +22,7 @@ class PSInfo extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\PSInfo',
   'itemsByName' =>
   array (
     'ColorToneFaithful' =>

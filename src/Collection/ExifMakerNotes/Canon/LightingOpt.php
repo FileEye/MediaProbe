@@ -23,6 +23,7 @@ class LightingOpt extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\LightingOpt',
   'itemsByName' =>
   array (
     'AutoLightingOptimizer' =>

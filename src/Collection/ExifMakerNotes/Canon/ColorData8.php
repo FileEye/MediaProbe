@@ -22,6 +22,7 @@ class ColorData8 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorData8',
   'itemsByName' =>
   array (
     'AverageBlackLevel' =>

@@ -22,6 +22,7 @@ class FaceDetect1 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\FaceDetect1',
   'itemsByName' =>
   array (
     'Face1Position' =>

@@ -23,6 +23,7 @@ class AFMicroAdj extends CollectionBase {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\AFMicroAdj',
   'itemsByName' =>
   array (
     'AFMicroAdjMode' =>

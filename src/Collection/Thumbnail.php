@@ -16,5 +16,6 @@ class Thumbnail extends CollectionBase {
   'title' => 'Thumbnail',
   'class' => 'FileEye\\MediaProbe\\Block\\Thumbnail',
   'DOMNode' => 'thumbnail',
+  'id' => 'Thumbnail',
 );
 }

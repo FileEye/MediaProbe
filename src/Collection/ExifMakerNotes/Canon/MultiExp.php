@@ -22,6 +22,7 @@ class MultiExp extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\MultiExp',
   'itemsByName' =>
   array (
     'MultiExposure' =>

@@ -14,5 +14,6 @@ class VoidCollection extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Void collection.',
+  'id' => 'VoidCollection',
 );
 }

@@ -22,6 +22,7 @@ class PersonalFuncs extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncs',
   'itemsByName' =>
   array (
     'PF0CustomFuncRegistration' =>

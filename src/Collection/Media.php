@@ -15,6 +15,7 @@ class Media extends CollectionBase {
   protected static $map = array (
   'class' => 'FileEye\\MediaProbe\\Media',
   'DOMNode' => 'media',
+  'id' => 'Media',
   'items' =>
   array (
     'Jpeg' =>

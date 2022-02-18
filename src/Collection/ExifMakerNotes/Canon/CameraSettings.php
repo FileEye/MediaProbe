@@ -23,6 +23,7 @@ class CameraSettings extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraSettings',
   'itemsByName' =>
   array (
     'AESetting' =>

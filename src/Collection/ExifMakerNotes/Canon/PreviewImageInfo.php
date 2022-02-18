@@ -22,6 +22,7 @@ class PreviewImageInfo extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\PreviewImageInfo',
   'itemsByName' =>
   array (
     'PreviewImageHeight' =>

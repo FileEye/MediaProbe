@@ -16,5 +16,6 @@ class Tag extends CollectionBase {
   'title' => 'Tag',
   'class' => 'FileEye\\MediaProbe\\Block\\Tag',
   'DOMNode' => 'tag',
+  'id' => 'Tag',
 );
 }

@@ -22,6 +22,7 @@ class ColorData9 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorData9',
   'itemsByName' =>
   array (
     'ColorDataVersion' =>

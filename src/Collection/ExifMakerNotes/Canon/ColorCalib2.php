@@ -22,6 +22,7 @@ class ColorCalib2 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorCalib2',
   'itemsByName' =>
   array (
     'CameraColorCalibration01' =>

@@ -23,6 +23,7 @@ class AFConfig extends CollectionBase {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\AFConfig',
   'itemsByName' =>
   array (
     'AFAccelDecelTracking' =>

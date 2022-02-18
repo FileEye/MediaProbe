@@ -15,5 +15,6 @@ class RawData extends CollectionBase {
   protected static $map = array (
   'class' => 'FileEye\\MediaProbe\\Block\\RawData',
   'DOMNode' => 'rawData',
+  'id' => 'RawData',
 );
 }

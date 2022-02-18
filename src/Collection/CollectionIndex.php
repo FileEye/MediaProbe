@@ -15,6 +15,7 @@ class CollectionIndex extends CollectionBase {
   }
 
   public static $map = array (
+  'id' => 'CollectionIndex',
   'collections' =>
   array (
     'ExifMakerNotes\\Apple\\Main' => 'ExifMakerNotes\\Apple\\Main',

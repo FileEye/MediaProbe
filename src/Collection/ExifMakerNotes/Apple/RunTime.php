@@ -18,6 +18,7 @@ class RunTime extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\RunTime',
   'DOMNode' => 'plist',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Apple\\RunTime',
   'itemsByName' =>
   array (
     'RunTimeEpoch' =>

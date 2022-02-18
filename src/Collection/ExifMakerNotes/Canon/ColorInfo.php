@@ -22,6 +22,7 @@ class ColorInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorInfo',
   'itemsByName' =>
   array (
     'ColorSpace' =>

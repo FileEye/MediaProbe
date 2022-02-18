@@ -18,6 +18,7 @@ class Main extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\MakerNote',
   'DOMNode' => 'makerNote',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Apple\\Main',
   'itemsByName' =>
   array (
     'AccelerationVector' =>

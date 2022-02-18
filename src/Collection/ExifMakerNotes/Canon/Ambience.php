@@ -23,6 +23,7 @@ class Ambience extends CollectionBase {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Ambience',
   'itemsByName' =>
   array (
     'AmbienceSelection' =>

@@ -22,6 +22,7 @@ class ImageInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonRaw\\ImageInfo',
   'itemsByName' =>
   array (
     'ColorBW' =>

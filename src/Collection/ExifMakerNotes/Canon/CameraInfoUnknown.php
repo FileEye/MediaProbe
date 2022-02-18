@@ -22,6 +22,7 @@ class CameraInfoUnknown extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfoUnknown',
   'itemsByName' =>
   array (
     'LensSerialNumber' =>

@@ -23,6 +23,7 @@ class Processing extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Processing',
   'itemsByName' =>
   array (
     'ColorTemperature' =>

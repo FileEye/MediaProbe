@@ -22,6 +22,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo1DmkIIN',
   'itemsByName' =>
   array (
     'ColorTemperature' =>

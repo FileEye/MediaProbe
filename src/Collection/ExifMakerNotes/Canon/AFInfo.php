@@ -22,6 +22,7 @@ class AFInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\AFInfo',
   'itemsByName' =>
   array (
     'AFAreaHeight' =>

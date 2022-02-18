@@ -22,6 +22,7 @@ class LensInfo extends CollectionBase {
     0 => 7,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\LensInfo',
   'itemsByName' =>
   array (
     'LensSerialNumber' =>

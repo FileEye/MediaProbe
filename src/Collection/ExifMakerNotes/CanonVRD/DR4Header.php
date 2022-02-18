@@ -22,6 +22,7 @@ class DR4Header extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\DR4Header',
   'itemsByName' =>
   array (
     'DR4CameraModel' =>

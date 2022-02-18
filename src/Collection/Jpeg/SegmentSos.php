@@ -18,5 +18,6 @@ class SegmentSos extends CollectionBase {
   'payload' => 'scan',
   'class' => 'FileEye\\MediaProbe\\Block\\JpegSegmentSos',
   'DOMNode' => 'jpegSegment',
+  'id' => 'Jpeg\\SegmentSos',
 );
 }

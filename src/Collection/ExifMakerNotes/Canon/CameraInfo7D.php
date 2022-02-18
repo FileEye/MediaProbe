@@ -22,6 +22,7 @@ class CameraInfo7D extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo7D',
   'itemsByName' =>
   array (
     'CameraOrientation' =>

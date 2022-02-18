@@ -23,6 +23,7 @@ class AFInfo2 extends CollectionBase {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\AFInfo2',
   'itemsByName' =>
   array (
     'AFAreaHeights' =>

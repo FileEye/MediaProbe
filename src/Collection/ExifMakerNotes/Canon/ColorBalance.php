@@ -23,6 +23,7 @@ class ColorBalance extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorBalance',
   'itemsByName' =>
   array (
     'WB_RGGBBlackLevels' =>

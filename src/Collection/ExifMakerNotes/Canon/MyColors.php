@@ -22,6 +22,7 @@ class MyColors extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\MyColors',
   'itemsByName' =>
   array (
     'MyColorMode' =>

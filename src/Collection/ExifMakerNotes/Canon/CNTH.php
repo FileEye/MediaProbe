@@ -19,6 +19,7 @@ class CNTH extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CNTH',
   'itemsByName' =>
   array (
     'ThumbnailImage' =>

@@ -22,6 +22,7 @@ class Ver1 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\Ver1',
   'itemsByName' =>
   array (
     'BlueCurveLimits' =>

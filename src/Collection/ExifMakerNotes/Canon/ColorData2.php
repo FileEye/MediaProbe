@@ -22,6 +22,7 @@ class ColorData2 extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorData2',
   'itemsByName' =>
   array (
     'ColorTempAsShot' =>

@@ -18,6 +18,7 @@ class IfdGps extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdGps',
   'itemsByName' =>
   array (
     'GPSAltitude' =>

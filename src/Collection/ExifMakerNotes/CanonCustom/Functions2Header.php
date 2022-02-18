@@ -18,6 +18,7 @@ class Functions2Header extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2Header',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'ExifMakerNotes\\CanonCustom\\Functions2',
+  'id' => 'ExifMakerNotes\\CanonCustom\\Functions2Header',
   'itemsByName' =>
   array (
     'AutoFocusDrive' =>

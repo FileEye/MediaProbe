@@ -22,6 +22,7 @@ class IfdInteroperability extends CollectionBase {
     0 => 'Interop',
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdInteroperability',
   'itemsByName' =>
   array (
     'InteropIndex' =>

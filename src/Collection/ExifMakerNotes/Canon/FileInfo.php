@@ -23,6 +23,7 @@ class FileInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\FileInfo',
   'itemsByName' =>
   array (
     'BracketMode' =>

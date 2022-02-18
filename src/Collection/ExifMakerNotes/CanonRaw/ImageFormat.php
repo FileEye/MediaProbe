@@ -22,6 +22,7 @@ class ImageFormat extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonRaw\\ImageFormat',
   'itemsByName' =>
   array (
     'FileFormat' =>

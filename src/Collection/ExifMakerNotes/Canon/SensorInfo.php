@@ -23,6 +23,7 @@ class SensorInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\SensorInfo',
   'itemsByName' =>
   array (
     'BlackMaskBottomBorder' =>

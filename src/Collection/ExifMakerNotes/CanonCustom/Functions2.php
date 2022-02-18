@@ -18,6 +18,7 @@ class Functions2 extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonCustom\\Functions2',
   'itemsByName' =>
   array (
     'AEBAutoCancel' =>

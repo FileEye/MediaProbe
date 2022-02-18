@@ -22,6 +22,7 @@ class Functions1D extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonCustom\\Functions1D',
   'itemsByName' =>
   array (
     'AEBSequenceAutoCancel' =>

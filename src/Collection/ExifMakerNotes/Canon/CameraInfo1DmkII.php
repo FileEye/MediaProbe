@@ -22,6 +22,7 @@ class CameraInfo1DmkII extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo1DmkII',
   'itemsByName' =>
   array (
     'CanonImageSize' =>

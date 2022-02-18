@@ -17,6 +17,7 @@ class CameraInfoResolver extends CollectionBase {
   'title' => 'Canon Camera Info Resolver',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfoResolver',
   'itemsByName' =>
   array (
     'CanonCameraInfo1000D' =>

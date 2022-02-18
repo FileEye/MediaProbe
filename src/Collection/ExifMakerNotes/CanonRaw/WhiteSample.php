@@ -22,6 +22,7 @@ class WhiteSample extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonRaw\\WhiteSample',
   'itemsByName' =>
   array (
     'WhiteSampleBits' =>

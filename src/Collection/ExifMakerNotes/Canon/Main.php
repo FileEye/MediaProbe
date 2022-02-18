@@ -18,6 +18,7 @@ class Main extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'makerNote',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Main',
   'itemsByName' =>
   array (
     'AFPointsInFocus1D' =>

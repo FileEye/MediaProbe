@@ -22,6 +22,7 @@ class Main extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonRaw\\Main',
   'itemsByName' =>
   array (
     'BaseISO' =>

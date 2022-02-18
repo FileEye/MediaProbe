@@ -14,6 +14,7 @@ class Format extends CollectionBase {
 
   protected static $map = array (
   'title' => 'The list of MediaProbe supported data formats.',
+  'id' => 'Format',
   'itemsByName' =>
   array (
     'Ascii' =>

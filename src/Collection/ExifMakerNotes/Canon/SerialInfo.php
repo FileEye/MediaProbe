@@ -22,6 +22,7 @@ class SerialInfo extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\SerialInfo',
   'itemsByName' =>
   array (
     'InternalSerialNumber' =>

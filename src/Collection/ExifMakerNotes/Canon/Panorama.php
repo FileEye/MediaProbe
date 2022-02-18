@@ -23,6 +23,7 @@ class Panorama extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Panorama',
   'itemsByName' =>
   array (
     'PanoramaDirection' =>

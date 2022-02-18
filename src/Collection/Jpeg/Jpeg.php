@@ -16,6 +16,7 @@ class Jpeg extends CollectionBase {
   'title' => 'JPEG image',
   'class' => 'FileEye\\MediaProbe\\Block\\Jpeg',
   'DOMNode' => 'jpeg',
+  'id' => 'Jpeg\\Jpeg',
   'itemsByName' =>
   array (
     'APP0' =>

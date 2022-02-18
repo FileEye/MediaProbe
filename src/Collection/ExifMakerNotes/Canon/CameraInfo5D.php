@@ -22,6 +22,7 @@ class CameraInfo5D extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo5D',
   'itemsByName' =>
   array (
     'AFPointsInFocus5D' =>

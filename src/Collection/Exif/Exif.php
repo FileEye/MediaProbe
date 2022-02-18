@@ -16,6 +16,7 @@ class Exif extends CollectionBase {
   'title' => 'JPEG Exif data',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Exif',
   'DOMNode' => 'exif',
+  'id' => 'Exif\\Exif',
   'items' =>
   array (
     'Tiff' =>

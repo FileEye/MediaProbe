@@ -22,6 +22,7 @@ class CameraInfo500D extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo500D',
   'itemsByName' =>
   array (
     'AutoLightingOptimizer' =>

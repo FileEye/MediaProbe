@@ -22,6 +22,7 @@ class CameraInfo5DmkII extends CollectionBase {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo5DmkII',
   'itemsByName' =>
   array (
     'AutoLightingOptimizer' =>

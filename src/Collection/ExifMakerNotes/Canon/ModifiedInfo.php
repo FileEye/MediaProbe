@@ -22,6 +22,7 @@ class ModifiedInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ModifiedInfo',
   'itemsByName' =>
   array (
     'ModifiedColorTemp' =>

@@ -16,5 +16,6 @@ class UnknownTag extends CollectionBase {
   'title' => 'Unknown Tag',
   'class' => 'FileEye\\MediaProbe\\Block\\Tag',
   'DOMNode' => 'tag',
+  'id' => 'UnknownTag',
 );
 }

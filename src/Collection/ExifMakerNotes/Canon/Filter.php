@@ -16,5 +16,6 @@ class Filter extends CollectionBase {
   'title' => 'Canon Filter',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\Filter',
   'DOMNode' => 'filter',
+  'id' => 'ExifMakerNotes\\Canon\\Filter',
 );
 }

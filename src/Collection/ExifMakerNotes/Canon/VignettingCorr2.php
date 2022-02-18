@@ -23,6 +23,7 @@ class VignettingCorr2 extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\VignettingCorr2',
   'itemsByName' =>
   array (
     'ChromaticAberrationSetting' =>

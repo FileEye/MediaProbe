@@ -27,6 +27,7 @@ class Ifd1 extends CollectionBase {
   array (
     0 => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd::thumbnailToBlock',
   ),
+  'id' => 'Tiff\\Ifd1',
   'itemsByName' =>
   array (
     'A100DataOffset' =>

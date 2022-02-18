@@ -22,6 +22,7 @@ class IHL extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\IHL',
   'itemsByName' =>
   array (
     'CRCDevelParams' =>

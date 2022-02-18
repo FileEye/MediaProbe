@@ -22,6 +22,7 @@ class CameraInfoUnknown32 extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfoUnknown32',
   'itemsByName' =>
   array (
     'CameraTemperature' =>

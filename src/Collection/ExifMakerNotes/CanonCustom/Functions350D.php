@@ -22,6 +22,7 @@ class Functions350D extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonCustom\\Functions350D',
   'itemsByName' =>
   array (
     'AFAssistBeam' =>

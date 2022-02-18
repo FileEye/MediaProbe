@@ -23,6 +23,7 @@ class ShotInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ShotInfo',
   'itemsByName' =>
   array (
     'AEBBracketValue' =>

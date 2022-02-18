@@ -16,5 +16,6 @@ class Segment extends CollectionBase {
   'title' => 'Generic JPEG data segment',
   'class' => 'FileEye\\MediaProbe\\Block\\JpegSegment',
   'DOMNode' => 'jpegSegment',
+  'id' => 'Jpeg\\Segment',
 );
 }

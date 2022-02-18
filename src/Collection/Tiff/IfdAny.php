@@ -16,6 +16,7 @@ class IfdAny extends CollectionBase {
   'title' => 'A catchall generic IFD definition, used as a fallback to describe tags that are not expected in a specific IFD.',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdAny',
   'itemsByName' =>
   array (
     'A100DataOffset' =>

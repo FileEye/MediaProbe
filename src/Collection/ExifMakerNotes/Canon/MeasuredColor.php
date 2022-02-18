@@ -23,6 +23,7 @@ class MeasuredColor extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\MeasuredColor',
   'itemsByName' =>
   array (
     'MeasuredRGGB' =>

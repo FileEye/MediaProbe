@@ -22,6 +22,7 @@ class RawJpgInfo extends CollectionBase {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonRaw\\RawJpgInfo',
   'itemsByName' =>
   array (
     'RawJpgHeight' =>

@@ -22,6 +22,7 @@ class CameraInfoPowerShot extends CollectionBase {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfoPowerShot',
   'itemsByName' =>
   array (
     'CameraTemperature' =>
