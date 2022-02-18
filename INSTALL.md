@@ -71,7 +71,7 @@ All in just four lines of code:
 
   $image = Image::loadFromFile($argv[1]);
   $entry = $image->getElement("tag[@name='ImageDescription']/entry");
-  $entry->setValue(['Edited by MediaProbe']);
+  $entry->setDataElement(['Edited by MediaProbe']);
   $image->saveToFile($argv[1]);
   ?>
   ```

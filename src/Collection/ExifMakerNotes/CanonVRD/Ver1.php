@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Ver1 extends Collection {
+class Ver1 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDVer1',

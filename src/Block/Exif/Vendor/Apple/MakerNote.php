@@ -6,14 +6,14 @@ use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -28,7 +28,7 @@ class MakerNote extends Ifd
         $offset = $this->getDefinition()->getDataOffset();
 
         // Load Apple's header as a raw data block.
-        $header_data_definition = new ItemDefinition(Collection::get('RawData', ['name' => 'appleHeader']), ItemFormat::BYTE, 14);
+        $header_data_definition = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'appleHeader']), DataFormat::BYTE, 14);
         $header_data_window = new DataWindow($data_element, $offset, 14);
         $header = new RawData($header_data_definition, $this);
         $header->parseData($header_data_window);
@@ -57,8 +57,6 @@ class MakerNote extends Ifd
             }
         }
 
-        $this->parsed = true;
-
         // Invoke post-load callbacks.
         $this->executePostParseCallbacks($data_element);
     }
@@ -82,7 +80,7 @@ class MakerNote extends Ifd
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getCollection()->getId() === 'RawData') {
+            if ($sub_block->getCollection()->getPropertyValue('id') === 'RawData') {
                 continue;
             }
 

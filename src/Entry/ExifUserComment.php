@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Block\BlockBase;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
@@ -19,50 +18,28 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  * The string can be encoded with a different encoding, and if so, the encoding
  * must be given using the second argument. The Exif standard specifies three
  * known encodings: 'ASCII', 'JIS', and 'Unicode'. If the user comment is
- * encoded using a character encoding different from the tree known encodings,
+ * encoded using a character encoding different from the three known encodings,
  * then the empty string should be passed as encoding, thereby specifying that
  * the encoding is undefined.
  */
 class ExifUserComment extends Undefined
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function validateDataElement(): void
     {
-        $this->setValue([$data_element->getBytes(0, $item_definition->getValuesCount())]);
-        return $this;
-    }
+        $value = $this->dataElement->getBytes();
 
-    /**
-     * Set the user comment.
-     *
-     * @param array $data
-     *            key 0 - holds the comment.
-     *            key 1 - holds a string with the encoding of the comment. This
-     *            should be either 'ASCII', 'JIS', 'Unicode', or the empty
-     *            string specifying an unknown encoding.
-     */
-    public function setValue(array $data)
-    {
-        $this->value = $data[0];
-        $this->components = strlen($this->value);
-
-        if (strlen($this->value) < 8) {
-            $this->parsed = false;
+        if (strlen($value) < 8) {
+            $this->valid = false;
         } else {
-            $encoding = strtoupper(rtrim(substr($this->value, 0, 8), "\x00"));
-            if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-                $this->parsed = true;
+            $encoding = strtoupper(rtrim(substr($value, 0, 8), "\x00"));
+            if (!in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
+                $this->valid = false;
             }
         }
 
-        if (!$this->parsed) {
-            $this->error('Invalid EXIF text encoding for UserComment.');
+        if (!$this->valid) {
+            $this->warning('Invalid EXIF text encoding for UserComment.');
         }
-
-        $this->debug("text: {text}", ['text' => $this->toString()]);
-        return $this;
     }
 
     /**
@@ -72,30 +49,22 @@ class ExifUserComment extends Undefined
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            $value = rtrim(substr($this->value, 8), " \x00");
+            $value = rtrim(substr($this->dataElement->getBytes(), 8), " \x00");
             return rtrim($value, " ");
         }
         if ($format === 'phpExif') {
-            $encoding = rtrim(substr($this->value, 0, 8), "\x00");
-            $value = rtrim(substr($this->value, 8), " \x00");
-            if (strlen($value) === 0 && substr($this->value, 8, 1) === ' ') {
+            $encoding = rtrim(substr($this->dataElement->getBytes(), 0, 8), "\x00");
+            $value = rtrim(substr($this->dataElement->getBytes(), 8), " \x00");
+            if (strlen($value) === 0 && substr($this->dataElement->getBytes(), 8, 1) === ' ') {
                 $value = ' ';
             }
             if (in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-                return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->value) - 8, chr(0));
+                return str_pad($encoding, 8, chr(0)) . str_pad($value, strlen($this->dataElement->getBytes()) - 8, chr(0));
             } else {
-                return rtrim($this->value, "\x00");
+                return rtrim($this->dataElement->getBytes(), "\x00");
             }
         }
-        return rtrim(substr($this->value, 8), "\x00");
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
-    {
-        return $this->value;
+        return rtrim(substr($this->dataElement->getBytes(), 8), "\x00");
     }
 
     /**
@@ -103,6 +72,6 @@ class ExifUserComment extends Undefined
      */
     public function toString(array $options = []): string
     {
-        return $this->parsed ? $this->getValue($options) : '';
+        return $this->valid ? $this->getValue($options) : '';
     }
 }

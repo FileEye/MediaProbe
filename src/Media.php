@@ -5,6 +5,8 @@ namespace FileEye\MediaProbe;
 use FileEye\MediaProbe\Block\BlockBase;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Collection\CollectionInterface;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFile;
 use FileEye\MediaProbe\Data\DataString;
@@ -14,6 +16,7 @@ use Monolog\Handler\TestHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 use PrettyXml\Formatter;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Stopwatch\Stopwatch;
 
 /**
  * Class to handle media data.
@@ -56,9 +59,16 @@ class Media extends BlockBase
     /**
      * An XML prettify formatter.
      *
-     * @var PrettyXml\Formatter
+     * @var \PrettyXml\Formatter
      */
     protected $xmlFormatter;
+
+    /**
+     * A Symfony stopwatch.
+     *
+     * @var \Symfony\Component\Stopwatch\Stopwatch
+     */
+    private $stopWatch;
 
     /**
      * Creates a Media object from a file.
@@ -101,16 +111,15 @@ class Media extends BlockBase
     public static function parse(DataElement $data_element, ?LoggerInterface $external_logger = null, ?string $fail_level = null): Media
     {
         // Determine the media format.
-        $media_format_collection = static::getMatchingMediaCollection($data_element);
+        $media_format = new ItemDefinition(static::getMatchingMediaCollection($data_element));
 
         // Build the Media object and its immediate child, that represents the
         // media format. Then parse the media according to the media format.
         $media = new static($external_logger, $fail_level);
+        $media->getStopwatch()->start('media-parsing');
         $media->debugBlockInfo($data_element);
-
-        $media_format = new ItemDefinition($media_format_collection);
         $media->addBlock($media_format)->parseData($data_element);
-        $media->parsed = true;
+        $media->getStopwatch()->stop('media-parsing');
 
         return $media;
     }
@@ -127,9 +136,9 @@ class Media extends BlockBase
      * @throws InvalidFileException
      *            On failure.
      */
-    protected static function getMatchingMediaCollection(DataElement $data_element): Collection
+    protected static function getMatchingMediaCollection(DataElement $data_element): CollectionInterface
     {
-        $media_collection = Collection::get('Media');
+        $media_collection = CollectionFactory::get('Media');
         // Loop through the 'Media' collection items, each of which defines a
         // media format collection, and checks if the media matches the format.
         // When a match is found, return the media format collection.
@@ -155,13 +164,14 @@ class Media extends BlockBase
      */
     public function __construct(?LoggerInterface $external_logger, ?string $fail_level)
     {
-        $media = new ItemDefinition(Collection::get('Media'));
+        $media = new ItemDefinition(CollectionFactory::get('Media'));
         parent::__construct($media);
         $this->logger = (new Logger('mediaprobe'))
           ->pushHandler(new TestHandler(Logger::INFO))
           ->pushProcessor(new PsrLogMessageProcessor());
         $this->externalLogger = $external_logger;
         $this->failLevel = $fail_level ? Logger::toMonologLevel($fail_level) : null;
+        $this->stopWatch = new Stopwatch();
     }
 
     /**
@@ -232,5 +242,13 @@ class Media extends BlockBase
             }
         }
         return $ret;
+    }
+
+    /**
+     * Returns the stopwatch.
+     */
+    public function getStopwatch(): Stopwatch
+    {
+        return $this->stopWatch;
     }
 }

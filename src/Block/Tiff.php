@@ -2,14 +2,14 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Image;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -41,65 +41,93 @@ class Tiff extends BlockBase
         return 'image/tiff';
     }
 
+    public function setByteOrder(int $byteOrder): self
+    {
+        $this->byteOrder = $byteOrder;
+        return $this;
+    }
+
+    public function getByteOrder(): int
+    {
+        return $this->byteOrder;
+    }
+
     /**
      * {@inheritdoc}
      */
-    protected function doParseData(DataElement $data): void
+    protected function doParseData(DataElement $data_element): void
     {
         // Determine the byte order of the TIFF data.
-        $this->byteOrder = self::getTiffSegmentByteOrder($data);
-        $data->setByteOrder($this->byteOrder);
+        $this->setByteOrder(self::getTiffSegmentByteOrder($data_element));
+        $data_element->setByteOrder($this->getByteOrder());
 
         $this->debug('byte order: {byte_order} ({byte_order_description})', [
-            'byte_order' => $this->byteOrder === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
-            'byte_order_description' => $this->byteOrder === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
+            'byte_order' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
+            'byte_order_description' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
         ]);
 
-        // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for
-        // header).
-        $ifd_offset = $data->getLong(4);
+        // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for header).
+        $ifd_offset = $data_element->getLong(4);
 
         // If the offset to first IFD is higher than 8, then there may be an
         // image scan (TIFF) in between. Store that in a RawData block.
         if ($ifd_offset > 8) {
             $scan = new ItemDefinition(
-                Collection::get('RawData', ['name' => 'scan']),
-                ItemFormat::BYTE,
+                CollectionFactory::get('RawData', ['name' => 'scan']),
+                DataFormat::BYTE,
                 $ifd_offset - 8
             );
-            $this->addBlock($scan)->parseData($data, 8, $ifd_offset - 8);
+            $this->addBlock($scan)->parseData($data_element, 8, $ifd_offset - 8);
         }
 
         // Loops through IFDs. In fact we should only have IFD0 and IFD1.
-        for ($i = 0; $i <= 2; $i++) {
-            // IFD1 shouldn't link further.
-            if ($ifd_offset === 2) {
-                $this->error('IFD1 should not link to another IFD');
-                break;
+        for ($i = 0; $i <= 1; $i++) {
+            // Check data is accessible, warn otherwise.
+            if ($ifd_offset >= $data_element->getSize() || $ifd_offset + 4 > $data_element->getSize()) {
+                $this->warning(
+                    'Could not determine number of entries for {item}, overflow',
+                    ['item' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name')]
+                );
+                continue;
             }
 
-            try {
-                // Create and load the IFDs. Note that the data element cannot
-                // be split in windows since any pointer will refer to the
-                // entire segment space.
-                $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
-                $ifd_tags_count = $data->getShort($ifd_offset);
-                $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), ItemFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
-                $ifd = new $ifd_class($ifd_item, $this);
-                $ifd->parseData($data);
+            // Find number of tags in IFD and warn if not enough data to read them.
+            $ifd_tags_count = $data_element->getShort($ifd_offset);
+            if ($ifd_offset + $ifd_tags_count * 4 > $data_element->getSize()) {
+                $this->warning(
+                    'Invalid data for {item}',
+                    ['item' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name')]
+                );
+                continue;
+            }
 
-                // Offset to next IFD.
-                $ifd_offset = $data->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
+            // Create and load the IFDs. Note that the data element cannot
+            // be split in windows since any pointer will refer to the
+            // entire segment space.
+            $ifd_class = $this->getCollection()->getItemCollection($i)->getPropertyValue('class');
+            $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), DataFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
+            $ifd = new $ifd_class($ifd_item, $this);
+            try {
+                $ifd->parseData($data_element);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
                     'ifd_name' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name'),
                     'msg' => $e->getMessage(),
                 ]);
-                break;
+                continue;
             }
+
+            // Offset to next IFD.
+            $ifd_offset = $data_element->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
 
             // If next IFD offset is 0 we are finished.
             if ($ifd_offset === 0) {
+                break;
+            }
+
+            // IFD1 shouldn't link further.
+            if ($i === 1) {
+                $this->error('IFD1 should not link to another IFD');
                 break;
             }
         }
@@ -111,14 +139,14 @@ class Tiff extends BlockBase
     public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         // TIFF byte order. 2 bytes running.
-        if ($this->byteOrder == ConvertBytes::LITTLE_ENDIAN) {
+        if ($this->getByteOrder() == ConvertBytes::LITTLE_ENDIAN) {
             $bytes = 'II';
         } else {
             $bytes = 'MM';
         }
 
         // TIFF magic number --- fixed value. 4 bytes running.
-        $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $this->byteOrder);
+        $bytes .= ConvertBytes::fromShort(self::TIFF_HEADER, $this->getByteOrder());
 
         // Check if we have a image scan before first IFD.
         $scan = $this->getElement("rawData");
@@ -130,12 +158,12 @@ class Tiff extends BlockBase
         // bytes for the IFD0 offset itself). If raw data is present, this
         // will come before IFD0. 8 bytes running.
         if (!$ifd0) {
-            $bytes .= ConvertBytes::fromLong(0, $this->byteOrder);
+            $bytes .= ConvertBytes::fromLong(0, $this->getByteOrder());
         } else {
             if ($scan) {
-                $bytes .= ConvertBytes::fromLong(8 + strlen($scan->toBytes()), $this->byteOrder);
+                $bytes .= ConvertBytes::fromLong(8 + strlen($scan->toBytes()), $this->getByteOrder());
             } else {
-                $bytes .= ConvertBytes::fromLong(8, $this->byteOrder);
+                $bytes .= ConvertBytes::fromLong(8, $this->getByteOrder());
             }
         }
 
@@ -146,10 +174,10 @@ class Tiff extends BlockBase
 
         // Dumps IFD0 and IFD1.
         if ($ifd0) {
-            $bytes .= $ifd0->toBytes($this->byteOrder, strlen($bytes), (bool) $ifd1);
+            $bytes .= $ifd0->toBytes($this->getByteOrder(), strlen($bytes), (bool) $ifd1);
         }
         if ($ifd1) {
-            $bytes .= $ifd1->toBytes($this->byteOrder, strlen($bytes), false);
+            $bytes .= $ifd1->toBytes($this->getByteOrder(), strlen($bytes), false);
         }
 
         return $bytes;

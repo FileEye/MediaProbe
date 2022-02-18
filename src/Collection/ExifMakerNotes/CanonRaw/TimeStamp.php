@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonRaw;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class TimeStamp extends Collection {
+class TimeStamp extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonRawTimeStamp',

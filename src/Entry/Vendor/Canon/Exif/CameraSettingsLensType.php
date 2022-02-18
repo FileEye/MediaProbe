@@ -18,7 +18,7 @@ class CameraSettingsLensType extends Short
         if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
             return $alternate->getValue($options);
         } else {
-            return $this->value[0];
+            return parent::getValue();
         }
     }
 }

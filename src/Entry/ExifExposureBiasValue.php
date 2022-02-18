@@ -19,6 +19,6 @@ class ExifExposureBiasValue extends SignedRational
         if (($options['format'] ?? null) === 'exiftool') {
             return $this->fractionToString($this->getValue());
         }
-        return $this->value[0][0] == 0 ? '0' : sprintf('%s%.01f', $this->value[0][0] * $this->value[0][1] > 0 ? '+' : '', $this->value[0][0] / $this->value[0][1]);
+        return $this->dataElement->getSignedRationalFloat() == 0 ? '0' : sprintf('%s%.01f', $this->dataElement->getSignedLong(0) * $this->dataElement->getSignedLong(4) > 0 ? '+' : '', $this->dataElement->getSignedRationalFloat());
     }
 }

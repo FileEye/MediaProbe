@@ -3,13 +3,14 @@
 namespace FileEye\MediaProbe\Entry\Core;
 
 use FileEye\MediaProbe\Block\BlockBase;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementBase;
 use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Base class for EntryInterface objects.
@@ -32,6 +33,13 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     protected $format;
 
     /**
+     * The size, in bytes, of each component held.
+     *
+     * @var int
+     */
+    protected $formatSize = 1;
+
+    /**
      * The number of components of this entry.
      *
      * @var int
@@ -39,33 +47,51 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     protected $components;
 
     /**
-     * The value held by this entry.
+     * The data element held by this entry.
      *
-     * A representation of the value of the entry which is more suitable for
-     * handling than the bytes.
-     *
-     * @var mixed
+     * @var DataElement
      */
-    protected $value;
+    protected $dataElement;
 
     /**
      * Constructs an EntryInterface object.
      *
-     * @param \FileEye\MediaProbe\ElementInterface $parent
+     * @param ElementInterface $parent
      *            xx
-     * @param array $data
+     * @param DataElement $dataElement
      *            the data that this entry will be holding.
-     * @param \FileEye\MediaProbe\ElementInterface|null $reference
+     * @param ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
-    public function __construct(ElementInterface $parent, array $data = [], ElementInterface $reference = null)
+    public function __construct(ElementInterface $parent, DataElement $dataElement, ElementInterface $reference = null)
     {
         parent::__construct(static::DOM_NODE_NAME, $parent, $reference);
-        if (!empty($data)) {
-            $this->setValue($data);
-        }
-        $this->format = ItemFormat::getFromName($this->formatName);
+        $this->setDataElement($dataElement);
+        $this->format = DataFormat::getFromName($this->formatName);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDataElement(DataElement $dataElement): void
+    {
+        $this->dataElement = $dataElement;
+        $this->components = (int) ($dataElement->getSize() / $this->formatSize);
+        $this->validateDataElement();
+    }
+
+    /**
+     * Checks validity of the data.
+     */
+    abstract protected function validateDataElement(): void;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDataElement(): DataElement
+    {
+        return $this->dataElement;
     }
 
     /**
@@ -112,23 +138,6 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     public function getComponents()
     {
         return $this->components;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setValue(array $value)
-    {
-        $this->parsed = true;
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getValue(array $options = [])
-    {
-        return $this->value;
     }
 
     /**
@@ -227,9 +236,17 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
+    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
+    {
+        return $this->dataElement->getBytes();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function toString(array $options = []): string
     {
-        if (is_null($this->value)) {
+        if (is_null($this->dataElement)) {
             return '';
         }
         $text = $this->resolveText($this->getValue($options));
@@ -251,7 +268,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     public function toDumpArray()
     {
         $dump = [
-            'format' => ItemFormat::getName($this->getFormat()),
+            'format' => DataFormat::getName($this->getFormat()),
             'components' => $this->getComponents(),
             'bytesHash' => hash('sha256', $this->toBytes()),
             'text' => $this->toString(),

@@ -10,7 +10,7 @@ items:
         length: 1
         class: FileEye\MediaProbe\Entry\Core\Byte
     2:
-        # ASCII string.
+        # NUL terminated ASCII string.
         # Each component will be an ASCII character.
         name: Ascii
         title: 'Ascii'
@@ -109,3 +109,10 @@ items:
         title: 'SignedShortRational'
         length: 4
         class: FileEye\MediaProbe\Entry\Core\SignedShortRational
+    2000:
+        # String of characters.
+        # Each component will be a character.
+        name: Char
+        title: 'Char'
+        length: 1
+        class: FileEye\MediaProbe\Entry\Core\Char

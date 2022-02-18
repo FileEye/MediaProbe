@@ -15,7 +15,7 @@ class ShutterCount extends Long
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0] + 1;
+        return $this->dataElement->getLong(0) + 1;
     }
 
     /**

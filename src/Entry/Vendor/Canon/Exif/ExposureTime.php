@@ -21,7 +21,7 @@ class ExposureTime extends SignedShort
         if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='ExposureTime']/entry")) {
             return $alternate->getValue($options);
         }
-        return exp(-$this->canonEv($this->value[0]) * log(2));
+        return exp(-$this->canonEv(parent::getValue()) * log(2));
     }
 
     /**

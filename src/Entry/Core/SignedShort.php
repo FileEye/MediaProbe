@@ -28,29 +28,29 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $format;
+    protected $formatSize = 2;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = -32768;
+    const MIN = -32768;
+    const MAX = 32767;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 32767;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): int
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getSignedShort($i * 2);
+        return $this->dataElement->getSignedShort($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->dataElement->getSignedShort();
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->dataElement->getSignedShort($i * 2);
+        }
+        return $ret;
     }
 
     /**

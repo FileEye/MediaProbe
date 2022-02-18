@@ -6,7 +6,6 @@ use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Collection;
 
 class Tags1Test extends MediaProbeTestCaseBase
 {

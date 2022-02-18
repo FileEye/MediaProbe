@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Thumbnail extends Collection {
+class Thumbnail extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Thumbnail',

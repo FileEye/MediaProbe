@@ -6,8 +6,7 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -25,10 +24,10 @@ class Index extends ListBase
         if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
-                $expected_format_names[] = ItemFormat::getName($expected_format_id);
+                $expected_format_names[] = DataFormat::getName($expected_format_id);
             }
             $this->warning("Found {format_name} data format, expected {expected_format_names}", [
-                'format_name' => ItemFormat::getName($this->getFormat()),
+                'format_name' => DataFormat::getName($this->getFormat()),
                 'expected_format_names' => implode(', ', $expected_format_names),
             ]);
         }
@@ -38,9 +37,9 @@ class Index extends ListBase
         // itself). This should match the size determined in the parent IFD.
         if ($this->getCollection()->getPropertyValue('hasIndexSize')) {
             $offset = 0;
-            $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0])[0];
+            $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0]);
             if ($index_size !== $this->getDefinition()->getSize()) {
-                $this->warning("Size mismatch between IFD and index header");
+                $this->error("Size mismatch between IFD and index header");
             }
         }
     }
@@ -107,53 +106,60 @@ class Index extends ListBase
     /**
      * @todo xxx
      */
-    protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): array
+    protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1)
     {
-        if ($format === ItemFormat::ASCII) {
-            $value = $data_element->getBytes($offset, $count);
-            $offset += $count;
-            return [$value];
+        $dataWindow = $this->getDataWindowFromData($data_element, $offset, $format, $count);
+        switch ($format) {
+            case DataFormat::BYTE:
+                return $dataWindow->getByte();
+            case DataFormat::SHORT:
+                return $dataWindow->getShort();
+            case DataFormat::SHORT_REV:
+                return $dataWindow->getShortRev();
+            case DataFormat::SIGNED_SHORT:
+                return $dataWindow->getSignedShort();
+            case DataFormat::LONG:
+                return $dataWindow->getLong();
+            case DataFormat::SIGNED_LONG:
+                return $dataWindow->getSignedLong();
+            case DataFormat::RATIONAL:
+                return $dataWindow->getRational();
+            case DataFormat::SIGNED_RATIONAL:
+                return $dataWindow->getSignedRational();
+            default:
+                $this->error("Unsupported format.");
         }
-        $value = [];
-        for ($h = 0; $h < $count; $h++) {
-            switch ($format) {
-                case ItemFormat::BYTE:
-                case ItemFormat::UNDEFINED:
-                    $value[] = $data_element->getByte($offset);
-                    $offset++;
-                    break;
-                case ItemFormat::SHORT:
-                    $value[] = $data_element->getShort($offset);
-                    $offset += 2;
-                    break;
-                case ItemFormat::SHORT_REV:
-                    $value[] = $data_element->getShortRev($offset);
-                    $offset += 2;
-                    break;
-                case ItemFormat::SIGNED_SHORT:
-                    $value[] = $data_element->getSignedShort($offset);
-                    $offset += 2;
-                    break;
-                case ItemFormat::LONG:
-                    $value[] = $data_element->getLong($offset);
-                    $offset += 4;
-                    break;
-                case ItemFormat::SIGNED_LONG:
-                    $value[] = $data_element->getSignedLong($offset);
-                    $offset += 4;
-                    break;
-                case ItemFormat::RATIONAL:
-                    $value[] = $data_element->getRational($offset);
-                    $offset += 8;
-                    break;
-                case ItemFormat::SIGNED_RATIONAL:
-                    $value[] = $data_element->getSignedRational($offset);
-                    $offset += 8;
-                    break;
-                default:
-                    $this->error("Unsupported format.");
-            }
+    }
+
+    /**
+     * @todo xxx
+     */
+    protected function getDataWindowFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): DataWindow
+    {
+        switch ($format) {
+            case DataFormat::ASCII:
+            case DataFormat::BYTE:
+            case DataFormat::UNDEFINED:
+                $size = 1;
+                break;
+            case DataFormat::SHORT:
+            case DataFormat::SHORT_REV:
+            case DataFormat::SIGNED_SHORT:
+                $size = 2;
+                break;
+            case DataFormat::LONG:
+            case DataFormat::SIGNED_LONG:
+                $size = 4;
+                break;
+            case DataFormat::RATIONAL:
+            case DataFormat::SIGNED_RATIONAL:
+                $size = 8;
+                break;
+            default:
+                $this->error("Unsupported format.");
         }
+        $value = new DataWindow($data_element, $offset, $count * $size);
+        $offset += ($count * $size);
         return $value;
     }
 
@@ -188,7 +194,7 @@ class Index extends ListBase
     {
         $components = 0;
         foreach ($this->getMultipleElements('tag') as $sub) {
-            $sub_size = ItemFormat::getSize($sub->getFormat()) * $sub->getComponents();
+            $sub_size = DataFormat::getSize($sub->getFormat()) * $sub->getComponents();
             // Components are in Shorts, $sub_size is in Bytes, so normalize.
             $components += $sub_size / 2;
         }
@@ -230,7 +236,7 @@ class Index extends ListBase
             'item' => $item,
             'offset' => $offset ?? null,
             'tags' => $this->getDefinition()->getValuesCount(),
-            'format' => ItemFormat::getName($this->getDefinition()->getFormat()),
+            'format' => DataFormat::getName($this->getDefinition()->getFormat()),
             'size' => $this->getDefinition()->getSize(),
         ]);
     }

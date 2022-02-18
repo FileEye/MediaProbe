@@ -17,7 +17,7 @@ use FileEye\MediaProbe\MediaProbe;
  *
  * The class can hold either just a single rational or an array of rationals.
  */
-class Rational extends Long
+class Rational extends NumberBase
 {
     /**
      * {@inheritdoc}
@@ -32,34 +32,34 @@ class Rational extends Long
     /**
      * {@inheritdoc}
      */
-    protected $format;
+    protected $formatSize = 8;
 
     /**
      * {@inheritdoc}
      */
     protected $dimension = 2;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = 0;
+    const MIN = 0;
+    const MAX = 4294967295;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 4294967295;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): array
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getRational($i * 8);
+        return $this->dataElement->getRational($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->formatNumber($this->dataElement->getRational(), $options);
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->formatNumber($this->dataElement->getRational($i * 8), $options);
+        }
+        return $ret;
     }
 
     /**
@@ -87,5 +87,13 @@ class Rational extends Long
                 $ret = $number[0] / $number[1];
                 return $ret == 0.0 ? 0 : $ret;
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function numberToBytes($number, $order)
+    {
+        return ConvertBytes::fromLong($number, $order);
     }
 }

@@ -6,16 +6,16 @@ use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Thumbnail;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -30,7 +30,6 @@ class Ifd extends ListBase
      */
     public function parseData(DataElement $data_element, int $start = 0, ?int $size = null, $xxx = 0): void
     {
-        //$ifd_data = new DataWindow($data_element, $start, $size);
         $offset = $this->getDefinition()->getDataOffset();
 
         // Get the number of entries.
@@ -40,10 +39,44 @@ class Ifd extends ListBase
         // Parse the items.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
+            $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Tiff\IfdAny');
+            $item_class = $item_definition->getCollection()->getPropertyValue('class');
+
+            // Check data is accessible, warn otherwise.
+            if ($item_definition->getDataOffset() >= $data_element->getSize()) {
+                $this->warning(
+                    'Could not access value for item {item} in \'{ifd}\', overflow',
+                    [
+                        'item' => MediaProbe::dumpIntHex($item_definition->getCollection()->getPropertyValue('name') ?? 'n/a'),
+                        'ifd' => $this->getAttribute('name'),
+                    ]
+                );
+                continue;
+            }
+/*            $this->debug(
+                'Item Offset {o} Components {c} Format {f} Formatsize {fs} Size {s} DataElement Size {des}', [
+                    'o' => MediaProbe::dumpIntHex($data_element->getAbsoluteOffset($item_definition->getDataOffset())),
+                    'c' => $item_definition->getValuesCount(),
+                    'f' => $item_definition->getFormat(),
+                    'fs' => DataFormat::getSize($item_definition->getFormat()),
+                    's' => MediaProbe::dumpIntHex($item_definition->getSize()),
+                    'des' => MediaProbe::dumpIntHex($data_element->getSize()),
+                ]
+            );*/
+            if ($item_definition->getDataOffset() +  $item_definition->getSize() > $data_element->getSize()) {
+                $this->warning(
+                    'Could not get value for item {item} in \'{ifd}\', not enough data',
+                    [
+                        'item' => MediaProbe::dumpIntHex($item_definition->getCollection()->getPropertyValue('name') ?? 'n/a'),
+                        'ifd' => $this->getAttribute('name'),
+                    ]
+                );
+                continue;
+            }
+
+            // Adds the item to the DOM.
+            $item = new $item_class($item_definition, $this);
             try {
-                $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Tiff\IfdAny');
-                $item_class = $item_definition->getCollection()->getPropertyValue('class');
-                $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, true)) {
                     $item->parseData($data_element);
                 } else {
@@ -55,10 +88,9 @@ class Ifd extends ListBase
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
+                $item->valid = false;
             }
         }
-
-        $this->parsed = true;
 
         // Invoke post-load callbacks.
         $this->executePostParseCallbacks($data_element);
@@ -117,17 +149,6 @@ class Ifd extends ListBase
     {
         $id = $data_element->getShort($offset);
         $format = $data_element->getShort($offset + 2);
-        $components = $data_element->getLong($offset + 4);
-        $size = ItemFormat::getSize($format) * $components;
-
-        // If the data size is bigger than 4 bytes, then actual data is not in
-        // the TAG's data element, but at the the offset stored in the data
-        // element.
-        if ($size > 4) {
-            $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
-        } else {
-            $data_offset = $offset + 8;
-        }
 
         // Fall back to the generic IFD collection if the item is missing from
         // the appropriate one.
@@ -135,7 +156,7 @@ class Ifd extends ListBase
             $item_collection = $this->getCollection()->getItemCollection($id);
         } catch (MediaProbeException $e) {
             if ($fallback_collection_id !== null) {
-                $item_collection = Collection::get($fallback_collection_id)->getItemCollection($id, 0, 'UnknownTag', [
+                $item_collection = CollectionFactory::get($fallback_collection_id)->getItemCollection($id, 0, 'UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);
@@ -147,19 +168,27 @@ class Ifd extends ListBase
             }
         }
 
-        // If the item is an Ifd, recurse in loading the item at offset.
         if (is_a($item_collection->getPropertyValue('class'), Ifd::class, true)) {
-            // Check the offset.
-            $item_offset = $data_element->getLong($offset + 8);
-/*          if ($item_offset <= $offset) {
-            $this->error('Invalid offset pointer to IFD: {offset}.', [
-                'offset' => $item_definition->getDataOffset(),
-            ]);
-            continue;
-          }*/
-            $components = $data_element->getShort($item_offset - 8);
-            $format = ItemFormat::LONG;
-            $data_offset = $item_offset;
+            // If the item is an Ifd, recurse in loading the item at offset.
+            $data_offset = $data_element->getLong($offset + 8);
+            $components = $data_element->getShort($data_offset);
+            // The first 2 bytes indicate the number of directory entries contained
+            // in the IFD. Then directory entries (12 bytes per entry) follow.
+            // After last directory entry, there are  4 bytes indicating the
+            // offset to next IFD.
+            $size = 2 + $components * DataFormat::getSize($format) + 4;
+        } else {
+            // The data is a tag.
+            $components = $data_element->getLong($offset + 4);
+            // If the data size is bigger than 4 bytes, then actual data is not in
+            // the TAG's data element, but at the the offset stored in the data
+            // element.
+            $size = DataFormat::getSize($format) * $components;
+            if ($size > 4) {
+                $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
+            } else {
+                $data_offset = $offset + 8;
+            }
         }
 
         return new ItemDefinition($item_collection, $format, $components, $data_offset, $data_element->getStart() + $offset, $seq);
@@ -187,16 +216,21 @@ class Ifd extends ListBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getCollection()->getId() === 'Thumbnail') {
+            if ($sub_block->getCollection()->getPropertyValue('id') === 'Thumbnail') {
                 continue;
             }
 
-            $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
-            $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
-            $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
-
             $data = $sub_block->toBytes($byte_order, $data_area_offset);
-//if ($sub_block->getAttribute('name') === 'CanonCameraInfo') dump('IFD entry', $sub_block->getAttribute('id'), $sub_block->getFormat(), $sub_block->getComponents(), MediaProbe::dumpHexFormatted($data));
+
+            $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
+            if ((int) $sub_block->getAttribute('id') === 37500) {
+                $bytes .= ConvertBytes::fromShort(DataFormat::UNDEFINED, $byte_order);
+                $bytes .= ConvertBytes::fromLong(strlen($data), $byte_order);
+            } else {
+                $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);
+                $bytes .= ConvertBytes::fromLong($sub_block->getComponents(), $byte_order);
+            }
+
             $s = strlen($data);
             if ($s > 4) {
                 $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
@@ -207,7 +241,6 @@ class Ifd extends ListBase
                 // fill out the four bytes available.
                 $bytes .= $data . str_repeat(chr(0), 4 - $s);
             }
-//if ($sub_block->getAttribute('name') === 'CanonFilterInfo') dump('IFD data', $data_area_offset, MediaProbe::dumpHexFormatted($bytes), MediaProbe::dumpHexFormatted($data_area_bytes));
         }
 
         // Thumbnail.
@@ -215,12 +248,12 @@ class Ifd extends ListBase
             $thumbnail_entry = $thumbnail->getElement('entry');
             // Add offset.
             $bytes .= ConvertBytes::fromShort($this->getCollection()->getItemCollectionByName('ThumbnailOffset')->getPropertyValue('item'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(ItemFormat::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromShort(DataFormat::LONG, $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($data_area_offset, $byte_order);
             // Add length.
             $bytes .= ConvertBytes::fromShort($this->getCollection()->getItemCollectionByName('ThumbnailLength')->getPropertyValue('item'), $byte_order);
-            $bytes .= ConvertBytes::fromShort(ItemFormat::LONG, $byte_order);
+            $bytes .= ConvertBytes::fromShort(DataFormat::LONG, $byte_order);
             $bytes .= ConvertBytes::fromLong(1, $byte_order);
             $bytes .= ConvertBytes::fromLong($thumbnail_entry->getComponents(), $byte_order);
             // Add thumbnail.
@@ -270,7 +303,7 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'length' => $length,
             ]);
-            $ifd->parsed = false;
+            $ifd->valid = false;
             return;
         }
 
@@ -279,7 +312,7 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'size' => $data_element->getSize(),
             ]);
-            $ifd->parsed = false;
+            $ifd->valid = false;
             return;
         }
 
@@ -300,7 +333,7 @@ class Ifd extends ListBase
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
-            while ($dataxx->getByte($size - 2) !== Jpeg::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Collection::get('Jpeg\Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
+            while ($dataxx->getByte($size - 2) !== Jpeg::JPEG_DELIMITER || $dataxx->getByte($size - 1) != CollectionFactory::get('Jpeg\Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
                 $size --;
             }
             if ($size != $dataxx->getSize()) {
@@ -310,7 +343,7 @@ class Ifd extends ListBase
             }
 
             $thumbnail = new ItemDefinition(
-                Collection::get('Thumbnail')
+                CollectionFactory::get('Thumbnail')
             );
             $ifd->addBlock($thumbnail)->parseData($dataxx, 0, $size);
         } catch (DataException $e) {
@@ -319,7 +352,7 @@ class Ifd extends ListBase
     }
 
     /**
-     * Converts a maker note tag to an IFD structure for dumping.
+     * Converts a maker note tag to an IFD structure.
      *
      * @param DataWindow $d
      *            the data window that will provide the data.
@@ -364,8 +397,11 @@ class Ifd extends ListBase
         // xxx
         $ifd->setAttribute('id', 37500);
         $ifd->setAttribute('name', $maker_note_ifd_name);
-        $data = new DataWindow($d, $maker_note_tag->getElement("entry")->getValue()[1]);
-        $ifd->parseData($data, $maker_note_tag->getElement("entry")->getValue()[1], null, -$maker_note_tag->getElement("entry")->getValue()[1]);
+        $data = $maker_note_tag->getElement("entry")->getDataElement();
+// dump(MediaProbe::dumpHexFormatted($data->getBytes()));
+        // @todo the netting of the dataOffset is a Canon only thing, move to vendor
+        // @todo xxx this is incorrect, parsing should happen indepentently from add'l offset
+        $ifd->parseData($data, 0, null, -$maker_note_tag->getDefinition()->getDataOffset());
 
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");
@@ -385,7 +421,7 @@ class Ifd extends ListBase
      */
     protected static function getMakerNoteCollection($make, $model)
     {
-        $maker_notes_collection = Collection::get('ExifMakerNotes\MakerNotes');
+        $maker_notes_collection = CollectionFactory::get('ExifMakerNotes\MakerNotes');
         foreach ($maker_notes_collection->listItemIds() as $maker_note_collection_id) {
             $maker_note_collection = $maker_notes_collection->getItemCollection($maker_note_collection_id);
             if ($maker_note_collection->getPropertyValue('make') === $make) {

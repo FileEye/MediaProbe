@@ -19,7 +19,7 @@ class LensSerialNumber extends Undefined
         if ($alternate) {
             return $alternate->getValue($options);
         } else {
-            return bin2hex($this->value);
+            return bin2hex($this->dataElement->getBytes());
         }
     }
 

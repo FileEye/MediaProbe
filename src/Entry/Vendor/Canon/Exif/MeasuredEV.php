@@ -15,7 +15,7 @@ class MeasuredEV extends SignedShort
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0] / 32 + 5;
+        return parent::getValue() / 32 + 5;
     }
 
     /**

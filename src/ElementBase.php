@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe;
 
+use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\DOMElement;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
@@ -37,11 +38,11 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     protected $XPath;
 
     /**
-     * Whether this element was successfully parsed from data.
+     * Whether this element was successfully validated.
      *
      * @var bool
      */
-    protected $parsed = false;
+    protected $valid = true;
 
     /**
      * Constructs an Element object.
@@ -203,9 +204,17 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function isParsed()
+    public function isValid()
     {
-        return $this->parsed;
+        return $this->valid;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDataElement(): DataElement
+    {
+        throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
     /**
@@ -213,7 +222,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function getValue(array $options = [])
     {
-        throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
     /**
@@ -221,7 +230,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function toString(array $options = []): string
     {
-        throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
+        throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
     /**
@@ -233,7 +242,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             'node' => $this->DOMNode->nodeName,
             'path' => $this->getContextPath(),
             'class' => get_class($this),
-            'parsed' => $this->isParsed(),
+            'valid' => $this->isValid(),
         ];
     }
 
@@ -244,6 +253,11 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     {
         $context['path'] = $this->getContextPath();
         $root_element = $this->getRootElement();
+
+/*        if (method_exists($root_element, 'getStopwatch')) {
+            $message = (string) $root_element->getStopwatch()->getEvent('media-parsing') . ' ' . $message;
+        }*/
+
         if (property_exists($root_element, 'logger')) {  // xx should be logging anyway
             $root_element->logger->log($level, $message, $context);
             if ($root_element->externalLogger) {  // xx should be logging anyway

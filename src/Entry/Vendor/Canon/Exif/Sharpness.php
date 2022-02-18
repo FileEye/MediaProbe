@@ -18,7 +18,7 @@ class Sharpness extends SignedShort
         if ($alternative_sharpness = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonCameraSettings']/tag[@name='Sharpness']/entry")) {
             $value = $alternative_sharpness->getValue($options);
         } else {
-            $value = $this->value[0];
+            $value = parent::getValue($options);
         }
 
         return $value === 0x7fff ? 0 : $value;

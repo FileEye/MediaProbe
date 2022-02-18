@@ -19,7 +19,7 @@ class AFPointsInFocus extends SignedShort
             if ($alternative_af_points_in_focus = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonShotInfo']/tag[@name='AFPointsInFocus']/entry")) {
                 return $alternative_af_points_in_focus->getValue($options);
             } else {
-                return $this->value[0];
+                return parent::getValue();
             }
         }
         return parent::getValue($options);
@@ -30,6 +30,6 @@ class AFPointsInFocus extends SignedShort
      */
     public function toString(array $options = []): string
     {
-        return $this->resolveText($this->value[0]);
+        return $this->resolveText(parent::getValue());
     }
 }

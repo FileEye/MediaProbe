@@ -15,11 +15,12 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.2"
-          - "7.3"
-          - "7.4"
-          - "8.0"
+#          - "7.2"
+#          - "7.3"
+#          - "7.4"
+#          - "8.0"
           - "8.1"
+#          - "8.2"
 
     steps:
     - name: Install PHP
@@ -40,9 +41,9 @@ jobs:
       uses: actions/cache@v2
       with:
         path: vendor
-        key: ${{ runner.os }}-php-${{ matrix.php-version }}-v2-${{ hashFiles('**/composer.lock') }}
+        key: ${{ runner.os }}-php-${{ matrix.php-version }}-v3-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
-          ${{ runner.os }}-php-${{ matrix.php-version }}-v2-
+          ${{ runner.os }}-php-${{ matrix.php-version }}-v3-
 
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
@@ -52,69 +53,41 @@ jobs:
       run: |
         php bin/fileeye-mediaprobe --version
         # Remove the comment to the lines below during development, to let
-        # re-compile the specification PHP file from the YAML files, and refresh
-        # the media file dumps.
-        # php bin/fileeye-mediaprobe compile
-        # php bin/fileeye-mediaprobe dump tests/media-samples tests/media-dumps
+        # re-compile the specification PHP file from the YAML files.
+        php bin/fileeye-mediaprobe compile
+        git config user.email "a@a.com"
+        git config user.name "Aa Aa"
+        git add .
+        git diff --cached
 
     - name: Image file dumps
+      continue-on-error: true
       run: |
-        #php examples/dump-media.php -d -w tests/media-samples/image/broken/canon-eos-650d.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/canon-eos-650d.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/exiftool/Canon1DmkIII.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon1DmkIII.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/exiftool/Canon.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-powershot-s60.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-powershot-s60.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-ixus-ii.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-ixus-ii.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/apple-iphone7.JPG
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone7.JPG-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/apple-iphone11.jpg
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/nikon-e5000.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/nikon-e5000.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/pentax-istDS.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/pentax-istDS.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-141.jpg
-        #php examples/dump-media.php -d -w tests/media-samples/image/broken/pel-152.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-152.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-10-a.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-10-a.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/broken/gh-10-b.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-10-b.jpg-rewrite.img
-        #php examples/dump-media.php       tests/media-samples/image/broken/gh-11.jpg
-        #php examples/dump-media.php -d -w tests/media-samples/image/broken/misplaced-exif.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/misplaced-exif.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/gh-16.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/gh-16.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/gh-21.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/gh-21.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/gh-77.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/gh-77.jpg-rewrite.img
-        php examples/dump-media.php -d    tests/media-samples/image/test-tags-1.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/test-tags-1.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/no-exif.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/no-exif.jpg-rewrite.img
-        #php examples/dump-media.php -d -s tests/media-samples/image/sample-1.tiff
-        #php examples/dump-media.php -d -w tests/media-samples/image/broken/pel-156.jpg
-        php examples/dump-media.php -d -s tests/media-samples/image/pel-157.tiff
-        #php examples/dump-media.php -d    tests/media-samples/image/pel-157.tiff-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-11.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/olympus-c765uz.jpg
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/fujifilm_x_a5.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/fujifilm_x_a5.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/canon_eos_70d_29.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_70d_29.jpg-rewrite.img
-        #php examples/dump-media.php -d -w tests/media-samples/image/camera/canon_eos_850d_08.jpg
-        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_850d_08.jpg-rewrite.img
-        #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
+        php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
+        php examples/dump-media.php -d tests/media-samples/image/broken/gh-11.jpg
+        php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
       run: vendor/bin/phpunit ./tests
+#      continue-on-error: true
 
     - name: Code style test
       if: ${{ matrix.php-version == 7.4 }}
       run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
+
+# Remove the comment to the lines below during development, to refresh the
+# media file dumps.
+#    - name: Update media dumps
+#      run: php bin/fileeye-mediaprobe dump tests/media-samples tests/media-dumps
+
+#    - name: Upload media dumps
+#      uses: actions/upload-artifact@v2
+#      with:
+#        name: media-dumps
+#        path: tests/media-dumps/**/*.yml
+
+#    - name: "Install PHPStan"
+#      run: "composer require --dev phpstan/phpstan:^1.2 --ansi"
+
+#    - name: "Run a static analysis with phpstan/phpstan"
+#      run: "vendor/bin/phpstan"

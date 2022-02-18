@@ -22,7 +22,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame( 4294963149, ConvertBytes::toLong("\xCD\xEF\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame( 4294967279, ConvertBytes::toLong("\xEF\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame( 4294967295, ConvertBytes::toLong("\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toSignedLong("\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN);
     }
 
@@ -41,7 +41,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame( 3455057919, ConvertBytes::toLong("\xCD\xEF\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame( 4026531839, ConvertBytes::toLong("\xEF\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame( 4294967295, ConvertBytes::toLong("\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toSignedLong("\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN);
     }
 
@@ -60,7 +60,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame(      -4147, ConvertBytes::toSignedLong("\xCD\xEF\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame(        -17, ConvertBytes::toSignedLong("\xEF\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame(         -1, ConvertBytes::toSignedLong("\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toSignedLong("\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN);
     }
 
@@ -79,7 +79,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame( -839909377, ConvertBytes::toSignedLong("\xCD\xEF\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame( -268435457, ConvertBytes::toSignedLong("\xEF\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame(         -1, ConvertBytes::toSignedLong("\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toSignedLong("\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN);
     }
 
@@ -100,7 +100,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame( 65535, ConvertBytes::toShort("\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame( 65535, ConvertBytes::toShort("\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame( 65535, ConvertBytes::toShort("\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toShort("\xFF", ConvertBytes::LITTLE_ENDIAN);
     }
 
@@ -121,7 +121,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame( 65535, ConvertBytes::toShort("\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame( 65535, ConvertBytes::toShort("\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame( 65535, ConvertBytes::toShort("\xFF\xFF", ConvertBytes::BIG_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toShort("\xFF", ConvertBytes::BIG_ENDIAN);
     }
 
@@ -142,7 +142,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame(    -1, ConvertBytes::toSignedShort("\xFF\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame(    -1, ConvertBytes::toSignedShort("\xFF\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
         $this->assertSame(    -1, ConvertBytes::toSignedShort("\xFF\xFF", ConvertBytes::LITTLE_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toSignedShort("\xFF", ConvertBytes::LITTLE_ENDIAN);
     }
 
@@ -163,7 +163,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame(    -1, ConvertBytes::toSignedShort("\xFF\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame(    -1, ConvertBytes::toSignedShort("\xFF\xFF\xFF", ConvertBytes::BIG_ENDIAN));
         $this->assertSame(    -1, ConvertBytes::toSignedShort("\xFF\xFF", ConvertBytes::BIG_ENDIAN));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toSignedShort("\xFF", ConvertBytes::BIG_ENDIAN);
     }
 
@@ -185,7 +185,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame( 255, ConvertBytes::toByte("\xFF\xFF\xFF"));
         $this->assertSame( 255, ConvertBytes::toByte("\xFF\xFF"));
         $this->assertSame( 255, ConvertBytes::toByte("\xFF"));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toByte("");
     }
 
@@ -207,7 +207,7 @@ class ConvertTest extends MediaProbeTestCaseBase
         $this->assertSame(  -1, ConvertBytes::toSignedByte("\xFF\xFF\xFF"));
         $this->assertSame(  -1, ConvertBytes::toSignedByte("\xFF\xFF"));
         $this->assertSame(  -1, ConvertBytes::toSignedByte("\xFF"));
-        $this->fcExpectException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         ConvertBytes::toSignedByte("");
     }
 }

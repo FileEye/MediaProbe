@@ -112,7 +112,7 @@ interface ElementInterface
      *
      * @return bool
      */
-    public function isParsed();
+    public function isValid();
 
     /**
      * Returns the value of this element, if the element supports it.

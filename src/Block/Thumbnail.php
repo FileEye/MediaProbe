@@ -16,6 +16,6 @@ class Thumbnail extends BlockBase
     protected function doParseData(DataElement $data): void
     {
         // Adds the segment data as an Undefined entry.
-        new Undefined($this, [$data->getBytes()]);
+        new Undefined($this, $data);
     }
 }

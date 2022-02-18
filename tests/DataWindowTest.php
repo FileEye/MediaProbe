@@ -71,7 +71,7 @@ class DataWindowTest extends MediaProbeTestCaseBase
         $window_1 = new DataWindow($data, 5, 10);
 
         $this->expectException(DataException::class);
-        $this->expectExceptionMessage('Excessive size for DataWindow');
+        $this->expectExceptionMessage('DataWindow (offset: 0 size: 40) out of bounds of DataElement (size: 10)');
         $window_1_sub3 = new DataWindow($window_1, 0, 40);
     }
 

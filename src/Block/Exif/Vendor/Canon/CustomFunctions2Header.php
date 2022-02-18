@@ -4,7 +4,6 @@ namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
@@ -12,7 +11,7 @@ use FileEye\MediaProbe\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -62,7 +61,7 @@ class CustomFunctions2Header extends ListBase
 
             $pos += 12;
             try {
-                $item_definition = new ItemDefinition($this->getCollection()->getItemCollection($rec_num), ItemFormat::SIGNED_LONG, $rec_count);
+                $item_definition = new ItemDefinition($this->getCollection()->getItemCollection($rec_num), DataFormat::SIGNED_LONG, $rec_count);
                 $class = $item_definition->getCollection()->getPropertyValue('class');
                 $group = new $class($item_definition, $this);
                 $group->parseData($data, $pos, min($rec_len, $data->getSize() - $pos));

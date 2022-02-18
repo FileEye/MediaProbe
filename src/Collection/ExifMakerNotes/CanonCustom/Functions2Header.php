@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonCustom;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Functions2Header extends Collection {
+class Functions2Header extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCustomFunctions2Header',

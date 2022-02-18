@@ -14,7 +14,7 @@ class MacroMagnification extends Byte
      */
     public function getValue(array $options = [])
     {
-        return exp((75 - $this->value[0]) * log(2) * 3 / 40);
+        return exp((75 - $this->dataElement->getByte(0)) * log(2) * 3 / 40);
     }
 
     /**

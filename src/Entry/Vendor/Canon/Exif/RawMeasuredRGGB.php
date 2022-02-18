@@ -17,7 +17,7 @@ class RawMeasuredRGGB extends Long
     {
         $format = $options['format'] ?? null;
         $value = [];
-        foreach ($this->value as $v) {
+        foreach (parent::getValue() as $v) {
             $value[] = (($v >> 16) | ($v << 16)) & 0xffffffff;
         }
         return $format === 'exiftool' ? implode(' ', $value) : $value;

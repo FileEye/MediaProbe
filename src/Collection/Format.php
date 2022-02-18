@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Format extends Collection {
+class Format extends CollectionBase {
 
   protected static $map = array (
   'title' => 'The list of MediaProbe supported data formats.',
@@ -23,6 +23,10 @@ class Format extends Collection {
     'Byte' =>
     array (
       0 => 1,
+    ),
+    'Char' =>
+    array (
+      0 => 2000,
     ),
     'Double' =>
     array (
@@ -239,6 +243,17 @@ class Format extends Collection {
         'title' => 'SignedShortRational',
         'length' => 4,
         'class' => 'FileEye\\MediaProbe\\Entry\\Core\\SignedShortRational',
+        'collection' => 'VoidCollection',
+      ),
+    ),
+    2000 =>
+    array (
+      0 =>
+      array (
+        'name' => 'Char',
+        'title' => 'Char',
+        'length' => 1,
+        'class' => 'FileEye\\MediaProbe\\Entry\\Core\\Char',
         'collection' => 'VoidCollection',
       ),
     ),

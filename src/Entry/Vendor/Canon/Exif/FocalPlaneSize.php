@@ -15,7 +15,7 @@ class FocalPlaneSize extends Short
      */
     public function getValue(array $options = [])
     {
-        return $this->value[0] * 25.4 / 1000;
+        return parent::getValue() * 25.4 / 1000;
     }
 
     /**

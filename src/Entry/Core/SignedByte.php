@@ -24,32 +24,27 @@ class SignedByte extends NumberBase
      */
     protected $formatName = 'SignedByte';
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $format;
+    const MIN = -128;
+    const MAX = 127;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = -128;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 127;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): int
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getSignedByte($i);
+        return $this->dataElement->getSignedByte($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->dataElement->getSignedByte();
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->dataElement->getSignedByte($i);
+        }
+        return $ret;
     }
 
     /**

@@ -25,13 +25,13 @@ class CameraISO extends SignedShort
             19 => 400,
             20 => 800, #PH
         ];
-        if ($this->value[0] === 0x7fff) {
+        if (parent::getValue() === 0x7fff) {
             return 0;
         }
-        if ($this->value[0] & 0x4000) {
-            return $this->value[0] & 0x3fff;
+        if (parent::getValue() & 0x4000) {
+            return parent::getValue() & 0x3fff;
         } else {
-            return isset($isoLookup[$this->value[0]]) ? $isoLookup[$this->value[0]] : "Unknown ({$this->value[0]})";
+            return isset($isoLookup[parent::getValue()]) ? $isoLookup[parent::getValue()] : "Unknown ({parent::getValue()})";
         }
     }
 

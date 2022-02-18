@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class IfdExif extends Collection {
+class IfdExif extends CollectionBase {
 
   protected static $map = array (
   'name' => 'ExifIFD',
@@ -4988,7 +4988,6 @@ class IfdExif extends Collection {
       0 =>
       array (
         'components' => 1,
-        'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifBrightnessValue',
         'collection' => 'Tag',
         'name' => 'BrightnessValue',
         'title' => 'Brightness Value',

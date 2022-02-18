@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Block;
 
 use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
@@ -23,12 +23,12 @@ class JpegSegmentApp1 extends JpegSegmentBase
     {
         // If we have an Exif table, parse it.
         if (Exif::isExifSegment($data, 4)) {
-            $exif = new ItemDefinition(Collection::get('Exif\Exif'));
+            $exif = new ItemDefinition(CollectionFactory::get('Exif\Exif'));
             $this->addBlock($exif)->parseData($data, 4, $data->getSize() - 4);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.
-            $entry = new Undefined($this, [$data->getBytes()]);
+            $entry = new Undefined($this, $data);
             $entry->debug("Not an Exif segment. Parsed {text}", ['text' => $entry->toString()]);
         }
     }

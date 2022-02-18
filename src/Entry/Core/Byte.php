@@ -23,32 +23,27 @@ class Byte extends NumberBase
      */
     protected $formatName = 'Byte';
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $format;
+    const MIN = 0;
+    const MAX = 255;
 
-    /**
-     * {@inheritdoc}
-     */
-    protected $min = 0;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $max = 255;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function loadFromData(DataElement $data_element, $offset, $size, array $options = [], ItemDefinition $item_definition = null)
+    protected function getNumberFromDataElement(int $offset): int
     {
-        $args = [];
-        for ($i = 0; $i < $item_definition->getValuesCount(); $i ++) {
-            $args[] = $data_element->getByte($i);
+        return $this->dataElement->getByte($offset);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getValue(array $options = [])
+    {
+        if ($this->components == 1) {
+            return $this->dataElement->getByte();
         }
-        $this->setValue($args);
-        return $this;
+        $ret = [];
+        for ($i = 0; $i < $this->components; $i++) {
+            $ret[] = $this->dataElement->getByte($i);
+        }
+        return $ret;
     }
 
     /**

@@ -2,6 +2,8 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
+use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -14,118 +16,39 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 abstract class NumberBase extends EntryBase
 {
     /**
-     * The minimum allowed value.
-     *
-     * @var int
-     */
-    protected $min;
-
-    /**
-     * The maximum allowed value.
-     *
-     * @var int
-     */
-    protected $max;
-
-    /**
      * The dimension of the number held.
      *
-     * Normal numbers have a dimension of one, pairs have a dimension of two,
-     * etc.
+     * Normal numbers have a dimension of one, fractions like Rational have a dimension of two.
      *
      * @var int
      */
     protected $dimension = 1;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function setValue(array $data)
+    protected function validateDataElement(): void
     {
-        parent::setValue($data);
-
-        foreach ($data as &$v) {
-            $this->validateNumber($v);
+        // Check that the data size is consistent.
+        if ($this->components * $this->formatSize !== $this->dataElement->getSize()) {
+            $this->error('Invalid data size.');
+            $this->valid = false;
         }
 
-        $this->components = count($data);
-        $this->value = empty($data) ? null : $data;
+        // Check that the numbers given are within the min-max range allowed.
+        for ($i = 0; $i < $this->components; $i++) {
+            try {
+                $this->getNumberFromDataElement($i * $this->formatSize);
+            } catch (DataException $e) {
+                $this->error($e->getMessage());
+                $this->valid = false;
+            }
+        }
 
         $this->debug("text: {text}", ['text' => $this->toString()]);
-        return $this;
     }
 
     /**
-     * {@inheritdoc}
+     * Return a number from the data element at specified offset.
      */
-    public function getValue(array $options = [])
-    {
-        if (is_null($this->value)) {
-            return null;
-        }
-        if ($this->components == 1) {
-            return $this->formatNumber($this->value[0], $options);
-        }
-        $ret = [];
-        foreach ($this->value as $value) {
-            $ret[] = $this->formatNumber($value, $options);
-        }
-        return $ret;
-    }
-
-    /**
-     * Validate a number.
-     *
-     * This method will check that the number given is within the range given
-     * by ::getMin() and ::getMax(), inclusive.
-     *
-     * @param int|array $n
-     *            the number in question.
-     *
-     * @return void
-     */
-    public function validateNumber(&$n)
-    {
-        if ($this->dimension == 1) {
-            if ($n < $this->min || $n > $this->max) {
-                $this->error('Value {value} out of range [{min},{max}]', [
-                    'value' => $n,
-                    'min' => $this->min,
-                    'max' => $this->max,
-                ]);
-                $n = 0;
-                $this->parsed = false;
-            }
-        } else {
-            for ($i = 0; $i < $this->dimension; $i ++) {
-                if ($n[$i] < $this->min || $n[$i] > $this->max) {
-                    $this->error('Value {value} out of range [{min},{max}]', [
-                        'value' => $n[$i],
-                        'min' => $this->min,
-                        'max' => $this->max,
-                    ]);
-                    $n[$i] = 0;
-                    $this->parsed = false;
-                }
-            }
-        }
-    }
-
-    /**
-     * Add a number.
-     *
-     * This appends a number to the numbers already held by this entry, thereby
-     * increasing the number of components by one.
-     *
-     * @param int $n
-     *            the number to be added.
-     */
-    public function addNumber($n)
-    {
-        $this->validateNumber($n);
-        $this->value[] = $n;
-        $this->components ++;
-    }
+    abstract protected function getNumberFromDataElement(int $offset);
 
     /**
      * Convert a number into bytes.
@@ -145,24 +68,6 @@ abstract class NumberBase extends EntryBase
      * @return string bytes representing the number given.
      */
     abstract protected function numberToBytes($number, $order);
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
-    {
-        $bytes = '';
-        for ($i = 0; $i < $this->components; $i ++) {
-            if ($this->dimension == 1) {
-                $bytes .= $this->numberToBytes($this->value[$i], $byte_order);
-            } else {
-                for ($j = 0; $j < $this->dimension; $j ++) {
-                    $bytes .= $this->numberToBytes($this->value[$i][$j], $byte_order);
-                }
-            }
-        }
-        return $bytes;
-    }
 
     /**
      * Formats a number.

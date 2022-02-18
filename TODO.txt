@@ -1,0 +1,64 @@
+php examples/dump-media.php -d tests/media-samples/image/pel-157.tiff
+php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
+php examples/dump-media.php -d tests/media-samples/image/broken/canon-eos-650d.jpg-rewrite.img
+php examples/dump-media.php -d tests/media-samples/image/exiftool/Canon.jpg
+php examples/dump-media.php -d tests/media-samples/image/exiftool/Canon1DmkIII.jpg
+
+
+- name: Image file dumps
+  continue-on-error: true
+  run: php examples/dump-media.php -d -w tests/media-samples/image/broken/canon-eos-650d.jpg
+
+
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/canon-eos-650d.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/exiftool/Canon1DmkIII.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon1DmkIII.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/exiftool/Canon.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-powershot-s60.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-powershot-s60.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-ixus-ii.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon-ixus-ii.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone6s.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/camera/apple-iphone7.JPG
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone7.JPG-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/apple-iphone11.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/nikon-coolscan-iv.jpg
+        #php examples/dump-media.php -d -w tests/media-samples/image/camera/nikon-e5000.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/nikon-e5000.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/pentax-istDS.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/pentax-istDS.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-141.jpg
+        #php examples/dump-media.php -d -w tests/media-samples/image/broken/pel-152.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-152.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-10-a.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-10-a.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/broken/gh-10-b.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-10-b.jpg-rewrite.img
+        #php examples/dump-media.php       tests/media-samples/image/broken/gh-11.jpg
+        #php examples/dump-media.php -d -w tests/media-samples/image/broken/misplaced-exif.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/misplaced-exif.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/gh-16.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/gh-16.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/gh-21.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/gh-21.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/gh-77.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/gh-77.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/test-tags-1.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/test-tags-1.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/no-exif.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/no-exif.jpg-rewrite.img
+        #php examples/dump-media.php -d -s tests/media-samples/image/sample-1.tiff
+        #php examples/dump-media.php -d -w tests/media-samples/image/broken/pel-156.jpg
+        #php examples/dump-media.php -d -s tests/media-samples/image/pel-157.tiff
+        #php examples/dump-media.php -d    tests/media-samples/image/pel-157.tiff-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/gh-11.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/olympus-c765uz.jpg
+        #php examples/dump-media.php -d -w tests/media-samples/image/camera/fujifilm_x_a5.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/fujifilm_x_a5.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_70d_29.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_70d_29.jpg-rewrite.img
+        #php examples/dump-media.php -d -w tests/media-samples/image/camera/canon_eos_850d_08.jpg
+        #php examples/dump-media.php -d    tests/media-samples/image/camera/canon_eos_850d_08.jpg-rewrite.img
+        #php examples/dump-media.php -d    tests/media-samples/image/broken/pel-176-RPT200076_03.jpg

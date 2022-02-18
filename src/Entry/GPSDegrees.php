@@ -16,9 +16,9 @@ class GPSDegrees extends Rational
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
-            $degrees = $this->value[0][0] / $this->value[0][1];
-            $minutes = $this->value[1][0] / $this->value[1][1];
-            $seconds = $this->value[2][0] / $this->value[2][1];
+            $degrees = $this->dataElement->getRationalFloat(0);
+            $minutes = $this->dataElement->getRationalFloat(8);
+            $seconds = $this->dataElement->getRationalFloat(16);
             return $degrees + $minutes / 60 + $seconds / 3600;
         }
         return parent::getValue($options);

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class RawData extends Collection {
+class RawData extends CollectionBase {
 
   protected static $map = array (
   'class' => 'FileEye\\MediaProbe\\Block\\RawData',

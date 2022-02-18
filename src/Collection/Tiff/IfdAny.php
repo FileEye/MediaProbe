@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class IfdAny extends Collection {
+class IfdAny extends CollectionBase {
 
   protected static $map = array (
   'title' => 'A catchall generic IFD definition, used as a fallback to describe tags that are not expected in a specific IFD.',
@@ -7597,7 +7597,6 @@ class IfdAny extends Collection {
       0 =>
       array (
         'components' => 1,
-        'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifBrightnessValue',
         'collection' => 'Tag',
         'name' => 'BrightnessValue',
         'title' => 'Brightness Value',

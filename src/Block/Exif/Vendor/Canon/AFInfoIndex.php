@@ -7,7 +7,7 @@ use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -51,8 +51,7 @@ class AFInfoIndex extends Index
             $item = new $item_class($item_definition, $this);
 
             $entry_class = $item_definition->getEntryClass();
-            new $entry_class($item, $this->getValueFromData($data, $offset, $item_definition->getFormat(), $value_components));
-            $item->parsed = true;
+            new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->getFormat(), $value_components));
         }
     }
 
@@ -88,7 +87,7 @@ class AFInfoIndex extends Index
             'item' => $item,
             'offset' => $offset ?? null,
             'tags' => $this->getDefinition()->getValuesCount(),
-            'format' => ItemFormat::getName($this->getDefinition()->getFormat()),
+            'format' => DataFormat::getName($this->getDefinition()->getFormat()),
             'size' => $this->getDefinition()->getSize(),
         ]);
     }

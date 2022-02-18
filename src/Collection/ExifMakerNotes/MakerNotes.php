@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class MakerNotes extends Collection {
+class MakerNotes extends CollectionBase {
 
   protected static $map = array (
   'class' => '????',

@@ -2,12 +2,11 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\ItemFormat;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -25,7 +24,7 @@ class RawData extends BlockBase
      */
     public function getFormat()
     {
-        return $this->getElement("entry") ? $this->getElement("entry")->getFormat() : ItemFormat::UNDEFINED;
+        return $this->getElement("entry") ? $this->getElement("entry")->getFormat() : DataFormat::UNDEFINED;
     }
 
     /**
@@ -43,7 +42,7 @@ class RawData extends BlockBase
      */
     protected function doParseData(DataElement $data): void
     {
-        new Undefined($this, [$data->getBytes()]);
+        new Undefined($this, $data);
     }
 
     /**

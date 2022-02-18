@@ -17,7 +17,7 @@ class FocusDistanceLower extends FocusDistance
         if ($alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonFileInfo']/tag[@name='FocusDistanceLower']/entry")) {
             return $alternative->getValue($options);
         } else {
-            return $this->value[0] / 100;
+            return parent::getValue();
         }
     }
 }
