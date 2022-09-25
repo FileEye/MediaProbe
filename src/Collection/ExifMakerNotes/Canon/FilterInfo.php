@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class FilterInfo extends Collection {
+class FilterInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonFilterInfo',
@@ -18,6 +18,7 @@ class FilterInfo extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\FilterInfoIndex',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\FilterInfo',
   'itemsByName' =>
   array (
     'FisheyeFilter' =>

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonCustom;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class FunctionsD30 extends Collection {
+class FunctionsD30 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCustomFunctionsD30',
@@ -22,6 +22,7 @@ class FunctionsD30 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonCustom\\FunctionsD30',
   'itemsByName' =>
   array (
     'AEBSequenceAutoCancel' =>

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class DR4Header extends Collection {
+class DR4Header extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDDR4Header',
@@ -22,6 +22,7 @@ class DR4Header extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\DR4Header',
   'itemsByName' =>
   array (
     'DR4CameraModel' =>

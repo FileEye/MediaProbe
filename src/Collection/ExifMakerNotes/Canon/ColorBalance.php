@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ColorBalance extends Collection {
+class ColorBalance extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonColorBalance',
@@ -23,6 +23,7 @@ class ColorBalance extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorBalance',
   'itemsByName' =>
   array (
     'WB_RGGBBlackLevels' =>

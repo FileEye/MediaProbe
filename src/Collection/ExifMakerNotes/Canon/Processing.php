@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Processing extends Collection {
+class Processing extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonProcessing',
@@ -23,6 +23,7 @@ class Processing extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Processing',
   'itemsByName' =>
   array (
     'ColorTemperature' =>

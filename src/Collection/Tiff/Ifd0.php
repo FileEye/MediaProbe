@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Ifd0 extends Collection {
+class Ifd0 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'IFD0',
@@ -28,6 +28,7 @@ class Ifd0 extends Collection {
     0 => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd::thumbnailToBlock',
     1 => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd::makerNoteToBlock',
   ),
+  'id' => 'Tiff\\Ifd0',
   'itemsByName' =>
   array (
     'A100DataOffset' =>

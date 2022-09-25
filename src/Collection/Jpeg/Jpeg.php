@@ -8,14 +8,15 @@
 
 namespace FileEye\MediaProbe\Collection\Jpeg;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Jpeg extends Collection {
+class Jpeg extends CollectionBase {
 
   protected static $map = array (
   'title' => 'JPEG image',
   'class' => 'FileEye\\MediaProbe\\Block\\Jpeg',
   'DOMNode' => 'jpeg',
+  'id' => 'Jpeg\\Jpeg',
   'itemsByName' =>
   array (
     'APP0' =>

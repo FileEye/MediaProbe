@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class LightingOpt extends Collection {
+class LightingOpt extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonLightingOpt',
@@ -23,6 +23,7 @@ class LightingOpt extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\LightingOpt',
   'itemsByName' =>
   array (
     'AutoLightingOptimizer' =>

@@ -6,7 +6,6 @@ use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Entry\IfdCopyright;
 use FileEye\MediaProbe\Entry\Time;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertTime;
 
 class EntryAsciiTest extends EntryTestBase

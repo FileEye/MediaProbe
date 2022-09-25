@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class IHL extends Collection {
+class IHL extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDIHL',
@@ -22,6 +22,7 @@ class IHL extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\IHL',
   'itemsByName' =>
   array (
     'CRCDevelParams' =>

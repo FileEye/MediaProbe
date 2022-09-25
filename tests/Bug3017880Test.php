@@ -7,11 +7,11 @@ use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Collection\CollectionFactory;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 
 class Bug3017880Test extends MediaProbeTestCaseBase
@@ -35,16 +35,16 @@ class Bug3017880Test extends MediaProbeTestCaseBase
                     ->disableOriginalConstructor()
                     ->getMock();
 
-                $exif_definition = new ItemDefinition(Collection::get('Exif\Exif'));
+                $exif_definition = new ItemDefinition(CollectionFactory::get('Exif\Exif'));
                 $exif = new Exif($exif_definition, $app1_segment_mock);
-                $tiff_definition = new ItemDefinition(Collection::get('Tiff\Tiff'));
+                $tiff_definition = new ItemDefinition(CollectionFactory::get('Tiff\Tiff'));
                 new Tiff($tiff_definition, $exif);
             }
 
             $tiff = $exif->getElement("tiff");
             $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
             if ($ifd0 === null) {
-                $ifd0 = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), DataFormat::LONG));
+                $ifd0 = new Ifd(new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG));
             }
 
             $software_name = 'Example V2';

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class StampInfo extends Collection {
+class StampInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDStampInfo',
@@ -22,6 +22,7 @@ class StampInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\StampInfo',
   'itemsByName' =>
   array (
     'StampToolCount' =>

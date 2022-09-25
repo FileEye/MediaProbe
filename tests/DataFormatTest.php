@@ -2,8 +2,8 @@
 
 namespace FileEye\MediaProbe\Test;
 
+use FileEye\MediaProbe\Collection\CollectionException;
 use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\CollectionException;
 
 class DataFormatTest extends MediaProbeTestCaseBase
 {

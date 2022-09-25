@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonRaw;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class MakeModel extends Collection {
+class MakeModel extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonRawMakeModel',
@@ -22,6 +22,7 @@ class MakeModel extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonRaw\\MakeModel',
   'itemsByName' =>
   array (
     'Make' =>

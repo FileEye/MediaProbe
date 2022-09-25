@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class IfdExif extends Collection {
+class IfdExif extends CollectionBase {
 
   protected static $map = array (
   'name' => 'ExifIFD',
@@ -18,6 +18,7 @@ class IfdExif extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdExif',
   'itemsByName' =>
   array (
     'Acceleration' =>

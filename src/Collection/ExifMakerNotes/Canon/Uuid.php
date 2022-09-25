@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Uuid extends Collection {
+class Uuid extends CollectionBase {
 
   protected static $map = array (
   '__todo' => true,
@@ -19,6 +19,7 @@ class Uuid extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Uuid',
   'itemsByName' =>
   array (
     'CompressorVersion' =>

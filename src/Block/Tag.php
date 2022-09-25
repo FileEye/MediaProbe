@@ -10,7 +10,6 @@ use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -33,7 +32,7 @@ class Tag extends BlockBase
     public function validate()
     {
         // Check if MediaProbe has a definition for this tag.
-        if (in_array($this->getCollection()->getId(), ['VoidCollection', 'UnknownTag'])) {
+        if (in_array($this->getCollection()->getPropertyValue('id'), ['VoidCollection', 'UnknownTag'])) {
             $this->notice("Unknown item {item} in '{parent}'", [
                 'item' => MediaProbe::dumpIntHex($this->getAttribute('id')),
                 'parent' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',

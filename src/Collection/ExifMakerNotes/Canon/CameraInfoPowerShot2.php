@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CameraInfoPowerShot2 extends Collection {
+class CameraInfoPowerShot2 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCameraInfoPowerShot2',
@@ -22,6 +22,7 @@ class CameraInfoPowerShot2 extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfoPowerShot2',
   'itemsByName' =>
   array (
     'CameraTemperature' =>

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class FocalLength extends Collection {
+class FocalLength extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonFocalLength',
@@ -22,6 +22,7 @@ class FocalLength extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\FocalLength',
   'itemsByName' =>
   array (
     'FocalLength' =>

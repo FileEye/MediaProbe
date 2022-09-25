@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class HDRInfo extends Collection {
+class HDRInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonHDRInfo',
@@ -22,6 +22,7 @@ class HDRInfo extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\HDRInfo',
   'itemsByName' =>
   array (
     'HDR' =>

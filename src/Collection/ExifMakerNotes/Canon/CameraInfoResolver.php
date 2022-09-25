@@ -8,15 +8,16 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CameraInfoResolver extends Collection {
+class CameraInfoResolver extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCameraInfoResolver',
   'title' => 'Canon Camera Info Resolver',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfoResolver',
   'itemsByName' =>
   array (
     'CanonCameraInfo1000D' =>

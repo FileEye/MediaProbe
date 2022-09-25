@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Jpeg;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class SegmentApp1 extends Collection {
+class SegmentApp1 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'APP1',
@@ -18,6 +18,7 @@ class SegmentApp1 extends Collection {
   'payload' => 'variable',
   'class' => 'FileEye\\MediaProbe\\Block\\JpegSegmentApp1',
   'DOMNode' => 'jpegSegment',
+  'id' => 'Jpeg\\SegmentApp1',
   'items' =>
   array (
     'Exif' =>

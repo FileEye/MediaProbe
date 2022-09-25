@@ -8,7 +8,7 @@ use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Entry\Time;
 
@@ -20,7 +20,7 @@ class IfdTest extends MediaProbeTestCaseBase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $ifd = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
+        $ifd = new Ifd(new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 

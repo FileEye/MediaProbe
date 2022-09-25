@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Block\Exif;
 
 use FileEye\MediaProbe\Block\BlockBase;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
@@ -34,7 +34,7 @@ class Exif extends BlockBase
     protected function doParseData(DataElement $data): void
     {
         if (Tiff::getTiffSegmentByteOrder($data, strlen(self::EXIF_HEADER)) !== null) {
-            $tiff = new ItemDefinition(Collection::get('Tiff\Tiff'));
+            $tiff = new ItemDefinition(CollectionFactory::get('Tiff\Tiff'));
             $this->addBlock($tiff)->parseData($data, strlen(self::EXIF_HEADER), $data->getSize() - strlen(self::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be

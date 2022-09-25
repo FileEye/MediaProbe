@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonCustom;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Functions350D extends Collection {
+class Functions350D extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCustomFunctions350D',
@@ -22,6 +22,7 @@ class Functions350D extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonCustom\\Functions350D',
   'itemsByName' =>
   array (
     'AFAssistBeam' =>

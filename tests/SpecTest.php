@@ -7,8 +7,8 @@ use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection;
-use FileEye\MediaProbe\CollectionException;
+use FileEye\MediaProbe\Collection\CollectionException;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\ExifUserComment;
 use FileEye\MediaProbe\Entry\Time;
@@ -31,14 +31,14 @@ class SpecTest extends MediaProbeTestCaseBase
         $tiff_mock = $this->getMockBuilder('FileEye\MediaProbe\Block\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
-        $ifd_0 = new Ifd(new ItemDefinition(Collection::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
+        $ifd_0 = new Ifd(new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
         $ifd_exif = new Ifd(new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), DataFormat::LONG), $ifd_0);
-        $ifd_canon_camera_settings = new Index(new ItemDefinition(Collection::get('ExifMakerNotes\\Canon\\Main')->getItemCollection(1), DataFormat::LONG), $tiff_mock);
+        $ifd_canon_camera_settings = new Index(new ItemDefinition(CollectionFactory::get('ExifMakerNotes\\Canon\\Main')->getItemCollection(1), DataFormat::LONG), $tiff_mock);
 
         // Test retrieving IFD id by name.
-        $this->assertEquals(Collection::getByName('IFD0'), Collection::getByName('0'));
-        $this->assertEquals(Collection::getByName('IFD0'), Collection::getByName('Main'));
-        $this->assertNotNull(Collection::getByName('Canon'));
+        $this->assertEquals(CollectionFactory::getByName('IFD0'), CollectionFactory::getByName('0'));
+        $this->assertEquals(CollectionFactory::getByName('IFD0'), CollectionFactory::getByName('Main'));
+        $this->assertNotNull(CollectionFactory::getByName('Canon'));
 
         // Test retrieving IFD class.
         $this->assertEquals(Ifd::class, $ifd_0->getCollection()->getPropertyValue('class'));
@@ -62,7 +62,7 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals(0x0103, $ifd_0->getCollection()->getItemCollectionByName('Compression')->getPropertyValue('item'));
 
         // Check methods identifying an IFD pointer TAG.
-        $this->assertSame('Tiff\IfdExif', $ifd_0->getCollection()->getItemCollection(0x8769)->getId());
+        $this->assertSame('Tiff\IfdExif', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('id'));
         $this->assertSame('ExifIFD', $ifd_0->getCollection()->getItemCollection(0x8769)->getPropertyValue('name'));
 
         // Check getTagFormat.
@@ -80,9 +80,9 @@ class SpecTest extends MediaProbeTestCaseBase
      */
     public function testGetEntryClass()
     {
-        $this->assertEquals(ExifUserComment::class, Collection::get('Tiff\IfdExif')->getItemCollection(0x9286)->getPropertyValue('entryClass'));
-        $this->assertEquals(Time::class, Collection::get('Tiff\IfdExif')->getItemCollection(0x9003)->getPropertyValue('entryClass'));
-        $this->assertNull(Collection::get('ExifMakerNotes\\Canon\\CameraSettings')->getItemCollection(1)->getPropertyValue('entryClass'));
+        $this->assertEquals(ExifUserComment::class, CollectionFactory::get('Tiff\IfdExif')->getItemCollection(0x9286)->getPropertyValue('entryClass'));
+        $this->assertEquals(Time::class, CollectionFactory::get('Tiff\IfdExif')->getItemCollection(0x9003)->getPropertyValue('entryClass'));
+        $this->assertNull(CollectionFactory::get('ExifMakerNotes\\Canon\\CameraSettings')->getItemCollection(1)->getPropertyValue('entryClass'));
     }
 
     /**
@@ -97,7 +97,7 @@ class SpecTest extends MediaProbeTestCaseBase
                     ->setMethods(['getCollection'])
                     ->getMock();
 
-        $parent_collection = Collection::get($parent_collection_id);
+        $parent_collection = CollectionFactory::get($parent_collection_id);
         $ifd->expects($this->any())
           ->method('getCollection')
           ->will($this->returnValue($parent_collection));
@@ -227,7 +227,7 @@ class SpecTest extends MediaProbeTestCaseBase
 
     public function testJpegSegmentIds()
     {
-        $collection = Collection::get('Jpeg\Jpeg');
+        $collection = CollectionFactory::get('Jpeg\Jpeg');
         $this->assertEquals(0xC0, $collection->getItemCollectionByName('SOF0')->getPropertyValue('item'));
         $this->assertEquals(0xD3, $collection->getItemCollectionByName('RST3')->getPropertyValue('item'));
         $this->assertEquals(0xE3, $collection->getItemCollectionByName('APP3')->getPropertyValue('item'));
@@ -242,7 +242,7 @@ class SpecTest extends MediaProbeTestCaseBase
 
     public function testJpegSegmentNames()
     {
-        $collection = Collection::get('Jpeg\Jpeg');
+        $collection = CollectionFactory::get('Jpeg\Jpeg');
         $this->assertEquals('SOF0', $collection->getItemCollection(0xC0)->getPropertyValue('name'));
         $this->assertEquals('RST3', $collection->getItemCollection(0xD3)->getPropertyValue('name'));
         $this->assertEquals('APP3', $collection->getItemCollection(0xE3)->getPropertyValue('name'));
@@ -254,7 +254,7 @@ class SpecTest extends MediaProbeTestCaseBase
 
     public function testJpegSegmentTitles()
     {
-        $collection = Collection::get('Jpeg\Jpeg');
+        $collection = CollectionFactory::get('Jpeg\Jpeg');
         $this->assertEquals('Start of frame (baseline DCT)', $collection->getItemCollection(0xC0)->getPropertyValue('title'));
         $this->assertEquals(MediaProbe::fmt('Restart %d', 3), $collection->getItemCollection(0xD3)->getPropertyValue('title'));
         $this->assertEquals(MediaProbe::fmt('Application segment %d', 3), $collection->getItemCollection(0xE3)->getPropertyValue('title'));

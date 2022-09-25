@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Main extends Collection {
+class Main extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDMain',
@@ -22,6 +22,7 @@ class Main extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\Main',
   'itemsByName' =>
   array (
     'XMP' =>

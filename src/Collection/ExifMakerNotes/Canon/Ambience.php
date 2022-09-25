@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Ambience extends Collection {
+class Ambience extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonAmbience',
@@ -23,6 +23,7 @@ class Ambience extends Collection {
   ),
   'hasIndexSize' => true,
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Ambience',
   'itemsByName' =>
   array (
     'AmbienceSelection' =>

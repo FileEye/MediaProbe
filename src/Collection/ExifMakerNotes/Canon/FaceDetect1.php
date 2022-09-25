@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class FaceDetect1 extends Collection {
+class FaceDetect1 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonFaceDetect1',
@@ -22,6 +22,7 @@ class FaceDetect1 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\FaceDetect1',
   'itemsByName' =>
   array (
     'Face1Position' =>

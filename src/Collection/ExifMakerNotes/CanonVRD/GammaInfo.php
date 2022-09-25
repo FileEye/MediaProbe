@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class GammaInfo extends Collection {
+class GammaInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDGammaInfo',
@@ -22,6 +22,7 @@ class GammaInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\GammaInfo',
   'itemsByName' =>
   array (
     'GammaBlackPoint' =>

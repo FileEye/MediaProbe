@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Ver2 extends Collection {
+class Ver2 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDVer2',
@@ -22,6 +22,7 @@ class Ver2 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\Ver2',
   'itemsByName' =>
   array (
     'AberrationCorrectionDistance' =>

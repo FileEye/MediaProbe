@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class TimeInfo extends Collection {
+class TimeInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonTimeInfo',
@@ -23,6 +23,7 @@ class TimeInfo extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\TimeInfo',
   'itemsByName' =>
   array (
     'DaylightSavings' =>

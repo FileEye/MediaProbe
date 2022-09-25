@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CropInfo extends Collection {
+class CropInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCropInfo',
@@ -22,6 +22,7 @@ class CropInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CropInfo',
   'itemsByName' =>
   array (
     'CropBottomMargin' =>

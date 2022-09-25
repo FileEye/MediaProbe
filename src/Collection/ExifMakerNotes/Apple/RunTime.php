@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Apple;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class RunTime extends Collection {
+class RunTime extends CollectionBase {
 
   protected static $map = array (
   'name' => 'AppleRuntime',
@@ -18,6 +18,7 @@ class RunTime extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\RunTime',
   'DOMNode' => 'plist',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Apple\\RunTime',
   'itemsByName' =>
   array (
     'RunTimeEpoch' =>

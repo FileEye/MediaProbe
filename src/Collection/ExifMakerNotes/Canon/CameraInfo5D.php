@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CameraInfo5D extends Collection {
+class CameraInfo5D extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCameraInfo5D',
@@ -22,6 +22,7 @@ class CameraInfo5D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo5D',
   'itemsByName' =>
   array (
     'AFPointsInFocus5D' =>

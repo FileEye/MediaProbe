@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class MultiExp extends Collection {
+class MultiExp extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonMultiExp',
@@ -22,6 +22,7 @@ class MultiExp extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\MultiExp',
   'itemsByName' =>
   array (
     'MultiExposure' =>

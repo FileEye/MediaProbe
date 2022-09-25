@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ColorCalib2 extends Collection {
+class ColorCalib2 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonColorCalib2',
@@ -22,6 +22,7 @@ class ColorCalib2 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorCalib2',
   'itemsByName' =>
   array (
     'CameraColorCalibration01' =>

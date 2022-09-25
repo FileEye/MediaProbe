@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Ver1 extends Collection {
+class Ver1 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDVer1',
@@ -22,6 +22,7 @@ class Ver1 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\Ver1',
   'itemsByName' =>
   array (
     'BlueCurveLimits' =>

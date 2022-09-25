@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class DustInfo extends Collection {
+class DustInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDDustInfo',
@@ -22,6 +22,7 @@ class DustInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\DustInfo',
   'itemsByName' =>
   array (
     'DustDeleteApplied' =>

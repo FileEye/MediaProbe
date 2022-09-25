@@ -7,7 +7,6 @@ use CFPropertyList\CFNumber;
 use CFPropertyList\CFPropertyList;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;

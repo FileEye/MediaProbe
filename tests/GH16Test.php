@@ -7,7 +7,6 @@ use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\WindowsString;
 use FileEye\MediaProbe\ItemDefinition;

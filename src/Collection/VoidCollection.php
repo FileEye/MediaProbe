@@ -8,11 +8,12 @@
 
 namespace FileEye\MediaProbe\Collection;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class VoidCollection extends Collection {
+class VoidCollection extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Void collection.',
+  'id' => 'VoidCollection',
 );
 }

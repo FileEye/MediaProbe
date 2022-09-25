@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class IfdInteroperability extends Collection {
+class IfdInteroperability extends CollectionBase {
 
   protected static $map = array (
   'name' => 'InteropIFD',
@@ -22,6 +22,7 @@ class IfdInteroperability extends Collection {
     0 => 'Interop',
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdInteroperability',
   'itemsByName' =>
   array (
     'InteropIndex' =>

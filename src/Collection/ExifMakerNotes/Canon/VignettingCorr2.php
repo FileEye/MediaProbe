@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class VignettingCorr2 extends Collection {
+class VignettingCorr2 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVignettingCorr2',
@@ -23,6 +23,7 @@ class VignettingCorr2 extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\VignettingCorr2',
   'itemsByName' =>
   array (
     'ChromaticAberrationSetting' =>

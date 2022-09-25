@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class PSInfo2 extends Collection {
+class PSInfo2 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonPSInfo2',
@@ -22,6 +22,7 @@ class PSInfo2 extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\PSInfo2',
   'itemsByName' =>
   array (
     'ColorToneAuto' =>

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Flags extends Collection {
+class Flags extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonFlags',
@@ -22,6 +22,7 @@ class Flags extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Flags',
   'itemsByName' =>
   array (
     'ModifiedParamFlag' =>

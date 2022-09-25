@@ -8,7 +8,6 @@ use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
 use Symfony\Component\Console\Command\Command;

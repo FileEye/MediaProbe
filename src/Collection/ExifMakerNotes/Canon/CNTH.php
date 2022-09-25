@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CNTH extends Collection {
+class CNTH extends CollectionBase {
 
   protected static $map = array (
   '__todo' => true,
@@ -19,6 +19,7 @@ class CNTH extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CNTH',
   'itemsByName' =>
   array (
     'ThumbnailImage' =>

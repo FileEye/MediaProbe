@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ColorCoefs extends Collection {
+class ColorCoefs extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonColorCoefs',
@@ -22,6 +22,7 @@ class ColorCoefs extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorCoefs',
   'itemsByName' =>
   array (
     'ColorTempAsShot' =>

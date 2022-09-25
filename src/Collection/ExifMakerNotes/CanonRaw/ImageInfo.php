@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonRaw;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ImageInfo extends Collection {
+class ImageInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonRawImageInfo',
@@ -22,6 +22,7 @@ class ImageInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonRaw\\ImageInfo',
   'itemsByName' =>
   array (
     'ColorBW' =>

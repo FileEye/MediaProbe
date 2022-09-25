@@ -8,14 +8,15 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class IfdAny extends Collection {
+class IfdAny extends CollectionBase {
 
   protected static $map = array (
   'title' => 'A catchall generic IFD definition, used as a fallback to describe tags that are not expected in a specific IFD.',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdAny',
   'itemsByName' =>
   array (
     'A100DataOffset' =>

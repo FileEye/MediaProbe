@@ -6,7 +6,7 @@ use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Thumbnail;
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -156,7 +156,7 @@ class Ifd extends ListBase
             $item_collection = $this->getCollection()->getItemCollection($id);
         } catch (MediaProbeException $e) {
             if ($fallback_collection_id !== null) {
-                $item_collection = Collection::get($fallback_collection_id)->getItemCollection($id, 0, 'UnknownTag', [
+                $item_collection = CollectionFactory::get($fallback_collection_id)->getItemCollection($id, 0, 'UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);
@@ -216,7 +216,7 @@ class Ifd extends ListBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getCollection()->getId() === 'Thumbnail') {
+            if ($sub_block->getCollection()->getPropertyValue('id') === 'Thumbnail') {
                 continue;
             }
 
@@ -333,7 +333,7 @@ class Ifd extends ListBase
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
-            while ($dataxx->getByte($size - 2) !== Jpeg::JPEG_DELIMITER || $dataxx->getByte($size - 1) != Collection::get('Jpeg\Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
+            while ($dataxx->getByte($size - 2) !== Jpeg::JPEG_DELIMITER || $dataxx->getByte($size - 1) != CollectionFactory::get('Jpeg\Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
                 $size --;
             }
             if ($size != $dataxx->getSize()) {
@@ -343,7 +343,7 @@ class Ifd extends ListBase
             }
 
             $thumbnail = new ItemDefinition(
-                Collection::get('Thumbnail')
+                CollectionFactory::get('Thumbnail')
             );
             $ifd->addBlock($thumbnail)->parseData($dataxx, 0, $size);
         } catch (DataException $e) {
@@ -421,7 +421,7 @@ class Ifd extends ListBase
      */
     protected static function getMakerNoteCollection($make, $model)
     {
-        $maker_notes_collection = Collection::get('ExifMakerNotes\MakerNotes');
+        $maker_notes_collection = CollectionFactory::get('ExifMakerNotes\MakerNotes');
         foreach ($maker_notes_collection->listItemIds() as $maker_note_collection_id) {
             $maker_note_collection = $maker_notes_collection->getItemCollection($maker_note_collection_id);
             if ($maker_note_collection->getPropertyValue('make') === $make) {

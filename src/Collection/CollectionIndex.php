@@ -7,8 +7,15 @@ namespace FileEye\MediaProbe\Collection;
  * DO NOT CHANGE MANUALLY.
  */
 // phpcs:disable
-abstract class Core {
+class CollectionIndex extends CollectionBase {
+
+  public function getNamespace(): string
+  {
+      return __NAMESPACE__;
+  }
+
   public static $map = array (
+  'id' => 'CollectionIndex',
   'collections' =>
   array (
     'ExifMakerNotes\\Apple\\Main' => 'ExifMakerNotes\\Apple\\Main',

@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
@@ -48,7 +48,7 @@ class Map extends Index
         $this->validate($data);
 
         // Preserve the entire map as a raw data block.
-        $mapdata = new ItemDefinition(Collection::get('RawData', ['name' => 'mapdata']));
+        $mapdata = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'mapdata']));
         $this->addBlock($mapdata)->parseData($data);
 
         // Build the map items.

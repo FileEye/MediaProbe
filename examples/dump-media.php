@@ -12,7 +12,6 @@ use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\InvalidFileException;
 use FileEye\MediaProbe\Media;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use FileEye\MediaProbe\Block\Jpeg;

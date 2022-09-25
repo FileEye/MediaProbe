@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class DLOInfo extends Collection {
+class DLOInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDDLOInfo',
@@ -22,6 +22,7 @@ class DLOInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\DLOInfo',
   'itemsByName' =>
   array (
     'DLOData' =>

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonCustom;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class PersonalFuncValues extends Collection {
+class PersonalFuncValues extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCustomPersonalFuncValues',
@@ -22,6 +22,7 @@ class PersonalFuncValues extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncValues',
   'itemsByName' =>
   array (
     'PF19ShootingSpeedHigh' =>

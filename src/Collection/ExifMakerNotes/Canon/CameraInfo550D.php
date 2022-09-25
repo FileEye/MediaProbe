@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CameraInfo550D extends Collection {
+class CameraInfo550D extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCameraInfo550D',
@@ -22,6 +22,7 @@ class CameraInfo550D extends Collection {
     0 => 1,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfo550D',
   'itemsByName' =>
   array (
     'CameraOrientation' =>

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\CanonVRD;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ToneCurve extends Collection {
+class ToneCurve extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonVRDToneCurve',
@@ -22,6 +22,7 @@ class ToneCurve extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\CanonVRD\\ToneCurve',
   'itemsByName' =>
   array (
     'BlueCurvePoints' =>

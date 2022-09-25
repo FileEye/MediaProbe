@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Skip extends Collection {
+class Skip extends CollectionBase {
 
   protected static $map = array (
   '__todo' => true,
@@ -19,6 +19,7 @@ class Skip extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Skip',
   'itemsByName' =>
   array (
     'Unknown_CNDB' =>

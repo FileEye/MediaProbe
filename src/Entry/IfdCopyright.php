@@ -6,7 +6,6 @@ use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**

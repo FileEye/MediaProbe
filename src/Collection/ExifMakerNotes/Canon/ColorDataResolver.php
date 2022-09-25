@@ -8,15 +8,16 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ColorDataResolver extends Collection {
+class ColorDataResolver extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonColorDataResolver',
   'title' => 'Canon Color Data Map Resolver',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
+  'id' => 'ExifMakerNotes\\Canon\\ColorDataResolver',
   'itemsByName' =>
   array (
     'CanonColorData1' =>

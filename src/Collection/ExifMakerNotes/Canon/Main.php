@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Main extends Collection {
+class Main extends CollectionBase {
 
   protected static $map = array (
   'name' => 'Canon',
@@ -18,6 +18,7 @@ class Main extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'makerNote',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\Main',
   'itemsByName' =>
   array (
     'AFPointsInFocus1D' =>

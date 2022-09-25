@@ -2,7 +2,6 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 

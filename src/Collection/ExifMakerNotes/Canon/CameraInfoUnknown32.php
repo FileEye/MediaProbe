@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CameraInfoUnknown32 extends Collection {
+class CameraInfoUnknown32 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonCameraInfoUnknown32',
@@ -22,6 +22,7 @@ class CameraInfoUnknown32 extends Collection {
     0 => 4,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CameraInfoUnknown32',
   'itemsByName' =>
   array (
     'CameraTemperature' =>

@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ColorData7 extends Collection {
+class ColorData7 extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonColorData7',
@@ -22,6 +22,7 @@ class ColorData7 extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ColorData7',
   'itemsByName' =>
   array (
     'AverageBlackLevel' =>

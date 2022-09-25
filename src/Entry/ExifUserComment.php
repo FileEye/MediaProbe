@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Block\BlockBase;
-use FileEye\MediaProbe\Collection;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;

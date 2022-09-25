@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class CTMD extends Collection {
+class CTMD extends CollectionBase {
 
   protected static $map = array (
   '__todo' => true,
@@ -19,6 +19,7 @@ class CTMD extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\CTMD',
   'itemsByName' =>
   array (
     'TimeStamp' =>

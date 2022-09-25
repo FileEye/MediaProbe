@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ContrastInfo extends Collection {
+class ContrastInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonContrastInfo',
@@ -22,6 +22,7 @@ class ContrastInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ContrastInfo',
   'itemsByName' =>
   array (
     'IntelligentContrast' =>

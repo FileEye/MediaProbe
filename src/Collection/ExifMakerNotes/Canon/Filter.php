@@ -8,13 +8,14 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Filter extends Collection {
+class Filter extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Canon Filter',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\Filter',
   'DOMNode' => 'filter',
+  'id' => 'ExifMakerNotes\\Canon\\Filter',
 );
 }

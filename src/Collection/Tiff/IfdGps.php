@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\Tiff;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class IfdGps extends Collection {
+class IfdGps extends CollectionBase {
 
   protected static $map = array (
   'name' => 'GPS',
@@ -18,6 +18,7 @@ class IfdGps extends Collection {
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tag',
+  'id' => 'Tiff\\IfdGps',
   'itemsByName' =>
   array (
     'GPSAltitude' =>

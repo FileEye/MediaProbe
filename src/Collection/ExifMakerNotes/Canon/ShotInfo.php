@@ -8,9 +8,9 @@
 
 namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Canon;
 
-use FileEye\MediaProbe\Collection;
+use FileEye\MediaProbe\Collection\CollectionBase;
 
-class ShotInfo extends Collection {
+class ShotInfo extends CollectionBase {
 
   protected static $map = array (
   'name' => 'CanonShotInfo',
@@ -23,6 +23,7 @@ class ShotInfo extends Collection {
     0 => 3,
   ),
   'defaultItemCollection' => 'Tag',
+  'id' => 'ExifMakerNotes\\Canon\\ShotInfo',
   'itemsByName' =>
   array (
     'AEBBracketValue' =>
