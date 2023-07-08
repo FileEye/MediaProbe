@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Utility;
 
 use Bramus\Monolog\Formatter\ColoredLineFormatter;
-use Bramus\Monolog\LogRecord;
+use Monolog\LogRecord;
 
 /**
  * Formats incoming records into a one-line suitable for dump debug.
