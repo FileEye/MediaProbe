@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Utility;
 
 use Bramus\Monolog\Formatter\ColoredLineFormatter;
+use Monolog\LogRecord;
 
 /**
  * Formats incoming records into a one-line suitable for dump debug.
@@ -15,7 +16,7 @@ class DumpLogFormatter extends ColoredLineFormatter
     /**
      * {@inheritdoc}
      */
-    public function format(array $record): string
+    public function format(LogRecord $record): string
     {
         // Level.
         $output = substr($record['level_name'], 0, 1) . '> ';
