@@ -23,35 +23,29 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     /**
      * The DOM node associated to this element.
-     *
-     * @var \DOMNode
      */
-    protected $DOMNode;
+    protected \DOMNode $DOMNode;
 
     /**
      * The Xpath object associated to the root element.
      *
      * @todo xx only the root should have it
-     *
-     * @var \DOMXPath|null
      */
-    protected $XPath;
+    protected ?\DOMXpath $XPath;
 
     /**
      * Whether this element was successfully validated.
-     *
-     * @var bool
      */
-    protected $valid = true;
+    protected bool $valid = true;
 
     /**
      * Constructs an Element object.
      *
      * @param string $dom_node_name
      *            The name of the DOM node associated to this element.
-     * @param \FileEye\MediaProbe\ElementInterface|null $parent
+     * @param ElementInterface|null $parent
      *            (Optional) the parent element of this element.
-     * @param \FileEye\MediaProbe\ElementInterface|null $reference
+     * @param ElementInterface|null $reference
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
@@ -84,7 +78,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getRootElement()
+    public function getRootElement(): ElementInterface
     {
         return $this->DOMNode->ownerDocument->documentElement->getMediaProbeElement();
     }
@@ -92,7 +86,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getParentElement()
+    public function getParentElement(): ElementInterface
     {
         return $this->DOMNode->getMediaProbeElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getMediaProbeElement() : null;
     }
@@ -100,7 +94,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getMultipleElements($expression)
+    public function getMultipleElements(string $expression): array
     {
         $node_list = $this->getRootElement()->XPath->query($expression, $this->DOMNode);
         $ret = [];
@@ -113,7 +107,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getElement($expression)
+    public function getElement(string $expression): ElementInterface
     {
         $ret = $this->getMultipleElements($expression);
         switch (count($ret)) {
@@ -129,7 +123,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function removeElement($expression)
+    public function removeElement(string $expression): bool
     {
         $ret = $this->getMultipleElements($expression);
         switch (count($ret)) {
@@ -146,7 +140,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function setAttribute($name, $value)
+    public function setAttribute(string $name, string $value): void
     {
         return $this->DOMNode->setAttribute($name, $value);
     }
@@ -154,7 +148,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getAttributes()
+    public function getAttributes(): array
     {
         $attr = [];
         foreach ($this->DOMNode->attributes as $attribute) {
@@ -166,18 +160,15 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getAttribute($name)
+    public function getAttribute(string $name): ?string
     {
         return $this->DOMNode->getAttribute($name);
     }
 
     /**
      * Returns the format of the context path segment.
-     *
-     * @returns string
-     *   The format of the context path segment.
      */
-    protected function getContextPathSegmentPattern()
+    protected function getContextPathSegmentPattern(): string
     {
         return '/{DOMNode}';
     }
@@ -185,7 +176,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getContextPath()
+    public function getContextPath(): string
     {
         // Get the path before this element.
         $parent_path = $this->getParentElement() ? $this->getParentElement()->getContextPath() : '';
@@ -204,13 +195,13 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function isValid()
+    public function isValid(): bool
     {
         return $this->valid;
     }
 
     /**
-     * {@inheritdoc}
+     * @todo
      */
     public function getDataElement(): DataElement
     {
@@ -220,7 +211,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
@@ -233,10 +224,12 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
+    abstract public function toBytes(bool $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string;
+
     /**
      * {@inheritdoc}
      */
-    public function toDumpArray()
+    public function toDumpArray(): array
     {
         return [
             'node' => $this->DOMNode->nodeName,
