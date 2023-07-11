@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\MediaProbe\Block;
+namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
