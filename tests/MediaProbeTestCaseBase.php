@@ -4,7 +4,7 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Model\ElementInterface;
-use FileEye\MediaProbe\Entry\Core\EntryInterface;
+use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\Version;

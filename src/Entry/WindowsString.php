@@ -5,7 +5,7 @@ namespace FileEye\MediaProbe\Entry;
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Entry\Core\EntryBase;
+use FileEye\MediaProbe\Model\EntryBase;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 

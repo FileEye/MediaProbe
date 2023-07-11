@@ -6,7 +6,7 @@ use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Model\ElementInterface;
-use FileEye\MediaProbe\Entry\Core\EntryInterface;
+use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Data\DataFormat;

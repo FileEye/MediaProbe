@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Data\DataString;
-use FileEye\MediaProbe\Entry\Core\EntryInterface;
+use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
