@@ -13,7 +13,7 @@ class ImageUniqueID extends Byte
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $str = '';
         foreach (parent::getValue() as $v) {

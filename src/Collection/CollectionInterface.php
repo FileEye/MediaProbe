@@ -24,7 +24,7 @@ interface CollectionInterface
      *
      * @return mixed
      */
-    public function getPropertyValue(string $property);
+    public function getPropertyValue(string $property): mixed;
 
     /**
      * Returns the collection items' ids.
@@ -58,5 +58,5 @@ interface CollectionInterface
      * @throws CollectionException
      *   When item is not in collection.
      */
-    public function getItemCollectionByName(string $item_name, $index = 0): CollectionInterface;
+    public function getItemCollectionByName(string $item_name, mixed $index = 0): CollectionInterface;
 }

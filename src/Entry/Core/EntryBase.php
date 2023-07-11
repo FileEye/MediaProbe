@@ -27,31 +27,23 @@ abstract class EntryBase extends ElementBase implements EntryInterface
 
     /**
      * The format of this entry.
-     *
-     * @var int
      */
-    protected $format;
+    protected int $format;
 
     /**
      * The size, in bytes, of each component held.
-     *
-     * @var int
      */
-    protected $formatSize = 1;
+    protected int $formatSize = 1;
 
     /**
      * The number of components of this entry.
-     *
-     * @var int
      */
-    protected $components;
+    protected int $components;
 
     /**
      * The data element held by this entry.
-     *
-     * @var DataElement
      */
-    protected $dataElement;
+    protected DataElement $dataElement;
 
     /**
      * Constructs an EntryInterface object.
@@ -105,7 +97,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
      * @return mixed
      *   The item collection index.
      */
-    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context)
+    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context): mixed
     {
         return 0;
     }
@@ -113,7 +105,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
-    public function getFormat()
+    public function getFormat(): int
     {
         return $this->format;
     }
@@ -121,7 +113,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * @todo xxx
      */
-    public function getOutputFormat()
+    public function getOutputFormat(): int
     {
         if (!$this->getParentElement()) {
             return $this->format;
@@ -135,7 +127,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
-    public function getComponents()
+    public function getComponents(): int
     {
         return $this->components;
     }
@@ -157,7 +149,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * @todo xxx
      */
-    protected function getMappedText($value)
+    protected function getMappedText(mixed $value): ?string
     {
         $text_config = $this->getParentElement()->getCollection()->getPropertyValue('text');
         $id = is_int($value) ? $value : (string) $value;
@@ -191,7 +183,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * @todo xxx
      */
-    public function resolveText($value, bool $null_on_missing = false)
+    public function resolveText(mixed $value, bool $null_on_missing = false): string|array|null
     {
         if (!$this->getParentElement()) {
             return is_array($value) ? implode(' ', $value) : $value;
@@ -236,7 +228,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string
     {
         return $this->dataElement->getBytes();
     }
@@ -265,7 +257,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * {@inheritdoc}
      */
-    public function toDumpArray()
+    public function toDumpArray(): array
     {
         $dump = [
             'format' => DataFormat::getName($this->getFormat()),

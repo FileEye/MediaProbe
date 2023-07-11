@@ -13,7 +13,7 @@ class ApertureRange extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context)
+    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context): mixed
     {
         switch ($components_count) {
             case 3:
@@ -27,7 +27,7 @@ class ApertureRange extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if (($options['format'] ?? null) === 'exiftool') {
             $v = [];

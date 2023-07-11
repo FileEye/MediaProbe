@@ -13,7 +13,7 @@ class AutoIso extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return exp(parent::getValue() / 32 * log(2)) * 100;
     }

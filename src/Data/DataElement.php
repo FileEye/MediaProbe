@@ -18,17 +18,13 @@ abstract class DataElement
      *
      * All offsets used for access into the data element will count from this
      * offset, effectively limiting access to a window starting at this byte.
-     *
-     * @var int
      */
-    protected $start;
+    protected int $start;
 
     /**
      * The size of the data element.
-     *
-     * @var int
      */
-    protected $size;
+    protected int $size;
 
     /**
      * The byte order.
@@ -36,10 +32,8 @@ abstract class DataElement
      * This will be the byte order used when data is read using the getter
      * functions. It must be one of ConvertBytes::LITTLE_ENDIAN or
      * ConvertBytes::BIG_ENDIAN.
-     *
-     * @var int
      */
-    protected $order = ConvertBytes::BIG_ENDIAN;
+    protected int $order = ConvertBytes::BIG_ENDIAN;
 
     /**
      * Gets the offset start of this element.

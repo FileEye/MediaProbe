@@ -22,22 +22,22 @@ class Rational extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'Rational';
+    protected string $name = 'Rational';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'Rational';
+    protected string $formatName = 'Rational';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatSize = 8;
+    protected int $formatSize = 8;
 
     /**
      * {@inheritdoc}
      */
-    protected $dimension = 2;
+    protected int $dimension = 2;
 
     const MIN = 0;
     const MAX = 4294967295;
@@ -50,7 +50,7 @@ class Rational extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->formatNumber($this->dataElement->getRational(), $options);
@@ -65,7 +65,7 @@ class Rational extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected function formatNumber($number, array $options = [])
+    protected function formatNumber(int|float|array $number, array $options = []): int|float|array|string
     {
         $format = $options['format'] ?? null;
         switch ($format) {
@@ -92,7 +92,7 @@ class Rational extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromLong($number, $order);
     }

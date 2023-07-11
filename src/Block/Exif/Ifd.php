@@ -7,6 +7,7 @@ use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Collection\CollectionFactory;
+use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -197,7 +198,7 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false): string
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $bytes = '';
 
@@ -415,11 +416,11 @@ class Ifd extends ListBase
      * @param string $model
      *            the value of IFD0/Model.
      *
-     * @return Collection|null
+     * @return CollectionInterface|null
      *            the Collection object describing the maker notes, or null if
      *            no specification exists.
      */
-    protected static function getMakerNoteCollection($make, $model)
+    protected static function getMakerNoteCollection(string $make, string $model): ?CollectionInterface
     {
         $maker_notes_collection = CollectionFactory::get('ExifMakerNotes\MakerNotes');
         foreach ($maker_notes_collection->listItemIds() as $maker_note_collection_id) {
@@ -434,7 +435,7 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0)
+    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0): void
     {
         $msg = '#{seq} {node}:{name}';
         $seq = $this->getDefinition()->getSequence() + 1;

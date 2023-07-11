@@ -8,18 +8,11 @@ class DOMElement extends \DOMElement
 {
     /**
      * The MediaProbe ElementInterface object associated to this node.
-     *
-     * @var \FileEye\MediaProbe\ElementInterface
      */
-    protected $mediaProbeElement;
+    protected ElementInterface $mediaProbeElement;
 
     /**
      * Sets the ElementInterface object associated to this node.
-     *
-     * @param \FileEye\MediaProbe\ElementInterface
-     *   The ElementInterface object associated to this node.
-     *
-     * @return void
      */
     public function setMediaProbeElement(ElementInterface $element): void
     {
@@ -28,9 +21,6 @@ class DOMElement extends \DOMElement
 
     /**
      * Gets the ElementInterface object associated to this node.
-     *
-     * @return \FileEye\MediaProbe\ElementInterface
-     *   The ElementInterface objects associated to this node.
      */
     public function getMediaProbeElement(): ElementInterface
     {

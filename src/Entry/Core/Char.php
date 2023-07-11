@@ -7,15 +7,15 @@ namespace FileEye\MediaProbe\Entry\Core;
  */
 class Char extends EntryBase
 {
-    protected $name = 'Char';
-    protected $formatName = 'Char';
+    protected string $name = 'Char';
+    protected string $formatName = 'Char';
 
     protected function validateDataElement(): void
     {
         $this->debug("text: {text}", ['text' => $this->toString()]);
     }
 
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return $this->dataElement->getBytes();
     }

@@ -10,7 +10,7 @@ abstract class JpegSegmentBase extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected function getContextPathSegmentPattern()
+    protected function getContextPathSegmentPattern(): string
     {
         return '/{DOMNode}:{name}:{id}';
     }

@@ -58,7 +58,7 @@ class AFInfoIndex extends Index
     /**
      * {@inheritdoc}
      */
-    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0)
+    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0): void
     {
         $msg = '#{seq} {node}:{name}';
         $seq = $this->getDefinition()->getSequence() + 1;

@@ -12,7 +12,7 @@ class ISO extends Byte
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return 100 * exp(($this->dataElement->getByte(0) / 8 - 9) * log(2));
     }

@@ -18,17 +18,17 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'SignedShort';
+    protected string $name = 'SignedShort';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'SignedShort';
+    protected string $formatName = 'SignedShort';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatSize = 2;
+    protected int $formatSize = 2;
 
     const MIN = -32768;
     const MAX = 32767;
@@ -41,7 +41,7 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->dataElement->getSignedShort();
@@ -56,7 +56,7 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromSignedShort($number, $order);
     }

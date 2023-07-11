@@ -13,7 +13,7 @@ class CameraISO extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $isoLookup = [
              0 => 'n/a',

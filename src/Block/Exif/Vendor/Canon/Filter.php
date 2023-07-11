@@ -27,10 +27,8 @@ class Filter extends ListBase
 {
     /**
      * The number of parameters for this filter.
-     *
-     * @var int
      */
-    protected $paramsCount;
+    protected int $paramsCount;
 
     /**
      * {@inheritdoc}
@@ -64,7 +62,7 @@ class Filter extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false): string
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $bytes = '';
 
@@ -95,7 +93,7 @@ class Filter extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0)
+    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0): void
     {
         $msg = 'filter#{seq} ';
         $seq = $this->getDefinition()->getSequence() + 1;
@@ -104,7 +102,7 @@ class Filter extends ListBase
         $this->debug($msg, [
             'seq' => $seq,
             'offset' => $offset,
-            'parms' => $this->paramsCount,
+            'parms' => $this->paramsCount ?? 'n/a',
             'size' => $this->getDefinition()->getSize(),
         ]);
     }
@@ -112,7 +110,7 @@ class Filter extends ListBase
     /**
      * {@inheritdoc}
      */
-    protected function getContextPathSegmentPattern()
+    protected function getContextPathSegmentPattern(): string
     {
         return '/{DOMNode}:{id}';
     }

@@ -15,5 +15,5 @@ class ExifMakerNote extends Undefined
     /**
      * {@inheritdoc}
      */
-    protected $name = 'MakerNote';
+    protected string $name = 'MakerNote';
 }

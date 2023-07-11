@@ -12,8 +12,8 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class MediaProbeTestCaseBase extends TestCase
 {
-    protected $fileSystem;
-    protected $tempWorkDirectory;
+    protected Filesystem $fileSystem;
+    protected string $tempWorkDirectory;
 
     public function setUp(): void
     {

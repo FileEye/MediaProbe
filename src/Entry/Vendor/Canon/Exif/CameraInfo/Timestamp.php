@@ -13,7 +13,7 @@ class Timestamp extends Long
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->dataElement->getLong(0) === 0) {
             return '0000:00:00 00:00:00';

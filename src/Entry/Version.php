@@ -18,7 +18,7 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    protected $name = 'Version';
+    protected string $name = 'Version';
 
     protected function validateDataElement(): void
     {
@@ -31,7 +31,7 @@ class Version extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         if (in_array($format, ['phpExif', 'exiftool'])) {

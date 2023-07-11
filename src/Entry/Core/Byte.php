@@ -16,12 +16,12 @@ class Byte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'Byte';
+    protected string $name = 'Byte';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'Byte';
+    protected string $formatName = 'Byte';
 
     const MIN = 0;
     const MAX = 255;
@@ -34,7 +34,7 @@ class Byte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->dataElement->getByte();
@@ -49,7 +49,7 @@ class Byte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return chr($number);
     }
