@@ -13,7 +13,7 @@ class FLFocalLength extends Short
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($alternate = $this->getRootElement()->getElement("//ifd[@name='ExifIFD']/tag[@name='FocalLength']/entry")) {
             $value = $alternate->getValue(['format' => 'parsed']);

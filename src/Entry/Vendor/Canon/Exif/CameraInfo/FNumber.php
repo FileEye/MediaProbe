@@ -12,7 +12,7 @@ class FNumber extends Byte
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return exp(($this->dataElement->getByte(0) - 8) / 16 * log(2));
     }

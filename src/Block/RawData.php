@@ -17,12 +17,12 @@ class RawData extends BlockBase
     /**
      * The data length.
      */
-    protected $components;
+    protected int $components;
 
     /**
      * xxx
      */
-    public function getFormat()
+    public function getFormat(): int
     {
         return $this->getElement("entry") ? $this->getElement("entry")->getFormat() : DataFormat::UNDEFINED;
     }
@@ -32,7 +32,7 @@ class RawData extends BlockBase
      *
      * @return int
      */
-    public function getComponents()
+    public function getComponents(): int
     {
         return $this->components; // xxx ???
     }
@@ -48,7 +48,7 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string
     {
         return $this->getElement('entry')->toBytes();
     }
@@ -56,7 +56,7 @@ class RawData extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected function getContextPathSegmentPattern()
+    protected function getContextPathSegmentPattern(): string
     {
         if ($this->getAttribute('name') !== '') {
             return '/{DOMNode}:{name}';

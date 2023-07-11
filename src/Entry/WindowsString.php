@@ -27,19 +27,19 @@ class WindowsString extends EntryBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'WindowsString';
+    protected string $name = 'WindowsString';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'Byte';
+    protected string $formatName = 'Byte';
 
     protected function validateDataElement(): void
     {
         $this->debug("text: {text}", ['text' => $this->toString()]);
     }
 
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         $type = $options['type'] ?? 'php';

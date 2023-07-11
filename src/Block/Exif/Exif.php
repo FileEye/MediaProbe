@@ -47,7 +47,7 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string
     {
         return self::EXIF_HEADER . $this->getElement('*')->toBytes();
     }
@@ -55,7 +55,7 @@ class Exif extends BlockBase
     /**
      * Determines if the data is an EXIF segment.
      */
-    public static function isExifSegment(DataElement $data_element, $offset = 0)
+    public static function isExifSegment(DataElement $data_element, $offset = 0): bool
     {
         // There must be at least 6 bytes for the Exif header.
         if ($data_element->getSize() - $offset < strlen(self::EXIF_HEADER)) {

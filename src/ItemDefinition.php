@@ -11,60 +11,28 @@ use FileEye\MediaProbe\Data\DataFormat;
 class ItemDefinition
 {
     /**
-     * The MediaProbe collection of this item.
-     *
-     * @var Collection
+     * @param CollectionInterface $collection
+     *   The MediaProbe collection of this item.
+     * @param int $format
+     *   The format of the item.
+     * @param int $valuesCount
+     *   The count of values of the item.
+     * @param int $dataOffset
+     *   The offset of the item data in the data window.
+     * @param int $itemDefinitionOffset
+     *   The offset of the item definition in the data window.
+     * @param int $sequence
+     *   The sequence of the item on its parent list.
      */
-    protected $collection;
-
-    /**
-     * The sequence of the item on its parent list.
-     *
-     * @var int
-     */
-    protected $sequence;
-
-    /**
-     * The format of the item.
-     *
-     * @var int
-     */
-    protected $format;
-
-    /**
-     * The count of values of the item.
-     *
-     * @var int
-     */
-    protected $valuesCount;
-
-    /**
-     * The offset of the item data in the data window.
-     *
-     * @var int
-     */
-    protected $dataOffset;
-
-    /**
-     * The offset of the item definition in the data window.
-     *
-     * @var int
-     */
-    protected $itemDefinitionOffset;
-
-    /**
-     * Constructor.
-     *
-     * @todo xxx
-     */
-    public function __construct(CollectionInterface $collection, int $format = DataFormat::BYTE, int $values_count = 1, int $data_offset = 0, int $item_definition_offset = 0, int $sequence = 0)
+    public function __construct(
+        protected CollectionInterface $collection,
+        protected int $format = DataFormat::BYTE,
+        protected int $valuesCount = 1,
+        protected int $dataOffset = 0,
+        protected int $itemDefinitionOffset = 0,
+        protected int $sequence = 0,
+    )
     {
-        $this->collection = $collection;
-        $this->format = $format;
-        $this->valuesCount = $values_count;
-        $this->dataOffset = $data_offset;
-        $this->itemDefinitionOffset = $item_definition_offset;
-        $this->sequence = $sequence;
     }
 
     /**

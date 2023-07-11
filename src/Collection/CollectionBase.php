@@ -11,10 +11,8 @@ abstract class CollectionBase implements CollectionInterface
 {
     /**
      * The overridden properties with their overriden values.
-     *
-     * @var array
      */
-    protected $overrides;
+    protected array $overrides;
 
     /**
      * Constructs a Collection object.
@@ -49,7 +47,7 @@ abstract class CollectionBase implements CollectionInterface
     /**
      * {@inheritdoc}
      */
-    public function getPropertyValue(string $property)
+    public function getPropertyValue(string $property): mixed
     {
         if (array_key_exists($property, $this->overrides)) {
             return $this->overrides[$property];
@@ -78,7 +76,7 @@ abstract class CollectionBase implements CollectionInterface
      * @return mixed
      *   The item collection index.
      */
-    private function getItemCollectionIndex(string $item_id, ?int $components_count, ElementInterface $context)
+    private function getItemCollectionIndex(string $item_id, ?int $components_count, ElementInterface $context): mixed
     {
         $entry_class = $this->getPropertyValue('items')[$item_id][0]['entryClass'] ?? null;
         return $entry_class ? $entry_class::resolveItemCollectionIndex($components_count, $context) : 0;
@@ -112,7 +110,7 @@ abstract class CollectionBase implements CollectionInterface
     /**
      * {@inheritdoc}
      */
-    public function getItemCollectionByName(string $item_name, $index = 0): CollectionInterface
+    public function getItemCollectionByName(string $item_name, mixed $index = 0): CollectionInterface
     {
         if (!isset($this->getPropertyValue('itemsByName')[$item_name][$index])) {
             throw new CollectionException('Missing collection for item \'%s\' in \'%s\'', $item_name, $this->getPropertyValue('id'));

@@ -14,19 +14,13 @@ interface ElementInterface
 {
     /**
      * Gets the root ancestor element of this element.
-     *
-     * @return \FileEye\MediaProbe\ElementInterface
-     *            the root ancestor element of this element.
      */
-    public function getRootElement();
+    public function getRootElement(): ElementInterface;
 
     /**
      * Gets the parent element of this element.
-     *
-     * @return \FileEye\MediaProbe\ElementInterface
-     *            the parent element of this element.
      */
-    public function getParentElement();
+    public function getParentElement(): ?ElementInterface;
 
     /**
      * Gets multiple children elements of this element.
@@ -34,10 +28,9 @@ interface ElementInterface
      * @param string $expression
      *            an XPath expression identifying the sub-elements to be selected.
      *
-     * @return \FileEye\MediaProbe\ElementInterface[]
-     *            the selected children elements of this element.
+     * @return ElementInterface[]
      */
-    public function getMultipleElements($expression);
+    public function getMultipleElements(string $expression): array;
 
     /**
      * Gets a single child element of this element.
@@ -45,13 +38,10 @@ interface ElementInterface
      * @param string $expression
      *            an XPath expression identifying the sub-element to be selected.
      *
-     * @return \FileEye\MediaProbe\ElementInterface
-     *            the selected child elements of this element.
-     *
-     * @throws \FileEye\MediaProbe\MediaProbeException
+     * @throws MediaProbeException
      *            when multiple elements fulfil the XPath expression.
      */
-    public function getElement($expression);
+    public function getElement(string $expression): ?ElementInterface;
 
     /**
      * Removes a single child element of this element.
@@ -62,10 +52,10 @@ interface ElementInterface
      * @return bool
      *            true if the element was removed, false if the element is not existing.
      *
-     * @throws \FileEye\MediaProbe\MediaProbeException
+     * @throws MediaProbeException
      *            when multiple elements fulfil the XPath expression.
      */
-    public function removeElement($expression);
+    public function removeElement(string $expression): bool;
 
     /**
      * Gets the DOM attributes associated to this element.
@@ -74,7 +64,7 @@ interface ElementInterface
      *            an associative array with the DOM attribute names as keys, and the DOM
      *            attribute values as values.
      */
-    public function getAttributes();
+    public function getAttributes(): array;
 
     /**
      * Gets the value of a DOM attribute associated to this element.
@@ -85,7 +75,7 @@ interface ElementInterface
      * @return string|null
      *            the DOM attribute value, or null if the attribute is not existing.
      */
-    public function getAttribute($name);
+    public function getAttribute(string $name): string;
 
     /**
      * Sets the value of a DOM attribute associated to this element.
@@ -95,24 +85,20 @@ interface ElementInterface
      * @param string $value
      *            the value of the DOM attribute.
      */
-    public function setAttribute($name, $value);
+    public function setAttribute(string $name, string $value): \DOMAttr|bool;
 
     /**
      * Returns a context path for this element.
      *
      * It gives whereabouts of the element within the overall structure of the image. Note
      * that this is not an XPath compliant path, it is mainly used for logging purposes.
-     *
-     * @return string
      */
-    public function getContextPath();
+    public function getContextPath(): string;
 
     /**
      * Determines if the element has been parsed successfully from data.
-     *
-     * @return bool
      */
-    public function isValid();
+    public function isValid(): bool;
 
     /**
      * Returns the value of this element, if the element supports it.
@@ -122,12 +108,10 @@ interface ElementInterface
      * @param array $options
      *            (Optional) an array of options to format the value.
      *
-     * @return mixed
-     *
-     * @throws \FileEye\MediaProbe\MediaProbeException
+     * @throws MediaProbeException
      *            when the element does not support returning a value.
      */
-    public function getValue(array $options = []);
+    public function getValue(array $options = []): mixed;
 
     /**
      * Gets the value of this element as text.
@@ -139,9 +123,7 @@ interface ElementInterface
      * @param array $options
      *            (Optional) an array of options to format the value.
      *
-     * @return string
-     *
-     * @throws \FileEye\MediaProbe\MediaProbeException
+     * @throws MediaProbeException
      *            when the element does not support returning a value.
      */
     public function toString(array $options = []): string;
@@ -152,21 +134,17 @@ interface ElementInterface
      * The returned value may be a PHP string in case of a single sequence of
      * bytes, or an array in case multiple sequences are needed.
      *
-     * @param bool $byte_order
+     * @param int $byte_order
      *            (Optional) the byte order to use for numeric values, which
      *            must be either ConvertBytes::LITTLE_ENDIAN or
      *            ConvertBytes::BIG_ENDIAN.
      * @param int $offset
      *            (Optional) the offset at which the bytes will be appended.
-     *
-     * @return string|string[]
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string;
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string;
 
     /**
      * Returns a dump of the element in an array.
-     *
-     * @return array
      */
-    public function toDumpArray();
+    public function toDumpArray(): array;
 }

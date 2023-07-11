@@ -17,7 +17,7 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 class IfdCopyright extends Ascii
 {
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         switch ($format) {

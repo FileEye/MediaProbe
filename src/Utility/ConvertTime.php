@@ -91,7 +91,7 @@ abstract class ConvertTime
      *            the integer timestamp or false if the day count cannot be
      *            represented as a UNIX timestamp.
      */
-    public static function julianDayToUnix(float $jd)
+    public static function julianDayToUnix(float $jd): int|false
     {
         if ($jd > 0) {
             $timestamp = ($jd - 2440588) * 86400;

@@ -29,7 +29,7 @@ class Tiff extends BlockBase
      *
      * @var int
      */
-    protected $byteOrder;
+    protected int $byteOrder;
 
     /**
      * Returns the MIME type of the image.
@@ -191,7 +191,7 @@ class Tiff extends BlockBase
      *
      * @return bool
      */
-    public static function isDataMatchingFormat(DataElement $data_element)
+    public static function isDataMatchingFormat(DataElement $data_element): bool
     {
         return static::getTiffSegmentByteOrder($data_element) !== null;
     }
@@ -203,7 +203,7 @@ class Tiff extends BlockBase
      *   The byte order of the TIFF segment in case data is a TIFF block, null
      *   otherwise.
      */
-    public static function getTiffSegmentByteOrder(DataElement $data_element, int $offset = 0)
+    public static function getTiffSegmentByteOrder(DataElement $data_element, int $offset = 0): ?int
     {
         // There must be at least 8 bytes available: 2 bytes for the byte
         // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
@@ -234,7 +234,7 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function debugBlockInfo(?DataElement $data_element = null)
+    public function debugBlockInfo(?DataElement $data_element = null): void
     {
         $msg = '{node}';
         $node = $this->DOMNode->nodeName;

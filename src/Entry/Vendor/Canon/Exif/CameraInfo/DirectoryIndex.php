@@ -13,7 +13,7 @@ class DirectoryIndex extends Long
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return $this->dataElement->getLong(0) - 1;
     }

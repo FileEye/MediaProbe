@@ -16,7 +16,7 @@ use FileEye\MediaProbe\MediaProbe;
 
 class GH16Test extends MediaProbeTestCaseBase
 {
-    protected $file;
+    protected string $file;
 
     public function setUp(): void
     {

@@ -19,17 +19,17 @@ class ShortRev extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'ShortRev';
+    protected string $name = 'ShortRev';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'ShortRev';
+    protected string $formatName = 'ShortRev';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatSize = 2;
+    protected int $formatSize = 2;
 
     const MIN = 0;
     const MAX = 65535;
@@ -42,7 +42,7 @@ class ShortRev extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->dataElement->getShortRev();
@@ -57,7 +57,7 @@ class ShortRev extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromShortRev($number, $order);
     }

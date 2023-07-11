@@ -29,7 +29,7 @@ class Tag extends BlockBase
     /**
      * Validates against the specification, if defined.
      */
-    public function validate()
+    public function validate(): void
     {
         // Check if MediaProbe has a definition for this tag.
         if (in_array($this->getCollection()->getPropertyValue('id'), ['VoidCollection', 'UnknownTag'])) {
@@ -85,7 +85,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return $this->getElement("entry") ? $this->getElement("entry")->getValue($options) : null;
     }
@@ -109,7 +109,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function getFormat()
+    public function getFormat(): int
     {
         return $this->getElement("entry") ? $this->getElement("entry")->getFormat() : $this->getDefinition()->getFormat();
     }
@@ -117,7 +117,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function getComponents()
+    public function getComponents(): int
     {
         return $this->getElement("entry") ? $this->getElement("entry")->getComponents() : $this->getDefinition()->getValuesCount();
     }
@@ -125,7 +125,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected function getContextPathSegmentPattern()
+    protected function getContextPathSegmentPattern(): string
     {
         if ($this->getAttribute('name') !== '') {
             return '/{DOMNode}:{name}:{id}';
@@ -136,7 +136,7 @@ class Tag extends BlockBase
     /**
      * {@inheritdoc}
      */
-    public function debugBlockInfo(?DataElement $data_element = null)
+    public function debugBlockInfo(?DataElement $data_element = null): void
     {
         $msg = '#{seq} @{ifdoffset} {node}';
         $seq = $this->getDefinition()->getSequence() + 1;

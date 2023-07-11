@@ -17,12 +17,12 @@ class SignedByte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'SignedByte';
+    protected string $name = 'SignedByte';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'SignedByte';
+    protected string $formatName = 'SignedByte';
 
     const MIN = -128;
     const MAX = 127;
@@ -35,7 +35,7 @@ class SignedByte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->dataElement->getSignedByte();
@@ -50,7 +50,7 @@ class SignedByte extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return chr($number);
     }

@@ -13,15 +13,11 @@ interface EntryInterface extends ElementInterface
 {
     /**
      * Returns the format of this entry.
-     *
-     * @return int
      */
-    public function getFormat();
+    public function getFormat(): int;
 
     /**
      * Returns the number of components of this entry.
-     *
-     * @return int
      */
-    public function getComponents();
+    public function getComponents(): int;
 }

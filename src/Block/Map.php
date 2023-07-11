@@ -23,12 +23,12 @@ class Map extends Index
     /**
      * The format of map data.
      */
-    protected $format;
+    protected int $format;
 
     /**
      * The amount of components in the map.
      */
-    protected $components;
+    protected int $components;
 
     /**
      * {@inheritdoc}
@@ -95,7 +95,7 @@ class Map extends Index
     /**
      * {@inheritdoc}
      */
-    public function getFormat()
+    public function getFormat(): int
     {
         return $this->format;
     }
@@ -103,7 +103,7 @@ class Map extends Index
     /**
      * {@inheritdoc}
      */
-    public function getComponents()
+    public function getComponents(): int
     {
         return $this->components;
     }
@@ -111,7 +111,7 @@ class Map extends Index
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false): string
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $mapDataElement = $this->getElement("rawData[@name='mapdata']/entry");
         if ($mapDataElement === null) {

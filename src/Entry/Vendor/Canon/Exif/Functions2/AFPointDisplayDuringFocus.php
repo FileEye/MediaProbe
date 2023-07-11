@@ -13,7 +13,7 @@ class AFPointDisplayDuringFocus extends SignedLong
     /**
      * {@inheritdoc}
      */
-    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context)
+    public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context): mixed
     {
         // Gets the Model from IFD0.
         $model = $context->getElement("//ifd[@name='IFD0']/tag[@name='Model']/entry")->getValue();

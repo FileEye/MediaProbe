@@ -12,7 +12,7 @@ class GPSAltitudeRef extends Byte
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         switch ($format) {

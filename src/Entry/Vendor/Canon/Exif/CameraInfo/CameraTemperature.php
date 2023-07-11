@@ -12,7 +12,7 @@ class CameraTemperature extends Byte
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return $this->dataElement->getByte(0) - 128;
     }
