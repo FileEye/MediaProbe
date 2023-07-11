@@ -5,7 +5,7 @@ namespace FileEye\MediaProbe\Block;
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\ElementBase;
+use FileEye\MediaProbe\Model\ElementBase;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;

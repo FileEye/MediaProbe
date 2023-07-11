@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
 
-use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 
 /**

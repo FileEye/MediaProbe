@@ -1,9 +1,9 @@
 <?php
 
-namespace FileEye\MediaProbe;
+namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\DOMElement;
+use FileEye\MediaProbe\Model\DOMElement;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;

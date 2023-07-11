@@ -7,7 +7,7 @@ use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;

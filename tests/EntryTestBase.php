@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\ElementBase;
+use FileEye\MediaProbe\Model\ElementBase;
 
 class EntryTestBase extends MediaProbeTestCaseBase
 {

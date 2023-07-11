@@ -7,7 +7,7 @@
  * A PHP library for reading and writing media files metadata.
  */
 
-use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\InvalidFileException;
