@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Block\BlockBase;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;

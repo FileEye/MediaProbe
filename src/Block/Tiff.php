@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;

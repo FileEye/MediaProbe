@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
-use FileEye\MediaProbe\Block\BlockBase;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Model\ElementBase;

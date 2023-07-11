@@ -35,9 +35,9 @@ abstract class BlockBase extends ElementBase
      *
      * @param \FileEye\MediaProbe\ItemDefinition $definition
      *            The Item Definition of this Block.
-     * @param \FileEye\MediaProbe\Block\BlockBase|null $parent
+     * @param \FileEye\MediaProbe\Model\BlockBase|null $parent
      *            (Optional) the parent Block of this Block.
-     * @param \FileEye\MediaProbe\Block\BlockBase|null $reference
+     * @param \FileEye\MediaProbe\Model\BlockBase|null $reference
      *            (Optional) if specified, the new Block will be inserted
      *            before the reference Block.
      */

@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Collection;
 
-use FileEye\MediaProbe\Block\BlockBase;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Entry\Core\EntryInterface;
 
