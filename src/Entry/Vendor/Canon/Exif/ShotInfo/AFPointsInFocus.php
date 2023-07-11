@@ -13,7 +13,7 @@ class AFPointsInFocus extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($options['format'] ?? null === 'exiftool') {
             if ($alternative_af_points_in_focus = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonShotInfo']/tag[@name='AFPointsInFocus']/entry")) {

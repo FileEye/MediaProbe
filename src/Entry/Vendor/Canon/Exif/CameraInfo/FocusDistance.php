@@ -13,7 +13,7 @@ class FocusDistance extends ShortRev
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return $this->dataElement->getShortRev(0) / 100;
     }

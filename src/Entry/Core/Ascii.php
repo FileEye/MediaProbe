@@ -7,8 +7,8 @@ namespace FileEye\MediaProbe\Entry\Core;
  */
 class Ascii extends EntryBase
 {
-    protected $name = 'Ascii';
-    protected $formatName = 'Ascii';
+    protected string $name = 'Ascii';
+    protected string $formatName = 'Ascii';
 
     protected function validateDataElement(): void
     {
@@ -21,7 +21,7 @@ class Ascii extends EntryBase
         $this->debug("text: {text}", ['text' => $this->toString()]);
     }
 
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         $val = rtrim($this->dataElement->getBytes(), "\x0");

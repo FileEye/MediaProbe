@@ -12,7 +12,7 @@ class GPSDegrees extends Rational
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {

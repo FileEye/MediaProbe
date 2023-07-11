@@ -39,7 +39,7 @@ class MediaProbe
      * @return string the translated string, or the original string if
      *         no translation could be found.
      */
-    public static function tra($str)
+    public static function tra(string $str): string
     {
         return $str;
     }
@@ -66,7 +66,7 @@ class MediaProbe
      * @return string the translated string, or the original string if
      *         no translation could be found.
      */
-    public static function fmt($format)
+    public static function fmt(string $format): string
     {
         $args = func_get_args();
         $str = array_shift($args);
@@ -81,7 +81,7 @@ class MediaProbe
      *
      * @return string
      */
-    public static function dumpHex($input, int $dump_length = null): ?string
+    public static function dumpHex(string $input, int $dump_length = null): ?string
     {
         $input_length = strlen($input);
 
@@ -120,7 +120,7 @@ class MediaProbe
         return $ret;
     }
 
-    public static function dumpHexFormatted($data, $newline = "\n")
+    public static function dumpHexFormatted(string $data, string $newline = "\n")
     {
         static $from = '';
         static $to = '';
@@ -151,7 +151,7 @@ class MediaProbe
         return $ret;
     }
 
-    public static function dumpIntHex($data): string
+    public static function dumpIntHex(mixed $data): string
     {
         if (is_numeric($data)) {
             return $data . '/0x' . strtoupper(dechex($data));

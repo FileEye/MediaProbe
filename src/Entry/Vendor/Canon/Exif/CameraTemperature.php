@@ -13,7 +13,7 @@ class CameraTemperature extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return parent::getValue() === 0 ? 0 : parent::getValue() - 128;
     }

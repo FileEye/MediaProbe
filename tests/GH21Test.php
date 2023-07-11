@@ -13,7 +13,7 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class GH21Test extends MediaProbeTestCaseBase
 {
-    protected $file;
+    protected string $file;
 
     public function setUp(): void
     {

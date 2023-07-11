@@ -17,17 +17,17 @@ class Long extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'Long';
+    protected string $name = 'Long';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'Long';
+    protected string $formatName = 'Long';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatSize = 4;
+    protected int $formatSize = 4;
 
     const MIN = 0;
     const MAX = 4294967295;
@@ -40,7 +40,7 @@ class Long extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->dataElement->getLong();
@@ -55,7 +55,7 @@ class Long extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromLong($number, $order);
     }

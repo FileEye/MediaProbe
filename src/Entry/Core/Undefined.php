@@ -15,12 +15,12 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'Undefined';
+    protected string $name = 'Undefined';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'Undefined';
+    protected string $formatName = 'Undefined';
 
     protected function validateDataElement(): void
     {
@@ -33,7 +33,7 @@ class Undefined extends EntryBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {

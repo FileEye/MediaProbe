@@ -13,7 +13,7 @@ class FocalPlaneSize extends Short
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return parent::getValue() * 25.4 / 1000;
     }

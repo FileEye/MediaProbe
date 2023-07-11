@@ -18,17 +18,17 @@ class SignedLong extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'SignedLong';
+    protected string $name = 'SignedLong';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'SignedLong';
+    protected string $formatName = 'SignedLong';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatSize = 4;
+    protected int $formatSize = 4;
 
     const MIN = -2147483648;
     const MAX = 2147483647;
@@ -41,7 +41,7 @@ class SignedLong extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->dataElement->getSignedLong();
@@ -56,7 +56,7 @@ class SignedLong extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromSignedLong($number, $order);
     }

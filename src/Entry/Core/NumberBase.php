@@ -19,10 +19,8 @@ abstract class NumberBase extends EntryBase
      * The dimension of the number held.
      *
      * Normal numbers have a dimension of one, fractions like Rational have a dimension of two.
-     *
-     * @var int
      */
-    protected $dimension = 1;
+    protected int $dimension = 1;
 
     protected function validateDataElement(): void
     {
@@ -48,7 +46,7 @@ abstract class NumberBase extends EntryBase
     /**
      * Return a number from the data element at specified offset.
      */
-    abstract protected function getNumberFromDataElement(int $offset);
+    abstract protected function getNumberFromDataElement(int $offset): int|array;
 
     /**
      * Convert a number into bytes.
@@ -61,13 +59,13 @@ abstract class NumberBase extends EntryBase
      * @param int $number
      *            the number that should be converted.
      *
-     * @param bool $byte_order
+     * @param int $byte_order
      *            one of ConvertBytes::LITTLE_ENDIAN or ConvertBytes::BIG_ENDIAN,
      *            specifying the target byte order.
      *
      * @return string bytes representing the number given.
      */
-    abstract protected function numberToBytes($number, $order);
+    abstract public function numberToBytes(int $number, int $order): string;
 
     /**
      * Formats a number.
@@ -84,7 +82,7 @@ abstract class NumberBase extends EntryBase
      *
      * @return string the number formatted as a string suitable for display.
      */
-    protected function formatNumber($number, array $options = [])
+    protected function formatNumber(int|float|array $number, array $options = []): int|float|array|string
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {

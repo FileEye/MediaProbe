@@ -106,7 +106,7 @@ class Index extends ListBase
     /**
      * @todo xxx
      */
-    protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1)
+    protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): mixed
     {
         $dataWindow = $this->getDataWindowFromData($data_element, $offset, $format, $count);
         switch ($format) {
@@ -166,7 +166,7 @@ class Index extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function toBytes($byte_order = ConvertBytes::LITTLE_ENDIAN, $offset = 0, $has_next_ifd = false): string
+    public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $data_bytes = '';
 
@@ -190,7 +190,7 @@ class Index extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function getComponents()
+    public function getComponents(): int
     {
         $components = 0;
         foreach ($this->getMultipleElements('tag') as $sub) {
@@ -207,7 +207,7 @@ class Index extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0)
+    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0): void
     {
         $msg = '#{seq} {node}:{name}';
         $seq = $this->getDefinition()->getSequence() + 1;

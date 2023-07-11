@@ -12,7 +12,7 @@ class MacroMagnification extends Byte
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return exp((75 - $this->dataElement->getByte(0)) * log(2) * 3 / 40);
     }

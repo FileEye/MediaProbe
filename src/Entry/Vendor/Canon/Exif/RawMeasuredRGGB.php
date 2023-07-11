@@ -13,7 +13,7 @@ class RawMeasuredRGGB extends Long
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
         $value = [];

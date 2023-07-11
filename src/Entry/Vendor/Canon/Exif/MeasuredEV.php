@@ -13,7 +13,7 @@ class MeasuredEV extends SignedShort
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return parent::getValue() / 32 + 5;
     }

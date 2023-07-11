@@ -16,7 +16,7 @@ class ExposureTime extends Byte
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         return exp(4 * log(2) * (1 - $this->canonEv($this->dataElement->getByte(0) - 24)));
     }

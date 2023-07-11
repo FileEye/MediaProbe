@@ -19,17 +19,17 @@ class Short extends NumberBase
     /**
      * {@inheritdoc}
      */
-    protected $name = 'Short';
+    protected string $name = 'Short';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatName = 'Short';
+    protected string $formatName = 'Short';
 
     /**
      * {@inheritdoc}
      */
-    protected $formatSize = 2;
+    protected int $formatSize = 2;
 
     const MIN = 0;
     const MAX = 65535;
@@ -42,7 +42,7 @@ class Short extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
             return $this->dataElement->getShort();
@@ -57,7 +57,7 @@ class Short extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes($number, $order)
+    public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromShort($number, $order);
     }

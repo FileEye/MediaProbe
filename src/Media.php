@@ -13,6 +13,7 @@ use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use Monolog\Logger;
 use Monolog\Handler\TestHandler;
+use Monolog\Level;
 use Monolog\Processor\PsrLogMessageProcessor;
 use PrettyXml\Formatter;
 use Psr\Log\LoggerInterface;
@@ -27,22 +28,9 @@ use Symfony\Component\Stopwatch\Stopwatch;
 class Media extends BlockBase
 {
     /**
-     * The internal logger instance for this Media object.
-     *
-     * @var \Monolog\Logger
+     * The internal Monolog logger instance for this Media object.
      */
-    protected $logger;
-
-    /**
-     * A PSR-3 compliant logger callback.
-     *
-     * Consuming code can have higher level logging facilities in place. Any
-     * entry sent to the internal logger will also be sent to the callback, if
-     * specified.
-     *
-     * @var \Psr\Log\LoggerInterface
-     */
-    protected $externalLogger;
+    protected Logger $logger;
 
     /**
      * The minimum log level for failure.
@@ -51,24 +39,18 @@ class Media extends BlockBase
      * breaking the flow. However it is possible to enable hard failures by
      * defining the minimum log level at which the parsing process will break
      * and throw an InvalidFileException.
-     *
-     * @var int
      */
-    protected $failLevel;
+    protected ?Level $failLevel;
 
     /**
      * An XML prettify formatter.
-     *
-     * @var \PrettyXml\Formatter
      */
-    protected $xmlFormatter;
+    protected Formatter $xmlFormatter;
 
     /**
      * A Symfony stopwatch.
-     *
-     * @var \Symfony\Component\Stopwatch\Stopwatch
      */
-    private $stopWatch;
+    private Stopwatch $stopWatch;
 
     /**
      * Creates a Media object from a file.
@@ -156,20 +138,25 @@ class Media extends BlockBase
     /**
      * Constructs a Media object.
      *
-     * @param \Psr\Log\LoggerInterface|null $external_logger
+     * @param \Psr\Log\LoggerInterface|null $externalLogger
      *            (Optional) a PSR-3 compliant logger callback.
+     *            Consuming code can have higher level logging facilities in place.
+     *            Any entry sent to the internal logger will also be sent to the
+     *            callback, if specified.
      * @param string|null $fail_level
      *            (Optional) a PSR-3 compliant log level. Any log entry at this
      *            level or above will force media parsing to stop.
      */
-    public function __construct(?LoggerInterface $external_logger, ?string $fail_level)
+    public function __construct(
+        protected ?LoggerInterface $externalLogger,
+        ?string $fail_level,
+    )
     {
         $media = new ItemDefinition(CollectionFactory::get('Media'));
         parent::__construct($media);
         $this->logger = (new Logger('mediaprobe'))
           ->pushHandler(new TestHandler(Logger::INFO))
           ->pushProcessor(new PsrLogMessageProcessor());
-        $this->externalLogger = $external_logger;
         $this->failLevel = $fail_level ? Logger::toMonologLevel($fail_level) : null;
         $this->stopWatch = new Stopwatch();
     }

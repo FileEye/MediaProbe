@@ -13,7 +13,7 @@ class LensSerialNumber extends Undefined
     /**
      * {@inheritdoc}
      */
-    public function getValue(array $options = [])
+    public function getValue(array $options = []): mixed
     {
         $alternate = $this->getRootElement()->getElement("//ifd[@name='ExifIFD']/tag[@name='LensSerialNumber']/entry");
         if ($alternate) {
