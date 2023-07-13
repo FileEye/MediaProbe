@@ -1,19 +1,19 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace FileEye\MediaProbe;
 
-use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tiff;
-use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Collection\CollectionFactory;
+use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFile;
 use FileEye\MediaProbe\Data\DataString;
+use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
-use Monolog\Logger;
 use Monolog\Handler\TestHandler;
 use Monolog\Level;
+use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
 use PrettyXml\Formatter;
 use Psr\Log\LoggerInterface;

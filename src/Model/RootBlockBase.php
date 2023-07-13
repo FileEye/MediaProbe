@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Model;
 
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Model\DOMElement;
 
 /**
@@ -14,14 +15,13 @@ abstract class RootBlockBase extends BlockBase
      */
     protected readonly \DOMXpath $xPath;
 
-    /**
-     * Constructs an Element object.
-     *
-     * @param string $DOMNodeName
-     *   The name of the DOM node associated to this element.
-     */
-    public function __construct(string $DOMNodeName)
+    public function __construct(ItemDefinition $definition)
     {
+        $this->definition = $definition;
+
+        $DOMNodeName = $this->getCollection()->getPropertyValue('DOMNode'));
+
+        // Add root DOM stuff.
         $doc = new \DOMDocument();
         $doc->registerNodeClass('DOMElement', DOMElement::class);
         $this->xPath = new \DOMXPath($doc);
@@ -29,5 +29,12 @@ abstract class RootBlockBase extends BlockBase
 
         // Assign this Element as the payload of the DOM node.
         $this->DOMNode->setMediaProbeElement($this);
+
+        if ($this->getCollection()->hasProperty('item')) {
+            $this->setAttribute('id', $this->getCollection()->getPropertyValue('item'));
+        }
+        if ($this->getCollection()->hasProperty('name')) {
+            $this->setAttribute('name', $this->getCollection()->getPropertyValue('name'));
+        }
     }
 }
