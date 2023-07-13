@@ -70,6 +70,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      */
     public function getParentElement(): ?ElementInterface
     {
+dump($this);
         return $this->DOMNode->getMediaProbeElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getMediaProbeElement() : null;
     }
 
