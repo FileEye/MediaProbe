@@ -19,7 +19,7 @@ abstract class RootBlockBase extends BlockBase
     {
         $this->definition = $definition;
 
-        $DOMNodeName = $this->getCollection()->getPropertyValue('DOMNode'));
+        $DOMNodeName = $this->getCollection()->getPropertyValue('DOMNode');
 
         // Add root DOM stuff.
         $doc = new \DOMDocument();
