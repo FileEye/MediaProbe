@@ -1,9 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Model\DOMElement;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -28,13 +27,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     protected \DOMNode $DOMNode;
 
     /**
-     * The Xpath object associated to the root element.
-     *
-     * @todo xx only the root should have it
-     */
-    protected ?\DOMXpath $XPath;
-
-    /**
      * Whether this element was successfully validated.
      */
     protected bool $valid = true;
@@ -43,27 +35,16 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      * Constructs an Element object.
      *
      * @param string $dom_node_name
-     *            The name of the DOM node associated to this element.
-     * @param ElementInterface|null $parent
-     *            (Optional) the parent element of this element.
+     *   The name of the DOM node associated to this element.
+     * @param ElementInterface $parent
+     *   The parent element of this element.
      * @param ElementInterface|null $reference
-     *            (Optional) if specified, the new element will be inserted
-     *            before the reference element.
+     *   (Optional) if specified, the new element will be inserted before the reference element.
      */
-    public function __construct(string $dom_node_name, ElementInterface $parent = null, ElementInterface $reference = null)
+    public function __construct(string $dom_node_name, ElementInterface $parent, ElementInterface $reference = null)
     {
-        // If $parent is null, this Element is the root of the DOM document that
-        // stores the image structure.
-        if (!isset($parent) || !isset($parent->DOMNode)) {
-            $doc = new \DOMDocument();
-            $doc->registerNodeClass('DOMElement', DOMElement::class);
-            $this->XPath = new \DOMXPath($doc);
-            $parent_node = $doc;
-        } else {
-            $doc = $parent->DOMNode->ownerDocument;
-            $parent_node = $parent->DOMNode;
-        }
-
+        $doc = $parent->DOMNode->ownerDocument;
+        $parent_node = $parent->DOMNode;
         $this->DOMNode = $doc->createElement($dom_node_name);
 
         if ($reference) {
