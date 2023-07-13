@@ -7,7 +7,7 @@ use FileEye\MediaProbe\Model\DOMElement;
 /**
  * Base class for a MediaProbe root block.
  */
-abstract class RootBlockBase extends ElementBase
+abstract class RootBlockBase extends BlockBase
 {
     /**
      * The Xpath object associated to the root element.
