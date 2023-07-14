@@ -17,7 +17,9 @@ abstract class RootBlockBase extends BlockBase
 
     public function __construct(ItemDefinition $definition)
     {
-        $this->definition = $definition;
+        parent::__construct($definition);
+
+/*        $this->definition = $definition;
 
         $DOMNodeName = $this->getCollection()->getPropertyValue('DOMNode');
 
@@ -35,6 +37,6 @@ abstract class RootBlockBase extends BlockBase
         }
         if ($this->getCollection()->hasProperty('name')) {
             $this->setAttribute('name', $this->getCollection()->getPropertyValue('name'));
-        }
+        }*/
     }
 }

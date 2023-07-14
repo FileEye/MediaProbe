@@ -34,28 +34,36 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * Constructs an Element object.
      *
-     * @param string $dom_node_name
+     * @param string $DOMNodeName
      *   The name of the DOM node associated to this element.
      * @param ElementInterface $parent
-     *   The parent element of this element.
+     *   (Optional) the parent element of this element.
      * @param ElementInterface|null $reference
      *   (Optional) if specified, the new element will be inserted before the reference element.
      */
-    public function __construct(string $dom_node_name, ElementInterface $parent, ElementInterface $reference = null)
+    public function __construct(string $DOMNodeName, ElementInterface $parent = null, ElementInterface $reference = null)
+    {
+        if ($parent) {
+            $this->addToDOM($DOMNodeName, $parent, $reference);
+        }
+    }
+
+    protected function addToDOM(string $DOMNodeName, ElementInterface $parent, ?ElementInterface $reference): void
     {
         $doc = $parent->DOMNode->ownerDocument;
-        $parent_node = $parent->DOMNode;
-        $this->DOMNode = $doc->createElement($dom_node_name);
+        $parentNode = $parent->DOMNode;
+        $this->DOMNode = $doc->createElement($DOMNodeName);
 
         if ($reference) {
-            $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
+            $parentNode->insertBefore($this->DOMNode, $reference->DOMNode);
         } else {
-            $parent_node->appendChild($this->DOMNode);
+            $parentNode->appendChild($this->DOMNode);
         }
 
         // Assign this Element as the payload of the DOM node.
         $this->DOMNode->setMediaProbeElement($this);
     }
+
 
     /**
      * {@inheritdoc}
