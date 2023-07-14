@@ -1,10 +1,10 @@
 <?php
 
-namespace FileEye\MediaProbe\Entry\Core;
+namespace FileEye\MediaProbe\Model;
 
-use FileEye\MediaProbe\Block\BlockBase;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Model\ElementInterface;
 
 /**
  * Interface for Entry objects.

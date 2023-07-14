@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\MediaProbe;
+namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Utility\ConvertBytes;

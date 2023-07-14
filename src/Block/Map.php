@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Data\DataFormat;

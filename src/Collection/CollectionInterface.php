@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Collection;
 
-use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Model\ElementInterface;
 
 /**
  * Interface for objects holding metadata specification information as a collection of properties.

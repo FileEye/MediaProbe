@@ -2,9 +2,9 @@
 
 namespace FileEye\MediaProbe\Collection;
 
-use FileEye\MediaProbe\Block\BlockBase;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Entry\Core\EntryInterface;
+use FileEye\MediaProbe\Model\EntryInterface;
 
 /**
  * Class to retrieve metadata specification information from collections.

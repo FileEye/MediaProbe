@@ -1,12 +1,12 @@
 <?php
 
-namespace FileEye\MediaProbe\Block;
+namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\ElementBase;
-use FileEye\MediaProbe\Entry\Core\EntryInterface;
+use FileEye\MediaProbe\Model\ElementBase;
+use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -35,9 +35,9 @@ abstract class BlockBase extends ElementBase
      *
      * @param \FileEye\MediaProbe\ItemDefinition $definition
      *            The Item Definition of this Block.
-     * @param \FileEye\MediaProbe\Block\BlockBase|null $parent
+     * @param \FileEye\MediaProbe\Model\BlockBase|null $parent
      *            (Optional) the parent Block of this Block.
-     * @param \FileEye\MediaProbe\Block\BlockBase|null $reference
+     * @param \FileEye\MediaProbe\Model\BlockBase|null $reference
      *            (Optional) if specified, the new Block will be inserted
      *            before the reference Block.
      */

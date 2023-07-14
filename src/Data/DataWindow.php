@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Data;
 
-use FileEye\MediaProbe\ElementBase;
+use FileEye\MediaProbe\Model\ElementBase;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;

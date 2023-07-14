@@ -2,6 +2,8 @@
 
 namespace FileEye\MediaProbe\Block;
 
+use FileEye\MediaProbe\Model\BlockBase;
+
 /**
  * Abstract class for JPEG data segments.
  */

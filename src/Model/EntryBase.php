@@ -1,12 +1,12 @@
 <?php
 
-namespace FileEye\MediaProbe\Entry\Core;
+namespace FileEye\MediaProbe\Model;
 
-use FileEye\MediaProbe\Block\BlockBase;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\ElementBase;
-use FileEye\MediaProbe\ElementInterface;
+use FileEye\MediaProbe\Model\ElementBase;
+use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;

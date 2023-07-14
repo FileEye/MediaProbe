@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
+use FileEye\MediaProbe\Model\EntryBase;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;

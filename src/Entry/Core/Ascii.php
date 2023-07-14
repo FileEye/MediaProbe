@@ -2,6 +2,8 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
+use FileEye\MediaProbe\Model\EntryBase;
+
 /**
  * Class for holding a NUL terminated ASCII string.
  */

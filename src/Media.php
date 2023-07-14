@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe;
 
-use FileEye\MediaProbe\Block\BlockBase;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection\CollectionInterface;
