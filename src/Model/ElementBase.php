@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Model;
 
@@ -28,20 +28,11 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     protected \DOMNode $DOMNode;
 
     /**
-     * The Xpath object associated to the root element.
-     *
-     * @todo xx only the root should have it
-     */
-    protected ?\DOMXpath $XPath;
-
-    /**
      * Whether this element was successfully validated.
      */
     protected bool $valid = true;
 
     /**
-     * Constructs an Element object.
-     *
      * @param string $dom_node_name
      *            The name of the DOM node associated to this element.
      * @param ElementInterface|null $parent
@@ -53,11 +44,10 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function __construct(string $dom_node_name, ElementInterface $parent = null, ElementInterface $reference = null)
     {
         // If $parent is null, this Element is the root of the DOM document that
-        // stores the image structure.
+        // stores the media structure.
         if (!isset($parent) || !isset($parent->DOMNode)) {
             $doc = new \DOMDocument();
             $doc->registerNodeClass('DOMElement', DOMElement::class);
-            $this->XPath = new \DOMXPath($doc);
             $parent_node = $doc;
         } else {
             $doc = $parent->DOMNode->ownerDocument;

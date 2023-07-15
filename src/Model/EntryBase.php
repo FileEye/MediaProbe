@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Model;
 
@@ -173,9 +173,9 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * @todo xxx
      */
-    protected function resolveValuePlaceholder(string $value, string $source): string
+    protected function resolveValuePlaceholder(string|int|float $value, string $source): string
     {
-        $tmp = str_replace('{value}', $value, $source);
+        $tmp = str_replace('{value}', (string) $value, $source);
         $tmp = str_replace('{valuehex}', dechex((int) $value), $tmp);
         return $tmp;
     }
@@ -183,7 +183,7 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * @todo xxx
      */
-    public function resolveText(mixed $value, bool $null_on_missing = false): string|array|null
+    public function resolveText(mixed $value, bool $null_on_missing = false): string|int|float|array|null
     {
         if (!$this->getParentElement()) {
             return is_array($value) ? implode(' ', $value) : $value;

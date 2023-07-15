@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace FileEye\MediaProbe;
 
-use FileEye\MediaProbe\Model\BlockBase;
+use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection\CollectionInterface;
@@ -25,7 +25,7 @@ use Symfony\Component\Stopwatch\Stopwatch;
  * This is the root class of any media file, and the base for accessing any
  * of its DOM-represented components.
  */
-class Media extends BlockBase
+class Media extends RootBlockBase
 {
     /**
      * The internal Monolog logger instance for this Media object.

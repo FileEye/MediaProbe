@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Model;
 
@@ -48,10 +48,10 @@ abstract class BlockBase extends ElementBase
         parent::__construct($this->getCollection()->getPropertyValue('DOMNode'), $parent, $reference);
 
         if ($this->getCollection()->hasProperty('item')) {
-            $this->setAttribute('id', $this->getCollection()->getPropertyValue('item'));
+            $this->setAttribute('id', (string) $this->getCollection()->getPropertyValue('item'));
         }
         if ($this->getCollection()->hasProperty('name')) {
-            $this->setAttribute('name', $this->getCollection()->getPropertyValue('name'));
+            $this->setAttribute('name', (string) $this->getCollection()->getPropertyValue('name'));
         }
     }
 

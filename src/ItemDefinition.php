@@ -35,49 +35,31 @@ class ItemDefinition
     {
     }
 
-    /**
-     * @todo
-     */
     public function getCollection(): CollectionInterface
     {
         return $this->collection;
     }
 
-    /**
-     * @todo
-     */
     public function getFormat(): int
     {
         return $this->format;
     }
 
-    /**
-     * @todo
-     */
     public function getValuesCount(): int
     {
         return $this->valuesCount;
     }
 
-    /**
-     * @todo
-     */
     public function getDataOffset(): int
     {
         return $this->dataOffset;
     }
 
-    /**
-     * @todo
-     */
     public function getItemDefinitionOffset(): int
     {
         return $this->itemDefinitionOffset;
     }
 
-    /**
-     * @todo
-     */
     public function getSequence(): int
     {
         return $this->sequence;
