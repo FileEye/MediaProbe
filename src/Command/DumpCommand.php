@@ -2,14 +2,15 @@
 
 namespace FileEye\MediaProbe\Command;
 
-use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Block\Exif\Exif;
 use FileEye\MediaProbe\Block\Exif\Ifd;
 use FileEye\MediaProbe\Block\Jpeg;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Dumper\DefaultDumper;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Model\BlockBase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -123,7 +124,7 @@ class DumpCommand extends Command
         $yaml['fileName'] = $file->getBaseName();
         $yaml['mimeType'] = $media->getMimeType();
         $yaml['fileContentHash'] = hash('sha256', $file->getContents());
-        $yaml['elements'] = $media->toDumpArray();
+        $yaml['elements'] = $media->asArray(new DefaultDumper());
         $yaml['log'] = [];
         foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
             foreach ($media->dumpLog($level) as $record) {

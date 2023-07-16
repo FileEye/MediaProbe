@@ -3,9 +3,10 @@
 namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Model\DOMElement;
+use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Model\DOMElement;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
@@ -66,17 +67,16 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         $this->DOMNode->setMediaProbeElement($this);
     }
 
-    /**
-     * {@inheritdoc}
-     */
+    public function getNodeName(): string
+    {
+        return $this->DOMNode->nodeName;
+    }
+
     public function getRootElement(): ElementInterface
     {
         return $this->DOMNode->ownerDocument->documentElement->getMediaProbeElement();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParentElement(): ?ElementInterface
     {
         return $this->DOMNode->getMediaProbeElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getMediaProbeElement() : null;
@@ -217,17 +217,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     abstract public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function toDumpArray(): array
+    public function asArray(DumperInterface $dumper): array
     {
-        return [
-            'node' => $this->DOMNode->nodeName,
-            'path' => $this->getContextPath(),
-            'class' => get_class($this),
-            'valid' => $this->isValid(),
-        ];
+        return $dumper->dumpElement($this);
     }
 
     /**

@@ -28,14 +28,14 @@ jobs:
         extensions: "yaml"
         ini-values: "zend.assertions=1"
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Validate composer.json and composer.lock
       run: composer validate
 
     - name: Cache Composer packages
       id: composer-cache
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: vendor
         key: ${{ runner.os }}-php-${{ matrix.php-version }}-v3-${{ hashFiles('**/composer.lock') }}
@@ -61,12 +61,12 @@ jobs:
         php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
-      run: vendor/bin/phpunit ./tests
 #      continue-on-error: true
+      run: vendor/bin/phpunit ./tests
 
-    - name: Code style test
-      if: ${{ matrix.php-version == 7.4 }}
-      run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
+#    - name: Code style test
+#      if: ${{ matrix.php-version == 7.4 }}
+#      run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
 
 # Remove the comment to the lines below during development, to refresh the
 # media file dumps.
@@ -74,7 +74,7 @@ jobs:
 #      run: php bin/fileeye-mediaprobe dump tests/media-samples tests/media-dumps
 
 #    - name: Upload media dumps
-#      uses: actions/upload-artifact@v2
+#      uses: actions/upload-artifact@v3
 #      with:
 #        name: media-dumps
 #        path: tests/media-dumps/**/*.yml

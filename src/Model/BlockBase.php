@@ -5,10 +5,11 @@ namespace FileEye\MediaProbe\Model;
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Model\ElementBase;
-use FileEye\MediaProbe\Model\EntryInterface;
+use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Model\ElementBase;
+use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -173,24 +174,9 @@ abstract class BlockBase extends ElementBase
         return $bytes;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function toDumpArray(): array
+    public function asArray(DumperInterface $dumper): array
     {
-        $attributes = [];
-        if ($this->getAttribute('name') !== '') {
-            $attributes['name'] = $this->getAttribute('name');
-        }
-        if ($this->getAttribute('id') !== '') {
-            $attributes['id'] = $this->getAttribute('id');
-        }
-        $dump = array_merge(parent::toDumpArray(), $attributes, ['collection' => $this->getCollection()->getPropertyValue('id')]);
-        // xx todo restore $dump = array_merge(parent::toDumpArray(), $this->getAttributes(), ['collection' => $this->getCollection()->getPropertyValue('id')]);
-        foreach ($this->getMultipleElements("*") as $sub_element) {
-            $dump['elements'][] = $sub_element->toDumpArray();
-        }
-        return $dump;
+        return $dumper->dumpBlock($this);
     }
 
     /**

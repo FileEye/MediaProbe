@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -12,6 +13,11 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 interface ElementInterface
 {
+    /**
+     * Returns the name of the DOM node of this element.
+     */
+    public function getNodeName(): string;
+
     /**
      * Gets the root ancestor element of this element.
      */
@@ -144,7 +150,7 @@ interface ElementInterface
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string;
 
     /**
-     * Returns a dump of the element in an array.
+     * Returns the element as an array.
      */
-    public function toDumpArray(): array;
+    public function asArray(DumperInterface $dumper): array;
 }

@@ -4,6 +4,7 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Collection\CollectionInterface;
+use FileEye\MediaProbe\Dumper\DefaultDumper;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Model\ElementInterface;
@@ -43,7 +44,7 @@ class MediaProbeTestCaseBase extends TestCase
 
     public function dumpElement(ElementInterface $element)
     {
-        dump($element->toDumpArray());
+        dump($element->asArray(new DefaultDumper()));
 /*        if ($element instanceof EntryInterface) {
             $ifd_name = $element->getParentElement()->getParentElement()->getAttribute('name') ?: $element->getParentElement()->getAttribute('name');
             $tag_title = $element->getParentElement()->getCollection()->getPropertyValue('title') ?? '*na*';

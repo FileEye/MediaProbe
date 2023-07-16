@@ -4,12 +4,15 @@ namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Model\ElementInterface;
 
+/**
+ * A class extending \DOMElement to hold a MediaProbe element.
+ */
 class DOMElement extends \DOMElement
 {
     /**
      * The MediaProbe ElementInterface object associated to this node.
      */
-    protected ElementInterface $mediaProbeElement;
+    private ElementInterface $mediaProbeElement;
 
     /**
      * Sets the ElementInterface object associated to this node.
