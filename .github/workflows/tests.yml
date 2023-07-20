@@ -56,10 +56,10 @@ jobs:
     - name: Image file dumps
       continue-on-error: true
       run: |
+        php examples/dump-media.php -d tests/media-samples/image/camera/canon_eos_850d_08.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/gh-11.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
-        php examples/dump-media.php -d tests/media-samples/image/camera/canon_eos_850d_08.jpg
 
     - name: Run test suite
 #      continue-on-error: true
