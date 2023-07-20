@@ -152,7 +152,7 @@ class Tag extends BlockBase
 
         if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
-            $info['item'] = MediaProbe::dumpIntHex($info['item']);
+            $info['item'] = MediaProbe::dumpIntHex($parentInfo['item']);
         }
 
         if (isset($parentInfo['size'])) {

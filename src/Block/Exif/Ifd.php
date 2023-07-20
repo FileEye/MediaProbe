@@ -447,7 +447,7 @@ class Ifd extends ListBase
 
         if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
-            $info['item'] = is_numeric($info['item']) ? $info['item'] . '/0x' . strtoupper(dechex($info['item'])) : $info['item'];
+            $info['item'] = is_numeric($parentInfo['item']) ? $parentInfo['item'] . '/0x' . strtoupper(dechex($parentInfo['item'])) : $parentInfo['item'];
         }
 
         if (isset($context['dataElement']) && $context['dataElement'] instanceof DataWindow) {
