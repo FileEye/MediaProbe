@@ -221,7 +221,7 @@ class Index extends ListBase
 
         if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
-            $info['item'] = is_numeric($item) ?$info['item'] . '/0x' . strtoupper(dechex($info['item'])) : $info['item'];
+            $info['item'] = is_numeric($parentInfo['item']) ?$parentInfo['item'] . '/0x' . strtoupper(dechex($parentInfo['item'])) : $parentInfo['item'];
         }
 
         if (isset($parentInfo['size'])) {
