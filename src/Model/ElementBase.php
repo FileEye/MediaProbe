@@ -193,7 +193,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     public function collectInfo(array $context = []): array
     {
-        $info = [};
+        $info = [];
         $info['node'] = $this->getNodeName();
         if (($name = $this->getAttribute('name')) !== null) {
             $info['name'] = $name;
