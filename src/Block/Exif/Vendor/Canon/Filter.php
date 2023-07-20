@@ -96,7 +96,6 @@ class Filter extends ListBase
             '_msg' =>'filter#{seq} @{offset}, {parms} parameter(s), size {size} bytes',
             'seq' => $this->getDefinition()->getSequence() + 1,
             'parms' => $this->paramsCount ?? 'n/a',
-            'size' => $this->getDefinition()->getSize(),
         ]);
     }
 

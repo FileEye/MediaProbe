@@ -180,12 +180,13 @@ abstract class BlockBase extends ElementBase implements BlockInterface
     {
         $info = [];
 
-        $msg = '{node}';
+        $parentInfo = parent::collectInfo($context);
 
-        if (($name = $this->getAttribute('name')) ==! null) {
-            $info['name'] = $name;
+        $msg = '{node}';
+        if (isset($parentInfo['name'])) {
             $msg .= ':{name}';
         }
+
         if (($title = $this->getCollection()->getPropertyValue('title')) ==! null) {
             $info['title'] = $title;
             $msg .= ' ({title})';
@@ -196,7 +197,7 @@ abstract class BlockBase extends ElementBase implements BlockInterface
             if ($context['dataElement'] instanceof DataWindow) {
                 $msg .= ' @{offset} size {size}';
                 $info['offset'] = $context['dataElement']->getAbsoluteOffset() . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset()));
-// @todo $offset = MediaProbe::dumpIntHex($context['dataElement']->getAbsoluteOffset());
+                // @todo $offset = MediaProbe::dumpIntHex($context['dataElement']->getAbsoluteOffset());
             } else {
                 $msg .= ' size {size} byte(s)';
             }

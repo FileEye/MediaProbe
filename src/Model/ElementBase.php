@@ -81,9 +81,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         return $this->DOMNode->getMediaProbeElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getMediaProbeElement() : null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getMultipleElements(string $expression): array
     {
         $node_list = $this->getRootElement()->XPath->query($expression, $this->DOMNode);
@@ -94,9 +91,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         return $ret;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getElement(string $expression): ?ElementInterface
     {
         $ret = $this->getMultipleElements($expression);
@@ -110,9 +104,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function removeElement(string $expression): bool
     {
         $ret = $this->getMultipleElements($expression);
@@ -127,17 +118,11 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setAttribute(string $name, string $value): \DOMAttr|bool
     {
         return $this->DOMNode->setAttribute($name, $value);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getAttributes(): array
     {
         $attr = [];
@@ -147,9 +132,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         return $attr;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getAttribute(string $name): string
     {
         return $this->DOMNode->getAttribute($name);
@@ -163,9 +145,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         return '/{DOMNode}';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getContextPath(): string
     {
         // Get the path before this element.
@@ -182,9 +161,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         return $parent_path . str_replace(array_keys($attributes), array_values($attributes), $this->getContextPathSegmentPattern());
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function isValid(): bool
     {
         return $this->valid;
@@ -198,17 +174,11 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
         throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
@@ -223,9 +193,15 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     public function collectInfo(array $context = []): array
     {
-        return [
-            'node' => $this->getNodeName(),
-        ];
+        $info = [};
+        $info['node'] = $this->getNodeName();
+        if (($name = $this->getAttribute('name')) !== null) {
+            $info['name'] = $name;
+        }
+        if (($item = $this->getAttribute('id')) !== null) {
+            $info['item'] = $item;
+        }
+        return $info;
     }
 
     public function debugInfo(array $context = []): bool
@@ -237,9 +213,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         return true;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function log($level, $message, array $context = []): void
     {
         $context['path'] = $this->getContextPath();

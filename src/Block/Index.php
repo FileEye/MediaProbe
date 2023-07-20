@@ -219,11 +219,10 @@ class Index extends ListBase
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
 
-        $item = $this->getAttribute('id');
-        if ($item ==! null) {
+        if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
+            $info['item'] = is_numeric($item) ?$info['item'] . '/0x' . strtoupper(dechex($info['item'])) : $info['item'];
         }
-        $info['item'] = is_numeric($item) ? $item . '/0x' . strtoupper(dechex($item)) : $item;
 
         if (isset($parentInfo['size'])) {
             $msg .= isset($parentInfo['offset']) ? ' @{offset}, {tags} entries, f {format}, s {size}' : ' {tags} entries, format ?xxx, size {size}';

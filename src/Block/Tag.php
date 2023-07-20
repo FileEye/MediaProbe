@@ -150,11 +150,10 @@ class Tag extends BlockBase
 
         $msg .= isset($parentInfo['name']) ? ':{name}' : '';
 
-        $item = $this->getAttribute('id');
-        if ($item ==! null) {
+        if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
+            $info['item'] = MediaProbe::dumpIntHex($info['item']);
         }
-        $info['item'] = MediaProbe::dumpIntHex($item);
 
         if (isset($parentInfo['size'])) {
             $msg .= isset($parentInfo['offset']) ? ' @{offset} size {size}' : ' size {size} byte(s)';
