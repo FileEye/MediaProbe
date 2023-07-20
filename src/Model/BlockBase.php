@@ -105,7 +105,6 @@ abstract class BlockBase extends ElementBase implements BlockInterface
     {
         $data = new DataWindow($data_element, $start, $size);
         $this->size = $data->getSize();
-        assert($this->debugInfo(['dataElement' => $data]));
         $this->doParseData($data);
 
         // Invoke post-parse callbacks.
