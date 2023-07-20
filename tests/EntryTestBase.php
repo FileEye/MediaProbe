@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Model\ElementBase;
+use FileEye\MediaProbe\Model\BlockBase;
 
 class EntryTestBase extends MediaProbeTestCaseBase
 {
@@ -13,7 +13,7 @@ class EntryTestBase extends MediaProbeTestCaseBase
     public function setUp(): void
     {
         parent::setUp();
-        $this->mockParentElement = $this->getMockBuilder(ElementBase::class)
+        $this->mockParentElement = $this->getMockBuilder(BlockBase::class)
           ->disableOriginalConstructor()
           ->getMock();
         $this->mockDataElement = $this->getMockBuilder(DataElement::class)

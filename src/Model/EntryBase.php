@@ -2,13 +2,10 @@
 
 namespace FileEye\MediaProbe\Model;
 
-use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Dumper\DumperInterface;
-use FileEye\MediaProbe\Model\ElementBase;
-use FileEye\MediaProbe\Model\ElementInterface;
-use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -49,17 +46,14 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     /**
      * Constructs an EntryInterface object.
      *
-     * @param ElementInterface $parent
+     * @param BlockInterface $parent
      *            xx
      * @param DataElement $dataElement
      *            the data that this entry will be holding.
-     * @param ElementInterface|null $reference
-     *            (Optional) if specified, the new element will be inserted
-     *            before the reference element.
      */
-    public function __construct(ElementInterface $parent, DataElement $dataElement, ElementInterface $reference = null)
+    public function __construct(BlockInterface $parent, DataElement $dataElement)
     {
-        parent::__construct(static::DOM_NODE_NAME, $parent, $reference);
+        parent::__construct(static::DOM_NODE_NAME, $parent);
         $this->setDataElement($dataElement);
         $this->format = DataFormat::getFromName($this->formatName);
     }

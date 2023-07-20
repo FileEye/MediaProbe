@@ -2,10 +2,6 @@
 
 namespace FileEye\MediaProbe\Model;
 
-use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Model\ElementInterface;
-
 /**
  * Interface for Entry objects.
  */

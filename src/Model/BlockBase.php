@@ -8,8 +8,6 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Model\ElementBase;
-use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -19,7 +17,7 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  * serves as a common ancestor to define the methods common to all MediaProbe
  * Block objects.
  */
-abstract class BlockBase extends ElementBase
+abstract class BlockBase extends ElementBase implements BlockInterface
 {
     /**
      * The Definition of this Block.
@@ -34,15 +32,14 @@ abstract class BlockBase extends ElementBase
     /**
      * Constructs a Block object.
      *
-     * @param \FileEye\MediaProbe\ItemDefinition $definition
-     *            The Item Definition of this Block.
-     * @param \FileEye\MediaProbe\Model\BlockBase|null $parent
-     *            (Optional) the parent Block of this Block.
-     * @param \FileEye\MediaProbe\Model\BlockBase|null $reference
-     *            (Optional) if specified, the new Block will be inserted
-     *            before the reference Block.
+     * @param ItemDefinition $definition
+     *   The Item Definition of this Block.
+     * @param BlockInterface|null $parent
+     *   (Optional) the parent Block of this Block.
+     * @param BlockInterface|null $reference
+     *   (Optional) if specified, the new Block will be inserted before the reference Block.
      */
-    public function __construct(ItemDefinition $definition, BlockBase $parent = null, BlockBase $reference = null)
+    public function __construct(ItemDefinition $definition, BlockInterface $parent = null, BlockInterface $reference = null)
     {
         $this->definition = $definition;
 
@@ -146,7 +143,7 @@ abstract class BlockBase extends ElementBase
     /**
      * @todo xxx
      */
-    public function addBlock(ItemDefinition $item_definition, ?BlockBase $parent = null, ?BlockBase $reference = null): BlockBase
+    public function addBlock(ItemDefinition $item_definition, ?BlockInterface $parent = null, ?BlockInterface $reference = null): BlockInterface
     {
         $class = $item_definition->getCollection()->getPropertyValue('class');
         return new $class($item_definition, $parent ?? $this, $reference);
