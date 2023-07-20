@@ -27,6 +27,8 @@ class AFInfoIndex extends Index
         // by opening a 'rawData' node instead of a 'tag'.
         $offset = 0;
         $index_components = $this->getDefinition()->getValuesCount();
+        assert($this->debugInfo(['dataElement' => $data, 'itemsCount' => $index_components]));
+
         for ($i = 0; $i < $index_components; $i++) {
             $item_definition = $this->getItemDefinitionFromData($i, $i, $data, $offset);
 
@@ -53,42 +55,5 @@ class AFInfoIndex extends Index
             $entry_class = $item_definition->getEntryClass();
             new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->getFormat(), $value_components));
         }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0): void
-    {
-        $msg = '#{seq} {node}:{name}';
-        $seq = $this->getDefinition()->getSequence() + 1;
-        if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
-            $seq = $parent_name . '.' . $seq;
-        }
-        $node = $this->DOMNode->nodeName;
-        $name = $this->getAttribute('name');
-        $item = $this->getAttribute('id');
-        if ($item ==! null) {
-            $msg .= ' ({item})';
-        }
-        if (is_numeric($item)) {
-            $item = $item . '/0x' . strtoupper(dechex($item));
-        }
-        if ($data_element instanceof DataWindow) {
-            $msg .= ' @{offset}, {tags} entries, f {format}, s {size}';
-            $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
-        } else {
-            $msg .= ' {tags} entries, format ?xxx, size {size}';
-        }
-        $this->debug($msg, [
-            'seq' => $seq,
-            'node' => $node,
-            'name' => $name,
-            'item' => $item,
-            'offset' => $offset ?? null,
-            'tags' => $this->getDefinition()->getValuesCount(),
-            'format' => DataFormat::getName($this->getDefinition()->getFormat()),
-            'size' => $this->getDefinition()->getSize(),
-        ]);
     }
 }

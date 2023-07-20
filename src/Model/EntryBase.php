@@ -255,8 +255,8 @@ abstract class EntryBase extends ElementBase implements EntryInterface
         return is_null($text) ? null : (string) $text;
     }
 
-    public function asArray(DumperInterface $dumper): array
+    public function asArray(DumperInterface $dumper, array $context = []): array
     {
-        return $dumper->dumpEntry($this);
+        return $dumper->dumpEntry($this, $context);
     }
 }

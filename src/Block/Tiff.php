@@ -231,34 +231,4 @@ class Tiff extends BlockBase
 
         return $order;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function debugBlockInfo(?DataElement $data_element = null): void
-    {
-        $msg = '{node}';
-        $node = $this->DOMNode->nodeName;
-        $name = $this->getAttribute('name');
-        if ($name ==! null) {
-            $msg .= ':{name}';
-        }
-        $title = $this->getCollection()->getPropertyValue('title');
-        if ($title ==! null) {
-            $msg .= ' ({title})';
-        }
-        if ($data_element instanceof DataWindow) {
-            $msg .= ' @{offset} size {size}';
-            $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
-        } else {
-            $msg .= ' size {size} byte(s)';
-        }
-        $this->debug($msg, [
-            'node' => $node,
-            'name' => $name,
-            'title' => $title,
-            'offset' => $offset ?? null,
-            'size' => $data_element ? $data_element->getSize() : null,
-        ]);
-    }
 }

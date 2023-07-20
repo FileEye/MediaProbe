@@ -99,7 +99,7 @@ class Media extends RootBlockBase
         // media format. Then parse the media according to the media format.
         $media = new static($external_logger, $fail_level);
         $media->getStopwatch()->start('media-parsing');
-        $media->debugBlockInfo($data_element);
+        assert($media->debugInfo(['dataElement' => $data_element]));
         $media->addBlock($media_format)->parseData($data_element);
         $media->getStopwatch()->stop('media-parsing');
 

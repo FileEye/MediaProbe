@@ -108,7 +108,7 @@ abstract class BlockBase extends ElementBase
     {
         $data = new DataWindow($data_element, $start, $size);
         $this->size = $data->getSize();
-        $this->debugBlockInfo($data);
+        assert($this->debugInfo(['dataElement' => $data]));
         $this->doParseData($data);
 
         // Invoke post-parse callbacks.
@@ -174,38 +174,39 @@ abstract class BlockBase extends ElementBase
         return $bytes;
     }
 
-    public function asArray(DumperInterface $dumper): array
+    public function asArray(DumperInterface $dumper, array $context = []): array
     {
-        return $dumper->dumpBlock($this);
+        return $dumper->dumpBlock($this, $context);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function debugBlockInfo(?DataElement $data_element = null): void
+    public function collectInfo(array $context = []): array
     {
+        $info = [];
+
         $msg = '{node}';
-        $node = $this->DOMNode->nodeName;
-        $name = $this->getAttribute('name');
-        if ($name ==! null) {
+
+        if (($name = $this->getAttribute('name')) ==! null) {
+            $info['name'] = $name;
             $msg .= ':{name}';
         }
-        $title = $this->getCollection()->getPropertyValue('title');
-        if ($title ==! null) {
+        if (($title = $this->getCollection()->getPropertyValue('title')) ==! null) {
+            $info['title'] = $title;
             $msg .= ' ({title})';
         }
-        if ($data_element instanceof DataWindow) {
-            $msg .= ' @{offset} size {size}';
-            $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
-        } else {
-            $msg .= ' size {size} byte(s)';
+
+        if (isset($context['dataElement'])) {
+            $info['size'] = $context['dataElement']->getSize();
+            if ($context['dataElement'] instanceof DataWindow) {
+                $msg .= ' @{offset} size {size}';
+                $info['offset'] = $context['dataElement']->getAbsoluteOffset() . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset()));
+// @todo $offset = MediaProbe::dumpIntHex($context['dataElement']->getAbsoluteOffset());
+            } else {
+                $msg .= ' size {size} byte(s)';
+            }
         }
-        $this->debug($msg, [
-            'node' => $node,
-            'name' => $name,
-            'title' => $title,
-            'offset' => $offset ?? null,
-            'size' => $data_element ? $data_element->getSize() : null,
-        ]);
+
+        $info['_msg'] = $msg;
+
+        return array_merge(parent::collectInfo($context), $info);
     }
 }

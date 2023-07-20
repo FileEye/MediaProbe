@@ -56,6 +56,8 @@ class Index extends ListBase
         // by opening a 'rawData' node instead of a 'tag'.
         $offset = 0;
         $index_components = $this->getDefinition()->getValuesCount();
+        assert($this->debugInfo(['dataElement' => $data, 'itemsCount' => $index_components]));
+
         for ($i = 0; $i < $index_components; $i++) {
             $item_definition = $this->getItemDefinitionFromData($i, $i, $data, $offset);
 
@@ -204,40 +206,33 @@ class Index extends ListBase
         return $components;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0): void
+    public function collectInfo(array $context = []): array
     {
+        $info = [];
+
+        $parentInfo = parent::collectInfo($context);
+
         $msg = '#{seq} {node}:{name}';
-        $seq = $this->getDefinition()->getSequence() + 1;
+
+        $info['seq'] = $this->getDefinition()->getSequence() + 1;
         if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
-            $seq = $parent_name . '.' . $seq;
+            $info['seq'] = $parent_name . '.' . $info['seq'];
         }
-        $node = $this->DOMNode->nodeName;
-        $name = $this->getAttribute('name');
+
         $item = $this->getAttribute('id');
         if ($item ==! null) {
             $msg .= ' ({item})';
         }
-        if (is_numeric($item)) {
-            $item = $item . '/0x' . strtoupper(dechex($item));
+        $info['item'] = is_numeric($item) ? $item . '/0x' . strtoupper(dechex($item)) : $item;
+
+        if (isset($parentInfo['size'])) {
+            $msg .= isset($parentInfo['offset']) ? ' @{offset}, {tags} entries, f {format}, s {size}' : ' {tags} entries, format ?xxx, size {size}';
         }
-        if ($data_element instanceof DataWindow) {
-            $msg .= ' @{offset}, {tags} entries, f {format}, s {size}';
-            $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
-        } else {
-            $msg .= ' {tags} entries, format ?xxx, size {size}';
-        }
-        $this->debug($msg, [
-            'seq' => $seq,
-            'node' => $node,
-            'name' => $name,
-            'item' => $item,
-            'offset' => $offset ?? null,
-            'tags' => $this->getDefinition()->getValuesCount(),
-            'format' => DataFormat::getName($this->getDefinition()->getFormat()),
-            'size' => $this->getDefinition()->getSize(),
-        ]);
+
+        $info['tags'] = $context['itemsCount'] ?? 'n/a';
+        $info['format'] = DataFormat::getName($this->getDefinition()->getFormat());
+        $info['_msg'] = $msg;
+
+        return array_merge($parentInfo, $info);
     }
 }

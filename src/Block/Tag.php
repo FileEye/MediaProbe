@@ -134,45 +134,38 @@ class Tag extends BlockBase
         return '/{DOMNode}:{id}';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function debugBlockInfo(?DataElement $data_element = null): void
+    public function collectInfo(array $context = []): array
     {
+        $info = [];
+
+        $parentInfo = parent::collectInfo($context);
+
         $msg = '#{seq} @{ifdoffset} {node}';
-        $seq = $this->getDefinition()->getSequence() + 1;
+
+        $info['seq'] = $this->getDefinition()->getSequence() + 1;
         if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
-            $seq = $parent_name . '.' . $seq;
+            $info['seq'] = $parent_name . '.' . $info['seq'];
         }
-        $item_definition_offset = $this->getDefinition()->getItemDefinitionOffset();
-        $node = $this->DOMNode->nodeName;
-        $name = $this->getAttribute('name');
-        if ($name ==! null) {
-            $msg .= ':{name}';
-        }
+        $info['ifdoffset'] = MediaProbe::dumpIntHex($this->getDefinition()->getItemDefinitionOffset());
+
+        $msg .= isset($parentInfo['name']) ? ':{name}' : '';
+
         $item = $this->getAttribute('id');
         if ($item ==! null) {
             $msg .= ' ({item})';
         }
-        $item = MediaProbe::dumpIntHex($item);
-        if ($data_element instanceof DataWindow) {
-            $msg .= ' @{offset} s {size}';
-            $offset = MediaProbe::dumpIntHex($data_element->getAbsoluteOffset());
-        } else {
-            $msg .= ' size {size} byte(s)';
+        $info['item'] = MediaProbe::dumpIntHex($item);
+
+        if (isset($parentInfo['size'])) {
+            $msg .= isset($parentInfo['offset']) ? ' @{offset} size {size}' : ' size {size} byte(s)';
         }
-        $msg .= ', f {format}, c {components}';
-        $this->debug($msg, [
-            'seq' => $seq,
-            'ifdoffset' => MediaProbe::dumpIntHex($item_definition_offset),
-            'format' => DataFormat::getName($this->getDefinition()->getFormat()),
-            'components' => $this->getDefinition()->getValuesCount(),
-            'node' => $node,
-            'name' => $name,
-            'item' => $item,
-//            'title' => $title,
-            'offset' => $offset ?? null,
-            'size' => $data_element ? $data_element->getSize() : null,
-        ]);
+
+        $info['format'] = DataFormat::getName($this->getDefinition()->getFormat());
+        $info['components'] = $this->getDefinition()->getValuesCount();
+        $msg .= ', format {format}, components {components}';
+
+        $info['_msg'] = $msg;
+
+        return array_merge($parentInfo, $info);
     }
 }

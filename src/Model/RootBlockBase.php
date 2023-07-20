@@ -2,6 +2,8 @@
 
 namespace FileEye\MediaProbe\Model;
 
+use FileEye\MediaProbe\Dumper\DebugDumper;
+use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\ItemDefinition;
 
 /**
@@ -15,6 +17,11 @@ abstract class RootBlockBase extends BlockBase
     protected \DOMXpath $XPath;
 
     /**
+     * The element dumper returning debug info for the elements.
+     */
+    protected DumperInterface $debugDumper;
+
+    /**
      * @param \FileEye\MediaProbe\ItemDefinition $definition
      *   The Item Definition of this Block.
      */
@@ -22,5 +29,6 @@ abstract class RootBlockBase extends BlockBase
     {
         parent::__construct($definition);
         $this->XPath = new \DOMXPath($this->DOMNode->ownerDocument);
+        $this->debugDumper = new DebugDumper();
     }
 }

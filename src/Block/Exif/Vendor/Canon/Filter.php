@@ -90,18 +90,11 @@ class Filter extends ListBase
         return $bytes;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function debugBlockInfo(?DataElement $data_element = null, int $items_count = 0): void
+    public function collectInfo(array $context = []): array
     {
-        $msg = 'filter#{seq} ';
-        $seq = $this->getDefinition()->getSequence() + 1;
-        $msg .= ' @{offset}, {parms} parameter(s), size {size} bytes';
-        $offset = $data_element->getAbsoluteOffset() . '/0x' . strtoupper(dechex($data_element->getAbsoluteOffset()));
-        $this->debug($msg, [
-            'seq' => $seq,
-            'offset' => $offset,
+        return array_merge(parent::collectInfo($context), [
+            '_msg' =>'filter#{seq} @{offset}, {parms} parameter(s), size {size} bytes',
+            'seq' => $this->getDefinition()->getSequence() + 1,
             'parms' => $this->paramsCount ?? 'n/a',
             'size' => $this->getDefinition()->getSize(),
         ]);
