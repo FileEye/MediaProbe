@@ -15,6 +15,8 @@ interface ElementInterface
 {
     /**
      * Returns the name of the DOM node of this element.
+     *
+     * @todo remove and leave as a key in collectInfo
      */
     public function getNodeName(): string;
 

@@ -27,11 +27,6 @@ class Map extends Index
     protected int $format;
 
     /**
-     * The amount of components in the map.
-     */
-    protected int $components;
-
-    /**
      * {@inheritdoc}
      */
     public function __construct(ItemDefinition $definition, BlockBase $parent = null, BlockBase $reference = null)
@@ -47,6 +42,7 @@ class Map extends Index
     protected function doParseData(DataElement $data): void
     {
         $this->validate($data);
+        assert($this->debugInfo(['dataElement' => $data]));
 
         // Preserve the entire map as a raw data block.
         $mapdata = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'mapdata']));

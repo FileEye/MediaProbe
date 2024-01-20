@@ -107,6 +107,13 @@ class Media extends RootBlockBase
     }
 
     /**
+     * @todo remove, replace by parser
+     */
+    protected function doParseData(DataElement $data): void
+    {
+    }
+
+    /**
      * Determines the media format collection of the media data.
      *
      * @param DataElement $data_element

@@ -26,6 +26,11 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 abstract class ListBase extends BlockBase
 {
     /**
+     * The amount of components in the list.
+     */
+    protected int $components;
+
+    /**
      * {@inheritdoc}
      */
     public function getComponents(): int

@@ -25,6 +25,7 @@ class JpegSegmentSos extends JpegSegmentBase
      */
     protected function doParseData(DataElement $data): void
     {
+        assert($this->debugInfo(['dataElement' => $data]));
         // This segment is last before End Of Image, and its length needs to be
         // determined by finding the EOI marker backwards from the end of data.
         // Some images have some trailing (garbage?) following the EOI marker,

@@ -25,6 +25,8 @@ class CustomFunctions2 extends ListBase
      */
     protected function doParseData(DataElement $data): void
     {
+        assert($this->debugInfo(['dataElement' => $data]));
+
         $rec_pos = 0;
         for ($n = 0; $n < $this->getDefinition()->getValuesCount(); $n++) {
             $id = $data->getLong($rec_pos);

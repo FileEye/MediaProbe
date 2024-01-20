@@ -33,6 +33,8 @@ class Jpeg extends BlockBase
      */
     protected function doParseData(DataElement $data): void
     {
+        assert($this->debugInfo(['dataElement' => $data]));
+
         // JPEG data is stored in big-endian format.
         $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
 

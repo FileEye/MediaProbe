@@ -16,7 +16,7 @@ class FilterInfo extends CollectionBase {
   'name' => 'CanonFilterInfo',
   'title' => 'Canon FilterInfo',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\FilterInfoIndex',
-  'DOMNode' => 'index',
+  'DOMNode' => 'filterInfo',
   'defaultItemCollection' => 'Tag',
   'id' => 'ExifMakerNotes\\Canon\\FilterInfo',
   'itemsByName' =>

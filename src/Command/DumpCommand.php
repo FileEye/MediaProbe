@@ -56,7 +56,7 @@ class DumpCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $sourcePath = $input->getArgument('file-path');
         $dumpPath = $input->getArgument('dump-path');

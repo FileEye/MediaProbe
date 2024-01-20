@@ -21,6 +21,8 @@ class RunTime extends ListBase
      */
     protected function doParseData(DataElement $data): void
     {
+        assert($this->debugInfo(['dataElement' => $data]));
+
         $plist = new CFPropertyList();
         $plist->parse($data->getBytes(0, $this->getDefinition()->getValuesCount()));
 

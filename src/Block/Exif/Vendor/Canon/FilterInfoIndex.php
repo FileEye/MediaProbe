@@ -41,24 +41,29 @@ class FilterInfoIndex extends Index
     {
         $offset = 0;
 
+        // The count of filters is at offset 4.
+        $this->components = $data->getLong($offset + 4);
+
+        assert($this->debugInfo(['dataElement' => $data]));
+
         // The first 4 bytes is a marker (?), store as RawData.
         $this
             ->addBlock(new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'filterHeader']), DataFormat::BYTE, 4))
             ->parseData(new DataWindow($data, $offset, 4));
-        $offset += 4;
-
-        // The next 4 bytes define the count of filters.
-        $index_components = $data->getLong($offset);
-        $this->debug("{filters} filters", [
-            'filters' => $index_components,
-        ]);
-        $offset += 4;
+        $offset += 8;
 
         // Loop and parse through the filters.
-        for ($i = 0; $i < $index_components; $i++) {
+        for ($i = 0; $i < $this->components; $i++) {
             $filter_size = $data->getLong($offset + 4);
             $this
-                ->addBlock(new ItemDefinition(CollectionFactory::get('ExifMakerNotes\Canon\Filter'), DataFormat::BYTE, $filter_size, $offset, 0, $i))
+                ->addBlock(
+                    new ItemDefinition(CollectionFactory::get('ExifMakerNotes\Canon\Filter'),
+                    DataFormat::BYTE,
+                    $filter_size,
+                    $offset,
+                    0,
+                    $i
+                ))
                 ->parseData(new DataWindow($data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }
@@ -97,5 +102,13 @@ class FilterInfoIndex extends Index
         }
 
         return $bytes;
+    }
+
+    public function collectInfo(array $context = []): array
+    {
+        $info = [];
+        $parentInfo = parent::collectInfo($context);
+        $info['tags'] = $this->components;
+        return array_merge($parentInfo, $info);
     }
 }

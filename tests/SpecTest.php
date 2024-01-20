@@ -111,7 +111,7 @@ class SpecTest extends MediaProbeTestCaseBase
     /**
      * Data provider for testGetTagText.
      */
-    public function getTagTextProvider()
+    public static function getTagTextProvider()
     {
         return [
             'IFD0/PlanarConfiguration - value 1' => [

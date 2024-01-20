@@ -26,10 +26,10 @@ class AFInfoIndex extends Index
         // property is true, the first entry is a special case that is handled
         // by opening a 'rawData' node instead of a 'tag'.
         $offset = 0;
-        $index_components = $this->getDefinition()->getValuesCount();
-        assert($this->debugInfo(['dataElement' => $data, 'itemsCount' => $index_components]));
+        $this->components = $this->getDefinition()->getValuesCount();
+        assert($this->debugInfo(['dataElement' => $data]));
 
-        for ($i = 0; $i < $index_components; $i++) {
+        for ($i = 0; $i < $this->components; $i++) {
             $item_definition = $this->getItemDefinitionFromData($i, $i, $data, $offset);
 
             // Check if this tag should be skipped.
@@ -40,10 +40,10 @@ class AFInfoIndex extends Index
 
             if (in_array($item_definition->getCollection()->getPropertyValue('name'), ['AFAreaWidths', 'AFAreaHeights', 'AFAreaXPositions', 'AFAreaYPositions'])) {
                 $value_components = $this->getElement("tag[@name='NumAFPoints']")->getElement("entry")->getValue();
-                $index_components -= ($value_components - 1);
+                $this->components -= ($value_components - 1);
             } elseif (in_array($item_definition->getCollection()->getPropertyValue('name'), ['AFPointsInFocus', 'AFPointsSelected'])) {
                 $value_components = (int) (($this->getElement("tag[@name='NumAFPoints']")->getElement("entry")->getValue() + 15) / 16);
-                $index_components -= ($value_components - 1);
+                $this->components -= ($value_components - 1);
             } else {
                 $value_components = 1;
             }

@@ -100,7 +100,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         }
     }
 
-    public function writeEntryProvider()
+    public static function writeEntryProvider()
     {
         return [
             'Byte Read/Write Tests' => [
