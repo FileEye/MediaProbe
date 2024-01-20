@@ -8,7 +8,7 @@
     "homepage": "https://github.com/FileEye/MediaProbe",
     "license": "GPL-3.0",
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.1",
         "ext-gd": "*",
         "ext-mbstring": "*",
         "composer-runtime-api": "^2.0.0",
@@ -16,18 +16,18 @@
         "monolog/monolog": "^3",
         "shanethehat/pretty-xml": "*",
         "sibche/plist": "*",
-        "symfony/stopwatch": "^6"
+        "symfony/stopwatch": "^6 | ^7"
     },
     "require-dev" : {
         "ext-exif": "*",
-        "phpunit/phpunit": "^9",
+        "phpunit/phpunit": "^9 | ^10",
         "squizlabs/php_codesniffer": "*",
-        "symfony/console": "^6",
-        "symfony/finder": "^6",
-        "symfony/filesystem": "^6",
-        "symfony/process": "^6",
-        "symfony/var-dumper": "^6",
-        "symfony/yaml": "^6",
+        "symfony/console": "^6 | ^7",
+        "symfony/finder": "^6 | ^7",
+        "symfony/filesystem": "^6 | ^7",
+        "symfony/process": "^6 | ^7",
+        "symfony/var-dumper": "^6 | ^7",
+        "symfony/yaml": "^6 | ^7",
         "bramus/monolog-colored-line-formatter": "^3"
     },
     "autoload": {
