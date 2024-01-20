@@ -26,6 +26,8 @@ class CustomFunctions2Header extends ListBase
      */
     protected function doParseData(DataElement $data): void
     {
+        assert($this->debugInfo(['dataElement' => $data]));
+
         $offset = 0;
         $size = $this->getDefinition()->getSize();
 

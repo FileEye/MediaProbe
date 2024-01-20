@@ -1,18 +1,19 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
-use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Index;
+use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Block\Tag;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -30,6 +31,12 @@ class Filter extends ListBase
      */
     protected int $paramsCount;
 
+    public function __construct(ItemDefinition $definition, BlockInterface $parent = null, BlockInterface $reference = null)
+    {
+        parent::__construct($definition, $parent, $reference);
+        $this->setAttribute('name', $this->getParentElement()->getAttribute('name') . '.' . $definition->getSequence());
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -38,22 +45,35 @@ class Filter extends ListBase
         $offset = 0;
 
         // The id of the filter is at offset 0.
-        $this->setAttribute('id', $data->getLong($offset));
+        $this->setAttribute('id', (string) $data->getLong($offset));
 
         // The count of filter parameters is at offset 8.
         $this->paramsCount = $data->getLong($offset + 8);
         $offset += 12;
 
+        assert($this->debugInfo(['dataElement' => $data]));
+
         // Loop and parse through the parameters.
         for ($p = 0; $p < $this->paramsCount; $p++) {
-            $id = $data->getLong($offset);
+            $id = (string) $data->getLong($offset);
             $val_count = $data->getLong($offset + 4);
             $offset += 8;
 
             // The items are defined in the collection of the parent element.
             $this
-                ->addBlock(new ItemDefinition($this->getParentElement()->getCollection()->getItemCollection($id), DataFormat::SIGNED_LONG, $val_count))
-                ->parseData(new DataWindow($data, $offset, $val_count * DataFormat::getSize(DataFormat::SIGNED_LONG)));
+                ->addBlock(new ItemDefinition(
+                    $this->getParentElement()->getCollection()->getItemCollection($id),
+                    DataFormat::SIGNED_LONG,
+                    $val_count,
+                    0,
+                    $offset,
+                    $p,
+                ))
+                ->parseData(new DataWindow(
+                    $data,
+                    $offset,
+                    $val_count * DataFormat::getSize(DataFormat::SIGNED_LONG)
+                ));
 
             $offset += 4 * $val_count;
         }
@@ -67,13 +87,13 @@ class Filter extends ListBase
         $bytes = '';
 
         // The id of the filter.
-        $bytes .= ConvertBytes::fromLong($this->getAttribute('id'), $byte_order);
+        $bytes .= ConvertBytes::fromLong((int) $this->getAttribute('id'), $byte_order);
 
         // Build the parameters.
         $params = $this->getMultipleElements('*');
         $data_area_bytes = '';
         foreach ($params as $param) {
-            $data_area_bytes .= ConvertBytes::fromLong($param->getAttribute('id'), $byte_order);
+            $data_area_bytes .= ConvertBytes::fromLong((int)  $param->getAttribute('id'), $byte_order);
             $data_area_bytes .= ConvertBytes::fromLong($param->getComponents(), $byte_order);
             $data_area_bytes .= $param->toBytes($byte_order);
         }
@@ -93,10 +113,9 @@ class Filter extends ListBase
     public function collectInfo(array $context = []): array
     {
         return array_merge(parent::collectInfo($context), [
-            '_msg' =>'filter#{seq} @{offset}, {parms} parameter(s), size {size} bytes',
+            '_msg' =>'#{seq}.{name} @{offset}, {parmetersCount} parameter(s), size {size} bytes',
             'seq' => $this->getDefinition()->getSequence() + 1,
-            'parms' => $this->paramsCount ?? 'n/a',
-            'size' => $this->getDefinition()->getSize(),
+            'parmetersCount' => $this->paramsCount,
         ]);
     }
 

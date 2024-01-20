@@ -98,6 +98,13 @@ class Ifd extends ListBase
     }
 
     /**
+     * @todo remove, replace by parser
+     */
+    protected function doParseData(DataElement $data): void
+    {
+    }
+
+    /**
      * Gets the number of items in the IFD, from the data.
      *
      * Items can be TAGs, other IFDs, etc.
@@ -445,11 +452,10 @@ class Ifd extends ListBase
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
 
-        $item = $this->getAttribute('id');
-        if ($item ==! null) {
+        if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
+            $info['item'] = is_numeric($parentInfo['item']) ? $parentInfo['item'] . '/0x' . strtoupper(dechex($parentInfo['item'])) : $parentInfo['item'];
         }
-        $info['item'] = is_numeric($item) ? $item . '/0x' . strtoupper(dechex($item)) : $item;
 
         if (isset($context['dataElement']) && $context['dataElement'] instanceof DataWindow) {
             $info['offset'] = $context['dataElement']->getAbsoluteOffset($this->getDefinition()->getDataOffset()) . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset($this->getDefinition()->getDataOffset())));

@@ -56,19 +56,16 @@ class Tiff extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected function doParseData(DataElement $data_element): void
+    protected function doParseData(DataElement $data): void
     {
         // Determine the byte order of the TIFF data.
-        $this->setByteOrder(self::getTiffSegmentByteOrder($data_element));
-        $data_element->setByteOrder($this->getByteOrder());
+        $this->setByteOrder(self::getTiffSegmentByteOrder($data));
+        $data->setByteOrder($this->getByteOrder());
 
-        $this->debug('byte order: {byte_order} ({byte_order_description})', [
-            'byte_order' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM',
-            'byte_order_description' => $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian',
-        ]);
+        assert($this->debugInfo(['dataElement' => $data]));
 
         // Starting IFD will be at offset 4 (2 bytes for byte order + 2 for header).
-        $ifd_offset = $data_element->getLong(4);
+        $ifd_offset = $data->getLong(4);
 
         // If the offset to first IFD is higher than 8, then there may be an
         // image scan (TIFF) in between. Store that in a RawData block.
@@ -78,13 +75,13 @@ class Tiff extends BlockBase
                 DataFormat::BYTE,
                 $ifd_offset - 8
             );
-            $this->addBlock($scan)->parseData($data_element, 8, $ifd_offset - 8);
+            $this->addBlock($scan)->parseData($data, 8, $ifd_offset - 8);
         }
 
         // Loops through IFDs. In fact we should only have IFD0 and IFD1.
         for ($i = 0; $i <= 1; $i++) {
             // Check data is accessible, warn otherwise.
-            if ($ifd_offset >= $data_element->getSize() || $ifd_offset + 4 > $data_element->getSize()) {
+            if ($ifd_offset >= $data->getSize() || $ifd_offset + 4 > $data->getSize()) {
                 $this->warning(
                     'Could not determine number of entries for {item}, overflow',
                     ['item' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name')]
@@ -93,8 +90,8 @@ class Tiff extends BlockBase
             }
 
             // Find number of tags in IFD and warn if not enough data to read them.
-            $ifd_tags_count = $data_element->getShort($ifd_offset);
-            if ($ifd_offset + $ifd_tags_count * 4 > $data_element->getSize()) {
+            $ifd_tags_count = $data->getShort($ifd_offset);
+            if ($ifd_offset + $ifd_tags_count * 4 > $data->getSize()) {
                 $this->warning(
                     'Invalid data for {item}',
                     ['item' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name')]
@@ -109,7 +106,7 @@ class Tiff extends BlockBase
             $ifd_item = new ItemDefinition($this->getCollection()->getItemCollection($i), DataFormat::LONG, $ifd_tags_count, $ifd_offset, 0, $i);
             $ifd = new $ifd_class($ifd_item, $this);
             try {
-                $ifd->parseData($data_element);
+                $ifd->parseData($data);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
                     'ifd_name' => $this->getCollection()->getItemCollection($i)->getPropertyValue('name'),
@@ -119,7 +116,7 @@ class Tiff extends BlockBase
             }
 
             // Offset to next IFD.
-            $ifd_offset = $data_element->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
+            $ifd_offset = $data->getLong($ifd_offset + $ifd_tags_count * 12 + 2);
 
             // If next IFD offset is 0 we are finished.
             if ($ifd_offset === 0) {
@@ -230,5 +227,18 @@ class Tiff extends BlockBase
         }
 
         return $order;
+    }
+
+    public function collectInfo(array $context = []): array
+    {
+        $info = [];
+
+        $parentInfo = parent::collectInfo($context);
+
+        $info['_msg'] = $parentInfo['_msg'] . ' byte order {byteOrder} ({byteOrderDescription})';
+        $info['byteOrder'] = $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'II' : 'MM';
+        $info['byteOrderDescription'] = $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian';
+
+        return array_merge($parentInfo, $info);
     }
 }

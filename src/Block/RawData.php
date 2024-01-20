@@ -43,6 +43,7 @@ class RawData extends BlockBase
      */
     protected function doParseData(DataElement $data): void
     {
+        assert($this->debugInfo(['dataElement' => $data]));
         new Undefined($this, $data);
     }
 

@@ -32,7 +32,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         parent::tearDown();
     }
 
-    public function mediaFileProvider()
+    public static function mediaFileProvider()
     {
         $finder = new Finder();
         $finder->files()->in(dirname(__FILE__) . '/media-dumps/image')->name('*.dump.yml');

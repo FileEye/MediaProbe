@@ -37,7 +37,7 @@ class CompileCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $compiler = new SpecCompiler();
         $compiler->compile($input->getArgument('spec-dir'), $input->getArgument('resource-dir'));

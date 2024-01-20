@@ -19,15 +19,6 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 class Tag extends BlockBase
 {
     /**
-     * Constructs a Tag block object.
-     */
-    public function __construct(ItemDefinition $definition, BlockBase $parent = null, ElementInterface $reference = null)
-    {
-        parent::__construct($definition, $parent, $reference);
-        $this->validate();
-    }
-
-    /**
      * Validates against the specification, if defined.
      */
     public function validate(): void
@@ -73,6 +64,8 @@ class Tag extends BlockBase
      */
     protected function doParseData(DataElement $data): void
     {
+        $this->validate();
+        assert($this->debugInfo(['dataElement' => $data]));
         try {
             $class = $this->getDefinition()->getEntryClass();
             $entry = new $class($this, $data);
@@ -140,21 +133,21 @@ class Tag extends BlockBase
 
         $parentInfo = parent::collectInfo($context);
 
-        $msg = '#{seq} @{ifdoffset} {node}';
+        $msg = '#{seq} rel@{relativeOffset} {node}';
 
         $info['seq'] = $this->getDefinition()->getSequence() + 1;
         if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
-        $info['ifdoffset'] = MediaProbe::dumpIntHex($this->getDefinition()->getItemDefinitionOffset());
+
+        $info['relativeOffset'] = MediaProbe::dumpIntHex($this->getDefinition()->getItemDefinitionOffset());
 
         $msg .= isset($parentInfo['name']) ? ':{name}' : '';
 
-        $item = $this->getAttribute('id');
-        if ($item ==! null) {
+        if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
+            $info['item'] = MediaProbe::dumpIntHex($parentInfo['item']);
         }
-        $info['item'] = MediaProbe::dumpIntHex($item);
 
         if (isset($parentInfo['size'])) {
             $msg .= isset($parentInfo['offset']) ? ' @{offset} size {size}' : ' size {size} byte(s)';
@@ -162,7 +155,7 @@ class Tag extends BlockBase
 
         $info['format'] = DataFormat::getName($this->getDefinition()->getFormat());
         $info['components'] = $this->getDefinition()->getValuesCount();
-        $msg .= ', format {format}, components {components}';
+        $msg .= ' format {format} count {components}';
 
         $info['_msg'] = $msg;
 

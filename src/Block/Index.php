@@ -55,10 +55,10 @@ class Index extends ListBase
         // property is true, the first entry is a special case that is handled
         // by opening a 'rawData' node instead of a 'tag'.
         $offset = 0;
-        $index_components = $this->getDefinition()->getValuesCount();
-        assert($this->debugInfo(['dataElement' => $data, 'itemsCount' => $index_components]));
+        $this->components = $this->getDefinition()->getValuesCount();
+        assert($this->debugInfo(['dataElement' => $data]));
 
-        for ($i = 0; $i < $index_components; $i++) {
+        for ($i = 0; $i < $this->components; $i++) {
             $item_definition = $this->getItemDefinitionFromData($i, $i, $data, $offset);
 
             // Check if this tag should be skipped.
@@ -67,7 +67,7 @@ class Index extends ListBase
                 continue;
             };
 
-            $index_components -= ($item_definition->getValuesCount() - 1);
+            $this->components -= ($item_definition->getValuesCount() - 1);
 
             // Adds the 'tag'.
             $this->addBlock($item_definition)->parseData($data, $item_definition->getDataOffset(), $item_definition->getSize());
@@ -219,11 +219,10 @@ class Index extends ListBase
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
 
-        $item = $this->getAttribute('id');
-        if ($item ==! null) {
+        if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
+            $info['item'] = is_numeric($parentInfo['item']) ?$parentInfo['item'] . '/0x' . strtoupper(dechex($parentInfo['item'])) : $parentInfo['item'];
         }
-        $info['item'] = is_numeric($item) ? $item . '/0x' . strtoupper(dechex($item)) : $item;
 
         if (isset($parentInfo['size'])) {
             $msg .= isset($parentInfo['offset']) ? ' @{offset}, {tags} entries, f {format}, s {size}' : ' {tags} entries, format ?xxx, size {size}';

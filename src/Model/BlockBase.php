@@ -105,7 +105,6 @@ abstract class BlockBase extends ElementBase implements BlockInterface
     {
         $data = new DataWindow($data_element, $start, $size);
         $this->size = $data->getSize();
-        assert($this->debugInfo(['dataElement' => $data]));
         $this->doParseData($data);
 
         // Invoke post-parse callbacks.
@@ -118,10 +117,7 @@ abstract class BlockBase extends ElementBase implements BlockInterface
      * @param DataElement $data_element
      *   The data element that will provide the data.
      */
-    protected function doParseData(DataElement $data): void
-    {
-        throw new MediaProbeException("%s does not implement the %s method.", get_called_class(), __FUNCTION__);
-    }
+    abstract protected function doParseData(DataElement $data);
 
     /**
      * Invoke post-parse callbacks.
@@ -180,12 +176,13 @@ abstract class BlockBase extends ElementBase implements BlockInterface
     {
         $info = [];
 
-        $msg = '{node}';
+        $parentInfo = parent::collectInfo($context);
 
-        if (($name = $this->getAttribute('name')) ==! null) {
-            $info['name'] = $name;
+        $msg = '{node}';
+        if (isset($parentInfo['name'])) {
             $msg .= ':{name}';
         }
+
         if (($title = $this->getCollection()->getPropertyValue('title')) ==! null) {
             $info['title'] = $title;
             $msg .= ' ({title})';
@@ -196,7 +193,7 @@ abstract class BlockBase extends ElementBase implements BlockInterface
             if ($context['dataElement'] instanceof DataWindow) {
                 $msg .= ' @{offset} size {size}';
                 $info['offset'] = $context['dataElement']->getAbsoluteOffset() . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset()));
-// @todo $offset = MediaProbe::dumpIntHex($context['dataElement']->getAbsoluteOffset());
+                // @todo $offset = MediaProbe::dumpIntHex($context['dataElement']->getAbsoluteOffset());
             } else {
                 $msg .= ' size {size} byte(s)';
             }
@@ -204,6 +201,6 @@ abstract class BlockBase extends ElementBase implements BlockInterface
 
         $info['_msg'] = $msg;
 
-        return array_merge(parent::collectInfo($context), $info);
+        return array_merge($parentInfo, $info);
     }
 }
