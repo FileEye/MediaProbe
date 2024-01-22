@@ -16,22 +16,5 @@ class Media extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Media',
   'DOMNode' => 'media',
   'id' => 'Media',
-  'items' =>
-  array (
-    'Jpeg' =>
-    array (
-      0 =>
-      array (
-        'collection' => 'Jpeg\\Jpeg',
-      ),
-    ),
-    'Tiff' =>
-    array (
-      0 =>
-      array (
-        'collection' => 'Tiff\\Tiff',
-      ),
-    ),
-  ),
 );
 }

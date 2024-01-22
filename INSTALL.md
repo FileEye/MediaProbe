@@ -67,9 +67,9 @@ All in just four lines of code:
 
   ```php5
   <?php
-  use FileEye\MediaProbe\Image;
+  use FileEye\MediaProbe\Media;
 
-  $image = Image::loadFromFile($argv[1]);
+  $image = Media::parseFromFile($argv[1]);
   $entry = $image->getElement("tag[@name='ImageDescription']/entry");
   $entry->setDataElement(['Edited by MediaProbe']);
   $image->saveToFile($argv[1]);

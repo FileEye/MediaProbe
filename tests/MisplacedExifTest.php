@@ -16,7 +16,7 @@ class MisplacedExifTest extends MediaProbeTestCaseBase
     public function testRead()
     {
         // Image contains non-EXIF APP1 segment ahead of the EXIF one.
-        $media = Media::loadFromFile(dirname(__FILE__) . '/media-samples/image/broken/misplaced-exif.jpg');
+        $media = Media::parseFromFile(dirname(__FILE__) . '/media-samples/image/broken/misplaced-exif.jpg');
         $jpeg = $media->getElement("jpeg");
 
         // Assert we just have loaded correct file for the test.

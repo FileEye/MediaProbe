@@ -120,7 +120,7 @@ class DumpCommand extends Command
     {
         $yaml = [];
 
-        $media = Media::loadFromFile((string) $file);
+        $media = Media::parseFromFile((string) $file);
         $yaml['fileName'] = $file->getBaseName();
         $yaml['mimeType'] = $media->getMimeType();
         $yaml['fileContentHash'] = hash('sha256', $file->getContents());

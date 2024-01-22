@@ -135,7 +135,7 @@ if (!is_readable($file)) {
 try {
     /* Load data from file */
     $baseline_memory = FileSizeConvert(memory_get_usage());
-    $media = Media::loadFromFile($file, $logger, $fail_on_error);
+    $media = Media::parseFromFile($file, $logger, $fail_on_error);
     $max_memory = FileSizeConvert(memory_get_peak_usage());
     $curr_memory = FileSizeConvert(memory_get_usage());
     if ($media === null) {

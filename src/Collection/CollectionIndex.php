@@ -153,6 +153,7 @@ class CollectionIndex extends CollectionBase {
     'Jpeg\\SegmentCom' => 'Jpeg\\SegmentCom',
     'Jpeg\\SegmentSos' => 'Jpeg\\SegmentSos',
     'Media' => 'Media',
+    'MediaType' => 'MediaType',
     'RawData' => 'RawData',
     'Tag' => 'Tag',
     'Thumbnail' => 'Thumbnail',
@@ -168,6 +169,8 @@ class CollectionIndex extends CollectionBase {
   ),
   'collectionsByName' =>
   array (
+    0 => 'Tiff\\Ifd0',
+    1 => 'Tiff\\Ifd1',
     'APP1' => 'Jpeg\\SegmentApp1',
     'Apple' => 'ExifMakerNotes\\Apple\\Main',
     'AppleRuntime' => 'ExifMakerNotes\\Apple\\RunTime',
@@ -303,13 +306,13 @@ class CollectionIndex extends CollectionBase {
     'GPS' => 'Tiff\\IfdGps',
     'IFD0' => 'Tiff\\Ifd0',
     'IFD1' => 'Tiff\\Ifd1',
-    0 => 'Tiff\\Ifd0',
     'Interop' => 'Tiff\\IfdInteroperability',
     'InteropIFD' => 'Tiff\\IfdInteroperability',
     'Jpeg\\Jpeg' => 'Jpeg\\Jpeg',
     'Jpeg\\Segment' => 'Jpeg\\Segment',
     'Main' => 'Tiff\\Ifd0',
     'Media' => 'Media',
+    'MediaType' => 'MediaType',
     'RawData' => 'RawData',
     'SOS' => 'Jpeg\\SegmentSos',
     'Tag' => 'Tag',
@@ -318,7 +321,6 @@ class CollectionIndex extends CollectionBase {
     'Tiff\\Tiff' => 'Tiff\\Tiff',
     'UnknownTag' => 'UnknownTag',
     'VoidCollection' => 'VoidCollection',
-    1 => 'Tiff\\Ifd1',
   ),
 );
 }

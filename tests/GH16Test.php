@@ -35,7 +35,7 @@ class GH16Test extends MediaProbeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         // Parse test file.
-        $media = Media::loadFromFile($this->file);
+        $media = Media::parseFromFile($this->file);
         $jpeg = $media->getElement("jpeg");
         $exif = $jpeg->getElement("jpegSegment/exif");
         $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
@@ -52,7 +52,7 @@ class GH16Test extends MediaProbeTestCaseBase
         $media->saveToFile($this->file);
 
         // Parse the test file again and check the Tag's new value was saved.
-        $r_media = Media::loadFromFile($this->file);
+        $r_media = Media::parseFromFile($this->file);
         $r_jpeg = $r_media->getElement("jpeg");
         $r_exif = $r_jpeg->getElement("jpegSegment/exif");
         $r_ifd0 = $r_exif->getElement("tiff/ifd[@name='IFD0']");
