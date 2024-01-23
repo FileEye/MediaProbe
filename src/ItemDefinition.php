@@ -25,7 +25,7 @@ class ItemDefinition
      *   The sequence of the item on its parent list.
      */
     public function __construct(
-        protected CollectionInterface $collection,
+        public readonly CollectionInterface $collection,
         protected int $format = DataFormat::BYTE,
         protected int $valuesCount = 1,
         protected int $dataOffset = 0,

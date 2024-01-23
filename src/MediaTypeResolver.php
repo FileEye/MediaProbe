@@ -24,15 +24,15 @@ class MediaTypeResolver
      */
     public static function fromDataElement(DataElement $dataElement): CollectionInterface
     {
-        $mediaCollection = CollectionFactory::get('MediaType');
+        $mediaTypes = CollectionFactory::get('MediaType');
         // Loop through the 'Media' collection items, each of which defines a media format
         // collection, and checks if the media matches the format. When a match is found, return
         // the media format collection.
-        foreach ($mediaCollection->listItemIds() as $typeItem) {
-            $typeCollection = $mediaCollection->getItemCollection($typeItem);
-            $class = $typeCollection->getPropertyValue('class');
-            if ($class::isDataMatchingFormat($dataElement)) {
-                return $typeCollection;
+        foreach ($mediaTypes->listItemIds() as $id) {
+            $type = $mediaTypes->getItemCollection($id);
+            $parser = $type->getPropertyValue('parser');
+            if ($parser::isDataMatchingMediaType($dataElement)) {
+                return $type;
             }
         }
         throw new MediaProbeException('Media type not managed by MediaProbe');

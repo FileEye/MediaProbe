@@ -112,12 +112,15 @@ class Media extends RootBlockBase
      */
     public static function parse(DataElement $dataElement, ?LoggerInterface $externalLogger = null, ?string $failLevel = null): Media
     {
-        // Determine the media format.
-        $mediaType = new ItemDefinition(MediaTypeResolver::fromDataElement($dataElement));
+        // Determine the media type. Throws MediaProbeException if not determinable.
+        $mediaType = new ItemDefinition(
+            collection: MediaTypeResolver::fromDataElement($dataElement),
+        );
 
-        // Build the Media object and its immediate child, that represents the
-        // media format. Then parse the media according to the media format.
+        // Build the Media object and its immediate child, that represents the actual media. Then
+        // parse the media according to the media format.
         $media = new static($externalLogger, $failLevel);
+        $media->setAttribute('mimeType', (string) $mediaType->collection->getPropertyValue('item'));
         $media->getStopwatch()->start('media-parsing');
         assert($media->debugInfo(['dataElement' => $dataElement]));
         $media->addBlock($mediaType)->parseData($dataElement);
@@ -127,18 +130,11 @@ class Media extends RootBlockBase
     }
 
     /**
-     * @todo remove, replace by parser
-     */
-    protected function doParseData(DataElement $data): void
-    {
-    }
-
-    /**
      * Determines the MIME type of the media.
      */
     public function getMimeType(): string
     {
-        return $this->getElement('*')->getMimeType();
+        return $this->getAttribute('mimeType');
     }
 
     /**
