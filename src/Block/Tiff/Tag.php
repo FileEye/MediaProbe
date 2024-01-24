@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\MediaProbe\Block;
+namespace FileEye\MediaProbe\Block\Tiff;
 
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
@@ -24,7 +24,7 @@ class Tag extends BlockBase
     public function validate(): void
     {
         // Check if MediaProbe has a definition for this tag.
-        if (in_array($this->getCollection()->getPropertyValue('id'), ['VoidCollection', 'UnknownTag'])) {
+        if (in_array($this->getCollection()->getPropertyValue('id'), ['VoidCollection', 'Tiff\UnknownTag'])) {
             $this->notice("Unknown item {item} in '{parent}'", [
                 'item' => MediaProbe::dumpIntHex($this->getAttribute('id')),
                 'parent' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',

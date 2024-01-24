@@ -21,7 +21,7 @@ class Ver2 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\Ver2',
   'itemsByName' =>
   array (
@@ -1227,7 +1227,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PictureStyle',
         'title' => 'Picture Style',
         'format' =>
@@ -1255,7 +1255,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'IsCustomPictureStyle',
         'title' => 'Is Custom Picture Style',
         'format' =>
@@ -1277,7 +1277,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawColorTone',
         'title' => 'Standard Raw Color Tone',
         'format' =>
@@ -1291,7 +1291,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawSaturation',
         'title' => 'Standard Raw Saturation',
         'format' =>
@@ -1305,7 +1305,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawContrast',
         'title' => 'Standard Raw Contrast',
         'format' =>
@@ -1319,7 +1319,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawLinear',
         'title' => 'Standard Raw Linear',
         'format' =>
@@ -1341,7 +1341,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawSharpness',
         'title' => 'Standard Raw Sharpness',
         'format' =>
@@ -1355,7 +1355,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawHighlightPoint',
         'title' => 'Standard Raw Highlight Point',
         'format' =>
@@ -1369,7 +1369,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawShadowPoint',
         'title' => 'Standard Raw Shadow Point',
         'format' =>
@@ -1383,7 +1383,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardOutputHighlightPoint',
         'title' => 'Standard Output Highlight Point',
         'format' =>
@@ -1397,7 +1397,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardOutputShadowPoint',
         'title' => 'Standard Output Shadow Point',
         'format' =>
@@ -1411,7 +1411,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawColorTone',
         'title' => 'Portrait Raw Color Tone',
         'format' =>
@@ -1425,7 +1425,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawSaturation',
         'title' => 'Portrait Raw Saturation',
         'format' =>
@@ -1439,7 +1439,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawContrast',
         'title' => 'Portrait Raw Contrast',
         'format' =>
@@ -1453,7 +1453,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawLinear',
         'title' => 'Portrait Raw Linear',
         'format' =>
@@ -1475,7 +1475,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawSharpness',
         'title' => 'Portrait Raw Sharpness',
         'format' =>
@@ -1489,7 +1489,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawHighlightPoint',
         'title' => 'Portrait Raw Highlight Point',
         'format' =>
@@ -1503,7 +1503,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawShadowPoint',
         'title' => 'Portrait Raw Shadow Point',
         'format' =>
@@ -1517,7 +1517,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitOutputHighlightPoint',
         'title' => 'Portrait Output Highlight Point',
         'format' =>
@@ -1531,7 +1531,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitOutputShadowPoint',
         'title' => 'Portrait Output Shadow Point',
         'format' =>
@@ -1545,7 +1545,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawColorTone',
         'title' => 'Landscape Raw Color Tone',
         'format' =>
@@ -1559,7 +1559,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawSaturation',
         'title' => 'Landscape Raw Saturation',
         'format' =>
@@ -1573,7 +1573,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawContrast',
         'title' => 'Landscape Raw Contrast',
         'format' =>
@@ -1587,7 +1587,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawLinear',
         'title' => 'Landscape Raw Linear',
         'format' =>
@@ -1609,7 +1609,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawSharpness',
         'title' => 'Landscape Raw Sharpness',
         'format' =>
@@ -1623,7 +1623,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawHighlightPoint',
         'title' => 'Landscape Raw Highlight Point',
         'format' =>
@@ -1637,7 +1637,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawShadowPoint',
         'title' => 'Landscape Raw Shadow Point',
         'format' =>
@@ -1651,7 +1651,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeOutputHighlightPoint',
         'title' => 'Landscape Output Highlight Point',
         'format' =>
@@ -1665,7 +1665,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeOutputShadowPoint',
         'title' => 'Landscape Output Shadow Point',
         'format' =>
@@ -1679,7 +1679,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawColorTone',
         'title' => 'Neutral Raw Color Tone',
         'format' =>
@@ -1693,7 +1693,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawSaturation',
         'title' => 'Neutral Raw Saturation',
         'format' =>
@@ -1707,7 +1707,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawContrast',
         'title' => 'Neutral Raw Contrast',
         'format' =>
@@ -1721,7 +1721,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawLinear',
         'title' => 'Neutral Raw Linear',
         'format' =>
@@ -1743,7 +1743,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawSharpness',
         'title' => 'Neutral Raw Sharpness',
         'format' =>
@@ -1757,7 +1757,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawHighlightPoint',
         'title' => 'Neutral Raw Highlight Point',
         'format' =>
@@ -1771,7 +1771,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawShadowPoint',
         'title' => 'Neutral Raw Shadow Point',
         'format' =>
@@ -1785,7 +1785,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralOutputHighlightPoint',
         'title' => 'Neutral Output Highlight Point',
         'format' =>
@@ -1799,7 +1799,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralOutputShadowPoint',
         'title' => 'Neutral Output Shadow Point',
         'format' =>
@@ -1813,7 +1813,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawColorTone',
         'title' => 'Faithful Raw Color Tone',
         'format' =>
@@ -1827,7 +1827,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawSaturation',
         'title' => 'Faithful Raw Saturation',
         'format' =>
@@ -1841,7 +1841,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawContrast',
         'title' => 'Faithful Raw Contrast',
         'format' =>
@@ -1855,7 +1855,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawLinear',
         'title' => 'Faithful Raw Linear',
         'format' =>
@@ -1877,7 +1877,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawSharpness',
         'title' => 'Faithful Raw Sharpness',
         'format' =>
@@ -1891,7 +1891,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawHighlightPoint',
         'title' => 'Faithful Raw Highlight Point',
         'format' =>
@@ -1905,7 +1905,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawShadowPoint',
         'title' => 'Faithful Raw Shadow Point',
         'format' =>
@@ -1919,7 +1919,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulOutputHighlightPoint',
         'title' => 'Faithful Output Highlight Point',
         'format' =>
@@ -1933,7 +1933,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulOutputShadowPoint',
         'title' => 'Faithful Output Shadow Point',
         'format' =>
@@ -1947,7 +1947,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeFilterEffect',
         'title' => 'Monochrome Filter Effect',
         'format' =>
@@ -1972,7 +1972,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeToningEffect',
         'title' => 'Monochrome Toning Effect',
         'format' =>
@@ -1997,7 +1997,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeContrast',
         'title' => 'Monochrome Contrast',
         'format' =>
@@ -2011,7 +2011,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeLinear',
         'title' => 'Monochrome Linear',
         'format' =>
@@ -2033,7 +2033,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeSharpness',
         'title' => 'Monochrome Sharpness',
         'format' =>
@@ -2047,7 +2047,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeRawHighlightPoint',
         'title' => 'Monochrome Raw Highlight Point',
         'format' =>
@@ -2061,7 +2061,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeRawShadowPoint',
         'title' => 'Monochrome Raw Shadow Point',
         'format' =>
@@ -2075,7 +2075,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeOutputHighlightPoint',
         'title' => 'Monochrome Output Highlight Point',
         'format' =>
@@ -2089,7 +2089,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeOutputShadowPoint',
         'title' => 'Monochrome Output Shadow Point',
         'format' =>
@@ -2103,7 +2103,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownContrast',
         'title' => 'Unknown Contrast',
         'format' =>
@@ -2117,7 +2117,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownLinear',
         'title' => 'Unknown Linear',
         'format' =>
@@ -2139,7 +2139,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownSharpness',
         'title' => 'Unknown Sharpness',
         'format' =>
@@ -2153,7 +2153,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownRawHighlightPoint',
         'title' => 'Unknown Raw Highlight Point',
         'format' =>
@@ -2167,7 +2167,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownRawShadowPoint',
         'title' => 'Unknown Raw Shadow Point',
         'format' =>
@@ -2181,7 +2181,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownOutputHighlightPoint',
         'title' => 'Unknown Output Highlight Point',
         'format' =>
@@ -2195,7 +2195,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownOutputShadowPoint',
         'title' => 'Unknown Output Shadow Point',
         'format' =>
@@ -2209,7 +2209,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomColorTone',
         'title' => 'Custom Color Tone',
         'format' =>
@@ -2223,7 +2223,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomSaturation',
         'title' => 'Custom Saturation',
         'format' =>
@@ -2237,7 +2237,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomContrast',
         'title' => 'Custom Contrast',
         'format' =>
@@ -2251,7 +2251,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomLinear',
         'title' => 'Custom Linear',
         'format' =>
@@ -2273,7 +2273,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomSharpness',
         'title' => 'Custom Sharpness',
         'format' =>
@@ -2287,7 +2287,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomRawHighlightPoint',
         'title' => 'Custom Raw Highlight Point',
         'format' =>
@@ -2301,7 +2301,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomRawShadowPoint',
         'title' => 'Custom Raw Shadow Point',
         'format' =>
@@ -2315,7 +2315,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomOutputHighlightPoint',
         'title' => 'Custom Output Highlight Point',
         'format' =>
@@ -2329,7 +2329,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomOutputShadowPoint',
         'title' => 'Custom Output Shadow Point',
         'format' =>
@@ -2343,7 +2343,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomPictureStyleData',
         'title' => 'Custom Picture Style Data',
         'format' =>
@@ -2357,7 +2357,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChrominanceNoiseReduction',
         'title' => 'Chrominance Noise Reduction',
         'format' =>
@@ -2377,7 +2377,7 @@ class Ver2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChrominanceNoiseReduction',
         'title' => 'Chrominance Noise Reduction',
         'format' =>
@@ -2418,7 +2418,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LuminanceNoiseReduction',
         'title' => 'Luminance Noise Reduction',
         'format' =>
@@ -2438,7 +2438,7 @@ class Ver2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LuminanceNoiseReduction',
         'title' => 'Luminance Noise Reduction',
         'format' =>
@@ -2479,7 +2479,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChrominanceNR_TIFF_JPEG',
         'title' => 'Chrominance NR TIFF JPEG',
         'format' =>
@@ -2499,7 +2499,7 @@ class Ver2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChrominanceNR_TIFF_JPEG',
         'title' => 'Chrominance NR TIFF JPEG',
         'format' =>
@@ -2540,7 +2540,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberrationOn',
         'title' => 'Chromatic Aberration On',
         'format' =>
@@ -2562,7 +2562,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DistortionCorrectionOn',
         'title' => 'Distortion Correction On',
         'format' =>
@@ -2584,7 +2584,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PeripheralIlluminationOn',
         'title' => 'Peripheral Illumination On',
         'format' =>
@@ -2606,7 +2606,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorBlur',
         'title' => 'Color Blur',
         'format' =>
@@ -2628,7 +2628,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberration',
         'title' => 'Chromatic Aberration',
         'format' =>
@@ -2642,7 +2642,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DistortionCorrection',
         'title' => 'Distortion Correction',
         'format' =>
@@ -2656,7 +2656,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PeripheralIllumination',
         'title' => 'Peripheral Illumination',
         'format' =>
@@ -2670,7 +2670,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AberrationCorrectionDistance',
         'title' => 'Aberration Correction Distance',
         'format' =>
@@ -2684,7 +2684,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberrationRed',
         'title' => 'Chromatic Aberration Red',
         'format' =>
@@ -2698,7 +2698,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberrationBlue',
         'title' => 'Chromatic Aberration Blue',
         'format' =>
@@ -2712,7 +2712,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LuminanceNR_TIFF_JPEG',
         'title' => 'Luminance NR TIFF JPEG',
         'format' =>
@@ -2726,7 +2726,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AutoLightingOptimizerOn',
         'title' => 'Auto Lighting Optimizer On',
         'format' =>
@@ -2748,7 +2748,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AutoLightingOptimizer',
         'title' => 'Auto Lighting Optimizer',
         'format' =>
@@ -2772,7 +2772,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawHighlight',
         'title' => 'Standard Raw Highlight',
         'format' =>
@@ -2786,7 +2786,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawHighlight',
         'title' => 'Portrait Raw Highlight',
         'format' =>
@@ -2800,7 +2800,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawHighlight',
         'title' => 'Landscape Raw Highlight',
         'format' =>
@@ -2814,7 +2814,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawHighlight',
         'title' => 'Neutral Raw Highlight',
         'format' =>
@@ -2828,7 +2828,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawHighlight',
         'title' => 'Faithful Raw Highlight',
         'format' =>
@@ -2842,7 +2842,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeRawHighlight',
         'title' => 'Monochrome Raw Highlight',
         'format' =>
@@ -2856,7 +2856,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownRawHighlight',
         'title' => 'Unknown Raw Highlight',
         'format' =>
@@ -2870,7 +2870,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomRawHighlight',
         'title' => 'Custom Raw Highlight',
         'format' =>
@@ -2884,7 +2884,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardRawShadow',
         'title' => 'Standard Raw Shadow',
         'format' =>
@@ -2898,7 +2898,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitRawShadow',
         'title' => 'Portrait Raw Shadow',
         'format' =>
@@ -2912,7 +2912,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeRawShadow',
         'title' => 'Landscape Raw Shadow',
         'format' =>
@@ -2926,7 +2926,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralRawShadow',
         'title' => 'Neutral Raw Shadow',
         'format' =>
@@ -2940,7 +2940,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulRawShadow',
         'title' => 'Faithful Raw Shadow',
         'format' =>
@@ -2954,7 +2954,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeRawShadow',
         'title' => 'Monochrome Raw Shadow',
         'format' =>
@@ -2968,7 +2968,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnknownRawShadow',
         'title' => 'Unknown Raw Shadow',
         'format' =>
@@ -2982,7 +2982,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomRawShadow',
         'title' => 'Custom Raw Shadow',
         'format' =>
@@ -2996,7 +2996,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AngleAdj',
         'title' => 'Angle Adj',
         'format' =>
@@ -3010,7 +3010,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CheckMark2',
         'title' => 'Check Mark 2',
         'format' =>
@@ -3036,7 +3036,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnsharpMask',
         'title' => 'Unsharp Mask',
         'format' =>
@@ -3058,7 +3058,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardUnsharpMaskStrength',
         'title' => 'Standard Unsharp Mask Strength',
         'format' =>
@@ -3072,7 +3072,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardUnsharpMaskFineness',
         'title' => 'Standard Unsharp Mask Fineness',
         'format' =>
@@ -3086,7 +3086,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardUnsharpMaskThreshold',
         'title' => 'Standard Unsharp Mask Threshold',
         'format' =>
@@ -3100,7 +3100,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitUnsharpMaskStrength',
         'title' => 'Portrait Unsharp Mask Strength',
         'format' =>
@@ -3114,7 +3114,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitUnsharpMaskFineness',
         'title' => 'Portrait Unsharp Mask Fineness',
         'format' =>
@@ -3128,7 +3128,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PortraitUnsharpMaskThreshold',
         'title' => 'Portrait Unsharp Mask Threshold',
         'format' =>
@@ -3142,7 +3142,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeUnsharpMaskStrength',
         'title' => 'Landscape Unsharp Mask Strength',
         'format' =>
@@ -3156,7 +3156,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeUnsharpMaskFineness',
         'title' => 'Landscape Unsharp Mask Fineness',
         'format' =>
@@ -3170,7 +3170,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LandscapeUnsharpMaskThreshold',
         'title' => 'Landscape Unsharp Mask Threshold',
         'format' =>
@@ -3184,7 +3184,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutraUnsharpMaskStrength',
         'title' => 'Neutra Unsharp Mask Strength',
         'format' =>
@@ -3198,7 +3198,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralUnsharpMaskFineness',
         'title' => 'Neutral Unsharp Mask Fineness',
         'format' =>
@@ -3212,7 +3212,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NeutralUnsharpMaskThreshold',
         'title' => 'Neutral Unsharp Mask Threshold',
         'format' =>
@@ -3226,7 +3226,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulUnsharpMaskStrength',
         'title' => 'Faithful Unsharp Mask Strength',
         'format' =>
@@ -3240,7 +3240,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulUnsharpMaskFineness',
         'title' => 'Faithful Unsharp Mask Fineness',
         'format' =>
@@ -3254,7 +3254,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaithfulUnsharpMaskThreshold',
         'title' => 'Faithful Unsharp Mask Threshold',
         'format' =>
@@ -3268,7 +3268,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeUnsharpMaskStrength',
         'title' => 'Monochrome Unsharp Mask Strength',
         'format' =>
@@ -3282,7 +3282,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeUnsharpMaskFineness',
         'title' => 'Monochrome Unsharp Mask Fineness',
         'format' =>
@@ -3296,7 +3296,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeUnsharpMaskThreshold',
         'title' => 'Monochrome Unsharp Mask Threshold',
         'format' =>
@@ -3310,7 +3310,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomUnsharpMaskStrength',
         'title' => 'Custom Unsharp Mask Strength',
         'format' =>
@@ -3324,7 +3324,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomUnsharpMaskFineness',
         'title' => 'Custom Unsharp Mask Fineness',
         'format' =>
@@ -3338,7 +3338,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomUnsharpMaskThreshold',
         'title' => 'Custom Unsharp Mask Threshold',
         'format' =>
@@ -3352,7 +3352,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomDefaultUnsharpStrength',
         'title' => 'Custom Default Unsharp Strength',
         'format' =>
@@ -3366,7 +3366,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomDefaultUnsharpFineness',
         'title' => 'Custom Default Unsharp Fineness',
         'format' =>
@@ -3380,7 +3380,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomDefaultUnsharpThreshold',
         'title' => 'Custom Default Unsharp Threshold',
         'format' =>
@@ -3394,7 +3394,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropCircleActive',
         'title' => 'Crop Circle Active',
         'format' =>
@@ -3416,7 +3416,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropCircleX',
         'title' => 'Crop Circle X',
         'format' =>
@@ -3430,7 +3430,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropCircleY',
         'title' => 'Crop Circle Y',
         'format' =>
@@ -3444,7 +3444,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropCircleRadius',
         'title' => 'Crop Circle Radius',
         'format' =>
@@ -3458,7 +3458,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOOn',
         'title' => 'DLO On',
         'format' =>
@@ -3480,7 +3480,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOSetting',
         'title' => 'DLO Setting',
         'format' =>
@@ -3494,7 +3494,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOShootingDistance',
         'title' => 'DLO Shooting Distance',
         'format' =>
@@ -3508,7 +3508,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLODataLength',
         'title' => 'DLO Data Length',
         'format' =>
@@ -3522,7 +3522,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawColorTone',
         'title' => 'Camera Raw Color Tone',
         'format' =>
@@ -3536,7 +3536,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawSaturation',
         'title' => 'Camera Raw Saturation',
         'format' =>
@@ -3550,7 +3550,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawContrast',
         'title' => 'Camera Raw Contrast',
         'format' =>
@@ -3564,7 +3564,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawLinear',
         'title' => 'Camera Raw Linear',
         'format' =>
@@ -3586,7 +3586,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawSharpness',
         'title' => 'Camera Raw Sharpness',
         'format' =>
@@ -3600,7 +3600,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawHighlightPoint',
         'title' => 'Camera Raw Highlight Point',
         'format' =>
@@ -3614,7 +3614,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawShadowPoint',
         'title' => 'Camera Raw Shadow Point',
         'format' =>
@@ -3628,7 +3628,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawOutputHighlightPoint',
         'title' => 'Camera Raw Output Highlight Point',
         'format' =>
@@ -3642,7 +3642,7 @@ class Ver2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraRawOutputShadowPoint',
         'title' => 'Camera Raw Output Shadow Point',
         'format' =>

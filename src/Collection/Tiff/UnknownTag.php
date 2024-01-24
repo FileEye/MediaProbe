@@ -6,16 +6,16 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection;
+namespace FileEye\MediaProbe\Collection\Tiff;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Tag extends CollectionBase {
+class UnknownTag extends CollectionBase {
 
   protected static $map = array (
-  'title' => 'Tag',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tag',
+  'title' => 'Unknown Tag',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tag',
   'DOMNode' => 'tag',
-  'id' => 'Tag',
+  'id' => 'Tiff\\UnknownTag',
 );
 }

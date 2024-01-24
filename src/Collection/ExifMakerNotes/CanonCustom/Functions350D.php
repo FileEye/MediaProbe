@@ -21,7 +21,7 @@ class Functions350D extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions350D',
   'itemsByName' =>
   array (
@@ -107,7 +107,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SetButtonCrossKeysFunc',
         'title' => 'Set Button Cross Keys Func',
         'format' =>
@@ -132,7 +132,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LongExposureNoiseReduction',
         'title' => 'Long Exposure Noise Reduction',
         'format' =>
@@ -154,7 +154,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -176,7 +176,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Shutter-AELock',
         'title' => 'Shutter-AE Lock',
         'format' =>
@@ -200,7 +200,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFAssistBeam',
         'title' => 'AF Assist Beam',
         'format' =>
@@ -223,7 +223,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
         'format' =>
@@ -245,7 +245,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MirrorLockup',
         'title' => 'Mirror Lockup',
         'format' =>
@@ -267,7 +267,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ETTLII',
         'title' => 'E-TTL II',
         'format' =>
@@ -289,7 +289,7 @@ class Functions350D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterCurtainSync',
         'title' => 'Shutter Curtain Sync',
         'format' =>

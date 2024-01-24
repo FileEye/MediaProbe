@@ -21,7 +21,7 @@ class DustInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\DustInfo',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class DustInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DustDeleteApplied',
         'title' => 'Dust Delete Applied',
         'format' =>

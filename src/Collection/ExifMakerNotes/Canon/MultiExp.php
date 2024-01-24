@@ -21,7 +21,7 @@ class MultiExp extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\MultiExp',
   'itemsByName' =>
   array (
@@ -59,7 +59,7 @@ class MultiExp extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MultiExposure',
         'title' => 'Multi Exposure',
         'format' =>
@@ -82,7 +82,7 @@ class MultiExp extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MultiExposureControl',
         'title' => 'Multi Exposure Control',
         'format' =>
@@ -106,7 +106,7 @@ class MultiExp extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MultiExposureShots',
         'title' => 'Multi Exposure Shots',
         'format' =>

@@ -2,9 +2,9 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\JpegSegmentApp1;
+use FileEye\MediaProbe\Block\Jpeg\Exif;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Media;
@@ -27,8 +27,8 @@ class MisplacedExifTest extends MediaProbeTestCaseBase
 
         // Add a new APP1 segment.
         $app1_segment_definition = new ItemDefinition(CollectionFactory::get('Jpeg\SegmentApp1'));
-        $app1_segment = new JpegSegmentApp1($app1_segment_definition, $jpeg);
-        $exif_definition = new ItemDefinition(CollectionFactory::get('Exif\Exif'));
+        $app1_segment = new SegmentApp1($app1_segment_definition, $jpeg);
+        $exif_definition = new ItemDefinition(CollectionFactory::get('Jpeg\Exif'));
         $newExif = new Exif($exif_definition, $app1_segment);
 
         // Ensure new APP1 segment is set to correct position among segments.

@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\MediaProbe\Block;
+namespace FileEye\MediaProbe\Block\Jpeg;
 
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
@@ -10,7 +10,7 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 /**
  * Class representing a JPEG comment segment.
  */
-class JpegSegmentCom extends JpegSegmentBase
+class SegmentCom extends SegmentBase
 {
     /**
      * {@inheritdoc}

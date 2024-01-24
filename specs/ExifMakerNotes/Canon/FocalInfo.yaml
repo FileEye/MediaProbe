@@ -1,10 +1,10 @@
 collection: ExifMakerNotes\Canon\FocalInfo
 name: CanonFocalInfo
 title: 'Canon FocalInfo'
-class: FileEye\MediaProbe\Block\Exif\Ifd
+class: FileEye\MediaProbe\Block\Tiff\Ifd
 DOMNode: index
 format: Long
-defaultItemCollection: Tag
+defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon

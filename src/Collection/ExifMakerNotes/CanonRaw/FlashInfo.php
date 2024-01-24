@@ -21,7 +21,7 @@ class FlashInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\FlashInfo',
   'itemsByName' =>
   array (
@@ -51,7 +51,7 @@ class FlashInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashGuideNumber',
         'title' => 'Flash Guide Number',
         'format' =>
@@ -65,7 +65,7 @@ class FlashInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashThreshold',
         'title' => 'Flash Threshold',
         'format' =>

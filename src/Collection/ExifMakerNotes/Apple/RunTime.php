@@ -17,7 +17,7 @@ class RunTime extends CollectionBase {
   'title' => 'Apple Runtime',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\RunTime',
   'DOMNode' => 'plist',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Apple\\RunTime',
   'itemsByName' =>
   array (
@@ -67,7 +67,7 @@ class RunTime extends CollectionBase {
         array (
           0 => 2000,
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RunTimeEpoch',
         'title' => 'Run Time Epoch',
         'exiftoolDOMNode' => 'Apple:RunTimeEpoch',
@@ -81,7 +81,7 @@ class RunTime extends CollectionBase {
         array (
           0 => 2000,
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RunTimeFlags',
         'title' => 'Run Time Flags',
         'text' =>
@@ -106,7 +106,7 @@ class RunTime extends CollectionBase {
         array (
           0 => 2000,
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RunTimeScale',
         'title' => 'Run Time Scale',
         'exiftoolDOMNode' => 'Apple:RunTimeScale',
@@ -120,7 +120,7 @@ class RunTime extends CollectionBase {
         array (
           0 => 2000,
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RunTimeValue',
         'title' => 'Run Time Value',
         'exiftoolDOMNode' => 'Apple:RunTimeValue',

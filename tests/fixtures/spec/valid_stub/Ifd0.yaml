@@ -1,20 +1,20 @@
 collection: Tiff\Ifd0
 name: IFD0
 title: IFD0
-class: FileEye\MediaProbe\Block\Exif\Ifd
+class: FileEye\MediaProbe\Block\Tiff\Ifd
 DOMNode: ifd
 alias:
   - '0'
   - 'Main'
 items:
     0x0100:
-        collection: tag
+        collection: Tiff\Tag
         name: ImageWidth
         title: 'Image Width'
         components: 1
         format: [Short, Long]
     0x0101:
-        collection: tag
+        collection: Tiff\Tag
         name: ImageLength
         title: 'Image Length'
         components: 1

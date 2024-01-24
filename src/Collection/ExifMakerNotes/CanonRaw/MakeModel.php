@@ -21,7 +21,7 @@ class MakeModel extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\MakeModel',
   'itemsByName' =>
   array (
@@ -51,7 +51,7 @@ class MakeModel extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Make',
         'title' => 'Make',
         'components' => 6,
@@ -66,7 +66,7 @@ class MakeModel extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Model',
         'title' => 'Camera Model Name',
         'format' =>

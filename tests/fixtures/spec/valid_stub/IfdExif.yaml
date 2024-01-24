@@ -1,17 +1,17 @@
 collection: IfdExif
 name: ExifIFD
 title: IFD Exif
-class: FileEye\MediaProbe\Block\Exif\Ifd
+class: FileEye\MediaProbe\Block\Tiff\Ifd
 DOMNode: ifd
 items:
     0x829A:
-        collection: tag
+        collection: Tiff\Tag
         name: ExposureTime
         title: 'Exposure Time'
         components: 1
         format: Rational
     0x829D:
-        collection: tag
+        collection: Tiff\Tag
         name: FNumber
         title: FNumber
         components: 1

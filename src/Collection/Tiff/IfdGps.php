@@ -15,9 +15,9 @@ class IfdGps extends CollectionBase {
   protected static $map = array (
   'name' => 'GPS',
   'title' => 'GPS IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'Tiff\\IfdGps',
   'itemsByName' =>
   array (
@@ -415,7 +415,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSVersionId',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSVersionID',
         'title' => 'GPS Version ID',
         'components' => 4,
@@ -431,7 +431,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSLatitudeRef',
         'title' => 'GPS Latitude Ref',
         'components' => 2,
@@ -456,7 +456,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSDegrees',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSLatitude',
         'title' => 'GPS Latitude',
         'components' => 3,
@@ -472,7 +472,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSLongitudeRef',
         'title' => 'GPS Longitude Ref',
         'components' => 2,
@@ -497,7 +497,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSDegrees',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSLongitude',
         'title' => 'GPS Longitude',
         'components' => 3,
@@ -515,7 +515,7 @@ class IfdGps extends CollectionBase {
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSAltitudeRef',
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSAltitudeRef',
         'title' => 'GPS Altitude Ref',
         'format' =>
@@ -540,7 +540,7 @@ class IfdGps extends CollectionBase {
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSAltitude',
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSAltitude',
         'title' => 'GPS Altitude',
         'format' =>
@@ -556,7 +556,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\GPSTimeStamp',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSTimeStamp',
         'title' => 'GPS Time Stamp',
         'components' => 3,
@@ -572,7 +572,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSSatellites',
         'title' => 'GPS Satellites',
         'format' =>
@@ -587,7 +587,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSStatus',
         'title' => 'GPS Status',
         'components' => 2,
@@ -611,7 +611,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSMeasureMode',
         'title' => 'GPS Measure Mode',
         'components' => 2,
@@ -636,7 +636,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDOP',
         'title' => 'GPS Dilution Of Precision',
         'format' =>
@@ -651,7 +651,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSSpeedRef',
         'title' => 'GPS Speed Ref',
         'components' => 2,
@@ -676,7 +676,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSSpeed',
         'title' => 'GPS Speed',
         'format' =>
@@ -691,7 +691,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSTrackRef',
         'title' => 'GPS Track Ref',
         'components' => 2,
@@ -716,7 +716,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSTrack',
         'title' => 'GPS Track',
         'format' =>
@@ -731,7 +731,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSImgDirectionRef',
         'title' => 'GPS Img Direction Ref',
         'components' => 2,
@@ -756,7 +756,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSImgDirection',
         'title' => 'GPS Img Direction',
         'format' =>
@@ -771,7 +771,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSMapDatum',
         'title' => 'GPS Map Datum',
         'format' =>
@@ -786,7 +786,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestLatitudeRef',
         'title' => 'GPS Dest Latitude Ref',
         'components' => 2,
@@ -810,7 +810,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestLatitude',
         'title' => 'GPS Dest Latitude',
         'components' => 3,
@@ -826,7 +826,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestLongitudeRef',
         'title' => 'GPS Dest Longitude Ref',
         'components' => 2,
@@ -850,7 +850,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestLongitude',
         'title' => 'GPS Dest Longitude',
         'components' => 3,
@@ -866,7 +866,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestBearingRef',
         'title' => 'GPS Dest Bearing Ref',
         'components' => 2,
@@ -891,7 +891,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestBearing',
         'title' => 'GPS Dest Bearing',
         'format' =>
@@ -906,7 +906,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestDistanceRef',
         'title' => 'GPS Dest Distance Ref',
         'components' => 2,
@@ -932,7 +932,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDestDistance',
         'title' => 'GPS Dest Distance',
         'format' =>
@@ -947,7 +947,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSProcessingMethod',
         'title' => 'GPS Processing Method',
         'format' =>
@@ -962,7 +962,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSAreaInformation',
         'title' => 'GPS Area Information',
         'format' =>
@@ -977,7 +977,7 @@ class IfdGps extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDateStamp',
         'title' => 'GPS Date Stamp',
         'components' => 11,
@@ -994,7 +994,7 @@ class IfdGps extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSDifferential',
         'title' => 'GPS Differential',
         'format' =>
@@ -1021,7 +1021,7 @@ class IfdGps extends CollectionBase {
         array (
           'default' => '{value} m',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GPSHPositioningError',
         'title' => 'GPS Horizontal Positioning Error',
         'format' =>

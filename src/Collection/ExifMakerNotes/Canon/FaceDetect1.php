@@ -21,7 +21,7 @@ class FaceDetect1 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FaceDetect1',
   'itemsByName' =>
   array (
@@ -123,7 +123,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FacesDetected',
         'title' => 'Faces Detected',
         'format' =>
@@ -137,7 +137,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaceDetectFrameSize',
         'title' => 'Face Detect Frame Size',
         'components' => 2,
@@ -152,7 +152,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face1Position',
         'title' => 'Face 1 Position',
         'components' => 2,
@@ -167,7 +167,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face2Position',
         'title' => 'Face 2 Position',
         'components' => 2,
@@ -182,7 +182,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face3Position',
         'title' => 'Face 3 Position',
         'components' => 2,
@@ -197,7 +197,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face4Position',
         'title' => 'Face 4 Position',
         'components' => 2,
@@ -212,7 +212,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face5Position',
         'title' => 'Face 5 Position',
         'components' => 2,
@@ -227,7 +227,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face6Position',
         'title' => 'Face 6 Position',
         'components' => 2,
@@ -242,7 +242,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face7Position',
         'title' => 'Face 7 Position',
         'components' => 2,
@@ -257,7 +257,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face8Position',
         'title' => 'Face 8 Position',
         'components' => 2,
@@ -272,7 +272,7 @@ class FaceDetect1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Face9Position',
         'title' => 'Face 9 Position',
         'components' => 2,

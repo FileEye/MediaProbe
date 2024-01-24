@@ -11,15 +11,15 @@ elements:
         -
             node: jpeg
             path: /media/jpeg
-            class: FileEye\MediaProbe\Block\Jpeg
+            class: FileEye\MediaProbe\Block\Jpeg\Jpeg
             valid: true
-            id: Jpeg
+            id: image/jpeg
             collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOI:216'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOI
                     id: '216'
@@ -37,7 +37,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
                     name: APP1
                     id: '225'
@@ -46,21 +46,21 @@ elements:
                         -
                             node: exif
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
-                            class: FileEye\MediaProbe\Block\Exif\Exif
+                            class: FileEye\MediaProbe\Block\Jpeg\Exif
                             valid: true
-                            collection: Exif\Exif
+                            collection: Jpeg\Exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
-                                    class: FileEye\MediaProbe\Block\Tiff
+                                    class: FileEye\MediaProbe\Block\Tiff\Tiff
                                     valid: true
                                     collection: Tiff\Tiff
                                     elements:
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            class: FileEye\MediaProbe\Block\Exif\Ifd
+                                            class: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: false
                                             name: IFD0
                                             id: '0'
@@ -69,11 +69,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Compression:259'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: Compression
                                                     id: '259'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -87,11 +87,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: ImageDescription
                                                     id: '270'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -105,11 +105,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: Make
                                                     id: '271'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -123,11 +123,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: Model
                                                     id: '272'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -141,11 +141,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: Orientation
                                                     id: '274'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -159,11 +159,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: XResolution
                                                     id: '282'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -177,11 +177,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: YResolution
                                                     id: '283'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -195,11 +195,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: ResolutionUnit
                                                     id: '296'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -213,11 +213,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: Software
                                                     id: '305'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -231,11 +231,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: ModifyDate
                                                     id: '306'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -249,11 +249,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: YCbCrPositioning
                                                     id: '531'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -267,11 +267,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Copyright:33432'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: Copyright
                                                     id: '33432'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -285,7 +285,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
+                                                    class: FileEye\MediaProbe\Block\Tiff\Ifd
                                                     valid: true
                                                     name: ExifIFD
                                                     id: '34665'
@@ -294,11 +294,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ExposureTime
                                                             id: '33434'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -312,11 +312,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: FNumber
                                                             id: '33437'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -330,11 +330,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureProgram:34850'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ExposureProgram
                                                             id: '34850'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -348,11 +348,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ISO:34855'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ISO
                                                             id: '34855'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -366,11 +366,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ExifVersion
                                                             id: '36864'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -384,11 +384,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: DateTimeOriginal
                                                             id: '36867'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -402,11 +402,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: CreateDate
                                                             id: '36868'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -420,11 +420,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ComponentsConfiguration
                                                             id: '37121'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -438,11 +438,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ShutterSpeedValue
                                                             id: '37377'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -456,11 +456,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ApertureValue
                                                             id: '37378'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -474,11 +474,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ExposureCompensation
                                                             id: '37380'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -492,11 +492,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: MeteringMode
                                                             id: '37383'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -510,11 +510,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: Flash
                                                             id: '37385'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -528,11 +528,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: FocalLength
                                                             id: '37386'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -546,11 +546,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ColorSpace
                                                             id: '40961'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -564,11 +564,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ExifImageWidth
                                                             id: '40962'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -582,11 +582,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ExifImageHeight
                                                             id: '40963'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -600,11 +600,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneXResolution:41486'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: FocalPlaneXResolution
                                                             id: '41486'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -618,11 +618,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneYResolution:41487'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: FocalPlaneYResolution
                                                             id: '41487'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -636,11 +636,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneResolutionUnit:41488'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: FocalPlaneResolutionUnit
                                                             id: '41488'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -654,11 +654,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CustomRendered:41985'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: CustomRendered
                                                             id: '41985'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -672,11 +672,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureMode:41986'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: ExposureMode
                                                             id: '41986'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -690,11 +690,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:WhiteBalance:41987'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: WhiteBalance
                                                             id: '41987'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -708,11 +708,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneCaptureType:41990'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: SceneCaptureType
                                                             id: '41990'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -726,7 +726,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP12:236'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: APP12
                     id: '236'
@@ -744,7 +744,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
                     name: APP1
                     id: '225'
@@ -762,7 +762,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP2:226'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: APP2
                     id: '226'
@@ -780,7 +780,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP14:238'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: APP14
                     id: '238'
@@ -798,7 +798,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DQT
                     id: '219'
@@ -816,7 +816,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOF0:192'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOF0
                     id: '192'
@@ -834,7 +834,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DHT
                     id: '196'
@@ -852,7 +852,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOS:218'
-                    class: FileEye\MediaProbe\Block\JpegSegmentSos
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentSos
                     valid: true
                     name: SOS
                     id: '218'
@@ -870,7 +870,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:EOI:217'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: EOI
                     id: '217'
@@ -893,13 +893,13 @@ log:
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-            message: 'Found 21 data components, expected 20 for item ''ModifyDate'' in ''IFD0'''
+            message: "Found 21 data components, expected 20 for item 'ModifyDate' in 'IFD0'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
-            message: 'Found 21 data components, expected 20 for item ''DateTimeOriginal'' in ''ExifIFD'''
+            message: "Found 21 data components, expected 20 for item 'DateTimeOriginal' in 'ExifIFD'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
-            message: 'Found 21 data components, expected 20 for item ''CreateDate'' in ''ExifIFD'''
+            message: "Found 21 data components, expected 20 for item 'CreateDate' in 'ExifIFD'"
 gdInfo:
     0: 330
     1: 220
@@ -910,7 +910,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: gh-10-a.jpg
-    FileDateTime: 1644443574
+    FileDateTime: 1639835048
     FileSize: 33843
     FileType: 2
     MimeType: image/jpeg

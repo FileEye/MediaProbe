@@ -2,8 +2,6 @@
 
 namespace FileEye\MediaProbe;
 
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
@@ -119,7 +117,7 @@ class Media extends RootBlockBase
 
         // Build the Media object and its immediate child, that represents the actual media. Then
         // parse the media according to the media format.
-        $media = new static($externalLogger, $failLevel);
+        $media = new Media($externalLogger, $failLevel);
         $media->setAttribute('mimeType', (string) $mediaType->collection->getPropertyValue('item'));
         $media->getStopwatch()->start('media-parsing');
         assert($media->debugInfo(['dataElement' => $dataElement]));
@@ -196,5 +194,15 @@ class Media extends RootBlockBase
     public function getStopwatch(): Stopwatch
     {
         return $this->stopWatch;
+    }
+
+    public function collectInfo(array $context = []): array
+    {
+        $info = parent::collectInfo($context);
+
+        $info['mimeType'] = $this->getAttribute('mimeType');
+        $info['_msg'] .= ' MIME type: {mimeType}';
+
+        return $info;
     }
 }

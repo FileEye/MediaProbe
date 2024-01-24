@@ -21,7 +21,7 @@ class IHL extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\IHL',
   'itemsByName' =>
   array (
@@ -75,7 +75,7 @@ class IHL extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'IHL_EXIF',
         'title' => 'IHL EXIF',
         'format' =>
@@ -89,7 +89,7 @@ class IHL extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ThumbnailImage',
         'title' => 'Thumbnail Image',
         'format' =>
@@ -103,7 +103,7 @@ class IHL extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PreviewImage',
         'title' => 'Preview Image',
         'format' =>
@@ -117,7 +117,7 @@ class IHL extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawCodecVersion',
         'title' => 'Raw Codec Version',
         'format' =>
@@ -131,7 +131,7 @@ class IHL extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CRCDevelParams',
         'title' => 'CRC Devel Params',
         'format' =>

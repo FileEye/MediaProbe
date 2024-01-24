@@ -18,7 +18,7 @@ class CNTH extends CollectionBase {
   'title' => 'Canon CNTH',
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CNTH',
   'itemsByName' =>
   array (
@@ -40,7 +40,7 @@ class CNTH extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ThumbnailImage',
         'title' => 'Thumbnail Image',
         'format' =>

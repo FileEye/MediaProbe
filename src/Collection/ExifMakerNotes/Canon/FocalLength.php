@@ -21,7 +21,7 @@ class FocalLength extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FocalLength',
   'itemsByName' =>
   array (
@@ -92,7 +92,7 @@ class FocalLength extends CollectionBase {
             2 => 'Zoom',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalType',
         'title' => 'Focal Type',
         'format' =>
@@ -107,7 +107,7 @@ class FocalLength extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FLFocalLength',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>
@@ -122,7 +122,7 @@ class FocalLength extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalPlaneSize',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneXSize',
         'title' => 'Focal Plane X Size',
         'format' =>
@@ -134,7 +134,7 @@ class FocalLength extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalPlaneSize',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneXUnknown',
         'title' => 'Focal Plane X Unknown',
         'format' =>
@@ -149,7 +149,7 @@ class FocalLength extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalPlaneSize',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneYSize',
         'title' => 'Focal Plane Y Size',
         'format' =>
@@ -161,7 +161,7 @@ class FocalLength extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocalPlaneSize',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneYUnknown',
         'title' => 'Focal Plane Y Unknown',
         'format' =>

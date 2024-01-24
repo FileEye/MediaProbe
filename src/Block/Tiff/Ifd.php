@@ -1,10 +1,10 @@
 <?php
 
-namespace FileEye\MediaProbe\Block\Exif;
+namespace FileEye\MediaProbe\Block\Tiff;
 
-use FileEye\MediaProbe\Block\Jpeg;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Block\ListBase;
-use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Collection\CollectionInterface;
@@ -29,22 +29,22 @@ class Ifd extends ListBase
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null, $xxx = 0): void
+    public function parseData(DataElement $dataElement, int $start = 0, ?int $size = null, $xxx = 0): void
     {
         $offset = $this->getDefinition()->getDataOffset();
 
         // Get the number of entries.
-        $n = $this->getItemsCountFromData($data_element, $offset);
-        assert($this->debugInfo(['dataElement' => $data_element, 'itemsCount' => $n]));
+        $n = $this->getItemsCountFromData($dataElement, $offset);
+        assert($this->debugInfo(['dataElement' => $dataElement, 'itemsCount' => $n]));
 
         // Parse the items.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset, $xxx, 'Tiff\IfdAny');
+            $item_definition = $this->getItemDefinitionFromData($i, $dataElement, $i_offset, $xxx, 'Tiff\IfdAny');
             $item_class = $item_definition->getCollection()->getPropertyValue('class');
 
             // Check data is accessible, warn otherwise.
-            if ($item_definition->getDataOffset() >= $data_element->getSize()) {
+            if ($item_definition->getDataOffset() >= $dataElement->getSize()) {
                 $this->warning(
                     'Could not access value for item {item} in \'{ifd}\', overflow',
                     [
@@ -56,15 +56,15 @@ class Ifd extends ListBase
             }
 /*            $this->debug(
                 'Item Offset {o} Components {c} Format {f} Formatsize {fs} Size {s} DataElement Size {des}', [
-                    'o' => MediaProbe::dumpIntHex($data_element->getAbsoluteOffset($item_definition->getDataOffset())),
+                    'o' => MediaProbe::dumpIntHex($dataElement->getAbsoluteOffset($item_definition->getDataOffset())),
                     'c' => $item_definition->getValuesCount(),
                     'f' => $item_definition->getFormat(),
                     'fs' => DataFormat::getSize($item_definition->getFormat()),
                     's' => MediaProbe::dumpIntHex($item_definition->getSize()),
-                    'des' => MediaProbe::dumpIntHex($data_element->getSize()),
+                    'des' => MediaProbe::dumpIntHex($dataElement->getSize()),
                 ]
             );*/
-            if ($item_definition->getDataOffset() +  $item_definition->getSize() > $data_element->getSize()) {
+            if ($item_definition->getDataOffset() +  $item_definition->getSize() > $dataElement->getSize()) {
                 $this->warning(
                     'Could not get value for item {item} in \'{ifd}\', not enough data',
                     [
@@ -79,13 +79,13 @@ class Ifd extends ListBase
             $item = new $item_class($item_definition, $this);
             try {
                 if (is_a($item_class, Ifd::class, true)) {
-                    $item->parseData($data_element);
+                    $item->parseData($dataElement);
                 } else {
                     // In case of an IFD terminator item entry, i.e. zero
                     // components, the data window size is still 4 bytes, from
                     // the IFD index area.
                     $item_data_window_size = $item_definition->getValuesCount() > 0 ? $item_definition->getSize() : 4;
-                    $item->parseData($data_element, $item_definition->getDataOffset(), $item_data_window_size);
+                    $item->parseData($dataElement, $item_definition->getDataOffset(), $item_data_window_size);
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
@@ -94,7 +94,7 @@ class Ifd extends ListBase
         }
 
         // Invoke post-load callbacks.
-        $this->executePostParseCallbacks($data_element);
+        $this->executePostParseCallbacks($dataElement);
     }
 
     /**
@@ -109,7 +109,7 @@ class Ifd extends ListBase
      *
      * Items can be TAGs, other IFDs, etc.
      *
-     * @param DataElement $data_element
+     * @param DataElement $dataElement
      *            the data element that will provide the data.
      * @param int $offset
      *            the offset within the data element where the count can be
@@ -118,14 +118,14 @@ class Ifd extends ListBase
      * @return int
      *            the number of items in the IFD.
      */
-    protected function getItemsCountFromData(DataElement $data_element, $offset): int
+    protected function getItemsCountFromData(DataElement $dataElement, $offset): int
     {
         // Get the number of tags.
-        $entries_count = $data_element->getShort($offset);
+        $entries_count = $dataElement->getShort($offset);
 
         // Check if we have enough data.
-        if (2 + 12 * $entries_count > $data_element->getSize()) {
-            $entries_count = floor(($offset - $data_element->getSize()) / 12);
+        if (2 + 12 * $entries_count > $dataElement->getSize()) {
+            $entries_count = floor(($offset - $dataElement->getSize()) / 12);
             $this->warning('Wrong number of IFD entries in ifd {ifdname}, adjusted to {tags}', [
                 'ifdname' => $this->getAttribute('name'),
                 'tags' => $entries_count,
@@ -140,7 +140,7 @@ class Ifd extends ListBase
      *
      * @param int $seq
      *            The sequence (0-index) of the item in the IFD.
-     * @param DataElement $data_element
+     * @param DataElement $dataElement
      *            the data element that will provide the data.
      * @param int $offset
      *            the offset within the data element where the count can be
@@ -153,10 +153,10 @@ class Ifd extends ListBase
      * @return \FileEye\MediaProbe\ItemDefinition
      *            the ItemDefinition object of the IFD item.
      */
-    protected function getItemDefinitionFromData(int $seq, DataElement $data_element, int $offset, int $data_offset_shift = 0, string $fallback_collection_id = null): ItemDefinition
+    protected function getItemDefinitionFromData(int $seq, DataElement $dataElement, int $offset, int $data_offset_shift = 0, string $fallback_collection_id = null): ItemDefinition
     {
-        $id = $data_element->getShort($offset);
-        $format = $data_element->getShort($offset + 2);
+        $id = $dataElement->getShort($offset);
+        $format = $dataElement->getShort($offset + 2);
 
         // Fall back to the generic IFD collection if the item is missing from
         // the appropriate one.
@@ -164,12 +164,12 @@ class Ifd extends ListBase
             $item_collection = $this->getCollection()->getItemCollection($id);
         } catch (MediaProbeException $e) {
             if ($fallback_collection_id !== null) {
-                $item_collection = CollectionFactory::get($fallback_collection_id)->getItemCollection($id, 0, 'UnknownTag', [
+                $item_collection = CollectionFactory::get($fallback_collection_id)->getItemCollection($id, 0, 'Tiff\UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);
             } else {
-                $item_collection = $this->getCollection()->getItemCollection($id, 0, 'UnknownTag', [
+                $item_collection = $this->getCollection()->getItemCollection($id, 0, 'Tiff\UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);
@@ -178,8 +178,8 @@ class Ifd extends ListBase
 
         if (is_a($item_collection->getPropertyValue('class'), Ifd::class, true)) {
             // If the item is an Ifd, recurse in loading the item at offset.
-            $data_offset = $data_element->getLong($offset + 8);
-            $components = $data_element->getShort($data_offset);
+            $data_offset = $dataElement->getLong($offset + 8);
+            $components = $dataElement->getShort($data_offset);
             // The first 2 bytes indicate the number of directory entries contained
             // in the IFD. Then directory entries (12 bytes per entry) follow.
             // After last directory entry, there are  4 bytes indicating the
@@ -187,19 +187,19 @@ class Ifd extends ListBase
             $size = 2 + $components * DataFormat::getSize($format) + 4;
         } else {
             // The data is a tag.
-            $components = $data_element->getLong($offset + 4);
+            $components = $dataElement->getLong($offset + 4);
             // If the data size is bigger than 4 bytes, then actual data is not in
             // the TAG's data element, but at the the offset stored in the data
             // element.
             $size = DataFormat::getSize($format) * $components;
             if ($size > 4) {
-                $data_offset = $data_element->getLong($offset + 8) + $data_offset_shift;
+                $data_offset = $dataElement->getLong($offset + 8) + $data_offset_shift;
             } else {
                 $data_offset = $offset + 8;
             }
         }
 
-        return new ItemDefinition($item_collection, $format, $components, $data_offset, $data_element->getStart() + $offset, $seq);
+        return new ItemDefinition($item_collection, $format, $components, $data_offset, $dataElement->getStart() + $offset, $seq);
     }
 
     /**
@@ -284,11 +284,11 @@ class Ifd extends ListBase
 
     /**
      * xx
-     * @param DataWindow $data_element
+     * @param DataWindow $dataElement
      *            the data from which the thumbnail will be
      *            extracted.
      */
-    public static function thumbnailToBlock(DataElement $data_element, Ifd $ifd): void
+    public static function thumbnailToBlock(DataElement $dataElement, Ifd $ifd): void
     {
         if (!$ifd->getElement("tag[@name='ThumbnailOffset']") || !$ifd->getElement("tag[@name='ThumbnailLength']")) {
             return;
@@ -315,10 +315,10 @@ class Ifd extends ListBase
             return;
         }
 
-        if ($offset > $data_element->getSize()) {
+        if ($offset > $dataElement->getSize()) {
             $ifd->error('Offset {offset} overflows total size ({size}) for JPEG thumbnail.', [
                 'offset' => $offset,
-                'size' => $data_element->getSize(),
+                'size' => $dataElement->getSize(),
             ]);
             $ifd->valid = false;
             return;
@@ -326,17 +326,17 @@ class Ifd extends ListBase
 
         // Some images have a broken length, so we try to carefully check
         // the length before we store the thumbnail.
-        if ($offset + $length > $data_element->getSize()) {
+        if ($offset + $length > $dataElement->getSize()) {
             $ifd->warning('Thumbnail length ({length} bytes) adjusted to {adjusted_length} bytes.', [
                 'length' => $length,
-                'adjusted_length' => $data_element->getSize() - $offset,
+                'adjusted_length' => $dataElement->getSize() - $offset,
             ]);
-            $length = $data_element->getSize() - $offset;
+            $length = $dataElement->getSize() - $offset;
         }
 
         // Now set the thumbnail normally.
         try {
-            $dataxx = new DataWindow($data_element, $offset, $length);
+            $dataxx = new DataWindow($dataElement, $offset, $length);
             // xx todo $dataxx->logInfo($ifd->getLogger());
             $size = $dataxx->getSize();
 

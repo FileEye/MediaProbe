@@ -2,10 +2,10 @@
 
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Apple;
 
-use FileEye\MediaProbe\Block\Exif\Ifd;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\RawData;
-use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
@@ -23,33 +23,33 @@ class MakerNote extends Ifd
     /**
      * {@inheritdoc}
      */
-    public function parseData(DataElement $data_element, int $start = 0, ?int $size = null, $xxx = 0): void
+    public function parseData(DataElement $dataElement, int $start = 0, ?int $size = null, $xxx = 0): void
     {
         $offset = $this->getDefinition()->getDataOffset();
 
         // Load Apple's header as a raw data block.
         $header_data_definition = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'appleHeader']), DataFormat::BYTE, 14);
-        $header_data_window = new DataWindow($data_element, $offset, 14);
+        $header_data_window = new DataWindow($dataElement, $offset, 14);
         $header = new RawData($header_data_definition, $this);
         $header->parseData($header_data_window);
 
         $offset += 14;
 
         // Get the number of entries.
-        $n = $this->getItemsCountFromData($data_element, $offset);
-        assert($this->debugInfo(['dataElement' => $data_element, 'sequence' => $n]));
+        $n = $this->getItemsCountFromData($dataElement, $offset);
+        assert($this->debugInfo(['dataElement' => $dataElement, 'sequence' => $n]));
 
         // Load the Blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
             try {
-                $item_definition = $this->getItemDefinitionFromData($i, $data_element, $i_offset);
+                $item_definition = $this->getItemDefinitionFromData($i, $dataElement, $i_offset);
                 $item_class = $item_definition->getCollection()->getPropertyValue('class');
                 $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, true)) {
-                    $item->parseData($data_element);
+                    $item->parseData($dataElement);
                 } else {
-                    $item_data_window = new DataWindow($data_element, $item_definition->getDataOffset(), $item_definition->getSize());
+                    $item_data_window = new DataWindow($dataElement, $item_definition->getDataOffset(), $item_definition->getSize());
                     $item->parseData($item_data_window);
                 }
             } catch (DataException $e) {
@@ -58,7 +58,7 @@ class MakerNote extends Ifd
         }
 
         // Invoke post-load callbacks.
-        $this->executePostParseCallbacks($data_element);
+        $this->executePostParseCallbacks($dataElement);
     }
 
     /**

@@ -14,7 +14,7 @@ class Segment extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Generic JPEG data segment',
-  'class' => 'FileEye\\MediaProbe\\Block\\JpegSegment',
+  'class' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Segment',
   'DOMNode' => 'jpegSegment',
   'id' => 'Jpeg\\Segment',
 );

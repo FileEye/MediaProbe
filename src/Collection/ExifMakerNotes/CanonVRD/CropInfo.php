@@ -21,7 +21,7 @@ class CropInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\CropInfo',
   'itemsByName' =>
   array (
@@ -115,7 +115,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropActive',
         'title' => 'Crop Active',
         'format' =>
@@ -137,7 +137,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropRotatedOriginalWidth',
         'title' => 'Crop Rotated Original Width',
         'format' =>
@@ -151,7 +151,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropRotatedOriginalHeight',
         'title' => 'Crop Rotated Original Height',
         'format' =>
@@ -165,7 +165,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropX',
         'title' => 'Crop X',
         'format' =>
@@ -179,7 +179,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropY',
         'title' => 'Crop Y',
         'format' =>
@@ -193,7 +193,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropWidth',
         'title' => 'Crop Width',
         'format' =>
@@ -207,7 +207,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropHeight',
         'title' => 'Crop Height',
         'format' =>
@@ -221,7 +221,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropRotation',
         'title' => 'Crop Rotation',
         'format' =>
@@ -235,7 +235,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropOriginalWidth',
         'title' => 'Crop Original Width',
         'format' =>
@@ -249,7 +249,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropOriginalHeight',
         'title' => 'Crop Original Height',
         'format' =>

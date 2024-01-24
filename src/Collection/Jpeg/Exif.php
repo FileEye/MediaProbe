@@ -6,7 +6,7 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Exif;
+namespace FileEye\MediaProbe\Collection\Jpeg;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
@@ -14,9 +14,9 @@ class Exif extends CollectionBase {
 
   protected static $map = array (
   'title' => 'JPEG Exif data',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Exif',
+  'class' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Exif',
   'DOMNode' => 'exif',
-  'id' => 'Exif\\Exif',
+  'id' => 'Jpeg\\Exif',
   'items' =>
   array (
     'Tiff' =>

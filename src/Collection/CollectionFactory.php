@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Collection;
 
 use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Model\EntryInterface;
 
 /**

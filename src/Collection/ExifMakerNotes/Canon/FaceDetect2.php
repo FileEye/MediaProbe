@@ -21,7 +21,7 @@ class FaceDetect2 extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FaceDetect2',
   'itemsByName' =>
   array (
@@ -51,7 +51,7 @@ class FaceDetect2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaceWidth',
         'title' => 'Face Width',
         'format' =>
@@ -65,7 +65,7 @@ class FaceDetect2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FacesDetected',
         'title' => 'Faces Detected',
         'format' =>

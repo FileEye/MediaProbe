@@ -22,7 +22,7 @@ class ColorBalance extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ColorBalance',
   'itemsByName' =>
   array (
@@ -116,7 +116,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsAuto',
         'title' => 'WB RGGB Levels Auto',
         'components' => 4,
@@ -131,7 +131,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsDaylight',
         'title' => 'WB RGGB Levels Daylight',
         'components' => 4,
@@ -146,7 +146,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsShade',
         'title' => 'WB RGGB Levels Shade',
         'components' => 4,
@@ -161,7 +161,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsCloudy',
         'title' => 'WB RGGB Levels Cloudy',
         'components' => 4,
@@ -176,7 +176,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsTungsten',
         'title' => 'WB RGGB Levels Tungsten',
         'components' => 4,
@@ -191,7 +191,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsFluorescent',
         'title' => 'WB RGGB Levels Fluorescent',
         'components' => 4,
@@ -206,7 +206,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsFlash',
         'title' => 'WB RGGB Levels Flash',
         'components' => 4,
@@ -221,7 +221,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsCustom',
         'title' => 'WB RGGB Levels Custom',
         'components' => 4,
@@ -236,7 +236,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsKelvin',
         'title' => 'WB RGGB Levels Kelvin',
         'components' => 4,
@@ -251,7 +251,7 @@ class ColorBalance extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBBlackLevels',
         'title' => 'WB RGGB Black Levels',
         'components' => 4,

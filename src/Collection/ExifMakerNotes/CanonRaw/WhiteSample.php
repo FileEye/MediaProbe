@@ -21,7 +21,7 @@ class WhiteSample extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\WhiteSample',
   'itemsByName' =>
   array (
@@ -75,7 +75,7 @@ class WhiteSample extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteSampleWidth',
         'title' => 'White Sample Width',
         'format' =>
@@ -89,7 +89,7 @@ class WhiteSample extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteSampleHeight',
         'title' => 'White Sample Height',
         'format' =>
@@ -103,7 +103,7 @@ class WhiteSample extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteSampleLeftBorder',
         'title' => 'White Sample Left Border',
         'format' =>
@@ -117,7 +117,7 @@ class WhiteSample extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteSampleTopBorder',
         'title' => 'White Sample Top Border',
         'format' =>
@@ -131,7 +131,7 @@ class WhiteSample extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteSampleBits',
         'title' => 'White Sample Bits',
         'format' =>

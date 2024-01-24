@@ -1,9 +1,9 @@
 collection: ExifMakerNotes\Canon\Main
 name: Canon
 title: 'Canon Maker Notes'
-class: FileEye\MediaProbe\Block\Exif\Ifd
+class: FileEye\MediaProbe\Block\Tiff\Ifd
 DOMNode: makerNote
-defaultItemCollection: Tag
+defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon

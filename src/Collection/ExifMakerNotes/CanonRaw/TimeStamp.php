@@ -21,7 +21,7 @@ class TimeStamp extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\TimeStamp',
   'itemsByName' =>
   array (
@@ -59,7 +59,7 @@ class TimeStamp extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DateTimeOriginal',
         'title' => 'Date/Time Original',
         'format' =>
@@ -73,7 +73,7 @@ class TimeStamp extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TimeZoneCode',
         'title' => 'Time Zone Code',
         'format' =>
@@ -87,7 +87,7 @@ class TimeStamp extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TimeZoneInfo',
         'title' => 'Time Zone Info',
         'format' =>

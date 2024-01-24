@@ -18,7 +18,7 @@ class Uuid extends CollectionBase {
   'title' => 'Canon Uuid',
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Uuid',
   'itemsByName' =>
   array (
@@ -48,7 +48,7 @@ class Uuid extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CompressorVersion',
         'title' => 'Compressor Version',
         'format' =>
@@ -62,7 +62,7 @@ class Uuid extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ThumbnailImage',
         'title' => 'Thumbnail Image',
         'format' =>

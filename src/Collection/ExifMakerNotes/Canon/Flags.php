@@ -15,13 +15,13 @@ class Flags extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonFlags',
   'title' => 'Canon Flags',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'index',
   'format' =>
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Flags',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class Flags extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedParamFlag',
         'title' => 'Modified Param Flag',
         'format' =>

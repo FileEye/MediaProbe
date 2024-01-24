@@ -21,7 +21,7 @@ class ImageInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\ImageInfo',
   'itemsByName' =>
   array (
@@ -91,7 +91,7 @@ class ImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageWidth',
         'title' => 'Image Width',
         'format' =>
@@ -105,7 +105,7 @@ class ImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageHeight',
         'title' => 'Image Height',
         'format' =>
@@ -119,7 +119,7 @@ class ImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PixelAspectRatio',
         'title' => 'Pixel Aspect Ratio',
         'format' =>
@@ -133,7 +133,7 @@ class ImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Rotation',
         'title' => 'Rotation',
         'format' =>
@@ -147,7 +147,7 @@ class ImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ComponentBitDepth',
         'title' => 'Component Bit Depth',
         'format' =>
@@ -161,7 +161,7 @@ class ImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorBitDepth',
         'title' => 'Color Bit Depth',
         'format' =>
@@ -175,7 +175,7 @@ class ImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorBW',
         'title' => 'Color BW',
         'format' =>

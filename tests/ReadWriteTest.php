@@ -2,12 +2,12 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\Block\Exif\Ifd;
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\JpegSegmentApp1;
-use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Block\Jpeg\Exif;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
+use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Entry\Core\Byte;
@@ -49,7 +49,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
 
         // Insert the APP1 segment before the COM one.
         $app1_segment_definition = new ItemDefinition($jpeg->getCollection()->getItemCollectionByName('APP1'));
-        $app1_segment = new JpegSegmentApp1($app1_segment_definition, $jpeg, $com_segment);
+        $app1_segment = new SegmentApp1($app1_segment_definition, $jpeg, $com_segment);
 
         $exif = new Exif(new ItemDefinition($app1_segment->getCollection()->getItemCollection('Exif')), $app1_segment);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
@@ -62,7 +62,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
 
         $ifd = new Ifd(new ItemDefinition($tiff->getCollection()->getItemCollection('0'), DataFormat::LONG), $tiff);
         foreach ($entries as $entry) {
-            $item_collection = $ifd->getCollection()->getItemCollection($entry[0], 0, 'UnknownTag', [
+            $item_collection = $ifd->getCollection()->getItemCollection($entry[0], 0, 'Tiff\UnknownTag', [
                 'item' => $entry[0],
                 'DOMNode' => 'tag',
             ]);
@@ -83,14 +83,14 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $r_media = Media::parseFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
         $r_jpeg = $r_media->getElement("jpeg");
 
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Exif', $r_jpeg->getElement("jpegSegment/exif"));
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Jpeg\Exif', $r_jpeg->getElement("jpegSegment/exif"));
 
         $tiff = $r_jpeg->getElement("jpegSegment/exif/tiff");
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Tiff', $tiff);
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Tiff\Tiff', $tiff);
         $this->assertCount(1, $tiff->getMultipleElements("ifd"));
 
         $ifd = $tiff->getElement("ifd[@name='IFD0']");
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Exif\Ifd', $ifd);
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Tiff\Ifd', $ifd);
         $this->assertEquals($ifd->getAttribute('name'), 'IFD0');
 
         foreach ($entries as $entry_name => $entry) {

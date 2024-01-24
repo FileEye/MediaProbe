@@ -15,9 +15,9 @@ class IfdExif extends CollectionBase {
   protected static $map = array (
   'name' => 'ExifIFD',
   'title' => 'Exif IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'Tiff\\IfdExif',
   'itemsByName' =>
   array (
@@ -2589,7 +2589,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StripOffsets',
         'title' => 'Strip Offsets',
         'format' =>
@@ -2601,7 +2601,7 @@ class IfdExif extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StripOffsets',
         'title' => 'Strip Offsets',
         'format' =>
@@ -2616,7 +2616,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StripByteCounts',
         'title' => 'Strip Byte Counts',
         'format' =>
@@ -2628,7 +2628,7 @@ class IfdExif extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StripByteCounts',
         'title' => 'Strip Byte Counts',
         'format' =>
@@ -2643,7 +2643,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FreeOffsets',
         'title' => 'Free Offsets',
         'format' =>
@@ -2658,7 +2658,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FreeByteCounts',
         'title' => 'Free Byte Counts',
         'format' =>
@@ -2673,7 +2673,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GrayResponseCurve',
         'title' => 'Gray Response Curve',
         'format' =>
@@ -2688,7 +2688,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'T4Options',
         'title' => 'T4 Options',
         'format' =>
@@ -2712,7 +2712,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'T6Options',
         'title' => 'T6 Options',
         'format' =>
@@ -2734,7 +2734,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorResponseUnit',
         'title' => 'Color Response Unit',
         'format' =>
@@ -2748,7 +2748,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorMap',
         'title' => 'Color Map',
         'format' =>
@@ -2763,7 +2763,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TileOffsets',
         'title' => 'Tile Offsets',
         'format' =>
@@ -2778,7 +2778,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TileByteCounts',
         'title' => 'Tile Byte Counts',
         'format' =>
@@ -2793,7 +2793,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BadFaxLines',
         'title' => 'Bad Fax Lines',
         'format' =>
@@ -2807,7 +2807,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CleanFaxData',
         'title' => 'Clean Fax Data',
         'format' =>
@@ -2830,7 +2830,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ConsecutiveBadFaxLines',
         'title' => 'Consecutive Bad Fax Lines',
         'format' =>
@@ -2844,7 +2844,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'InkNames',
         'title' => 'Ink Names',
         'format' =>
@@ -2859,7 +2859,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'NumberofInks',
         'title' => 'Numberof Inks',
         'format' =>
@@ -2874,7 +2874,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DotRange',
         'title' => 'Dot Range',
         'format' =>
@@ -2889,7 +2889,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExtraSamples',
         'title' => 'Extra Samples',
         'format' =>
@@ -2913,7 +2913,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SMinSampleValue',
         'title' => 'S Min Sample Value',
         'format' =>
@@ -2928,7 +2928,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SMaxSampleValue',
         'title' => 'S Max Sample Value',
         'format' =>
@@ -2943,7 +2943,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TransferRange',
         'title' => 'Transfer Range',
         'format' =>
@@ -2958,7 +2958,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ClipPath',
         'title' => 'Clip Path',
         'format' =>
@@ -2973,7 +2973,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'XClipPathUnits',
         'title' => 'X Clip Path Units',
         'format' =>
@@ -2988,7 +2988,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'YClipPathUnits',
         'title' => 'Y Clip Path Units',
         'format' =>
@@ -3003,7 +3003,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Indexed',
         'title' => 'Indexed',
         'format' =>
@@ -3026,7 +3026,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGTables',
         'title' => 'JPEG Tables',
         'format' =>
@@ -3041,7 +3041,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OPIProxy',
         'title' => 'OPI Proxy',
         'format' =>
@@ -3064,7 +3064,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ProfileType',
         'title' => 'Profile Type',
         'format' =>
@@ -3086,7 +3086,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaxProfile',
         'title' => 'Fax Profile',
         'format' =>
@@ -3115,7 +3115,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CodingMethods',
         'title' => 'Coding Methods',
         'format' =>
@@ -3142,7 +3142,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'VersionYear',
         'title' => 'Version Year',
         'format' =>
@@ -3156,7 +3156,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModeNumber',
         'title' => 'Mode Number',
         'format' =>
@@ -3170,7 +3170,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Decode',
         'title' => 'Decode',
         'format' =>
@@ -3184,7 +3184,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DefaultImageColor',
         'title' => 'Default Image Color',
         'format' =>
@@ -3198,7 +3198,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'T82Options',
         'title' => 'T82 Options',
         'format' =>
@@ -3212,7 +3212,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGTables',
         'title' => 'JPEG Tables',
         'format' =>
@@ -3226,7 +3226,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGProc',
         'title' => 'JPEG Proc',
         'format' =>
@@ -3249,7 +3249,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OtherImageStart',
         'title' => 'Other Image Start',
         'format' =>
@@ -3264,7 +3264,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OtherImageLength',
         'title' => 'Other Image Length',
         'format' =>
@@ -3279,7 +3279,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGRestartInterval',
         'title' => 'JPEG Restart Interval',
         'format' =>
@@ -3294,7 +3294,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGLosslessPredictors',
         'title' => 'JPEG Lossless Predictors',
         'format' =>
@@ -3309,7 +3309,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGPointTransforms',
         'title' => 'JPEG Point Transforms',
         'format' =>
@@ -3324,7 +3324,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGQTables',
         'title' => 'JPEGQ Tables',
         'format' =>
@@ -3339,7 +3339,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGDCTables',
         'title' => 'JPEGDC Tables',
         'format' =>
@@ -3354,7 +3354,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPEGACTables',
         'title' => 'JPEGAC Tables',
         'format' =>
@@ -3369,7 +3369,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StripRowCounts',
         'title' => 'Strip Row Counts',
         'format' =>
@@ -3383,7 +3383,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'USPTOMiscellaneous',
         'title' => 'USPTO Miscellaneous',
         'format' =>
@@ -3397,7 +3397,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'XP_DIP_XML',
         'title' => 'XP DIP XML',
         'format' =>
@@ -3411,7 +3411,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SonyRawFileType',
         'title' => 'Sony Raw File Type',
         'format' =>
@@ -3435,7 +3435,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SonyToneCurve',
         'title' => 'Sony Tone Curve',
         'format' =>
@@ -3449,7 +3449,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageID',
         'title' => 'Image ID',
         'format' =>
@@ -3464,7 +3464,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WangTag1',
         'title' => 'Wang Tag 1',
         'format' =>
@@ -3478,7 +3478,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WangAnnotation',
         'title' => 'Wang Annotation',
         'format' =>
@@ -3492,7 +3492,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WangTag3',
         'title' => 'Wang Tag 3',
         'format' =>
@@ -3506,7 +3506,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WangTag4',
         'title' => 'Wang Tag 4',
         'format' =>
@@ -3520,7 +3520,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageReferencePoints',
         'title' => 'Image Reference Points',
         'format' =>
@@ -3534,7 +3534,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RegionXformTackPoint',
         'title' => 'Region Xform Tack Point',
         'format' =>
@@ -3548,7 +3548,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WarpQuadrilateral',
         'title' => 'Warp Quadrilateral',
         'format' =>
@@ -3562,7 +3562,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AffineTransformMat',
         'title' => 'Affine Transform Mat',
         'format' =>
@@ -3576,7 +3576,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Matteing',
         'title' => 'Matteing',
         'format' =>
@@ -3591,7 +3591,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DataType',
         'title' => 'Data Type',
         'format' =>
@@ -3606,7 +3606,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageDepth',
         'title' => 'Image Depth',
         'format' =>
@@ -3621,7 +3621,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TileDepth',
         'title' => 'Tile Depth',
         'format' =>
@@ -3636,7 +3636,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageFullWidth',
         'title' => 'Image Full Width',
         'format' =>
@@ -3650,7 +3650,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageFullHeight',
         'title' => 'Image Full Height',
         'format' =>
@@ -3664,7 +3664,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TextureFormat',
         'title' => 'Texture Format',
         'format' =>
@@ -3678,7 +3678,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WrapModes',
         'title' => 'Wrap Modes',
         'format' =>
@@ -3692,7 +3692,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FovCot',
         'title' => 'Fov Cot',
         'format' =>
@@ -3706,7 +3706,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MatrixWorldToScreen',
         'title' => 'Matrix World To Screen',
         'format' =>
@@ -3720,7 +3720,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MatrixWorldToCamera',
         'title' => 'Matrix World To Camera',
         'format' =>
@@ -3734,7 +3734,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Model2',
         'title' => 'Model 2',
         'format' =>
@@ -3748,7 +3748,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BatteryLevel',
         'title' => 'Battery Level',
         'format' =>
@@ -3765,7 +3765,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 1,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifExposureTime',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -3782,7 +3782,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 1,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifFNumber',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FNumber',
         'title' => 'F Number',
         'format' =>
@@ -3797,7 +3797,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDFileTag',
         'title' => 'MD File Tag',
         'format' =>
@@ -3811,7 +3811,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDScalePixel',
         'title' => 'MD Scale Pixel',
         'format' =>
@@ -3825,7 +3825,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDColorTable',
         'title' => 'MD Color Table',
         'format' =>
@@ -3839,7 +3839,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDLabName',
         'title' => 'MD Lab Name',
         'format' =>
@@ -3853,7 +3853,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDSampleInfo',
         'title' => 'MD Sample Info',
         'format' =>
@@ -3867,7 +3867,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDPrepDate',
         'title' => 'MD Prep Date',
         'format' =>
@@ -3881,7 +3881,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDPrepTime',
         'title' => 'MD Prep Time',
         'format' =>
@@ -3895,7 +3895,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MDFileUnits',
         'title' => 'MD File Units',
         'format' =>
@@ -3909,7 +3909,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PixelScale',
         'title' => 'Pixel Scale',
         'format' =>
@@ -3923,7 +3923,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AdventScale',
         'title' => 'Advent Scale',
         'format' =>
@@ -3937,7 +3937,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AdventRevision',
         'title' => 'Advent Revision',
         'format' =>
@@ -3951,7 +3951,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UIC1Tag',
         'title' => 'UIC1 Tag',
         'format' =>
@@ -3965,7 +3965,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UIC2Tag',
         'title' => 'UIC2 Tag',
         'format' =>
@@ -3979,7 +3979,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UIC3Tag',
         'title' => 'UIC3 Tag',
         'format' =>
@@ -3993,7 +3993,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UIC4Tag',
         'title' => 'UIC4 Tag',
         'format' =>
@@ -4007,7 +4007,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'IntergraphPacketData',
         'title' => 'Intergraph Packet Data',
         'format' =>
@@ -4021,7 +4021,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'IntergraphFlagRegisters',
         'title' => 'Intergraph Flag Registers',
         'format' =>
@@ -4035,7 +4035,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'IntergraphMatrix',
         'title' => 'Intergraph Matrix',
         'format' =>
@@ -4049,7 +4049,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'INGRReserved',
         'title' => 'INGR Reserved',
         'format' =>
@@ -4063,7 +4063,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModelTiePoint',
         'title' => 'Model Tie Point',
         'format' =>
@@ -4077,7 +4077,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Site',
         'title' => 'Site',
         'format' =>
@@ -4091,7 +4091,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorSequence',
         'title' => 'Color Sequence',
         'format' =>
@@ -4105,7 +4105,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'IT8Header',
         'title' => 'IT8 Header',
         'format' =>
@@ -4119,7 +4119,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RasterPadding',
         'title' => 'Raster Padding',
         'format' =>
@@ -4145,7 +4145,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BitsPerRunLength',
         'title' => 'Bits Per Run Length',
         'format' =>
@@ -4159,7 +4159,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BitsPerExtendedRunLength',
         'title' => 'Bits Per Extended Run Length',
         'format' =>
@@ -4174,7 +4174,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTable',
         'title' => 'Color Table',
         'format' =>
@@ -4188,7 +4188,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageColorIndicator',
         'title' => 'Image Color Indicator',
         'format' =>
@@ -4210,7 +4210,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BackgroundColorIndicator',
         'title' => 'Background Color Indicator',
         'format' =>
@@ -4232,7 +4232,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageColorValue',
         'title' => 'Image Color Value',
         'format' =>
@@ -4246,7 +4246,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BackgroundColorValue',
         'title' => 'Background Color Value',
         'format' =>
@@ -4260,7 +4260,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PixelIntensityRange',
         'title' => 'Pixel Intensity Range',
         'format' =>
@@ -4274,7 +4274,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TransparencyIndicator',
         'title' => 'Transparency Indicator',
         'format' =>
@@ -4288,7 +4288,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorCharacterization',
         'title' => 'Color Characterization',
         'format' =>
@@ -4302,7 +4302,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'HCUsage',
         'title' => 'HC Usage',
         'format' =>
@@ -4325,7 +4325,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TrapIndicator',
         'title' => 'Trap Indicator',
         'format' =>
@@ -4339,7 +4339,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CMYKEquivalent',
         'title' => 'CMYK Equivalent',
         'format' =>
@@ -4353,7 +4353,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PixelMagicJBIGOptions',
         'title' => 'Pixel Magic JBIG Options',
         'format' =>
@@ -4367,7 +4367,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JPLCartoIFD',
         'title' => 'JPL Carto IFD',
         'format' =>
@@ -4381,7 +4381,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModelTransform',
         'title' => 'Model Transform',
         'format' =>
@@ -4395,7 +4395,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_GRGBLevels',
         'title' => 'WB GRGB Levels',
         'format' =>
@@ -4409,7 +4409,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TIFF_FXExtensions',
         'title' => 'TIFF FX Extensions',
         'format' =>
@@ -4434,7 +4434,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MultiProfiles',
         'title' => 'Multi Profiles',
         'format' =>
@@ -4465,7 +4465,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SharedData',
         'title' => 'Shared Data',
         'format' =>
@@ -4479,7 +4479,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'T88Options',
         'title' => 'T88 Options',
         'format' =>
@@ -4493,7 +4493,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageLayer',
         'title' => 'Image Layer',
         'format' =>
@@ -4507,7 +4507,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'JBIGOptions',
         'title' => 'JBIG Options',
         'format' =>
@@ -4522,7 +4522,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureProgram',
         'title' => 'Exposure Program',
         'format' =>
@@ -4553,7 +4553,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SpectralSensitivity',
         'title' => 'Spectral Sensitivity',
         'format' =>
@@ -4572,7 +4572,7 @@ class IfdExif extends CollectionBase {
         array (
           0 => 'ISOSpeedRatings',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISO',
         'title' => 'ISO',
         'format' =>
@@ -4587,7 +4587,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Opto-ElectricConvFactor',
         'title' => 'Opto-Electric Conv Factor',
         'format' =>
@@ -4602,7 +4602,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Interlace',
         'title' => 'Interlace',
         'format' =>
@@ -4616,7 +4616,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TimeZoneOffset',
         'title' => 'Time Zone Offset',
         'format' =>
@@ -4630,7 +4630,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SelfTimerMode',
         'title' => 'Self Timer Mode',
         'format' =>
@@ -4644,7 +4644,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SensitivityType',
         'title' => 'Sensitivity Type',
         'format' =>
@@ -4672,7 +4672,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StandardOutputSensitivity',
         'title' => 'Standard Output Sensitivity',
         'format' =>
@@ -4686,7 +4686,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RecommendedExposureIndex',
         'title' => 'Recommended Exposure Index',
         'format' =>
@@ -4700,7 +4700,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISOSpeed',
         'title' => 'ISO Speed',
         'format' =>
@@ -4714,7 +4714,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISOSpeedLatitudeyyy',
         'title' => 'ISO Speed Latitude yyy',
         'format' =>
@@ -4728,7 +4728,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISOSpeedLatitudezzz',
         'title' => 'ISO Speed Latitude zzz',
         'format' =>
@@ -4742,7 +4742,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaxRecvParams',
         'title' => 'Fax Recv Params',
         'format' =>
@@ -4756,7 +4756,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaxSubAddress',
         'title' => 'Fax Sub Address',
         'format' =>
@@ -4770,7 +4770,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FaxRecvTime',
         'title' => 'Fax Recv Time',
         'format' =>
@@ -4784,7 +4784,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FedexEDR',
         'title' => 'Fedex EDR',
         'format' =>
@@ -4800,7 +4800,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 4,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExifVersion',
         'title' => 'Exif Version',
         'format' =>
@@ -4817,7 +4817,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 20,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Time',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DateTimeOriginal',
         'title' => 'Date/Time Original',
         'format' =>
@@ -4834,7 +4834,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 20,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Time',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CreateDate',
         'title' => 'Create Date',
         'format' =>
@@ -4849,7 +4849,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GooglePlusUploadCode',
         'title' => 'Google Plus Upload Code',
         'format' =>
@@ -4864,7 +4864,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 7,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OffsetTime',
         'title' => 'Offset Time',
         'format' =>
@@ -4879,7 +4879,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 7,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OffsetTimeOriginal',
         'title' => 'Offset Time Original',
         'format' =>
@@ -4894,7 +4894,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 7,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OffsetTimeDigitized',
         'title' => 'Offset Time Digitized',
         'format' =>
@@ -4910,7 +4910,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 4,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifComponentsConfiguration',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ComponentsConfiguration',
         'title' => 'Components Configuration',
         'format' =>
@@ -4939,7 +4939,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CompressedBitsPerPixel',
         'title' => 'Compressed Bits Per Pixel',
         'format' =>
@@ -4956,7 +4956,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 1,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifShutterSpeedValue',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterSpeedValue',
         'title' => 'Shutter Speed Value',
         'format' =>
@@ -4973,7 +4973,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 1,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ApertureValue',
         'title' => 'Aperture Value',
         'format' =>
@@ -4989,7 +4989,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BrightnessValue',
         'title' => 'Brightness Value',
         'format' =>
@@ -5010,7 +5010,7 @@ class IfdExif extends CollectionBase {
           0 => 'ExposureBiasValue',
         ),
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureCompensation',
         'title' => 'Exposure Compensation',
         'format' =>
@@ -5027,7 +5027,7 @@ class IfdExif extends CollectionBase {
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifApertureValue',
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MaxApertureValue',
         'title' => 'Max Aperture Value',
         'format' =>
@@ -5044,7 +5044,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 1,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifSubjectDistance',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubjectDistance',
         'title' => 'Subject Distance',
         'format' =>
@@ -5060,7 +5060,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MeteringMode',
         'title' => 'Metering Mode',
         'format' =>
@@ -5090,7 +5090,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LightSource',
         'title' => 'Light Source',
         'format' =>
@@ -5134,7 +5134,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Flash',
         'title' => 'Flash',
         'format' =>
@@ -5184,7 +5184,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 1,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifFocalLength',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>
@@ -5199,7 +5199,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashEnergy',
         'title' => 'Flash Energy',
         'format' =>
@@ -5214,7 +5214,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SpatialFrequencyResponse',
         'title' => 'Spatial Frequency Response',
         'format' =>
@@ -5229,7 +5229,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Noise',
         'title' => 'Noise',
         'format' =>
@@ -5244,7 +5244,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneXResolution',
         'title' => 'Focal Plane X Resolution',
         'format' =>
@@ -5259,7 +5259,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneYResolution',
         'title' => 'Focal Plane Y Resolution',
         'format' =>
@@ -5274,7 +5274,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneResolutionUnit',
         'title' => 'Focal Plane Resolution Unit',
         'format' =>
@@ -5300,7 +5300,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageNumber',
         'title' => 'Image Number',
         'format' =>
@@ -5315,7 +5315,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SecurityClassification',
         'title' => 'Security Classification',
         'format' =>
@@ -5341,7 +5341,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageHistory',
         'title' => 'Image History',
         'format' =>
@@ -5357,7 +5357,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifSubjectArea',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubjectArea',
         'title' => 'Subject Area',
         'format' =>
@@ -5372,7 +5372,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureIndex',
         'title' => 'Exposure Index',
         'format' =>
@@ -5387,7 +5387,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TIFF-EPStandardID',
         'title' => 'TIFF-EP Standard ID',
         'format' =>
@@ -5402,7 +5402,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SensingMethod',
         'title' => 'Sensing Method',
         'format' =>
@@ -5431,7 +5431,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CIP3DataFile',
         'title' => 'CIP3 Data File',
         'format' =>
@@ -5445,7 +5445,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CIP3Sheet',
         'title' => 'CIP3 Sheet',
         'format' =>
@@ -5459,7 +5459,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CIP3Side',
         'title' => 'CIP3 Side',
         'format' =>
@@ -5473,7 +5473,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StoNits',
         'title' => 'Sto Nits',
         'format' =>
@@ -5495,7 +5495,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       1 =>
       array (
@@ -5506,7 +5506,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       2 =>
       array (
@@ -5517,7 +5517,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       3 =>
       array (
@@ -5528,7 +5528,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       4 =>
       array (
@@ -5539,7 +5539,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       5 =>
       array (
@@ -5550,7 +5550,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       6 =>
       array (
@@ -5561,7 +5561,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       7 =>
       array (
@@ -5572,7 +5572,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       8 =>
       array (
@@ -5583,7 +5583,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       9 =>
       array (
@@ -5594,7 +5594,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       10 =>
       array (
@@ -5605,7 +5605,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       11 =>
       array (
@@ -5616,7 +5616,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       12 =>
       array (
@@ -5627,7 +5627,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       13 =>
       array (
@@ -5638,7 +5638,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       14 =>
       array (
@@ -5649,7 +5649,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       15 =>
       array (
@@ -5660,7 +5660,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       16 =>
       array (
@@ -5671,7 +5671,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       17 =>
       array (
@@ -5682,7 +5682,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       18 =>
       array (
@@ -5693,7 +5693,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       19 =>
       array (
@@ -5704,7 +5704,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       20 =>
       array (
@@ -5715,7 +5715,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       21 =>
       array (
@@ -5726,7 +5726,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       22 =>
       array (
@@ -5737,7 +5737,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       23 =>
       array (
@@ -5748,7 +5748,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       24 =>
       array (
@@ -5759,7 +5759,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       25 =>
       array (
@@ -5770,7 +5770,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       26 =>
       array (
@@ -5781,7 +5781,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       27 =>
       array (
@@ -5792,7 +5792,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       28 =>
       array (
@@ -5803,7 +5803,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       29 =>
       array (
@@ -5814,7 +5814,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       30 =>
       array (
@@ -5825,7 +5825,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       31 =>
       array (
@@ -5836,7 +5836,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       32 =>
       array (
@@ -5847,7 +5847,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       33 =>
       array (
@@ -5858,7 +5858,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       34 =>
       array (
@@ -5869,7 +5869,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       35 =>
       array (
@@ -5880,7 +5880,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       36 =>
       array (
@@ -5891,7 +5891,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       37 =>
       array (
@@ -5902,7 +5902,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       38 =>
       array (
@@ -5913,7 +5913,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       39 =>
       array (
@@ -5924,7 +5924,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       40 =>
       array (
@@ -5935,7 +5935,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       41 =>
       array (
@@ -5946,7 +5946,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       42 =>
       array (
@@ -5957,7 +5957,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       43 =>
       array (
@@ -5968,7 +5968,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       44 =>
       array (
@@ -5979,7 +5979,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       45 =>
       array (
@@ -5990,7 +5990,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       46 =>
       array (
@@ -6001,7 +6001,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       47 =>
       array (
@@ -6012,7 +6012,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       48 =>
       array (
@@ -6023,7 +6023,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       49 =>
       array (
@@ -6034,7 +6034,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       50 =>
       array (
@@ -6045,7 +6045,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       51 =>
       array (
@@ -6056,7 +6056,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       52 =>
       array (
@@ -6067,7 +6067,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       53 =>
       array (
@@ -6078,7 +6078,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       54 =>
       array (
@@ -6089,7 +6089,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       55 =>
       array (
@@ -6100,7 +6100,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       56 =>
       array (
@@ -6111,7 +6111,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       57 =>
       array (
@@ -6122,7 +6122,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       58 =>
       array (
@@ -6133,7 +6133,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       59 =>
       array (
@@ -6144,7 +6144,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       60 =>
       array (
@@ -6155,7 +6155,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       61 =>
       array (
@@ -6166,7 +6166,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       62 =>
       array (
@@ -6177,7 +6177,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       63 =>
       array (
@@ -6188,7 +6188,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       64 =>
       array (
@@ -6199,7 +6199,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       65 =>
       array (
@@ -6210,7 +6210,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       66 =>
       array (
@@ -6221,7 +6221,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       67 =>
       array (
@@ -6232,7 +6232,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       68 =>
       array (
@@ -6243,7 +6243,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       69 =>
       array (
@@ -6254,7 +6254,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       70 =>
       array (
@@ -6265,7 +6265,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       71 =>
       array (
@@ -6276,7 +6276,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       72 =>
       array (
@@ -6287,7 +6287,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       73 =>
       array (
@@ -6298,7 +6298,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       74 =>
       array (
@@ -6309,7 +6309,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       75 =>
       array (
@@ -6320,7 +6320,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       76 =>
       array (
@@ -6331,7 +6331,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       77 =>
       array (
@@ -6342,7 +6342,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       78 =>
       array (
@@ -6353,7 +6353,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       79 =>
       array (
@@ -6364,7 +6364,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       80 =>
       array (
@@ -6375,7 +6375,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       81 =>
       array (
@@ -6386,7 +6386,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       82 =>
       array (
@@ -6397,7 +6397,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       83 =>
       array (
@@ -6408,7 +6408,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       84 =>
       array (
@@ -6419,7 +6419,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
       85 =>
       array (
@@ -6430,7 +6430,7 @@ class IfdExif extends CollectionBase {
           0 => 7,
         ),
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifMakerNote',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
     ),
     37510 =>
@@ -6438,7 +6438,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifUserComment',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UserComment',
         'title' => 'User Comment',
         'format' =>
@@ -6453,7 +6453,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubSecTime',
         'title' => 'Sub Sec Time',
         'format' =>
@@ -6468,7 +6468,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubSecTimeOriginal',
         'title' => 'Sub Sec Time Original',
         'format' =>
@@ -6483,7 +6483,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubSecTimeDigitized',
         'title' => 'Sub Sec Time Digitized',
         'format' =>
@@ -6498,7 +6498,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MSDocumentText',
         'title' => 'MS Document Text',
         'format' =>
@@ -6512,7 +6512,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MSPropertySetStorage',
         'title' => 'MS Property Set Storage',
         'format' =>
@@ -6526,7 +6526,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MSDocumentTextPosition',
         'title' => 'MS Document Text Position',
         'format' =>
@@ -6540,7 +6540,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AmbientTemperature',
         'title' => 'Ambient Temperature',
         'format' =>
@@ -6554,7 +6554,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Humidity',
         'title' => 'Humidity',
         'format' =>
@@ -6568,7 +6568,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Pressure',
         'title' => 'Pressure',
         'format' =>
@@ -6582,7 +6582,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WaterDepth',
         'title' => 'Water Depth',
         'format' =>
@@ -6596,7 +6596,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Acceleration',
         'title' => 'Acceleration',
         'format' =>
@@ -6610,7 +6610,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraElevationAngle',
         'title' => 'Camera Elevation Angle',
         'format' =>
@@ -6626,7 +6626,7 @@ class IfdExif extends CollectionBase {
       array (
         'components' => 4,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashpixVersion',
         'title' => 'Flashpix Version',
         'format' =>
@@ -6642,7 +6642,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorSpace',
         'title' => 'Color Space',
         'format' =>
@@ -6678,7 +6678,7 @@ class IfdExif extends CollectionBase {
           0 => 3,
           1 => 4,
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExifImageWidth',
         'title' => 'Exif Image Width',
         'phpExifTag' => 'ExifImageWidth',
@@ -6699,7 +6699,7 @@ class IfdExif extends CollectionBase {
           0 => 3,
           1 => 4,
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExifImageHeight',
         'title' => 'Exif Image Height',
         'phpExifTag' => 'ExifImageLength',
@@ -6710,7 +6710,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RelatedSoundFile',
         'title' => 'Related Sound File',
         'format' =>
@@ -6732,7 +6732,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SamsungRawPointersOffset',
         'title' => 'Samsung Raw Pointers Offset',
         'format' =>
@@ -6746,7 +6746,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SamsungRawPointersLength',
         'title' => 'Samsung Raw Pointers Length',
         'format' =>
@@ -6760,7 +6760,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SamsungRawByteOrder',
         'title' => 'Samsung Raw Byte Order',
         'format' =>
@@ -6774,7 +6774,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SamsungRawUnknown',
         'title' => 'Samsung Raw Unknown',
         'format' =>
@@ -6789,7 +6789,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashEnergy',
         'title' => 'Flash Energy',
         'format' =>
@@ -6804,7 +6804,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SpatialFrequencyResponse',
         'title' => 'Spatial Frequency Response',
         'format' =>
@@ -6819,7 +6819,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Noise',
         'title' => 'Noise',
         'format' =>
@@ -6835,7 +6835,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneXResolution',
         'title' => 'Focal Plane X Resolution',
         'format' =>
@@ -6851,7 +6851,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneYResolution',
         'title' => 'Focal Plane Y Resolution',
         'format' =>
@@ -6867,7 +6867,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalPlaneResolutionUnit',
         'title' => 'Focal Plane Resolution Unit',
         'format' =>
@@ -6893,7 +6893,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageNumber',
         'title' => 'Image Number',
         'format' =>
@@ -6908,7 +6908,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SecurityClassification',
         'title' => 'Security Classification',
         'format' =>
@@ -6923,7 +6923,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageHistory',
         'title' => 'Image History',
         'format' =>
@@ -6939,7 +6939,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubjectLocation',
         'title' => 'Subject Location',
         'format' =>
@@ -6955,7 +6955,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureIndex',
         'title' => 'Exposure Index',
         'format' =>
@@ -6970,7 +6970,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TIFF-EPStandardID',
         'title' => 'TIFF-EP Standard ID',
         'format' =>
@@ -6986,7 +6986,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SensingMethod',
         'title' => 'Sensing Method',
         'format' =>
@@ -7015,7 +7015,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FileSource',
         'title' => 'File Source',
         'format' =>
@@ -7041,7 +7041,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SceneType',
         'title' => 'Scene Type',
         'format' =>
@@ -7074,7 +7074,7 @@ class IfdExif extends CollectionBase {
             '2 1 1 0' => '[Blue,Green][Green,Red]',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CFAPattern',
         'title' => 'CFA Pattern',
         'format' =>
@@ -7090,7 +7090,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomRendered',
         'title' => 'Custom Rendered',
         'format' =>
@@ -7117,7 +7117,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureMode',
         'title' => 'Exposure Mode',
         'format' =>
@@ -7142,7 +7142,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -7166,7 +7166,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DigitalZoomRatio',
         'title' => 'Digital Zoom Ratio',
         'format' =>
@@ -7190,7 +7190,7 @@ class IfdExif extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalLengthIn35mmFormat',
         'title' => 'Focal Length In 35mm Format',
         'format' =>
@@ -7206,7 +7206,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SceneCaptureType',
         'title' => 'Scene Capture Type',
         'format' =>
@@ -7232,7 +7232,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GainControl',
         'title' => 'Gain Control',
         'format' =>
@@ -7259,7 +7259,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Contrast',
         'title' => 'Contrast',
         'format' =>
@@ -7284,7 +7284,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Saturation',
         'title' => 'Saturation',
         'format' =>
@@ -7309,7 +7309,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Sharpness',
         'title' => 'Sharpness',
         'format' =>
@@ -7333,7 +7333,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DeviceSettingDescription',
         'title' => 'Device Setting Description',
         'format' =>
@@ -7349,7 +7349,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubjectDistanceRange',
         'title' => 'Subject Distance Range',
         'format' =>
@@ -7375,7 +7375,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 32,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageUniqueID',
         'title' => 'Image Unique ID',
         'format' =>
@@ -7390,7 +7390,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OwnerName',
         'title' => 'Owner Name',
         'format' =>
@@ -7404,7 +7404,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -7419,7 +7419,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\ExifLensInfo',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensInfo',
         'title' => 'Lens Info',
         'components' => 4,
@@ -7434,7 +7434,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensMake',
         'title' => 'Lens Make',
         'format' =>
@@ -7448,7 +7448,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensModel',
         'title' => 'Lens Model',
         'format' =>
@@ -7462,7 +7462,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensSerialNumber',
         'title' => 'Lens Serial Number',
         'format' =>
@@ -7476,7 +7476,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GDALMetadata',
         'title' => 'GDAL Metadata',
         'format' =>
@@ -7490,7 +7490,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GDALNoData',
         'title' => 'GDAL No Data',
         'format' =>
@@ -7505,7 +7505,7 @@ class IfdExif extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Gamma',
         'title' => 'Gamma',
         'format' =>
@@ -7519,7 +7519,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExpandSoftware',
         'title' => 'Expand Software',
         'format' =>
@@ -7533,7 +7533,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExpandLens',
         'title' => 'Expand Lens',
         'format' =>
@@ -7547,7 +7547,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExpandFilm',
         'title' => 'Expand Film',
         'format' =>
@@ -7561,7 +7561,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExpandFilterLens',
         'title' => 'Expand Filter Lens',
         'format' =>
@@ -7575,7 +7575,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExpandScanner',
         'title' => 'Expand Scanner',
         'format' =>
@@ -7589,7 +7589,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExpandFlashLamp',
         'title' => 'Expand Flash Lamp',
         'format' =>
@@ -7603,7 +7603,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PixelFormat',
         'title' => 'Pixel Format',
         'format' =>
@@ -7678,7 +7678,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Transformation',
         'title' => 'Transformation',
         'format' =>
@@ -7706,7 +7706,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Uncompressed',
         'title' => 'Uncompressed',
         'format' =>
@@ -7728,7 +7728,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageType',
         'title' => 'Image Type',
         'format' =>
@@ -7750,7 +7750,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageWidth',
         'title' => 'Image Width',
         'format' =>
@@ -7764,7 +7764,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageHeight',
         'title' => 'Image Height',
         'format' =>
@@ -7778,7 +7778,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WidthResolution',
         'title' => 'Width Resolution',
         'format' =>
@@ -7792,7 +7792,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'HeightResolution',
         'title' => 'Height Resolution',
         'format' =>
@@ -7806,7 +7806,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageOffset',
         'title' => 'Image Offset',
         'format' =>
@@ -7820,7 +7820,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageByteCount',
         'title' => 'Image Byte Count',
         'format' =>
@@ -7834,7 +7834,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AlphaOffset',
         'title' => 'Alpha Offset',
         'format' =>
@@ -7848,7 +7848,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AlphaByteCount',
         'title' => 'Alpha Byte Count',
         'format' =>
@@ -7862,7 +7862,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageDataDiscard',
         'title' => 'Image Data Discard',
         'format' =>
@@ -7886,7 +7886,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AlphaDataDiscard',
         'title' => 'Alpha Data Discard',
         'format' =>
@@ -7910,7 +7910,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OceScanjobDesc',
         'title' => 'Oce Scanjob Desc',
         'format' =>
@@ -7924,7 +7924,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OceApplicationSelector',
         'title' => 'Oce Application Selector',
         'format' =>
@@ -7938,7 +7938,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OceIDNumber',
         'title' => 'Oce ID Number',
         'format' =>
@@ -7952,7 +7952,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OceImageLogic',
         'title' => 'Oce Image Logic',
         'format' =>
@@ -7966,7 +7966,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Annotations',
         'title' => 'Annotations',
         'format' =>
@@ -7980,7 +7980,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OriginalFileName',
         'title' => 'Original File Name',
         'format' =>
@@ -7994,7 +7994,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'USPTOOriginalContentType',
         'title' => 'USPTO Original Content Type',
         'format' =>
@@ -8017,7 +8017,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CR2CFAPattern',
         'title' => 'CR2 CFA Pattern',
         'format' =>
@@ -8041,7 +8041,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawImageSegmentation',
         'title' => 'Raw Image Segmentation',
         'format' =>
@@ -8055,7 +8055,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AliasLayerMetadata',
         'title' => 'Alias Layer Metadata',
         'format' =>
@@ -8069,7 +8069,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SubTileBlockSize',
         'title' => 'Sub Tile Block Size',
         'format' =>
@@ -8083,7 +8083,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RowInterleaveFactor',
         'title' => 'Row Interleave Factor',
         'format' =>
@@ -8097,7 +8097,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Padding',
         'title' => 'Padding',
         'format' =>
@@ -8110,7 +8110,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OffsetSchema',
         'title' => 'Offset Schema',
         'format' =>
@@ -8124,7 +8124,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OwnerName',
         'title' => 'Owner Name',
         'format' =>
@@ -8138,7 +8138,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -8152,7 +8152,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Lens',
         'title' => 'Lens',
         'format' =>
@@ -8166,7 +8166,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawFile',
         'title' => 'Raw File',
         'format' =>
@@ -8180,7 +8180,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Converter',
         'title' => 'Converter',
         'format' =>
@@ -8194,7 +8194,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -8208,7 +8208,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Exposure',
         'title' => 'Exposure',
         'format' =>
@@ -8222,7 +8222,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Shadows',
         'title' => 'Shadows',
         'format' =>
@@ -8236,7 +8236,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Brightness',
         'title' => 'Brightness',
         'format' =>
@@ -8250,7 +8250,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Contrast',
         'title' => 'Contrast',
         'format' =>
@@ -8264,7 +8264,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Saturation',
         'title' => 'Saturation',
         'format' =>
@@ -8278,7 +8278,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Sharpness',
         'title' => 'Sharpness',
         'format' =>
@@ -8292,7 +8292,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Smoothness',
         'title' => 'Smoothness',
         'format' =>
@@ -8306,7 +8306,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MoireFilter',
         'title' => 'Moire Filter',
         'format' =>

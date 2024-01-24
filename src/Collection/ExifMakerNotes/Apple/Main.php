@@ -17,7 +17,7 @@ class Main extends CollectionBase {
   'title' => 'Apple Maker Notes',
   'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\MakerNote',
   'DOMNode' => 'makerNote',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Apple\\Main',
   'itemsByName' =>
   array (
@@ -60,7 +60,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AccelerationVector',
         'title' => 'Acceleration Vector',
         'components' => 3,
@@ -75,7 +75,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'HDRImageType',
         'title' => 'HDR Image Type',
         'format' =>
@@ -97,7 +97,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BurstUUID',
         'title' => 'Burst UUID',
         'format' =>
@@ -111,7 +111,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ContentIdentifier',
         'title' => 'Content Identifier',
         'format' =>
@@ -125,7 +125,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageUniqueID',
         'title' => 'Image Unique ID',
         'format' =>

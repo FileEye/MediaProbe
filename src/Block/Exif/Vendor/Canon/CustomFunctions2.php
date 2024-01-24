@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\ListBase;
-use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
@@ -45,7 +45,7 @@ class CustomFunctions2 extends ListBase
                 $item_collection = $this->getCollection()->getItemCollection(
                     $id,
                     null,
-                    'UnknownTag',
+                    'Tiff\UnknownTag',
                     ['item' => $id, 'DOMNode' => 'tag'],
                     $num,
                     $this->getRootElement()

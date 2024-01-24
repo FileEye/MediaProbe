@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Map;
-use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -20,9 +20,9 @@ class ColorDataMap extends Map
     /**
      * {@inheritdoc}
      */
-    protected function validate(DataElement $data_element): void
+    protected function validate(DataElement $dataElement): void
     {
-        parent::validate($data_element);
+        parent::validate($dataElement);
 
         // Find the appropriate map collection.
         foreach ($this->getCollection()->listItemIds() as $color_data_map) {

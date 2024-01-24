@@ -3,7 +3,7 @@
 namespace FileEye\MediaProbe\Block;
 
 use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Data\DataException;

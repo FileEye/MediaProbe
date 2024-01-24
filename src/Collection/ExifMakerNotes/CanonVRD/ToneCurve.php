@@ -21,7 +21,7 @@ class ToneCurve extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\ToneCurve',
   'itemsByName' =>
   array (
@@ -115,7 +115,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveColorSpace',
         'title' => 'Tone Curve Color Space',
         'format' =>
@@ -137,7 +137,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveShape',
         'title' => 'Tone Curve Shape',
         'format' =>
@@ -159,7 +159,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveInputRange',
         'title' => 'Tone Curve Input Range',
         'components' => 2,
@@ -174,7 +174,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveOutputRange',
         'title' => 'Tone Curve Output Range',
         'components' => 2,
@@ -189,7 +189,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RGBCurvePoints',
         'title' => 'RGB Curve Points',
         'components' => 21,
@@ -204,7 +204,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveX',
         'title' => 'Tone Curve X',
         'format' =>
@@ -218,7 +218,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveY',
         'title' => 'Tone Curve Y',
         'format' =>
@@ -232,7 +232,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RedCurvePoints',
         'title' => 'Red Curve Points',
         'components' => 21,
@@ -247,7 +247,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GreenCurvePoints',
         'title' => 'Green Curve Points',
         'components' => 21,
@@ -262,7 +262,7 @@ class ToneCurve extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BlueCurvePoints',
         'title' => 'Blue Curve Points',
         'components' => 21,

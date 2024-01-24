@@ -21,29 +21,29 @@ class Main extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\Main',
   'itemsByName' =>
   array (
     'XMP' =>
     array (
-      0 => '4294902006',
+      0 => 4294902006,
     ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
     'CanonVRD:XMP' =>
     array (
-      0 => '4294902006',
+      0 => 4294902006,
     ),
   ),
   'items' =>
   array (
-    '4294902006' =>
+    4294902006 =>
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'XMP',
         'title' => 'XMP',
         'format' =>

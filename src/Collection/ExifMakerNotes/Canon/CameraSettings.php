@@ -22,7 +22,7 @@ class CameraSettings extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CameraSettings',
   'itemsByName' =>
   array (
@@ -341,7 +341,7 @@ class CameraSettings extends CollectionBase {
             2 => 'Normal',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MacroMode',
         'title' => 'Macro Mode',
         'format' =>
@@ -362,7 +362,7 @@ class CameraSettings extends CollectionBase {
             0 => 'Off',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SelfTimer',
         'title' => 'Self Timer',
         'format' =>
@@ -376,7 +376,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Quality',
         'title' => 'Quality',
         'format' =>
@@ -405,7 +405,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonFlashMode',
         'title' => 'Canon Flash Mode',
         'format' =>
@@ -434,7 +434,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ContinuousDrive',
         'title' => 'Continuous Drive',
         'format' =>
@@ -463,7 +463,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusMode',
         'title' => 'Focus Mode',
         'format' =>
@@ -494,7 +494,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RecordMode',
         'title' => 'Record Mode',
         'format' =>
@@ -526,7 +526,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonImageSize',
         'title' => 'Canon Image Size',
         'format' =>
@@ -565,7 +565,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'EasyMode',
         'title' => 'Easy Mode',
         'format' =>
@@ -667,7 +667,7 @@ class CameraSettings extends CollectionBase {
             3 => 'Other',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DigitalZoom',
         'title' => 'Digital Zoom',
         'format' =>
@@ -682,7 +682,7 @@ class CameraSettings extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Contrast',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Contrast',
         'title' => 'Contrast',
         'format' =>
@@ -704,7 +704,7 @@ class CameraSettings extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Saturation',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Saturation',
         'title' => 'Saturation',
         'format' =>
@@ -726,7 +726,7 @@ class CameraSettings extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Sharpness',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Sharpness',
         'title' => 'Sharpness',
         'format' =>
@@ -741,7 +741,7 @@ class CameraSettings extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraISO',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraISO',
         'title' => 'Camera ISO',
         'format' =>
@@ -755,7 +755,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MeteringMode',
         'title' => 'Metering Mode',
         'format' =>
@@ -781,7 +781,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusRange',
         'title' => 'Focus Range',
         'format' =>
@@ -812,7 +812,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPoint',
         'title' => 'AF Point',
         'format' =>
@@ -840,7 +840,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonExposureMode',
         'title' => 'Canon Exposure Mode',
         'format' =>
@@ -1273,7 +1273,7 @@ class CameraSettings extends CollectionBase {
             65535 => 'n/a',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensType',
         'title' => 'Lens Type',
         'format' =>
@@ -1292,7 +1292,7 @@ class CameraSettings extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',
         'format' =>
@@ -1311,7 +1311,7 @@ class CameraSettings extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',
         'format' =>
@@ -1329,7 +1329,7 @@ class CameraSettings extends CollectionBase {
         array (
           'default' => '{value}/mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalUnits',
         'title' => 'Focal Units',
         'format' =>
@@ -1344,7 +1344,7 @@ class CameraSettings extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ApertureValue',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MaxAperture',
         'title' => 'Max Aperture',
         'format' =>
@@ -1359,7 +1359,7 @@ class CameraSettings extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ApertureValue',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MinAperture',
         'title' => 'Min Aperture',
         'format' =>
@@ -1373,7 +1373,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashActivity',
         'title' => 'Flash Activity',
         'format' =>
@@ -1387,7 +1387,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashBits',
         'title' => 'Flash Bits',
         'format' =>
@@ -1417,7 +1417,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusContinuous',
         'title' => 'Focus Continuous',
         'format' =>
@@ -1440,7 +1440,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AESetting',
         'title' => 'AE Setting',
         'format' =>
@@ -1465,7 +1465,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageStabilization',
         'title' => 'Image Stabilization',
         'format' =>
@@ -1496,7 +1496,7 @@ class CameraSettings extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\DisplayAperture',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DisplayAperture',
         'title' => 'Display Aperture',
         'format' =>
@@ -1510,7 +1510,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ZoomSourceWidth',
         'title' => 'Zoom Source Width',
         'format' =>
@@ -1524,7 +1524,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ZoomTargetWidth',
         'title' => 'Zoom Target Width',
         'format' =>
@@ -1538,7 +1538,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SpotMeteringMode',
         'title' => 'Spot Metering Mode',
         'format' =>
@@ -1560,7 +1560,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PhotoEffect',
         'title' => 'Photo Effect',
         'format' =>
@@ -1588,7 +1588,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ManualFlashOutput',
         'title' => 'Manual Flash Output',
         'format' =>
@@ -1613,7 +1613,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTone',
         'title' => 'Color Tone',
         'format' =>
@@ -1634,7 +1634,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SRAWQuality',
         'title' => 'SRAW Quality',
         'format' =>

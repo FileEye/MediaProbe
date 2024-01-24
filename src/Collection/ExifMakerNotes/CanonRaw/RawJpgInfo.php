@@ -21,7 +21,7 @@ class RawJpgInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\RawJpgInfo',
   'itemsByName' =>
   array (
@@ -67,7 +67,7 @@ class RawJpgInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawJpgQuality',
         'title' => 'Raw Jpg Quality',
         'format' =>
@@ -91,7 +91,7 @@ class RawJpgInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawJpgSize',
         'title' => 'Raw Jpg Size',
         'format' =>
@@ -114,7 +114,7 @@ class RawJpgInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawJpgWidth',
         'title' => 'Raw Jpg Width',
         'format' =>
@@ -128,7 +128,7 @@ class RawJpgInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawJpgHeight',
         'title' => 'Raw Jpg Height',
         'format' =>

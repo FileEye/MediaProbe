@@ -21,7 +21,7 @@ class AspectInfo extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\AspectInfo',
   'itemsByName' =>
   array (
@@ -75,7 +75,7 @@ class AspectInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AspectRatio',
         'title' => 'Aspect Ratio',
         'format' =>
@@ -100,7 +100,7 @@ class AspectInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CroppedImageWidth',
         'title' => 'Cropped Image Width',
         'format' =>
@@ -114,7 +114,7 @@ class AspectInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CroppedImageHeight',
         'title' => 'Cropped Image Height',
         'format' =>
@@ -128,7 +128,7 @@ class AspectInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CroppedImageLeft',
         'title' => 'Cropped Image Left',
         'format' =>
@@ -142,7 +142,7 @@ class AspectInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CroppedImageTop',
         'title' => 'Cropped Image Top',
         'format' =>
