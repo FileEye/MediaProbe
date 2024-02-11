@@ -21,7 +21,7 @@ class StampInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\StampInfo',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class StampInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'StampToolCount',
         'title' => 'Stamp Tool Count',
         'format' =>

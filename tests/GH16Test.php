@@ -2,11 +2,11 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\Block\Exif\Ifd;
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Block\Jpeg\Exif;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\WindowsString;
 use FileEye\MediaProbe\ItemDefinition;
@@ -35,7 +35,7 @@ class GH16Test extends MediaProbeTestCaseBase
     public function testThisDoesNotWorkAsExpected()
     {
         // Parse test file.
-        $media = Media::loadFromFile($this->file);
+        $media = Media::parseFromFile($this->file);
         $jpeg = $media->getElement("jpeg");
         $exif = $jpeg->getElement("jpegSegment/exif");
         $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
@@ -52,7 +52,7 @@ class GH16Test extends MediaProbeTestCaseBase
         $media->saveToFile($this->file);
 
         // Parse the test file again and check the Tag's new value was saved.
-        $r_media = Media::loadFromFile($this->file);
+        $r_media = Media::parseFromFile($this->file);
         $r_jpeg = $r_media->getElement("jpeg");
         $r_exif = $r_jpeg->getElement("jpegSegment/exif");
         $r_ifd0 = $r_exif->getElement("tiff/ifd[@name='IFD0']");

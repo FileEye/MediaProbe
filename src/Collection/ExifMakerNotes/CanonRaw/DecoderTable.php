@@ -21,7 +21,7 @@ class DecoderTable extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\DecoderTable',
   'itemsByName' =>
   array (
@@ -59,7 +59,7 @@ class DecoderTable extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DecoderTableNumber',
         'title' => 'Decoder Table Number',
         'format' =>
@@ -73,7 +73,7 @@ class DecoderTable extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CompressedDataOffset',
         'title' => 'Compressed Data Offset',
         'format' =>
@@ -87,7 +87,7 @@ class DecoderTable extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CompressedDataLength',
         'title' => 'Compressed Data Length',
         'format' =>

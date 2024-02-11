@@ -41,6 +41,7 @@ class CompileCommand extends Command
     {
         $compiler = new SpecCompiler();
         $compiler->compile($input->getArgument('spec-dir'), $input->getArgument('resource-dir'));
+        $output->writeln('Compile OK');
         return(0);
     }
 }

@@ -1,6 +1,8 @@
 collection: Tiff\Tiff
 title: 'TIFF image data'
-class: FileEye\MediaProbe\Block\Tiff
+class: FileEye\MediaProbe\Block\Tiff\Tiff
+parser: FileEye\MediaProbe\Parser\Tiff\Tiff
+writer: FileEye\MediaProbe\Writer\Tiff\Tiff
 DOMNode: tiff
 items:
     0:

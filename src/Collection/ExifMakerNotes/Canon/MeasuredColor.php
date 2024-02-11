@@ -22,7 +22,7 @@ class MeasuredColor extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\MeasuredColor',
   'itemsByName' =>
   array (
@@ -53,7 +53,7 @@ class MeasuredColor extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MeasuredRGGB',
         'title' => 'Measured RGGB',
         'components' => 4,

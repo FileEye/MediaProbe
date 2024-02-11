@@ -2,8 +2,10 @@ collection: Jpeg\SegmentApp1
 name: APP1
 title: 'JPEG Application segment 1'
 payload: variable
-class: FileEye\MediaProbe\Block\JpegSegmentApp1
+class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
+parser: FileEye\MediaProbe\Parser\Jpeg\SegmentApp1
+writer: FileEye\MediaProbe\Writer\Jpeg\SegmentApp1
 DOMNode: jpegSegment
 items:
     Exif:
-        collection: Exif\Exif
+        collection: Jpeg\Exif

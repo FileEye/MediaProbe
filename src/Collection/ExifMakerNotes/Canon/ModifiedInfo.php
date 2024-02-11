@@ -21,7 +21,7 @@ class ModifiedInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ModifiedInfo',
   'itemsByName' =>
   array (
@@ -123,7 +123,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedToneCurve',
         'title' => 'Modified Tone Curve',
         'format' =>
@@ -146,7 +146,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedSharpness',
         'title' => 'Modified Sharpness',
         'format' =>
@@ -160,7 +160,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedSharpnessFreq',
         'title' => 'Modified Sharpness Freq',
         'format' =>
@@ -186,7 +186,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedSensorRedLevel',
         'title' => 'Modified Sensor Red Level',
         'format' =>
@@ -200,7 +200,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedSensorBlueLevel',
         'title' => 'Modified Sensor Blue Level',
         'format' =>
@@ -214,7 +214,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedWhiteBalanceRed',
         'title' => 'Modified White Balance Red',
         'format' =>
@@ -228,7 +228,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedWhiteBalanceBlue',
         'title' => 'Modified White Balance Blue',
         'format' =>
@@ -242,7 +242,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedWhiteBalance',
         'title' => 'Modified White Balance',
         'format' =>
@@ -284,7 +284,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedColorTemp',
         'title' => 'Modified Color Temp',
         'format' =>
@@ -298,7 +298,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedPictureStyle',
         'title' => 'Modified Picture Style',
         'format' =>
@@ -342,7 +342,7 @@ class ModifiedInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ModifiedDigitalGain',
         'title' => 'Modified Digital Gain',
         'format' =>

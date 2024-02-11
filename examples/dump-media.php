@@ -14,8 +14,8 @@ use FileEye\MediaProbe\InvalidFileException;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Utility\ConvertBytes;
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Utility\DumpLogFormatter;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -135,7 +135,7 @@ if (!is_readable($file)) {
 try {
     /* Load data from file */
     $baseline_memory = FileSizeConvert(memory_get_usage());
-    $media = Media::loadFromFile($file, $logger, $fail_on_error);
+    $media = Media::parseFromFile($file, $logger, $fail_on_error);
     $max_memory = FileSizeConvert(memory_get_peak_usage());
     $curr_memory = FileSizeConvert(memory_get_usage());
     if ($media === null) {

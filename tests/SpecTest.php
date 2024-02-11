@@ -2,11 +2,11 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif\Ifd;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Map;
-use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionException;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataString;
@@ -28,7 +28,7 @@ class SpecTest extends MediaProbeTestCaseBase
      */
     public function testDefaultSpec()
     {
-        $tiff_mock = $this->getMockBuilder('FileEye\MediaProbe\Block\Tiff')
+        $tiff_mock = $this->getMockBuilder('FileEye\MediaProbe\Block\Tiff\Tiff')
             ->disableOriginalConstructor()
             ->getMock();
         $ifd_0 = new Ifd(new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
@@ -46,8 +46,8 @@ class SpecTest extends MediaProbeTestCaseBase
 
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals([
-            'FileEye\MediaProbe\Block\Exif\Ifd::thumbnailToBlock',
-            'FileEye\MediaProbe\Block\Exif\Ifd::makerNoteToBlock',
+            'FileEye\MediaProbe\Block\Tiff\Ifd::thumbnailToBlock',
+            'FileEye\MediaProbe\Block\Tiff\Ifd::makerNoteToBlock',
         ], $ifd_0->getCollection()->getPropertyValue('postParse'));
         $this->assertNull($ifd_canon_camera_settings->getCollection()->getPropertyValue('postParse'));
 

@@ -25,41 +25,58 @@ class ItemDefinition
      *   The sequence of the item on its parent list.
      */
     public function __construct(
-        protected CollectionInterface $collection,
-        protected int $format = DataFormat::BYTE,
-        protected int $valuesCount = 1,
-        protected int $dataOffset = 0,
-        protected int $itemDefinitionOffset = 0,
-        protected int $sequence = 0,
-    )
-    {
+        public readonly CollectionInterface $collection,
+        public readonly int $format = DataFormat::BYTE,
+        public readonly int $valuesCount = 1,
+        public readonly int $dataOffset = 0,
+        public readonly int $itemDefinitionOffset = 0,
+        public readonly int $sequence = 0,
+    ) {
     }
 
+    /**
+     * @deprecated
+     */
     public function getCollection(): CollectionInterface
     {
         return $this->collection;
     }
 
+    /**
+     * @deprecated
+     */
     public function getFormat(): int
     {
         return $this->format;
     }
 
+    /**
+     * @deprecated
+     */
     public function getValuesCount(): int
     {
         return $this->valuesCount;
     }
 
+    /**
+     * @deprecated
+     */
     public function getDataOffset(): int
     {
         return $this->dataOffset;
     }
 
+    /**
+     * @deprecated
+     */
     public function getItemDefinitionOffset(): int
     {
         return $this->itemDefinitionOffset;
     }
 
+    /**
+     * @deprecated
+     */
     public function getSequence(): int
     {
         return $this->sequence;
@@ -70,7 +87,7 @@ class ItemDefinition
      */
     public function getSize(): int
     {
-        return DataFormat::getSize($this->getFormat()) * $this->getValuesCount();
+        return DataFormat::getSize($this->format) * $this->valuesCount;
     }
 
     /**
@@ -82,7 +99,7 @@ class ItemDefinition
         // Return the specific entry class if defined, or fall back to
         // default class for the format.
         if (!$entry_class = $this->collection->getPropertyValue('entryClass')) {
-            if (empty($this->getFormat())) {
+            if (empty($this->format)) {
                 throw new MediaProbeException(
                     'No format can be derived for item: %s (%s)',
                     $this->collection->getPropertyValue('item') ?? 'n/a',
@@ -90,10 +107,10 @@ class ItemDefinition
                 );
             }
 
-            if (!$entry_class = DataFormat::getClass($this->getFormat())) {
+            if (!$entry_class = DataFormat::getClass($this->format)) {
                 throw new MediaProbeException(
                     'Unsupported format %d for item: %s (%s)',
-                    $this->getFormat(),
+                    $this->format,
                     $this->collection->getPropertyValue('item') ?? 'n/a',
                     $this->collection->getPropertyValue('name') ?? 'n/a'
                 );

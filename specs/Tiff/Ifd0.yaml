@@ -1,15 +1,15 @@
 collection: Tiff\Ifd0
 name: IFD0
 title: IFD0
-class: FileEye\MediaProbe\Block\Exif\Ifd
+class: FileEye\MediaProbe\Block\Tiff\Ifd
 DOMNode: ifd
-defaultItemCollection: Tag
+defaultItemCollection: Tiff\Tag
 alias:
     - '0'
     - Main
 postParse:
-    - 'FileEye\MediaProbe\Block\Exif\Ifd::thumbnailToBlock'
-    - 'FileEye\MediaProbe\Block\Exif\Ifd::makerNoteToBlock'
+    - 'FileEye\MediaProbe\Block\Tiff\Ifd::thumbnailToBlock'
+    - 'FileEye\MediaProbe\Block\Tiff\Ifd::makerNoteToBlock'
 compiler:
     exiftool:
         g1: IFD0

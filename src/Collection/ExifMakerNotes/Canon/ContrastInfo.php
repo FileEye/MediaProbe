@@ -21,7 +21,7 @@ class ContrastInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ContrastInfo',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class ContrastInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'IntelligentContrast',
         'title' => 'Intelligent Contrast',
         'format' =>

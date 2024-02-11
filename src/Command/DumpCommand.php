@@ -2,11 +2,10 @@
 
 namespace FileEye\MediaProbe\Command;
 
-use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\Block\Exif\Ifd;
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Block\Jpeg\Exif;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Dumper\DefaultDumper;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
@@ -120,7 +119,7 @@ class DumpCommand extends Command
     {
         $yaml = [];
 
-        $media = Media::loadFromFile((string) $file);
+        $media = Media::parseFromFile((string) $file);
         $yaml['fileName'] = $file->getBaseName();
         $yaml['mimeType'] = $media->getMimeType();
         $yaml['fileContentHash'] = hash('sha256', $file->getContents());

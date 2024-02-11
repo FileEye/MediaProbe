@@ -21,7 +21,7 @@ class SerialInfo extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\SerialInfo',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class SerialInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'InternalSerialNumber',
         'title' => 'Internal Serial Number',
         'format' =>

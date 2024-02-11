@@ -2,8 +2,8 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Media;
 
@@ -13,7 +13,7 @@ class GH77Test extends MediaProbeTestCaseBase
     {
         $file = dirname(__FILE__) . '/media-samples/image/gh-77.jpg';
 
-        $media = Media::loadFromFile($file);
+        $media = Media::parseFromFile($file);
         $input_jpeg = $media->getElement("jpeg");
 
         $app1 = $input_jpeg->getElement("jpegSegment/exif");

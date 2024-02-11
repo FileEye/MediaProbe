@@ -11,15 +11,15 @@ elements:
         -
             node: jpeg
             path: /media/jpeg
-            class: FileEye\MediaProbe\Block\Jpeg
+            class: FileEye\MediaProbe\Block\Jpeg\Jpeg
             valid: true
-            id: Jpeg
+            id: image/jpeg
             collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOI:216'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOI
                     id: '216'
@@ -37,7 +37,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DQT
                     id: '219'
@@ -55,7 +55,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
                     name: APP1
                     id: '225'
@@ -64,21 +64,21 @@ elements:
                         -
                             node: exif
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
-                            class: FileEye\MediaProbe\Block\Exif\Exif
+                            class: FileEye\MediaProbe\Block\Jpeg\Exif
                             valid: true
-                            collection: Exif\Exif
+                            collection: Jpeg\Exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
-                                    class: FileEye\MediaProbe\Block\Tiff
+                                    class: FileEye\MediaProbe\Block\Tiff\Tiff
                                     valid: true
                                     collection: Tiff\Tiff
                                     elements:
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            class: FileEye\MediaProbe\Block\Exif\Ifd
+                                            class: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: true
                                             name: IFD0
                                             id: '0'
@@ -87,11 +87,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: Software
                                                     id: '305'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -105,7 +105,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOF0:192'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOF0
                     id: '192'
@@ -123,7 +123,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DHT
                     id: '196'
@@ -141,7 +141,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOS:218'
-                    class: FileEye\MediaProbe\Block\JpegSegmentSos
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentSos
                     valid: true
                     name: SOS
                     id: '218'
@@ -159,7 +159,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:EOI:217'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: EOI
                     id: '217'
@@ -185,7 +185,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: bug3017880.jpg
-    FileDateTime: 1644443593
+    FileDateTime: 1639835048
     FileSize: 4900
     FileType: 2
     MimeType: image/jpeg

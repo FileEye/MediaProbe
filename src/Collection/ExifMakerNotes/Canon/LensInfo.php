@@ -21,7 +21,7 @@ class LensInfo extends CollectionBase {
   array (
     0 => 7,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\LensInfo',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class LensInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensSerialNumber',
         'title' => 'Lens Serial Number',
         'components' => 5,

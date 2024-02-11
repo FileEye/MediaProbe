@@ -1,6 +1,7 @@
 skip:
     phpExif:
         - ExifVersion
+        - Title
     exiftool:
         - 'ExifIFD:ExifVersion'
 fileName: misplaced-exif.jpg
@@ -16,15 +17,15 @@ elements:
         -
             node: jpeg
             path: /media/jpeg
-            class: FileEye\MediaProbe\Block\Jpeg
+            class: FileEye\MediaProbe\Block\Jpeg\Jpeg
             valid: true
-            id: Jpeg
+            id: image/jpeg
             collection: Jpeg\Jpeg
             elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOI:216'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOI
                     id: '216'
@@ -42,7 +43,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP0:224'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: APP0
                     id: '224'
@@ -60,7 +61,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
                     name: APP1
                     id: '225'
@@ -78,7 +79,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    class: FileEye\MediaProbe\Block\JpegSegmentApp1
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
                     name: APP1
                     id: '225'
@@ -87,21 +88,21 @@ elements:
                         -
                             node: exif
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
-                            class: FileEye\MediaProbe\Block\Exif\Exif
+                            class: FileEye\MediaProbe\Block\Jpeg\Exif
                             valid: true
-                            collection: Exif\Exif
+                            collection: Jpeg\Exif
                             elements:
                                 -
                                     node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
-                                    class: FileEye\MediaProbe\Block\Tiff
+                                    class: FileEye\MediaProbe\Block\Tiff\Tiff
                                     valid: true
                                     collection: Tiff\Tiff
                                     elements:
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            class: FileEye\MediaProbe\Block\Exif\Ifd
+                                            class: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: true
                                             name: IFD0
                                             id: '0'
@@ -110,11 +111,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XPTitle:40091'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: XPTitle
                                                     id: '40091'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -128,11 +129,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: ImageDescription
                                                     id: '270'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -146,11 +147,11 @@ elements:
                                                 -
                                                     node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-                                                    class: FileEye\MediaProbe\Block\Tag
+                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: false
                                                     name: ModifyDate
                                                     id: '306'
-                                                    collection: Tag
+                                                    collection: Tiff\Tag
                                                     elements:
                                                         -
                                                             node: entry
@@ -164,7 +165,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
-                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
+                                                    class: FileEye\MediaProbe\Block\Tiff\Ifd
                                                     valid: true
                                                     name: GPS
                                                     id: '34853'
@@ -173,11 +174,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSVersionID:0'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: GPSVersionID
                                                             id: '0'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -191,7 +192,7 @@ elements:
                                                 -
                                                     node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    class: FileEye\MediaProbe\Block\Exif\Ifd
+                                                    class: FileEye\MediaProbe\Block\Tiff\Ifd
                                                     valid: true
                                                     name: ExifIFD
                                                     id: '34665'
@@ -200,11 +201,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: false
                                                             name: ExifVersion
                                                             id: '36864'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -218,11 +219,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTime:37520'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: SubSecTime
                                                             id: '37520'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -236,11 +237,11 @@ elements:
                                                         -
                                                             node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880'
-                                                            class: FileEye\MediaProbe\Block\Tag
+                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: OffsetTime
                                                             id: '36880'
-                                                            collection: Tag
+                                                            collection: Tiff\Tag
                                                             elements:
                                                                 -
                                                                     node: entry
@@ -254,7 +255,7 @@ elements:
                                         -
                                             node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
-                                            class: FileEye\MediaProbe\Block\Exif\Ifd
+                                            class: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: true
                                             name: IFD1
                                             id: '1'
@@ -279,7 +280,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:COM:254'
-                    class: FileEye\MediaProbe\Block\JpegSegmentCom
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentCom
                     valid: true
                     name: COM
                     id: '254'
@@ -297,7 +298,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DQT
                     id: '219'
@@ -315,7 +316,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DQT
                     id: '219'
@@ -333,7 +334,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOF2:194'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOF2
                     id: '194'
@@ -351,7 +352,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DHT
                     id: '196'
@@ -369,7 +370,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DHT
                     id: '196'
@@ -387,7 +388,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOS:218'
-                    class: FileEye\MediaProbe\Block\JpegSegmentSos
+                    class: FileEye\MediaProbe\Block\Jpeg\SegmentSos
                     valid: true
                     name: SOS
                     id: '218'
@@ -405,7 +406,7 @@ elements:
                 -
                     node: jpegSegment
                     path: '/media/jpeg/jpegSegment:EOI:217'
-                    class: FileEye\MediaProbe\Block\JpegSegment
+                    class: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: EOI
                     id: '217'
@@ -424,13 +425,13 @@ log:
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-            message: 'Found 11 data components, expected 20 for item ''ModifyDate'' in ''IFD0'''
+            message: "Found 11 data components, expected 20 for item 'ModifyDate' in 'IFD0'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
-            message: 'Invalid datetime format for ''1509749992'''
+            message: "Invalid datetime format for '1509749992'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-            message: 'Found Byte data format, expected Undefined for item ''ExifVersion'' in ''ExifIFD'''
+            message: "Found Byte data format, expected Undefined for item 'ExifVersion' in 'ExifIFD'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
             message: 'Incorrect version data.'
@@ -444,7 +445,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: misplaced-exif.jpg
-    FileDateTime: 1644612165
+    FileDateTime: 1639835048
     FileSize: 4587
     FileType: 2
     MimeType: image/jpeg
@@ -457,7 +458,7 @@ exifReadData:
         ByteOrderMotorola: 0
         Thumbnail.FileType: 2
         Thumbnail.MimeType: image/jpeg
-    Title: ''
+    Title: '?'
     ImageDescription: Test1
     DateTime: '1509749992'
     GPS_IFD_Pointer: 91

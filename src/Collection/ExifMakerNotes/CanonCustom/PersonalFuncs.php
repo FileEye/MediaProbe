@@ -21,7 +21,7 @@ class PersonalFuncs extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncs',
   'itemsByName' =>
   array (
@@ -267,7 +267,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF0CustomFuncRegistration',
         'title' => 'PF0 Custom Func Registration',
         'format' =>
@@ -281,7 +281,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF1DisableShootingModes',
         'title' => 'PF1 Disable Shooting Modes',
         'format' =>
@@ -295,7 +295,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF2DisableMeteringModes',
         'title' => 'PF2 Disable Metering Modes',
         'format' =>
@@ -309,7 +309,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF3ManualExposureMetering',
         'title' => 'PF3 Manual Exposure Metering',
         'format' =>
@@ -323,7 +323,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF4ExposureTimeLimits',
         'title' => 'PF4 Exposure Time Limits',
         'format' =>
@@ -337,7 +337,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF5ApertureLimits',
         'title' => 'PF5 Aperture Limits',
         'format' =>
@@ -351,7 +351,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF6PresetShootingModes',
         'title' => 'PF6 Preset Shooting Modes',
         'format' =>
@@ -365,7 +365,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF7BracketContinuousShoot',
         'title' => 'PF7 Bracket Continuous Shoot',
         'format' =>
@@ -379,7 +379,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF8SetBracketShots',
         'title' => 'PF8 Set Bracket Shots',
         'format' =>
@@ -393,7 +393,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF9ChangeBracketSequence',
         'title' => 'PF9 Change Bracket Sequence',
         'format' =>
@@ -407,7 +407,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF10RetainProgramShift',
         'title' => 'PF10 Retain Program Shift',
         'format' =>
@@ -421,7 +421,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF13DrivePriority',
         'title' => 'PF13 Drive Priority',
         'format' =>
@@ -435,7 +435,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF14DisableFocusSearch',
         'title' => 'PF14 Disable Focus Search',
         'format' =>
@@ -449,7 +449,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF15DisableAFAssistBeam',
         'title' => 'PF15 Disable AF Assist Beam',
         'format' =>
@@ -463,7 +463,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF16AutoFocusPointShoot',
         'title' => 'PF16 Auto Focus Point Shoot',
         'format' =>
@@ -477,7 +477,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF17DisableAFPointSel',
         'title' => 'PF17 Disable AF Point Sel',
         'format' =>
@@ -491,7 +491,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF18EnableAutoAFPointSel',
         'title' => 'PF18 Enable Auto AF Point Sel',
         'format' =>
@@ -505,7 +505,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF19ContinuousShootSpeed',
         'title' => 'PF19 Continuous Shoot Speed',
         'format' =>
@@ -519,7 +519,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF20LimitContinousShots',
         'title' => 'PF20 Limit Continous Shots',
         'format' =>
@@ -533,7 +533,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF21EnableQuietOperation',
         'title' => 'PF21 Enable Quiet Operation',
         'format' =>
@@ -547,7 +547,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF23SetTimerLengths',
         'title' => 'PF23 Set Timer Lengths',
         'format' =>
@@ -561,7 +561,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF24LightLCDDuringBulb',
         'title' => 'PF24 Light LCD During Bulb',
         'format' =>
@@ -575,7 +575,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25DefaultClearSettings',
         'title' => 'PF25 Default Clear Settings',
         'format' =>
@@ -589,7 +589,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF26ShortenReleaseLag',
         'title' => 'PF26 Shorten Release Lag',
         'format' =>
@@ -603,7 +603,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF27ReverseDialRotation',
         'title' => 'PF27 Reverse Dial Rotation',
         'format' =>
@@ -617,7 +617,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF28NoQuickDialExpComp',
         'title' => 'PF28 No Quick Dial Exp Comp',
         'format' =>
@@ -631,7 +631,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF29QuickDialSwitchOff',
         'title' => 'PF29 Quick Dial Switch Off',
         'format' =>
@@ -645,7 +645,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF30EnlargementMode',
         'title' => 'PF30 Enlargement Mode',
         'format' =>
@@ -659,7 +659,7 @@ class PersonalFuncs extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF31OriginalDecisionData',
         'title' => 'PF31 Original Decision Data',
         'format' =>

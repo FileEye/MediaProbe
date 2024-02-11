@@ -17,7 +17,7 @@ class Index extends ListBase
     /**
      * Validates the list against the specification.
      */
-    protected function validate(DataElement $data_element): void
+    protected function validate(DataElement $dataElement): void
     {
         // Warn if format is not as expected.
         $expected_format = $this->getCollection()->getPropertyValue('format');
@@ -37,7 +37,7 @@ class Index extends ListBase
         // itself). This should match the size determined in the parent IFD.
         if ($this->getCollection()->getPropertyValue('hasIndexSize')) {
             $offset = 0;
-            $index_size = $this->getValueFromData($data_element, $offset, $this->getCollection()->getPropertyValue('format')[0]);
+            $index_size = $this->getValueFromData($dataElement, $offset, $this->getCollection()->getPropertyValue('format')[0]);
             if ($index_size !== $this->getDefinition()->getSize()) {
                 $this->error("Size mismatch between IFD and index header");
             }
@@ -83,7 +83,7 @@ class Index extends ListBase
      *            The sequence (0-index) of the item in the index.
      * @param mixed $id
      *            The id of the item in the index.
-     * @param DataElement $data_element
+     * @param DataElement $dataElement
      *            the data element that will provide the data.
      * @param int $offset
      *            the offset within the data element where the count can be
@@ -92,11 +92,11 @@ class Index extends ListBase
      * @return \FileEye\MediaProbe\ItemDefinition
      *            the ItemDefinition object of the IFD item.
      */
-    protected function getItemDefinitionFromData(int $seq, $id, DataElement $data_element, int $offset): ItemDefinition
+    protected function getItemDefinitionFromData(int $seq, $id, DataElement $dataElement, int $offset): ItemDefinition
     {
         // In case the item is not found in the collection for the index,
         // we still load it as a 'tag'.
-        $item_collection = $this->getCollection()->getItemCollection($id, 0, 'UnknownTag', [
+        $item_collection = $this->getCollection()->getItemCollection($id, 0, 'Tiff\UnknownTag', [
             'item' => $id,
             'DOMNode' => 'tag',
         ]);
@@ -108,9 +108,9 @@ class Index extends ListBase
     /**
      * @todo xxx
      */
-    protected function getValueFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): mixed
+    protected function getValueFromData(DataElement $dataElement, int &$offset, int $format, int $count = 1): mixed
     {
-        $dataWindow = $this->getDataWindowFromData($data_element, $offset, $format, $count);
+        $dataWindow = $this->getDataWindowFromData($dataElement, $offset, $format, $count);
         switch ($format) {
             case DataFormat::BYTE:
                 return $dataWindow->getByte();
@@ -136,7 +136,7 @@ class Index extends ListBase
     /**
      * @todo xxx
      */
-    protected function getDataWindowFromData(DataElement $data_element, int &$offset, int $format, int $count = 1): DataWindow
+    protected function getDataWindowFromData(DataElement $dataElement, int &$offset, int $format, int $count = 1): DataWindow
     {
         switch ($format) {
             case DataFormat::ASCII:
@@ -160,7 +160,7 @@ class Index extends ListBase
             default:
                 $this->error("Unsupported format.");
         }
-        $value = new DataWindow($data_element, $offset, $count * $size);
+        $value = new DataWindow($dataElement, $offset, $count * $size);
         $offset += ($count * $size);
         return $value;
     }

@@ -21,7 +21,7 @@ class GammaInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\GammaInfo',
   'itemsByName' =>
   array (
@@ -139,7 +139,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaContrast',
         'title' => 'Gamma Contrast',
         'format' =>
@@ -153,7 +153,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaColorTone',
         'title' => 'Gamma Color Tone',
         'format' =>
@@ -167,7 +167,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaSaturation',
         'title' => 'Gamma Saturation',
         'format' =>
@@ -181,7 +181,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaUnsharpMaskStrength',
         'title' => 'Gamma Unsharp Mask Strength',
         'format' =>
@@ -195,7 +195,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaUnsharpMaskFineness',
         'title' => 'Gamma Unsharp Mask Fineness',
         'format' =>
@@ -209,7 +209,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaUnsharpMaskThreshold',
         'title' => 'Gamma Unsharp Mask Threshold',
         'format' =>
@@ -223,7 +223,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaSharpnessStrength',
         'title' => 'Gamma Sharpness Strength',
         'format' =>
@@ -237,7 +237,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaShadow',
         'title' => 'Gamma Shadow',
         'format' =>
@@ -251,7 +251,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaHighlight',
         'title' => 'Gamma Highlight',
         'format' =>
@@ -265,7 +265,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaBlackPoint',
         'title' => 'Gamma Black Point',
         'format' =>
@@ -279,7 +279,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaWhitePoint',
         'title' => 'Gamma White Point',
         'format' =>
@@ -293,7 +293,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaMidPoint',
         'title' => 'Gamma Mid Point',
         'format' =>
@@ -307,7 +307,7 @@ class GammaInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaCurveOutputRange',
         'title' => 'Gamma Curve Output Range',
         'components' => 2,

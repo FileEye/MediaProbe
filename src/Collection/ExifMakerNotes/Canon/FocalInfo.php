@@ -15,13 +15,13 @@ class FocalInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonFocalInfo',
   'title' => 'Canon FocalInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'index',
   'format' =>
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FocalInfo',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class FocalInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>

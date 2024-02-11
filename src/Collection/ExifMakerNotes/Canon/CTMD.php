@@ -18,7 +18,7 @@ class CTMD extends CollectionBase {
   'title' => 'Canon CTMD',
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CTMD',
   'itemsByName' =>
   array (
@@ -40,7 +40,7 @@ class CTMD extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'TimeStamp',
         'title' => 'Time Stamp',
         'format' =>

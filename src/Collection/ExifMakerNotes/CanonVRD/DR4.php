@@ -21,7 +21,7 @@ class DR4 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\DR4',
   'itemsByName' =>
   array (
@@ -539,7 +539,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SharpnessAdjOn',
         'title' => 'Sharpness Adj On',
         'format' =>
@@ -561,7 +561,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveOriginal',
         'title' => 'Tone Curve Original',
         'format' =>
@@ -583,7 +583,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AutoLightingOptimizerOn',
         'title' => 'Auto Lighting Optimizer On',
         'format' =>
@@ -605,7 +605,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorMoireReductionOn',
         'title' => 'Color Moire Reduction On',
         'format' =>
@@ -627,7 +627,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PeripheralIlluminationOn',
         'title' => 'Peripheral Illumination On',
         'format' =>
@@ -649,7 +649,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberrationOn',
         'title' => 'Chromatic Aberration On',
         'format' =>
@@ -671,7 +671,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DistortionCorrectionOn',
         'title' => 'Distortion Correction On',
         'format' =>
@@ -693,7 +693,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOOn',
         'title' => 'DLO On',
         'format' =>
@@ -715,7 +715,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Rotation',
         'title' => 'Rotation',
         'format' =>
@@ -729,7 +729,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AngleAdj',
         'title' => 'Angle Adj',
         'format' =>
@@ -743,7 +743,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomPictureStyle',
         'title' => 'Custom Picture Style',
         'format' =>
@@ -757,7 +757,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CheckMark',
         'title' => 'Check Mark',
         'format' =>
@@ -783,7 +783,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WorkColorSpace',
         'title' => 'Work Color Space',
         'format' =>
@@ -808,7 +808,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawBrightnessAdj',
         'title' => 'Raw Brightness Adj',
         'format' =>
@@ -822,7 +822,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalanceAdj',
         'title' => 'White Balance Adj',
         'format' =>
@@ -852,7 +852,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBAdjColorTemp',
         'title' => 'WB Adj Color Temp',
         'format' =>
@@ -866,7 +866,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBAdjMagentaGreen',
         'title' => 'WB Adj Magenta Green',
         'format' =>
@@ -880,7 +880,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBAdjBlueAmber',
         'title' => 'WB Adj Blue Amber',
         'format' =>
@@ -894,7 +894,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBAdjRGGBLevels',
         'title' => 'WB Adj RGGB Levels',
         'format' =>
@@ -908,7 +908,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GammaLinear',
         'title' => 'Gamma Linear',
         'format' =>
@@ -930,7 +930,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PictureStyle',
         'title' => 'Picture Style',
         'format' =>
@@ -960,7 +960,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ContrastAdj',
         'title' => 'Contrast Adj',
         'format' =>
@@ -974,7 +974,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorToneAdj',
         'title' => 'Color Tone Adj',
         'format' =>
@@ -988,7 +988,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorSaturationAdj',
         'title' => 'Color Saturation Adj',
         'format' =>
@@ -1002,7 +1002,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeToningEffect',
         'title' => 'Monochrome Toning Effect',
         'format' =>
@@ -1027,7 +1027,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MonochromeFilterEffect',
         'title' => 'Monochrome Filter Effect',
         'format' =>
@@ -1052,7 +1052,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnsharpMaskStrength',
         'title' => 'Unsharp Mask Strength',
         'format' =>
@@ -1066,7 +1066,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnsharpMaskFineness',
         'title' => 'Unsharp Mask Fineness',
         'format' =>
@@ -1080,7 +1080,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'UnsharpMaskThreshold',
         'title' => 'Unsharp Mask Threshold',
         'format' =>
@@ -1094,7 +1094,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShadowAdj',
         'title' => 'Shadow Adj',
         'format' =>
@@ -1108,7 +1108,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'HighlightAdj',
         'title' => 'Highlight Adj',
         'format' =>
@@ -1122,7 +1122,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SharpnessAdj',
         'title' => 'Sharpness Adj',
         'format' =>
@@ -1144,7 +1144,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SharpnessStrength',
         'title' => 'Sharpness Strength',
         'format' =>
@@ -1158,7 +1158,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveBrightness',
         'title' => 'Tone Curve Brightness',
         'format' =>
@@ -1172,7 +1172,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveContrast',
         'title' => 'Tone Curve Contrast',
         'format' =>
@@ -1186,7 +1186,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AutoLightingOptimizer',
         'title' => 'Auto Lighting Optimizer',
         'format' =>
@@ -1209,7 +1209,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LuminanceNoiseReduction',
         'title' => 'Luminance Noise Reduction',
         'format' =>
@@ -1223,7 +1223,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChrominanceNoiseReduction',
         'title' => 'Chrominance Noise Reduction',
         'format' =>
@@ -1237,7 +1237,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorMoireReduction',
         'title' => 'Color Moire Reduction',
         'format' =>
@@ -1251,7 +1251,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShootingDistance',
         'title' => 'Shooting Distance',
         'format' =>
@@ -1265,7 +1265,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PeripheralIllumination',
         'title' => 'Peripheral Illumination',
         'format' =>
@@ -1279,7 +1279,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberration',
         'title' => 'Chromatic Aberration',
         'format' =>
@@ -1293,7 +1293,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorBlurOn',
         'title' => 'Color Blur On',
         'format' =>
@@ -1315,7 +1315,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DistortionCorrection',
         'title' => 'Distortion Correction',
         'format' =>
@@ -1329,7 +1329,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOSetting',
         'title' => 'DLO Setting',
         'format' =>
@@ -1343,7 +1343,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberrationRed',
         'title' => 'Chromatic Aberration Red',
         'format' =>
@@ -1357,7 +1357,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberrationBlue',
         'title' => 'Chromatic Aberration Blue',
         'format' =>
@@ -1371,7 +1371,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DistortionEffect',
         'title' => 'Distortion Effect',
         'format' =>
@@ -1396,7 +1396,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DiffractionCorrectionOn',
         'title' => 'Diffraction Correction On',
         'format' =>
@@ -1418,7 +1418,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorHue',
         'title' => 'Color Hue',
         'format' =>
@@ -1432,7 +1432,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SaturationAdj',
         'title' => 'Saturation Adj',
         'format' =>
@@ -1446,7 +1446,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RedHSL',
         'title' => 'Red HSL',
         'format' =>
@@ -1460,7 +1460,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OrangeHSL',
         'title' => 'Orange HSL',
         'format' =>
@@ -1474,7 +1474,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'YellowHSL',
         'title' => 'Yellow HSL',
         'format' =>
@@ -1488,7 +1488,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GreenHSL',
         'title' => 'Green HSL',
         'format' =>
@@ -1502,7 +1502,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AquaHSL',
         'title' => 'Aqua HSL',
         'format' =>
@@ -1516,7 +1516,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BlueHSL',
         'title' => 'Blue HSL',
         'format' =>
@@ -1530,7 +1530,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PurpleHSL',
         'title' => 'Purple HSL',
         'format' =>
@@ -1544,7 +1544,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MagentaHSL',
         'title' => 'Magenta HSL',
         'format' =>
@@ -1558,7 +1558,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropAspectRatio',
         'title' => 'Crop Aspect Ratio',
         'format' =>
@@ -1589,7 +1589,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropAspectRatioCustom',
         'title' => 'Crop Aspect Ratio Custom',
         'format' =>
@@ -1603,7 +1603,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomPictureStyleData',
         'title' => 'Custom Picture Style Data',
         'format' =>
@@ -1617,7 +1617,7 @@ class DR4 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensFocalLength',
         'title' => 'Lens Focal Length',
         'format' =>

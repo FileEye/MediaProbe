@@ -21,7 +21,7 @@ class FunctionsD30 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\FunctionsD30',
   'itemsByName' =>
   array (
@@ -155,7 +155,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LongExposureNoiseReduction',
         'title' => 'Long Exposure Noise Reduction',
         'format' =>
@@ -177,7 +177,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Shutter-AELock',
         'title' => 'Shutter-AE Lock',
         'format' =>
@@ -201,7 +201,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MirrorLockup',
         'title' => 'Mirror Lockup',
         'format' =>
@@ -223,7 +223,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
         'format' =>
@@ -245,7 +245,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFAssist',
         'title' => 'AF Assist',
         'format' =>
@@ -269,7 +269,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -291,7 +291,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AEBSequenceAutoCancel',
         'title' => 'AEB Sequence/Auto Cancel',
         'format' =>
@@ -315,7 +315,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterCurtainSync',
         'title' => 'Shutter Curtain Sync',
         'format' =>
@@ -337,7 +337,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensAFStopButton',
         'title' => 'Lens AF Stop Button',
         'format' =>
@@ -360,7 +360,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FillFlashAutoReduction',
         'title' => 'Fill Flash Auto Reduction',
         'format' =>
@@ -382,7 +382,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MenuButtonReturn',
         'title' => 'Menu Button Return',
         'format' =>
@@ -405,7 +405,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -429,7 +429,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SensorCleaning',
         'title' => 'Sensor Cleaning',
         'format' =>
@@ -451,7 +451,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SuperimposedDisplay',
         'title' => 'Superimposed Display',
         'format' =>
@@ -473,7 +473,7 @@ class FunctionsD30 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterReleaseNoCFCard',
         'title' => 'Shutter Release W/O CF Card',
         'format' =>

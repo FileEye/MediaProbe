@@ -22,7 +22,7 @@ class MovieInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\MovieInfo',
   'itemsByName' =>
   array (
@@ -79,7 +79,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FrameRate',
         'title' => 'Frame Rate',
         'format' =>
@@ -93,7 +93,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FrameCount',
         'title' => 'Frame Count',
         'format' =>
@@ -107,7 +107,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FrameCount',
         'title' => 'Frame Count',
         'format' =>
@@ -121,7 +121,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FrameRate',
         'title' => 'Frame Rate',
         'format' =>
@@ -135,7 +135,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Duration',
         'title' => 'Duration',
         'format' =>
@@ -149,7 +149,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AudioBitrate',
         'title' => 'Audio Bitrate',
         'format' =>
@@ -163,7 +163,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AudioSampleRate',
         'title' => 'Audio Sample Rate',
         'format' =>
@@ -177,7 +177,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AudioChannels',
         'title' => 'Audio Channels',
         'format' =>
@@ -191,7 +191,7 @@ class MovieInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'VideoCodec',
         'title' => 'Video Codec',
         'components' => 4,

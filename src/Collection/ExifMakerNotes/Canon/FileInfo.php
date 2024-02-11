@@ -22,7 +22,7 @@ class FileInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FileInfo',
   'itemsByName' =>
   array (
@@ -181,7 +181,7 @@ class FileInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FileNumber',
         'title' => 'File Number',
         'format' =>
@@ -193,7 +193,7 @@ class FileInfo extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FileNumber',
         'title' => 'File Number',
         'format' =>
@@ -205,7 +205,7 @@ class FileInfo extends CollectionBase {
       2 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterCount',
         'title' => 'Shutter Count',
         'format' =>
@@ -217,7 +217,7 @@ class FileInfo extends CollectionBase {
       3 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterCount',
         'title' => 'Shutter Count',
         'format' =>
@@ -231,7 +231,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BracketMode',
         'title' => 'Bracket Mode',
         'format' =>
@@ -256,7 +256,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BracketValue',
         'title' => 'Bracket Value',
         'format' =>
@@ -270,7 +270,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BracketShotNumber',
         'title' => 'Bracket Shot Number',
         'format' =>
@@ -284,7 +284,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawJpgQuality',
         'title' => 'Raw Jpg Quality',
         'format' =>
@@ -313,7 +313,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawJpgSize',
         'title' => 'Raw Jpg Size',
         'format' =>
@@ -352,7 +352,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LongExposureNoiseReduction2',
         'title' => 'Long Exposure Noise Reduction 2',
         'format' =>
@@ -376,7 +376,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBBracketMode',
         'title' => 'WB Bracket Mode',
         'format' =>
@@ -399,7 +399,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBBracketValueAB',
         'title' => 'WB Bracket Value AB',
         'format' =>
@@ -413,7 +413,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBBracketValueGM',
         'title' => 'WB Bracket Value GM',
         'format' =>
@@ -427,7 +427,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FilterEffect',
         'title' => 'Filter Effect',
         'format' =>
@@ -452,7 +452,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToningEffect',
         'title' => 'Toning Effect',
         'format' =>
@@ -477,7 +477,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MacroMagnification',
         'title' => 'Macro Magnification',
         'format' =>
@@ -491,7 +491,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LiveViewShooting',
         'title' => 'Live View Shooting',
         'format' =>
@@ -514,7 +514,7 @@ class FileInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocusDistance',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusDistanceUpper',
         'title' => 'Focus Distance Upper',
         'format' =>
@@ -529,7 +529,7 @@ class FileInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FocusDistance',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusDistanceLower',
         'title' => 'Focus Distance Lower',
         'format' =>
@@ -543,7 +543,7 @@ class FileInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashExposureLock',
         'title' => 'Flash Exposure Lock',
         'format' =>

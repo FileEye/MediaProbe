@@ -15,13 +15,13 @@ class IfdInteroperability extends CollectionBase {
   protected static $map = array (
   'name' => 'InteropIFD',
   'title' => 'Interoperability IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'alias' =>
   array (
     0 => 'Interop',
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'Tiff\\IfdInteroperability',
   'itemsByName' =>
   array (
@@ -99,7 +99,7 @@ class IfdInteroperability extends CollectionBase {
       0 =>
       array (
         'components' => 4,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'InteropIndex',
         'title' => 'Interoperability Index',
         'format' =>
@@ -125,7 +125,7 @@ class IfdInteroperability extends CollectionBase {
       array (
         'components' => 4,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'InteropVersion',
         'title' => 'Interoperability Version',
         'format' =>
@@ -140,7 +140,7 @@ class IfdInteroperability extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RelatedImageFileFormat',
         'title' => 'Related Image File Format',
         'format' =>
@@ -156,7 +156,7 @@ class IfdInteroperability extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RelatedImageWidth',
         'title' => 'Related Image Width',
         'format' =>
@@ -176,7 +176,7 @@ class IfdInteroperability extends CollectionBase {
           0 => 'RelatedImageLength',
         ),
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RelatedImageHeight',
         'title' => 'Related Image Height',
         'format' =>

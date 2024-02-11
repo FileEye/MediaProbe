@@ -21,7 +21,7 @@ class CameraInfo1DX extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CameraInfo1DX',
   'itemsByName' =>
   array (
@@ -179,7 +179,7 @@ class CameraInfo1DX extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FirmwareVersionLookAhead',
         'title' => 'Firmware Version Look Ahead',
         'format' =>
@@ -194,7 +194,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FNumber',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FNumber',
         'title' => 'F Number',
         'format' =>
@@ -209,7 +209,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -224,7 +224,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISO',
         'title' => 'ISO',
         'format' =>
@@ -239,7 +239,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -257,7 +257,7 @@ class CameraInfo1DX extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>
@@ -271,7 +271,7 @@ class CameraInfo1DX extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CameraOrientation',
         'title' => 'Camera Orientation',
         'format' =>
@@ -295,7 +295,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusDistanceUpper',
         'title' => 'Focus Distance Upper',
         'format' =>
@@ -310,7 +310,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusDistanceLower',
         'title' => 'Focus Distance Lower',
         'format' =>
@@ -324,7 +324,7 @@ class CameraInfo1DX extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -366,7 +366,7 @@ class CameraInfo1DX extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -380,7 +380,7 @@ class CameraInfo1DX extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PictureStyle',
         'title' => 'Picture Style',
         'format' =>
@@ -828,7 +828,7 @@ class CameraInfo1DX extends CollectionBase {
             65535 => 'n/a',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensType',
         'title' => 'Lens Type',
         'format' =>
@@ -846,7 +846,7 @@ class CameraInfo1DX extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',
         'format' =>
@@ -864,7 +864,7 @@ class CameraInfo1DX extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',
         'format' =>
@@ -878,7 +878,7 @@ class CameraInfo1DX extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FirmwareVersion',
         'title' => 'Firmware Version',
         'components' => 6,
@@ -894,7 +894,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FileIndex',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FileIndex',
         'title' => 'File Index',
         'format' =>
@@ -909,7 +909,7 @@ class CameraInfo1DX extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\DirectoryIndex',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DirectoryIndex',
         'title' => 'Directory Index',
         'format' =>

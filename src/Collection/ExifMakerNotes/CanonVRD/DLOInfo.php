@@ -21,7 +21,7 @@ class DLOInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\DLOInfo',
   'itemsByName' =>
   array (
@@ -59,7 +59,7 @@ class DLOInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOSettingApplied',
         'title' => 'DLO Setting Applied',
         'format' =>
@@ -73,7 +73,7 @@ class DLOInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOVersion',
         'title' => 'DLO Version',
         'components' => 10,
@@ -88,7 +88,7 @@ class DLOInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DLOData',
         'title' => 'DLO Data',
         'format' =>

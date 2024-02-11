@@ -15,9 +15,9 @@ class Main extends CollectionBase {
   protected static $map = array (
   'name' => 'Canon',
   'title' => 'Canon Maker Notes',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Ifd',
+  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'makerNote',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Main',
   'itemsByName' =>
   array (
@@ -364,7 +364,7 @@ class Main extends CollectionBase {
         array (
           0 => 3,
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonFlashInfo',
         'title' => 'Canon Flash Info',
         'exiftoolDOMNode' => 'Canon:CanonFlashInfo',
@@ -390,7 +390,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonImageType',
         'title' => 'Canon Image Type',
         'format' =>
@@ -404,7 +404,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonFirmwareVersion',
         'title' => 'Canon Firmware Version',
         'format' =>
@@ -419,7 +419,7 @@ class Main extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FileNumber',
         'title' => 'File Number',
         'format' =>
@@ -433,7 +433,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OwnerName',
         'title' => 'Owner Name',
         'format' =>
@@ -449,14 +449,14 @@ class Main extends CollectionBase {
       array (
         'name' => 'UnknownD30',
         'title' => 'UnknownD30',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
     ),
     12 =>
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -467,7 +467,7 @@ class Main extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -478,7 +478,7 @@ class Main extends CollectionBase {
       ),
       2 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -500,7 +500,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonFileLength',
         'title' => 'Canon File Length',
         'format' =>
@@ -795,69 +795,69 @@ class Main extends CollectionBase {
             1074257321 => 'HF G25',
             1074257844 => 'XC10',
             1074258371 => 'EOS C200',
-            '2147483649' => 'EOS-1D',
-            '2147484007' => 'EOS-1DS',
-            '2147484008' => 'EOS 10D',
-            '2147484009' => 'EOS-1D Mark III',
-            '2147484016' => 'EOS Digital Rebel / 300D / Kiss Digital',
-            '2147484020' => 'EOS-1D Mark II',
-            '2147484021' => 'EOS 20D',
-            '2147484022' => 'EOS Digital Rebel XSi / 450D / Kiss X2',
-            '2147484040' => 'EOS-1Ds Mark II',
-            '2147484041' => 'EOS Digital Rebel XT / 350D / Kiss Digital N',
-            '2147484048' => 'EOS 40D',
-            '2147484179' => 'EOS 5D',
-            '2147484181' => 'EOS-1Ds Mark III',
-            '2147484184' => 'EOS 5D Mark II',
-            '2147484185' => 'WFT-E1',
-            '2147484210' => 'EOS-1D Mark II N',
-            '2147484212' => 'EOS 30D',
-            '2147484214' => 'EOS Digital Rebel XTi / 400D / Kiss Digital X',
-            '2147484225' => 'WFT-E2',
-            '2147484230' => 'WFT-E3',
-            '2147484240' => 'EOS 7D',
-            '2147484242' => 'EOS Rebel T1i / 500D / Kiss X3',
-            '2147484244' => 'EOS Rebel XS / 1000D / Kiss F',
-            '2147484257' => 'EOS 50D',
-            '2147484265' => 'EOS-1D X',
-            '2147484272' => 'EOS Rebel T2i / 550D / Kiss X4',
-            '2147484273' => 'WFT-E4',
-            '2147484275' => 'WFT-E5',
-            '2147484289' => 'EOS-1D Mark IV',
-            '2147484293' => 'EOS 5D Mark III',
-            '2147484294' => 'EOS Rebel T3i / 600D / Kiss X5',
-            '2147484295' => 'EOS 60D',
-            '2147484296' => 'EOS Rebel T3 / 1100D / Kiss X50',
-            '2147484297' => 'EOS 7D Mark II',
-            '2147484311' => 'WFT-E2 II',
-            '2147484312' => 'WFT-E4 II',
-            '2147484417' => 'EOS Rebel T4i / 650D / Kiss X6i',
-            '2147484418' => 'EOS 6D',
-            '2147484452' => 'EOS-1D C',
-            '2147484453' => 'EOS 70D',
-            '2147484454' => 'EOS Rebel T5i / 700D / Kiss X7i',
-            '2147484455' => 'EOS Rebel T5 / 1200D / Kiss X70 / Hi',
-            '2147484456' => 'EOS-1D X MARK II',
-            '2147484465' => 'EOS M',
-            '2147484486' => 'EOS Rebel SL1 / 100D / Kiss X7',
-            '2147484487' => 'EOS Rebel T6s / 760D / 8000D',
-            '2147484489' => 'EOS 5D Mark IV',
-            '2147484496' => 'EOS 80D',
-            '2147484501' => 'EOS M2',
-            '2147484546' => 'EOS 5DS',
-            '2147484563' => 'EOS Rebel T6i / 750D / Kiss X8i',
-            '2147484673' => 'EOS 5DS R',
-            '2147484676' => 'EOS Rebel T6 / 1300D / Kiss X80',
-            '2147484677' => 'EOS Rebel T7i / 800D / Kiss X9i',
-            '2147484678' => 'EOS 6D Mark II',
-            '2147484680' => 'EOS 77D / 9000D',
-            '2147484695' => 'EOS Rebel SL2 / 200D / Kiss X9',
-            '2147484706' => 'EOS Rebel T100 / 4000D / 3000D',
-            '2147484708' => 'EOR R',
-            '2147484722' => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
+            2147483649 => 'EOS-1D',
+            2147484007 => 'EOS-1DS',
+            2147484008 => 'EOS 10D',
+            2147484009 => 'EOS-1D Mark III',
+            2147484016 => 'EOS Digital Rebel / 300D / Kiss Digital',
+            2147484020 => 'EOS-1D Mark II',
+            2147484021 => 'EOS 20D',
+            2147484022 => 'EOS Digital Rebel XSi / 450D / Kiss X2',
+            2147484040 => 'EOS-1Ds Mark II',
+            2147484041 => 'EOS Digital Rebel XT / 350D / Kiss Digital N',
+            2147484048 => 'EOS 40D',
+            2147484179 => 'EOS 5D',
+            2147484181 => 'EOS-1Ds Mark III',
+            2147484184 => 'EOS 5D Mark II',
+            2147484185 => 'WFT-E1',
+            2147484210 => 'EOS-1D Mark II N',
+            2147484212 => 'EOS 30D',
+            2147484214 => 'EOS Digital Rebel XTi / 400D / Kiss Digital X',
+            2147484225 => 'WFT-E2',
+            2147484230 => 'WFT-E3',
+            2147484240 => 'EOS 7D',
+            2147484242 => 'EOS Rebel T1i / 500D / Kiss X3',
+            2147484244 => 'EOS Rebel XS / 1000D / Kiss F',
+            2147484257 => 'EOS 50D',
+            2147484265 => 'EOS-1D X',
+            2147484272 => 'EOS Rebel T2i / 550D / Kiss X4',
+            2147484273 => 'WFT-E4',
+            2147484275 => 'WFT-E5',
+            2147484289 => 'EOS-1D Mark IV',
+            2147484293 => 'EOS 5D Mark III',
+            2147484294 => 'EOS Rebel T3i / 600D / Kiss X5',
+            2147484295 => 'EOS 60D',
+            2147484296 => 'EOS Rebel T3 / 1100D / Kiss X50',
+            2147484297 => 'EOS 7D Mark II',
+            2147484311 => 'WFT-E2 II',
+            2147484312 => 'WFT-E4 II',
+            2147484417 => 'EOS Rebel T4i / 650D / Kiss X6i',
+            2147484418 => 'EOS 6D',
+            2147484452 => 'EOS-1D C',
+            2147484453 => 'EOS 70D',
+            2147484454 => 'EOS Rebel T5i / 700D / Kiss X7i',
+            2147484455 => 'EOS Rebel T5 / 1200D / Kiss X70 / Hi',
+            2147484456 => 'EOS-1D X MARK II',
+            2147484465 => 'EOS M',
+            2147484486 => 'EOS Rebel SL1 / 100D / Kiss X7',
+            2147484487 => 'EOS Rebel T6s / 760D / 8000D',
+            2147484489 => 'EOS 5D Mark IV',
+            2147484496 => 'EOS 80D',
+            2147484501 => 'EOS M2',
+            2147484546 => 'EOS 5DS',
+            2147484563 => 'EOS Rebel T6i / 750D / Kiss X8i',
+            2147484673 => 'EOS 5DS R',
+            2147484676 => 'EOS Rebel T6 / 1300D / Kiss X80',
+            2147484677 => 'EOS Rebel T7i / 800D / Kiss X9i',
+            2147484678 => 'EOS 6D Mark II',
+            2147484680 => 'EOS 77D / 9000D',
+            2147484695 => 'EOS Rebel SL2 / 200D / Kiss X9',
+            2147484706 => 'EOS Rebel T100 / 4000D / 3000D',
+            2147484708 => 'EOR R',
+            2147484722 => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CanonModelID',
         'title' => 'Canon Model ID',
         'format' =>
@@ -887,7 +887,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ThumbnailImageValidArea',
         'title' => 'Thumbnail Image Valid Area',
         'components' => 4,
@@ -902,7 +902,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SerialNumberFormat',
         'title' => 'Serial Number Format',
         'format' =>
@@ -913,8 +913,8 @@ class Main extends CollectionBase {
         array (
           'mapping' =>
           array (
-            '2415919104' => 'Format 1',
-            '2684354560' => 'Format 2',
+            2415919104 => 'Format 1',
+            2684354560 => 'Format 2',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:SerialNumberFormat',
@@ -924,7 +924,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SuperMacro',
         'title' => 'Super Macro',
         'format' =>
@@ -947,7 +947,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DateStampMode',
         'title' => 'Date Stamp Mode',
         'format' =>
@@ -978,7 +978,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FirmwareRevision',
         'title' => 'Firmware Revision',
         'format' =>
@@ -992,7 +992,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Categories',
         'title' => 'Categories',
         'components' => 2,
@@ -1055,7 +1055,7 @@ class Main extends CollectionBase {
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ImageUniqueID',
         'outputFormat' => 2,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ImageUniqueID',
         'title' => 'Image Unique ID',
         'format' =>
@@ -1071,7 +1071,7 @@ class Main extends CollectionBase {
       array (
         '__todo' => 'assign collection',
         'name' => 'CanonWBInfo',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
     ),
     47 =>
@@ -1094,7 +1094,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BatteryType',
         'title' => 'Battery Type',
         'format' =>
@@ -1116,7 +1116,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawDataOffset',
         'title' => 'Raw Data Offset',
         'format' =>
@@ -1130,7 +1130,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'OriginalDecisionDataOffset',
         'title' => 'Original Decision Data Offset',
         'format' =>
@@ -1179,7 +1179,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointsInFocus1D',
         'title' => 'AF Points In Focus 1D',
         'format' =>
@@ -1193,7 +1193,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensModel',
         'title' => 'Lens Model',
         'format' =>
@@ -1207,7 +1207,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'InternalSerialNumber',
         'title' => 'Internal Serial Number',
         'format' =>
@@ -1221,7 +1221,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DustRemovalData',
         'title' => 'Dust Removal Data',
         'format' =>
@@ -1267,7 +1267,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveTable',
         'title' => 'Tone Curve Table',
         'format' =>
@@ -1281,7 +1281,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SharpnessTable',
         'title' => 'Sharpness Table',
         'format' =>
@@ -1295,7 +1295,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SharpnessFreqTable',
         'title' => 'Sharpness Freq Table',
         'format' =>
@@ -1309,7 +1309,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalanceTable',
         'title' => 'White Balance Table',
         'format' =>
@@ -1339,7 +1339,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -1369,7 +1369,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveMatching',
         'title' => 'Tone Curve Matching',
         'format' =>
@@ -1383,7 +1383,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalanceMatching',
         'title' => 'White Balance Matching',
         'format' =>
@@ -1398,7 +1398,7 @@ class Main extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorSpace',
         'title' => 'Color Space',
         'format' =>
@@ -1428,7 +1428,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'VRDOffset',
         'title' => 'VRD Offset',
         'format' =>
@@ -1458,7 +1458,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CRWParam',
         'title' => 'CRW Param',
         'format' =>
@@ -1480,7 +1480,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Flavor',
         'title' => 'Flavor',
         'format' =>
@@ -1494,7 +1494,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PictureStyleUserDef',
         'title' => 'Picture Style User Def',
         'components' => 3,
@@ -1539,7 +1539,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PictureStylePC',
         'title' => 'Picture Style PC',
         'components' => 3,
@@ -1584,7 +1584,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CustomPictureStyleFileName',
         'title' => 'Custom Picture Style File Name',
         'format' =>
@@ -1609,7 +1609,7 @@ class Main extends CollectionBase {
         'name' => 'CanonVignettingCorr',
         '__todo' => true,
         '__collection' => 'ExifMakerNotes\\Canon\\VignettingCorrResolver',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
     ),
     16406 =>
@@ -1636,7 +1636,7 @@ class Main extends CollectionBase {
         'title' => 'Canon LensInfo',
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\LensInfo',
         '__collection' => 'ExifMakerNotes\\Canon\\LensInfo',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
     ),
     16416 =>
@@ -1670,7 +1670,7 @@ class Main extends CollectionBase {
         'name' => 'CanonRawBurstModeRoll',
         '__todo' => true,
         '__collection' => 'ExifMakerNotes\\Canon\\RawBurstModeRoll',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
       ),
     ),
   ),

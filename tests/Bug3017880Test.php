@@ -2,11 +2,11 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Exif\Exif;
-use FileEye\MediaProbe\Block\Exif\Ifd;
-use FileEye\MediaProbe\Block\Jpeg;
-use FileEye\MediaProbe\Block\Tag;
-use FileEye\MediaProbe\Block\Tiff;
+use FileEye\MediaProbe\Block\Jpeg\Exif;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
@@ -22,7 +22,7 @@ class Bug3017880Test extends MediaProbeTestCaseBase
         try {
             $exif = null;
             $resave_file = 0;
-            $media = Media::loadFromFile($filename);
+            $media = Media::parseFromFile($filename);
             $jpeg = $media->getElement("jpeg");
             $this->assertInstanceOf(Jpeg::class, $jpeg);
 
@@ -32,7 +32,7 @@ class Bug3017880Test extends MediaProbeTestCaseBase
 
             if ($exif === null) {
                 $app1_segment_mock = $this->getStubRoot();
-                $exif_definition = new ItemDefinition(CollectionFactory::get('Exif\Exif'));
+                $exif_definition = new ItemDefinition(CollectionFactory::get('Jpeg\Exif'));
                 $exif = new Exif($exif_definition, $app1_segment_mock);
                 $tiff_definition = new ItemDefinition(CollectionFactory::get('Tiff\Tiff'));
                 new Tiff($tiff_definition, $exif);

@@ -21,7 +21,7 @@ class PersonalFuncValues extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncValues',
   'itemsByName' =>
   array (
@@ -227,7 +227,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF1Value',
         'title' => 'PF1 Value',
         'format' =>
@@ -241,7 +241,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF2Value',
         'title' => 'PF2 Value',
         'format' =>
@@ -255,7 +255,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF3Value',
         'title' => 'PF3 Value',
         'format' =>
@@ -269,7 +269,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF4ExposureTimeMin',
         'title' => 'PF4 Exposure Time Min',
         'format' =>
@@ -283,7 +283,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF4ExposureTimeMax',
         'title' => 'PF4 Exposure Time Max',
         'format' =>
@@ -297,7 +297,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF5ApertureMin',
         'title' => 'PF5 Aperture Min',
         'format' =>
@@ -311,7 +311,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF5ApertureMax',
         'title' => 'PF5 Aperture Max',
         'format' =>
@@ -325,7 +325,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF8BracketShots',
         'title' => 'PF8 Bracket Shots',
         'format' =>
@@ -339,7 +339,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF19ShootingSpeedLow',
         'title' => 'PF19 Shooting Speed Low',
         'format' =>
@@ -353,7 +353,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF19ShootingSpeedHigh',
         'title' => 'PF19 Shooting Speed High',
         'format' =>
@@ -367,7 +367,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF20MaxContinousShots',
         'title' => 'PF20 Max Continous Shots',
         'format' =>
@@ -381,7 +381,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF23ShutterButtonTime',
         'title' => 'PF23 Shutter Button Time',
         'format' =>
@@ -395,7 +395,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF23FELockTime',
         'title' => 'PF23 FE Lock Time',
         'format' =>
@@ -409,7 +409,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF23PostReleaseTime',
         'title' => 'PF23 Post Release Time',
         'format' =>
@@ -423,7 +423,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25AEMode',
         'title' => 'PF25 AE Mode',
         'format' =>
@@ -437,7 +437,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25MeteringMode',
         'title' => 'PF25 Metering Mode',
         'format' =>
@@ -451,7 +451,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25DriveMode',
         'title' => 'PF25 Drive Mode',
         'format' =>
@@ -465,7 +465,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25AFMode',
         'title' => 'PF25 AF Mode',
         'format' =>
@@ -479,7 +479,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25AFPointSel',
         'title' => 'PF25 AF Point Sel',
         'format' =>
@@ -493,7 +493,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25ImageSize',
         'title' => 'PF25 Image Size',
         'format' =>
@@ -507,7 +507,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25WBMode',
         'title' => 'PF25 WB Mode',
         'format' =>
@@ -521,7 +521,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25Parameters',
         'title' => 'PF25 Parameters',
         'format' =>
@@ -535,7 +535,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF25ColorMatrix',
         'title' => 'PF25 Color Matrix',
         'format' =>
@@ -549,7 +549,7 @@ class PersonalFuncValues extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PF27Value',
         'title' => 'PF27 Value',
         'format' =>

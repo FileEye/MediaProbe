@@ -18,7 +18,7 @@ class Skip extends CollectionBase {
   'title' => 'Canon Skip',
   'class' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Skip',
   'itemsByName' =>
   array (
@@ -40,7 +40,7 @@ class Skip extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Unknown_CNDB',
         'title' => 'Unknown CNDB',
         'format' =>

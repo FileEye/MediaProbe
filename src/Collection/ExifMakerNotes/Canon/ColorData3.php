@@ -21,7 +21,7 @@ class ColorData3 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ColorData3',
   'itemsByName' =>
   array (
@@ -307,7 +307,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorDataVersion',
         'title' => 'Color Data Version',
         'format' =>
@@ -328,7 +328,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsAsShot',
         'title' => 'WB RGGB Levels As Shot',
         'components' => 4,
@@ -343,7 +343,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempAsShot',
         'title' => 'Color Temp As Shot',
         'format' =>
@@ -357,7 +357,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsAuto',
         'title' => 'WB RGGB Levels Auto',
         'components' => 4,
@@ -372,7 +372,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempAuto',
         'title' => 'Color Temp Auto',
         'format' =>
@@ -386,7 +386,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsMeasured',
         'title' => 'WB RGGB Levels Measured',
         'components' => 4,
@@ -401,7 +401,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempMeasured',
         'title' => 'Color Temp Measured',
         'format' =>
@@ -415,7 +415,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsDaylight',
         'title' => 'WB RGGB Levels Daylight',
         'components' => 4,
@@ -430,7 +430,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempDaylight',
         'title' => 'Color Temp Daylight',
         'format' =>
@@ -444,7 +444,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsShade',
         'title' => 'WB RGGB Levels Shade',
         'components' => 4,
@@ -459,7 +459,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempShade',
         'title' => 'Color Temp Shade',
         'format' =>
@@ -473,7 +473,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsCloudy',
         'title' => 'WB RGGB Levels Cloudy',
         'components' => 4,
@@ -488,7 +488,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempCloudy',
         'title' => 'Color Temp Cloudy',
         'format' =>
@@ -502,7 +502,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsTungsten',
         'title' => 'WB RGGB Levels Tungsten',
         'components' => 4,
@@ -517,7 +517,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempTungsten',
         'title' => 'Color Temp Tungsten',
         'format' =>
@@ -531,7 +531,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsFluorescent',
         'title' => 'WB RGGB Levels Fluorescent',
         'components' => 4,
@@ -546,7 +546,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempFluorescent',
         'title' => 'Color Temp Fluorescent',
         'format' =>
@@ -560,7 +560,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsKelvin',
         'title' => 'WB RGGB Levels Kelvin',
         'components' => 4,
@@ -575,7 +575,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempKelvin',
         'title' => 'Color Temp Kelvin',
         'format' =>
@@ -589,7 +589,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsFlash',
         'title' => 'WB RGGB Levels Flash',
         'components' => 4,
@@ -604,7 +604,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempFlash',
         'title' => 'Color Temp Flash',
         'format' =>
@@ -618,7 +618,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsPC1',
         'title' => 'WB RGGB Levels PC1',
         'components' => 4,
@@ -633,7 +633,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempPC1',
         'title' => 'Color Temp PC1',
         'format' =>
@@ -647,7 +647,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsPC2',
         'title' => 'WB RGGB Levels PC2',
         'components' => 4,
@@ -662,7 +662,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempPC2',
         'title' => 'Color Temp PC2',
         'format' =>
@@ -676,7 +676,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsPC3',
         'title' => 'WB RGGB Levels PC3',
         'components' => 4,
@@ -691,7 +691,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempPC3',
         'title' => 'Color Temp PC3',
         'format' =>
@@ -705,7 +705,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WB_RGGBLevelsCustom',
         'title' => 'WB RGGB Levels Custom',
         'components' => 4,
@@ -720,7 +720,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempCustom',
         'title' => 'Color Temp Custom',
         'format' =>
@@ -734,7 +734,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PerChannelBlackLevel',
         'title' => 'Per Channel Black Level',
         'components' => 4,
@@ -749,7 +749,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashOutput',
         'title' => 'Flash Output',
         'format' =>
@@ -763,7 +763,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashBatteryLevel',
         'title' => 'Flash Battery Level',
         'format' =>
@@ -777,7 +777,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTempFlashData',
         'title' => 'Color Temp Flash Data',
         'format' =>
@@ -791,7 +791,7 @@ class ColorData3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MeasuredRGGBData',
         'title' => 'Measured RGGB Data',
         'components' => 4,

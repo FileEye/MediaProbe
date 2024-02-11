@@ -16,7 +16,9 @@ class SegmentCom extends CollectionBase {
   'name' => 'COM',
   'title' => 'JPEG Comment',
   'payload' => 'variable',
-  'class' => 'FileEye\\MediaProbe\\Block\\JpegSegmentCom',
+  'class' => 'FileEye\\MediaProbe\\Block\\Jpeg\\SegmentCom',
+  'parser' => 'FileEye\\MediaProbe\\Parser\\Jpeg\\SegmentCom',
+  'writer' => 'FileEye\\MediaProbe\\Writer\\Jpeg\\SegmentCom',
   'DOMNode' => 'jpegSegment',
   'id' => 'Jpeg\\SegmentCom',
 );

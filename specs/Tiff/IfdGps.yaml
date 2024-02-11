@@ -1,9 +1,9 @@
 collection: Tiff\IfdGps
 name: GPS
 title: 'GPS IFD'
-class: FileEye\MediaProbe\Block\Exif\Ifd
+class: FileEye\MediaProbe\Block\Tiff\Ifd
 DOMNode: ifd
-defaultItemCollection: Tag
+defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: GPS

@@ -52,6 +52,7 @@ jobs:
         # Remove the comment to the lines below during development, to let
         # re-compile the specification PHP file from the YAML files.
         # php bin/fileeye-mediaprobe compile
+        # php bin/fileeye-mediaprobe dump tests/media-samples tests/media-dumps
 
     - name: Image file dumps
       continue-on-error: true

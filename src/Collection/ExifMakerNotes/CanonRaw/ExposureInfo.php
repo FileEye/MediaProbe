@@ -21,7 +21,7 @@ class ExposureInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\ExposureInfo',
   'itemsByName' =>
   array (
@@ -59,7 +59,7 @@ class ExposureInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureCompensation',
         'title' => 'Exposure Compensation',
         'format' =>
@@ -73,7 +73,7 @@ class ExposureInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterSpeedValue',
         'title' => 'Shutter Speed Value',
         'format' =>
@@ -87,7 +87,7 @@ class ExposureInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ApertureValue',
         'title' => 'Aperture Value',
         'format' =>

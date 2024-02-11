@@ -21,7 +21,7 @@ class Functions5D extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions5D',
   'itemsByName' =>
   array (
@@ -203,7 +203,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -226,7 +226,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SetFunctionWhenShooting',
         'title' => 'Set Function When Shooting',
         'format' =>
@@ -251,7 +251,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LongExposureNoiseReduction',
         'title' => 'Long Exposure Noise Reduction',
         'format' =>
@@ -274,7 +274,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -296,7 +296,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Shutter-AELock',
         'title' => 'Shutter-AE Lock',
         'format' =>
@@ -320,7 +320,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFAssistBeam',
         'title' => 'AF Assist Beam',
         'format' =>
@@ -342,7 +342,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
         'format' =>
@@ -364,7 +364,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashFiring',
         'title' => 'Flash Firing',
         'format' =>
@@ -386,7 +386,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISOExpansion',
         'title' => 'ISO Expansion',
         'format' =>
@@ -408,7 +408,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AEBSequenceAutoCancel',
         'title' => 'AEB Sequence/Auto Cancel',
         'format' =>
@@ -432,7 +432,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SuperimposedDisplay',
         'title' => 'Superimposed Display',
         'format' =>
@@ -454,7 +454,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MenuButtonDisplayPosition',
         'title' => 'Menu Button Display Position',
         'format' =>
@@ -477,7 +477,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MirrorLockup',
         'title' => 'Mirror Lockup',
         'format' =>
@@ -499,7 +499,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointSelectionMethod',
         'title' => 'AF Point Selection Method',
         'format' =>
@@ -522,7 +522,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ETTLII',
         'title' => 'E-TTL II',
         'format' =>
@@ -544,7 +544,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterCurtainSync',
         'title' => 'Shutter Curtain Sync',
         'format' =>
@@ -566,7 +566,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SafetyShiftInAvOrTv',
         'title' => 'Safety Shift In Av Or Tv',
         'format' =>
@@ -588,7 +588,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointActivationArea',
         'title' => 'AF Point Activation Area',
         'format' =>
@@ -610,7 +610,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LCDDisplayReturnToShoot',
         'title' => 'LCD Display Return To Shoot',
         'format' =>
@@ -632,7 +632,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensAFStopButton',
         'title' => 'Lens AF Stop Button',
         'format' =>
@@ -658,7 +658,7 @@ class Functions5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AddOriginalDecisionData',
         'title' => 'Add Original Decision Data',
         'format' =>

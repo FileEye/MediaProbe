@@ -21,7 +21,7 @@ class ExposureInfo extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ExposureInfo',
   'itemsByName' =>
   array (
@@ -59,7 +59,7 @@ class ExposureInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FNumber',
         'title' => 'F Number',
         'format' =>
@@ -73,7 +73,7 @@ class ExposureInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -87,7 +87,7 @@ class ExposureInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISO',
         'title' => 'ISO',
         'format' =>

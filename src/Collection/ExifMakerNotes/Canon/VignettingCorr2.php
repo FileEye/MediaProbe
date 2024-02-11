@@ -22,7 +22,7 @@ class VignettingCorr2 extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\VignettingCorr2',
   'itemsByName' =>
   array (
@@ -53,7 +53,7 @@ class VignettingCorr2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PeripheralLightingSetting',
         'title' => 'Peripheral Lighting Setting',
         'format' =>
@@ -75,7 +75,7 @@ class VignettingCorr2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ChromaticAberrationSetting',
         'title' => 'Chromatic Aberration Setting',
         'format' =>

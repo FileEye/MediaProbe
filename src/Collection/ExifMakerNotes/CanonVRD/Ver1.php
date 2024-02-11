@@ -21,7 +21,7 @@ class Ver1 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\Ver1',
   'itemsByName' =>
   array (
@@ -379,7 +379,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'VRDVersion',
         'title' => 'VRD Version',
         'format' =>
@@ -393,7 +393,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBAdjRGGBLevels',
         'title' => 'WB Adj RGGB Levels',
         'components' => 4,
@@ -408,7 +408,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalanceAdj',
         'title' => 'White Balance Adj',
         'format' =>
@@ -438,7 +438,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBAdjColorTemp',
         'title' => 'WB Adj Color Temp',
         'format' =>
@@ -452,7 +452,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBFineTuneActive',
         'title' => 'WB Fine Tune Active',
         'format' =>
@@ -474,7 +474,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBFineTuneSaturation',
         'title' => 'WB Fine Tune Saturation',
         'format' =>
@@ -488,7 +488,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WBFineTuneTone',
         'title' => 'WB Fine Tune Tone',
         'format' =>
@@ -502,7 +502,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawColorAdj',
         'title' => 'Raw Color Adj',
         'format' =>
@@ -525,7 +525,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawCustomSaturation',
         'title' => 'Raw Custom Saturation',
         'format' =>
@@ -539,7 +539,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawCustomTone',
         'title' => 'Raw Custom Tone',
         'format' =>
@@ -553,7 +553,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawBrightnessAdj',
         'title' => 'Raw Brightness Adj',
         'format' =>
@@ -567,7 +567,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveProperty',
         'title' => 'Tone Curve Property',
         'format' =>
@@ -594,7 +594,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DynamicRangeMin',
         'title' => 'Dynamic Range Min',
         'format' =>
@@ -608,7 +608,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'DynamicRangeMax',
         'title' => 'Dynamic Range Max',
         'format' =>
@@ -622,7 +622,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveActive',
         'title' => 'Tone Curve Active',
         'format' =>
@@ -644,7 +644,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveMode',
         'title' => 'Tone Curve Mode',
         'format' =>
@@ -666,7 +666,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BrightnessAdj',
         'title' => 'Brightness Adj',
         'format' =>
@@ -680,7 +680,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ContrastAdj',
         'title' => 'Contrast Adj',
         'format' =>
@@ -694,7 +694,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SaturationAdj',
         'title' => 'Saturation Adj',
         'format' =>
@@ -708,7 +708,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorToneAdj',
         'title' => 'Color Tone Adj',
         'format' =>
@@ -722,7 +722,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LuminanceCurvePoints',
         'title' => 'Luminance Curve Points',
         'components' => 21,
@@ -737,7 +737,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LuminanceCurveLimits',
         'title' => 'Luminance Curve Limits',
         'components' => 4,
@@ -752,7 +752,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ToneCurveInterpolation',
         'title' => 'Tone Curve Interpolation',
         'format' =>
@@ -774,7 +774,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RedCurvePoints',
         'title' => 'Red Curve Points',
         'components' => 21,
@@ -789,7 +789,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RedCurveLimits',
         'title' => 'Red Curve Limits',
         'components' => 4,
@@ -804,7 +804,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GreenCurvePoints',
         'title' => 'Green Curve Points',
         'components' => 21,
@@ -819,7 +819,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'GreenCurveLimits',
         'title' => 'Green Curve Limits',
         'components' => 4,
@@ -834,7 +834,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BlueCurvePoints',
         'title' => 'Blue Curve Points',
         'components' => 21,
@@ -849,7 +849,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'BlueCurveLimits',
         'title' => 'Blue Curve Limits',
         'components' => 4,
@@ -864,7 +864,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RGBCurvePoints',
         'title' => 'RGB Curve Points',
         'components' => 21,
@@ -879,7 +879,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RGBCurveLimits',
         'title' => 'RGB Curve Limits',
         'components' => 4,
@@ -894,7 +894,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropActive',
         'title' => 'Crop Active',
         'format' =>
@@ -916,7 +916,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropLeft',
         'title' => 'Crop Left',
         'format' =>
@@ -930,7 +930,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropTop',
         'title' => 'Crop Top',
         'format' =>
@@ -944,7 +944,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropWidth',
         'title' => 'Crop Width',
         'format' =>
@@ -958,7 +958,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropHeight',
         'title' => 'Crop Height',
         'format' =>
@@ -972,7 +972,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SharpnessAdj',
         'title' => 'Sharpness Adj',
         'format' =>
@@ -986,7 +986,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CropAspectRatio',
         'title' => 'Crop Aspect Ratio',
         'format' =>
@@ -1020,7 +1020,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ConstrainedCropWidth',
         'title' => 'Constrained Crop Width',
         'format' =>
@@ -1034,7 +1034,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ConstrainedCropHeight',
         'title' => 'Constrained Crop Height',
         'format' =>
@@ -1048,7 +1048,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'CheckMark',
         'title' => 'Check Mark',
         'format' =>
@@ -1072,7 +1072,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Rotation',
         'title' => 'Rotation',
         'format' =>
@@ -1096,7 +1096,7 @@ class Ver1 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WorkColorSpace',
         'title' => 'Work Color Space',
         'format' =>

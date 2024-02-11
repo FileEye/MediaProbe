@@ -21,7 +21,7 @@ class Functions1D extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions1D',
   'itemsByName' =>
   array (
@@ -211,7 +211,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -233,7 +233,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FinderDisplayDuringExposure',
         'title' => 'Finder Display During Exposure',
         'format' =>
@@ -255,7 +255,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterReleaseNoCFCard',
         'title' => 'Shutter Release W/O CF Card',
         'format' =>
@@ -277,7 +277,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISOSpeedExpansion',
         'title' => 'ISO Speed Expansion',
         'format' =>
@@ -299,7 +299,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterAELButton',
         'title' => 'Shutter Button/AEL Button',
         'format' =>
@@ -323,7 +323,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ManualTv',
         'title' => 'Manual Tv/Av For M',
         'format' =>
@@ -347,7 +347,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
         'format' =>
@@ -370,7 +370,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'USMLensElectronicMF',
         'title' => 'USM Lens Electronic MF',
         'format' =>
@@ -393,7 +393,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LCDPanels',
         'title' => 'Top/Back LCD Panels',
         'format' =>
@@ -417,7 +417,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AEBSequenceAutoCancel',
         'title' => 'AEB Sequence/Auto Cancel',
         'format' =>
@@ -441,7 +441,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointIllumination',
         'title' => 'AF Point Illumination',
         'format' =>
@@ -465,7 +465,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointSelection',
         'title' => 'AF Point Selection',
         'format' =>
@@ -489,7 +489,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MirrorLockup',
         'title' => 'Mirror Lockup',
         'format' =>
@@ -511,7 +511,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointSpotMetering',
         'title' => 'No. AF Points/Spot Metering',
         'format' =>
@@ -535,7 +535,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FillFlashAutoReduction',
         'title' => 'Fill Flash Auto Reduction',
         'format' =>
@@ -557,7 +557,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterCurtainSync',
         'title' => 'Shutter Curtain Sync',
         'format' =>
@@ -579,7 +579,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SafetyShiftInAvOrTv',
         'title' => 'Safety Shift In Av Or Tv',
         'format' =>
@@ -601,7 +601,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointActivationArea',
         'title' => 'AF Point Activation Area',
         'format' =>
@@ -624,7 +624,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SwitchToRegisteredAFPoint',
         'title' => 'Switch To Registered AF Point',
         'format' =>
@@ -647,7 +647,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensAFStopButton',
         'title' => 'Lens AF Stop Button',
         'format' =>
@@ -673,7 +673,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AIServoTrackingSensitivity',
         'title' => 'AI Servo Tracking Sensitivity',
         'format' =>
@@ -698,7 +698,7 @@ class Functions1D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AIServoContinuousShooting',
         'title' => 'AI Servo Continuous Shooting',
         'format' =>

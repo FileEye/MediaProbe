@@ -21,7 +21,7 @@ class FaceDetect3 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FaceDetect3',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class FaceDetect3 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FacesDetected',
         'title' => 'Faces Detected',
         'format' =>

@@ -5,7 +5,7 @@ namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Map;
 use FileEye\MediaProbe\Block\RawData;
-use FileEye\MediaProbe\Block\Tag;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
@@ -57,13 +57,15 @@ class FilterInfoIndex extends Index
             $filter_size = $data->getLong($offset + 4);
             $this
                 ->addBlock(
-                    new ItemDefinition(CollectionFactory::get('ExifMakerNotes\Canon\Filter'),
-                    DataFormat::BYTE,
-                    $filter_size,
-                    $offset,
-                    0,
-                    $i
-                ))
+                    new ItemDefinition(
+                        CollectionFactory::get('ExifMakerNotes\Canon\Filter'),
+                        DataFormat::BYTE,
+                        $filter_size,
+                        $offset,
+                        0,
+                        $i
+                    )
+                )
                 ->parseData(new DataWindow($data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }

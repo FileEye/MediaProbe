@@ -21,7 +21,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CameraInfo1DmkIIN',
   'itemsByName' =>
   array (
@@ -140,7 +140,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -158,7 +158,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>
@@ -576,7 +576,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
             65535 => 'n/a',
           ),
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensType',
         'title' => 'Lens Type',
         'format' =>
@@ -594,7 +594,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',
         'format' =>
@@ -612,7 +612,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',
         'format' =>
@@ -626,7 +626,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -668,7 +668,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -682,7 +682,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'PictureStyle',
         'title' => 'Picture Style',
         'format' =>
@@ -726,7 +726,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Sharpness',
         'title' => 'Sharpness',
         'format' =>
@@ -740,7 +740,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Contrast',
         'title' => 'Contrast',
         'format' =>
@@ -761,7 +761,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Saturation',
         'title' => 'Saturation',
         'format' =>
@@ -782,7 +782,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ColorTone',
         'title' => 'Color Tone',
         'format' =>
@@ -804,7 +804,7 @@ class CameraInfo1DmkIIN extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ISO',
         'title' => 'ISO',
         'components' => 5,

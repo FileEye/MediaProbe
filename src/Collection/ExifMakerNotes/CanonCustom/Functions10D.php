@@ -21,7 +21,7 @@ class Functions10D extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions10D',
   'itemsByName' =>
   array (
@@ -171,7 +171,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -196,7 +196,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterReleaseNoCFCard',
         'title' => 'Shutter Release W/O CF Card',
         'format' =>
@@ -218,7 +218,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -240,7 +240,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'Shutter-AELock',
         'title' => 'Shutter-AE Lock',
         'format' =>
@@ -264,7 +264,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFAssist',
         'title' => 'AF Assist/Flash Firing',
         'format' =>
@@ -288,7 +288,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
         'format' =>
@@ -310,7 +310,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFPointRegistration',
         'title' => 'AF Point Registration',
         'format' =>
@@ -338,7 +338,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'RawAndJpgRecording',
         'title' => 'Raw And Jpg Recording',
         'format' =>
@@ -364,7 +364,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AEBSequenceAutoCancel',
         'title' => 'AEB Sequence/Auto Cancel',
         'format' =>
@@ -388,7 +388,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SuperimposedDisplay',
         'title' => 'Superimposed Display',
         'format' =>
@@ -410,7 +410,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MenuButtonDisplayPosition',
         'title' => 'Menu Button Display Position',
         'format' =>
@@ -433,7 +433,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'MirrorLockup',
         'title' => 'Mirror Lockup',
         'format' =>
@@ -455,7 +455,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'AssistButtonFunction',
         'title' => 'Assist Button Function',
         'format' =>
@@ -480,7 +480,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'FillFlashAutoReduction',
         'title' => 'Fill Flash Auto Reduction',
         'format' =>
@@ -502,7 +502,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'ShutterCurtainSync',
         'title' => 'Shutter Curtain Sync',
         'format' =>
@@ -524,7 +524,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'SafetyShiftInAvOrTv',
         'title' => 'Safety Shift In Av Or Tv',
         'format' =>
@@ -546,7 +546,7 @@ class Functions10D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'LensAFStopButton',
         'title' => 'Lens AF Stop Button',
         'format' =>

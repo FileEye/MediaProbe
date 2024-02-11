@@ -21,7 +21,7 @@ class VignettingCorrUnknown extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tag',
+  'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\VignettingCorrUnknown',
   'itemsByName' =>
   array (
@@ -36,7 +36,7 @@ class VignettingCorrUnknown extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tag',
+        'collection' => 'Tiff\\Tag',
         'name' => 'VignettingCorrVersion',
         'title' => 'Vignetting Corr Version',
         'format' =>
