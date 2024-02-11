@@ -139,5 +139,4 @@ class Tiff extends ParserBase
 
         return $order;
     }
-
 }

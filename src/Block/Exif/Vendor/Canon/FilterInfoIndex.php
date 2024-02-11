@@ -57,13 +57,15 @@ class FilterInfoIndex extends Index
             $filter_size = $data->getLong($offset + 4);
             $this
                 ->addBlock(
-                    new ItemDefinition(CollectionFactory::get('ExifMakerNotes\Canon\Filter'),
-                    DataFormat::BYTE,
-                    $filter_size,
-                    $offset,
-                    0,
-                    $i
-                ))
+                    new ItemDefinition(
+                        CollectionFactory::get('ExifMakerNotes\Canon\Filter'),
+                        DataFormat::BYTE,
+                        $filter_size,
+                        $offset,
+                        0,
+                        $i
+                    )
+                )
                 ->parseData(new DataWindow($data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }

@@ -3,12 +3,6 @@
 namespace FileEye\MediaProbe\Block\Jpeg;
 
 use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\Collection\CollectionFactory;
-use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -30,48 +24,8 @@ class Exif extends BlockBase
     /**
      * {@inheritdoc}
      */
-    protected function doParseData(DataElement $data): void
-    {
-        assert($this->debugInfo(['dataElement' => $data]));
-
-        $tiff = new ItemDefinition(
-            collection: CollectionFactory::get('Tiff\Tiff'),
-        );
-        $tiffParser = $tiff->collection->getPropertyValue('parser');
-
-        if ($tiffParser::getTiffSegmentByteOrder($data, strlen(self::EXIF_HEADER)) !== null) {
-            $this->addBlock($tiff)->parseData($data, strlen(self::EXIF_HEADER), $data->getSize() - strlen(self::EXIF_HEADER));
-        } else {
-            // We store the data as normal JPEG content if it could not be
-            // parsed as Tiff data.
-            $entry = new Undefined($this, [$data->getBytes()]);
-            $this->error("TIFF header not found. Parsed {text}", ['text' => $entry->toString()]);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string
     {
         return self::EXIF_HEADER . $this->getElement('*')->toBytes();
-    }
-
-    /**
-     * Determines if the data is an EXIF segment.
-     */
-    public static function isExifSegment(DataElement $dataElement, $offset = 0): bool
-    {
-        // There must be at least 6 bytes for the Exif header.
-        if ($dataElement->getSize() - $offset < strlen(self::EXIF_HEADER)) {
-            return false;
-        }
-
-        // Verify the Exif header.
-        if ($dataElement->getBytes($offset, strlen(self::EXIF_HEADER)) === self::EXIF_HEADER) {
-            return true;
-        }
-
-        return false;
     }
 }

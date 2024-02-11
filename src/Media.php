@@ -64,8 +64,7 @@ class Media extends RootBlockBase
     public function __construct(
         protected ?LoggerInterface $externalLogger,
         ?string $failLevel,
-    )
-    {
+    ) {
         $media = new ItemDefinition(CollectionFactory::get('Media'));
         parent::__construct($media);
         $this->logger = (new Logger('mediaprobe'))
