@@ -3322,7 +3322,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: 9d9f290527a6be626a8f5985b26e19b237b44872b03631811df4416fc1713178
-                                                                                            text: '7 shots'
+                                                                                            text: '3 shots'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:SpotMeterLinkToAFPoint:263'
@@ -3376,7 +3376,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 2
                                                                                             bytesHash: 05f9075d4f8f096866ad4063f8323fd438699a22fb0fc5c2472ec6377ed62d6a
-                                                                                            text: 'Disable, 252'
+                                                                                            text: '0 252'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:UsableMeteringModes:266'
@@ -3394,7 +3394,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 2
                                                                                             bytesHash: 70820d91f8b6989b5d70c3a2ff39ca6259311cfbaf9ceca71c2b2b437ef1d59d
-                                                                                            text: 'Disable, 240'
+                                                                                            text: '0 240'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:ExposureModeInManual:267'
@@ -4195,7 +4195,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 4
                                                                                             bytesHash: 9e92db3fb903d738ba7d3555b28197adffda640121de63a5a3803dab8e01f149
-                                                                                            text: 'Disable; 6 s: 6; 16 s: 16; After release: 2'
+                                                                                            text: '; 6 s: 6; 16 s: 16; After release: 2'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:ShortReleaseTimeLag:2061'
@@ -5820,8 +5820,26 @@ log:
             message: 'Offset out of bounds - rel -1 [0, 27], abs 8059 [8060, 8087]'
     WARNING:
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
+            message: "Could not access value for item 'Clarity' in 'CanonCameraSettings', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147'
+            message: "Could not access value for item 'ShutterMode' in 'CanonFileInfo', overflow"
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147'
             message: "Could not access value for item 'FlashExposureLock' in 'CanonFileInfo', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147'
+            message: "Could not access value for item 'AntiFlicker' in 'CanonFileInfo', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147'
+            message: "Could not access value for item 'RFLensType' in 'CanonFileInfo', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:ContinuousShootingSpeed:1552'
+            message: "Found 3 data components, expected 6 for item 'ContinuousShootingSpeed' in 'AutoFocusDrive'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:TimerLength:2060'
+            message: "Found 4 data components, expected 3 for item 'TimerLength' in 'OperationOthers'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonColorData:16385'
             message: "Could not access value for item 'PerChannelBlackLevel' in 'CanonColorData', overflow"

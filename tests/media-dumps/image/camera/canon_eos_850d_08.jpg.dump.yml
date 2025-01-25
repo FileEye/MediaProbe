@@ -1191,7 +1191,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: e545d395bb3fd971f91bf9a2b6722831df704efae6c1aa9da0989ed0970b77bb
-                                                                                    text: E-TTL
+                                                                                    text: '8'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusContinuous:32'
@@ -1390,6 +1390,24 @@ elements:
                                                                                     components: 1
                                                                                     bytesHash: ca2fd00fa001190744c15c317643ab092e7048ce086a243e2be9437c898de1bb
                                                                                     text: '-1'
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Clarity:51'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: Clarity
+                                                                            id: '51'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Clarity:51/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    valid: true
+                                                                                    format: SignedShort
+                                                                                    components: 1
+                                                                                    bytesHash: 8f96c15501bef61baf5bd943201979595736b66b6a7e3b35c353729ab8d9a561
+                                                                                    text: n/a
                                                                 -
                                                                     node: index
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2'
@@ -2117,6 +2135,24 @@ elements:
                                                                                     components: 5
                                                                                     bytesHash: 08d9142f6cf9c636064d34b3ed15adb7632e921e4ee614abb6440b1e80641f3e
                                                                                     text: 000009f9f5
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:FirmwareVersion:1473'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: false
+                                                                            name: FirmwareVersion
+                                                                            id: '1473'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:FirmwareVersion:1473/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                                    valid: false
+                                                                                    format: Ascii
+                                                                                    components: 6
+                                                                                    bytesHash: d5862bdb50b9bb0f4b2e636c8df4b359e4af0204e4f9841cdf91cdc9af69e61b
+                                                                                    text: !!binary qq6qqqqo
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonModelID:16'
@@ -2134,7 +2170,7 @@ elements:
                                                                             format: Long
                                                                             components: 1
                                                                             bytesHash: fe49f43f6bd4194fa91297a42ea62a8ee4967aa90635a6e1bfde266dd52a1ddb
-                                                                            text: 'Unknown (0x80000435)'
+                                                                            text: 'EOS Rebel T8i / 850D / X10i'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:ThumbnailImageValidArea:19'
@@ -3102,6 +3138,24 @@ elements:
                                                                                     text: '3.73 m'
                                                                         -
                                                                             node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:ShutterMode:23'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: ShutterMode
+                                                                            id: '23'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:ShutterMode:23/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    valid: true
+                                                                                    format: SignedShort
+                                                                                    components: 1
+                                                                                    bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
+                                                                                    text: 'Electronic First Curtain'
+                                                                        -
+                                                                            node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:FlashExposureLock:25'
                                                                             class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                             valid: true
@@ -3118,6 +3172,42 @@ elements:
                                                                                     components: 1
                                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
                                                                                     text: 'Off'
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:AntiFlicker:32'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: AntiFlicker
+                                                                            id: '32'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:AntiFlicker:32/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    valid: true
+                                                                                    format: SignedShort
+                                                                                    components: 1
+                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                                                    text: 'Off'
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:RFLensType:61'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: RFLensType
+                                                                            id: '61'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:RFLensType:61/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    valid: true
+                                                                                    format: Short
+                                                                                    components: 1
+                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                                                    text: n/a
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:LensModel:149'
@@ -3486,7 +3576,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: d23f96d836ebed25ad1d3d2b9d92362252cc8a347a98312a75284f7f6d08bd02
-                                                                                            text: 'Monochrome, WB corrected, [6]'
+                                                                                            text: '[0], [1], [6]'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:CustomControls:1804'
@@ -3903,35 +3993,37 @@ elements:
                                                                                     text: '0'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:14'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:UnsharpMaskFineness:14'
                                                                             class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                             valid: true
+                                                                            name: UnsharpMaskFineness
                                                                             id: '14'
-                                                                            collection: Tiff\UnknownTag
+                                                                            collection: Tiff\Tag
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:14/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:UnsharpMaskFineness:14/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
-                                                                                    format: Short
+                                                                                    format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
                                                                                     text: '2'
                                                                         -
                                                                             node: tag
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:15'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:UnsharpMaskThreshold:15'
                                                                             class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                             valid: true
+                                                                            name: UnsharpMaskThreshold
                                                                             id: '15'
-                                                                            collection: Tiff\UnknownTag
+                                                                            collection: Tiff\Tag
                                                                             elements:
                                                                                 -
                                                                                     node: entry
-                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:15/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:UnsharpMaskThreshold:15/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
                                                                                     valid: true
-                                                                                    format: Short
+                                                                                    format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: c0ba8a33ac67f44abff5984dfbb6f56c46b880ac2b86e1f23e7fa9c402c53ae7
                                                                                     text: '4'
@@ -4419,7 +4511,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 38ac7bda3d1c2bebaee514c7bf472ec10c12ee6bd464d5e75ea8b09ff9425fcb
-                                                                                    text: '19'
+                                                                                    text: '19 (90D/850D/M6mkII/M200)'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonColorData:16385/tag:WB_RGGBLevelsAsShot:71'
@@ -6162,6 +6254,42 @@ elements:
                                                                                     components: 1
                                                                                     bytesHash: 67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450
                                                                                     text: 'On'
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonVignettingCorr2:16406/tag:DistortionCorrectionSetting:7'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: DistortionCorrectionSetting
+                                                                            id: '7'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonVignettingCorr2:16406/tag:DistortionCorrectionSetting:7/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                    valid: true
+                                                                                    format: SignedLong
+                                                                                    components: 1
+                                                                                    bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                    text: 'Off'
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonVignettingCorr2:16406/tag:DigitalLensOptimizerSetting:9'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: DigitalLensOptimizerSetting
+                                                                            id: '9'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonVignettingCorr2:16406/tag:DigitalLensOptimizerSetting:9/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                    valid: true
+                                                                                    format: SignedLong
+                                                                                    components: 1
+                                                                                    bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                                    text: 'Off'
                                                                 -
                                                                     node: map
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonLightingOpt:16408'
@@ -6277,6 +6405,42 @@ elements:
                                                                                     format: SignedLong
                                                                                     components: 1
                                                                                     bytesHash: 9d9f290527a6be626a8f5985b26e19b237b44872b03631811df4416fc1713178
+                                                                                    text: 'Off'
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonLightingOpt:16408/tag:DigitalLensOptimizer:10'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: DigitalLensOptimizer
+                                                                            id: '10'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonLightingOpt:16408/tag:DigitalLensOptimizer:10/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                    valid: true
+                                                                                    format: SignedLong
+                                                                                    components: 1
+                                                                                    bytesHash: 67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450
+                                                                                    text: Standard
+                                                                        -
+                                                                            node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonLightingOpt:16408/tag:DualPixelRaw:11'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: DualPixelRaw
+                                                                            id: '11'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonLightingOpt:16408/tag:DualPixelRaw:11/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                                    valid: true
+                                                                                    format: SignedLong
+                                                                                    components: 1
+                                                                                    bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
                                                                                     text: 'Off'
                                                                 -
                                                                     node: tag
@@ -7426,6 +7590,9 @@ log:
             message: "Found 1 data components, expected 3 for item 'ISOSpeedRange' in 'Exposure'"
     NOTICE:
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraInfo:13/tag:FirmwareVersion:1473/entry'
+            message: 'Ascii entry missing final NUL character.'
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:25'
             message: "Unknown item 25/0x19 in 'Canon'"
         -
@@ -7440,12 +7607,6 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:63'
             message: "Unknown item 63/0x3F in 'Canon'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:14'
-            message: "Unknown item 14/0xE in 'CanonProcessing'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:15'
-            message: "Unknown item 15/0xF in 'CanonProcessing'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonProcessing:160/tag:16'
             message: "Unknown item 16/0x10 in 'CanonProcessing'"
