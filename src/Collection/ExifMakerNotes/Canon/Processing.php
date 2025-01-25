@@ -58,6 +58,14 @@ class Processing extends CollectionBase {
     array (
       0 => 1,
     ),
+    'UnsharpMaskFineness' =>
+    array (
+      0 => 14,
+    ),
+    'UnsharpMaskThreshold' =>
+    array (
+      0 => 15,
+    ),
     'WBShiftAB' =>
     array (
       0 => 12,
@@ -359,6 +367,34 @@ class Processing extends CollectionBase {
         'exiftoolDOMNode' => 'Canon:WBShiftGM',
       ),
     ),
+    14 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'UnsharpMaskFineness',
+        'title' => 'Unsharp Mask Fineness',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:UnsharpMaskFineness',
+      ),
+    ),
+    15 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'UnsharpMaskThreshold',
+        'title' => 'Unsharp Mask Threshold',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:UnsharpMaskThreshold',
+      ),
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
@@ -393,6 +429,14 @@ class Processing extends CollectionBase {
     'Canon:ToneCurve' =>
     array (
       0 => 1,
+    ),
+    'Canon:UnsharpMaskFineness' =>
+    array (
+      0 => 14,
+    ),
+    'Canon:UnsharpMaskThreshold' =>
+    array (
+      0 => 15,
     ),
     'Canon:WBShiftAB' =>
     array (

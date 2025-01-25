@@ -742,10 +742,10 @@ class ColorData8 extends CollectionBase {
         array (
           'mapping' =>
           array (
-            12 => '12 (5DS/5DSR)',
-            13 => '13 (80D)',
+            12 => '12 (1DXmkII/5DS/5DSR)',
+            13 => '13 (80D/5DmkIV)',
             14 => '14 (1300D/2000D/4000D)',
-            15 => '15 (6DmkII/77D/200D/800D)',
+            15 => '15 (6DmkII/77D/200D/800D,9000D)',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:ColorDataVersion',

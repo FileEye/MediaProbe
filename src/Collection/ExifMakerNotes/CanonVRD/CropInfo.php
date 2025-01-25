@@ -29,6 +29,10 @@ class CropInfo extends CollectionBase {
     array (
       0 => 0,
     ),
+    'CropAngle' =>
+    array (
+      0 => 8,
+    ),
     'CropHeight' =>
     array (
       0 => 6,
@@ -51,7 +55,7 @@ class CropInfo extends CollectionBase {
     ),
     'CropRotation' =>
     array (
-      0 => 8,
+      0 => 7,
     ),
     'CropWidth' =>
     array (
@@ -71,6 +75,10 @@ class CropInfo extends CollectionBase {
     'CanonVRD:CropActive' =>
     array (
       0 => 0,
+    ),
+    'CanonVRD:CropAngle' =>
+    array (
+      0 => 8,
     ),
     'CanonVRD:CropHeight' =>
     array (
@@ -94,7 +102,7 @@ class CropInfo extends CollectionBase {
     ),
     'CanonVRD:CropRotation' =>
     array (
-      0 => 8,
+      0 => 7,
     ),
     'CanonVRD:CropWidth' =>
     array (
@@ -217,7 +225,7 @@ class CropInfo extends CollectionBase {
         'exiftoolDOMNode' => 'CanonVRD:CropHeight',
       ),
     ),
-    8 =>
+    7 =>
     array (
       0 =>
       array (
@@ -226,9 +234,23 @@ class CropInfo extends CollectionBase {
         'title' => 'Crop Rotation',
         'format' =>
         array (
-          0 => 12,
+          0 => 9,
         ),
         'exiftoolDOMNode' => 'CanonVRD:CropRotation',
+      ),
+    ),
+    8 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'CropAngle',
+        'title' => 'Crop Angle',
+        'format' =>
+        array (
+          0 => 12,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:CropAngle',
       ),
     ),
     10 =>

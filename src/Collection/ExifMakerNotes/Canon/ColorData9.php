@@ -711,6 +711,9 @@ class ColorData9 extends CollectionBase {
           'mapping' =>
           array (
             16 => '16 (M50)',
+            17 => '17 (EOS R)',
+            18 => '18 (EOS RP/250D)',
+            19 => '19 (90D/850D/M6mkII/M200)',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:ColorDataVersion',

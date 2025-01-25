@@ -25,6 +25,10 @@ class CameraInfoUnknown extends CollectionBase {
   'id' => 'ExifMakerNotes\\Canon\\CameraInfoUnknown',
   'itemsByName' =>
   array (
+    'FirmwareVersion' =>
+    array (
+      0 => 1473,
+    ),
     'LensSerialNumber' =>
     array (
       0 => 363,
@@ -32,6 +36,10 @@ class CameraInfoUnknown extends CollectionBase {
   ),
   'itemsByExiftoolDOMNode' =>
   array (
+    'Canon:FirmwareVersion' =>
+    array (
+      0 => 1473,
+    ),
     'Canon:LensSerialNumber' =>
     array (
       0 => 363,
@@ -54,6 +62,21 @@ class CameraInfoUnknown extends CollectionBase {
           0 => 7,
         ),
         'exiftoolDOMNode' => 'Canon:LensSerialNumber',
+      ),
+    ),
+    1473 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'FirmwareVersion',
+        'title' => 'Firmware Version',
+        'components' => 6,
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'Canon:FirmwareVersion',
       ),
     ),
   ),

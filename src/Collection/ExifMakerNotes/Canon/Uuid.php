@@ -26,6 +26,10 @@ class Uuid extends CollectionBase {
     array (
       0 => 'CNCV',
     ),
+    'MakerNoteCanon' =>
+    array (
+      0 => 'CMT3',
+    ),
     'ThumbnailImage' =>
     array (
       0 => 'THMB',
@@ -37,6 +41,10 @@ class Uuid extends CollectionBase {
     array (
       0 => 'CNCV',
     ),
+    'Canon:MakerNoteCanon' =>
+    array (
+      0 => 'CMT3',
+    ),
     'Canon:ThumbnailImage' =>
     array (
       0 => 'THMB',
@@ -44,6 +52,20 @@ class Uuid extends CollectionBase {
   ),
   'items' =>
   array (
+    'CMT3' =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'MakerNoteCanon',
+        'title' => 'Maker Note Canon',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:MakerNoteCanon',
+      ),
+    ),
     'CNCV' =>
     array (
       0 =>

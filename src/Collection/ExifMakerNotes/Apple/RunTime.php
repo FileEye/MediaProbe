@@ -88,11 +88,11 @@ class RunTime extends CollectionBase {
         array (
           'mapping' =>
           array (
-            1 => 'Valid',
-            2 => 'Has been rounded',
-            4 => 'Positive infinity',
-            8 => 'Negative infinity',
-            16 => 'Indefinite',
+            'Bit0' => 'Valid',
+            'Bit1' => 'Has been rounded',
+            'Bit2' => 'Positive infinity',
+            'Bit3' => 'Negative infinity',
+            'Bit4' => 'Indefinite',
           ),
         ),
         'exiftoolDOMNode' => 'Apple:RunTimeFlags',

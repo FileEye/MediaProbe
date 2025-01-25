@@ -133,6 +133,10 @@ class Functions2 extends CollectionBase {
     array (
       0 => 1803,
     ),
+    'AudioCompression' =>
+    array (
+      0 => 2070,
+    ),
     'AutoAFPointColorTracking' =>
     array (
       0 => 1308,
@@ -541,6 +545,10 @@ class Functions2 extends CollectionBase {
     'CanonCustom:AssignFuncButton' =>
     array (
       0 => 1803,
+    ),
+    'CanonCustom:AudioCompression' =>
+    array (
+      0 => 2070,
     ),
     'CanonCustom:AutoAFPointColorTracking' =>
     array (
@@ -1010,6 +1018,28 @@ class Functions2 extends CollectionBase {
         array (
           'mapping' =>
           array (
+            2 => '2 shots',
+            3 => '3 shots',
+            5 => '5 shots',
+            7 => '7 shots',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:AEBShotCount',
+      ),
+      1 =>
+      array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AEBShotCount',
+        'collection' => 'Tiff\\Tag',
+        'name' => 'AEBShotCount',
+        'title' => 'AEB Shot Count',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
             0 => '3 shots',
             1 => '2 shots',
             2 => '5 shots',
@@ -1018,7 +1048,7 @@ class Functions2 extends CollectionBase {
         ),
         'exiftoolDOMNode' => 'CanonCustom:AEBShotCount',
       ),
-      1 =>
+      2 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AEBShotCount',
         'collection' => 'Tiff\\Tag',
@@ -1095,6 +1125,18 @@ class Functions2 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'UsableShootingModes',
         'title' => 'Usable Shooting Modes',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:UsableShootingModes',
+      ),
+      1 =>
+      array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
+        'collection' => 'Tiff\\Tag',
+        'name' => 'UsableShootingModes',
+        'title' => 'Usable Shooting Modes',
         'components' => 2,
         'format' =>
         array (
@@ -1114,6 +1156,18 @@ class Functions2 extends CollectionBase {
     266 =>
     array (
       0 =>
+      array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
+        'collection' => 'Tiff\\Tag',
+        'name' => 'UsableMeteringModes',
+        'title' => 'Usable Metering Modes',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:UsableMeteringModes',
+      ),
+      1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
         'collection' => 'Tiff\\Tag',
@@ -1505,10 +1559,10 @@ class Functions2 extends CollectionBase {
         array (
           'mapping' =>
           array (
-            1 => 'Evaluative',
-            2 => 'Partial',
-            4 => 'Spot',
-            8 => 'Center-weighted',
+            'Bit0' => 'Evaluative',
+            'Bit1' => 'Partial',
+            'Bit2' => 'Spot',
+            'Bit3' => 'Center-weighted',
           ),
         ),
         'exiftoolDOMNode' => 'CanonCustom:AELockMeterModeAfterFocus',
@@ -1814,11 +1868,13 @@ class Functions2 extends CollectionBase {
         array (
           'mapping' =>
           array (
-            1 => 'Monochrome',
-            2 => 'WB corrected',
-            4 => 'One-touch image quality',
-            8 => 'ISO expansion',
-            16 => 'Spot metering',
+            'Bit0' => 'Monochrome',
+            'Bit1' => 'WB corrected',
+            'Bit2' => 'One-touch image quality',
+            'Bit3' => 'ISO expansion',
+            'Bit4' => 'Spot metering',
+            'Bit6' => 'Noise reduction',
+            'Bit7' => 'HDR',
           ),
         ),
         'exiftoolDOMNode' => 'CanonCustom:ViewfinderWarnings',
@@ -2770,6 +2826,40 @@ class Functions2 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'ContinuousShootingSpeed',
         'title' => 'Continuous Shooting Speed',
+        'components' => 6,
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Disable',
+            1 => 'Enable',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:ContinuousShootingSpeed',
+      ),
+      1 =>
+      array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShootingSpeed',
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ContinuousShootingSpeed',
+        'title' => 'Continuous Shooting Speed',
+        'components' => 5,
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:ContinuousShootingSpeed',
+      ),
+      2 =>
+      array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShootingSpeed',
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ContinuousShootingSpeed',
+        'title' => 'Continuous Shooting Speed',
         'components' => 3,
         'format' =>
         array (
@@ -2817,6 +2907,17 @@ class Functions2 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'RestrictDriveModes',
         'title' => 'Restrict Drive Modes',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:RestrictDriveModes',
+      ),
+      1 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'RestrictDriveModes',
+        'title' => 'Restrict Drive Modes',
         'components' => 2,
         'format' =>
         array (
@@ -2859,6 +2960,27 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'collection' => 'Tiff\\Tag',
+        'name' => 'Shutter-AELock',
+        'title' => 'Shutter-AE Lock',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            '0 0' => 'AF/AE lock',
+            '1 0' => 'AE lock/AF',
+            '2 0' => 'AF/AF lock, No AE lock',
+            '3 0' => 'AE/AF, No AE lock',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:Shutter-AELock',
+      ),
+      2 =>
+      array (
+        'collection' => 'Tiff\\Tag',
         'name' => 'AFAndMeteringButtons',
         'title' => 'AF And Metering Buttons',
         'format' =>
@@ -2878,7 +3000,7 @@ class Functions2 extends CollectionBase {
         ),
         'exiftoolDOMNode' => 'CanonCustom:AFAndMeteringButtons',
       ),
-      2 =>
+      3 =>
       array (
         'collection' => 'Tiff\\Tag',
         'name' => 'ShutterButtonAFOnButton',
@@ -3089,6 +3211,17 @@ class Functions2 extends CollectionBase {
         'exiftoolDOMNode' => 'CanonCustom:SetButtonWhenShooting',
       ),
       6 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'SetButtonWhenShooting',
+        'title' => 'Set Button When Shooting',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:SetButtonWhenShooting',
+      ),
+      7 =>
       array (
         'collection' => 'Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
@@ -3617,6 +3750,19 @@ class Functions2 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'TimerLength',
         'title' => 'Timer Length',
+        'components' => 3,
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:TimerLength',
+      ),
+      1 =>
+      array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\TimerLength',
+        'collection' => 'Tiff\\Tag',
+        'name' => 'TimerLength',
+        'title' => 'Timer Length',
         'components' => 4,
         'format' =>
         array (
@@ -3787,6 +3933,8 @@ class Functions2 extends CollectionBase {
           array (
             0 => 'Cancel selected',
             1 => 'Erase selected',
+            2 => 'Erase RAW selected',
+            3 => 'Erase non-RAW selected',
           ),
         ),
         'exiftoolDOMNode' => 'CanonCustom:DefaultEraseOption',
@@ -3834,6 +3982,28 @@ class Functions2 extends CollectionBase {
           ),
         ),
         'exiftoolDOMNode' => 'CanonCustom:AddIPTCInformation',
+      ),
+    ),
+    2070 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'AudioCompression',
+        'title' => 'Audio Compression',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Enable',
+            1 => 'Disable',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonCustom:AudioCompression',
       ),
     ),
   ),
