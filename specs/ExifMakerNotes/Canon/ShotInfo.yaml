@@ -9,7 +9,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::ShotInfo'']/tag'
+        xpath: "//table[@name='Canon::ShotInfo']/tag"
 items:
     1:
         entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\AutoIso

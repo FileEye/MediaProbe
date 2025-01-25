@@ -9,7 +9,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::Processing'']/tag'
+        xpath: "//table[@name='Canon::Processing']/tag"
 items:
     -
         collection: RawData
@@ -179,3 +179,19 @@ items:
                 writable: true
                 DOMNode: 'Canon:WBShiftGM'
                 desc: 'WB Shift GM'
+    -
+        exiftool:
+            -
+                name: UnsharpMaskFineness
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:UnsharpMaskFineness'
+                desc: 'Unsharp Mask Fineness'
+    -
+        exiftool:
+            -
+                name: UnsharpMaskThreshold
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:UnsharpMaskThreshold'
+                desc: 'Unsharp Mask Threshold'

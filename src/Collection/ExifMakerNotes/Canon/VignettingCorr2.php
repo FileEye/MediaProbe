@@ -30,6 +30,14 @@ class VignettingCorr2 extends CollectionBase {
     array (
       0 => 6,
     ),
+    'DigitalLensOptimizerSetting' =>
+    array (
+      0 => 9,
+    ),
+    'DistortionCorrectionSetting' =>
+    array (
+      0 => 7,
+    ),
     'PeripheralLightingSetting' =>
     array (
       0 => 5,
@@ -93,12 +101,64 @@ class VignettingCorr2 extends CollectionBase {
         'exiftoolDOMNode' => 'Canon:ChromaticAberrationSetting',
       ),
     ),
+    7 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DistortionCorrectionSetting',
+        'title' => 'Distortion Correction Setting',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:DistortionCorrectionSetting',
+      ),
+    ),
+    9 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DigitalLensOptimizerSetting',
+        'title' => 'Digital Lens Optimizer Setting',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:DigitalLensOptimizerSetting',
+      ),
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
     'Canon:ChromaticAberrationSetting' =>
     array (
       0 => 6,
+    ),
+    'Canon:DigitalLensOptimizerSetting' =>
+    array (
+      0 => 9,
+    ),
+    'Canon:DistortionCorrectionSetting' =>
+    array (
+      0 => 7,
     ),
     'Canon:PeripheralLightingSetting' =>
     array (

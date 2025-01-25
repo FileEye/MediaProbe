@@ -9,7 +9,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::LightingOpt'']/tag'
+        xpath: "//table[@name='Canon::LightingOpt']/tag"
 items:
     1:
         exiftool:
@@ -71,3 +71,26 @@ items:
                     - Low
                     - Strong
                     - 'Off'
+    10:
+        exiftool:
+            -
+                name: DigitalLensOptimizer
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:DigitalLensOptimizer'
+                desc: 'Digital Lens Optimizer'
+                values:
+                    - 'Off'
+                    - Standard
+                    - High
+    11:
+        exiftool:
+            -
+                name: DualPixelRaw
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:DualPixelRaw'
+                desc: 'Dual Pixel Raw'
+                values:
+                    - 'Off'
+                    - 'On'

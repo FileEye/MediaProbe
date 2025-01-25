@@ -26,6 +26,10 @@ class FileInfo extends CollectionBase {
   'id' => 'ExifMakerNotes\\Canon\\FileInfo',
   'itemsByName' =>
   array (
+    'AntiFlicker' =>
+    array (
+      0 => 32,
+    ),
     'BracketMode' =>
     array (
       0 => 3,
@@ -70,6 +74,10 @@ class FileInfo extends CollectionBase {
     array (
       0 => 16,
     ),
+    'RFLensType' =>
+    array (
+      0 => 61,
+    ),
     'RawJpgQuality' =>
     array (
       0 => 6,
@@ -81,6 +89,10 @@ class FileInfo extends CollectionBase {
     'ShutterCount' =>
     array (
       0 => 1,
+    ),
+    'ShutterMode' =>
+    array (
+      0 => 23,
     ),
     'ToningEffect' =>
     array (
@@ -101,6 +113,10 @@ class FileInfo extends CollectionBase {
   ),
   'itemsByExiftoolDOMNode' =>
   array (
+    'Canon:AntiFlicker' =>
+    array (
+      0 => 32,
+    ),
     'Canon:BracketMode' =>
     array (
       0 => 3,
@@ -145,6 +161,10 @@ class FileInfo extends CollectionBase {
     array (
       0 => 16,
     ),
+    'Canon:RFLensType' =>
+    array (
+      0 => 61,
+    ),
     'Canon:RawJpgQuality' =>
     array (
       0 => 6,
@@ -156,6 +176,10 @@ class FileInfo extends CollectionBase {
     'Canon:ShutterCount' =>
     array (
       0 => 1,
+    ),
+    'Canon:ShutterMode' =>
+    array (
+      0 => 23,
     ),
     'Canon:ToningEffect' =>
     array (
@@ -302,8 +326,8 @@ class FileInfo extends CollectionBase {
             4 => 'RAW',
             5 => 'Superfine',
             7 => 'CRAW',
-            130 => 'Normal Movie',
-            131 => 'Movie (2)',
+            130 => 'Light (RAW)',
+            131 => 'Standard (RAW)',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:RawJpgQuality',
@@ -539,6 +563,29 @@ class FileInfo extends CollectionBase {
         'exiftoolDOMNode' => 'Canon:FocusDistanceLower',
       ),
     ),
+    23 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ShutterMode',
+        'title' => 'Shutter Mode',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Mechanical',
+            1 => 'Electronic First Curtain',
+            2 => 'Electronic',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:ShutterMode',
+      ),
+    ),
     25 =>
     array (
       0 =>
@@ -559,6 +606,114 @@ class FileInfo extends CollectionBase {
           ),
         ),
         'exiftoolDOMNode' => 'Canon:FlashExposureLock',
+      ),
+    ),
+    32 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'AntiFlicker',
+        'title' => 'Anti Flicker',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:AntiFlicker',
+      ),
+    ),
+    61 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'RFLensType',
+        'title' => 'RF Lens Type',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'n/a',
+            257 => 'Canon RF 50mm F1.2L USM',
+            258 => 'Canon RF 24-105mm F4L IS USM',
+            259 => 'Canon RF 28-70mm F2L USM',
+            260 => 'Canon RF 35mm F1.8 MACRO IS STM',
+            261 => 'Canon RF 85mm F1.2L USM',
+            262 => 'Canon RF 85mm F1.2L USM DS',
+            263 => 'Canon RF 24-70mm F2.8L IS USM',
+            264 => 'Canon RF 15-35mm F2.8L IS USM',
+            265 => 'Canon RF 24-240mm F4-6.3 IS USM',
+            266 => 'Canon RF 70-200mm F2.8L IS USM',
+            267 => 'Canon RF 85mm F2 MACRO IS STM',
+            268 => 'Canon RF 600mm F11 IS STM',
+            269 => 'Canon RF 600mm F11 IS STM + RF1.4x',
+            270 => 'Canon RF 600mm F11 IS STM + RF2x',
+            271 => 'Canon RF 800mm F11 IS STM',
+            272 => 'Canon RF 800mm F11 IS STM + RF1.4x',
+            273 => 'Canon RF 800mm F11 IS STM + RF2x',
+            274 => 'Canon RF 24-105mm F4-7.1 IS STM',
+            275 => 'Canon RF 100-500mm F4.5-7.1L IS USM',
+            276 => 'Canon RF 100-500mm F4.5-7.1L IS USM + RF1.4x',
+            277 => 'Canon RF 100-500mm F4.5-7.1L IS USM + RF2x',
+            278 => 'Canon RF 70-200mm F4L IS USM',
+            279 => 'Canon RF 100mm F2.8L MACRO IS USM',
+            280 => 'Canon RF 50mm F1.8 STM',
+            281 => 'Canon RF 14-35mm F4L IS USM',
+            282 => 'Canon RF-S 18-45mm F4.5-6.3 IS STM',
+            283 => 'Canon RF 100-400mm F5.6-8 IS USM',
+            284 => 'Canon RF 100-400mm F5.6-8 IS USM + RF1.4x',
+            285 => 'Canon RF 100-400mm F5.6-8 IS USM + RF2x',
+            286 => 'Canon RF-S 18-150mm F3.5-6.3 IS STM',
+            287 => 'Canon RF 24mm F1.8 MACRO IS STM',
+            288 => 'Canon RF 16mm F2.8 STM',
+            289 => 'Canon RF 400mm F2.8L IS USM',
+            290 => 'Canon RF 400mm F2.8L IS USM + RF1.4x',
+            291 => 'Canon RF 400mm F2.8L IS USM + RF2x',
+            292 => 'Canon RF 600mm F4L IS USM',
+            293 => 'Canon RF 600mm F4L IS USM + RF1.4x',
+            294 => 'Canon RF 600mm F4L IS USM + RF2x',
+            295 => 'Canon RF 800mm F5.6L IS USM',
+            296 => 'Canon RF 800mm F5.6L IS USM + RF1.4x',
+            297 => 'Canon RF 800mm F5.6L IS USM + RF2x',
+            298 => 'Canon RF 1200mm F8L IS USM',
+            299 => 'Canon RF 1200mm F8L IS USM + RF1.4x',
+            300 => 'Canon RF 1200mm F8L IS USM + RF2x',
+            301 => 'Canon RF 5.2mm F2.8L Dual Fisheye 3D VR',
+            302 => 'Canon RF 15-30mm F4.5-6.3 IS STM',
+            303 => 'Canon RF 135mm F1.8 L IS USM',
+            304 => 'Canon RF 24-50mm F4.5-6.3 IS STM',
+            305 => 'Canon RF-S 55-210mm F5-7.1 IS STM',
+            306 => 'Canon RF 100-300mm F2.8L IS USM',
+            307 => 'Canon RF 100-300mm F2.8L IS USM + RF1.4x',
+            308 => 'Canon RF 100-300mm F2.8L IS USM + RF2x',
+            309 => 'Canon RF 200-800mm F6.3-9 IS USM',
+            310 => 'Canon RF 200-800mm F6.3-9 IS USM + RF1.4x',
+            311 => 'Canon RF 200-800mm F6.3-9 IS USM + RF2x',
+            312 => 'Canon RF 10-20mm F4 L IS STM',
+            313 => 'Canon RF 28mm F2.8 STM',
+            314 => 'Canon RF 24-105mm F2.8 L IS USM Z',
+            315 => 'Canon RF-S 10-18mm F4.5-6.3 IS STM',
+            316 => 'Canon RF 35mm F1.4 L VCM',
+            317 => 'Canon RF-S 3.9mm F3.5 STM DUAL FISHEYE',
+            318 => 'Canon RF 28-70mm F2.8 IS STM',
+            319 => 'Canon RF 70-200mm F2.8 L IS USM Z',
+            325 => 'Canon RF 50mm F1.4 L VCM',
+            326 => 'Canon RF 24mm F1.4 L VCM',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:RFLensType',
       ),
     ),
   ),

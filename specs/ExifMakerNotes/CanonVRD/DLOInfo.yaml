@@ -8,7 +8,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: CanonVRD
-        xpath: '//table[@name=''CanonVRD::DLOInfo'']/tag'
+        xpath: "//table[@name='CanonVRD::DLOInfo']/tag"
 items:
     4:
         exiftool:
@@ -32,6 +32,6 @@ items:
             -
                 name: DLOData
                 type: undef
-                writable: true
+                writable: false
                 DOMNode: 'CanonVRD:DLOData'
                 desc: 'DLO Data'

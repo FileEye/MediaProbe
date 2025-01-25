@@ -8,7 +8,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: CanonVRD
-        xpath: '//table[@name=''CanonVRD::Ver2'']/tag'
+        xpath: "//table[@name='CanonVRD::Ver2']/tag"
 items:
     2:
         exiftool:
@@ -639,7 +639,7 @@ items:
             -
                 name: CustomPictureStyleData
                 type: var_int16u
-                writable: true
+                writable: false
                 DOMNode: 'CanonVRD:CustomPictureStyleData'
                 desc: 'Custom Picture Style Data'
     94:
@@ -1307,7 +1307,7 @@ items:
             -
                 name: DLODataLength
                 type: int32u
-                writable: true
+                writable: false
                 DOMNode: 'CanonVRD:DLODataLength'
                 desc: 'DLO Data Length'
     225:

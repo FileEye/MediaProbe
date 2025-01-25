@@ -12,7 +12,7 @@ postParse:
 compiler:
     exiftool:
         g1: IFD1
-        xpath: '//table[@name=''Exif::Main'']/tag[not(@g1) or @g1=''IFD1'']'
+        xpath: "//table[@name='Exif::Main']/tag[not(@g1) or @g1='IFD1']"
 items:
     11:
         exifReadData:
@@ -35,7 +35,7 @@ items:
                 DOMNode: 'IFD1:SubfileType'
                 desc: 'Subfile Type'
                 values:
-                    0: 'Full-resolution Image'
+                    0: 'Full-resolution image'
                     1: 'Reduced-resolution image'
                     2: 'Single page of multi-page image'
                     3: 'Single page of multi-page reduced-resolution image'
@@ -43,10 +43,17 @@ items:
                     5: 'Transparency mask of reduced-resolution image'
                     6: 'Transparency mask of multi-page image'
                     7: 'Transparency mask of reduced-resolution multi-page image'
-                    8: 'TIFF/IT final page'
-                    16: 'TIFF-FX mixed raster content'
+                    8: 'Depth map'
+                    9: 'Depth map of reduced-resolution image'
+                    16: 'Enhanced image data'
                     65537: 'Alternate reduced-resolution image'
-                    '4294967295': invalid
+                    65540: 'Semantic Mask'
+                    4294967295: invalid
+                    Bit0: 'Reduced resolution'
+                    Bit1: 'Single page'
+                    Bit2: 'Transparency mask'
+                    Bit3: 'TIFF/IT final page'
+                    Bit4: 'TIFF-FX mixed raster content'
     255:
         exifReadData:
             key: 'THUMBNAIL::SubFile'
@@ -160,6 +167,7 @@ items:
                     34927: WebP
                     34933: PNG
                     34934: 'JPEG XR'
+                    52546: 'JPEG XL'
                     65000: 'Kodak DCR Compressed'
                     65535: 'Pentax PEF Compressed'
     262:
@@ -189,6 +197,8 @@ items:
                     32845: 'Pixar LogLuv'
                     32892: 'Sequential Color Filter'
                     34892: 'Linear Raw'
+                    51177: 'Depth Map'
+                    52527: 'Semantic Mask'
     263:
         exiftool:
             -
@@ -285,6 +295,12 @@ items:
                 writable: true
                 DOMNode: 'IFD1:PreviewImageStart'
                 desc: 'Preview Image Start'
+            4:
+                name: PreviewImageStart
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:PreviewImageStart'
+                desc: 'Preview Image Start'
     274:
         components: 1
         exifReadData:
@@ -338,6 +354,12 @@ items:
             key: 'THUMBNAIL::StripByteCounts'
         exiftool:
             2:
+                name: PreviewImageLength
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:PreviewImageLength'
+                desc: 'Preview Image Length'
+            4:
                 name: PreviewImageLength
                 type: int32u
                 writable: true
@@ -540,6 +562,11 @@ items:
                 values:
                     1: None
                     2: 'Horizontal differencing'
+                    3: 'Floating point'
+                    34892: 'Horizontal difference X2'
+                    34893: 'Horizontal difference X4'
+                    34894: 'Floating point X2'
+                    34895: 'Floating point X4'
     318:
         exifReadData:
             key: 'THUMBNAIL::WhitePoint'
@@ -775,6 +802,15 @@ items:
                 g2: Author
                 DOMNode: 'IFD1:Copyright'
                 desc: Copyright
+    33550:
+        exiftool:
+            -
+                name: PixelScale
+                type: double
+                count: 3
+                writable: true
+                DOMNode: 'IFD1:PixelScale'
+                desc: 'Pixel Scale'
     33723:
         exifReadData:
             key: 'THUMBNAIL::IPTC/NAA'
@@ -785,6 +821,23 @@ items:
                 writable: true
                 DOMNode: 'IFD1:IPTC-NAA'
                 desc: IPTC-NAA
+    33920:
+        exiftool:
+            -
+                name: IntergraphMatrix
+                type: double
+                writable: true
+                DOMNode: 'IFD1:IntergraphMatrix'
+                desc: 'Intergraph Matrix'
+    33922:
+        exiftool:
+            -
+                name: ModelTiePoint
+                type: double
+                writable: true
+                g2: Location
+                DOMNode: 'IFD1:ModelTiePoint'
+                desc: 'Model Tie Point'
     34118:
         exiftool:
             -
@@ -793,6 +846,16 @@ items:
                 writable: true
                 DOMNode: 'IFD1:SEMInfo'
                 desc: 'SEM Info'
+    34264:
+        exiftool:
+            -
+                name: ModelTransform
+                type: double
+                count: 16
+                writable: true
+                g2: Location
+                DOMNode: 'IFD1:ModelTransform'
+                desc: 'Model Transform'
     34665:
         collection: Tiff\IfdExif
         name: ExifIFD
@@ -800,7 +863,7 @@ items:
         exiftool:
             -
                 name: GeoTiffDirectory
-                type: undef
+                type: int16u
                 writable: true
                 DOMNode: 'IFD1:GeoTiffDirectory'
                 desc: 'Geo Tiff Directory'
@@ -808,7 +871,7 @@ items:
         exiftool:
             -
                 name: GeoTiffDoubleParams
-                type: undef
+                type: double
                 writable: true
                 DOMNode: 'IFD1:GeoTiffDoubleParams'
                 desc: 'Geo Tiff Double Params'
@@ -889,6 +952,22 @@ items:
                 writable: true
                 DOMNode: 'IFD1:XPSubject'
                 desc: 'XP Subject'
+    42112:
+        exiftool:
+            -
+                name: GDALMetadata
+                type: string
+                writable: true
+                DOMNode: 'IFD1:GDALMetadata'
+                desc: 'GDAL Metadata'
+    42113:
+        exiftool:
+            -
+                name: GDALNoData
+                type: string
+                writable: true
+                DOMNode: 'IFD1:GDALNoData'
+                desc: 'GDAL No Data'
     50341:
         compiler:
             exiftool:
@@ -1068,13 +1147,19 @@ items:
                 desc: 'Shadow Scale'
     50740:
         exiftool:
+            4:
+                name: DNGPrivateData
+                type: int8u
+                writable: true
+                DOMNode: 'IFD1:DNGPrivateData'
+                desc: 'DNG Private Data'
             1:
                 name: DNGAdobeData
                 type: undef
                 writable: true
                 DOMNode: 'IFD1:DNGAdobeData'
                 desc: 'DNG Adobe Data'
-            4:
+            6:
                 name: DNGPrivateData
                 type: int8u
                 writable: true
@@ -1218,6 +1303,10 @@ items:
                 writable: true
                 DOMNode: 'IFD1:ColorimetricReference'
                 desc: 'Colorimetric Reference'
+                values:
+                    - Scene-referred
+                    - 'Output-referred (ICC Profile Dynamic Range)'
+                    - 'Output-referred (High Dyanmic Range)'
     50885:
         exiftool:
             -
@@ -1559,3 +1648,237 @@ items:
                 writable: true
                 DOMNode: 'IFD1:RawToPreviewGain'
                 desc: 'Raw To Preview Gain'
+    51177:
+        exiftool:
+            -
+                name: DepthFormat
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:DepthFormat'
+                desc: 'Depth Format'
+                values:
+                    - Unknown
+                    - Linear
+                    - Inverse
+    51178:
+        exiftool:
+            -
+                name: DepthNear
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:DepthNear'
+                desc: 'Depth Near'
+    51179:
+        exiftool:
+            -
+                name: DepthFar
+                type: rational64u
+                writable: true
+                DOMNode: 'IFD1:DepthFar'
+                desc: 'Depth Far'
+    51180:
+        exiftool:
+            -
+                name: DepthUnits
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:DepthUnits'
+                desc: 'Depth Units'
+                values:
+                    - Unknown
+                    - Meters
+    51181:
+        exiftool:
+            -
+                name: DepthMeasureType
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:DepthMeasureType'
+                desc: 'Depth Measure Type'
+                values:
+                    - Unknown
+                    - 'Optical Axis'
+                    - 'Optical Ray'
+    51182:
+        exiftool:
+            -
+                name: EnhanceParams
+                type: string
+                writable: true
+                DOMNode: 'IFD1:EnhanceParams'
+                desc: 'Enhance Params'
+    52529:
+        exiftool:
+            -
+                name: CalibrationIlluminant3
+                type: int16u
+                writable: true
+                DOMNode: 'IFD1:CalibrationIlluminant3'
+                desc: 'Calibration Illuminant 3'
+                values:
+                    0: Unknown
+                    1: Daylight
+                    2: Fluorescent
+                    3: 'Tungsten (Incandescent)'
+                    4: Flash
+                    9: 'Fine Weather'
+                    10: Cloudy
+                    11: Shade
+                    12: 'Daylight Fluorescent'
+                    13: 'Day White Fluorescent'
+                    14: 'Cool White Fluorescent'
+                    15: 'White Fluorescent'
+                    16: 'Warm White Fluorescent'
+                    17: 'Standard Light A'
+                    18: 'Standard Light B'
+                    19: 'Standard Light C'
+                    20: D55
+                    21: D65
+                    22: D75
+                    23: D50
+                    24: 'ISO Studio Tungsten'
+                    255: Other
+    52530:
+        exiftool:
+            -
+                name: CameraCalibration3
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:CameraCalibration3'
+                desc: 'Camera Calibration 3'
+    52531:
+        exiftool:
+            -
+                name: ColorMatrix3
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ColorMatrix3'
+                desc: 'Color Matrix 3'
+    52532:
+        exiftool:
+            -
+                name: ForwardMatrix3
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ForwardMatrix3'
+                desc: 'Forward Matrix 3'
+    52533:
+        exiftool:
+            -
+                name: IlluminantData1
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:IlluminantData1'
+                desc: 'Illuminant Data 1'
+    52534:
+        exiftool:
+            -
+                name: IlluminantData2
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:IlluminantData2'
+                desc: 'Illuminant Data 2'
+    52535:
+        exiftool:
+            -
+                name: IlluminantData3
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:IlluminantData3'
+                desc: 'Illuminant Data 3'
+    52537:
+        exiftool:
+            -
+                name: ProfileHueSatMapData3
+                type: float
+                writable: true
+                DOMNode: 'IFD1:ProfileHueSatMapData3'
+                desc: 'Profile Hue Sat Map Data 3'
+    52538:
+        exiftool:
+            -
+                name: ReductionMatrix3
+                type: rational64s
+                writable: true
+                DOMNode: 'IFD1:ReductionMatrix3'
+                desc: 'Reduction Matrix 3'
+    52543:
+        exiftool:
+            -
+                name: RGBTables
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:RGBTables'
+                desc: 'RGB Tables'
+    52544:
+        exiftool:
+            -
+                name: ProfileGainTableMap2
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:ProfileGainTableMap2'
+                desc: 'Profile Gain Table Map 2'
+    52548:
+        exiftool:
+            -
+                name: ImageSequenceInfo
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:ImageSequenceInfo'
+                desc: 'Image Sequence Info'
+    52550:
+        exiftool:
+            -
+                name: ImageStats
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:ImageStats'
+                desc: 'Image Stats'
+    52551:
+        exiftool:
+            -
+                name: ProfileDynamicRange
+                type: undef
+                writable: true
+                DOMNode: 'IFD1:ProfileDynamicRange'
+                desc: 'Profile Dynamic Range'
+    52552:
+        exiftool:
+            -
+                name: ProfileGroupName
+                type: string
+                writable: true
+                DOMNode: 'IFD1:ProfileGroupName'
+                desc: 'Profile Group Name'
+    52553:
+        exiftool:
+            -
+                name: JXLDistance
+                type: float
+                writable: true
+                DOMNode: 'IFD1:JXLDistance'
+                desc: 'JXL Distance'
+    52554:
+        exiftool:
+            -
+                name: JXLEffort
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:JXLEffort'
+                desc: 'JXL Effort'
+    52555:
+        exiftool:
+            -
+                name: JXLDecodeSpeed
+                type: int32u
+                writable: true
+                DOMNode: 'IFD1:JXLDecodeSpeed'
+                desc: 'JXL Decode Speed'
+    52897:
+        exiftool:
+            -
+                name: SEAL
+                type: string
+                writable: true
+                DOMNode: 'IFD1:SEAL'
+                desc: SEAL

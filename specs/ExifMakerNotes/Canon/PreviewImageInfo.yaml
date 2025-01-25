@@ -8,7 +8,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::PreviewImageInfo'']/tag'
+        xpath: "//table[@name='Canon::PreviewImageInfo']/tag"
 items:
     1:
         exiftool:
@@ -26,8 +26,8 @@ items:
                     4: RAW
                     5: Superfine
                     7: CRAW
-                    130: 'Normal Movie'
-                    131: 'Movie (2)'
+                    130: 'Light (RAW)'
+                    131: 'Standard (RAW)'
     2:
         exiftool:
             -

@@ -8,14 +8,14 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::VignettingCorr'']/tag'
+        xpath: "//table[@name='Canon::VignettingCorr']/tag"
 items:
     0:
         exiftool:
             -
                 name: VignettingCorrVersion
                 type: int8u
-                writable: true
+                writable: false
                 DOMNode: 'Canon:VignettingCorrVersion'
                 desc: 'Vignetting Corr Version'
     2:
@@ -26,6 +26,17 @@ items:
                 writable: true
                 DOMNode: 'Canon:PeripheralLighting'
                 desc: 'Peripheral Lighting'
+                values:
+                    - 'Off'
+                    - 'On'
+    3:
+        exiftool:
+            -
+                name: DistortionCorrection
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:DistortionCorrection'
+                desc: 'Distortion Correction'
                 values:
                     - 'Off'
                     - 'On'
@@ -59,6 +70,14 @@ items:
                 writable: true
                 DOMNode: 'Canon:PeripheralLightingValue'
                 desc: 'Peripheral Lighting Value'
+    9:
+        exiftool:
+            -
+                name: DistortionCorrectionValue
+                type: int16s
+                writable: true
+                DOMNode: 'Canon:DistortionCorrectionValue'
+                desc: 'Distortion Correction Value'
     11:
         exiftool:
             -

@@ -9,13 +9,13 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::AFConfig'']/tag'
+        xpath: "//table[@name='Canon::AFConfig']/tag"
 items:
-    -
+    0:
         collection: RawData
         name: indexSize
         format: Long
-    -
+    1:
         exiftool:
             -
                 name: AFConfigTool
@@ -23,7 +23,7 @@ items:
                 writable: true
                 DOMNode: 'Canon:AFConfigTool'
                 desc: 'AF Config Tool'
-    -
+    2:
         exiftool:
             -
                 name: AFTrackingSensitivity
@@ -31,7 +31,7 @@ items:
                 writable: true
                 DOMNode: 'Canon:AFTrackingSensitivity'
                 desc: 'AF Tracking Sensitivity'
-    -
+    3:
         exiftool:
             -
                 name: AFAccelDecelTracking
@@ -39,7 +39,7 @@ items:
                 writable: true
                 DOMNode: 'Canon:AFAccelDecelTracking'
                 desc: 'AF Accel/Decel Tracking'
-    -
+    4:
         exiftool:
             -
                 name: AFPointSwitching
@@ -47,7 +47,7 @@ items:
                 writable: true
                 DOMNode: 'Canon:AFPointSwitching'
                 desc: 'AF Point Switching'
-    -
+    5:
         exiftool:
             -
                 name: AIServoFirstImage
@@ -59,7 +59,7 @@ items:
                     - 'Equal Priority'
                     - 'Release Priority'
                     - 'Focus Priority'
-    -
+    6:
         exiftool:
             -
                 name: AIServoSecondImage
@@ -73,8 +73,19 @@ items:
                     - 'Focus Priority'
                     - 'Release High Priority'
                     - 'Focus High Priority'
-    -
+    7:
         exiftool:
+            -
+                name: USMLensElectronicMF
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:USMLensElectronicMF'
+                desc: 'USM Lens Electronic MF'
+                values:
+                    - 'Disable After One-Shot'
+                    - 'One-Shot -> Enabled'
+                    - 'One-Shot -> Enabled (magnify)'
+                    - 'Disable in AF Mode'
             -
                 name: USMLensElectronicMF
                 type: int32s
@@ -85,7 +96,7 @@ items:
                     - 'Enable After AF'
                     - 'Disable After AF'
                     - 'Disable in AF Mode'
-    -
+    8:
         exiftool:
             -
                 name: AFAssistBeam
@@ -97,7 +108,8 @@ items:
                     - Enable
                     - Disable
                     - 'IR AF Assist Beam Only'
-    -
+                    - 'LED AF Assist Beam Only'
+    9:
         exiftool:
             -
                 name: OneShotAFRelease
@@ -108,7 +120,7 @@ items:
                 values:
                     - 'Focus Priority'
                     - 'Release Priority'
-    -
+    10:
         exiftool:
             -
                 name: AutoAFPointSelEOSiTRAF
@@ -119,7 +131,7 @@ items:
                 values:
                     - Enable
                     - Disable
-    -
+    11:
         exiftool:
             -
                 name: LensDriveWhenAFImpossible
@@ -130,7 +142,7 @@ items:
                 values:
                     - 'Continue Focus Search'
                     - 'Stop Focus Search'
-    -
+    12:
         exiftool:
             -
                 name: SelectAFAreaSelectionMode
@@ -139,13 +151,13 @@ items:
                 DOMNode: 'Canon:SelectAFAreaSelectionMode'
                 desc: 'Select AF Area Selection Mode'
                 values:
-                    1: 'Single-point AF'
-                    2: Auto
-                    4: 'Zone AF'
-                    8: 'AF Point Expansion (4 point)'
-                    16: 'Spot AF'
-                    32: 'AF Point Expansion (8 point)'
-    -
+                    Bit0: 'Single-point AF'
+                    Bit1: Auto
+                    Bit2: 'Zone AF'
+                    Bit3: 'AF Point Expansion (4 point)'
+                    Bit4: 'Spot AF'
+                    Bit5: 'AF Point Expansion (8 point)'
+    13:
         exiftool:
             -
                 name: AFAreaSelectionMethod
@@ -156,7 +168,7 @@ items:
                 values:
                     - 'M-Fn Button'
                     - 'Main Dial'
-    -
+    14:
         exiftool:
             -
                 name: OrientationLinkedAF
@@ -168,7 +180,7 @@ items:
                     - 'Same for Vert/Horiz Points'
                     - 'Separate Vert/Horiz Points'
                     - 'Separate Area+Points'
-    -
+    15:
         exiftool:
             -
                 name: ManualAFPointSelPattern
@@ -179,7 +191,7 @@ items:
                 values:
                     - 'Stops at AF Area Edges'
                     - Continuous
-    -
+    16:
         exiftool:
             -
                 name: AFPointDisplayDuringFocus
@@ -193,7 +205,7 @@ items:
                     - 'Selected (pre-AF, focused)'
                     - 'Selected (focused)'
                     - Disabled
-    -
+    17:
         exiftool:
             -
                 name: VFDisplayIllumination
@@ -205,7 +217,7 @@ items:
                     - Auto
                     - Enable
                     - Disable
-    -
+    18:
         exiftool:
             -
                 name: AFStatusViewfinder
@@ -216,7 +228,7 @@ items:
                 values:
                     - 'Show in Field of View'
                     - 'Show Outside View'
-    -
+    19:
         exiftool:
             -
                 name: InitialAFPointInServo
@@ -228,3 +240,27 @@ items:
                     - 'Initial AF Point Selected'
                     - 'Manual AF Point'
                     - Auto
+    20:
+        exiftool:
+            -
+                name: SubjectToDetect
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:SubjectToDetect'
+                desc: 'Subject To Detect'
+                values:
+                    - None
+                    - People
+                    - Animals
+                    - Vehicles
+    24:
+        exiftool:
+            -
+                name: EyeDetection
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:EyeDetection'
+                desc: 'Eye Detection'
+                values:
+                    - 'Off'
+                    - 'On'

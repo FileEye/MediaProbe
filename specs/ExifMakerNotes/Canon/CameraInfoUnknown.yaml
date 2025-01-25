@@ -8,7 +8,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::CameraInfoUnknown'']/tag'
+        xpath: "//table[@name='Canon::CameraInfoUnknown']/tag"
 items:
     363:
         entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo\LensSerialNumber
@@ -21,3 +21,12 @@ items:
                 writable: true
                 DOMNode: 'Canon:LensSerialNumber'
                 desc: 'Lens Serial Number'
+    1473:
+        exiftool:
+            -
+                name: FirmwareVersion
+                type: string
+                count: 6
+                writable: false
+                DOMNode: 'Canon:FirmwareVersion'
+                desc: 'Firmware Version'

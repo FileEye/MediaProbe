@@ -7,7 +7,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Apple
-        xpath: '//table[@name=''Apple::RunTime'']/tag'
+        xpath: "//table[@name='Apple::RunTime']/tag"
 items:
     epoch:
         format: Char
@@ -28,11 +28,11 @@ items:
                 DOMNode: 'Apple:RunTimeFlags'
                 desc: 'Run Time Flags'
                 values:
-                    1: Valid
-                    2: 'Has been rounded'
-                    4: 'Positive infinity'
-                    8: 'Negative infinity'
-                    16: Indefinite
+                    Bit0: Valid
+                    Bit1: 'Has been rounded'
+                    Bit2: 'Positive infinity'
+                    Bit3: 'Negative infinity'
+                    Bit4: Indefinite
     timescale:
         format: Char
         exiftool:

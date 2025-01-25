@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 
-<rdf:Description rdf:about='test/media-samples/image/exiftool/Canon1DmkIII.jpg'
-  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
-  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
-  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
-  xmlns:File='http://ns.exiftool.ca/File/1.0/'
-  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
-  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
-  xmlns:Canon='http://ns.exiftool.ca/MakerNotes/Canon/1.0/'
-  xmlns:CanonCustom='http://ns.exiftool.ca/MakerNotes/CanonCustom/1.0/'
-  xmlns:InteropIFD='http://ns.exiftool.ca/EXIF/InteropIFD/1.0/'
-  xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'
-  xmlns:IFD1='http://ns.exiftool.ca/EXIF/IFD1/1.0/'
-  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
- <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+<rdf:Description rdf:about='tests/media-samples/image/exiftool/Canon1DmkIII.jpg'
+  xmlns:et='http://ns.exiftool.org/1.0/' et:toolkit='Image::ExifTool 13.10'
+  xmlns:ExifTool='http://ns.exiftool.org/ExifTool/1.0/'
+  xmlns:System='http://ns.exiftool.org/File/System/1.0/'
+  xmlns:File='http://ns.exiftool.org/File/1.0/'
+  xmlns:IFD0='http://ns.exiftool.org/EXIF/IFD0/1.0/'
+  xmlns:ExifIFD='http://ns.exiftool.org/EXIF/ExifIFD/1.0/'
+  xmlns:Canon='http://ns.exiftool.org/MakerNotes/Canon/1.0/'
+  xmlns:CanonCustom='http://ns.exiftool.org/MakerNotes/CanonCustom/1.0/'
+  xmlns:InteropIFD='http://ns.exiftool.org/EXIF/InteropIFD/1.0/'
+  xmlns:GPS='http://ns.exiftool.org/EXIF/GPS/1.0/'
+  xmlns:IFD1='http://ns.exiftool.org/EXIF/IFD1/1.0/'
+  xmlns:Composite='http://ns.exiftool.org/Composite/1.0/'>
+ <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>13.10</ExifTool:ExifToolVersion>
  <System:FileName et:id='FileName' et:table='Extra'>Canon1DmkIII.jpg</System:FileName>
- <System:Directory et:id='Directory' et:table='Extra'>test/media-samples/image/exiftool</System:Directory>
+ <System:Directory et:id='Directory' et:table='Extra'>tests/media-samples/image/exiftool</System:Directory>
  <System:FileSize et:id='FileSize' et:table='Extra'>8337</System:FileSize>
- <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2021:12:17 13:35:37+00:00</System:FileModifyDate>
- <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2021:12:17 13:35:37+00:00</System:FileAccessDate>
- <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2021:12:17 13:35:37+00:00</System:FileInodeChangeDate>
- <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+ <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2021:12:18 14:44:08+01:00</System:FileModifyDate>
+ <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2023:12:14 12:52:43+01:00</System:FileAccessDate>
+ <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2021:12:18 14:44:08+01:00</System:FileInodeChangeDate>
+ <System:FilePermissions et:id='FilePermissions' et:table='Extra'>100644</System:FilePermissions>
  <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
  <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>
  <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
@@ -285,11 +285,11 @@
  <CanonCustom:ISOSpeedRange et:id='259' et:table='CanonCustom::Functions2' et:index='0'>0 3200 100</CanonCustom:ISOSpeedRange>
  <CanonCustom:AEBAutoCancel et:id='260' et:table='CanonCustom::Functions2'>0</CanonCustom:AEBAutoCancel>
  <CanonCustom:AEBSequence et:id='261' et:table='CanonCustom::Functions2'>0</CanonCustom:AEBSequence>
- <CanonCustom:AEBShotCount et:id='262' et:table='CanonCustom::Functions2' et:index='0'>3</CanonCustom:AEBShotCount>
+ <CanonCustom:AEBShotCount et:id='262' et:table='CanonCustom::Functions2' et:index='1'>3</CanonCustom:AEBShotCount>
  <CanonCustom:SpotMeterLinkToAFPoint et:id='263' et:table='CanonCustom::Functions2'>0</CanonCustom:SpotMeterLinkToAFPoint>
  <CanonCustom:SafetyShift et:id='264' et:table='CanonCustom::Functions2'>0</CanonCustom:SafetyShift>
- <CanonCustom:UsableShootingModes et:id='265' et:table='CanonCustom::Functions2'>0 252</CanonCustom:UsableShootingModes>
- <CanonCustom:UsableMeteringModes et:id='266' et:table='CanonCustom::Functions2'>0 240</CanonCustom:UsableMeteringModes>
+ <CanonCustom:UsableShootingModes et:id='265' et:table='CanonCustom::Functions2' et:index='1'>0 252</CanonCustom:UsableShootingModes>
+ <CanonCustom:UsableMeteringModes et:id='266' et:table='CanonCustom::Functions2' et:index='1'>0 240</CanonCustom:UsableMeteringModes>
  <CanonCustom:ExposureModeInManual et:id='267' et:table='CanonCustom::Functions2'>0</CanonCustom:ExposureModeInManual>
  <CanonCustom:ShutterSpeedRange et:id='268' et:table='CanonCustom::Functions2' et:index='0'>0 0.0001220703125 32</CanonCustom:ShutterSpeedRange>
  <CanonCustom:ApertureRange et:id='269' et:table='CanonCustom::Functions2' et:index='0'>0 90.5096679918781 1</CanonCustom:ApertureRange>
@@ -319,12 +319,12 @@
  <CanonCustom:AFPointBrightness et:id='1293' et:table='CanonCustom::Functions2'>0</CanonCustom:AFPointBrightness>
  <CanonCustom:AFAssistBeam et:id='1294' et:table='CanonCustom::Functions2' et:index='1'>0</CanonCustom:AFAssistBeam>
  <CanonCustom:MirrorLockup et:id='1551' et:table='CanonCustom::Functions2'>0</CanonCustom:MirrorLockup>
- <CanonCustom:ContinuousShootingSpeed et:id='1552' et:table='CanonCustom::Functions2'>0 10 3</CanonCustom:ContinuousShootingSpeed>
+ <CanonCustom:ContinuousShootingSpeed et:id='1552' et:table='CanonCustom::Functions2' et:index='2'>0 10 3</CanonCustom:ContinuousShootingSpeed>
  <CanonCustom:ContinuousShotLimit et:id='1553' et:table='CanonCustom::Functions2'>0 99</CanonCustom:ContinuousShotLimit>
- <CanonCustom:ShutterButtonAFOnButton et:id='1793' et:table='CanonCustom::Functions2' et:index='2'>0</CanonCustom:ShutterButtonAFOnButton>
+ <CanonCustom:ShutterButtonAFOnButton et:id='1793' et:table='CanonCustom::Functions2' et:index='3'>0</CanonCustom:ShutterButtonAFOnButton>
  <CanonCustom:AFOnAELockButtonSwitch et:id='1794' et:table='CanonCustom::Functions2'>0</CanonCustom:AFOnAELockButtonSwitch>
  <CanonCustom:QuickControlDialInMeter et:id='1795' et:table='CanonCustom::Functions2'>0</CanonCustom:QuickControlDialInMeter>
- <CanonCustom:SetButtonWhenShooting et:id='1796' et:table='CanonCustom::Functions2' et:index='6'>0</CanonCustom:SetButtonWhenShooting>
+ <CanonCustom:SetButtonWhenShooting et:id='1796' et:table='CanonCustom::Functions2' et:index='7'>0</CanonCustom:SetButtonWhenShooting>
  <CanonCustom:ManualTv et:id='1797' et:table='CanonCustom::Functions2'>0</CanonCustom:ManualTv>
  <CanonCustom:DialDirectionTvAv et:id='1798' et:table='CanonCustom::Functions2'>0</CanonCustom:DialDirectionTvAv>
  <CanonCustom:AvSettingWithoutLens et:id='1799' et:table='CanonCustom::Functions2'>0</CanonCustom:AvSettingWithoutLens>
@@ -332,7 +332,7 @@
  <CanonCustom:LockMicrophoneButton et:id='1801' et:table='CanonCustom::Functions2'>0</CanonCustom:LockMicrophoneButton>
  <CanonCustom:ButtonFunctionControlOff et:id='1802' et:table='CanonCustom::Functions2'>0</CanonCustom:ButtonFunctionControlOff>
  <CanonCustom:FocusingScreen et:id='2059' et:table='CanonCustom::Functions2' et:index='5'>0</CanonCustom:FocusingScreen>
- <CanonCustom:TimerLength et:id='2060' et:table='CanonCustom::Functions2'>0 6 16 2</CanonCustom:TimerLength>
+ <CanonCustom:TimerLength et:id='2060' et:table='CanonCustom::Functions2' et:index='1'>0 6 16 2</CanonCustom:TimerLength>
  <CanonCustom:ShortReleaseTimeLag et:id='2061' et:table='CanonCustom::Functions2'>0</CanonCustom:ShortReleaseTimeLag>
  <CanonCustom:AddAspectRatioInfo et:id='2062' et:table='CanonCustom::Functions2'>0</CanonCustom:AddAspectRatioInfo>
  <CanonCustom:AddOriginalDecisionData et:id='2063' et:table='CanonCustom::Functions2'>0</CanonCustom:AddOriginalDecisionData>
@@ -346,31 +346,31 @@
  <IFD1:ResolutionUnit et:id='296' et:table='Exif::Main'>2</IFD1:ResolutionUnit>
  <IFD1:ThumbnailOffset et:id='513' et:table='Exif::Main' et:index='0'>8060</IFD1:ThumbnailOffset>
  <IFD1:ThumbnailLength et:id='514' et:table='Exif::Main' et:index='0'>28</IFD1:ThumbnailLength>
- <IFD1:ThumbnailImage et:id='ThumbnailImage' et:table='Composite'>(Binary data 28 bytes, use -b option to extract)</IFD1:ThumbnailImage>
- <Composite:Aperture et:id='Aperture' et:table='Composite'>5.6</Composite:Aperture>
- <Composite:DriveMode et:id='DriveMode' et:table='Composite'>0</Composite:DriveMode>
- <Composite:FileNumber et:id='FileNumber' et:table='Composite'>108-0232</Composite:FileNumber>
- <Composite:ISO et:id='ISO' et:table='Composite'>3200</Composite:ISO>
- <Composite:ImageSize et:id='ImageSize' et:table='Composite'>8x8</Composite:ImageSize>
- <Composite:Lens et:id='Lens' et:table='Composite'>16</Composite:Lens>
- <Composite:LensID et:id='LensID' et:table='Composite'>246</Composite:LensID>
- <Composite:Megapixels et:id='Megapixels' et:table='Composite'>6.4e-05</Composite:Megapixels>
- <Composite:OriginalDecisionData et:id='OriginalDecisionData' et:table='Composite'>(Binary data 512 bytes, use -b option to extract)</Composite:OriginalDecisionData>
- <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>1.28139525792121</Composite:ScaleFactor35efl>
- <Composite:ShootingMode et:id='ShootingMode' et:table='Composite'>1</Composite:ShootingMode>
- <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.008</Composite:ShutterSpeed>
- <Composite:SubSecCreateDate et:id='SubSecCreateDate' et:table='Composite'>2007:02:22 17:02:42.81</Composite:SubSecCreateDate>
- <Composite:SubSecDateTimeOriginal et:id='SubSecDateTimeOriginal' et:table='Composite'>2007:02:22 17:02:42.81</Composite:SubSecDateTimeOriginal>
- <Composite:SubSecModifyDate et:id='SubSecModifyDate' et:table='Composite'>2007:02:22 17:02:42.81</Composite:SubSecModifyDate>
- <Composite:WB_RGGBLevels et:id='WB_RGGBLevels' et:table='Composite'>2275 1024 1024 1357</Composite:WB_RGGBLevels>
- <Composite:BlueBalance et:id='BlueBalance' et:table='Composite'>1.3251953125</Composite:BlueBalance>
- <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.0234480816462597</Composite:CircleOfConfusion>
- <Composite:DOF et:id='DOF' et:table='Composite'>1.41374565386058 2.01013726602328</Composite:DOF>
- <Composite:FOV et:id='FOV' et:table='Composite'>43.7359796401221</Composite:FOV>
- <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>44.8488340272423</Composite:FocalLength35efl>
- <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>9.32912138826904</Composite:HyperfocalDistance>
- <Composite:Lens35efl et:id='Lens35efl' et:table='Composite'>20.5023241267394</Composite:Lens35efl>
- <Composite:LightValue et:id='LightValue' et:table='Composite'>6.93663793900257</Composite:LightValue>
- <Composite:RedBalance et:id='RedBalance' et:table='Composite'>2.2216796875</Composite:RedBalance>
+ <IFD1:ThumbnailImage et:id='Exif-ThumbnailImage' et:table='Composite'>(Binary data 28 bytes, use -b option to extract)</IFD1:ThumbnailImage>
+ <Composite:DriveMode et:id='Canon-DriveMode' et:table='Composite'>0</Composite:DriveMode>
+ <Composite:FileNumber et:id='Canon-FileNumber' et:table='Composite'>1080232</Composite:FileNumber>
+ <Composite:ISO et:id='Canon-ISO' et:table='Composite'>3200</Composite:ISO>
+ <Composite:Lens et:id='Canon-Lens' et:table='Composite'>16</Composite:Lens>
+ <Composite:OriginalDecisionData et:id='Canon-OriginalDecisionData' et:table='Composite'>(Binary data 512 bytes, use -b option to extract)</Composite:OriginalDecisionData>
+ <Composite:ShootingMode et:id='Canon-ShootingMode' et:table='Composite'>1</Composite:ShootingMode>
+ <Composite:WB_RGGBLevels et:id='Canon-WB_RGGBLevels' et:table='Composite'>2275 1024 1024 1357</Composite:WB_RGGBLevels>
+ <Composite:Aperture et:id='Exif-Aperture' et:table='Composite'>5.6</Composite:Aperture>
+ <Composite:BlueBalance et:id='Exif-BlueBalance' et:table='Composite'>1.3251953125</Composite:BlueBalance>
+ <Composite:ImageSize et:id='Exif-ImageSize' et:table='Composite'>8 8</Composite:ImageSize>
+ <Composite:LensID et:id='Exif-LensID' et:table='Composite'>246</Composite:LensID>
+ <Composite:Megapixels et:id='Exif-Megapixels' et:table='Composite'>6.4e-05</Composite:Megapixels>
+ <Composite:RedBalance et:id='Exif-RedBalance' et:table='Composite'>2.2216796875</Composite:RedBalance>
+ <Composite:ScaleFactor35efl et:id='Exif-ScaleFactor35efl' et:table='Composite'>1.28139525792121</Composite:ScaleFactor35efl>
+ <Composite:ShutterSpeed et:id='Exif-ShutterSpeed' et:table='Composite'>0.008</Composite:ShutterSpeed>
+ <Composite:SubSecCreateDate et:id='Exif-SubSecCreateDate' et:table='Composite'>2007:02:22 17:02:42.81</Composite:SubSecCreateDate>
+ <Composite:SubSecDateTimeOriginal et:id='Exif-SubSecDateTimeOriginal' et:table='Composite'>2007:02:22 17:02:42.81</Composite:SubSecDateTimeOriginal>
+ <Composite:SubSecModifyDate et:id='Exif-SubSecModifyDate' et:table='Composite'>2007:02:22 17:02:42.81</Composite:SubSecModifyDate>
+ <Composite:Lens35efl et:id='Canon-Lens35efl' et:table='Composite'>20.5023241267394</Composite:Lens35efl>
+ <Composite:CircleOfConfusion et:id='Exif-CircleOfConfusion' et:table='Composite'>0.0234480816462597</Composite:CircleOfConfusion>
+ <Composite:DOF et:id='Exif-DOF' et:table='Composite'>1.41374565386058 2.01013726602328</Composite:DOF>
+ <Composite:FOV et:id='Exif-FOV' et:table='Composite'>43.7359796401221</Composite:FOV>
+ <Composite:FocalLength35efl et:id='Exif-FocalLength35efl' et:table='Composite'>44.8488340272423</Composite:FocalLength35efl>
+ <Composite:HyperfocalDistance et:id='Exif-HyperfocalDistance' et:table='Composite'>9.32912138826904</Composite:HyperfocalDistance>
+ <Composite:LightValue et:id='Exif-LightValue' et:table='Composite'>6.93663793900257</Composite:LightValue>
 </rdf:Description>
 </rdf:RDF>
