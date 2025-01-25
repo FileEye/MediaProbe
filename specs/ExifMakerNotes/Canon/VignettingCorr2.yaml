@@ -9,7 +9,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::VignettingCorr2'']/tag'
+        xpath: "//table[@name='Canon::VignettingCorr2']/tag"
 items:
     0:
         collection: RawData
@@ -33,6 +33,28 @@ items:
                 writable: true
                 DOMNode: 'Canon:ChromaticAberrationSetting'
                 desc: 'Chromatic Aberration Setting'
+                values:
+                    - 'Off'
+                    - 'On'
+    7:
+        exiftool:
+            -
+                name: DistortionCorrectionSetting
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:DistortionCorrectionSetting'
+                desc: 'Distortion Correction Setting'
+                values:
+                    - 'Off'
+                    - 'On'
+    9:
+        exiftool:
+            -
+                name: DigitalLensOptimizerSetting
+                type: int32s
+                writable: true
+                DOMNode: 'Canon:DigitalLensOptimizerSetting'
+                desc: 'Digital Lens Optimizer Setting'
                 values:
                     - 'Off'
                     - 'On'

@@ -8,14 +8,14 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::CNTH'']/tag'
+        xpath: "//table[@name='Canon::CNTH']/tag"
 items:
     CNDA:
         exiftool:
             -
                 name: ThumbnailImage
                 type: undef
-                writable: false
+                writable: true
                 g2: Preview
                 DOMNode: 'Canon:ThumbnailImage'
                 desc: 'Thumbnail Image'

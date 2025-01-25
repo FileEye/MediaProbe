@@ -8,7 +8,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::ColorData5'']/tag'
+        xpath: "//table[@name='Canon::ColorData5']/tag"
 items:
     0:
         exiftool:
@@ -39,3 +39,27 @@ items:
                 writable: true
                 DOMNode: 'Canon:PerChannelBlackLevel'
                 desc: 'Per Channel Black Level'
+    662:
+        exiftool:
+            -
+                name: SpecularWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:SpecularWhiteLevel'
+                desc: 'Specular White Level'
+    1385:
+        exiftool:
+            -
+                name: NormalWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:NormalWhiteLevel'
+                desc: 'Normal White Level'
+    1386:
+        exiftool:
+            -
+                name: SpecularWhiteLevel
+                type: int16u
+                writable: true
+                DOMNode: 'Canon:SpecularWhiteLevel'
+                desc: 'Specular White Level'

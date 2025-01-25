@@ -7,11 +7,65 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Apple
-        xpath: '//table[@name=''Apple::Main'']/tag'
+        xpath: "//table[@name='Apple::Main']/tag"
 items:
+    1:
+        exiftool:
+            -
+                name: MakerNoteVersion
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:MakerNoteVersion'
+                desc: 'Maker Note Version'
+    2:
+        exiftool:
+            -
+                name: AEMatrix
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:AEMatrix'
+                desc: 'AE Matrix'
     3:
         name: AppleRuntime
         collection: ExifMakerNotes\Apple\RunTime
+    4:
+        exiftool:
+            -
+                name: AEStable
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:AEStable'
+                desc: 'AE Stable'
+                values:
+                    - 'No'
+                    - 'Yes'
+    5:
+        exiftool:
+            -
+                name: AETarget
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:AETarget'
+                desc: 'AE Target'
+    6:
+        exiftool:
+            -
+                name: AEAverage
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:AEAverage'
+                desc: 'AE Average'
+    7:
+        exiftool:
+            -
+                name: AFStable
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:AFStable'
+                desc: 'AF Stable'
+                values:
+                    - 'No'
+                    - 'Yes'
     8:
         exiftool:
             -
@@ -41,6 +95,23 @@ items:
                 writable: true
                 DOMNode: 'Apple:BurstUUID'
                 desc: 'Burst UUID'
+    12:
+        exiftool:
+            -
+                name: FocusDistanceRange
+                type: rational64s
+                count: 2
+                writable: true
+                DOMNode: 'Apple:FocusDistanceRange'
+                desc: 'Focus Distance Range'
+    15:
+        exiftool:
+            -
+                name: OISMode
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:OISMode'
+                desc: 'OIS Mode'
     17:
         exiftool:
             -
@@ -49,6 +120,20 @@ items:
                 writable: true
                 DOMNode: 'Apple:ContentIdentifier'
                 desc: 'Content Identifier'
+    20:
+        exiftool:
+            -
+                name: ImageCaptureType
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:ImageCaptureType'
+                desc: 'Image Capture Type'
+                values:
+                    1: ProRAW
+                    2: Portrait
+                    10: Photo
+                    11: 'Manual Focus'
+                    12: Scene
     21:
         exiftool:
             -
@@ -57,3 +142,208 @@ items:
                 writable: true
                 DOMNode: 'Apple:ImageUniqueID'
                 desc: 'Image Unique ID'
+    23:
+        exiftool:
+            -
+                name: LivePhotoVideoIndex
+                type: '?'
+                writable: true
+                DOMNode: 'Apple:LivePhotoVideoIndex'
+                desc: 'Live Photo Video Index'
+    25:
+        exiftool:
+            -
+                name: ImageProcessingFlags
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:ImageProcessingFlags'
+                desc: 'Image Processing Flags'
+    26:
+        exiftool:
+            -
+                name: QualityHint
+                type: string
+                writable: true
+                DOMNode: 'Apple:QualityHint'
+                desc: 'Quality Hint'
+    29:
+        exiftool:
+            -
+                name: LuminanceNoiseAmplitude
+                type: rational64s
+                writable: true
+                DOMNode: 'Apple:LuminanceNoiseAmplitude'
+                desc: 'Luminance Noise Amplitude'
+    31:
+        exiftool:
+            -
+                name: PhotosAppFeatureFlags
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:PhotosAppFeatureFlags'
+                desc: 'Photos App Feature Flags'
+    32:
+        exiftool:
+            -
+                name: ImageCaptureRequestID
+                type: string
+                writable: true
+                DOMNode: 'Apple:ImageCaptureRequestID'
+                desc: 'Image Capture Request ID'
+    33:
+        exiftool:
+            -
+                name: HDRHeadroom
+                type: rational64s
+                writable: true
+                DOMNode: 'Apple:HDRHeadroom'
+                desc: 'HDR Headroom'
+    35:
+        exiftool:
+            -
+                name: AFPerformance
+                type: int32s
+                count: 2
+                writable: true
+                DOMNode: 'Apple:AFPerformance'
+                desc: 'AF Performance'
+    37:
+        exiftool:
+            -
+                name: SceneFlags
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:SceneFlags'
+                desc: 'Scene Flags'
+    38:
+        exiftool:
+            -
+                name: SignalToNoiseRatioType
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:SignalToNoiseRatioType'
+                desc: 'Signal To Noise Ratio Type'
+    39:
+        exiftool:
+            -
+                name: SignalToNoiseRatio
+                type: rational64s
+                writable: true
+                DOMNode: 'Apple:SignalToNoiseRatio'
+                desc: 'Signal To Noise Ratio'
+    43:
+        exiftool:
+            -
+                name: PhotoIdentifier
+                type: string
+                writable: true
+                DOMNode: 'Apple:PhotoIdentifier'
+                desc: 'Photo Identifier'
+    45:
+        exiftool:
+            -
+                name: ColorTemperature
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:ColorTemperature'
+                desc: 'Color Temperature'
+    46:
+        exiftool:
+            -
+                name: CameraType
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:CameraType'
+                desc: 'Camera Type'
+                values:
+                    0: 'Back Wide Angle'
+                    1: 'Back Normal'
+                    6: Front
+    47:
+        exiftool:
+            -
+                name: FocusPosition
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:FocusPosition'
+                desc: 'Focus Position'
+    48:
+        exiftool:
+            -
+                name: HDRGain
+                type: rational64s
+                writable: true
+                DOMNode: 'Apple:HDRGain'
+                desc: 'HDR Gain'
+    56:
+        exiftool:
+            -
+                name: AFMeasuredDepth
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:AFMeasuredDepth'
+                desc: 'AF Measured Depth'
+    61:
+        exiftool:
+            -
+                name: AFConfidence
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:AFConfidence'
+                desc: 'AF Confidence'
+    62:
+        exiftool:
+            -
+                name: ColorCorrectionMatrix
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:ColorCorrectionMatrix'
+                desc: 'Color Correction Matrix'
+    63:
+        exiftool:
+            -
+                name: GreenGhostMitigationStatus
+                type: int32s
+                writable: true
+                DOMNode: 'Apple:GreenGhostMitigationStatus'
+                desc: 'Green Ghost Mitigation Status'
+    64:
+        exiftool:
+            -
+                name: SemanticStyle
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:SemanticStyle'
+                desc: 'Semantic Style'
+    65:
+        exiftool:
+            -
+                name: SemanticStyleRenderingVer
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:SemanticStyleRenderingVer'
+                desc: 'Semantic Style Rendering Ver'
+    66:
+        exiftool:
+            -
+                name: SemanticStylePreset
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:SemanticStylePreset'
+                desc: 'Semantic Style Preset'
+    78:
+        exiftool:
+            -
+                name: Apple_0x004e
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:Apple_0x004e'
+                desc: 'Apple 0x004e'
+    79:
+        exiftool:
+            -
+                name: Apple_0x004f
+                type: '?'
+                writable: false
+                DOMNode: 'Apple:Apple_0x004f'
+                desc: 'Apple 0x004f'
