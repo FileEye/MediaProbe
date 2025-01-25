@@ -63,8 +63,8 @@ jobs:
 #        php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
-#      continue-on-error: true
-      run: vendor/bin/phpunit ./tests
+      continue-on-error: true
+      run: vendor/bin/phpunit --color=always --testdox --display-deprecations --display-phpunit-deprecations ./tests
 
 #    - name: Code style test
 #      if: ${{ matrix.php-version == 7.4 }}
@@ -84,5 +84,5 @@ jobs:
 #    - name: "Install PHPStan"
 #      run: "composer require --dev phpstan/phpstan:^1.2 --ansi"
 
-#    - name: "Run a static analysis with phpstan/phpstan"
-#      run: "vendor/bin/phpstan"
+    - name: "Run a static analysis with phpstan/phpstan"
+      run: vendor/bin/phpstan analyze
