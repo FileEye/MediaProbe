@@ -553,15 +553,16 @@ elements:
                                                                             text: '14 byte(s) of data'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:1'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:MakerNoteVersion:1'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: MakerNoteVersion
                                                                     id: '1'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:1/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:MakerNoteVersion:1/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
@@ -570,15 +571,16 @@ elements:
                                                                             text: '9'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:2'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEMatrix:2'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: AEMatrix
                                                                     id: '2'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:2/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEMatrix:2/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\Undefined
                                                                             valid: true
                                                                             format: Undefined
@@ -611,7 +613,7 @@ elements:
                                                                                     format: Char
                                                                                     components: 1
                                                                                     bytesHash: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
-                                                                                    text: Valid
+                                                                                    text: '1'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeValue:value'
@@ -668,32 +670,34 @@ elements:
                                                                                     text: '0'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:4'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEStable:4'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: AEStable
                                                                     id: '4'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:4/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEStable:4/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: b40711a88c7039756fb8a73827eabe2c0fe5a0346ca7e0a104adc0fc764f528d
-                                                                            text: '1'
+                                                                            text: 'Yes'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:5'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AETarget:5'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: AETarget
                                                                     id: '5'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:5/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AETarget:5/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
@@ -702,15 +706,16 @@ elements:
                                                                             text: '165'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:6'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEAverage:6'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: AEAverage
                                                                     id: '6'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:6/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEAverage:6/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
@@ -719,21 +724,22 @@ elements:
                                                                             text: '162'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:7'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AFStable:7'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: AFStable
                                                                     id: '7'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:7/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AFStable:7/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: b40711a88c7039756fb8a73827eabe2c0fe5a0346ca7e0a104adc0fc764f528d
-                                                                            text: '1'
+                                                                            text: 'Yes'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AccelerationVector:8'
@@ -754,15 +760,16 @@ elements:
                                                                             text: '-0.9991062118278 0.077602872134769 0.11136580706781'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:12'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:FocusDistanceRange:12'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: FocusDistanceRange
                                                                     id: '12'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:12/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:FocusDistanceRange:12/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedRational
                                                                             valid: true
                                                                             format: SignedRational
@@ -840,21 +847,22 @@ elements:
                                                                             text: 6AB558E4-C30A-487F-9443-29F4B3CC1F4E
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:20'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageCaptureType:20'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: ImageCaptureType
                                                                     id: '20'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:20/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageCaptureType:20/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: b40711a88c7039756fb8a73827eabe2c0fe5a0346ca7e0a104adc0fc764f528d
-                                                                            text: '1'
+                                                                            text: ProRAW
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22'
@@ -874,15 +882,16 @@ elements:
                                                                             text: Aaonjq1yJePknSSYF/Tu0r00cTL9
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:23'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: LivePhotoVideoIndex
                                                                     id: '23'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:23/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
@@ -891,15 +900,16 @@ elements:
                                                                             text: '0'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:25'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageProcessingFlags:25'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: ImageProcessingFlags
                                                                     id: '25'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:25/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageProcessingFlags:25/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
@@ -908,15 +918,16 @@ elements:
                                                                             text: '0'
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:26'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:QualityHint:26'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: QualityHint
                                                                     id: '26'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:26/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:QualityHint:26/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\Ascii
                                                                             valid: true
                                                                             format: Ascii
@@ -925,15 +936,16 @@ elements:
                                                                             text: q825s
                                                                 -
                                                                     node: tag
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:31'
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:PhotosAppFeatureFlags:31'
                                                                     class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    name: PhotosAppFeatureFlags
                                                                     id: '31'
-                                                                    collection: Tiff\UnknownTag
+                                                                    collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             node: entry
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:31/entry'
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:PhotosAppFeatureFlags:31/entry'
                                                                             class: FileEye\MediaProbe\Entry\Core\SignedLong
                                                                             valid: true
                                                                             format: SignedLong
@@ -1670,28 +1682,11 @@ elements:
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
 log:
+    WARNING:
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
+            message: "Found SignedLong data format, expected Undefined for item 'LivePhotoVideoIndex' in 'Apple'"
     NOTICE:
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:1'
-            message: "Unknown item 1/0x1 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:2'
-            message: "Unknown item 2/0x2 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:4'
-            message: "Unknown item 4/0x4 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:5'
-            message: "Unknown item 5/0x5 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:6'
-            message: "Unknown item 6/0x6 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:7'
-            message: "Unknown item 7/0x7 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:12'
-            message: "Unknown item 12/0xC in 'Apple'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
             message: "Unknown item 13/0xD in 'Apple'"
@@ -1702,23 +1697,8 @@ log:
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:16'
             message: "Unknown item 16/0x10 in 'Apple'"
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:20'
-            message: "Unknown item 20/0x14 in 'Apple'"
-        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22'
             message: "Unknown item 22/0x16 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:23'
-            message: "Unknown item 23/0x17 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:25'
-            message: "Unknown item 25/0x19 in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:26'
-            message: "Unknown item 26/0x1A in 'Apple'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:31'
-            message: "Unknown item 31/0x1F in 'Apple'"
 gdInfo:
     0: 4032
     1: 3024
