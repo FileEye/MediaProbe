@@ -17,6 +17,7 @@ use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * Test the Spec class.
@@ -87,9 +88,8 @@ class SpecTest extends MediaProbeTestCaseBase
 
     /**
      * Tests getting decoded TAG text from TAG values.
-     *
-     * @dataProvider getTagTextProvider
      */
+    #[DataProvider('getTagTextProvider')]
     public function testGetTagText($expected_text, $expected_class, $parent_collection_id, $tag_name, string $args, $brief = false)
     {
         $stubRoot = $this->getStubRoot();

@@ -96,6 +96,7 @@ items:
                 DOMNode: 'Apple:BurstUUID'
                 desc: 'Burst UUID'
     12:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\FocusDistanceRange
         exiftool:
             -
                 name: FocusDistanceRange
@@ -121,6 +122,7 @@ items:
                 DOMNode: 'Apple:ContentIdentifier'
                 desc: 'Content Identifier'
     20:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\ImageCaptureType
         exiftool:
             -
                 name: ImageCaptureType
@@ -199,6 +201,7 @@ items:
                 DOMNode: 'Apple:HDRHeadroom'
                 desc: 'HDR Headroom'
     35:
+        entryClass: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\AFPerformance
         exiftool:
             -
                 name: AFPerformance

@@ -1,3 +1,11 @@
+skip:
+    exiftool:
+        - 'Apple:AEMatrix'
+        - 'Apple:ImageProcessingFlags'
+        - 'Apple:QualityHint'
+        - 'Apple:ImageCaptureRequestID'
+        - 'Apple:SceneFlags'
+        - 'Apple:SignalToNoiseRatioType'
 fileName: apple-iphone11.jpg
 mimeType: image/jpeg
 fileContentHash: 38be1f3365dbf826bb4fc7c486f884791ee8813fc9ec218704645b5982738f12
@@ -662,12 +670,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeFlags:flags/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Char
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\RunTimeFlags
                                                                                     valid: true
                                                                                     format: Char
                                                                                     components: 1
                                                                                     bytesHash: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
-                                                                                    text: '1'
+                                                                                    text: Valid
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeValue:value'
@@ -824,12 +832,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:FocusDistanceRange:12/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\FocusDistanceRange
                                                                             valid: true
                                                                             format: SignedRational
                                                                             components: 2
                                                                             bytesHash: 5c9229d72008f3e4d0273f4e6b881245b177027ffcfc6f66877eb19d8a6cfccd
-                                                                            text: '50.05859375 47.22265625'
+                                                                            text: '47.22 - 50.06 m'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
@@ -893,7 +901,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageCaptureType:20/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\ImageCaptureType
                                                                             valid: true
                                                                             format: SignedLong
                                                                             components: 1
@@ -1036,12 +1044,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AFPerformance:35/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\AFPerformance
                                                                             valid: true
                                                                             format: SignedLong
                                                                             components: 2
                                                                             bytesHash: e6d6504539d2404f7eca98924eac70e4fce92ad52656e804b3b1fbcf9f66b672
-                                                                            text: '171 268435521'
+                                                                            text: '171 1 65'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SceneFlags:37'

@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         backupGlobals="false"
          colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
          stopOnFailure="false"
          bootstrap="vendor/autoload.php"
-        >
-    <testsuites>
-        <testsuite name="MediaProbe Testing Suite">
-            <directory suffix="Test.php">./tests/</directory>
-        </testsuite>
-    </testsuites>
-    <!-- Filter for coverage reports. -->
-    <filter>
-        <whitelist>
-            <directory suffix=".php">./src/</directory>
-            <exclude>
-              <directory suffix=".php">./src/Command/</directory>
-              <directory suffix=".php">./src/Collection/</directory>
-            </exclude>
-        </whitelist>
-    </filter>
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+         cacheDirectory=".phpunit.cache"
+         backupStaticProperties="false">
+  <testsuites>
+    <testsuite name="MediaProbe Testing Suite">
+      <directory suffix="Test.php">./tests/</directory>
+    </testsuite>
+  </testsuites>
+  <!-- Filter for coverage reports. -->
+  <source>
+    <include>
+      <directory suffix=".php">./src/</directory>
+    </include>
+    <exclude>
+      <directory suffix=".php">./src/Command/</directory>
+      <directory suffix=".php">./src/Collection/</directory>
+    </exclude>
+  </source>
 </phpunit>

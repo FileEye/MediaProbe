@@ -77,6 +77,7 @@ class RunTime extends CollectionBase {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Apple\\Exif\\RunTimeFlags',
         'format' =>
         array (
           0 => 2000,

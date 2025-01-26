@@ -1119,7 +1119,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettings\FlashBits
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -3064,6 +3064,24 @@ elements:
                                                                                     text: '13.63 m'
                                                                         -
                                                                             node: tag
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:ShutterMode:23'
+                                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                            valid: true
+                                                                            name: ShutterMode
+                                                                            id: '23'
+                                                                            collection: Tiff\Tag
+                                                                            elements:
+                                                                                -
+                                                                                    node: entry
+                                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:ShutterMode:23/entry'
+                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    valid: true
+                                                                                    format: SignedShort
+                                                                                    components: 1
+                                                                                    bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
+                                                                                    text: Mechanical
+                                                                        -
+                                                                            node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147/tag:FlashExposureLock:25'
                                                                             class: FileEye\MediaProbe\Block\Tiff\Tag
                                                                             valid: true
@@ -4475,7 +4493,7 @@ elements:
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: 102b51b9765a56a3e899f7cf0ee38e5251f9c503b357b330a49183eb7b155604
-                                                                                    text: '10 (1DX/5DmkIII/6D/70D/100D/650D/700D/M)'
+                                                                                    text: '10 (1DX/5DmkIII/6D/70D/100D/650D/700D/M/M2)'
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonColorData:16385/tag:WB_RGGBLevelsAsShot:63'
@@ -7240,8 +7258,29 @@ elements:
 log:
     WARNING:
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
+            message: "Could not access value for item 'Clarity' in 'CanonCameraSettings', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147'
+            message: "Could not access value for item 'AntiFlicker' in 'CanonFileInfo', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonFileInfo:147'
+            message: "Could not access value for item 'RFLensType' in 'CanonFileInfo', overflow"
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:AFMicroadjustment:1287'
             message: "Found 16 data components, expected 5 for item 'AFMicroadjustment' in 'AutoFocusDrive'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonVignettingCorr2:16406'
+            message: "Could not access value for item 'DistortionCorrectionSetting' in 'CanonVignettingCorr2', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonVignettingCorr2:16406'
+            message: "Could not access value for item 'DigitalLensOptimizerSetting' in 'CanonVignettingCorr2', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonLightingOpt:16408'
+            message: "Could not access value for item 'DigitalLensOptimizer' in 'CanonLightingOpt', overflow"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonLightingOpt:16408'
+            message: "Could not access value for item 'DualPixelRaw' in 'CanonLightingOpt', overflow"
     NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:25'

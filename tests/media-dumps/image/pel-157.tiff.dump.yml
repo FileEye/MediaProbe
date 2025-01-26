@@ -1,4 +1,6 @@
 skip:
+    mediaprobe:
+        - '/media/tiff/ifd:IFD0:0/tag:ThumbnailData:20507/entry'
     exiftool:
         - 'IFD0:PreviewImageStart'
         - 'IFD0:PreviewImageLength'
@@ -65,7 +67,7 @@ elements:
                                     format: Long
                                     components: 1
                                     bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                    text: 'Full-resolution Image'
+                                    text: 'Full-resolution image'
                         -
                             node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ImageWidth:256'
@@ -464,15 +466,16 @@ elements:
                                     text: "<?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?>\r\n<x:xmpmeta xmlns:x=\"adobe:ns:meta/\"><rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"><rdf:Description rdf:about=\"uuid:faf5bdd5-ba3d-11da-ad31-d33d75182f1b\" xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\"><xmp:CreatorTool>G925FXXU6ERF5</xmp:CreatorTool><xmp:CreateDate>2020-03-27T14:08:39</xmp:CreateDate></rdf:Description></rdf:RDF></x:xmpmeta>\r\n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                                                                                                    \n                            <?xpacket end='w'?>"
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20507'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailData:20507'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailData
                             id: '20507'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20507/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailData:20507/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Byte
                                     valid: true
                                     format: Byte
@@ -481,15 +484,16 @@ elements:
                                     text: '255 216 255 196 1 162 0 0 1 5 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 1 0 3 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 16 0 2 1 3 3 2 4 3 5 5 4 4 0 0 1 125 1 2 3 0 4 17 5 18 33 49 65 6 19 81 97 7 34 113 20 50 129 145 161 8 35 66 177 193 21 82 209 240 36 51 98 114 130 9 10 22 23 24 25 26 37 38 39 40 41 42 52 53 54 55 56 57 58 67 68 69 70 71 72 73 74 83 84 85 86 87 88 89 90 99 100 101 102 103 104 105 106 115 116 117 118 119 120 121 122 131 132 133 134 135 136 137 138 146 147 148 149 150 151 152 153 154 162 163 164 165 166 167 168 169 170 178 179 180 181 182 183 184 185 186 194 195 196 197 198 199 200 201 202 210 211 212 213 214 215 216 217 218 225 226 227 228 229 230 231 232 233 234 241 242 243 244 245 246 247 248 249 250 17 0 2 1 2 4 4 3 4 7 5 4 4 0 1 2 119 0 1 2 3 17 4 5 33 49 6 18 65 81 7 97 113 19 34 50 129 8 20 66 145 161 177 193 9 35 51 82 240 21 98 114 209 10 22 36 52 225 37 241 23 24 25 26 38 39 40 41 42 53 54 55 56 57 58 67 68 69 70 71 72 73 74 83 84 85 86 87 88 89 90 99 100 101 102 103 104 105 106 115 116 117 118 119 120 121 122 130 131 132 133 134 135 136 137 138 146 147 148 149 150 151 152 153 154 162 163 164 165 166 167 168 169 170 178 179 180 181 182 183 184 185 186 194 195 196 197 198 199 200 201 202 210 211 212 213 214 215 216 217 218 226 227 228 229 230 231 232 233 234 242 243 244 245 246 247 248 249 250 255 219 0 132 0 21 14 16 18 16 13 21 18 17 18 24 22 21 25 31 52 34 31 29 29 31 64 46 48 38 52 76 67 80 79 75 67 73 72 84 94 121 102 84 89 114 90 72 73 105 143 106 114 124 128 135 136 135 81 101 148 159 147 131 157 121 132 135 130 1 22 24 24 31 28 31 62 34 34 62 130 86 73 86 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 130 255 192 0 17 8 1 16 1 224 3 1 33 0 2 17 1 3 17 1 255 218 0 12 3 1 0 2 17 3 17 0 63 0 185 75 90 153 133 37 0 24 163 20 0 148 83 0 160 208 2 81 64 5 20 0 180 80 2 81 64 5 37 0 20 80 32 162 128 16 211 77 0 37 20 192 74 40 0 162 128 18 138 0 74 90 0 40 160 2 138 0 40 160 4 162 128 10 40 0 164 166 1 69 0 37 20 0 82 80 1 69 0 20 148 0 81 64 23 104 168 24 180 80 1 69 0 20 80 2 26 74 96 20 80 1 69 0 20 80 1 69 0 20 148 0 81 64 130 146 128 16 210 80 1 73 76 4 52 80 1 65 160 4 162 128 10 40 0 162 128 10 40 0 162 128 10 74 0 90 40 1 41 41 128 81 64 5 37 0 20 80 1 73 64 5 37 0 20 80 5 234 74 145 134 104 160 5 163 52 0 102 140 208 2 102 146 128 10 90 0 41 40 0 162 128 10 90 0 74 40 1 51 69 2 16 209 64 8 105 166 152 0 162 128 10 74 0 40 160 2 138 0 74 40 0 165 160 2 138 0 74 40 0 162 128 10 40 1 40 160 4 162 152 5 37 0 20 80 2 81 64 9 69 0 20 80 5 234 74 145 133 37 0 45 20 0 81 64 9 69 0 20 162 128 22 144 208 1 69 0 20 80 2 81 64 13 52 10 4 20 148 0 26 105 166 1 69 0 45 37 0 20 148 0 180 148 0 81 64 5 20 0 81 64 5 20 0 148 80 1 69 0 37 20 0 148 83 0 164 160 2 138 0 74 40 1 40 160 2 146 128 47 102 150 164 98 82 80 1 74 40 0 162 128 10 74 0 41 104 0 162 128 10 74 0 51 75 64 9 69 0 37 38 40 16 81 64 8 105 40 0 163 20 192 40 160 4 52 148 0 81 64 5 20 0 81 64 5 20 0 81 64 5 37 0 20 80 2 81 64 5 37 48 10 74 0 40 160 4 162 128 10 74 0 40 160 11 148 84 140 90 40 0 165 160 2 138 64 20 148 192 40 160 2 138 0 74 40 0 162 128 10 40 1 40 160 65 73 64 5 37 0 24 162 128 18 138 96 37 20 0 148 80 1 75 64 9 69 0 20 80 1 69 0 20 148 0 81 64 9 69 48 18 138 0 41 40 0 162 128 18 138 0 41 40 0 162 128 46 209 82 49 104 197 0 20 82 0 162 128 10 41 128 148 80 2 82 208 1 69 0 20 148 0 81 64 5 37 2 10 40 1 40 160 4 160 208 2 81 76 2 146 128 10 40 0 162 128 18 150 128 10 74 0 40 160 2 138 0 74 40 0 164 166 2 81 64 5 20 0 148 80 1 69 0 37 20 0 148 80 5 209 75 82 48 165 164 2 81 64 5 20 0 148 83 0 162 128 18 150 128 10 40 0 162 128 10 74 0 40 160 4 162 129 9 69 0 37 20 0 148 83 0 164 160 2 138 0 40 160 2 146 128 10 40 0 162 128 10 40 1 40 160 2 146 152 9 69 0 20 80 2 81 64 5 20 0 148 80 1 69 0 92 165 169 24 81 72 2 138 0 40 160 4 162 152 5 45 0 37 20 0 184 162 144 5 37 0 20 83 0 162 128 18 146 129 5 37 0 6 146 128 18 138 96 20 148 0 81 64 5 20 0 81 64 9 69 0 20 80 1 69 0 37 20 0 148 83 0 164 160 2 138 0 41 40 0 162 128 10 74 0 40 160 11 184 162 164 97 69 32 10 40 0 162 128 10 41 128 148 180 0 81 72 2 138 0 41 40 0 162 128 10 41 128 148 98 128 12 82 80 32 164 52 0 148 134 128 10 74 96 45 20 0 148 80 1 69 0 37 45 0 37 20 0 81 64 9 69 0 37 20 192 40 160 4 162 128 10 40 0 164 160 2 138 0 74 40 2 237 25 169 24 153 162 128 10 90 0 40 164 1 69 0 20 80 2 209 64 9 69 0 20 148 0 180 80 1 69 0 20 148 0 148 134 152 132 160 208 1 73 64 9 69 48 10 40 1 40 160 2 138 0 40 160 0 2 78 0 36 251 83 204 50 129 147 19 129 234 84 210 184 17 209 76 4 162 128 10 74 0 40 166 1 69 0 37 20 0 81 64 5 37 0 20 148 1 123 20 98 160 98 133 62 148 155 104 0 218 104 197 0 20 80 1 69 0 20 80 1 69 0 20 148 0 81 138 0 40 160 2 138 0 74 13 48 18 146 129 9 69 0 20 148 0 81 64 5 42 161 108 237 228 142 212 0 197 101 108 237 96 216 244 57 162 128 10 41 128 84 240 219 51 141 205 242 39 169 239 244 164 221 129 11 45 244 86 131 203 183 198 243 198 115 201 252 106 142 249 238 207 153 51 182 206 195 214 161 106 203 217 18 209 90 16 37 20 0 82 80 1 69 48 10 40 1 40 160 2 138 0 74 40 0 164 160 13 79 42 156 35 21 157 202 29 180 82 109 20 134 49 133 70 105 161 13 162 152 130 138 0 40 160 2 138 0 40 160 2 138 0 40 160 4 162 128 18 146 152 5 37 2 12 81 64 5 37 0 20 80 2 82 16 8 193 25 7 177 160 10 179 216 163 13 209 13 143 219 158 42 163 75 119 111 195 179 99 253 174 69 75 211 98 150 164 137 169 55 241 198 167 232 113 86 205 221 184 181 18 103 116 142 14 213 207 221 247 52 115 7 41 115 78 49 11 5 185 184 120 218 65 215 230 24 7 232 59 213 75 139 233 238 220 164 60 47 115 83 123 142 214 27 29 178 39 45 243 183 169 169 84 109 80 57 56 245 57 173 18 177 45 133 20 196 20 148 0 81 64 5 37 48 10 40 0 162 128 18 138 0 41 40 0 162 128 54 105 9 197 100 88 3 72 104 1 140 106 34 41 161 9 138 74 98 10 90 0 41 40 0 165 160 4 162 128 10 40 0 162 128 18 146 128 10 74 96 24 165 197 0 37 20 0 148 148 8 40 160 4 162 128 10 66 50 8 35 32 246 160 10 183 218 60 134 35 52 40 20 128 73 143 60 145 235 89 17 28 182 57 218 125 43 54 90 44 111 1 112 78 71 165 93 183 185 133 45 70 208 119 1 247 71 115 245 161 59 3 39 130 67 44 42 236 187 73 234 41 245 162 32 40 166 1 73 64 5 20 0 81 64 9 69 48 10 40 1 40 160 2 138 0 40 160 13 138 67 89 22 33 163 20 0 211 77 41 154 98 24 69 55 20 192 40 160 66 81 64 11 69 0 20 80 2 81 64 5 20 0 148 80 1 138 40 0 162 128 18 146 152 9 69 2 18 138 0 100 146 44 107 185 242 7 168 4 210 193 113 3 72 167 122 48 207 66 122 254 20 12 210 149 109 174 65 216 72 112 58 170 241 248 213 54 186 183 180 7 0 180 131 185 199 31 74 207 155 161 86 234 82 150 123 171 204 128 197 34 110 190 255 0 227 81 255 0 103 197 180 134 102 57 244 226 154 136 54 80 150 194 100 149 130 33 100 3 33 135 122 45 25 35 148 7 0 174 121 7 181 22 176 94 230 205 21 161 1 73 64 5 20 0 82 80 1 69 0 37 20 192 40 160 4 162 128 10 40 0 162 128 53 201 164 205 100 88 102 138 0 74 40 0 197 5 69 0 49 147 210 163 42 105 136 109 20 196 45 20 0 81 138 0 49 69 0 20 148 0 81 138 0 40 160 4 162 128 18 146 152 9 69 2 10 40 0 170 243 218 67 32 39 97 13 234 157 77 38 52 85 62 117 156 68 46 224 173 212 231 252 226 173 67 20 69 22 64 55 100 103 45 205 74 69 54 77 73 86 64 85 123 139 72 230 4 227 107 159 226 20 52 50 88 211 100 106 155 139 96 99 38 157 76 65 73 64 5 20 0 82 80 1 69 0 37 20 192 40 160 2 138 0 74 90 0 74 40 3 79 52 181 145 97 154 51 64 11 154 76 208 1 78 6 128 10 99 10 0 140 169 244 166 226 168 145 113 69 0 20 80 1 69 0 24 164 160 2 138 0 74 40 1 40 160 4 162 128 18 138 96 37 20 8 41 40 1 8 200 193 25 20 212 69 69 218 163 3 210 128 29 73 64 5 20 192 74 40 0 162 128 10 74 0 41 40 0 162 128 10 74 96 20 80 1 69 0 20 80 1 69 0 105 81 89 22 38 104 205 48 23 52 82 0 165 160 5 162 128 10 77 162 128 16 173 52 173 49 13 197 46 40 1 40 166 1 73 64 130 146 128 10 13 0 37 37 0 20 148 0 82 83 1 40 160 66 81 64 5 20 0 148 80 2 81 76 2 138 0 74 40 0 164 160 2 146 128 10 40 0 162 152 9 69 0 20 80 1 69 0 20 148 1 167 72 107 50 132 163 52 0 102 151 52 0 82 210 1 115 69 3 19 52 185 160 3 52 211 76 67 104 160 4 162 128 10 41 128 148 80 33 40 160 4 164 160 2 146 128 18 138 96 37 20 8 40 160 4 162 128 10 74 0 40 160 2 146 152 5 37 0 20 148 0 82 80 1 69 0 20 80 2 81 76 2 138 0 40 160 2 138 0 191 186 147 117 102 80 102 140 208 1 75 154 0 51 75 154 0 51 70 104 0 205 0 208 2 210 26 0 74 40 1 40 160 2 138 98 10 74 0 41 40 1 40 160 4 162 128 18 146 128 10 74 96 20 80 32 164 160 2 146 128 10 40 0 164 166 1 73 64 9 69 0 20 148 0 81 64 5 20 0 81 64 9 69 48 10 40 0 162 144 23 40 169 24 82 208 48 165 160 2 138 64 20 162 128 22 140 80 2 129 78 217 64 11 178 143 44 82 1 165 41 165 72 166 3 104 166 2 129 154 82 180 128 2 154 54 208 3 72 166 154 96 54 138 4 33 164 160 2 146 152 130 138 0 40 160 4 162 128 10 74 0 41 41 128 82 80 1 73 64 5 20 0 148 80 1 69 0 20 80 1 69 0 20 80 1 69 0 90 165 169 24 82 208 48 165 2 128 22 148 12 210 1 118 209 138 0 0 167 1 64 15 11 75 138 67 22 144 208 2 82 26 0 97 90 80 162 129 11 180 81 138 6 46 41 8 160 6 21 166 48 166 33 152 162 152 132 52 148 0 98 146 128 10 41 128 148 80 33 40 160 2 146 128 10 74 96 20 148 0 82 80 1 69 0 20 148 0 81 64 5 20 0 81 64 5 20 0 82 208 5 170 42 70 20 180 12 5 58 128 20 82 138 64 62 140 82 24 98 156 5 0 45 45 0 37 20 0 148 148 0 98 150 128 10 40 0 164 52 0 211 76 106 4 48 138 105 170 16 148 80 2 81 64 9 69 48 10 74 4 20 148 0 82 80 1 73 76 2 146 128 10 40 1 40 160 2 138 0 41 40 0 162 128 10 40 0 165 160 3 20 80 5 170 42 70 45 20 12 90 81 72 7 10 81 64 14 20 180 134 45 45 0 20 80 2 19 73 154 0 90 74 0 41 104 1 51 70 104 1 51 73 154 0 66 105 166 129 12 52 132 85 0 148 148 8 41 40 0 164 166 1 69 0 37 37 2 10 40 1 40 160 4 162 152 5 37 0 20 80 2 81 64 5 20 0 82 80 1 75 64 10 5 46 40 1 113 72 69 33 150 41 113 72 3 20 224 180 134 40 90 92 80 0 41 65 160 5 6 157 154 67 10 92 208 1 154 51 64 9 73 154 0 76 209 154 0 51 70 104 0 38 155 154 0 51 70 104 16 132 210 83 1 166 146 128 10 74 98 18 146 128 10 74 0 40 166 2 81 64 132 162 128 10 40 1 40 160 4 162 152 9 69 0 20 80 1 73 64 5 20 0 82 208 2 208 13 33 139 154 13 0 78 41 194 144 199 1 75 72 5 162 129 134 40 197 32 23 20 180 0 82 208 1 73 64 5 37 0 37 37 0 25 164 205 2 16 154 76 211 0 205 25 160 3 52 80 2 82 80 1 73 76 66 81 64 5 20 0 148 80 2 98 131 76 2 146 129 5 20 0 134 147 20 0 98 147 20 0 98 138 96 37 20 0 81 64 11 138 76 80 1 138 40 1 104 160 5 20 26 67 39 6 157 154 67 20 26 118 105 0 180 82 24 180 225 64 6 40 197 0 46 41 49 64 5 37 0 37 37 0 20 134 128 19 20 98 152 132 34 146 128 10 40 1 40 160 2 146 128 10 74 98 10 40 1 40 160 2 146 128 10 107 144 170 88 244 2 128 22 138 96 20 80 2 80 104 16 148 80 2 81 138 0 74 41 128 81 64 5 20 0 81 64 5 20 128 90 40 25 61 20 128 112 167 10 67 28 41 194 144 197 162 128 22 138 0 40 160 4 52 148 0 148 80 1 138 76 80 1 70 40 1 8 164 34 129 5 33 20 192 74 74 0 41 41 136 41 40 0 162 128 10 40 1 40 197 0 24 166 200 62 67 64 14 164 197 0 20 148 192 41 40 0 162 129 9 70 40 0 197 37 0 20 83 0 163 20 128 41 104 0 162 129 137 69 0 79 69 32 22 156 13 33 142 6 156 13 33 142 20 80 1 69 0 20 185 160 4 164 52 0 148 80 2 209 64 9 69 0 20 152 160 4 197 20 0 220 26 66 13 49 9 73 76 2 138 4 20 80 2 82 129 64 11 182 141 180 0 152 166 200 62 95 196 127 58 0 92 81 138 0 67 72 104 1 49 69 48 18 138 4 20 80 1 138 76 80 1 138 40 0 162 128 10 40 1 40 160 2 146 129 150 40 164 1 75 64 197 6 158 166 144 15 20 180 134 20 80 2 81 64 5 20 0 148 80 2 209 64 9 69 0 20 80 2 81 64 5 33 160 6 145 73 138 98 19 20 98 128 23 105 163 97 160 5 219 74 22 128 23 109 46 218 64 38 218 108 139 242 143 247 135 243 160 1 134 42 58 96 33 52 153 166 32 205 20 0 148 83 1 40 160 2 138 0 41 40 16 80 72 3 36 224 122 154 0 129 239 109 99 251 211 167 224 115 252 170 35 169 66 127 213 164 178 127 186 159 227 73 201 34 148 88 211 123 59 125 203 76 123 187 226 154 100 189 124 252 209 71 244 4 154 135 50 148 6 152 166 113 137 110 165 62 203 133 254 84 211 105 17 251 193 159 253 230 38 161 201 178 148 81 179 75 91 25 5 20 12 81 79 74 64 72 40 164 48 162 128 10 40 0 162 128 10 74 0 90 74 0 40 160 2 146 128 10 40 0 162 128 18 140 80 2 109 165 197 2 23 20 180 12 49 75 138 0 40 160 2 153 47 65 254 240 254 116 0 143 205 70 69 52 33 173 73 76 65 75 64 6 40 197 0 52 138 67 76 8 228 158 24 135 239 37 69 250 181 64 218 141 176 56 86 105 15 162 41 52 155 72 18 108 97 191 145 142 34 180 115 158 238 193 105 190 125 243 103 2 24 199 208 147 80 230 90 128 98 119 24 146 229 255 0 224 0 45 51 236 113 49 203 238 144 250 187 19 80 228 217 74 41 18 44 49 32 249 81 71 208 82 226 164 161 198 138 0 74 40 3 70 150 186 12 2 138 0 81 79 94 41 12 120 52 102 144 194 138 0 40 160 2 150 128 18 138 0 40 160 4 162 128 18 140 208 1 75 64 5 20 0 148 180 0 82 208 1 69 0 45 20 0 81 64 9 154 100 135 238 127 188 40 1 77 52 208 33 132 83 106 132 49 229 142 49 153 29 84 123 156 84 45 168 90 175 73 55 159 246 20 183 242 164 221 134 144 195 168 231 136 237 164 111 118 33 69 48 221 94 55 68 138 63 169 45 254 21 46 69 40 141 99 116 249 221 115 128 123 34 1 252 243 76 54 234 231 247 143 35 255 0 188 230 161 201 148 162 133 91 120 147 238 198 163 240 167 133 3 160 169 40 82 58 82 154 0 64 40 160 2 138 0 40 160 2 146 128 52 104 174 131 1 104 160 5 20 224 105 12 112 52 102 144 197 205 25 160 3 52 102 128 22 138 0 41 40 0 162 128 18 138 0 74 40 0 162 128 22 138 0 40 160 5 165 160 2 138 0 40 160 3 52 153 160 4 36 14 166 171 79 123 109 27 46 233 211 33 185 27 185 232 105 1 11 234 144 127 203 52 150 83 254 202 99 249 212 127 218 51 183 221 181 3 253 231 255 0 235 82 230 31 40 199 158 241 248 223 28 99 253 149 201 253 106 38 133 223 253 109 196 175 237 187 3 244 169 114 101 40 161 22 218 21 57 17 174 125 72 205 73 128 56 169 184 197 20 234 6 20 80 1 69 0 20 26 0 74 40 0 237 69 0 4 224 100 240 61 234 23 187 183 79 189 58 126 7 63 202 128 33 125 78 217 122 22 127 247 87 252 106 7 213 215 63 36 36 253 91 20 236 43 157 29 21 185 136 180 80 1 75 64 197 6 151 52 128 51 70 104 0 205 40 52 0 185 165 164 48 162 128 10 74 0 41 40 0 162 128 18 150 128 10 40 1 104 160 2 151 52 0 100 14 166 153 36 241 70 51 36 168 163 221 177 72 10 207 169 219 3 132 47 33 255 0 97 9 253 106 54 212 156 255 0 171 181 127 248 27 1 254 52 155 42 196 79 121 122 223 116 67 31 224 88 212 67 237 4 16 247 82 144 78 112 56 255 0 235 212 185 15 148 67 2 49 203 130 231 253 182 45 252 233 194 52 81 242 168 31 65 74 227 176 184 161 71 20 134 45 45 0 6 155 64 11 75 64 5 20 0 81 64 12 121 162 79 191 34 47 213 133 68 215 182 195 254 90 103 232 164 209 96 35 55 233 156 44 82 19 239 129 80 207 168 203 24 200 129 87 234 217 167 97 92 170 218 165 203 116 42 159 69 255 0 26 133 238 238 92 252 211 63 224 113 252 170 172 43 144 156 177 201 36 159 122 13 2 10 40 3 255 217'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20512'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailImageWidth:20512'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailImageWidth
                             id: '20512'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20512/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailImageWidth:20512/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Long
                                     valid: true
                                     format: Long
@@ -498,15 +502,16 @@ elements:
                                     text: '480'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20513'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailImageHeight:20513'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailImageHeight
                             id: '20513'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20513/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailImageHeight:20513/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Long
                                     valid: true
                                     format: Long
@@ -515,15 +520,16 @@ elements:
                                     text: '272'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20515'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailCompression:20515'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailCompression
                             id: '20515'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20515/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailCompression:20515/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -532,15 +538,16 @@ elements:
                                     text: '6'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20521'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailOrientation:20521'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailOrientation
                             id: '20521'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20521/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailOrientation:20521/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -549,15 +556,16 @@ elements:
                                     text: '1'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20525'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionX:20525'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailResolutionX
                             id: '20525'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20525/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionX:20525/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -566,15 +574,16 @@ elements:
                                     text: '72'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20526'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionY:20526'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailResolutionY
                             id: '20526'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20526/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionY:20526/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Rational
                                     valid: true
                                     format: Rational
@@ -583,15 +592,16 @@ elements:
                                     text: '72'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20528'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionUnit:20528'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ThumbnailResolutionUnit
                             id: '20528'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20528/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionUnit:20528/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -600,15 +610,16 @@ elements:
                                     text: '2'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20624'
+                            path: '/media/tiff/ifd:IFD0:0/tag:LuminanceTable:20624'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: LuminanceTable
                             id: '20624'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20624/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:LuminanceTable:20624/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -617,15 +628,16 @@ elements:
                                     text: '3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 4 3 3 3 3 3 3 4 5 3 3 3 3 3 4 5 6 3 3 3 3 5 6 7 8 3 3 3 4 6 8 9 12 3 3 4 5 7 9 12 15 4 4 5 6 8 12 15 21'
                         -
                             node: tag
-                            path: '/media/tiff/ifd:IFD0:0/tag:20625'
+                            path: '/media/tiff/ifd:IFD0:0/tag:ChrominanceTable:20625'
                             class: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
+                            name: ChrominanceTable
                             id: '20625'
-                            collection: Tiff\UnknownTag
+                            collection: Tiff\Tag
                             elements:
                                 -
                                     node: entry
-                                    path: '/media/tiff/ifd:IFD0:0/tag:20625/entry'
+                                    path: '/media/tiff/ifd:IFD0:0/tag:ChrominanceTable:20625/entry'
                                     class: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
@@ -1646,6 +1658,36 @@ log:
             path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338'
             message: "Found Short data format, expected Undefined for item 'ExtraSamples' in 'IFD0'"
         -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailData:20507'
+            message: "Found Byte data format, expected Undefined for item 'ThumbnailData' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailImageWidth:20512'
+            message: "Found Long data format, expected Undefined for item 'ThumbnailImageWidth' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailImageHeight:20513'
+            message: "Found Long data format, expected Undefined for item 'ThumbnailImageHeight' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailCompression:20515'
+            message: "Found Short data format, expected Undefined for item 'ThumbnailCompression' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailOrientation:20521'
+            message: "Found Short data format, expected Undefined for item 'ThumbnailOrientation' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionX:20525'
+            message: "Found Rational data format, expected Undefined for item 'ThumbnailResolutionX' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionY:20526'
+            message: "Found Rational data format, expected Undefined for item 'ThumbnailResolutionY' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ThumbnailResolutionUnit:20528'
+            message: "Found Short data format, expected Undefined for item 'ThumbnailResolutionUnit' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:LuminanceTable:20624'
+            message: "Found Short data format, expected Undefined for item 'LuminanceTable' in 'IFD0'"
+        -
+            path: '/media/tiff/ifd:IFD0:0/tag:ChrominanceTable:20625'
+            message: "Found Short data format, expected Undefined for item 'ChrominanceTable' in 'IFD0'"
+        -
             path: '/media/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:BrightnessValue:37379'
             message: "Found Rational data format, expected SignedRational for item 'BrightnessValue' in 'ExifIFD'"
         -
@@ -1660,37 +1702,6 @@ log:
         -
             path: '/media/tiff/ifd:IFD0:0/tag:FocalLengthIn35mmFormat:41989'
             message: "Found Long data format, expected Short for item 'FocalLengthIn35mmFormat' in 'IFD0'"
-    NOTICE:
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20507'
-            message: "Unknown item 20507/0x501B in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20512'
-            message: "Unknown item 20512/0x5020 in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20513'
-            message: "Unknown item 20513/0x5021 in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20515'
-            message: "Unknown item 20515/0x5023 in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20521'
-            message: "Unknown item 20521/0x5029 in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20525'
-            message: "Unknown item 20525/0x502D in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20526'
-            message: "Unknown item 20526/0x502E in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20528'
-            message: "Unknown item 20528/0x5030 in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20624'
-            message: "Unknown item 20624/0x5090 in 'IFD0'"
-        -
-            path: '/media/tiff/ifd:IFD0:0/tag:20625'
-            message: "Unknown item 20625/0x5091 in 'IFD0'"
 gdInfo:
     0: 3264
     1: 1836

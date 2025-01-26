@@ -1,17 +1,19 @@
 <?php
 
-namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
+namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettings;
 
-use FileEye\MediaProbe\Entry\Core\SignedLong;
+use FileEye\MediaProbe\Entry\Core\SignedShort;
 
-/**
- * Handler for CanonCustom ViewfinderWarnings tags.
- */
-class ViewfinderWarnings extends SignedLong
+class FlashBits extends SignedShort
 {
     public function toString(array $options = []): string
     {
         $value = (int) $this->getValue($options);
+
+        if ($value === 0) {
+            return $this->getMappedText($value);
+        }
+
         $ret = [];
         for ($i = 0; $i < 32; $i++) {
             $mask = 2 ** $i;
