@@ -23,6 +23,7 @@ class Ver1 extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\Ver1',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\Ver1',
   'itemsByName' =>
   array (
     'BlueCurveLimits' =>

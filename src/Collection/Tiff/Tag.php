@@ -17,5 +17,6 @@ class Tag extends CollectionBase {
   'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tag',
   'DOMNode' => 'tag',
   'id' => 'Tiff\\Tag',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tag',
 );
 }

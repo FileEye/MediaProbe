@@ -15,7 +15,7 @@ class ColorBalance extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonColorBalance',
   'title' => 'Canon Color Balance',
-  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>

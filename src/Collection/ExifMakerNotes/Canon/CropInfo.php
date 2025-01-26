@@ -15,7 +15,7 @@ class CropInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCropInfo',
   'title' => 'Canon CropInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

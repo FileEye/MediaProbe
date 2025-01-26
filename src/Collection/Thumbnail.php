@@ -14,7 +14,7 @@ class Thumbnail extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Thumbnail',
-  'class' => 'FileEye\\MediaProbe\\Block\\Thumbnail',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Thumbnail',
   'DOMNode' => 'thumbnail',
   'id' => 'Thumbnail',
 );

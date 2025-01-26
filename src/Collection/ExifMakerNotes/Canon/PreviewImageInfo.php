@@ -15,7 +15,7 @@ class PreviewImageInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonPreviewImageInfo',
   'title' => 'Canon PreviewImageInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

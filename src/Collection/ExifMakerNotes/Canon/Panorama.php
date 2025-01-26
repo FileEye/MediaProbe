@@ -15,7 +15,7 @@ class Panorama extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonPanorama',
   'title' => 'Panorama Information',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'hasIndexSize' => true,
   'format' =>

@@ -15,6 +15,7 @@ class MakerNotes extends CollectionBase {
   protected static $map = array (
   'class' => '????',
   'id' => 'ExifMakerNotes\\MakerNotes',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\MakerNotes',
   'itemsByName' =>
   array (
     'Apple' =>

@@ -23,6 +23,7 @@ class Ver2 extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\Ver2',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\Ver2',
   'itemsByName' =>
   array (
     'AberrationCorrectionDistance' =>

@@ -23,6 +23,7 @@ class IHL extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\IHL',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\IHL',
   'itemsByName' =>
   array (
     'CRCDevelParams' =>

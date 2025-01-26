@@ -16,7 +16,7 @@ class CTMD extends CollectionBase {
   '__todo' => true,
   'name' => 'CanonCTMD',
   'title' => 'Canon CTMD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CTMD',

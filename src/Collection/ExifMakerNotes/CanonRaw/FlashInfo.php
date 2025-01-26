@@ -23,6 +23,7 @@ class FlashInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\FlashInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\FlashInfo',
   'itemsByName' =>
   array (
     'FlashGuideNumber' =>

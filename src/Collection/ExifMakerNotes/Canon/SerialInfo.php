@@ -15,7 +15,7 @@ class SerialInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonSerialInfo',
   'title' => 'Canon SerialInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\IndexMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\IndexMap',
   'DOMNode' => 'index',
   'format' =>
   array (

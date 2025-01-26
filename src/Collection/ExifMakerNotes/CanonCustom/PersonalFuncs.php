@@ -23,6 +23,7 @@ class PersonalFuncs extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncs',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonCustom\\PersonalFuncs',
   'itemsByName' =>
   array (
     'PF0CustomFuncRegistration' =>

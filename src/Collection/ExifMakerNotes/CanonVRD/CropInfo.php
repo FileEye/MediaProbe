@@ -23,6 +23,7 @@ class CropInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\CropInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\CropInfo',
   'itemsByName' =>
   array (
     'CropActive' =>

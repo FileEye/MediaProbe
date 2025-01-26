@@ -23,6 +23,7 @@ class DLOInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\DLOInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\DLOInfo',
   'itemsByName' =>
   array (
     'DLOData' =>

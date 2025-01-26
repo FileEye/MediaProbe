@@ -16,7 +16,7 @@ class Uuid extends CollectionBase {
   '__todo' => true,
   'name' => 'CanonUuid',
   'title' => 'Canon Uuid',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Uuid',

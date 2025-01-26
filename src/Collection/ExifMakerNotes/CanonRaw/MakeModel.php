@@ -23,6 +23,7 @@ class MakeModel extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\MakeModel',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\MakeModel',
   'itemsByName' =>
   array (
     'Make' =>

@@ -41,7 +41,7 @@ class Ifd extends ListBase
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
             $item_definition = $this->getItemDefinitionFromData($i, $dataElement, $i_offset, $xxx, 'Tiff\IfdAny');
-            $item_class = $item_definition->getCollection()->getPropertyValue('class');
+            $item_class = $item_definition->getCollection()->getPropertyValue('handler');
 
             // Check data is accessible, warn otherwise.
             if ($item_definition->getDataOffset() >= $dataElement->getSize()) {
@@ -176,7 +176,7 @@ class Ifd extends ListBase
             }
         }
 
-        if (is_a($item_collection->getPropertyValue('class'), Ifd::class, true)) {
+        if (is_a($item_collection->getPropertyValue('handler'), Ifd::class, true)) {
             // If the item is an Ifd, recurse in loading the item at offset.
             $data_offset = $dataElement->getLong($offset + 8);
             $components = $dataElement->getShort($data_offset);
@@ -394,7 +394,7 @@ class Ifd extends ListBase
         }
 
         // Load maker note into IFD.
-        $ifd_class = $maker_note_collection->getPropertyValue('class');
+        $ifd_class = $maker_note_collection->getPropertyValue('handler');
         $maker_note_ifd_name = $maker_note_collection->getPropertyValue('item');  // xx why not name?? it used to work
         $exif_ifd->debug("**** Parsing {makernote} maker notes", [
             'makernote' => $maker_note_ifd_name,

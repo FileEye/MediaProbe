@@ -15,7 +15,7 @@ class Functions2 extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCustomFunctions2',
   'title' => 'CanonCustom Functions2 - a set of custom function tags which are (reasonably) consistent across models',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions2',

@@ -15,7 +15,7 @@ class Ambience extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonAmbience',
   'title' => 'Canon Ambience',
-  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
   'format' =>
   array (

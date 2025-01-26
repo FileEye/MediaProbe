@@ -23,6 +23,7 @@ class RawJpgInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\RawJpgInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\RawJpgInfo',
   'itemsByName' =>
   array (
     'RawJpgHeight' =>

@@ -15,7 +15,7 @@ class ColorCalib extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonColorCalib',
   'title' => 'Canon ColorCalib',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorCalibMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorCalibMap',
   'DOMNode' => 'index',
   'format' =>
   array (

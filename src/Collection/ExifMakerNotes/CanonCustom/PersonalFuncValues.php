@@ -23,6 +23,7 @@ class PersonalFuncValues extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncValues',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonCustom\\PersonalFuncValues',
   'itemsByName' =>
   array (
     'PF19ShootingSpeedHigh' =>

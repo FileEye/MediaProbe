@@ -16,7 +16,7 @@ class CNTH extends CollectionBase {
   '__todo' => true,
   'name' => 'CanonCNTH',
   'title' => 'Canon CNTH',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CNTH',

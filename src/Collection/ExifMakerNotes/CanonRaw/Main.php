@@ -23,6 +23,7 @@ class Main extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\Main',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\Main',
   'itemsByName' =>
   array (
     'BaseISO' =>

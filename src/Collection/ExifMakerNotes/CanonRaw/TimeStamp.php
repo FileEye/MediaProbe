@@ -23,6 +23,7 @@ class TimeStamp extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\TimeStamp',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\TimeStamp',
   'itemsByName' =>
   array (
     'DateTimeOriginal' =>

@@ -15,7 +15,7 @@ class ColorDataUnknown extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonColorDataUnknown',
   'title' => 'Canon Color DataUnknown',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
   'format' =>
   array (

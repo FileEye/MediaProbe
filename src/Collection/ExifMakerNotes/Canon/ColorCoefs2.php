@@ -15,7 +15,7 @@ class ColorCoefs2 extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonColorCoefs2',
   'title' => 'Canon ColorCoefs2',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorCalibMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorCalibMap',
   'DOMNode' => 'index',
   'format' =>
   array (

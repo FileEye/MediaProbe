@@ -15,7 +15,7 @@ class CameraInfoResolver extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCameraInfoResolver',
   'title' => 'Canon Camera Info Resolver',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'id' => 'ExifMakerNotes\\Canon\\CameraInfoResolver',
   'itemsByName' =>

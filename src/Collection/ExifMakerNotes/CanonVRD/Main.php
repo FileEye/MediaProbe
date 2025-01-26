@@ -23,6 +23,7 @@ class Main extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\Main',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\Main',
   'itemsByName' =>
   array (
     'XMP' =>

@@ -15,7 +15,7 @@ class TimeInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonTimeInfo',
   'title' => 'Canon TimeInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>

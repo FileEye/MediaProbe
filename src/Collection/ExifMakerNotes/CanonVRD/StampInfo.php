@@ -23,6 +23,7 @@ class StampInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\StampInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\StampInfo',
   'itemsByName' =>
   array (
     'StampToolCount' =>

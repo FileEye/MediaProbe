@@ -15,7 +15,7 @@ class MovieInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonMovieInfo',
   'title' => 'Canon Movie Info',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'hasIndexSize' => true,
   'format' =>

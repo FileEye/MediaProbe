@@ -14,11 +14,9 @@ class Jpeg extends CollectionBase {
 
   protected static $map = array (
   'title' => 'JPEG image',
-  'class' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Jpeg',
-  'parser' => 'FileEye\\MediaProbe\\Parser\\Jpeg\\Jpeg',
-  'writer' => 'FileEye\\MediaProbe\\Writer\\Jpeg\\Jpeg',
   'DOMNode' => 'jpeg',
   'id' => 'Jpeg\\Jpeg',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Jpeg',
   'itemsByName' =>
   array (
     'APP0' =>

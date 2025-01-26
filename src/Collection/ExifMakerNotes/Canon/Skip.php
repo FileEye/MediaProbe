@@ -16,7 +16,7 @@ class Skip extends CollectionBase {
   '__todo' => true,
   'name' => 'CanonSkip',
   'title' => 'Canon Skip',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Skip',

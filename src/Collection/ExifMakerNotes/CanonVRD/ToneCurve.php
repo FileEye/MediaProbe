@@ -23,6 +23,7 @@ class ToneCurve extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\ToneCurve',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\ToneCurve',
   'itemsByName' =>
   array (
     'BlueCurvePoints' =>

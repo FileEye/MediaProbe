@@ -15,7 +15,7 @@ class IfdInteroperability extends CollectionBase {
   protected static $map = array (
   'name' => 'InteropIFD',
   'title' => 'Interoperability IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'alias' =>
   array (

@@ -15,5 +15,6 @@ class Media extends CollectionBase {
   protected static $map = array (
   'DOMNode' => 'media',
   'id' => 'Media',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media',
 );
 }

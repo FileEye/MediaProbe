@@ -15,7 +15,7 @@ class ColorData2 extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonColorData2',
   'title' => 'Canon Color Data2',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\ColorDataMap',
   'DOMNode' => 'map',
   'format' =>
   array (

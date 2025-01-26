@@ -15,7 +15,7 @@ class Functions1D extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCustomFunctions1D',
   'title' => 'CanonCustom Functions1D',
-  'class' => 'tbd',
+  'handler' => 'tbd',
   'DOMNode' => 'tbd',
   'format' =>
   array (

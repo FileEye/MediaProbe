@@ -15,7 +15,7 @@ class IfdGps extends CollectionBase {
   protected static $map = array (
   'name' => 'GPS',
   'title' => 'GPS IFD',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'Tiff\\IfdGps',

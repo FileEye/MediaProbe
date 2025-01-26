@@ -28,6 +28,11 @@ class SpecCompiler
     const DEFAULT_COLLECTION_NAMESPACE = 'FileEye\\MediaProbe\\Collection';
 
     /**
+     * Default directory where to write compiled classes.
+     */
+    const DEFAULT_HANDLER_NAMESPACE = 'FileEye\\MediaProbe\\Block';
+
+    /**
      * Identifier for void collection.
      */
     const VOID_COLLECTION = 'VoidCollection';
@@ -191,6 +196,7 @@ DATA;
         unset($tmp['collection'], $tmp['items'], $tmp['compiler']);
         $map = $tmp;
         $map['id'] = $input['collection'];
+        $map['handler'] = $input['handler'] ?? (self::DEFAULT_HANDLER_NAMESPACE . '\\' . $input['collection']);
 
         // Collection items entries.
         foreach ($input['items'] as $id => $item) {

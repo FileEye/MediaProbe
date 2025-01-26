@@ -14,7 +14,7 @@ class Filter extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Canon Filter',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\Filter',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\Filter',
   'DOMNode' => 'filter',
   'id' => 'ExifMakerNotes\\Canon\\Filter',
 );

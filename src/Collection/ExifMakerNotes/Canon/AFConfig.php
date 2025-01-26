@@ -15,7 +15,7 @@ class AFConfig extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonAFConfig',
   'title' => 'Canon AF Config',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

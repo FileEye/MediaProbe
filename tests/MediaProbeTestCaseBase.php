@@ -26,6 +26,12 @@ class MediaProbeTestCaseBase extends TestCase
         $this->fileSystem->mkdir($this->tempWorkDirectory);
     }
 
+    public function tearDown(): void
+    {
+        $this->fileSystem->remove([$this->tempWorkDirectory]);
+        parent::tearDown();
+    }
+
     /**
      * Returns a stub RootBlock that can be used to append test structures.
      */

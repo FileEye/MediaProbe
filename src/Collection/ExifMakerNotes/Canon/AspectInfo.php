@@ -15,7 +15,7 @@ class AspectInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonAspectInfo',
   'title' => 'Canon AspectInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

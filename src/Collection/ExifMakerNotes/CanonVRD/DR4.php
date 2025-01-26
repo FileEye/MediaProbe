@@ -23,6 +23,7 @@ class DR4 extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\DR4',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\DR4',
   'itemsByName' =>
   array (
     'AngleAdj' =>

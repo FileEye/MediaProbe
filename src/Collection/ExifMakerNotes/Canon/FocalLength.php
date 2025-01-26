@@ -15,7 +15,7 @@ class FocalLength extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonFocalLength',
   'title' => 'Canon Focal Length',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

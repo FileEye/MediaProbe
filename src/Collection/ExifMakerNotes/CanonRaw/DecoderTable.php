@@ -23,6 +23,7 @@ class DecoderTable extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\DecoderTable',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\DecoderTable',
   'itemsByName' =>
   array (
     'CompressedDataLength' =>

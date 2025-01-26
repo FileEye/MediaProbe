@@ -15,7 +15,7 @@ class SensorInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonSensorInfo',
   'title' => 'Canon Sensor Info',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'hasIndexSize' => true,
   'format' =>

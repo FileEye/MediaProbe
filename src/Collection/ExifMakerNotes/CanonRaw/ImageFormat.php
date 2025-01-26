@@ -23,6 +23,7 @@ class ImageFormat extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\ImageFormat',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\ImageFormat',
   'itemsByName' =>
   array (
     'FileFormat' =>

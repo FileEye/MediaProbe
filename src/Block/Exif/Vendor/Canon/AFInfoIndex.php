@@ -49,7 +49,7 @@ class AFInfoIndex extends Index
             }
 
             // Adds the 'tag'.
-            $item_class = $item_definition->getCollection()->getPropertyValue('class');
+            $item_class = $item_definition->getCollection()->getPropertyValue('handler');
             $item = new $item_class($item_definition, $this);
 
             $entry_class = $item_definition->getEntryClass();

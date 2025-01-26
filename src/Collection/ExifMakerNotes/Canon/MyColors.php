@@ -15,7 +15,7 @@ class MyColors extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonMyColors',
   'title' => 'Canon MyColors',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

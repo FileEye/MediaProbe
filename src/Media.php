@@ -9,6 +9,8 @@ use FileEye\MediaProbe\Data\DataFile;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use FileEye\MimeMap\Extension;
+use FileEye\MimeMap\MappingException;
 use Monolog\Handler\TestHandler;
 use Monolog\Level;
 use Monolog\Logger;
@@ -87,11 +89,31 @@ class Media extends RootBlockBase
      *
      * @throws MediaProbeException
      */
-    public static function parseFromFile(string $path, ?LoggerInterface $externalLogger = null, ?string $failLevel = null): Media
+    public static function parseFromFile(
+        string $path,
+        ?LoggerInterface $externalLogger = null,
+        ?string $failLevel = null,
+    ): Media
     {
+        // Find the most likely MIME type given the file extension.
+        $extension = '';
+        $typeHints = [];
+        $fileParts = explode('.', basename($path));
+        while (array_shift($fileParts) !== NULL) {
+          $extension = strtolower(implode('.', $fileParts));
+          $mimeMapExtension = new Extension($extension);
+          try {
+            $typeHints = $mimeMapExtension->getTypes();
+            break;
+          }
+          catch (MappingException $e) {
+            continue;
+          }
+        }
+
         // @todo lock file while reading, capture fstats to prevent overwrites.
         $dataFile = new DataFile($path);
-        return static::parse($dataFile, $externalLogger, $failLevel);
+        return static::parse($dataFile, $typeHints, $externalLogger, $failLevel);
     }
 
     /**
@@ -99,6 +121,8 @@ class Media extends RootBlockBase
      *
      * @param DataElement $dataElement
      *   The data element providing the data.
+     * @param list<string> $typeHints
+     *   (Optional) a list of most likely MIME types.
      * @param ?LoggerInterface $externalLogger
      *   (Optional) a PSR-3 compliant logger callback.
      * @param ?string $failLevel
@@ -107,18 +131,24 @@ class Media extends RootBlockBase
      *
      * @throws MediaProbeException
      */
-    public static function parse(DataElement $dataElement, ?LoggerInterface $externalLogger = null, ?string $failLevel = null): Media
+    public static function parse(
+        DataElement $dataElement,
+        array $typeHints = [],
+        ?LoggerInterface $externalLogger = null,
+        ?string $failLevel = null,
+    ): Media
     {
+        $media = new Media($externalLogger, $failLevel);
+        $media->getStopwatch()->start('media-parsing');
+
         // Determine the media type. Throws MediaProbeException if not determinable.
         $mediaType = new ItemDefinition(
-            collection: MediaTypeResolver::fromDataElement($dataElement),
+            collection: MediaTypeResolver::fromDataElement($dataElement, $typeHints),
         );
 
         // Build the Media object and its immediate child, that represents the actual media. Then
         // parse the media according to the media format.
-        $media = new Media($externalLogger, $failLevel);
         $media->setAttribute('mimeType', (string) $mediaType->collection->getPropertyValue('item'));
-        $media->getStopwatch()->start('media-parsing');
         assert($media->debugInfo(['dataElement' => $dataElement]));
         $media->addBlock($mediaType)->parseData($dataElement);
         $media->getStopwatch()->stop('media-parsing');

@@ -15,7 +15,7 @@ class Processing extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonProcessing',
   'title' => 'Canon Processing',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'hasIndexSize' => true,
   'format' =>

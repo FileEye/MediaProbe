@@ -23,6 +23,7 @@ class GammaInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\GammaInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\GammaInfo',
   'itemsByName' =>
   array (
     'GammaBlackPoint' =>

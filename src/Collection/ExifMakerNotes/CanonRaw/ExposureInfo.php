@@ -23,6 +23,7 @@ class ExposureInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\ExposureInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\ExposureInfo',
   'itemsByName' =>
   array (
     'ApertureValue' =>

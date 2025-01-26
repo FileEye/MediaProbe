@@ -14,7 +14,7 @@ class UnknownTag extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Unknown Tag',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tag',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tag',
   'DOMNode' => 'tag',
   'id' => 'Tiff\\UnknownTag',
 );

@@ -14,7 +14,7 @@ class IfdAny extends CollectionBase {
 
   protected static $map = array (
   'title' => 'A catchall generic IFD definition, used as a fallback to describe tags that are not expected in a specific IFD.',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'Tiff\\IfdAny',
   'itemsByName' =>

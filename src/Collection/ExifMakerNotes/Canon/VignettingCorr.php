@@ -15,7 +15,7 @@ class VignettingCorr extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonVignettingCorr',
   'title' => 'Canon VignettingCorr',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

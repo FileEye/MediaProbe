@@ -15,7 +15,7 @@ class LightingOpt extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonLightingOpt',
   'title' => 'Canon LightingOpt',
-  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>

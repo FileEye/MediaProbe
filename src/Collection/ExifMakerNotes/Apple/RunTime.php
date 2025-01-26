@@ -15,7 +15,7 @@ class RunTime extends CollectionBase {
   protected static $map = array (
   'name' => 'AppleRuntime',
   'title' => 'Apple Runtime',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\RunTime',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\RunTime',
   'DOMNode' => 'plist',
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Apple\\RunTime',

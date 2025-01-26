@@ -15,7 +15,7 @@ class FaceDetect2 extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonFaceDetect2',
   'title' => 'Canon FaceDetect2',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

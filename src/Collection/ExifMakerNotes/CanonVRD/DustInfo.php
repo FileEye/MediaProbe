@@ -23,6 +23,7 @@ class DustInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonVRD\\DustInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonVRD\\DustInfo',
   'itemsByName' =>
   array (
     'DustDeleteApplied' =>

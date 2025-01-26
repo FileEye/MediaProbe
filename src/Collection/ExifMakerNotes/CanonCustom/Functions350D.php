@@ -23,6 +23,7 @@ class Functions350D extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions350D',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonCustom\\Functions350D',
   'itemsByName' =>
   array (
     'AFAssistBeam' =>

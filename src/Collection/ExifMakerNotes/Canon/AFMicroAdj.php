@@ -15,7 +15,7 @@ class AFMicroAdj extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonAFMicroAdj',
   'title' => 'Canon AF Micro Adj',
-  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
   'format' =>
   array (

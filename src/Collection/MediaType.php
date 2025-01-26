@@ -14,6 +14,7 @@ class MediaType extends CollectionBase {
 
   protected static $map = array (
   'id' => 'MediaType',
+  'handler' => 'FileEye\\MediaProbe\\Block\\MediaType',
   'items' =>
   array (
     'image/jpeg' =>

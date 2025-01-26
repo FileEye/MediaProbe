@@ -15,7 +15,7 @@ class ContrastInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonContrastInfo',
   'title' => 'Canon ContrastInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

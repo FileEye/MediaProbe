@@ -15,7 +15,7 @@ class ExposureInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonExposureInfo',
   'title' => 'Canon ExposureInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

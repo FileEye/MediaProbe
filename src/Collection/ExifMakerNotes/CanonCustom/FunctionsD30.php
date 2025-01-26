@@ -23,6 +23,7 @@ class FunctionsD30 extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\FunctionsD30',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonCustom\\FunctionsD30',
   'itemsByName' =>
   array (
     'AEBSequenceAutoCancel' =>

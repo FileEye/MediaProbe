@@ -15,7 +15,7 @@ class CameraSettings extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCameraSettings',
   'title' => 'Canon Camera Settings',
-  'class' => 'FileEye\\MediaProbe\\Block\\Map',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Map',
   'DOMNode' => 'map',
   'hasIndexSize' => true,
   'format' =>

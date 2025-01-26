@@ -15,7 +15,7 @@ class ModifiedInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonModifiedInfo',
   'title' => 'Canon ModifiedInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

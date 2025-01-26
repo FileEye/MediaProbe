@@ -15,7 +15,7 @@ class MeasuredColor extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonMeasuredColor',
   'title' => 'Canon Measured Color',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'hasIndexSize' => true,
   'format' =>

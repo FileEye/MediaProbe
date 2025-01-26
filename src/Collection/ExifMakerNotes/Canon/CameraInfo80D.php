@@ -15,7 +15,7 @@ class CameraInfo80D extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCameraInfo80D',
   'title' => 'Canon CameraInfo80D',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (

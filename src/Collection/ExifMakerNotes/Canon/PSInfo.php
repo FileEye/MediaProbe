@@ -15,7 +15,7 @@ class PSInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonPSInfo',
   'title' => 'Canon PSInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\IndexMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\IndexMap',
   'DOMNode' => 'index',
   'format' =>
   array (

@@ -15,7 +15,7 @@ class Functions2Header extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCustomFunctions2Header',
   'title' => 'CanonCustom Functions2 Header',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2Header',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2Header',
   'DOMNode' => 'index',
   'defaultItemCollection' => 'ExifMakerNotes\\CanonCustom\\Functions2',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions2Header',

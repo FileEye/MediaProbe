@@ -15,7 +15,7 @@ class CameraInfo1DmkIV extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCameraInfo1DmkIV',
   'title' => 'Canon CameraInfo1DmkIV',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (

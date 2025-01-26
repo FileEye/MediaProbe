@@ -15,7 +15,7 @@ class CameraInfoUnknown32 extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCameraInfoUnknown32',
   'title' => 'Canon CameraInfoUnknown32',
-  'class' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CameraInfoMap',
   'DOMNode' => 'map',
   'format' =>
   array (

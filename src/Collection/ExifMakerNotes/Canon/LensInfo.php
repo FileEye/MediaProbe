@@ -15,7 +15,7 @@ class LensInfo extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonLensInfo',
   'title' => 'Canon LensInfo',
-  'class' => 'FileEye\\MediaProbe\\Block\\Index',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
   'format' =>
   array (

@@ -15,7 +15,7 @@ class Ifd0 extends CollectionBase {
   protected static $map = array (
   'name' => 'IFD0',
   'title' => 'IFD0',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tiff\\Tag',
   'alias' =>

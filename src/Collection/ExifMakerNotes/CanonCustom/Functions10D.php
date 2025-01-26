@@ -15,7 +15,7 @@ class Functions10D extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonCustomFunctions10D',
   'title' => 'CanonCustom Functions10D',
-  'class' => 'tbd',
+  'handler' => 'tbd',
   'DOMNode' => 'tbd',
   'format' =>
   array (

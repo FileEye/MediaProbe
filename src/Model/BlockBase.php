@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Model;
 
@@ -140,8 +142,8 @@ abstract class BlockBase extends ElementBase implements BlockInterface
      */
     public function addBlock(ItemDefinition $item_definition, ?BlockInterface $parent = null, ?BlockInterface $reference = null): BlockInterface
     {
-        $class = $item_definition->getCollection()->getPropertyValue('class');
-        return new $class($item_definition, $parent ?? $this, $reference);
+        $handler = $item_definition->getCollection()->getPropertyValue('handler');
+        return new $handler($item_definition, $parent ?? $this, $reference);
     }
 
     /**

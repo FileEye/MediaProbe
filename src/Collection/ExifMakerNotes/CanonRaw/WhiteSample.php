@@ -23,6 +23,7 @@ class WhiteSample extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\WhiteSample',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\WhiteSample',
   'itemsByName' =>
   array (
     'WhiteSampleBits' =>

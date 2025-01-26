@@ -14,11 +14,9 @@ class Exif extends CollectionBase {
 
   protected static $map = array (
   'title' => 'JPEG Exif data',
-  'class' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Exif',
-  'parser' => 'FileEye\\MediaProbe\\Parser\\Jpeg\\Exif',
-  'writer' => 'FileEye\\MediaProbe\\Writer\\Jpeg\\Exif',
   'DOMNode' => 'exif',
   'id' => 'Jpeg\\Exif',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Exif',
   'items' =>
   array (
     'Tiff' =>

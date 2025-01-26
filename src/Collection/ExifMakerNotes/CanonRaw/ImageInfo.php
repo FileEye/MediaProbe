@@ -23,6 +23,7 @@ class ImageInfo extends CollectionBase {
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonRaw\\ImageInfo',
+  'handler' => 'FileEye\\MediaProbe\\Block\\ExifMakerNotes\\CanonRaw\\ImageInfo',
   'itemsByName' =>
   array (
     'ColorBW' =>
