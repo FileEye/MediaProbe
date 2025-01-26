@@ -21,12 +21,10 @@ use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class ReadWriteTest extends MediaProbeTestCaseBase
 {
-    /**
-     * {@inheritdoc}
-     */
     public function tearDown(): void
     {
         unlink(dirname(__FILE__) . '/test-output.jpg');
@@ -34,9 +32,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         parent::tearDown();
     }
 
-    /**
-     * @dataProvider writeEntryProvider
-     */
+    #[DataProvider('writeEntryProvider')]
     public function testWriteRead(array $entries)
     {
         $media = Media::parseFromFile(dirname(__FILE__) . '/media-samples/image/no-exif.jpg', null, 'error');

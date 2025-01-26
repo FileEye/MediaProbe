@@ -8,6 +8,7 @@ use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
@@ -20,9 +21,6 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     protected ?\DOMDocument $exiftoolDump;
     protected ?\DOMDocument $exiftoolRawDump;
 
-    /**
-     * {@inheritdoc}
-     */
     public function tearDown(): void
     {
         $this->testDump = null;
@@ -43,9 +41,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         return $result;
     }
 
-    /**
-     * @dataProvider mediaFileProvider
-     */
+    #[DataProvider('mediaFileProvider')]
     public function testParseFromFile($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
@@ -75,9 +71,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         }
     }
 
-    /**
-     * @dataProvider mediaFileProvider
-     */
+    #[DataProvider('mediaFileProvider')]
     public function testParse($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
@@ -108,9 +102,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         }
     }
 
-    /**
-     * @dataProvider mediaFileProvider
-     */
+    #[DataProvider('mediaFileProvider')]
     public function testRewriteThroughGd($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
@@ -145,9 +137,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         imagedestroy($gd_resource);
     }
 
-    /**
-     * @dataProvider mediaFileProvider
-     */
+    #[DataProvider('mediaFileProvider')]
     public function testRewrite($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());

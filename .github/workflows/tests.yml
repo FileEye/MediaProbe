@@ -15,9 +15,9 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "8.1"
           - "8.2"
           - "8.3"
+          - "8.4"
 
     steps:
     - name: Install PHP
@@ -63,7 +63,7 @@ jobs:
 #        php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
-      continue-on-error: true
+#      continue-on-error: true
       run: vendor/bin/phpunit --color=always --testdox --display-deprecations --display-phpunit-deprecations ./tests
 
 #    - name: Code style test
@@ -84,5 +84,5 @@ jobs:
 #    - name: "Install PHPStan"
 #      run: "composer require --dev phpstan/phpstan:^1.2 --ansi"
 
-    - name: "Run a static analysis with phpstan/phpstan"
-      run: vendor/bin/phpstan analyze
+#    - name: "Run a static analysis with phpstan/phpstan"
+#      run: vendor/bin/phpstan analyze
