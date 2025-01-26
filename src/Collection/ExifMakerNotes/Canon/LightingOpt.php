@@ -30,6 +30,14 @@ class LightingOpt extends CollectionBase {
     array (
       0 => 2,
     ),
+    'DigitalLensOptimizer' =>
+    array (
+      0 => 10,
+    ),
+    'DualPixelRaw' =>
+    array (
+      0 => 11,
+    ),
     'HighISONoiseReduction' =>
     array (
       0 => 5,
@@ -52,6 +60,14 @@ class LightingOpt extends CollectionBase {
     'Canon:AutoLightingOptimizer' =>
     array (
       0 => 2,
+    ),
+    'Canon:DigitalLensOptimizer' =>
+    array (
+      0 => 10,
+    ),
+    'Canon:DualPixelRaw' =>
+    array (
+      0 => 11,
     ),
     'Canon:HighISONoiseReduction' =>
     array (
@@ -185,6 +201,51 @@ class LightingOpt extends CollectionBase {
           ),
         ),
         'exiftoolDOMNode' => 'Canon:HighISONoiseReduction',
+      ),
+    ),
+    10 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DigitalLensOptimizer',
+        'title' => 'Digital Lens Optimizer',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'Standard',
+            2 => 'High',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:DigitalLensOptimizer',
+      ),
+    ),
+    11 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DualPixelRaw',
+        'title' => 'Dual Pixel Raw',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:DualPixelRaw',
       ),
     ),
   ),

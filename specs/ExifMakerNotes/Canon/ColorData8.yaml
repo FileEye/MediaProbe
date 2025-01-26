@@ -8,7 +8,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: Canon
-        xpath: '//table[@name=''Canon::ColorData8'']/tag'
+        xpath: "//table[@name='Canon::ColorData8']/tag"
 items:
     0:
         exiftool:
@@ -19,10 +19,10 @@ items:
                 DOMNode: 'Canon:ColorDataVersion'
                 desc: 'Color Data Version'
                 values:
-                    12: '12 (5DS/5DSR)'
-                    13: '13 (80D)'
+                    12: '12 (1DXmkII/5DS/5DSR)'
+                    13: '13 (80D/5DmkIV)'
                     14: '14 (1300D/2000D/4000D)'
-                    15: '15 (6DmkII/77D/200D/800D)'
+                    15: '15 (6DmkII/77D/200D/800D,9000D)'
     63:
         exiftool:
             -

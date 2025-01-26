@@ -29,10 +29,19 @@ class ColorData5 extends CollectionBase {
     array (
       0 => 0,
     ),
+    'NormalWhiteLevel' =>
+    array (
+      0 => 1385,
+    ),
     'PerChannelBlackLevel' =>
     array (
       0 => 264,
       1 => 333,
+    ),
+    'SpecularWhiteLevel' =>
+    array (
+      0 => 662,
+      1 => 1386,
     ),
   ),
   'itemsByExiftoolDOMNode' =>
@@ -41,10 +50,19 @@ class ColorData5 extends CollectionBase {
     array (
       0 => 0,
     ),
+    'Canon:NormalWhiteLevel' =>
+    array (
+      0 => 1385,
+    ),
     'Canon:PerChannelBlackLevel' =>
     array (
       0 => 264,
       1 => 333,
+    ),
+    'Canon:SpecularWhiteLevel' =>
+    array (
+      0 => 662,
+      1 => 1386,
     ),
   ),
   'items' =>
@@ -99,6 +117,48 @@ class ColorData5 extends CollectionBase {
           0 => 8,
         ),
         'exiftoolDOMNode' => 'Canon:PerChannelBlackLevel',
+      ),
+    ),
+    662 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'SpecularWhiteLevel',
+        'title' => 'Specular White Level',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:SpecularWhiteLevel',
+      ),
+    ),
+    1385 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'NormalWhiteLevel',
+        'title' => 'Normal White Level',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:NormalWhiteLevel',
+      ),
+    ),
+    1386 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'SpecularWhiteLevel',
+        'title' => 'Specular White Level',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'exiftoolDOMNode' => 'Canon:SpecularWhiteLevel',
       ),
     ),
   ),

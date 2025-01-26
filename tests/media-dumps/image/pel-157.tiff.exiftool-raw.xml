@@ -1,25 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 
-<rdf:Description rdf:about='test/media-samples/image/pel-157.tiff'
-  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
-  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
-  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
-  xmlns:File='http://ns.exiftool.ca/File/1.0/'
-  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
-  xmlns:XMP-rdf='http://ns.exiftool.ca/XMP/XMP-rdf/1.0/'
-  xmlns:XMP-xmp='http://ns.exiftool.ca/XMP/XMP-xmp/1.0/'
-  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
-  xmlns:GPS='http://ns.exiftool.ca/EXIF/GPS/1.0/'
-  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
- <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+<rdf:Description rdf:about='tests/media-samples/image/pel-157.tiff'
+  xmlns:et='http://ns.exiftool.org/1.0/' et:toolkit='Image::ExifTool 13.10'
+  xmlns:ExifTool='http://ns.exiftool.org/ExifTool/1.0/'
+  xmlns:System='http://ns.exiftool.org/File/System/1.0/'
+  xmlns:File='http://ns.exiftool.org/File/1.0/'
+  xmlns:IFD0='http://ns.exiftool.org/EXIF/IFD0/1.0/'
+  xmlns:XMP-rdf='http://ns.exiftool.org/XMP/XMP-rdf/1.0/'
+  xmlns:XMP-xmp='http://ns.exiftool.org/XMP/XMP-xmp/1.0/'
+  xmlns:ExifIFD='http://ns.exiftool.org/EXIF/ExifIFD/1.0/'
+  xmlns:GPS='http://ns.exiftool.org/EXIF/GPS/1.0/'
+  xmlns:Samsung='http://ns.exiftool.org/MakerNotes/Samsung/1.0/'
+  xmlns:Composite='http://ns.exiftool.org/Composite/1.0/'>
+ <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>13.10</ExifTool:ExifToolVersion>
  <System:FileName et:id='FileName' et:table='Extra'>pel-157.tiff</System:FileName>
- <System:Directory et:id='Directory' et:table='Extra'>test/media-samples/image</System:Directory>
+ <System:Directory et:id='Directory' et:table='Extra'>tests/media-samples/image</System:Directory>
  <System:FileSize et:id='FileSize' et:table='Extra'>4239700</System:FileSize>
- <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2021:12:17 13:35:38+00:00</System:FileModifyDate>
- <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2021:12:17 13:35:37+00:00</System:FileAccessDate>
- <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2021:12:17 13:35:38+00:00</System:FileInodeChangeDate>
- <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+ <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2023:07:08 18:22:02+02:00</System:FileModifyDate>
+ <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2023:12:11 19:37:45+01:00</System:FileAccessDate>
+ <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2023:07:08 18:22:02+02:00</System:FileInodeChangeDate>
+ <System:FilePermissions et:id='FilePermissions' et:table='Extra'>100644</System:FilePermissions>
  <File:FileType et:id='FileType' et:table='Extra'>TIFF</File:FileType>
  <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>TIF</File:FileTypeExtension>
  <File:MIMEType et:id='MIMEType' et:table='Extra'>image/tiff</File:MIMEType>
@@ -32,11 +33,11 @@
  <IFD0:PhotometricInterpretation et:id='262' et:table='Exif::Main'>2</IFD0:PhotometricInterpretation>
  <IFD0:Make et:id='271' et:table='Exif::Main'>samsung</IFD0:Make>
  <IFD0:Model et:id='272' et:table='Exif::Main'>SM-G925F</IFD0:Model>
- <IFD0:StripOffsets et:id='273' et:table='Exif::Main' et:index='1'>(Binary data 14190 bytes, use -b option to extract)</IFD0:StripOffsets>
+ <IFD0:StripOffsets et:id='273' et:table='Exif::Main' et:index='3'>(Binary data 14190 bytes, use -b option to extract)</IFD0:StripOffsets>
  <IFD0:Orientation et:id='274' et:table='Exif::Main'>1</IFD0:Orientation>
  <IFD0:SamplesPerPixel et:id='277' et:table='Exif::Main'>4</IFD0:SamplesPerPixel>
  <IFD0:RowsPerStrip et:id='278' et:table='Exif::Main'>1</IFD0:RowsPerStrip>
- <IFD0:StripByteCounts et:id='279' et:table='Exif::Main' et:index='1'>(Binary data 9179 bytes, use -b option to extract)</IFD0:StripByteCounts>
+ <IFD0:StripByteCounts et:id='279' et:table='Exif::Main' et:index='3'>(Binary data 9179 bytes, use -b option to extract)</IFD0:StripByteCounts>
  <IFD0:XResolution et:id='282' et:table='Exif::Main'>72.009</IFD0:XResolution>
  <IFD0:YResolution et:id='283' et:table='Exif::Main'>72.009</IFD0:YResolution>
  <IFD0:PlanarConfiguration et:id='284' et:table='Exif::Main'>1</IFD0:PlanarConfiguration>
@@ -46,6 +47,16 @@
  <IFD0:Predictor et:id='317' et:table='Exif::Main'>2</IFD0:Predictor>
  <IFD0:ExtraSamples et:id='338' et:table='Exif::Main'>2</IFD0:ExtraSamples>
  <IFD0:YCbCrPositioning et:id='531' et:table='Exif::Main'>1</IFD0:YCbCrPositioning>
+ <IFD0:ThumbnailData et:id='20507' et:table='Exif::Main'>(Binary data 4574 bytes, use -b option to extract)</IFD0:ThumbnailData>
+ <IFD0:ThumbnailImageWidth et:id='20512' et:table='Exif::Main'>480</IFD0:ThumbnailImageWidth>
+ <IFD0:ThumbnailImageHeight et:id='20513' et:table='Exif::Main'>272</IFD0:ThumbnailImageHeight>
+ <IFD0:ThumbnailCompression et:id='20515' et:table='Exif::Main'>6</IFD0:ThumbnailCompression>
+ <IFD0:ThumbnailOrientation et:id='20521' et:table='Exif::Main'>1</IFD0:ThumbnailOrientation>
+ <IFD0:ThumbnailResolutionX et:id='20525' et:table='Exif::Main'>72</IFD0:ThumbnailResolutionX>
+ <IFD0:ThumbnailResolutionY et:id='20526' et:table='Exif::Main'>72</IFD0:ThumbnailResolutionY>
+ <IFD0:ThumbnailResolutionUnit et:id='20528' et:table='Exif::Main'>2</IFD0:ThumbnailResolutionUnit>
+ <IFD0:LuminanceTable et:id='20624' et:table='Exif::Main'>3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 4 3 3 3 3 3 3 4 5 3 3 3 3 3 4 5 6 3 3 3 3 5 6 7 8 3 3 3 4 6 8 9 12 3 3 4 5 7 9 12 15 4 4 5 6 8 12 15 21</IFD0:LuminanceTable>
+ <IFD0:ChrominanceTable et:id='20625' et:table='Exif::Main'>3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 4 3 3 3 3 3 3 4 5 3 3 3 3 3 4 5 6 3 3 3 3 5 6 7 8 3 3 3 4 6 8 9 12 3 3 4 5 7 9 12 15 4 4 5 6 8 12 15 21</IFD0:ChrominanceTable>
  <IFD0:ExposureTime et:id='33434' et:table='Exif::Main'>0.0003521126761</IFD0:ExposureTime>
  <IFD0:FNumber et:id='33437' et:table='Exif::Main'>1.9</IFD0:FNumber>
  <IFD0:ExposureProgram et:id='34850' et:table='Exif::Main'>2</IFD0:ExposureProgram>
@@ -105,21 +116,26 @@ AgIAAA==
  <GPS:GPSAltitudeRef et:id='5' et:table='GPS::Main'>0</GPS:GPSAltitudeRef>
  <GPS:GPSAltitude et:id='6' et:table='GPS::Main'>576</GPS:GPSAltitude>
  <GPS:GPSDateStamp et:id='29' et:table='GPS::Main'>2020:03:27</GPS:GPSDateStamp>
- <Composite:Aperture et:id='Aperture' et:table='Composite'>1.9</Composite:Aperture>
- <Composite:GPSAltitude et:id='GPSAltitude' et:table='Composite'>576</Composite:GPSAltitude>
- <Composite:GPSLatitude et:id='GPSLatitude' et:table='Composite'>42.6983333333333</Composite:GPSLatitude>
- <Composite:GPSLongitude et:id='GPSLongitude' et:table='Composite'>23.3641666666667</Composite:GPSLongitude>
- <Composite:GPSPosition et:id='GPSPosition' et:table='Composite'>42.6983333333333 23.3641666666667</Composite:GPSPosition>
- <Composite:ImageSize et:id='ImageSize' et:table='Composite'>3264x1836</Composite:ImageSize>
- <Composite:Megapixels et:id='Megapixels' et:table='Composite'>5.992704</Composite:Megapixels>
- <Composite:ScaleFactor35efl et:id='ScaleFactor35efl' et:table='Composite'>6.51162790697674</Composite:ScaleFactor35efl>
- <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.0003521126761</Composite:ShutterSpeed>
- <Composite:SubSecCreateDate et:id='SubSecCreateDate' et:table='Composite'>2020:03:27 14:08:39.00</Composite:SubSecCreateDate>
- <Composite:SubSecDateTimeOriginal et:id='SubSecDateTimeOriginal' et:table='Composite'>2020:03:27 14:08:39.00</Composite:SubSecDateTimeOriginal>
- <Composite:CircleOfConfusion et:id='CircleOfConfusion' et:table='Composite'>0.00461424716800451</Composite:CircleOfConfusion>
- <Composite:FOV et:id='FOV' et:table='Composite'>65.4705078447874</Composite:FOV>
- <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>28</Composite:FocalLength35efl>
- <Composite:HyperfocalDistance et:id='HyperfocalDistance' et:table='Composite'>2.10902853554266</Composite:HyperfocalDistance>
- <Composite:LightValue et:id='LightValue' et:table='Composite'>14.645602146213</Composite:LightValue>
+ <Samsung:MakerNoteVersion et:id='1' et:table='Samsung::Type2'>0100</Samsung:MakerNoteVersion>
+ <Samsung:DeviceType et:id='2' et:table='Samsung::Type2'>73728</Samsung:DeviceType>
+ <Samsung:RawDataByteOrder et:id='64' et:table='Samsung::Type2'>0</Samsung:RawDataByteOrder>
+ <Samsung:RawDataCFAPattern et:id='80' et:table='Samsung::Type2'>1</Samsung:RawDataCFAPattern>
+ <Samsung:FaceDetect et:id='256' et:table='Samsung::Type2'>0</Samsung:FaceDetect>
+ <Composite:Aperture et:id='Exif-Aperture' et:table='Composite'>1.9</Composite:Aperture>
+ <Composite:ImageSize et:id='Exif-ImageSize' et:table='Composite'>3264 1836</Composite:ImageSize>
+ <Composite:Megapixels et:id='Exif-Megapixels' et:table='Composite'>5.992704</Composite:Megapixels>
+ <Composite:ScaleFactor35efl et:id='Exif-ScaleFactor35efl' et:table='Composite'>6.51162790697674</Composite:ScaleFactor35efl>
+ <Composite:ShutterSpeed et:id='Exif-ShutterSpeed' et:table='Composite'>0.0003521126761</Composite:ShutterSpeed>
+ <Composite:SubSecCreateDate et:id='Exif-SubSecCreateDate' et:table='Composite'>2020:03:27 14:08:39.00</Composite:SubSecCreateDate>
+ <Composite:SubSecDateTimeOriginal et:id='Exif-SubSecDateTimeOriginal' et:table='Composite'>2020:03:27 14:08:39.00</Composite:SubSecDateTimeOriginal>
+ <Composite:GPSAltitude et:id='GPS-GPSAltitude' et:table='Composite'>576</Composite:GPSAltitude>
+ <Composite:GPSLatitude et:id='GPS-GPSLatitude' et:table='Composite'>42.6983333333333</Composite:GPSLatitude>
+ <Composite:GPSLongitude et:id='GPS-GPSLongitude' et:table='Composite'>23.3641666666667</Composite:GPSLongitude>
+ <Composite:CircleOfConfusion et:id='Exif-CircleOfConfusion' et:table='Composite'>0.00461424716800451</Composite:CircleOfConfusion>
+ <Composite:FOV et:id='Exif-FOV' et:table='Composite'>65.4705078447874</Composite:FOV>
+ <Composite:FocalLength35efl et:id='Exif-FocalLength35efl' et:table='Composite'>28</Composite:FocalLength35efl>
+ <Composite:GPSPosition et:id='Exif-GPSPosition' et:table='Composite'>42.6983333333333 23.3641666666667</Composite:GPSPosition>
+ <Composite:HyperfocalDistance et:id='Exif-HyperfocalDistance' et:table='Composite'>2.10902853554266</Composite:HyperfocalDistance>
+ <Composite:LightValue et:id='Exif-LightValue' et:table='Composite'>14.645602146213</Composite:LightValue>
 </rdf:Description>
 </rdf:RDF>

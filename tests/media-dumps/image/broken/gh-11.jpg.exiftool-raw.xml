@@ -1,28 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
 
-<rdf:Description rdf:about='test/media-samples/image/broken/gh-11.jpg'
-  xmlns:et='http://ns.exiftool.ca/1.0/' et:toolkit='Image::ExifTool 11.16'
-  xmlns:ExifTool='http://ns.exiftool.ca/ExifTool/1.0/'
-  xmlns:System='http://ns.exiftool.ca/File/System/1.0/'
-  xmlns:File='http://ns.exiftool.ca/File/1.0/'
-  xmlns:JFIF='http://ns.exiftool.ca/JFIF/JFIF/1.0/'
-  xmlns:IFD0='http://ns.exiftool.ca/EXIF/IFD0/1.0/'
-  xmlns:ExifIFD='http://ns.exiftool.ca/EXIF/ExifIFD/1.0/'
-  xmlns:Sony='http://ns.exiftool.ca/MakerNotes/Sony/1.0/'
-  xmlns:Composite='http://ns.exiftool.ca/Composite/1.0/'>
- <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>11.16</ExifTool:ExifToolVersion>
+<rdf:Description rdf:about='tests/media-samples/image/broken/gh-11.jpg'
+  xmlns:et='http://ns.exiftool.org/1.0/' et:toolkit='Image::ExifTool 13.10'
+  xmlns:ExifTool='http://ns.exiftool.org/ExifTool/1.0/'
+  xmlns:System='http://ns.exiftool.org/File/System/1.0/'
+  xmlns:File='http://ns.exiftool.org/File/1.0/'
+  xmlns:JFIF='http://ns.exiftool.org/JFIF/JFIF/1.0/'
+  xmlns:IFD0='http://ns.exiftool.org/EXIF/IFD0/1.0/'
+  xmlns:ExifIFD='http://ns.exiftool.org/EXIF/ExifIFD/1.0/'
+  xmlns:Sony='http://ns.exiftool.org/MakerNotes/Sony/1.0/'
+  xmlns:Composite='http://ns.exiftool.org/Composite/1.0/'>
+ <ExifTool:ExifToolVersion et:id='ExifToolVersion' et:table='Extra'>13.10</ExifTool:ExifToolVersion>
  <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Possibly incorrect maker notes offsets (fix by -314?)</ExifTool:Warning>
  <ExifTool:Warning et:id='Warning' et:table='Extra'>[minor] Bad offset for MakerNotes tag 0xa400</ExifTool:Warning>
  <ExifTool:Warning et:id='Warning' et:table='Extra'>InteropIFD pointer references previous ExifIFD directory</ExifTool:Warning>
  <ExifTool:Warning et:id='Warning' et:table='Extra'>Bad IFD1 directory</ExifTool:Warning>
  <System:FileName et:id='FileName' et:table='Extra'>gh-11.jpg</System:FileName>
- <System:Directory et:id='Directory' et:table='Extra'>test/media-samples/image/broken</System:Directory>
+ <System:Directory et:id='Directory' et:table='Extra'>tests/media-samples/image/broken</System:Directory>
  <System:FileSize et:id='FileSize' et:table='Extra'>4304</System:FileSize>
- <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2021:12:17 13:35:37+00:00</System:FileModifyDate>
- <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2021:12:17 13:35:37+00:00</System:FileAccessDate>
- <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2021:12:17 13:35:37+00:00</System:FileInodeChangeDate>
- <System:FilePermissions et:id='FilePermissions' et:table='Extra'>644</System:FilePermissions>
+ <System:FileModifyDate et:id='FileModifyDate' et:table='Extra'>2021:12:18 14:44:08+01:00</System:FileModifyDate>
+ <System:FileAccessDate et:id='FileAccessDate' et:table='Extra'>2023:12:14 12:41:07+01:00</System:FileAccessDate>
+ <System:FileInodeChangeDate et:id='FileInodeChangeDate' et:table='Extra'>2021:12:18 14:44:08+01:00</System:FileInodeChangeDate>
+ <System:FilePermissions et:id='FilePermissions' et:table='Extra'>100644</System:FilePermissions>
  <File:FileType et:id='FileType' et:table='Extra'>JPEG</File:FileType>
  <File:FileTypeExtension et:id='FileTypeExtension' et:table='Extra'>JPG</File:FileTypeExtension>
  <File:MIMEType et:id='MIMEType' et:table='Extra'>image/jpeg</File:MIMEType>
@@ -85,11 +85,11 @@
  <Sony:ReleaseMode et:id='45129' et:table='Sony::Main'>0</Sony:ReleaseMode>
  <Sony:SequenceNumber et:id='45130' et:table='Sony::Main'>0</Sony:SequenceNumber>
  <Sony:Anti-Blur et:id='45131' et:table='Sony::Main'>0</Sony:Anti-Blur>
- <Composite:Aperture et:id='Aperture' et:table='Composite'>2.8</Composite:Aperture>
- <Composite:ImageSize et:id='ImageSize' et:table='Composite'>50x38</Composite:ImageSize>
- <Composite:Megapixels et:id='Megapixels' et:table='Composite'>0.0019</Composite:Megapixels>
- <Composite:ShutterSpeed et:id='ShutterSpeed' et:table='Composite'>0.002</Composite:ShutterSpeed>
- <Composite:FocalLength35efl et:id='FocalLength35efl' et:table='Composite'>6.3</Composite:FocalLength35efl>
- <Composite:LightValue et:id='LightValue' et:table='Composite'>11.9366379390026</Composite:LightValue>
+ <Composite:Aperture et:id='Exif-Aperture' et:table='Composite'>2.8</Composite:Aperture>
+ <Composite:ImageSize et:id='Exif-ImageSize' et:table='Composite'>50 38</Composite:ImageSize>
+ <Composite:Megapixels et:id='Exif-Megapixels' et:table='Composite'>0.0019</Composite:Megapixels>
+ <Composite:ShutterSpeed et:id='Exif-ShutterSpeed' et:table='Composite'>0.002</Composite:ShutterSpeed>
+ <Composite:FocalLength35efl et:id='Exif-FocalLength35efl' et:table='Composite'>6.3</Composite:FocalLength35efl>
+ <Composite:LightValue et:id='Exif-LightValue' et:table='Composite'>11.9366379390026</Composite:LightValue>
 </rdf:Description>
 </rdf:RDF>

@@ -8,7 +8,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: CanonVRD
-        xpath: '//table[@name=''CanonVRD::CropInfo'']/tag'
+        xpath: "//table[@name='CanonVRD::CropInfo']/tag"
 items:
     0:
         exiftool:
@@ -69,14 +69,22 @@ items:
                 writable: true
                 DOMNode: 'CanonVRD:CropHeight'
                 desc: 'Crop Height'
-    8:
+    7:
         exiftool:
             -
                 name: CropRotation
-                type: double
+                type: int32s
                 writable: true
                 DOMNode: 'CanonVRD:CropRotation'
                 desc: 'Crop Rotation'
+    8:
+        exiftool:
+            -
+                name: CropAngle
+                type: double
+                writable: true
+                DOMNode: 'CanonVRD:CropAngle'
+                desc: 'Crop Angle'
     10:
         exiftool:
             -

@@ -592,8 +592,8 @@ class ColorData7 extends CollectionBase {
         array (
           'mapping' =>
           array (
-            10 => '10 (1DX/5DmkIII/6D/70D/100D/650D/700D/M)',
-            11 => '11 (7DmkII/750D/760D)',
+            10 => '10 (1DX/5DmkIII/6D/70D/100D/650D/700D/M/M2)',
+            11 => '11 (7DmkII/750D/760D/8000D)',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:ColorDataVersion',

@@ -285,6 +285,10 @@ class Main extends CollectionBase {
     array (
       0 => 16392,
     ),
+    'RawDataLength' =>
+    array (
+      0 => 130,
+    ),
     'RawDataOffset' =>
     array (
       0 => 129,
@@ -530,7 +534,11 @@ class Main extends CollectionBase {
           array (
             1042 => 'EOS M50 / Kiss M',
             2049 => 'PowerShot SX740 HS',
+            2052 => 'PowerShot G5 X Mark II',
             2053 => 'PowerShot SX70 HS',
+            2056 => 'PowerShot G7 X Mark III',
+            2065 => 'EOS M6 Mark II',
+            2066 => 'EOS M200',
             16842752 => 'PowerShot A30',
             17039360 => 'PowerShot S300 / Digital IXUS 300 / IXY Digital 300',
             17170432 => 'PowerShot A20',
@@ -695,6 +703,7 @@ class Main extends CollectionBase {
             52822016 => 'PowerShot A3400 IS',
             52887552 => 'PowerShot A2400 IS',
             52953088 => 'PowerShot A2300',
+            53608448 => 'PowerShot S100V',
             53673984 => 'PowerShot G15',
             53739520 => 'PowerShot SX50 HS',
             53805056 => 'PowerShot SX160 IS',
@@ -753,7 +762,7 @@ class Main extends CollectionBase {
             67239936 => 'PowerShot SX420 IS',
             67305472 => 'PowerShot ELPH 190 IS / IXUS 180 / IXY 190',
             67371008 => 'PowerShot G1',
-            67371009 => 'IXY 180',
+            67371009 => 'PowerShot ELPH 180 IS / IXUS 175 / IXY 180',
             67436544 => 'PowerShot SX720 HS',
             67502080 => 'PowerShot SX620 HS',
             67567616 => 'EOS M6',
@@ -837,7 +846,7 @@ class Main extends CollectionBase {
             2147484453 => 'EOS 70D',
             2147484454 => 'EOS Rebel T5i / 700D / Kiss X7i',
             2147484455 => 'EOS Rebel T5 / 1200D / Kiss X70 / Hi',
-            2147484456 => 'EOS-1D X MARK II',
+            2147484456 => 'EOS-1D X Mark II',
             2147484465 => 'EOS M',
             2147484486 => 'EOS Rebel SL1 / 100D / Kiss X7',
             2147484487 => 'EOS Rebel T6s / 760D / 8000D',
@@ -852,9 +861,30 @@ class Main extends CollectionBase {
             2147484678 => 'EOS 6D Mark II',
             2147484680 => 'EOS 77D / 9000D',
             2147484695 => 'EOS Rebel SL2 / 200D / Kiss X9',
+            2147484705 => 'EOS R5',
             2147484706 => 'EOS Rebel T100 / 4000D / 3000D',
-            2147484708 => 'EOR R',
+            2147484708 => 'EOS R',
+            2147484712 => 'EOS-1D X Mark III',
             2147484722 => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
+            2147484723 => 'EOS RP',
+            2147484725 => 'EOS Rebel T8i / 850D / X10i',
+            2147484726 => 'EOS SL3 / 250D / Kiss X10',
+            2147484727 => 'EOS 90D',
+            2147484752 => 'EOS R3',
+            2147484755 => 'EOS R6',
+            2147484772 => 'EOS R7',
+            2147484773 => 'EOS R10',
+            2147484775 => 'PowerShot ZOOM',
+            2147484776 => 'EOS M50 Mark II / Kiss M2',
+            2147484800 => 'EOS R50',
+            2147484801 => 'EOS R6 Mark II',
+            2147484807 => 'EOS R8',
+            2147484817 => 'PowerShot V10',
+            2147484821 => 'EOS R1',
+            2147484822 => 'R5 Mark II',
+            2147484824 => 'EOS R100',
+            2147484960 => 'EOS D2000C',
+            2147485024 => 'EOS D6000C',
           ),
         ),
         'collection' => 'Tiff\\Tag',
@@ -1005,13 +1035,13 @@ class Main extends CollectionBase {
           'mapping' =>
           array (
             0 => '(none)',
-            1 => 'People',
-            2 => 'Scenery',
-            4 => 'Events',
-            8 => 'User 1',
-            16 => 'User 2',
-            32 => 'User 3',
-            64 => 'To Do',
+            'Bit0' => 'People',
+            'Bit1' => 'Scenery',
+            'Bit2' => 'Events',
+            'Bit3' => 'User 1',
+            'Bit4' => 'User 2',
+            'Bit5' => 'User 3',
+            'Bit6' => 'To Do',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:Categories',
@@ -1124,6 +1154,20 @@ class Main extends CollectionBase {
           0 => 7,
         ),
         'exiftoolDOMNode' => 'Canon:RawDataOffset',
+      ),
+    ),
+    130 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'RawDataLength',
+        'title' => 'Raw Data Length',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'Canon:RawDataLength',
       ),
     ),
     131 =>
@@ -1411,6 +1455,7 @@ class Main extends CollectionBase {
           array (
             1 => 'sRGB',
             2 => 'Adobe RGB',
+            65535 => 'n/a',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:ColorSpace',
@@ -1771,6 +1816,10 @@ class Main extends CollectionBase {
     'Canon:PictureStyleUserDef' =>
     array (
       0 => 16392,
+    ),
+    'Canon:RawDataLength' =>
+    array (
+      0 => 130,
     ),
     'Canon:RawDataOffset' =>
     array (

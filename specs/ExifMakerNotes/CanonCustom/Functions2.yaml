@@ -7,7 +7,7 @@ defaultItemCollection: Tiff\Tag
 compiler:
     exiftool:
         g1: CanonCustom
-        xpath: '//table[@name=''CanonCustom::Functions2'']/tag'
+        xpath: "//table[@name='CanonCustom::Functions2']/tag"
 items:
     257:
         entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\ExposureLevelIncrements
@@ -97,6 +97,17 @@ items:
                 DOMNode: 'CanonCustom:AEBShotCount'
                 desc: 'AEB Shot Count'
                 values:
+                    2: '2 shots'
+                    3: '3 shots'
+                    5: '5 shots'
+                    7: '7 shots'
+            -
+                name: AEBShotCount
+                type: int32s
+                writable: true
+                DOMNode: 'CanonCustom:AEBShotCount'
+                desc: 'AEB Shot Count'
+                values:
                     - '3 shots'
                     - '2 shots'
                     - '5 shots'
@@ -142,6 +153,12 @@ items:
             -
                 name: UsableShootingModes
                 type: int32s
+                writable: true
+                DOMNode: 'CanonCustom:UsableShootingModes'
+                desc: 'Usable Shooting Modes'
+            -
+                name: UsableShootingModes
+                type: int32s
                 count: 2
                 writable: true
                 DOMNode: 'CanonCustom:UsableShootingModes'
@@ -152,6 +169,12 @@ items:
     266:
         entryClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2\UsableShootingModes
         exiftool:
+            -
+                name: UsableMeteringModes
+                type: int32s
+                writable: true
+                DOMNode: 'CanonCustom:UsableMeteringModes'
+                desc: 'Usable Metering Modes'
             -
                 name: UsableMeteringModes
                 type: int32s
@@ -355,10 +378,10 @@ items:
                 DOMNode: 'CanonCustom:AELockMeterModeAfterFocus'
                 desc: 'AE Lock Meter Mode After Focus'
                 values:
-                    1: Evaluative
-                    2: Partial
-                    4: Spot
-                    8: Center-weighted
+                    Bit0: Evaluative
+                    Bit1: Partial
+                    Bit2: Spot
+                    Bit3: Center-weighted
     513:
         exiftool:
             -
@@ -512,11 +535,13 @@ items:
                 DOMNode: 'CanonCustom:ViewfinderWarnings'
                 desc: 'Viewfinder Warnings'
                 values:
-                    1: Monochrome
-                    2: 'WB corrected'
-                    4: 'One-touch image quality'
-                    8: 'ISO expansion'
-                    16: 'Spot metering'
+                    Bit0: Monochrome
+                    Bit1: 'WB corrected'
+                    Bit2: 'One-touch image quality'
+                    Bit3: 'ISO expansion'
+                    Bit4: 'Spot metering'
+                    Bit6: 'Noise reduction'
+                    Bit7: HDR
     1035:
         exiftool:
             -
@@ -1011,6 +1036,23 @@ items:
             -
                 name: ContinuousShootingSpeed
                 type: int32s
+                count: 6
+                writable: true
+                DOMNode: 'CanonCustom:ContinuousShootingSpeed'
+                desc: 'Continuous Shooting Speed'
+                values:
+                    - Disable
+                    - Enable
+            -
+                name: ContinuousShootingSpeed
+                type: int32s
+                count: 5
+                writable: true
+                DOMNode: 'CanonCustom:ContinuousShootingSpeed'
+                desc: 'Continuous Shooting Speed'
+            -
+                name: ContinuousShootingSpeed
+                type: int32s
                 count: 3
                 writable: true
                 DOMNode: 'CanonCustom:ContinuousShootingSpeed'
@@ -1036,6 +1078,12 @@ items:
             -
                 name: RestrictDriveModes
                 type: int32s
+                writable: true
+                DOMNode: 'CanonCustom:RestrictDriveModes'
+                desc: 'Restrict Drive Modes'
+            -
+                name: RestrictDriveModes
+                type: int32s
                 count: 2
                 writable: true
                 DOMNode: 'CanonCustom:RestrictDriveModes'
@@ -1056,6 +1104,17 @@ items:
                     - 'AE lock/AF'
                     - 'AF/AF lock, No AE lock'
                     - 'AE/AF, No AE lock'
+            -
+                name: Shutter-AELock
+                type: int32s
+                writable: true
+                DOMNode: 'CanonCustom:Shutter-AELock'
+                desc: 'Shutter-AE Lock'
+                values:
+                    '0 0': 'AF/AE lock'
+                    '1 0': 'AE lock/AF'
+                    '2 0': 'AF/AF lock, No AE lock'
+                    '3 0': 'AE/AF, No AE lock'
             -
                 name: AFAndMeteringButtons
                 type: int32s
@@ -1185,6 +1244,12 @@ items:
                     - 'LCD monitor On/Off'
                     - 'Menu display'
                     - Disabled
+            -
+                name: SetButtonWhenShooting
+                type: int32s
+                writable: true
+                DOMNode: 'CanonCustom:SetButtonWhenShooting'
+                desc: 'Set Button When Shooting'
             -
                 name: SetButtonWhenShooting
                 type: int32s
@@ -1458,6 +1523,13 @@ items:
             -
                 name: TimerLength
                 type: int32s
+                count: 3
+                writable: true
+                DOMNode: 'CanonCustom:TimerLength'
+                desc: 'Timer Length'
+            -
+                name: TimerLength
+                type: int32s
                 count: 4
                 writable: true
                 DOMNode: 'CanonCustom:TimerLength'
@@ -1547,6 +1619,8 @@ items:
                 values:
                     - 'Cancel selected'
                     - 'Erase selected'
+                    - 'Erase RAW selected'
+                    - 'Erase non-RAW selected'
     2068:
         exiftool:
             -
@@ -1569,3 +1643,14 @@ items:
                 values:
                     - Disable
                     - Enable
+    2070:
+        exiftool:
+            -
+                name: AudioCompression
+                type: int32s
+                writable: true
+                DOMNode: 'CanonCustom:AudioCompression'
+                desc: 'Audio Compression'
+                values:
+                    - Enable
+                    - Disable

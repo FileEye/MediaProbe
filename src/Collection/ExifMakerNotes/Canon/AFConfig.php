@@ -70,6 +70,10 @@ class AFConfig extends CollectionBase {
     array (
       0 => 10,
     ),
+    'EyeDetection' =>
+    array (
+      0 => 24,
+    ),
     'InitialAFPointInServo' =>
     array (
       0 => 19,
@@ -93,6 +97,10 @@ class AFConfig extends CollectionBase {
     'SelectAFAreaSelectionMode' =>
     array (
       0 => 12,
+    ),
+    'SubjectToDetect' =>
+    array (
+      0 => 20,
     ),
     'USMLensElectronicMF' =>
     array (
@@ -240,6 +248,27 @@ class AFConfig extends CollectionBase {
         array (
           'mapping' =>
           array (
+            0 => 'Disable After One-Shot',
+            1 => 'One-Shot -> Enabled',
+            2 => 'One-Shot -> Enabled (magnify)',
+            3 => 'Disable in AF Mode',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:USMLensElectronicMF',
+      ),
+      1 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'USMLensElectronicMF',
+        'title' => 'USM Lens Electronic MF',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
             0 => 'Enable After AF',
             1 => 'Disable After AF',
             2 => 'Disable in AF Mode',
@@ -266,6 +295,7 @@ class AFConfig extends CollectionBase {
             0 => 'Enable',
             1 => 'Disable',
             2 => 'IR AF Assist Beam Only',
+            3 => 'LED AF Assist Beam Only',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:AFAssistBeam',
@@ -352,12 +382,12 @@ class AFConfig extends CollectionBase {
         array (
           'mapping' =>
           array (
-            1 => 'Single-point AF',
-            2 => 'Auto',
-            4 => 'Zone AF',
-            8 => 'AF Point Expansion (4 point)',
-            16 => 'Spot AF',
-            32 => 'AF Point Expansion (8 point)',
+            'Bit0' => 'Single-point AF',
+            'Bit1' => 'Auto',
+            'Bit2' => 'Zone AF',
+            'Bit3' => 'AF Point Expansion (4 point)',
+            'Bit4' => 'Spot AF',
+            'Bit5' => 'AF Point Expansion (8 point)',
           ),
         ),
         'exiftoolDOMNode' => 'Canon:SelectAFAreaSelectionMode',
@@ -523,6 +553,52 @@ class AFConfig extends CollectionBase {
         'exiftoolDOMNode' => 'Canon:InitialAFPointInServo',
       ),
     ),
+    20 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'SubjectToDetect',
+        'title' => 'Subject To Detect',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'None',
+            1 => 'People',
+            2 => 'Animals',
+            3 => 'Vehicles',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:SubjectToDetect',
+      ),
+    ),
+    24 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'EyeDetection',
+        'title' => 'Eye Detection',
+        'format' =>
+        array (
+          0 => 9,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:EyeDetection',
+      ),
+    ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
@@ -570,6 +646,10 @@ class AFConfig extends CollectionBase {
     array (
       0 => 10,
     ),
+    'Canon:EyeDetection' =>
+    array (
+      0 => 24,
+    ),
     'Canon:InitialAFPointInServo' =>
     array (
       0 => 19,
@@ -593,6 +673,10 @@ class AFConfig extends CollectionBase {
     'Canon:SelectAFAreaSelectionMode' =>
     array (
       0 => 12,
+    ),
+    'Canon:SubjectToDetect' =>
+    array (
+      0 => 20,
     ),
     'Canon:USMLensElectronicMF' =>
     array (

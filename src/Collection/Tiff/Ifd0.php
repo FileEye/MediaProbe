@@ -95,6 +95,10 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50779,
     ),
+    'CalibrationIlluminant3' =>
+    array (
+      0 => 52529,
+    ),
     'CameraCalibration1' =>
     array (
       0 => 50723,
@@ -102,6 +106,10 @@ class Ifd0 extends CollectionBase {
     'CameraCalibration2' =>
     array (
       0 => 50724,
+    ),
+    'CameraCalibration3' =>
+    array (
+      0 => 52530,
     ),
     'CameraCalibrationSig' =>
     array (
@@ -130,6 +138,10 @@ class Ifd0 extends CollectionBase {
     'ColorMatrix2' =>
     array (
       0 => 50722,
+    ),
+    'ColorMatrix3' =>
+    array (
+      0 => 52531,
     ),
     'ColorimetricReference' =>
     array (
@@ -175,9 +187,33 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 51110,
     ),
+    'DepthFar' =>
+    array (
+      0 => 51179,
+    ),
+    'DepthFormat' =>
+    array (
+      0 => 51177,
+    ),
+    'DepthMeasureType' =>
+    array (
+      0 => 51181,
+    ),
+    'DepthNear' =>
+    array (
+      0 => 51178,
+    ),
+    'DepthUnits' =>
+    array (
+      0 => 51180,
+    ),
     'DocumentName' =>
     array (
       0 => 269,
+    ),
+    'EnhanceParams' =>
+    array (
+      0 => 51182,
     ),
     'ExifIFD' =>
     array (
@@ -195,9 +231,21 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50965,
     ),
+    'ForwardMatrix3' =>
+    array (
+      0 => 52532,
+    ),
     'FrameRate' =>
     array (
       0 => 51044,
+    ),
+    'GDALMetadata' =>
+    array (
+      0 => 42112,
+    ),
+    'GDALNoData' =>
+    array (
+      0 => 42113,
     ),
     'GPS' =>
     array (
@@ -231,6 +279,18 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 33723,
     ),
+    'IlluminantData1' =>
+    array (
+      0 => 52533,
+    ),
+    'IlluminantData2' =>
+    array (
+      0 => 52534,
+    ),
+    'IlluminantData3' =>
+    array (
+      0 => 52535,
+    ),
     'ImageDescription' =>
     array (
       0 => 270,
@@ -239,9 +299,17 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 257,
     ),
+    'ImageSequenceInfo' =>
+    array (
+      0 => 52548,
+    ),
     'ImageSourceData' =>
     array (
       0 => 37724,
+    ),
+    'ImageStats' =>
+    array (
+      0 => 52550,
     ),
     'ImageWidth' =>
     array (
@@ -250,6 +318,22 @@ class Ifd0 extends CollectionBase {
     'InkSet' =>
     array (
       0 => 332,
+    ),
+    'IntergraphMatrix' =>
+    array (
+      0 => 33920,
+    ),
+    'JXLDecodeSpeed' =>
+    array (
+      0 => 52555,
+    ),
+    'JXLDistance' =>
+    array (
+      0 => 52553,
+    ),
+    'JXLEffort' =>
+    array (
+      0 => 52554,
     ),
     'LinearResponseLimit' =>
     array (
@@ -278,6 +362,14 @@ class Ifd0 extends CollectionBase {
     'Model' =>
     array (
       0 => 272,
+    ),
+    'ModelTiePoint' =>
+    array (
+      0 => 33922,
+    ),
+    'ModelTransform' =>
+    array (
+      0 => 34264,
     ),
     'ModifyDate' =>
     array (
@@ -338,6 +430,10 @@ class Ifd0 extends CollectionBase {
     'PhotometricInterpretation' =>
     array (
       0 => 262,
+    ),
+    'PixelScale' =>
+    array (
+      0 => 33550,
     ),
     'PlanarConfiguration' =>
     array (
@@ -401,9 +497,21 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50942,
     ),
+    'ProfileDynamicRange' =>
+    array (
+      0 => 52551,
+    ),
     'ProfileEmbedPolicy' =>
     array (
       0 => 50941,
+    ),
+    'ProfileGainTableMap2' =>
+    array (
+      0 => 52544,
+    ),
+    'ProfileGroupName' =>
+    array (
+      0 => 52552,
     ),
     'ProfileHueSatMapData1' =>
     array (
@@ -412,6 +520,10 @@ class Ifd0 extends CollectionBase {
     'ProfileHueSatMapData2' =>
     array (
       0 => 50939,
+    ),
+    'ProfileHueSatMapData3' =>
+    array (
+      0 => 52537,
     ),
     'ProfileHueSatMapDims' =>
     array (
@@ -441,6 +553,10 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50940,
     ),
+    'RGBTables' =>
+    array (
+      0 => 52543,
+    ),
     'Rating' =>
     array (
       0 => 18246,
@@ -469,6 +585,10 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50726,
     ),
+    'ReductionMatrix3' =>
+    array (
+      0 => 52538,
+    ),
     'ReelName' =>
     array (
       0 => 51081,
@@ -484,6 +604,10 @@ class Ifd0 extends CollectionBase {
     'RowsPerStrip' =>
     array (
       0 => 278,
+    ),
+    'SEAL' =>
+    array (
+      0 => 52897,
     ),
     'SEMInfo' =>
     array (
@@ -903,6 +1027,10 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50779,
     ),
+    'IFD0:CalibrationIlluminant3' =>
+    array (
+      0 => 52529,
+    ),
     'IFD0:CameraCalibration1' =>
     array (
       0 => 50723,
@@ -910,6 +1038,10 @@ class Ifd0 extends CollectionBase {
     'IFD0:CameraCalibration2' =>
     array (
       0 => 50724,
+    ),
+    'IFD0:CameraCalibration3' =>
+    array (
+      0 => 52530,
     ),
     'IFD0:CameraCalibrationSig' =>
     array (
@@ -938,6 +1070,10 @@ class Ifd0 extends CollectionBase {
     'IFD0:ColorMatrix2' =>
     array (
       0 => 50722,
+    ),
+    'IFD0:ColorMatrix3' =>
+    array (
+      0 => 52531,
     ),
     'IFD0:ColorimetricReference' =>
     array (
@@ -983,9 +1119,33 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 51110,
     ),
+    'IFD0:DepthFar' =>
+    array (
+      0 => 51179,
+    ),
+    'IFD0:DepthFormat' =>
+    array (
+      0 => 51177,
+    ),
+    'IFD0:DepthMeasureType' =>
+    array (
+      0 => 51181,
+    ),
+    'IFD0:DepthNear' =>
+    array (
+      0 => 51178,
+    ),
+    'IFD0:DepthUnits' =>
+    array (
+      0 => 51180,
+    ),
     'IFD0:DocumentName' =>
     array (
       0 => 269,
+    ),
+    'IFD0:EnhanceParams' =>
+    array (
+      0 => 51182,
     ),
     'IFD0:FillOrder' =>
     array (
@@ -999,9 +1159,21 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50965,
     ),
+    'IFD0:ForwardMatrix3' =>
+    array (
+      0 => 52532,
+    ),
     'IFD0:FrameRate' =>
     array (
       0 => 51044,
+    ),
+    'IFD0:GDALMetadata' =>
+    array (
+      0 => 42112,
+    ),
+    'IFD0:GDALNoData' =>
+    array (
+      0 => 42113,
     ),
     'IFD0:GeoTiffAsciiParams' =>
     array (
@@ -1031,6 +1203,18 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 33723,
     ),
+    'IFD0:IlluminantData1' =>
+    array (
+      0 => 52533,
+    ),
+    'IFD0:IlluminantData2' =>
+    array (
+      0 => 52534,
+    ),
+    'IFD0:IlluminantData3' =>
+    array (
+      0 => 52535,
+    ),
     'IFD0:ImageDescription' =>
     array (
       0 => 270,
@@ -1039,9 +1223,17 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 257,
     ),
+    'IFD0:ImageSequenceInfo' =>
+    array (
+      0 => 52548,
+    ),
     'IFD0:ImageSourceData' =>
     array (
       0 => 37724,
+    ),
+    'IFD0:ImageStats' =>
+    array (
+      0 => 52550,
     ),
     'IFD0:ImageWidth' =>
     array (
@@ -1050,6 +1242,22 @@ class Ifd0 extends CollectionBase {
     'IFD0:InkSet' =>
     array (
       0 => 332,
+    ),
+    'IFD0:IntergraphMatrix' =>
+    array (
+      0 => 33920,
+    ),
+    'IFD0:JXLDecodeSpeed' =>
+    array (
+      0 => 52555,
+    ),
+    'IFD0:JXLDistance' =>
+    array (
+      0 => 52553,
+    ),
+    'IFD0:JXLEffort' =>
+    array (
+      0 => 52554,
     ),
     'IFD0:LinearResponseLimit' =>
     array (
@@ -1078,6 +1286,14 @@ class Ifd0 extends CollectionBase {
     'IFD0:Model' =>
     array (
       0 => 272,
+    ),
+    'IFD0:ModelTiePoint' =>
+    array (
+      0 => 33922,
+    ),
+    'IFD0:ModelTransform' =>
+    array (
+      0 => 34264,
     ),
     'IFD0:ModifyDate' =>
     array (
@@ -1139,6 +1355,10 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 262,
     ),
+    'IFD0:PixelScale' =>
+    array (
+      0 => 33550,
+    ),
     'IFD0:PlanarConfiguration' =>
     array (
       0 => 284,
@@ -1197,9 +1417,21 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50942,
     ),
+    'IFD0:ProfileDynamicRange' =>
+    array (
+      0 => 52551,
+    ),
     'IFD0:ProfileEmbedPolicy' =>
     array (
       0 => 50941,
+    ),
+    'IFD0:ProfileGainTableMap2' =>
+    array (
+      0 => 52544,
+    ),
+    'IFD0:ProfileGroupName' =>
+    array (
+      0 => 52552,
     ),
     'IFD0:ProfileHueSatMapData1' =>
     array (
@@ -1208,6 +1440,10 @@ class Ifd0 extends CollectionBase {
     'IFD0:ProfileHueSatMapData2' =>
     array (
       0 => 50939,
+    ),
+    'IFD0:ProfileHueSatMapData3' =>
+    array (
+      0 => 52537,
     ),
     'IFD0:ProfileHueSatMapDims' =>
     array (
@@ -1237,6 +1473,10 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50940,
     ),
+    'IFD0:RGBTables' =>
+    array (
+      0 => 52543,
+    ),
     'IFD0:Rating' =>
     array (
       0 => 18246,
@@ -1265,6 +1505,10 @@ class Ifd0 extends CollectionBase {
     array (
       0 => 50726,
     ),
+    'IFD0:ReductionMatrix3' =>
+    array (
+      0 => 52538,
+    ),
     'IFD0:ReelName' =>
     array (
       0 => 51081,
@@ -1280,6 +1524,10 @@ class Ifd0 extends CollectionBase {
     'IFD0:RowsPerStrip' =>
     array (
       0 => 278,
+    ),
+    'IFD0:SEAL' =>
+    array (
+      0 => 52897,
     ),
     'IFD0:SEMInfo' =>
     array (
@@ -1430,7 +1678,7 @@ class Ifd0 extends CollectionBase {
         array (
           'mapping' =>
           array (
-            0 => 'Full-resolution Image',
+            0 => 'Full-resolution image',
             1 => 'Reduced-resolution image',
             2 => 'Single page of multi-page image',
             3 => 'Single page of multi-page reduced-resolution image',
@@ -1438,10 +1686,17 @@ class Ifd0 extends CollectionBase {
             5 => 'Transparency mask of reduced-resolution image',
             6 => 'Transparency mask of multi-page image',
             7 => 'Transparency mask of reduced-resolution multi-page image',
-            8 => 'TIFF/IT final page',
-            16 => 'TIFF-FX mixed raster content',
+            8 => 'Depth map',
+            9 => 'Depth map of reduced-resolution image',
+            16 => 'Enhanced image data',
             65537 => 'Alternate reduced-resolution image',
+            65540 => 'Semantic Mask',
             4294967295 => 'invalid',
+            'Bit0' => 'Reduced resolution',
+            'Bit1' => 'Single page',
+            'Bit2' => 'Transparency mask',
+            'Bit3' => 'TIFF/IT final page',
+            'Bit4' => 'TIFF-FX mixed raster content',
           ),
         ),
         'phpExifTag' => 'NewSubFile',
@@ -1578,6 +1833,7 @@ class Ifd0 extends CollectionBase {
             34927 => 'WebP',
             34933 => 'PNG',
             34934 => 'JPEG XR',
+            52546 => 'JPEG XL',
             65000 => 'Kodak DCR Compressed',
             65535 => 'Pentax PEF Compressed',
           ),
@@ -1624,6 +1880,8 @@ class Ifd0 extends CollectionBase {
             32845 => 'Pixar LogLuv',
             32892 => 'Sequential Color Filter',
             34892 => 'Linear Raw',
+            51177 => 'Depth Map',
+            52527 => 'Semantic Mask',
           ),
         ),
         'phpExifTag' => 'PhotometricInterpretation',
@@ -1779,6 +2037,19 @@ class Ifd0 extends CollectionBase {
         'phpExifTag' => 'StripOffsets',
         'exiftoolDOMNode' => 'IFD0:PreviewImageStart',
       ),
+      1 =>
+      array (
+        'format' =>
+        array (
+          0 => 3,
+          1 => 4,
+        ),
+        'collection' => 'Tiff\\Tag',
+        'name' => 'PreviewImageStart',
+        'title' => 'Preview Image Start',
+        'phpExifTag' => 'StripOffsets',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageStart',
+      ),
     ),
     274 =>
     array (
@@ -1846,6 +2117,19 @@ class Ifd0 extends CollectionBase {
     279 =>
     array (
       0 =>
+      array (
+        'format' =>
+        array (
+          0 => 3,
+          1 => 4,
+        ),
+        'collection' => 'Tiff\\Tag',
+        'name' => 'PreviewImageLength',
+        'title' => 'Preview Image Length',
+        'phpExifTag' => 'StripByteCounts',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageLength',
+      ),
+      1 =>
       array (
         'format' =>
         array (
@@ -2153,6 +2437,11 @@ class Ifd0 extends CollectionBase {
           array (
             1 => 'None',
             2 => 'Horizontal differencing',
+            3 => 'Floating point',
+            34892 => 'Horizontal difference X2',
+            34893 => 'Horizontal difference X4',
+            34894 => 'Floating point X2',
+            34895 => 'Floating point X4',
           ),
         ),
         'phpExifTag' => 'Predictor',
@@ -2498,6 +2787,21 @@ class Ifd0 extends CollectionBase {
         'exiftoolDOMNode' => 'IFD0:Copyright',
       ),
     ),
+    33550 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'PixelScale',
+        'title' => 'Pixel Scale',
+        'components' => 3,
+        'format' =>
+        array (
+          0 => 12,
+        ),
+        'exiftoolDOMNode' => 'IFD0:PixelScale',
+      ),
+    ),
     33723 =>
     array (
       0 =>
@@ -2513,6 +2817,34 @@ class Ifd0 extends CollectionBase {
         'exiftoolDOMNode' => 'IFD0:IPTC-NAA',
       ),
     ),
+    33920 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'IntergraphMatrix',
+        'title' => 'Intergraph Matrix',
+        'format' =>
+        array (
+          0 => 12,
+        ),
+        'exiftoolDOMNode' => 'IFD0:IntergraphMatrix',
+      ),
+    ),
+    33922 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ModelTiePoint',
+        'title' => 'Model Tie Point',
+        'format' =>
+        array (
+          0 => 12,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ModelTiePoint',
+      ),
+    ),
     34118 =>
     array (
       0 =>
@@ -2525,6 +2857,21 @@ class Ifd0 extends CollectionBase {
           0 => 2,
         ),
         'exiftoolDOMNode' => 'IFD0:SEMInfo',
+      ),
+    ),
+    34264 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ModelTransform',
+        'title' => 'Model Transform',
+        'components' => 16,
+        'format' =>
+        array (
+          0 => 12,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ModelTransform',
       ),
     ),
     34665 =>
@@ -2544,7 +2891,7 @@ class Ifd0 extends CollectionBase {
         'title' => 'Geo Tiff Directory',
         'format' =>
         array (
-          0 => 7,
+          0 => 3,
         ),
         'exiftoolDOMNode' => 'IFD0:GeoTiffDirectory',
       ),
@@ -2558,7 +2905,7 @@ class Ifd0 extends CollectionBase {
         'title' => 'Geo Tiff Double Params',
         'format' =>
         array (
-          0 => 7,
+          0 => 12,
         ),
         'exiftoolDOMNode' => 'IFD0:GeoTiffDoubleParams',
       ),
@@ -2678,6 +3025,34 @@ class Ifd0 extends CollectionBase {
         ),
         'phpExifTag' => 'Subject',
         'exiftoolDOMNode' => 'IFD0:XPSubject',
+      ),
+    ),
+    42112 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'GDALMetadata',
+        'title' => 'GDAL Metadata',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'IFD0:GDALMetadata',
+      ),
+    ),
+    42113 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'GDALNoData',
+        'title' => 'GDAL No Data',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'IFD0:GDALNoData',
       ),
     ),
     50341 =>
@@ -2982,6 +3357,17 @@ class Ifd0 extends CollectionBase {
       0 =>
       array (
         'collection' => 'Tiff\\Tag',
+        'name' => 'DNGPrivateData',
+        'title' => 'DNG Private Data',
+        'format' =>
+        array (
+          0 => 1,
+        ),
+        'exiftoolDOMNode' => 'IFD0:DNGPrivateData',
+      ),
+      1 =>
+      array (
+        'collection' => 'Tiff\\Tag',
         'name' => 'DNGAdobeData',
         'title' => 'DNG Adobe Data',
         'format' =>
@@ -2990,7 +3376,7 @@ class Ifd0 extends CollectionBase {
         ),
         'exiftoolDOMNode' => 'IFD0:DNGAdobeData',
       ),
-      1 =>
+      2 =>
       array (
         'collection' => 'Tiff\\Tag',
         'name' => 'DNGPrivateData',
@@ -3217,6 +3603,15 @@ class Ifd0 extends CollectionBase {
         'format' =>
         array (
           0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Scene-referred',
+            1 => 'Output-referred (ICC Profile Dynamic Range)',
+            2 => 'Output-referred (High Dyanmic Range)',
+          ),
         ),
         'exiftoolDOMNode' => 'IFD0:ColorimetricReference',
       ),
@@ -3818,6 +4213,410 @@ class Ifd0 extends CollectionBase {
           0 => 12,
         ),
         'exiftoolDOMNode' => 'IFD0:RawToPreviewGain',
+      ),
+    ),
+    51177 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DepthFormat',
+        'title' => 'Depth Format',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unknown',
+            1 => 'Linear',
+            2 => 'Inverse',
+          ),
+        ),
+        'exiftoolDOMNode' => 'IFD0:DepthFormat',
+      ),
+    ),
+    51178 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DepthNear',
+        'title' => 'Depth Near',
+        'format' =>
+        array (
+          0 => 5,
+        ),
+        'exiftoolDOMNode' => 'IFD0:DepthNear',
+      ),
+    ),
+    51179 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DepthFar',
+        'title' => 'Depth Far',
+        'format' =>
+        array (
+          0 => 5,
+        ),
+        'exiftoolDOMNode' => 'IFD0:DepthFar',
+      ),
+    ),
+    51180 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DepthUnits',
+        'title' => 'Depth Units',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unknown',
+            1 => 'Meters',
+          ),
+        ),
+        'exiftoolDOMNode' => 'IFD0:DepthUnits',
+      ),
+    ),
+    51181 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DepthMeasureType',
+        'title' => 'Depth Measure Type',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unknown',
+            1 => 'Optical Axis',
+            2 => 'Optical Ray',
+          ),
+        ),
+        'exiftoolDOMNode' => 'IFD0:DepthMeasureType',
+      ),
+    ),
+    51182 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'EnhanceParams',
+        'title' => 'Enhance Params',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'IFD0:EnhanceParams',
+      ),
+    ),
+    52529 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'CalibrationIlluminant3',
+        'title' => 'Calibration Illuminant 3',
+        'format' =>
+        array (
+          0 => 3,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unknown',
+            1 => 'Daylight',
+            2 => 'Fluorescent',
+            3 => 'Tungsten (Incandescent)',
+            4 => 'Flash',
+            9 => 'Fine Weather',
+            10 => 'Cloudy',
+            11 => 'Shade',
+            12 => 'Daylight Fluorescent',
+            13 => 'Day White Fluorescent',
+            14 => 'Cool White Fluorescent',
+            15 => 'White Fluorescent',
+            16 => 'Warm White Fluorescent',
+            17 => 'Standard Light A',
+            18 => 'Standard Light B',
+            19 => 'Standard Light C',
+            20 => 'D55',
+            21 => 'D65',
+            22 => 'D75',
+            23 => 'D50',
+            24 => 'ISO Studio Tungsten',
+            255 => 'Other',
+          ),
+        ),
+        'exiftoolDOMNode' => 'IFD0:CalibrationIlluminant3',
+      ),
+    ),
+    52530 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'CameraCalibration3',
+        'title' => 'Camera Calibration 3',
+        'format' =>
+        array (
+          0 => 10,
+        ),
+        'exiftoolDOMNode' => 'IFD0:CameraCalibration3',
+      ),
+    ),
+    52531 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ColorMatrix3',
+        'title' => 'Color Matrix 3',
+        'format' =>
+        array (
+          0 => 10,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ColorMatrix3',
+      ),
+    ),
+    52532 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ForwardMatrix3',
+        'title' => 'Forward Matrix 3',
+        'format' =>
+        array (
+          0 => 10,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ForwardMatrix3',
+      ),
+    ),
+    52533 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'IlluminantData1',
+        'title' => 'Illuminant Data 1',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:IlluminantData1',
+      ),
+    ),
+    52534 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'IlluminantData2',
+        'title' => 'Illuminant Data 2',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:IlluminantData2',
+      ),
+    ),
+    52535 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'IlluminantData3',
+        'title' => 'Illuminant Data 3',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:IlluminantData3',
+      ),
+    ),
+    52537 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ProfileHueSatMapData3',
+        'title' => 'Profile Hue Sat Map Data 3',
+        'format' =>
+        array (
+          0 => 11,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ProfileHueSatMapData3',
+      ),
+    ),
+    52538 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ReductionMatrix3',
+        'title' => 'Reduction Matrix 3',
+        'format' =>
+        array (
+          0 => 10,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ReductionMatrix3',
+      ),
+    ),
+    52543 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'RGBTables',
+        'title' => 'RGB Tables',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:RGBTables',
+      ),
+    ),
+    52544 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ProfileGainTableMap2',
+        'title' => 'Profile Gain Table Map 2',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ProfileGainTableMap2',
+      ),
+    ),
+    52548 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ImageSequenceInfo',
+        'title' => 'Image Sequence Info',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ImageSequenceInfo',
+      ),
+    ),
+    52550 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ImageStats',
+        'title' => 'Image Stats',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ImageStats',
+      ),
+    ),
+    52551 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ProfileDynamicRange',
+        'title' => 'Profile Dynamic Range',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ProfileDynamicRange',
+      ),
+    ),
+    52552 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'ProfileGroupName',
+        'title' => 'Profile Group Name',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'IFD0:ProfileGroupName',
+      ),
+    ),
+    52553 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'JXLDistance',
+        'title' => 'JXL Distance',
+        'format' =>
+        array (
+          0 => 11,
+        ),
+        'exiftoolDOMNode' => 'IFD0:JXLDistance',
+      ),
+    ),
+    52554 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'JXLEffort',
+        'title' => 'JXL Effort',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'IFD0:JXLEffort',
+      ),
+    ),
+    52555 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'JXLDecodeSpeed',
+        'title' => 'JXL Decode Speed',
+        'format' =>
+        array (
+          0 => 4,
+        ),
+        'exiftoolDOMNode' => 'IFD0:JXLDecodeSpeed',
+      ),
+    ),
+    52897 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'SEAL',
+        'title' => 'SEAL',
+        'format' =>
+        array (
+          0 => 2,
+        ),
+        'exiftoolDOMNode' => 'IFD0:SEAL',
       ),
     ),
   ),

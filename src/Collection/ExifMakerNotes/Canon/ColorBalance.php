@@ -26,6 +26,10 @@ class ColorBalance extends CollectionBase {
   'id' => 'ExifMakerNotes\\Canon\\ColorBalance',
   'itemsByName' =>
   array (
+    'BlackLevels' =>
+    array (
+      0 => 29,
+    ),
     'WB_RGGBBlackLevels' =>
     array (
       0 => 37,
@@ -69,6 +73,10 @@ class ColorBalance extends CollectionBase {
   ),
   'itemsByExiftoolDOMNode' =>
   array (
+    'Canon:BlackLevels' =>
+    array (
+      0 => 29,
+    ),
     'Canon:WB_RGGBBlackLevels' =>
     array (
       0 => 37,
@@ -230,6 +238,18 @@ class ColorBalance extends CollectionBase {
           0 => 8,
         ),
         'exiftoolDOMNode' => 'Canon:WB_RGGBLevelsCustom',
+      ),
+      1 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'BlackLevels',
+        'title' => 'Black Levels',
+        'components' => 4,
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:BlackLevels',
       ),
     ),
     33 =>

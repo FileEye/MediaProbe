@@ -30,6 +30,14 @@ class VignettingCorr extends CollectionBase {
       0 => 4,
       1 => 5,
     ),
+    'DistortionCorrection' =>
+    array (
+      0 => 3,
+    ),
+    'DistortionCorrectionValue' =>
+    array (
+      0 => 9,
+    ),
     'OriginalImageHeight' =>
     array (
       0 => 12,
@@ -57,6 +65,14 @@ class VignettingCorr extends CollectionBase {
     array (
       0 => 4,
       1 => 5,
+    ),
+    'Canon:DistortionCorrection' =>
+    array (
+      0 => 3,
+    ),
+    'Canon:DistortionCorrectionValue' =>
+    array (
+      0 => 9,
     ),
     'Canon:OriginalImageHeight' =>
     array (
@@ -117,6 +133,28 @@ class VignettingCorr extends CollectionBase {
         'exiftoolDOMNode' => 'Canon:PeripheralLighting',
       ),
     ),
+    3 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DistortionCorrection',
+        'title' => 'Distortion Correction',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Off',
+            1 => 'On',
+          ),
+        ),
+        'exiftoolDOMNode' => 'Canon:DistortionCorrection',
+      ),
+    ),
     4 =>
     array (
       0 =>
@@ -173,6 +211,20 @@ class VignettingCorr extends CollectionBase {
           0 => 8,
         ),
         'exiftoolDOMNode' => 'Canon:PeripheralLightingValue',
+      ),
+    ),
+    9 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DistortionCorrectionValue',
+        'title' => 'Distortion Correction Value',
+        'format' =>
+        array (
+          0 => 8,
+        ),
+        'exiftoolDOMNode' => 'Canon:DistortionCorrectionValue',
       ),
     ),
     11 =>

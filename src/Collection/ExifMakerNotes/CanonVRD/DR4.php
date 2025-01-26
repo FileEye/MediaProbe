@@ -121,6 +121,26 @@ class DR4 extends CollectionBase {
     array (
       0 => 132870,
     ),
+    'DPRAWBokehShift' =>
+    array (
+      0 => 133920,
+    ),
+    'DPRAWBokehShiftArea' =>
+    array (
+      0 => 133921,
+    ),
+    'DPRAWGhostingReductionArea' =>
+    array (
+      0 => 133936,
+    ),
+    'DPRAWMicroadjustBackFront' =>
+    array (
+      0 => 133904,
+    ),
+    'DPRAWMicroadjustStrength' =>
+    array (
+      0 => 133906,
+    ),
     'DiffractionCorrectionOn' =>
     array (
       0 => 132875,
@@ -188,6 +208,10 @@ class DR4 extends CollectionBase {
     'PurpleHSL' =>
     array (
       0 => 133398,
+    ),
+    'Rating' =>
+    array (
+      0 => 65792,
     ),
     'RawBrightnessAdj' =>
     array (
@@ -376,6 +400,26 @@ class DR4 extends CollectionBase {
     array (
       0 => 132870,
     ),
+    'CanonVRD:DPRAWBokehShift' =>
+    array (
+      0 => 133920,
+    ),
+    'CanonVRD:DPRAWBokehShiftArea' =>
+    array (
+      0 => 133921,
+    ),
+    'CanonVRD:DPRAWGhostingReductionArea' =>
+    array (
+      0 => 133936,
+    ),
+    'CanonVRD:DPRAWMicroadjustBackFront' =>
+    array (
+      0 => 133904,
+    ),
+    'CanonVRD:DPRAWMicroadjustStrength' =>
+    array (
+      0 => 133906,
+    ),
     'CanonVRD:DiffractionCorrectionOn' =>
     array (
       0 => 132875,
@@ -443,6 +487,10 @@ class DR4 extends CollectionBase {
     'CanonVRD:PurpleHSL' =>
     array (
       0 => 133398,
+    ),
+    'CanonVRD:Rating' =>
+    array (
+      0 => 65792,
     ),
     'CanonVRD:RawBrightnessAdj' =>
     array (
@@ -751,6 +799,33 @@ class DR4 extends CollectionBase {
           0 => 7,
         ),
         'exiftoolDOMNode' => 'CanonVRD:CustomPictureStyle',
+      ),
+    ),
+    65792 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'Rating',
+        'title' => 'Rating',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'text' =>
+        array (
+          'mapping' =>
+          array (
+            0 => 'Unrated',
+            1 => '1',
+            2 => '2',
+            3 => '3',
+            4 => '4',
+            5 => '5',
+            4294967295 => 'Rejected',
+          ),
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:Rating',
       ),
     ),
     65793 =>
@@ -1552,6 +1627,76 @@ class DR4 extends CollectionBase {
           0 => 7,
         ),
         'exiftoolDOMNode' => 'CanonVRD:MagentaHSL',
+      ),
+    ),
+    133904 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DPRAWMicroadjustBackFront',
+        'title' => 'DPRAW Microadjust Back Front',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DPRAWMicroadjustBackFront',
+      ),
+    ),
+    133906 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DPRAWMicroadjustStrength',
+        'title' => 'DPRAW Microadjust Strength',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DPRAWMicroadjustStrength',
+      ),
+    ),
+    133920 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DPRAWBokehShift',
+        'title' => 'DPRAW Bokeh Shift',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DPRAWBokehShift',
+      ),
+    ),
+    133921 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DPRAWBokehShiftArea',
+        'title' => 'DPRAW Bokeh Shift Area',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DPRAWBokehShiftArea',
+      ),
+    ),
+    133936 =>
+    array (
+      0 =>
+      array (
+        'collection' => 'Tiff\\Tag',
+        'name' => 'DPRAWGhostingReductionArea',
+        'title' => 'DPRAW Ghosting Reduction Area',
+        'format' =>
+        array (
+          0 => 7,
+        ),
+        'exiftoolDOMNode' => 'CanonVRD:DPRAWGhostingReductionArea',
       ),
     ),
     196865 =>
