@@ -1528,6 +1528,7 @@ class CameraSettings extends CollectionBase {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraSettings\\FlashBits',
         'collection' => 'Tiff\\Tag',
         'name' => 'FlashBits',
         'title' => 'Flash Bits',

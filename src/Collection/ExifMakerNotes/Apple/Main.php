@@ -506,6 +506,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Apple\\Exif\\FocusDistanceRange',
         'collection' => 'Tiff\\Tag',
         'name' => 'FocusDistanceRange',
         'title' => 'Focus Distance Range',
@@ -549,6 +550,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Apple\\Exif\\ImageCaptureType',
         'collection' => 'Tiff\\Tag',
         'name' => 'ImageCaptureType',
         'title' => 'Image Capture Type',
@@ -686,6 +688,7 @@ class Main extends CollectionBase {
     array (
       0 =>
       array (
+        'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Apple\\Exif\\AFPerformance',
         'collection' => 'Tiff\\Tag',
         'name' => 'AFPerformance',
         'title' => 'AF Performance',

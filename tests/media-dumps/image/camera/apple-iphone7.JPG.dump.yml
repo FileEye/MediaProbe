@@ -1,3 +1,8 @@
+skip:
+    exiftool:
+        - 'Apple:AEMatrix'
+        - 'Apple:ImageProcessingFlags'
+        - 'Apple:QualityHint'
 fileName: apple-iphone7.JPG
 mimeType: image/jpeg
 fileContentHash: 70abc50d086d0d12391befa26357a0524e9b99c1a7e96f1d44d7f79a06881b1f
@@ -608,12 +613,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeFlags:flags/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Char
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\RunTimeFlags
                                                                                     valid: true
                                                                                     format: Char
                                                                                     components: 1
                                                                                     bytesHash: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
-                                                                                    text: '1'
+                                                                                    text: Valid
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeValue:value'
@@ -770,12 +775,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:FocusDistanceRange:12/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\FocusDistanceRange
                                                                             valid: true
                                                                             format: SignedRational
                                                                             components: 2
                                                                             bytesHash: 0aee66fe9fc2bd3863c3192aaf02d60a20dbfcc8baaa66210a42eccb696433db
-                                                                            text: '0.53515625 1.90625'
+                                                                            text: '0.54 - 1.91 m'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
@@ -857,7 +862,7 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageCaptureType:20/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\ImageCaptureType
                                                                             valid: true
                                                                             format: SignedLong
                                                                             components: 1

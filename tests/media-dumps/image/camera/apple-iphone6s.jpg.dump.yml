@@ -1,3 +1,7 @@
+skip:
+    exiftool:
+        - 'Apple:AEMatrix'
+        - 'Apple:ImageProcessingFlags'
 fileName: apple-iphone6s.jpg
 mimeType: image/jpeg
 fileContentHash: acb2045c15846eeb455deb1654ed381a1dbb2d2e618ed5a36a96221411aff6ac
@@ -608,12 +612,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeFlags:flags/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\Char
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\RunTimeFlags
                                                                                     valid: true
                                                                                     format: Char
                                                                                     components: 1
                                                                                     bytesHash: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
-                                                                                    text: '1'
+                                                                                    text: Valid
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeValue:value'
@@ -822,12 +826,12 @@ elements:
                                                                         -
                                                                             node: entry
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageCaptureType:20/entry'
-                                                                            class: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            class: FileEye\MediaProbe\Entry\Vendor\Apple\Exif\ImageCaptureType
                                                                             valid: true
                                                                             format: SignedLong
                                                                             components: 1
                                                                             bytesHash: 1bc5d0e3df0ea12c4d0078668d14924f95106bbe173e196de50fe13a900b0937
-                                                                            text: '4'
+                                                                            text: 'Unknown (4)'
                                                                 -
                                                                     node: tag
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'

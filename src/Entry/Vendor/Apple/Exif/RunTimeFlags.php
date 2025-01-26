@@ -1,13 +1,10 @@
 <?php
 
-namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
+namespace FileEye\MediaProbe\Entry\Vendor\Apple\Exif;
 
-use FileEye\MediaProbe\Entry\Core\SignedLong;
+use FileEye\MediaProbe\Entry\Core\Char;
 
-/**
- * Handler for CanonCustom ViewfinderWarnings tags.
- */
-class ViewfinderWarnings extends SignedLong
+class RunTimeFlags extends Char
 {
     public function toString(array $options = []): string
     {

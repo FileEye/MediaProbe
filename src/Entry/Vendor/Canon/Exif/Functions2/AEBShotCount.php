@@ -10,23 +10,14 @@ use FileEye\MediaProbe\Entry\Core\SignedLong;
  */
 class AEBShotCount extends SignedLong
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context): mixed
     {
-        switch ($components_count) {
-            case 1:
-                return 0;
-
-            case 2:
-                return 1;
-        }
+        return match ($components_count) {
+            1 => 1,
+            2 => 2,
+        };
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
         $val = $this->getValue($options);

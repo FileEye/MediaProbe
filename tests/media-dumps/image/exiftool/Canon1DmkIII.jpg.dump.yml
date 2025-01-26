@@ -1002,7 +1002,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettings\FlashBits
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -3322,7 +3322,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: 9d9f290527a6be626a8f5985b26e19b237b44872b03631811df4416fc1713178
-                                                                                            text: '3 shots'
+                                                                                            text: '7 shots'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:SpotMeterLinkToAFPoint:263'
@@ -4195,7 +4195,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 4
                                                                                             bytesHash: 9e92db3fb903d738ba7d3555b28197adffda640121de63a5a3803dab8e01f149
-                                                                                            text: '; 6 s: 6; 16 s: 16; After release: 2'
+                                                                                            text: 'Disable; 6 s: 6; 16 s: 16; After release: 2'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:ShortReleaseTimeLag:2061'
@@ -5837,9 +5837,6 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:ContinuousShootingSpeed:1552'
             message: "Found 3 data components, expected 6 for item 'ContinuousShootingSpeed' in 'AutoFocusDrive'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:TimerLength:2060'
-            message: "Found 4 data components, expected 3 for item 'TimerLength' in 'OperationOthers'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonColorData:16385'
             message: "Could not access value for item 'PerChannelBlackLevel' in 'CanonColorData', overflow"

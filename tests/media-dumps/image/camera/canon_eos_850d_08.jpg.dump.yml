@@ -108,6 +108,8 @@ skip:
         - 'Canon:Sharpness'
         - 'Canon:AFPointsSelected'
         - 'Canon:AFPointsInFocus'
+        - '########### 201103'
+        - 'Canon:FirmwareVersion'
 fileName: canon_eos_850d_08.jpg
 mimeType: image/jpeg
 fileContentHash: 4e20f0333037b59712360f2c847b0bd4a880f54c1a1cb3ce7f763bcc76d76ebc
@@ -1186,12 +1188,12 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettings\FlashBits
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
                                                                                     bytesHash: e545d395bb3fd971f91bf9a2b6722831df704efae6c1aa9da0989ed0970b77bb
-                                                                                    text: '8'
+                                                                                    text: E-TTL
                                                                         -
                                                                             node: tag
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusContinuous:32'
@@ -3576,7 +3578,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: d23f96d836ebed25ad1d3d2b9d92362252cc8a347a98312a75284f7f6d08bd02
-                                                                                            text: '[0], [1], [6]'
+                                                                                            text: 'Monochrome, WB corrected, Noise reduction'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:CustomControls:1804'

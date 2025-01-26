@@ -1119,7 +1119,7 @@ elements:
                                                                                 -
                                                                                     node: entry
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29/entry'
-                                                                                    class: FileEye\MediaProbe\Entry\Core\SignedShort
+                                                                                    class: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettings\FlashBits
                                                                                     valid: true
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -3340,7 +3340,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 2
                                                                                             bytesHash: 35be322d094f9d154a8aba4733b8497f180353bd7ae7b0a15f90b586b549f28b
-                                                                                            text: ''
+                                                                                            text: '3 shots'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:Exposure:1/tag:SafetyShift:264'
@@ -3664,7 +3664,7 @@ elements:
                                                                                             format: SignedLong
                                                                                             components: 1
                                                                                             bytesHash: 9d9f290527a6be626a8f5985b26e19b237b44872b03631811df4416fc1713178
-                                                                                            text: '[0], [1]'
+                                                                                            text: 'Monochrome, WB corrected'
                                                                                 -
                                                                                     node: tag
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:OperationOthers:4/tag:CustomControls:1804'
