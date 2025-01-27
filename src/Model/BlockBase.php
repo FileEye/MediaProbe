@@ -41,7 +41,11 @@ abstract class BlockBase extends ElementBase implements BlockInterface
      * @param BlockInterface|null $reference
      *   (Optional) if specified, the new Block will be inserted before the reference Block.
      */
-    public function __construct(ItemDefinition $definition, BlockInterface $parent = null, BlockInterface $reference = null)
+    public function __construct(
+        ItemDefinition $definition,
+        ?BlockInterface $parent = null,
+        ?BlockInterface $reference = null,
+    )
     {
         $this->definition = $definition;
 

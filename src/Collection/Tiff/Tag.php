@@ -14,7 +14,6 @@ class Tag extends CollectionBase {
 
   protected static $map = array (
   'title' => 'Tag',
-  'class' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tag',
   'DOMNode' => 'tag',
   'id' => 'Tiff\\Tag',
   'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tag',

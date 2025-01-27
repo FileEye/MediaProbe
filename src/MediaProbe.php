@@ -81,7 +81,7 @@ class MediaProbe
      *
      * @return string
      */
-    public static function dumpHex(string $input, int $dump_length = null): ?string
+    public static function dumpHex(string $input, ?int $dump_length = null): ?string
     {
         $input_length = strlen($input);
 

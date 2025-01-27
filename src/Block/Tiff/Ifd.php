@@ -153,7 +153,13 @@ class Ifd extends ListBase
      * @return \FileEye\MediaProbe\ItemDefinition
      *            the ItemDefinition object of the IFD item.
      */
-    protected function getItemDefinitionFromData(int $seq, DataElement $dataElement, int $offset, int $data_offset_shift = 0, string $fallback_collection_id = null): ItemDefinition
+    protected function getItemDefinitionFromData(
+        int $seq, 
+        DataElement $dataElement, 
+        int $offset, 
+        int $data_offset_shift = 0, 
+        ?string $fallback_collection_id = null,
+    ): ItemDefinition
     {
         $id = $dataElement->getShort($offset);
         $format = $dataElement->getShort($offset + 2);

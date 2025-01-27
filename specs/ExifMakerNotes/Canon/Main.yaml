@@ -100,10 +100,6 @@ items:
                 g2: Image
                 DOMNode: 'Canon:CanonFileLength'
                 desc: 'Canon File Length'
-    15:
-        __todo: fix
-        name: CanonCustomFunctions
-        collection: ExifMakerNotes\CanonCustom\FunctionsResolver
     16:
         text:
             default: 'Unknown (0x{valuehex})'
@@ -614,18 +610,6 @@ items:
                 writable: true
                 DOMNode: 'Canon:OriginalDecisionDataOffset'
                 desc: 'Original Decision Data Offset'
-    144:
-        __todo: fix
-        name: CanonCustomFunctions1D
-        collection: ExifMakerNotes\CanonCustom\Functions1D
-    145:
-        __todo: fix
-        name: CanonCustomPersonalFuncs
-        collection: ExifMakerNotes\CanonCustom\PersonalFuncs
-    146:
-        __todo: fix
-        name: CanonCustomPersonalFuncValues
-        collection: ExifMakerNotes\CanonCustom\PersonalFuncValues
     147:
         name: CanonFileInfo
         collection: ExifMakerNotes\Canon\FileInfo

@@ -85,7 +85,13 @@ abstract class CollectionBase implements CollectionInterface
     /**
      * {@inheritdoc}
      */
-    public function getItemCollection(string $item, $index = 0, string $default_id = null, array $default_properties = [], int $components_count = null, ElementInterface $context = null): CollectionInterface
+    public function getItemCollection(
+        string $item, $index = 0,
+        ?string $default_id = null,
+        array $default_properties = [],
+        ?int $components_count = null,
+        ?ElementInterface $context = null,
+    ): CollectionInterface
     {
         if ($index === null) {
             if ($context === null) {
