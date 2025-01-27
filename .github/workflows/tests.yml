@@ -81,8 +81,5 @@ jobs:
 #        name: media-dumps
 #        path: tests/media-dumps/**/*.yml
 
-#    - name: "Install PHPStan"
-#      run: "composer require --dev phpstan/phpstan:^1.2 --ansi"
-
-#    - name: "Run a static analysis with phpstan/phpstan"
-#      run: vendor/bin/phpstan analyze
+    - name: "Run a static analysis with phpstan/phpstan"
+      run: vendor/bin/phpstan analyze

@@ -12,27 +12,28 @@
         "ext-gd": "*",
         "ext-mbstring": "*",
         "composer-runtime-api": "^2.0.0",
-        "psr/log": "*",
+        "fileeye/mimemap": "^2.2",
         "monolog/monolog": "^3",
+        "psr/log": "*",
         "shanethehat/pretty-xml": "*",
         "sibche/plist": "*",
-        "symfony/stopwatch": "^7.2",
-        "fileeye/mimemap": "^2.2"
+        "symfony/stopwatch": "^7.2"
     },
     "require-dev" : {
         "ext-exif": "*",
+        "bramus/monolog-colored-line-formatter": "^3",
+        "phpstan/extension-installer": "*",
+        "phpstan/phpstan-deprecation-rules": "^2",
+        "phpstan/phpstan": "^2",
+        "phpstan/phpstan-phpunit": "^2",
         "phpunit/phpunit": "^11",
         "squizlabs/php_codesniffer": "*",
         "symfony/console": "^7.2",
-        "symfony/finder": "^7.2",
         "symfony/filesystem": "^7.2",
+        "symfony/finder": "^7.2",
         "symfony/process": "^7.2",
         "symfony/var-dumper": "^7.2",
-        "symfony/yaml": "^7.2",
-        "bramus/monolog-colored-line-formatter": "^3",
-        "phpstan/phpstan": "^2",
-        "phpstan/extension-installer": "*",
-        "phpstan/phpstan-deprecation-rules": "^2"
+        "symfony/yaml": "^7.2"
     },
     "autoload": {
         "psr-4": {
