@@ -29,7 +29,11 @@ class Map extends Index
     /**
      * {@inheritdoc}
      */
-    public function __construct(ItemDefinition $definition, BlockBase $parent = null, BlockBase $reference = null)
+    public function __construct(
+        ItemDefinition $definition,
+        ?BlockBase $parent = null,
+        ?BlockBase $reference = null,
+    )
     {
         parent::__construct($definition, $parent, $reference);
         $this->components = $definition->getValuesCount();

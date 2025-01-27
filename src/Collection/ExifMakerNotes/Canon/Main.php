@@ -85,25 +85,9 @@ class Main extends CollectionBase {
     array (
       0 => 152,
     ),
-    'CanonCustomFunctions' =>
-    array (
-      0 => 15,
-    ),
-    'CanonCustomFunctions1D' =>
-    array (
-      0 => 144,
-    ),
     'CanonCustomFunctions2Header' =>
     array (
       0 => 153,
-    ),
-    'CanonCustomPersonalFuncValues' =>
-    array (
-      0 => 146,
-    ),
-    'CanonCustomPersonalFuncs' =>
-    array (
-      0 => 145,
     ),
     'CanonFaceDetect1' =>
     array (
@@ -512,15 +496,6 @@ class Main extends CollectionBase {
           0 => 4,
         ),
         'exiftoolDOMNode' => 'Canon:CanonFileLength',
-      ),
-    ),
-    15 =>
-    array (
-      0 =>
-      array (
-        '__todo' => 'fix',
-        'name' => 'CanonCustomFunctions',
-        'collection' => 'ExifMakerNotes\\CanonCustom\\FunctionsResolver',
       ),
     ),
     16 =>
@@ -1182,33 +1157,6 @@ class Main extends CollectionBase {
           0 => 4,
         ),
         'exiftoolDOMNode' => 'Canon:OriginalDecisionDataOffset',
-      ),
-    ),
-    144 =>
-    array (
-      0 =>
-      array (
-        '__todo' => 'fix',
-        'name' => 'CanonCustomFunctions1D',
-        'collection' => 'ExifMakerNotes\\CanonCustom\\Functions1D',
-      ),
-    ),
-    145 =>
-    array (
-      0 =>
-      array (
-        '__todo' => 'fix',
-        'name' => 'CanonCustomPersonalFuncs',
-        'collection' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncs',
-      ),
-    ),
-    146 =>
-    array (
-      0 =>
-      array (
-        '__todo' => 'fix',
-        'name' => 'CanonCustomPersonalFuncValues',
-        'collection' => 'ExifMakerNotes\\CanonCustom\\PersonalFuncValues',
       ),
     ),
     147 =>

@@ -31,7 +31,11 @@ class Filter extends ListBase
      */
     protected int $paramsCount;
 
-    public function __construct(ItemDefinition $definition, BlockInterface $parent = null, BlockInterface $reference = null)
+    public function __construct(
+        ItemDefinition $definition, 
+        ?BlockInterface $parent = null, 
+        ?BlockInterface $reference = null,
+    )
     {
         parent::__construct($definition, $parent, $reference);
         $this->setAttribute('name', $this->getParentElement()->getAttribute('name') . '.' . $definition->getSequence());
