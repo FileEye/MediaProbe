@@ -2,9 +2,10 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
 
-use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 use FileEye\MediaProbe\Entry\ExifTrait;
+use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Model\ElementInterface;
 
 /**
  * Handler for CanonCustom tags representing Shutter speed range.
@@ -18,13 +19,11 @@ class ShutterSpeedRange extends SignedLong
      */
     public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context): mixed
     {
-        switch ($components_count) {
-            case 3:
-                return 0;
-
-            case 4:
-                return 1;
-        }
+        return match ($components_count) {
+            3 => 0,
+            4 => 1,
+            default => throw new MediaProbeException('Invalid number of components'),
+        };
     }
 
     /**

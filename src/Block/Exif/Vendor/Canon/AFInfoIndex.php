@@ -26,22 +26,22 @@ class AFInfoIndex extends Index
         // property is true, the first entry is a special case that is handled
         // by opening a 'rawData' node instead of a 'tag'.
         $offset = 0;
-        $this->components = $this->getDefinition()->getValuesCount();
+        $this->components = $this->getDefinition()->valuesCount;
         assert($this->debugInfo(['dataElement' => $data]));
 
         for ($i = 0; $i < $this->components; $i++) {
             $item_definition = $this->getItemDefinitionFromData($i, $i, $data, $offset);
 
             // Check if this tag should be skipped.
-            if ($item_definition->getCollection()->getPropertyValue('skip')) {
+            if ($item_definition->collection->getPropertyValue('skip')) {
                 $this->debug("Skipped");
                 continue;
             };
 
-            if (in_array($item_definition->getCollection()->getPropertyValue('name'), ['AFAreaWidths', 'AFAreaHeights', 'AFAreaXPositions', 'AFAreaYPositions'])) {
+            if (in_array($item_definition->collection->getPropertyValue('name'), ['AFAreaWidths', 'AFAreaHeights', 'AFAreaXPositions', 'AFAreaYPositions'])) {
                 $value_components = $this->getElement("tag[@name='NumAFPoints']")->getElement("entry")->getValue();
                 $this->components -= ($value_components - 1);
-            } elseif (in_array($item_definition->getCollection()->getPropertyValue('name'), ['AFPointsInFocus', 'AFPointsSelected'])) {
+            } elseif (in_array($item_definition->collection->getPropertyValue('name'), ['AFPointsInFocus', 'AFPointsSelected'])) {
                 $value_components = (int) (($this->getElement("tag[@name='NumAFPoints']")->getElement("entry")->getValue() + 15) / 16);
                 $this->components -= ($value_components - 1);
             } else {
@@ -49,11 +49,11 @@ class AFInfoIndex extends Index
             }
 
             // Adds the 'tag'.
-            $item_class = $item_definition->getCollection()->getPropertyValue('handler');
+            $item_class = $item_definition->collection->getPropertyValue('handler');
             $item = new $item_class($item_definition, $this);
 
             $entry_class = $item_definition->getEntryClass();
-            new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->getFormat(), $value_components));
+            new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->format, $value_components));
         }
     }
 }

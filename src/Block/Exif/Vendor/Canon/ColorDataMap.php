@@ -27,7 +27,7 @@ class ColorDataMap extends Map
         // Find the appropriate map collection.
         foreach ($this->getCollection()->listItemIds() as $color_data_map) {
             $map_t = $this->getCollection()->getItemCollection($color_data_map);
-            if (in_array($this->getDefinition()->getValuesCount(), $map_t->getPropertyValue('condition') ?? [])) {
+            if (in_array($this->getDefinition()->valuesCount, $map_t->getPropertyValue('condition') ?? [])) {
                 $this->definition = new ItemDefinition($map_t, $map_t->getPropertyValue('format')[0]);
                 break;
             }

@@ -18,8 +18,9 @@ class NumberSignedLongTest extends NumberTestCase
         $this->max = 2147483647;
     }
 
-    protected function convertValueToBytes(int $value): string
+    protected function convertValueToBytes(int|float|array $value): string
     {
+        assert(is_int($value));
         return ConvertBytes::fromSignedLong($value);
     }
 }

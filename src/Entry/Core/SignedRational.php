@@ -2,10 +2,11 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
-use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Model\BlockBase;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Class for holding signed rational numbers.
@@ -20,24 +21,9 @@ use FileEye\MediaProbe\MediaProbe;
  */
 class SignedRational extends NumberBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'SignedRational';
-
-    /**
-     * {@inheritdoc}
-     */
     protected string $formatName = 'SignedRational';
-
-    /**
-     * {@inheritdoc}
-     */
     protected int $formatSize = 8;
-
-    /**
-     * {@inheritdoc}
-     */
     protected int $dimension = 2;
 
     const MIN = -2147483648;
@@ -48,9 +34,6 @@ class SignedRational extends NumberBase
         return $this->dataElement->getSignedRational($offset);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
@@ -63,9 +46,6 @@ class SignedRational extends NumberBase
         return $ret;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function formatNumber(int|float|array $number, array $options = []): int|float|array|string
     {
         $format = $options['format'] ?? null;
@@ -94,9 +74,6 @@ class SignedRational extends NumberBase
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromLong($number, $order);

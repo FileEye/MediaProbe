@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Utility;
 
 /**
@@ -24,10 +26,10 @@ abstract class ConvertTime
      * @param int $day
      *            the day in the month.
      *
-     * @return int
+     * @return float
      *            the Julian Day count.
      */
-    public static function gregorianToJulianDay(int $year, int $month, int $day): int
+    public static function gregorianToJulianDay(int $year, int $month, int $day): float
     {
         // Special case mapping 0/0/0 -> 0
         if ($year == 0 || $month == 0 || $day == 0) {
@@ -42,13 +44,13 @@ abstract class ConvertTime
     /**
      * Converts a Julian Day count to a year/month/day triple.
      *
-     * @param int
+     * @param float $jd
      *            the Julian Day count.
      *
      * @return array
      *            array with three entries: year, month, day.
      */
-    public static function julianDayToGregorian(int $jd): array
+    public static function julianDayToGregorian(float $jd): array
     {
         // Special case mapping 0 -> 0/0/0
         if ($jd == 0) {
@@ -65,7 +67,7 @@ abstract class ConvertTime
         $l = floor($j / 11);
         $m = $j + 2 - (12 * $l);
         $y = 100 * ($n - 49) + $i + $l;
-        return [$y, $m, $d];
+        return [(int) $y, (int) $m, (int) $d];
     }
 
     /**
@@ -73,7 +75,7 @@ abstract class ConvertTime
      *
      * @param int $timestamp
      *            the timestamp.
-     * @return int
+     * @return float
      *            the Julian Day count.
      */
     public static function unixToJulianDay(int $timestamp): float
@@ -84,10 +86,10 @@ abstract class ConvertTime
     /**
      * Converts a Julian Day count to a UNIX timestamp.
      *
-     * @param int $jd
+     * @param float $jd
      *            the Julian Day count.
      *
-     * @return mixed
+     * @return int|false
      *            the integer timestamp or false if the day count cannot be
      *            represented as a UNIX timestamp.
      */
@@ -96,7 +98,7 @@ abstract class ConvertTime
         if ($jd > 0) {
             $timestamp = ($jd - 2440588) * 86400;
             if ($timestamp >= 0) {
-                return $timestamp;
+                return (int) $timestamp;
             }
         }
         return false;

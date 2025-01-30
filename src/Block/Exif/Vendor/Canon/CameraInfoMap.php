@@ -28,7 +28,7 @@ class CameraInfoMap extends Map
         $model_entry = $this->getRootElement()->getElement("//ifd[@name='IFD0']/tag[@name='Model']/entry");
         $model = $model_entry ? $model_entry->getValue() : 'n/a';
 
-        $values_count = $this->getDefinition()->getValuesCount();
+        $values_count = $this->getDefinition()->valuesCount;
 
         // Find the appropriate map collection.
         $mapped = false;
@@ -42,9 +42,9 @@ class CameraInfoMap extends Map
         }
         if (!$mapped) {
             if ($this->getFormat() === DataFormat::LONG) {
-                if (in_array($this->getDefinition()->getValuesCount(), [138, 148])) {
+                if (in_array($this->getDefinition()->valuesCount, [138, 148])) {
                     $this->definition = new ItemDefinition($this->getCollection()->getItemCollection('CanonCameraInfoPowerShot'));
-                } elseif (in_array($this->getDefinition()->getValuesCount(), [156, 162, 167, 171, 264])) {
+                } elseif (in_array($this->getDefinition()->valuesCount, [156, 162, 167, 171, 264])) {
                     $this->definition = new ItemDefinition($this->getCollection()->getItemCollection('CanonCameraInfoPowerShot2'));
                 } else {
                     $this->definition = new ItemDefinition($this->getCollection()->getItemCollection('CanonCameraInfoUnknown32'));

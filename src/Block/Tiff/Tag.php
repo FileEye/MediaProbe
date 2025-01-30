@@ -5,16 +5,18 @@ namespace FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
+use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
- * Class representing an Exif TAG as an MediaProbe block.
+ * Class representing an Exif TAG as a MediaProbe block.
  */
 class Tag extends BlockBase
 {
@@ -23,11 +25,14 @@ class Tag extends BlockBase
      */
     public function validate(): void
     {
+        $parentElement = $this->getParentElement();
+        assert($parentElement instanceof BlockInterface);
+
         // Check if MediaProbe has a definition for this tag.
         if (in_array($this->getCollection()->getPropertyValue('id'), ['VoidCollection', 'Tiff\UnknownTag'])) {
             $this->notice("Unknown item {item} in '{parent}'", [
                 'item' => MediaProbe::dumpIntHex($this->getAttribute('id')),
-                'parent' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',
+                'parent' => $parentElement->getCollection()->getPropertyValue('name') ?? 'n/a',
             ]);
             return;
         }
@@ -43,7 +48,7 @@ class Tag extends BlockBase
                 'format_name' => DataFormat::getName($this->getFormat()),
                 'expected_format_names' => implode(', ', $expected_format_names),
                 'item' => $this->getAttribute('name') ?? 'n/a',
-                'parent' => $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a',
+                'parent' => $parentElement->getCollection()->getPropertyValue('name') ?? 'n/a',
             ]);
         }
 
@@ -54,14 +59,11 @@ class Tag extends BlockBase
                 'components' => $this->getComponents(),
                 'expected_components' => $expected_components,
                 'item' => $this->getAttribute('name') ?? 'n/a',
-                'parent' => $this->getParentElement() ? $this->getParentElement()->getCollection()->getPropertyValue('name') ?? 'n/a' : 'n/a',
+                'parent' => $parentElement ? $parentElement->getCollection()->getPropertyValue('name') ?? 'n/a' : 'n/a',
             ]);
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function doParseData(DataElement $data): void
     {
         $this->validate();
@@ -76,49 +78,41 @@ class Tag extends BlockBase
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         return $this->getElement("entry") ? $this->getElement("entry")->getValue($options) : null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
         return $this->getElement("entry") ? $this->getElement("entry")->toString($options) : '';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
     {
         return $this->getElement("entry") ? $this->getElement("entry")->toBytes($order, $offset) : '';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFormat(): int
     {
-        return $this->getElement("entry") ? $this->getElement("entry")->getFormat() : $this->getDefinition()->getFormat();
+        $entry = $this->getElement("entry");
+        if (!$entry) {
+            return $this->getDefinition()->format;
+        }
+        assert($entry instanceof EntryInterface, get_class($entry));
+        return $entry->getFormat();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getComponents(): int
     {
-        return $this->getElement("entry") ? $this->getElement("entry")->getComponents() : $this->getDefinition()->getValuesCount();
+        $entry = $this->getElement("entry");
+        if (!$entry) {
+            return $this->getDefinition()->valuesCount;
+        }
+        assert($entry instanceof EntryInterface, get_class($entry));
+        return $entry->getComponents();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function getContextPathSegmentPattern(): string
     {
         if ($this->getAttribute('name') !== '') {
@@ -135,12 +129,12 @@ class Tag extends BlockBase
 
         $msg = '#{seq} rel@{relativeOffset} {node}';
 
-        $info['seq'] = $this->getDefinition()->getSequence() + 1;
+        $info['seq'] = $this->getDefinition()->sequence + 1;
         if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
 
-        $info['relativeOffset'] = MediaProbe::dumpIntHex($this->getDefinition()->getItemDefinitionOffset());
+        $info['relativeOffset'] = MediaProbe::dumpIntHex($this->getDefinition()->itemDefinitionOffset);
 
         $msg .= isset($parentInfo['name']) ? ':{name}' : '';
 
@@ -153,8 +147,8 @@ class Tag extends BlockBase
             $msg .= isset($parentInfo['offset']) ? ' @{offset} size {size}' : ' size {size} byte(s)';
         }
 
-        $info['format'] = DataFormat::getName($this->getDefinition()->getFormat());
-        $info['components'] = $this->getDefinition()->getValuesCount();
+        $info['format'] = DataFormat::getName($this->getDefinition()->format);
+        $info['components'] = $this->getDefinition()->valuesCount;
         $msg .= ' format {format} count {components}';
 
         $info['_msg'] = $msg;

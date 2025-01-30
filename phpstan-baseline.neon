@@ -1,0 +1,49 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to an undefined method FileEye\\MediaProbe\\Model\\ElementInterface\:\:getCollection\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: examples/dump-media.php
+
+		-
+			message: '#^Variable \$curr_memory might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: examples/dump-media.php
+
+		-
+			message: '#^Variable \$max_memory might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: examples/dump-media.php
+
+		-
+			message: '#^Variable \$media might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: examples/dump-media.php
+
+		-
+			message: '#^Variable \$result might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: examples/dump-media.php
+
+		-
+			message: '#^Call to method add\(\) on an unknown class CFPropertyList\\CFDictionary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Block/Exif/Vendor/Apple/RunTime.php
+
+		-
+			message: '#^Instantiated class CFPropertyList\\CFDictionary not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Block/Exif/Vendor/Apple/RunTime.php
+
+		-
+			message: '#^Instantiated class CFPropertyList\\CFNumber not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Block/Exif/Vendor/Apple/RunTime.php

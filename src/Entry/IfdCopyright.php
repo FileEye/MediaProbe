@@ -35,15 +35,13 @@ class IfdCopyright extends Ascii
     /**
      * Return a text string with the copyright information.
      *
-     * The photographer and editor copyright fields will be returned
-     * with a '-' in between if both copyright fields are present,
-     * otherwise only one of them will be returned.
+     * The photographer and editor copyright fields will be returned with a '-' in between if both
+     * copyright fields are present, otherwise only one of them will be returned.
      *
-     * @param  bool $short
-     *            if false, then the strings '(Photographer)' and '(Editor)'
-     *            will be appended to the photographer and editor copyright
-     *            fields (if present), otherwise the fields will be returned
-     *            as is.
+     * @param array $options
+     *   If the 'short' key is false, then the strings '(Photographer)' and '(Editor)' will be
+     *   appended to the photographer and editor copyright fields (if present), otherwise the
+     *   fields will be returned as is.
      *
      * @return string the copyright information in a string.
      */
@@ -55,8 +53,8 @@ class IfdCopyright extends Ascii
             $p = '';
             $e = '';
         } else {
-            $p = ' ' . MediaProbe::tra('(Photographer)');
-            $e = ' ' . MediaProbe::tra('(Editor)');
+            $p = ' ' . '(Photographer)';
+            $e = ' ' . '(Editor)';
         }
 
         $value = $this->getValue();

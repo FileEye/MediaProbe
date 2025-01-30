@@ -75,30 +75,20 @@ abstract class BlockBase extends ElementBase implements BlockInterface
         return 0;
     }
 
-    /**
-     * Gets the Definition of this Block.
-     *
-     * @return \FileEye\MediaProbe\ItemDefinition
-     */
     public function getDefinition(): ItemDefinition
     {
         return $this->definition;
     }
 
-    /**
-     * Gets the Collection of this Block.
-     *
-     * @return \FileEye\MediaProbe\Collection
-     */
     public function getCollection(): CollectionInterface
     {
-        return $this->getDefinition()->getCollection();
+        return $this->getDefinition()->collection;
     }
 
     // xx
     public function getFormat(): int
     {
-        return $this->getDefinition()->getFormat();
+        return $this->getDefinition()->format;
     }
 
     /**
@@ -124,6 +114,8 @@ abstract class BlockBase extends ElementBase implements BlockInterface
         $this->executePostParseCallbacks($data);
     }
 
+    abstract protected function doParseData(DataElement $data): void;
+
     /**
      * Invoke post-parse callbacks.
      *
@@ -146,7 +138,7 @@ abstract class BlockBase extends ElementBase implements BlockInterface
      */
     public function addBlock(ItemDefinition $item_definition, ?BlockInterface $parent = null, ?BlockInterface $reference = null): BlockInterface
     {
-        $handler = $item_definition->getCollection()->getPropertyValue('handler');
+        $handler = $item_definition->collection->getPropertyValue('handler');
         return new $handler($item_definition, $parent ?? $this, $reference);
     }
 

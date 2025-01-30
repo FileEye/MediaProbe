@@ -74,4 +74,6 @@ abstract class NumberTestCase extends EntryTestBase
         }
         return new DataString($ret);
     }
+
+    abstract protected function convertValueToBytes(int|float|array $value): string;
 }

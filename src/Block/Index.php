@@ -2,7 +2,9 @@
 
 namespace FileEye\MediaProbe\Block;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\ItemDefinition;
@@ -44,9 +46,6 @@ class Index extends ListBase
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function doParseData(DataElement $data): void
     {
         $this->validate($data);
@@ -55,22 +54,24 @@ class Index extends ListBase
         // property is true, the first entry is a special case that is handled
         // by opening a 'rawData' node instead of a 'tag'.
         $offset = 0;
-        $this->components = $this->getDefinition()->getValuesCount();
+        $this->components = $this->getDefinition()->valuesCount;
         assert($this->debugInfo(['dataElement' => $data]));
 
         for ($i = 0; $i < $this->components; $i++) {
             $item_definition = $this->getItemDefinitionFromData($i, $i, $data, $offset);
 
             // Check if this tag should be skipped.
-            if ($item_definition->getCollection()->getPropertyValue('skip')) {
+            if ($item_definition->collection->getPropertyValue('skip')) {
                 $this->debug("Skipped");
                 continue;
             };
 
-            $this->components -= ($item_definition->getValuesCount() - 1);
+            $this->components -= ($item_definition->valuesCount - 1);
 
             // Adds the 'tag'.
-            $this->addBlock($item_definition)->parseData($data, $item_definition->getDataOffset(), $item_definition->getSize());
+            $tag = $this->addBlock($item_definition);
+            assert($tag instanceof Tag || $tag instanceof RawData, get_class($tag));
+            $tag->parseData($data, $item_definition->dataOffset, $item_definition->getSize());
 
             $offset += $item_definition->getSize();
         }
@@ -111,26 +112,17 @@ class Index extends ListBase
     protected function getValueFromData(DataElement $dataElement, int &$offset, int $format, int $count = 1): mixed
     {
         $dataWindow = $this->getDataWindowFromData($dataElement, $offset, $format, $count);
-        switch ($format) {
-            case DataFormat::BYTE:
-                return $dataWindow->getByte();
-            case DataFormat::SHORT:
-                return $dataWindow->getShort();
-            case DataFormat::SHORT_REV:
-                return $dataWindow->getShortRev();
-            case DataFormat::SIGNED_SHORT:
-                return $dataWindow->getSignedShort();
-            case DataFormat::LONG:
-                return $dataWindow->getLong();
-            case DataFormat::SIGNED_LONG:
-                return $dataWindow->getSignedLong();
-            case DataFormat::RATIONAL:
-                return $dataWindow->getRational();
-            case DataFormat::SIGNED_RATIONAL:
-                return $dataWindow->getSignedRational();
-            default:
-                $this->error("Unsupported format.");
-        }
+        return match ($format) {
+            DataFormat::BYTE => $dataWindow->getByte(),
+            DataFormat::SHORT => $dataWindow->getShort(),
+            DataFormat::SHORT_REV => $dataWindow->getShortRev(),
+            DataFormat::SIGNED_SHORT => $dataWindow->getSignedShort(),
+            DataFormat::LONG => $dataWindow->getLong(),
+            DataFormat::SIGNED_LONG => $dataWindow->getSignedLong(),
+            DataFormat::RATIONAL => $dataWindow->getRational(),
+            DataFormat::SIGNED_RATIONAL => $dataWindow->getSignedRational(),
+            default => throw new DataException("Unsupported format."),
+        };
     }
 
     /**
@@ -138,44 +130,27 @@ class Index extends ListBase
      */
     protected function getDataWindowFromData(DataElement $dataElement, int &$offset, int $format, int $count = 1): DataWindow
     {
-        switch ($format) {
-            case DataFormat::ASCII:
-            case DataFormat::BYTE:
-            case DataFormat::UNDEFINED:
-                $size = 1;
-                break;
-            case DataFormat::SHORT:
-            case DataFormat::SHORT_REV:
-            case DataFormat::SIGNED_SHORT:
-                $size = 2;
-                break;
-            case DataFormat::LONG:
-            case DataFormat::SIGNED_LONG:
-                $size = 4;
-                break;
-            case DataFormat::RATIONAL:
-            case DataFormat::SIGNED_RATIONAL:
-                $size = 8;
-                break;
-            default:
-                $this->error("Unsupported format.");
-        }
+        $size = match ($format) {
+            DataFormat::ASCII, DataFormat::BYTE, DataFormat::UNDEFINED => 1,
+            DataFormat::SHORT, DataFormat::SHORT_REV, DataFormat::SIGNED_SHORT => 2,
+            DataFormat::LONG, DataFormat::SIGNED_LONG => 4,
+            DataFormat::RATIONAL, DataFormat::SIGNED_RATIONAL => 8,
+            default => throw new DataException("Unsupported format."),
+        };
         $value = new DataWindow($dataElement, $offset, $count * $size);
         $offset += ($count * $size);
         return $value;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $data_bytes = '';
 
         // Get the tags to be written. The index size, if present, is stored in
         // a rawData node.
-        foreach ($this->getMultipleElements('tag') as $tag => $sub_block) {
-            $data_bytes .= $sub_block->toBytes($byte_order);
+        foreach ($this->getMultipleElements('tag') as $tag => $tag_block) {
+            assert($tag_block instanceof Tag);
+            $data_bytes .= $tag_block->toBytes($byte_order);
         }
 
         $actual_size = strlen($data_bytes);
@@ -189,16 +164,14 @@ class Index extends ListBase
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getComponents(): int
     {
         $components = 0;
-        foreach ($this->getMultipleElements('tag') as $sub) {
-            $sub_size = DataFormat::getSize($sub->getFormat()) * $sub->getComponents();
-            // Components are in Shorts, $sub_size is in Bytes, so normalize.
-            $components += $sub_size / 2;
+        foreach ($this->getMultipleElements('tag') as $tag) {
+            assert($tag instanceof Tag);
+            $tag_size = DataFormat::getSize($tag->getFormat()) * $tag->getComponents();
+            // Components are in Shorts, $tag_size is in Bytes, so normalize.
+            $components += $tag_size / 2;
         }
         if ($this->getCollection()->getPropertyValue('hasIndexSize')) {
             $components++;
@@ -214,7 +187,7 @@ class Index extends ListBase
 
         $msg = '#{seq} {node}:{name}';
 
-        $info['seq'] = $this->getDefinition()->getSequence() + 1;
+        $info['seq'] = $this->getDefinition()->sequence + 1;
         if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
@@ -229,7 +202,7 @@ class Index extends ListBase
         }
 
         $info['tags'] = $context['itemsCount'] ?? 'n/a';
-        $info['format'] = DataFormat::getName($this->getDefinition()->getFormat());
+        $info['format'] = DataFormat::getName($this->getDefinition()->format);
         $info['_msg'] = $msg;
 
         return array_merge($parentInfo, $info);

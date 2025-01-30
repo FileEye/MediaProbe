@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Block\Jpeg;
 
+use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
@@ -53,7 +54,9 @@ class Exif extends BlockBase
         $tiffHandler = $tiff->collection->getPropertyValue('handler');
 
         if ($tiffHandler::getTiffSegmentByteOrder($data, strlen(static::EXIF_HEADER)) !== null) {
-            $this->addBlock($tiff)->parseData($data, strlen(static::EXIF_HEADER), $data->getSize() - strlen(static::EXIF_HEADER));
+            $tiff = $this->addBlock($tiff);
+            assert($tiff instanceof Tiff);
+            $tiff->parseData($data, strlen(static::EXIF_HEADER), $data->getSize() - strlen(static::EXIF_HEADER));
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.

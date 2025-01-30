@@ -35,54 +35,6 @@ class ItemDefinition
     }
 
     /**
-     * @deprecated
-     */
-    public function getCollection(): CollectionInterface
-    {
-        return $this->collection;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getFormat(): int
-    {
-        return $this->format;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getValuesCount(): int
-    {
-        return $this->valuesCount;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getDataOffset(): int
-    {
-        return $this->dataOffset;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getItemDefinitionOffset(): int
-    {
-        return $this->itemDefinitionOffset;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function getSequence(): int
-    {
-        return $this->sequence;
-    }
-
-    /**
      * @todo
      */
     public function getSize(): int

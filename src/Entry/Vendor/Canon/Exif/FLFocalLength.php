@@ -4,6 +4,7 @@ namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
 use FileEye\MediaProbe\Entry\Core\Short;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\MediaProbeException;
 
 /**
  * Handler for Canon Focal Length tags.
@@ -26,7 +27,7 @@ class FLFocalLength extends Short
             $denominator = $focal_units->getValue();
         }
 
-        return $this->value[0] / $denominator;
+        return throw new MediaProbeException('Invalid data');
     }
 
     /**

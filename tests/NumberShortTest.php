@@ -18,8 +18,9 @@ class NumberShortTest extends NumberTestCase
         $this->max = 65535;
     }
 
-    protected function convertValueToBytes(int $value): string
+    protected function convertValueToBytes(int|float|array $value): string
     {
+        assert(is_int($value));
         return ConvertBytes::fromShort($value);
     }
 }

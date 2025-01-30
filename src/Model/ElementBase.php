@@ -6,8 +6,10 @@ namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Dumper\DumperInterface;
+use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
@@ -27,7 +29,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     /**
      * The DOM node associated to this element.
      */
-    protected \DOMNode $DOMNode;
+    protected DOMElement $DOMNode;
 
     /**
      * Whether this element was successfully validated.
@@ -43,7 +45,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
-    public function __construct(string $dom_node_name, ElementInterface $parent = null, ElementInterface $reference = null)
+    public function __construct(string $dom_node_name, ?ElementInterface $parent = null, ?ElementInterface $reference = null)
     {
         // If $parent is null, this Element is the root of the DOM document that
         // stores the media structure.
@@ -59,6 +61,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         $this->DOMNode = $doc->createElement($dom_node_name);
 
         if ($reference) {
+            assert($reference instanceof ElementBase);
             $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
         } else {
             $parent_node->appendChild($this->DOMNode);
@@ -68,26 +71,33 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         $this->DOMNode->setMediaProbeElement($this);
     }
 
-    public function getNodeName(): string
-    {
-        return $this->DOMNode->nodeName;
-    }
-
     public function getRootElement(): ElementInterface
     {
-        return $this->DOMNode->ownerDocument->documentElement->getMediaProbeElement();
+        $doc = $this->DOMNode->ownerDocument->documentElement;
+        assert($doc instanceof DOMElement);
+        return $doc->getMediaProbeElement();
     }
 
     public function getParentElement(): ?ElementInterface
     {
-        return $this->DOMNode->getMediaProbeElement() !== $this->getRootElement() ? $this->DOMNode->parentNode->getMediaProbeElement() : null;
+        $domNode = $this->DOMNode;
+        assert($domNode instanceof DOMElement);
+        if ($domNode->getMediaProbeElement() !== $this->getRootElement()) {
+            $parentDomNode = $this->DOMNode->parentNode;
+            assert($parentDomNode instanceof DOMElement);
+            return $parentDomNode->getMediaProbeElement();
+        }
+        return null;
     }
 
     public function getMultipleElements(string $expression): array
     {
-        $node_list = $this->getRootElement()->XPath->query($expression, $this->DOMNode);
+        $rootElement = $this->getRootElement();
+        assert($rootElement instanceof RootBlockBase, get_class($rootElement));
+        $node_list = $rootElement->XPath->query($expression, $this->DOMNode);
         $ret = [];
         for ($i = 0; $i < $node_list->length; $i++) {
+            assert($node_list->item($i) instanceof DOMElement);
             $ret[] = $node_list->item($i)->getMediaProbeElement();
         }
         return $ret;
@@ -113,6 +123,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
             case 0:
                 return false;
             case 1:
+                assert($ret[0] instanceof ElementBase);
                 $ret[0]->DOMNode->parentNode->removeChild($ret[0]->DOMNode);
                 return true;
             default:
@@ -168,14 +179,6 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         return $this->valid;
     }
 
-    /**
-     * @todo
-     */
-    public function getDataElement(): DataElement
-    {
-        throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
-    }
-
     public function getValue(array $options = []): mixed
     {
         throw new MediaProbeException("%s does not implement the %s method.", static::class, __FUNCTION__);
@@ -196,7 +199,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     public function collectInfo(array $context = []): array
     {
         $info = [];
-        $info['node'] = $this->getNodeName();
+        $info['node'] = $this->DOMNode->nodeName;
         if (($name = $this->getAttribute('name')) !== null) {
             $info['name'] = $name;
         }
@@ -208,7 +211,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     public function debugInfo(array $context = []): bool
     {
-        $debugInfo = $this->asArray($this->getRootElement()->debugDumper, $context);
+        $rootElement = $this->getRootElement();
+        assert($rootElement instanceof Media);
+        $debugInfo = $this->asArray($rootElement->debugDumper, $context);
         $msg = $debugInfo['_msg'] ?? static::class;
         unset($debugInfo['_msg']);
         $this->debug($msg, $debugInfo);
@@ -225,6 +230,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         }*/
 
         if (property_exists($root_element, 'logger')) {  // xx should be logging anyway
+            assert($root_element instanceof Media);
             $root_element->logger->log($level, $message, $context);
             if ($root_element->externalLogger) {  // xx should be logging anyway
                 $root_element->externalLogger->log($level, $message, $context);

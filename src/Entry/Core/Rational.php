@@ -6,6 +6,7 @@ use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Class for holding unsigned rational numbers.
@@ -19,24 +20,9 @@ use FileEye\MediaProbe\MediaProbe;
  */
 class Rational extends NumberBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'Rational';
-
-    /**
-     * {@inheritdoc}
-     */
     protected string $formatName = 'Rational';
-
-    /**
-     * {@inheritdoc}
-     */
     protected int $formatSize = 8;
-
-    /**
-     * {@inheritdoc}
-     */
     protected int $dimension = 2;
 
     const MIN = 0;
@@ -47,9 +33,6 @@ class Rational extends NumberBase
         return $this->dataElement->getRational($offset);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
@@ -62,9 +45,6 @@ class Rational extends NumberBase
         return $ret;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function formatNumber(int|float|array $number, array $options = []): int|float|array|string
     {
         $format = $options['format'] ?? null;
@@ -89,9 +69,6 @@ class Rational extends NumberBase
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function numberToBytes(int $number, int $order): string
     {
         return ConvertBytes::fromLong($number, $order);

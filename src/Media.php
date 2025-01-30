@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace FileEye\MediaProbe;
 
@@ -7,6 +9,7 @@ use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFile;
 use FileEye\MediaProbe\Data\DataString;
+use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use FileEye\MimeMap\Extension;
@@ -70,7 +73,7 @@ class Media extends RootBlockBase
         $media = new ItemDefinition(CollectionFactory::get('Media'));
         parent::__construct($media);
         $this->logger = (new Logger('mediaprobe'))
-            ->pushHandler(new TestHandler(Logger::INFO))
+            ->pushHandler(new TestHandler(Level::Info))
             ->pushProcessor(new PsrLogMessageProcessor());
         $this->failLevel = $failLevel ? Logger::toMonologLevel($failLevel) : null;
         $this->stopWatch = new Stopwatch();
@@ -150,10 +153,17 @@ class Media extends RootBlockBase
         // parse the media according to the media format.
         $media->setAttribute('mimeType', (string) $mediaType->collection->getPropertyValue('item'));
         assert($media->debugInfo(['dataElement' => $dataElement]));
-        $media->addBlock($mediaType)->parseData($dataElement);
+        $mediaTypeBlock = $media->addBlock($mediaType);
+        assert($mediaTypeBlock instanceof BlockInterface);
+        $mediaTypeBlock->parseData($dataElement);
         $media->getStopwatch()->stop('media-parsing');
 
         return $media;
+    }
+
+    protected function doParseData(DataElement $data): void
+    {
+        throw new \LogicException(__METHOD__ . '() is not implemented');
     }
 
     /**
@@ -192,11 +202,11 @@ class Media extends RootBlockBase
      */
     public function toXml(bool $pretty = false): string
     {
-        if ($pretty && !$this->$xmlFormatter) {
-            $this->$xmlFormatter = new Formatter();
+        if ($pretty && !$this->xmlFormatter) {
+            $this->xmlFormatter = new Formatter();
         }
         $xml = $this->DOMNode->ownerDocument->saveXML();
-        return $pretty ? $this->$xmlFormatter->format($xml) : $xml;
+        return $pretty ? $this->xmlFormatter->format($xml) : $xml;
     }
 
     /**
@@ -211,6 +221,7 @@ class Media extends RootBlockBase
     public function dumpLog(?string $level_name = null): array
     {
         $handler = $this->logger->getHandlers()[0];
+        assert($handler instanceof TestHandler);
         $ret = [];
         foreach ($handler->getRecords() as $record) {
             if (($level_name && $record['level_name'] === $level_name) || !$level_name) {

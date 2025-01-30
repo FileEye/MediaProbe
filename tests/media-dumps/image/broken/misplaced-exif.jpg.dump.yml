@@ -8,414 +8,367 @@ fileName: misplaced-exif.jpg
 mimeType: image/jpeg
 fileContentHash: b14a62158bfab96530f8c257cb619371a39ca5d28c9e23a65e95e7b4ac4ba3b2
 elements:
-    node: media
     path: /media
-    class: FileEye\MediaProbe\Media
+    handlerClass: FileEye\MediaProbe\Media
     valid: true
     collection: Media
     elements:
         -
-            node: jpeg
             path: /media/jpeg
-            class: FileEye\MediaProbe\Block\Jpeg\Jpeg
+            handlerClass: FileEye\MediaProbe\Block\Jpeg\Jpeg
             valid: true
             id: image/jpeg
             collection: Jpeg\Jpeg
             elements:
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOI:216'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOI
                     id: '216'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:SOI:216/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 2
                             bytesHash: 71563ad80061407ede9c6f316836284bd3710a520c5a792b5eda1cb703690815
                             text: '2 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP0:224'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: APP0
                     id: '224'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:APP0:224/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 18
                             bytesHash: 04085feff5a66932455f3842f562bb65160eb7bf2b6a733115873d7acf472eb4
                             text: '18 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
                     name: APP1
                     id: '225'
                     collection: Jpeg\SegmentApp1
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:APP1:225/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 458
                             bytesHash: be2e770f2315069122d7575741a9ff8ea497e9700522dfaedef1c90b20def142
                             text: '458 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    class: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
                     name: APP1
                     id: '225'
                     collection: Jpeg\SegmentApp1
                     elements:
                         -
-                            node: exif
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
-                            class: FileEye\MediaProbe\Block\Jpeg\Exif
+                            handlerClass: FileEye\MediaProbe\Block\Jpeg\Exif
                             valid: true
                             collection: Jpeg\Exif
                             elements:
                                 -
-                                    node: tiff
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
-                                    class: FileEye\MediaProbe\Block\Tiff\Tiff
+                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tiff
                                     valid: true
                                     collection: Tiff\Tiff
                                     elements:
                                         -
-                                            node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            class: FileEye\MediaProbe\Block\Tiff\Ifd
+                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: true
                                             name: IFD0
                                             id: '0'
                                             collection: Tiff\Ifd0
                                             elements:
                                                 -
-                                                    node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XPTitle:40091'
-                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: XPTitle
                                                     id: '40091'
                                                     collection: Tiff\Tag
                                                     elements:
                                                         -
-                                                            node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XPTitle:40091/entry'
-                                                            class: FileEye\MediaProbe\Entry\WindowsString
+                                                            handlerClass: FileEye\MediaProbe\Entry\WindowsString
                                                             valid: true
                                                             format: Byte
                                                             components: 1
                                                             bytesHash: 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
                                                             text: ''
                                                 -
-                                                    node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270'
-                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
                                                     name: ImageDescription
                                                     id: '270'
                                                     collection: Tiff\Tag
                                                     elements:
                                                         -
-                                                            node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                             valid: true
                                                             format: Ascii
                                                             components: 6
                                                             bytesHash: 059d7955ee15906a5f9fe69c6c94d419db9f9e8489a99f8d5a5aba5bb11a6c2e
                                                             text: Test1
                                                 -
-                                                    node: tag
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-                                                    class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: false
                                                     name: ModifyDate
                                                     id: '306'
                                                     collection: Tiff\Tag
                                                     elements:
                                                         -
-                                                            node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
-                                                            class: FileEye\MediaProbe\Entry\Time
+                                                            handlerClass: FileEye\MediaProbe\Entry\Time
                                                             valid: false
                                                             format: Ascii
                                                             components: 11
                                                             bytesHash: 8082e900bcd25e2f020ec7473bdc84b09feba7c72eba59119286e9bb8efb2dfc
                                                             text: '1509749992'
                                                 -
-                                                    node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
-                                                    class: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                                     valid: true
                                                     name: GPS
                                                     id: '34853'
                                                     collection: Tiff\IfdGps
                                                     elements:
                                                         -
-                                                            node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSVersionID:0'
-                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: GPSVersionID
                                                             id: '0'
                                                             collection: Tiff\Tag
                                                             elements:
                                                                 -
-                                                                    node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSVersionID:0/entry'
-                                                                    class: FileEye\MediaProbe\Entry\GPSVersionId
+                                                                    handlerClass: FileEye\MediaProbe\Entry\GPSVersionId
                                                                     valid: true
                                                                     format: Byte
                                                                     components: 4
                                                                     bytesHash: 3c7a246021bffd30e44bb63887f5ea8e6b87b5dae4db1110fabe67c1683200d0
                                                                     text: 2.3.0.0
                                                 -
-                                                    node: ifd
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    class: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                                     valid: true
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Tiff\IfdExif
                                                     elements:
                                                         -
-                                                            node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: false
                                                             name: ExifVersion
                                                             id: '36864'
                                                             collection: Tiff\Tag
                                                             elements:
                                                                 -
-                                                                    node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Version
+                                                                    handlerClass: FileEye\MediaProbe\Entry\Version
                                                                     valid: false
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 6142c2545fc60da377b0bb1b1ac7bfedb5c5f741fd21fc924dfaac20c48cf0b2
                                                                     text: '0.0'
                                                         -
-                                                            node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTime:37520'
-                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: SubSecTime
                                                             id: '37520'
                                                             collection: Tiff\Tag
                                                             elements:
                                                                 -
-                                                                    node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTime:37520/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                                     valid: true
                                                                     format: Ascii
                                                                     components: 2
                                                                     bytesHash: e4f60d0aa6d7f3d3b6a6494b1c861b99f649c6f9ec51abaf201b20f297327c95
                                                                     text: '0'
                                                         -
-                                                            node: tag
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880'
-                                                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
                                                             name: OffsetTime
                                                             id: '36880'
                                                             collection: Tiff\Tag
                                                             elements:
                                                                 -
-                                                                    node: entry
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880/entry'
-                                                                    class: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                                     valid: true
                                                                     format: Ascii
                                                                     components: 7
                                                                     bytesHash: 3c23203d1c5f9debe4a838f6b142a1dcae721fba060615dc95718b30adf2900c
                                                                     text: '+00:00'
                                         -
-                                            node: ifd
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
-                                            class: FileEye\MediaProbe\Block\Tiff\Ifd
+                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: true
                                             name: IFD1
                                             id: '1'
                                             collection: Tiff\Ifd1
                                             elements:
                                                 -
-                                                    node: thumbnail
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail'
-                                                    class: FileEye\MediaProbe\Block\Thumbnail
+                                                    handlerClass: FileEye\MediaProbe\Block\Thumbnail
                                                     valid: true
                                                     collection: Thumbnail
                                                     elements:
                                                         -
-                                                            node: entry
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail/entry'
-                                                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                                                             valid: true
                                                             format: Undefined
                                                             components: 1457
                                                             bytesHash: f61c1bfebdbdc57435c7a567225ba1fc9e907285192bb74fab92dc0a4a7dfe55
                                                             text: '1457 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:COM:254'
-                    class: FileEye\MediaProbe\Block\Jpeg\SegmentCom
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentCom
                     valid: true
                     name: COM
                     id: '254'
                     collection: Jpeg\SegmentCom
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:COM:254/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Char
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Char
                             valid: true
                             format: Char
                             components: 17
                             bytesHash: 31af3a71e475036fc7427bee0a875861b66aae02154d4d28048187025673510a
                             text: 'Created with GIMP'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DQT
                     id: '219'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:DQT:219/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 69
                             bytesHash: a6f9ef7a75ff7f267a8826a24d6a648deb9459cef5c5364d3ebd38029eb4ffac
                             text: '69 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DQT
                     id: '219'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:DQT:219/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 69
                             bytesHash: af60179a7a2c75500394253953ac37178bb9e6f72a43d9a2ad9be61c53c3c6d7
                             text: '69 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOF2:194'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: SOF2
                     id: '194'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:SOF2:194/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 19
                             bytesHash: 5bbeefdda9b936aeabf74efa880078bac2df75986ed192e9906e6f3de9f80d94
                             text: '19 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DHT
                     id: '196'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:DHT:196/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 28
                             bytesHash: cdc6ead4795d62aac4b3f93fb9ad1c1941aef2d761690529fbebc3fa104843e6
                             text: '28 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: DHT
                     id: '196'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:DHT:196/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 22
                             bytesHash: f575307044c1cabbd4cb71c98fe6e707b998b9a9d45e477db5c07eab9e4caf92
                             text: '22 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:SOS:218'
-                    class: FileEye\MediaProbe\Block\Jpeg\SegmentSos
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentSos
                     valid: true
                     name: SOS
                     id: '218'
                     collection: Jpeg\SegmentSos
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:SOS:218/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 2224
                             bytesHash: fc2dc0cb942824a22eb2d38bb00fdf61330d03db0e9ca0056f301c5a988a5650
                             text: '2224 byte(s) of data'
                 -
-                    node: jpegSegment
                     path: '/media/jpeg/jpegSegment:EOI:217'
-                    class: FileEye\MediaProbe\Block\Jpeg\Segment
+                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
                     name: EOI
                     id: '217'
                     collection: Jpeg\Segment
                     elements:
                         -
-                            node: entry
                             path: '/media/jpeg/jpegSegment:EOI:217/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 2
