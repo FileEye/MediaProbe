@@ -57,7 +57,7 @@ class EntryAsciiTest extends EntryTestBase
         // Check day roll-over for SF bug #1699489.
         $entry->setDataElement(new DataString('2007:04:23 23:30:00' . chr(0)));
         $t_plus_one_hour = $entry->getValue(['type' => Time::UNIX_TIMESTAMP]) + 3600;
-        $entry->setDataElement(new DataString(ConvertTime::unixToExifString($t_plus_one_hour) . chr(0)));
+        $entry->setDataElement(new DataString(ConvertTime::unixToExifString((float) $t_plus_one_hour) . chr(0)));
         $this->assertEquals('2007:04:24 00:30:00', $entry->getValue());
         $this->assertEquals('2007:04:24 00:30:00' . chr(0), $entry->toBytes());
     }

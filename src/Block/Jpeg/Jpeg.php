@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Block\Jpeg;
 
+use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
@@ -61,7 +62,9 @@ class Jpeg extends BlockBase implements MediaTypeBlockInterface
                         DataFormat::BYTE,
                         $offset
                     );
-                    $this->addBlock($trail)->parseData($data, $offset, $newOffset - $offset);
+                    $trailData = $this->addBlock($trail);
+                    assert($trailData instanceof RawData);
+                    $trailData->parseData($data, $offset, $newOffset - $offset);
                 }
                 $offset = $newOffset;
             } catch (DataException $e) {
@@ -100,6 +103,7 @@ class Jpeg extends BlockBase implements MediaTypeBlockInterface
             // Parse the MediaProbe JPEG segment data.
             $segmentDefinition = new ItemDefinition($segmentCollection);
             $segment = $this->addBlock($segmentDefinition);
+            assert($segment instanceof SegmentBase, get_class($segment));
             $segment->parseData($data, $offset, $segmentSize);
 
             // Position to end of the segment.

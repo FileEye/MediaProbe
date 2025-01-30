@@ -11,12 +11,7 @@ use FileEye\MediaProbe\Model\EntryInterface;
  */
 abstract class CollectionFactory
 {
-    /**
-     * The collections' index.
-     *
-     * @var Collection
-     */
-    protected static $collectionIndex;
+    protected static CollectionIndex $collectionIndex;
 
     /**
      * Sets the compiled MediaProbe collection mapper class.
@@ -56,13 +51,8 @@ abstract class CollectionFactory
     /**
      * Returns the requested collection.
      *
-     * @param string $id
-     *   The id of the collection.
      * @param array $overrides
      *   (Optional) If defined, overrides properties defined in the collection.
-     *
-     * @return Collection
-     *   The collection.
      *
      * @throws CollectionException
      *   When the collection does not exist.
@@ -78,12 +68,6 @@ abstract class CollectionFactory
 
     /**
      * Returns a collection given its name.
-     *
-     * @param string $collection_name
-     *   The collection name.
-     *
-     * @return Collection
-     *   The collection object.
      *
      * @throws CollectionException
      *   When the collection does not exist.

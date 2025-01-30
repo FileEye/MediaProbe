@@ -4,8 +4,8 @@ namespace FileEye\MediaProbe\Block\Tiff;
 
 use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Block\ListBase;
-use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Block\Thumbnail;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
@@ -13,12 +13,13 @@ use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Model\ElementInterface;
-use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Entry\Core\Undefined;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Model\BlockBase;
+use FileEye\MediaProbe\Model\ElementInterface;
+use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -31,7 +32,7 @@ class Ifd extends ListBase
      */
     public function parseData(DataElement $dataElement, int $start = 0, ?int $size = null, $xxx = 0): void
     {
-        $offset = $this->getDefinition()->getDataOffset();
+        $offset = $this->getDefinition()->dataOffset;
 
         // Get the number of entries.
         $n = $this->getItemsCountFromData($dataElement, $offset);
@@ -41,14 +42,14 @@ class Ifd extends ListBase
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
             $item_definition = $this->getItemDefinitionFromData($i, $dataElement, $i_offset, $xxx, 'Tiff\IfdAny');
-            $item_class = $item_definition->getCollection()->getPropertyValue('handler');
+            $item_class = $item_definition->collection->getPropertyValue('handler');
 
             // Check data is accessible, warn otherwise.
-            if ($item_definition->getDataOffset() >= $dataElement->getSize()) {
+            if ($item_definition->dataOffset >= $dataElement->getSize()) {
                 $this->warning(
                     'Could not access value for item {item} in \'{ifd}\', overflow',
                     [
-                        'item' => MediaProbe::dumpIntHex($item_definition->getCollection()->getPropertyValue('name') ?? 'n/a'),
+                        'item' => MediaProbe::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
                         'ifd' => $this->getAttribute('name'),
                     ]
                 );
@@ -56,19 +57,19 @@ class Ifd extends ListBase
             }
 /*            $this->debug(
                 'Item Offset {o} Components {c} Format {f} Formatsize {fs} Size {s} DataElement Size {des}', [
-                    'o' => MediaProbe::dumpIntHex($dataElement->getAbsoluteOffset($item_definition->getDataOffset())),
-                    'c' => $item_definition->getValuesCount(),
-                    'f' => $item_definition->getFormat(),
-                    'fs' => DataFormat::getSize($item_definition->getFormat()),
+                    'o' => MediaProbe::dumpIntHex($dataElement->getAbsoluteOffset($item_definition->dataOffset)),
+                    'c' => $item_definition->valuesCount,
+                    'f' => $item_definition->format,
+                    'fs' => DataFormat::getSize($item_definition->format),
                     's' => MediaProbe::dumpIntHex($item_definition->getSize()),
                     'des' => MediaProbe::dumpIntHex($dataElement->getSize()),
                 ]
             );*/
-            if ($item_definition->getDataOffset() +  $item_definition->getSize() > $dataElement->getSize()) {
+            if ($item_definition->dataOffset +  $item_definition->getSize() > $dataElement->getSize()) {
                 $this->warning(
                     'Could not get value for item {item} in \'{ifd}\', not enough data',
                     [
-                        'item' => MediaProbe::dumpIntHex($item_definition->getCollection()->getPropertyValue('name') ?? 'n/a'),
+                        'item' => MediaProbe::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
                         'ifd' => $this->getAttribute('name'),
                     ]
                 );
@@ -84,8 +85,8 @@ class Ifd extends ListBase
                     // In case of an IFD terminator item entry, i.e. zero
                     // components, the data window size is still 4 bytes, from
                     // the IFD index area.
-                    $item_data_window_size = $item_definition->getValuesCount() > 0 ? $item_definition->getSize() : 4;
-                    $item->parseData($dataElement, $item_definition->getDataOffset(), $item_data_window_size);
+                    $item_data_window_size = $item_definition->valuesCount > 0 ? $item_definition->getSize() : 4;
+                    $item->parseData($dataElement, $item_definition->dataOffset, $item_data_window_size);
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
@@ -154,10 +155,10 @@ class Ifd extends ListBase
      *            the ItemDefinition object of the IFD item.
      */
     protected function getItemDefinitionFromData(
-        int $seq, 
-        DataElement $dataElement, 
-        int $offset, 
-        int $data_offset_shift = 0, 
+        int $seq,
+        DataElement $dataElement,
+        int $offset,
+        int $data_offset_shift = 0,
         ?string $fallback_collection_id = null,
     ): ItemDefinition
     {
@@ -230,9 +231,11 @@ class Ifd extends ListBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getCollection()->getPropertyValue('id') === 'Thumbnail') {
+            if ($sub_block instanceof Thumbnail) {
                 continue;
             }
+
+            assert($sub_block instanceof Tag || $sub_block instanceof ListBase, get_class($sub_block));
 
             $data = $sub_block->toBytes($byte_order, $data_area_offset);
 
@@ -260,6 +263,7 @@ class Ifd extends ListBase
         // Thumbnail.
         if ($thumbnail) {
             $thumbnail_entry = $thumbnail->getElement('entry');
+            assert($thumbnail_entry instanceof EntryInterface);
             // Add offset.
             $bytes .= ConvertBytes::fromShort($this->getCollection()->getItemCollectionByName('ThumbnailOffset')->getPropertyValue('item'), $byte_order);
             $bytes .= ConvertBytes::fromShort(DataFormat::LONG, $byte_order);
@@ -304,7 +308,9 @@ class Ifd extends ListBase
 
         // Get Thumbnail's offset and size.
         $offset = $ifd->getElement("tag[@name='ThumbnailOffset']/entry")->getValue();
+        assert(is_int($offset));
         $length = $ifd->getElement("tag[@name='ThumbnailLength']/entry")->getValue();
+        assert(is_int($length));
 
         // Remove the tags that describe the Thumbnail.
         $ifd->removeElement("tag[@name='ThumbnailOffset']");
@@ -379,11 +385,13 @@ class Ifd extends ListBase
         if (!$exif_ifd = $ifd->getElement("ifd[@name='ExifIFD']")) {
             return;
         }
+        assert($exif_ifd instanceof Ifd);
 
         // Get MakerNote tag from Exif IFD.
         if (!$maker_note_tag = $exif_ifd->getElement("tag[@name='MakerNote']")) {
             return;
         }
+        assert($maker_note_tag instanceof Tag);
 
         // Get Make tag from IFD0.
         if (!$make_tag = $ifd->getElement("tag[@name='Make']")) {
@@ -411,11 +419,12 @@ class Ifd extends ListBase
         // xxx
         $ifd->setAttribute('id', 37500);
         $ifd->setAttribute('name', $maker_note_ifd_name);
-        $data = $maker_note_tag->getElement("entry")->getDataElement();
-// dump(MediaProbe::dumpHexFormatted($data->getBytes()));
+        $entry = $maker_note_tag->getElement("entry");
+        assert($entry instanceof EntryInterface);
+        $data = $entry->getDataElement();
         // @todo the netting of the dataOffset is a Canon only thing, move to vendor
         // @todo xxx this is incorrect, parsing should happen indepentently from add'l offset
-        $ifd->parseData($data, 0, null, -$maker_note_tag->getDefinition()->getDataOffset());
+        $ifd->parseData($data, 0, null, -$maker_note_tag->getDefinition()->dataOffset);
 
         // Remove the MakerNote tag that has been converted to IFD.
         $exif_ifd->removeElement("tag[@name='MakerNote']");
@@ -453,7 +462,7 @@ class Ifd extends ListBase
 
         $msg = '#{seq} {node}:{name}';
 
-        $info['seq'] = $this->getDefinition()->getSequence() + 1;
+        $info['seq'] = $this->getDefinition()->sequence + 1;
         if ($this->getParentElement() && ($parent_name = $this->getParentElement()->getAttribute('name'))) {
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
@@ -464,7 +473,7 @@ class Ifd extends ListBase
         }
 
         if (isset($context['dataElement']) && $context['dataElement'] instanceof DataWindow) {
-            $info['offset'] = $context['dataElement']->getAbsoluteOffset($this->getDefinition()->getDataOffset()) . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset($this->getDefinition()->getDataOffset())));
+            $info['offset'] = $context['dataElement']->getAbsoluteOffset($this->getDefinition()->dataOffset) . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset($this->getDefinition()->dataOffset)));
         }
 
         $info['tags'] = $context['itemsCount'] ?? 'n/a';

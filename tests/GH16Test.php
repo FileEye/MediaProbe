@@ -39,6 +39,7 @@ class GH16Test extends MediaProbeTestCaseBase
         $jpeg = $media->getElement("jpeg");
         $exif = $jpeg->getElement("jpegSegment/exif");
         $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
+        $this->assertInstanceOf(Ifd::class, $ifd0);
         $this->assertCount(1, $ifd0->getMultipleElements("tag"));
         $this->assertEquals('Ïðåâåä, ìåäâåä!', $ifd0->getElement("tag[@name='XPSubject']")->toString());
 

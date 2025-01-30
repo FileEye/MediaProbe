@@ -42,7 +42,9 @@ class SegmentSos extends SegmentBase
         $eoi = new ItemDefinition(
             $this->getParentElement()->getCollection()->getItemCollection(static::JPEG_EOI)
         );
-        $this->getParentElement()->addBlock($eoi)->parseData($data, $end_offset, 2);
+        $eoiBlock = $this->getParentElement()->addBlock($eoi);
+        assert($eoiBlock instanceof Segment, get_class($eoiBlock));
+        $eoiBlock->parseData($data, $end_offset, 2);
         $end_offset += 2;
 
         // Now check to see if there are any trailing data.
@@ -56,5 +58,10 @@ class SegmentSos extends SegmentBase
             $trail = new RawData($trail_definition, $this->getParentElement());
             $trail->parseData($trail_data_window);
         }
+    }
+
+    public function getParentElement(): Jpeg
+    {
+        return parent::getParentElement();
     }
 }

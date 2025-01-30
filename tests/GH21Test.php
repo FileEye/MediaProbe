@@ -62,6 +62,7 @@ class GH21Test extends MediaProbeTestCaseBase
 
         $out_media = Media::parse(new DataString($scaled_bytes));
         $out_jpeg = $out_media->getElement("jpeg");
+        $this->assertInstanceOf(Jpeg::class, $out_jpeg);
 
         // Find the COM segment in the output file.
         $out_com_segment = $out_jpeg->getElement("jpegSegment[@name='COM']");

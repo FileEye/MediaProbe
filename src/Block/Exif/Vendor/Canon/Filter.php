@@ -32,18 +32,15 @@ class Filter extends ListBase
     protected int $paramsCount;
 
     public function __construct(
-        ItemDefinition $definition, 
-        ?BlockInterface $parent = null, 
+        ItemDefinition $definition,
+        FilterInfoIndex $parent,
         ?BlockInterface $reference = null,
     )
     {
         parent::__construct($definition, $parent, $reference);
-        $this->setAttribute('name', $this->getParentElement()->getAttribute('name') . '.' . $definition->getSequence());
+        $this->setAttribute('name', $this->getParentElement()->getAttribute('name') . '.' . $definition->sequence);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function doParseData(DataElement $data): void
     {
         $offset = 0;
@@ -64,28 +61,25 @@ class Filter extends ListBase
             $offset += 8;
 
             // The items are defined in the collection of the parent element.
-            $this
-                ->addBlock(new ItemDefinition(
-                    $this->getParentElement()->getCollection()->getItemCollection($id),
-                    DataFormat::SIGNED_LONG,
-                    $val_count,
-                    0,
-                    $offset,
-                    $p,
-                ))
-                ->parseData(new DataWindow(
-                    $data,
-                    $offset,
-                    $val_count * DataFormat::getSize(DataFormat::SIGNED_LONG)
-                ));
+            $tag = $this->addBlock(new ItemDefinition(
+                $this->getParentElement()->getCollection()->getItemCollection($id),
+                DataFormat::SIGNED_LONG,
+                $val_count,
+                0,
+                $offset,
+                $p,
+            ));
+            assert($tag instanceof Tag, get_class($tag));
+            $tag->parseData(new DataWindow(
+                $data,
+                $offset,
+                $val_count * DataFormat::getSize(DataFormat::SIGNED_LONG),
+            ));
 
             $offset += 4 * $val_count;
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $bytes = '';
@@ -97,6 +91,7 @@ class Filter extends ListBase
         $params = $this->getMultipleElements('*');
         $data_area_bytes = '';
         foreach ($params as $param) {
+            assert($param instanceof Tag, get_class($param));
             $data_area_bytes .= ConvertBytes::fromLong((int)  $param->getAttribute('id'), $byte_order);
             $data_area_bytes .= ConvertBytes::fromLong($param->getComponents(), $byte_order);
             $data_area_bytes .= $param->toBytes($byte_order);
@@ -118,16 +113,18 @@ class Filter extends ListBase
     {
         return array_merge(parent::collectInfo($context), [
             '_msg' =>'#{seq}.{name} @{offset}, {parmetersCount} parameter(s), size {size} bytes',
-            'seq' => $this->getDefinition()->getSequence() + 1,
+            'seq' => $this->getDefinition()->sequence + 1,
             'parmetersCount' => $this->paramsCount,
         ]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function getContextPathSegmentPattern(): string
     {
         return '/{DOMNode}:{id}';
+    }
+
+    public function getParentElement(): FilterInfoIndex
+    {
+        return parent::getParentElement();
     }
 }

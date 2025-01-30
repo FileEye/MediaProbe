@@ -60,7 +60,7 @@ abstract class NumberBase extends EntryBase
      * @param int $number
      *            the number that should be converted.
      *
-     * @param int $byte_order
+     * @param int $order
      *            one of ConvertBytes::LITTLE_ENDIAN or ConvertBytes::BIG_ENDIAN,
      *            specifying the target byte order.
      *
@@ -87,6 +87,7 @@ abstract class NumberBase extends EntryBase
     {
         $format = $options['format'] ?? null;
         if ($format === 'exiftool') {
+            assert(!is_array($number));
             return $number == 0.0 ? 0 : round($number, 8);
         }
         return $number;

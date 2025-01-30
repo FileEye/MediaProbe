@@ -21,9 +21,6 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 class CustomFunctions2Header extends ListBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function doParseData(DataElement $data): void
     {
         assert($this->debugInfo(['dataElement' => $data]));
@@ -64,7 +61,7 @@ class CustomFunctions2Header extends ListBase
             $pos += 12;
             try {
                 $item_definition = new ItemDefinition($this->getCollection()->getItemCollection($rec_num), DataFormat::SIGNED_LONG, $rec_count);
-                $class = $item_definition->getCollection()->getPropertyValue('handler');
+                $class = $item_definition->collection->getPropertyValue('handler');
                 $group = new $class($item_definition, $this);
                 $group->parseData($data, $pos, min($rec_len, $data->getSize() - $pos));
             } catch (\Exception $e) {
@@ -75,15 +72,14 @@ class CustomFunctions2Header extends ListBase
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $bytes = '';
 
         // Fill in the Functions2 groups.
         foreach ($this->getMultipleElements('*') as $group) {
+            assert($group instanceof CustomFunctions2, get_class($group));
+
             // The group's data.
             $group_data = $group->toBytes($byte_order);
             // The group's ID.
@@ -106,9 +102,6 @@ class CustomFunctions2Header extends ListBase
         return ConvertBytes::fromLong(strlen($bytes) + 4, $byte_order) . $bytes;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getComponents(): int
     {
         // The components in this case is the total number of Long values
@@ -117,10 +110,12 @@ class CustomFunctions2Header extends ListBase
         // so we start the count off 2.
         $components = 2;
         foreach ($this->getMultipleElements('*') as $group) {
+            assert($group instanceof CustomFunctions2, get_class($group));
             // For each group, 1 long for the ID, 1 long to represent the
             // size of the group, 1 long to represent the number of tags.
             $components += (1 + 1 + 1);
             foreach ($group->getMultipleElements('tag') as $tag) {
+                assert($tag instanceof Tag, get_class($tag));
                 // For each tag, 1 long for the ID, 1 long to represent the
                 // number of tag values, then as many longs as the number of
                 // values.

@@ -37,6 +37,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
     {
         $media = Media::parseFromFile(dirname(__FILE__) . '/media-samples/image/no-exif.jpg', null, 'error');
         $jpeg = $media->getElement("jpeg");
+        $this->assertInstanceOf(Jpeg::class, $jpeg);
 
         $this->assertNull($jpeg->getElement("jpegSegment/exif"));
 

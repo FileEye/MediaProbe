@@ -6,6 +6,7 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use FileEye\MediaProbe\Utility\ConvertTime;
 
@@ -18,9 +19,6 @@ use FileEye\MediaProbe\Utility\ConvertTime;
  */
 class Time extends Ascii
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'Time';
 
     /**
@@ -37,7 +35,6 @@ class Time extends Ascii
      * Constant denoting a Julian Day Count.
      */
     const JULIAN_DAY_COUNT = 3;
-
 
     protected function validateDataElement(): void
     {
@@ -69,21 +66,18 @@ class Time extends Ascii
     /**
      * Return the timestamp of the entry.
      *
-     * The timestamp held by this entry is returned in one of three formats:
-     * as a string according to EXIF specs (default), as a standard UNIX
-     * timestamp, or as a fractional Julian Day Count.
+     * The timestamp held by this entry is returned in one of three formats: as a string according
+     * to EXIF specs (default), as a standard UNIX timestamp, or as a fractional Julian Day Count.
      *
-     * @param array
-     *            (Optional) an array of options to format the value.
+     * @param array $options
+     *   (Optional) an array of options to format the value.
      *
-     * @return mixed the timestamp held by this entry in the correct form as
-     *         indicated by the 'type' option. For UNIX_TIMESTAMP this is an
-     *         integer counting the number of seconds since January 1st 1970,
-     *         for EXIF_STRING this is a string of the form
-     *         'YYYY:MM:DD hh:mm:ss', and for JULIAN_DAY_COUNT this is a
-     *         floating point number where the integer part denotes the day
-     *         count and the fractional part denotes the time of day (0.25
-     *         means 6:00, 0.75 means 18:00).
+     * @return mixed 
+     *   The timestamp held by this entry in the correct form as indicated by the 'type' option.
+     *   For UNIX_TIMESTAMP this is an integer counting the number of seconds since January 1st
+     *   1970, for EXIF_STRING this is a string of the form 'YYYY:MM:DD hh:mm:ss', and for
+     *   JULIAN_DAY_COUNT this is a floating point number where the integer part denotes the day
+     *   count and the fractional part denotes the time of day (0.25 means 6:00, 0.75 means 18:00).
      */
     public function getValue(array $options = []): mixed
     {
@@ -135,5 +129,6 @@ class Time extends Ascii
             case self::JULIAN_DAY_COUNT:
                 return $day_count + $seconds_count / 86400;
         }
+        throw new MediaProbeException(sprintf('Invalid time type %d', $type));
     }
 }

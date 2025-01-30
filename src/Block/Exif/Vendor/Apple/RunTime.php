@@ -16,15 +16,12 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class RunTime extends ListBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function doParseData(DataElement $data): void
     {
         assert($this->debugInfo(['dataElement' => $data]));
 
         $plist = new CFPropertyList();
-        $plist->parse($data->getBytes(0, $this->getDefinition()->getValuesCount()));
+        $plist->parse($data->getBytes(0, $this->getDefinition()->valuesCount));
 
         // Build a TAG object for each PList item.
         foreach ($plist->toArray() as $tag_name => $value) {
@@ -37,9 +34,6 @@ class RunTime extends ListBase
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $plist = new CFPropertyList();
@@ -50,15 +44,13 @@ class RunTime extends ListBase
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
+            assert($sub_block instanceof Tag);
             $dict->add($sub_block->getCollection()->getPropertyValue('item'), new CFNumber($sub_block->getValue()));
         }
 
         return $plist->toBinary();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getComponents(): int
     {
         return strlen($this->toBytes());

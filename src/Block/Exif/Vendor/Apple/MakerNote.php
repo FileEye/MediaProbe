@@ -10,6 +10,7 @@ use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
+use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\ItemDefinition;
@@ -20,12 +21,9 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class MakerNote extends Ifd
 {
-    /**
-     * {@inheritdoc}
-     */
     public function parseData(DataElement $dataElement, int $start = 0, ?int $size = null, $xxx = 0): void
     {
-        $offset = $this->getDefinition()->getDataOffset();
+        $offset = $this->getDefinition()->dataOffset;
 
         // Load Apple's header as a raw data block.
         $header_data_definition = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'appleHeader']), DataFormat::BYTE, 14);
@@ -44,16 +42,20 @@ class MakerNote extends Ifd
             $i_offset = $offset + 2 + 12 * $i;
             try {
                 $item_definition = $this->getItemDefinitionFromData($i, $dataElement, $i_offset);
-                $item_class = $item_definition->getCollection()->getPropertyValue('handler');
+                $item_class = $item_definition->collection->getPropertyValue('handler');
                 $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, true)) {
                     $item->parseData($dataElement);
                 } else {
-                    $item_data_window = new DataWindow($dataElement, $item_definition->getDataOffset(), $item_definition->getSize());
+                    $item_data_window = new DataWindow($dataElement, $item_definition->dataOffset, $item_definition->getSize());
                     $item->parseData($item_data_window);
                 }
             } catch (DataException $e) {
-                $item->error($e->getMessage());
+                if (isset($item)) {
+                    $item->error($e->getMessage());
+                } else {
+                    throw $e;
+                }
             }
         }
 
@@ -61,9 +63,6 @@ class MakerNote extends Ifd
         $this->executePostParseCallbacks($dataElement);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $bytes = $this->getElement('rawData')->toBytes();
@@ -80,9 +79,11 @@ class MakerNote extends Ifd
 
         // Fill in the TAG entries in the IFD.
         foreach ($this->getMultipleElements('*') as $tag => $sub_block) {
-            if ($sub_block->getCollection()->getPropertyValue('id') === 'RawData') {
+            if ($sub_block instanceof RawData) {
                 continue;
             }
+
+            assert($sub_block instanceof Tag || $sub_block instanceof ListBase, get_class($sub_block));
 
             $bytes .= ConvertBytes::fromShort($sub_block->getAttribute('id'), $byte_order);
             $bytes .= ConvertBytes::fromShort($sub_block->getFormat(), $byte_order);

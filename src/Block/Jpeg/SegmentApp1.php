@@ -20,7 +20,9 @@ class SegmentApp1 extends SegmentBase
         // @todo use parser and not class call driectly
         if (Exif::isExifSegment($data, 4)) {
             $exif = new ItemDefinition(CollectionFactory::get('Jpeg\Exif'));
-            $this->addBlock($exif)->parseData($data, 4, $data->getSize() - 4);
+            $exifBlock = $this->addBlock($exif);
+            assert($exifBlock instanceof Exif);
+            $exifBlock->parseData($data, 4, $data->getSize() - 4);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Exif data.

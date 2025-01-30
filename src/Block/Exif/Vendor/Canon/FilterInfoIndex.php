@@ -47,26 +47,26 @@ class FilterInfoIndex extends Index
         assert($this->debugInfo(['dataElement' => $data]));
 
         // The first 4 bytes is a marker (?), store as RawData.
-        $this
-            ->addBlock(new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'filterHeader']), DataFormat::BYTE, 4))
-            ->parseData(new DataWindow($data, $offset, 4));
+        $rawData = $this->addBlock(new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'filterHeader']), DataFormat::BYTE, 4));
+        assert($rawData instanceof RawData);
+        $rawData->parseData(new DataWindow($data, $offset, 4));
         $offset += 8;
 
         // Loop and parse through the filters.
         for ($i = 0; $i < $this->components; $i++) {
             $filter_size = $data->getLong($offset + 4);
-            $this
-                ->addBlock(
-                    new ItemDefinition(
-                        CollectionFactory::get('ExifMakerNotes\Canon\Filter'),
-                        DataFormat::BYTE,
-                        $filter_size,
-                        $offset,
-                        0,
-                        $i
-                    )
+            $filter = $this->addBlock(
+                new ItemDefinition(
+                    CollectionFactory::get('ExifMakerNotes\Canon\Filter'),
+                    DataFormat::BYTE,
+                    $filter_size,
+                    $offset,
+                    0,
+                    $i
                 )
-                ->parseData(new DataWindow($data, $offset, $filter_size + 4));
+            );
+            assert($filter instanceof Filter);
+            $filter->parseData(new DataWindow($data, $offset, $filter_size + 4));
             $offset += 4 + $filter_size;
         }
     }

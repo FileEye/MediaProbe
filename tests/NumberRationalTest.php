@@ -72,8 +72,9 @@ class NumberRationalTest extends NumberTestCase
         $this->assertSame('0', $this->num->toString());
     }
 
-    protected function convertValueToBytes(array $value): string
+    protected function convertValueToBytes(int|float|array $value): string
     {
+        assert(is_array($value));
         return ConvertBytes::fromRational($value);
     }
 }

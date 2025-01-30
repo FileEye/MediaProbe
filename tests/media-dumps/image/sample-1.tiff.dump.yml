@@ -9,311 +9,276 @@ fileName: sample-1.tiff
 mimeType: image/tiff
 fileContentHash: 26f4b11c45ad3e56a530d03967ff4627892b3264183b85fefba194ff1fe3e08e
 elements:
-    node: media
     path: /media
-    class: FileEye\MediaProbe\Media
+    handlerClass: FileEye\MediaProbe\Media
     valid: true
     collection: Media
     elements:
         -
-            node: tiff
             path: /media/tiff
-            class: FileEye\MediaProbe\Block\Tiff\Tiff
+            handlerClass: FileEye\MediaProbe\Block\Tiff\Tiff
             valid: true
             id: image/tiff
             collection: Tiff\Tiff
             elements:
                 -
-                    node: rawData
                     path: '/media/tiff/rawData:scan'
-                    class: FileEye\MediaProbe\Block\RawData
+                    handlerClass: FileEye\MediaProbe\Block\RawData
                     valid: true
                     name: scan
                     collection: RawData
                     elements:
                         -
-                            node: entry
                             path: '/media/tiff/rawData:scan/entry'
-                            class: FileEye\MediaProbe\Entry\Core\Undefined
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
                             format: Undefined
                             components: 6392
                             bytesHash: f83a63ebc8fcedad19dfa8937b0c0f622b8b49b51179ab8bef11b8492f2b2786
                             text: '6392 byte(s) of data'
                 -
-                    node: ifd
                     path: '/media/tiff/ifd:IFD0:0'
-                    class: FileEye\MediaProbe\Block\Tiff\Ifd
+                    handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                     valid: true
                     name: IFD0
                     id: '0'
                     collection: Tiff\Ifd0
                     elements:
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ImageWidth:256'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: ImageWidth
                             id: '256'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ImageWidth:256/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: 189d4883529028b6aee913d0e17ecb98942e4d1224da8ef14af99a691bf4b003
                                     text: '174'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ImageHeight:257'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: ImageHeight
                             id: '257'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ImageHeight:257/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: eb397f6553d3485bc197003a6be3e81c6f696675467b648f0791a8be05de1230
                                     text: '38'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:BitsPerSample:258'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: BitsPerSample
                             id: '258'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:BitsPerSample:258/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 4
                                     bytesHash: 7971bdefa5d350222fbe3aa926ee2bdbd685341db331bea9e81324b49dc78544
                                     text: '8 8 8 8'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:Compression:259'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: Compression
                             id: '259'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:Compression:259/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: 9f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3d
                                     text: LZW
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:PhotometricInterpretation:262'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: PhotometricInterpretation
                             id: '262'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:PhotometricInterpretation:262/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f
                                     text: RGB
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageStart:273'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: PreviewImageStart
                             id: '273'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageStart:273/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Long
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Long
                                     valid: true
                                     format: Long
                                     components: 1
                                     bytesHash: 17eb70034b5b71092521d184c5e7b069d47de657e51aef2be11a00c115036943
                                     text: '8'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:Orientation:274'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: Orientation
                             id: '274'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:Orientation:274/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2
                                     text: 'Horizontal (normal)'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:SamplesPerPixel:277'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: SamplesPerPixel
                             id: '277'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:SamplesPerPixel:277/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: 4f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
                                     text: '4'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:RowsPerStrip:278'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: RowsPerStrip
                             id: '278'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:RowsPerStrip:278/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: eb397f6553d3485bc197003a6be3e81c6f696675467b648f0791a8be05de1230
                                     text: '38'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageLength:279'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: PreviewImageLength
                             id: '279'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageLength:279/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Long
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Long
                                     valid: true
                                     format: Long
                                     components: 1
                                     bytesHash: 8fa5b160d74c6be305c0e3e74cc85821a2a5d4e1ba9c59a858a5717b6dab16e8
                                     text: '6391'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:PlanarConfiguration:284'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: PlanarConfiguration
                             id: '284'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:PlanarConfiguration:284/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2
                                     text: Chunky
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:Predictor:317'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: Predictor
                             id: '317'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:Predictor:317/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f
                                     text: 'Horizontal differencing'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: ExtraSamples
                             id: '338'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 1
                                     bytesHash: b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2
                                     text: 'Associated Alpha'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: SampleFormat
                             id: '339'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339/entry'
-                                    class: FileEye\MediaProbe\Entry\Core\Short
+                                    handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                     valid: true
                                     format: Short
                                     components: 4
                                     bytesHash: 9d523143304148a2b2d887da817f10830e37f50d7689ca5a9e69f10d7b2eb31f
                                     text: 'Unsigned, Unsigned, Unsigned, Unsigned'
                         -
-                            node: tag
                             path: '/media/tiff/ifd:IFD0:0/tag:ApplicationNotes:700'
-                            class: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                             valid: true
                             name: ApplicationNotes
                             id: '700'
                             collection: Tiff\Tag
                             elements:
                                 -
-                                    node: entry
                                     path: '/media/tiff/ifd:IFD0:0/tag:ApplicationNotes:700/entry'
-                                    class: FileEye\MediaProbe\Entry\IfdApplicationNotes
+                                    handlerClass: FileEye\MediaProbe\Entry\IfdApplicationNotes
                                     valid: true
                                     format: Char
                                     components: 323

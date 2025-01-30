@@ -13,14 +13,7 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 class Undefined extends EntryBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'Undefined';
-
-    /**
-     * {@inheritdoc}
-     */
     protected string $formatName = 'Undefined';
 
     protected function validateDataElement(): void
@@ -31,9 +24,6 @@ class Undefined extends EntryBase
         $this->debug("data: {data}", ['data' => MediaProbe::dumpHex($this->toBytes(), 12)]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
@@ -47,9 +37,6 @@ class Undefined extends EntryBase
         return $this->dataElement->getBytes();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
         if ($this->hasMappedText()) {

@@ -1,14 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe;
 
 /**
  * Standard MediaProbe printf() capable exception.
- * This class is a simple extension of the standard Exception class in
- * PHP, and all the methods defined there retain their original
- * meaning.
  *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
+ * This class is a simple extension of the standard Exception class in PHP, and all the methods
+ * defined there retain their original meaning.
  */
 class MediaProbeException extends \Exception
 {
@@ -25,10 +25,8 @@ class MediaProbeException extends \Exception
      *            any number of arguments to be used with
      *            the format string.
      */
-    public function __construct(string $fmt)
+    public function __construct(string $fmt, mixed ...$args)
     {
-        $args = func_get_args();
-        $fmt = array_shift($args);
         parent::__construct(vsprintf($fmt, $args));
     }
 }

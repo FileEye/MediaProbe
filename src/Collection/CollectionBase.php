@@ -10,6 +10,11 @@ use FileEye\MediaProbe\Model\ElementInterface;
 abstract class CollectionBase implements CollectionInterface
 {
     /**
+     * The collection map.
+     */
+    protected static $map;
+
+    /**
      * The overridden properties with their overriden values.
      */
     protected array $overrides;
@@ -25,17 +30,11 @@ abstract class CollectionBase implements CollectionInterface
         $this->overrides = $overrides;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getProperties(): array
     {
         return static::$map;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function hasProperty(string $property): bool
     {
         if (array_key_exists($property, $this->overrides)) {
@@ -44,9 +43,6 @@ abstract class CollectionBase implements CollectionInterface
         return array_key_exists($property, $this->getProperties());
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getPropertyValue(string $property): mixed
     {
         if (array_key_exists($property, $this->overrides)) {
@@ -55,9 +51,6 @@ abstract class CollectionBase implements CollectionInterface
         return $this->getProperties()[$property] ?? null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function listItemIds(): array
     {
         return array_keys($this->getPropertyValue('items') ?? []);
@@ -82,9 +75,6 @@ abstract class CollectionBase implements CollectionInterface
         return $entry_class ? $entry_class::resolveItemCollectionIndex($components_count, $context) : 0;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getItemCollection(
         string $item, $index = 0,
         ?string $default_id = null,
@@ -113,9 +103,6 @@ abstract class CollectionBase implements CollectionInterface
         return CollectionFactory::get($this->getPropertyValue('items')[$item][$index]['collection'], $item_properties);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getItemCollectionByName(string $item_name, mixed $index = 0): CollectionInterface
     {
         if (!isset($this->getPropertyValue('itemsByName')[$item_name][$index])) {

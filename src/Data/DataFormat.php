@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Data;
 
+use FileEye\MediaProbe\Collection\CollectionException;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 
 /**

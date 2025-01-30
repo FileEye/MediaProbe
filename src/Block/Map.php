@@ -2,15 +2,16 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Model\BlockBase;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -36,13 +37,10 @@ class Map extends Index
     )
     {
         parent::__construct($definition, $parent, $reference);
-        $this->components = $definition->getValuesCount();
-        $this->format = $definition->getFormat();
+        $this->components = $definition->valuesCount;
+        $this->format = $definition->format;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function doParseData(DataElement $data): void
     {
         $this->validate($data);
@@ -50,7 +48,9 @@ class Map extends Index
 
         // Preserve the entire map as a raw data block.
         $mapdata = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'mapdata']));
-        $this->addBlock($mapdata)->parseData($data);
+        $mapdataBlock = $this->addBlock($mapdata);
+        assert($mapdataBlock instanceof RawData);
+        $mapdataBlock->parseData($data);
 
         // Build the map items.
         $i = 0;
@@ -58,22 +58,22 @@ class Map extends Index
             $n = $item * DataFormat::getSize($this->getFormat());
             $item_definition = $this->getItemDefinitionFromData($i, $item, $data, $n);
 
-            // Check data is accessible, warn otherwise.
-            if ($item_definition->getDataOffset() >= $data->getSize()) {
-                $this->warning(
-                    'Could not access value for item \'{item}\' in \'{map}\', overflow',
+            // Check data is accessible, notice otherwise.
+            if ($item_definition->dataOffset >= $data->getSize()) {
+                $this->info(
+                    'Could not access value for \'{item}\' in map \'{map}\', overflow',
                     [
-                        'item' => $item_definition->getCollection()->getPropertyValue('name'),
+                        'item' => $item_definition->collection->getPropertyValue('name'),
                         'map' => $this->getAttribute('name'),
                     ]
                 );
                 continue;
             }
-            if ($item_definition->getDataOffset() +  $item_definition->getSize() > $data->getSize()) {
-                $this->warning(
-                    'Could not get value for item \'{item}\' in \'{map}\', not enough data',
+            if ($item_definition->dataOffset +  $item_definition->getSize() > $data->getSize()) {
+                $this->notice(
+                    'Could not get value for \'{item}\' in map \'{map}\', not enough data',
                     [
-                        'item' => $item_definition->getCollection()->getPropertyValue('name'),
+                        'item' => $item_definition->collection->getPropertyValue('name'),
                         'map' => $this->getAttribute('name'),
                     ]
                 );
@@ -82,8 +82,9 @@ class Map extends Index
 
             // Adds the item to the DOM.
             $item = $this->addBlock($item_definition);
+            assert($item instanceof Tag || $item instanceof RawData, get_class($item));
             try {
-                $item->parseData($data, $item_definition->getDataOffset(), $item_definition->getSize());
+                $item->parseData($data, $item_definition->dataOffset, $item_definition->getSize());
             } catch (DataException $e) {
                 $item->error($e->getMessage());
                 $item->valid = false;
@@ -93,25 +94,16 @@ class Map extends Index
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFormat(): int
     {
         return $this->format;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getComponents(): int
     {
         return $this->components;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
     {
         $mapDataElement = $this->getElement("rawData[@name='mapdata']/entry");
@@ -122,7 +114,7 @@ class Map extends Index
 
         // Dump each tag at the position in the map specified by the item id.
         foreach ($this->getMultipleElements('*[not(self::rawData)]') as $sub_id => $sub) {
-            $bytes_offset = $sub->getAttribute('id') * DataFormat::getSize($this->getFormat());
+            $bytes_offset = ((int) $sub->getAttribute('id')) * DataFormat::getSize($this->getFormat());
             $bytes = $sub->toBytes($byte_order);
             $bytes_length = strlen($bytes);
 

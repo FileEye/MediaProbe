@@ -125,7 +125,7 @@ class DumpCommand extends Command
         $yaml['fileContentHash'] = hash('sha256', $file->getContents());
         $yaml['elements'] = $media->asArray(new DefaultDumper());
         $yaml['log'] = [];
-        foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
+        foreach (['ERROR', 'WARNING', 'NOTICE', 'INFO'] as $level) {
             foreach ($media->dumpLog($level) as $record) {
                 $yaml['log'][$level][] = [
                     'path' => isset($record['context']['path']) ? $record['context']['path'] : '*** missing ***',
