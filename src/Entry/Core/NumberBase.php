@@ -2,8 +2,8 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
-use FileEye\MediaProbe\Model\EntryBase;
 use FileEye\MediaProbe\Data\DataException;
+use FileEye\MediaProbe\Model\EntryBase;
 
 /**
  * Abstract class for numbers.

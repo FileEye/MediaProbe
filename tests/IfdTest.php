@@ -3,13 +3,13 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Tiff\Ifd;
-use FileEye\MediaProbe\Data\DataString;
-use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
+use FileEye\MediaProbe\Data\DataFormat;
+use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Entry\Time;
+use FileEye\MediaProbe\ItemDefinition;
 
 class IfdTest extends MediaProbeTestCaseBase
 {

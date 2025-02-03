@@ -2,8 +2,8 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
-use FileEye\MediaProbe\Model\EntryBase;
 use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Model\EntryBase;
 
 /**
  * Class for holding data of undefined format.

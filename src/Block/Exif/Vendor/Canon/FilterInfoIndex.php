@@ -6,9 +6,9 @@ use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**

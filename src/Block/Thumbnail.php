@@ -2,9 +2,9 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
+use FileEye\MediaProbe\Model\BlockBase;
 
 /**
  * Class used to hold data for a JPEG Thumbnail.

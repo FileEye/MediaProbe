@@ -3,11 +3,12 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Jpeg\Exif;
-use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Block\Tiff\Tiff;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Entry\Core\Byte;
@@ -17,7 +18,6 @@ use FileEye\MediaProbe\Entry\Core\SignedByte;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 use FileEye\MediaProbe\Entry\Core\SignedShort;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use PHPUnit\Framework\Attributes\DataProvider;

@@ -4,10 +4,10 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\WindowsString;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
 
 class GH16Test extends MediaProbeTestCaseBase
