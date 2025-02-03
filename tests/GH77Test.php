@@ -2,9 +2,6 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Jpeg\Jpeg;
-use FileEye\MediaProbe\Block\Tiff\Tiff;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Media;
 
 class GH77Test extends MediaProbeTestCaseBase

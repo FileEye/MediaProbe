@@ -36,8 +36,7 @@ class MediaTypeResolver
         foreach ($typeHints as $hint) {
             try {
                 $type = $mediaTypesCollection->getItemCollection($hint);
-            }
-            catch (CollectionException) {
+            } catch (CollectionException) {
                 continue;
             }
             $handler = $type->getPropertyValue('handler');

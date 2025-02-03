@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace FileEye\MediaProbe;
 
 use FileEye\MediaProbe\Collection\CollectionFactory;
-use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFile;
-use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Model\RootBlockBase;
-use FileEye\MediaProbe\Utility\ConvertBytes;
 use FileEye\MimeMap\Extension;
 use FileEye\MimeMap\MappingException;
 use Monolog\Handler\TestHandler;
@@ -69,22 +66,20 @@ class Media extends RootBlockBase
         string $path,
         ?LoggerInterface $externalLogger = null,
         ?string $failLevel = null,
-    ): Media
-    {
+    ): Media {
         // Find the most likely MIME type given the file extension.
         $extension = '';
         $typeHints = [];
         $fileParts = explode('.', basename($path));
-        while (array_shift($fileParts) !== NULL) {
-          $extension = strtolower(implode('.', $fileParts));
-          $mimeMapExtension = new Extension($extension);
-          try {
-            $typeHints = $mimeMapExtension->getTypes();
-            break;
-          }
-          catch (MappingException $e) {
-            continue;
-          }
+        while (array_shift($fileParts) !== null) {
+            $extension = strtolower(implode('.', $fileParts));
+            $mimeMapExtension = new Extension($extension);
+            try {
+                $typeHints = $mimeMapExtension->getTypes();
+                break;
+            } catch (MappingException $e) {
+                continue;
+            }
         }
 
         // @todo lock file while reading, capture fstats to prevent overwrites.
@@ -112,8 +107,7 @@ class Media extends RootBlockBase
         array $typeHints = [],
         ?LoggerInterface $externalLogger = null,
         ?string $failLevel = null,
-    ): Media
-    {
+    ): Media {
         $media = new Media($externalLogger, $failLevel);
         $media->getStopwatch()->start('media-parsing');
 

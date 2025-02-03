@@ -2,10 +2,6 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
-use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataElement;
-
 /**
  * Class for holding unsigned bytes.
  *

@@ -2,7 +2,6 @@
 
 namespace FileEye\MediaProbe\Data;
 
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**

@@ -2,17 +2,13 @@
 
 namespace FileEye\MediaProbe\Block\Tiff;
 
-use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Model\BlockInterface;
-use FileEye\MediaProbe\Model\ElementInterface;
-use FileEye\MediaProbe\Model\EntryInterface;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Model\BlockBase;
+use FileEye\MediaProbe\Model\BlockInterface;
+use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**

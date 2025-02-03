@@ -2,11 +2,11 @@
 
 namespace FileEye\MediaProbe\Command;
 
+use FileEye\MediaProbe\Utility\SpecCompiler;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use FileEye\MediaProbe\Utility\SpecCompiler;
 
 /**
  * A Symfony application command to compile the MediaProbe specification YAML files.

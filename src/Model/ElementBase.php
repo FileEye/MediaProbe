@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Model;
 
-use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\Media;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;

@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Entry\Core\SignedRational;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Decode text for an Exif/ShutterSpeedValue tag.

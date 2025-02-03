@@ -2,10 +2,7 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Media;
-use FileEye\MediaProbe\Block\Tiff\Ifd;
-use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 
 class Tags1Test extends MediaProbeTestCaseBase
 {

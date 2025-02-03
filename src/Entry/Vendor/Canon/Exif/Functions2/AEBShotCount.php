@@ -2,8 +2,8 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
 
-use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
+use FileEye\MediaProbe\Model\ElementInterface;
 
 /**
  * Handler for CanonCustom AEBShotCount tags.

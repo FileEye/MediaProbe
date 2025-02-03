@@ -2,9 +2,9 @@
 
 namespace FileEye\MediaProbe\Test;
 
+use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 // @todo xxx add a test for negative/zero window size

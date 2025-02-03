@@ -2,12 +2,8 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Ascii;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
-use FileEye\MediaProbe\Utility\ConvertBytes;
 use FileEye\MediaProbe\Utility\ConvertTime;
 
 /**
@@ -72,7 +68,7 @@ class Time extends Ascii
      * @param array $options
      *   (Optional) an array of options to format the value.
      *
-     * @return mixed 
+     * @return mixed
      *   The timestamp held by this entry in the correct form as indicated by the 'type' option.
      *   For UNIX_TIMESTAMP this is an integer counting the number of seconds since January 1st
      *   1970, for EXIF_STRING this is a string of the form 'YYYY:MM:DD hh:mm:ss', and for

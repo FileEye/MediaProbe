@@ -2,11 +2,9 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Media;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Model\EntryInterface;
 use PHPUnit\Framework\Attributes\DataProvider;

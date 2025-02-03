@@ -4,7 +4,6 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Entry\Core\SignedRational;
-use FileEye\MediaProbe\Entry\Exception\OverflowException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class NumberSignedRationalTest extends NumberTestCase

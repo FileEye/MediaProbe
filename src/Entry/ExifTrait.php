@@ -2,8 +2,6 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\MediaProbe;
-
 /**
  * Common functions for Exif decoding.
  */

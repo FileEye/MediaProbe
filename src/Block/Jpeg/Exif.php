@@ -6,9 +6,9 @@ use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
-use FileEye\MediaProbe\ItemDefinition;
 
 /**
  * Class representing Exif data.

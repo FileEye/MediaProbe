@@ -2,21 +2,16 @@
 
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Apple;
 
-use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\RawData;
+use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Model\BlockInterface;
-use FileEye\MediaProbe\Model\ElementInterface;
-use FileEye\MediaProbe\Model\EntryInterface;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\MediaProbeException;
+use FileEye\MediaProbe\Data\DataWindow;
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class MakerNote extends Ifd

@@ -2,12 +2,6 @@
 
 namespace FileEye\MediaProbe\Data;
 
-use FileEye\MediaProbe\Model\ElementBase;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\MediaProbeException;
-use FileEye\MediaProbe\Utility\ConvertBytes;
-use Psr\Log\LoggerInterface;
-
 /**
  * An object opening a window on an underlying DataElement
  */

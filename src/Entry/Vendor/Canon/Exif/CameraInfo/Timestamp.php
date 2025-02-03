@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo;
 
 use FileEye\MediaProbe\Entry\Core\Long;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon Directory Index tags.

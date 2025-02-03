@@ -2,12 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry;
 
-use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Model\EntryBase;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Class used to manipulate strings in the format Windows XP uses.
