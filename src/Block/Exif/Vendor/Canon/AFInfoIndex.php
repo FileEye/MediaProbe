@@ -3,12 +3,7 @@
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\Index;
-use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Class representing an index of values, for Canon AFInfo e AFInfo2.

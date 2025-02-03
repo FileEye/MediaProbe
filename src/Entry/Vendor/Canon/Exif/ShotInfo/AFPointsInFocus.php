@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ShotInfo;
 
 use FileEye\MediaProbe\Entry\Core\SignedShort;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon ShotInfo AFPointsInFocus tags.

@@ -29,8 +29,7 @@ class TimerLength extends SignedLong
             $ret[] = '16 s: ' . $val[2];
             $ret[] = 'After release: ' . $val[3];
             return implode('; ', $ret);
-        }
-        else {
+        } else {
             $ret = [];
             $ret[] = '6 s: ' . $val[1];
             $ret[] = '16 s: ' . $val[2];

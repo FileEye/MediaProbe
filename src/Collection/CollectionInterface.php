@@ -46,12 +46,12 @@ interface CollectionInterface
      *   When item is not in collection and no default given.
      */
     public function getItemCollection(
-        string $item, 
-        $index = 0, 
-        ?string $default_id = null, 
-        array $default_properties = [], 
-        ?int $components_count = null, 
-        ?ElementInterface $context = null,
+        string $item,
+        $index = 0,
+        ?string $default_id = null,
+        array $default_properties = [],
+        ?int $components_count = null,
+        ?ElementInterface $context = null
     ): CollectionInterface;
 
     /**

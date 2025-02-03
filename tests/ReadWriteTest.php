@@ -19,7 +19,6 @@ use FileEye\MediaProbe\Entry\Core\SignedShort;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Media;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use PHPUnit\Framework\Attributes\DataProvider;
 

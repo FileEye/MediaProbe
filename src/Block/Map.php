@@ -7,10 +7,7 @@ use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\Data\DataString;
-use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -34,8 +31,7 @@ class Map extends Index
         ItemDefinition $definition,
         ?BlockBase $parent = null,
         ?BlockBase $reference = null,
-    )
-    {
+    ) {
         parent::__construct($definition, $parent, $reference);
         $this->components = $definition->valuesCount;
         $this->format = $definition->format;

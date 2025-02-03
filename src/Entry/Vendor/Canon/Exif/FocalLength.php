@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
 use FileEye\MediaProbe\Entry\Core\Short;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon Camera ISO tags.

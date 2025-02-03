@@ -9,7 +9,6 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -45,8 +44,7 @@ abstract class BlockBase extends ElementBase implements BlockInterface
         ItemDefinition $definition,
         ?BlockInterface $parent = null,
         ?BlockInterface $reference = null,
-    )
-    {
+    ) {
         $this->definition = $definition;
 
         parent::__construct($this->getCollection()->getPropertyValue('DOMNode'), $parent, $reference);

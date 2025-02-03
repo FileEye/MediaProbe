@@ -3,11 +3,7 @@
 namespace FileEye\MediaProbe\Entry\Core;
 
 use FileEye\MediaProbe\Model\EntryBase;
-use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Abstract class for numbers.

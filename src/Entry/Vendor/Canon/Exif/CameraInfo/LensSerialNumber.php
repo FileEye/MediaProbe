@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo;
 
 use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Canon Lens Serial Number tags.

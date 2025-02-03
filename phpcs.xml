@@ -22,4 +22,13 @@
     <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found">
         <type>error</type>
     </rule>
+
+    <config name="installed_paths" value="../../slevomat/coding-standard"/>
+    <!--rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/-->
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true" />
+        </properties>
+    </rule>
+
 </ruleset>

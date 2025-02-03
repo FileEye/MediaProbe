@@ -4,7 +4,6 @@ namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraInfo;
 
 use FileEye\MediaProbe\Entry\Core\Byte;
 use FileEye\MediaProbe\Entry\ExifTrait;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Common handler for Canon ExposureTime tags.

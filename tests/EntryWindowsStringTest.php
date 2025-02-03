@@ -4,7 +4,6 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\WindowsString;
-use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class EntryWindowsStringTest extends EntryTestBase
 {

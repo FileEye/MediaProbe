@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Entry\Core\Rational;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Handler for Exif ApertureValue tags.

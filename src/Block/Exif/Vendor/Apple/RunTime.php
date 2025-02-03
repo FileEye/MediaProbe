@@ -9,9 +9,7 @@ use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataString;
-use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 class RunTime extends ListBase

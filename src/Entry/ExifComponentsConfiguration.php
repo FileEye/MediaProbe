@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry;
 
 use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Decode text for an Exif/ComponentsConfiguration tag.

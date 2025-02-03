@@ -2,15 +2,8 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Test\TestClasses\Core;
-use FileEye\MediaProbe\Block\Tiff\Ifd;
-use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionFactory;
-use FileEye\MediaProbe\Utility\SpecCompiler;
 use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Yaml\Exception\ParseException;
 
 /**
  * Test compilation of a set of MediaProbe specification YAML files.

@@ -67,9 +67,8 @@ jobs:
 #      continue-on-error: true
       run: vendor/bin/phpunit --color=always --testdox --display-deprecations --display-phpunit-deprecations ./tests
 
-#    - name: Code style test
-#      if: ${{ matrix.php-version == 7.4 }}
-#      run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
+    - name: Code style test
+      run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
 
 # Remove the comment to the lines below during development, to refresh the
 # media file dumps.

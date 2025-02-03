@@ -54,8 +54,7 @@ abstract class RootBlockBase extends BlockBase
         ItemDefinition $definition,
         protected ?Level $failLevel = null,
         protected ?LoggerInterface $externalLogger = null,
-    )
-    {
+    ) {
         parent::__construct($definition);
         $this->XPath = new \DOMXPath($this->DOMNode->ownerDocument);
         $this->debugDumper = new DebugDumper();

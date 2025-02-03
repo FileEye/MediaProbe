@@ -2,8 +2,6 @@
 
 namespace FileEye\MediaProbe\Data;
 
-use SplFileObject;
-
 /**
  * A DataElement object holding a file's data.
  */
@@ -19,7 +17,7 @@ final class DataFile extends DataElement
     /**
      * The file handle.
      *
-     * @var SplFileObject
+     * @var \SplFileObject
      */
     private $fileHandle;
 

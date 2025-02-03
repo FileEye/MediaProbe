@@ -70,23 +70,22 @@ abstract class CollectionBase implements CollectionInterface
      *   The item collection index.
      */
     private function getItemCollectionIndex(
-        string $item_id, 
-        ?int $components_count, 
+        string $item_id,
+        ?int $components_count,
         ElementInterface $context,
-    ): mixed
-    {
+    ): mixed {
         $entry_class = $this->getPropertyValue('items')[$item_id][0]['entryClass'] ?? null;
         return $entry_class ? $entry_class::resolveItemCollectionIndex($components_count, $context) : 0;
     }
 
     public function getItemCollection(
-        string $item, $index = 0,
+        string $item,
+        $index = 0,
         ?string $default_id = null,
         array $default_properties = [],
         ?int $components_count = null,
         ?ElementInterface $context = null,
-    ): CollectionInterface
-    {
+    ): CollectionInterface {
         if ($index === null) {
             if ($context === null) {
                 $index = 0;

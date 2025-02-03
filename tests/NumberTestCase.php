@@ -4,7 +4,6 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataString;
-use FileEye\MediaProbe\MediaProbe;
 
 abstract class NumberTestCase extends EntryTestBase
 {

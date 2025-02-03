@@ -3,16 +3,6 @@
 namespace FileEye\MediaProbe\Block;
 
 use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\Block\Tiff\Tag;
-use FileEye\MediaProbe\Data\DataElement;
-use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\Data\DataException;
-use FileEye\MediaProbe\Model\ElementInterface;
-use FileEye\MediaProbe\Model\EntryInterface;
-use FileEye\MediaProbe\MediaProbe;
-use FileEye\MediaProbe\MediaProbeException;
-use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Abstract class representing a generic table of data.

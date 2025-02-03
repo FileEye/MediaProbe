@@ -3,7 +3,6 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
 use FileEye\MediaProbe\Entry\Core\Short;
-use FileEye\MediaProbe\MediaProbe;
 
 /**
  * Decoder for Canon CameraSettings Lens Type tags.
