@@ -10,11 +10,8 @@ use FileEye\MediaProbe\MediaProbe;
  */
 class ExifSubjectDistance extends Rational
 {
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
-        return MediaProbe::fmt('%.1f m', $this->getValue());
+        return sprintf('%.1f m', $this->getValue());
     }
 }

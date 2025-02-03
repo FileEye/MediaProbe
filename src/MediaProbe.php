@@ -4,55 +4,14 @@ namespace FileEye\MediaProbe;
 
 use Composer\InstalledVersions;
 
-/**
- * Class with miscellaneous static methods.
- *
- * This class contains various methods that govern the overall behavior of
- * MediaProbe.
- *
- * Debugging output from MediaProbe can be turned on and off by assigning true or
- * false to {@link MediaProbe::$debug}.
- *
- * @author Martin Geisler <mgeisler@users.sourceforge.net>
- */
 class MediaProbe
 {
     /**
      * Returns the current version of MediaProbe.
-     *
-     * @return string
-     *            the current version of MediaProbe.
      */
     public static function version(): string
     {
         return InstalledVersions::getPrettyVersion('fileeye/mediaprobe');
-    }
-
-    /**
-     * Translate and format a string.
-     *
-     * This static function will first use Gettext to translate a format
-     * string, which will then have access to any extra arguments. By
-     * always using this function for dynamic string one is assured that
-     * the translation will be taken from the correct text domain. If
-     * the string is static, use {@link tra} instead as it will be
-     * faster.
-     *
-     * @param string $format
-     *            the format string. This will be translated
-     *            before being used as a format string.
-     *
-     * @param mixed ...$args
-     *            any number of arguments can be given. The
-     *            arguments will be available for the format string as usual with
-     *            sprintf().
-     *
-     * @return string the translated string, or the original string if
-     *         no translation could be found.
-     */
-    public static function fmt(string $format, mixed ...$args): string
-    {
-        return vsprintf($format, $args);
     }
 
     /**

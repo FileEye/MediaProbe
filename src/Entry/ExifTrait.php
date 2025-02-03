@@ -76,9 +76,9 @@ trait ExifTrait
     protected function exposureTimeToString($val)
     {
         if ($val < 0.25001 and $val > 0) {
-            return MediaProbe::fmt("1/%d", (int) (0.5 + 1 / $val));
+            return sprintf("1/%d", (int) (0.5 + 1 / $val));
         }
-        return MediaProbe::fmt("%.1f", $val);
+        return sprintf("%.1f", $val);
     }
 
     /**

@@ -250,8 +250,8 @@ class SpecTest extends MediaProbeTestCaseBase
     {
         $collection = CollectionFactory::get('Jpeg\Jpeg');
         $this->assertEquals('Start of frame (baseline DCT)', $collection->getItemCollection(0xC0)->getPropertyValue('title'));
-        $this->assertEquals(MediaProbe::fmt('Restart %d', 3), $collection->getItemCollection(0xD3)->getPropertyValue('title'));
-        $this->assertEquals(MediaProbe::fmt('Application segment %d', 3), $collection->getItemCollection(0xE3)->getPropertyValue('title'));
-        $this->assertEquals(MediaProbe::fmt('Extension %d', 11), $collection->getItemCollection(0xFB)->getPropertyValue('title'));
+        $this->assertEquals('Restart 3', $collection->getItemCollection(0xD3)->getPropertyValue('title'));
+        $this->assertEquals('Application segment 3', $collection->getItemCollection(0xE3)->getPropertyValue('title'));
+        $this->assertEquals('Extension 11', $collection->getItemCollection(0xFB)->getPropertyValue('title'));
     }
 }

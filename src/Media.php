@@ -18,7 +18,6 @@ use Monolog\Handler\TestHandler;
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
-use PrettyXml\Formatter;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 
@@ -31,31 +30,6 @@ use Symfony\Component\Stopwatch\Stopwatch;
 class Media extends RootBlockBase
 {
     /**
-     * The internal Monolog logger instance for this Media object.
-     */
-    protected Logger $logger;
-
-    /**
-     * The minimum log level for failure.
-     *
-     * MediaProbe normally intercepts and logs media parsing issues without
-     * breaking the flow. However it is possible to enable hard failures by
-     * defining the minimum log level at which the parsing process will break
-     * and throw an MediaProbeException.
-     */
-    protected ?Level $failLevel;
-
-    /**
-     * An XML prettify formatter.
-     */
-    protected Formatter $xmlFormatter;
-
-    /**
-     * A Symfony stopwatch.
-     */
-    private Stopwatch $stopWatch;
-
-    /**
      * Constructs a Media object.
      *
      * @param ?LoggerInterface $externalLogger
@@ -67,15 +41,14 @@ class Media extends RootBlockBase
      *   media parsing to stop.
      */
     public function __construct(
-        protected ?LoggerInterface $externalLogger,
+        ?LoggerInterface $externalLogger,
         ?string $failLevel,
     ) {
         $media = new ItemDefinition(CollectionFactory::get('Media'));
-        parent::__construct($media);
+        parent::__construct($media, $failLevel ? Logger::toMonologLevel($failLevel) : null, $externalLogger);
         $this->logger = (new Logger('mediaprobe'))
             ->pushHandler(new TestHandler(Level::Info))
             ->pushProcessor(new PsrLogMessageProcessor());
-        $this->failLevel = $failLevel ? Logger::toMonologLevel($failLevel) : null;
         $this->stopWatch = new Stopwatch();
     }
 
@@ -192,48 +165,6 @@ class Media extends RootBlockBase
             throw new MediaProbeException('File save failed');
         }
         return $size;
-    }
-
-    /**
-     * Returns the DOM structure of the Media object as an XML string.
-     *
-     * @param bool $pretty
-     *   TRUE if the XML should be prettified.
-     */
-    public function toXml(bool $pretty = false): string
-    {
-        if ($pretty && !$this->xmlFormatter) {
-            $this->xmlFormatter = new Formatter();
-        }
-        $xml = $this->DOMNode->ownerDocument->saveXML();
-        return $pretty ? $this->xmlFormatter->format($xml) : $xml;
-    }
-
-    /**
-     * Returns the log entries of the Media object.
-     *
-     * @param string $level_name
-     *   (Optional) If specified, filters only the entries of the specified severity level.
-     *
-     * @return array
-     *   An array of Monolog entries.
-     */
-    public function dumpLog(?string $level_name = null): array
-    {
-        $handler = $this->logger->getHandlers()[0];
-        assert($handler instanceof TestHandler);
-        $ret = [];
-        foreach ($handler->getRecords() as $record) {
-            if (($level_name && $record['level_name'] === $level_name) || !$level_name) {
-                $ret[] = $record;
-            }
-        }
-        return $ret;
-    }
-
-    public function getStopwatch(): Stopwatch
-    {
-        return $this->stopWatch;
     }
 
     public function collectInfo(array $context = []): array

@@ -16,6 +16,6 @@ class ExifFNumber extends Rational
     public function toString(array $options = []): string
     {
         $f = ($options['short'] ?? false || ($options['format'] ?? null) === 'exiftool') ? '' : 'f/';
-        return MediaProbe::fmt('%s%.01f', $f, $this->getValue());
+        return sprintf('%s%.01f', $f, $this->getValue());
     }
 }
