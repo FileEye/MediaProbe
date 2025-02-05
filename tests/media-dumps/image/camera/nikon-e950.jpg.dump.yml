@@ -5,12 +5,14 @@ elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
     valid: true
+    validationLevel: OK
     collection: Media
     elements:
         -
             path: /media/jpeg
             handlerClass: FileEye\MediaProbe\Block\Jpeg\Jpeg
             valid: true
+            validationLevel: OK
             id: image/jpeg
             collection: Jpeg\Jpeg
             elements:
@@ -18,6 +20,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:SOI:216'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: SOI
                     id: '216'
                     collection: Jpeg\Segment
@@ -26,6 +29,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:SOI:216/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 2
                             bytesHash: 71563ad80061407ede9c6f316836284bd3710a520c5a792b5eda1cb703690815
@@ -34,6 +38,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:APP0:224'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: APP0
                     id: '224'
                     collection: Jpeg\Segment
@@ -42,6 +47,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP0:224/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 18
                             bytesHash: 9173d299a693ee56c2904ed8b15b2b4612e3a9e114016ae06833a08591e2c17f
@@ -50,6 +56,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:APP1:225'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
                     valid: true
+                    validationLevel: OK
                     name: APP1
                     id: '225'
                     collection: Jpeg\SegmentApp1
@@ -58,18 +65,21 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             handlerClass: FileEye\MediaProbe\Block\Jpeg\Exif
                             valid: true
+                            validationLevel: OK
                             collection: Jpeg\Exif
                             elements:
                                 -
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tiff
                                     valid: true
+                                    validationLevel: OK
                                     collection: Tiff\Tiff
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: true
+                                            validationLevel: OK
                                             name: IFD0
                                             id: '0'
                                             collection: Tiff\Ifd0
@@ -78,6 +88,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: ImageDescription
                                                     id: '270'
                                                     collection: Tiff\Tag
@@ -86,6 +97,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Ascii
                                                             components: 11
                                                             bytesHash: fed9eee28b267775287911e4727d1053e0a30fbfbc61b455ba95d2ac23e286a7
@@ -94,6 +106,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: Make
                                                     id: '271'
                                                     collection: Tiff\Tag
@@ -102,6 +115,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Ascii
                                                             components: 6
                                                             bytesHash: 6dc023ebd015f78dd36e1174db5aa809d960d103c885b85679b94176681f4294
@@ -110,6 +124,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: Model
                                                     id: '272'
                                                     collection: Tiff\Tag
@@ -118,6 +133,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Ascii
                                                             components: 5
                                                             bytesHash: 8e5144f31e2eb654b87ed822721a02c1706ff14b39a35b58e253efa2b444ed1b
@@ -126,6 +142,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: Orientation
                                                     id: '274'
                                                     collection: Tiff\Tag
@@ -134,6 +151,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Short
                                                             components: 1
                                                             bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
@@ -142,6 +160,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: XResolution
                                                     id: '282'
                                                     collection: Tiff\Tag
@@ -150,6 +169,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Rational
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
@@ -158,6 +178,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: YResolution
                                                     id: '283'
                                                     collection: Tiff\Tag
@@ -166,6 +187,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Rational
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
@@ -174,6 +196,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: ResolutionUnit
                                                     id: '296'
                                                     collection: Tiff\Tag
@@ -182,6 +205,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Short
                                                             components: 1
                                                             bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
@@ -190,6 +214,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: Software
                                                     id: '305'
                                                     collection: Tiff\Tag
@@ -198,6 +223,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Ascii
                                                             components: 9
                                                             bytesHash: 8ab1a51bed10176d7fe18f128fbddb35b3cd82e92093e6aabfc4207485ec6ec9
@@ -206,6 +232,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: ModifyDate
                                                     id: '306'
                                                     collection: Tiff\Tag
@@ -214,6 +241,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Time
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Ascii
                                                             components: 20
                                                             bytesHash: ecec0640a45fc9fb732ea7e72b0ba9ff96f5621ea05f0044faa259da4886d184
@@ -222,6 +250,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: YCbCrPositioning
                                                     id: '531'
                                                     collection: Tiff\Tag
@@ -230,6 +259,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Short
                                                             components: 1
                                                             bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
@@ -238,6 +268,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Tiff\IfdExif
@@ -246,6 +277,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ExposureTime
                                                             id: '33434'
                                                             collection: Tiff\Tag
@@ -254,6 +286,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifExposureTime
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: e25449b81a973ff2a96c1d16651c86b321ccc75d40a48494c3628cec4d94e867
@@ -262,6 +295,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: FNumber
                                                             id: '33437'
                                                             collection: Tiff\Tag
@@ -270,6 +304,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifFNumber
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: c1ee4370a56556df9fce3141f5e529cba152a3c33727e614f67b5e2383fa765b
@@ -278,6 +313,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureProgram:34850'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ExposureProgram
                                                             id: '34850'
                                                             collection: Tiff\Tag
@@ -286,6 +322,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureProgram:34850/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
@@ -294,6 +331,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ISO:34855'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ISO
                                                             id: '34855'
                                                             collection: Tiff\Tag
@@ -302,6 +340,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ISO:34855/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 6fd27b6685dd017d06230f819aafdbd609480ce22aa2590ed1ed2f46c6af6716
@@ -310,6 +349,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ExifVersion
                                                             id: '36864'
                                                             collection: Tiff\Tag
@@ -318,6 +358,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Version
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 82b87b56b096bcf4be784d993717c10443d843ebc880e4dae7cd5d049240d451
@@ -326,6 +367,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: DateTimeOriginal
                                                             id: '36867'
                                                             collection: Tiff\Tag
@@ -334,6 +376,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Time
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Ascii
                                                                     components: 20
                                                                     bytesHash: ecec0640a45fc9fb732ea7e72b0ba9ff96f5621ea05f0044faa259da4886d184
@@ -342,6 +385,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: CreateDate
                                                             id: '36868'
                                                             collection: Tiff\Tag
@@ -350,6 +394,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Time
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Ascii
                                                                     components: 20
                                                                     bytesHash: ecec0640a45fc9fb732ea7e72b0ba9ff96f5621ea05f0044faa259da4886d184
@@ -358,6 +403,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ComponentsConfiguration
                                                             id: '37121'
                                                             collection: Tiff\Tag
@@ -366,6 +412,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifComponentsConfiguration
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 1666d9845b241586380fe85194c47f1d1868c4d7d30ba806ecc6d581df9eeadc
@@ -374,6 +421,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CompressedBitsPerPixel:37122'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: CompressedBitsPerPixel
                                                             id: '37122'
                                                             collection: Tiff\Tag
@@ -382,6 +430,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CompressedBitsPerPixel:37122/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Rational
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 8ad041705ad57138eb90bb9b7dab49557cd5bd9fcb3bb4086dcf3db05fd87cb6
@@ -390,6 +439,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ExposureCompensation
                                                             id: '37380'
                                                             collection: Tiff\Tag
@@ -398,6 +448,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifExposureBiasValue
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: SignedRational
                                                                     components: 1
                                                                     bytesHash: dd73a46975594b97bfef18db6ea376dafa119d27bfa7b0e2f94e0e3e67420f42
@@ -406,6 +457,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: MaxApertureValue
                                                             id: '37381'
                                                             collection: Tiff\Tag
@@ -414,6 +466,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifApertureValue
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 5f4b6dc97c7e5d15ade2c803036bddbccd4cdafaeec7a78ca267def6e2b1754a
@@ -422,6 +475,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: MeteringMode
                                                             id: '37383'
                                                             collection: Tiff\Tag
@@ -430,6 +484,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 2921a11f25dadaa24aa79a548e4e81508c2e5e56af2d833d65e2bcce448ce2f5
@@ -438,6 +493,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LightSource:37384'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: LightSource
                                                             id: '37384'
                                                             collection: Tiff\Tag
@@ -446,6 +502,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LightSource:37384/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
@@ -454,6 +511,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: Flash
                                                             id: '37385'
                                                             collection: Tiff\Tag
@@ -462,6 +520,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7
@@ -470,6 +529,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: FocalLength
                                                             id: '37386'
                                                             collection: Tiff\Tag
@@ -478,6 +538,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifFocalLength
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
                                                                     bytesHash: 66534053248090c12e928ff5dbad82e2589fd7c5fc0c625b2755a6e8ac1ec1da
@@ -486,6 +547,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MakerNote:37500'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: MakerNote
                                                             id: '37500'
                                                             collection: Tiff\Tag
@@ -494,6 +556,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MakerNote:37500/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifMakerNote
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Undefined
                                                                     components: 308
                                                                     bytesHash: 961bca926112a4768b64b2f0b25b17fae2696ee6d4ba8ab6372e40435beabf8d
@@ -502,6 +565,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:UserComment:37510'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: UserComment
                                                             id: '37510'
                                                             collection: Tiff\Tag
@@ -510,6 +574,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:UserComment:37510/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifUserComment
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Undefined
                                                                     components: 125
                                                                     bytesHash: 652413a4822d78c1bed4ebe59bd1c942bca07b6834f9685231bf6337b3971ab1
@@ -518,6 +583,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FlashpixVersion:40960'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: FlashpixVersion
                                                             id: '40960'
                                                             collection: Tiff\Tag
@@ -526,6 +592,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FlashpixVersion:40960/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Version
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Undefined
                                                                     components: 4
                                                                     bytesHash: 5e7b571a60a7c187d6a4cb8bbedbe4e69d4caa49b51d9ddf3320afd793f146bf
@@ -534,6 +601,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ColorSpace
                                                             id: '40961'
                                                             collection: Tiff\Tag
@@ -542,6 +610,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Short
                                                                     components: 1
                                                                     bytesHash: 47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254
@@ -550,6 +619,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ExifImageWidth
                                                             id: '40962'
                                                             collection: Tiff\Tag
@@ -558,6 +628,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Long
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Long
                                                                     components: 1
                                                                     bytesHash: ca99ceb00e48a12c99ee650951a0154c6edd9e596c56af5d7bca151b5412704c
@@ -566,6 +637,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: ExifImageHeight
                                                             id: '40963'
                                                             collection: Tiff\Tag
@@ -574,6 +646,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Long
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Long
                                                                     components: 1
                                                                     bytesHash: 95289b2dda0e64fd15afd08d382f6af6a1cf08d74d1dc4e3b607d8ca89f23760
@@ -582,6 +655,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: InteropIFD
                                                             id: '40965'
                                                             collection: Tiff\IfdInteroperability
@@ -590,6 +664,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:InteropIndex:1'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     name: InteropIndex
                                                                     id: '1'
                                                                     collection: Tiff\Tag
@@ -598,6 +673,7 @@ elements:
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:InteropIndex:1/entry'
                                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                                             valid: true
+                                                                            validationLevel: OK
                                                                             format: Ascii
                                                                             components: 4
                                                                             bytesHash: 3c013d3ab26e4330d8b866ea2aa1b79258d1cfaddf3e411f48876b520903f6d5
@@ -606,6 +682,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:InteropVersion:2'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     name: InteropVersion
                                                                     id: '2'
                                                                     collection: Tiff\Tag
@@ -614,6 +691,7 @@ elements:
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:InteropVersion:2/entry'
                                                                             handlerClass: FileEye\MediaProbe\Entry\Version
                                                                             valid: true
+                                                                            validationLevel: OK
                                                                             format: Undefined
                                                                             components: 4
                                                                             bytesHash: 5e7b571a60a7c187d6a4cb8bbedbe4e69d4caa49b51d9ddf3320afd793f146bf
@@ -622,6 +700,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FileSource:41728'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: FileSource
                                                             id: '41728'
                                                             collection: Tiff\Tag
@@ -630,6 +709,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FileSource:41728/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Undefined
                                                                     components: 1
                                                                     bytesHash: 084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff29c5
@@ -638,6 +718,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneType:41729'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                             valid: true
+                                                            validationLevel: OK
                                                             name: SceneType
                                                             id: '41729'
                                                             collection: Tiff\Tag
@@ -646,6 +727,7 @@ elements:
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneType:41729/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                                                                     valid: true
+                                                                    validationLevel: OK
                                                                     format: Undefined
                                                                     components: 1
                                                                     bytesHash: 4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a
@@ -654,6 +736,7 @@ elements:
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
                                             valid: true
+                                            validationLevel: OK
                                             name: IFD1
                                             id: '1'
                                             collection: Tiff\Ifd1
@@ -662,6 +745,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:Compression:259'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: Compression
                                                     id: '259'
                                                     collection: Tiff\Tag
@@ -670,6 +754,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:Compression:259/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Short
                                                             components: 1
                                                             bytesHash: ceb827ad3d3884fd4d50ae6099d6d50c09a21e72ebd309708e8b69d93df19e55
@@ -678,6 +763,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:XResolution:282'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: XResolution
                                                     id: '282'
                                                     collection: Tiff\Tag
@@ -686,6 +772,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:XResolution:282/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Rational
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
@@ -694,6 +781,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:YResolution:283'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: YResolution
                                                     id: '283'
                                                     collection: Tiff\Tag
@@ -702,6 +790,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:YResolution:283/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Rational
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Rational
                                                             components: 1
                                                             bytesHash: 2b970998247fd0882868363e988cb16a1c38131150bcadd5c13a5614a3c1e54c
@@ -710,6 +799,7 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:ResolutionUnit:296'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
                                                     valid: true
+                                                    validationLevel: OK
                                                     name: ResolutionUnit
                                                     id: '296'
                                                     collection: Tiff\Tag
@@ -718,6 +808,7 @@ elements:
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:ResolutionUnit:296/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Short
                                                             components: 1
                                                             bytesHash: 99be5efb88ca2013bd8e4eb035fd42d5245468fe9afa70d8ba9c1c419a48c4e8
@@ -726,12 +817,14 @@ elements:
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail'
                                                     handlerClass: FileEye\MediaProbe\Block\Thumbnail
                                                     valid: true
+                                                    validationLevel: OK
                                                     collection: Thumbnail
                                                     elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/thumbnail/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                                                             valid: true
+                                                            validationLevel: OK
                                                             format: Undefined
                                                             components: 4923
                                                             bytesHash: 37d2ff6b0c23e319e9988e5ac697dd571b55c026e37336fee8a533fed8a870d1
@@ -740,6 +833,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:APP13:237'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: APP13
                     id: '237'
                     collection: Jpeg\Segment
@@ -748,6 +842,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP13:237/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 4262
                             bytesHash: 3bf3076d8317f200b81292127357b570a996b7162f974f0cfcc021274a56931a
@@ -756,6 +851,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:APP14:238'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: APP14
                     id: '238'
                     collection: Jpeg\Segment
@@ -764,6 +860,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:APP14:238/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 16
                             bytesHash: 8650bc924651ef5967488049ca4ab34347d47aafb62f730b4f29b4e87588a2b8
@@ -772,6 +869,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:DQT:219'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: DQT
                     id: '219'
                     collection: Jpeg\Segment
@@ -780,6 +878,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:DQT:219/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 134
                             bytesHash: 4e6eba991e0cae85ffc02735ed4afea295daf63b75690b00a68a80da92e6635a
@@ -788,6 +887,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:SOF0:192'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: SOF0
                     id: '192'
                     collection: Jpeg\Segment
@@ -796,6 +896,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:SOF0:192/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 19
                             bytesHash: 1ddf6dbce9d9cfa43a74012acda9b14c421d80581bec52eccc6e9f58efc19ff2
@@ -804,6 +905,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:DRI:221'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: DRI
                     id: '221'
                     collection: Jpeg\Segment
@@ -812,6 +914,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:DRI:221/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 6
                             bytesHash: e8219dd79cfe1087b2e03a933ef25142acde27392436d380a360224ef73e809e
@@ -820,6 +923,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:DHT:196'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: DHT
                     id: '196'
                     collection: Jpeg\Segment
@@ -828,6 +932,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:DHT:196/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 420
                             bytesHash: 0b4be78f9ca2a5db19c2aa35b820481b18cc59acb6ca749e53510b9887a45842
@@ -836,6 +941,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:SOS:218'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentSos
                     valid: true
+                    validationLevel: OK
                     name: SOS
                     id: '218'
                     collection: Jpeg\SegmentSos
@@ -844,6 +950,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:SOS:218/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 339333
                             bytesHash: 94e85c8797dbe899084267a136213615a08c99dbff5cb632023050aae6ced385
@@ -852,6 +959,7 @@ elements:
                     path: '/media/jpeg/jpegSegment:EOI:217'
                     handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
                     valid: true
+                    validationLevel: OK
                     name: EOI
                     id: '217'
                     collection: Jpeg\Segment
@@ -860,6 +968,7 @@ elements:
                             path: '/media/jpeg/jpegSegment:EOI:217/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             valid: true
+                            validationLevel: OK
                             format: Undefined
                             components: 2
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0

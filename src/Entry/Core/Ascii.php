@@ -17,7 +17,6 @@ class Ascii extends EntryBase
         // Check the last byte is NUL.
         if (substr($this->dataElement->getBytes(), -1) !== "\x0") {
             $this->notice('Ascii entry missing final NUL character.');
-            $this->valid = false;
         }
 
         $this->debug("text: {text}", ['text' => $this->toString()]);

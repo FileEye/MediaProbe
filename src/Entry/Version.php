@@ -18,7 +18,6 @@ class Version extends Undefined
     {
         if (!is_numeric($this->dataElement->getBytes())) {
             $this->warning('Incorrect version data.');
-            $this->valid = false;
         }
     }
 

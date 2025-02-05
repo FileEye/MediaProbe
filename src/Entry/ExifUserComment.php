@@ -24,22 +24,15 @@ class ExifUserComment extends Undefined
         $value = $this->dataElement->getBytes();
 
         if (strlen($value) < 8) {
-            $this->valid = false;
+            $this->warning('Invalid data for UserComment, out of bounds.');
         } else {
             $encoding = strtoupper(rtrim(substr($value, 0, 8), "\x00"));
             if (!in_array($encoding, ['', 'ASCII', 'JIS', 'UNICODE'])) {
-                $this->valid = false;
+                $this->warning('Invalid EXIF text encoding for UserComment.');
             }
-        }
-
-        if (!$this->valid) {
-            $this->warning('Invalid EXIF text encoding for UserComment.');
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         $format = $options['format'] ?? null;
@@ -62,11 +55,8 @@ class ExifUserComment extends Undefined
         return rtrim(substr($this->dataElement->getBytes(), 8), "\x00");
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
-        return $this->valid ? $this->getValue($options) : '';
+        return $this->isValid() ? $this->getValue($options) : '';
     }
 }

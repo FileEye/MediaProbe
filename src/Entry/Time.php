@@ -46,13 +46,11 @@ class Time extends Ascii
         // We need to find 6 elements, year, month, day, hour, minutes, seconds.
         if (count($d) !== 6) {
             $this->warning("Invalid datetime format for '{value}'", ['value' => $value]);
-            $this->valid = false;
         } else {
             for ($i = 0; $i < 6; $i ++) {
                 // If any of year, month, day, hour, minutes, seconds are 0, the timestamp is invalid.
                 if (empty($d[$i])) {
                     $this->warning("Invalid datetime '{value}'", ['value' => $value]);
-                    $this->valid = false;
                     break;
                 }
             }

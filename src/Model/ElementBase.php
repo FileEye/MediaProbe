@@ -9,6 +9,7 @@ use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use Monolog\Level;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
@@ -30,9 +31,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     protected DOMElement $DOMNode;
 
     /**
-     * Whether this element was successfully validated.
+     * Validation level of this element.
      */
-    protected bool $valid = true;
+    protected ?Level $level = null;
 
     /**
      * @param string $dom_node_name
@@ -47,30 +48,26 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
     {
         // If $parent is null, this Element is the root of the DOM document that
         // stores the media structure.
-        if (!isset($parent) || !isset($parent->DOMNode)) {
-            $doc = new \DOMDocument();
-            $doc->registerNodeClass('DOMElement', DOMElement::class);
-            $parent_node = $doc;
-        } else {
+        if (isset($parent) && isset($parent->DOMNode)) {
             $doc = $parent->DOMNode->ownerDocument;
             $parent_node = $parent->DOMNode;
+            $this->DOMNode = $doc->createElement($dom_node_name);
+            if ($reference) {
+                assert($reference instanceof ElementBase);
+                $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
+            } else {
+                $parent_node->appendChild($this->DOMNode);
+            }
+            // Assign this Element as the payload of the DOM node.
+            $this->DOMNode->setMediaProbeElement($this);
         }
-
-        $this->DOMNode = $doc->createElement($dom_node_name);
-
-        if ($reference) {
-            assert($reference instanceof ElementBase);
-            $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
-        } else {
-            $parent_node->appendChild($this->DOMNode);
-        }
-
-        // Assign this Element as the payload of the DOM node.
-        $this->DOMNode->setMediaProbeElement($this);
     }
 
     public function getRootElement(): ElementInterface
     {
+        if (!isset($this->DOMNode)) {
+            return $this;
+        }
         $doc = $this->DOMNode->ownerDocument->documentElement;
         assert($doc instanceof DOMElement);
         return $doc->getMediaProbeElement();
@@ -78,6 +75,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     public function getParentElement(): ?ElementInterface
     {
+        if (!isset($this->DOMNode)) {
+            return null;
+        }
         $domNode = $this->DOMNode;
         assert($domNode instanceof DOMElement);
         if ($domNode->getMediaProbeElement() !== $this->getRootElement()) {
@@ -158,6 +158,10 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     public function getContextPath(): string
     {
+        if (!isset($this->DOMNode)) {
+            return '';
+        }
+
         // Get the path before this element.
         $parent_path = $this->getParentElement() ? $this->getParentElement()->getContextPath() : '';
 
@@ -174,7 +178,20 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
 
     public function isValid(): bool
     {
-        return $this->valid;
+        return is_null($this->level) || ($this->level->value < Level::Warning->value);
+    }
+
+    public function level(): ?Level
+    {
+        return $this->level;
+    }
+
+    public function validationLevel(): string
+    {
+        return match ($this->level()) {
+            null, Level::Debug => 'OK',
+            default => ucfirst($this->level()->toPsrLogLevel()),
+        };
     }
 
     public function getValue(array $options = []): mixed
@@ -223,9 +240,9 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         $context['path'] = $this->getContextPath();
         $root_element = $this->getRootElement();
 
-/*        if (method_exists($root_element, 'getStopwatch')) {
-            $message = (string) $root_element->getStopwatch()->getEvent('media-parsing') . ' ' . $message;
-        }*/
+        if (!isset($this->level) || Logger::toMonologLevel($level)->value > $this->level->value) {
+            $this->level = Logger::toMonologLevel($level);
+        }
 
         if (property_exists($root_element, 'logger') && isset($root_element->logger)) {  // xx should be logging anyway
             assert($root_element instanceof RootBlockBase);

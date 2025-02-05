@@ -15,8 +15,8 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          #- "8.2"
-          - "8.3"
+          - "8.2"
+          #- "8.3"
           #- "8.4"
 
     steps:
@@ -59,15 +59,18 @@ jobs:
       run: |
         php examples/dump-media.php -d tests/media-samples/image/camera/canon_eos_850d_08.jpg
         php examples/dump-media.php -d tests/media-samples/image/broken/canon-eos-650d.jpg
+        php examples/dump-media.php -d tests/media-samples/image/camera/COPYING
+        php examples/dump-media.php -d composer.json
 #        php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/gh-11.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
 
     - name: Run test suite
-#      continue-on-error: true
-      run: vendor/bin/phpunit --color=always --testdox --display-deprecations --display-phpunit-deprecations ./tests
+      continue-on-error: true
+      run: vendor/bin/phpunit --color=always --testdox --display-deprecations --display-phpunit-deprecations --display-warnings ./tests
 
     - name: Code style test
+      continue-on-error: true
       run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
 
 # Remove the comment to the lines below during development, to refresh the

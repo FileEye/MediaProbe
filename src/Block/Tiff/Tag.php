@@ -5,11 +5,11 @@ namespace FileEye\MediaProbe\Block\Tiff;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use FileEye\MediaProbe\Utility\HexDump;
 
 /**
  * Class representing an Exif TAG as a MediaProbe block.
@@ -27,7 +27,7 @@ class Tag extends BlockBase
         // Check if MediaProbe has a definition for this tag.
         if (in_array($this->getCollection()->getPropertyValue('id'), ['VoidCollection', 'Tiff\UnknownTag'])) {
             $this->notice("Unknown item {item} in '{parent}'", [
-                'item' => MediaProbe::dumpIntHex($this->getAttribute('id')),
+                'item' => HexDump::dumpIntHex($this->getAttribute('id')),
                 'parent' => $parentElement->getCollection()->getPropertyValue('name') ?? 'n/a',
             ]);
             return;
@@ -67,10 +67,9 @@ class Tag extends BlockBase
         try {
             $class = $this->getDefinition()->getEntryClass();
             $entry = new $class($this, $data);
-            $this->valid = $entry->isValid();
+            $this->level = $entry->level();
         } catch (DataException $e) {
             $this->error($e->getMessage());
-            $this->valid = false;
         }
     }
 
@@ -130,13 +129,13 @@ class Tag extends BlockBase
             $info['seq'] = $parent_name . '.' . $info['seq'];
         }
 
-        $info['relativeOffset'] = MediaProbe::dumpIntHex($this->getDefinition()->itemDefinitionOffset);
+        $info['relativeOffset'] = HexDump::dumpIntHex($this->getDefinition()->itemDefinitionOffset);
 
         $msg .= isset($parentInfo['name']) ? ':{name}' : '';
 
         if (isset($parentInfo['item'])) {
             $msg .= ' ({item})';
-            $info['item'] = MediaProbe::dumpIntHex($parentInfo['item']);
+            $info['item'] = HexDump::dumpIntHex($parentInfo['item']);
         }
 
         if (isset($parentInfo['size'])) {

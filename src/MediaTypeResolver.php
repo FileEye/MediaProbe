@@ -24,7 +24,7 @@ class MediaTypeResolver
      *   The media format collection.
      *
      * @throws MediaProbeException
-     *   If no supporte media type can be identified.
+     *   If no supported media type can be identified.
      */
     public static function fromDataElement(DataElement $dataElement, array $typeHints = []): CollectionInterface
     {
@@ -57,6 +57,6 @@ class MediaTypeResolver
             }
         }
 
-        throw new MediaProbeException('Media type not managed by MediaProbe');
+        throw new MediaProbeException(sprintf("Media type '%s' not managed by MediaProbe", $typeHints !== [] ? implode("'|'", $typeHints) : 'unidentified'));
     }
 }

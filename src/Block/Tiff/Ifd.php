@@ -13,10 +13,10 @@ use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Model\EntryInterface;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use FileEye\MediaProbe\Utility\HexDump;
 
 /**
  * Class representing an Image File Directory (IFD).
@@ -45,7 +45,7 @@ class Ifd extends ListBase
                 $this->warning(
                     'Could not access value for item {item} in \'{ifd}\', overflow',
                     [
-                        'item' => MediaProbe::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
+                        'item' => HexDump::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
                         'ifd' => $this->getAttribute('name'),
                     ]
                 );
@@ -53,19 +53,19 @@ class Ifd extends ListBase
             }
 /*            $this->debug(
                 'Item Offset {o} Components {c} Format {f} Formatsize {fs} Size {s} DataElement Size {des}', [
-                    'o' => MediaProbe::dumpIntHex($dataElement->getAbsoluteOffset($item_definition->dataOffset)),
+                    'o' => HexDump::dumpIntHex($dataElement->getAbsoluteOffset($item_definition->dataOffset)),
                     'c' => $item_definition->valuesCount,
                     'f' => $item_definition->format,
                     'fs' => DataFormat::getSize($item_definition->format),
-                    's' => MediaProbe::dumpIntHex($item_definition->getSize()),
-                    'des' => MediaProbe::dumpIntHex($dataElement->getSize()),
+                    's' => HexDump::dumpIntHex($item_definition->getSize()),
+                    'des' => HexDump::dumpIntHex($dataElement->getSize()),
                 ]
             );*/
             if ($item_definition->dataOffset +  $item_definition->getSize() > $dataElement->getSize()) {
                 $this->warning(
                     'Could not get value for item {item} in \'{ifd}\', not enough data',
                     [
-                        'item' => MediaProbe::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
+                        'item' => HexDump::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
                         'ifd' => $this->getAttribute('name'),
                     ]
                 );
@@ -86,7 +86,6 @@ class Ifd extends ListBase
                 }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
-                $item->valid = false;
             }
         }
 
@@ -318,7 +317,6 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'length' => $length,
             ]);
-            $ifd->valid = false;
             return;
         }
 
@@ -327,7 +325,6 @@ class Ifd extends ListBase
                 'offset' => $offset,
                 'size' => $dataElement->getSize(),
             ]);
-            $ifd->valid = false;
             return;
         }
 

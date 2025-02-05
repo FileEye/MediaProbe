@@ -41,7 +41,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     }
 
     #[DataProvider('mediaFileProvider')]
-    public function testParseFromFile($mediaDumpFile)
+    public function testParseFromFile($mediaDumpFile): void
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
 
@@ -71,7 +71,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     }
 
     #[DataProvider('mediaFileProvider')]
-    public function testParse($mediaDumpFile)
+    public function testParse($mediaDumpFile): void
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
 
@@ -105,6 +105,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     public function testRewriteThroughGd($mediaDumpFile)
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
+
+        if ($this->testDump['elements']['validationLevel'] === 'Critical') {
+            $this->markTestSkipped($this->testDump['fileName'] . ' of MIME type \'' . $this->testDump['mimeType'] . '\' has validation level \'' . $this->testDump['elements']['validationLevel'] . '\' and can not be tested for rewriting.');
+        }
 
         $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
         $this->fileSystem->mkdir($this->tempWorkDirectory . '/media-samples/image/' . $mediaDumpFile->getRelativePath());
@@ -141,6 +145,10 @@ class MediaFilesTest extends MediaProbeTestCaseBase
     {
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
 
+        if ($this->testDump['elements']['validationLevel'] === 'Critical') {
+            $this->markTestSkipped($this->testDump['fileName'] . ' of MIME type \'' . $this->testDump['mimeType'] . '\' has validation level \'' . $this->testDump['elements']['validationLevel'] . '\' and can not be tested for rewriting.');
+        }
+
         $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
         $this->fileSystem->mkdir($this->tempWorkDirectory . '/media-samples/image/' . $mediaDumpFile->getRelativePath());
         $rewriteFile = $this->tempWorkDirectory . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'] . '-rewrite-gd.img';
@@ -174,6 +182,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->assertSame($expected['path'], $element->getContextPath());
         if (!$rewritten) {
             $this->assertSame($expected['valid'], $element->isValid(), $element->getContextPath());
+            $this->assertSame($expected['validationLevel'], $element->validationLevel(), $element->getContextPath());
         }
 
         // Check entry.

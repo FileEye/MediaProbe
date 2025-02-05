@@ -9,14 +9,11 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFile;
 use FileEye\MediaProbe\Model\BlockInterface;
 use FileEye\MediaProbe\Model\RootBlockBase;
-use FileEye\MimeMap\Extension;
-use FileEye\MimeMap\MappingException;
 use Monolog\Handler\TestHandler;
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Stopwatch\Stopwatch;
 
 /**
  * Class to handle media data.
@@ -41,12 +38,14 @@ class Media extends RootBlockBase
         ?LoggerInterface $externalLogger,
         ?string $failLevel,
     ) {
-        $media = new ItemDefinition(CollectionFactory::get('Media'));
-        parent::__construct($media, $failLevel ? Logger::toMonologLevel($failLevel) : null, $externalLogger);
-        $this->logger = (new Logger('mediaprobe'))
-            ->pushHandler(new TestHandler(Level::Info))
-            ->pushProcessor(new PsrLogMessageProcessor());
-        $this->stopWatch = new Stopwatch();
+        parent::__construct(
+            definition: new ItemDefinition(CollectionFactory::get('Media')),
+            failLevel: $failLevel ? Logger::toMonologLevel($failLevel) : null,
+            logger: (new Logger('mediaprobe'))
+                ->pushHandler(new TestHandler(Level::Info))
+                ->pushProcessor(new PsrLogMessageProcessor()),
+            externalLogger: $externalLogger,
+        );
     }
 
     /**
@@ -67,24 +66,9 @@ class Media extends RootBlockBase
         ?LoggerInterface $externalLogger = null,
         ?string $failLevel = null,
     ): Media {
-        // Find the most likely MIME type given the file extension.
-        $extension = '';
-        $typeHints = [];
-        $fileParts = explode('.', basename($path));
-        while (array_shift($fileParts) !== null) {
-            $extension = strtolower(implode('.', $fileParts));
-            $mimeMapExtension = new Extension($extension);
-            try {
-                $typeHints = $mimeMapExtension->getTypes();
-                break;
-            } catch (MappingException $e) {
-                continue;
-            }
-        }
-
         // @todo lock file while reading, capture fstats to prevent overwrites.
         $dataFile = new DataFile($path);
-        return static::parse($dataFile, $typeHints, $externalLogger, $failLevel);
+        return static::parse($dataFile, $dataFile->typeHints, $externalLogger, $failLevel);
     }
 
     /**
@@ -111,10 +95,17 @@ class Media extends RootBlockBase
         $media = new Media($externalLogger, $failLevel);
         $media->getStopwatch()->start('media-parsing');
 
-        // Determine the media type. Throws MediaProbeException if not determinable.
-        $mediaType = new ItemDefinition(
-            collection: MediaTypeResolver::fromDataElement($dataElement, $typeHints),
-        );
+        // Determine the media type. Stop immediately if not processable.
+        try {
+            $mediaType = new ItemDefinition(
+                collection: MediaTypeResolver::fromDataElement($dataElement, $typeHints),
+            );
+        } catch (MediaProbeException $e) {
+            assert($media->debugInfo(['dataElement' => $dataElement]));
+            $media->critical($e->getMessage());
+            $media->getStopwatch()->stop('media-parsing');
+            return $media;
+        }
 
         // Build the Media object and its immediate child, that represents the actual media. Then
         // parse the media according to the media format.
@@ -123,6 +114,7 @@ class Media extends RootBlockBase
         $mediaTypeBlock = $media->addBlock($mediaType);
         assert($mediaTypeBlock instanceof BlockInterface);
         $mediaTypeBlock->parseData($dataElement);
+        $media->level = $mediaTypeBlock->level();
         $media->getStopwatch()->stop('media-parsing');
 
         return $media;
@@ -165,8 +157,15 @@ class Media extends RootBlockBase
     {
         $info = parent::collectInfo($context);
 
+        if ($context['dataElement'] instanceof DataFile) {
+            $info['_msg'] .= ' file: ' . basename($context['dataElement']->filePath);
+        }
+        
         $info['mimeType'] = $this->getAttribute('mimeType');
-        $info['_msg'] .= ' MIME type: {mimeType}';
+
+        if ($info['mimeType']) {
+            $info['_msg'] .= ' MIME type: {mimeType}';
+        }
 
         return $info;
     }

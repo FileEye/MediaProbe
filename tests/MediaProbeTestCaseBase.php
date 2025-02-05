@@ -9,6 +9,7 @@ use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Model\ElementInterface;
 use FileEye\MediaProbe\Model\EntryInterface;
+use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\Version;
 use Symfony\Component\Filesystem\Filesystem;
@@ -37,14 +38,12 @@ class MediaProbeTestCaseBase extends TestCase
      */
     protected function getStubRoot(string $DOMName = 'StubRoot'): StubRootBlock
     {
-        $collection = $this->getMockBuilder(CollectionInterface::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $collection = $this->createMock(CollectionInterface::class);
         $collection->method('getPropertyValue')->with('DOMNode')->willReturn($DOMName);
         $itemDefinition = $this->getMockBuilder(ItemDefinition::class)
             ->setConstructorArgs([$collection])
             ->getMock();
-        return new StubRootBlock($itemDefinition);
+        return new StubRootBlock($itemDefinition, $this->createMock(Logger::class));
     }
 
     public function dumpElement(ElementInterface $element)

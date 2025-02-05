@@ -24,7 +24,6 @@ abstract class NumberBase extends EntryBase
         // Check that the data size is consistent.
         if ($this->components * $this->formatSize !== $this->dataElement->getSize()) {
             $this->error('Invalid data size.');
-            $this->valid = false;
         }
 
         // Check that the numbers given are within the min-max range allowed.
@@ -33,7 +32,6 @@ abstract class NumberBase extends EntryBase
                 $this->getNumberFromDataElement($i * $this->formatSize);
             } catch (DataException $e) {
                 $this->error($e->getMessage());
-                $this->valid = false;
             }
         }
 

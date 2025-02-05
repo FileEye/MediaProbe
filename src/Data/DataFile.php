@@ -2,42 +2,35 @@
 
 namespace FileEye\MediaProbe\Data;
 
+use FileEye\MimeMap\Extension;
+use FileEye\MimeMap\MappingException;
+
 /**
  * A DataElement object holding a file's data.
  */
 final class DataFile extends DataElement
 {
     /**
-     * The file path.
-     *
-     * @var string
-     */
-    private $filePath;
-
-    /**
      * The file handle.
-     *
-     * @var \SplFileObject
      */
-    private $fileHandle;
+    private \SplFileObject $fileHandle;
 
     /**
-     * Construct a new DataFile object with the file supplied.
+     * The array of most likely MIME types of the file.
      *
-     * @param string $filePath
-     *   The file path.
+     * @var list<string>
      */
-    public function __construct(string $filePath)
-    {
-        $this->filePath = $filePath;
+    public readonly array $typeHints;
+
+    public function __construct(
+        public readonly string $filePath,
+    ) {
         $this->fileHandle = new \SplFileObject($this->filePath, 'r');
         $this->start = 0;
         $this->size = $this->fileHandle->fstat()['size'];
+        $this->typeHints = $this->determineMimeTypeHints();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBytes(int $offset = 0, ?int $size = null): string
     {
         if ($offset < 0) {
@@ -53,5 +46,25 @@ final class DataFile extends DataElement
 
         $this->fileHandle->fseek($offset);
         return $this->fileHandle->fread($size);
+    }
+
+    /**
+     * Find the most likely MIME type given the file extension.
+     *
+     * @return list<string>
+     */
+    protected function determineMimeTypeHints(): array
+    {
+        $fileParts = explode('.', basename($this->filePath));
+        while (array_shift($fileParts) !== null) {
+            $extension = strtolower(implode('.', $fileParts));
+            $mimeMapExtension = new Extension($extension);
+            try {
+                return $mimeMapExtension->getTypes();
+            } catch (MappingException) {
+                continue;
+            }
+        }
+        return [];
     }
 }

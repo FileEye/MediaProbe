@@ -3,18 +3,15 @@
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
 use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\MediaProbe;
+use FileEye\MediaProbe\Utility\HexDump;
 
 /**
  * Decode text for an Canon Lens Info tag.
  */
 class LensInfo extends Undefined
 {
-    /**
-     * {@inheritdoc}
-     */
     public function toString(array $options = []): string
     {
-        return MediaProbe::dumpHex($this->toBytes());
+        return HexDump::dumpHex($this->toBytes());
     }
 }

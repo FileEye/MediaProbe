@@ -5,6 +5,7 @@ namespace FileEye\MediaProbe\Model;
 use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use Monolog\Level;
 
 /**
  * Interface for Element objects.
@@ -100,6 +101,16 @@ interface ElementInterface
      * Determines if the element has been parsed successfully from data.
      */
     public function isValid(): bool;
+
+    /**
+     * Returns the validation level of this element.
+     */
+    public function level(): ?Level;
+
+    /**
+     * Returns the validation level of this element as a string for dumps.
+     */
+    public function validationLevel(): string;
 
     /**
      * Returns the value of this element, if the element supports it.

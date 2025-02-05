@@ -29,7 +29,7 @@ abstract class RootBlockBase extends BlockBase
     /**
      * The internal Monolog logger instance for this Media object.
      */
-    protected Logger $logger;
+    //protected Logger $logger;
 
     /**
      * The minimum log level for failure.
@@ -44,7 +44,7 @@ abstract class RootBlockBase extends BlockBase
     /**
      * A Symfony stopwatch.
      */
-    protected Stopwatch $stopWatch;
+    //protected Stopwatch $stopWatch;
 
     /**
      * @param \FileEye\MediaProbe\ItemDefinition $definition
@@ -52,11 +52,19 @@ abstract class RootBlockBase extends BlockBase
      */
     public function __construct(
         ItemDefinition $definition,
+        protected Logger $logger,
         protected ?Level $failLevel = null,
         protected ?LoggerInterface $externalLogger = null,
+        protected Stopwatch $stopWatch = new Stopwatch(),
     ) {
-        parent::__construct($definition);
+        $doc = new \DOMDocument();
+        $doc->registerNodeClass(\DOMElement::class, DOMElement::class);
+        $this->DOMNode = $doc->createElement($definition->collection->getPropertyValue('DOMNode'));
+        $doc->appendChild($this->DOMNode);
+        $this->DOMNode->setMediaProbeElement($this);
         $this->XPath = new \DOMXPath($this->DOMNode->ownerDocument);
+        parent::__construct($definition);
+
         $this->debugDumper = new DebugDumper();
     }
 

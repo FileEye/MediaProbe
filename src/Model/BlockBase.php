@@ -49,6 +49,10 @@ abstract class BlockBase extends ElementBase implements BlockInterface
 
         parent::__construct($this->getCollection()->getPropertyValue('DOMNode'), $parent, $reference);
 
+        if (!isset($this->DOMNode)) {
+            return;
+        }
+
         if ($this->getCollection()->hasProperty('item')) {
             $this->setAttribute('id', (string) $this->getCollection()->getPropertyValue('item'));
         }
@@ -188,7 +192,7 @@ abstract class BlockBase extends ElementBase implements BlockInterface
             if ($context['dataElement'] instanceof DataWindow) {
                 $msg .= ' @{offset} size {size}';
                 $info['offset'] = $context['dataElement']->getAbsoluteOffset() . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset()));
-                // @todo $offset = MediaProbe::dumpIntHex($context['dataElement']->getAbsoluteOffset());
+                // @todo $offset = HexDump::dumpIntHex($context['dataElement']->getAbsoluteOffset());
             } else {
                 $msg .= ' size {size} byte(s)';
             }

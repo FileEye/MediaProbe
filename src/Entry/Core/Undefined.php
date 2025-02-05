@@ -2,8 +2,8 @@
 
 namespace FileEye\MediaProbe\Entry\Core;
 
-use FileEye\MediaProbe\MediaProbe;
 use FileEye\MediaProbe\Model\EntryBase;
+use FileEye\MediaProbe\Utility\HexDump;
 
 /**
  * Class for holding data of undefined format.
@@ -18,7 +18,7 @@ class Undefined extends EntryBase
         if ($this->hasMappedText()) {
             $this->debug("text: {text}", ['text' => $this->toString()]);
         }
-        $this->debug("data: {data}", ['data' => MediaProbe::dumpHex($this->toBytes(), 12)]);
+        $this->debug("data: {data}", ['data' => HexDump::dumpHex($this->toBytes(), 12)]);
     }
 
     public function getValue(array $options = []): mixed
