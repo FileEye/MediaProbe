@@ -29,6 +29,11 @@ class Tiff extends BlockBase implements MediaTypeBlockInterface
      */
     protected int $byteOrder;
 
+    public static function isDataMatchingMediaType(DataElement $dataElement): bool
+    {
+        return static::getTiffSegmentByteOrder($dataElement) !== null;
+    }
+
     public function setByteOrder(int $byteOrder): self
     {
         $this->byteOrder = $byteOrder;
@@ -181,11 +186,6 @@ class Tiff extends BlockBase implements MediaTypeBlockInterface
         $info['byteOrderDescription'] = $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian';
 
         return array_merge($parentInfo, $info);
-    }
-
-    public static function isDataMatchingMediaType(DataElement $dataElement): bool
-    {
-        return static::getTiffSegmentByteOrder($dataElement) !== null;
     }
 
     /**

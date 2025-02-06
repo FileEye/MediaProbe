@@ -17,7 +17,6 @@ class SegmentApp1 extends SegmentBase
     {
         assert($this->debugInfo(['dataElement' => $data]));
         // If we have an Exif table, parse it.
-        // @todo use parser and not class call driectly
         if (Exif::isExifSegment($data, 4)) {
             $exif = new ItemDefinition(CollectionFactory::get('Jpeg\Exif'));
             $exifBlock = $this->addBlock($exif);

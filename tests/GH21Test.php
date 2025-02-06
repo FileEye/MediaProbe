@@ -31,7 +31,7 @@ class GH21Test extends MediaProbeTestCaseBase
 
     public function testThisDoesNotWorkAsExpected()
     {
-        $input_media = Media::parseFromFile($this->file);
+        $input_media = Media::createFromFile($this->file);
         $input_jpeg = $input_media->getElement("jpeg");
         $input_exif = $input_jpeg->getElement("jpegSegment/exif");
 
@@ -60,7 +60,7 @@ class GH21Test extends MediaProbeTestCaseBase
         imagejpeg($scaled, null);
         $scaled_bytes = ob_get_clean();
 
-        $out_media = Media::parse(new DataString($scaled_bytes));
+        $out_media = (new Media())->fromDataElement(new DataString($scaled_bytes));
         $out_jpeg = $out_media->getElement("jpeg");
         $this->assertInstanceOf(Jpeg::class, $out_jpeg);
 
@@ -81,7 +81,7 @@ class GH21Test extends MediaProbeTestCaseBase
 
         $out_media->saveToFile($this->file);
 
-        $media = Media::parseFromFile($this->file);
+        $media = Media::createFromFile($this->file);
         $jpeg = $media->getElement("jpeg");
         $exifin = $jpeg->getElement("jpegSegment/exif");
         $this->assertEquals($input_exif, $exifin);

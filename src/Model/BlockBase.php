@@ -6,6 +6,7 @@ namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataFile;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\ItemDefinition;
@@ -103,20 +104,12 @@ abstract class BlockBase extends ElementBase implements BlockInterface
     {
         $data = new DataWindow($dataElement, $start, $size);
         $this->size = $data->getSize();
-        if ($this->getCollection()->hasProperty('parser')) {
-            $parserClass = $this->getCollection()->getPropertyValue('parser');
-            $parser = new $parserClass($this);
-            $parser->parseData($data);
-        } else {
-            // @todo remove this when full parser model in place.
-            $this->doParseData($data);
-        }
+        // @phpstan-ignore method.notFound
+        $this->doParseData($data);
 
         // Invoke post-parse callbacks.
         $this->executePostParseCallbacks($data);
     }
-
-    abstract protected function doParseData(DataElement $data): void;
 
     /**
      * Invoke post-parse callbacks.
@@ -189,6 +182,9 @@ abstract class BlockBase extends ElementBase implements BlockInterface
 
         if (isset($context['dataElement'])) {
             $info['size'] = $context['dataElement']->getSize();
+            if ($context['dataElement'] instanceof DataFile) {
+                $msg .= ' file: ' . basename($context['dataElement']->filePath);
+            }
             if ($context['dataElement'] instanceof DataWindow) {
                 $msg .= ' @{offset} size {size}';
                 $info['offset'] = $context['dataElement']->getAbsoluteOffset() . '/0x' . strtoupper(dechex($context['dataElement']->getAbsoluteOffset()));

@@ -6,6 +6,7 @@ use FileEye\MediaProbe\Collection\CollectionException;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataFile;
 
 /**
  * Resolve a media type from the data element.
@@ -17,8 +18,6 @@ class MediaTypeResolver
      *
      * @param DataElement $dataElement
      *   The data element that will provide the data.
-     * @param list<string> $typeHints
-     *   (Optional) a list of most likely MIME types.
      *
      * @return CollectionInterface
      *   The media format collection.
@@ -26,9 +25,10 @@ class MediaTypeResolver
      * @throws MediaProbeException
      *   If no supported media type can be identified.
      */
-    public static function fromDataElement(DataElement $dataElement, array $typeHints = []): CollectionInterface
+    public static function fromDataElement(DataElement $dataElement): CollectionInterface
     {
         $mediaTypesCollection = CollectionFactory::get('MediaType');
+        $typeHints = $dataElement instanceof DataFile ? $dataElement->typeHints : [];
 
         // Loop through the 'Media' collection items, each of which defines a media format
         // collection, and checks if the media matches the format. When a match is found, return
@@ -57,6 +57,6 @@ class MediaTypeResolver
             }
         }
 
-        throw new MediaProbeException(sprintf("Media type '%s' not managed by MediaProbe", $typeHints !== [] ? implode("'|'", $typeHints) : 'unidentified'));
+        throw new MediaProbeException("Media type not managed by MediaProbe");
     }
 }

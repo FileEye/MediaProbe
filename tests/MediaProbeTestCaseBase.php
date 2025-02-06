@@ -40,10 +40,7 @@ class MediaProbeTestCaseBase extends TestCase
     {
         $collection = $this->createMock(CollectionInterface::class);
         $collection->method('getPropertyValue')->with('DOMNode')->willReturn($DOMName);
-        $itemDefinition = $this->getMockBuilder(ItemDefinition::class)
-            ->setConstructorArgs([$collection])
-            ->getMock();
-        return new StubRootBlock($itemDefinition, $this->createMock(Logger::class));
+        return new StubRootBlock($collection, $this->createMock(Logger::class));
     }
 
     public function dumpElement(ElementInterface $element)

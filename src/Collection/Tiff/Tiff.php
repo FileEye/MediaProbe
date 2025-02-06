@@ -15,6 +15,7 @@ class Tiff extends CollectionBase {
   protected static $map = array (
   'title' => 'TIFF image data',
   'DOMNode' => 'tiff',
+  'mimeType' => 'image/tiff',
   'id' => 'Tiff\\Tiff',
   'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tiff',
   'items' =>

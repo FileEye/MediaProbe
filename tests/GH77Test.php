@@ -10,7 +10,7 @@ class GH77Test extends MediaProbeTestCaseBase
     {
         $file = dirname(__FILE__) . '/media-samples/image/gh-77.jpg';
 
-        $media = Media::parseFromFile($file);
+        $media = Media::createFromFile($file);
         $input_jpeg = $media->getElement("jpeg");
 
         $app1 = $input_jpeg->getElement("jpegSegment/exif");

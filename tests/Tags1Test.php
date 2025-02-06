@@ -8,7 +8,7 @@ class Tags1Test extends MediaProbeTestCaseBase
 {
     public function testTags()
     {
-        $media = Media::parseFromFile(dirname(__FILE__) . '/media-samples/image/test-tags-1.jpg', null, 'error');
+        $media = Media::createFromFile(dirname(__FILE__) . '/media-samples/image/test-tags-1.jpg', null, 'error');
         $jpeg = $media->getElement("jpeg");
 
         $this->assertInstanceOf('FileEye\MediaProbe\Block\Jpeg\Exif', $jpeg->getElement("jpegSegment/exif"));

@@ -21,10 +21,13 @@ interface CollectionInterface
 
     /**
      * Returns the value a property, taking overrides into account.
-     *
-     * @return mixed
      */
     public function getPropertyValue(string $property): mixed;
+
+    /**
+     * Returns the PHP handler class for this collection.
+     */
+    public function getHandler(): string;
 
     /**
      * Returns the collection items' ids.
@@ -65,5 +68,8 @@ interface CollectionInterface
      * @throws CollectionException
      *   When item is not in collection.
      */
-    public function getItemCollectionByName(string $item_name, mixed $index = 0): CollectionInterface;
+    public function getItemCollectionByName(
+        string $item_name,
+        mixed $index = 0,
+    ): CollectionInterface;
 }

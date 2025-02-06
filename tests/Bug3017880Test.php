@@ -23,7 +23,7 @@ class Bug3017880Test extends MediaProbeTestCaseBase
 
         $exif = null;
         $resave_file = 0;
-        $media = Media::parseFromFile($filename);
+        $media = Media::createFromFile($filename);
         $jpeg = $media->getElement("jpeg");
         $this->assertInstanceOf(Jpeg::class, $jpeg);
 

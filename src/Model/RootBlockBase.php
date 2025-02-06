@@ -1,7 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace FileEye\MediaProbe\Model;
 
+use FileEye\MediaProbe\Collection\CollectionInterface;
+use FileEye\MediaProbe\Data\DataFile;
 use FileEye\MediaProbe\Dumper\DebugDumper;
 use FileEye\MediaProbe\Dumper\DumperInterface;
 use FileEye\MediaProbe\ItemDefinition;
@@ -27,31 +31,29 @@ abstract class RootBlockBase extends BlockBase
     protected DumperInterface $debugDumper;
 
     /**
-     * The internal Monolog logger instance for this Media object.
+     * The MIME type.
      */
-    //protected Logger $logger;
+    protected string $mimeType;
 
     /**
-     * The minimum log level for failure.
-     *
-     * MediaProbe normally intercepts and logs media parsing issues without
-     * breaking the flow. However it is possible to enable hard failures by
-     * defining the minimum log level at which the parsing process will break
-     * and throw an MediaProbeException.
-     */
-    //protected ?Level $failLevel;
-
-    /**
-     * A Symfony stopwatch.
-     */
-    //protected Stopwatch $stopWatch;
-
-    /**
-     * @param \FileEye\MediaProbe\ItemDefinition $definition
-     *   The Item Definition of this Block.
+     * @param CollectionInterface $collection
+     *   The Collection of this Block.
+     * @param Logger $logger
+     *   The internal Monolog logger instance for this Media object.
+     * @param ?Level $failLevel
+     *   (Optional) The minimum log level for failure.
+     *   MediaProbe normally intercepts and logs media parsing issues without breaking the flow.
+     *   However it is possible to enable hard failures by defining the minimum log level at
+     *   which the parsing process will break and throw a MediaProbeException.
+     * @param ?LoggerInterface $externalLogger
+     *   (Optional) a PSR-3 compliant logger callback. Consuming code can have higher level
+     *   logging facilities in place. Any entry sent to the internal logger will also be sent to
+     *   the callback, if specified.
+     * @param Stopwatch $stopWatch
+     *   (Optional) A Symfony stopwatch.
      */
     public function __construct(
-        ItemDefinition $definition,
+        CollectionInterface $collection,
         protected Logger $logger,
         protected ?Level $failLevel = null,
         protected ?LoggerInterface $externalLogger = null,
@@ -59,11 +61,11 @@ abstract class RootBlockBase extends BlockBase
     ) {
         $doc = new \DOMDocument();
         $doc->registerNodeClass(\DOMElement::class, DOMElement::class);
-        $this->DOMNode = $doc->createElement($definition->collection->getPropertyValue('DOMNode'));
+        $this->DOMNode = $doc->createElement($collection->getPropertyValue('DOMNode'));
         $doc->appendChild($this->DOMNode);
         $this->DOMNode->setMediaProbeElement($this);
         $this->XPath = new \DOMXPath($this->DOMNode->ownerDocument);
-        parent::__construct($definition);
+        parent::__construct(new ItemDefinition($collection));
 
         $this->debugDumper = new DebugDumper();
     }
@@ -90,8 +92,37 @@ abstract class RootBlockBase extends BlockBase
         return $ret;
     }
 
+    public function getMimeType(): string
+    {
+        return $this->mimeType ?? '';
+    }
+
     public function getStopwatch(): Stopwatch
     {
         return $this->stopWatch;
+    }
+
+    public function collectInfo(array $context = []): array
+    {
+        $info = [];
+        $msg = '';
+
+        if (isset($context['dataElement'])) {
+            if ($context['dataElement'] instanceof DataFile) {
+                $msg .= 'file: ' . basename($context['dataElement']->filePath) . ' ';
+            }
+            $msg .= 'size: {size} byte(s)';
+            $info['size'] = $context['dataElement']->getSize();
+        }
+
+        $info['mimeType'] = $this->getMimeType();
+
+        if ($info['mimeType']) {
+            $msg .= ' MIME type: {mimeType}';
+        }
+
+        $info['_msg'] = $msg;
+
+        return $info;
     }
 }

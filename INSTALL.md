@@ -69,7 +69,7 @@ All in just four lines of code:
   <?php
   use FileEye\MediaProbe\Media;
 
-  $image = Media::parseFromFile($argv[1]);
+  $image = Media::createFromFile($argv[1]);
   $entry = $image->getElement("tag[@name='ImageDescription']/entry");
   $entry->setDataElement(['Edited by MediaProbe']);
   $image->saveToFile($argv[1]);

@@ -51,6 +51,14 @@ abstract class CollectionBase implements CollectionInterface
         return $this->getProperties()[$property] ?? null;
     }
 
+    /**
+     * @return class-string
+     */
+    public function getHandler(): string
+    {
+        return $this->getPropertyValue('handler');
+    }
+
     public function listItemIds(): array
     {
         return array_keys($this->getPropertyValue('items') ?? []);
@@ -106,8 +114,10 @@ abstract class CollectionBase implements CollectionInterface
         return CollectionFactory::get($this->getPropertyValue('items')[$item][$index]['collection'], $item_properties);
     }
 
-    public function getItemCollectionByName(string $item_name, mixed $index = 0): CollectionInterface
-    {
+    public function getItemCollectionByName(
+        string $item_name,
+        mixed $index = 0,
+    ): CollectionInterface {
         if (!isset($this->getPropertyValue('itemsByName')[$item_name][$index])) {
             throw new CollectionException('Missing collection for item \'%s\' in \'%s\'', $item_name, $this->getPropertyValue('id'));
         }

@@ -25,6 +25,7 @@ final class DataFile extends DataElement
     public function __construct(
         public readonly string $filePath,
     ) {
+        // @todo lock file while reading, capture fstats to prevent overwrites.
         $this->fileHandle = new \SplFileObject($this->filePath, 'r');
         $this->start = 0;
         $this->size = $this->fileHandle->fstat()['size'];
@@ -55,7 +56,7 @@ final class DataFile extends DataElement
      */
     protected function determineMimeTypeHints(): array
     {
-        $fileParts = explode('.', basename($this->filePath));
+        $fileParts = explode('.', $this->fileHandle->getFileName());
         while (array_shift($fileParts) !== null) {
             $extension = strtolower(implode('.', $fileParts));
             $mimeMapExtension = new Extension($extension);

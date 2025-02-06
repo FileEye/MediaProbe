@@ -94,13 +94,6 @@ class Ifd extends ListBase
     }
 
     /**
-     * @todo remove, replace by parser
-     */
-    protected function doParseData(DataElement $data): void
-    {
-    }
-
-    /**
      * Gets the number of items in the IFD, from the data.
      *
      * Items can be TAGs, other IFDs, etc.
