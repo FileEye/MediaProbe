@@ -44,19 +44,25 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
      *            (Optional) if specified, the new element will be inserted
      *            before the reference element.
      */
-    public function __construct(string $dom_node_name, ?ElementInterface $parent = null, ?ElementInterface $reference = null)
-    {
+    public function __construct(
+        string $dom_node_name, 
+        protected ?ElementInterface $parent = null, 
+        ?ElementInterface $reference = null, 
+        bool $graft = TRUE,
+    ) {
         // If $parent is null, this Element is the root of the DOM document that
         // stores the media structure.
         if (isset($parent) && isset($parent->DOMNode)) {
             $doc = $parent->DOMNode->ownerDocument;
             $parent_node = $parent->DOMNode;
             $this->DOMNode = $doc->createElement($dom_node_name);
-            if ($reference) {
-                assert($reference instanceof ElementBase);
-                $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
-            } else {
-                $parent_node->appendChild($this->DOMNode);
+            if ($graft) {
+                if ($reference) {
+                    assert($reference instanceof ElementBase);
+                    $parent_node->insertBefore($this->DOMNode, $reference->DOMNode);
+                } else {
+                    $parent_node->appendChild($this->DOMNode);
+                }
             }
             // Assign this Element as the payload of the DOM node.
             $this->DOMNode->setMediaProbeElement($this);
@@ -83,7 +89,7 @@ abstract class ElementBase implements ElementInterface, LoggerInterface
         if ($domNode->getMediaProbeElement() !== $this->getRootElement()) {
             $parentDomNode = $this->DOMNode->parentNode;
             assert($parentDomNode instanceof DOMElement);
-            return $parentDomNode->getMediaProbeElement();
+            return $parentDomNode ? $parentDomNode->getMediaProbeElement() : $this->parent;
         }
         return null;
     }

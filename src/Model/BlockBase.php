@@ -45,13 +45,14 @@ abstract class BlockBase extends ElementBase implements BlockInterface
         ItemDefinition $definition,
         ?BlockInterface $parent = null,
         ?BlockInterface $reference = null,
+        bool $graft = TRUE,
     ) {
         $this->definition = $definition;
 
-        parent::__construct($this->getCollection()->getPropertyValue('DOMNode'), $parent, $reference);
+        parent::__construct($this->getCollection()->getPropertyValue('DOMNode'), $parent, $reference, $graft);
 
         if (!isset($this->DOMNode)) {
-            return;
+            throw new MediaProbeException(sprintf('No DOM node specified for %s', __CLASS__));
         }
 
         if ($this->getCollection()->hasProperty('item')) {
@@ -109,6 +110,11 @@ abstract class BlockBase extends ElementBase implements BlockInterface
 
         // Invoke post-parse callbacks.
         $this->executePostParseCallbacks($data);
+    }
+
+    public function fromDataElement(DataElement $dataElement): BlockInterface
+    {
+        throw new \LogicException(sprintf('%s does not implement %s()', get_class($this), 'fromDataElement'));
     }
 
     /**

@@ -61,12 +61,6 @@ class Media extends RootBlockBase
         return $media;
     }
 
-    /**
-     * Creates a Media object from data.
-     *
-     * @param DataElement $dataElement
-     *   The data element providing the data.
-     */
     public function fromDataElement(DataElement $dataElement): Media
     {
         $this->getStopwatch()->start('media-parsing');
@@ -79,8 +73,12 @@ class Media extends RootBlockBase
             // Build the Media immediate child object, that represents the actual media. Then
             // parse the media according to the media format.
             $mediaTypeHandler = $mediaTypeCollection->getHandler();
-            $mediaTypeBlock = new $mediaTypeHandler(new ItemDefinition($mediaTypeCollection), $this);
-            $mediaTypeBlock->parseData($dataElement);
+            $mediaTypeBlock = new $mediaTypeHandler(
+                collection: $mediaTypeCollection, 
+                parent: $this,
+            );
+            $mediaTypeBlock->fromDataElement($dataElement);
+            $this->graftBlock($mediaTypeBlock);
             $this->level = $mediaTypeBlock->level();
         } catch (MediaProbeException $e) {
             assert($this->debugInfo(['dataElement' => $dataElement]));
@@ -90,6 +88,11 @@ class Media extends RootBlockBase
         $this->getStopwatch()->stop('media-parsing');
 
         return $this;
+    }
+
+    public function graftBlock($mediaTypeBlock): void 
+    {
+        $this->DOMNode->appendChild($mediaTypeBlock->DOMNode);
     }
 
     /**
