@@ -13,7 +13,7 @@ use FileEye\MediaProbe\Collection\CollectionBase;
 class Format extends CollectionBase {
 
   protected static $map = array (
-  'title' => 'The list of MediaProbe supported data formats.',
+  'title' => 'MediaProbe supported data formats',
   'id' => 'Format',
   'handler' => 'FileEye\\MediaProbe\\Block\\Format',
   'itemsByName' =>

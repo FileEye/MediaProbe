@@ -23,7 +23,7 @@ class Exif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tiff',
+        'collection' => 'Media\\Tiff',
       ),
     ),
   ),

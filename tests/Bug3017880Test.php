@@ -3,10 +3,10 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Jpeg\Exif;
-use FileEye\MediaProbe\Block\Jpeg\Jpeg;
+use FileEye\MediaProbe\Block\Media\Jpeg;
+use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
-use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
@@ -35,7 +35,7 @@ class Bug3017880Test extends MediaProbeTestCaseBase
             $app1_segment_mock = $this->getStubRoot();
             $exif_definition = new ItemDefinition(CollectionFactory::get('Jpeg\Exif'));
             $exif = new Exif($exif_definition, $app1_segment_mock);
-            $exif->graftBlock(new Tiff(CollectionFactory::get('Tiff\Tiff'), $exif));
+            $exif->graftBlock(new Tiff(CollectionFactory::get('Media\Tiff'), $exif));
         }
 
         $tiff = $exif->getElement("tiff");

@@ -6,18 +6,17 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Tiff;
+namespace FileEye\MediaProbe\Collection\Media;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
 class Tiff extends CollectionBase {
 
   protected static $map = array (
-  'title' => 'TIFF image data',
-  'DOMNode' => 'tiff',
   'mimeType' => 'image/tiff',
-  'id' => 'Tiff\\Tiff',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Tiff',
+  'DOMNode' => 'tiff',
+  'id' => 'Media\\Tiff',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Tiff',
   'items' =>
   array (
     0 =>

@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Block\Jpeg;
 
+use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;

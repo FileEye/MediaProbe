@@ -47,7 +47,7 @@ class Exif extends BlockBase
     {
         assert($this->debugInfo(['dataElement' => $dataElement]));
 
-        $tiffCollection = CollectionFactory::get('Tiff\Tiff');
+        $tiffCollection = CollectionFactory::get('Media\Tiff');
         $tiffHandler = $tiffCollection->getHandler();
 
         if ($tiffHandler::getTiffSegmentByteOrder($dataElement, strlen(static::EXIF_HEADER)) !== null) {

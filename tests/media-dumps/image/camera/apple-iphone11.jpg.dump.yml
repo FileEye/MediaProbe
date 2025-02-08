@@ -18,11 +18,11 @@ elements:
     elements:
         -
             path: /media/jpeg
-            handlerClass: FileEye\MediaProbe\Block\Jpeg\Jpeg
+            handlerClass: FileEye\MediaProbe\Block\Media\Jpeg
             valid: true
             validationLevel: OK
             id: image/jpeg
-            collection: Jpeg\Jpeg
+            collection: Media\Jpeg
             elements:
                 -
                     path: '/media/jpeg/jpegSegment:SOI:216'
@@ -60,10 +60,10 @@ elements:
                             elements:
                                 -
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
-                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tiff
+                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff
                                     valid: true
                                     validationLevel: OK
-                                    collection: Tiff\Tiff
+                                    collection: Media\Tiff
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'

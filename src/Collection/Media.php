@@ -13,6 +13,7 @@ use FileEye\MediaProbe\Collection\CollectionBase;
 class Media extends CollectionBase {
 
   protected static $map = array (
+  'title' => 'MediaProbe root media collection',
   'DOMNode' => 'media',
   'id' => 'Media',
   'handler' => 'FileEye\\MediaProbe\\Block\\Media',

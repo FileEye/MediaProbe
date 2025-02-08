@@ -4,9 +4,9 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Map;
+use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
-use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionException;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -216,7 +216,7 @@ class SpecTest extends MediaProbeTestCaseBase
 
     public function testJpegSegmentIds()
     {
-        $collection = CollectionFactory::get('Jpeg\Jpeg');
+        $collection = CollectionFactory::get('Media\Jpeg');
         $this->assertEquals(0xC0, $collection->getItemCollectionByName('SOF0')->getPropertyValue('item'));
         $this->assertEquals(0xD3, $collection->getItemCollectionByName('RST3')->getPropertyValue('item'));
         $this->assertEquals(0xE3, $collection->getItemCollectionByName('APP3')->getPropertyValue('item'));
@@ -225,25 +225,25 @@ class SpecTest extends MediaProbeTestCaseBase
         $this->assertEquals(0xD9, $collection->getItemCollectionByName('EOI')->getPropertyValue('item'));
         $this->assertEquals(0xDA, $collection->getItemCollectionByName('SOS')->getPropertyValue('item'));
         $this->expectException(CollectionException::class);
-        $this->expectExceptionMessage('Missing collection for item \'missing\' in \'Jpeg\Jpeg\'');
+        $this->expectExceptionMessage('Missing collection for item \'missing\' in \'Media\Jpeg\'');
         $item_collection = $collection->getItemCollectionByName('missing');
     }
 
     public function testJpegSegmentNames()
     {
-        $collection = CollectionFactory::get('Jpeg\Jpeg');
+        $collection = CollectionFactory::get('Media\Jpeg');
         $this->assertEquals('SOF0', $collection->getItemCollection(0xC0)->getPropertyValue('name'));
         $this->assertEquals('RST3', $collection->getItemCollection(0xD3)->getPropertyValue('name'));
         $this->assertEquals('APP3', $collection->getItemCollection(0xE3)->getPropertyValue('name'));
         $this->assertEquals('JPG11', $collection->getItemCollection(0xFB)->getPropertyValue('name'));
         $this->expectException(CollectionException::class);
-        $this->expectExceptionMessage('Missing collection for item \'100\' in \'Jpeg\Jpeg\'');
+        $this->expectExceptionMessage('Missing collection for item \'100\' in \'Media\Jpeg\'');
         $item_collection = $collection->getItemCollection(100);
     }
 
     public function testJpegSegmentTitles()
     {
-        $collection = CollectionFactory::get('Jpeg\Jpeg');
+        $collection = CollectionFactory::get('Media\Jpeg');
         $this->assertEquals('Start of frame (baseline DCT)', $collection->getItemCollection(0xC0)->getPropertyValue('title'));
         $this->assertEquals('Restart 3', $collection->getItemCollection(0xD3)->getPropertyValue('title'));
         $this->assertEquals('Application segment 3', $collection->getItemCollection(0xE3)->getPropertyValue('title'));

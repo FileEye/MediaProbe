@@ -10,11 +10,11 @@ elements:
     elements:
         -
             path: /media/jpeg
-            handlerClass: FileEye\MediaProbe\Block\Jpeg\Jpeg
+            handlerClass: FileEye\MediaProbe\Block\Media\Jpeg
             valid: false
             validationLevel: Error
             id: image/jpeg
-            collection: Jpeg\Jpeg
+            collection: Media\Jpeg
             elements:
                 -
                     path: '/media/jpeg/jpegSegment:SOI:216'

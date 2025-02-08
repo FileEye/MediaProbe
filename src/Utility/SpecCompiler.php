@@ -40,8 +40,7 @@ class SpecCompiler
     /**
      * Map of expected collection level array keys.
      */
-    //private $collectionKeys = ['name', 'title', 'items'];
-    private $collectionKeys = ['collection', 'items'];
+    private $collectionKeys = ['items'];
 
     /** @var Filesystem */
     private $fs;
@@ -165,7 +164,7 @@ DATA;
      * @param SplFileInfo $file
      *            the YAML specification file being processed.
      */
-    protected function mapCollection(array $input, SplFileInfo $file, $collection_path, $collection_namespace)
+    protected function mapCollection(array $input, SplFileInfo $file, string $collection_path, string $collection_namespace)
     {
         // Check validity of collection keys.
         $diff = array_diff($this->collectionKeys, array_intersect(array_keys($input), $this->collectionKeys));
@@ -173,7 +172,15 @@ DATA;
             throw new SpecCompilerException($file->getFileName() . ": missing collection key(s) - " . implode(", ", $diff));
         }
 
-        $name = $input['name'] ?? $input['collection'];
+        // Unless directed otherwise, take the collection from the file name of the YAML file.
+        if (isset($input['collection'])) {
+            $collection = $input['collection'];
+        } else {
+            $collection = $file->getRelativePath() !== '' ? str_replace('/', '\\', $file->getRelativePath()) . '\\' : '';
+            $collection .= str_replace('.yaml', '', $file->getBasename());
+        }
+
+        $name = $input['name'] ?? $collection;
 
         // Process 'format'
         if (!empty($input['format'])) {
@@ -182,12 +189,12 @@ DATA;
 
         // Add the collection to the index.
         // 'collections' entry.
-        $this->map['collections'][$input['collection']] = $input['collection'];
+        $this->map['collections'][$collection] = $collection;
         // 'collectionsByName' entry.
-        $this->map['collectionsByName'][(string) $name] = $input['collection'];
+        $this->map['collectionsByName'][(string) $name] = $collection;
         if (!empty($input['alias'])) { // xx todo check for duplicates
             foreach ($input['alias'] as $alias) {
-                $this->map['collectionsByName'][(string) $alias] = $input['collection'];
+                $this->map['collectionsByName'][(string) $alias] = $collection;
             }
         }
 
@@ -195,8 +202,8 @@ DATA;
         $tmp = $input;
         unset($tmp['collection'], $tmp['items'], $tmp['compiler']);
         $map = $tmp;
-        $map['id'] = $input['collection'];
-        $map['handler'] = $input['handler'] ?? (self::DEFAULT_HANDLER_NAMESPACE . '\\' . $input['collection']);
+        $map['id'] = $collection;
+        $map['handler'] = $input['handler'] ?? (self::DEFAULT_HANDLER_NAMESPACE . '\\' . $collection);
 
         // Collection items entries.
         foreach ($input['items'] as $id => $item) {
@@ -317,7 +324,7 @@ DATA;
             ksort($map['itemsByExiftoolDOMNode']);
         }
 
-        $parts = explode('\\', $input['collection']);
+        $parts = explode('\\', $collection);
         $class_name = array_pop($parts);
         if ($parts) {
             $namespace = $collection_namespace . '\\' . implode('\\', $parts);

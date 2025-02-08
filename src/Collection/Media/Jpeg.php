@@ -6,18 +6,17 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Jpeg;
+namespace FileEye\MediaProbe\Collection\Media;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
 class Jpeg extends CollectionBase {
 
   protected static $map = array (
-  'title' => 'JPEG image',
-  'DOMNode' => 'jpeg',
   'mimeType' => 'image/jpeg',
-  'id' => 'Jpeg\\Jpeg',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Jpeg',
+  'DOMNode' => 'jpeg',
+  'id' => 'Media\\Jpeg',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Jpeg',
   'itemsByName' =>
   array (
     'APP0' =>

@@ -13,6 +13,7 @@ use FileEye\MediaProbe\Collection\CollectionBase;
 class MediaType extends CollectionBase {
 
   protected static $map = array (
+  'title' => 'MediaProbe supported MIME types',
   'id' => 'MediaType',
   'handler' => 'FileEye\\MediaProbe\\Block\\MediaType',
   'items' =>
@@ -21,14 +22,14 @@ class MediaType extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Jpeg',
+        'collection' => 'Media\\Jpeg',
       ),
     ),
     'image/tiff' =>
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tiff',
+        'collection' => 'Media\\Tiff',
       ),
     ),
   ),

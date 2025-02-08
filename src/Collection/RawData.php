@@ -13,6 +13,7 @@ use FileEye\MediaProbe\Collection\CollectionBase;
 class RawData extends CollectionBase {
 
   protected static $map = array (
+  'title' => 'Dump of raw data as bytes',
   'handler' => 'FileEye\\MediaProbe\\Block\\RawData',
   'DOMNode' => 'rawData',
   'id' => 'RawData',

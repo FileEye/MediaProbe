@@ -2,8 +2,8 @@
 
 namespace FileEye\MediaProbe\Block\Tiff;
 
-use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Block\ListBase;
+use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
@@ -337,7 +337,7 @@ class Ifd extends ListBase
             $size = $dataxx->getSize();
 
             // Now move backwards until we find the EOI JPEG marker.
-            while ($dataxx->getByte($size - 2) !== Jpeg::JPEG_DELIMITER || $dataxx->getByte($size - 1) != CollectionFactory::get('Jpeg\Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
+            while ($dataxx->getByte($size - 2) !== Jpeg::JPEG_DELIMITER || $dataxx->getByte($size - 1) != CollectionFactory::get('Media\Jpeg')->getItemCollectionByName('EOI')->getPropertyValue('item')) {
                 $size --;
             }
             if ($size != $dataxx->getSize()) {

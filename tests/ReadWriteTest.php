@@ -3,11 +3,11 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Jpeg\Exif;
-use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
+use FileEye\MediaProbe\Block\Media\Jpeg;
+use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
-use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Ascii;
@@ -83,7 +83,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $this->assertInstanceOf('FileEye\MediaProbe\Block\Jpeg\Exif', $r_jpeg->getElement("jpegSegment/exif"));
 
         $tiff = $r_jpeg->getElement("jpegSegment/exif/tiff");
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Tiff\Tiff', $tiff);
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Media\Tiff', $tiff);
         $this->assertCount(1, $tiff->getMultipleElements("ifd"));
 
         $ifd = $tiff->getElement("ifd[@name='IFD0']");

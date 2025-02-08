@@ -3,8 +3,8 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Jpeg\Exif;
-use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
+use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Dumper\DefaultDumper;

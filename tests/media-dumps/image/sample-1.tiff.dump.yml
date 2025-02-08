@@ -17,11 +17,11 @@ elements:
     elements:
         -
             path: /media/tiff
-            handlerClass: FileEye\MediaProbe\Block\Tiff\Tiff
+            handlerClass: FileEye\MediaProbe\Block\Media\Tiff
             valid: true
             validationLevel: OK
             id: image/tiff
-            collection: Tiff\Tiff
+            collection: Media\Tiff
             elements:
                 -
                     path: '/media/tiff/rawData:scan'
