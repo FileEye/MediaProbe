@@ -7,6 +7,7 @@ use FileEye\MediaProbe\Block\Jpeg\Jpeg;
 use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataString;
+use FileEye\MediaProbe\Dumper\DefaultDumper;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -84,6 +85,8 @@ class GH21Test extends MediaProbeTestCaseBase
         $media = Media::createFromFile($this->file);
         $jpeg = $media->getElement("jpeg");
         $exifin = $jpeg->getElement("jpegSegment/exif");
-        $this->assertEquals($input_exif, $exifin);
+
+        $dumper = new DefaultDumper();
+        $this->assertEquals($input_exif->asArray($dumper), $exifin->asArray($dumper));
     }
 }

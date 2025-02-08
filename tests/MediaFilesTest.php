@@ -63,7 +63,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
             $this->assertElement($this->testDump['elements'], $media);
         }
 
-        foreach (['ERROR', 'WARNING', 'NOTICE'] as $level) {
+        foreach (['ERROR', 'WARNING', 'NOTICE', 'INFO'] as $level) {
             if (isset($this->testDump['log'][$level])) {
                 $this->assertEquals(count($this->testDump['log'][$level]), count($media->dumpLog($level)));
             }

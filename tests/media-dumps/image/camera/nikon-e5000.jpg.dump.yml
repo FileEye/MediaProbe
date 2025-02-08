@@ -5,7 +5,7 @@ elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
     valid: true
-    validationLevel: OK
+    validationLevel: Info
     collection: Media
     elements:
         -
@@ -921,6 +921,10 @@ log:
         -
             path: '/media/jpeg/jpegSegment:SOS:218'
             message: 'Found trailing content after EOI: 1396 bytes'
+    INFO:
+        -
+            path: /media
+            message: '**** No decoder available to parse maker notes for NIKON/E5000'
 gdInfo:
     0: 1600
     1: 1200

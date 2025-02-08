@@ -44,7 +44,6 @@ class SpecTest extends MediaProbeTestCaseBase
         // Test retrieving IFD post-load callbacks.
         $this->assertEquals([
             'FileEye\MediaProbe\Block\Tiff\Ifd::thumbnailToBlock',
-            'FileEye\MediaProbe\Block\Tiff\Ifd::makerNoteToBlock',
         ], $ifd_0->getCollection()->getPropertyValue('postParse'));
         $this->assertNull($ifd_canon_camera_settings->getCollection()->getPropertyValue('postParse'));
 

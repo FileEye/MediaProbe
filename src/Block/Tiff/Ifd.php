@@ -7,7 +7,6 @@ use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
-use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -354,89 +353,6 @@ class Ifd extends ListBase
         } catch (DataException $e) {
             $ifd->error($e->getMessage());
         }
-    }
-
-    /**
-     * Converts a maker note tag to an IFD structure.
-     *
-     * @param DataWindow $d
-     *            the data window that will provide the data.
-     * @param Ifd $ifd
-     *            the root Ifd object.
-     */
-    public static function makerNoteToBlock(DataElement $d, Ifd $ifd): void
-    {
-        // Get the Exif subIfd if existing.
-        if (!$exif_ifd = $ifd->getElement("ifd[@name='ExifIFD']")) {
-            return;
-        }
-        assert($exif_ifd instanceof Ifd);
-
-        // Get MakerNote tag from Exif IFD.
-        if (!$maker_note_tag = $exif_ifd->getElement("tag[@name='MakerNote']")) {
-            return;
-        }
-        assert($maker_note_tag instanceof Tag);
-
-        // Get Make tag from IFD0.
-        if (!$make_tag = $ifd->getElement("tag[@name='Make']")) {
-            return;
-        }
-
-        // Get Model tag from IFD0.
-        $model_tag = $ifd->getElement("tag[@name='Model']");
-        $model = $model_tag && $model_tag->getElement("entry") ? $model_tag->getElement("entry")->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
-
-        // Get maker note collection.
-        if (!$maker_note_collection = static::getMakerNoteCollection($make_tag->getElement("entry")->getValue(), $model)) {
-            return;
-        }
-
-        // Load maker note into IFD.
-        $ifd_class = $maker_note_collection->getPropertyValue('handler');
-        $maker_note_ifd_name = $maker_note_collection->getPropertyValue('item');  // xx why not name?? it used to work
-        $exif_ifd->debug("**** Parsing {makernote} maker notes", [
-            'makernote' => $maker_note_ifd_name,
-        ]);
-        $item_definition = new ItemDefinition($maker_note_collection, $maker_note_tag->getFormat(), $maker_note_tag->getComponents());
-        $ifd = new $ifd_class($item_definition, $exif_ifd, $maker_note_tag);
-
-        // xxx
-        $ifd->setAttribute('id', 37500);
-        $ifd->setAttribute('name', $maker_note_ifd_name);
-        $entry = $maker_note_tag->getElement("entry");
-        assert($entry instanceof EntryInterface);
-        $data = $entry->getDataElement();
-        // @todo the netting of the dataOffset is a Canon only thing, move to vendor
-        // @todo xxx this is incorrect, parsing should happen indepentently from add'l offset
-        $ifd->parseData($data, 0, null, -$maker_note_tag->getDefinition()->dataOffset);
-
-        // Remove the MakerNote tag that has been converted to IFD.
-        $exif_ifd->removeElement("tag[@name='MakerNote']");
-    }
-
-    /**
-     * Determines the Collection of the maker notes.
-     *
-     * @param string $make
-     *            the value of IFD0/Make.
-     * @param string $model
-     *            the value of IFD0/Model.
-     *
-     * @return CollectionInterface|null
-     *            the Collection object describing the maker notes, or null if
-     *            no specification exists.
-     */
-    protected static function getMakerNoteCollection(string $make, string $model): ?CollectionInterface
-    {
-        $maker_notes_collection = CollectionFactory::get('ExifMakerNotes\MakerNotes');
-        foreach ($maker_notes_collection->listItemIds() as $maker_note_collection_id) {
-            $maker_note_collection = $maker_notes_collection->getItemCollection($maker_note_collection_id);
-            if ($maker_note_collection->getPropertyValue('make') === $make) {
-                return $maker_note_collection;
-            }
-        }
-        return null;
     }
 
     public function collectInfo(array $context = []): array

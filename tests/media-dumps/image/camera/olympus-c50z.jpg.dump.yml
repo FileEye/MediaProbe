@@ -5,7 +5,7 @@ elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
     valid: true
-    validationLevel: OK
+    validationLevel: Info
     collection: Media
     elements:
         -
@@ -1135,7 +1135,11 @@ elements:
                             components: 2
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
-log: {  }
+log:
+    INFO:
+        -
+            path: /media
+            message: '**** No decoder available to parse maker notes for OLYMPUS OPTICAL CO.,LTD/X-2,C-50Z       '
 gdInfo:
     0: 533
     1: 400

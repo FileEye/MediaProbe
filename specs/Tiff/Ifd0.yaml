@@ -9,7 +9,6 @@ alias:
     - Main
 postParse:
     - 'FileEye\MediaProbe\Block\Tiff\Ifd::thumbnailToBlock'
-    - 'FileEye\MediaProbe\Block\Tiff\Ifd::makerNoteToBlock'
 compiler:
     exiftool:
         g1: IFD0

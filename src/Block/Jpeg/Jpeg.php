@@ -8,14 +8,13 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\Model\MediaTypeBlockInterface;
+use FileEye\MediaProbe\Model\MediaTypeBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Class for handling an image/jpeg MIME type data.
  */
-class Jpeg extends BlockBase implements MediaTypeBlockInterface
+class Jpeg extends MediaTypeBlockBase
 {
     /**
      * JPEG delimiter.
@@ -32,7 +31,7 @@ class Jpeg extends BlockBase implements MediaTypeBlockInterface
         return $dataElement->getBytes(0, 3) === static::JPEG_HEADER;
     }
 
-    public function doParseData(DataElement $data): void
+    public function fromDataElement(DataElement $data): Jpeg
     {
         assert($this->debugInfo(['dataElement' => $data]));
 
@@ -69,7 +68,7 @@ class Jpeg extends BlockBase implements MediaTypeBlockInterface
                 $offset = $newOffset;
             } catch (DataException $e) {
                 $this->error($e->getMessage());
-                return;
+                return $this;
             }
 
             // Get the JPEG segment id.
@@ -119,6 +118,8 @@ class Jpeg extends BlockBase implements MediaTypeBlockInterface
         if (!$this->getElement("jpegSegment[@name='EOI']")) {
             $this->error('Missing EOI (End Of Image) JPEG marker');
         }
+
+        return $this;
     }
 
     /**

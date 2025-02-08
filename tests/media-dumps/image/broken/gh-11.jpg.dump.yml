@@ -38,7 +38,7 @@ elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
     valid: true
-    validationLevel: OK
+    validationLevel: Info
     collection: Media
     elements:
         -
@@ -97,8 +97,8 @@ elements:
                         -
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             handlerClass: FileEye\MediaProbe\Block\Jpeg\Exif
-                            valid: true
-                            validationLevel: OK
+                            valid: false
+                            validationLevel: Warning
                             collection: Jpeg\Exif
                             elements:
                                 -
@@ -1603,6 +1603,10 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/ifd:InteropIFD:40965/tag:40965'
             message: "Unknown item 40965/0xA005 in 'InteropIFD'"
+    INFO:
+        -
+            path: /media
+            message: '**** No decoder available to parse maker notes for SONY/DSC-W55'
 gdInfo:
     0: 50
     1: 38

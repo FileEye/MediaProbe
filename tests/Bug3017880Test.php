@@ -35,8 +35,7 @@ class Bug3017880Test extends MediaProbeTestCaseBase
             $app1_segment_mock = $this->getStubRoot();
             $exif_definition = new ItemDefinition(CollectionFactory::get('Jpeg\Exif'));
             $exif = new Exif($exif_definition, $app1_segment_mock);
-            $tiff_definition = new ItemDefinition(CollectionFactory::get('Tiff\Tiff'));
-            new Tiff($tiff_definition, $exif);
+            $exif->graftBlock(new Tiff(CollectionFactory::get('Tiff\Tiff'), $exif));
         }
 
         $tiff = $exif->getElement("tiff");

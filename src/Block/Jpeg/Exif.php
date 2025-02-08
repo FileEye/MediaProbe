@@ -2,11 +2,10 @@
 
 namespace FileEye\MediaProbe\Block\Jpeg;
 
-use FileEye\MediaProbe\Block\Tiff\Tiff;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
+use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -44,24 +43,25 @@ class Exif extends BlockBase
         return false;
     }
 
-    public function doParseData(DataElement $data): void
+    public function doParseData(DataElement $dataElement): void
     {
-        assert($this->debugInfo(['dataElement' => $data]));
+        assert($this->debugInfo(['dataElement' => $dataElement]));
 
-        $tiff = new ItemDefinition(
-            collection: CollectionFactory::get('Tiff\Tiff'),
-        );
-        $tiffHandler = $tiff->collection->getPropertyValue('handler');
+        $tiffCollection = CollectionFactory::get('Tiff\Tiff');
+        $tiffHandler = $tiffCollection->getHandler();
 
-        if ($tiffHandler::getTiffSegmentByteOrder($data, strlen(static::EXIF_HEADER)) !== null) {
-            $tiff = $this->addBlock($tiff);
-            assert($tiff instanceof Tiff);
-            $tiff->parseData($data, strlen(static::EXIF_HEADER), $data->getSize() - strlen(static::EXIF_HEADER));
+        if ($tiffHandler::getTiffSegmentByteOrder($dataElement, strlen(static::EXIF_HEADER)) !== null) {
+            $tiffBlock = new $tiffHandler(
+                collection: $tiffCollection,
+                parent: $this,
+            );
+            $tiffBlock->fromDataElement(new DataWindow($dataElement, strlen(static::EXIF_HEADER), $dataElement->getSize() - strlen(static::EXIF_HEADER)));
+            $this->graftBlock($tiffBlock);
         } else {
             // We store the data as normal JPEG content if it could not be
             // parsed as Tiff data.
-            $entry = new Undefined($this, [$data->getBytes()]);
-            $this->error("TIFF header not found. Parsed {text}", ['text' => $entry->toString()]);
+            $entry = new Undefined($this, [$dataElement->getBytes()]);
+            $this->warning("TIFF header not found. Parsed {text}", ['text' => $entry->toString()]);
         }
     }
 

@@ -8,14 +8,13 @@ use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
-use FileEye\MediaProbe\Model\BlockBase;
-use FileEye\MediaProbe\Model\MediaTypeBlockInterface;
+use FileEye\MediaProbe\Model\MediaTypeBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
  * Class for handling an image/tiff MIME type data.
  */
-class Tiff extends BlockBase implements MediaTypeBlockInterface
+class Tiff extends MediaTypeBlockBase
 {
     /**
      * TIFF header.
@@ -34,6 +33,41 @@ class Tiff extends BlockBase implements MediaTypeBlockInterface
         return static::getTiffSegmentByteOrder($dataElement) !== null;
     }
 
+    /**
+     * Returns the byte order of a TIFF segment.
+     *
+     * @return int|null
+     *   The byte order of the TIFF segment in case data is a TIFF block, null
+     *   otherwise.
+     */
+    public static function getTiffSegmentByteOrder(DataElement $dataElement, int $offset = 0): ?int
+    {
+        // There must be at least 8 bytes available: 2 bytes for the byte
+        // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
+        // the first IFD.
+        if ($dataElement->getSize() - $offset < 8) {
+            return null;
+        }
+
+        // Byte order.
+        $orderString = $dataElement->getBytes($offset, 2);
+        if ($orderString === 'II') {
+            $order = ConvertBytes::LITTLE_ENDIAN;
+        } elseif ($orderString === 'MM') {
+            $order = ConvertBytes::BIG_ENDIAN;
+        } else {
+            return null;
+        }
+
+        // Verify the TIFF header.
+        $magicString = $dataElement->getBytes($offset + 2, 2);
+        if (ConvertBytes::toShort($magicString, $order) !== static::TIFF_HEADER) {
+            return null;
+        }
+
+        return $order;
+    }
+
     public function setByteOrder(int $byteOrder): self
     {
         $this->byteOrder = $byteOrder;
@@ -45,7 +79,7 @@ class Tiff extends BlockBase implements MediaTypeBlockInterface
         return $this->byteOrder;
     }
 
-    public function doParseData(DataElement $data): void
+    public function fromDataElement(DataElement $data): Tiff
     {
         // Determine the byte order of the TIFF data.
         $byteOrder = self::getTiffSegmentByteOrder($data);
@@ -121,6 +155,8 @@ class Tiff extends BlockBase implements MediaTypeBlockInterface
                 break;
             }
         }
+
+        return $this;
     }
 
     /**
@@ -186,40 +222,5 @@ class Tiff extends BlockBase implements MediaTypeBlockInterface
         $info['byteOrderDescription'] = $this->getByteOrder() === ConvertBytes::LITTLE_ENDIAN ? 'Little Endian' : 'Big Endian';
 
         return array_merge($parentInfo, $info);
-    }
-
-    /**
-     * Returns the byte order of a TIFF segment.
-     *
-     * @return int|null
-     *   The byte order of the TIFF segment in case data is a TIFF block, null
-     *   otherwise.
-     */
-    public static function getTiffSegmentByteOrder(DataElement $dataElement, int $offset = 0): ?int
-    {
-        // There must be at least 8 bytes available: 2 bytes for the byte
-        // order, 2 bytes for the TIFF header, and 4 bytes for the offset to
-        // the first IFD.
-        if ($dataElement->getSize() - $offset < 8) {
-            return null;
-        }
-
-        // Byte order.
-        $orderString = $dataElement->getBytes($offset, 2);
-        if ($orderString === 'II') {
-            $order = ConvertBytes::LITTLE_ENDIAN;
-        } elseif ($orderString === 'MM') {
-            $order = ConvertBytes::BIG_ENDIAN;
-        } else {
-            return null;
-        }
-
-        // Verify the TIFF header.
-        $magicString = $dataElement->getBytes($offset + 2, 2);
-        if (ConvertBytes::toShort($magicString, $order) !== static::TIFF_HEADER) {
-            return null;
-        }
-
-        return $order;
     }
 }

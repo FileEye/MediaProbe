@@ -51,7 +51,8 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
-        $tiff = new Tiff(new ItemDefinition($exif->getCollection()->getItemCollection('Tiff')), $exif);
+        $tiff = new Tiff($exif->getCollection()->getItemCollection('Tiff'), $exif);
+        $exif->graftBlock($tiff);
         $tiff->setByteOrder(ConvertBytes::BIG_ENDIAN);
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
