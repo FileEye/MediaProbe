@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\MediaProbe\Block\Jpeg;
+namespace FileEye\MediaProbe\Block\Media\Jpeg;
 
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Entry\Core\Undefined;
@@ -12,10 +12,12 @@ use FileEye\MediaProbe\Entry\Core\Undefined;
  */
 class Segment extends SegmentBase
 {
-    public function doParseData(DataElement $data): void
+    public function fromDataElement(DataElement $dataElement): static
     {
-        assert($this->debugInfo(['dataElement' => $data]));
+        $this->size = $dataElement->getSize();
+        assert($this->debugInfo(['dataElement' => $dataElement]));
         // Adds the segment data as an Undefined entry.
-        new Undefined($this, $data);
+        new Undefined($this, $dataElement);
+        return $this;
     }
 }

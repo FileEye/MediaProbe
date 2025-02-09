@@ -69,6 +69,8 @@ class Media extends RootBlockBase
     {
         $this->getStopwatch()->start('media-parsing');
 
+        $this->size = $dataElement->getSize();
+
         try {
             // Determine the media type.
             $mediaTypeCollection = MediaTypeResolver::fromDataElement($dataElement);

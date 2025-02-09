@@ -6,7 +6,7 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Jpeg;
+namespace FileEye\MediaProbe\Collection\Media\Jpeg;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
@@ -17,15 +17,15 @@ class SegmentApp1 extends CollectionBase {
   'title' => 'JPEG Application segment 1',
   'payload' => 'variable',
   'DOMNode' => 'jpegSegment',
-  'id' => 'Jpeg\\SegmentApp1',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Jpeg\\SegmentApp1',
+  'id' => 'Media\\Jpeg\\SegmentApp1',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Jpeg\\SegmentApp1',
   'items' =>
   array (
-    'Exif' =>
+    'ExifApp' =>
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Exif',
+        'collection' => 'Media\\Jpeg\\ExifApp',
       ),
     ),
   ),

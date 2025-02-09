@@ -1,25 +1,30 @@
 <?php
 
-declare(strict_types=1);
+namespace FileEye\MediaProbe\Block\Media\Jpeg;
 
-namespace FileEye\MediaProbe\Model;
-
+use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\Model\BlockBase;
 
 /**
- * Base class for Block objects that identify MIME types.
+ * Abstract class for JPEG data segments.
  */
-abstract class MediaTypeBlockBase extends BlockBase implements MediaTypeBlockInterface
+abstract class SegmentBase extends BlockBase
 {
     public function __construct(
         public readonly CollectionInterface $collection,
-        BlockBase $parent,
+        Jpeg $parent,
     ) {
         parent::__construct(
             definition: new ItemDefinition($this->collection),
             parent: $parent,
             graft: false,
         );
+    }
+
+    protected function getContextPathSegmentPattern(): string
+    {
+        return '/{DOMNode}:{name}:{id}';
     }
 }

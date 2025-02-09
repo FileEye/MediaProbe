@@ -19,7 +19,6 @@ class DefaultDumper implements DumperInterface
         return [
             'path' => $element->getContextPath(),
             'handlerClass' => get_class($element),
-            'valid' => $element->isValid(),
             'validationLevel' => $element->validationLevel(),
         ];
     }

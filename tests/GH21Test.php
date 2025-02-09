@@ -2,13 +2,12 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Jpeg\Exif;
-use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
 use FileEye\MediaProbe\Block\Media\Jpeg;
+use FileEye\MediaProbe\Block\Media\Jpeg\ExifApp;
+use FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Dumper\DefaultDumper;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Media;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
@@ -69,16 +68,15 @@ class GH21Test extends MediaProbeTestCaseBase
         $out_com_segment = $out_jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $app1_segment_definition = new ItemDefinition($out_jpeg->getCollection()->getItemCollectionByName('APP1'));
-        $out_app1_segment = new SegmentApp1($app1_segment_definition, $out_jpeg, $out_com_segment);
+        $out_app1_segment = new SegmentApp1($out_jpeg->collection->getItemCollectionByName('APP1'), $out_jpeg);
+        $out_jpeg->graftBlock($out_app1_segment, $out_com_segment);
 
         // Add the EXIF block to the APP1 segment.
-        $exif_definition = new ItemDefinition(CollectionFactory::get('Jpeg\Exif'));
-        $exif_block = new Exif($exif_definition, $out_app1_segment);
-        $exif_data = $input_exif->toBytes();
-        $data_string = new DataString($exif_data);
+        $exif_block = new ExifApp(CollectionFactory::get('Media\Jpeg\ExifApp'), $out_app1_segment);
+        $data_string = new DataString($input_exif->toBytes());
         $data_string->setByteOrder(ConvertBytes::BIG_ENDIAN);
-        $exif_block->parseData($data_string);
+        $exif_block->fromDataElement($data_string);
+        $out_app1_segment->graftBlock($exif_block);
 
         $out_media->saveToFile($this->file);
 

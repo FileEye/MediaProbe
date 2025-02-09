@@ -278,7 +278,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF0',
         'title' => 'Start of frame (baseline DCT)',
         'payload' => 'variable',
@@ -288,7 +288,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF1',
         'title' => 'Start of frame (extended sequential)',
         'payload' => 'variable',
@@ -298,7 +298,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF2',
         'title' => 'Start of frame (progressive DCT)',
         'payload' => 'variable',
@@ -308,7 +308,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF3',
         'title' => 'Encoding (lossless)',
         'payload' => 'variable',
@@ -318,7 +318,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'DHT',
         'title' => 'Define Huffman table',
         'payload' => 'variable',
@@ -328,7 +328,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF5',
         'title' => 'Start of frame (differential sequential)',
         'payload' => 'variable',
@@ -338,7 +338,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF6',
         'title' => 'Start of frame (differential progressive)',
         'payload' => 'variable',
@@ -348,7 +348,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF7',
         'title' => 'Start of frame (differential lossless)',
         'payload' => 'variable',
@@ -358,7 +358,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG',
         'title' => 'Extension',
         'payload' => 'variable',
@@ -368,7 +368,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF9',
         'title' => 'Start of frame (extended sequential, arithmetic)',
         'payload' => 'variable',
@@ -378,7 +378,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF10',
         'title' => 'Encoding (progressive, arithmetic)',
         'payload' => 'variable',
@@ -388,7 +388,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF11',
         'title' => 'Encoding (lossless, arithmetic)',
         'payload' => 'variable',
@@ -398,7 +398,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'DAC',
         'title' => 'Define arithmetic coding conditioning',
         'payload' => 'variable',
@@ -408,7 +408,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF13',
         'title' => 'Encoding (differential sequential, arithmetic)',
         'payload' => 'variable',
@@ -418,7 +418,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF14',
         'title' => 'Encoding (differential progressive, arithmetic)',
         'payload' => 'variable',
@@ -428,7 +428,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOF15',
         'title' => 'Encoding (differential lossless, arithmetic)',
         'payload' => 'variable',
@@ -438,7 +438,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST0',
         'title' => 'Restart 0',
         'payload' => 'none',
@@ -448,7 +448,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST1',
         'title' => 'Restart 1',
         'payload' => 'none',
@@ -458,7 +458,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST2',
         'title' => 'Restart 2',
         'payload' => 'none',
@@ -468,7 +468,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST3',
         'title' => 'Restart 3',
         'payload' => 'none',
@@ -478,7 +478,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST4',
         'title' => 'Restart 4',
         'payload' => 'none',
@@ -488,7 +488,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST5',
         'title' => 'Restart 5',
         'payload' => 'none',
@@ -498,7 +498,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST6',
         'title' => 'Restart 6',
         'payload' => 'none',
@@ -508,7 +508,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'RST7',
         'title' => 'Restart 7',
         'payload' => 'none',
@@ -518,7 +518,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'SOI',
         'title' => 'Start of image',
         'payload' => 'none',
@@ -528,7 +528,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'EOI',
         'title' => 'End of image',
         'payload' => 'none',
@@ -538,7 +538,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\SegmentSos',
+        'collection' => 'Media\\Jpeg\\SegmentSos',
         'name' => 'SOS',
         'title' => 'Start of scan',
         'payload' => 'scan',
@@ -548,7 +548,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'DQT',
         'title' => 'Define quantization table',
         'payload' => 'variable',
@@ -558,7 +558,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'DNL',
         'title' => 'Define number of lines',
         'payload' => 'variable',
@@ -568,7 +568,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'DRI',
         'title' => 'Define restart interval',
         'payload' => 'fixed',
@@ -579,7 +579,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'DHP',
         'title' => 'Define hierarchical progression',
         'payload' => 'variable',
@@ -589,7 +589,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'EXP',
         'title' => 'Expand reference component',
         'payload' => 'variable',
@@ -599,7 +599,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP0',
         'title' => 'Application segment 0',
         'payload' => 'variable',
@@ -609,7 +609,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\SegmentApp1',
+        'collection' => 'Media\\Jpeg\\SegmentApp1',
         'name' => 'APP1',
       ),
     ),
@@ -617,7 +617,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP2',
         'title' => 'Application segment 2',
         'payload' => 'variable',
@@ -627,7 +627,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP3',
         'title' => 'Application segment 3',
         'payload' => 'variable',
@@ -637,7 +637,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP4',
         'title' => 'Application segment 4',
         'payload' => 'variable',
@@ -647,7 +647,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP5',
         'title' => 'Application segment 5',
         'payload' => 'variable',
@@ -657,7 +657,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP6',
         'title' => 'Application segment 6',
         'payload' => 'variable',
@@ -667,7 +667,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP7',
         'title' => 'Application segment 7',
         'payload' => 'variable',
@@ -677,7 +677,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP8',
         'title' => 'Application segment 8',
         'payload' => 'variable',
@@ -687,7 +687,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP9',
         'title' => 'Application segment 9',
         'payload' => 'variable',
@@ -697,7 +697,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP10',
         'title' => 'Application segment 10',
         'payload' => 'variable',
@@ -707,7 +707,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP11',
         'title' => 'Application segment 11',
         'payload' => 'variable',
@@ -717,7 +717,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP12',
         'title' => 'Application segment 12',
         'payload' => 'variable',
@@ -727,7 +727,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP13',
         'title' => 'Application segment 13',
         'payload' => 'variable',
@@ -737,7 +737,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP14',
         'title' => 'Application segment 14',
         'payload' => 'variable',
@@ -747,7 +747,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'APP15',
         'title' => 'Application segment 5',
         'payload' => 'variable',
@@ -757,7 +757,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG0',
         'title' => 'Extension 0',
         'payload' => 'variable',
@@ -767,7 +767,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG1',
         'title' => 'Extension 1',
         'payload' => 'variable',
@@ -777,7 +777,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG2',
         'title' => 'Extension 2',
         'payload' => 'variable',
@@ -787,7 +787,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG3',
         'title' => 'Extension 3',
         'payload' => 'variable',
@@ -797,7 +797,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG4',
         'title' => 'Extension 4',
         'payload' => 'variable',
@@ -807,7 +807,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG5',
         'title' => 'Extension 5',
         'payload' => 'variable',
@@ -817,7 +817,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG6',
         'title' => 'Extension 6',
         'payload' => 'variable',
@@ -827,7 +827,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG7',
         'title' => 'Extension 7',
         'payload' => 'variable',
@@ -837,7 +837,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG8',
         'title' => 'Extension 8',
         'payload' => 'variable',
@@ -847,7 +847,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG9',
         'title' => 'Extension 9',
         'payload' => 'variable',
@@ -857,7 +857,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG10',
         'title' => 'Extension 10',
         'payload' => 'variable',
@@ -867,7 +867,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG11',
         'title' => 'Extension 11',
         'payload' => 'variable',
@@ -877,7 +877,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG12',
         'title' => 'Extension 12',
         'payload' => 'variable',
@@ -887,7 +887,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\Segment',
+        'collection' => 'Media\\Jpeg\\Segment',
         'name' => 'JPG13',
         'title' => 'Extension 13',
         'payload' => 'variable',
@@ -897,7 +897,7 @@ class Jpeg extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Jpeg\\SegmentCom',
+        'collection' => 'Media\\Jpeg\\SegmentCom',
         'name' => 'COM',
         'title' => 'Comment',
         'payload' => 'variable',
