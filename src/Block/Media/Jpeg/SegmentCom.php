@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\MediaProbe\Block\Jpeg;
+namespace FileEye\MediaProbe\Block\Media\Jpeg;
 
 use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Data\DataElement;
@@ -13,11 +13,13 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 class SegmentCom extends SegmentBase
 {
-    public function doParseData(DataElement $data): void
+    public function fromDataElement(DataElement $dataElement): static
     {
-        assert($this->debugInfo(['dataElement' => $data]));
+        $this->size = $dataElement->getSize();
+        assert($this->debugInfo(['dataElement' => $dataElement]));
         // Adds the segment data as a Char string.
-        new Char($this, new DataWindow($data, 4));
+        new Char($this, new DataWindow($dataElement, 4));
+        return $this;
     }
 
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string

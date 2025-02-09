@@ -1,12 +1,15 @@
 <?php
 
-namespace FileEye\MediaProbe\Block\Jpeg;
+namespace FileEye\MediaProbe\Block\Media\Jpeg;
 
 use FileEye\MediaProbe\Collection\CollectionFactory;
+use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\Entry\Core\Undefined;
+use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Model\BlockBase;
+use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -15,7 +18,7 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  * This is found in a JPEG APP1 segment, and it is just an header for an entire
  * TIFF structure.
  */
-class Exif extends BlockBase
+class ExifApp extends BlockBase
 {
     /**
      * Exif header.
@@ -24,6 +27,17 @@ class Exif extends BlockBase
      */
     // @todo xxx the trailing bytes may not be zeros
     const EXIF_HEADER = "Exif\0\0";
+
+    public function __construct(
+        public readonly CollectionInterface $collection,
+        SegmentApp1|RootBlockBase $parent,
+    ) {
+        parent::__construct(
+            definition: new ItemDefinition($this->collection),
+            parent: $parent,
+            graft: false,
+        );
+    }
 
     /**
      * Determines if the data is an EXIF segment.
@@ -43,7 +57,7 @@ class Exif extends BlockBase
         return false;
     }
 
-    public function doParseData(DataElement $dataElement): void
+    public function fromDataElement(DataElement $dataElement): static
     {
         assert($this->debugInfo(['dataElement' => $dataElement]));
 
@@ -63,6 +77,8 @@ class Exif extends BlockBase
             $entry = new Undefined($this, [$dataElement->getBytes()]);
             $this->warning("TIFF header not found. Parsed {text}", ['text' => $entry->toString()]);
         }
+
+        return $this;
     }
 
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0): string

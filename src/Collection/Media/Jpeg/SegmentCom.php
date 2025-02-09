@@ -6,7 +6,7 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Jpeg;
+namespace FileEye\MediaProbe\Collection\Media\Jpeg;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
@@ -17,7 +17,7 @@ class SegmentCom extends CollectionBase {
   'title' => 'JPEG Comment',
   'payload' => 'variable',
   'DOMNode' => 'jpegSegment',
-  'id' => 'Jpeg\\SegmentCom',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Jpeg\\SegmentCom',
+  'id' => 'Media\\Jpeg\\SegmentCom',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Jpeg\\SegmentCom',
 );
 }

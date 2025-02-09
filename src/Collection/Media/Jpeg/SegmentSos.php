@@ -6,16 +6,18 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Jpeg;
+namespace FileEye\MediaProbe\Collection\Media\Jpeg;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Segment extends CollectionBase {
+class SegmentSos extends CollectionBase {
 
   protected static $map = array (
-  'title' => 'Generic JPEG data segment',
+  'name' => 'SOS',
+  'title' => 'JPEG Start of scan',
+  'payload' => 'scan',
   'DOMNode' => 'jpegSegment',
-  'id' => 'Jpeg\\Segment',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Jpeg\\Segment',
+  'id' => 'Media\\Jpeg\\SegmentSos',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Jpeg\\SegmentSos',
 );
 }

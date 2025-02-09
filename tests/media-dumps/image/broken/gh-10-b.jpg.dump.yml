@@ -101,31 +101,27 @@ fileContentHash: 8a2c852a40b471cc65c67ce6d9f0554f779cca76db8e557b03ea4c2e06352ea
 elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
-    valid: true
     validationLevel: OK
     collection: Media
     elements:
         -
             path: /media/jpeg
             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg
-            valid: true
             validationLevel: OK
             id: image/jpeg
             collection: Media\Jpeg
             elements:
                 -
                     path: '/media/jpeg/jpegSegment:SOI:216'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: SOI
                     id: '216'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:SOI:216/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 2
@@ -133,17 +129,15 @@ elements:
                             text: '2 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:APP0:224'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: APP0
                     id: '224'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:APP0:224/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 18
@@ -151,31 +145,28 @@ elements:
                             text: '18 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:APP1:225'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentApp1
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1
                     validationLevel: OK
                     name: APP1
                     id: '225'
-                    collection: Jpeg\SegmentApp1
+                    collection: Media\Jpeg\SegmentApp1
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
-                            handlerClass: FileEye\MediaProbe\Block\Jpeg\Exif
-                            valid: true
+                            handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\ExifApp
                             validationLevel: OK
-                            collection: Jpeg\Exif
+                            id: ExifApp
+                            collection: Media\Jpeg\ExifApp
                             elements:
                                 -
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff
-                                    valid: true
                                     validationLevel: OK
                                     collection: Media\Tiff
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
-                                            valid: true
                                             validationLevel: OK
                                             name: IFD0
                                             id: '0'
@@ -184,7 +175,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: Make
                                                     id: '271'
@@ -193,7 +183,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Ascii
                                                             components: 6
@@ -202,7 +191,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: Model
                                                     id: '272'
@@ -211,7 +199,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Ascii
                                                             components: 19
@@ -220,7 +207,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: Orientation
                                                     id: '274'
@@ -229,7 +215,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -238,7 +223,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: XResolution
                                                     id: '282'
@@ -247,7 +231,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Rational
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Rational
                                                             components: 1
@@ -256,7 +239,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: YResolution
                                                     id: '283'
@@ -265,7 +247,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Rational
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Rational
                                                             components: 1
@@ -274,7 +255,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: ResolutionUnit
                                                     id: '296'
@@ -283,7 +263,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -292,7 +271,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: ModifyDate
                                                     id: '306'
@@ -301,7 +279,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Time
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Ascii
                                                             components: 20
@@ -310,7 +287,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: YCbCrPositioning
                                                     id: '531'
@@ -319,7 +295,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -328,7 +303,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:SensingMethod:41495'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: SensingMethod
                                                     id: '41495'
@@ -337,7 +311,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:SensingMethod:41495/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -346,7 +319,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:CustomRendered:41985'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: CustomRendered
                                                     id: '41985'
@@ -355,7 +327,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:CustomRendered:41985/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -364,7 +335,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExposureMode:41986'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: ExposureMode
                                                     id: '41986'
@@ -373,7 +343,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExposureMode:41986/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -382,7 +351,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:WhiteBalance:41987'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: WhiteBalance
                                                     id: '41987'
@@ -391,7 +359,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:WhiteBalance:41987/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -400,7 +367,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:DigitalZoomRatio:41988'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: DigitalZoomRatio
                                                     id: '41988'
@@ -409,7 +375,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:DigitalZoomRatio:41988/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Rational
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Rational
                                                             components: 1
@@ -418,7 +383,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:SceneCaptureType:41990'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    valid: true
                                                     validationLevel: OK
                                                     name: SceneCaptureType
                                                     id: '41990'
@@ -427,7 +391,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:SceneCaptureType:41990/entry'
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                            valid: true
                                                             validationLevel: OK
                                                             format: Short
                                                             components: 1
@@ -436,7 +399,6 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
-                                                    valid: false
                                                     validationLevel: Error
                                                     name: ExifIFD
                                                     id: '34665'
@@ -445,7 +407,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ExposureTime
                                                             id: '33434'
@@ -454,7 +415,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifExposureTime
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
@@ -463,7 +423,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: FNumber
                                                             id: '33437'
@@ -472,7 +431,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifFNumber
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
@@ -481,7 +439,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ExifVersion
                                                             id: '36864'
@@ -490,7 +447,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Version
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Undefined
                                                                     components: 4
@@ -499,7 +455,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: DateTimeOriginal
                                                             id: '36867'
@@ -508,7 +463,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Time
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 20
@@ -517,7 +471,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: CreateDate
                                                             id: '36868'
@@ -526,7 +479,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Time
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 20
@@ -535,7 +487,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ComponentsConfiguration
                                                             id: '37121'
@@ -544,7 +495,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifComponentsConfiguration
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Undefined
                                                                     components: 4
@@ -553,7 +503,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CompressedBitsPerPixel:37122'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: CompressedBitsPerPixel
                                                             id: '37122'
@@ -562,7 +511,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CompressedBitsPerPixel:37122/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Rational
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
@@ -571,7 +519,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ShutterSpeedValue
                                                             id: '37377'
@@ -580,7 +527,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifShutterSpeedValue
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: SignedRational
                                                                     components: 1
@@ -589,7 +535,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ApertureValue
                                                             id: '37378'
@@ -598,7 +543,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifApertureValue
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
@@ -607,7 +551,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ExposureCompensation
                                                             id: '37380'
@@ -616,7 +559,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifExposureBiasValue
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: SignedRational
                                                                     components: 1
@@ -625,7 +567,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: MaxApertureValue
                                                             id: '37381'
@@ -634,7 +575,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MaxApertureValue:37381/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifApertureValue
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
@@ -643,7 +583,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: MeteringMode
                                                             id: '37383'
@@ -652,7 +591,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 1
@@ -661,7 +599,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: Flash
                                                             id: '37385'
@@ -670,7 +607,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 1
@@ -679,7 +615,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: FocalLength
                                                             id: '37386'
@@ -688,7 +623,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifFocalLength
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
@@ -697,7 +631,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
-                                                            valid: false
                                                             validationLevel: Warning
                                                             name: Canon
                                                             id: '37500'
@@ -706,7 +639,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
                                                                     handlerClass: FileEye\MediaProbe\Block\Map
-                                                                    valid: false
                                                                     validationLevel: Error
                                                                     name: CanonCameraSettings
                                                                     id: '1'
@@ -715,7 +647,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:mapdata'
                                                                             handlerClass: FileEye\MediaProbe\Block\RawData
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: mapdata
                                                                             collection: RawData
@@ -723,7 +654,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/rawData:mapdata/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Undefined
                                                                                     components: 92
@@ -732,7 +662,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MacroMode:1'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: MacroMode
                                                                             id: '1'
@@ -741,7 +670,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MacroMode:1/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -750,7 +678,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SelfTimer:2'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: SelfTimer
                                                                             id: '2'
@@ -759,7 +686,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SelfTimer:2/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -768,7 +694,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Quality:3'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: Quality
                                                                             id: '3'
@@ -777,7 +702,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Quality:3/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -786,7 +710,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonFlashMode:4'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: CanonFlashMode
                                                                             id: '4'
@@ -795,7 +718,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonFlashMode:4/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -804,7 +726,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ContinuousDrive:5'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: ContinuousDrive
                                                                             id: '5'
@@ -813,7 +734,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ContinuousDrive:5/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -822,7 +742,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusMode:7'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocusMode
                                                                             id: '7'
@@ -831,7 +750,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusMode:7/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -840,7 +758,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:RecordMode:9'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: RecordMode
                                                                             id: '9'
@@ -849,7 +766,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:RecordMode:9/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -858,7 +774,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonImageSize:10'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: CanonImageSize
                                                                             id: '10'
@@ -867,7 +782,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonImageSize:10/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -876,7 +790,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:EasyMode:11'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: EasyMode
                                                                             id: '11'
@@ -885,7 +798,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:EasyMode:11/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -894,7 +806,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DigitalZoom:12'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: DigitalZoom
                                                                             id: '12'
@@ -903,7 +814,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DigitalZoom:12/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -912,7 +822,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Contrast:13'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: Contrast
                                                                             id: '13'
@@ -921,7 +830,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Contrast:13/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Contrast
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -930,7 +838,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Saturation:14'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: Saturation
                                                                             id: '14'
@@ -939,7 +846,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Saturation:14/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Saturation
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -948,7 +854,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Sharpness:15'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: Sharpness
                                                                             id: '15'
@@ -957,7 +862,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:Sharpness:15/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Sharpness
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -966,7 +870,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CameraISO:16'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: CameraISO
                                                                             id: '16'
@@ -975,7 +878,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CameraISO:16/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraISO
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -984,7 +886,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MeteringMode:17'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: MeteringMode
                                                                             id: '17'
@@ -993,7 +894,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MeteringMode:17/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1002,7 +902,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusRange:18'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocusRange
                                                                             id: '18'
@@ -1011,7 +910,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusRange:18/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1020,7 +918,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AFPoint:19'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: AFPoint
                                                                             id: '19'
@@ -1029,7 +926,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AFPoint:19/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1038,7 +934,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonExposureMode:20'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: CanonExposureMode
                                                                             id: '20'
@@ -1047,7 +942,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:CanonExposureMode:20/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1056,7 +950,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:LensType:22'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: LensType
                                                                             id: '22'
@@ -1065,7 +958,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:LensType:22/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettingsLensType
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Short
                                                                                     components: 1
@@ -1074,7 +966,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxFocalLength:23'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: MaxFocalLength
                                                                             id: '23'
@@ -1083,7 +974,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxFocalLength:23/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Short
                                                                                     components: 1
@@ -1092,7 +982,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinFocalLength:24'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: MinFocalLength
                                                                             id: '24'
@@ -1101,7 +990,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinFocalLength:24/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalLength
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Short
                                                                                     components: 1
@@ -1110,7 +998,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocalUnits:25'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocalUnits
                                                                             id: '25'
@@ -1119,7 +1006,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocalUnits:25/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1128,7 +1014,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxAperture:26'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: MaxAperture
                                                                             id: '26'
@@ -1137,7 +1022,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MaxAperture:26/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1146,7 +1030,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinAperture:27'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: MinAperture
                                                                             id: '27'
@@ -1155,7 +1038,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:MinAperture:27/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ApertureValue
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1164,7 +1046,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashActivity:28'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FlashActivity
                                                                             id: '28'
@@ -1173,7 +1054,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashActivity:28/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1182,7 +1062,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FlashBits
                                                                             id: '29'
@@ -1191,7 +1070,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FlashBits:29/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\CameraSettings\FlashBits
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1200,7 +1078,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusContinuous:32'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocusContinuous
                                                                             id: '32'
@@ -1209,7 +1086,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:FocusContinuous:32/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1218,7 +1094,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AESetting:33'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: AESetting
                                                                             id: '33'
@@ -1227,7 +1102,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:AESetting:33/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1236,7 +1110,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ImageStabilization:34'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: ImageStabilization
                                                                             id: '34'
@@ -1245,7 +1118,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ImageStabilization:34/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1254,7 +1126,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DisplayAperture:35'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: DisplayAperture
                                                                             id: '35'
@@ -1263,7 +1134,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:DisplayAperture:35/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\DisplayAperture
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1272,7 +1142,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomSourceWidth:36'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: ZoomSourceWidth
                                                                             id: '36'
@@ -1281,7 +1150,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomSourceWidth:36/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1290,7 +1158,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomTargetWidth:37'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: ZoomTargetWidth
                                                                             id: '37'
@@ -1299,7 +1166,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ZoomTargetWidth:37/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1308,7 +1174,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SpotMeteringMode:39'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: SpotMeteringMode
                                                                             id: '39'
@@ -1317,7 +1182,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:SpotMeteringMode:39/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1326,7 +1190,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:PhotoEffect:40'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: PhotoEffect
                                                                             id: '40'
@@ -1335,7 +1198,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:PhotoEffect:40/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1344,7 +1206,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ManualFlashOutput:41'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: ManualFlashOutput
                                                                             id: '41'
@@ -1353,7 +1214,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ManualFlashOutput:41/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1362,7 +1222,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ColorTone:42'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: ColorTone
                                                                             id: '42'
@@ -1371,7 +1230,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1/tag:ColorTone:42/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\SignedShort
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: SignedShort
                                                                                     components: 1
@@ -1380,7 +1238,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2'
                                                                     handlerClass: FileEye\MediaProbe\Block\Index
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     name: CanonFocalLength
                                                                     id: '2'
@@ -1389,7 +1246,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalType:0'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocalType
                                                                             id: '0'
@@ -1398,7 +1254,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalType:0/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Short
                                                                                     components: 1
@@ -1407,7 +1262,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalLength:1'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocalLength
                                                                             id: '1'
@@ -1416,7 +1270,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalLength:1/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FLFocalLength
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Short
                                                                                     components: 1
@@ -1425,7 +1278,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneXSize:2'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocalPlaneXSize
                                                                             id: '2'
@@ -1434,7 +1286,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneXSize:2/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalPlaneSize
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Short
                                                                                     components: 1
@@ -1443,7 +1294,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneYSize:3'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             name: FocalPlaneYSize
                                                                             id: '3'
@@ -1452,7 +1302,6 @@ elements:
                                                                                 -
                                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonFocalLength:2/tag:FocalPlaneYSize:3/entry'
                                                                                     handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FocalPlaneSize
-                                                                                    valid: true
                                                                                     validationLevel: OK
                                                                                     format: Short
                                                                                     components: 1
@@ -1461,7 +1310,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonFlashInfo:3'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     name: CanonFlashInfo
                                                                     id: '3'
@@ -1470,7 +1318,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonFlashInfo:3/entry'
                                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             format: Short
                                                                             components: 4
@@ -1479,7 +1326,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:FileNumber:8'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     name: FileNumber
                                                                     id: '8'
@@ -1488,7 +1334,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:FileNumber:8/entry'
                                                                             handlerClass: FileEye\MediaProbe\Entry\Vendor\Canon\Exif\FileNumber
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             format: Long
                                                                             components: 1
@@ -1497,7 +1342,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonModelID:16'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     name: CanonModelID
                                                                     id: '16'
@@ -1506,7 +1350,6 @@ elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:CanonModelID:16/entry'
                                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Long
-                                                                            valid: true
                                                                             validationLevel: OK
                                                                             format: Long
                                                                             components: 1
@@ -1515,7 +1358,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:UserComment:37510'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: UserComment
                                                             id: '37510'
@@ -1524,7 +1366,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:UserComment:37510/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\ExifUserComment
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Undefined
                                                                     components: 264
@@ -1533,7 +1374,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FlashpixVersion:40960'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: FlashpixVersion
                                                             id: '40960'
@@ -1542,7 +1382,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FlashpixVersion:40960/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Version
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Undefined
                                                                     components: 4
@@ -1551,7 +1390,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ColorSpace
                                                             id: '40961'
@@ -1560,7 +1398,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 1
@@ -1569,7 +1406,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ExifImageWidth
                                                             id: '40962'
@@ -1578,7 +1414,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 1
@@ -1587,7 +1422,6 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            valid: true
                                                             validationLevel: OK
                                                             name: ExifImageHeight
                                                             id: '40963'
@@ -1596,7 +1430,6 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963/entry'
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Short
-                                                                    valid: true
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 1
@@ -1604,17 +1437,15 @@ elements:
                                                                     text: '1704'
                 -
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: DQT
                     id: '219'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:DQT:219/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 69
@@ -1622,17 +1453,15 @@ elements:
                             text: '69 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:DQT:219'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: DQT
                     id: '219'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:DQT:219/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 69
@@ -1640,17 +1469,15 @@ elements:
                             text: '69 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:SOF0:192'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: SOF0
                     id: '192'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:SOF0:192/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 19
@@ -1658,17 +1485,15 @@ elements:
                             text: '19 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: DHT
                     id: '196'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:DHT:196/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 31
@@ -1676,17 +1501,15 @@ elements:
                             text: '31 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: DHT
                     id: '196'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:DHT:196/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 74
@@ -1694,17 +1517,15 @@ elements:
                             text: '74 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: DHT
                     id: '196'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:DHT:196/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 28
@@ -1712,17 +1533,15 @@ elements:
                             text: '28 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:DHT:196'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: DHT
                     id: '196'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:DHT:196/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 53
@@ -1730,17 +1549,15 @@ elements:
                             text: '53 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:SOS:218'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\SegmentSos
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\SegmentSos
                     validationLevel: OK
                     name: SOS
                     id: '218'
-                    collection: Jpeg\SegmentSos
+                    collection: Media\Jpeg\SegmentSos
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:SOS:218/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 10113
@@ -1748,17 +1565,15 @@ elements:
                             text: '10113 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:EOI:217'
-                    handlerClass: FileEye\MediaProbe\Block\Jpeg\Segment
-                    valid: true
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
                     validationLevel: OK
                     name: EOI
                     id: '217'
-                    collection: Jpeg\Segment
+                    collection: Media\Jpeg\Segment
                     elements:
                         -
                             path: '/media/jpeg/jpegSegment:EOI:217/entry'
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                            valid: true
                             validationLevel: OK
                             format: Undefined
                             components: 2

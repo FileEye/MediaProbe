@@ -2,12 +2,13 @@
 
 namespace FileEye\MediaProbe\Block\Media;
 
-use FileEye\MediaProbe\Block\Jpeg\SegmentBase;
+use FileEye\MediaProbe\Block\Media\Jpeg\SegmentBase;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
+use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Model\MediaTypeBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -32,21 +33,23 @@ class Jpeg extends MediaTypeBlockBase
         return $dataElement->getBytes(0, 3) === static::JPEG_HEADER;
     }
 
-    public function fromDataElement(DataElement $data): Jpeg
+    public function fromDataElement(DataElement $dataElement): Jpeg
     {
-        assert($this->debugInfo(['dataElement' => $data]));
+        $this->size = $dataElement->getSize();
+        assert($this->debugInfo(['dataElement' => $dataElement]));
 
         // JPEG data is stored in big-endian format.
-        $data->setByteOrder(ConvertBytes::BIG_ENDIAN);
+        $dataElement->setByteOrder(ConvertBytes::BIG_ENDIAN);
 
         // Run through the data to parse the segments in the image. After each
         // segment is parsed, the offset will be moved forward, and after the
         // last segment we will terminate.
         $offset = 0;
-        while ($offset < $data->getSize()) {
+        $sosParsed = false;
+        while ($offset < $dataElement->getSize()) {
             // Get the next JPEG segment id offset.
             try {
-                $newOffset = $this->getJpegSegmentIdOffset($data, $offset);
+                $newOffset = $this->getJpegSegmentIdOffset($dataElement, $offset);
                 $segmentId = $segmentId ?? 0;
                 if ($newOffset !== $offset) {
                     // Add any trailing data from previous segment in a
@@ -54,7 +57,7 @@ class Jpeg extends MediaTypeBlockBase
                     $this->error('Unexpected data found at end of JPEG segment {id}/{hexid} @ offset {offset}, size {size}', [
                         'id' => $segmentId,
                         'hexid' => '0x' . strtoupper(dechex($segmentId)),
-                        'offset' => $data->getAbsoluteOffset($offset),
+                        'offset' => $dataElement->getAbsoluteOffset($offset),
                         'size' => $newOffset - $offset,
                     ]);
                     $trail = new ItemDefinition(
@@ -64,7 +67,7 @@ class Jpeg extends MediaTypeBlockBase
                     );
                     $trailData = $this->addBlock($trail);
                     assert($trailData instanceof RawData);
-                    $trailData->parseData($data, $offset, $newOffset - $offset);
+                    $trailData->parseData($dataElement, $offset, $newOffset - $offset);
                 }
                 $offset = $newOffset;
             } catch (DataException $e) {
@@ -73,26 +76,27 @@ class Jpeg extends MediaTypeBlockBase
             }
 
             // Get the JPEG segment id.
-            $segmentId = $data->getByte($offset + 1);
+            $segmentId = $dataElement->getByte($offset + 1);
 
             // Warn if an unidentified segment is detected.
-            if (!in_array($segmentId, $this->getCollection()->listItemIds())) {
+            if (!in_array($segmentId, $this->collection->listItemIds())) {
                 $this->warning('Invalid JPEG marker {id}/{hexid} found @ offset {offset}', [
                     'id' => $segmentId,
                     'hexid' => '0x' . strtoupper(dechex($segmentId)),
-                    'offset' => $data->getAbsoluteOffset($offset),
+                    'offset' => $dataElement->getAbsoluteOffset($offset),
                 ]);
             }
 
             // Get the JPEG segment size.
-            $segmentCollection = $this->getCollection()->getItemCollection($segmentId);
+            $segmentCollection = $this->collection->getItemCollection($segmentId);
+
             $segmentSize = match ($segmentCollection->getPropertyValue('payload')) {
                 // The data window size is the JPEG delimiter byte and the segment identifier byte.
                 'none' => 2,
                 // Read the length of the segment. The data window size includes the JPEG delimiter
                 // byte, the segment identifier byte and two bytes used to store the segment
                 // length.
-                'variable' => $data->getShort($offset + 2) + 2,
+                'variable' => $dataElement->getShort($offset + 2) + 2,
                 // The data window size includes the JPEG delimiter byte and the segment identifier
                 // byte.
                 'fixed' => $segmentCollection->getPropertyValue('components') + 2,
@@ -101,15 +105,40 @@ class Jpeg extends MediaTypeBlockBase
             };
 
             // Parse the MediaProbe JPEG segment data.
-            $segmentDefinition = new ItemDefinition($segmentCollection);
-            $segment = $this->addBlock($segmentDefinition);
-            assert($segment instanceof SegmentBase, get_class($segment));
-            $segment->parseData($data, $offset, $segmentSize);
+            $segmentHandler = $segmentCollection->getHandler();
+            $segmentBlock = new $segmentHandler(
+                collection: $segmentCollection,
+                parent: $this,
+            );
+            assert($segmentBlock instanceof SegmentBase, get_class($segmentBlock));
+            $segmentBlock->fromDataElement(new DataWindow($dataElement, $offset, $segmentSize));
+            $this->graftBlock($segmentBlock);
 
             // Position to end of the segment.
-            $offset += $segment->getSize();
+            $offset += $segmentBlock->getSize();
+
+            // There could be data after EOI, prepare to handle that.
+            if ($segmentCollection->getPropertyValue('name') === 'SOS') {
+                $sosParsed = true;
+            } elseif ($sosParsed && $segmentCollection->getPropertyValue('name') === 'EOI') {
+                break;
+            }
         }
 
+        // Now check to see if there are any trailing data.
+        if ($offset < $dataElement->getSize()) {
+            $raw_size = $dataElement->getSize() - $offset;
+            $this->notice('Found trailing content after EOI: {size} bytes', ['size' => $raw_size]);
+            // There is no JPEG marker for trailing garbage, so we just collect
+            // the data in a RawData object.
+            $trail_definition = new ItemDefinition(CollectionFactory::get('RawData'), DataFormat::BYTE, $raw_size);
+            $trail_data_window = new DataWindow($dataElement, $offset, $raw_size);
+            $trail = new RawData($trail_definition, $this->getParentElement());
+            $trail->parseData($trail_data_window);
+            $this->graftBlock($trail);
+        }
+
+        // @todo move below to grafting
         // Fail if SOS is missing.
         if (!$this->getElement("jpegSegment[@name='SOS']")) {
             $this->error('Missing SOS (Start Of Scan) JPEG marker');

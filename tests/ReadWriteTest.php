@@ -2,9 +2,9 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Jpeg\Exif;
-use FileEye\MediaProbe\Block\Jpeg\SegmentApp1;
 use FileEye\MediaProbe\Block\Media\Jpeg;
+use FileEye\MediaProbe\Block\Media\Jpeg\ExifApp;
+use FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1;
 use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
@@ -44,10 +44,12 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $com_segment = $jpeg->getElement("jpegSegment[@name='COM']");
 
         // Insert the APP1 segment before the COM one.
-        $app1_segment_definition = new ItemDefinition($jpeg->getCollection()->getItemCollectionByName('APP1'));
-        $app1_segment = new SegmentApp1($app1_segment_definition, $jpeg, $com_segment);
+        $app1_segment_collection = $jpeg->collection->getItemCollectionByName('APP1');
+        $app1_segment = new SegmentApp1($app1_segment_collection, $jpeg);
+        $jpeg->graftBlock($app1_segment, $com_segment);
 
-        $exif = new Exif(new ItemDefinition($app1_segment->getCollection()->getItemCollection('Exif')), $app1_segment);
+        $exif = new ExifApp($app1_segment->collection->getItemCollection('ExifApp'), $app1_segment);
+        $app1_segment->graftBlock($exif);
         $this->assertNotNull($jpeg->getElement("jpegSegment/exif"));
         $this->assertNull($exif->getElement("tiff"));
 
@@ -80,7 +82,7 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $r_media = Media::createFromFile(dirname(__FILE__) . '/test-output.jpg', null, 'error');
         $r_jpeg = $r_media->getElement("jpeg");
 
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Jpeg\Exif', $r_jpeg->getElement("jpegSegment/exif"));
+        $this->assertInstanceOf(ExifApp::class, $r_jpeg->getElement("jpegSegment/exif"));
 
         $tiff = $r_jpeg->getElement("jpegSegment/exif/tiff");
         $this->assertInstanceOf('FileEye\MediaProbe\Block\Media\Tiff', $tiff);
