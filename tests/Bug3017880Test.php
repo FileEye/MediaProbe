@@ -39,9 +39,15 @@ class Bug3017880Test extends MediaProbeTestCaseBase
         }
 
         $tiff = $exif->getElement("tiff");
+        $this->assertInstanceOf(Tiff::class, $tiff);
         $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
         if ($ifd0 === null) {
-            $ifd0 = new Ifd(new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG), $tiff);
+            $ifd0 = new Ifd(
+                collection: CollectionFactory::get('Tiff\Ifd0'),
+                definition: new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG),
+                parent: $tiff,
+            );
+            $tiff->graftBlock($ifd0);
         }
         $this->assertInstanceOf(Ifd::class, $ifd0);
 

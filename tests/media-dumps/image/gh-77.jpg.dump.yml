@@ -4,13 +4,13 @@ fileContentHash: d9f1c83ee7b22349b29ac50b1bc141aad8aa9493c19986a172054dfa694b4d9
 elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
-    validationLevel: OK
+    validationLevel: Warning
     collection: Media
     elements:
         -
             path: /media/jpeg
             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg
-            validationLevel: OK
+            validationLevel: Warning
             id: image/jpeg
             collection: Media\Jpeg
             elements:
@@ -65,7 +65,7 @@ elements:
                 -
                     path: '/media/jpeg/jpegSegment:APP1:225'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1
-                    validationLevel: OK
+                    validationLevel: Warning
                     name: APP1
                     id: '225'
                     collection: Media\Jpeg\SegmentApp1
@@ -73,14 +73,14 @@ elements:
                         -
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\ExifApp
-                            validationLevel: OK
+                            validationLevel: Warning
                             id: ExifApp
                             collection: Media\Jpeg\ExifApp
                             elements:
                                 -
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff
-                                    validationLevel: OK
+                                    validationLevel: Warning
                                     collection: Media\Tiff
                                     elements:
                                         -
