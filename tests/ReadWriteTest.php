@@ -59,7 +59,12 @@ class ReadWriteTest extends MediaProbeTestCaseBase
         $this->assertNotNull($exif->getElement("tiff"));
         $this->assertNull($tiff->getElement("ifd[@name='IFD0']"));
 
-        $ifd = new Ifd(new ItemDefinition($tiff->getCollection()->getItemCollection('0'), DataFormat::LONG), $tiff);
+        $ifd = new Ifd(
+            collection: $tiff->getCollection()->getItemCollection('0'),
+            definition: new ItemDefinition($tiff->getCollection()->getItemCollection('0'), DataFormat::LONG),
+            parent: $tiff,
+        );
+        $tiff->graftBlock($ifd);
         foreach ($entries as $entry) {
             $item_collection = $ifd->getCollection()->getItemCollection($entry[0], 0, 'Tiff\UnknownTag', [
                 'item' => $entry[0],

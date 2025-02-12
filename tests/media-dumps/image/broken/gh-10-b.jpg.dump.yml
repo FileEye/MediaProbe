@@ -101,13 +101,13 @@ fileContentHash: 8a2c852a40b471cc65c67ce6d9f0554f779cca76db8e557b03ea4c2e06352ea
 elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
-    validationLevel: OK
+    validationLevel: Error
     collection: Media
     elements:
         -
             path: /media/jpeg
             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg
-            validationLevel: OK
+            validationLevel: Error
             id: image/jpeg
             collection: Media\Jpeg
             elements:
@@ -146,7 +146,7 @@ elements:
                 -
                     path: '/media/jpeg/jpegSegment:APP1:225'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1
-                    validationLevel: OK
+                    validationLevel: Error
                     name: APP1
                     id: '225'
                     collection: Media\Jpeg\SegmentApp1
@@ -154,20 +154,20 @@ elements:
                         -
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\ExifApp
-                            validationLevel: OK
+                            validationLevel: Error
                             id: ExifApp
                             collection: Media\Jpeg\ExifApp
                             elements:
                                 -
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff
-                                    validationLevel: OK
+                                    validationLevel: Error
                                     collection: Media\Tiff
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
-                                            validationLevel: OK
+                                            validationLevel: Error
                                             name: IFD0
                                             id: '0'
                                             collection: Tiff\Ifd0

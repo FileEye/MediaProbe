@@ -4,9 +4,11 @@ namespace FileEye\MediaProbe\Block\Tiff;
 
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Media\Jpeg;
+use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
+use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -14,6 +16,7 @@ use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Model\EntryInterface;
+use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 use FileEye\MediaProbe\Utility\HexDump;
 
@@ -22,9 +25,18 @@ use FileEye\MediaProbe\Utility\HexDump;
  */
 class Ifd extends ListBase
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function __construct(
+        public readonly CollectionInterface $collection,
+        ItemDefinition $definition,
+        Tiff|Ifd|RootBlockBase $parent,
+    ) {
+        parent::__construct(
+            definition: $definition,
+            parent: $parent,
+            graft: false,
+        );
+    }
+
     public function parseData(DataElement $dataElement, int $start = 0, ?int $size = null, $xxx = 0): void
     {
         $offset = $this->getDefinition()->dataOffset;
@@ -72,19 +84,31 @@ class Ifd extends ListBase
             }
 
             // Adds the item to the DOM.
-            $item = new $item_class($item_definition, $this);
             try {
                 if (is_a($item_class, Ifd::class, true)) {
-                    $item->parseData($dataElement);
+                    $item = new $item_class(
+                        collection: $item_definition->collection,
+                        definition: $item_definition,
+                        parent: $this,
+                    );
+                    try {
+                        $item->parseData($dataElement);
+                    } catch (DataException $e) {
+                        $item->error($e->getMessage());
+                    }
+                    $this->graftBlock($item);
                 } else {
                     // In case of an IFD terminator item entry, i.e. zero
                     // components, the data window size is still 4 bytes, from
                     // the IFD index area.
+                    $item = new $item_class($item_definition, $this);
                     $item_data_window_size = $item_definition->valuesCount > 0 ? $item_definition->getSize() : 4;
                     $item->parseData($dataElement, $item_definition->dataOffset, $item_data_window_size);
                 }
             } catch (DataException $e) {
-                $item->error($e->getMessage());
+                if (isset($item)) {
+                    $item->error($e->getMessage());
+                }
             }
         }
 

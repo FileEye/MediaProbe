@@ -107,7 +107,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
 
         if ($this->testDump['elements']['validationLevel'] === 'Critical') {
-            $this->markTestIncomplete($this->testDump['fileName'] . ' of MIME type \'' . $this->testDump['mimeType'] . '\' has validation level \'' . $this->testDump['elements']['validationLevel'] . '\' and can not be tested for rewriting.');
+            $this->markTestSkipped($this->testDump['fileName'] . ' of MIME type \'' . $this->testDump['mimeType'] . '\' has validation level \'' . $this->testDump['elements']['validationLevel'] . '\' and can not be tested for rewriting.');
         }
 
         $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];
@@ -122,7 +122,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->assertEquals($this->testDump['gdInfo'], $gd_info);
 
         if ($this->testDump['mimeType'] === 'image/tiff') {
-            $this->markTestIncomplete($this->testDump['fileName'] . ' of MIME type ' . $this->testDump['mimeType'] . ' can not be tested via GD.');
+            $this->markTestSkipped($this->testDump['fileName'] . ' of MIME type ' . $this->testDump['mimeType'] . ' can not be tested via GD.');
         }
 
         // Test loading the image to GD from memory; it fails hard in case of errors.
@@ -146,7 +146,7 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         $this->testDump = Yaml::parse($mediaDumpFile->getContents());
 
         if ($this->testDump['elements']['validationLevel'] === 'Critical') {
-            $this->markTestIncomplete($this->testDump['fileName'] . ' of MIME type \'' . $this->testDump['mimeType'] . '\' has validation level \'' . $this->testDump['elements']['validationLevel'] . '\' and can not be tested for rewriting.');
+            $this->markTestSkipped($this->testDump['fileName'] . ' of MIME type \'' . $this->testDump['mimeType'] . '\' has validation level \'' . $this->testDump['elements']['validationLevel'] . '\' and can not be tested for rewriting.');
         }
 
         $testFile = dirname(__FILE__) . '/media-samples/image/' . $mediaDumpFile->getRelativePath() . '/' . $this->testDump['fileName'];

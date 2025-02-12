@@ -4,7 +4,6 @@ namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Map;
-use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionException;
@@ -15,6 +14,7 @@ use FileEye\MediaProbe\Entry\ExifUserComment;
 use FileEye\MediaProbe\Entry\Time;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Utility\ConvertBytes;
+use Monolog\Logger;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
@@ -27,10 +27,20 @@ class SpecTest extends MediaProbeTestCaseBase
      */
     public function testDefaultSpec()
     {
-        $tiff_mock = $this->createMock(Tiff::class);
-        $ifd_0 = new Ifd(new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG), $tiff_mock);
-        $ifd_exif = new Ifd(new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), DataFormat::LONG), $ifd_0);
-        $ifd_canon_camera_settings = new Index(new ItemDefinition(CollectionFactory::get('ExifMakerNotes\\Canon\\Main')->getItemCollection(1), DataFormat::LONG), $tiff_mock);
+        $tiffStub = new StubRootBlock(CollectionFactory::get('Media\Tiff'), $this->createMock(Logger::class));
+        $ifd_0 = new Ifd(
+            collection: CollectionFactory::get('Tiff\Ifd0'),
+            definition: new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG),
+            parent: $tiffStub,
+        );
+        $tiffStub->graftBlock($ifd_0);
+        $ifd_exif = new Ifd(
+            collection: $ifd_0->collection->getItemCollection(0x8769),
+            definition: new ItemDefinition($ifd_0->getCollection()->getItemCollection(0x8769), DataFormat::LONG),
+            parent: $ifd_0,
+        );
+        $ifd_0->graftBlock($ifd_exif);
+        $ifd_canon_camera_settings = new Index(new ItemDefinition(CollectionFactory::get('ExifMakerNotes\\Canon\\Main')->getItemCollection(1), DataFormat::LONG), $tiffStub);
 
         // Test retrieving IFD id by name.
         $this->assertEquals(CollectionFactory::getByName('IFD0'), CollectionFactory::getByName('0'));
@@ -88,7 +98,12 @@ class SpecTest extends MediaProbeTestCaseBase
     public function testGetTagText($expected_text, $expected_class, $parent_collection_id, $tag_name, string $args, $brief = false)
     {
         $stubRoot = $this->getStubRoot();
-        $ifd = new Ifd(new ItemDefinition(CollectionFactory::get($parent_collection_id)), $stubRoot);
+        $ifd = new Ifd(
+            collection: CollectionFactory::get($parent_collection_id),
+            definition: new ItemDefinition(CollectionFactory::get($parent_collection_id)),
+            parent: $stubRoot,
+        );
+        $stubRoot->graftBlock($ifd);
 
         $parent_collection = CollectionFactory::get($parent_collection_id);
         $item_collection = $parent_collection->getItemCollectionByName($tag_name);
