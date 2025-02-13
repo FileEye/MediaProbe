@@ -56,7 +56,7 @@ class CustomFunctions2Header extends ListBase
             $pos += 12;
             try {
                 $item_definition = new ItemDefinition($this->getCollection()->getItemCollection($rec_num), DataFormat::SIGNED_LONG, $rec_count);
-                $class = $item_definition->collection->getPropertyValue('handler');
+                $class = $item_definition->collection->handler();
                 $group = new $class($item_definition, $this);
                 $group->parseData($data, $pos, min($rec_len, $data->getSize() - $pos));
             } catch (\Exception $e) {

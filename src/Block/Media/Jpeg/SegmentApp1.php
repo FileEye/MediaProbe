@@ -20,7 +20,7 @@ class SegmentApp1 extends SegmentBase
         // If we have an Exif table, parse it.
         if (ExifApp::isExifSegment($dataElement, 4)) {
             $exifAppCollection = $this->collection->getItemCollection('ExifApp');
-            $exifAppHandler = $exifAppCollection->getHandler();
+            $exifAppHandler = $exifAppCollection->handler();
             $exifBlock = new $exifAppHandler(
                 collection: $exifAppCollection,
                 parent: $this,

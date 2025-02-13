@@ -105,7 +105,7 @@ class Jpeg extends MediaTypeBlockBase
             };
 
             // Parse the MediaProbe JPEG segment data.
-            $segmentHandler = $segmentCollection->getHandler();
+            $segmentHandler = $segmentCollection->handler();
             $segmentBlock = new $segmentHandler(
                 collection: $segmentCollection,
                 parent: $this,

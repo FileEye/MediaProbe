@@ -78,7 +78,7 @@ class Media extends RootBlockBase
             assert($this->debugInfo(['dataElement' => $dataElement]));
             // Build the Media immediate child object, that represents the actual media. Then
             // parse the media according to the media format.
-            $mediaTypeHandler = $mediaTypeCollection->getHandler();
+            $mediaTypeHandler = $mediaTypeCollection->handler();
             $mediaTypeBlock = new $mediaTypeHandler(
                 collection: $mediaTypeCollection,
                 parent: $this,
@@ -153,28 +153,26 @@ class Media extends RootBlockBase
         }
 
         // Load maker note into IFD.
-        $ifd_class = $maker_note_collection->getHandler();
+        $ifd_class = $maker_note_collection->handler();
         $maker_note_ifd_name = $maker_note_collection->getPropertyValue('item');  // xx why not name?? it used to work
         $media->debug("**** Parsing maker notes for {maker}/{model}", [
             'maker' => $maker,
             'model' => $model,
         ]);
+        $entry = $maker_note_tag->getElement("entry");
+        assert($entry instanceof EntryInterface);
+
         $item_definition = new ItemDefinition($maker_note_collection, $maker_note_tag->getFormat(), $maker_note_tag->getComponents());
         $ifd = new $ifd_class(
             collection: $maker_note_collection,
             definition: $item_definition,
+            dataDisplacement: $maker_note_tag->getDefinition()->dataOffset,
             parent: $exif_ifd,
         );
-
-        // xxx
         $ifd->setAttribute('id', '37500');
         $ifd->setAttribute('name', $maker_note_ifd_name);
-        $entry = $maker_note_tag->getElement("entry");
-        assert($entry instanceof EntryInterface);
         $data = $entry->getDataElement();
-        // @todo the netting of the dataOffset is a Canon only thing, move to vendor
-        // @todo xxx this is incorrect, parsing should happen indepentently from add'l offset
-        $ifd->parseData($data, 0, null, -$maker_note_tag->getDefinition()->dataOffset);
+        $ifd->fromDataElement($data);
         $exif_ifd->graftBlock($ifd, $maker_note_tag);
 
         // Remove the MakerNote tag that has been converted to IFD.

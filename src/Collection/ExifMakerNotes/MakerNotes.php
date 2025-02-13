@@ -42,7 +42,7 @@ class MakerNotes extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'ExifMakerNotes\\Canon\\Main',
+        'collection' => 'Maker\\Canon\\Exif\\MakerNote',
         'name' => 'Canon',
         'make' => 'Canon',
         'model' => '.*',

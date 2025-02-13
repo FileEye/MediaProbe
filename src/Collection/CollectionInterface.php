@@ -26,8 +26,10 @@ interface CollectionInterface
 
     /**
      * Returns the PHP handler class for this collection.
+     *
+     * @return class-string
      */
-    public function getHandler(): string;
+    public function handler(): string;
 
     /**
      * Returns the collection items' ids.

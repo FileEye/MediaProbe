@@ -131,7 +131,7 @@ class Tiff extends MediaTypeBlockBase
             // be split in windows since any pointer will refer to the
             // entire segment space.
             $ifdCollection = $this->collection->getItemCollection($i);
-            $ifdClass = $ifdCollection->getHandler();
+            $ifdClass = $ifdCollection->handler();
             $ifdItem = new ItemDefinition($ifdCollection, DataFormat::LONG, $ifdTagsCount, $ifdOffset, 0, $i);
             $ifd = new $ifdClass(
                 collection: $ifdCollection,
@@ -139,7 +139,7 @@ class Tiff extends MediaTypeBlockBase
                 parent: $this,
             );
             try {
-                $ifd->parseData($dataElement);
+                $ifd->fromDataElement($dataElement);
             } catch (DataException $e) {
                 $this->error('Error processing {ifd_name}: {msg}.', [
                     'ifd_name' => $this->collection->getItemCollection($i)->getPropertyValue('name'),

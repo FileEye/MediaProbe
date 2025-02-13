@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Apple;
 
 use FileEye\MediaProbe\Block\ListBase;
+use FileEye\MediaProbe\Block\Maker\MakerNoteBase;
 use FileEye\MediaProbe\Block\RawData;
 use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
@@ -12,13 +13,14 @@ use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
-class MakerNote extends Ifd
+class MakerNote extends MakerNoteBase
 {
-    public function parseData(DataElement $dataElement, int $start = 0, ?int $size = null, $xxx = 0): void
+    public function fromDataElement(DataElement $dataElement): MakerNote
     {
-        $offset = $this->getDefinition()->dataOffset;
+        $offset = 0;
 
         // Load Apple's header as a raw data block.
         $header_data_definition = new ItemDefinition(CollectionFactory::get('RawData', ['name' => 'appleHeader']), DataFormat::BYTE, 14);
@@ -36,15 +38,18 @@ class MakerNote extends Ifd
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
             try {
-                $item_definition = $this->getItemDefinitionFromData($i, $dataElement, $i_offset);
-                $item_class = $item_definition->collection->getPropertyValue('handler');
+                $item_definition = $this->getItemDefinitionFromData(
+                    seq: $i,
+                    dataElement: $dataElement,
+                    offset: $i_offset,
+                );
+                $item_class = $item_definition->collection->handler();
                 $item = new $item_class($item_definition, $this);
                 if (is_a($item_class, Ifd::class, true)) {
-                    $item->parseData($dataElement);
-                } else {
-                    $item_data_window = new DataWindow($dataElement, $item_definition->dataOffset, $item_definition->getSize());
-                    $item->parseData($item_data_window);
+                    throw new MediaProbeException(sprintf('There should not be sub-IFDs in %s', __CLASS__));
                 }
+                $item_data_window = new DataWindow($dataElement, $item_definition->dataOffset, $item_definition->getSize());
+                $item->parseData($item_data_window);
             } catch (DataException $e) {
                 if (isset($item)) {
                     $item->error($e->getMessage());
@@ -56,6 +61,8 @@ class MakerNote extends Ifd
 
         // Invoke post-load callbacks.
         $this->executePostParseCallbacks($dataElement);
+
+        return $this;
     }
 
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string
