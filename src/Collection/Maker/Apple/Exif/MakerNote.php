@@ -6,19 +6,19 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\ExifMakerNotes\Apple;
+namespace FileEye\MediaProbe\Collection\Maker\Apple\Exif;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Main extends CollectionBase {
+class MakerNote extends CollectionBase {
 
   protected static $map = array (
   'name' => 'Apple',
   'title' => 'Apple Maker Notes',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Apple\\MakerNote',
   'DOMNode' => 'makerNote',
   'defaultItemCollection' => 'Tiff\\Tag',
-  'id' => 'ExifMakerNotes\\Apple\\Main',
+  'id' => 'Maker\\Apple\\Exif\\MakerNote',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Maker\\Apple\\Exif\\MakerNote',
   'itemsByName' =>
   array (
     'AEAverage' =>

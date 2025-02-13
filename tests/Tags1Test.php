@@ -17,14 +17,14 @@ class Tags1Test extends MediaProbeTestCaseBase
         $this->assertInstanceOf(Tiff::class, $jpeg->getElement("jpegSegment/exif/tiff"));
 
         $ifd0 = $jpeg->getElement("jpegSegment/exif/tiff/ifd[@name='IFD0']");
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Tiff\Ifd', $ifd0);
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Media\Tiff\Ifd', $ifd0);
 
         $ratingPercent = $ifd0->getElement("tag[@name='RatingPercent']/entry");
         $this->assertInstanceOf('FileEye\MediaProbe\Entry\Core\Short', $ratingPercent);
         $this->assertEquals(78, $ratingPercent->getValue());
 
         $exifIfd = $ifd0->getElement("ifd[@name='ExifIFD']");
-        $this->assertInstanceOf('FileEye\MediaProbe\Block\Tiff\Ifd', $exifIfd);
+        $this->assertInstanceOf('FileEye\MediaProbe\Block\Media\Tiff\Ifd', $exifIfd);
 
         $offsetTime = $exifIfd->getElement("tag[@name='OffsetTime']/entry");
         $this->assertInstanceOf('FileEye\MediaProbe\Entry\Core\Ascii', $offsetTime);

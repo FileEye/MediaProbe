@@ -6,7 +6,7 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Tiff;
+namespace FileEye\MediaProbe\Collection\Media\Tiff;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
@@ -14,9 +14,9 @@ class IfdAny extends CollectionBase {
 
   protected static $map = array (
   'title' => 'A catchall generic IFD definition, used as a fallback to describe tags that are not expected in a specific IFD.',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Tiff\\Ifd',
   'defaultItemCollection' => 'Tiff\\Tag',
-  'id' => 'Tiff\\IfdAny',
+  'id' => 'Media\\Tiff\\IfdAny',
   'itemsByName' =>
   array (
     'A100DataOffset' =>

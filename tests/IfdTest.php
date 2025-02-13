@@ -2,7 +2,8 @@
 
 namespace FileEye\MediaProbe\Test;
 
-use FileEye\MediaProbe\Block\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -17,8 +18,12 @@ class IfdTest extends MediaProbeTestCaseBase
     {
         $tiff_mock = $this->getStubRoot('tiff');
         $ifd = new Ifd(
-            collection: CollectionFactory::get('Tiff\Ifd0'),
-            definition: new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG),
+            ifdEntry: new IfdEntryValueObject(
+                collection: CollectionFactory::get('Media\Tiff\\Ifd0'),
+                dataFormat: DataFormat::LONG,
+                countOfComponents: 1,
+                data: 0,
+            ),
             parent: $tiff_mock,
         );
         $tiff_mock->graftBlock($ifd);

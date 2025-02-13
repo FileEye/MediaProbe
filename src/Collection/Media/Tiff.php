@@ -23,14 +23,14 @@ class Tiff extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Ifd0',
+        'collection' => 'Media\\Tiff\\Ifd0',
       ),
     ),
     1 =>
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Ifd1',
+        'collection' => 'Media\\Tiff\\Ifd1',
       ),
     ),
   ),

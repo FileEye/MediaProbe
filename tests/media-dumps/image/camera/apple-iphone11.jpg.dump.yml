@@ -61,11 +61,11 @@ elements:
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                             validationLevel: OK
                                             name: IFD0
                                             id: '0'
-                                            collection: Tiff\Ifd0
+                                            collection: Media\Tiff\Ifd0
                                             elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
@@ -213,11 +213,11 @@ elements:
                                                             text: Centered
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                                     validationLevel: OK
                                                     name: ExifIFD
                                                     id: '34665'
-                                                    collection: Tiff\IfdExif
+                                                    collection: Media\Tiff\IfdExif
                                                     elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'
@@ -525,11 +525,11 @@ elements:
                                                                     text: 'Within rectangle (width 2002, height 1505) around (x,y) = (2213,1324)'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
-                                                            handlerClass: FileEye\MediaProbe\Block\Exif\Vendor\Apple\MakerNote
+                                                            handlerClass: FileEye\MediaProbe\Block\Maker\Apple\Exif\MakerNote
                                                             validationLevel: OK
                                                             name: Apple
                                                             id: '37500'
-                                                            collection: ExifMakerNotes\Apple\Main
+                                                            collection: Maker\Apple\Exif\MakerNote
                                                             elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/rawData:appleHeader'
@@ -1271,11 +1271,11 @@ elements:
                                                                     text: 'General Composite Image'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                                     validationLevel: OK
                                                     name: GPS
                                                     id: '34853'
-                                                    collection: Tiff\IfdGps
+                                                    collection: Media\Tiff\IfdGps
                                                     elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLatitudeRef:1'
@@ -1487,11 +1487,11 @@ elements:
                                                                     text: '60.2935875943 m'
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
-                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                             validationLevel: OK
                                             name: IFD1
                                             id: '1'
-                                            collection: Tiff\Ifd1
+                                            collection: Media\Tiff\Ifd1
                                             elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1/tag:Compression:259'

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace FileEye\MediaProbe;
 
-use FileEye\MediaProbe\Block\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Collection\CollectionInterface;
@@ -162,10 +163,14 @@ class Media extends RootBlockBase
         $entry = $maker_note_tag->getElement("entry");
         assert($entry instanceof EntryInterface);
 
-        $item_definition = new ItemDefinition($maker_note_collection, $maker_note_tag->getFormat(), $maker_note_tag->getComponents());
-        $ifd = new $ifd_class(
+        $ifdEntry = new IfdEntryValueObject(
             collection: $maker_note_collection,
-            definition: $item_definition,
+            dataFormat: $maker_note_tag->getFormat(),
+            countOfComponents: $maker_note_tag->getComponents(),
+            data: 0,
+        );
+        $ifd = new $ifd_class(
+            ifdEntry: $ifdEntry,
             dataDisplacement: $maker_note_tag->getDefinition()->dataOffset,
             parent: $exif_ifd,
         );

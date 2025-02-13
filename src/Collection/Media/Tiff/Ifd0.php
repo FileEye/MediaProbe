@@ -6,28 +6,28 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Tiff;
+namespace FileEye\MediaProbe\Collection\Media\Tiff;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
-class Ifd1 extends CollectionBase {
+class Ifd0 extends CollectionBase {
 
   protected static $map = array (
-  'name' => 'IFD1',
-  'title' => 'IFD1',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'name' => 'IFD0',
+  'title' => 'IFD0',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tiff\\Tag',
   'alias' =>
   array (
-    0 => '1',
-    1 => 'Thumbnail',
+    0 => '0',
+    1 => 'Main',
   ),
   'postParse' =>
   array (
-    0 => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd::thumbnailToBlock',
+    0 => 'FileEye\\MediaProbe\\Block\\Media\\Tiff\\Ifd::thumbnailToBlock',
   ),
-  'id' => 'Tiff\\Ifd1',
+  'id' => 'Media\\Tiff\\Ifd0',
   'itemsByName' =>
   array (
     'A100DataOffset' =>
@@ -727,920 +727,920 @@ class Ifd1 extends CollectionBase {
   ),
   'itemsByPhpExifTag' =>
   array (
-    'THUMBNAIL::ACDComment' =>
+    'ACDComment' =>
     array (
       0 => 11,
     ),
-    'THUMBNAIL::Artist' =>
+    'Artist' =>
     array (
       0 => 315,
     ),
-    'THUMBNAIL::Author' =>
+    'Author' =>
     array (
       0 => 40093,
     ),
-    'THUMBNAIL::BitsPerSample' =>
+    'BitsPerSample' =>
     array (
       0 => 258,
     ),
-    'THUMBNAIL::Comments' =>
+    'Comments' =>
     array (
       0 => 40092,
     ),
-    'THUMBNAIL::Compression' =>
+    'Compression' =>
     array (
       0 => 259,
     ),
-    'THUMBNAIL::Copyright' =>
+    'Copyright' =>
     array (
       0 => 33432,
     ),
-    'THUMBNAIL::DateTime' =>
+    'DateTime' =>
     array (
       0 => 306,
     ),
-    'THUMBNAIL::DocumentName' =>
+    'DocumentName' =>
     array (
       0 => 269,
     ),
-    'THUMBNAIL::ExtensibleMetadataPlatform' =>
+    'ExtensibleMetadataPlatform' =>
     array (
       0 => 700,
     ),
-    'THUMBNAIL::FillOrder' =>
+    'FillOrder' =>
     array (
       0 => 266,
     ),
-    'THUMBNAIL::GrayResponseUnit' =>
+    'GrayResponseUnit' =>
     array (
       0 => 290,
     ),
-    'THUMBNAIL::HalfToneHints' =>
+    'HalfToneHints' =>
     array (
       0 => 321,
     ),
-    'THUMBNAIL::HostComputer' =>
+    'HostComputer' =>
     array (
       0 => 316,
     ),
-    'THUMBNAIL::IPTC/NAA' =>
+    'IPTC/NAA' =>
     array (
       0 => 33723,
     ),
-    'THUMBNAIL::ImageDescription' =>
+    'ImageDescription' =>
     array (
       0 => 270,
     ),
-    'THUMBNAIL::ImageLength' =>
+    'ImageLength' =>
     array (
       0 => 257,
     ),
-    'THUMBNAIL::ImageSourceData' =>
+    'ImageSourceData' =>
     array (
       0 => 37724,
     ),
-    'THUMBNAIL::ImageWidth' =>
+    'ImageWidth' =>
     array (
       0 => 256,
     ),
-    'THUMBNAIL::InkSet' =>
+    'InkSet' =>
     array (
       0 => 332,
     ),
-    'THUMBNAIL::JPEGInterchangeFormat' =>
+    'JPEGInterchangeFormat' =>
     array (
       0 => 513,
     ),
-    'THUMBNAIL::JPEGInterchangeFormatLength' =>
+    'JPEGInterchangeFormatLength' =>
     array (
       0 => 514,
     ),
-    'THUMBNAIL::Keywords' =>
+    'Keywords' =>
     array (
       0 => 40094,
     ),
-    'THUMBNAIL::Make' =>
+    'Make' =>
     array (
       0 => 271,
     ),
-    'THUMBNAIL::MaxSampleValue' =>
+    'MaxSampleValue' =>
     array (
       0 => 281,
     ),
-    'THUMBNAIL::MinSampleValue' =>
+    'MinSampleValue' =>
     array (
       0 => 280,
     ),
-    'THUMBNAIL::Model' =>
+    'Model' =>
     array (
       0 => 272,
     ),
-    'THUMBNAIL::NewSubFile' =>
+    'NewSubFile' =>
     array (
       0 => 254,
     ),
-    'THUMBNAIL::Orientation' =>
+    'Orientation' =>
     array (
       0 => 274,
     ),
-    'THUMBNAIL::PageName' =>
+    'PageName' =>
     array (
       0 => 285,
     ),
-    'THUMBNAIL::PageNumber' =>
+    'PageNumber' =>
     array (
       0 => 297,
     ),
-    'THUMBNAIL::PhotometricInterpretation' =>
+    'PhotometricInterpretation' =>
     array (
       0 => 262,
     ),
-    'THUMBNAIL::PlanarConfiguration' =>
+    'PlanarConfiguration' =>
     array (
       0 => 284,
     ),
-    'THUMBNAIL::Predictor' =>
+    'Predictor' =>
     array (
       0 => 317,
     ),
-    'THUMBNAIL::PrimaryChromaticities' =>
+    'PrimaryChromaticities' =>
     array (
       0 => 319,
     ),
-    'THUMBNAIL::ReferenceBlackWhite' =>
+    'ReferenceBlackWhite' =>
     array (
       0 => 532,
     ),
-    'THUMBNAIL::ResolutionUnit' =>
+    'ResolutionUnit' =>
     array (
       0 => 296,
     ),
-    'THUMBNAIL::RowsPerStrip' =>
+    'RowsPerStrip' =>
     array (
       0 => 278,
     ),
-    'THUMBNAIL::SamplesPerPixel' =>
+    'SamplesPerPixel' =>
     array (
       0 => 277,
     ),
-    'THUMBNAIL::Software' =>
+    'Software' =>
     array (
       0 => 305,
     ),
-    'THUMBNAIL::StripByteCounts' =>
+    'StripByteCounts' =>
     array (
       0 => 279,
     ),
-    'THUMBNAIL::StripOffsets' =>
+    'StripOffsets' =>
     array (
       0 => 273,
     ),
-    'THUMBNAIL::SubFile' =>
+    'SubFile' =>
     array (
       0 => 255,
     ),
-    'THUMBNAIL::SubIFD' =>
+    'SubIFD' =>
     array (
       0 => 330,
     ),
-    'THUMBNAIL::Subject' =>
+    'Subject' =>
     array (
       0 => 40095,
     ),
-    'THUMBNAIL::TargetPrinter' =>
+    'TargetPrinter' =>
     array (
       0 => 337,
     ),
-    'THUMBNAIL::TileLength' =>
+    'TileLength' =>
     array (
       0 => 323,
     ),
-    'THUMBNAIL::TileWidth' =>
+    'TileWidth' =>
     array (
       0 => 322,
     ),
-    'THUMBNAIL::Title' =>
+    'Title' =>
     array (
       0 => 40091,
     ),
-    'THUMBNAIL::TransferFunction' =>
+    'TransferFunction' =>
     array (
       0 => 301,
     ),
-    'THUMBNAIL::WhitePoint' =>
+    'WhitePoint' =>
     array (
       0 => 318,
     ),
-    'THUMBNAIL::XPosition' =>
+    'XPosition' =>
     array (
       0 => 286,
     ),
-    'THUMBNAIL::XResolution' =>
+    'XResolution' =>
     array (
       0 => 282,
     ),
-    'THUMBNAIL::YCbCrCoefficients' =>
+    'YCbCrCoefficients' =>
     array (
       0 => 529,
     ),
-    'THUMBNAIL::YCbCrPositioning' =>
+    'YCbCrPositioning' =>
     array (
       0 => 531,
     ),
-    'THUMBNAIL::YCbCrSubSampling' =>
+    'YCbCrSubSampling' =>
     array (
       0 => 530,
     ),
-    'THUMBNAIL::YPosition' =>
+    'YPosition' =>
     array (
       0 => 287,
     ),
-    'THUMBNAIL::YResolution' =>
+    'YResolution' =>
     array (
       0 => 283,
     ),
   ),
   'itemsByExiftoolDOMNode' =>
   array (
-    'IFD1:A100DataOffset' =>
+    'IFD0:A100DataOffset' =>
     array (
       0 => 330,
     ),
-    'IFD1:AnalogBalance' =>
+    'IFD0:AnalogBalance' =>
     array (
       0 => 50727,
     ),
-    'IFD1:ApplicationNotes' =>
+    'IFD0:ApplicationNotes' =>
     array (
       0 => 700,
     ),
-    'IFD1:Artist' =>
+    'IFD0:Artist' =>
     array (
       0 => 315,
     ),
-    'IFD1:AsShotICCProfile' =>
+    'IFD0:AsShotICCProfile' =>
     array (
       0 => 50831,
     ),
-    'IFD1:AsShotNeutral' =>
+    'IFD0:AsShotNeutral' =>
     array (
       0 => 50728,
     ),
-    'IFD1:AsShotPreProfileMatrix' =>
+    'IFD0:AsShotPreProfileMatrix' =>
     array (
       0 => 50832,
     ),
-    'IFD1:AsShotProfileName' =>
+    'IFD0:AsShotProfileName' =>
     array (
       0 => 50934,
     ),
-    'IFD1:AsShotWhiteXY' =>
+    'IFD0:AsShotWhiteXY' =>
     array (
       0 => 50729,
     ),
-    'IFD1:BaselineExposure' =>
+    'IFD0:BaselineExposure' =>
     array (
       0 => 50730,
     ),
-    'IFD1:BaselineExposureOffset' =>
+    'IFD0:BaselineExposureOffset' =>
     array (
       0 => 51109,
     ),
-    'IFD1:BaselineNoise' =>
+    'IFD0:BaselineNoise' =>
     array (
       0 => 50731,
     ),
-    'IFD1:BaselineSharpness' =>
+    'IFD0:BaselineSharpness' =>
     array (
       0 => 50732,
     ),
-    'IFD1:BitsPerSample' =>
+    'IFD0:BitsPerSample' =>
     array (
       0 => 258,
     ),
-    'IFD1:CalibrationIlluminant1' =>
+    'IFD0:CalibrationIlluminant1' =>
     array (
       0 => 50778,
     ),
-    'IFD1:CalibrationIlluminant2' =>
+    'IFD0:CalibrationIlluminant2' =>
     array (
       0 => 50779,
     ),
-    'IFD1:CalibrationIlluminant3' =>
+    'IFD0:CalibrationIlluminant3' =>
     array (
       0 => 52529,
     ),
-    'IFD1:CameraCalibration1' =>
+    'IFD0:CameraCalibration1' =>
     array (
       0 => 50723,
     ),
-    'IFD1:CameraCalibration2' =>
+    'IFD0:CameraCalibration2' =>
     array (
       0 => 50724,
     ),
-    'IFD1:CameraCalibration3' =>
+    'IFD0:CameraCalibration3' =>
     array (
       0 => 52530,
     ),
-    'IFD1:CameraCalibrationSig' =>
+    'IFD0:CameraCalibrationSig' =>
     array (
       0 => 50931,
     ),
-    'IFD1:CameraLabel' =>
+    'IFD0:CameraLabel' =>
     array (
       0 => 51105,
     ),
-    'IFD1:CameraSerialNumber' =>
+    'IFD0:CameraSerialNumber' =>
     array (
       0 => 50735,
     ),
-    'IFD1:CellLength' =>
+    'IFD0:CellLength' =>
     array (
       0 => 265,
     ),
-    'IFD1:CellWidth' =>
+    'IFD0:CellWidth' =>
     array (
       0 => 264,
     ),
-    'IFD1:ColorMatrix1' =>
+    'IFD0:ColorMatrix1' =>
     array (
       0 => 50721,
     ),
-    'IFD1:ColorMatrix2' =>
+    'IFD0:ColorMatrix2' =>
     array (
       0 => 50722,
     ),
-    'IFD1:ColorMatrix3' =>
+    'IFD0:ColorMatrix3' =>
     array (
       0 => 52531,
     ),
-    'IFD1:ColorimetricReference' =>
+    'IFD0:ColorimetricReference' =>
     array (
       0 => 50879,
     ),
-    'IFD1:Compression' =>
+    'IFD0:Compression' =>
     array (
       0 => 259,
     ),
-    'IFD1:Copyright' =>
+    'IFD0:Copyright' =>
     array (
       0 => 33432,
     ),
-    'IFD1:CurrentICCProfile' =>
+    'IFD0:CurrentICCProfile' =>
     array (
       0 => 50833,
     ),
-    'IFD1:CurrentPreProfileMatrix' =>
+    'IFD0:CurrentPreProfileMatrix' =>
     array (
       0 => 50834,
     ),
-    'IFD1:DNGAdobeData' =>
+    'IFD0:DNGAdobeData' =>
     array (
       0 => 50740,
     ),
-    'IFD1:DNGBackwardVersion' =>
+    'IFD0:DNGBackwardVersion' =>
     array (
       0 => 50707,
     ),
-    'IFD1:DNGLensInfo' =>
+    'IFD0:DNGLensInfo' =>
     array (
       0 => 50736,
     ),
-    'IFD1:DNGPrivateData' =>
+    'IFD0:DNGPrivateData' =>
     array (
       0 => 50740,
     ),
-    'IFD1:DNGVersion' =>
+    'IFD0:DNGVersion' =>
     array (
       0 => 50706,
     ),
-    'IFD1:DefaultBlackRender' =>
+    'IFD0:DefaultBlackRender' =>
     array (
       0 => 51110,
     ),
-    'IFD1:DepthFar' =>
+    'IFD0:DepthFar' =>
     array (
       0 => 51179,
     ),
-    'IFD1:DepthFormat' =>
+    'IFD0:DepthFormat' =>
     array (
       0 => 51177,
     ),
-    'IFD1:DepthMeasureType' =>
+    'IFD0:DepthMeasureType' =>
     array (
       0 => 51181,
     ),
-    'IFD1:DepthNear' =>
+    'IFD0:DepthNear' =>
     array (
       0 => 51178,
     ),
-    'IFD1:DepthUnits' =>
+    'IFD0:DepthUnits' =>
     array (
       0 => 51180,
     ),
-    'IFD1:DocumentName' =>
+    'IFD0:DocumentName' =>
     array (
       0 => 269,
     ),
-    'IFD1:EnhanceParams' =>
+    'IFD0:EnhanceParams' =>
     array (
       0 => 51182,
     ),
-    'IFD1:FillOrder' =>
+    'IFD0:FillOrder' =>
     array (
       0 => 266,
     ),
-    'IFD1:ForwardMatrix1' =>
+    'IFD0:ForwardMatrix1' =>
     array (
       0 => 50964,
     ),
-    'IFD1:ForwardMatrix2' =>
+    'IFD0:ForwardMatrix2' =>
     array (
       0 => 50965,
     ),
-    'IFD1:ForwardMatrix3' =>
+    'IFD0:ForwardMatrix3' =>
     array (
       0 => 52532,
     ),
-    'IFD1:FrameRate' =>
+    'IFD0:FrameRate' =>
     array (
       0 => 51044,
     ),
-    'IFD1:GDALMetadata' =>
+    'IFD0:GDALMetadata' =>
     array (
       0 => 42112,
     ),
-    'IFD1:GDALNoData' =>
+    'IFD0:GDALNoData' =>
     array (
       0 => 42113,
     ),
-    'IFD1:GeoTiffAsciiParams' =>
+    'IFD0:GeoTiffAsciiParams' =>
     array (
       0 => 34737,
     ),
-    'IFD1:GeoTiffDirectory' =>
+    'IFD0:GeoTiffDirectory' =>
     array (
       0 => 34735,
     ),
-    'IFD1:GeoTiffDoubleParams' =>
+    'IFD0:GeoTiffDoubleParams' =>
     array (
       0 => 34736,
     ),
-    'IFD1:GrayResponseUnit' =>
+    'IFD0:GrayResponseUnit' =>
     array (
       0 => 290,
     ),
-    'IFD1:HalftoneHints' =>
+    'IFD0:HalftoneHints' =>
     array (
       0 => 321,
     ),
-    'IFD1:HostComputer' =>
+    'IFD0:HostComputer' =>
     array (
       0 => 316,
     ),
-    'IFD1:IPTC-NAA' =>
+    'IFD0:IPTC-NAA' =>
     array (
       0 => 33723,
     ),
-    'IFD1:IlluminantData1' =>
+    'IFD0:IlluminantData1' =>
     array (
       0 => 52533,
     ),
-    'IFD1:IlluminantData2' =>
+    'IFD0:IlluminantData2' =>
     array (
       0 => 52534,
     ),
-    'IFD1:IlluminantData3' =>
+    'IFD0:IlluminantData3' =>
     array (
       0 => 52535,
     ),
-    'IFD1:ImageDescription' =>
+    'IFD0:ImageDescription' =>
     array (
       0 => 270,
     ),
-    'IFD1:ImageHeight' =>
+    'IFD0:ImageHeight' =>
     array (
       0 => 257,
     ),
-    'IFD1:ImageSequenceInfo' =>
+    'IFD0:ImageSequenceInfo' =>
     array (
       0 => 52548,
     ),
-    'IFD1:ImageSourceData' =>
+    'IFD0:ImageSourceData' =>
     array (
       0 => 37724,
     ),
-    'IFD1:ImageStats' =>
+    'IFD0:ImageStats' =>
     array (
       0 => 52550,
     ),
-    'IFD1:ImageWidth' =>
+    'IFD0:ImageWidth' =>
     array (
       0 => 256,
     ),
-    'IFD1:InkSet' =>
+    'IFD0:InkSet' =>
     array (
       0 => 332,
     ),
-    'IFD1:IntergraphMatrix' =>
+    'IFD0:IntergraphMatrix' =>
     array (
       0 => 33920,
     ),
-    'IFD1:JXLDecodeSpeed' =>
+    'IFD0:JXLDecodeSpeed' =>
     array (
       0 => 52555,
     ),
-    'IFD1:JXLDistance' =>
+    'IFD0:JXLDistance' =>
     array (
       0 => 52553,
     ),
-    'IFD1:JXLEffort' =>
+    'IFD0:JXLEffort' =>
     array (
       0 => 52554,
     ),
-    'IFD1:LinearResponseLimit' =>
+    'IFD0:LinearResponseLimit' =>
     array (
       0 => 50734,
     ),
-    'IFD1:LocalizedCameraModel' =>
+    'IFD0:LocalizedCameraModel' =>
     array (
       0 => 50709,
     ),
-    'IFD1:Make' =>
+    'IFD0:Make' =>
     array (
       0 => 271,
     ),
-    'IFD1:MakerNoteSafety' =>
+    'IFD0:MakerNoteSafety' =>
     array (
       0 => 50741,
     ),
-    'IFD1:MaxSampleValue' =>
+    'IFD0:MaxSampleValue' =>
     array (
       0 => 281,
     ),
-    'IFD1:MinSampleValue' =>
+    'IFD0:MinSampleValue' =>
     array (
       0 => 280,
     ),
-    'IFD1:Model' =>
+    'IFD0:Model' =>
     array (
       0 => 272,
     ),
-    'IFD1:ModelTiePoint' =>
+    'IFD0:ModelTiePoint' =>
     array (
       0 => 33922,
     ),
-    'IFD1:ModelTransform' =>
+    'IFD0:ModelTransform' =>
     array (
       0 => 34264,
     ),
-    'IFD1:ModifyDate' =>
+    'IFD0:ModifyDate' =>
     array (
       0 => 306,
     ),
-    'IFD1:NewRawImageDigest' =>
+    'IFD0:NewRawImageDigest' =>
     array (
       0 => 51111,
     ),
-    'IFD1:OldSubfileType' =>
+    'IFD0:OldSubfileType' =>
     array (
       0 => 255,
     ),
-    'IFD1:Orientation' =>
+    'IFD0:Orientation' =>
     array (
       0 => 274,
     ),
-    'IFD1:OriginalBestQualitySize' =>
+    'IFD0:OriginalBestQualitySize' =>
     array (
       0 => 51090,
     ),
-    'IFD1:OriginalDefaultCropSize' =>
+    'IFD0:OriginalDefaultCropSize' =>
     array (
       0 => 51091,
     ),
-    'IFD1:OriginalDefaultFinalSize' =>
+    'IFD0:OriginalDefaultFinalSize' =>
     array (
       0 => 51089,
     ),
-    'IFD1:OriginalRawFileData' =>
+    'IFD0:OriginalRawFileData' =>
     array (
       0 => 50828,
     ),
-    'IFD1:OriginalRawFileDigest' =>
+    'IFD0:OriginalRawFileDigest' =>
     array (
       0 => 50973,
     ),
-    'IFD1:OriginalRawFileName' =>
+    'IFD0:OriginalRawFileName' =>
     array (
       0 => 50827,
     ),
-    'IFD1:PageName' =>
+    'IFD0:PageName' =>
     array (
       0 => 285,
     ),
-    'IFD1:PageNumber' =>
+    'IFD0:PageNumber' =>
     array (
       0 => 297,
     ),
-    'IFD1:PanasonicTitle' =>
+    'IFD0:PanasonicTitle' =>
     array (
       0 => 50898,
     ),
-    'IFD1:PanasonicTitle2' =>
+    'IFD0:PanasonicTitle2' =>
     array (
       0 => 50899,
     ),
-    'IFD1:PhotometricInterpretation' =>
+    'IFD0:PhotometricInterpretation' =>
     array (
       0 => 262,
     ),
-    'IFD1:PixelScale' =>
+    'IFD0:PixelScale' =>
     array (
       0 => 33550,
     ),
-    'IFD1:PlanarConfiguration' =>
+    'IFD0:PlanarConfiguration' =>
     array (
       0 => 284,
     ),
-    'IFD1:Predictor' =>
+    'IFD0:Predictor' =>
     array (
       0 => 317,
     ),
-    'IFD1:PreviewApplicationName' =>
+    'IFD0:PreviewApplicationName' =>
     array (
       0 => 50966,
     ),
-    'IFD1:PreviewApplicationVersion' =>
+    'IFD0:PreviewApplicationVersion' =>
     array (
       0 => 50967,
     ),
-    'IFD1:PreviewColorSpace' =>
+    'IFD0:PreviewColorSpace' =>
     array (
       0 => 50970,
     ),
-    'IFD1:PreviewDateTime' =>
+    'IFD0:PreviewDateTime' =>
     array (
       0 => 50971,
     ),
-    'IFD1:PreviewImageLength' =>
+    'IFD0:PreviewImageLength' =>
     array (
       0 => 279,
       1 => 514,
     ),
-    'IFD1:PreviewImageStart' =>
+    'IFD0:PreviewImageStart' =>
     array (
       0 => 273,
       1 => 513,
     ),
-    'IFD1:PreviewSettingsDigest' =>
+    'IFD0:PreviewSettingsDigest' =>
     array (
       0 => 50969,
     ),
-    'IFD1:PreviewSettingsName' =>
+    'IFD0:PreviewSettingsName' =>
     array (
       0 => 50968,
     ),
-    'IFD1:PrimaryChromaticities' =>
+    'IFD0:PrimaryChromaticities' =>
     array (
       0 => 319,
     ),
-    'IFD1:ProcessingSoftware' =>
+    'IFD0:ProcessingSoftware' =>
     array (
       0 => 11,
     ),
-    'IFD1:ProfileCalibrationSig' =>
+    'IFD0:ProfileCalibrationSig' =>
     array (
       0 => 50932,
     ),
-    'IFD1:ProfileCopyright' =>
+    'IFD0:ProfileCopyright' =>
     array (
       0 => 50942,
     ),
-    'IFD1:ProfileDynamicRange' =>
+    'IFD0:ProfileDynamicRange' =>
     array (
       0 => 52551,
     ),
-    'IFD1:ProfileEmbedPolicy' =>
+    'IFD0:ProfileEmbedPolicy' =>
     array (
       0 => 50941,
     ),
-    'IFD1:ProfileGainTableMap2' =>
+    'IFD0:ProfileGainTableMap2' =>
     array (
       0 => 52544,
     ),
-    'IFD1:ProfileGroupName' =>
+    'IFD0:ProfileGroupName' =>
     array (
       0 => 52552,
     ),
-    'IFD1:ProfileHueSatMapData1' =>
+    'IFD0:ProfileHueSatMapData1' =>
     array (
       0 => 50938,
     ),
-    'IFD1:ProfileHueSatMapData2' =>
+    'IFD0:ProfileHueSatMapData2' =>
     array (
       0 => 50939,
     ),
-    'IFD1:ProfileHueSatMapData3' =>
+    'IFD0:ProfileHueSatMapData3' =>
     array (
       0 => 52537,
     ),
-    'IFD1:ProfileHueSatMapDims' =>
+    'IFD0:ProfileHueSatMapDims' =>
     array (
       0 => 50937,
     ),
-    'IFD1:ProfileHueSatMapEncoding' =>
+    'IFD0:ProfileHueSatMapEncoding' =>
     array (
       0 => 51107,
     ),
-    'IFD1:ProfileLookTableData' =>
+    'IFD0:ProfileLookTableData' =>
     array (
       0 => 50982,
     ),
-    'IFD1:ProfileLookTableDims' =>
+    'IFD0:ProfileLookTableDims' =>
     array (
       0 => 50981,
     ),
-    'IFD1:ProfileLookTableEncoding' =>
+    'IFD0:ProfileLookTableEncoding' =>
     array (
       0 => 51108,
     ),
-    'IFD1:ProfileName' =>
+    'IFD0:ProfileName' =>
     array (
       0 => 50936,
     ),
-    'IFD1:ProfileToneCurve' =>
+    'IFD0:ProfileToneCurve' =>
     array (
       0 => 50940,
     ),
-    'IFD1:RGBTables' =>
+    'IFD0:RGBTables' =>
     array (
       0 => 52543,
     ),
-    'IFD1:Rating' =>
+    'IFD0:Rating' =>
     array (
       0 => 18246,
     ),
-    'IFD1:RatingPercent' =>
+    'IFD0:RatingPercent' =>
     array (
       0 => 18249,
     ),
-    'IFD1:RawDataUniqueID' =>
+    'IFD0:RawDataUniqueID' =>
     array (
       0 => 50781,
     ),
-    'IFD1:RawImageDigest' =>
+    'IFD0:RawImageDigest' =>
     array (
       0 => 50972,
     ),
-    'IFD1:RawToPreviewGain' =>
+    'IFD0:RawToPreviewGain' =>
     array (
       0 => 51112,
     ),
-    'IFD1:ReductionMatrix1' =>
+    'IFD0:ReductionMatrix1' =>
     array (
       0 => 50725,
     ),
-    'IFD1:ReductionMatrix2' =>
+    'IFD0:ReductionMatrix2' =>
     array (
       0 => 50726,
     ),
-    'IFD1:ReductionMatrix3' =>
+    'IFD0:ReductionMatrix3' =>
     array (
       0 => 52538,
     ),
-    'IFD1:ReelName' =>
+    'IFD0:ReelName' =>
     array (
       0 => 51081,
     ),
-    'IFD1:ReferenceBlackWhite' =>
+    'IFD0:ReferenceBlackWhite' =>
     array (
       0 => 532,
     ),
-    'IFD1:ResolutionUnit' =>
+    'IFD0:ResolutionUnit' =>
     array (
       0 => 296,
     ),
-    'IFD1:RowsPerStrip' =>
+    'IFD0:RowsPerStrip' =>
     array (
       0 => 278,
     ),
-    'IFD1:SEAL' =>
+    'IFD0:SEAL' =>
     array (
       0 => 52897,
     ),
-    'IFD1:SEMInfo' =>
+    'IFD0:SEMInfo' =>
     array (
       0 => 34118,
     ),
-    'IFD1:SRawType' =>
+    'IFD0:SRawType' =>
     array (
       0 => 50885,
     ),
-    'IFD1:SamplesPerPixel' =>
+    'IFD0:SamplesPerPixel' =>
     array (
       0 => 277,
     ),
-    'IFD1:ShadowScale' =>
+    'IFD0:ShadowScale' =>
     array (
       0 => 50739,
     ),
-    'IFD1:Software' =>
+    'IFD0:Software' =>
     array (
       0 => 305,
     ),
-    'IFD1:SubfileType' =>
+    'IFD0:SubfileType' =>
     array (
       0 => 254,
     ),
-    'IFD1:TStop' =>
+    'IFD0:TStop' =>
     array (
       0 => 51058,
     ),
-    'IFD1:TargetPrinter' =>
+    'IFD0:TargetPrinter' =>
     array (
       0 => 337,
     ),
-    'IFD1:Thresholding' =>
+    'IFD0:Thresholding' =>
     array (
       0 => 263,
     ),
-    'IFD1:ThumbnailLength' =>
+    'IFD0:ThumbnailLength' =>
     array (
       0 => 514,
     ),
-    'IFD1:ThumbnailOffset' =>
+    'IFD0:ThumbnailOffset' =>
     array (
       0 => 513,
     ),
-    'IFD1:TileLength' =>
+    'IFD0:TileLength' =>
     array (
       0 => 323,
     ),
-    'IFD1:TileWidth' =>
+    'IFD0:TileWidth' =>
     array (
       0 => 322,
     ),
-    'IFD1:TimeCodes' =>
+    'IFD0:TimeCodes' =>
     array (
       0 => 51043,
     ),
-    'IFD1:TransferFunction' =>
+    'IFD0:TransferFunction' =>
     array (
       0 => 301,
     ),
-    'IFD1:UniqueCameraModel' =>
+    'IFD0:UniqueCameraModel' =>
     array (
       0 => 50708,
     ),
-    'IFD1:WhitePoint' =>
+    'IFD0:WhitePoint' =>
     array (
       0 => 318,
     ),
-    'IFD1:XPAuthor' =>
+    'IFD0:XPAuthor' =>
     array (
       0 => 40093,
     ),
-    'IFD1:XPComment' =>
+    'IFD0:XPComment' =>
     array (
       0 => 40092,
     ),
-    'IFD1:XPKeywords' =>
+    'IFD0:XPKeywords' =>
     array (
       0 => 40094,
     ),
-    'IFD1:XPSubject' =>
+    'IFD0:XPSubject' =>
     array (
       0 => 40095,
     ),
-    'IFD1:XPTitle' =>
+    'IFD0:XPTitle' =>
     array (
       0 => 40091,
     ),
-    'IFD1:XPosition' =>
+    'IFD0:XPosition' =>
     array (
       0 => 286,
     ),
-    'IFD1:XResolution' =>
+    'IFD0:XResolution' =>
     array (
       0 => 282,
     ),
-    'IFD1:YCbCrCoefficients' =>
+    'IFD0:YCbCrCoefficients' =>
     array (
       0 => 529,
     ),
-    'IFD1:YCbCrPositioning' =>
+    'IFD0:YCbCrPositioning' =>
     array (
       0 => 531,
     ),
-    'IFD1:YCbCrSubSampling' =>
+    'IFD0:YCbCrSubSampling' =>
     array (
       0 => 530,
     ),
-    'IFD1:YPosition' =>
+    'IFD0:YPosition' =>
     array (
       0 => 287,
     ),
-    'IFD1:YResolution' =>
+    'IFD0:YResolution' =>
     array (
       0 => 283,
     ),
@@ -1658,8 +1658,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::ACDComment',
-        'exiftoolDOMNode' => 'IFD1:ProcessingSoftware',
+        'phpExifTag' => 'ACDComment',
+        'exiftoolDOMNode' => 'IFD0:ProcessingSoftware',
       ),
     ),
     254 =>
@@ -1698,8 +1698,8 @@ class Ifd1 extends CollectionBase {
             'Bit4' => 'TIFF-FX mixed raster content',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::NewSubFile',
-        'exiftoolDOMNode' => 'IFD1:SubfileType',
+        'phpExifTag' => 'NewSubFile',
+        'exiftoolDOMNode' => 'IFD0:SubfileType',
       ),
     ),
     255 =>
@@ -1722,8 +1722,8 @@ class Ifd1 extends CollectionBase {
             3 => 'Single page of multi-page image',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::SubFile',
-        'exiftoolDOMNode' => 'IFD1:OldSubfileType',
+        'phpExifTag' => 'SubFile',
+        'exiftoolDOMNode' => 'IFD0:OldSubfileType',
       ),
     ),
     256 =>
@@ -1739,8 +1739,8 @@ class Ifd1 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'ImageWidth',
         'title' => 'Image Width',
-        'phpExifTag' => 'THUMBNAIL::ImageWidth',
-        'exiftoolDOMNode' => 'IFD1:ImageWidth',
+        'phpExifTag' => 'ImageWidth',
+        'exiftoolDOMNode' => 'IFD0:ImageWidth',
       ),
     ),
     257 =>
@@ -1756,8 +1756,8 @@ class Ifd1 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'ImageHeight',
         'title' => 'Image Height',
-        'phpExifTag' => 'THUMBNAIL::ImageLength',
-        'exiftoolDOMNode' => 'IFD1:ImageHeight',
+        'phpExifTag' => 'ImageLength',
+        'exiftoolDOMNode' => 'IFD0:ImageHeight',
       ),
     ),
     258 =>
@@ -1771,8 +1771,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::BitsPerSample',
-        'exiftoolDOMNode' => 'IFD1:BitsPerSample',
+        'phpExifTag' => 'BitsPerSample',
+        'exiftoolDOMNode' => 'IFD0:BitsPerSample',
       ),
     ),
     259 =>
@@ -1844,8 +1844,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::Compression',
-        'exiftoolDOMNode' => 'IFD1:Compression',
+        'phpExifTag' => 'Compression',
+        'exiftoolDOMNode' => 'IFD0:Compression',
       ),
     ),
     262 =>
@@ -1883,8 +1883,8 @@ class Ifd1 extends CollectionBase {
             52527 => 'Semantic Mask',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::PhotometricInterpretation',
-        'exiftoolDOMNode' => 'IFD1:PhotometricInterpretation',
+        'phpExifTag' => 'PhotometricInterpretation',
+        'exiftoolDOMNode' => 'IFD0:PhotometricInterpretation',
       ),
     ),
     263 =>
@@ -1907,7 +1907,7 @@ class Ifd1 extends CollectionBase {
             3 => 'Randomized dither',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:Thresholding',
+        'exiftoolDOMNode' => 'IFD0:Thresholding',
       ),
     ),
     264 =>
@@ -1921,7 +1921,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'exiftoolDOMNode' => 'IFD1:CellWidth',
+        'exiftoolDOMNode' => 'IFD0:CellWidth',
       ),
     ),
     265 =>
@@ -1935,7 +1935,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'exiftoolDOMNode' => 'IFD1:CellLength',
+        'exiftoolDOMNode' => 'IFD0:CellLength',
       ),
     ),
     266 =>
@@ -1957,8 +1957,8 @@ class Ifd1 extends CollectionBase {
             2 => 'Reversed',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::FillOrder',
-        'exiftoolDOMNode' => 'IFD1:FillOrder',
+        'phpExifTag' => 'FillOrder',
+        'exiftoolDOMNode' => 'IFD0:FillOrder',
       ),
     ),
     269 =>
@@ -1972,8 +1972,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::DocumentName',
-        'exiftoolDOMNode' => 'IFD1:DocumentName',
+        'phpExifTag' => 'DocumentName',
+        'exiftoolDOMNode' => 'IFD0:DocumentName',
       ),
     ),
     270 =>
@@ -1987,8 +1987,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::ImageDescription',
-        'exiftoolDOMNode' => 'IFD1:ImageDescription',
+        'phpExifTag' => 'ImageDescription',
+        'exiftoolDOMNode' => 'IFD0:ImageDescription',
       ),
     ),
     271 =>
@@ -2002,8 +2002,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::Make',
-        'exiftoolDOMNode' => 'IFD1:Make',
+        'phpExifTag' => 'Make',
+        'exiftoolDOMNode' => 'IFD0:Make',
       ),
     ),
     272 =>
@@ -2017,8 +2017,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::Model',
-        'exiftoolDOMNode' => 'IFD1:Model',
+        'phpExifTag' => 'Model',
+        'exiftoolDOMNode' => 'IFD0:Model',
       ),
     ),
     273 =>
@@ -2033,8 +2033,8 @@ class Ifd1 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'PreviewImageStart',
         'title' => 'Preview Image Start',
-        'phpExifTag' => 'THUMBNAIL::StripOffsets',
-        'exiftoolDOMNode' => 'IFD1:PreviewImageStart',
+        'phpExifTag' => 'StripOffsets',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageStart',
       ),
       1 =>
       array (
@@ -2046,8 +2046,8 @@ class Ifd1 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'PreviewImageStart',
         'title' => 'Preview Image Start',
-        'phpExifTag' => 'THUMBNAIL::StripOffsets',
-        'exiftoolDOMNode' => 'IFD1:PreviewImageStart',
+        'phpExifTag' => 'StripOffsets',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageStart',
       ),
     ),
     274 =>
@@ -2076,8 +2076,8 @@ class Ifd1 extends CollectionBase {
             8 => 'Rotate 270 CW',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::Orientation',
-        'exiftoolDOMNode' => 'IFD1:Orientation',
+        'phpExifTag' => 'Orientation',
+        'exiftoolDOMNode' => 'IFD0:Orientation',
       ),
     ),
     277 =>
@@ -2092,8 +2092,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::SamplesPerPixel',
-        'exiftoolDOMNode' => 'IFD1:SamplesPerPixel',
+        'phpExifTag' => 'SamplesPerPixel',
+        'exiftoolDOMNode' => 'IFD0:SamplesPerPixel',
       ),
     ),
     278 =>
@@ -2109,8 +2109,8 @@ class Ifd1 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'RowsPerStrip',
         'title' => 'Rows Per Strip',
-        'phpExifTag' => 'THUMBNAIL::RowsPerStrip',
-        'exiftoolDOMNode' => 'IFD1:RowsPerStrip',
+        'phpExifTag' => 'RowsPerStrip',
+        'exiftoolDOMNode' => 'IFD0:RowsPerStrip',
       ),
     ),
     279 =>
@@ -2125,8 +2125,8 @@ class Ifd1 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'PreviewImageLength',
         'title' => 'Preview Image Length',
-        'phpExifTag' => 'THUMBNAIL::StripByteCounts',
-        'exiftoolDOMNode' => 'IFD1:PreviewImageLength',
+        'phpExifTag' => 'StripByteCounts',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageLength',
       ),
       1 =>
       array (
@@ -2138,8 +2138,8 @@ class Ifd1 extends CollectionBase {
         'collection' => 'Tiff\\Tag',
         'name' => 'PreviewImageLength',
         'title' => 'Preview Image Length',
-        'phpExifTag' => 'THUMBNAIL::StripByteCounts',
-        'exiftoolDOMNode' => 'IFD1:PreviewImageLength',
+        'phpExifTag' => 'StripByteCounts',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageLength',
       ),
     ),
     280 =>
@@ -2153,8 +2153,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::MinSampleValue',
-        'exiftoolDOMNode' => 'IFD1:MinSampleValue',
+        'phpExifTag' => 'MinSampleValue',
+        'exiftoolDOMNode' => 'IFD0:MinSampleValue',
       ),
     ),
     281 =>
@@ -2168,8 +2168,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::MaxSampleValue',
-        'exiftoolDOMNode' => 'IFD1:MaxSampleValue',
+        'phpExifTag' => 'MaxSampleValue',
+        'exiftoolDOMNode' => 'IFD0:MaxSampleValue',
       ),
     ),
     282 =>
@@ -2184,8 +2184,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::XResolution',
-        'exiftoolDOMNode' => 'IFD1:XResolution',
+        'phpExifTag' => 'XResolution',
+        'exiftoolDOMNode' => 'IFD0:XResolution',
       ),
     ),
     283 =>
@@ -2200,8 +2200,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::YResolution',
-        'exiftoolDOMNode' => 'IFD1:YResolution',
+        'phpExifTag' => 'YResolution',
+        'exiftoolDOMNode' => 'IFD0:YResolution',
       ),
     ),
     284 =>
@@ -2224,8 +2224,8 @@ class Ifd1 extends CollectionBase {
             2 => 'Planar',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::PlanarConfiguration',
-        'exiftoolDOMNode' => 'IFD1:PlanarConfiguration',
+        'phpExifTag' => 'PlanarConfiguration',
+        'exiftoolDOMNode' => 'IFD0:PlanarConfiguration',
       ),
     ),
     285 =>
@@ -2239,8 +2239,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::PageName',
-        'exiftoolDOMNode' => 'IFD1:PageName',
+        'phpExifTag' => 'PageName',
+        'exiftoolDOMNode' => 'IFD0:PageName',
       ),
     ),
     286 =>
@@ -2254,8 +2254,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::XPosition',
-        'exiftoolDOMNode' => 'IFD1:XPosition',
+        'phpExifTag' => 'XPosition',
+        'exiftoolDOMNode' => 'IFD0:XPosition',
       ),
     ),
     287 =>
@@ -2269,8 +2269,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::YPosition',
-        'exiftoolDOMNode' => 'IFD1:YPosition',
+        'phpExifTag' => 'YPosition',
+        'exiftoolDOMNode' => 'IFD0:YPosition',
       ),
     ),
     290 =>
@@ -2295,8 +2295,8 @@ class Ifd1 extends CollectionBase {
             5 => '1e-06',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::GrayResponseUnit',
-        'exiftoolDOMNode' => 'IFD1:GrayResponseUnit',
+        'phpExifTag' => 'GrayResponseUnit',
+        'exiftoolDOMNode' => 'IFD0:GrayResponseUnit',
       ),
     ),
     296 =>
@@ -2320,8 +2320,8 @@ class Ifd1 extends CollectionBase {
             3 => 'cm',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::ResolutionUnit',
-        'exiftoolDOMNode' => 'IFD1:ResolutionUnit',
+        'phpExifTag' => 'ResolutionUnit',
+        'exiftoolDOMNode' => 'IFD0:ResolutionUnit',
       ),
     ),
     297 =>
@@ -2336,8 +2336,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::PageNumber',
-        'exiftoolDOMNode' => 'IFD1:PageNumber',
+        'phpExifTag' => 'PageNumber',
+        'exiftoolDOMNode' => 'IFD0:PageNumber',
       ),
     ),
     301 =>
@@ -2352,8 +2352,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::TransferFunction',
-        'exiftoolDOMNode' => 'IFD1:TransferFunction',
+        'phpExifTag' => 'TransferFunction',
+        'exiftoolDOMNode' => 'IFD0:TransferFunction',
       ),
     ),
     305 =>
@@ -2367,8 +2367,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::Software',
-        'exiftoolDOMNode' => 'IFD1:Software',
+        'phpExifTag' => 'Software',
+        'exiftoolDOMNode' => 'IFD0:Software',
       ),
     ),
     306 =>
@@ -2384,8 +2384,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::DateTime',
-        'exiftoolDOMNode' => 'IFD1:ModifyDate',
+        'phpExifTag' => 'DateTime',
+        'exiftoolDOMNode' => 'IFD0:ModifyDate',
       ),
     ),
     315 =>
@@ -2399,8 +2399,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::Artist',
-        'exiftoolDOMNode' => 'IFD1:Artist',
+        'phpExifTag' => 'Artist',
+        'exiftoolDOMNode' => 'IFD0:Artist',
       ),
     ),
     316 =>
@@ -2414,8 +2414,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::HostComputer',
-        'exiftoolDOMNode' => 'IFD1:HostComputer',
+        'phpExifTag' => 'HostComputer',
+        'exiftoolDOMNode' => 'IFD0:HostComputer',
       ),
     ),
     317 =>
@@ -2443,8 +2443,8 @@ class Ifd1 extends CollectionBase {
             34895 => 'Floating point X4',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::Predictor',
-        'exiftoolDOMNode' => 'IFD1:Predictor',
+        'phpExifTag' => 'Predictor',
+        'exiftoolDOMNode' => 'IFD0:Predictor',
       ),
     ),
     318 =>
@@ -2459,8 +2459,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::WhitePoint',
-        'exiftoolDOMNode' => 'IFD1:WhitePoint',
+        'phpExifTag' => 'WhitePoint',
+        'exiftoolDOMNode' => 'IFD0:WhitePoint',
       ),
     ),
     319 =>
@@ -2475,8 +2475,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::PrimaryChromaticities',
-        'exiftoolDOMNode' => 'IFD1:PrimaryChromaticities',
+        'phpExifTag' => 'PrimaryChromaticities',
+        'exiftoolDOMNode' => 'IFD0:PrimaryChromaticities',
       ),
     ),
     321 =>
@@ -2491,8 +2491,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'phpExifTag' => 'THUMBNAIL::HalfToneHints',
-        'exiftoolDOMNode' => 'IFD1:HalftoneHints',
+        'phpExifTag' => 'HalfToneHints',
+        'exiftoolDOMNode' => 'IFD0:HalftoneHints',
       ),
     ),
     322 =>
@@ -2506,8 +2506,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'phpExifTag' => 'THUMBNAIL::TileWidth',
-        'exiftoolDOMNode' => 'IFD1:TileWidth',
+        'phpExifTag' => 'TileWidth',
+        'exiftoolDOMNode' => 'IFD0:TileWidth',
       ),
     ),
     323 =>
@@ -2521,8 +2521,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'phpExifTag' => 'THUMBNAIL::TileLength',
-        'exiftoolDOMNode' => 'IFD1:TileLength',
+        'phpExifTag' => 'TileLength',
+        'exiftoolDOMNode' => 'IFD0:TileLength',
       ),
     ),
     330 =>
@@ -2536,8 +2536,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'phpExifTag' => 'THUMBNAIL::SubIFD',
-        'exiftoolDOMNode' => 'IFD1:A100DataOffset',
+        'phpExifTag' => 'SubIFD',
+        'exiftoolDOMNode' => 'IFD0:A100DataOffset',
       ),
     ),
     332 =>
@@ -2559,8 +2559,8 @@ class Ifd1 extends CollectionBase {
             2 => 'Not CMYK',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::InkSet',
-        'exiftoolDOMNode' => 'IFD1:InkSet',
+        'phpExifTag' => 'InkSet',
+        'exiftoolDOMNode' => 'IFD0:InkSet',
       ),
     ),
     337 =>
@@ -2574,8 +2574,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::TargetPrinter',
-        'exiftoolDOMNode' => 'IFD1:TargetPrinter',
+        'phpExifTag' => 'TargetPrinter',
+        'exiftoolDOMNode' => 'IFD0:TargetPrinter',
       ),
     ),
     513 =>
@@ -2590,23 +2590,10 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'phpExifTag' => 'THUMBNAIL::JPEGInterchangeFormat',
-        'exiftoolDOMNode' => 'IFD1:ThumbnailOffset',
+        'phpExifTag' => 'JPEGInterchangeFormat',
+        'exiftoolDOMNode' => 'IFD0:ThumbnailOffset',
       ),
       1 =>
-      array (
-        'components' => 1,
-        'collection' => 'Tiff\\Tag',
-        'name' => 'ThumbnailOffset',
-        'title' => 'Thumbnail Offset',
-        'format' =>
-        array (
-          0 => 4,
-        ),
-        'phpExifTag' => 'THUMBNAIL::JPEGInterchangeFormat',
-        'exiftoolDOMNode' => 'IFD1:ThumbnailOffset',
-      ),
-      2 =>
       array (
         'components' => 1,
         'collection' => 'Tiff\\Tag',
@@ -2616,8 +2603,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'phpExifTag' => 'THUMBNAIL::JPEGInterchangeFormat',
-        'exiftoolDOMNode' => 'IFD1:PreviewImageStart',
+        'phpExifTag' => 'JPEGInterchangeFormat',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageStart',
       ),
     ),
     514 =>
@@ -2632,23 +2619,10 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'phpExifTag' => 'THUMBNAIL::JPEGInterchangeFormatLength',
-        'exiftoolDOMNode' => 'IFD1:ThumbnailLength',
+        'phpExifTag' => 'JPEGInterchangeFormatLength',
+        'exiftoolDOMNode' => 'IFD0:ThumbnailLength',
       ),
       1 =>
-      array (
-        'components' => 1,
-        'collection' => 'Tiff\\Tag',
-        'name' => 'ThumbnailLength',
-        'title' => 'Thumbnail Length',
-        'format' =>
-        array (
-          0 => 4,
-        ),
-        'phpExifTag' => 'THUMBNAIL::JPEGInterchangeFormatLength',
-        'exiftoolDOMNode' => 'IFD1:ThumbnailLength',
-      ),
-      2 =>
       array (
         'components' => 1,
         'collection' => 'Tiff\\Tag',
@@ -2658,8 +2632,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'phpExifTag' => 'THUMBNAIL::JPEGInterchangeFormatLength',
-        'exiftoolDOMNode' => 'IFD1:PreviewImageLength',
+        'phpExifTag' => 'JPEGInterchangeFormatLength',
+        'exiftoolDOMNode' => 'IFD0:PreviewImageLength',
       ),
     ),
     529 =>
@@ -2674,8 +2648,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::YCbCrCoefficients',
-        'exiftoolDOMNode' => 'IFD1:YCbCrCoefficients',
+        'phpExifTag' => 'YCbCrCoefficients',
+        'exiftoolDOMNode' => 'IFD0:YCbCrCoefficients',
       ),
     ),
     530 =>
@@ -2705,8 +2679,8 @@ class Ifd1 extends CollectionBase {
             '4 2' => 'YCbCr4:1:0 (4 2)',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::YCbCrSubSampling',
-        'exiftoolDOMNode' => 'IFD1:YCbCrSubSampling',
+        'phpExifTag' => 'YCbCrSubSampling',
+        'exiftoolDOMNode' => 'IFD0:YCbCrSubSampling',
       ),
     ),
     531 =>
@@ -2729,8 +2703,8 @@ class Ifd1 extends CollectionBase {
             2 => 'Co-sited',
           ),
         ),
-        'phpExifTag' => 'THUMBNAIL::YCbCrPositioning',
-        'exiftoolDOMNode' => 'IFD1:YCbCrPositioning',
+        'phpExifTag' => 'YCbCrPositioning',
+        'exiftoolDOMNode' => 'IFD0:YCbCrPositioning',
       ),
     ),
     532 =>
@@ -2745,8 +2719,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'phpExifTag' => 'THUMBNAIL::ReferenceBlackWhite',
-        'exiftoolDOMNode' => 'IFD1:ReferenceBlackWhite',
+        'phpExifTag' => 'ReferenceBlackWhite',
+        'exiftoolDOMNode' => 'IFD0:ReferenceBlackWhite',
       ),
     ),
     700 =>
@@ -2762,8 +2736,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'phpExifTag' => 'THUMBNAIL::ExtensibleMetadataPlatform',
-        'exiftoolDOMNode' => 'IFD1:ApplicationNotes',
+        'phpExifTag' => 'ExtensibleMetadataPlatform',
+        'exiftoolDOMNode' => 'IFD0:ApplicationNotes',
       ),
     ),
     18246 =>
@@ -2778,7 +2752,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'exiftoolDOMNode' => 'IFD1:Rating',
+        'exiftoolDOMNode' => 'IFD0:Rating',
       ),
     ),
     18249 =>
@@ -2793,7 +2767,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'exiftoolDOMNode' => 'IFD1:RatingPercent',
+        'exiftoolDOMNode' => 'IFD0:RatingPercent',
       ),
     ),
     33432 =>
@@ -2808,8 +2782,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'phpExifTag' => 'THUMBNAIL::Copyright',
-        'exiftoolDOMNode' => 'IFD1:Copyright',
+        'phpExifTag' => 'Copyright',
+        'exiftoolDOMNode' => 'IFD0:Copyright',
       ),
     ),
     33550 =>
@@ -2824,7 +2798,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 12,
         ),
-        'exiftoolDOMNode' => 'IFD1:PixelScale',
+        'exiftoolDOMNode' => 'IFD0:PixelScale',
       ),
     ),
     33723 =>
@@ -2838,8 +2812,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'phpExifTag' => 'THUMBNAIL::IPTC/NAA',
-        'exiftoolDOMNode' => 'IFD1:IPTC-NAA',
+        'phpExifTag' => 'IPTC/NAA',
+        'exiftoolDOMNode' => 'IFD0:IPTC-NAA',
       ),
     ),
     33920 =>
@@ -2853,7 +2827,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 12,
         ),
-        'exiftoolDOMNode' => 'IFD1:IntergraphMatrix',
+        'exiftoolDOMNode' => 'IFD0:IntergraphMatrix',
       ),
     ),
     33922 =>
@@ -2867,7 +2841,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 12,
         ),
-        'exiftoolDOMNode' => 'IFD1:ModelTiePoint',
+        'exiftoolDOMNode' => 'IFD0:ModelTiePoint',
       ),
     ),
     34118 =>
@@ -2881,7 +2855,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:SEMInfo',
+        'exiftoolDOMNode' => 'IFD0:SEMInfo',
       ),
     ),
     34264 =>
@@ -2896,14 +2870,14 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 12,
         ),
-        'exiftoolDOMNode' => 'IFD1:ModelTransform',
+        'exiftoolDOMNode' => 'IFD0:ModelTransform',
       ),
     ),
     34665 =>
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\IfdExif',
+        'collection' => 'Media\\Tiff\\IfdExif',
         'name' => 'ExifIFD',
       ),
     ),
@@ -2918,7 +2892,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 3,
         ),
-        'exiftoolDOMNode' => 'IFD1:GeoTiffDirectory',
+        'exiftoolDOMNode' => 'IFD0:GeoTiffDirectory',
       ),
     ),
     34736 =>
@@ -2932,7 +2906,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 12,
         ),
-        'exiftoolDOMNode' => 'IFD1:GeoTiffDoubleParams',
+        'exiftoolDOMNode' => 'IFD0:GeoTiffDoubleParams',
       ),
     ),
     34737 =>
@@ -2946,14 +2920,14 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:GeoTiffAsciiParams',
+        'exiftoolDOMNode' => 'IFD0:GeoTiffAsciiParams',
       ),
     ),
     34853 =>
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\IfdGps',
+        'collection' => 'Media\\Tiff\\IfdGps',
         'name' => 'GPS',
       ),
     ),
@@ -2968,8 +2942,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'phpExifTag' => 'THUMBNAIL::ImageSourceData',
-        'exiftoolDOMNode' => 'IFD1:ImageSourceData',
+        'phpExifTag' => 'ImageSourceData',
+        'exiftoolDOMNode' => 'IFD0:ImageSourceData',
       ),
     ),
     40091 =>
@@ -2984,8 +2958,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'phpExifTag' => 'THUMBNAIL::Title',
-        'exiftoolDOMNode' => 'IFD1:XPTitle',
+        'phpExifTag' => 'Title',
+        'exiftoolDOMNode' => 'IFD0:XPTitle',
       ),
     ),
     40092 =>
@@ -3000,8 +2974,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'phpExifTag' => 'THUMBNAIL::Comments',
-        'exiftoolDOMNode' => 'IFD1:XPComment',
+        'phpExifTag' => 'Comments',
+        'exiftoolDOMNode' => 'IFD0:XPComment',
       ),
     ),
     40093 =>
@@ -3016,8 +2990,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'phpExifTag' => 'THUMBNAIL::Author',
-        'exiftoolDOMNode' => 'IFD1:XPAuthor',
+        'phpExifTag' => 'Author',
+        'exiftoolDOMNode' => 'IFD0:XPAuthor',
       ),
     ),
     40094 =>
@@ -3032,8 +3006,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'phpExifTag' => 'THUMBNAIL::Keywords',
-        'exiftoolDOMNode' => 'IFD1:XPKeywords',
+        'phpExifTag' => 'Keywords',
+        'exiftoolDOMNode' => 'IFD0:XPKeywords',
       ),
     ),
     40095 =>
@@ -3048,8 +3022,8 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'phpExifTag' => 'THUMBNAIL::Subject',
-        'exiftoolDOMNode' => 'IFD1:XPSubject',
+        'phpExifTag' => 'Subject',
+        'exiftoolDOMNode' => 'IFD0:XPSubject',
       ),
     ),
     42112 =>
@@ -3063,7 +3037,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:GDALMetadata',
+        'exiftoolDOMNode' => 'IFD0:GDALMetadata',
       ),
     ),
     42113 =>
@@ -3077,7 +3051,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:GDALNoData',
+        'exiftoolDOMNode' => 'IFD0:GDALNoData',
       ),
     ),
     50341 =>
@@ -3105,7 +3079,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:DNGVersion',
+        'exiftoolDOMNode' => 'IFD0:DNGVersion',
       ),
     ),
     50707 =>
@@ -3120,7 +3094,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:DNGBackwardVersion',
+        'exiftoolDOMNode' => 'IFD0:DNGBackwardVersion',
       ),
     ),
     50708 =>
@@ -3134,7 +3108,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:UniqueCameraModel',
+        'exiftoolDOMNode' => 'IFD0:UniqueCameraModel',
       ),
     ),
     50709 =>
@@ -3148,7 +3122,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:LocalizedCameraModel',
+        'exiftoolDOMNode' => 'IFD0:LocalizedCameraModel',
       ),
     ),
     50721 =>
@@ -3162,7 +3136,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ColorMatrix1',
+        'exiftoolDOMNode' => 'IFD0:ColorMatrix1',
       ),
     ),
     50722 =>
@@ -3176,7 +3150,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ColorMatrix2',
+        'exiftoolDOMNode' => 'IFD0:ColorMatrix2',
       ),
     ),
     50723 =>
@@ -3190,7 +3164,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:CameraCalibration1',
+        'exiftoolDOMNode' => 'IFD0:CameraCalibration1',
       ),
     ),
     50724 =>
@@ -3204,7 +3178,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:CameraCalibration2',
+        'exiftoolDOMNode' => 'IFD0:CameraCalibration2',
       ),
     ),
     50725 =>
@@ -3218,7 +3192,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ReductionMatrix1',
+        'exiftoolDOMNode' => 'IFD0:ReductionMatrix1',
       ),
     ),
     50726 =>
@@ -3232,7 +3206,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ReductionMatrix2',
+        'exiftoolDOMNode' => 'IFD0:ReductionMatrix2',
       ),
     ),
     50727 =>
@@ -3246,7 +3220,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:AnalogBalance',
+        'exiftoolDOMNode' => 'IFD0:AnalogBalance',
       ),
     ),
     50728 =>
@@ -3260,7 +3234,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:AsShotNeutral',
+        'exiftoolDOMNode' => 'IFD0:AsShotNeutral',
       ),
     ),
     50729 =>
@@ -3275,7 +3249,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:AsShotWhiteXY',
+        'exiftoolDOMNode' => 'IFD0:AsShotWhiteXY',
       ),
     ),
     50730 =>
@@ -3289,7 +3263,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:BaselineExposure',
+        'exiftoolDOMNode' => 'IFD0:BaselineExposure',
       ),
     ),
     50731 =>
@@ -3303,7 +3277,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:BaselineNoise',
+        'exiftoolDOMNode' => 'IFD0:BaselineNoise',
       ),
     ),
     50732 =>
@@ -3317,7 +3291,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:BaselineSharpness',
+        'exiftoolDOMNode' => 'IFD0:BaselineSharpness',
       ),
     ),
     50734 =>
@@ -3331,7 +3305,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:LinearResponseLimit',
+        'exiftoolDOMNode' => 'IFD0:LinearResponseLimit',
       ),
     ),
     50735 =>
@@ -3345,7 +3319,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:CameraSerialNumber',
+        'exiftoolDOMNode' => 'IFD0:CameraSerialNumber',
       ),
     ),
     50736 =>
@@ -3360,7 +3334,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:DNGLensInfo',
+        'exiftoolDOMNode' => 'IFD0:DNGLensInfo',
       ),
     ),
     50739 =>
@@ -3374,7 +3348,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:ShadowScale',
+        'exiftoolDOMNode' => 'IFD0:ShadowScale',
       ),
     ),
     50740 =>
@@ -3388,7 +3362,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:DNGPrivateData',
+        'exiftoolDOMNode' => 'IFD0:DNGPrivateData',
       ),
       1 =>
       array (
@@ -3399,7 +3373,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:DNGAdobeData',
+        'exiftoolDOMNode' => 'IFD0:DNGAdobeData',
       ),
       2 =>
       array (
@@ -3410,7 +3384,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:DNGPrivateData',
+        'exiftoolDOMNode' => 'IFD0:DNGPrivateData',
       ),
     ),
     50741 =>
@@ -3432,7 +3406,7 @@ class Ifd1 extends CollectionBase {
             1 => 'Safe',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:MakerNoteSafety',
+        'exiftoolDOMNode' => 'IFD0:MakerNoteSafety',
       ),
     ),
     50778 =>
@@ -3474,7 +3448,7 @@ class Ifd1 extends CollectionBase {
             255 => 'Other',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:CalibrationIlluminant1',
+        'exiftoolDOMNode' => 'IFD0:CalibrationIlluminant1',
       ),
     ),
     50779 =>
@@ -3516,7 +3490,7 @@ class Ifd1 extends CollectionBase {
             255 => 'Other',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:CalibrationIlluminant2',
+        'exiftoolDOMNode' => 'IFD0:CalibrationIlluminant2',
       ),
     ),
     50781 =>
@@ -3531,7 +3505,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:RawDataUniqueID',
+        'exiftoolDOMNode' => 'IFD0:RawDataUniqueID',
       ),
     ),
     50827 =>
@@ -3545,7 +3519,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:OriginalRawFileName',
+        'exiftoolDOMNode' => 'IFD0:OriginalRawFileName',
       ),
     ),
     50828 =>
@@ -3559,7 +3533,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:OriginalRawFileData',
+        'exiftoolDOMNode' => 'IFD0:OriginalRawFileData',
       ),
     ),
     50831 =>
@@ -3573,7 +3547,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:AsShotICCProfile',
+        'exiftoolDOMNode' => 'IFD0:AsShotICCProfile',
       ),
     ),
     50832 =>
@@ -3587,7 +3561,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:AsShotPreProfileMatrix',
+        'exiftoolDOMNode' => 'IFD0:AsShotPreProfileMatrix',
       ),
     ),
     50833 =>
@@ -3601,7 +3575,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:CurrentICCProfile',
+        'exiftoolDOMNode' => 'IFD0:CurrentICCProfile',
       ),
     ),
     50834 =>
@@ -3615,7 +3589,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:CurrentPreProfileMatrix',
+        'exiftoolDOMNode' => 'IFD0:CurrentPreProfileMatrix',
       ),
     ),
     50879 =>
@@ -3638,7 +3612,7 @@ class Ifd1 extends CollectionBase {
             2 => 'Output-referred (High Dyanmic Range)',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:ColorimetricReference',
+        'exiftoolDOMNode' => 'IFD0:ColorimetricReference',
       ),
     ),
     50885 =>
@@ -3652,7 +3626,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:SRawType',
+        'exiftoolDOMNode' => 'IFD0:SRawType',
       ),
     ),
     50898 =>
@@ -3666,7 +3640,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:PanasonicTitle',
+        'exiftoolDOMNode' => 'IFD0:PanasonicTitle',
       ),
     ),
     50899 =>
@@ -3680,7 +3654,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:PanasonicTitle2',
+        'exiftoolDOMNode' => 'IFD0:PanasonicTitle2',
       ),
     ),
     50931 =>
@@ -3694,7 +3668,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:CameraCalibrationSig',
+        'exiftoolDOMNode' => 'IFD0:CameraCalibrationSig',
       ),
     ),
     50932 =>
@@ -3708,7 +3682,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileCalibrationSig',
+        'exiftoolDOMNode' => 'IFD0:ProfileCalibrationSig',
       ),
     ),
     50934 =>
@@ -3722,7 +3696,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:AsShotProfileName',
+        'exiftoolDOMNode' => 'IFD0:AsShotProfileName',
       ),
     ),
     50936 =>
@@ -3736,7 +3710,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileName',
+        'exiftoolDOMNode' => 'IFD0:ProfileName',
       ),
     ),
     50937 =>
@@ -3751,7 +3725,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileHueSatMapDims',
+        'exiftoolDOMNode' => 'IFD0:ProfileHueSatMapDims',
       ),
     ),
     50938 =>
@@ -3765,7 +3739,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 11,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileHueSatMapData1',
+        'exiftoolDOMNode' => 'IFD0:ProfileHueSatMapData1',
       ),
     ),
     50939 =>
@@ -3779,7 +3753,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 11,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileHueSatMapData2',
+        'exiftoolDOMNode' => 'IFD0:ProfileHueSatMapData2',
       ),
     ),
     50940 =>
@@ -3793,7 +3767,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 11,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileToneCurve',
+        'exiftoolDOMNode' => 'IFD0:ProfileToneCurve',
       ),
     ),
     50941 =>
@@ -3817,7 +3791,7 @@ class Ifd1 extends CollectionBase {
             3 => 'No Restrictions',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileEmbedPolicy',
+        'exiftoolDOMNode' => 'IFD0:ProfileEmbedPolicy',
       ),
     ),
     50942 =>
@@ -3831,7 +3805,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileCopyright',
+        'exiftoolDOMNode' => 'IFD0:ProfileCopyright',
       ),
     ),
     50964 =>
@@ -3845,7 +3819,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ForwardMatrix1',
+        'exiftoolDOMNode' => 'IFD0:ForwardMatrix1',
       ),
     ),
     50965 =>
@@ -3859,7 +3833,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ForwardMatrix2',
+        'exiftoolDOMNode' => 'IFD0:ForwardMatrix2',
       ),
     ),
     50966 =>
@@ -3873,7 +3847,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:PreviewApplicationName',
+        'exiftoolDOMNode' => 'IFD0:PreviewApplicationName',
       ),
     ),
     50967 =>
@@ -3887,7 +3861,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:PreviewApplicationVersion',
+        'exiftoolDOMNode' => 'IFD0:PreviewApplicationVersion',
       ),
     ),
     50968 =>
@@ -3901,7 +3875,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:PreviewSettingsName',
+        'exiftoolDOMNode' => 'IFD0:PreviewSettingsName',
       ),
     ),
     50969 =>
@@ -3915,7 +3889,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:PreviewSettingsDigest',
+        'exiftoolDOMNode' => 'IFD0:PreviewSettingsDigest',
       ),
     ),
     50970 =>
@@ -3940,7 +3914,7 @@ class Ifd1 extends CollectionBase {
             4 => 'ProPhoto RGB',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:PreviewColorSpace',
+        'exiftoolDOMNode' => 'IFD0:PreviewColorSpace',
       ),
     ),
     50971 =>
@@ -3954,7 +3928,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:PreviewDateTime',
+        'exiftoolDOMNode' => 'IFD0:PreviewDateTime',
       ),
     ),
     50972 =>
@@ -3969,7 +3943,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:RawImageDigest',
+        'exiftoolDOMNode' => 'IFD0:RawImageDigest',
       ),
     ),
     50973 =>
@@ -3984,7 +3958,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:OriginalRawFileDigest',
+        'exiftoolDOMNode' => 'IFD0:OriginalRawFileDigest',
       ),
     ),
     50981 =>
@@ -3999,7 +3973,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileLookTableDims',
+        'exiftoolDOMNode' => 'IFD0:ProfileLookTableDims',
       ),
     ),
     50982 =>
@@ -4013,7 +3987,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 11,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileLookTableData',
+        'exiftoolDOMNode' => 'IFD0:ProfileLookTableData',
       ),
     ),
     51043 =>
@@ -4027,7 +4001,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:TimeCodes',
+        'exiftoolDOMNode' => 'IFD0:TimeCodes',
       ),
     ),
     51044 =>
@@ -4041,7 +4015,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:FrameRate',
+        'exiftoolDOMNode' => 'IFD0:FrameRate',
       ),
     ),
     51058 =>
@@ -4055,7 +4029,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:TStop',
+        'exiftoolDOMNode' => 'IFD0:TStop',
       ),
     ),
     51081 =>
@@ -4069,7 +4043,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:ReelName',
+        'exiftoolDOMNode' => 'IFD0:ReelName',
       ),
     ),
     51089 =>
@@ -4084,7 +4058,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'exiftoolDOMNode' => 'IFD1:OriginalDefaultFinalSize',
+        'exiftoolDOMNode' => 'IFD0:OriginalDefaultFinalSize',
       ),
     ),
     51090 =>
@@ -4099,7 +4073,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'exiftoolDOMNode' => 'IFD1:OriginalBestQualitySize',
+        'exiftoolDOMNode' => 'IFD0:OriginalBestQualitySize',
       ),
     ),
     51091 =>
@@ -4114,7 +4088,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:OriginalDefaultCropSize',
+        'exiftoolDOMNode' => 'IFD0:OriginalDefaultCropSize',
       ),
     ),
     51105 =>
@@ -4128,7 +4102,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:CameraLabel',
+        'exiftoolDOMNode' => 'IFD0:CameraLabel',
       ),
     ),
     51107 =>
@@ -4150,7 +4124,7 @@ class Ifd1 extends CollectionBase {
             1 => 'sRGB',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileHueSatMapEncoding',
+        'exiftoolDOMNode' => 'IFD0:ProfileHueSatMapEncoding',
       ),
     ),
     51108 =>
@@ -4172,7 +4146,7 @@ class Ifd1 extends CollectionBase {
             1 => 'sRGB',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileLookTableEncoding',
+        'exiftoolDOMNode' => 'IFD0:ProfileLookTableEncoding',
       ),
     ),
     51109 =>
@@ -4186,7 +4160,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:BaselineExposureOffset',
+        'exiftoolDOMNode' => 'IFD0:BaselineExposureOffset',
       ),
     ),
     51110 =>
@@ -4208,7 +4182,7 @@ class Ifd1 extends CollectionBase {
             1 => 'None',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:DefaultBlackRender',
+        'exiftoolDOMNode' => 'IFD0:DefaultBlackRender',
       ),
     ),
     51111 =>
@@ -4223,7 +4197,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 1,
         ),
-        'exiftoolDOMNode' => 'IFD1:NewRawImageDigest',
+        'exiftoolDOMNode' => 'IFD0:NewRawImageDigest',
       ),
     ),
     51112 =>
@@ -4237,7 +4211,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 12,
         ),
-        'exiftoolDOMNode' => 'IFD1:RawToPreviewGain',
+        'exiftoolDOMNode' => 'IFD0:RawToPreviewGain',
       ),
     ),
     51177 =>
@@ -4260,7 +4234,7 @@ class Ifd1 extends CollectionBase {
             2 => 'Inverse',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:DepthFormat',
+        'exiftoolDOMNode' => 'IFD0:DepthFormat',
       ),
     ),
     51178 =>
@@ -4274,7 +4248,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:DepthNear',
+        'exiftoolDOMNode' => 'IFD0:DepthNear',
       ),
     ),
     51179 =>
@@ -4288,7 +4262,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 5,
         ),
-        'exiftoolDOMNode' => 'IFD1:DepthFar',
+        'exiftoolDOMNode' => 'IFD0:DepthFar',
       ),
     ),
     51180 =>
@@ -4310,7 +4284,7 @@ class Ifd1 extends CollectionBase {
             1 => 'Meters',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:DepthUnits',
+        'exiftoolDOMNode' => 'IFD0:DepthUnits',
       ),
     ),
     51181 =>
@@ -4333,7 +4307,7 @@ class Ifd1 extends CollectionBase {
             2 => 'Optical Ray',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:DepthMeasureType',
+        'exiftoolDOMNode' => 'IFD0:DepthMeasureType',
       ),
     ),
     51182 =>
@@ -4347,7 +4321,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:EnhanceParams',
+        'exiftoolDOMNode' => 'IFD0:EnhanceParams',
       ),
     ),
     52529 =>
@@ -4389,7 +4363,7 @@ class Ifd1 extends CollectionBase {
             255 => 'Other',
           ),
         ),
-        'exiftoolDOMNode' => 'IFD1:CalibrationIlluminant3',
+        'exiftoolDOMNode' => 'IFD0:CalibrationIlluminant3',
       ),
     ),
     52530 =>
@@ -4403,7 +4377,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:CameraCalibration3',
+        'exiftoolDOMNode' => 'IFD0:CameraCalibration3',
       ),
     ),
     52531 =>
@@ -4417,7 +4391,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ColorMatrix3',
+        'exiftoolDOMNode' => 'IFD0:ColorMatrix3',
       ),
     ),
     52532 =>
@@ -4431,7 +4405,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ForwardMatrix3',
+        'exiftoolDOMNode' => 'IFD0:ForwardMatrix3',
       ),
     ),
     52533 =>
@@ -4445,7 +4419,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:IlluminantData1',
+        'exiftoolDOMNode' => 'IFD0:IlluminantData1',
       ),
     ),
     52534 =>
@@ -4459,7 +4433,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:IlluminantData2',
+        'exiftoolDOMNode' => 'IFD0:IlluminantData2',
       ),
     ),
     52535 =>
@@ -4473,7 +4447,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:IlluminantData3',
+        'exiftoolDOMNode' => 'IFD0:IlluminantData3',
       ),
     ),
     52537 =>
@@ -4487,7 +4461,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 11,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileHueSatMapData3',
+        'exiftoolDOMNode' => 'IFD0:ProfileHueSatMapData3',
       ),
     ),
     52538 =>
@@ -4501,7 +4475,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 10,
         ),
-        'exiftoolDOMNode' => 'IFD1:ReductionMatrix3',
+        'exiftoolDOMNode' => 'IFD0:ReductionMatrix3',
       ),
     ),
     52543 =>
@@ -4515,7 +4489,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:RGBTables',
+        'exiftoolDOMNode' => 'IFD0:RGBTables',
       ),
     ),
     52544 =>
@@ -4529,7 +4503,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileGainTableMap2',
+        'exiftoolDOMNode' => 'IFD0:ProfileGainTableMap2',
       ),
     ),
     52548 =>
@@ -4543,7 +4517,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:ImageSequenceInfo',
+        'exiftoolDOMNode' => 'IFD0:ImageSequenceInfo',
       ),
     ),
     52550 =>
@@ -4557,7 +4531,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:ImageStats',
+        'exiftoolDOMNode' => 'IFD0:ImageStats',
       ),
     ),
     52551 =>
@@ -4571,7 +4545,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 7,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileDynamicRange',
+        'exiftoolDOMNode' => 'IFD0:ProfileDynamicRange',
       ),
     ),
     52552 =>
@@ -4585,7 +4559,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:ProfileGroupName',
+        'exiftoolDOMNode' => 'IFD0:ProfileGroupName',
       ),
     ),
     52553 =>
@@ -4599,7 +4573,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 11,
         ),
-        'exiftoolDOMNode' => 'IFD1:JXLDistance',
+        'exiftoolDOMNode' => 'IFD0:JXLDistance',
       ),
     ),
     52554 =>
@@ -4613,7 +4587,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'exiftoolDOMNode' => 'IFD1:JXLEffort',
+        'exiftoolDOMNode' => 'IFD0:JXLEffort',
       ),
     ),
     52555 =>
@@ -4627,7 +4601,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 4,
         ),
-        'exiftoolDOMNode' => 'IFD1:JXLDecodeSpeed',
+        'exiftoolDOMNode' => 'IFD0:JXLDecodeSpeed',
       ),
     ),
     52897 =>
@@ -4641,7 +4615,7 @@ class Ifd1 extends CollectionBase {
         array (
           0 => 2,
         ),
-        'exiftoolDOMNode' => 'IFD1:SEAL',
+        'exiftoolDOMNode' => 'IFD0:SEAL',
       ),
     ),
   ),

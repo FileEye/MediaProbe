@@ -5,7 +5,8 @@ namespace FileEye\MediaProbe\Test;
 use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Block\Media\Jpeg\ExifApp;
 use FileEye\MediaProbe\Block\Media\Tiff;
-use FileEye\MediaProbe\Block\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -43,8 +44,12 @@ class Bug3017880Test extends MediaProbeTestCaseBase
         $ifd0 = $exif->getElement("tiff/ifd[@name='IFD0']");
         if ($ifd0 === null) {
             $ifd0 = new Ifd(
-                collection: CollectionFactory::get('Tiff\Ifd0'),
-                definition: new ItemDefinition(CollectionFactory::get('Tiff\Ifd0'), DataFormat::LONG),
+                ifdEntry: new IfdEntryValueObject(
+                    collection: CollectionFactory::get('Media\Tiff\\Ifd0'),
+                    dataFormat: DataFormat::LONG,
+                    countOfComponents: 1,
+                    data: 0,
+                ),
                 parent: $tiff,
             );
             $tiff->graftBlock($ifd0);
