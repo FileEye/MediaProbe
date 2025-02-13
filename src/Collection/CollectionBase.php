@@ -51,10 +51,7 @@ abstract class CollectionBase implements CollectionInterface
         return $this->getProperties()[$property] ?? null;
     }
 
-    /**
-     * @return class-string
-     */
-    public function getHandler(): string
+    public function handler(): string
     {
         return $this->getPropertyValue('handler');
     }

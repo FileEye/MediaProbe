@@ -455,11 +455,11 @@ elements:
                                                                     text: '35.0 mm'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                            handlerClass: FileEye\MediaProbe\Block\Maker\Canon\Exif\MakerNote
                                                             validationLevel: OK
                                                             name: Canon
                                                             id: '37500'
-                                                            collection: ExifMakerNotes\Canon\Main
+                                                            collection: Maker\Canon\Exif\MakerNote
                                                             elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
@@ -4701,18 +4701,9 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16404'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Error
                                                                     id: '16404'
                                                                     collection: Tiff\UnknownTag
-                                                                    elements:
-                                                                        -
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16404/entry'
-                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
-                                                                            validationLevel: OK
-                                                                            format: Undefined
-                                                                            components: 4
-                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                            text: '4 byte(s) of data'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:UserComment:37510'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -5174,6 +5165,9 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
             message: 'Offset out of bounds - rel -1 [0, 27], abs 8059 [8060, 8087]'
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16404'
+            message: 'Zero or negative size for DataWindow'
     WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/index:CanonCustomFunctions2Header:153/index:AutoFocusDrive:3/tag:ContinuousShootingSpeed:1552'
@@ -5209,9 +5203,6 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16402'
             message: "Unknown item 16402/0x4012 in 'Canon'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:16404'
-            message: "Unknown item 16404/0x4014 in 'Canon'"
 gdInfo:
     0: 8
     1: 8
@@ -5222,7 +5213,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: Canon1DmkIII.jpg
-    FileDateTime: 1737909392
+    FileDateTime: 1739439764
     FileSize: 8337
     FileType: 2
     MimeType: image/jpeg

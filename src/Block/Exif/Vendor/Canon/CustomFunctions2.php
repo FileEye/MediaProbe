@@ -44,7 +44,7 @@ class CustomFunctions2 extends ListBase
                     $this->getRootElement()
                 );
                 $item_definition = new ItemDefinition($item_collection, DataFormat::SIGNED_LONG, $num, $rec_pos);
-                $class = $item_definition->collection->getPropertyValue('handler');
+                $class = $item_definition->collection->handler();
                 $tag = new $class($item_definition, $this);
                 $tag_data_window = new DataWindow($data, $item_definition->dataOffset, $item_definition->getSize());
                 $tag->parseData($tag_data_window);

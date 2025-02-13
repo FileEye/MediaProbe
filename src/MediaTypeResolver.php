@@ -39,7 +39,7 @@ class MediaTypeResolver
             } catch (CollectionException) {
                 continue;
             }
-            $handler = $type->getPropertyValue('handler');
+            $handler = $type->handler();
             if ($handler::isDataMatchingMediaType($dataElement)) {
                 return $type;
             }
@@ -51,7 +51,7 @@ class MediaTypeResolver
                 continue;
             }
             $type = $mediaTypesCollection->getItemCollection($id);
-            $handler = $type->getPropertyValue('handler');
+            $handler = $type->handler();
             if ($handler::isDataMatchingMediaType($dataElement)) {
                 return $type;
             }

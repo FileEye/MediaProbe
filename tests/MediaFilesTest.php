@@ -126,18 +126,18 @@ class MediaFilesTest extends MediaProbeTestCaseBase
         }
 
         // Test loading the image to GD from memory; it fails hard in case of errors.
-        $gd_resource = imagecreatefromstring($original_media->toBytes());
+        $gd_resource = \imagecreatefromstring($original_media->toBytes());
         $this->assertNotFalse($gd_resource);
         $this->assertEquals($this->testDump['gdInfo'][0], imagesx($gd_resource));
         $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
-        imagedestroy($gd_resource);
+        \imagedestroy($gd_resource);
 
         // Test loading the image to GD from file; it fails hard in case of errors.
-        $gd_resource = imagecreatefromjpeg($rewriteFile);
+        $gd_resource = \imagecreatefromjpeg($rewriteFile);
         $this->assertNotFalse($gd_resource);
         $this->assertEquals($this->testDump['gdInfo'][0], imagesx($gd_resource));
         $this->assertEquals($this->testDump['gdInfo'][1], imagesy($gd_resource));
-        imagedestroy($gd_resource);
+        \imagedestroy($gd_resource);
     }
 
     #[DataProvider('mediaFileProvider')]

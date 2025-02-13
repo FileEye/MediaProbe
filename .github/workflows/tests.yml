@@ -60,7 +60,7 @@ jobs:
         php examples/dump-media.php -d tests/media-samples/image/camera/canon_eos_850d_08.jpg
         php examples/dump-media.php -d tests/media-samples/image/broken/canon-eos-650d.jpg
         php examples/dump-media.php -d tests/media-samples/image/camera/COPYING
-        php examples/dump-media.php -d composer.json
+        php examples/dump-media.php -d tests/media-samples/image/exiftool/Canon1DmkIII.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/gh-10-b.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/gh-11.jpg
 #        php examples/dump-media.php -d tests/media-samples/image/broken/pel-176-RPT200076_03.jpg
@@ -73,16 +73,17 @@ jobs:
       continue-on-error: true
       run: ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1
 
+    - name: "Run a static analysis with phpstan/phpstan"
+      run: vendor/bin/phpstan analyze
+#      continue-on-error: true
+
 # Remove the comment to the lines below during development, to refresh the
 # media file dumps.
 #    - name: Update media dumps
 #      run: php bin/fileeye-mediaprobe dump tests/media-samples tests/media-dumps
 
 #    - name: Upload media dumps
-#      uses: actions/upload-artifact@v3
+#      uses: actions/upload-artifact@v4
 #      with:
 #        name: media-dumps
 #        path: tests/media-dumps/**/*.yml
-
-    - name: "Run a static analysis with phpstan/phpstan"
-      run: vendor/bin/phpstan analyze

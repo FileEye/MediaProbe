@@ -140,7 +140,7 @@ abstract class BlockBase extends ElementBase implements BlockInterface
      */
     public function addBlock(ItemDefinition $item_definition, ?BlockInterface $parent = null, ?BlockInterface $reference = null): BlockInterface
     {
-        $handler = $item_definition->collection->getPropertyValue('handler');
+        $handler = $item_definition->collection->handler();
         return new $handler($item_definition, $parent ?? $this, $reference);
     }
 
