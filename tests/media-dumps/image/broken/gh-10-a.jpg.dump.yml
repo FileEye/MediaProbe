@@ -53,11 +53,11 @@ elements:
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                             validationLevel: Error
                                             name: IFD0
                                             id: '0'
-                                            collection: Tiff\Ifd0
+                                            collection: Media\Tiff\Ifd0
                                             elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Compression:259'
@@ -253,11 +253,11 @@ elements:
                                                             text: ''
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                                     validationLevel: OK
                                                     name: ExifIFD
                                                     id: '34665'
-                                                    collection: Tiff\IfdExif
+                                                    collection: Media\Tiff\IfdExif
                                                     elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'

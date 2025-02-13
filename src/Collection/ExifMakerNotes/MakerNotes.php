@@ -32,7 +32,7 @@ class MakerNotes extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'ExifMakerNotes\\Apple\\Main',
+        'collection' => 'Maker\\Apple\\Exif\\MakerNote',
         'name' => 'Apple',
         'make' => 'Apple',
         'model' => '.*',

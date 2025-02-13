@@ -2,8 +2,9 @@
 
 namespace FileEye\MediaProbe\Block\Media;
 
+use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Block\RawData;
-use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
@@ -127,15 +128,19 @@ class Tiff extends MediaTypeBlockBase
                 continue;
             }
 
-            // Create and load the IFDs. Note that the data element cannot
-            // be split in windows since any pointer will refer to the
-            // entire segment space.
+            // Create and load the IFDs. Note that the data element cannot be split in windows
+            // since any pointer will refer to the entire segment space.
             $ifdCollection = $this->collection->getItemCollection($i);
             $ifdClass = $ifdCollection->handler();
-            $ifdItem = new ItemDefinition($ifdCollection, DataFormat::LONG, $ifdTagsCount, $ifdOffset, 0, $i);
-            $ifd = new $ifdClass(
+            $ifdEntry = new IfdEntryValueObject(
+                sequence: $i,
                 collection: $ifdCollection,
-                definition: $ifdItem,
+                dataFormat: DataFormat::LONG,
+                countOfComponents: $ifdTagsCount,
+                data: $ifdOffset,
+            );
+            $ifd = new $ifdClass(
+                ifdEntry: $ifdEntry,
                 parent: $this,
             );
             try {

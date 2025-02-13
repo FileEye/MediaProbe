@@ -3,9 +3,8 @@
 namespace FileEye\MediaProbe\Block\Maker;
 
 use FileEye\MediaProbe\Block\Media\Tiff;
-use FileEye\MediaProbe\Block\Tiff\Ifd;
-use FileEye\MediaProbe\Collection\CollectionInterface;
-use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Model\RootBlockBase;
 
 /**
@@ -14,14 +13,12 @@ use FileEye\MediaProbe\Model\RootBlockBase;
 class MakerNoteBase extends Ifd
 {
     public function __construct(
-        CollectionInterface $collection,
-        ItemDefinition $definition,
+        IfdEntryValueObject $ifdEntry,
         Tiff|Ifd|RootBlockBase $parent,
         protected readonly int $dataDisplacement = 0,
     ) {
         parent::__construct(
-            collection: $collection,
-            definition: $definition,
+            ifdEntry: $ifdEntry,
             parent: $parent,
         );
     }

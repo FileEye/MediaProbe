@@ -166,11 +166,11 @@ elements:
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                             validationLevel: Error
                                             name: IFD0
                                             id: '0'
-                                            collection: Tiff\Ifd0
+                                            collection: Media\Tiff\Ifd0
                                             elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
@@ -398,11 +398,11 @@ elements:
                                                             text: Standard
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                                     validationLevel: Error
                                                     name: ExifIFD
                                                     id: '34665'
-                                                    collection: Tiff\IfdExif
+                                                    collection: Media\Tiff\IfdExif
                                                     elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'
@@ -630,11 +630,11 @@ elements:
                                                                     text: '12.7 mm'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                                            handlerClass: FileEye\MediaProbe\Block\Maker\Canon\Exif\MakerNote
                                                             validationLevel: Warning
                                                             name: Canon
                                                             id: '37500'
-                                                            collection: ExifMakerNotes\Canon\Main
+                                                            collection: Maker\Canon\Exif\MakerNote
                                                             elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'

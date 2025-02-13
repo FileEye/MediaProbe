@@ -1,14 +1,13 @@
-collection: Tiff\Ifd1
 name: IFD1
 title: IFD1
-handler: FileEye\MediaProbe\Block\Tiff\Ifd
+handler: FileEye\MediaProbe\Block\Media\Tiff\Ifd
 DOMNode: ifd
 defaultItemCollection: Tiff\Tag
 alias:
     - '1'
     - Thumbnail
 postParse:
-    - 'FileEye\MediaProbe\Block\Tiff\Ifd::thumbnailToBlock'
+    - 'FileEye\MediaProbe\Block\Media\Tiff\Ifd::thumbnailToBlock'
 compiler:
     exiftool:
         g1: IFD1
@@ -857,7 +856,7 @@ items:
                 DOMNode: 'IFD1:ModelTransform'
                 desc: 'Model Transform'
     34665:
-        collection: Tiff\IfdExif
+        collection: Media\Tiff\IfdExif
         name: ExifIFD
     34735:
         exiftool:
@@ -884,7 +883,7 @@ items:
                 DOMNode: 'IFD1:GeoTiffAsciiParams'
                 desc: 'Geo Tiff Ascii Params'
     34853:
-        collection: Tiff\IfdGps
+        collection: Media\Tiff\IfdGps
         name: GPS
     37724:
         exifReadData:

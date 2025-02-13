@@ -69,11 +69,11 @@ elements:
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
-                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Ifd
+                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
                                             validationLevel: OK
                                             name: IFD0
                                             id: '0'
-                                            collection: Tiff\Ifd0
+                                            collection: Media\Tiff\Ifd0
                                             elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305'
@@ -166,7 +166,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: bug3017880.jpg
-    FileDateTime: 1739395734
+    FileDateTime: 1739479534
     FileSize: 4900
     FileType: 2
     MimeType: image/jpeg

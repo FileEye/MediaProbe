@@ -15,7 +15,7 @@ class Flags extends CollectionBase {
   protected static $map = array (
   'name' => 'CanonFlags',
   'title' => 'Canon Flags',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Tiff\\Ifd',
   'DOMNode' => 'index',
   'format' =>
   array (

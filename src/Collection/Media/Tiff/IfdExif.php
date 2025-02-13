@@ -6,7 +6,7 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Tiff;
+namespace FileEye\MediaProbe\Collection\Media\Tiff;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
@@ -15,10 +15,10 @@ class IfdExif extends CollectionBase {
   protected static $map = array (
   'name' => 'ExifIFD',
   'title' => 'Exif IFD',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tiff\\Tag',
-  'id' => 'Tiff\\IfdExif',
+  'id' => 'Media\\Tiff\\IfdExif',
   'itemsByName' =>
   array (
     'Acceleration' =>
@@ -8465,7 +8465,7 @@ class IfdExif extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\IfdInteroperability',
+        'collection' => 'Media\\Tiff\\IfdInteroperability',
       ),
     ),
     40976 =>

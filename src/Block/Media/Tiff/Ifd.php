@@ -1,6 +1,6 @@
 <?php
 
-namespace FileEye\MediaProbe\Block\Tiff;
+namespace FileEye\MediaProbe\Block\Media\Tiff;
 
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Media\Jpeg;
@@ -8,7 +8,6 @@ use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
-use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -22,16 +21,24 @@ use FileEye\MediaProbe\Utility\HexDump;
 
 /**
  * Class representing an Image File Directory (IFD).
+ *
+ * @see https://docs.fileformat.com/image/exif/
+ * @see https://www.media.mit.edu/pia/Research/deepview/exif.html
  */
 class Ifd extends ListBase
 {
     public function __construct(
-        public readonly CollectionInterface $collection,
-        ItemDefinition $definition,
+        public readonly IfdEntryValueObject $ifdEntry,
         Tiff|Ifd|RootBlockBase $parent,
     ) {
         parent::__construct(
-            definition: $definition,
+            definition: new ItemDefinition(
+                collection: $ifdEntry->collection,
+                format: $ifdEntry->dataFormat,
+                valuesCount: $ifdEntry->countOfComponents,
+                dataOffset: $ifdEntry->data,
+                sequence: $ifdEntry->sequence,
+            ),
             parent: $parent,
             graft: false,
         );
@@ -39,39 +46,39 @@ class Ifd extends ListBase
 
     public function fromDataElement(DataElement $dataElement): Ifd
     {
-        $offset = $this->getDefinition()->dataOffset;
+        $offset = $this->ifdEntry->data;
 
         // Get the number of entries.
-        $n = $this->getItemsCountFromData($dataElement, $offset);
+        $n = $this->ifdEntriesCountFromDataElement($dataElement, $offset);
         assert($this->debugInfo(['dataElement' => $dataElement, 'itemsCount' => $n]));
 
         // Parse the items.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
-            $item_definition = $this->getItemDefinitionFromData(
+            $ifdEntry = $this->ifdEntryFromDataElement(
                 seq: $i,
                 dataElement: $dataElement,
                 offset: $i_offset,
-                fallbackCollectionId: 'Tiff\IfdAny',
+                fallbackCollectionId: 'Media\\Tiff\\IfdAny',
             );
-            $item_class = $item_definition->collection->handler();
+            $item_class = $ifdEntry->collection->handler();
 
             // Check data is accessible, warn otherwise.
-            if ($item_definition->dataOffset >= $dataElement->getSize()) {
+            if ($ifdEntry->data >= $dataElement->getSize()) {
                 $this->warning(
                     'Could not access value for item {item} in \'{ifd}\', overflow',
                     [
-                        'item' => HexDump::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
+                        'item' => HexDump::dumpIntHex($ifdEntry->collection->getPropertyValue('name') ?? 'n/a'),
                         'ifd' => $this->getAttribute('name'),
                     ]
                 );
                 continue;
             }
-            if ($item_definition->dataOffset +  $item_definition->getSize() > $dataElement->getSize()) {
+            if ($ifdEntry->data +  $ifdEntry->size() > $dataElement->getSize()) {
                 $this->warning(
                     'Could not get value for item {item} in \'{ifd}\', not enough data',
                     [
-                        'item' => HexDump::dumpIntHex($item_definition->collection->getPropertyValue('name') ?? 'n/a'),
+                        'item' => HexDump::dumpIntHex($ifdEntry->collection->getPropertyValue('name') ?? 'n/a'),
                         'ifd' => $this->getAttribute('name'),
                     ]
                 );
@@ -83,8 +90,7 @@ class Ifd extends ListBase
                 if (is_a($item_class, Ifd::class, true)) {
                     // This is a sub-IFD.
                     $item = new $item_class(
-                        collection: $item_definition->collection,
-                        definition: $item_definition,
+                        ifdEntry: $ifdEntry,
                         parent: $this,
                     );
                     try {
@@ -98,9 +104,18 @@ class Ifd extends ListBase
                     // In case of an IFD terminator item entry, i.e. zero
                     // components, the data window size is still 4 bytes, from
                     // the IFD index area.
-                    $item = new $item_class($item_definition, $this);
-                    $item_data_window_size = $item_definition->valuesCount > 0 ? $item_definition->getSize() : 4;
-                    $item->parseData($dataElement, $item_definition->dataOffset, $item_data_window_size);
+                    $item = new $item_class(
+                        new ItemDefinition(
+                            collection: $ifdEntry->collection,
+                            format: $ifdEntry->dataFormat,
+                            valuesCount: $ifdEntry->countOfComponents,
+                            dataOffset: $ifdEntry->data,
+                            sequence: $ifdEntry->sequence,
+                        ),
+                        $this,
+                    );
+                    $item_data_window_size = $ifdEntry->countOfComponents > 0 ? $ifdEntry->size() : 4;
+                    $item->parseData($dataElement, $ifdEntry->data, $item_data_window_size);
                 }
             } catch (DataException $e) {
                 if (isset($item)) {
@@ -129,7 +144,7 @@ class Ifd extends ListBase
      * @return int
      *            the number of items in the IFD.
      */
-    protected function getItemsCountFromData(DataElement $dataElement, $offset): int
+    protected function ifdEntriesCountFromDataElement(DataElement $dataElement, int $offset): int
     {
         // Get the number of tags.
         $entries_count = $dataElement->getShort($offset);
@@ -147,7 +162,7 @@ class Ifd extends ListBase
     }
 
     /**
-     * Gets the ItemDefinition object of an IFD item, from the data.
+     * Gets the IfdEntryValueObject object of an IFD entry, from the data.
      *
      * @param int $seq
      *            The sequence (0-index) of the item in the IFD.
@@ -159,18 +174,14 @@ class Ifd extends ListBase
      * @param int $dataDisplacement
      *            (Optional) if specified, an additional shift to the offset
      *            where data can be found.
-     * @todo xxx
-     *
-     * @return \FileEye\MediaProbe\ItemDefinition
-     *            the ItemDefinition object of the IFD item.
      */
-    protected function getItemDefinitionFromData(
+    protected function ifdEntryFromDataElement(
         int $seq,
         DataElement $dataElement,
         int $offset,
         int $dataDisplacement = 0,
         ?string $fallbackCollectionId = null,
-    ): ItemDefinition {
+    ): IfdEntryValueObject {
         $id = $dataElement->getShort($offset);
         $format = $dataElement->getShort($offset + 2);
 
@@ -215,7 +226,13 @@ class Ifd extends ListBase
             }
         }
 
-        return new ItemDefinition($item_collection, $format, $components, $data_offset, $dataElement->getStart() + $offset, $seq);
+        return new IfdEntryValueObject(
+            sequence: $seq,
+            collection: $item_collection,
+            dataFormat: $format,
+            countOfComponents: $components,
+            data: $data_offset,
+        );
     }
 
     public function toBytes(int $byte_order = ConvertBytes::LITTLE_ENDIAN, int $offset = 0, $has_next_ifd = false): string

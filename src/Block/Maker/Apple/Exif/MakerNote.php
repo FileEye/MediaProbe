@@ -1,11 +1,11 @@
 <?php
 
-namespace FileEye\MediaProbe\Block\Exif\Vendor\Apple;
+namespace FileEye\MediaProbe\Block\Maker\Apple\Exif;
 
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Maker\MakerNoteBase;
+use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
 use FileEye\MediaProbe\Block\RawData;
-use FileEye\MediaProbe\Block\Tiff\Ifd;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
@@ -31,24 +31,33 @@ class MakerNote extends MakerNoteBase
         $offset += 14;
 
         // Get the number of entries.
-        $n = $this->getItemsCountFromData($dataElement, $offset);
+        $n = $this->ifdEntriesCountFromDataElement($dataElement, $offset);
         assert($this->debugInfo(['dataElement' => $dataElement, 'sequence' => $n]));
 
         // Load the Blocks.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
             try {
-                $item_definition = $this->getItemDefinitionFromData(
+                $ifdEntry = $this->ifdEntryFromDataElement(
                     seq: $i,
                     dataElement: $dataElement,
                     offset: $i_offset,
                 );
-                $item_class = $item_definition->collection->handler();
-                $item = new $item_class($item_definition, $this);
+                $item_class = $ifdEntry->collection->handler();
+                $item = new $item_class(
+                    new ItemDefinition(
+                        collection: $ifdEntry->collection,
+                        format: $ifdEntry->dataFormat,
+                        valuesCount: $ifdEntry->countOfComponents,
+                        dataOffset: $ifdEntry->data,
+                        sequence: $ifdEntry->sequence,
+                    ),
+                    $this,
+                );
                 if (is_a($item_class, Ifd::class, true)) {
                     throw new MediaProbeException(sprintf('There should not be sub-IFDs in %s', __CLASS__));
                 }
-                $item_data_window = new DataWindow($dataElement, $item_definition->dataOffset, $item_definition->getSize());
+                $item_data_window = new DataWindow($dataElement, $ifdEntry->data, $ifdEntry->size());
                 $item->parseData($item_data_window);
             } catch (DataException $e) {
                 if (isset($item)) {

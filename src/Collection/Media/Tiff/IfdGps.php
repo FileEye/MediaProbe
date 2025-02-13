@@ -6,7 +6,7 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Tiff;
+namespace FileEye\MediaProbe\Collection\Media\Tiff;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
@@ -15,10 +15,10 @@ class IfdGps extends CollectionBase {
   protected static $map = array (
   'name' => 'GPS',
   'title' => 'GPS IFD',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'defaultItemCollection' => 'Tiff\\Tag',
-  'id' => 'Tiff\\IfdGps',
+  'id' => 'Media\\Tiff\\IfdGps',
   'itemsByName' =>
   array (
     'GPSAltitude' =>

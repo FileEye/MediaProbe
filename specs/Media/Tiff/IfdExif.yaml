@@ -1,7 +1,6 @@
-collection: Tiff\IfdExif
 name: ExifIFD
 title: 'Exif IFD'
-handler: FileEye\MediaProbe\Block\Tiff\Ifd
+handler: FileEye\MediaProbe\Block\Media\Tiff\Ifd
 DOMNode: ifd
 defaultItemCollection: Tiff\Tag
 compiler:
@@ -3497,7 +3496,7 @@ items:
                 DOMNode: 'ExifIFD:RelatedSoundFile'
                 desc: 'Related Sound File'
     40965:
-        collection: Tiff\IfdInteroperability
+        collection: Media\Tiff\IfdInteroperability
     40976:
         exiftool:
             -

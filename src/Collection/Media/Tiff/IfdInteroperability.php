@@ -6,7 +6,7 @@
  */
 // phpcs:disable
 
-namespace FileEye\MediaProbe\Collection\Tiff;
+namespace FileEye\MediaProbe\Collection\Media\Tiff;
 
 use FileEye\MediaProbe\Collection\CollectionBase;
 
@@ -15,14 +15,14 @@ class IfdInteroperability extends CollectionBase {
   protected static $map = array (
   'name' => 'InteropIFD',
   'title' => 'Interoperability IFD',
-  'handler' => 'FileEye\\MediaProbe\\Block\\Tiff\\Ifd',
+  'handler' => 'FileEye\\MediaProbe\\Block\\Media\\Tiff\\Ifd',
   'DOMNode' => 'ifd',
   'alias' =>
   array (
     0 => 'Interop',
   ),
   'defaultItemCollection' => 'Tiff\\Tag',
-  'id' => 'Tiff\\IfdInteroperability',
+  'id' => 'Media\\Tiff\\IfdInteroperability',
   'itemsByName' =>
   array (
     'InteropIndex' =>
