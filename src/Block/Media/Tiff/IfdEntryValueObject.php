@@ -4,12 +4,21 @@ namespace FileEye\MediaProbe\Block\Media\Tiff;
 
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataFormat;
+use FileEye\MediaProbe\MediaProbeException;
 
 /**
  * A value object representing an IFD entry.
  */
-class IfdEntryValueObject
+final class IfdEntryValueObject
 {
+    /**
+     * The expected size of the data part, calculated as the count of components multiplied per
+     * the size of each component.
+     *
+     * @var positive-int
+     */
+    public readonly int $size;
+
     /**
      * True if the data of the entry is an offset to the actual entry data; False if the data is
      * the value entry itself.
@@ -32,14 +41,34 @@ class IfdEntryValueObject
         public readonly CollectionInterface $collection,
         public readonly int $dataFormat,
         public readonly int $countOfComponents,
-        public readonly int $data,
+        private readonly int $data = 0,
         public readonly int $sequence = 0,
     ) {
-        $this->isOffset = $this->size() > 4;
+        $this->size = DataFormat::getSize($this->dataFormat) * $this->countOfComponents;
+        $this->isOffset = $this->size > 4;
     }
 
-    public function size(): int
+    /**
+     * Return the offset at which data can be found.
+     *
+     * @return positive-int
+     */
+    public function dataOffset(): int
     {
-        return DataFormat::getSize($this->dataFormat) * $this->countOfComponents;
+        if (!$this->isOffset) {
+            throw new MediaProbeException('The IFD entry value is not an offset');
+        }
+        return $this->data;
+    }
+
+    /**
+     * Return the entry data value.
+     */
+    public function dataValue(): int
+    {
+        if ($this->isOffset) {
+            throw new MediaProbeException('The IFD entry value is an offset, not a value');
+        }
+        return $this->data;
     }
 }

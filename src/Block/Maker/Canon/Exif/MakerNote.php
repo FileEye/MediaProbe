@@ -9,7 +9,6 @@ use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\MediaProbeException;
-use FileEye\MediaProbe\Utility\HexDump;
 
 class MakerNote extends MakerNoteBase
 {
@@ -21,7 +20,7 @@ class MakerNote extends MakerNoteBase
         $n = $this->ifdEntriesCountFromDataElement($dataElement, $offset);
         assert($this->debugInfo(['dataElement' => $dataElement, 'sequence' => $n]));
 
-        // Load the Blocks.
+        // Parse the IFD entries.
         for ($i = 0; $i < $n; $i++) {
             $i_offset = $offset + 2 + 12 * $i;
             try {
@@ -31,44 +30,26 @@ class MakerNote extends MakerNoteBase
                     offset: $i_offset,
                     dataDisplacement: $this->dataDisplacement,
                 );
+
+                if ($ifdEntry === false) {
+                    continue;
+                }
+
                 $item_class = $ifdEntry->collection->handler();
-
-                // Check data is accessible, warn otherwise.
-                if ($ifdEntry->data >= $dataElement->getSize()) {
-                    $this->warning(
-                        'Could not access value for item {item} in \'{ifd}\', overflow',
-                        [
-                            'item' => HexDump::dumpIntHex($ifdEntry->collection->getPropertyValue('name') ?? 'n/a'),
-                            'ifd' => $this->getAttribute('name'),
-                        ]
-                    );
-                    continue;
+                if (is_a($item_class, Ifd::class, true)) {
+                    throw new MediaProbeException(sprintf('There should not be sub-IFDs in %s', __CLASS__));
                 }
-                if ($ifdEntry->data +  $ifdEntry->size() > $dataElement->getSize()) {
-                    $this->warning(
-                        'Could not get value for item {item} in \'{ifd}\', not enough data',
-                        [
-                            'item' => HexDump::dumpIntHex($ifdEntry->collection->getPropertyValue('name') ?? 'n/a'),
-                            'ifd' => $this->getAttribute('name'),
-                        ]
-                    );
-                    continue;
-                }
-
                 $item = new $item_class(
                     new ItemDefinition(
                         collection: $ifdEntry->collection,
                         format: $ifdEntry->dataFormat,
                         valuesCount: $ifdEntry->countOfComponents,
-                        dataOffset: $ifdEntry->data,
+                        dataOffset: $ifdEntry->isOffset ? $ifdEntry->dataOffset() : $ifdEntry->dataValue(),
                         sequence: $ifdEntry->sequence,
                     ),
                     $this,
                 );
-                if (is_a($item_class, Ifd::class, true)) {
-                    throw new MediaProbeException(sprintf('There should not be sub-IFDs in %s', __CLASS__));
-                }
-                $item_data_window = new DataWindow($dataElement, $ifdEntry->data, $ifdEntry->size());
+                $item_data_window = new DataWindow($dataElement, $ifdEntry->isOffset ? $ifdEntry->dataOffset() : $ifdEntry->dataValue(), $ifdEntry->size);
                 $item->parseData($item_data_window);
             } catch (DataException $e) {
                 if (isset($item)) {
