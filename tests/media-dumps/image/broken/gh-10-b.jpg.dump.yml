@@ -631,7 +631,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500'
                                                             handlerClass: FileEye\MediaProbe\Block\Maker\Canon\Exif\MakerNote
-                                                            validationLevel: Warning
+                                                            validationLevel: Error
                                                             name: Canon
                                                             id: '37500'
                                                             collection: Maker\Canon\Exif\MakerNote
@@ -1587,7 +1587,6 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/map:CanonCameraSettings:1'
             message: 'Size mismatch between IFD and index header'
-    WARNING:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500'
             message: "Could not get value for item 'CanonShotInfo' in 'Canon', not enough data"
