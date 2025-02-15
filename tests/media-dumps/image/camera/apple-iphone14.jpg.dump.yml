@@ -6,9 +6,15 @@ skip:
         - 'Apple:ImageCaptureRequestID'
         - 'Apple:SceneFlags'
         - 'Apple:SignalToNoiseRatioType'
-fileName: apple-iphone11.jpg
+        - 'Apple:GreenGhostMitigationStatus'
+        - 'Apple:SemanticStyleRenderingVer'
+        - 'Apple:Apple_0x004e'
+        - 'Apple:Apple_0x004f'
+        - 'Apple:LivePhotoVideoIndex'
+        - 'Apple:SemanticStyle'
+fileName: apple-iphone14.jpg
 mimeType: image/jpeg
-fileContentHash: 38be1f3365dbf826bb4fc7c486f884791ee8813fc9ec218704645b5982738f12
+fileContentHash: fd4be9ec42124fafb2435d2a7a4ce5e2b339c402490ecb653bc080432c2a8b7d
 elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
@@ -38,6 +44,22 @@ elements:
                             components: 2
                             bytesHash: 71563ad80061407ede9c6f316836284bd3710a520c5a792b5eda1cb703690815
                             text: '2 byte(s) of data'
+                -
+                    path: '/media/jpeg/jpegSegment:APP0:224'
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
+                    validationLevel: OK
+                    name: APP0
+                    id: '224'
+                    collection: Media\Jpeg\Segment
+                    elements:
+                        -
+                            path: '/media/jpeg/jpegSegment:APP0:224/entry'
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
+                            validationLevel: OK
+                            format: Undefined
+                            components: 22
+                            bytesHash: d02fbc2627ffd43d316bb8d930c3737e1cae9aae07d0268ed4db61dd559cf78d
+                            text: '22 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:APP1:225'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1
@@ -97,8 +119,8 @@ elements:
                                                             validationLevel: OK
                                                             format: Ascii
                                                             components: 10
-                                                            bytesHash: 65fe412e71772d5ec09cfbff900f52c71063ffdc3540e1ca5b2bf0cdb3cc8d4b
-                                                            text: 'iPhone 11'
+                                                            bytesHash: 9604da687848f28ca7fa611e389e9942a539a3f231227b3a8be84842a60b7ef0
+                                                            text: 'iPhone 14'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -177,8 +199,8 @@ elements:
                                                             validationLevel: OK
                                                             format: Ascii
                                                             components: 7
-                                                            bytesHash: f4df9e182af7e344dd863ce0e79a441cf3796a9246d920c7f35547823fac6cbc
-                                                            text: 13.3.1
+                                                            bytesHash: 80ece68797ad574a7d273b62c7950c6f837a0aaa50a02dd9dccca5f1594b8af0
+                                                            text: 18.1.1
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -193,8 +215,24 @@ elements:
                                                             validationLevel: OK
                                                             format: Ascii
                                                             components: 20
-                                                            bytesHash: 8292c52cd56ce4fbddf343c2e45d9c00dfe43d846ed38594e2cfa6379ebdcf6f
-                                                            text: '2020:06:01 19:08:36'
+                                                            bytesHash: 5aee83e1ac1a6eb526b3aa8f938b487b0fdca884a23447b3b6d7d8e2d65a0c65
+                                                            text: '2025:02:01 20:33:38'
+                                                -
+                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:HostComputer:316'
+                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    validationLevel: OK
+                                                    name: HostComputer
+                                                    id: '316'
+                                                    collection: Tiff\Tag
+                                                    elements:
+                                                        -
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:HostComputer:316/entry'
+                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
+                                                            validationLevel: OK
+                                                            format: Ascii
+                                                            components: 10
+                                                            bytesHash: 9604da687848f28ca7fa611e389e9942a539a3f231227b3a8be84842a60b7ef0
+                                                            text: 'iPhone 14'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -233,8 +271,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: 2c7914734ebd07e0f0ea11a3d00e6100d560df83a972813750d93b1978a349e4
-                                                                    text: '1/2033 sec.'
+                                                                    bytesHash: 929dd193c75b3d08f7c71c52de9aa19d8590a1552939107404f195b7ba56cea4
+                                                                    text: '1/50 sec.'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -249,8 +287,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: e6118ff6599940ac2157c1cdd9bfca3ba6bc7dda367060670db23e980d52f140
-                                                                    text: f/1.8
+                                                                    bytesHash: 6e84f9a5bc0587b940f5ee0dcae0b2e952a871537ed8e36a1360f9de4805b2b2
+                                                                    text: f/1.5
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureProgram:34850'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -281,8 +319,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 1
-                                                                    bytesHash: 474f2af47544e9c7ce4338cabd43c5ca1c26432b7300ce387406157ea433891f
-                                                                    text: '32'
+                                                                    bytesHash: d96bdf2090bd7dafe1ab0d9f7ffc4720d002c07abbf48df3969af497b1edbfb9
+                                                                    text: '250'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -297,8 +335,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Undefined
                                                                     components: 4
-                                                                    bytesHash: 74beb3a917a6281b5db97b012ce9b51afbae0625545ef013ba0e7ed0a39a71fd
-                                                                    text: '2.31'
+                                                                    bytesHash: ff455aba2f55d7848b455053f5d27b544e4f523d0a629fcba717ce719a84c8bc
+                                                                    text: '2.32'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -313,8 +351,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 20
-                                                                    bytesHash: 8292c52cd56ce4fbddf343c2e45d9c00dfe43d846ed38594e2cfa6379ebdcf6f
-                                                                    text: '2020:06:01 19:08:36'
+                                                                    bytesHash: 5aee83e1ac1a6eb526b3aa8f938b487b0fdca884a23447b3b6d7d8e2d65a0c65
+                                                                    text: '2025:02:01 20:33:38'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -329,8 +367,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 20
-                                                                    bytesHash: 8292c52cd56ce4fbddf343c2e45d9c00dfe43d846ed38594e2cfa6379ebdcf6f
-                                                                    text: '2020:06:01 19:08:36'
+                                                                    bytesHash: 5aee83e1ac1a6eb526b3aa8f938b487b0fdca884a23447b3b6d7d8e2d65a0c65
+                                                                    text: '2025:02:01 20:33:38'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -345,8 +383,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 7
-                                                                    bytesHash: 3d3b06ed209ea3fbfc17d3b3111b28a90fec65c3f4262a02c97b595f7156ede3
-                                                                    text: '+02:00'
+                                                                    bytesHash: 2f70fea04c81042292de26d254326840318b1dfdd23d7a4dbb5763fa44c13cc6
+                                                                    text: '+01:00'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTimeOriginal:36881'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -361,8 +399,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 7
-                                                                    bytesHash: 3d3b06ed209ea3fbfc17d3b3111b28a90fec65c3f4262a02c97b595f7156ede3
-                                                                    text: '+02:00'
+                                                                    bytesHash: 2f70fea04c81042292de26d254326840318b1dfdd23d7a4dbb5763fa44c13cc6
+                                                                    text: '+01:00'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTimeDigitized:36882'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -377,8 +415,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 7
-                                                                    bytesHash: 3d3b06ed209ea3fbfc17d3b3111b28a90fec65c3f4262a02c97b595f7156ede3
-                                                                    text: '+02:00'
+                                                                    bytesHash: 2f70fea04c81042292de26d254326840318b1dfdd23d7a4dbb5763fa44c13cc6
+                                                                    text: '+01:00'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -409,8 +447,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: SignedRational
                                                                     components: 1
-                                                                    bytesHash: 4899f3a89c38d25ec1d977232d193ee8511ec690c83db9fd860822126d42c2ac
-                                                                    text: '81319/7400 sec. (APEX: 45)'
+                                                                    bytesHash: fbb8aa251c77a4095a46f6c8bc7879991cb9f8d46f5342549d045430c4e4adb7
+                                                                    text: '48307/8559 sec. (APEX: 7)'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -425,8 +463,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: 6fd834efbe3e0103e6c11178f2b05507db85ad244a610506793ab39b50b33249
-                                                                    text: '1.8'
+                                                                    bytesHash: a5e6f4980bd01ed1b2189aad25f385f752638658408b9936e4252597aed5609f
+                                                                    text: '1.5'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:BrightnessValue:37379'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -441,8 +479,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: SignedRational
                                                                     components: 1
-                                                                    bytesHash: 6eb534b3e6c1a35a3eda08bafa374df9be0946cd52bba4fe22b0fefa2b62db8c
-                                                                    text: '9.8924182897267'
+                                                                    bytesHash: dc44a77a2164b5f2d6c5bfbcc16cae5a15daf693a4ab26d6d483ec5480225b3a
+                                                                    text: '1.2033756963208'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -489,8 +527,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 1
-                                                                    bytesHash: b5609376c87f00c645433e48648cb02e6a3f83467f2c827194de5d58f971c8f0
-                                                                    text: 'Auto, Did not fire'
+                                                                    bytesHash: 0298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe7
+                                                                    text: 'Off, Did not fire'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -505,8 +543,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: 1be1abdcd49befa3840464e716c0288ef3d8b41d46fc704e3ee0b979c4a3fbb2
-                                                                    text: '4.2 mm'
+                                                                    bytesHash: 9ad909cc34e669d417848d541887bb34a3e0befa358e56b37ec8f7fb65216a6c
+                                                                    text: '5.7 mm'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubjectArea:37396'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -521,8 +559,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Short
                                                                     components: 4
-                                                                    bytesHash: 755963c980c2f4730686d5de8c4290b98080a478770e4e945f5994398a392f4c
-                                                                    text: 'Within rectangle (width 2002, height 1505) around (x,y) = (2213,1324)'
+                                                                    bytesHash: 5ec5350d6ca6d183fd273183b0c8f627a0c5564618f4deb6d675a5ed44eba876
+                                                                    text: 'Within rectangle (width 2006, height 1506) around (x,y) = (2213,1327)'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
                                                             handlerClass: FileEye\MediaProbe\Block\Maker\Apple\Exif\MakerNote
@@ -560,8 +598,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: 390b36a09502b05d4f8c27aea2636c6b7fd05b27d742ed32074ffea1f888ebe4
-                                                                            text: '11'
+                                                                            bytesHash: 9246be1e9ba9f5de5baf766a256eb725e9a7551fb93d7faa793c938e0f41de35
+                                                                            text: '15'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEMatrix:2'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -575,9 +613,9 @@ elements:
                                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                                                                             validationLevel: OK
                                                                             format: Undefined
-                                                                            components: 558
-                                                                            bytesHash: cec87f067b4bea8607b746fa569caf851d1561b6a7c81b55b0e975ef29fc261a
-                                                                            text: '558 byte(s) of data'
+                                                                            components: 512
+                                                                            bytesHash: f0f3ac75ba9a495889440d0b783a4578db5f776c8893e9e1d449593b0fe352be
+                                                                            text: '512 byte(s) of data'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3'
                                                                     handlerClass: FileEye\MediaProbe\Block\Exif\Vendor\Apple\RunTime
@@ -616,8 +654,8 @@ elements:
                                                                                     validationLevel: OK
                                                                                     format: Char
                                                                                     components: 15
-                                                                                    bytesHash: ad06c18acc94443f20cde7de94d80ea6bbe354b6b317123084d95af7ebd3b52b
-                                                                                    text: '222814068412041'
+                                                                                    bytesHash: ad0e1ed7d529d11180da20813223becfbfcd3bf887690b833987a8fd56f1e590
+                                                                                    text: '364312998632666'
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/plist:AppleRuntime:3/tag:RunTimeScale:timescale'
                                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -664,8 +702,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
-                                                                            text: 'No'
+                                                                            bytesHash: b40711a88c7039756fb8a73827eabe2c0fe5a0346ca7e0a104adc0fc764f528d
+                                                                            text: 'Yes'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AETarget:5'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -680,8 +718,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: 809bbd7cc8438ceb57b5f51db7751182dcc9a867d1219af433712ff4f5c96d7b
-                                                                            text: '168'
+                                                                            bytesHash: 02f292021e8730d527eef710dc9e9a3287aa76af6c3c00703eb708fb0f6ff908
+                                                                            text: '194'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AEAverage:6'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -696,8 +734,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: 3c6527cac49827251ef9d68bdfc154988f1d747316803beaa47e06cfb73cc9fa
-                                                                            text: '182'
+                                                                            bytesHash: 053ac09e0109c6d84088a0106d301d00ebe129455cb7889c911000d6f462271f
+                                                                            text: '193'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AFStable:7'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -728,8 +766,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedRational
                                                                             components: 3
-                                                                            bytesHash: 9c0531868e1b358c6dbd5903eed1b1220531507e0b6fb9730c6a99056ab8afaf
-                                                                            text: '-0.011308182971366 -1.0046949386806 0.085962392364731'
+                                                                            bytesHash: 17786375110dcc2b5bb3a652be40836aeb106a939198c45433cfb47a7921fc6c
+                                                                            text: '0.020319707695821 -0.59822344792201 -0.82269221594975'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:FocusDistanceRange:12'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -744,8 +782,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedRational
                                                                             components: 2
-                                                                            bytesHash: 5c9229d72008f3e4d0273f4e6b881245b177027ffcfc6f66877eb19d8a6cfccd
-                                                                            text: '47.22 - 50.06 m'
+                                                                            bytesHash: 166dba5501be4538c6b7affea9d9abf341bc0e5e6459d19271744ab84243b77c
+                                                                            text: '0.99 - 1.84 m'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -759,8 +797,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: 79a881f99a636d0ad75f16f53668982b59f8bb96c3fbb449155fe7a08dba9cb1
-                                                                            text: '24'
+                                                                            bytesHash: 90a21fd1ef7b2ead7bf8b13df631f94dd0b1c0ab174a64fb9ea5d37fdad4b150
+                                                                            text: '75'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:14'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -805,8 +843,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: e084a105a7b7d599b8346d3cba5ac51b756d7e29c7ef77fd9eff31fdeae31389
-                                                                            text: Photo
+                                                                            bytesHash: c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059
+                                                                            text: Scene
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -816,12 +854,12 @@ elements:
                                                                     elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22/entry'
-                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                                                                             validationLevel: OK
-                                                                            format: Ascii
-                                                                            components: 29
-                                                                            bytesHash: e1fb084cd6e91dec2d27e4ef1ab00a1871a0f63458726567a7b9a6098166749d
-                                                                            text: AXfk7VQu4POMftN2gtzRBss36w+t
+                                                                            format: Undefined
+                                                                            components: 72
+                                                                            bytesHash: eaa4d7f7c7d4808b82204de8c0e95d507179d34bbf0a7d0f9bba5a711e58b62e
+                                                                            text: '72 byte(s) of data'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -836,8 +874,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: 287c2b497a1165fa315ac861d45205825a0263a3551cd8b1d9e8cfbb1b356b16
-                                                                            text: '38805504'
+                                                                            bytesHash: 2b0086fa1ea11a22196ee92191a33c535f77c87f997cf99c0354d101b7f5c36a
+                                                                            text: '1336'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageProcessingFlags:25'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -852,8 +890,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: 433ebf5bc03dffa38536673207a21281612cef5faa9bc7a4d5b9be2fdb12cf1a
-                                                                            text: '2'
+                                                                            bytesHash: 238f73a84b579ac89313a44491c2de0efce03e949392dddddfbd9fef162d6247
+                                                                            text: '8194'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:QualityHint:26'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -868,8 +906,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: Ascii
                                                                             components: 6
-                                                                            bytesHash: 3d8a49074f3612ebe8d1da8feadb834d685b4bc91d4c0c230ad3c4fdf47b8872
-                                                                            text: q900n
+                                                                            bytesHash: 768f99b5ba616a4d119333e95055a62256f146bd8ac26b1d4151a79bc05ed0b6
+                                                                            text: q750n
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:PhotosAppFeatureFlags:31'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -900,8 +938,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: Ascii
                                                                             components: 37
-                                                                            bytesHash: 50271cd4fb6bbaf2571b52875cbeea1e5accf8a03bd8f88d0c9efa0332ae868c
-                                                                            text: E23A8617-EBEA-4DB9-AE4B-3B300FB66AE3
+                                                                            bytesHash: 24e863f31bf0777ca8f9675eeea2444c8c5caa5da20249b66c9d976eee4be167
+                                                                            text: B21AC568-6DC1-4850-A106-967BC8A4B7A3
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:HDRHeadroom:33'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -916,8 +954,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedRational
                                                                             components: 1
-                                                                            bytesHash: 321827fb1a7ddac86878bcded4d487f3bd78f29e3dea59c8c74bcd8f00370f90
-                                                                            text: '1.5531336076444'
+                                                                            bytesHash: 6484ad36c1ad4c0da648c597161b20ca43131fb47146c28fd48d31c855bc09ae
+                                                                            text: '0.84320902819991'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:AFPerformance:35'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -932,8 +970,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 2
-                                                                            bytesHash: e6d6504539d2404f7eca98924eac70e4fce92ad52656e804b3b1fbcf9f66b672
-                                                                            text: '171 1 65'
+                                                                            bytesHash: eb2927d7265eb3aeb8d8912a885bcca910257a1434893f490f4eb85820db25fd
+                                                                            text: '29 1 60'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SceneFlags:37'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -948,8 +986,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedLong
                                                                             components: 1
-                                                                            bytesHash: 2a74f75553e1cc08471ccc59fc9dbb89eb27ffa93a6a1b7c0fab526dfa8a7989
-                                                                            text: '134'
+                                                                            bytesHash: f216c0ca3d0e0b3c53d3137ac41baf4ae1c539d7e6912ecff367cea5b154eb5e
+                                                                            text: '1403'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SignalToNoiseRatioType:38'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -980,23 +1018,8 @@ elements:
                                                                             validationLevel: OK
                                                                             format: SignedRational
                                                                             components: 1
-                                                                            bytesHash: 18b38cf405c5bc56f21bc2fd163679b8110f3a8bcb327776c85f6764ac350401
-                                                                            text: '58.257846776915'
-                                                                -
-                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:40'
-                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: Info
-                                                                    id: '40'
-                                                                    collection: Tiff\UnknownTag
-                                                                    elements:
-                                                                        -
-                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:40/entry'
-                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
-                                                                            validationLevel: OK
-                                                                            format: SignedLong
-                                                                            components: 1
-                                                                            bytesHash: b40711a88c7039756fb8a73827eabe2c0fe5a0346ca7e0a104adc0fc764f528d
-                                                                            text: '1'
+                                                                            bytesHash: 00b066da372e88b6d81b221d5b77720924617629e6dbd64d85905a918145889a
+                                                                            text: '35.568653132504'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:PhotoIdentifier:43'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1011,8 +1034,377 @@ elements:
                                                                             validationLevel: OK
                                                                             format: Ascii
                                                                             components: 37
-                                                                            bytesHash: 4245b18d91ab2e52d1e138a77e4f0f7b40a2cdecc35ea5ed05eb0767c50dff7d
-                                                                            text: D60E8EF9-229C-4BAE-BD94-585DBFFEE0F6
+                                                                            bytesHash: f2bad4eb5c1f78b4804cbaaa45a9d93d359b4ef04308416bd8fc667812c25ffa
+                                                                            text: 25BB40EE-45DE-473C-A07F-5A6FEFB8E269
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ColorTemperature:45'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: ColorTemperature
+                                                                    id: '45'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ColorTemperature:45/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: 25aa4122e5da4270649109c2a92e1fda46f6b109f799e92a78c062e1c48160ba
+                                                                            text: '2469'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:CameraType:46'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: CameraType
+                                                                    id: '46'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:CameraType:46/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: b40711a88c7039756fb8a73827eabe2c0fe5a0346ca7e0a104adc0fc764f528d
+                                                                            text: 'Back Normal'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:FocusPosition:47'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: FocusPosition
+                                                                    id: '47'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:FocusPosition:47/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: 53c926c91de543d32b704940cf82d28a213c78fde58800f1dadccf37835c96e2
+                                                                            text: '105'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:HDRGain:48'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: HDRGain
+                                                                    id: '48'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:HDRGain:48/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            validationLevel: OK
+                                                                            format: SignedRational
+                                                                            components: 1
+                                                                            bytesHash: cd2662154e6d76b2b2b92e70c0cac3ccf534f9b74eb5b89819ec509083d00a50
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:54'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '54'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:54/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: e71e356ce8508f6e96dcb8356fcf2753ebc50940c7f45f45c9fbb3bc91182252
+                                                                            text: '125'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:55'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '55'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:55/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: 1bc5d0e3df0ea12c4d0078668d14924f95106bbe173e196de50fe13a900b0937
+                                                                            text: '4'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:58'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '58'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:58/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:59'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '59'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:59/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:60'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '60'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:60/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: 1bc5d0e3df0ea12c4d0078668d14924f95106bbe173e196de50fe13a900b0937
+                                                                            text: '4'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:GreenGhostMitigationStatus:63'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: GreenGhostMitigationStatus
+                                                                    id: '63'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:GreenGhostMitigationStatus:63/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SemanticStyle:64'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: SemanticStyle
+                                                                    id: '64'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SemanticStyle:64/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                            validationLevel: OK
+                                                                            format: Undefined
+                                                                            components: 74
+                                                                            bytesHash: 1a82dca188096f802fd3e2851d21dc42fbeec1a6a200d0925a0e089166e64a57
+                                                                            text: '74 byte(s) of data'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SemanticStyleRenderingVer:65'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Notice
+                                                                    name: SemanticStyleRenderingVer
+                                                                    id: '65'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SemanticStyleRenderingVer:65/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:67'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '67'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:67/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:68'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '68'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:68/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:69'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '69'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:69/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:70'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '70'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:70/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:74'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '74'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:74/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: 433ebf5bc03dffa38536673207a21281612cef5faa9bc7a4d5b9be2fdb12cf1a
+                                                                            text: '2'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:77'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '77'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:77/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedRational
+                                                                            validationLevel: OK
+                                                                            format: SignedRational
+                                                                            components: 1
+                                                                            bytesHash: aa3bcd5e6350834f82c2b8fdba1e11f56ae65696fb5ab949aa2f71ca5b050032
+                                                                            text: '33.482482919029'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:Apple_0x004e:78'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: Apple_0x004e
+                                                                    id: '78'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:Apple_0x004e:78/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                            validationLevel: OK
+                                                                            format: Undefined
+                                                                            components: 121
+                                                                            bytesHash: 512994ba4958b8a6c8f257164320a1e5d8fe9c04a7b0e2abbb1d09c777b18126
+                                                                            text: '121 byte(s) of data'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:Apple_0x004f:79'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: OK
+                                                                    name: Apple_0x004f
+                                                                    id: '79'
+                                                                    collection: Tiff\Tag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:Apple_0x004f:79/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
+                                                                            validationLevel: OK
+                                                                            format: Undefined
+                                                                            components: 43
+                                                                            bytesHash: 616161fd6279b3e3eec0904f1b368b087b1722b18bcf2e557b22331030ea695c
+                                                                            text: '43 byte(s) of data'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:82'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '82'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:82/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: 3b28a6c3766c6295adad976d349705ef49393fbfdebe4facb5862d2cdfa285d3
+                                                                            text: '9'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:83'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '83'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:83/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: b40711a88c7039756fb8a73827eabe2c0fe5a0346ca7e0a104adc0fc764f528d
+                                                                            text: '1'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:85'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '85'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:85/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119
+                                                                            text: '0'
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:88'
+                                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                                    validationLevel: Info
+                                                                    id: '88'
+                                                                    collection: Tiff\UnknownTag
+                                                                    elements:
+                                                                        -
+                                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:88/entry'
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            validationLevel: OK
+                                                                            format: SignedLong
+                                                                            components: 1
+                                                                            bytesHash: 038d13ce0516722ebcb884e9c1cbdccce571960f3140bff1730e5822ca8adce8
+                                                                            text: '1795'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTimeOriginal:37521'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1027,8 +1419,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 4
-                                                                    bytesHash: b2136ffee8be91ed57ba6010cd969157757504de345c80c8597906dd80ea4695
-                                                                    text: '005'
+                                                                    bytesHash: b7ceb27d584143de68e941b67beed3bff86a0e57edb4c2d6d208ee467ab158c0
+                                                                    text: '098'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTimeDigitized:37522'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1043,8 +1435,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Ascii
                                                                     components: 4
-                                                                    bytesHash: b2136ffee8be91ed57ba6010cd969157757504de345c80c8597906dd80ea4695
-                                                                    text: '005'
+                                                                    bytesHash: b7ceb27d584143de68e941b67beed3bff86a0e57edb4c2d6d208ee467ab158c0
+                                                                    text: '098'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FlashpixVersion:40960'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1219,8 +1611,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 4
-                                                                    bytesHash: 0c20fdc6f7db8c21ec6e9ec443fffd3dd92c9a7b4f23b49d82f386e8c9059811
-                                                                    text: '1.53999996-4.25mm f/1.8-2.4'
+                                                                    bytesHash: 844636a46e82609051c941253108b67b90bd4e77f29b08aedbb816e83ad7fc97
+                                                                    text: '1.53999996-5.69999981mm f/1.5-2.4'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensMake:42035'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1250,9 +1642,9 @@ elements:
                                                                     handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
                                                                     validationLevel: OK
                                                                     format: Ascii
-                                                                    components: 45
-                                                                    bytesHash: 4eab7ce3e82eba55994ee34d186b8115cb93e6a46f2d73082816520631f687e3
-                                                                    text: 'iPhone 11 back dual wide camera 4.25mm f/1.8'
+                                                                    components: 44
+                                                                    bytesHash: 290f7e3a78c0d6a4b832b04aa8ea88312ba41e055e08495c41d517dadd89c25b
+                                                                    text: 'iPhone 14 back dual wide camera 5.7mm f/1.5'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CompositeImage:42080'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1307,8 +1699,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 3
-                                                                    bytesHash: a7f63ffcb04998004354621efad45677b3b9349711609eb372c4c6f0714ba633
-                                                                    text: '45° 51'' 30.36" (45.86°)'
+                                                                    bytesHash: 70a52e7f4ac7dcda689f67e5694bc287f7ccf269c7e6e65c0b5f4cc8379220a4
+                                                                    text: '46° 46'' 57.43" (46.78°)'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSLongitudeRef:3'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1339,8 +1731,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 3
-                                                                    bytesHash: 3a2287ad2da0512278ca28f2c0542af7c5ded65d3e46b6d81129c53b0e907c6f
-                                                                    text: '9° 23'' 6.24" (9.39°)'
+                                                                    bytesHash: 37b278eb074e0ddaf62861a550d26ffb17a9bb45b40c42f7c098eb028e0000bf
+                                                                    text: '12° 5'' 4.76" (12.08°)'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSAltitudeRef:5'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1371,8 +1763,24 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: 1640f32beaa4702c4c5ad8a22690b0a0c8a86c7dbfba85ae8875d15885194245
-                                                                    text: '199.77742749054'
+                                                                    bytesHash: 508301d6cee41804dffce9a7c21233e43546484d6a58cd1a69ef39be3025adfd
+                                                                    text: '1581.5840024707'
+                                                        -
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSTimeStamp:7'
+                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            validationLevel: OK
+                                                            name: GPSTimeStamp
+                                                            id: '7'
+                                                            collection: Tiff\Tag
+                                                            elements:
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSTimeStamp:7/entry'
+                                                                    handlerClass: FileEye\MediaProbe\Entry\GPSTimeStamp
+                                                                    validationLevel: OK
+                                                                    format: Rational
+                                                                    components: 3
+                                                                    bytesHash: 5000e1817423794d26f78fdef18ac043e45d130ae9923391ffa950bc43c7b6bd
+                                                                    text: '19 33 33'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSSpeedRef:12'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1403,8 +1811,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: b8dea01e9b270a94575999a699bd1eb85d518d0df861e7bd315705d07d08b789
-                                                                    text: '2.2944087992667'
+                                                                    bytesHash: cd2662154e6d76b2b2b92e70c0cac3ccf534f9b74eb5b89819ec509083d00a50
+                                                                    text: '0'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSImgDirectionRef:16'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1435,8 +1843,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: 5a20c70a988e9a65fe351f4fca5e70592579be581b9175eea12b0235221c3e93
-                                                                    text: '302.28152492669'
+                                                                    bytesHash: fc3337f1f00b32f2e7c0a4f338cbf13c02d4d0f02d945c2fbe8ce997c0fd680d
+                                                                    text: '132.84297171802'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSDestBearingRef:23'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1467,8 +1875,24 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: 5a20c70a988e9a65fe351f4fca5e70592579be581b9175eea12b0235221c3e93
-                                                                    text: '302.28152492669'
+                                                                    bytesHash: fc3337f1f00b32f2e7c0a4f338cbf13c02d4d0f02d945c2fbe8ce997c0fd680d
+                                                                    text: '132.84297171802'
+                                                        -
+                                                            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSDateStamp:29'
+                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            validationLevel: OK
+                                                            name: GPSDateStamp
+                                                            id: '29'
+                                                            collection: Tiff\Tag
+                                                            elements:
+                                                                -
+                                                                    path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSDateStamp:29/entry'
+                                                                    handlerClass: FileEye\MediaProbe\Entry\Core\Ascii
+                                                                    validationLevel: OK
+                                                                    format: Ascii
+                                                                    components: 11
+                                                                    bytesHash: ed2d4e1e5f5b513c49f462480d752f45cfd50209ebd9a2168283b8d079afe2aa
+                                                                    text: '2025:02:01'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:GPS:34853/tag:GPSHPositioningError:31'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -1483,8 +1907,8 @@ elements:
                                                                     validationLevel: OK
                                                                     format: Rational
                                                                     components: 1
-                                                                    bytesHash: e55295e022201d29daf36be215f0fff2e2819fb755a9175976472a7428d7e791
-                                                                    text: '60.2935875943 m'
+                                                                    bytesHash: cb135b42d3c66b889fde3534a2e5798034e0d43455190e13f286e48687edaafc
+                                                                    text: '27.37935019905 m'
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD1:1'
                                             handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
@@ -1568,9 +1992,9 @@ elements:
                                                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                                                             validationLevel: OK
                                                             format: Undefined
-                                                            components: 9068
-                                                            bytesHash: 7456de25066f57873d46d1c08307127f329a064afabe6b9c29dde21811baf497
-                                                            text: '9068 byte(s) of data'
+                                                            components: 8073
+                                                            bytesHash: f16f513bc862bc012c133aa08a82abf161e3c209bc968adeb3400f48de5e5614
+                                                            text: '8073 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:APP2:226'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
@@ -1584,9 +2008,25 @@ elements:
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             validationLevel: OK
                             format: Undefined
-                            components: 566
-                            bytesHash: 6a8087371ab362f894d146af4f702f531013ec233e006a3daf7c3b9dbbf2bcab
-                            text: '566 byte(s) of data'
+                            components: 90
+                            bytesHash: bf113287d29db71b74e9d1c40db9d6c9051d404f72201244b6f728a40736f357
+                            text: '90 byte(s) of data'
+                -
+                    path: '/media/jpeg/jpegSegment:APP2:226'
+                    handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
+                    validationLevel: OK
+                    name: APP2
+                    id: '226'
+                    collection: Media\Jpeg\Segment
+                    elements:
+                        -
+                            path: '/media/jpeg/jpegSegment:APP2:226/entry'
+                            handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
+                            validationLevel: OK
+                            format: Undefined
+                            components: 554
+                            bytesHash: f6bbbacbc2749ae4f38b748b490c9dab1c3336ffe52c11e361f5021ddc7442a5
+                            text: '554 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:APP10:234'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
@@ -1600,9 +2040,9 @@ elements:
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             validationLevel: OK
                             format: Undefined
-                            components: 766
-                            bytesHash: 7a4cdbaca2e61fa9a22324c85ee414b4a2ef087fd03080f7b9c363cbe2978914
-                            text: '766 byte(s) of data'
+                            components: 768
+                            bytesHash: 72f9c5815453d4fc04c6273cf3604aa4d8779e35ec30bf93c74a273f1b177d91
+                            text: '768 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:DQT:219'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
@@ -1617,7 +2057,7 @@ elements:
                             validationLevel: OK
                             format: Undefined
                             components: 134
-                            bytesHash: 58ab441dcdc1934d6cc6d53378b959f35074c161f7d8719bdccd39eaf0b770ed
+                            bytesHash: a550055999703510c1089b116d4e63cdb5dc41430abee3e0b69142c21c53ae34
                             text: '134 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:DRI:221'
@@ -1680,9 +2120,9 @@ elements:
                             handlerClass: FileEye\MediaProbe\Entry\Core\Undefined
                             validationLevel: OK
                             format: Undefined
-                            components: 4220320
-                            bytesHash: f19235f2554d084c0aab3598cb60aa17795f983e347f002652e77fa24d6b6a98
-                            text: '4220320 byte(s) of data'
+                            components: 2624404
+                            bytesHash: 0c0065500ac6da51be2a26725e5c16b3ec7a0fa64992e5fa6ee5ffd6c7527578
+                            text: '2624404 byte(s) of data'
                 -
                     path: '/media/jpeg/jpegSegment:EOI:217'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\Segment
@@ -1702,8 +2142,17 @@ elements:
 log:
     NOTICE:
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
+            message: "Unknown data format for IFD entry 23/0x17: Missing collection for item '16' in 'Format'"
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
             message: "Found SignedLong data format, expected Undefined for tag 'LivePhotoVideoIndex' in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
+            message: "Unknown data format for IFD entry 37/0x25: Missing collection for item '16' in 'Format'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SemanticStyleRenderingVer:65'
+            message: "Found SignedLong data format, expected Undefined for tag 'SemanticStyleRenderingVer' in 'Apple'"
     INFO:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
@@ -1718,8 +2167,50 @@ log:
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22'
             message: "Unknown tag 22/0x16 in 'Apple'"
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:40'
-            message: "Unknown tag 40/0x28 in 'Apple'"
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:54'
+            message: "Unknown tag 54/0x36 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:55'
+            message: "Unknown tag 55/0x37 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:58'
+            message: "Unknown tag 58/0x3A in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:59'
+            message: "Unknown tag 59/0x3B in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:60'
+            message: "Unknown tag 60/0x3C in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:67'
+            message: "Unknown tag 67/0x43 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:68'
+            message: "Unknown tag 68/0x44 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:69'
+            message: "Unknown tag 69/0x45 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:70'
+            message: "Unknown tag 70/0x46 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:74'
+            message: "Unknown tag 74/0x4A in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:77'
+            message: "Unknown tag 77/0x4D in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:82'
+            message: "Unknown tag 82/0x52 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:83'
+            message: "Unknown tag 83/0x53 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:85'
+            message: "Unknown tag 85/0x55 in 'Apple'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:88'
+            message: "Unknown tag 88/0x58 in 'Apple'"
 gdInfo:
     0: 4032
     1: 3024
@@ -1729,9 +2220,9 @@ gdInfo:
     channels: 3
     mime: image/jpeg
 exifReadData:
-    FileName: apple-iphone11.jpg
-    FileDateTime: 1737909392
-    FileSize: 4233685
+    FileName: apple-iphone14.jpg
+    FileDateTime: 1739573294
+    FileSize: 2637496
     FileType: 2
     MimeType: image/jpeg
     SectionsFound: 'ANY_TAG, IFD0, THUMBNAIL, EXIF, GPS'
@@ -1741,53 +2232,54 @@ exifReadData:
         Width: 4032
         IsColor: 1
         ByteOrderMotorola: 1
-        ApertureFNumber: f/1.8
+        ApertureFNumber: f/1.5
         Thumbnail.FileType: 2
         Thumbnail.MimeType: image/jpeg
     Make: Apple
-    Model: 'iPhone 11'
+    Model: 'iPhone 14'
     Orientation: 6
     XResolution: 72/1
     YResolution: 72/1
     ResolutionUnit: 2
-    Software: 13.3.1
-    DateTime: '2020:06:01 19:08:36'
+    Software: 18.1.1
+    DateTime: '2025:02:01 20:33:38'
+    HostComputer: 'iPhone 14'
     YCbCrPositioning: 1
-    Exif_IFD_Pointer: 206
-    GPS_IFD_Pointer: 2026
+    Exif_IFD_Pointer: 228
+    GPS_IFD_Pointer: 2586
     THUMBNAIL:
         Compression: 6
         XResolution: 72/1
         YResolution: 72/1
         ResolutionUnit: 2
-        JPEGInterchangeFormat: 2370
-        JPEGInterchangeFormatLength: 9068
-    ExposureTime: 1/2033
-    FNumber: 9/5
+        JPEGInterchangeFormat: 2990
+        JPEGInterchangeFormatLength: 8073
+    ExposureTime: 1/50
+    FNumber: 3/2
     ExposureProgram: 2
-    ISOSpeedRatings: 32
-    ExifVersion: '0231'
-    DateTimeOriginal: '2020:06:01 19:08:36'
-    DateTimeDigitized: '2020:06:01 19:08:36'
-    'UndefinedTag:0x9010': '+02:00'
-    'UndefinedTag:0x9011': '+02:00'
-    'UndefinedTag:0x9012': '+02:00'
+    ISOSpeedRatings: 250
+    ExifVersion: '0232'
+    DateTimeOriginal: '2025:02:01 20:33:38'
+    DateTimeDigitized: '2025:02:01 20:33:38'
+    'UndefinedTag:0x9010': '+01:00'
+    'UndefinedTag:0x9011': '+01:00'
+    'UndefinedTag:0x9012': '+01:00'
     ComponentsConfiguration: !!binary AQIDAA==
-    ShutterSpeedValue: 81319/7400
-    ApertureValue: 54823/32325
-    BrightnessValue: 118343/11963
+    ShutterSpeedValue: 48307/8559
+    ApertureValue: 27767/23734
+    BrightnessValue: 36076/29979
     ExposureBiasValue: 0/1
     MeteringMode: 5
-    Flash: 24
-    FocalLength: 17/4
+    Flash: 16
+    FocalLength: 57/10
     SubjectLocation:
-        - 2002
-        - 1505
+        - 2006
+        - 1506
         - 2213
-        - 1324
+        - 1327
     MakerNote: 'Apple iOS'
-    SubSecTimeOriginal: '005'
-    SubSecTimeDigitized: '005'
+    SubSecTimeOriginal: '098'
+    SubSecTimeDigitized: '098'
     FlashPixVersion: '0100'
     ColorSpace: 65535
     ExifImageWidth: 4032
@@ -1800,28 +2292,33 @@ exifReadData:
     SceneCaptureType: 0
     'UndefinedTag:0xA432':
         - 807365/524263
-        - 17/4
-        - 9/5
+        - 2988413/524283
+        - 3/2
         - 12/5
     'UndefinedTag:0xA433': Apple
-    'UndefinedTag:0xA434': 'iPhone 11 back dual wide camera 4.25mm f/1.8'
+    'UndefinedTag:0xA434': 'iPhone 14 back dual wide camera 5.7mm f/1.5'
     'UndefinedTag:0xA460': 2
     GPSLatitudeRef: 'N'
     GPSLatitude:
-        - 45/1
-        - 51/1
-        - 3036/100
+        - 46/1
+        - 46/1
+        - 5743/100
     GPSLongitudeRef: E
     GPSLongitude:
-        - 9/1
-        - 23/1
-        - 624/100
+        - 12/1
+        - 5/1
+        - 476/100
     GPSAltitudeRef: "\0"
-    GPSAltitude: 316847/1586
+    GPSAltitude: 5121169/3238
+    GPSTimeStamp:
+        - 19/1
+        - 33/1
+        - 33/1
     GPSSpeedRef: K
-    GPSSpeed: 12516/5455
+    GPSSpeed: 0/1
     GPSImgDirectionRef: T
-    GPSImgDirection: 103078/341
+    GPSImgDirection: 314705/2369
     GPSDestBearingRef: T
-    GPSDestBearing: 103078/341
-    'UndefinedTag:0x001F': 287721/4772
+    GPSDestBearing: 314705/2369
+    GPSDateStamp: '2025:02:01'
+    'UndefinedTag:0x001F': 213203/7787

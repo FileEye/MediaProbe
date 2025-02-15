@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\ListBase;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -55,20 +56,23 @@ class Filter extends ListBase
             $offset += 8;
 
             // The items are defined in the collection of the parent element.
-            $tag = $this->addBlock(new ItemDefinition(
-                $this->getParentElement()->getCollection()->getItemCollection($id),
-                DataFormat::SIGNED_LONG,
-                $val_count,
-                0,
-                $offset,
-                $p,
-            ));
+            $ifdEntry = new IfdEntryValueObject(
+                sequence: $p,
+                collection: $this->getParentElement()->getCollection()->getItemCollection($id),
+                dataFormat: DataFormat::SIGNED_LONG,
+                countOfComponents: $val_count,
+                data: 0,
+                #$offset?
+            );
+            $tagHandler = $ifdEntry->collection->handler();
+            $tag = new $tagHandler($ifdEntry, $this);
             assert($tag instanceof Tag, get_class($tag));
-            $tag->parseData(new DataWindow(
+            $tag->fromDataElement(new DataWindow(
                 $data,
                 $offset,
                 $val_count * DataFormat::getSize(DataFormat::SIGNED_LONG),
             ));
+            $this->graftBlock($tag);
 
             $offset += 4 * $val_count;
         }

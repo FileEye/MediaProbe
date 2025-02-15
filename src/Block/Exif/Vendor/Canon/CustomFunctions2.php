@@ -3,12 +3,12 @@
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\ListBase;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataWindow;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Utility\ConvertBytes;
 
 /**
@@ -43,11 +43,17 @@ class CustomFunctions2 extends ListBase
                     $num,
                     $this->getRootElement()
                 );
-                $item_definition = new ItemDefinition($item_collection, DataFormat::SIGNED_LONG, $num, $rec_pos);
-                $class = $item_definition->collection->handler();
-                $tag = new $class($item_definition, $this);
-                $tag_data_window = new DataWindow($data, $item_definition->dataOffset, $item_definition->getSize());
-                $tag->parseData($tag_data_window);
+                $ifdEntry = new IfdEntryValueObject(
+                    collection: $item_collection,
+                    dataFormat: DataFormat::SIGNED_LONG,
+                    countOfComponents: $num,
+                    data: $rec_pos,
+                );
+                $class = $item_collection->handler();
+                $tag = new $class($ifdEntry, $this);
+                $tag_data_window = new DataWindow($data, $ifdEntry->isOffset ? $ifdEntry->dataOffset() : $ifdEntry->dataValue(), $ifdEntry->size);
+                $tag->fromDataElement($tag_data_window);
+                $this->graftBlock($tag);
             } catch (DataException $e) {
                 if (isset($tag)) {
                     $tag->error($e->getMessage());

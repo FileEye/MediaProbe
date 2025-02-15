@@ -20,6 +20,11 @@ final class IfdEntryValueObject
     public readonly int $size;
 
     /**
+     * The data format of the IFD entry as identified from the data.
+     */
+    public readonly int $dataFormatFromData;
+
+    /**
      * True if the data of the entry is an offset to the actual entry data; False if the data is
      * the value entry itself.
      */
@@ -30,6 +35,8 @@ final class IfdEntryValueObject
      *   The MediaProbe collection of this IFD entry.
      * @param int $dataFormat
      *   The data format of the IFD entry.
+     * @param int|null $dataFormatFromData
+     *   The data format of the IFD entry as identified from the data.
      * @param int $countOfComponents
      *   The number of components of the IFD entry.
      * @param int $data
@@ -39,13 +46,15 @@ final class IfdEntryValueObject
      */
     public function __construct(
         public readonly CollectionInterface $collection,
-        public readonly int $dataFormat,
-        public readonly int $countOfComponents,
+        public readonly int $dataFormat = DataFormat::LONG,
+        ?int $dataFormatFromData = null,
+        public readonly int $countOfComponents = 1,
         private readonly int $data = 0,
         public readonly int $sequence = 0,
     ) {
         $this->size = DataFormat::getSize($this->dataFormat) * $this->countOfComponents;
         $this->isOffset = $this->size > 4;
+        $this->dataFormatFromData = $dataFormatFromData ?? $this->dataFormat;
     }
 
     /**

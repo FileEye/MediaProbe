@@ -11,13 +11,13 @@ fileContentHash: 26f4b11c45ad3e56a530d03967ff4627892b3264183b85fefba194ff1fe3e08
 elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
-    validationLevel: OK
+    validationLevel: Notice
     collection: Media
     elements:
         -
             path: /media/tiff
             handlerClass: FileEye\MediaProbe\Block\Media\Tiff
-            validationLevel: OK
+            validationLevel: Notice
             id: image/tiff
             collection: Media\Tiff
             elements:
@@ -39,7 +39,7 @@ elements:
                 -
                     path: '/media/tiff/ifd:IFD0:0'
                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                    validationLevel: OK
+                    validationLevel: Notice
                     name: IFD0
                     id: '0'
                     collection: Media\Tiff\Ifd0
@@ -239,7 +239,7 @@ elements:
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338'
                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                            validationLevel: OK
+                            validationLevel: Notice
                             name: ExtraSamples
                             id: '338'
                             collection: Tiff\Tag
@@ -255,7 +255,7 @@ elements:
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339'
                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                            validationLevel: OK
+                            validationLevel: Notice
                             name: SampleFormat
                             id: '339'
                             collection: Tiff\Tag
@@ -285,13 +285,13 @@ elements:
                                     bytesHash: 395dcc364f390cfa373c4cd4a37d62f10b547d51d24510386c4fc3a3f106d7e2
                                     text: "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.1.2\">\n   <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n      <rdf:Description rdf:about=\"\"\n            xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\">\n         <tiff:Compression>5</tiff:Compression>\n      </rdf:Description>\n   </rdf:RDF>\n</x:xmpmeta>\n"
 log:
-    WARNING:
+    NOTICE:
         -
             path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338'
-            message: "Found Short data format, expected Undefined for item 'ExtraSamples' in 'IFD0'"
+            message: "Found Short data format, expected Undefined for tag 'ExtraSamples' in 'IFD0'"
         -
             path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339'
-            message: "Found Short data format, expected Undefined for item 'SampleFormat' in 'IFD0'"
+            message: "Found Short data format, expected Undefined for tag 'SampleFormat' in 'IFD0'"
 gdInfo:
     0: 174
     1: 38

@@ -211,7 +211,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Media\Tiff\IfdExif
@@ -475,7 +475,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
                                                             handlerClass: FileEye\MediaProbe\Block\Maker\Apple\Exif\MakerNote
-                                                            validationLevel: OK
+                                                            validationLevel: Notice
                                                             name: Apple
                                                             id: '37500'
                                                             collection: Maker\Apple\Exif\MakerNote
@@ -698,7 +698,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '13'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -713,7 +713,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:14'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '14'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -728,7 +728,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:16'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '16'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -775,7 +775,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '22'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -790,7 +790,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Notice
                                                                     name: LivePhotoVideoIndex
                                                                     id: '23'
                                                                     collection: Tiff\Tag
@@ -1500,23 +1500,23 @@ elements:
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
 log:
-    WARNING:
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
-            message: "Found SignedLong data format, expected Undefined for item 'LivePhotoVideoIndex' in 'Apple'"
     NOTICE:
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
+            message: "Found SignedLong data format, expected Undefined for tag 'LivePhotoVideoIndex' in 'Apple'"
+    INFO:
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:13'
-            message: "Unknown item 13/0xD in 'Apple'"
+            message: "Unknown tag 13/0xD in 'Apple'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:14'
-            message: "Unknown item 14/0xE in 'Apple'"
+            message: "Unknown tag 14/0xE in 'Apple'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:16'
-            message: "Unknown item 16/0x10 in 'Apple'"
+            message: "Unknown tag 16/0x10 in 'Apple'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:22'
-            message: "Unknown item 22/0x16 in 'Apple'"
+            message: "Unknown tag 22/0x16 in 'Apple'"
 gdInfo:
     0: 4032
     1: 3024

@@ -16,7 +16,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 
 /**
- * Base class for MediaProbe root block.
+ * Base class for a MediaProbe root block.
  */
 abstract class RootBlockBase extends BlockBase
 {

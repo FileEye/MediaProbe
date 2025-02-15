@@ -38,7 +38,7 @@ elements:
                 -
                     path: '/media/jpeg/jpegSegment:APP1:225'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1
-                    validationLevel: OK
+                    validationLevel: Notice
                     name: APP1
                     id: '225'
                     collection: Media\Jpeg\SegmentApp1
@@ -46,20 +46,20 @@ elements:
                         -
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\ExifApp
-                            validationLevel: OK
+                            validationLevel: Notice
                             id: ExifApp
                             collection: Media\Jpeg\ExifApp
                             elements:
                                 -
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff
-                                    validationLevel: OK
+                                    validationLevel: Notice
                                     collection: Media\Tiff
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
                                             handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                            validationLevel: OK
+                                            validationLevel: Notice
                                             name: IFD0
                                             id: '0'
                                             collection: Media\Tiff\Ifd0
@@ -131,7 +131,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExifVersion:36864'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: Warning
+                                                    validationLevel: Notice
                                                     name: ExifVersion
                                                     id: '36864'
                                                     collection: Tiff\Tag
@@ -219,7 +219,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExposureTime:33434'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ExposureTime
                                                     id: '33434'
                                                     collection: Tiff\Tag
@@ -267,7 +267,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ComponentsConfiguration:37121'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ComponentsConfiguration
                                                     id: '37121'
                                                     collection: Tiff\Tag
@@ -283,7 +283,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:FNumber:33437'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: FNumber
                                                     id: '33437'
                                                     collection: Tiff\Tag
@@ -475,7 +475,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:UserComment:37510'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: Warning
+                                                    validationLevel: Notice
                                                     name: UserComment
                                                     id: '37510'
                                                     collection: Tiff\Tag
@@ -523,7 +523,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Media\Tiff\IfdExif
@@ -531,7 +531,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OtherImageStart:513'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: OK
+                                                            validationLevel: Notice
                                                             name: OtherImageStart
                                                             id: '513'
                                                             collection: Tiff\Tag
@@ -547,7 +547,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OtherImageLength:514'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: OK
+                                                            validationLevel: Notice
                                                             name: OtherImageLength
                                                             id: '514'
                                                             collection: Tiff\Tag
@@ -769,33 +769,33 @@ elements:
 log:
     WARNING:
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExifVersion:36864'
-            message: "Found Byte data format, expected Undefined for item 'ExifVersion' in 'IFD0'"
-        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExifVersion:36864/entry'
             message: 'Incorrect version data.'
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExposureTime:33434'
-            message: "Found SignedRational data format, expected Rational for item 'ExposureTime' in 'IFD0'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ComponentsConfiguration:37121'
-            message: "Found Byte data format, expected Undefined for item 'ComponentsConfiguration' in 'IFD0'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:FNumber:33437'
-            message: "Found SignedRational data format, expected Rational for item 'FNumber' in 'IFD0'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:UserComment:37510'
-            message: "Found Ascii data format, expected Undefined for item 'UserComment' in 'IFD0'"
-        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:UserComment:37510/entry'
             message: 'Invalid EXIF text encoding for UserComment.'
+    NOTICE:
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExifVersion:36864'
+            message: "Found Byte data format, expected Undefined for tag 'ExifVersion' in 'IFD0'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ExposureTime:33434'
+            message: "Found SignedRational data format, expected Rational for tag 'ExposureTime' in 'IFD0'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ComponentsConfiguration:37121'
+            message: "Found Byte data format, expected Undefined for tag 'ComponentsConfiguration' in 'IFD0'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:FNumber:33437'
+            message: "Found SignedRational data format, expected Rational for tag 'FNumber' in 'IFD0'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:UserComment:37510'
+            message: "Found Ascii data format, expected Undefined for tag 'UserComment' in 'IFD0'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OtherImageStart:513'
-            message: "Found Long data format, expected Undefined for item 'OtherImageStart' in 'ExifIFD'"
+            message: "Found Long data format, expected Undefined for tag 'OtherImageStart' in 'ExifIFD'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OtherImageLength:514'
-            message: "Found Long data format, expected Undefined for item 'OtherImageLength' in 'ExifIFD'"
-    NOTICE:
+            message: "Found Long data format, expected Undefined for tag 'OtherImageLength' in 'ExifIFD'"
         -
             path: /media/jpeg
             message: 'Found trailing content after EOI: 3504 bytes'
