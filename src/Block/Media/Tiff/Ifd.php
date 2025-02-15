@@ -7,6 +7,7 @@ use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\Thumbnail;
 use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Collection\CollectionException;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
@@ -70,46 +71,36 @@ class Ifd extends ListBase
 
             // Adds the IFD entry to the DOM.
             $item_class = $ifdEntry->collection->handler();
+            $item = new $item_class(
+                ifdEntry: $ifdEntry,
+                parent: $this,
+            );
             try {
                 if (is_a($item_class, Ifd::class, true)) {
                     // This is a sub-IFD.
-                    $item = new $item_class(
-                        ifdEntry: $ifdEntry,
-                        parent: $this,
-                    );
                     try {
                         $item->fromDataElement($dataElement);
                     } catch (DataException $e) {
                         $item->error($e->getMessage());
                     }
-                    $this->graftBlock($item);
                 } else {
                     // This is a TAG.
                     // In case of an IFD terminator item entry, i.e. zero
                     // components, the data window size is still 4 bytes, from
                     // the IFD index area.
-                    $item = new $item_class(
-                        new ItemDefinition(
-                            collection: $ifdEntry->collection,
-                            format: $ifdEntry->dataFormat,
-                            valuesCount: $ifdEntry->countOfComponents,
-                            dataOffset: $ifdEntry->isOffset ? $ifdEntry->dataOffset() : $ifdEntry->dataValue(),
-                            sequence: $ifdEntry->sequence,
-                        ),
-                        $this,
-                    );
-                    $item_data_window_size = $ifdEntry->countOfComponents > 0 ? $ifdEntry->size : 4;
-                    if ($ifdEntry->isOffset) {
-                        $item->parseData($dataElement, $ifdEntry->dataOffset(), $item_data_window_size);
-                    } else {
-                        $item->parseData($dataElement, $ifdEntry->dataValue(), $item_data_window_size);
+                    try {
+                        $item_data_window_offset = $ifdEntry->isOffset ? $ifdEntry->dataOffset() : $ifdEntry->dataValue();
+                        $item_data_window_size = $ifdEntry->countOfComponents > 0 ? $ifdEntry->size : 4;
+                        $tagDataWindow = new DataWindow($dataElement, $item_data_window_offset, $item_data_window_size);
+                        $item->fromDataElement($tagDataWindow);
+                    } catch (DataException $e) {
+                        $item->error($e->getMessage());
                     }
                 }
             } catch (DataException $e) {
-                if (isset($item)) {
-                    $item->error($e->getMessage());
-                }
+                $item->error($e->getMessage());
             }
+            $this->graftBlock($item);
         }
 
         // Invoke post-load callbacks.
@@ -153,15 +144,13 @@ class Ifd extends ListBase
      * Gets the IfdEntryValueObject object of an IFD entry, from the data.
      *
      * @param int $seq
-     *            The sequence (0-index) of the item in the IFD.
+     *   The sequence (0-index) of the item in the IFD.
      * @param DataElement $dataElement
-     *            the data element that will provide the data.
+     *   The data element that will provide the data.
      * @param int $offset
-     *            the offset within the data element where the count can be
-     *            found.
+     *   The offset within the data element where the count can be found.
      * @param int $dataDisplacement
-     *            (Optional) if specified, an additional shift to the offset
-     *            where data can be found.
+     *   (Optional) if specified, an additional shift to the offset where data can be found.
      */
     protected function ifdEntryFromDataElement(
         int $seq,
@@ -172,9 +161,25 @@ class Ifd extends ListBase
     ): IfdEntryValueObject|false {
         $id = $dataElement->getShort($offset);
         $format = $dataElement->getShort($offset + 2);
+        $realFormat = $format;
 
-        // Fall back to the generic IFD collection if the item is missing from
-        // the appropriate one.
+        try {
+            $componentSize = DataFormat::getSize($format);
+        } catch (CollectionException $e) {
+            // If the fromat is unknown, we can only take the entry data as a Long value, not an
+            // offset; however we can only do so if only one component is in data.
+            $message = sprintf('Unknown data format for IFD entry %s: %s', HexDump::dumpIntHex($id), $e->getMessage());
+            if ($dataElement->getLong($offset + 4) === 1) {
+                $this->notice($message);
+            } else {
+                $this->error($message);
+            }
+            $format = DataFormat::SIGNED_LONG;
+            $componentSize = DataFormat::getSize($format);
+        }
+
+        // Fall back to the generic IFD collection if the item is missing from the appropriate
+        // one.
         try {
             $item_collection = $this->getCollection()->getItemCollection($id);
         } catch (MediaProbeException $e) {
@@ -198,13 +203,13 @@ class Ifd extends ListBase
             // The first 2 bytes indicate the number of directory entries contained in the IFD.
             // Then directory entries (12 bytes per entry) follow. After last directory entry,
             // there are 4 bytes indicating the offset to next IFD.
-            $size = 2 + $components * DataFormat::getSize($format) + 4;
+            $size = 2 + $components * $componentSize + 4;
         } else {
             // The data is a tag.
             $components = $dataElement->getLong($offset + 4);
             // If the data size is bigger than 4 bytes, then actual data is not in the entry
             // data, but at the the offset stored in the data.
-            $size = DataFormat::getSize($format) * $components;
+            $size = $componentSize * $components;
             if ($size > 4) {
                 $data_offset = $dataElement->getLong($offset + 8) - $dataDisplacement;
             } else {
@@ -239,6 +244,7 @@ class Ifd extends ListBase
             sequence: $seq,
             collection: $item_collection,
             dataFormat: $format,
+            dataFormatFromData: $realFormat,
             countOfComponents: $components,
             data: $data_offset,
         );

@@ -3,6 +3,8 @@
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\Index;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 
 /**
@@ -45,7 +47,21 @@ class AFInfoIndex extends Index
 
             // Adds the 'tag'.
             $item_class = $item_definition->collection->handler();
-            $item = new $item_class($item_definition, $this);
+            if (is_a($item_class, Tag::class, true)) {
+                $item = new $item_class(
+                    ifdEntry: new IfdEntryValueObject(
+                        collection: $item_definition->collection,
+                        dataFormat: $item_definition->format,
+                        countOfComponents: $item_definition->valuesCount,
+                        data: $item_definition->dataOffset,
+                        sequence: $item_definition->sequence,
+                    ),
+                    parent: $this,
+                );
+                $this->graftBlock($item);
+            } else {
+                $item = new $item_class($item_definition, $this);
+            }
 
             $entry_class = $item_definition->getEntryClass();
             new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->format, $value_components));

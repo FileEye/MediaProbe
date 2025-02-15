@@ -200,7 +200,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                                    validationLevel: OK
+                                                    validationLevel: Info
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Media\Tiff\IfdExif
@@ -432,7 +432,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500'
                                                             handlerClass: FileEye\MediaProbe\Block\Maker\Canon\Exif\MakerNote
-                                                            validationLevel: OK
+                                                            validationLevel: Info
                                                             name: Canon
                                                             id: '37500'
                                                             collection: Maker\Canon\Exif\MakerNote
@@ -1598,7 +1598,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '0'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -1613,7 +1613,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '0'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -1924,7 +1924,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '0'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -1939,7 +1939,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:24'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '24'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -1954,7 +1954,7 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:25'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Info
                                                                     id: '25'
                                                                     collection: Tiff\UnknownTag
                                                                     elements:
@@ -2468,22 +2468,22 @@ elements:
                             bytesHash: cde66e78e5419dea74df7cf43d9aa876b8c669d40067992e719cef90ac5f3fe0
                             text: '2 byte(s) of data'
 log:
-    NOTICE:
+    INFO:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
-            message: "Unknown item 0/0x0 in 'Canon'"
+            message: "Unknown tag 0/0x0 in 'Canon'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
-            message: "Unknown item 0/0x0 in 'Canon'"
+            message: "Unknown tag 0/0x0 in 'Canon'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:0'
-            message: "Unknown item 0/0x0 in 'Canon'"
+            message: "Unknown tag 0/0x0 in 'Canon'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:24'
-            message: "Unknown item 24/0x18 in 'Canon'"
+            message: "Unknown tag 24/0x18 in 'Canon'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Canon:37500/tag:25'
-            message: "Unknown item 25/0x19 in 'Canon'"
+            message: "Unknown tag 25/0x19 in 'Canon'"
 gdInfo:
     0: 640
     1: 480
@@ -2494,7 +2494,7 @@ gdInfo:
     mime: image/jpeg
 exifReadData:
     FileName: canon-powershot-s60.jpg
-    FileDateTime: 1737909392
+    FileDateTime: 1739563719
     FileSize: 42616
     FileType: 2
     MimeType: image/jpeg

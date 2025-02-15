@@ -10,7 +10,6 @@ use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\Core\Ascii;
 use FileEye\MediaProbe\Entry\Time;
-use FileEye\MediaProbe\ItemDefinition;
 
 class IfdTest extends MediaProbeTestCaseBase
 {
@@ -30,10 +29,25 @@ class IfdTest extends MediaProbeTestCaseBase
 
         $this->assertCount(0, $ifd->getMultipleElements('tag'));
 
-        $tag1 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x010E), DataFormat::ASCII), $ifd);
+        $tag1 = new Tag(
+            ifdEntry: new IfdEntryValueObject(
+                collection: $ifd->getCollection()->getItemCollection(0x010E),
+                dataFormat: DataFormat::ASCII,
+            ),
+            parent: $ifd,
+        );
+        $ifd->graftBlock($tag1);
         $desc = new Ascii($tag1, new DataString('Hello?' . chr(0)));
 
-        $tag2 = new Tag(new ItemDefinition($ifd->getCollection()->getItemCollection(0x0132), DataFormat::ASCII, 20), $ifd);
+        $tag2 = new Tag(
+            ifdEntry: new IfdEntryValueObject(
+                collection: $ifd->getCollection()->getItemCollection(0x0132),
+                dataFormat: DataFormat::ASCII,
+                countOfComponents: 20,
+            ),
+            parent: $ifd,
+        );
+        $ifd->graftBlock($tag2);
         $date = new Time($tag2, new DataString('12345678' . chr(0)));
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));

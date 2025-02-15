@@ -206,7 +206,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ModifyDate
                                                     id: '306'
                                                     collection: Tiff\Tag
@@ -254,7 +254,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Media\Tiff\IfdExif
@@ -342,7 +342,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: OK
+                                                            validationLevel: Notice
                                                             name: DateTimeOriginal
                                                             id: '36867'
                                                             collection: Tiff\Tag
@@ -358,7 +358,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: OK
+                                                            validationLevel: Notice
                                                             name: CreateDate
                                                             id: '36868'
                                                             collection: Tiff\Tag
@@ -792,16 +792,16 @@ log:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
             message: 'Offset 1002 overflows total size (712) for JPEG thumbnail.'
-    WARNING:
+    NOTICE:
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-            message: "Found 21 data components, expected 20 for item 'ModifyDate' in 'IFD0'"
+            message: "Found 21 data components, expected 20 for tag 'ModifyDate' in 'IFD0'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
-            message: "Found 21 data components, expected 20 for item 'DateTimeOriginal' in 'ExifIFD'"
+            message: "Found 21 data components, expected 20 for tag 'DateTimeOriginal' in 'ExifIFD'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
-            message: "Found 21 data components, expected 20 for item 'CreateDate' in 'ExifIFD'"
+            message: "Found 21 data components, expected 20 for tag 'CreateDate' in 'ExifIFD'"
 gdInfo:
     0: 330
     1: 220

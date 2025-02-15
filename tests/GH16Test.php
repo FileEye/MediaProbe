@@ -3,11 +3,11 @@
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Entry\WindowsString;
-use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Media;
 
 class GH16Test extends MediaProbeTestCaseBase
@@ -42,7 +42,14 @@ class GH16Test extends MediaProbeTestCaseBase
         // Change the value of the Tag's entry and save the file to disk.
         $ifd0->removeElement("tag[@name='XPSubject']");
         $new_entry_value = "Превед, медвед!";
-        $tag = new Tag(new ItemDefinition($ifd0->getCollection()->getItemCollection(0x9C9F), DataFormat::BYTE), $ifd0);
+        $tag = new Tag(
+            ifdEntry: new IfdEntryValueObject(
+                collection: $ifd0->getCollection()->getItemCollection(0x9C9F),
+                dataFormat: DataFormat::BYTE,
+            ),
+            parent: $ifd0,
+        );
+        $ifd0->graftBlock($tag);
         new WindowsString($tag, new DataString(mb_convert_encoding($new_entry_value, 'UCS-2LE', 'UTF-8') . "\x00\x00"));
         $this->assertCount(1, $ifd0->getMultipleElements('tag'));
         $this->assertEquals($new_entry_value, $ifd0->getElement("tag[@name='XPSubject']")->toString());

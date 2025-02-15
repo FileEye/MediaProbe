@@ -7,6 +7,7 @@ use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
+use FileEye\MediaProbe\Data\DataWindow;
 use FileEye\MediaProbe\ItemDefinition;
 use FileEye\MediaProbe\Model\BlockBase;
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -80,7 +81,15 @@ class Map extends Index
             $item = $this->addBlock($item_definition);
             assert($item instanceof Tag || $item instanceof RawData, get_class($item));
             try {
-                $item->parseData($data, $item_definition->dataOffset, $item_definition->getSize());
+                if (is_a($item, Tag::class, true)) {
+                    $item_data_window_offset = $item->ifdEntry->isOffset ? $item->ifdEntry->dataOffset() : $item->ifdEntry->dataValue();
+                    $item_data_window_size = $item->ifdEntry->countOfComponents > 0 ? $item->ifdEntry->size : 4;
+                    $tagDataWindow = new DataWindow($data, $item_data_window_offset, $item_data_window_size);
+                    $item->fromDataElement($tagDataWindow);
+                    $this->graftBlock($item);
+                } else {
+                    $item->parseData($data, $item_definition->dataOffset, $item_definition->getSize());
+                }
             } catch (DataException $e) {
                 $item->error($e->getMessage());
             }

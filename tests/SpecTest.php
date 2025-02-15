@@ -121,9 +121,15 @@ class SpecTest extends MediaProbeTestCaseBase
         $parent_collection = CollectionFactory::get($parent_collection_id);
         $item_collection = $parent_collection->getItemCollectionByName($tag_name);
         $item_format = $item_collection->getPropertyValue('format')[0];
-        $item_definition = new ItemDefinition($item_collection, $item_format);
-        $entry_class_name = $item_definition->getEntryClass();
-        $tag = new Tag($item_definition, $ifd);
+        $ifdEntry = new IfdEntryValueObject(
+            collection: $item_collection,
+            dataFormat: $item_format
+        );
+        $tag = new Tag(
+            ifdEntry: $ifdEntry,
+            parent: $ifd
+        );
+        $entry_class_name = $tag->getEntryClass();
         new $entry_class_name($tag, new DataString($args));
 
         $this->assertInstanceOf($expected_class, $tag->getElement("entry"));

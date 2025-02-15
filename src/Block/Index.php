@@ -27,7 +27,7 @@ class Index extends ListBase
             foreach ($expected_format as $expected_format_id) {
                 $expected_format_names[] = DataFormat::getName($expected_format_id);
             }
-            $this->warning("Found {format_name} data format, expected {expected_format_names}", [
+            $this->notice("Found {format_name} data format, expected {expected_format_names}", [
                 'format_name' => DataFormat::getName($this->getFormat()),
                 'expected_format_names' => implode(', ', $expected_format_names),
             ]);
@@ -70,7 +70,15 @@ class Index extends ListBase
             // Adds the 'tag'.
             $tag = $this->addBlock($item_definition);
             assert($tag instanceof Tag || $tag instanceof RawData, get_class($tag));
-            $tag->parseData($data, $item_definition->dataOffset, $item_definition->getSize());
+            if (is_a($tag, Tag::class, true)) {
+                $item_data_window_offset = $tag->ifdEntry->isOffset ? $tag->ifdEntry->dataOffset() : $tag->ifdEntry->dataValue();
+                $item_data_window_size = $tag->ifdEntry->countOfComponents > 0 ? $tag->ifdEntry->size : 4;
+                $tagDataWindow = new DataWindow($data, $item_data_window_offset, $item_data_window_size);
+                $tag->fromDataElement($tagDataWindow);
+                $this->graftBlock($tag);
+            } else {
+                $tag->parseData($data, $item_definition->dataOffset, $item_definition->getSize());
+            }
 
             $offset += $item_definition->getSize();
         }

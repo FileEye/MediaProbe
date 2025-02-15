@@ -10,13 +10,13 @@ fileContentHash: b14a62158bfab96530f8c257cb619371a39ca5d28c9e23a65e95e7b4ac4ba3b
 elements:
     path: /media
     handlerClass: FileEye\MediaProbe\Media
-    validationLevel: OK
+    validationLevel: Notice
     collection: Media
     elements:
         -
             path: /media/jpeg
             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg
-            validationLevel: OK
+            validationLevel: Notice
             id: image/jpeg
             collection: Media\Jpeg
             elements:
@@ -71,7 +71,7 @@ elements:
                 -
                     path: '/media/jpeg/jpegSegment:APP1:225'
                     handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\SegmentApp1
-                    validationLevel: OK
+                    validationLevel: Notice
                     name: APP1
                     id: '225'
                     collection: Media\Jpeg\SegmentApp1
@@ -79,20 +79,20 @@ elements:
                         -
                             path: '/media/jpeg/jpegSegment:APP1:225/exif'
                             handlerClass: FileEye\MediaProbe\Block\Media\Jpeg\ExifApp
-                            validationLevel: OK
+                            validationLevel: Notice
                             id: ExifApp
                             collection: Media\Jpeg\ExifApp
                             elements:
                                 -
                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff
-                                    validationLevel: OK
+                                    validationLevel: Notice
                                     collection: Media\Tiff
                                     elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
                                             handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                            validationLevel: OK
+                                            validationLevel: Notice
                                             name: IFD0
                                             id: '0'
                                             collection: Media\Tiff\Ifd0
@@ -132,7 +132,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: Warning
+                                                    validationLevel: Notice
                                                     name: ModifyDate
                                                     id: '306'
                                                     collection: Tiff\Tag
@@ -172,7 +172,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Media\Tiff\IfdExif
@@ -180,7 +180,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: Warning
+                                                            validationLevel: Notice
                                                             name: ExifVersion
                                                             id: '36864'
                                                             collection: Tiff\Tag
@@ -378,17 +378,18 @@ elements:
 log:
     WARNING:
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-            message: "Found 11 data components, expected 20 for item 'ModifyDate' in 'IFD0'"
-        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
             message: "Invalid datetime format for '1509749992'"
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-            message: "Found Byte data format, expected Undefined for item 'ExifVersion' in 'ExifIFD'"
-        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864/entry'
             message: 'Incorrect version data.'
+    NOTICE:
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
+            message: "Found 11 data components, expected 20 for tag 'ModifyDate' in 'IFD0'"
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
+            message: "Found Byte data format, expected Undefined for tag 'ExifVersion' in 'ExifIFD'"
 gdInfo:
     0: 320
     1: 200

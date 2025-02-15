@@ -2,20 +2,40 @@
 
 namespace FileEye\MediaProbe\Block\Tiff;
 
+use FileEye\MediaProbe\Block\ListBase;
+use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
-use FileEye\MediaProbe\Model\BlockBase;
+use FileEye\MediaProbe\ItemDefinition;
+use FileEye\MediaProbe\MediaProbeException;
 use FileEye\MediaProbe\Model\BlockInterface;
-use FileEye\MediaProbe\Model\EntryInterface;
-use FileEye\MediaProbe\Utility\ConvertBytes;
+use FileEye\MediaProbe\Model\LeafBlockBase;
+use FileEye\MediaProbe\Model\RootBlockBase;
 use FileEye\MediaProbe\Utility\HexDump;
 
 /**
  * Class representing an Exif TAG as a MediaProbe block.
  */
-class Tag extends BlockBase
+class Tag extends LeafBlockBase
 {
+    public function __construct(
+        public readonly IfdEntryValueObject $ifdEntry,
+        ListBase|RootBlockBase $parent,
+    ) {
+        parent::__construct(
+            definition: new ItemDefinition(
+                collection: $ifdEntry->collection,
+                format: $ifdEntry->dataFormat,
+                valuesCount: $ifdEntry->countOfComponents,
+                dataOffset: $ifdEntry->isOffset ? $ifdEntry->dataOffset() : $ifdEntry->dataValue(),
+                sequence: $ifdEntry->sequence,
+            ),
+            parent: $parent,
+            graft: false,
+        );
+    }
+
     /**
      * Validates against the specification, if defined.
      */
@@ -26,21 +46,21 @@ class Tag extends BlockBase
 
         // Check if MediaProbe has a definition for this tag.
         if (in_array($this->getCollection()->getPropertyValue('id'), ['VoidCollection', 'Tiff\UnknownTag'])) {
-            $this->notice("Unknown item {item} in '{parent}'", [
+            $this->info("Unknown tag {item} in '{parent}'", [
                 'item' => HexDump::dumpIntHex($this->getAttribute('id')),
                 'parent' => $parentElement->getCollection()->getPropertyValue('name') ?? 'n/a',
             ]);
             return;
         }
 
-        // Warn if format is not as expected.
+        // Notice if format is not as expected.
         $expected_format = $this->getCollection()->getPropertyValue('format');
         if ($expected_format !== null && $this->getFormat() !== null && !in_array($this->getFormat(), $expected_format)) {
             $expected_format_names = [];
             foreach ($expected_format as $expected_format_id) {
                 $expected_format_names[] = DataFormat::getName($expected_format_id);
             }
-            $this->warning("Found {format_name} data format, expected {expected_format_names} for item '{item}' in '{parent}'", [
+            $this->notice("Found {format_name} data format, expected {expected_format_names} for tag '{item}' in '{parent}'", [
                 'format_name' => DataFormat::getName($this->getFormat()),
                 'expected_format_names' => implode(', ', $expected_format_names),
                 'item' => $this->getAttribute('name') ?? 'n/a',
@@ -48,10 +68,10 @@ class Tag extends BlockBase
             ]);
         }
 
-        // Warn if components are not as expected.
+        // Notice if components are not as expected.
         $expected_components = $this->getCollection()->getPropertyValue('components');
         if ($expected_components !== null && $this->getComponents() !== null && $this->getComponents() !== $expected_components) {
-            $this->warning("Found {components} data components, expected {expected_components} for item '{item}' in '{parent}'", [
+            $this->notice("Found {components} data components, expected {expected_components} for tag '{item}' in '{parent}'", [
                 'components' => $this->getComponents(),
                 'expected_components' => $expected_components,
                 'item' => $this->getAttribute('name') ?? 'n/a',
@@ -60,60 +80,47 @@ class Tag extends BlockBase
         }
     }
 
-    protected function doParseData(DataElement $data): void
+    public function fromDataElement(DataElement $dataElement): Tag
     {
         $this->validate();
-        assert($this->debugInfo(['dataElement' => $data]));
+        $this->debugInfo(['dataElement' => $dataElement]);
         try {
-            $class = $this->getDefinition()->getEntryClass();
-            $entry = new $class($this, $data);
-            $this->level = $entry->level();
+            $class = $this->getEntryClass();
+            $entry = new $class($this, $dataElement);
         } catch (DataException $e) {
             $this->error($e->getMessage());
         }
+        return $this;
     }
 
-    public function getValue(array $options = []): mixed
+    public function getEntryClass(): string
     {
-        return $this->getElement("entry") ? $this->getElement("entry")->getValue($options) : null;
-    }
+        // Return the specific entry class if defined, or fall back to
+        // default class for the format.
+        if (!$entry_class = $this->ifdEntry->collection->getPropertyValue('entryClass')) {
+            if (empty($this->ifdEntry->dataFormat)) {
+                throw new MediaProbeException(
+                    'No format can be derived for TAG: %s (%s)',
+                    $this->ifdEntry->collection->getPropertyValue('item') ?? 'n/a',
+                    $this->ifdEntry->collection->getPropertyValue('name') ?? 'n/a'
+                );
+            }
 
-    public function toString(array $options = []): string
-    {
-        return $this->getElement("entry") ? $this->getElement("entry")->toString($options) : '';
-    }
-
-    public function toBytes($order = ConvertBytes::LITTLE_ENDIAN, $offset = 0): string
-    {
-        return $this->getElement("entry") ? $this->getElement("entry")->toBytes($order, $offset) : '';
-    }
-
-    public function getFormat(): int
-    {
-        $entry = $this->getElement("entry");
-        if (!$entry) {
-            return $this->getDefinition()->format;
+            if (!$entry_class = DataFormat::getClass($this->ifdEntry->dataFormat)) {
+                throw new MediaProbeException(
+                    'Unsupported format %d for TAG: %s (%s)',
+                    $this->ifdEntry->dataFormat,
+                    $this->ifdEntry->collection->getPropertyValue('item') ?? 'n/a',
+                    $this->ifdEntry->collection->getPropertyValue('name') ?? 'n/a'
+                );
+            }
         }
-        assert($entry instanceof EntryInterface, get_class($entry));
-        return $entry->getFormat();
+        return $entry_class;
     }
 
-    public function getComponents(): int
+    public function parseData(DataElement $dataElement, int $start = 0, ?int $size = null): void
     {
-        $entry = $this->getElement("entry");
-        if (!$entry) {
-            return $this->getDefinition()->valuesCount;
-        }
-        assert($entry instanceof EntryInterface, get_class($entry));
-        return $entry->getComponents();
-    }
-
-    protected function getContextPathSegmentPattern(): string
-    {
-        if ($this->getAttribute('name') !== '') {
-            return '/{DOMNode}:{name}:{id}';
-        }
-        return '/{DOMNode}:{id}';
+        throw new \LogicException('removing');
     }
 
     public function collectInfo(array $context = []): array

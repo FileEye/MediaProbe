@@ -70,7 +70,7 @@ elements:
                                         -
                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0'
                                             handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                            validationLevel: OK
+                                            validationLevel: Notice
                                             name: IFD0
                                             id: '0'
                                             collection: Media\Tiff\Ifd0
@@ -78,7 +78,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: Notice
+                                                    validationLevel: OK
                                                     name: Make
                                                     id: '271'
                                                     collection: Tiff\Tag
@@ -94,7 +94,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: Notice
+                                                    validationLevel: OK
                                                     name: Model
                                                     id: '272'
                                                     collection: Tiff\Tag
@@ -158,7 +158,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: Notice
+                                                    validationLevel: OK
                                                     name: Software
                                                     id: '305'
                                                     collection: Tiff\Tag
@@ -190,7 +190,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Artist:315'
                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                    validationLevel: Notice
+                                                    validationLevel: OK
                                                     name: Artist
                                                     id: '315'
                                                     collection: Tiff\Tag
@@ -206,7 +206,7 @@ elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665'
                                                     handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Ifd
-                                                    validationLevel: OK
+                                                    validationLevel: Notice
                                                     name: ExifIFD
                                                     id: '34665'
                                                     collection: Media\Tiff\IfdExif
@@ -486,7 +486,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTimeOriginal:37521'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: Notice
+                                                            validationLevel: OK
                                                             name: SubSecTimeOriginal
                                                             id: '37521'
                                                             collection: Tiff\Tag
@@ -502,7 +502,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SubSecTimeDigitized:37522'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: Notice
+                                                            validationLevel: OK
                                                             name: SubSecTimeDigitized
                                                             id: '37522'
                                                             collection: Tiff\Tag
@@ -646,7 +646,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SerialNumber:42033'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: Notice
+                                                            validationLevel: OK
                                                             name: SerialNumber
                                                             id: '42033'
                                                             collection: Tiff\Tag
@@ -678,7 +678,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensModel:42036'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: Notice
+                                                            validationLevel: OK
                                                             name: LensModel
                                                             id: '42036'
                                                             collection: Tiff\Tag
@@ -694,7 +694,7 @@ elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:LensSerialNumber:42037'
                                                             handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                            validationLevel: Notice
+                                                            validationLevel: OK
                                                             name: LensSerialNumber
                                                             id: '42037'
                                                             collection: Tiff\Tag
@@ -806,18 +806,6 @@ elements:
 log:
     WARNING:
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-            message: "Found 19 data components, expected 20 for item 'ModifyDate' in 'IFD0'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
-            message: "Found 19 data components, expected 20 for item 'DateTimeOriginal' in 'ExifIFD'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
-            message: "Found 19 data components, expected 20 for item 'CreateDate' in 'ExifIFD'"
-        -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880'
-            message: "Found 6 data components, expected 7 for item 'OffsetTime' in 'ExifIFD'"
-        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff'
             message: 'Could not determine number of entries for IFD1, overflow'
     NOTICE:
@@ -831,17 +819,29 @@ log:
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305/entry'
             message: 'Ascii entry missing final NUL character.'
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
+            message: "Found 19 data components, expected 20 for tag 'ModifyDate' in 'IFD0'"
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306/entry'
             message: 'Ascii entry missing final NUL character.'
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Artist:315/entry'
             message: 'Ascii entry missing final NUL character.'
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
+            message: "Found 19 data components, expected 20 for tag 'DateTimeOriginal' in 'ExifIFD'"
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867/entry'
             message: 'Ascii entry missing final NUL character.'
         -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
+            message: "Found 19 data components, expected 20 for tag 'CreateDate' in 'ExifIFD'"
+        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868/entry'
             message: 'Ascii entry missing final NUL character.'
+        -
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880'
+            message: "Found 6 data components, expected 7 for tag 'OffsetTime' in 'ExifIFD'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:OffsetTime:36880/entry'
             message: 'Ascii entry missing final NUL character.'

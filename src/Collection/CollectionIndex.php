@@ -251,7 +251,7 @@ class CollectionIndex extends CollectionBase {
     'Media\\Tiff\\IfdAny' => 'Media\\Tiff\\IfdAny',
     'RawData' => 'RawData',
     'SOS' => 'Media\\Jpeg\\SegmentSos',
-    'Thumbnail' => 'Thumbnail',
+    'Thumbnail' => 'Media\\Tiff\\Ifd1',
     'Tiff\\Tag' => 'Tiff\\Tag',
     'Tiff\\UnknownTag' => 'Tiff\\UnknownTag',
     'VoidCollection' => 'VoidCollection',
