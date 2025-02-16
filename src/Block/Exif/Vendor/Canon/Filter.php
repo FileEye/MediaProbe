@@ -123,6 +123,8 @@ class Filter extends ListBase
 
     public function getParentElement(): FilterInfoIndex
     {
-        return parent::getParentElement();
+        $parent = parent::getParentElement();
+        assert($parent instanceof FilterInfoIndex);
+        return $parent;
     }
 }

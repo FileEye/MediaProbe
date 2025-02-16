@@ -10,7 +10,6 @@ skip:
         - 'Apple:SemanticStyleRenderingVer'
         - 'Apple:Apple_0x004e'
         - 'Apple:Apple_0x004f'
-        - 'Apple:LivePhotoVideoIndex'
         - 'Apple:SemanticStyle'
 fileName: apple-iphone14.jpg
 mimeType: image/jpeg
@@ -870,12 +869,12 @@ elements:
                                                                     elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23/entry'
-                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Long64
                                                                             validationLevel: OK
-                                                                            format: SignedLong
+                                                                            format: Long64
                                                                             components: 1
-                                                                            bytesHash: 2b0086fa1ea11a22196ee92191a33c535f77c87f997cf99c0354d101b7f5c36a
-                                                                            text: '1336'
+                                                                            bytesHash: 1e91a3fcb19cd587cc927e9fbd82cf0ce1bbce3b597c50a82efcb9300b6158b1
+                                                                            text: '5251076'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:ImageProcessingFlags:25'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -975,19 +974,19 @@ elements:
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SceneFlags:37'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
-                                                                    validationLevel: OK
+                                                                    validationLevel: Notice
                                                                     name: SceneFlags
                                                                     id: '37'
                                                                     collection: Tiff\Tag
                                                                     elements:
                                                                         -
                                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SceneFlags:37/entry'
-                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\SignedLong
+                                                                            handlerClass: FileEye\MediaProbe\Entry\Core\Long64
                                                                             validationLevel: OK
-                                                                            format: SignedLong
+                                                                            format: Long64
                                                                             components: 1
-                                                                            bytesHash: f216c0ca3d0e0b3c53d3137ac41baf4ae1c539d7e6912ecff367cea5b154eb5e
-                                                                            text: '1403'
+                                                                            bytesHash: e6be7b85d1e521cd436ef61b12243067c89ac5fd705a4fd10b17202e27163ded
+                                                                            text: '5262'
                                                                 -
                                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SignalToNoiseRatioType:38'
                                                                     handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
@@ -2142,14 +2141,11 @@ elements:
 log:
     NOTICE:
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
-            message: "Unknown data format for IFD entry 23/0x17: Missing collection for item '16' in 'Format'"
-        -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:LivePhotoVideoIndex:23'
-            message: "Found SignedLong data format, expected Undefined for tag 'LivePhotoVideoIndex' in 'Apple'"
+            message: "Found Long64 data format, expected Undefined for tag 'LivePhotoVideoIndex' in 'Apple'"
         -
-            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500'
-            message: "Unknown data format for IFD entry 37/0x25: Missing collection for item '16' in 'Format'"
+            path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SceneFlags:37'
+            message: "Found Long64 data format, expected SignedLong for tag 'SceneFlags' in 'Apple'"
         -
             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/makerNote:Apple:37500/tag:SemanticStyleRenderingVer:65'
             message: "Found SignedLong data format, expected Undefined for tag 'SemanticStyleRenderingVer' in 'Apple'"

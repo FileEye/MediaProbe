@@ -11,19 +11,8 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
   */
 class Long extends NumberBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'Long';
-
-    /**
-     * {@inheritdoc}
-     */
     protected string $formatName = 'Long';
-
-    /**
-     * {@inheritdoc}
-     */
     protected int $formatSize = 4;
 
     const MIN = 0;
@@ -34,9 +23,6 @@ class Long extends NumberBase
         return $this->dataElement->getLong($offset);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
@@ -49,10 +35,7 @@ class Long extends NumberBase
         return $ret;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function numberToBytes(int $number, int $order): string
+    public function numberToBytes(int|float $number, int $order): string
     {
         return ConvertBytes::fromLong($number, $order);
     }

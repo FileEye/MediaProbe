@@ -22,6 +22,6 @@ class MeasuredEV2 extends SignedShort
      */
     public function toString(array $options = []): string
     {
-        return round($this->getValue(), 2);
+        return (string) round($this->getValue(), 2);
     }
 }

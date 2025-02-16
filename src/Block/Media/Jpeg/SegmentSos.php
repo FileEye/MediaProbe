@@ -39,6 +39,8 @@ class SegmentSos extends SegmentBase
 
     public function getParentElement(): Jpeg
     {
-        return parent::getParentElement();
+        $parent = parent::getParentElement();
+        assert($parent instanceof Jpeg);
+        return $parent;
     }
 }
