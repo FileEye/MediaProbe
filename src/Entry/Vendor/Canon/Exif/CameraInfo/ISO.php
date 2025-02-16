@@ -22,6 +22,6 @@ class ISO extends Byte
      */
     public function toString(array $options = []): string
     {
-        return round($this->getValue());
+        return (string) round($this->getValue());
     }
 }

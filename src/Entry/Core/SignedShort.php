@@ -53,7 +53,7 @@ class SignedShort extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes(int $number, int $order): string
+    public function numberToBytes(int|float $number, int $order): string
     {
         return ConvertBytes::fromSignedShort($number, $order);
     }

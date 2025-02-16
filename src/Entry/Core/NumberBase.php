@@ -41,7 +41,7 @@ abstract class NumberBase extends EntryBase
     /**
      * Return a number from the data element at specified offset.
      */
-    abstract protected function getNumberFromDataElement(int $offset): int|array;
+    abstract protected function getNumberFromDataElement(int $offset): int|float|array;
 
     /**
      * Convert a number into bytes.
@@ -60,7 +60,7 @@ abstract class NumberBase extends EntryBase
      *
      * @return string bytes representing the number given.
      */
-    abstract public function numberToBytes(int $number, int $order): string;
+    abstract public function numberToBytes(int|float $number, int $order): string;
 
     /**
      * Formats a number.

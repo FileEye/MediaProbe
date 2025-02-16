@@ -53,7 +53,7 @@ class ShortRev extends NumberBase
     /**
      * {@inheritdoc}
      */
-    public function numberToBytes(int $number, int $order): string
+    public function numberToBytes(int|float $number, int $order): string
     {
         return ConvertBytes::fromShortRev($number, $order);
     }

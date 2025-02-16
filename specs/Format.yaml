@@ -90,6 +90,20 @@ items:
         name: Double
         title: 'Double'
         length: 8
+    16:
+        # BigTIFF.
+        # Each component will be an unsigned 64-bit integer.
+        name: Long64
+        title: 'Long (64-bit)'
+        length: 8
+        class: FileEye\MediaProbe\Entry\Core\Long64
+    17:
+        # BigTIFF.
+        # Each component will be a signed 64-bit integer.
+        name: SignedLong64
+        title: 'SignedLong (64-bit)'
+        length: 8
+        class: FileEye\MediaProbe\Entry\Core\SignedLong64
     1000:
         # Unsigned 16-bit integer (Short), reversed byte order.
         name: ShortRev

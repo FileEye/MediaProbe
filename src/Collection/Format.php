@@ -42,6 +42,10 @@ class Format extends CollectionBase {
     array (
       0 => 4,
     ),
+    'Long64' =>
+    array (
+      0 => 16,
+    ),
     'Rational' =>
     array (
       0 => 5,
@@ -65,6 +69,10 @@ class Format extends CollectionBase {
     'SignedLong' =>
     array (
       0 => 9,
+    ),
+    'SignedLong64' =>
+    array (
+      0 => 17,
     ),
     'SignedRational' =>
     array (
@@ -212,6 +220,28 @@ class Format extends CollectionBase {
         'name' => 'Double',
         'title' => 'Double',
         'length' => 8,
+        'collection' => 'VoidCollection',
+      ),
+    ),
+    16 =>
+    array (
+      0 =>
+      array (
+        'name' => 'Long64',
+        'title' => 'Long (64-bit)',
+        'length' => 8,
+        'class' => 'FileEye\\MediaProbe\\Entry\\Core\\Long64',
+        'collection' => 'VoidCollection',
+      ),
+    ),
+    17 =>
+    array (
+      0 =>
+      array (
+        'name' => 'SignedLong64',
+        'title' => 'SignedLong (64-bit)',
+        'length' => 8,
+        'class' => 'FileEye\\MediaProbe\\Entry\\Core\\SignedLong64',
         'collection' => 'VoidCollection',
       ),
     ),

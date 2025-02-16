@@ -61,7 +61,9 @@ abstract class RootBlockBase extends BlockBase
     ) {
         $doc = new \DOMDocument();
         $doc->registerNodeClass(\DOMElement::class, DOMElement::class);
-        $this->DOMNode = $doc->createElement($collection->getPropertyValue('DOMNode'));
+        $element = $doc->createElement($collection->getPropertyValue('DOMNode'));
+        assert($element instanceof DOMElement);
+        $this->DOMNode = $element;
         $doc->appendChild($this->DOMNode);
         $this->DOMNode->setMediaProbeElement($this);
         $this->XPath = new \DOMXPath($this->DOMNode->ownerDocument);

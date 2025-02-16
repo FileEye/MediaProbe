@@ -251,6 +251,21 @@ abstract class DataElement
     }
 
     /**
+     * Returns a 64-bit unsigned long read from the data.
+     *
+     * @param int $offset
+     *   The offset into the data. An offset of zero will return the first byte in the current
+     *   allowed window. The last valid offset is equal to ::getSize()-8.
+     *
+     * @throws DataException
+     *   In case of invalid offset.
+     */
+    public function getLong64(int $offset = 0): int|float
+    {
+        return ConvertBytes::toLong64($this->getBytes($offset, 8), $this->getByteOrder());
+    }
+
+    /**
      * Return a signed long read from the data.
      *
      * @param int $offset
@@ -267,6 +282,21 @@ abstract class DataElement
     public function getSignedLong(int $offset = 0): int
     {
         return ConvertBytes::toSignedLong($this->getBytes($offset, 4), $this->getByteOrder());
+    }
+
+    /**
+     * Returns a 64-bit signed long read from the data.
+     *
+     * @param int $offset
+     *   The offset into the data. An offset of zero will return the first byte in the current
+     *   allowed window. The last valid offset is equal to ::getSize()-8.
+     *
+     * @throws DataException
+     *   In case of invalid offset.
+     */
+    public function getSignedLong64(int $offset = 0): int|float
+    {
+        return ConvertBytes::toSignedLong64($this->getBytes($offset, 8), $this->getByteOrder());
     }
 
     /**

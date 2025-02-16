@@ -52,6 +52,7 @@ class IfdTest extends MediaProbeTestCaseBase
 
         $this->assertCount(2, $ifd->getMultipleElements('tag'));
 
+        /** @var non-empty-array<int,Tag> $tags */
         $tags = [];
         foreach ($ifd->getMultipleElements('tag') as $tag) {
             $tags[$tag->getAttribute('id')] = $tag->getElement("entry");

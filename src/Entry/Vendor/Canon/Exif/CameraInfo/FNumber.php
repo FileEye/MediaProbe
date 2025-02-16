@@ -22,6 +22,6 @@ class FNumber extends Byte
      */
     public function toString(array $options = []): string
     {
-        return round($this->getValue(), 1);
+        return (string) round($this->getValue(), 1);
     }
 }
