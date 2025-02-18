@@ -260,7 +260,7 @@ abstract class DataElement
      * @throws DataException
      *   In case of invalid offset.
      */
-    public function getLong64(int $offset = 0): int|float
+    public function getLong64(int $offset = 0): string
     {
         return ConvertBytes::toLong64($this->getBytes($offset, 8), $this->getByteOrder());
     }
@@ -294,7 +294,7 @@ abstract class DataElement
      * @throws DataException
      *   In case of invalid offset.
      */
-    public function getSignedLong64(int $offset = 0): int|float
+    public function getSignedLong64(int $offset = 0): string
     {
         return ConvertBytes::toSignedLong64($this->getBytes($offset, 8), $this->getByteOrder());
     }

@@ -113,19 +113,6 @@ interface ElementInterface
     public function validationLevel(): string;
 
     /**
-     * Returns the value of this element, if the element supports it.
-     *
-     * For a formatted version of the value, use ::toString() instead.
-     *
-     * @param array $options
-     *   (Optional) an array of options to format the value.
-     *
-     * @throws MediaProbeException
-     *   When the element does not support returning a value.
-     */
-    public function getValue(array $options = []): mixed;
-
-    /**
      * Gets the value of this element as text.
      *
      * The value will be returned in a format suitable for presentation, e.g. rationals will be

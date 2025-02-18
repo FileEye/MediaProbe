@@ -36,13 +36,17 @@ class AFInfoIndex extends Index
             };
 
             if (in_array($item_definition->collection->getPropertyValue('name'), ['AFAreaWidths', 'AFAreaHeights', 'AFAreaXPositions', 'AFAreaYPositions'])) {
-                $value_components = $this->getElement("tag[@name='NumAFPoints']")->getElement("entry")->getValue();
-                $this->components -= ($value_components - 1);
+                $valueComponentsTag = $this->getElement("tag[@name='NumAFPoints']");
+                assert($valueComponentsTag instanceof Tag);
+                $valueComponents = $valueComponentsTag->getValue();
+                $this->components -= ($valueComponents - 1);
             } elseif (in_array($item_definition->collection->getPropertyValue('name'), ['AFPointsInFocus', 'AFPointsSelected'])) {
-                $value_components = (int) (($this->getElement("tag[@name='NumAFPoints']")->getElement("entry")->getValue() + 15) / 16);
-                $this->components -= ($value_components - 1);
+                $valueComponentsTag = $this->getElement("tag[@name='NumAFPoints']");
+                assert($valueComponentsTag instanceof Tag);
+                $valueComponents = (int) (($valueComponentsTag->getValue() + 15) / 16);
+                $this->components -= ($valueComponents - 1);
             } else {
-                $value_components = 1;
+                $valueComponents = 1;
             }
 
             // Adds the 'tag'.
@@ -64,7 +68,7 @@ class AFInfoIndex extends Index
             }
 
             $entry_class = $item_definition->getEntryClass();
-            new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->format, $value_components));
+            new $entry_class($item, $this->getDataWindowFromData($data, $offset, $item_definition->format, $valueComponents));
         }
     }
 }

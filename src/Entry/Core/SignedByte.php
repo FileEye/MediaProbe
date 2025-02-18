@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Entry\Core;
 
 /**
@@ -10,14 +12,7 @@ namespace FileEye\MediaProbe\Entry\Core;
  */
 class SignedByte extends NumberBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'SignedByte';
-
-    /**
-     * {@inheritdoc}
-     */
     protected string $formatName = 'SignedByte';
 
     const MIN = -128;
@@ -28,9 +23,6 @@ class SignedByte extends NumberBase
         return $this->dataElement->getSignedByte($offset);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
@@ -43,10 +35,7 @@ class SignedByte extends NumberBase
         return $ret;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function numberToBytes(int|float $number, int $order): string
+    public function numberToBytes(int|string $number, int $order): string
     {
         return chr($number);
     }

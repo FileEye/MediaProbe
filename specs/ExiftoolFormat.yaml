@@ -36,6 +36,20 @@ items:
         format: Float
     double:
         format: Double
+#    ifd:
+#        13, # IFD (with int32u format)
+#    unicode:
+#        14, # UNICODE
+#    complex:
+#        15, # COMPLEX
+    int64u:
+        format: Long64
+    int64s:
+        format: SignedLong64
+#    ifd64:
+#        18, # IFD8 (with int64u format) [BigTIFF]
+#    utf8:
+#        129,# UTF-8 (Exif 3.0)
     # var_int16u is present in ExifMakerNotes\CanonVRD\Ver2
     var_int16u:
         format: Undefined

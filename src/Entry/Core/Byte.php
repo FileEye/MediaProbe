@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Entry\Core;
 
 /**
@@ -9,14 +11,7 @@ namespace FileEye\MediaProbe\Entry\Core;
  */
 class Byte extends NumberBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'Byte';
-
-    /**
-     * {@inheritdoc}
-     */
     protected string $formatName = 'Byte';
 
     const MIN = 0;
@@ -27,9 +22,6 @@ class Byte extends NumberBase
         return $this->dataElement->getByte($offset);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
@@ -42,10 +34,7 @@ class Byte extends NumberBase
         return $ret;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function numberToBytes(int|float $number, int $order): string
+    public function numberToBytes(int|string $number, int $order): string
     {
         return chr($number);
     }

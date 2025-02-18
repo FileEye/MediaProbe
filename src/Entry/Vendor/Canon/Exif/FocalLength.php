@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Entry\Core\Short;
 
 /**
@@ -9,16 +10,15 @@ use FileEye\MediaProbe\Entry\Core\Short;
  */
 class FocalLength extends Short
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         // Get the Focal Units.
-        if (!$focal_units = $this->getRootElement()->getElement("//makerNote[@name='Canon']//tag[@name='FocalUnits']/entry")) {
+        $tag = $this->getRootElement()->getElement("//makerNote[@name='Canon']//tag[@name='FocalUnits']");
+        if (!$tag) {
             $denominator = 1;
         } else {
-            $denominator = $focal_units->getValue() ?: 1;
+            assert($tag instanceof Tag);
+            $denominator = $tag->getValue() ?: 1;
         }
 
         return parent::getValue() / $denominator;

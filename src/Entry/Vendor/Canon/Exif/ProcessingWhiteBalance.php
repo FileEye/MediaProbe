@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Entry\Core\SignedShort;
 
 /**
@@ -15,11 +16,15 @@ class ProcessingWhiteBalance extends SignedShort
     public function getValue(array $options = []): mixed
     {
         if (parent::getValue() < 0) {
-            if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='WhiteBalance']/entry")) {
-                return $alternate->getValue($options);
+            $alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonCameraInfo']/tag[@name='WhiteBalance']");
+            if ($alternative) {
+                assert($alternative instanceof Tag);
+                return $alternative->getValue($options);
             }
-            if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonShotInfo']/tag[@name='WhiteBalance']/entry")) {
-                return $alternate->getValue($options);
+            $alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name='CanonShotInfo']/tag[@name='WhiteBalance']");
+            if ($alternative) {
+                assert($alternative instanceof Tag);
+                return $alternative->getValue($options);
             }
         }
         return parent::getValue();

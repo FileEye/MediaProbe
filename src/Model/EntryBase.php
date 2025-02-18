@@ -256,4 +256,6 @@ abstract class EntryBase extends ElementBase implements EntryInterface
     {
         return $dumper->dumpEntry($this, $context);
     }
+
+    abstract public function getValue(array $options = []): mixed;
 }

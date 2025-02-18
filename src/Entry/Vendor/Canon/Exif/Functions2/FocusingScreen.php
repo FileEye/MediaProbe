@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\Functions2;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Entry\Core\SignedLong;
 use FileEye\MediaProbe\Model\ElementInterface;
 
@@ -16,7 +17,9 @@ class FocusingScreen extends SignedLong
     public static function resolveItemCollectionIndex(?int $components_count, ElementInterface $context): mixed
     {
         // Gets the Model from IFD0.
-        $model = $context->getElement("//ifd[@name='IFD0']/tag[@name='Model']/entry")->getValue();
+        $modelTag = $context->getElement("//ifd[@name='IFD0']/tag[@name='Model']");
+        assert($modelTag instanceof Tag);
+        $model = $modelTag->getValue();
 
         if (preg_match('/\b(40D|50D|60D)\b/', $model) === 1) {
             // 40D, 50D and 60D.

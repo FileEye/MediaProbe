@@ -15,7 +15,12 @@ abstract class LeafBlockBase extends BlockBase
 {
     public function getValue(array $options = []): mixed
     {
-        return $this->getElement("entry") ? $this->getElement("entry")->getValue($options) : null;
+        $entry = $this->getElement("entry");
+        if ($entry === null) {
+            return null;
+        }
+        assert($entry instanceof EntryInterface);
+        return $entry->getValue($options);
     }
 
     public function toString(array $options = []): string

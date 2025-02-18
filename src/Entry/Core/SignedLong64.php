@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Entry\Core;
 
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -15,10 +17,10 @@ class SignedLong64 extends NumberBase
     protected string $formatName = 'SignedLong64';
     protected int $formatSize = 8;
 
-    const MIN = -9223372036854775808;
-    const MAX = 9223372036854775807;
+    const MIN = '-9223372036854775808';
+    const MAX = '9223372036854775807';
 
-    protected function getNumberFromDataElement(int $offset): int|float
+    protected function getNumberFromDataElement(int $offset): string
     {
         return $this->dataElement->getSignedLong64($offset);
     }
@@ -35,7 +37,7 @@ class SignedLong64 extends NumberBase
         return $ret;
     }
 
-    public function numberToBytes(int|float $number, int $order): string
+    public function numberToBytes(int|string $number, int $order): string
     {
         return ConvertBytes::fromSignedLong64($number, $order);
     }

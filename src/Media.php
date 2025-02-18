@@ -138,17 +138,23 @@ class Media extends RootBlockBase
         if (!$make_tag = $media->getElement("//ifd[@name='IFD0']/tag[@name='Make']")) {
             return;
         }
-        $maker = $make_tag && $make_tag->getElement("entry") ? $make_tag->getElement("entry")->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
+        assert($make_tag instanceof Tag);
+        $maker = $make_tag->getValue() ?: 'n/a';
 
         // Get Model tag from IFD0.
         $model_tag = $media->getElement("//ifd[@name='IFD0']/tag[@name='Model']");
-        $model = $model_tag && $model_tag->getElement("entry") ? $model_tag->getElement("entry")->getValue() : 'na';  // xx modelTag should always have an entry, so the check is irrelevant but a test fails
+        if ($model_tag) {
+            assert($model_tag instanceof Tag);
+            $model = $model_tag->getValue() ?: 'n/a';
+        } else {
+            $model = 'n/a';
+        }
 
         // Get maker note collection.
-        if (!$maker_note_collection = static::getMakerNoteCollection($make_tag->getElement("entry")->getValue(), $model)) {
-            $media->info("**** No decoder available to parse maker notes for {maker}/{model}", [
-                'maker' => $maker,
-                'model' => $model,
+        if (!$maker_note_collection = static::getMakerNoteCollection($maker, $model)) {
+            $media->info("**** No decoder available to parse maker notes for {maker} model {model}", [
+                'maker' => trim($maker),
+                'model' => trim($model),
             ]);
             return;
         }

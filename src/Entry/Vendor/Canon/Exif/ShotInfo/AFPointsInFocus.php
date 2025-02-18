@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif\ShotInfo;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Entry\Core\SignedShort;
 
 /**
@@ -15,8 +16,10 @@ class AFPointsInFocus extends SignedShort
     public function getValue(array $options = []): mixed
     {
         if ($options['format'] ?? null === 'exiftool') {
-            if ($alternative_af_points_in_focus = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonShotInfo']/tag[@name='AFPointsInFocus']/entry")) {
-                return $alternative_af_points_in_focus->getValue($options);
+            $alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonShotInfo']/tag[@name='AFPointsInFocus']");
+            if ($alternative) {
+                assert($alternative instanceof Tag);
+                return $alternative->getValue($options);
             } else {
                 return parent::getValue();
             }
