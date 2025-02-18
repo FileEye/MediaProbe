@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Entry\Core\Short;
 
 /**
@@ -9,12 +10,11 @@ use FileEye\MediaProbe\Entry\Core\Short;
  */
 class CameraSettingsLensType extends Short
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
-        if ($alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']/entry")) {
+        $alternate = $this->getRootElement()->getElement("//makerNote[@name='Canon']/map[@name='CanonCameraInfo']/tag[@name='LensType']");
+        if ($alternate) {
+            assert($alternate instanceof Tag);
             return $alternate->getValue($options);
         } else {
             return parent::getValue();

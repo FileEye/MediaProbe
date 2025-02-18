@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Entry\Core\SignedShort;
 
 /**
@@ -14,8 +15,10 @@ class Sharpness extends SignedShort
      */
     public function getValue(array $options = []): mixed
     {
-        if ($alternative_sharpness = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonCameraSettings']/tag[@name='Sharpness']/entry")) {
-            $value = $alternative_sharpness->getValue($options);
+        $alternative = $this->getRootElement()->getElement("//makerNote[@name='Canon']/*[@name!='CanonCameraSettings']/tag[@name='Sharpness']");
+        if ($alternative) {
+            assert($alternative instanceof Tag);
+            $value = $alternative->getValue($options);
         } else {
             $value = parent::getValue($options);
         }

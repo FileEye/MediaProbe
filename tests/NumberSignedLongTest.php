@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Entry\Core\SignedLong;
@@ -11,13 +13,13 @@ class NumberSignedLongTest extends NumberTestCase
     {
         parent::setUp();
         $this->num = new SignedLong($this->mockParentElement, $this->mockDataElement);
-        $this->min = -2147483648;
-        $this->max = 2147483647;
+        $this->min = '-2147483648';
+        $this->max = '2147483647';
     }
 
-    protected function convertValueToBytes(int|float|array $value): string
+    protected function convertValueToBytes(int|string|array $value): string
     {
-        assert(is_int($value));
-        return ConvertBytes::fromSignedLong($value);
+        assert(is_int($value) || is_string($value));
+        return ConvertBytes::fromSignedLong((int) $value);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Entry\Core;
 
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -35,7 +37,7 @@ class Long extends NumberBase
         return $ret;
     }
 
-    public function numberToBytes(int|float $number, int $order): string
+    public function numberToBytes(int|string $number, int $order): string
     {
         return ConvertBytes::fromLong($number, $order);
     }

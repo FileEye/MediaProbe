@@ -2,6 +2,7 @@
 
 namespace FileEye\MediaProbe\Test;
 
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Media;
 
 class GH77Test extends MediaProbeTestCaseBase
@@ -17,7 +18,9 @@ class GH77Test extends MediaProbeTestCaseBase
 
         $ifd0 = $app1->getElement("tiff/ifd[@name='IFD0']");
 
-        $model = $ifd0->getElement("tag[@name='Model']")->getValue();
+        $modelTag = $ifd0->getElement("tag[@name='Model']");
+        $this->assertInstanceOf(Tag::class, $modelTag);
+        $model = $modelTag->getValue();
         $this->assertEquals($model, "Canon EOS 5D Mark III");
 
         $copyright_entry = $ifd0->getElement("tag[@name='Copyright']/entry");

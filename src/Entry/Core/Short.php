@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Entry\Core;
 
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -12,19 +14,8 @@ use FileEye\MediaProbe\Utility\ConvertBytes;
  */
 class Short extends NumberBase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected string $name = 'Short';
-
-    /**
-     * {@inheritdoc}
-     */
     protected string $formatName = 'Short';
-
-    /**
-     * {@inheritdoc}
-     */
     protected int $formatSize = 2;
 
     const MIN = 0;
@@ -35,9 +26,6 @@ class Short extends NumberBase
         return $this->dataElement->getShort($offset);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getValue(array $options = []): mixed
     {
         if ($this->components == 1) {
@@ -50,10 +38,7 @@ class Short extends NumberBase
         return $ret;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function numberToBytes(int|float $number, int $order): string
+    public function numberToBytes(int|string $number, int $order): string
     {
         return ConvertBytes::fromShort($number, $order);
     }

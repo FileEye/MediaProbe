@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Entry\Core;
 
 use FileEye\MediaProbe\Model\EntryBase;

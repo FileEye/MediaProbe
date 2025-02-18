@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Test;
 
 use FileEye\MediaProbe\Data\DataException;
@@ -12,8 +14,8 @@ class NumberSignedRationalTest extends NumberTestCase
     {
         parent::setUp();
         $this->num = new SignedRational($this->mockParentElement, $this->mockDataElement);
-        $this->min = -2147483648;
-        $this->max = 2147483647;
+        $this->min = '-2147483648';
+        $this->max = '2147483647';
     }
 
     public function testBase()
@@ -71,7 +73,7 @@ class NumberSignedRationalTest extends NumberTestCase
         $this->assertSame('0', $this->num->toString());
     }
 
-    protected function convertValueToBytes(int|float|array $value): string
+    protected function convertValueToBytes(int|string|array $value): string
     {
         assert(is_array($value));
         return ConvertBytes::fromSignedRational($value);

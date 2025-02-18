@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FileEye\MediaProbe\Entry\Core;
 
 use FileEye\MediaProbe\Utility\ConvertBytes;
@@ -15,10 +17,10 @@ class Long64 extends NumberBase
     protected string $formatName = 'Long64';
     protected int $formatSize = 8;
 
-    const MIN = 0;
-    const MAX = 18446744073709551615;
+    const MIN = '0';
+    const MAX = '18446744073709551615';
 
-    protected function getNumberFromDataElement(int $offset): int|float
+    protected function getNumberFromDataElement(int $offset): string
     {
         return $this->dataElement->getLong64($offset);
     }
@@ -35,7 +37,7 @@ class Long64 extends NumberBase
         return $ret;
     }
 
-    public function numberToBytes(int|float $number, int $order): string
+    public function numberToBytes(int|string $number, int $order): string
     {
         return ConvertBytes::fromLong64($number, $order);
     }

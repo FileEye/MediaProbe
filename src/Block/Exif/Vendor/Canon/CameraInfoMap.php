@@ -3,6 +3,7 @@
 namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\Map;
+use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFormat;
 use FileEye\MediaProbe\ItemDefinition;
@@ -22,8 +23,13 @@ class CameraInfoMap extends Map
         parent::validate($dataElement);
 
         // Gets the Model from IFD0.
-        $model_entry = $this->getRootElement()->getElement("//ifd[@name='IFD0']/tag[@name='Model']/entry");
-        $model = $model_entry ? $model_entry->getValue() : 'n/a';
+        $modelTag = $this->getRootElement()->getElement("//ifd[@name='IFD0']/tag[@name='Model']");
+        if ($modelTag) {
+            assert($modelTag instanceof Tag);
+            $model = $modelTag->getValue() ?? "n/a";
+        } else {
+            $model = "n/a";
+        }
 
         $values_count = $this->getDefinition()->valuesCount;
 
