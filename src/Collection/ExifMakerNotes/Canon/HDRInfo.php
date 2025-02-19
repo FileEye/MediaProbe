@@ -21,7 +21,7 @@ class HDRInfo extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\HDRInfo',
   'itemsByName' =>
   array (
@@ -51,7 +51,7 @@ class HDRInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HDR',
         'title' => 'HDR',
         'format' =>
@@ -74,7 +74,7 @@ class HDRInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HDREffect',
         'title' => 'HDR Effect',
         'format' =>

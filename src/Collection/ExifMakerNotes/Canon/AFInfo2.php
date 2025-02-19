@@ -22,7 +22,7 @@ class AFInfo2 extends CollectionBase {
     0 => 3,
   ),
   'hasIndexSize' => true,
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\AFInfo2',
   'itemsByName' =>
   array (
@@ -178,7 +178,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAreaMode',
         'title' => 'AF Area Mode',
         'format' =>
@@ -218,7 +218,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'NumAFPoints',
         'title' => 'Num AF Points',
         'format' =>
@@ -232,7 +232,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ValidAFPoints',
         'title' => 'Valid AF Points',
         'format' =>
@@ -246,7 +246,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CanonImageWidth',
         'title' => 'Canon Image Width',
         'format' =>
@@ -260,7 +260,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CanonImageHeight',
         'title' => 'Canon Image Height',
         'format' =>
@@ -274,7 +274,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFImageWidth',
         'title' => 'AF Image Width',
         'format' =>
@@ -288,7 +288,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFImageHeight',
         'title' => 'AF Image Height',
         'format' =>
@@ -302,7 +302,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAreaWidths',
         'title' => 'AF Area Widths',
         'format' =>
@@ -316,7 +316,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAreaHeights',
         'title' => 'AF Area Heights',
         'format' =>
@@ -330,7 +330,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAreaXPositions',
         'title' => 'AF Area X Positions',
         'format' =>
@@ -344,7 +344,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAreaYPositions',
         'title' => 'AF Area Y Positions',
         'format' =>
@@ -359,7 +359,7 @@ class AFInfo2 extends CollectionBase {
       0 =>
       array (
         '__todo' => 'add decoding',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointsInFocus',
         'title' => 'AF Points In Focus',
         'format' =>
@@ -374,7 +374,7 @@ class AFInfo2 extends CollectionBase {
       0 =>
       array (
         '__todo' => 'add decoding',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointsSelected',
         'title' => 'AF Points Selected',
         'format' =>
@@ -386,7 +386,7 @@ class AFInfo2 extends CollectionBase {
       1 =>
       array (
         '__todo' => 'add decoding',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Canon_AFInfo2_0x000d',
         'title' => 'Canon AF Info 2 0x000d',
         'format' =>
@@ -400,7 +400,7 @@ class AFInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PrimaryAFPoint',
         'title' => 'Primary AF Point',
         'format' =>

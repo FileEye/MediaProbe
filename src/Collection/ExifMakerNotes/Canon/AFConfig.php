@@ -22,7 +22,7 @@ class AFConfig extends CollectionBase {
     0 => 4,
   ),
   'hasIndexSize' => true,
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\AFConfig',
   'itemsByName' =>
   array (
@@ -133,7 +133,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFConfigTool',
         'title' => 'AF Config Tool',
         'format' =>
@@ -147,7 +147,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFTrackingSensitivity',
         'title' => 'AF Tracking Sensitivity',
         'format' =>
@@ -161,7 +161,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAccelDecelTracking',
         'title' => 'AF Accel/Decel Tracking',
         'format' =>
@@ -175,7 +175,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointSwitching',
         'title' => 'AF Point Switching',
         'format' =>
@@ -189,7 +189,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AIServoFirstImage',
         'title' => 'AI Servo First Image',
         'format' =>
@@ -212,7 +212,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AIServoSecondImage',
         'title' => 'AI Servo Second Image',
         'format' =>
@@ -237,7 +237,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'USMLensElectronicMF',
         'title' => 'USM Lens Electronic MF',
         'format' =>
@@ -258,7 +258,7 @@ class AFConfig extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'USMLensElectronicMF',
         'title' => 'USM Lens Electronic MF',
         'format' =>
@@ -281,7 +281,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAssistBeam',
         'title' => 'AF Assist Beam',
         'format' =>
@@ -305,7 +305,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OneShotAFRelease',
         'title' => 'One Shot AF Release',
         'format' =>
@@ -327,7 +327,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoAFPointSelEOSiTRAF',
         'title' => 'Auto AF Point Sel EOS iTR AF',
         'format' =>
@@ -349,7 +349,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensDriveWhenAFImpossible',
         'title' => 'Lens Drive When AF Impossible',
         'format' =>
@@ -371,7 +371,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SelectAFAreaSelectionMode',
         'title' => 'Select AF Area Selection Mode',
         'format' =>
@@ -397,7 +397,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAreaSelectionMethod',
         'title' => 'AF Area Selection Method',
         'format' =>
@@ -419,7 +419,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OrientationLinkedAF',
         'title' => 'Orientation Linked AF',
         'format' =>
@@ -442,7 +442,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ManualAFPointSelPattern',
         'title' => 'Manual AF Point Sel Pattern',
         'format' =>
@@ -464,7 +464,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointDisplayDuringFocus',
         'title' => 'AF Point Display During Focus',
         'format' =>
@@ -489,7 +489,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'VFDisplayIllumination',
         'title' => 'VF Display Illumination',
         'format' =>
@@ -512,7 +512,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFStatusViewfinder',
         'title' => 'AF Status Viewfinder',
         'format' =>
@@ -534,7 +534,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'InitialAFPointInServo',
         'title' => 'Initial AF Point In Servo',
         'format' =>
@@ -557,7 +557,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SubjectToDetect',
         'title' => 'Subject To Detect',
         'format' =>
@@ -581,7 +581,7 @@ class AFConfig extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'EyeDetection',
         'title' => 'Eye Detection',
         'format' =>

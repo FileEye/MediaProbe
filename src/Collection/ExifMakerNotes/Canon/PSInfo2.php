@@ -21,7 +21,7 @@ class PSInfo2 extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\PSInfo2',
   'itemsByName' =>
   array (
@@ -539,7 +539,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastStandard',
         'title' => 'Contrast Standard',
         'format' =>
@@ -560,7 +560,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessStandard',
         'title' => 'Sharpness Standard',
         'format' =>
@@ -581,7 +581,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationStandard',
         'title' => 'Saturation Standard',
         'format' =>
@@ -602,7 +602,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneStandard',
         'title' => 'Color Tone Standard',
         'format' =>
@@ -623,7 +623,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectStandard',
         'title' => 'Filter Effect Standard',
         'format' =>
@@ -644,7 +644,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectStandard',
         'title' => 'Toning Effect Standard',
         'format' =>
@@ -665,7 +665,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastPortrait',
         'title' => 'Contrast Portrait',
         'format' =>
@@ -686,7 +686,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessPortrait',
         'title' => 'Sharpness Portrait',
         'format' =>
@@ -707,7 +707,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationPortrait',
         'title' => 'Saturation Portrait',
         'format' =>
@@ -728,7 +728,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTonePortrait',
         'title' => 'Color Tone Portrait',
         'format' =>
@@ -749,7 +749,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectPortrait',
         'title' => 'Filter Effect Portrait',
         'format' =>
@@ -770,7 +770,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectPortrait',
         'title' => 'Toning Effect Portrait',
         'format' =>
@@ -791,7 +791,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastLandscape',
         'title' => 'Contrast Landscape',
         'format' =>
@@ -812,7 +812,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessLandscape',
         'title' => 'Sharpness Landscape',
         'format' =>
@@ -833,7 +833,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationLandscape',
         'title' => 'Saturation Landscape',
         'format' =>
@@ -854,7 +854,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneLandscape',
         'title' => 'Color Tone Landscape',
         'format' =>
@@ -875,7 +875,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectLandscape',
         'title' => 'Filter Effect Landscape',
         'format' =>
@@ -896,7 +896,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectLandscape',
         'title' => 'Toning Effect Landscape',
         'format' =>
@@ -917,7 +917,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastNeutral',
         'title' => 'Contrast Neutral',
         'format' =>
@@ -938,7 +938,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessNeutral',
         'title' => 'Sharpness Neutral',
         'format' =>
@@ -959,7 +959,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationNeutral',
         'title' => 'Saturation Neutral',
         'format' =>
@@ -980,7 +980,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneNeutral',
         'title' => 'Color Tone Neutral',
         'format' =>
@@ -1001,7 +1001,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectNeutral',
         'title' => 'Filter Effect Neutral',
         'format' =>
@@ -1022,7 +1022,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectNeutral',
         'title' => 'Toning Effect Neutral',
         'format' =>
@@ -1043,7 +1043,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastFaithful',
         'title' => 'Contrast Faithful',
         'format' =>
@@ -1064,7 +1064,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessFaithful',
         'title' => 'Sharpness Faithful',
         'format' =>
@@ -1085,7 +1085,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationFaithful',
         'title' => 'Saturation Faithful',
         'format' =>
@@ -1106,7 +1106,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneFaithful',
         'title' => 'Color Tone Faithful',
         'format' =>
@@ -1127,7 +1127,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectFaithful',
         'title' => 'Filter Effect Faithful',
         'format' =>
@@ -1148,7 +1148,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectFaithful',
         'title' => 'Toning Effect Faithful',
         'format' =>
@@ -1169,7 +1169,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastMonochrome',
         'title' => 'Contrast Monochrome',
         'format' =>
@@ -1190,7 +1190,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessMonochrome',
         'title' => 'Sharpness Monochrome',
         'format' =>
@@ -1211,7 +1211,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationMonochrome',
         'title' => 'Saturation Monochrome',
         'format' =>
@@ -1232,7 +1232,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneMonochrome',
         'title' => 'Color Tone Monochrome',
         'format' =>
@@ -1253,7 +1253,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectMonochrome',
         'title' => 'Filter Effect Monochrome',
         'format' =>
@@ -1279,7 +1279,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectMonochrome',
         'title' => 'Toning Effect Monochrome',
         'format' =>
@@ -1305,7 +1305,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastAuto',
         'title' => 'Contrast Auto',
         'format' =>
@@ -1326,7 +1326,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessAuto',
         'title' => 'Sharpness Auto',
         'format' =>
@@ -1347,7 +1347,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationAuto',
         'title' => 'Saturation Auto',
         'format' =>
@@ -1368,7 +1368,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneAuto',
         'title' => 'Color Tone Auto',
         'format' =>
@@ -1389,7 +1389,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectAuto',
         'title' => 'Filter Effect Auto',
         'format' =>
@@ -1415,7 +1415,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectAuto',
         'title' => 'Toning Effect Auto',
         'format' =>
@@ -1441,7 +1441,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastUserDef1',
         'title' => 'Contrast User Def 1',
         'format' =>
@@ -1462,7 +1462,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessUserDef1',
         'title' => 'Sharpness User Def 1',
         'format' =>
@@ -1483,7 +1483,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationUserDef1',
         'title' => 'Saturation User Def 1',
         'format' =>
@@ -1504,7 +1504,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneUserDef1',
         'title' => 'Color Tone User Def 1',
         'format' =>
@@ -1525,7 +1525,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectUserDef1',
         'title' => 'Filter Effect User Def 1',
         'format' =>
@@ -1551,7 +1551,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectUserDef1',
         'title' => 'Toning Effect User Def 1',
         'format' =>
@@ -1577,7 +1577,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastUserDef2',
         'title' => 'Contrast User Def 2',
         'format' =>
@@ -1598,7 +1598,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessUserDef2',
         'title' => 'Sharpness User Def 2',
         'format' =>
@@ -1619,7 +1619,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationUserDef2',
         'title' => 'Saturation User Def 2',
         'format' =>
@@ -1640,7 +1640,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneUserDef2',
         'title' => 'Color Tone User Def 2',
         'format' =>
@@ -1661,7 +1661,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectUserDef2',
         'title' => 'Filter Effect User Def 2',
         'format' =>
@@ -1687,7 +1687,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectUserDef2',
         'title' => 'Toning Effect User Def 2',
         'format' =>
@@ -1713,7 +1713,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastUserDef3',
         'title' => 'Contrast User Def 3',
         'format' =>
@@ -1734,7 +1734,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessUserDef3',
         'title' => 'Sharpness User Def 3',
         'format' =>
@@ -1755,7 +1755,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationUserDef3',
         'title' => 'Saturation User Def 3',
         'format' =>
@@ -1776,7 +1776,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneUserDef3',
         'title' => 'Color Tone User Def 3',
         'format' =>
@@ -1797,7 +1797,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectUserDef3',
         'title' => 'Filter Effect User Def 3',
         'format' =>
@@ -1823,7 +1823,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectUserDef3',
         'title' => 'Toning Effect User Def 3',
         'format' =>
@@ -1849,7 +1849,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UserDef1PictureStyle',
         'title' => 'User Def 1 Picture Style',
         'format' =>
@@ -1879,7 +1879,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UserDef2PictureStyle',
         'title' => 'User Def 2 Picture Style',
         'format' =>
@@ -1909,7 +1909,7 @@ class PSInfo2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UserDef3PictureStyle',
         'title' => 'User Def 3 Picture Style',
         'format' =>

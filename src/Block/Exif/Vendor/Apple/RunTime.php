@@ -7,7 +7,7 @@ use CFPropertyList\CFNumber;
 use CFPropertyList\CFPropertyList;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
-use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Media\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataString;
 use FileEye\MediaProbe\Utility\ConvertBytes;

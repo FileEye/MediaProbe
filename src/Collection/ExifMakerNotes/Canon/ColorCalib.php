@@ -21,7 +21,7 @@ class ColorCalib extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ColorCalib',
   'itemsByName' =>
   array (
@@ -155,7 +155,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration01',
         'title' => 'Camera Color Calibration 01',
         'components' => 4,
@@ -170,7 +170,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration02',
         'title' => 'Camera Color Calibration 02',
         'components' => 4,
@@ -185,7 +185,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration03',
         'title' => 'Camera Color Calibration 03',
         'components' => 4,
@@ -200,7 +200,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration04',
         'title' => 'Camera Color Calibration 04',
         'components' => 4,
@@ -215,7 +215,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration05',
         'title' => 'Camera Color Calibration 05',
         'components' => 4,
@@ -230,7 +230,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration06',
         'title' => 'Camera Color Calibration 06',
         'components' => 4,
@@ -245,7 +245,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration07',
         'title' => 'Camera Color Calibration 07',
         'components' => 4,
@@ -260,7 +260,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration08',
         'title' => 'Camera Color Calibration 08',
         'components' => 4,
@@ -275,7 +275,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration09',
         'title' => 'Camera Color Calibration 09',
         'components' => 4,
@@ -290,7 +290,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration10',
         'title' => 'Camera Color Calibration 10',
         'components' => 4,
@@ -305,7 +305,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration11',
         'title' => 'Camera Color Calibration 11',
         'components' => 4,
@@ -320,7 +320,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration12',
         'title' => 'Camera Color Calibration 12',
         'components' => 4,
@@ -335,7 +335,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration13',
         'title' => 'Camera Color Calibration 13',
         'components' => 4,
@@ -350,7 +350,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration14',
         'title' => 'Camera Color Calibration 14',
         'components' => 4,
@@ -365,7 +365,7 @@ class ColorCalib extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraColorCalibration15',
         'title' => 'Camera Color Calibration 15',
         'components' => 4,

@@ -21,7 +21,7 @@ class VignettingCorr extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\VignettingCorr',
   'itemsByName' =>
   array (
@@ -101,7 +101,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'VignettingCorrVersion',
         'title' => 'Vignetting Corr Version',
         'format' =>
@@ -115,7 +115,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PeripheralLighting',
         'title' => 'Peripheral Lighting',
         'format' =>
@@ -137,7 +137,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DistortionCorrection',
         'title' => 'Distortion Correction',
         'format' =>
@@ -159,7 +159,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ChromaticAberrationCorr',
         'title' => 'Chromatic Aberration Corr',
         'format' =>
@@ -181,7 +181,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ChromaticAberrationCorr',
         'title' => 'Chromatic Aberration Corr',
         'format' =>
@@ -203,7 +203,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PeripheralLightingValue',
         'title' => 'Peripheral Lighting Value',
         'format' =>
@@ -217,7 +217,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DistortionCorrectionValue',
         'title' => 'Distortion Correction Value',
         'format' =>
@@ -231,7 +231,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OriginalImageWidth',
         'title' => 'Original Image Width',
         'format' =>
@@ -245,7 +245,7 @@ class VignettingCorr extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OriginalImageHeight',
         'title' => 'Original Image Height',
         'format' =>

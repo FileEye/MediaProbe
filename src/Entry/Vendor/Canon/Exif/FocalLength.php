@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Entry\Vendor\Canon\Exif;
 
-use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Media\Tiff\Tag;
 use FileEye\MediaProbe\Entry\Core\Short;
 
 /**

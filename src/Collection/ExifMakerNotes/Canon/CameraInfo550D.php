@@ -21,7 +21,7 @@ class CameraInfo550D extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CameraInfo550D',
   'itemsByName' =>
   array (
@@ -188,7 +188,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FNumber',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FNumber',
         'title' => 'F Number',
         'format' =>
@@ -203,7 +203,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -218,7 +218,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ISO',
         'title' => 'ISO',
         'format' =>
@@ -232,7 +232,7 @@ class CameraInfo550D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HighlightTonePriority',
         'title' => 'Highlight Tone Priority',
         'format' =>
@@ -254,7 +254,7 @@ class CameraInfo550D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashMeteringMode',
         'title' => 'Flash Metering Mode',
         'format' =>
@@ -280,7 +280,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -298,7 +298,7 @@ class CameraInfo550D extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>
@@ -312,7 +312,7 @@ class CameraInfo550D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraOrientation',
         'title' => 'Camera Orientation',
         'format' =>
@@ -336,7 +336,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusDistanceUpper',
         'title' => 'Focus Distance Upper',
         'format' =>
@@ -351,7 +351,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FocusDistance',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusDistanceLower',
         'title' => 'Focus Distance Lower',
         'format' =>
@@ -365,7 +365,7 @@ class CameraInfo550D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -407,7 +407,7 @@ class CameraInfo550D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -421,7 +421,7 @@ class CameraInfo550D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PictureStyle',
         'title' => 'Picture Style',
         'format' =>
@@ -992,7 +992,7 @@ class CameraInfo550D extends CollectionBase {
             65535 => 'n/a',
           ),
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensType',
         'title' => 'Lens Type',
         'format' =>
@@ -1010,7 +1010,7 @@ class CameraInfo550D extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',
         'format' =>
@@ -1028,7 +1028,7 @@ class CameraInfo550D extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',
         'format' =>
@@ -1042,7 +1042,7 @@ class CameraInfo550D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FirmwareVersion',
         'title' => 'Firmware Version',
         'components' => 6,
@@ -1058,7 +1058,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FileIndex',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FileIndex',
         'title' => 'File Index',
         'format' =>
@@ -1073,7 +1073,7 @@ class CameraInfo550D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\DirectoryIndex',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DirectoryIndex',
         'title' => 'Directory Index',
         'format' =>

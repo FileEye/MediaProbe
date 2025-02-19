@@ -21,7 +21,7 @@ class CameraInfoUnknown extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CameraInfoUnknown',
   'itemsByName' =>
   array (
@@ -53,7 +53,7 @@ class CameraInfoUnknown extends CollectionBase {
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\LensSerialNumber',
         'outputFormat' => 2,
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensSerialNumber',
         'title' => 'Lens Serial Number',
         'components' => 5,
@@ -68,7 +68,7 @@ class CameraInfoUnknown extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FirmwareVersion',
         'title' => 'Firmware Version',
         'components' => 6,

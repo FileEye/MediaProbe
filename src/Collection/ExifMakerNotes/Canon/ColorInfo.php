@@ -21,7 +21,7 @@ class ColorInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ColorInfo',
   'itemsByName' =>
   array (
@@ -59,7 +59,7 @@ class ColorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Saturation',
         'title' => 'Saturation',
         'format' =>
@@ -80,7 +80,7 @@ class ColorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTone',
         'title' => 'Color Tone',
         'format' =>
@@ -101,7 +101,7 @@ class ColorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorSpace',
         'title' => 'Color Space',
         'format' =>

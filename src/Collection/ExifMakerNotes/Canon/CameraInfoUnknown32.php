@@ -21,7 +21,7 @@ class CameraInfoUnknown32 extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CameraInfoUnknown32',
   'itemsByName' =>
   array (
@@ -54,7 +54,7 @@ class CameraInfoUnknown32 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -69,7 +69,7 @@ class CameraInfoUnknown32 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -84,7 +84,7 @@ class CameraInfoUnknown32 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -99,7 +99,7 @@ class CameraInfoUnknown32 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -114,7 +114,7 @@ class CameraInfoUnknown32 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -129,7 +129,7 @@ class CameraInfoUnknown32 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>

@@ -21,7 +21,7 @@ class Flags extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Flags',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class Flags extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ModifiedParamFlag',
         'title' => 'Modified Param Flag',
         'format' =>

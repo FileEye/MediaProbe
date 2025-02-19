@@ -22,7 +22,7 @@ class TimeInfo extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\TimeInfo',
   'itemsByName' =>
   array (
@@ -61,7 +61,7 @@ class TimeInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\TimeInfo\\TimeZone',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TimeZone',
         'title' => 'Time Zone',
         'format' =>
@@ -75,7 +75,7 @@ class TimeInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TimeZoneCity',
         'title' => 'Time Zone City',
         'format' =>
@@ -130,7 +130,7 @@ class TimeInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DaylightSavings',
         'title' => 'Daylight Savings',
         'format' =>

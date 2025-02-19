@@ -18,7 +18,7 @@ class Uuid extends CollectionBase {
   'title' => 'Canon Uuid',
   'handler' => 'FileEye\\MediaProbe\\Block\\Index',
   'DOMNode' => 'index',
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Uuid',
   'itemsByName' =>
   array (
@@ -56,7 +56,7 @@ class Uuid extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MakerNoteCanon',
         'title' => 'Maker Note Canon',
         'format' =>
@@ -70,7 +70,7 @@ class Uuid extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CompressorVersion',
         'title' => 'Compressor Version',
         'format' =>
@@ -84,7 +84,7 @@ class Uuid extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ThumbnailImage',
         'title' => 'Thumbnail Image',
         'format' =>

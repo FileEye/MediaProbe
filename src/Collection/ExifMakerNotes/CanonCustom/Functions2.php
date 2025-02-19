@@ -17,7 +17,7 @@ class Functions2 extends CollectionBase {
   'title' => 'CanonCustom Functions2 - a set of custom function tags which are (reasonably) consistent across models',
   'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\CustomFunctions2',
   'DOMNode' => 'index',
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\CanonCustom\\Functions2',
   'itemsByName' =>
   array (
@@ -852,7 +852,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ExposureLevelIncrements',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
         'format' =>
@@ -873,7 +873,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ExposureLevelIncrements',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureLevelIncrements',
         'title' => 'Exposure Level Increments',
         'format' =>
@@ -895,7 +895,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ISOSpeedIncrements',
         'title' => 'ISO Speed Increments',
         'format' =>
@@ -918,7 +918,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CustomIsoSpeedRange',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ISOSpeedRange',
         'title' => 'ISO Speed Range',
         'components' => 3,
@@ -939,7 +939,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CustomIsoSpeedRange',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ISOExpansion',
         'title' => 'ISO Expansion',
         'format' =>
@@ -961,7 +961,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEBAutoCancel',
         'title' => 'AEB Auto Cancel',
         'format' =>
@@ -983,7 +983,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEBSequence',
         'title' => 'AEB Sequence',
         'format' =>
@@ -1007,7 +1007,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AEBShotCount',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEBShotCount',
         'title' => 'AEB Shot Count',
         'format' =>
@@ -1029,7 +1029,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AEBShotCount',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEBShotCount',
         'title' => 'AEB Shot Count',
         'format' =>
@@ -1051,7 +1051,7 @@ class Functions2 extends CollectionBase {
       2 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AEBShotCount',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEBShotCount',
         'title' => 'AEB Shot Count',
         'components' => 2,
@@ -1076,7 +1076,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SpotMeterLinkToAFPoint',
         'title' => 'Spot Meter Link To AF Point',
         'format' =>
@@ -1098,7 +1098,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SafetyShift',
         'title' => 'Safety Shift',
         'format' =>
@@ -1122,7 +1122,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UsableShootingModes',
         'title' => 'Usable Shooting Modes',
         'format' =>
@@ -1134,7 +1134,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UsableShootingModes',
         'title' => 'Usable Shooting Modes',
         'components' => 2,
@@ -1158,7 +1158,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UsableMeteringModes',
         'title' => 'Usable Metering Modes',
         'format' =>
@@ -1170,7 +1170,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\UsableShootingModes',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UsableMeteringModes',
         'title' => 'Usable Metering Modes',
         'components' => 2,
@@ -1193,7 +1193,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureModeInManual',
         'title' => 'Exposure Mode In Manual',
         'format' =>
@@ -1219,7 +1219,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ShutterSpeedRange',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ShutterSpeedRange',
         'title' => 'Shutter Speed Range',
         'components' => 3,
@@ -1240,7 +1240,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ShutterSpeedRange',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ShutterSpeedRange',
         'title' => 'Shutter Speed Range',
         'components' => 4,
@@ -1256,7 +1256,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ApertureRange',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ApertureRange',
         'title' => 'Aperture Range',
         'components' => 3,
@@ -1277,7 +1277,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ApertureRange',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ApertureRange',
         'title' => 'Aperture Range',
         'components' => 4,
@@ -1293,7 +1293,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ApplyShootingMeteringMode',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ApplyShootingMeteringMode',
         'title' => 'Apply Shooting Metering Mode',
         'components' => 8,
@@ -1316,7 +1316,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -1335,7 +1335,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -1355,7 +1355,7 @@ class Functions2 extends CollectionBase {
       ),
       2 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -1374,7 +1374,7 @@ class Functions2 extends CollectionBase {
       ),
       3 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -1393,7 +1393,7 @@ class Functions2 extends CollectionBase {
       ),
       4 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -1413,7 +1413,7 @@ class Functions2 extends CollectionBase {
       ),
       5 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashSyncSpeedAv',
         'title' => 'Flash Sync Speed Av',
         'format' =>
@@ -1436,7 +1436,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEMicroadjustment',
         'title' => 'AE Microadjustment',
         'components' => 3,
@@ -1459,7 +1459,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FEMicroadjustment',
         'title' => 'FE Microadjustment',
         'components' => 3,
@@ -1482,7 +1482,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SameExposureForNewAperture',
         'title' => 'Same Exposure For New Aperture',
         'format' =>
@@ -1502,7 +1502,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SameExposureForNewAperture',
         'title' => 'Same Exposure For New Aperture',
         'format' =>
@@ -1526,7 +1526,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureCompAutoCancel',
         'title' => 'Exposure Comp Auto Cancel',
         'format' =>
@@ -1548,7 +1548,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AELockMeterModeAfterFocus',
         'title' => 'AE Lock Meter Mode After Focus',
         'format' =>
@@ -1572,7 +1572,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LongExposureNoiseReduction',
         'title' => 'Long Exposure Noise Reduction',
         'format' =>
@@ -1596,7 +1596,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\HighISONoiseReduction',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HighISONoiseReduction',
         'title' => 'High ISO Noise Reduction',
         'format' =>
@@ -1618,7 +1618,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\HighISONoiseReduction',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HighISONoiseReduction',
         'title' => 'High ISO Noise Reduction',
         'format' =>
@@ -1640,7 +1640,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HighlightTonePriority',
         'title' => 'Highlight Tone Priority',
         'format' =>
@@ -1662,7 +1662,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoLightingOptimizer',
         'title' => 'Auto Lighting Optimizer',
         'format' =>
@@ -1683,7 +1683,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoLightingOptimizer',
         'title' => 'Auto Lighting Optimizer',
         'format' =>
@@ -1705,7 +1705,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ETTLII',
         'title' => 'E-TTL II',
         'format' =>
@@ -1727,7 +1727,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ShutterCurtainSync',
         'title' => 'Shutter Curtain Sync',
         'format' =>
@@ -1749,7 +1749,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashFiring',
         'title' => 'Flash Firing',
         'format' =>
@@ -1771,7 +1771,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ViewInfoDuringExposure',
         'title' => 'View Info During Exposure',
         'format' =>
@@ -1793,7 +1793,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LCDIlluminationDuringBulb',
         'title' => 'LCD Illumination During Bulb',
         'format' =>
@@ -1815,7 +1815,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'InfoButtonWhenShooting',
         'title' => 'Info Button When Shooting',
         'format' =>
@@ -1834,7 +1834,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'InfoButtonWhenShooting',
         'title' => 'Info Button When Shooting',
         'format' =>
@@ -1857,7 +1857,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ViewfinderWarnings',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ViewfinderWarnings',
         'title' => 'Viewfinder Warnings',
         'format' =>
@@ -1884,7 +1884,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LVShootingAreaDisplay',
         'title' => 'LV Shooting Area Display',
         'format' =>
@@ -1906,7 +1906,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LVShootingAreaDisplay',
         'title' => 'LV Shooting Area Display',
         'format' =>
@@ -1928,7 +1928,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'USMLensElectronicMF',
         'title' => 'USM Lens Electronic MF',
         'format' =>
@@ -1951,7 +1951,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AIServoTrackingSensitivity',
         'title' => 'AI Servo Tracking Sensitivity',
         'format' =>
@@ -1976,7 +1976,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AIServoImagePriority',
         'title' => 'AI Servo Image Priority',
         'format' =>
@@ -2000,7 +2000,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AIServoTrackingMethod',
         'title' => 'AI Servo Tracking Method',
         'format' =>
@@ -2022,7 +2022,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensDriveNoAF',
         'title' => 'Lens Drive No AF',
         'format' =>
@@ -2044,7 +2044,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensAFStopButton',
         'title' => 'Lens AF Stop Button',
         'format' =>
@@ -2073,7 +2073,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AFMicroadjustment',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFMicroadjustment',
         'title' => 'AF Microadjustment',
         'components' => 5,
@@ -2097,7 +2097,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointAreaExpansion',
         'title' => 'AF Point Area Expansion',
         'format' =>
@@ -2116,7 +2116,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointAreaExpansion',
         'title' => 'AF Point Area Expansion',
         'format' =>
@@ -2136,7 +2136,7 @@ class Functions2 extends CollectionBase {
       ),
       2 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointAreaExpansion',
         'title' => 'AF Point Area Expansion',
         'format' =>
@@ -2161,7 +2161,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\SelectableAFPoint',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SelectableAFPoint',
         'title' => 'Selectable AF Point',
         'format' =>
@@ -2184,7 +2184,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\SelectableAFPoint',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SelectableAFPoint',
         'title' => 'Selectable AF Point',
         'format' =>
@@ -2210,7 +2210,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SwitchToRegisteredAFPoint',
         'title' => 'Switch To Registered AF Point',
         'format' =>
@@ -2230,7 +2230,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SwitchToRegisteredAFPoint',
         'title' => 'Switch To Registered AF Point',
         'format' =>
@@ -2252,7 +2252,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointAutoSelection',
         'title' => 'AF Point Auto Selection',
         'format' =>
@@ -2276,7 +2276,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AFPointDisplayDuringFocus',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointDisplayDuringFocus',
         'title' => 'AF Point Display During Focus',
         'format' =>
@@ -2297,7 +2297,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\AFPointDisplayDuringFocus',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointDisplayDuringFocus',
         'title' => 'AF Point Display During Focus',
         'format' =>
@@ -2322,7 +2322,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointBrightness',
         'title' => 'AF Point Brightness',
         'format' =>
@@ -2344,7 +2344,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAssistBeam',
         'title' => 'AF Assist Beam',
         'format' =>
@@ -2364,7 +2364,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAssistBeam',
         'title' => 'AF Assist Beam',
         'format' =>
@@ -2388,7 +2388,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointSelectionMethod',
         'title' => 'AF Point Selection Method',
         'format' =>
@@ -2408,7 +2408,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointSelectionMethod',
         'title' => 'AF Point Selection Method',
         'format' =>
@@ -2430,7 +2430,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'VFDisplayIllumination',
         'title' => 'VF Display Illumination',
         'format' =>
@@ -2450,7 +2450,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SuperimposedDisplay',
         'title' => 'Superimposed Display',
         'format' =>
@@ -2472,7 +2472,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFDuringLiveView',
         'title' => 'AF During Live View',
         'format' =>
@@ -2491,7 +2491,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFDuringLiveView',
         'title' => 'AF During Live View',
         'format' =>
@@ -2515,7 +2515,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\SelectAFAreaSelectMode',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SelectAFAreaSelectMode',
         'title' => 'Select AF Area Select Mode',
         'format' =>
@@ -2539,7 +2539,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ManualAFPointSelectPattern',
         'title' => 'Manual AF Point Select Pattern',
         'format' =>
@@ -2561,7 +2561,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DisplayAllAFPoints',
         'title' => 'Display All AF Points',
         'format' =>
@@ -2583,7 +2583,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusDisplayAIServoAndMF',
         'title' => 'Focus Display AI Servo And MF',
         'format' =>
@@ -2605,7 +2605,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OrientationLinkedAFPoint',
         'title' => 'Orientation Linked AF Point',
         'format' =>
@@ -2627,7 +2627,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MultiControllerWhileMetering',
         'title' => 'Multi Controller While Metering',
         'format' =>
@@ -2649,7 +2649,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AccelerationTracking',
         'title' => 'Acceleration Tracking',
         'format' =>
@@ -2663,7 +2663,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AIServoFirstImagePriority',
         'title' => 'AI Servo First Image Priority',
         'format' =>
@@ -2686,7 +2686,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AIServoSecondImagePriority',
         'title' => 'AI Servo Second Image Priority',
         'format' =>
@@ -2709,7 +2709,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAreaSelectMethod',
         'title' => 'AF Area Select Method',
         'format' =>
@@ -2731,7 +2731,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoAFPointColorTracking',
         'title' => 'Auto AF Point Color Tracking',
         'format' =>
@@ -2753,7 +2753,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'VFDisplayIllumination',
         'title' => 'VF Display Illumination',
         'format' =>
@@ -2776,7 +2776,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'InitialAFPointAIServoAF',
         'title' => 'Initial AF Point AI Servo AF',
         'format' =>
@@ -2799,7 +2799,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MirrorLockup',
         'title' => 'Mirror Lockup',
         'format' =>
@@ -2823,7 +2823,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShootingSpeed',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContinuousShootingSpeed',
         'title' => 'Continuous Shooting Speed',
         'components' => 6,
@@ -2844,7 +2844,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShootingSpeed',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContinuousShootingSpeed',
         'title' => 'Continuous Shooting Speed',
         'components' => 5,
@@ -2857,7 +2857,7 @@ class Functions2 extends CollectionBase {
       2 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShootingSpeed',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContinuousShootingSpeed',
         'title' => 'Continuous Shooting Speed',
         'components' => 3,
@@ -2881,7 +2881,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\ContinuousShotLimit',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContinuousShotLimit',
         'title' => 'Continuous Shot Limit',
         'components' => 2,
@@ -2904,7 +2904,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RestrictDriveModes',
         'title' => 'Restrict Drive Modes',
         'format' =>
@@ -2915,7 +2915,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RestrictDriveModes',
         'title' => 'Restrict Drive Modes',
         'components' => 2,
@@ -2938,7 +2938,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Shutter-AELock',
         'title' => 'Shutter-AE Lock',
         'format' =>
@@ -2959,7 +2959,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Shutter-AELock',
         'title' => 'Shutter-AE Lock',
         'format' =>
@@ -2980,7 +2980,7 @@ class Functions2 extends CollectionBase {
       ),
       2 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFAndMeteringButtons',
         'title' => 'AF And Metering Buttons',
         'format' =>
@@ -3002,7 +3002,7 @@ class Functions2 extends CollectionBase {
       ),
       3 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ShutterButtonAFOnButton',
         'title' => 'Shutter Button AF On Button',
         'format' =>
@@ -3027,7 +3027,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFOnAELockButtonSwitch',
         'title' => 'AF On AE Lock Button Switch',
         'format' =>
@@ -3049,7 +3049,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'QuickControlDialInMeter',
         'title' => 'Quick Control Dial In Meter',
         'format' =>
@@ -3074,7 +3074,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3098,7 +3098,7 @@ class Functions2 extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3121,7 +3121,7 @@ class Functions2 extends CollectionBase {
       ),
       2 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3144,7 +3144,7 @@ class Functions2 extends CollectionBase {
       ),
       3 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3167,7 +3167,7 @@ class Functions2 extends CollectionBase {
       ),
       4 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3189,7 +3189,7 @@ class Functions2 extends CollectionBase {
       ),
       5 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3212,7 +3212,7 @@ class Functions2 extends CollectionBase {
       ),
       6 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3223,7 +3223,7 @@ class Functions2 extends CollectionBase {
       ),
       7 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SetButtonWhenShooting',
         'title' => 'Set Button When Shooting',
         'format' =>
@@ -3251,7 +3251,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ManualTv',
         'title' => 'Manual Tv/Av For M',
         'format' =>
@@ -3273,7 +3273,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DialDirectionTvAv',
         'title' => 'Dial Direction Tv Av',
         'format' =>
@@ -3295,7 +3295,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AvSettingWithoutLens',
         'title' => 'Av Setting Without Lens',
         'format' =>
@@ -3317,7 +3317,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WBMediaImageSizeSetting',
         'title' => 'WB Media Image Size Setting',
         'format' =>
@@ -3340,7 +3340,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LockMicrophoneButton',
         'title' => 'Lock Microphone Button',
         'format' =>
@@ -3364,7 +3364,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ButtonFunctionControlOff',
         'title' => 'Button Function Control Off',
         'format' =>
@@ -3386,7 +3386,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AssignFuncButton',
         'title' => 'Assign Func Button',
         'format' =>
@@ -3411,7 +3411,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CustomControls',
         'title' => 'Custom Controls',
         'format' =>
@@ -3425,7 +3425,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'StartMovieShooting',
         'title' => 'Start Movie Shooting',
         'format' =>
@@ -3447,7 +3447,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashButtonFunction',
         'title' => 'Flash Button Function',
         'format' =>
@@ -3470,7 +3470,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\MultiFunctionLock',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MultiFunctionLock',
         'title' => 'Multi Function Lock',
         'format' =>
@@ -3494,7 +3494,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TrashButtonFunction',
         'title' => 'Trash Button Function',
         'format' =>
@@ -3516,7 +3516,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ShutterReleaseWithoutLens',
         'title' => 'Shutter Release Without Lens',
         'format' =>
@@ -3538,7 +3538,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ControlRingRotation',
         'title' => 'Control Ring Rotation',
         'format' =>
@@ -3560,7 +3560,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusRingRotation',
         'title' => 'Focus Ring Rotation',
         'format' =>
@@ -3582,7 +3582,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RFLensMFFocusRingSensitivity',
         'title' => 'RF Lens MF Focus Ring Sensitivity',
         'format' =>
@@ -3604,7 +3604,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CustomizeDials',
         'title' => 'Customize Dials',
         'format' =>
@@ -3619,7 +3619,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -3640,7 +3640,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -3661,7 +3661,7 @@ class Functions2 extends CollectionBase {
       2 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -3682,7 +3682,7 @@ class Functions2 extends CollectionBase {
       3 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -3702,7 +3702,7 @@ class Functions2 extends CollectionBase {
       4 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -3722,7 +3722,7 @@ class Functions2 extends CollectionBase {
       5 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\FocusingScreen',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusingScreen',
         'title' => 'Focusing Screen',
         'format' =>
@@ -3747,7 +3747,7 @@ class Functions2 extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\TimerLength',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TimerLength',
         'title' => 'Timer Length',
         'components' => 3,
@@ -3760,7 +3760,7 @@ class Functions2 extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\Functions2\\TimerLength',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TimerLength',
         'title' => 'Timer Length',
         'components' => 4,
@@ -3783,7 +3783,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ShortReleaseTimeLag',
         'title' => 'Short Release Time Lag',
         'format' =>
@@ -3805,7 +3805,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AddAspectRatioInfo',
         'title' => 'Add Aspect Ratio Info',
         'format' =>
@@ -3832,7 +3832,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AddOriginalDecisionData',
         'title' => 'Add Original Decision Data',
         'format' =>
@@ -3854,7 +3854,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LiveViewExposureSimulation',
         'title' => 'Live View Exposure Simulation',
         'format' =>
@@ -3876,7 +3876,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LCDDisplayAtPowerOn',
         'title' => 'LCD Display At Power On',
         'format' =>
@@ -3898,7 +3898,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MemoAudioQuality',
         'title' => 'Memo Audio Quality',
         'format' =>
@@ -3920,7 +3920,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DefaultEraseOption',
         'title' => 'Default Erase Option',
         'format' =>
@@ -3944,7 +3944,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RetractLensOnPowerOff',
         'title' => 'Retract Lens On Power Off',
         'format' =>
@@ -3966,7 +3966,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AddIPTCInformation',
         'title' => 'Add IPTC Information',
         'format' =>
@@ -3988,7 +3988,7 @@ class Functions2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AudioCompression',
         'title' => 'Audio Compression',
         'format' =>

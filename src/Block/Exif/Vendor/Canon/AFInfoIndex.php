@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Block\Exif\Vendor\Canon;
 
 use FileEye\MediaProbe\Block\Index;
 use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
-use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Media\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 
 /**

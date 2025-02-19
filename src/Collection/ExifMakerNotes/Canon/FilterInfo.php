@@ -17,7 +17,7 @@ class FilterInfo extends CollectionBase {
   'title' => 'Canon FilterInfo',
   'handler' => 'FileEye\\MediaProbe\\Block\\Exif\\Vendor\\Canon\\FilterInfoIndex',
   'DOMNode' => 'filterInfo',
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FilterInfo',
   'itemsByName' =>
   array (
@@ -115,7 +115,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'GrainyBWFilter',
         'title' => 'Grainy B/W Filter',
         'text' =>
@@ -136,7 +136,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SoftFocusFilter',
         'title' => 'Soft Focus Filter',
         'text' =>
@@ -157,7 +157,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToyCameraFilter',
         'title' => 'Toy Camera Filter',
         'text' =>
@@ -178,7 +178,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MiniatureFilter',
         'title' => 'Miniature Filter',
         'text' =>
@@ -199,7 +199,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MiniatureFilterOrientation',
         'title' => 'Miniature Filter Orientation',
         'text' =>
@@ -221,7 +221,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MiniatureFilterPosition',
         'title' => 'Miniature Filter Position',
         'exiftoolDOMNode' => 'Canon:MiniatureFilterPosition',
@@ -235,7 +235,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MiniatureFilterParameter',
         'title' => 'Miniature Filter Parameter',
         'exiftoolDOMNode' => 'Canon:MiniatureFilterParameter',
@@ -249,7 +249,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FisheyeFilter',
         'title' => 'Fisheye Filter',
         'text' =>
@@ -270,7 +270,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PaintingFilter',
         'title' => 'Painting Filter',
         'text' =>
@@ -291,7 +291,7 @@ class FilterInfo extends CollectionBase {
         array (
           0 => 9,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WatercolorFilter',
         'title' => 'Watercolor Filter',
         'text' =>

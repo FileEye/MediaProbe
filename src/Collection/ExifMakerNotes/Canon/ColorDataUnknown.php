@@ -21,7 +21,7 @@ class ColorDataUnknown extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ColorDataUnknown',
   'itemsByName' =>
   array (
@@ -36,7 +36,7 @@ class ColorDataUnknown extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorDataVersion',
         'title' => 'Color Data Version',
         'format' =>

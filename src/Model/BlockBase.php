@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace FileEye\MediaProbe\Model;
 
 use FileEye\MediaProbe\Block\Media\Tiff\IfdEntryValueObject;
-use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Media\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionInterface;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataFile;

@@ -22,7 +22,7 @@ class AFMicroAdj extends CollectionBase {
     0 => 4,
   ),
   'hasIndexSize' => true,
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\AFMicroAdj',
   'itemsByName' =>
   array (
@@ -57,7 +57,7 @@ class AFMicroAdj extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFMicroAdjMode',
         'title' => 'AF Micro Adj Mode',
         'format' =>
@@ -80,7 +80,7 @@ class AFMicroAdj extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFMicroAdjValue',
         'title' => 'AF Micro Adj Value',
         'format' =>

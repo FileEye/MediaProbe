@@ -21,7 +21,7 @@ class FocalInfo extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\FocalInfo',
   'itemsByName' =>
   array (
@@ -43,7 +43,7 @@ class FocalInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>

@@ -22,7 +22,7 @@ class SensorInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\SensorInfo',
   'itemsByName' =>
   array (
@@ -89,7 +89,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorWidth',
         'title' => 'Sensor Width',
         'format' =>
@@ -103,7 +103,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorHeight',
         'title' => 'Sensor Height',
         'format' =>
@@ -117,7 +117,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorLeftBorder',
         'title' => 'Sensor Left Border',
         'format' =>
@@ -131,7 +131,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorTopBorder',
         'title' => 'Sensor Top Border',
         'format' =>
@@ -145,7 +145,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorRightBorder',
         'title' => 'Sensor Right Border',
         'format' =>
@@ -159,7 +159,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorBottomBorder',
         'title' => 'Sensor Bottom Border',
         'format' =>
@@ -173,7 +173,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BlackMaskLeftBorder',
         'title' => 'Black Mask Left Border',
         'format' =>
@@ -187,7 +187,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BlackMaskTopBorder',
         'title' => 'Black Mask Top Border',
         'format' =>
@@ -201,7 +201,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BlackMaskRightBorder',
         'title' => 'Black Mask Right Border',
         'format' =>
@@ -215,7 +215,7 @@ class SensorInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BlackMaskBottomBorder',
         'title' => 'Black Mask Bottom Border',
         'format' =>

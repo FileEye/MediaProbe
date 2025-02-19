@@ -2,7 +2,7 @@
 
 namespace FileEye\MediaProbe\Block;
 
-use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Media\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataFormat;
@@ -104,7 +104,7 @@ class Index extends ListBase
     {
         // In case the item is not found in the collection for the index,
         // we still load it as a 'tag'.
-        $item_collection = $this->getCollection()->getItemCollection($id, 0, 'Tiff\UnknownTag', [
+        $item_collection = $this->getCollection()->getItemCollection($id, 0, 'Media\\Tiff\\UnknownTag', [
             'item' => $id,
             'DOMNode' => 'tag',
         ]);
