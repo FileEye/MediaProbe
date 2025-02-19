@@ -46,7 +46,7 @@ elements:
                     elements:
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:ImageWidth:256'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: ImageWidth
                             id: '256'
@@ -62,7 +62,7 @@ elements:
                                     text: '174'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:ImageHeight:257'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: ImageHeight
                             id: '257'
@@ -78,7 +78,7 @@ elements:
                                     text: '38'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:BitsPerSample:258'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: BitsPerSample
                             id: '258'
@@ -94,7 +94,7 @@ elements:
                                     text: '8 8 8 8'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:Compression:259'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: Compression
                             id: '259'
@@ -110,7 +110,7 @@ elements:
                                     text: LZW
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:PhotometricInterpretation:262'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: PhotometricInterpretation
                             id: '262'
@@ -126,7 +126,7 @@ elements:
                                     text: RGB
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageStart:273'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: PreviewImageStart
                             id: '273'
@@ -142,7 +142,7 @@ elements:
                                     text: '8'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:Orientation:274'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: Orientation
                             id: '274'
@@ -158,7 +158,7 @@ elements:
                                     text: 'Horizontal (normal)'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:SamplesPerPixel:277'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: SamplesPerPixel
                             id: '277'
@@ -174,7 +174,7 @@ elements:
                                     text: '4'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:RowsPerStrip:278'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: RowsPerStrip
                             id: '278'
@@ -190,7 +190,7 @@ elements:
                                     text: '38'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:PreviewImageLength:279'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: PreviewImageLength
                             id: '279'
@@ -206,7 +206,7 @@ elements:
                                     text: '6391'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:PlanarConfiguration:284'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: PlanarConfiguration
                             id: '284'
@@ -222,7 +222,7 @@ elements:
                                     text: Chunky
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:Predictor:317'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: Predictor
                             id: '317'
@@ -238,7 +238,7 @@ elements:
                                     text: 'Horizontal differencing'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:ExtraSamples:338'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: Notice
                             name: ExtraSamples
                             id: '338'
@@ -254,7 +254,7 @@ elements:
                                     text: 'Associated Alpha'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:SampleFormat:339'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: Notice
                             name: SampleFormat
                             id: '339'
@@ -270,7 +270,7 @@ elements:
                                     text: 'Unsigned, Unsigned, Unsigned, Unsigned'
                         -
                             path: '/media/tiff/ifd:IFD0:0/tag:ApplicationNotes:700'
-                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                             validationLevel: OK
                             name: ApplicationNotes
                             id: '700'

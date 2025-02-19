@@ -21,7 +21,7 @@ class CameraInfo5D extends CollectionBase {
   array (
     0 => 1,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CameraInfo5D',
   'itemsByName' =>
   array (
@@ -502,7 +502,7 @@ class CameraInfo5D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FNumber',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FNumber',
         'title' => 'F Number',
         'format' =>
@@ -517,7 +517,7 @@ class CameraInfo5D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ExposureTime',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -532,7 +532,7 @@ class CameraInfo5D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\ISO',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ISO',
         'title' => 'ISO',
         'format' =>
@@ -1073,7 +1073,7 @@ class CameraInfo5D extends CollectionBase {
             65535 => 'n/a',
           ),
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensType',
         'title' => 'Lens Type',
         'format' =>
@@ -1088,7 +1088,7 @@ class CameraInfo5D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -1103,7 +1103,7 @@ class CameraInfo5D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\MacroMagnification',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MacroMagnification',
         'title' => 'Macro Magnification',
         'format' =>
@@ -1117,7 +1117,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraOrientation',
         'title' => 'Camera Orientation',
         'format' =>
@@ -1144,7 +1144,7 @@ class CameraInfo5D extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocalLength',
         'title' => 'Focal Length',
         'format' =>
@@ -1158,7 +1158,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointsInFocus5D',
         'title' => 'AF Points In Focus 5D',
         'format' =>
@@ -1194,7 +1194,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -1236,7 +1236,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -1250,7 +1250,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PictureStyle',
         'title' => 'Picture Style',
         'format' =>
@@ -1298,7 +1298,7 @@ class CameraInfo5D extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MinFocalLength',
         'title' => 'Min Focal Length',
         'format' =>
@@ -1316,7 +1316,7 @@ class CameraInfo5D extends CollectionBase {
         array (
           'default' => '{value} mm',
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MaxFocalLength',
         'title' => 'Max Focal Length',
         'format' =>
@@ -1857,7 +1857,7 @@ class CameraInfo5D extends CollectionBase {
             65535 => 'n/a',
           ),
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensType',
         'title' => 'Lens Type',
         'format' =>
@@ -1871,7 +1871,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FirmwareRevision',
         'title' => 'Firmware Revision',
         'components' => 8,
@@ -1886,7 +1886,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ShortOwnerName',
         'title' => 'Short Owner Name',
         'components' => 16,
@@ -1902,7 +1902,7 @@ class CameraInfo5D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\DirectoryIndex',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DirectoryIndex',
         'title' => 'Directory Index',
         'format' =>
@@ -1917,7 +1917,7 @@ class CameraInfo5D extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\FileIndex',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FileIndex',
         'title' => 'File Index',
         'format' =>
@@ -1931,7 +1931,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastStandard',
         'title' => 'Contrast Standard',
         'format' =>
@@ -1945,7 +1945,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastPortrait',
         'title' => 'Contrast Portrait',
         'format' =>
@@ -1959,7 +1959,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastLandscape',
         'title' => 'Contrast Landscape',
         'format' =>
@@ -1973,7 +1973,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastNeutral',
         'title' => 'Contrast Neutral',
         'format' =>
@@ -1987,7 +1987,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastFaithful',
         'title' => 'Contrast Faithful',
         'format' =>
@@ -2001,7 +2001,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastMonochrome',
         'title' => 'Contrast Monochrome',
         'format' =>
@@ -2015,7 +2015,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastUserDef1',
         'title' => 'Contrast User Def 1',
         'format' =>
@@ -2029,7 +2029,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastUserDef2',
         'title' => 'Contrast User Def 2',
         'format' =>
@@ -2043,7 +2043,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContrastUserDef3',
         'title' => 'Contrast User Def 3',
         'format' =>
@@ -2057,7 +2057,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessStandard',
         'title' => 'Sharpness Standard',
         'format' =>
@@ -2071,7 +2071,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessPortrait',
         'title' => 'Sharpness Portrait',
         'format' =>
@@ -2085,7 +2085,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessLandscape',
         'title' => 'Sharpness Landscape',
         'format' =>
@@ -2099,7 +2099,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessNeutral',
         'title' => 'Sharpness Neutral',
         'format' =>
@@ -2113,7 +2113,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessFaithful',
         'title' => 'Sharpness Faithful',
         'format' =>
@@ -2127,7 +2127,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessMonochrome',
         'title' => 'Sharpness Monochrome',
         'format' =>
@@ -2141,7 +2141,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessUserDef1',
         'title' => 'Sharpness User Def 1',
         'format' =>
@@ -2155,7 +2155,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessUserDef2',
         'title' => 'Sharpness User Def 2',
         'format' =>
@@ -2169,7 +2169,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessUserDef3',
         'title' => 'Sharpness User Def 3',
         'format' =>
@@ -2183,7 +2183,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationStandard',
         'title' => 'Saturation Standard',
         'format' =>
@@ -2197,7 +2197,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationPortrait',
         'title' => 'Saturation Portrait',
         'format' =>
@@ -2211,7 +2211,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationLandscape',
         'title' => 'Saturation Landscape',
         'format' =>
@@ -2225,7 +2225,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationNeutral',
         'title' => 'Saturation Neutral',
         'format' =>
@@ -2239,7 +2239,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationFaithful',
         'title' => 'Saturation Faithful',
         'format' =>
@@ -2253,7 +2253,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FilterEffectMonochrome',
         'title' => 'Filter Effect Monochrome',
         'format' =>
@@ -2279,7 +2279,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationUserDef1',
         'title' => 'Saturation User Def 1',
         'format' =>
@@ -2293,7 +2293,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationUserDef2',
         'title' => 'Saturation User Def 2',
         'format' =>
@@ -2307,7 +2307,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SaturationUserDef3',
         'title' => 'Saturation User Def 3',
         'format' =>
@@ -2321,7 +2321,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneStandard',
         'title' => 'Color Tone Standard',
         'format' =>
@@ -2335,7 +2335,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTonePortrait',
         'title' => 'Color Tone Portrait',
         'format' =>
@@ -2349,7 +2349,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneLandscape',
         'title' => 'Color Tone Landscape',
         'format' =>
@@ -2363,7 +2363,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneNeutral',
         'title' => 'Color Tone Neutral',
         'format' =>
@@ -2377,7 +2377,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneFaithful',
         'title' => 'Color Tone Faithful',
         'format' =>
@@ -2391,7 +2391,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToningEffectMonochrome',
         'title' => 'Toning Effect Monochrome',
         'format' =>
@@ -2417,7 +2417,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneUserDef1',
         'title' => 'Color Tone User Def 1',
         'format' =>
@@ -2431,7 +2431,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneUserDef2',
         'title' => 'Color Tone User Def 2',
         'format' =>
@@ -2445,7 +2445,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorToneUserDef3',
         'title' => 'Color Tone User Def 3',
         'format' =>
@@ -2459,7 +2459,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UserDef1PictureStyle',
         'title' => 'User Def 1 Picture Style',
         'format' =>
@@ -2489,7 +2489,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UserDef2PictureStyle',
         'title' => 'User Def 2 Picture Style',
         'format' =>
@@ -2519,7 +2519,7 @@ class CameraInfo5D extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UserDef3PictureStyle',
         'title' => 'User Def 3 Picture Style',
         'format' =>
@@ -2551,7 +2551,7 @@ class CameraInfo5D extends CollectionBase {
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraInfo\\Timestamp',
         'outputFormat' => 2,
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TimeStamp',
         'title' => 'Time Stamp',
         'format' =>

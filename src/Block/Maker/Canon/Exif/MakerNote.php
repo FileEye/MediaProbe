@@ -4,7 +4,7 @@ namespace FileEye\MediaProbe\Block\Maker\Canon\Exif;
 
 use FileEye\MediaProbe\Block\Maker\MakerNoteBase;
 use FileEye\MediaProbe\Block\Media\Tiff\Ifd;
-use FileEye\MediaProbe\Block\Tiff\Tag;
+use FileEye\MediaProbe\Block\Media\Tiff\Tag;
 use FileEye\MediaProbe\Data\DataElement;
 use FileEye\MediaProbe\Data\DataException;
 use FileEye\MediaProbe\Data\DataWindow;

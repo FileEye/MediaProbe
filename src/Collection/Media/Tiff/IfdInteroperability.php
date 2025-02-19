@@ -21,7 +21,7 @@ class IfdInteroperability extends CollectionBase {
   array (
     0 => 'Interop',
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'Media\\Tiff\\IfdInteroperability',
   'itemsByName' =>
   array (
@@ -99,7 +99,7 @@ class IfdInteroperability extends CollectionBase {
       0 =>
       array (
         'components' => 4,
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'InteropIndex',
         'title' => 'Interoperability Index',
         'format' =>
@@ -125,7 +125,7 @@ class IfdInteroperability extends CollectionBase {
       array (
         'components' => 4,
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Version',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'InteropVersion',
         'title' => 'Interoperability Version',
         'format' =>
@@ -140,7 +140,7 @@ class IfdInteroperability extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RelatedImageFileFormat',
         'title' => 'Related Image File Format',
         'format' =>
@@ -156,7 +156,7 @@ class IfdInteroperability extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RelatedImageWidth',
         'title' => 'Related Image Width',
         'format' =>
@@ -176,7 +176,7 @@ class IfdInteroperability extends CollectionBase {
           0 => 'RelatedImageLength',
         ),
         'components' => 1,
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RelatedImageHeight',
         'title' => 'Related Image Height',
         'format' =>

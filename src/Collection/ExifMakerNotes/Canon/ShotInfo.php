@@ -22,7 +22,7 @@ class ShotInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ShotInfo',
   'itemsByName' =>
   array (
@@ -261,7 +261,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\AutoIso',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoISO',
         'title' => 'Auto ISO',
         'format' =>
@@ -276,7 +276,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\BaseIso',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BaseISO',
         'title' => 'Base ISO',
         'format' =>
@@ -291,7 +291,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\MeasuredEV',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MeasuredEV',
         'title' => 'Measured EV',
         'format' =>
@@ -306,7 +306,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ApertureValue',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TargetAperture',
         'title' => 'Target Aperture',
         'format' =>
@@ -321,7 +321,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\TargetExposureTime',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'TargetExposureTime',
         'title' => 'Target Exposure Time',
         'format' =>
@@ -336,7 +336,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ExposureCompensation',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureCompensation',
         'title' => 'Exposure Compensation',
         'format' =>
@@ -350,7 +350,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -392,7 +392,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SlowShutter',
         'title' => 'Slow Shutter',
         'format' =>
@@ -417,7 +417,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SequenceNumber',
         'title' => 'Shot Number In Continuous Burst',
         'format' =>
@@ -432,7 +432,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\OpticalZoomCode',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OpticalZoomCode',
         'title' => 'Optical Zoom Code',
         'format' =>
@@ -447,7 +447,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\CameraTemperature',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraTemperature',
         'title' => 'Camera Temperature',
         'format' =>
@@ -461,7 +461,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashGuideNumber',
         'title' => 'Flash Guide Number',
         'format' =>
@@ -476,7 +476,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\AFPointsInFocus',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointsInFocus',
         'title' => 'AF Points In Focus',
         'format' =>
@@ -504,7 +504,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashExposureComp',
         'title' => 'Flash Exposure Compensation',
         'format' =>
@@ -518,7 +518,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoExposureBracketing',
         'title' => 'Auto Exposure Bracketing',
         'format' =>
@@ -543,7 +543,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEBBracketValue',
         'title' => 'AEB Bracket Value',
         'format' =>
@@ -557,7 +557,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ControlMode',
         'title' => 'Control Mode',
         'format' =>
@@ -581,7 +581,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\FocusDistanceUpper',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusDistanceUpper',
         'title' => 'Focus Distance Upper',
         'format' =>
@@ -596,7 +596,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\FocusDistanceLower',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusDistanceLower',
         'title' => 'Focus Distance Lower',
         'format' =>
@@ -611,7 +611,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ShotInfo\\FNumber',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FNumber',
         'title' => 'F Number',
         'format' =>
@@ -626,7 +626,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ExposureTime',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -638,7 +638,7 @@ class ShotInfo extends CollectionBase {
       1 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ExposureTime',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ExposureTime',
         'title' => 'Exposure Time',
         'format' =>
@@ -653,7 +653,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\MeasuredEV2',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MeasuredEV2',
         'title' => 'Measured EV 2',
         'format' =>
@@ -668,7 +668,7 @@ class ShotInfo extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\BulbDuration',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BulbDuration',
         'title' => 'Bulb Duration',
         'format' =>
@@ -682,7 +682,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraType',
         'title' => 'Camera Type',
         'format' =>
@@ -707,7 +707,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoRotate',
         'title' => 'Auto Rotate',
         'format' =>
@@ -732,7 +732,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'NDFilter',
         'title' => 'ND Filter',
         'format' =>
@@ -755,7 +755,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SelfTimer2',
         'title' => 'Self Timer 2',
         'format' =>
@@ -769,7 +769,7 @@ class ShotInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FlashOutput',
         'title' => 'Flash Output',
         'format' =>

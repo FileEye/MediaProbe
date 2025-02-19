@@ -22,7 +22,7 @@ class LightingOpt extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\LightingOpt',
   'itemsByName' =>
   array (
@@ -92,7 +92,7 @@ class LightingOpt extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PeripheralIlluminationCorr',
         'title' => 'Peripheral Illumination Corr',
         'format' =>
@@ -114,7 +114,7 @@ class LightingOpt extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AutoLightingOptimizer',
         'title' => 'Auto Lighting Optimizer',
         'format' =>
@@ -138,7 +138,7 @@ class LightingOpt extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HighlightTonePriority',
         'title' => 'Highlight Tone Priority',
         'format' =>
@@ -160,7 +160,7 @@ class LightingOpt extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LongExposureNoiseReduction',
         'title' => 'Long Exposure Noise Reduction',
         'format' =>
@@ -183,7 +183,7 @@ class LightingOpt extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HighISONoiseReduction',
         'title' => 'High ISO Noise Reduction',
         'format' =>
@@ -207,7 +207,7 @@ class LightingOpt extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DigitalLensOptimizer',
         'title' => 'Digital Lens Optimizer',
         'format' =>
@@ -230,7 +230,7 @@ class LightingOpt extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DualPixelRaw',
         'title' => 'Dual Pixel Raw',
         'format' =>

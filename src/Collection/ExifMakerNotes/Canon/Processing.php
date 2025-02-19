@@ -22,7 +22,7 @@ class Processing extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Processing',
   'itemsByName' =>
   array (
@@ -109,7 +109,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToneCurve',
         'title' => 'Tone Curve',
         'format' =>
@@ -132,7 +132,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Sharpness',
         'title' => 'Sharpness',
         'format' =>
@@ -146,7 +146,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessFrequency',
         'title' => 'Sharpness Frequency',
         'format' =>
@@ -172,7 +172,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorRedLevel',
         'title' => 'Sensor Red Level',
         'format' =>
@@ -186,7 +186,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SensorBlueLevel',
         'title' => 'Sensor Blue Level',
         'format' =>
@@ -200,7 +200,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalanceRed',
         'title' => 'White Balance Red',
         'format' =>
@@ -214,7 +214,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalanceBlue',
         'title' => 'White Balance Blue',
         'format' =>
@@ -229,7 +229,7 @@ class Processing extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ProcessingWhiteBalance',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalance',
         'title' => 'White Balance',
         'format' =>
@@ -271,7 +271,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -285,7 +285,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PictureStyle',
         'title' => 'Picture Style',
         'format' =>
@@ -329,7 +329,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DigitalGain',
         'title' => 'Digital Gain',
         'format' =>
@@ -343,7 +343,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WBShiftAB',
         'title' => 'WB Shift AB',
         'format' =>
@@ -357,7 +357,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WBShiftGM',
         'title' => 'WB Shift GM',
         'format' =>
@@ -371,7 +371,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UnsharpMaskFineness',
         'title' => 'Unsharp Mask Fineness',
         'format' =>
@@ -385,7 +385,7 @@ class Processing extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'UnsharpMaskThreshold',
         'title' => 'Unsharp Mask Threshold',
         'format' =>

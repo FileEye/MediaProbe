@@ -21,7 +21,7 @@ class CropInfo extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\CropInfo',
   'itemsByName' =>
   array (
@@ -67,7 +67,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CropLeftMargin',
         'title' => 'Crop Left Margin',
         'format' =>
@@ -81,7 +81,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CropRightMargin',
         'title' => 'Crop Right Margin',
         'format' =>
@@ -95,7 +95,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CropTopMargin',
         'title' => 'Crop Top Margin',
         'format' =>
@@ -109,7 +109,7 @@ class CropInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CropBottomMargin',
         'title' => 'Crop Bottom Margin',
         'format' =>

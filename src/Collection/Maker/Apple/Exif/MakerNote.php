@@ -16,7 +16,7 @@ class MakerNote extends CollectionBase {
   'name' => 'Apple',
   'title' => 'Apple Maker Notes',
   'DOMNode' => 'makerNote',
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'Maker\\Apple\\Exif\\MakerNote',
   'handler' => 'FileEye\\MediaProbe\\Block\\Maker\\Apple\\Exif\\MakerNote',
   'itemsByName' =>
@@ -347,7 +347,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'MakerNoteVersion',
         'title' => 'Maker Note Version',
         'format' =>
@@ -361,7 +361,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEMatrix',
         'title' => 'AE Matrix',
         'format' =>
@@ -383,7 +383,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEStable',
         'title' => 'AE Stable',
         'format' =>
@@ -405,7 +405,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AETarget',
         'title' => 'AE Target',
         'format' =>
@@ -419,7 +419,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AEAverage',
         'title' => 'AE Average',
         'format' =>
@@ -433,7 +433,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFStable',
         'title' => 'AF Stable',
         'format' =>
@@ -455,7 +455,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AccelerationVector',
         'title' => 'Acceleration Vector',
         'components' => 3,
@@ -470,7 +470,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HDRImageType',
         'title' => 'HDR Image Type',
         'format' =>
@@ -492,7 +492,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BurstUUID',
         'title' => 'Burst UUID',
         'format' =>
@@ -507,7 +507,7 @@ class MakerNote extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Apple\\Exif\\FocusDistanceRange',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusDistanceRange',
         'title' => 'Focus Distance Range',
         'components' => 2,
@@ -522,7 +522,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OISMode',
         'title' => 'OIS Mode',
         'format' =>
@@ -536,7 +536,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ContentIdentifier',
         'title' => 'Content Identifier',
         'format' =>
@@ -551,7 +551,7 @@ class MakerNote extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Apple\\Exif\\ImageCaptureType',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ImageCaptureType',
         'title' => 'Image Capture Type',
         'format' =>
@@ -576,7 +576,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ImageUniqueID',
         'title' => 'Image Unique ID',
         'format' =>
@@ -590,7 +590,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LivePhotoVideoIndex',
         'title' => 'Live Photo Video Index',
         'format' =>
@@ -604,7 +604,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ImageProcessingFlags',
         'title' => 'Image Processing Flags',
         'format' =>
@@ -618,7 +618,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'QualityHint',
         'title' => 'Quality Hint',
         'format' =>
@@ -632,7 +632,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LuminanceNoiseAmplitude',
         'title' => 'Luminance Noise Amplitude',
         'format' =>
@@ -646,7 +646,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PhotosAppFeatureFlags',
         'title' => 'Photos App Feature Flags',
         'format' =>
@@ -660,7 +660,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ImageCaptureRequestID',
         'title' => 'Image Capture Request ID',
         'format' =>
@@ -674,7 +674,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HDRHeadroom',
         'title' => 'HDR Headroom',
         'format' =>
@@ -689,7 +689,7 @@ class MakerNote extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Apple\\Exif\\AFPerformance',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPerformance',
         'title' => 'AF Performance',
         'components' => 2,
@@ -704,7 +704,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SceneFlags',
         'title' => 'Scene Flags',
         'format' =>
@@ -718,7 +718,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SignalToNoiseRatioType',
         'title' => 'Signal To Noise Ratio Type',
         'format' =>
@@ -732,7 +732,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SignalToNoiseRatio',
         'title' => 'Signal To Noise Ratio',
         'format' =>
@@ -746,7 +746,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PhotoIdentifier',
         'title' => 'Photo Identifier',
         'format' =>
@@ -760,7 +760,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -774,7 +774,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CameraType',
         'title' => 'Camera Type',
         'format' =>
@@ -797,7 +797,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FocusPosition',
         'title' => 'Focus Position',
         'format' =>
@@ -811,7 +811,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'HDRGain',
         'title' => 'HDR Gain',
         'format' =>
@@ -825,7 +825,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFMeasuredDepth',
         'title' => 'AF Measured Depth',
         'format' =>
@@ -839,7 +839,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFConfidence',
         'title' => 'AF Confidence',
         'format' =>
@@ -853,7 +853,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorCorrectionMatrix',
         'title' => 'Color Correction Matrix',
         'format' =>
@@ -867,7 +867,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'GreenGhostMitigationStatus',
         'title' => 'Green Ghost Mitigation Status',
         'format' =>
@@ -881,7 +881,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SemanticStyle',
         'title' => 'Semantic Style',
         'format' =>
@@ -895,7 +895,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SemanticStyleRenderingVer',
         'title' => 'Semantic Style Rendering Ver',
         'format' =>
@@ -909,7 +909,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SemanticStylePreset',
         'title' => 'Semantic Style Preset',
         'format' =>
@@ -923,7 +923,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Apple_0x004e',
         'title' => 'Apple 0x004e',
         'format' =>
@@ -937,7 +937,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Apple_0x004f',
         'title' => 'Apple 0x004f',
         'format' =>

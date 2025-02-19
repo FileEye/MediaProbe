@@ -21,7 +21,7 @@ class PreviewImageInfo extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\PreviewImageInfo',
   'itemsByName' =>
   array (
@@ -75,7 +75,7 @@ class PreviewImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PreviewQuality',
         'title' => 'Preview Quality',
         'format' =>
@@ -104,7 +104,7 @@ class PreviewImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PreviewImageLength',
         'title' => 'Preview Image Length',
         'format' =>
@@ -118,7 +118,7 @@ class PreviewImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PreviewImageWidth',
         'title' => 'Preview Image Width',
         'format' =>
@@ -132,7 +132,7 @@ class PreviewImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PreviewImageHeight',
         'title' => 'Preview Image Height',
         'format' =>
@@ -146,7 +146,7 @@ class PreviewImageInfo extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PreviewImageStart',
         'title' => 'Preview Image Start',
         'format' =>

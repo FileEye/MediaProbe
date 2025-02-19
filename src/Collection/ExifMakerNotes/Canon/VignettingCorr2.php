@@ -22,7 +22,7 @@ class VignettingCorr2 extends CollectionBase {
   array (
     0 => 4,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\VignettingCorr2',
   'itemsByName' =>
   array (
@@ -61,7 +61,7 @@ class VignettingCorr2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PeripheralLightingSetting',
         'title' => 'Peripheral Lighting Setting',
         'format' =>
@@ -83,7 +83,7 @@ class VignettingCorr2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ChromaticAberrationSetting',
         'title' => 'Chromatic Aberration Setting',
         'format' =>
@@ -105,7 +105,7 @@ class VignettingCorr2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DistortionCorrectionSetting',
         'title' => 'Distortion Correction Setting',
         'format' =>
@@ -127,7 +127,7 @@ class VignettingCorr2 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DigitalLensOptimizerSetting',
         'title' => 'Digital Lens Optimizer Setting',
         'format' =>

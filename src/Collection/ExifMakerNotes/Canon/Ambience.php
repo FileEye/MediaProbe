@@ -22,7 +22,7 @@ class Ambience extends CollectionBase {
     0 => 4,
   ),
   'hasIndexSize' => true,
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\Ambience',
   'itemsByName' =>
   array (
@@ -53,7 +53,7 @@ class Ambience extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AmbienceSelection',
         'title' => 'Ambience Selection',
         'format' =>

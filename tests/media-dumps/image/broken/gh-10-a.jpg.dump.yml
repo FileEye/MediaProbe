@@ -61,7 +61,7 @@ elements:
                                             elements:
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Compression:259'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: Compression
                                                     id: '259'
@@ -77,7 +77,7 @@ elements:
                                                             text: 'JPEG (old-style)'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ImageDescription:270'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: ImageDescription
                                                     id: '270'
@@ -93,7 +93,7 @@ elements:
                                                             text: ''
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Make:271'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: Make
                                                     id: '271'
@@ -109,7 +109,7 @@ elements:
                                                             text: Canon
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Model:272'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: Model
                                                     id: '272'
@@ -125,7 +125,7 @@ elements:
                                                             text: 'Canon EOS 20D'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Orientation:274'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: Orientation
                                                     id: '274'
@@ -141,7 +141,7 @@ elements:
                                                             text: 'Horizontal (normal)'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:XResolution:282'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: XResolution
                                                     id: '282'
@@ -157,7 +157,7 @@ elements:
                                                             text: '72'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YResolution:283'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: YResolution
                                                     id: '283'
@@ -173,7 +173,7 @@ elements:
                                                             text: '72'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ResolutionUnit:296'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: ResolutionUnit
                                                     id: '296'
@@ -189,7 +189,7 @@ elements:
                                                             text: inches
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Software:305'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: Software
                                                     id: '305'
@@ -205,7 +205,7 @@ elements:
                                                             text: 'Adobe Photoshop Elements for Windows, version 2.0'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:ModifyDate:306'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: Notice
                                                     name: ModifyDate
                                                     id: '306'
@@ -221,7 +221,7 @@ elements:
                                                             text: '2006:03:22 18:11:10'
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:YCbCrPositioning:531'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: YCbCrPositioning
                                                     id: '531'
@@ -237,7 +237,7 @@ elements:
                                                             text: Co-sited
                                                 -
                                                     path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/tag:Copyright:33432'
-                                                    handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                    handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                     validationLevel: OK
                                                     name: Copyright
                                                     id: '33432'
@@ -261,7 +261,7 @@ elements:
                                                     elements:
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureTime:33434'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ExposureTime
                                                             id: '33434'
@@ -277,7 +277,7 @@ elements:
                                                                     text: '1/10 sec.'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FNumber:33437'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: FNumber
                                                             id: '33437'
@@ -293,7 +293,7 @@ elements:
                                                                     text: f/8.0
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureProgram:34850'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ExposureProgram
                                                             id: '34850'
@@ -309,7 +309,7 @@ elements:
                                                                     text: Manual
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ISO:34855'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ISO
                                                             id: '34855'
@@ -325,7 +325,7 @@ elements:
                                                                     text: '400'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifVersion:36864'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ExifVersion
                                                             id: '36864'
@@ -341,7 +341,7 @@ elements:
                                                                     text: '2.21'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:DateTimeOriginal:36867'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: Notice
                                                             name: DateTimeOriginal
                                                             id: '36867'
@@ -357,7 +357,7 @@ elements:
                                                                     text: '2006:02:13 04:34:54'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CreateDate:36868'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: Notice
                                                             name: CreateDate
                                                             id: '36868'
@@ -373,7 +373,7 @@ elements:
                                                                     text: '2006:02:13 04:34:54'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ComponentsConfiguration:37121'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ComponentsConfiguration
                                                             id: '37121'
@@ -389,7 +389,7 @@ elements:
                                                                     text: 'Y, Cb, Cr, -'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ShutterSpeedValue:37377'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ShutterSpeedValue
                                                             id: '37377'
@@ -405,7 +405,7 @@ elements:
                                                                     text: '217706/65536 sec. (APEX: 3)'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ApertureValue:37378'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ApertureValue
                                                             id: '37378'
@@ -421,7 +421,7 @@ elements:
                                                                     text: '8.0'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureCompensation:37380'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ExposureCompensation
                                                             id: '37380'
@@ -437,7 +437,7 @@ elements:
                                                                     text: '0'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:MeteringMode:37383'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: MeteringMode
                                                             id: '37383'
@@ -453,7 +453,7 @@ elements:
                                                                     text: Multi-segment
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:Flash:37385'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: Flash
                                                             id: '37385'
@@ -469,7 +469,7 @@ elements:
                                                                     text: 'Off, Did not fire'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalLength:37386'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: FocalLength
                                                             id: '37386'
@@ -485,7 +485,7 @@ elements:
                                                                     text: '17.0 mm'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ColorSpace:40961'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ColorSpace
                                                             id: '40961'
@@ -501,7 +501,7 @@ elements:
                                                                     text: sRGB
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageWidth:40962'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ExifImageWidth
                                                             id: '40962'
@@ -517,7 +517,7 @@ elements:
                                                                     text: '330'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExifImageHeight:40963'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ExifImageHeight
                                                             id: '40963'
@@ -533,7 +533,7 @@ elements:
                                                                     text: '220'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneXResolution:41486'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: FocalPlaneXResolution
                                                             id: '41486'
@@ -549,7 +549,7 @@ elements:
                                                                     text: '3959.3220338983'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneYResolution:41487'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: FocalPlaneYResolution
                                                             id: '41487'
@@ -565,7 +565,7 @@ elements:
                                                                     text: '3959.3220338983'
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:FocalPlaneResolutionUnit:41488'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: FocalPlaneResolutionUnit
                                                             id: '41488'
@@ -581,7 +581,7 @@ elements:
                                                                     text: inches
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:CustomRendered:41985'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: CustomRendered
                                                             id: '41985'
@@ -597,7 +597,7 @@ elements:
                                                                     text: Normal
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:ExposureMode:41986'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: ExposureMode
                                                             id: '41986'
@@ -613,7 +613,7 @@ elements:
                                                                     text: Manual
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:WhiteBalance:41987'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: WhiteBalance
                                                             id: '41987'
@@ -629,7 +629,7 @@ elements:
                                                                     text: Manual
                                                         -
                                                             path: '/media/jpeg/jpegSegment:APP1:225/exif/tiff/ifd:IFD0:0/ifd:ExifIFD:34665/tag:SceneCaptureType:41990'
-                                                            handlerClass: FileEye\MediaProbe\Block\Tiff\Tag
+                                                            handlerClass: FileEye\MediaProbe\Block\Media\Tiff\Tag
                                                             validationLevel: OK
                                                             name: SceneCaptureType
                                                             id: '41990'

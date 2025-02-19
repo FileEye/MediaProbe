@@ -16,7 +16,7 @@ class MakerNote extends CollectionBase {
   'name' => 'Canon',
   'title' => 'Canon Maker Notes',
   'DOMNode' => 'makerNote',
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'Maker\\Canon\\Exif\\MakerNote',
   'handler' => 'FileEye\\MediaProbe\\Block\\Maker\\Canon\\Exif\\MakerNote',
   'itemsByName' =>
@@ -352,7 +352,7 @@ class MakerNote extends CollectionBase {
         array (
           0 => 3,
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CanonFlashInfo',
         'title' => 'Canon Flash Info',
         'exiftoolDOMNode' => 'Canon:CanonFlashInfo',
@@ -378,7 +378,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CanonImageType',
         'title' => 'Canon Image Type',
         'format' =>
@@ -392,7 +392,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CanonFirmwareVersion',
         'title' => 'Canon Firmware Version',
         'format' =>
@@ -407,7 +407,7 @@ class MakerNote extends CollectionBase {
       0 =>
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\FileNumber',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FileNumber',
         'title' => 'File Number',
         'format' =>
@@ -421,7 +421,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OwnerName',
         'title' => 'Owner Name',
         'format' =>
@@ -437,14 +437,14 @@ class MakerNote extends CollectionBase {
       array (
         'name' => 'UnknownD30',
         'title' => 'UnknownD30',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
       ),
     ),
     12 =>
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -455,7 +455,7 @@ class MakerNote extends CollectionBase {
       ),
       1 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -466,7 +466,7 @@ class MakerNote extends CollectionBase {
       ),
       2 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SerialNumber',
         'title' => 'Serial Number',
         'format' =>
@@ -488,7 +488,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CanonFileLength',
         'title' => 'Canon File Length',
         'format' =>
@@ -862,7 +862,7 @@ class MakerNote extends CollectionBase {
             2147485024 => 'EOS D6000C',
           ),
         ),
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CanonModelID',
         'title' => 'Canon Model ID',
         'format' =>
@@ -892,7 +892,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ThumbnailImageValidArea',
         'title' => 'Thumbnail Image Valid Area',
         'components' => 4,
@@ -907,7 +907,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SerialNumberFormat',
         'title' => 'Serial Number Format',
         'format' =>
@@ -929,7 +929,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SuperMacro',
         'title' => 'Super Macro',
         'format' =>
@@ -952,7 +952,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DateStampMode',
         'title' => 'Date Stamp Mode',
         'format' =>
@@ -983,7 +983,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'FirmwareRevision',
         'title' => 'Firmware Revision',
         'format' =>
@@ -997,7 +997,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Categories',
         'title' => 'Categories',
         'components' => 2,
@@ -1060,7 +1060,7 @@ class MakerNote extends CollectionBase {
       array (
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\ImageUniqueID',
         'outputFormat' => 2,
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ImageUniqueID',
         'title' => 'Image Unique ID',
         'format' =>
@@ -1076,7 +1076,7 @@ class MakerNote extends CollectionBase {
       array (
         '__todo' => 'assign collection',
         'name' => 'CanonWBInfo',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
       ),
     ),
     47 =>
@@ -1099,7 +1099,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'BatteryType',
         'title' => 'Battery Type',
         'format' =>
@@ -1121,7 +1121,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RawDataOffset',
         'title' => 'Raw Data Offset',
         'format' =>
@@ -1135,7 +1135,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'RawDataLength',
         'title' => 'Raw Data Length',
         'format' =>
@@ -1149,7 +1149,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'OriginalDecisionDataOffset',
         'title' => 'Original Decision Data Offset',
         'format' =>
@@ -1171,7 +1171,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'AFPointsInFocus1D',
         'title' => 'AF Points In Focus 1D',
         'format' =>
@@ -1185,7 +1185,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'LensModel',
         'title' => 'Lens Model',
         'format' =>
@@ -1199,7 +1199,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'InternalSerialNumber',
         'title' => 'Internal Serial Number',
         'format' =>
@@ -1213,7 +1213,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'DustRemovalData',
         'title' => 'Dust Removal Data',
         'format' =>
@@ -1259,7 +1259,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToneCurveTable',
         'title' => 'Tone Curve Table',
         'format' =>
@@ -1273,7 +1273,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessTable',
         'title' => 'Sharpness Table',
         'format' =>
@@ -1287,7 +1287,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SharpnessFreqTable',
         'title' => 'Sharpness Freq Table',
         'format' =>
@@ -1301,7 +1301,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalanceTable',
         'title' => 'White Balance Table',
         'format' =>
@@ -1331,7 +1331,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorTemperature',
         'title' => 'Color Temperature',
         'format' =>
@@ -1361,7 +1361,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ToneCurveMatching',
         'title' => 'Tone Curve Matching',
         'format' =>
@@ -1375,7 +1375,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'WhiteBalanceMatching',
         'title' => 'White Balance Matching',
         'format' =>
@@ -1390,7 +1390,7 @@ class MakerNote extends CollectionBase {
       0 =>
       array (
         'components' => 1,
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorSpace',
         'title' => 'Color Space',
         'format' =>
@@ -1421,7 +1421,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'VRDOffset',
         'title' => 'VRD Offset',
         'format' =>
@@ -1451,7 +1451,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CRWParam',
         'title' => 'CRW Param',
         'format' =>
@@ -1473,7 +1473,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'Flavor',
         'title' => 'Flavor',
         'format' =>
@@ -1487,7 +1487,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PictureStyleUserDef',
         'title' => 'Picture Style User Def',
         'components' => 3,
@@ -1532,7 +1532,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PictureStylePC',
         'title' => 'Picture Style PC',
         'components' => 3,
@@ -1577,7 +1577,7 @@ class MakerNote extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'CustomPictureStyleFileName',
         'title' => 'Custom Picture Style File Name',
         'format' =>
@@ -1602,7 +1602,7 @@ class MakerNote extends CollectionBase {
         'name' => 'CanonVignettingCorr',
         '__todo' => true,
         '__collection' => 'ExifMakerNotes\\Canon\\VignettingCorrResolver',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
       ),
     ),
     16406 =>
@@ -1629,7 +1629,7 @@ class MakerNote extends CollectionBase {
         'title' => 'Canon LensInfo',
         'entryClass' => 'FileEye\\MediaProbe\\Entry\\Vendor\\Canon\\Exif\\LensInfo',
         '__collection' => 'ExifMakerNotes\\Canon\\LensInfo',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
       ),
     ),
     16416 =>
@@ -1663,7 +1663,7 @@ class MakerNote extends CollectionBase {
         'name' => 'CanonRawBurstModeRoll',
         '__todo' => true,
         '__collection' => 'ExifMakerNotes\\Canon\\RawBurstModeRoll',
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
       ),
     ),
   ),

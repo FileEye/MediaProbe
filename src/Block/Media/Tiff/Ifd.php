@@ -5,8 +5,8 @@ namespace FileEye\MediaProbe\Block\Media\Tiff;
 use FileEye\MediaProbe\Block\ListBase;
 use FileEye\MediaProbe\Block\Media\Jpeg;
 use FileEye\MediaProbe\Block\Media\Tiff;
+use FileEye\MediaProbe\Block\Media\Tiff\Tag;
 use FileEye\MediaProbe\Block\Thumbnail;
-use FileEye\MediaProbe\Block\Tiff\Tag;
 use FileEye\MediaProbe\Collection\CollectionException;
 use FileEye\MediaProbe\Collection\CollectionFactory;
 use FileEye\MediaProbe\Data\DataElement;
@@ -179,12 +179,12 @@ class Ifd extends ListBase
             $item_collection = $this->getCollection()->getItemCollection($id);
         } catch (MediaProbeException $e) {
             if ($fallbackCollectionId !== null) {
-                $item_collection = CollectionFactory::get($fallbackCollectionId)->getItemCollection($id, 0, 'Tiff\UnknownTag', [
+                $item_collection = CollectionFactory::get($fallbackCollectionId)->getItemCollection($id, 0, 'Media\\Tiff\\UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);
             } else {
-                $item_collection = $this->getCollection()->getItemCollection($id, 0, 'Tiff\UnknownTag', [
+                $item_collection = $this->getCollection()->getItemCollection($id, 0, 'Media\\Tiff\\UnknownTag', [
                     'item' => $id,
                     'DOMNode' => 'tag',
                 ]);

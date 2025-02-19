@@ -21,7 +21,7 @@ class ColorData5 extends CollectionBase {
   array (
     0 => 3,
   ),
-  'defaultItemCollection' => 'Tiff\\Tag',
+  'defaultItemCollection' => 'Media\\Tiff\\Tag',
   'id' => 'ExifMakerNotes\\Canon\\ColorData5',
   'itemsByName' =>
   array (
@@ -71,7 +71,7 @@ class ColorData5 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'ColorDataVersion',
         'title' => 'Color Data Version',
         'format' =>
@@ -93,7 +93,7 @@ class ColorData5 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PerChannelBlackLevel',
         'title' => 'Per Channel Black Level',
         'components' => 4,
@@ -108,7 +108,7 @@ class ColorData5 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'PerChannelBlackLevel',
         'title' => 'Per Channel Black Level',
         'components' => 4,
@@ -123,7 +123,7 @@ class ColorData5 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SpecularWhiteLevel',
         'title' => 'Specular White Level',
         'format' =>
@@ -137,7 +137,7 @@ class ColorData5 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'NormalWhiteLevel',
         'title' => 'Normal White Level',
         'format' =>
@@ -151,7 +151,7 @@ class ColorData5 extends CollectionBase {
     array (
       0 =>
       array (
-        'collection' => 'Tiff\\Tag',
+        'collection' => 'Media\\Tiff\\Tag',
         'name' => 'SpecularWhiteLevel',
         'title' => 'Specular White Level',
         'format' =>
